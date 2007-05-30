@@ -64,7 +64,7 @@ Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly r
 			Overwatch smut, enter at own risk;
 			MATH(~10-20.03.2017).</li>
 		<li><a href="the_taste_of_mi/">"The Taste of MI"</a> [PL] —
-			lass reminsces about her key life points while waiting for her wife;
+			lass reminsces about her key life points while lying in wait for her wife;
 			MATH(30.06.2017–12.08.2017).</li>
 	</ul>
 	<p></p>

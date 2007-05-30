@@ -30,7 +30,7 @@ BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK)
 Some things I'<!--'-->ve written:
 <ul>
 	<li><a href="writing/moments/">"A Widow's Trace"</a> — Overwatch smut, enter at own risk; ~10-20.03.2017.</li>
-	<li><a href="writing/the_taste_of_mi/">"The Taste of MI"</a> [PL] — lass reminsces about her key life points while waiting for her wife;
+	<li><a href="writing/the_taste_of_mi/">"The Taste of MI"</a> [PL] — lass reminsces about her key life points while lying in wait for her wife;
 	                                                                    30.06.2017 - 12.08.2017.</li>
 	<li><a href="writing/">More…</a></li>
 </ul>
