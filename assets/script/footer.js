@@ -6,5 +6,5 @@ request.open('GET', function() {
 			return links[i].href;
 	}
 }(), false);  // <-- Synchronous request for document.write(). Smack me
-request.send(null);
+request.send();
 document.write(request.responseText);
