@@ -1,4 +1,1 @@
-body {
-	background-color: black;
-	color:            white;
-}
+@import url('universal.css');
