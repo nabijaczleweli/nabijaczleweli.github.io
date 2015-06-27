@@ -1,1 +1,6 @@
 @import url('universal.css');
+
+iframe[name=main] {
+	position: fixed;
+	top: 0;
+}

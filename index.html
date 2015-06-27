@@ -9,15 +9,17 @@
 	<meta name="publisher"   content="GitHub" />
 	<meta name="description" content="nabijaczleweli's page with thingamajigs" />
 
+	<script src="assets/script/document.js"></script>
+
 	<link rel="license"       href="LICENSE"                     type="text/plain" />
 	<link rel="shortcut icon" href="assets/favicon.ico"          type="image/x-icon" sizes="16x16 24x24 32x32 48x48 256x256" />
 	<link rel="stylesheet"    href="assets/style/index.css"      type="text/css" />
-	<link                     href="assets/document/footer.html" type="text/html" />
 	<link rel="index"         href="http://nabijaczleweli.github.io" />
 </head>
 <body lang="en">
-	&lt;empty&gt; <span style="font-size: 35%">much like your mother in bed</span>
-
-	<script src="assets/script/footer.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		document.write(iframe_from('document/index_main.htm', 'main'));
+		document.write(iframe_from('document/footer.htm', 'footer'));
+	</script>
 </body>
 </html>

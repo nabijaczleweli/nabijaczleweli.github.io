@@ -1,4 +1,29 @@
 * {
-	background-color: black;
-	color:            white;
+	background-color: #131313;
+	color:            #ECECEC;
+}
+
+:link {
+	color: #FFFF11;
+}
+
+:visited {
+	color: #AAE574;
+}
+
+iframe {
+	width:  100%;
+	border: 0;
+}
+
+iframe[name=footer] {
+	position: fixed;
+	bottom:   0;
+}
+
+.img_up {
+	position: fixed;
+	bottom:   0;
+	right:    0;
+	z-index:  10000000;
 }

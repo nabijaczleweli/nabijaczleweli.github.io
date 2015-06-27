@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100px" height="60px" style="background: transparent;">
+ <path d="M 0 60 L 50 0 L 100 60" stroke-width="3px" fill="transparent" stroke="#808080" />
+
+ <text x="13%" y="40%" style="stroke: #5050A0;" transform="scale(2.2)">up</text>
+</svg>

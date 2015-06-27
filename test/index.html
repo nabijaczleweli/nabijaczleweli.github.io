@@ -9,16 +9,19 @@
 	<meta name="publisher"   content="GitHub" />
 	<meta name="description" content="nabijaczleweli's page with thingamajigs" />
 
+	<script src="../assets/script/document.js"></script>
+	<script src="../assets/script/subpage.js"></script>
+
 	<link rel="license"       href="LICENSE"                        type="text/plain" />
 	<link rel="shortcut icon" href="../assets/favicon.ico"          type="image/x-icon" sizes="16x16 24x24 32x32 48x48 256x256" />
 	<link rel="stylesheet"    href="../assets/style/index.css"      type="text/css" />
-	<link                     href="../assets/document/footer.html" type="text/html" />
 	<link rel="index"         href="http://nabijaczleweli.github.io" />
-	<link rel="up"            href="http://nabijaczleweli.github.io" />
+	<link rel="up"            href=".." />
 </head>
 <body lang="en">
-	TEST
-
-	<script src="../assets/script/footer.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		document.write(iframe_from('document/test/test_main.htm', 'main'));
+		document.write(iframe_from('document/footer.htm', 'footer'));
+	</script>
 </body>
 </html>
