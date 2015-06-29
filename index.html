@@ -11,15 +11,25 @@
 
 	<script src="assets/script/document.js"></script>
 
-	<link rel="license"       href="LICENSE"                     type="text/plain" />
 	<link rel="shortcut icon" href="assets/favicon.ico"          type="image/x-icon" sizes="16x16 24x24 32x32 48x48 256x256" />
 	<link rel="stylesheet"    href="assets/style/index.css"      type="text/css" />
+	<link rel="license"       href="LICENSE"                     type="text/plain" />
 	<link rel="index"         href="http://nabijaczleweli.github.io" />
 </head>
 <body lang="en">
-	<script type="text/javascript">
-		document.write(iframe_from('document/index_main.htm', 'main'));
-		document.write(iframe_from('document/footer.htm', 'footer'));
-	</script>
+	<div class="wrapper">
+		<div class="content">
+			<a href="gh_list">GitHub repo lister</a><br />
+			<script id='counter_js'>
+				var str =  '';
+				for(var i = 1; i <= 40; ++i)
+					str += i + '<br />';
+				document.getElementById('counter_js').outerHTML = str;
+			</script>
+		</div>
+		<div class="footer">
+			<script>insert_footer();</script>
+		</div>
+	</div>
 </body>
 </html>

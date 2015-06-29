@@ -1,0 +1,17 @@
+@import url('index.css');
+
+th {
+	background-color: #535353;
+}
+
+tr:nth-child(even) {
+	background-color: #333333;
+}
+
+tr:nth-child(odd) {
+	background-color: #232323;
+}
+
+table {
+	width: 100%;
+}

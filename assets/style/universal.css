@@ -1,5 +1,9 @@
-* {
+html, body {
 	background-color: #131313;
+	overflow:         auto;
+	padding:          0;
+	height:           100%;
+	margin:           0;
 	color:            #ECECEC;
 }
 
@@ -11,19 +15,28 @@
 	color: #AAE574;
 }
 
-iframe {
-	width:  100%;
-	border: 0;
-}
-
-iframe[name=footer] {
-	position: fixed;
-	bottom:   0;
-}
-
 .img_up {
-	position: fixed;
+	position: absolute;
+	z-index:  10000000;
 	bottom:   0;
 	right:    0;
-	z-index:  10000000;
+}
+
+.wrapper {
+	min-height: 100%;
+	position:   relative;
+	overflow:   hidden;
+}
+
+.content {
+	padding-bottom: 1.1em;
+}
+
+.footer {
+	padding-bottom: .1em;
+	position:       absolute;
+	bottom:         0;
+	height:         1em;
+	width:          100%;
+	left:           0;
 }
