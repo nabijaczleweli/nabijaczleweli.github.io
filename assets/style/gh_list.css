@@ -1,4 +1,5 @@
 @import url('index.css');
+@import url('https://octicons.github.com/components/octicons/octicons/octicons.css');
 
 th {
 	background-color: #535353;
@@ -14,4 +15,9 @@ tr:nth-child(odd) {
 
 table {
 	width: 100%;
+}
+
+.github_get_prs {
+	position: absolute;
+	right:    0;
 }
