@@ -1,0 +1,78 @@
+==================================================================
+https://keybase.io/nabijaczleweli
+--------------------------------------------------------------------
+ 
+I hereby claim:
+ 
+  * I am an admin of http://nabijaczleweli.xyz
+  * I am nabijaczleweli (https://keybase.io/nabijaczleweli) on keybase.
+  * I have a public key with fingerprint 7D69 474E 8402 8C5C C0C4  4163 BCFD 0B01 8D26 58F1
+ 
+To do so, I am signing this object:
+ 
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.8.18"
+        },
+        "key": {
+            "eldest_kid": "0101e3a640e5b919a15dccc546fc8e609b631d0e84c825f731b51efd87cb64c2a1660a",
+            "fingerprint": "7d69474e84028c5cc0c44163bcfd0b018d2658f1",
+            "host": "keybase.io",
+            "key_id": "bcfd0b018d2658f1",
+            "kid": "0101e3a640e5b919a15dccc546fc8e609b631d0e84c825f731b51efd87cb64c2a1660a",
+            "uid": "c53aa309c826ed4295e29f1450a75219",
+            "username": "nabijaczleweli"
+        },
+        "service": {
+            "hostname": "nabijaczleweli.xyz",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1440370259,
+    "expire_in": 157680000,
+    "prev": "59becc20bcb4e83d16783d1a4c22886ea289dac1c8e287d8f7aeda3ae7b8490c",
+    "seqno": 14,
+    "tag": "signature"
+}
+ 
+which yields the signature:
+ 
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+ 
+owGtkn1QFHUYx49TQATiJUYbtZljBSdm6Nrd21diCgcMJUuHGwoju9uX33F7HHvH
+7XIIBCEWKgIihNrI1PhCaOXIYIr0NgQOERoijJbQUWMDCI14BBpBZ+0yNFMz/tn+
+8ZudeT7P9/k+39+vNnSZRuv3hS/Yr3pD5rTflQlWkzH0srEYYh18IZRQDHF2AYiy
++icyuQBKgHJAIctIQC84dKKDB3qbpFti4iE3cEmCQ1QoWE/pEQoqiVd5tRvYeSDJ
+phyBV6sIjAADQ2AwwFkaoRkE5zmOwzHCwlGAgGmWMCA8DCiMo1DcQhoQFkeAhadI
+jiUwDmUQgoAZZaBFELOBy+kSVIsQyRM0RmJKG4xSHM5xMIdhCGFgOQsPszBC8SiB
+UxZEabQ6JPk/y0CLTk2L9h7B/8++8xflONzAMAaYVmAC8BhK4wClLQiGwwyJowit
+ghJwLQUvMqxgY7giOygAdkGNVqm5BQ6o8ar7PJLT7yosUnScLofs4Bx2pW6VZWeC
+2i4XOlW+ALCmJSUTK5wSeSXTf98loqCcLKjaCIbBBhJGcToeArucgguYBJXASYKC
+lU+dA9yKJk6zgONQmOVY5ToMPEKQ6skoGaAURQAGpWie4RAlNZQiecpCMoBnDAwg
+WQqjYQ5Sl8sTHepIxSiTrWhKQrbIyPkuAJXs165brvHTagL8tepr1awMCv/nCZvj
+wjVN5vebRNr7YsYqndfXx8T9fGHYN+O5+thcd2AR59t49P4bOWeecyVu21ezqSfo
+9dqoWc/9g1XN16vGIvMujh/as7nvlZbWTtfyutYHWPJdG7o7ZUv5+MKOGk25N9h9
+vfRU1IknS2vW91bdtA0EjxypGPrls8b8nk1T7VsfhkuNaQ3e33ya7hRT0r2iW1L+
+QsEaScxr27eh6d2s6NgZOvp494FRqWzyUqhrflQ+l3HhifYaF1630JisMwdUROef
+tp08PXe+05rprPom+nl9w4fa7mH/hKcaUs+aPaFu2LHjmPnj5JoQ70Nt6rclZ5Lk
+tBvjbfpo68iv31cNBr1WPfbqWPh2Ob0WhG735caLXdXsNmtcbmbZ1lXlWXN3nFfv
+Thj1X8f0xwykxzWX9to2/mg9Wzqxeqqy6Gl9f8fk8O+f32jx+OPXbh+PaA6svllX
+9lfUvdttIbv7SW3YrHfnxdVien3vQkZkxIlZuTIwrfHozr3DiYeOuS8Pxj77zEyX
+r77/q5A/OyL3euqGWuYH/eAfdMvq41pHAowz16bDQJjxI7fxk44UW6GEpZmPJL73
+QtflOz9tXvt4TKdp9EGzZWbPWuK7hsNb1lckTesOHywz/vHpZGWYPnrlFdv+2Ahi
+Xnr7zbLm0PaCt7JWZCTlvXS+a01xX88lzbkvTSsGUqfe4TF7oOeDWyfn1v0N
+=cvWg
+-----END PGP MESSAGE-----
+ 
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+ 
+View my publicly-auditable identity here: https://keybase.io/nabijaczleweli
+ 
+==================================================================
+
