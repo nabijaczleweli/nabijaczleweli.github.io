@@ -1,23 +1,18 @@
 ==================================================================
 https://keybase.io/nabijaczleweli
 --------------------------------------------------------------------
- 
+
 I hereby claim:
- 
+
   * I am an admin of http://nabijaczleweli.xyz
   * I am nabijaczleweli (https://keybase.io/nabijaczleweli) on keybase.
   * I have a public key with fingerprint 7D69 474E 8402 8C5C C0C4  4163 BCFD 0B01 8D26 58F1
- 
+
 To do so, I am signing this object:
- 
+
 {
     "body": {
-        "client": {
-            "name": "keybase.io node.js client",
-            "version": "0.8.18"
-        },
         "key": {
-            "eldest_kid": "0101e3a640e5b919a15dccc546fc8e609b631d0e84c825f731b51efd87cb64c2a1660a",
             "fingerprint": "7d69474e84028c5cc0c44163bcfd0b018d2658f1",
             "host": "keybase.io",
             "key_id": "bcfd0b018d2658f1",
@@ -32,47 +27,47 @@ To do so, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1440370259,
+    "ctime": 1441130098,
     "expire_in": 157680000,
-    "prev": "59becc20bcb4e83d16783d1a4c22886ea289dac1c8e287d8f7aeda3ae7b8490c",
-    "seqno": 14,
+    "prev": "07e1f10522898c93836229da7490af0d3dfb1c1f6d745e16bb10e4068d6e1b35",
+    "seqno": 21,
     "tag": "signature"
 }
- 
+
 which yields the signature:
- 
+
 -----BEGIN PGP MESSAGE-----
-Version: GnuPG v1
- 
-owGtkn1QFHUYx49TQATiJUYbtZljBSdm6Nrd21diCgcMJUuHGwoju9uX33F7HHvH
-7XIIBCEWKgIihNrI1PhCaOXIYIr0NgQOERoijJbQUWMDCI14BBpBZ+0yNFMz/tn+
-8ZudeT7P9/k+39+vNnSZRuv3hS/Yr3pD5rTflQlWkzH0srEYYh18IZRQDHF2AYiy
-+icyuQBKgHJAIctIQC84dKKDB3qbpFti4iE3cEmCQ1QoWE/pEQoqiVd5tRvYeSDJ
-phyBV6sIjAADQ2AwwFkaoRkE5zmOwzHCwlGAgGmWMCA8DCiMo1DcQhoQFkeAhadI
-jiUwDmUQgoAZZaBFELOBy+kSVIsQyRM0RmJKG4xSHM5xMIdhCGFgOQsPszBC8SiB
-UxZEabQ6JPk/y0CLTk2L9h7B/8++8xflONzAMAaYVmAC8BhK4wClLQiGwwyJowit
-ghJwLQUvMqxgY7giOygAdkGNVqm5BQ6o8ar7PJLT7yosUnScLofs4Bx2pW6VZWeC
-2i4XOlW+ALCmJSUTK5wSeSXTf98loqCcLKjaCIbBBhJGcToeArucgguYBJXASYKC
-lU+dA9yKJk6zgONQmOVY5ToMPEKQ6skoGaAURQAGpWie4RAlNZQiecpCMoBnDAwg
-WQqjYQ5Sl8sTHepIxSiTrWhKQrbIyPkuAJXs165brvHTagL8tepr1awMCv/nCZvj
-wjVN5vebRNr7YsYqndfXx8T9fGHYN+O5+thcd2AR59t49P4bOWeecyVu21ezqSfo
-9dqoWc/9g1XN16vGIvMujh/as7nvlZbWTtfyutYHWPJdG7o7ZUv5+MKOGk25N9h9
-vfRU1IknS2vW91bdtA0EjxypGPrls8b8nk1T7VsfhkuNaQ3e33ya7hRT0r2iW1L+
-QsEaScxr27eh6d2s6NgZOvp494FRqWzyUqhrflQ+l3HhifYaF1630JisMwdUROef
-tp08PXe+05rprPom+nl9w4fa7mH/hKcaUs+aPaFu2LHjmPnj5JoQ70Nt6rclZ5Lk
-tBvjbfpo68iv31cNBr1WPfbqWPh2Ob0WhG735caLXdXsNmtcbmbZ1lXlWXN3nFfv
-Thj1X8f0xwykxzWX9to2/mg9Wzqxeqqy6Gl9f8fk8O+f32jx+OPXbh+PaA6svllX
-9lfUvdttIbv7SW3YrHfnxdVien3vQkZkxIlZuTIwrfHozr3DiYeOuS8Pxj77zEyX
-r77/q5A/OyL3euqGWuYH/eAfdMvq41pHAowz16bDQJjxI7fxk44UW6GEpZmPJL73
-QtflOz9tXvt4TKdp9EGzZWbPWuK7hsNb1lckTesOHywz/vHpZGWYPnrlFdv+2Ahi
-Xnr7zbLm0PaCt7JWZCTlvXS+a01xX88lzbkvTSsGUqfe4TF7oOeDWyfn1v0N
-=cvWg
+Version: Keybase OpenPGP v2.0.43
+Comment: https://keybase.io/crypto
+
+yMM2AnicbZJtUFRVGMcXxUZIQ7TwBRjwElZCeM59Offe1YEGpEUSoSiIFLf7cu5y
+Afeyy7ILKPHiCOjgUE0T0QczaRqJIU1oNgUshJgBxNmZgmgopMQawzYYnUZGw+5l
+6pvny5nzPL/nf57nP8/g2pWm4IDefx4POLnt9YWA0f6MMtNrN39zHiZETa4gzIeJ
+Irx8Kardhp0lTtXuIswEKyOeZmnM0YDkJEaSgETTEFGipMhABJCTScRwCiTiiQKt
+1KjQZUShFCeomh7TH1ZV1qOP4IuWEwACiCkB0QAzIg95ATKyJEkMjRSJwwjwIqKg
+DPQGJI5kFJaCIgOxInOsJCJaIgWIEBB0ubJlOYmhBIECvA4jLNMkz2CSVyDNAIFl
+SMgbYCl22oVDWKftgqgWClJlMfbgYpWoiif0nFuVsGGEMc8juYTyikpdp8SpuTRJ
+K9bzBS5Xidkod1WUGLwHi9b/lKyiapd1S/UCN3aWqpqdMEOdlFyqIQ11NyEFAM/F
+E7i8RHViq2oQDIs4oB/jG+w2fGIxVCBgSJLjOYmnOAqRJC8LLM0DQQEyJSsilKCC
+ZJZmMESiCAGmAeJkhKFIMYQxm8OuEWYS6n0KNl2zVLXZBVeZExNVV/oPBJoCgk2P
+rVphbIUpOGjd/7sSuibkYfY1y5C7dx/+/Xy+90izty3q60XfvcTCjaHehriwTwJ9
+/a1doz0XlpKOVq28+OOnt840P1t/PDV6puvLSx1z2SZLe1HO1QO/PF1+0O9IfQDe
+JFtUb9aW7fOrC+sjVfBSSh0zsNXDtUW81XIHHreixPLNETk96X3Mhaix/IX4QEvq
+qcip3IR70f6vatMWp3/wJ+fO8refgEjykHkJI/u2BgxNjse0xgXt6t7g9HV+w3e8
++FTYMDZ7C9649sWxHUfkXe3+Z6qntwc2KlPVgT+ZXvDXdjcXrWs4N2FPbJqqHZ+f
+RaM7z3jOjqlj87CjuuXVSl843RBlJXvoEfet7jVzyeRCUl55Zw9odczfzTwx1239
+23bjXOY7rNd115MevfdyzfvXKze+PRG3rZXVQNvUt570ly0FsVXeZmssE/vdfbv3
+w4HYOXdhZ+OVwfDM1vs799c1TtkiQ5tSh/lik/usI+ryA3ZpNvzJ98anr4/koqAB
+08ypFf0+Tdmt/bznxu71KUMN1Z9fDU7e0fVub8jBxOAPNlU9/MMt+SeHc0KS8nOL
+0/qGayzr/2T2XDoatjl2MuxjW8rqxBjPyaWyPGtGWVNO9Mxij+PihrToiYxXtKAs
+OduS3RZaE9N3x3fzr6gt+dzeQxObnmPViNvt3xeM1w2edjwvfFSvpp2OyYr7bP+x
+7F/P/wsN6aSm
+=ZnkN
 -----END PGP MESSAGE-----
- 
+
 And finally, I am proving ownership of this host by posting or
 appending to this document.
- 
-View my publicly-auditable identity here: https://keybase.io/nabijaczleweli
- 
-==================================================================
 
+View my publicly-auditable identity here: https://keybase.io/nabijaczleweli
+
+==================================================================
