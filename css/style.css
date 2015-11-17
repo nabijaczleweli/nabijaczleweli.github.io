@@ -1,3 +1,7 @@
-body {
-	background: url('//www.newhdwallpapers.in/wp-content/uploads/2014/03/Pier-Evening-Lights-HD-Wallpapers.jpg') no-repeat center;
+html {
+  background: url('//www.newhdwallpapers.in/wp-content/uploads/2014/03/Pier-Evening-Lights-HD-Wallpapers.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;
 }
