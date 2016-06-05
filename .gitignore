@@ -1,0 +1,12 @@
+*
+!src
+!src/**
+!assets
+!assets/**
+!*.enc
+!.git*
+!.travis.yml
+!*Makefile
+!*.sublime-project
+!LICENSE-*
+!README.md
