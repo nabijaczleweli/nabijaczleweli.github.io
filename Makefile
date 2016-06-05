@@ -20,6 +20,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+ifeq "$(TRAVIS)" "true"
+	ADDITIONAL_TRAVIS_ARGS := -DBUILD_ID=$(TRAVIS_BUILD_ID) -DREPO_SLUG=$(TRAVIS_REPO_SLUG)
+else
+	ADDITIONAL_TRAVIS_ARGS :=
+endif
+
 CPP := cpp
 OUTDIR := out/
 
@@ -42,7 +48,7 @@ preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(SOURCES))
 
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
-	$(CPP) -CC -P -o$@ $^ -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")"
+	$(CPP) -CC -P $^ -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" $(ADDITIONAL_TRAVIS_ARGS) | sed "s;COLON_SLASH_SLASH;://;g" > $@
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)

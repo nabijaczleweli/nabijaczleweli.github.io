@@ -13,19 +13,25 @@
 
 
 #ifdef __clang__
-#define COMPILER_NAME Clang
+  #define COMPILER_NAME Clang
 #elif defined(__GNUC__)
-#define COMPILER_NAME GCC
+  #define COMPILER_NAME GCC
 #else
-#define COMPILER_NAME an unknown compiler
+  #define COMPILER_NAME an unknown compiler
 #endif
 
 #ifdef __clang__
-		#define COMPILER_VERSION __clang_major__‍.‍__clang_minor__‍.‍__clang_patchlevel__
+  #define COMPILER_VERSION __clang_major__‍.‍__clang_minor__‍.‍__clang_patchlevel__
 #elif defined(__GNUC__)
-		#define COMPILER_VERSION __GNUC__‍.‍__GNUC_MINOR__‍.‍__GNUC_PATCHLEVEL__
+  #define COMPILER_VERSION __GNUC__‍.‍__GNUC_MINOR__‍.‍__GNUC_PATCHLEVEL__
 #else
-		#define COMPILER_VERSION unknown
+  #define COMPILER_VERSION unknown
+#endif
+
+#if defined(BUILD_ID) && defined(REPO_SLUG)
+  #define CI_LINK_FOOTER_PART <br /><a href=httpsCOLON_SLASH_SLASHtravis-ci.org/REPO_SLUG/builds/BUILD_ID>See job on TravisCI</a>.
+#else
+  #define CI_LINK_FOOTER_PART
 #endif
 
 
@@ -45,18 +51,18 @@
   </head>                                                                                 \
   <body>
 
-#define BOILERPLATE_END()                                                                                                                  \
-    <hr />                                                                                                                                 \
-    Creative text licensed under <a href="/capitalism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                  \
-    code licensed under <a href="/capitalism/LICENSE-CODE">The MIT License</a>.                                                            \
-    <hr />                                                                                                                                 \
-    This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, \
-    and contributt and/or yell at me there.                                                                                                \
-    <hr />                                                                                                                                 \
-    Do you consider this some <i>good shit, right there</i>?                                                                               \
-    Follow me on GitHub, <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>                                                    \
-    or on Twitter, <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.                                                       \
-    <hr />                                                                                                                                 \
-    Automatically generated with COMPILER_NAME version COMPILER_VERSION's <!--'--> C preprocessor on DATE_TIME from __FILE__.              \
-  </body>                                                                                                                                  \
+#define BOILERPLATE_END()                                                                                                                         \
+    <hr />                                                                                                                                        \
+    Creative text licensed under <a href="/capitalism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                         \
+    code licensed under <a href="/capitalism/LICENSE-CODE">The MIT License</a>.                                                                   \
+    <hr />                                                                                                                                        \
+    This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>,        \
+    and contributt and/or yell at me there.                                                                                                       \
+    <hr />                                                                                                                                        \
+    Do you consider this some <i>good shit, right there</i>?<br />                                                                                \
+    Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,                                        \
+    or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.            \
+    <hr />                                                                                                                                        \
+    Automatically generated with COMPILER_NAME version COMPILER_VERSION's <!--'--> C preprocessor on DATE_TIME from __FILE__. CI_LINK_FOOTER_PART \
+  </body>                                                                                                                                         \
 </html>
