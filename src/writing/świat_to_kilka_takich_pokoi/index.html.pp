@@ -51,7 +51,7 @@ apartament.<br />
 w pobliżu drzwi Franz-Ferdinandzkich.<br />
 Trzeci wchodzi.<br />
 &emsp;Zamek ustępuje pod piętnastoma kilo Newtonami.<br />
-&emsp;Książę śpi. Posejść. Wycelować. Pociągnąć. Strzelić.<br />
+&emsp;Książę śpi. Podejść. Wycelować. Pociągnąć. Strzelić.<br />
 Schować. Wycofać się. Zamknąć drzwi.<br />
 &emsp;— Spawa*? — wybełkotała grupa zewnętrzna<br />
 &emsp;— Przykładnie — odpowiedział i clusnął sobie<br />
