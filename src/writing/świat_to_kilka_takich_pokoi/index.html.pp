@@ -53,7 +53,7 @@ Trzeci wchodzi.<br />
 &emsp;Zamek ustępuje pod piętnastoma kilo Newtonami.<br />
 &emsp;Książę śpi. Posejść. Wycelować. Pociągnąć. Strzelić.<br />
 Schować. Wycofać się. Zamknąć drzwi.<br />
-&emsp;— Spawa? — wybełkotała grupa zewnętrzna<br />
+&emsp;— Spawa*? — wybełkotała grupa zewnętrzna<br />
 &emsp;— Przykładnie — odpowiedział i clusnął sobie<br />
 Oddalili się lekkim zatoczem.
 </p>
@@ -121,7 +121,7 @@ go odrzuciło.<br />
 <br />
 <p>
 &emsp;Po zapadnięciu zmroku wziął standardowego czter<br />
-dziesto milimetrowego fraga* i zapieczętowaną kopertę.<br />
+dziesto milimetrowego fraga** i zapieczętowaną kopertę.<br />
 Granat bardzo ładnie przelatuje przez zamk-<br />
 nięte okno, a list, tj. deklarację wojny, przelatuje<br />
 za nim na cegle, przez brak okna.<br />
@@ -137,7 +137,7 @@ rąbanie w drzwi.<br />
 cofnął się, gdy zobaczył wycelowaną w niego<br />
 ППШę.<br />
 &emsp;— A teraz przedyskutujem, czemu jesteś teraz w<br />
-&emsp;&emsp; wojnie z resztą cywilizowanego świata i Francją**.<br />
+&emsp;&emsp; wojnie z resztą cywilizowanego świata i Francją***.<br />
 &emsp;— Dobsz... — przerwał, gdy skrzypnęły za nim drzwi,<br />
 &emsp;&emsp; odwrócił się.<br />
 &emsp;— Not too late to the party, I hope? —<br />
@@ -169,10 +169,11 @@ I tak, drogie dzieci, zaczęła sie WWI.
 
 <br />
 <p>
-*frag — granat odłamkowy fragmentacyjny.<br />
-**Nie lubię Francji<br />
+*spawa — śpi, chłe chłe<br />
+**frag — granat odłamkowy fragmentacyjny.<br />
+***Nie lubię Francji<br />
 </p>
-
+Świat to kilka takich pokoi
 <br />
 <br />
 <p>
