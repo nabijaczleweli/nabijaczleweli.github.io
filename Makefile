@@ -46,9 +46,10 @@ licenses : $(patsubst %,$(OUTDIR)%,$(LICENSES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(SOURCES))
 
 
+# `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
-	$(CPP) -CC -P $^ -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" $(ADDITIONAL_TRAVIS_ARGS) | sed "s;COLON_SLASH_SLASH;://;g" > $@
+	cd $(dir $^) && $(CPP) $(notdir $^) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" $(ADDITIONAL_TRAVIS_ARGS) | sed "s;COLON_SLASH_SLASH;://;g" > $(CURDIR)/$@
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)

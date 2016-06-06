@@ -19,7 +19,8 @@ Things I handwrote and then transcribed, because I like laborious work:
 <ul>
   <li><a href="writing/świat_to_kilka_takich_pokoi/">"Świat to kilka takich pokoi"</a> [PL] — Grade 9 Polish language class assignment,
                                                                                               wherein I abstract the causes of WWI asin
-                                                                                              the context of a stereotypical social building.</li>
+                                                                                              the context of a stereotypical social building
+                                                                                              01.06.2016 - 03.06.2016.</li>
 </ul>
 
 
