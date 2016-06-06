@@ -93,7 +93,7 @@ Uformował hipoplan:<br />
   <li>Znaleźć sprawcę</li>
   <li>Zajebać kurwiego syna w męczarniach.</li>
 </ol>
-&embsp;Jako więc zaplanował, tako i zrobił. Zaczął od punktu<br />
+&emsp;Jako więc zaplanował, tako i zrobił. Zaczął od punktu<br />
 pierwszego: zaopatrzył się w perfumowaną chusteczkę i<br />
 wrócił do Franz-Ferdinanda, zanotował sforsowany<br />
 zamek, który wcześniej przeoczył, przeszedł<br />
@@ -115,12 +115,12 @@ go odrzuciło.<br />
 &emsp;&emsp; coś.<br />
 &emsp;— Taa — skinieniem głowy Franz-Jo-<br />
 &emsp;&emsp; sef podziękował i zbył delikwentów —<br />
-&emsp;&emsp; chzą Wel'kiej Srbii to dostaną Wel'ką<br />
+&emsp;&emsp; chcą Wel'kiej Srbii to dostaną Wel'ką<br />
 &emsp;&emsp; Srbiję, hy hy hy.
 </div>
 <br />
 <p>
-&emsp;Po zapadnięciu zmroku wziął standardowego czter<br />
+&emsp;Po zapadnięciu zmroku wziął standardowego czter-<br />
 dziesto milimetrowego fraga** i zapieczętowaną kopertę.<br />
 Granat bardzo ładnie przelatuje przez zamk-<br />
 nięte okno, a list, tj. deklarację wojny, przelatuje<br />
@@ -129,7 +129,7 @@ za nim na cegle, przez brak okna.<br />
 odłamkowe do najcichszych nie należą, więc o jakiejś<br />
 pierwszej obudziło Franz-Josefa pukanie, nie,<br />
 rąbanie w drzwi.<br />
-&emsp;— Чево хотете?<br />
+&emsp;— Чего хотите?<br />
 &emsp;— Mamy do pogadania — niski, tubalny wręcz głos,<br />
 &emsp;&emsp; militarny wschodniosłowiański akcent.<br />
 &emsp;— Car Mikołaj — już szeptem — to przejebane. Idę!<br />
@@ -156,7 +156,7 @@ cofnął się, gdy zobaczył wycelowaną w niego<br />
 &emsp;— Deal. Zobaczymy<br />
 &emsp;&emsp; się... wkrótce. — z groźbą w głosie powiedział<br />
 &emsp;&emsp; Brytol i ewakuował się bezszelestnie salutując<br />
-&emsp;&emsp; w drzwiach; Rusku oddał honor.<br />
+&emsp;&emsp; w drzwiach; Ruski oddał honor.<br />
 &emsp;— To jest ostatni raz, który się widzimy — wyraźna<br />
 &emsp;&emsp; kpina w głosie Ruskiego, który,<br />
 &emsp;&emsp; po wypowiedzeniu tej kwestii opuścił ciężkim krokiem<br />
