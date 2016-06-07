@@ -54,7 +54,7 @@ Trzeci wchodzi.<br />
 &emsp;Książę śpi. Podejść. Wycelować. Pociągnąć. Strzelić.<br />
 Schować. Wycofać się. Zamknąć drzwi.<br />
 &emsp;— Spawa*? — wybełkotała grupa zewnętrzna<br />
-&emsp;— Przykładnie — odpowiedział i clusnął sobie<br />
+&emsp;— Przykładnie — odpowiedział i chlusnął sobie<br />
 Oddalili się lekkim zatoczem.
 </p>
 <br />
