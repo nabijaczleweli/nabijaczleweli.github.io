@@ -173,10 +173,10 @@ I tak, drogie dzieci, zaczęła sie WWI.
 **frag — granat odłamkowy fragmentacyjny.<br />
 ***Nie lubię Francji<br />
 </p>
-Świat to kilka takich pokoi
-<br />
 <br />
 <p>
+Świat to kilka takich pokoi<br />
+<br />
 Utwór napisany od 01.06.2016 do 03.06.2016 przez Jędrzeja A. Łopacińskiego.
 </p>
 
