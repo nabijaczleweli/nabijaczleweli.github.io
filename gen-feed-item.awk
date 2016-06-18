@@ -32,7 +32,7 @@ function escape_html(text) {
 BEGIN {
 	title = ""
 	description = ""
-	author = "nabijaczleweli"
+	author = ""
 	pubDate = ""
 }
 
@@ -60,7 +60,11 @@ END {
 	print "      <description>" description "</description>"
 	print "      <author>" author "</author>"
 	print "      <pubDate>" pubDate "</pubDate>"
-	print "      <guid>http://nabijaczleweli.xyz/capitalism/" filename "</guid>"
-	print "      <source>http://nabijaczleweli.xyz/capitalism/feed.xml</source>"
+
+	printf "      <guid>http://nabijaczleweli.xyz/capitalism/"
+	system("python3 -c \"import urllib.parse; print(urllib.parse.quote('''" filename "'''), end=\\\"\\\", flush=True)\"")
+	print "</guid>"
+
+	print "      <source url=\"http://nabijaczleweli.xyz/capitalism/feed.xml\">nabijaczleweli's page</source>"
 	print "    </item>"
 }

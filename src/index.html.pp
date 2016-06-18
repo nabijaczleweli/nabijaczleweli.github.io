@@ -1,5 +1,5 @@
 <!--
-nabijaczleweli.xyz (c) by nabijaczleweli
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
 ​
 nabijaczleweli.xyz is licensed under a
 Creative Commons Attribution 4.0 International License.

@@ -22,15 +22,16 @@
 
 BEGIN {
 	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-	print "<rss version=\"2.0\">"
+	print "<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">"
 	print "  <channel>"
+	print "    <atom:link href=\"http://nabijaczleweli.xyz/capitalism/feed.xml\" rel=\"self\" type=\"application/rss+xml\" />"
 	print "    <title>nabijaczleweli's page</title>"
 	print "    <link>http://nabijaczleweli.xyz/capitalism</link>"
 	print "    <description>Newest articles on nabijaczleweli.xyz</description>"
 	print "    <language>en-BR</language>"
 	print "    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>"
-	print "    <managingEditor>nabijaczleweli <nabijaczleweli@gmail.com></managingEditor>"
-	print "    <webMaster>nabijaczleweli <nabijaczleweli@gmail.com></webMaster>"
+	print "    <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>"
+	print "    <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>"
 
 	print "    <pubDate>"
 	printf "      "
@@ -49,7 +50,11 @@ BEGIN {
 
 	print "    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>"
 	print "    <ttl>60</ttl>"
-	print "    <image>http://nabijaczleweli.xyz/assets/nabijaczleweli.png</image>"
+	print "    <image>"
+	print "      <url>http://nabijaczleweli.xyz/assets/nabijaczleweli.png</url>"
+	print "      <title>nabijaczleweli's page</title>"
+	print "      <link>http://nabijaczleweli.xyz/capitalism</link>"
+	print "    </image>"
 }
 
 {
