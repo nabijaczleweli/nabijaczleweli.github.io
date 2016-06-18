@@ -64,5 +64,7 @@
     or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.             \
     <hr />                                                                                                                                         \
     Automatically generated with COMPILER_NAME version COMPILER_VERSION's <!--'--> C preprocessor on DATE_TIME from FILE_NAME. CI_LINK_FOOTER_PART \
+    <hr />                                                                                                                                         \
+    <a href="http://nabijaczleweli.xyz/capitalism/feed.xml">RSS feed</a>                                                                           \
   </body>                                                                                                                                          \
 </html>
