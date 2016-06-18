@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>nabijaczleweli's page</title>
+    <link>http://nabijaczleweli.xyz/capitalism</link>
+    <description>Newest articles on nabijaczleweli.xyz</description>
+    <language>en-BR</language>
+    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>
+    <managingEditor>nabijaczleweli <nabijaczleweli@gmail.com></managingEditor>
+    <webMaster>nabijaczleweli <nabijaczleweli@gmail.com></webMaster>
+    <pubDate>
+      Sat, 18 Jun 2016 12:16:28 +0000
+    </pubDate>
+    <lastBuildDate>
+      Sat, 18 Jun 2016 12:16:28 +0000
+    </lastBuildDate>
+    <generator>
+      GNU Awk 3.1.8
+    </generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>60</ttl>
+    <image>http://nabijaczleweli.xyz/assets/nabijaczleweli.png</image>
+
+    <item>
+      <title>Świat to kilka takich pokoi — nabijaczleweli</title>
+      <description>Świat to kilka takich pokoi [PL]</description>
+      <author>nabijaczleweli</author>
+      <pubDate>Mon, 06 Jun 2016 23:40:30 Central European Daylight Time</pubDate>
+      <guid>http://nabijaczleweli.xyz/capitalism/writing/świat_to_kilka_takich_pokoi/</guid>
+      <source>http://nabijaczleweli.xyz/capitalism/feed.xml</source>
+    </item>
+  </channel>
+</rss>
