@@ -12,7 +12,7 @@ work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
 #include "common.h"
 
 
-BOILERPLATE(main(), "Landing page for things")
+BOILERPLATE(main(), Landing page for things)
 
 
 Things I handwrote and then transcribed, because I like laborious work:

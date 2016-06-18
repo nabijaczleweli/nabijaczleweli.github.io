@@ -43,7 +43,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">                                 \
     <meta name="viewport" content="width=device-width,initial-scale=1">                   \
     <meta name="author" content="nabijaczleweli">                                         \
-    <meta name="description" content=description>                                         \
+    <meta name="description" content=#description>                                        \
     <title>pagename — nabijaczleweli</title>                                              \
                                                                                           \
     <link href="/capitalism/assets/common.css" rel="stylesheet" />                        \

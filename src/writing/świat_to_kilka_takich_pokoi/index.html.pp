@@ -12,7 +12,10 @@ work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
 #include "../../common.h"
 
 
-BOILERPLATE(Świat to kilka takich pokoi, "Świat to kilka takich pokoi [PL]")
+#define RSS_PUB_DATE Mon, 06 Jun 2016 23:40:30 Central European Daylight Time
+
+
+BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL])
 
 
 Interludium<br />

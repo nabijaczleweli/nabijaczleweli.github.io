@@ -4,6 +4,7 @@
 !assets
 !assets/**
 !*.enc
+!*.awk
 !.git*
 !.travis.yml
 !*Makefile

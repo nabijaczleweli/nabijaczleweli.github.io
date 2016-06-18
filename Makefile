@@ -26,6 +26,8 @@ else
 	ADDITIONAL_TRAVIS_ARGS :=
 endif
 
+AWK := awk
+SED := sed
 CPP := cpp
 OUTDIR := out/
 
@@ -33,10 +35,10 @@ SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.
 ASSETS := $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.*))
 LICENSES := $(sort $(wildcard LICENSE-*))
 
-.PHONY : all clean assets licenses preprocess
+.PHONY : all clean assets licenses preprocess rss
 
 
-all : assets licenses preprocess
+all : assets licenses preprocess rss
 
 clean :
 	rm -rf $(OUTDIR)
@@ -44,6 +46,12 @@ clean :
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 licenses : $(patsubst %,$(OUTDIR)%,$(LICENSES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(SOURCES))
+rss : $(OUTDIR)feed.xml
+
+
+$(OUTDIR)feed.xml : gen-feed.awk $(SOURCES)
+	@mkdir -p $(dir $@)
+	echo $(filter-out $<,$^) | $(SED) "s/ /\n/g" | $(AWK) -f $< -v awk="$(AWK)" > $@
 
 
 # `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
