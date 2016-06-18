@@ -27,14 +27,15 @@
 		{
 			"file_include_patterns":
 			[
-				"*Makefile*"
+				"*Makefile*",
+				".travis.yml"
 			],
 			"folder_exclude_patterns":
 			[
 				"*"
 			],
 			"follow_symlinks": true,
-			"name": "Makefiles",
+			"name": "Build files",
 			"path": "."
 		}
 	]
