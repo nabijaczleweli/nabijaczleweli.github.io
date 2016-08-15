@@ -35,20 +35,21 @@
 #endif
 
 
-#define BOILERPLATE(pagename, description)                                                \
-<!DOCTYPE html>                                                                           \
-<html lang="en">                                                                          \
-<head>                                                                                    \
-  <meta charset="utf-8">                                                                  \
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">                                 \
-    <meta name="viewport" content="width=device-width,initial-scale=1">                   \
-    <meta name="author" content="nabijaczleweli">                                         \
-    <meta name="description" content=#description>                                        \
-    <title>pagename — nabijaczleweli</title>                                              \
-                                                                                          \
-    <link href="/capitalism/assets/common.css" rel="stylesheet" />                        \
-    <script type="text/javascript" src="/js/add_icons.js" id="icon-placeholder"></script> \
-  </head>                                                                                 \
+#define BOILERPLATE(pagename, description)                                                                 \
+<!DOCTYPE html>                                                                                            \
+<html lang="en">                                                                                           \
+<head>                                                                                                     \
+  <meta charset="utf-8">                                                                                   \
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">                                                  \
+    <meta name="viewport" content="width=device-width,initial-scale=1">                                    \
+    <meta name="author" content="nabijaczleweli">                                                          \
+    <meta name="description" content=#description>                                                         \
+    <title>pagename — nabijaczleweli</title>                                                               \
+                                                                                                           \
+    <link href="/capitalism/assets/common.css" rel="stylesheet" />                                         \
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" rel="stylesheet" /> \
+    <script type="text/javascript" src="/js/add_icons.js" id="icon-placeholder"></script>                  \
+  </head>                                                                                                  \
   <body>
 
 #define BOILERPLATE_END()                                                                                                                          \
