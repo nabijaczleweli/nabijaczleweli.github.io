@@ -9,16 +9,18 @@ work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
+#include "util.h"
 #include "common.h"
-#include "octicons.h"
+#include "fontawesome.h"
 
 
-#define DOC(link, name, desc)                                                      \
-<li>                                                                               \
-  <a href=link><samp>name</samp></a>                                               \
-  <a href=httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/name>OCT_MARK_GITHUB</a> \
-  — desc                                                                           \
-</li>                                                                              \
+#define DOC(name, cratename, cratename_code, desc)                                                                          \
+<li>                                                                                                                        \
+  <a href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/nabijaczleweli/name/doc/cratename_code/index.html)><samp>name</samp></a> \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/name)>FA(github)</a>                                          \
+  <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                             \
+  — desc                                                                                                                    \
+</li>                                                                                                                       \
 
 
 BOILERPLATE(main(), Landing page for things)
@@ -36,18 +38,16 @@ Things I handwrote and then transcribed, because I like laborious work:
 
 Documentation for my various projects:
 <ul>
-	DOC("https://cdn.rawgit.com/nabijaczleweli/BearLibTerminal.rs/doc/bear_lib_terminal/index.html",
-	    BearLibTerminal.rs,
+	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
 	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
-	DOC("https://cdn.rawgit.com/nabijaczleweli/bidir-map-rs/doc/bidir_map/index.html",
-	    bidir-map-rs,
+	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
-	DOC("https://cdn.rawgit.com/nabijaczleweli/whereami-rs/doc/whereami/index.html",
-	    whereami-rs,
+	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
-	DOC("https://cdn.rawgit.com/nabijaczleweli/checksums/doc/checksums/index.html",
-	    checksums,
+	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
+	DOC(blake-rs, blake, blake,
+	    Implementation of the <a href="http://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
 </ul>
 
 
