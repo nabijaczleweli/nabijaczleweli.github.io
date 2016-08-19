@@ -48,6 +48,8 @@ Documentation for my various projects:
 	    Tool for making/verifying checksums of directory trees)
 	DOC(blake-rs, blake, blake,
 	    Implementation of the <a href="http://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
+	DOC(md6-rs, md6, md6,
+	    Implementation of the <a href="http://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
 </ul>
 
 

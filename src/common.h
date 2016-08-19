@@ -46,8 +46,8 @@
     <meta name="description" content=#description>                                                         \
     <title>pagename — nabijaczleweli</title>                                                               \
                                                                                                            \
-    <link href="/capitalism/assets/common.css" rel="stylesheet" />                                         \
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" /> \
+    <link href="/capitalism/assets/common.css" rel="stylesheet" />                                         \
     <script type="text/javascript" src="/js/add_icons.js" id="icon-placeholder"></script>                  \
   </head>                                                                                                  \
   <body>
