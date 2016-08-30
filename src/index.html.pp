@@ -44,6 +44,9 @@ Documentation for my various projects:
 	    Bidirectional maps for Rust)
 	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
+	DOC(not-stakkr, not-stakkr, not_stakkr,
+	    not-stakkr is a platform that allows you to create and queue tweets to be shared when YOU want.
+	    You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically.)
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
 	DOC(blake-rs, blake, blake,
