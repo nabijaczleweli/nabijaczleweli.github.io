@@ -43,13 +43,13 @@ Documentation for my various projects:
 	    Bidirectional maps for Rust)
 	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
-	DOC(not-stakkr, not-stakkr, not_stakkr,
-	    not-stakkr is a platform that allows you to create and queue tweets to be shared when YOU want.
-	    You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically.)
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
 	DOC(blake-rs, blake, blake,
 	    Implementation of the <a href="http://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
+	DOC(tweetr, tweetr, tweetr,
+	    tweetr is a platform that allows you to create and queue tweets to be shared when YOU want.
+	    You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically.)
 	DOC(md6-rs, md6, md6,
 	    Implementation of the <a href="http://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
 </ul>
