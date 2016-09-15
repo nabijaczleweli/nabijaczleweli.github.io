@@ -14,12 +14,12 @@ work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
 #include "fontawesome.h"
 
 
-#define DOC(name, cratename, cratename_code, desc)                                                                          \
+#define DOC(name, cratename, cratename_code, ...)                                                                           \
 <li>                                                                                                                        \
   <a href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/nabijaczleweli/name/doc/cratename_code/index.html)><samp>name</samp></a> \
   <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/name)>FA(github)</a>                                          \
   <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                             \
-  — desc                                                                                                                    \
+  — __VA_ARGS__                                                                                                             \
 </li>                                                                                                                       \
 
 
@@ -45,6 +45,8 @@ Documentation for my various projects:
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
+	DOC(termimage, termimage, termimage,
+	    Display images in your terminal, kind of.)
 	DOC(blake-rs, blake, blake,
 	    Implementation of the <a href="http://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
 	DOC(tweetr, tweetr, tweetr,
