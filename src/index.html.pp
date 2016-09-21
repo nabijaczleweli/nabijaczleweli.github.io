@@ -31,6 +31,9 @@ Things I handwrote and then transcribed, because I like laborious work:
   <li><a href="writing/świat_to_kilka_takich_pokoi/">"Świat to kilka takich pokoi"</a> [PL] — wherein I abstract the causes of WWI in
                                                                                               the context of a stereotypical social building;
                                                                                               01.06.2016 - 03.06.2016.</li>
+  <li><a href="writing/każdy_koniec_to_nowy_początek/">"Każdy koniec to nowy początek"</a> [PL] — wherein sociological (r)evolutions happen
+                                                                                                  and we're<!--'--> there to observe it;
+                                                                                                  ~31.03.2016.</li>
 </ul>
 
 <br />
