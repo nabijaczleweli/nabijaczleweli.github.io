@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Thu, 15 Sep 2016 08:51:36 +0000
+      Wed, 21 Sep 2016 23:36:52 +0000
     </pubDate>
     <lastBuildDate>
-      Thu, 15 Sep 2016 08:51:36 +0000
+      Wed, 21 Sep 2016 23:36:52 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -27,11 +27,20 @@
     </image>
 
     <item>
+      <title>Każdy koniec to nowy początek — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>Każdy koniec to nowy początek [PL]</description>
+      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
+      <pubDate>Thu, 22 Sep 2016 01:20:30 +0200</pubDate>
+      <guid>http://nabijaczleweli.xyz/capitalism/writing/ka%00dy%5Fkoniec%5Fto%5Fnowy%5Fpoczątek/</guid>
+      <source url="http://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+    </item>
+
+    <item>
       <title>Świat to kilka takich pokoi — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>Świat to kilka takich pokoi [PL]</description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 06 Jun 2016 23:40:30 +0200</pubDate>
-      <guid>http://nabijaczleweli.xyz/capitalism/writing/%C5%9Bwiat_to_kilka_takich_pokoi/</guid>
+      <guid>http://nabijaczleweli.xyz/capitalism/writing/świat%5Fto%5Fkilka%5Ftakich%5Fpokoi/</guid>
       <source url="http://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
     </item>
   </channel>
