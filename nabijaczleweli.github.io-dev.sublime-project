@@ -28,7 +28,8 @@
 			"file_include_patterns":
 			[
 				"*Makefile*",
-				".travis.yml"
+				".travis.yml",
+				"*.awk"
 			],
 			"folder_exclude_patterns":
 			[
