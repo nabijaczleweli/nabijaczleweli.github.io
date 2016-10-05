@@ -1,11 +1,11 @@
-#define __LICENSE                                                 \
-// nabijaczleweli.xyz (c) by nabijaczleweli                       \
-​//                                                                \
-// nabijaczleweli.xyz is licensed under a                         \
-// Creative Commons Attribution 4.0 International License.        \
-​//                                                                \
-// You should have received a copy of the license along with this \
-// work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+#define __LICENSE                                                  \
+// nabijaczleweli.xyz (c) by nabijaczleweli                        \
+​//                                                                 \
+// nabijaczleweli.xyz is licensed under a                          \
+// Creative Commons Attribution 4.0 International License.         \
+​//                                                                 \
+// You should have received a copy of the license along with this  \
+// work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #undef __LICENSE
 
 
@@ -66,6 +66,6 @@
     <hr />                                                                                                                                         \
     Automatically generated with COMPILER_NAME version COMPILER_VERSION's <!--'--> C preprocessor on DATE_TIME from FILE_NAME. CI_LINK_FOOTER_PART \
     <hr />                                                                                                                                         \
-    <a href="http://nabijaczleweli.xyz/capitalism/feed.xml">RSS feed</a>                                                                           \
+    <a href="https://nabijaczleweli.xyz/capitalism/feed.xml">RSS feed</a>                                                                           \
   </body>                                                                                                                                          \
 </html>

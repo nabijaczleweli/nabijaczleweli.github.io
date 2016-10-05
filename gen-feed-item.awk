@@ -28,30 +28,12 @@ function escape_html(text) {
 	return text
 }
 
-# Adapted from https://gist.github.com/moyashi/4063894
-function escape(str, c, len, res) {
-	len = length(str)
-	res = ""
-	for (i = 1; i <= len; i++) {
-		c = substr(str, i, 1);
-	if (c ~ /[0-9A-Za-z\/]/)
-		res = res c
-	else
-		res = res "%" sprintf("%02X", ord[c])
-	}
-	return res
-}
-
 
 BEGIN {
 	title = ""
 	description = ""
 	author = ""
 	pubDate = ""
-
-	for(i = 0; i <= 255; i++) {
-		ord[sprintf("%c", i)] = i
-	}
 }
 
 / \(c\) by / {
@@ -78,7 +60,7 @@ END {
 	print "      <description>" description "</description>"
 	print "      <author>" author "</author>"
 	print "      <pubDate>" pubDate "</pubDate>"
-	print "      <guid>http://nabijaczleweli.xyz/capitalism/" escape(filename) "</guid>"
-	print "      <source url=\"http://nabijaczleweli.xyz/capitalism/feed.xml\">nabijaczleweli's page</source>"
+	print "      <guid>https://nabijaczleweli.xyz/capitalism/" filename "</guid>"
+	print "      <source url=\"https://nabijaczleweli.xyz/capitalism/feed.xml\">nabijaczleweli's page</source>"
 	print "    </item>"
 }

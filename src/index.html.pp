@@ -5,7 +5,7 @@ nabijaczleweli.xyz is licensed under a
 Creative Commons Attribution 4.0 International License.
 ​
 You should have received a copy of the license along with this
-work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
@@ -51,12 +51,12 @@ Documentation for my various projects:
 	DOC(termimage, termimage, termimage,
 	    Display images in your terminal, kind of.)
 	DOC(blake-rs, blake, blake,
-	    Implementation of the <a href="http://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
+	    Implementation of the <a href="https://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
 	DOC(tweetr, tweetr, tweetr,
 	    tweetr is a platform that allows you to create and queue tweets to be shared when YOU want.
 	    You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically.)
 	DOC(md6-rs, md6, md6,
-	    Implementation of the <a href="http://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
+	    Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
 </ul>
 
 
