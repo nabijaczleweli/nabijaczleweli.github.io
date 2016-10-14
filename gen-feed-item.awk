@@ -34,6 +34,7 @@ BEGIN {
 	description = ""
 	author = ""
 	pubDate = ""
+	everything = ""
 }
 
 / \(c\) by / {
@@ -49,15 +50,22 @@ BEGIN {
 	pubDate = gensub(/#define RSS_PUB_DATE (.*)/, "\\1", "g")
 }
 
+/^BOILERPLATE/,/^BOILERPLATE_END/ {
+	everything = everything $0 "\n"
+}
+
 END {
-	# pubDate empty, which means, that a page is not meant for RSS consumption
+	# pubDate empty, which means that a page is not meant for RSS consumption
 	if(pubDate == "")
 		exit
+
+	everything = gensub(/^BOILERPLATE\(.*\)\n\n\n/, "", "g", everything)
+	everything = gensub(/\n\nBOILERPLATE_END,*/, "", "g", everything)
 
 	print ""
 	print "    <item>"
 	print "      <title>" title "</title>"
-	print "      <description>" description "</description>"
+	print "      <description>" escape_html(everything) "</description>"
 	print "      <author>" author "</author>"
 	print "      <pubDate>" pubDate "</pubDate>"
 	print "      <guid>https://nabijaczleweli.xyz/capitalism/" filename "</guid>"
