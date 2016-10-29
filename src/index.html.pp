@@ -44,6 +44,8 @@ Documentation for my various projects:
 	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
+	DOC(cargo-update, cargo-update, cargo_update,
+	    Cargo subcommand for checking and applying updates to installed executables t)
 	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(checksums, checksums, checksums,
