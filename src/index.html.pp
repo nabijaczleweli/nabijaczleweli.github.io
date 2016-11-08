@@ -42,12 +42,16 @@ Documentation for my various projects:
 <ul>
 	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
 	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
+	DOC(safe-transmute-rs, safe-transmute, safe_transmute,
+	    A safeguarded <samp>transmute()</samp> for Rust)
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
 	    Cargo subcommand for checking and applying updates to installed executables t)
 	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
+	DOC(mandalas-rs, mandalas, mandalas,
+	    A mandala generator using Tonči Juričev-Grgin's<!--'--> method)
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
 	DOC(termimage, termimage, termimage,
