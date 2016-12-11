@@ -47,7 +47,7 @@ Documentation for my various projects:
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
-	    Cargo subcommand for checking and applying updates to installed executables t)
+	    Cargo subcommand for checking and applying updates to installed executables)
 	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(mandalas-rs, mandalas, mandalas,
@@ -55,14 +55,14 @@ Documentation for my various projects:
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
 	DOC(termimage, termimage, termimage,
-	    Display images in your terminal, kind of.)
+	    Display images in your terminal, kind of)
 	DOC(blake-rs, blake, blake,
 	    Implementation of the <a href="https://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
 	DOC(dishub, dishub, dishub,
 	    App for posting GitHub activity on Discord)
 	DOC(tweetr, tweetr, tweetr,
 	    tweetr is a platform that allows you to create and queue tweets to be shared when YOU want.
-	    You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically.)
+	    You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically)
 	DOC(md6-rs, md6, md6,
 	    Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
 </ul>
