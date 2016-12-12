@@ -20,7 +20,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-function detect_mimetype(fname) {
+function mimetype(fname) {
 	ext = gensub(/[^.]+\.(.+)/, "\\1", "g", fname)
 	if(ext ~ /ml/) {
 		return "application/xhtml+xml"
@@ -28,6 +28,8 @@ function detect_mimetype(fname) {
 		return "image/png"
 	} else if(ext ~ /jp(?:e?)g/) {
 		return "image/jpeg"
+	} else if(ext == "svg") {
+		return "image/svg+xml"
 	} else {
 		return "application/octet-stream"
 	}
@@ -39,6 +41,7 @@ BEGIN {
 	close("curl")
 
 	content_idx = 1
+	have_cover = 0
 }
 
 /^Self: / {
@@ -61,6 +64,14 @@ BEGIN {
 	content_filename[content_idx] = gensub(/\//, "-", "g", content_filename[content_idx])
 	content_name[content_idx] = gensub(/([^.]+)\..*/, "\\1", "g", content_filename[content_idx])
 	++content_idx
+}
+
+/^Cover: / {
+	content_filename[0] = gensub(/Cover: (.+)/, "\\1", "g")
+	content_file[0] = gensub(/(.+)\/.+/, "\\1/" content_filename[0], "g", self)
+	content_filename[0] = gensub(/\//, "-", "g", content_filename[0])
+	content_name[0] = gensub(/([^.]+)\..*/, "\\1", "g", content_filename[0])
+	have_cover = 1
 }
 
 /^Author: / {
@@ -86,7 +97,7 @@ END {
 	print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>") > temp "META-INF/container.xml"
 	print("<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">") >> temp "META-INF/container.xml"
 	print("   <rootfiles>") >> temp "META-INF/container.xml"
-	print("      <rootfile full-path=\"content.opf\" media-type=\"application/oebps-package+xml\"/>") >> temp "META-INF/container.xml"
+	print("      <rootfile full-path=\"content.opf\" media-type=\"application/oebps-package+xml\" />") >> temp "META-INF/container.xml"
 	print("   </rootfiles>") >> temp "META-INF/container.xml"
 	print("</container>") >> temp "META-INF/container.xml"
 	close(temp "META-INF/container.xml")
@@ -99,16 +110,18 @@ END {
 	print("    <dc:identifier id=\"uuid\" opf:scheme=\"uuid\">" uuid "</dc:identifier>") >> temp "content.opf"
 	print("    <dc:date>" date "</dc:date>") >> temp "content.opf"
 	print("    <dc:language>" language "</dc:language>") >> temp "content.opf"
+	if(have_cover == 1)
+		print("    <meta name=\"cover\" content=\"" content_name[0] "\" />") >> temp "content.opf"
 	print("  </metadata>") >> temp "content.opf"
 	print("  <manifest>") >> temp "content.opf"
 	for(i = 0; i < content_idx; ++i)
 		if(i in content_name)
-			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" detect_mimetype(content_filename[i]) "\"/>") >> temp "content.opf"
+			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" mimetype(content_filename[i]) "\" />") >> temp "content.opf"
 	print("  </manifest>") >> temp "content.opf"
-	print("  <spine toc=\"ncx\">") >> temp "content.opf"
-	for(i = 0; i < content_idx; ++i)
-		if(i in content_name)
-			print("    <itemref idref=\"" content_name[i] "\"/>") >> temp "content.opf"
+	print("  <spine>") >> temp "content.opf"
+	# Skip Cover
+	for(i = 1; i < content_idx; ++i)
+		print("    <itemref idref=\"" content_name[i] "\" />") >> temp "content.opf"
 	print("  </spine>") >> temp "content.opf"
 	print("</package>") >> temp "content.opf"
 	close(temp "content.opf")
