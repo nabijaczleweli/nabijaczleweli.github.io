@@ -21,7 +21,7 @@
 
 
 function mimetype(fname) {
-	ext = gensub(/[^.]+\.(.+)/, "\\1", "g", fname)
+	ext = gensub(/.+\.(.+)/, "\\1", "g", fname)
 	if(ext ~ /ml/) {
 		return "application/xhtml+xml"
 	} else if(ext == "png") {
@@ -33,6 +33,12 @@ function mimetype(fname) {
 	} else {
 		return "application/octet-stream"
 	}
+}
+
+function add_content(filename, idx) {
+	content_filename[idx] = gensub(/\.\.-/, "", "g", gensub(/\//, "-", "g", filename))
+	content_file[idx] = gensub(/(.+)\/.+/, "\\1/" filename, "g", self)
+	content_name[idx] = gensub(/([^.]+)\..*/, "\\1", "g", filename)
 }
 
 
@@ -59,18 +65,12 @@ BEGIN {
 }
 
 /^Content: / {
-	content_filename[content_idx] = gensub(/Content: (.+)/, "\\1", "g")
-	content_file[content_idx] = gensub(/(.+)\/.+/, "\\1/" content_filename[content_idx], "g", self)
-	content_filename[content_idx] = gensub(/\//, "-", "g", content_filename[content_idx])
-	content_name[content_idx] = gensub(/([^.]+)\..*/, "\\1", "g", content_filename[content_idx])
+	add_content(gensub(/Content: (.+)/, "\\1", "g"), content_idx)
 	++content_idx
 }
 
 /^Cover: / {
-	content_filename[0] = gensub(/Cover: (.+)/, "\\1", "g")
-	content_file[0] = gensub(/(.+)\/.+/, "\\1/" content_filename[0], "g", self)
-	content_filename[0] = gensub(/\//, "-", "g", content_filename[0])
-	content_name[0] = gensub(/([^.]+)\..*/, "\\1", "g", content_filename[0])
+	add_content(gensub(/Cover: (.+)/, "\\1", "g"), 0)
 	have_cover = 1
 }
 
