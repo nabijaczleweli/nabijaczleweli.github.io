@@ -20,9 +20,25 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+function detect_mimetype(fname) {
+	ext = gensub(/[^.]+\.(.+)/, "\\1", "g", fname)
+	if(ext ~ /ml/) {
+		return "application/xhtml+xml"
+	} else if(ext == "png") {
+		return "image/png"
+	} else if(ext ~ /jp(?:e?)g/) {
+		return "image/jpeg"
+	} else {
+		return "application/octet-stream"
+	}
+}
+
+
 BEGIN {
 	"curl -SsL https://www.uuidgenerator.net/api/version4" | getline uuid
 	close("curl")
+
+	content_idx = 1
 }
 
 /^Self: / {
@@ -40,10 +56,11 @@ BEGIN {
 }
 
 /^Content: / {
-	content_filename = gensub(/Content: (.+)/, "\\1", "g")
-	content_file = gensub(/(.+)\/.+/, "\\1/" content_filename, "g", self)
-	content_filename = gensub(/\//, "-", "g", content_filename)
-	content_name = gensub(/([^.]+)\..*/, "\\1", "g", content_filename)
+	content_filename[content_idx] = gensub(/Content: (.+)/, "\\1", "g")
+	content_file[content_idx] = gensub(/(.+)\/.+/, "\\1/" content_filename[content_idx], "g", self)
+	content_filename[content_idx] = gensub(/\//, "-", "g", content_filename[content_idx])
+	content_name[content_idx] = gensub(/([^.]+)\..*/, "\\1", "g", content_filename[content_idx])
+	++content_idx
 }
 
 /^Author: / {
@@ -84,15 +101,21 @@ END {
 	print("    <dc:language>" language "</dc:language>") >> temp "content.opf"
 	print("  </metadata>") >> temp "content.opf"
 	print("  <manifest>") >> temp "content.opf"
-	print("    <item href=\"" content_filename "\" id=\"" content_name "\" media-type=\"application/xhtml+xml\"/>") >> temp "content.opf"
+	for(i = 0; i < content_idx; ++i)
+		if(i in content_name)
+			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" detect_mimetype(content_filename[i]) "\"/>") >> temp "content.opf"
 	print("  </manifest>") >> temp "content.opf"
 	print("  <spine toc=\"ncx\">") >> temp "content.opf"
-	print("    <itemref idref=\"" content_name "\"/>") >> temp "content.opf"
+	for(i = 0; i < content_idx; ++i)
+		if(i in content_name)
+			print("    <itemref idref=\"" content_name[i] "\"/>") >> temp "content.opf"
 	print("  </spine>") >> temp "content.opf"
 	print("</package>") >> temp "content.opf"
 	close(temp "content.opf")
 
-	system("cp " content_file " " temp content_filename)
+	for(i = 0; i < content_idx; ++i)
+		if(i in content_name)
+			system("cp " content_file[i] " " temp content_filename[i])
 
 	system("cd '" temp "' && rm -f '../" flat_name ".epub' && zip -qr '../" flat_name ".epub' .")
 	system("cat '" temp "../" flat_name ".epub'")
