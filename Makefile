@@ -26,30 +26,48 @@ else
 	ADDITIONAL_TRAVIS_ARGS :=
 endif
 
+ifneq "$(TEMP)" ""
+	TEMP_DIR := $(TEMP)
+else
+	ifneq "$(TMP)" ""
+		TEMP_DIR := $(TMP)
+	else
+		TEMP_DIR := /tmp
+	endif
+endif
+
+ifeq "$(OS)" "Windows_NT"
+	ECHO := /bin/echo
+else
+	ECHO := echo
+endif
+
 AWK := awk
 SED := sed
 CPP := cpp
 OUTDIR := out/
 
-SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
+PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
+BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp))
 ASSETS := $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.*))
 LICENSES := $(sort $(wildcard LICENSE-*))
 
-.PHONY : all clean assets licenses preprocess rss
+.PHONY : all clean assets licenses books preprocess rss
 
 
-all : assets licenses preprocess rss
+all : assets licenses books preprocess rss
 
 clean :
 	rm -rf $(OUTDIR)
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 licenses : $(patsubst %,$(OUTDIR)%,$(LICENSES))
-preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(SOURCES))
+preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
+books : gen-epub-book.awk $(patsubst src/%.epupp,$(OUTDIR)%.epub,$(BOOK_SOURCES))
 rss : $(OUTDIR)feed.xml
 
 
-$(OUTDIR)feed.xml : gen-feed.awk $(SOURCES)
+$(OUTDIR)feed.xml : gen-feed.awk $(PREPROCESS_SOURCES)
 	@mkdir -p $(dir $@)
 	echo $(filter-out $<,$^) | $(SED) "s/ /\n/g" | $(AWK) -f $< -v awk="$(AWK)" > $@
 
@@ -58,6 +76,11 @@ $(OUTDIR)feed.xml : gen-feed.awk $(SOURCES)
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
 	cd $(dir $^) && $(CPP) $(notdir $^) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$^\"" $(ADDITIONAL_TRAVIS_ARGS) | sed "s;COLON_SLASH_SLASH;://;g" > $(CURDIR)/$@
+
+
+$(OUTDIR)%.epub : gen-epub-book.awk src/%.epupp
+	@mkdir -p $(dir $@)
+	$(ECHO) -e "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)
