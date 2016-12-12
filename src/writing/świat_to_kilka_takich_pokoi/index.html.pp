@@ -10,6 +10,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../../common.h"
+#include "../writing.h"
 
 
 #define RSS_PUB_DATE Mon, 06 Jun 2016 23:40:30 +0200
@@ -21,4 +22,5 @@ BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL])
 #include "book.html"
 
 
+WRITING_END()
 BOILERPLATE_END()
