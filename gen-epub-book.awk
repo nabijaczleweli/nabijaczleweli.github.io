@@ -130,6 +130,6 @@ END {
 		if(i in content_name)
 			system("cp " content_file[i] " " temp content_filename[i])
 
-	system("cd '" temp "' && rm -f '../" flat_name ".epub' && zip -qr '../" flat_name ".epub' .")
+	system("cd '" temp "' && rm -f '../" flat_name ".epub' && zip -qr9 '../" flat_name ".epub' .")
 	system("cat '" temp "../" flat_name ".epub'")
 }
