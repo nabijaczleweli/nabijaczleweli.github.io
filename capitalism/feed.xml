@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Mon, 12 Dec 2016 02:26:47 +0000
+      Mon, 12 Dec 2016 02:44:22 +0000
     </pubDate>
     <lastBuildDate>
-      Mon, 12 Dec 2016 02:26:47 +0000
+      Mon, 12 Dec 2016 02:44:22 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -29,7 +29,10 @@
     <item>
       <title>Każdy koniec to nowy początek — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>#include &quot;book.html&quot;
-()
+
+
+WRITING_END()
+BOILERPLATE_END()
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 22 Sep 2016 01:20:30 +0200</pubDate>
@@ -40,7 +43,10 @@
     <item>
       <title>Świat to kilka takich pokoi — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>#include &quot;book.html&quot;
-()
+
+
+WRITING_END()
+BOILERPLATE_END()
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 06 Jun 2016 23:40:30 +0200</pubDate>
