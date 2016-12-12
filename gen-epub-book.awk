@@ -21,8 +21,8 @@
 
 
 BEGIN {
-	"uuidgen" | getline uuid
-	close("uuidgen")
+	"curl -SsL https://www.uuidgenerator.net/api/version4" | getline uuid
+	close("curl")
 }
 
 /^Self: / {

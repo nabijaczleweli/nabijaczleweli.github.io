@@ -37,7 +37,7 @@ else
 endif
 
 ifeq "$(OS)" "Windows_NT"
-	ECHO := /bin/echo
+	ECHO := /bin/echo -e
 else
 	ECHO := echo
 endif
@@ -80,7 +80,7 @@ $(OUTDIR)% : src/%.pp
 
 $(OUTDIR)%.epub : gen-epub-book.awk src/%.epupp
 	@mkdir -p $(dir $@)
-	$(ECHO) -e "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
+	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)
