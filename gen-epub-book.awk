@@ -42,6 +42,7 @@ BEGIN {
 /^Content: / {
 	content_filename = gensub(/Content: (.+)/, "\\1", "g")
 	content_file = gensub(/(.+)\/.+/, "\\1/" content_filename, "g", self)
+	content_filename = gensub(/\//, "-", "g", content_filename)
 	content_name = gensub(/([^.]+)\..*/, "\\1", "g", content_filename)
 }
 
@@ -58,7 +59,7 @@ BEGIN {
 }
 
 END {
-	system("rm -rf '" temp "' '" temp "../" flat_name ".epub' > /dev/null 2>&1")
+	system("rm -rf '" temp "' > /dev/null 2>&1")
 	system("mkdir -p '" temp "' > /dev/null 2>&1")
 
 	printf("application/epub+zip") > temp "mimetype"
@@ -91,8 +92,8 @@ END {
 	print("</package>") >> temp "content.opf"
 	close(temp "content.opf")
 
-	system("cp " content_file " " temp)
+	system("cp " content_file " " temp content_filename)
 
-	system("cd '" temp "' && zip -qr '../" flat_name ".epub' .")
+	system("cd '" temp "' && rm -f '../" flat_name ".epub' && zip -qr '../" flat_name ".epub' .")
 	system("cat '" temp "../" flat_name ".epub'")
 }
