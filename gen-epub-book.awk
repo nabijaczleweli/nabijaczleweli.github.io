@@ -95,35 +95,35 @@ END {
 
 	system("mkdir -p '" temp "META-INF' > /dev/null 2>&1")
 	print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>") > temp "META-INF/container.xml"
-	print("<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">") >> temp "META-INF/container.xml"
-	print("   <rootfiles>") >> temp "META-INF/container.xml"
-	print("      <rootfile full-path=\"content.opf\" media-type=\"application/oebps-package+xml\" />") >> temp "META-INF/container.xml"
-	print("   </rootfiles>") >> temp "META-INF/container.xml"
-	print("</container>") >> temp "META-INF/container.xml"
+	print("<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">") > temp "META-INF/container.xml"
+	print("   <rootfiles>") > temp "META-INF/container.xml"
+	print("      <rootfile full-path=\"content.opf\" media-type=\"application/oebps-package+xml\" />") > temp "META-INF/container.xml"
+	print("   </rootfiles>") > temp "META-INF/container.xml"
+	print("</container>") > temp "META-INF/container.xml"
 	close(temp "META-INF/container.xml")
 
 	print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>") > temp "content.opf"
-	print("<package xmlns=\"http://www.idpf.org/2007/opf\" unique-identifier=\"uuid\" version=\"2.0\">") >> temp "content.opf"
-	print("  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:opf=\"http://www.idpf.org/2007/opf\">") >> temp "content.opf"
-	print("    <dc:title>" title "</dc:title>") >> temp "content.opf"
-	print("    <dc:creator opf:role=\"aut\">" author "</dc:creator>") >> temp "content.opf"
-	print("    <dc:identifier id=\"uuid\" opf:scheme=\"uuid\">" uuid "</dc:identifier>") >> temp "content.opf"
-	print("    <dc:date>" date "</dc:date>") >> temp "content.opf"
-	print("    <dc:language>" language "</dc:language>") >> temp "content.opf"
+	print("<package xmlns=\"http://www.idpf.org/2007/opf\" unique-identifier=\"uuid\" version=\"2.0\">") > temp "content.opf"
+	print("  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:opf=\"http://www.idpf.org/2007/opf\">") > temp "content.opf"
+	print("    <dc:title>" title "</dc:title>") > temp "content.opf"
+	print("    <dc:creator opf:role=\"aut\">" author "</dc:creator>") > temp "content.opf"
+	print("    <dc:identifier id=\"uuid\" opf:scheme=\"uuid\">" uuid "</dc:identifier>") > temp "content.opf"
+	print("    <dc:date>" date "</dc:date>") > temp "content.opf"
+	print("    <dc:language>" language "</dc:language>") > temp "content.opf"
 	if(have_cover == 1)
-		print("    <meta name=\"cover\" content=\"" content_name[0] "\" />") >> temp "content.opf"
-	print("  </metadata>") >> temp "content.opf"
-	print("  <manifest>") >> temp "content.opf"
+		print("    <meta name=\"cover\" content=\"" content_name[0] "\" />") > temp "content.opf"
+	print("  </metadata>") > temp "content.opf"
+	print("  <manifest>") > temp "content.opf"
 	for(i = 0; i < content_idx; ++i)
 		if(i in content_name)
-			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" mimetype(content_filename[i]) "\" />") >> temp "content.opf"
-	print("  </manifest>") >> temp "content.opf"
-	print("  <spine>") >> temp "content.opf"
+			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" mimetype(content_filename[i]) "\" />") > temp "content.opf"
+	print("  </manifest>") > temp "content.opf"
+	print("  <spine>") > temp "content.opf"
 	# Skip Cover
 	for(i = 1; i < content_idx; ++i)
-		print("    <itemref idref=\"" content_name[i] "\" />") >> temp "content.opf"
-	print("  </spine>") >> temp "content.opf"
-	print("</package>") >> temp "content.opf"
+		print("    <itemref idref=\"" content_name[i] "\" />") > temp "content.opf"
+	print("  </spine>") > temp "content.opf"
+	print("</package>") > temp "content.opf"
 	close(temp "content.opf")
 
 	for(i = 0; i < content_idx; ++i)
