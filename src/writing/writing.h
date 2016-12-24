@@ -12,7 +12,13 @@
 #pragma once
 
 
-#define WRITING_END()       \
-    <hr />                  \
-    Get this in ePub format \
-    <script type="text/javascript">document.write('<a href="' + document.URL.substr(0, document.URL.lastIndexOf('/')) + '.epub">here</a>')</script>.
+#define WRITING_CUSTOM_END(what, url_code)                                                               \
+    <hr />                                                                                               \
+    Get what in ePub format                                                                              \
+    <script type="text/javascript">document.write('<a href="' + (url_code) + '.epub">here</a>')</script> \
+    or in MOBI format                                                                                    \
+    <script type="text/javascript">document.write('<a href="' + (url_code) + '.mobi">here</a>')</script>.
+
+#define WRITING_CUSTOM_NAME_END(what) WRITING_CUSTOM_END(what, (document.URL.substr(0, document.URL.lastIndexOf('/'))))
+
+#define WRITING_END() WRITING_CUSTOM_NAME_END(this)

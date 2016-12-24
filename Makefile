@@ -45,6 +45,7 @@ endif
 AWK := awk
 SED := sed
 CPP := cpp
+CALIBRE_CONVERT := ebook-convert
 OUTDIR := out/
 
 PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
@@ -63,7 +64,7 @@ clean :
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 licenses : $(patsubst %,$(OUTDIR)%,$(LICENSES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
-books : gen-epub-book.awk $(patsubst src/%.epupp,$(OUTDIR)%.epub,$(BOOK_SOURCES))
+books : gen-epub-book.awk $(patsubst src/%.epupp,$(OUTDIR)%.epub,$(BOOK_SOURCES)) $(patsubst src/%.epupp,$(OUTDIR)%.mobi,$(BOOK_SOURCES))
 rss : $(OUTDIR)feed.xml
 
 
@@ -75,12 +76,15 @@ $(OUTDIR)feed.xml : gen-feed.awk $(PREPROCESS_SOURCES)
 # `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
-	cd $(dir $^) && $(CPP) $(notdir $^) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$^\"" $(ADDITIONAL_TRAVIS_ARGS) | sed "s;COLON_SLASH_SLASH;://;g" > $(CURDIR)/$@
-
+	cd $(dir $<) && $(CPP) $(notdir $<) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$<\"" $(ADDITIONAL_TRAVIS_ARGS) | sed "s;COLON_SLASH_SLASH;://;g" > $(CURDIR)/$@
 
 $(OUTDIR)%.epub : gen-epub-book.awk src/%.epupp
 	@mkdir -p $(dir $@)
 	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
+
+$(OUTDIR)%.mobi : $(OUTDIR)%.epub
+	@mkdir -p $(dir $(TEMP_DIR)/$(subst $(OUTDIR),,$^))
+	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)

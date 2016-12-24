@@ -66,6 +66,6 @@
     <hr />                                                                                                                                         \
     Automatically generated with COMPILER_NAME version COMPILER_VERSION's <!--'--> C preprocessor on DATE_TIME from FILE_NAME. CI_LINK_FOOTER_PART \
     <hr />                                                                                                                                         \
-    <a href="https://nabijaczleweli.xyz/capitalism/feed.xml">RSS feed</a>                                                                           \
+    <a href="/capitalism/feed.xml">RSS feed</a>                                                                                                    \
   </body>                                                                                                                                          \
 </html>
