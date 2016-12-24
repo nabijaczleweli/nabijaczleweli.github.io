@@ -14,11 +14,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define WP(story_semiurl, post_id, ...)                                                                    \
-<li>                                                                                                       \
-  <a href=STR(story_semiurl.html)>__VA_ARGS__</a>                                                          \
-  <a href=STR(httpsCOLON_SLASH_SLASHwww.reddit.com/r/WritingPrompts/comments/post_id)>FA(reddit-alien)</a> \
-</li>                                                                                                      \
+#define WP_RAW(story_semiurl, post_id, title, ...)                                                   \
+<li>                                                                                                 \
+  <a href=STR(story_semiurl.html)>title</a>                                                          \
+  <a href=STR(httpsCOLON_SLASH_SLASHwww.reddit.com/r/WritingPrompts/comments/post_id)>FA(reddit)</a> \
+  __VA_ARGS__                                                                                        \
+</li>
+
+#define WP(story_semiurl, post_id, title, ...) WP_RAW(story_semiurl, post_id, title, — __VA_ARGS__)
+
+#define WP_IP(story_semiurl, post_id, title, img_address) WP_RAW(story_semiurl, post_id, title, <a href=STR(httpsCOLON_SLASH_SLASH##img_address)>FA(image)</a>)
 
 
 BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to /r/WritingPrompts)
@@ -26,10 +31,11 @@ BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to 
 
 List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> completed by me:
 
-<ol>
-  <!--/* WP(the_pursuer, 5i2h9m, The Pursuer) */-->
-	WP(theless, 5ihrpc, The-less)
-</ol>
+<ul>
+	<!-- WP_IP(the_pursuer, 5i2h9m, The Pursuer, artsed.deviantart.com/art/The-Pursuer-459072802) -->
+	WP(theless, 5ihrpc, The-less, Write a story without using the word "the")
+	WP(start_eq_end, 5jor6i, End = Start, You must start and end your story by using the same sentence)
+</ul>
 
 
 WRITING_CUSTOM_NAME_END(all stories)
