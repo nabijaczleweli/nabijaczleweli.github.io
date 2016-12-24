@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define TODO add RSS_PUB_DATE
+#define TODO add RSS-PUB-DATE
 
 
 BOILERPLATE(The Pursuer, The Pursuer - writing prompt)

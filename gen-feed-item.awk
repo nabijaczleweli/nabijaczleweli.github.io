@@ -51,7 +51,15 @@ BEGIN {
 }
 
 /^BOILERPLATE/,/^BOILERPLATE_END/ {
-	everything = everything $0 "\n"
+	if($0 ~ /^#include "[^.]+\.html"/) {
+		c = "cat " gensub(/\/\//, "/", "g", gensub(/^#include "([^"]+)"/, "src/" gensub(/(.+)\/.*/, "/\\1", "g", filename) "/\\1", "g"))
+		while((c | getline tmpline) > 0) {
+			everything = everything tmpline "\n"
+		}
+		close(c)
+	} else {
+		everything = everything $0 "\n"
+	}
 }
 
 END {
@@ -60,7 +68,8 @@ END {
 		exit
 
 	everything = gensub(/^BOILERPLATE\(.*\)\n\n\n/, "", "g", everything)
-	everything = gensub(/\n\nBOILERPLATE_END,*/, "", "g", everything)
+	everything = gensub(/\n\nWRITING[ABCDEFGHIJKLMNOPQRSTUVWXYZ_]*_END.*/, "", "g", everything)
+	everything = gensub(/\n\nBOILERPLATE_END.*/, "", "g", everything)
 
 	print ""
 	print "    <item>"

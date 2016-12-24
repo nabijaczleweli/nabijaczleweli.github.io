@@ -86,6 +86,8 @@ BEGIN {
 }
 
 /^Image-Content: / {
+	system("mkdir -p '" temp "../" flat_name "-image-content/'")
+
 	noncontent_filename[noncontent_idx] = gensub(/\.\.-/, "", "g", gensub(/\//, "-", "g", gensub(/Image-Content: (.+)/, "\\1", "g")))
 	noncontent_file[noncontent_idx] = gensub(/(.+)\/.+/, "\\1/" gensub(/Image-Content: (.+)/, "\\1", "g"), "g", self)
 	noncontent_name[noncontent_idx] = gensub(/\//, "-", "g", gensub(/([^.]+)\..*/, "\\1", "g", gensub(/Image-Content: (.+)/, "\\1", "g")))
