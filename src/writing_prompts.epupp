@@ -1,13 +1,18 @@
 Name: Writing prompt collection
 Cover: writing_prompts/cover.png
+
 # Network-Image-Content: https://img09.deviantart.net/e6c8/i/2015/138/8/0/the_pursuer_by_artsed-d7lbiua.jpg
 # Content: writing_prompts/the_pursuer.html
+
 Image-Content: writing_prompts/no_the.png
 Content: writing_prompts/theless.html
+
 Image-Content: writing_prompts/start_eq_end.png
 Content: writing_prompts/start_eq_end.html
+
 Network-Image-Content: https://i.imgur.com/gkevfag.jpg
 Content: writing_prompts/dead_santa.html
+
 Author: nabijaczleweli
-Date: 2016-12-26T02:02:34+02:00
+Date: 2016-12-26T02:04:54+02:00
 Language: en-BR
