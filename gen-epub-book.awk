@@ -44,11 +44,13 @@ function add_content(filename, idx) {
 
 BEGIN {
 	"curl -SsL https://www.uuidgenerator.net/api/version4" | getline uuid
-	close("curl")
+	close("curl -SsL https://www.uuidgenerator.net/api/version4")
+	uuid = substr(uuid, 0, length(uuid) - 1)
 
 	content_idx = 1
 	noncontent_idx = 0
 	have_cover = 0
+	toc_index = 0
 }
 
 /^Self: / {
@@ -69,6 +71,15 @@ BEGIN {
 
 /^Content: / {
 	add_content(gensub(/Content: (.+)/, "\\1", "g"), content_idx)
+
+	"grep -E '<!-- ePub title: \"[^\"]+\" -->' '" content_file[content_idx] "'" | getline content_title[content_idx]
+	close("grep -E '<!-- ePub title: \"[^\"]+\" -->' '" content_file[content_idx] "'")
+	if(content_title[content_idx] == "" || content_title[content_idx] == "\n") {
+		delete content_title[content_idx]
+	} else {
+		content_title[content_idx] = gensub(/<!-- ePub title: "([^"]+)" -->/, "\\1", "g", content_title[content_idx])
+	}
+
 	++content_idx
 }
 
@@ -179,24 +190,52 @@ END {
 		print("    <meta name=\"cover\" content=\"" content_name[0] "\" />") > temp "content.opf"
 	print("  </metadata>") > temp "content.opf"
 	print("  <manifest>") > temp "content.opf"
+	print("    <item href=\"toc.ncx\" id=\"toc\" media-type=\"application/x-dtbncx+xml\"/>") > temp "content.opf"
 	for(i = 0; i < content_idx; ++i)
 		if((i in content_name) && !(content_name[i] in specified_content_names)) {
 			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" mimetype(content_filename[i]) "\" />") > temp "content.opf"
 			specified_content_names[content_name[i]] = i
 		}
 	print("  </manifest>") > temp "content.opf"
-	print("  <spine>") > temp "content.opf"
+	print("  <spine toc=\"toc\">") > temp "content.opf"
 	# Skip Cover
 	for(i = 1; i < content_idx; ++i)
 		print("    <itemref idref=\"" content_name[i] "\" />") > temp "content.opf"
 	print("  </spine>") > temp "content.opf"
-	if(have_cover == 1) {
-		print("  <guide>") > temp "content.opf"
+	print("  <guide>") > temp "content.opf"
+	if(have_cover == 1)
 		print("    <reference xmlns=\"http://www.idpf.org/2007/opf\" href=\"" content_filename[0] "\" title=\"" content_name[0] "\" type=\"cover\" />") > temp "content.opf"
-		print("  </guide>") > temp "content.opf"
-	}
+	print("    <reference href=\"toc.ncx\" title=\"Table of Contents\" type=\"toc\" />") > temp "content.opf"
+	print("  </guide>") > temp "content.opf"
 	print("</package>") > temp "content.opf"
 	close(temp "content.opf")
+
+	print("<?xml version='1.0' encoding='utf-8'?>") > temp "toc.ncx"
+	print("<ncx xmlns=\"http://www.daisy.org/z3986/2005/ncx/\" version=\"2005-1\" xml:lang=\"pl\">") > temp "toc.ncx"
+	print("  <head>") > temp "toc.ncx"
+	print("    <meta content=\"" uuid "\" name=\"dtb:uid\"/>") > temp "toc.ncx"
+	print("    <meta content=\"2\" name=\"dtb:depth\"/>") > temp "toc.ncx"
+	print("  </head>") > temp "toc.ncx"
+	print("  <docTitle>") > temp "toc.ncx"
+	print("    <text>" title "</text>") > temp "toc.ncx"
+	print("  </docTitle>") > temp "toc.ncx"
+	print("  <navMap>") > temp "toc.ncx"
+	for(i = 0; i < content_idx; ++i)
+		if((i in content_title) && (content_title[i] !~ /image-content/)) {
+			"curl -SsL https://www.uuidgenerator.net/api/version4" | getline content_uuid[i]
+			close("curl -SsL https://www.uuidgenerator.net/api/version4")
+			content_uuid[i] = substr(content_uuid[i], 0, length(content_uuid[i]) - 1)
+
+			print("    <navPoint id=\"" content_uuid[i] "\" playOrder=\"" ++toc_index "\">") > temp "toc.ncx"
+			print("      <navLabel>") > temp "toc.ncx"
+			print("        <text>" content_title[i] "</text>") > temp "toc.ncx"
+			print("      </navLabel>") > temp "toc.ncx"
+			print("      <content src=\"" content_filename[i] "\"/>") > temp "toc.ncx"
+			print("    </navPoint>") > temp "toc.ncx"
+		}
+	print("  </navMap>") > temp "toc.ncx"
+	print("</ncx>") > temp "toc.ncx"
+	close(temp "toc.ncx")
 
 	for(i = 0; i < content_idx; ++i)
 		if((i in content_name) && !(content_name[i] in copied_content_names)) {
