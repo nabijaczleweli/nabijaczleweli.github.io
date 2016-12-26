@@ -36,7 +36,9 @@ Things I handwrote and then transcribed, because I like laborious work:
                                                                                                   ~31.03.2016.</li>
 </ul>
 
-<br />
+<p>
+	<a href="writing_prompts">Writing prompts</a> done by me.
+</p>
 
 Documentation for my various projects:
 <ul>
