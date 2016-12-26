@@ -1,10 +1,12 @@
 Name: Writing prompt collection
-# Network-Image-Content: http://img09.deviantart.net/e6c8/i/2015/138/8/0/the_pursuer_by_artsed-d7lbiua.jpg
+# Network-Image-Content: https://img09.deviantart.net/e6c8/i/2015/138/8/0/the_pursuer_by_artsed-d7lbiua.jpg
 # Content: writing_prompts/the_pursuer.html
 Image-Content: writing_prompts/no_the.png
 Content: writing_prompts/theless.html
 Image-Content: writing_prompts/start_eq_end.png
 Content: writing_prompts/start_eq_end.html
+Network-Image-Content: https://i.imgur.com/gkevfag.jpg
+Content: writing_prompts/dead_santa.html
 Author: nabijaczleweli
-Date: 2016-12-24T15:00:52+02:00
+Date: 2016-12-26T02:00:04+02:00
 Language: en-BR

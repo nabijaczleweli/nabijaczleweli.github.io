@@ -13,10 +13,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Sat, 24 Dec 2016 15:00:32 +0200
+#define RSS_PUB_DATE Mon, 26 Dec 2016 01:59:20 +0200
 
 
-BOILERPLATE(End = Start, You must start and end by using the same sentence - writing prompt)
+BOILERPLATE(No gifts this year, No gifts this year - writing prompt)
 
 
 <style type="text/css">
@@ -25,7 +25,7 @@ BOILERPLATE(End = Start, You must start and end by using the same sentence - wri
 	}
 </style>
 
-#include "start_eq_end.html"
+#include "dead_santa.html"
 
 
 WRITING_CUSTOM_NAME_END(all stories)

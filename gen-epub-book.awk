@@ -114,7 +114,7 @@ BEGIN {
 	content_file[content_idx] = temp "../" flat_name "-network-image-content/data-" content_idx ".html"
 	content_name[content_idx] = "network-image-content-" content_idx
 
-	system("curl -SsL " gensub(/Network-Image-Content: (.+)/, "\\1", "g") " -o '" noncontent_file[noncontent_idx] "'")
+	system("cd " temp "../" flat_name "-network-image-content/ && curl -SsOL " gensub(/Network-Image-Content: (.+)/, "\\1", "g"))
 	print("<center><img src=\"" noncontent_filename[noncontent_idx] "\"></img></center>") > content_file[content_idx]
 	close(content_file[content_idx])
 
@@ -124,6 +124,18 @@ BEGIN {
 
 /^Cover: / {
 	add_content(gensub(/Cover: (.+)/, "\\1", "g"), 0)
+	have_cover = 1
+}
+
+/^Network-Cover: / {
+	system("mkdir -p '" temp "../" flat_name "-network-image-content/'")
+
+	content_filename[0] = gensub(/Network-Cover: .+\/(.+)/, "\\1", "g")
+	content_file[0] = temp "../" flat_name "-network-image-content/" content_filename[0]
+	content_name[0] = "network-cover-" content_idx "-" gensub(/Network-Cover: .+\/([^.]+)\..+/, "\\1", "g")
+
+	system("cd '" temp "../" flat_name "-network-image-content/' && curl -SsOL " gensub(/Network-Cover: (.+)/, "\\1", "g"))
+
 	have_cover = 1
 }
 
@@ -180,7 +192,7 @@ END {
 	print("  </spine>") > temp "content.opf"
 	if(have_cover == 1) {
 		print("  <guide>") > temp "content.opf"
-		print("    <reference xmlns=\"http://www.idpf.org/2007/opf\" href=\"" content_filename[0] "\" title=\"" content_name[0] "\" type=\"cover\" />")> temp "content.opf"
+		print("    <reference xmlns=\"http://www.idpf.org/2007/opf\" href=\"" content_filename[0] "\" title=\"" content_name[0] "\" type=\"cover\" />") > temp "content.opf"
 		print("  </guide>") > temp "content.opf"
 	}
 	print("</package>") > temp "content.opf"
