@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Sat, 24 Dec 2016 02:04:36 +0200
+#define RSS_PUB_DATE Sat, 24 Dec 2016 02:04:36 +0100
 
 
 BOILERPLATE(The-less, Write a story without using the word "the" - writing prompt)
