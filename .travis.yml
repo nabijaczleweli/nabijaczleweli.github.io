@@ -8,8 +8,9 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_63c9d3fcdbeb_key -iv $encrypted_63c9d3fcdbeb_iv -in gh_rsa.enc -out gh_rsa -d
 
 install:
-  - export PATH="$PATH:$HOME/calibre"
+  - export PATH="$HOME/calibre:$PATH"
   - curl -SL https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; import os; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(os.getenv('HOME'))"
+  - ebook-convert --version
 
 script:
   - make OUTDIR=../capitalism/
