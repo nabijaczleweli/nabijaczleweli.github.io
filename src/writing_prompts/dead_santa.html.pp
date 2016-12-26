@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Mon, 26 Dec 2016 01:59:20 +0200
+#define RSS_PUB_DATE Mon, 26 Dec 2016 02:00:40 +0200
 
 
 BOILERPLATE(No gifts this year, No gifts this year - writing prompt)
