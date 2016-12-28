@@ -36,6 +36,7 @@ List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> co
 	WP(theless, 5ihrpc, The-less, Write a story without using the word "the")
 	WP(start_eq_end, 5jor6i, End = Start, You must start and end your story by using the same sentence)
 	WP_IP(dead_santa, 5j7m3m, No gifts this year, imgur.com/gkevfag)
+	WP(six_minutes, 5kb0q6, Six Minutes, Two people, talking. The scene only lasts a few minutes. No flashbacks)
 </ul>
 
 

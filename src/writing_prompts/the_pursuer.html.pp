@@ -20,9 +20,7 @@ BOILERPLATE(The Pursuer, The Pursuer - writing prompt)
 
 
 <style type="text/css">
-	p {
-		max-width: 25.625%;
-	}
+#include "column.css"
 </style>
 
 #include "the_pursuer.html"

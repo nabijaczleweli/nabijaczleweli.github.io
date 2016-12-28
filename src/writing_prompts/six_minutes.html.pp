@@ -13,17 +13,17 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Sat, 24 Dec 2016 02:04:36 +0100
+#define TODO add RSS-PUB-DATE
 
 
-BOILERPLATE(The-less, Write a story without using the word "the" - writing prompt)
+BOILERPLATE(Six Minutes, Six Minutes - writing prompt)
 
 
 <style type="text/css">
 #include "column.css"
 </style>
 
-#include "theless.html"
+#include "six_minutes.html"
 
 
 WRITING_CUSTOM_NAME_END(all stories)

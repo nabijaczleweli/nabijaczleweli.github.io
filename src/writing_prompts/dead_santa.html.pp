@@ -20,9 +20,7 @@ BOILERPLATE(No gifts this year, No gifts this year - writing prompt)
 
 
 <style type="text/css">
-	p {
-		max-width: 25.625%;
-	}
+#include "column.css"
 </style>
 
 #include "dead_santa.html"

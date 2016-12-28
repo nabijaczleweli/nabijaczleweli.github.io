@@ -20,9 +20,7 @@ BOILERPLATE(End = Start, You must start and end by using the same sentence - wri
 
 
 <style type="text/css">
-	p {
-		max-width: 25.625%;
-	}
+#include "column.css"
 </style>
 
 #include "start_eq_end.html"
