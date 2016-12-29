@@ -28,6 +28,18 @@ function escape_html(text) {
 	return text
 }
 
+function handle_line(line, fname) {
+	if(line ~ /^#include ".+"/) {
+		inc_f = gensub(/\/\//, "/", "g", gensub(/^#include "([^"]+)"/, gensub(/(.+)\/.*/, "\\1", "g", fname) "/\\1", "g", line))
+		while(("cat " inc_f | getline line) > 0) {
+			handle_line(line, inc_f)
+		}
+		close("cat " inc_f)
+	} else {
+		everything = everything line "\n"
+	}
+}
+
 
 BEGIN {
 	title = ""
@@ -51,15 +63,7 @@ BEGIN {
 }
 
 /^BOILERPLATE/,/^BOILERPLATE_END/ {
-	if($0 ~ /^#include "[^.]+\.html"/) {
-		c = "cat " gensub(/\/\//, "/", "g", gensub(/^#include "([^"]+)"/, "src/" gensub(/(.+)\/.*/, "/\\1", "g", filename) "/\\1", "g"))
-		while((c | getline tmpline) > 0) {
-			everything = everything tmpline "\n"
-		}
-		close(c)
-	} else {
-		everything = everything $0 "\n"
-	}
+	handle_line($0, "src/" filename)
 }
 
 END {
