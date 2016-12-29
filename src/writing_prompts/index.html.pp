@@ -37,6 +37,8 @@ List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> co
 	WP(start_eq_end, 5jor6i, End = Start, You must start and end your story by using the same sentence)
 	WP_IP(dead_santa, 5j7m3m, No gifts this year, imgur.com/gkevfag)
 	WP(six_minutes, 5kb0q6, Six Minutes, Two people, talking. The scene only lasts a few minutes. No flashbacks)
+	WP(green_ass_dog, 5kt8x0, Cucumber Dog, You meet dog who stands with a green knapsack on its back and tells you
+	                                        "I am on a journey looking for Ass, Potatoes, &amp; Cucumbers. Can you assist me?")
 </ul>
 
 
