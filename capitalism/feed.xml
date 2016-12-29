@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Thu, 29 Dec 2016 14:43:42 +0000
+      Thu, 29 Dec 2016 17:08:33 +0000
     </pubDate>
     <lastBuildDate>
-      Thu, 29 Dec 2016 14:43:42 +0000
+      Thu, 29 Dec 2016 17:08:33 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -367,7 +367,17 @@ Utwór napisany od 01.06.2016 do 03.06.2016 przez Jędrzeja A. Łopacińskiego.
     <item>
       <title>No gifts this year — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style type=&quot;text/css&quot;&gt;
-#include &quot;column.css&quot;
+@media all and (min-device-width: 400px) and (max-device-width: 800px) {
+	p {
+		max-width: 51.25%;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	p {
+		max-width: 25.625%;
+	}
+}
 &lt;/style&gt;
 
 &lt;!-- ePub title: &quot;No gifts this year&quot; --&gt;
@@ -427,7 +437,17 @@ Utwór napisany od 01.06.2016 do 03.06.2016 przez Jędrzeja A. Łopacińskiego.
     <item>
       <title>Cucumber Dog — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style type=&quot;text/css&quot;&gt;
-#include &quot;column.css&quot;
+@media all and (min-device-width: 400px) and (max-device-width: 800px) {
+	p {
+		max-width: 51.25%;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	p {
+		max-width: 25.625%;
+	}
+}
 &lt;/style&gt;
 
 &lt;!-- ePub title: &quot;Cucumber Dog&quot; --&gt;
@@ -478,7 +498,17 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
     <item>
       <title>Six Minutes — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style type=&quot;text/css&quot;&gt;
-#include &quot;column.css&quot;
+@media all and (min-device-width: 400px) and (max-device-width: 800px) {
+	p {
+		max-width: 51.25%;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	p {
+		max-width: 25.625%;
+	}
+}
 &lt;/style&gt;
 
 &lt;!-- ePub title: &quot;Six Minutes&quot; --&gt;
@@ -552,7 +582,17 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
     <item>
       <title>End = Start — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style type=&quot;text/css&quot;&gt;
-#include &quot;column.css&quot;
+@media all and (min-device-width: 400px) and (max-device-width: 800px) {
+	p {
+		max-width: 51.25%;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	p {
+		max-width: 25.625%;
+	}
+}
 &lt;/style&gt;
 
 &lt;!-- ePub title: &quot;End = Start&quot; --&gt;
@@ -580,7 +620,17 @@ Not ever would she expect this.&lt;br /&gt;
     <item>
       <title>The-less — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style type=&quot;text/css&quot;&gt;
-#include &quot;column.css&quot;
+@media all and (min-device-width: 400px) and (max-device-width: 800px) {
+	p {
+		max-width: 51.25%;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	p {
+		max-width: 25.625%;
+	}
+}
 &lt;/style&gt;
 
 &lt;!-- ePub title: &quot;The-less&quot; --&gt;
