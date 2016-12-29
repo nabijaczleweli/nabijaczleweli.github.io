@@ -39,7 +39,7 @@ List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> co
 	WP(six_minutes, 5kb0q6, Six Minutes, Two people, talking. The scene only lasts a few minutes. No flashbacks)
 	WP(green_ass_dog, 5kt8x0, Cucumber Dog, You meet dog who stands with a green knapsack on its back and tells you
 	                                        "I am on a journey looking for Ass, Potatoes, &amp; Cucumbers. Can you assist me?")
-	WP(not_dead_yet, 5ks29s, Get Up， Soldier, "Get Up, Soldier, You're Not Dead Yet")
+	WP(not_dead_yet, 5ks29s, Get Up，Soldier, "Get Up, Soldier, You're Not Dead Yet")
 </ul>
 
 
