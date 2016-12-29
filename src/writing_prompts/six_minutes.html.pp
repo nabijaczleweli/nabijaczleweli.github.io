@@ -16,12 +16,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Wed, 28 Dec 2016 01:54:52 +0100
 
 
-BOILERPLATE(Six Minutes, Six Minutes - writing prompt)
+BOILERPLATE(Six Minutes, Six Minutes - writing prompt, COLUMN_CSS_LINK)
 
-
-<style type="text/css">
-#include "column.css"
-</style>
 
 #include "six_minutes.html"
 

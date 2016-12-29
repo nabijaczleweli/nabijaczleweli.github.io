@@ -12,6 +12,9 @@
 #pragma once
 
 
+#define COLUMN_CSS_LINK <link href="/capitalism/assets/column.css" rel="stylesheet" />
+
+
 #define WRITING_CUSTOM_END(what, url_code)                                                               \
     <hr />                                                                                               \
     Get what in ePub format                                                                              \

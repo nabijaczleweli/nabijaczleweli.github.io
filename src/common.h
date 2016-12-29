@@ -35,11 +35,11 @@
 #endif
 
 
-#define BOILERPLATE(pagename, description)                                                                 \
+#define BOILERPLATE(pagename, description, ...)                                                            \
 <!DOCTYPE html>                                                                                            \
 <html lang="en">                                                                                           \
-<head>                                                                                                     \
-  <meta charset="utf-8">                                                                                   \
+  <head>                                                                                                   \
+    <meta charset="utf-8">                                                                                 \
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">                                                  \
     <meta name="viewport" content="width=device-width,initial-scale=1">                                    \
     <meta name="author" content="nabijaczleweli">                                                          \
@@ -49,6 +49,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" /> \
     <link href="/capitalism/assets/common.css" rel="stylesheet" />                                         \
     <script type="text/javascript" src="/js/add_icons.js" id="icon-placeholder"></script>                  \
+    __VA_ARGS__                                                                                            \
   </head>                                                                                                  \
   <body>
 

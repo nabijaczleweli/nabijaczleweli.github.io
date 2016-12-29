@@ -54,8 +54,8 @@ BEGIN {
 }
 
 /^BOILERPLATE\(.*\)/ {
-	title = gensub(/BOILERPLATE\(([^,]+), (.*)\)/, "\\1", "g") " — " author
-	description = gensub(/BOILERPLATE\(([^,]+), (.*)\)/, "\\2", "g")
+	title = gensub(/BOILERPLATE\(([^,]+), ([^,]+).*\)/, "\\1", "g") " — " author
+	description = gensub(/BOILERPLATE\(([^,]+), ([^,]+).*\)/, "\\2", "g")
 }
 
 /#define RSS_PUB_DATE/ {
