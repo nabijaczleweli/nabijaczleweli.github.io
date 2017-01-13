@@ -44,6 +44,8 @@ Documentation for my various projects:
 <ul>
 	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
 	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
+	DOC(trivial-colours-rs, trivial_colours, trivial_colours,
+	    Very simple and naive colour changing for your terminal, but that'<!--'-->s exactly what you need sometimes)
 	DOC(safe-transmute-rs, safe-transmute, safe_transmute,
 	    A safeguarded <samp>transmute()</samp> for Rust)
 	DOC(bidir-map-rs, bidir-map, bidir_map,
