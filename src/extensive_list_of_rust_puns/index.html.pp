@@ -23,6 +23,9 @@ by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>:
   <li>"Kept wondering what was preventing me from sharing a <code>Cell</code> with multiple threads, but then I let the idea <code>Sync</code> in."
        -- <a href="//chat.stackoverflow.com/users/1233251">E_net4</a>
         - <a href="//chat.stackoverflow.com/transcript/message/35242477#35242477">22.01.17 11:34 PM</a></li>
+  <li>"Indiana Jones raiders of the lost <code>Arc&lt;T&gt;</code>"
+       -- <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>
+        - <a href="//chat.stackoverflow.com/transcript/message/35262129#35262129">23.01.17 11:30 PM</a></li>
 </ul>
 
 
