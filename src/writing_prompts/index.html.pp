@@ -42,6 +42,7 @@ List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> co
 	WP(not_dead_yet, 5ks29s, Get Up，Soldier, "Get Up, Soldier, You're Not Dead Yet")
 	WP(trucks_a_cash, 5l4iqi, Utopian Assassin, Government mails money for amount of happiness spread. You sometimes get some. One day you get a truckload)
 	WP(degenerate, 5l09xc, Degenerate Watch, Plot is based on some song)
+	WP(laser_cats, 5qv165, Ghostly Lasers, Cats interpret laser pointers the same way people interpret ghosts)
 </ul>
 
 
