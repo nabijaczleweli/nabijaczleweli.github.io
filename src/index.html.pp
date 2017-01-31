@@ -42,6 +42,9 @@ Things I handwrote and then transcribed, because I like laborious work:
 
 Documentation for my various projects:
 <ul>
+	DOC(rust-embed-resource, embed-resource, embed_resource,
+	    A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
+	    in the most resilient fashion imaginable)
 	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
 	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
 	DOC(trivial-colours-rs, trivial_colours, trivial_colours,
