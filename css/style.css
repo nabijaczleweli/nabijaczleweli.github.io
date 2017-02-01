@@ -13,3 +13,7 @@ body {
   -o-background-size:      cover;
   background-size:         cover;
 }
+
+body .container {
+  max-width: 600px;
+}
