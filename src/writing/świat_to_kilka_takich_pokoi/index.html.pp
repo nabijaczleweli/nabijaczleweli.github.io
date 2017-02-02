@@ -14,6 +14,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Mon, 06 Jun 2016 23:40:30 +0200
+#define SOFT_BR --><br /><!--
+#define SOFT_EMSP -->&emsp;<!--
 
 
 BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL])

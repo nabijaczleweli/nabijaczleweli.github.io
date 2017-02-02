@@ -14,6 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Thu, 22 Sep 2016 01:20:30 +0200
+#define SOFT_BR --><br /><!--
 
 
 BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL])
