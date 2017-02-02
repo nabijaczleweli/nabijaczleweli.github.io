@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing.h"
 
 
-#define RSS_PUB_DATE Thu, 22 Sep 2016 01:20:30 +0200
+#define RSS_PUB_DATE Thu, 22 Sep 2016 01:20:31 +0200
 #define SOFT_BR --><br /><!--
 
 
