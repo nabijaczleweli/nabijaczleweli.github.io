@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Mon, 30 Jan 2017 00:07:59 +0100
 
 
-BOILERPLATE(Ghostly Lasers, Ghostly Lasers - writing prompt, COLUMN_CSS_LINK)
+BOILERPLATE(Ghostly Lasers, Ghostly Lasers - writing prompt, COLUMN_CSS_LINK BOOK_URL_SETTER_SCRIPT)
 
 
 #include "laser_cats.html"

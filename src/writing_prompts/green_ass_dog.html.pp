@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Thu, 29 Dec 2016 15:37:19 +0100
 
 
-BOILERPLATE(Cucumber Dog, Cucumber Dog - writing prompt, COLUMN_CSS_LINK)
+BOILERPLATE(Cucumber Dog, Cucumber Dog - writing prompt, COLUMN_CSS_LINK BOOK_URL_SETTER_SCRIPT)
 
 
 #include "green_ass_dog.html"

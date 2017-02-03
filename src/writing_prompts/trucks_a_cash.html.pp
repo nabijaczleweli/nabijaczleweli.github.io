@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Sat, 31 Dec 2016 18:30:49 +0100
 
 
-BOILERPLATE(Utopian Assassin, Utopian Assassin - writing prompt, COLUMN_CSS_LINK)
+BOILERPLATE(Utopian Assassin, Utopian Assassin - writing prompt, COLUMN_CSS_LINK BOOK_URL_SETTER_SCRIPT)
 
 
 #include "trucks_a_cash.html"

@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Sat, 24 Dec 2016 15:00:32 +0100
 
 
-BOILERPLATE(End = Start, You must start and end by using the same sentence - writing prompt, COLUMN_CSS_LINK)
+BOILERPLATE(End = Start, You must start and end by using the same sentence - writing prompt, COLUMN_CSS_LINK BOOK_URL_SETTER_SCRIPT)
 
 
 #include "start_eq_end.html"

@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Thu, 02 Feb 2017 13:45:35 +0100
 
 
-BOILERPLATE(The Last Eye, The Last Eye - writing prompt, COLUMN_CSS_LINK)
+BOILERPLATE(The Last Eye, The Last Eye - writing prompt, COLUMN_CSS_LINK BOOK_URL_SETTER_SCRIPT)
 
 
 #include "eye_see.html"

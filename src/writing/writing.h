@@ -13,15 +13,21 @@
 
 
 #define COLUMN_CSS_LINK <link href="/capitalism/assets/column.css" rel="stylesheet" />
+#define BOOK_URL_SETTER_SCRIPT <script type="text/javascript" src="/capitalism/assets/book_setter.js"></script>
+#define CUSTOM_BOOK_URL_SETTER_SCRIPT(url_code) \
+  <script type="text/javascript">               \
+    function custom_book_url() {                \
+      return (url_code);                        \
+    }                                           \
+  </script>                                     \
+  BOOK_URL_SETTER_SCRIPT
 
 
-#define WRITING_CUSTOM_END(what, url_code)                                                               \
-    <hr />                                                                                               \
-    Get what in ePub format                                                                              \
-    <script type="text/javascript">document.write('<a href="' + (url_code) + '.epub">here</a>')</script> \
-    or in MOBI format                                                                                    \
-    <script type="text/javascript">document.write('<a href="' + (url_code) + '.mobi">here</a>')</script>.
-
-#define WRITING_CUSTOM_NAME_END(what) WRITING_CUSTOM_END(what, (document.URL.substr(0, document.URL.lastIndexOf('/'))))
+#define WRITING_CUSTOM_NAME_END(what)        \
+    <hr />                                   \
+    Get what in ePub format                  \
+    <a href="#" id="epub_book_link">here</a> \
+    or in MOBI format                        \
+    <a href="#" id="mobi_book_link">here</a>.
 
 #define WRITING_END() WRITING_CUSTOM_NAME_END(this)

@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define SOFT_EMSP -->&emsp;<!--
 
 
-BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL])
+BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], BOOK_URL_SETTER_SCRIPT)
 
 
 #include "book.html"
