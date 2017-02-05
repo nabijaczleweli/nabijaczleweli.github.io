@@ -22,5 +22,6 @@ BOILERPLATE(Ghostly Lasers, Ghostly Lasers - writing prompt, COLUMN_CSS_LINK WOR
 #include "laser_cats.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

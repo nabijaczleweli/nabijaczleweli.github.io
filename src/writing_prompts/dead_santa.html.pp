@@ -22,5 +22,6 @@ BOILERPLATE(No gifts this year, No gifts this year - writing prompt, COLUMN_CSS_
 #include "dead_santa.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

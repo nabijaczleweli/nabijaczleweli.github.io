@@ -22,5 +22,6 @@ BOILERPLATE(Six Minutes, Six Minutes - writing prompt, COLUMN_CSS_LINK WORD_COUN
 #include "six_minutes.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

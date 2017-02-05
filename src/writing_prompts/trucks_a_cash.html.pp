@@ -22,5 +22,6 @@ BOILERPLATE(Utopian Assassin, Utopian Assassin - writing prompt, COLUMN_CSS_LINK
 #include "trucks_a_cash.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

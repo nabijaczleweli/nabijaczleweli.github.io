@@ -22,5 +22,6 @@ BOILERPLATE(End = Start, You must start and end by using the same sentence - wri
 #include "start_eq_end.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

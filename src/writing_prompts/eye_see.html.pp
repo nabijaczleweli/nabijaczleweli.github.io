@@ -22,5 +22,6 @@ BOILERPLATE(The Last Eye, The Last Eye - writing prompt, COLUMN_CSS_LINK WORD_CO
 #include "eye_see.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

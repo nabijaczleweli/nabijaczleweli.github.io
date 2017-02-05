@@ -23,5 +23,6 @@ BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL
 #include "book.html"
 
 
+WORD_COUNTER_END()
 WRITING_END()
 BOILERPLATE_END()

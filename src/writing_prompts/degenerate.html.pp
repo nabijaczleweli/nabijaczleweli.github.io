@@ -22,5 +22,6 @@ BOILERPLATE(Degenerate Watch, Degenerate Watch - writing prompt, COLUMN_CSS_LINK
 #include "degenerate.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

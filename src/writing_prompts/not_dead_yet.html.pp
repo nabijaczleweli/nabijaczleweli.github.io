@@ -22,5 +22,6 @@ BOILERPLATE(Get up，soldier, Get up，soldier - writing prompt, COLUMN_CSS_LINK
 #include "not_dead_yet.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

@@ -22,5 +22,6 @@ BOILERPLATE(The-less, Write a story without using the word "the" - writing promp
 #include "theless.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()

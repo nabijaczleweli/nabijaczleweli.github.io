@@ -72,8 +72,7 @@ END {
 		exit
 
 	everything = gensub(/^BOILERPLATE\(.*\)\n\n\n/, "", "g", everything)
-	everything = gensub(/\n\nWRITING[ABCDEFGHIJKLMNOPQRSTUVWXYZ_]*_END.*/, "", "g", everything)
-	everything = gensub(/\n\nBOILERPLATE_END.*/, "", "g", everything)
+	everything = gensub(/\n\n[ABCDEFGHIJKLMNOPQRSTUVWXYZ_]*_END.*/, "", "g", everything)
 
 	print ""
 	print "    <item>"

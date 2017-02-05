@@ -22,5 +22,6 @@ BOILERPLATE(Cucumber Dog, Cucumber Dog - writing prompt, COLUMN_CSS_LINK WORD_CO
 #include "green_ass_dog.html"
 
 
+WORD_COUNTER_END()
 WRITING_CUSTOM_NAME_END(all stories)
 BOILERPLATE_END()
