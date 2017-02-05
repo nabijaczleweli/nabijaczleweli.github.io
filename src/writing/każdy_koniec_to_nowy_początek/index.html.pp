@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define SOFT_BR --><br /><!--
 
 
-BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 #include "book.html"

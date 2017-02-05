@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define TODO add RSS-PUB-DATE
 
 
-BOILERPLATE(The Pursuer, The Pursuer - writing prompt, COLUMN_CSS_LINK BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(The Pursuer, The Pursuer - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 #include "the_pursuer.html"

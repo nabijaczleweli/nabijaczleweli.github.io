@@ -26,7 +26,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define WP_IP(story_semiurl, post_id, title, img_address) WP_RAW(story_semiurl, post_id, title, <a href=STR(httpsCOLON_SLASH_SLASH##img_address)>FA(image)</a>)
 
 
-BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to /r/WritingPrompts, BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to /r/WritingPrompts, WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> completed by me:
