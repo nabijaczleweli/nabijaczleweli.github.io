@@ -26,7 +26,7 @@ function mimetype(fname) {
 		return "application/xhtml+xml"
 	} else if(ext == "png") {
 		return "image/png"
-	} else if(ext ~ /jp(?:e?)g/) {
+	} else if(ext ~ /jp(e?)g/) {
 		return "image/jpeg"
 	} else if(ext == "svg") {
 		return "image/svg+xml"
@@ -39,6 +39,16 @@ function add_content(filename, idx) {
 	content_filename[idx] = gensub(/\.\.-/, "", "g", gensub(/\//, "-", "g", filename))
 	content_file[idx] = gensub(/(.+)\/.+/, "\\1/" filename, "g", self)
 	content_name[idx] = gensub(/\//, "-", "g", gensub(/([^.]+)\..*/, "\\1", "g", filename))
+}
+
+function write_image_content(img_idx, outfile_idx) {
+	print("<html xmlns=\"http://www.w3.org/1999/xhtml\">") > content_file[outfile_idx]
+	print("  <head></head>") >> content_file[outfile_idx]
+	print("  <body>") >> content_file[outfile_idx]
+	print("    <center><img src=\"" noncontent_filename[img_idx] "\"></img></center>") >> content_file[outfile_idx]
+	print("  </body>") >> content_file[outfile_idx]
+	print("</html>") >> content_file[outfile_idx]
+	close(content_file[outfile_idx])
 }
 
 
@@ -107,8 +117,7 @@ BEGIN {
 	content_file[content_idx] = temp "../" flat_name "-image-content/data-" content_idx ".html"
 	content_name[content_idx] = "image-content-" content_idx
 
-	print("<center><img src=\"" noncontent_filename[noncontent_idx] "\"></img></center>") > content_file[content_idx]
-	close(content_file[content_idx])
+	write_image_content(noncontent_idx, content_idx)
 
 	++content_idx
 	++noncontent_idx
@@ -126,8 +135,7 @@ BEGIN {
 	content_name[content_idx] = "network-image-content-" content_idx
 
 	system("cd " temp "../" flat_name "-network-image-content/ && curl -SsOL " gensub(/Network-Image-Content: (.+)/, "\\1", "g"))
-	print("<center><img src=\"" noncontent_filename[noncontent_idx] "\"></img></center>") > content_file[content_idx]
-	close(content_file[content_idx])
+	write_image_content(noncontent_idx, content_idx)
 
 	++content_idx
 	++noncontent_idx
@@ -195,6 +203,11 @@ END {
 		if((i in content_name) && !(content_name[i] in specified_content_names)) {
 			print("    <item href=\"" content_filename[i] "\" id=\"" content_name[i] "\" media-type=\"" mimetype(content_filename[i]) "\" />") > temp "content.opf"
 			specified_content_names[content_name[i]] = i
+		}
+	for(i = 0; i < noncontent_idx; ++i)
+		if((i in noncontent_name) && !(noncontent_name[i] in specified_noncontent_names)) {
+			print("    <item href=\"" noncontent_filename[i] "\" id=\"noncontent-" i "\" media-type=\"" mimetype(noncontent_filename[i]) "\" />") > temp "content.opf"
+			specified_noncontent_names[noncontent_name[i]] = i
 		}
 	print("  </manifest>") > temp "content.opf"
 	print("  <spine toc=\"toc\">") > temp "content.opf"
