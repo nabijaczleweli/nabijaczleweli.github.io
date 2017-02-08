@@ -40,6 +40,10 @@ Things I handwrote and then transcribed, because I like laborious work:
 	<a href="writing_prompts">Writing prompts</a> done by me.
 </p>
 
+<p>
+	The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
+</p>
+
 Documentation for my various projects:
 <ul>
 	DOC(rust-embed-resource, embed-resource, embed_resource,
