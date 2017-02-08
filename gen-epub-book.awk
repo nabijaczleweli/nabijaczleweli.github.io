@@ -41,14 +41,28 @@ function add_content(filename, idx) {
 	content_name[idx] = gensub(/\//, "-", "g", gensub(/([^.]+)\..*/, "\\1", "g", filename))
 }
 
-function write_image_content(img_idx, outfile_idx) {
+function write_content_head(outfile_idx) {
 	print("<html xmlns=\"http://www.w3.org/1999/xhtml\">") > content_file[outfile_idx]
 	print("  <head></head>") >> content_file[outfile_idx]
 	print("  <body>") >> content_file[outfile_idx]
-	print("    <center><img src=\"" noncontent_filename[img_idx] "\"></img></center>") >> content_file[outfile_idx]
+}
+
+function write_content_tail(outfile_idx) {
 	print("  </body>") >> content_file[outfile_idx]
 	print("</html>") >> content_file[outfile_idx]
 	close(content_file[outfile_idx])
+}
+
+function write_image_content(img_idx, outfile_idx) {
+	write_content_head(outfile_idx)
+	print("    <center><img src=\"" noncontent_filename[img_idx] "\"></img></center>") >> content_file[outfile_idx]
+	write_content_tail(outfile_idx)
+}
+
+function write_string_content(content, outfile_idx) {
+	write_content_head(outfile_idx)
+	print("    " content) >> content_file[outfile_idx]
+	write_content_tail(outfile_idx)
 }
 
 
@@ -71,8 +85,6 @@ BEGIN {
 	out_file = gensub(/Out: (.+)/, "\\1", "g")
 	flat_name = gensub(/.*\/([^.]+)\..*/, "\\1", "g", out_file)
 	temp = temp "/nabijaczleweli.xyz-book-gen/" flat_name "/"
-
-	system("rm -rf '" temp "../" flat_name "-string-content/' > /dev/null 2>&1")
 }
 
 /^Name: / {
@@ -100,8 +112,7 @@ BEGIN {
 	content_file[content_idx] = temp "../" flat_name "-string-content/data-" content_idx ".html"
 	content_name[content_idx] = "string-content-" content_idx
 
-	print(gensub(/String-Content: (.+)/, "\\1", "g")) > content_file[content_idx]
-	close(content_file[content_idx])
+	write_string_content(gensub(/String-Content: (.+)/, "\\1", "g"), content_idx)
 
 	++content_idx
 }
