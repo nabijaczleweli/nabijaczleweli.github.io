@@ -55,10 +55,14 @@ Documentation for my various projects:
 	    Very simple and naive colour changing for your terminal, but that'<!--'-->s exactly what you need sometimes)
 	DOC(safe-transmute-rs, safe-transmute, safe_transmute,
 	    A safeguarded <samp>transmute()</samp> for Rust)
+	DOC(gen-epub-book.rs, gen-epub-book, gen_epub_book,
+	    Generate an ePub book from a simple plaintext descriptor in Rust)
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
 	    Cargo subcommand for checking and applying updates to installed executables)
+	DOC(poke-a-mango, poke-a-mango, poke_a_mango,
+	    What all the kool kidz are playing these days)
 	DOC(whereami-rs, whereami-rs, whereami,
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(mandalas-rs, mandalas, mandalas,
