@@ -50,19 +50,17 @@ OUTDIR := out/
 
 PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
 BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp))
-ASSETS := $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.*))
-LICENSES := $(sort $(wildcard LICENSE-*))
+ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.*))
 
-.PHONY : all clean assets licenses books preprocess rss
+.PHONY : all clean assets books preprocess rss
 
 
-all : assets licenses books preprocess rss
+all : assets books preprocess rss
 
 clean :
 	rm -rf $(OUTDIR)
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
-licenses : $(patsubst %,$(OUTDIR)%,$(LICENSES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
 books : gen-epub-book.awk $(patsubst src/%.epupp,$(OUTDIR)%.epub,$(BOOK_SOURCES)) $(patsubst src/%.epupp,$(OUTDIR)%.mobi,$(BOOK_SOURCES))
 rss : $(OUTDIR)feed.xml
