@@ -12,6 +12,9 @@
 #pragma once
 
 
+#include "util.h"
+
+
 #ifdef __clang__
   #define COMPILER_NAME Clang
 #elif defined(__GNUC__)
@@ -29,15 +32,14 @@
 #endif
 
 #if defined(BUILD_ID) && defined(REPO_SLUG)
-  #define CI_LINK_FOOTER_PART <br /><a href=httpsCOLON_SLASH_SLASHtravis-ci.org/REPO_SLUG/builds/BUILD_ID>See job on TravisCI</a>.
+  #define CI_LINK_FOOTER_PART <br /><a href=STR(httpsCOLON_SLASH_SLASHtravis-ci.org/REPO_SLUG/builds/BUILD_ID)>See job on TravisCI</a>.
 #else
   #define CI_LINK_FOOTER_PART
 #endif
 
-
 #define CMT // Copypasted from /assets/icons.htm
 #undef CMT
-#define BOILERPLATE_ICONS                                                                                 \
+#define ICONS_HEADER_PART                                                                                 \
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">        \
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">        \
     <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">        \
@@ -61,6 +63,7 @@
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">                       \
     <meta name="theme-color" content="#ffffff">
 
+
 #define BOILERPLATE(pagename, description, ...)                                                            \
 <!DOCTYPE html>                                                                                            \
 <html lang="en">                                                                                           \
@@ -74,25 +77,26 @@
                                                                                                            \
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> \
     <link href="/capitalism/assets/common.css" rel="stylesheet" />                                         \
-    BOILERPLATE_ICONS                                                                                      \
+    ICONS_HEADER_PART                                                                                      \
     __VA_ARGS__                                                                                            \
   </head>                                                                                                  \
   <body>
 
-#define BOILERPLATE_END()                                                                                                                         \
-    <hr />                                                                                                                                        \
-    Creative text licensed under <a href="/capitalism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                         \
-    code licensed under <a href="/capitalism/LICENSE-CODE">The MIT License</a>.                                                                   \
-    <hr />                                                                                                                                        \
-    This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>,        \
-    and contributt and/or yell at me there.                                                                                                       \
-    <hr />                                                                                                                                        \
-    Do you consider this some <i>good shit, right there</i>?<br />                                                                                \
-    Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,                                        \
-    or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.            \
-    <hr />                                                                                                                                        \
-    Automatically generated with COMPILER_NAME version COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from FILE_NAME. CI_LINK_FOOTER_PART \
-    <hr />                                                                                                                                        \
-    <a href="/capitalism/feed.xml">RSS feed</a>                                                                                                   \
-  </body>                                                                                                                                         \
+#define BOILERPLATE_END()                                                                                                                  \
+    <hr />                                                                                                                                 \
+    Creative text licensed under <a href="/capitalism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                  \
+    code licensed under <a href="/capitalism/LICENSE-CODE">The MIT License</a>.                                                            \
+    <hr />                                                                                                                                 \
+    This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, \
+    and contributt and/or yell at me there.                                                                                                \
+    <hr />                                                                                                                                 \
+    Do you consider this some <i>good shit, right there</i>?<br />                                                                         \
+    Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,                                 \
+    or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.     \
+    <hr />                                                                                                                                 \
+    Automatically generated with COMPILER_NAME version COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from FILE_NAME.              \
+    CI_LINK_FOOTER_PART                                                                                                                    \
+    <hr />                                                                                                                                 \
+    <a href="/capitalism/feed.xml">RSS feed</a>                                                                                            \
+  </body>                                                                                                                                  \
 </html>
