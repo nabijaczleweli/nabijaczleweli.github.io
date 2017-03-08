@@ -24,9 +24,9 @@ BEGIN {
 	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 	print "<rss version=\"2.0\" xmlns:atom=\"https://www.w3.org/2005/Atom\">"
 	print "  <channel>"
-	print "    <atom:link href=\"https://nabijaczleweli.xyz/capitalism/feed.xml\" rel=\"self\" type=\"application/rss+xml\" />"
+	print "    <atom:link href=\"https://nabijaczleweli.xyz/kaschism/feed.xml\" rel=\"self\" type=\"application/rss+xml\" />"
 	print "    <title>nabijaczleweli's page</title>"
-	print "    <link>https://nabijaczleweli.xyz/capitalism</link>"
+	print "    <link>https://nabijaczleweli.xyz/kaschism</link>"
 	print "    <description>Newest articles on nabijaczleweli.xyz</description>"
 	print "    <language>en-BR</language>"
 	print "    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>"
@@ -53,7 +53,7 @@ BEGIN {
 	print "    <image>"
 	print "      <url>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</url>"
 	print "      <title>nabijaczleweli's page</title>"
-	print "      <link>https://nabijaczleweli.xyz/capitalism</link>"
+	print "      <link>https://nabijaczleweli.xyz/kaschism</link>"
 	print "    </image>"
 }
 
