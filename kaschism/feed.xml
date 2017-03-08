@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="https://nabijaczleweli.xyz/capitalism/feed.xml" rel="self" type="application/rss+xml" />
+    <title>nabijaczleweli's page</title>
+    <link>https://nabijaczleweli.xyz/capitalism</link>
+    <description>Newest articles on nabijaczleweli.xyz</description>
+    <language>en-BR</language>
+    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>
+    <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
+    <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
+    <pubDate>
+      Wed, 08 Mar 2017 01:28:32 +0000
+    </pubDate>
+    <lastBuildDate>
+      Wed, 08 Mar 2017 01:28:32 +0000
+    </lastBuildDate>
+    <generator>
+      GNU Awk 3.1.8
+    </generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>60</ttl>
+    <image>
+      <url>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</url>
+      <title>nabijaczleweli's page</title>
+      <link>https://nabijaczleweli.xyz/capitalism</link>
+    </image>
+  </channel>
+</rss>

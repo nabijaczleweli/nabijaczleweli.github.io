@@ -1,0 +1,10 @@
+@media all and (min-device-width: 400px) {
+	body {
+		max-width: 51.25%;
+		margin: 0 auto;
+	}
+
+	hr {
+		color: transparent;
+	}
+}
