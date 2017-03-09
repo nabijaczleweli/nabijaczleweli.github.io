@@ -12,9 +12,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "common.h"
 
 
-#define COLUMN_CSS <link href="/kaschism/assets/column.css" rel="stylesheet" />
 #define TODO_JS <script type="text/javascript" src="/kaschism/assets/todo.js"></script>
-BOILERPLATE(What，why and when is Kaschism, Kaschism – Groats good，rice bad，details inside, COLUMN_CSS TODO_JS)
+BOILERPLATE(What，why and when is Kaschism, Kaschism – Groats good，rice bad，details inside, TODO_JS)
 
 
 <p id="definition-short">
@@ -28,7 +27,7 @@ BOILERPLATE(What，why and when is Kaschism, Kaschism – Groats good，rice bad
 </p>
 
 <div id="works">
-	The general ideas, a.k.a. the <a href="#works" class="todo">"Kaschist Manifesto"</a>.<br />
+	The general ideas, a.k.a. the <a href="works/manifesto.html">"Kaschist Manifesto"</a> [PL].<br />
 	Collateral works:
 	<ul>
 		<li><span class="todo">Also TODO</span></li>

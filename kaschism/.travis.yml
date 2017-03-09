@@ -7,7 +7,7 @@ cache:
 env:
   global:
     - PATH=$HOME/calibre:$HOME/bin:$PATH
-    - GEN_EPUB_BOOK_VERSION=v0.1.0
+    - GEN_EPUB_BOOK_VERSION=v0.3.1
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_081938a76f01_key -iv $encrypted_081938a76f01_iv -in gh_rsa.enc -out gh_rsa -d
@@ -17,7 +17,8 @@ install:
   - ebook-convert --version
   -
   - mkdir -p "$HOME/bin"
-  - curl -SL "https://github.com/nabijaczleweli/gen-epub-book.cpp/releases/download/$GEN_EPUB_BOOK_VERSION/gen-epub-book-$GEN_EPUB_BOOK_VERSION" -o "$HOME/bin/gen-epub-book"
+  - curl -SL "https://github.com/nabijaczleweli/gen-epub-book.rs/releases/download/$GEN_EPUB_BOOK_VERSION/gen-epub-book.rs-$GEN_EPUB_BOOK_VERSION" -o "$HOME/bin/gen-epub-book"
+  - chmod +x "$HOME/bin/gen-epub-book"
 
 script:
   - make OUTDIR="../kaschism/"
