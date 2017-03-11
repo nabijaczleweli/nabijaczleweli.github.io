@@ -14,10 +14,9 @@
 
 #define COLUMN_CSS_LINK <link href="/capitalism/assets/column.css" rel="stylesheet" />
 
-#define WORD_COUNT_SCRIPT                                                                                  \
-  <script type="text/javascript" src="//cdn.rawgit.com/tehsis/normalize/master/normalize.min.js"></script> \
-  <script type="text/javascript" src="/capitalism/assets/syllable.js"></script>                            \
-  <script type="text/javascript" src="/capitalism/assets/pluralize.js"></script>                           \
+#define WORD_COUNT_SCRIPT                                                         \
+  <script type="text/javascript" src="/capitalism/assets/syllable.js"></script>   \
+  <script type="text/javascript" src="/capitalism/assets/pluralize.js"></script>  \
   <script type="text/javascript" src="/capitalism/assets/word_count.js"></script>
 
 #define BOOK_URL_SETTER_SCRIPT <script type="text/javascript" src="/capitalism/assets/book_setter.js"></script>
