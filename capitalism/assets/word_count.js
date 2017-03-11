@@ -1,6 +1,8 @@
 window.addEventListener("load", function() {
-	const WORD_REGEX = /(\w+)/g;
-	const CHAR_REGEX = /\w/g;
+	// Based on kourge.net/projects/regexp-unicode-block
+	// Check for Latin, Latin-1 Supplement, Latin Extended-{A,B} and Cyrillic word characters
+	const WORD_REGEX = /((?:\w|[\u0080-\u024F\u0400-\u04FF])+)/gu;
+	const CHAR_REGEX = /(?:\w|[\u0080-\u024F\u0400-\u04FF])/gu;
 	const writings = document.getElementsByClassName("writing");
 	const word_count = document.getElementById("word_count");
 	const syllable_count = document.getElementById("syllable_count");
@@ -14,13 +16,15 @@ window.addEventListener("load", function() {
 		let words = w.innerText.match(WORD_REGEX);
 
 		word_c += words.length;
-		words.forEach(function(w) {
-			syllable_c += syllable(w);
-		});
+		if(syllable_count)
+			words.forEach(function(w) {
+				syllable_c += syllable(w);
+			});
 		character_c += w.innerText.match(CHAR_REGEX).length;
 	});
 
 	word_count.innerText = word_c;
-	syllable_count.innerText = syllable_c;
+	if(syllable_count)
+		syllable_count.innerText = syllable_c;
 	character_count.innerText = character_c;
 });
