@@ -6,3 +6,7 @@ ul, ol {
 a > i.fa {
 	color: black;
 }
+
+.hidden {
+	display: none;
+}

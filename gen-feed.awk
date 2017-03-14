@@ -60,7 +60,7 @@ BEGIN {
 {
 	name = gensub(/src\/(.*)\.pp/, "\\1", "g")
 	name = gensub(/\/?index.html$/, "/", "g", name)
-	system("cat " $0 " | " awk " -f gen-feed-item.awk -v awk=\"" awk "\" -v filename=\"" name "\"")
+	system(awk " -f gen-feed-item.awk -v awk=\"" awk "\" -v filename=\"" name "\" " $0)
 }
 
 END {
