@@ -25,9 +25,15 @@ window.addEventListener("load", function() {
 		character_c += w.innerText.match(CHAR_REGEX).length;
 	});
 
-	word_count.innerText = word_c;
+	word_count.innerText = separatedNumber(word_c);
 	if(syllable_count)
-		syllable_count.innerText = syllable_c;
-	character_count.innerText = character_c;
+		syllable_count.innerText = separatedNumber(syllable_c);
+	character_count.innerText = separatedNumber(character_c);
 	wordcount_wrapper.classList.remove("hidden")
+
+
+	// Stolen from http://stackoverflow.com/a/2901298/2851815
+	function separatedNumber(num) {
+		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+	}
 });
