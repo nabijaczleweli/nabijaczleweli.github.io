@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Mon, 10 Apr 2017 21:27:16 +0000
+      Mon, 10 Apr 2017 21:39:29 +0000
     </pubDate>
     <lastBuildDate>
-      Mon, 10 Apr 2017 21:27:16 +0000
+      Mon, 10 Apr 2017 21:39:29 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -114,6 +114,129 @@ Spód:
       <author>nabijaczleweli@gmail.com (nabijaczleweli), stanislaw@gorski.be (Stanisław Górski), and krzysztof1400@gmail.com (Krzysztof Żelazny)</author>
       <pubDate>Sun, 09 Apr 2017 23:42:17 +0200</pubDate>
       <guid>https://nabijaczleweli.xyz/kaschism/works/milletcake.html</guid>
+      <source url="https://nabijaczleweli.xyz/kaschism/feed.xml">kaschism</source>
+    </item>
+
+    <item>
+      <title>Sushi po Polsku — nabijaczleweli@gmail.com (nabijaczleweli), stanislaw@gorski.be (Stanisław Górski), and krzysztof1400@gmail.com (Krzysztof Żelazny)</title>
+      <description>BOILERPLATE(Sushi po Polsku, Sushi po Polsku [PL], CUSTOM_BOOK_URL_SETTER_SCRIPT(document.URL.replace(/\.html$/, &quot;&quot;)) PAGE_BREAK_STYLE)
+
+&lt;style&gt;
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+	padding-left: 1.25em;
+}
+&lt;/style&gt;
+
+
+&lt;center&gt;&lt;h1&gt;Sushi po polsku – suszi&lt;/h1&gt;&lt;/center&gt;
+&lt;!-- ePub title: &quot;Suszi wietrzne - ingrediencje&quot; --&gt;
+
+&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;sushi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+
+&lt;h3 id=&quot;maki-ingredients&quot; class=&quot;new-page&quot;&gt;Składniki suszi wietrznego&lt;/h3&gt;
+
+&lt;div class=&quot;writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+Do przygotowania pysznego wietrznego wariantu Sushi po Polsku potrzebujemy:
+&lt;ul&gt;
+	&lt;li&gt;
+		Szklanki kaszy gryczanej,
+		&lt;ul&gt;
+			&lt;li&gt;Łyżeczka soli,&lt;/li&gt;
+			&lt;li&gt;3 łyżki ciekłego tłuszczu.&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;Jednej rolki śledzia rollmopsa albo po kaszebsku,&lt;/li&gt;
+	&lt;li&gt;Jednego ogórka kiszonego,&lt;/li&gt;
+	&lt;li&gt;Kilku chrupiących liści sałaty.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- ePub title: &quot;Suszi wietrzne - przygotowanie&quot; --&gt;
+
+&lt;h3 id=&quot;maki-prep&quot; class=&quot;new-page&quot;&gt;Przygotowanie suszi wietrznego&lt;/h3&gt;
+
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Gotujemy 2 szklanki wody z tłuszczem i solą, po czem dorzucamy kaszy, mieszając;
+gotujemy następne 15 minut na &quot;mniejszym gazie&quot;, po czem odstawiamy na kolejne 10, coby resztę wciągła.
+Odcedzamy i mamy w tenż sposób ugotowaną kaszę. Jako, iże suszi spożywa się na zimno, rekomendujemy odczekanie paru chwil, coby ostygła.
+&lt;/p&gt;
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Śledzia tniemy na paski ok. 15x4, ogórki na prostopadłościany o podobnych wymiarach (grubość śledzia dyktuje trzeci wymiar ogórków).
+Sałatę możemy pozostawić domyślną ili odciąć jej fragment bliższy główki, jeno część depresją dolinowatą będącą ostawiając.
+&lt;/p&gt;
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Następnie wsypujemy kaszę na sałatę, tworząc równą pokrywę grubości ~7mm, lecz nie za szeroko, coby nie zdominowała ona naszego pysznego suszi.
+Uważając na estetykę kompozycji dodajemy na środku zwertykalizowanego śledzia i ogórka w z grubsza równych ilościach tak,
+żeby wystawały one ~połowicznie z podstawy kaszowej.
+&lt;/p&gt;
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Doprawiamy do smaku i delektujemy się pysznym, zdrowym i kaszystycznym produktem :)
+&lt;/p&gt;
+&lt;!-- ePub title: &quot;Suszi trzymane - ingrediencje&quot; --&gt;
+
+&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;sushi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+
+&lt;h3 id=&quot;nigiri-ingredients&quot; class=&quot;new-page&quot;&gt;Składniki suszi trzymanego&lt;/h3&gt;
+
+&lt;div class=&quot;writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+Do przygotowania pysznego trzymanego wariantu Sushi po Polsku potrzebujemy:
+&lt;ul&gt;
+	&lt;li&gt;
+		Szklanki kaszy gryczanej,
+		&lt;ul&gt;
+			&lt;li&gt;Łyżeczka soli,&lt;/li&gt;
+			&lt;li&gt;3 łyżki ciekłego tłuszczu.&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;Płaty śledziowe,&lt;/li&gt;
+	&lt;li&gt;Po 5ml musztardy ostrej.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- ePub title: &quot;Suszi trzymane - przygotowanie&quot; --&gt;
+
+&lt;h3 id=&quot;nigiri-prep&quot; class=&quot;new-page&quot;&gt;Przygotowanie suszi trzymanego&lt;/h3&gt;
+
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Gotujemy 2 szklanki wody z tłuszczem i solą, po czem dorzucamy kaszy, mieszając;
+gotujemy następne 25 minut na &quot;mniejszym gazie&quot;, po czem zmniejszamy do oporu (bez wyłączania) i redukujemy resztę wody do zera.
+Sprawiamy w ten sposób, że wszystko, co zostało wygotowane z kaszy do niej wróci, zapewniając lepkość.
+Po kompletnej redukcji układamy z kaszy walce ~⌀35 l60-80 od spodu spłaszczone —
+dzięki lepkości pozostałej z redukcji powinny one zachować integralność strukturalną.
+&lt;/p&gt;
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Bierzemy płat śledziowy, nakładamy musztardę punktowo centralnie od spodu, po czem przykładamy i delikatnie dociskamy go do walca z kaszy.
+&lt;/p&gt;
+&lt;p class=&quot;writing&quot;&gt;
+&amp;emsp;Doprawiamy do smaku i delektujemy się pysznym, zdrowym i kaszystycznym produktem :)
+&lt;/p&gt;
+&lt;!-- ePub title: &quot;Przyprawy&quot; --&gt;
+
+&lt;h3 id=&quot;spices&quot; class=&quot;new-page&quot;&gt;Przyprawy&lt;/h3&gt;
+
+&lt;div class=&quot;writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+Do doprawienia wszech wariantów suszi użyć można:
+&lt;ul&gt;
+	&lt;li&gt;Keczupu w ramach ogólnego smakopoprawiacza,&lt;/li&gt;
+	&lt;li&gt;Musztardy rosyjskiej albo sarepskiej coby dodać ostrości.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+      <author>nabijaczleweli@gmail.com (nabijaczleweli), stanislaw@gorski.be (Stanisław Górski), and krzysztof1400@gmail.com (Krzysztof Żelazny)</author>
+      <pubDate>Mon, 10 Apr 2017 23:24:31 +0200</pubDate>
+      <guid>https://nabijaczleweli.xyz/kaschism/works/sushi.html</guid>
       <source url="https://nabijaczleweli.xyz/kaschism/feed.xml">kaschism</source>
     </item>
   </channel>
