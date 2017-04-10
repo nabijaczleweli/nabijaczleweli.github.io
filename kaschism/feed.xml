@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Mon, 10 Apr 2017 01:05:56 +0000
+      Mon, 10 Apr 2017 21:27:16 +0000
     </pubDate>
     <lastBuildDate>
-      Mon, 10 Apr 2017 01:05:56 +0000
+      Mon, 10 Apr 2017 21:27:16 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -31,7 +31,7 @@
       <description>&lt;center&gt;&lt;h1&gt;Sernik jaglany&lt;/h1&gt;&lt;/center&gt;
 &lt;!-- ePub title: &quot;Pan Jaglak&quot; --&gt;
 
-&lt;h3 id=&quot;pan_jaglak&quot;&gt;Pan Jaglak – autor&lt;/h3&gt;
+&lt;h3 id=&quot;pan_jaglak&quot; class=&quot;new-page&quot;&gt;Pan Jaglak – autor&lt;/h3&gt;
 
 &lt;p class=&quot;writing&quot;&gt;
 Opisując dowolną zbiorowość ludzką nie należy pominąć postaci wybitnych, przyczyniających się do powstania i rozwoju zbiorowości.
@@ -50,7 +50,7 @@ Ku popularyzacji kaszystycznej sztuki kulinarnej poniżej zamieszczam przepis na
 &lt;/p&gt;
 &lt;!-- ePub title: &quot;Ingrediencje&quot; --&gt;
 
-&lt;h3 id=&quot;ingredients&quot;&gt;Składniki&lt;/h3&gt;
+&lt;h3 id=&quot;ingredients&quot; class=&quot;new-page&quot;&gt;Składniki&lt;/h3&gt;
 
 &lt;div class=&quot;writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -88,7 +88,7 @@ Spód:
 &lt;/div&gt;
 &lt;!-- ePub title: &quot;Przygotowanie&quot; --&gt;
 
-&lt;h3 id=&quot;prep&quot;&gt;Przygotowanie&lt;/h3&gt;
+&lt;h3 id=&quot;prep&quot; class=&quot;new-page&quot;&gt;Przygotowanie&lt;/h3&gt;
 
 &lt;div class=&quot;writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
