@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Tue, 11 Apr 2017 20:39:57 +0000
+      Thu, 13 Apr 2017 15:53:39 +0000
     </pubDate>
     <lastBuildDate>
-      Tue, 11 Apr 2017 20:39:57 +0000
+      Thu, 13 Apr 2017 15:53:39 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -532,7 +532,7 @@ We are the &lt;em&gt;last&lt;/em&gt; line of defence from &lt;strong&gt;&lt;em&g
 
     <item>
       <title>Sushi po Polsku — nabijaczleweli@gmail.com (nabijaczleweli), stanislaw@gorski.be (Stanisław Górski), and krzysztof1400@gmail.com (Krzysztof Żelazny)</title>
-      <description>BOILERPLATE(Sushi po Polsku, Sushi po Polsku [PL], CUSTOM_BOOK_URL_SETTER_SCRIPT(document.URL.replace(/\.html$/, &quot;&quot;)) PAGE_BREAK_STYLE)
+      <description>BOILERPLATE(Sushi po Polsku, Sushi po Polsku [PL], CUSTOM_BOOK_URL_SETTER_SCRIPT(document.URL.replace(/\.html$/, &quot;&quot;)) PAGE_BREAK_STYLE WORD_COUNT_SCRIPT)
 
 &lt;style&gt;
 ul, ol {
