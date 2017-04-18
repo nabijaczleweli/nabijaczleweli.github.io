@@ -30,7 +30,7 @@ after_success:
       git config --global user.email "nabijaczleweli@gmail.com";
       git config --global user.name "Nabijaczleweli Autouploader Bot";
       git config --global push.default simple;
-      git add .;
+      git add -A .;
       git commit -F ../DOC_UPDATE_MSG;
       git push;
       popd;
