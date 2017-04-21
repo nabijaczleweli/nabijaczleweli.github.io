@@ -29,13 +29,15 @@
   BOOK_URL_SETTER_SCRIPT
 
 
-#define WORD_COUNTER_END()                            \
+#define _WORD_COUNTER_END(...)                        \
     <span id="wordcount_wrapper" class="hidden">      \
       <hr />                                          \
       <span id="word_count">0</span> words,           \
-      <span id="syllable_count">0</span> syllables,   \
+      __VA_ARGS__                                     \
       <span id="character_count">0</span> characters. \
     </span>
+#define WORD_COUNTER_END() _WORD_COUNTER_END(<span id="syllable_count">0</span> syllables,)
+#define WORD_COUNTER_END_NON_ENGLISH() _WORD_COUNTER_END()
 
 #define WRITING_CUSTOM_NAME_END(what)        \
     <hr />                                   \

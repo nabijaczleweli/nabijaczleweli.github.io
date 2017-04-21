@@ -34,6 +34,7 @@ Things I handwrote and then transcribed, because I like laborious work:
   <li><a href="writing/każdy_koniec_to_nowy_początek/">"Każdy koniec to nowy początek"</a> [PL] — wherein sociological (r)evolutions happen
                                                                                                   and we're<!--'--> there to observe it;
                                                                                                   ~31.03.2016.</li>
+  <li><a href="writing/moments/">"A Widow's Trace"</a> — Overwatch smut, enter at own risk; ~10-20.03.2017.</li>
 </ul>
 
 <p>

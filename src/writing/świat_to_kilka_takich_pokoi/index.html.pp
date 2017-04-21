@@ -24,6 +24,6 @@ BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], WOR
 #include "book.html"
 
 
-WORD_COUNTER_END()
+WORD_COUNTER_END_NON_ENGLISH()
 WRITING_END()
 BOILERPLATE_END()
