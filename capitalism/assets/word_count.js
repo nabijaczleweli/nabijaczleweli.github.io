@@ -1,8 +1,8 @@
 window.addEventListener("load", function() {
 	// Based on kourge.net/projects/regexp-unicode-block
-	// Check for Latin, Latin-1 Supplement, Latin Extended-{A,B} and Cyrillic word characters
-	const WORD_REGEX = /((?:\w|[\u0080-\u024F\u0400-\u04FF])+)/gu;
-	const CHAR_REGEX = /(?:\w|[\u0080-\u024F\u0400-\u04FF])/gu;
+	// Check for Latin, Latin-1 Supplement, Latin Extended-{A,B}, IPA Extensions and Cyrillic word characters
+	const WORD_REGEX = /((?:\w|[\u0080-\u02AF\u0400-\u04FF])+)/gu;
+	const CHAR_REGEX = /(?:\w|[\u0080-\u02AF\u0400-\u04FF])/gu;
 
 	const writings = document.getElementsByClassName("writing");
 	const word_count = document.getElementById("word_count");
