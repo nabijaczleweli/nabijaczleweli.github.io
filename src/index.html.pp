@@ -14,13 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "fontawesome.h"
 
 
-#define DOC(name, cratename, cratename_code, ...)                                                                           \
+#define USER_DOC(user, name, cratename, cratename_code, ...)                                                                \
 <li>                                                                                                                        \
-  <a href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/nabijaczleweli/name/doc/cratename_code/index.html)><samp>name</samp></a> \
-  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/name)>FA(github)</a>                                          \
+  <a href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/user/name/doc/cratename_code/index.html)><samp>name</samp></a> \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FA(github)</a>                                          \
   <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                             \
   — __VA_ARGS__                                                                                                             \
-</li>                                                                                                                       \
+</li>
+
+#define DOC(name, cratename, cratename_code, ...) USER_DOC(nabijaczleweli, name, cratename, cratename_code, __VA_ARGS__)
 
 
 BOILERPLATE(main(), Landing page for things)
@@ -68,6 +70,8 @@ Documentation for my various projects:
 	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(mandalas-rs, mandalas, mandalas,
 	    A mandala generator using Tonči Juričev-Grgin's<!--'--> method)
+	DOC(rfsapi-rs, rfsapi, rfsapi,
+	    Raw Filesystem API for Rust -- enable simpler browsing with ease)
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
 	DOC(termimage, termimage, termimage,
@@ -83,6 +87,8 @@ Documentation for my various projects:
 	    Rust crate for parsing and writing the PLS playlist format)
 	DOC(md6-rs, md6, md6,
 	    Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
+	USER_DOC(thecoshman, doh, doh, doh,
+	         D'<!--'-->Oh - Directories Over HTTP)
 </ul>
 
 
