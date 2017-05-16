@@ -39,7 +39,11 @@ Things I handwrote and then transcribed, because I like laborious work:
 </ul>
 
 <p>
-	<a href="writing_prompts">Writing prompts</a> done by me.
+	Some <a href="writing_prompts">writing prompts</a> done by me.
+</p>
+
+<p>
+	Various things that are technically <a href="poetry">poetry</a>, depending on whom you ask.
 </p>
 
 <p>

@@ -1,11 +1,11 @@
 @media all and (min-device-width: 400px) and (max-device-width: 800px) {
-	p {
+	div, p {
 		max-width: 51.25%;
 	}
 }
 
 @media all and (min-device-width: 800px) {
-	p {
+	div, p {
 		max-width: 25.625%;
 	}
 }
