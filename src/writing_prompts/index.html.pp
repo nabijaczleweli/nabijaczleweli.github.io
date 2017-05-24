@@ -14,11 +14,11 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define WP_RAW(story_semiurl, post_id, title, ...)                                                   \
-<li>                                                                                                 \
-  <a href=STR(story_semiurl.html)>title</a>                                                          \
-  <a href=STR(httpsCOLON_SLASH_SLASHwww.reddit.com/r/WritingPrompts/comments/post_id)>FA(reddit)</a> \
-  __VA_ARGS__                                                                                        \
+#define WP_RAW(story_semiurl, post_id, title, ...)                                                         \
+<li>                                                                                                       \
+  <a href=STR(story_semiurl.html)>title</a>                                                                \
+  <a href=STR(httpsCOLON_SLASH_SLASHwww.reddit.com/r/WritingPrompts/comments/post_id)>FA(reddit-alien)</a> \
+  __VA_ARGS__                                                                                              \
 </li>
 
 #define WP(story_semiurl, post_id, title, ...) WP_RAW(story_semiurl, post_id, title, — __VA_ARGS__)
