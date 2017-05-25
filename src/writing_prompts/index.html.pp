@@ -14,16 +14,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
+#define WP(story_semiurl, post_id, title, ...) WP_RAW(story_semiurl, post_id, title, — __VA_ARGS__)
+#define WP_IP(story_semiurl, post_id, title, img_address) WP_RAW(story_semiurl, post_id, title, <a href=STR(httpsCOLON_SLASH_SLASH##img_address)>FA(image)</a>)
 #define WP_RAW(story_semiurl, post_id, title, ...)                                                         \
 <li>                                                                                                       \
   <a href=STR(story_semiurl.html)>title</a>                                                                \
   <a href=STR(httpsCOLON_SLASH_SLASHwww.reddit.com/r/WritingPrompts/comments/post_id)>FA(reddit-alien)</a> \
   __VA_ARGS__                                                                                              \
 </li>
-
-#define WP(story_semiurl, post_id, title, ...) WP_RAW(story_semiurl, post_id, title, — __VA_ARGS__)
-
-#define WP_IP(story_semiurl, post_id, title, img_address) WP_RAW(story_semiurl, post_id, title, <a href=STR(httpsCOLON_SLASH_SLASH##img_address)>FA(image)</a>)
 
 
 BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to /r/WritingPrompts, BOOK_URL_SETTER_SCRIPT)

@@ -16,11 +16,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define RSS_PUB_DATE Mon, 06 Jun 2016 23:40:31 +0200
 #define SOFT_BR --><br /><!--
 #define SOFT_EMSP -->&emsp;<!--
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
+#include "../preface.html"
 #include "book.html"
 
 
