@@ -47,6 +47,10 @@ Things I handwrote and then transcribed, because I like laborious work:
 </p>
 
 <p>
+	Some pretty (? or so I hope) things I made with <a href="maths">maths</a>.
+</p>
+
+<p>
 	The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
 </p>
 
