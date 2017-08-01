@@ -1,0 +1,4 @@
+[submodule "ext/gen-epub-book"]
+	path = ext/gen-epub-book
+	url = https://github.com/nabijaczleweli/gen-epub-book
+	branch = v2.0.0

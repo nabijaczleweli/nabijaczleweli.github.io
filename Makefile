@@ -46,6 +46,7 @@ AWK := awk
 SED := sed
 CPP := cpp
 CALIBRE_CONVERT := ebook-convert
+GEN_EPUB_BOOK := ext/gen-epub-book/gen-epub-book.awk
 OUTDIR := out/
 
 PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
@@ -62,7 +63,7 @@ clean :
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
-books : gen-epub-book.awk $(patsubst src/%.epupp,$(OUTDIR)%.epub,$(BOOK_SOURCES)) $(patsubst src/%.epupp,$(OUTDIR)%.mobi,$(BOOK_SOURCES))
+books : $(GEN_EPUB_BOOK) $(patsubst src/%.epupp,$(OUTDIR)%.epub,$(BOOK_SOURCES)) $(patsubst src/%.epupp,$(OUTDIR)%.mobi,$(BOOK_SOURCES))
 rss : $(OUTDIR)feed.xml
 
 
@@ -76,7 +77,7 @@ $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
 	cd $(dir $<) && $(CPP) $(notdir $<) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$<\"" $(ADDITIONAL_TRAVIS_ARGS) | sed -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--[[:space:]'\"]*-->//g" > $(CURDIR)/$@
 
-$(OUTDIR)%.epub : gen-epub-book.awk src/%.epupp
+$(OUTDIR)%.epub : $(GEN_EPUB_BOOK) src/%.epupp
 	@mkdir -p $(dir $@)
 	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
 
