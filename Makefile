@@ -75,7 +75,7 @@ $(OUTDIR)feed.xml : gen-feed.awk $(PREPROCESS_SOURCES)
 # `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
-	cd $(dir $<) && $(CPP) $(notdir $<) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$<\"" $(ADDITIONAL_TRAVIS_ARGS) | sed -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--[[:space:]'\"]*-->//g" > $(CURDIR)/$@
+	cd $(dir $<) && $(CPP) $(notdir $<) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$<\"" $(ADDITIONAL_TRAVIS_ARGS) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--[[:space:]'\"]*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s/[[:space:]]+^/\\n/g" > $(CURDIR)/$@
 
 $(OUTDIR)%.epub : $(GEN_EPUB_BOOK) src/%.epupp
 	@mkdir -p $(dir $@)
