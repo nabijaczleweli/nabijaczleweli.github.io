@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Sat, 24 Dec 2016 02:04:36 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(The-less, Write a story without using the word "the" - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "theless.html"

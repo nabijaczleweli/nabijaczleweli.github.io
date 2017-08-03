@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Thu, 29 Dec 2016 15:37:19 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(Cucumber Dog, Cucumber Dog - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "green_ass_dog.html"

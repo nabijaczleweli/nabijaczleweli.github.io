@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Mon, 26 Dec 2016 02:01:20 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(No gifts this year, No gifts this year - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "dead_santa.html"

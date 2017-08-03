@@ -21,6 +21,11 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
+<style>
+#include "../indent.css"
+</style>
+
+
 #include "../preface.html"
 #include "book.html"
 

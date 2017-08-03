@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Sun, 08 Jan 2017 04:00:46 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(Degenerate Watch, Degenerate Watch - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "degenerate.html"

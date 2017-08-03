@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Thu, 29 Dec 2016 21:51:50 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(Get up，soldier, Get up，soldier - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "not_dead_yet.html"

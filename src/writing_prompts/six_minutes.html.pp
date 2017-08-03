@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Wed, 28 Dec 2016 01:54:52 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(Six Minutes, Six Minutes - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "six_minutes.html"

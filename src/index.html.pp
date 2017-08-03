@@ -43,10 +43,6 @@ Things I handwrote and then transcribed, because I like laborious work:
 </p>
 
 <p>
-	Various things that are technically <a href="poetry">poetry</a>, depending on whom you ask.
-</p>
-
-<p>
 	Some pretty (? or so I hope) things I made with <a href="maths">maths</a>.
 </p>
 

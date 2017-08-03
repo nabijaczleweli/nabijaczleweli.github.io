@@ -1,6 +1,10 @@
 Name: Świat to kilka takich pokoi
+
+Include: indent.css
+
 Content: preface.html
 Content: świat_to_kilka_takich_pokoi/book.html
+
 Author: Jędrzej Aleksander Łopaciński
 Date: 2016-03-06T11:41:53+02:00
 Language: pl

@@ -14,9 +14,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Sat, 31 Dec 2016 18:30:49 +0100
+#define EBOOK_ONLY(...)
 
 
 BOILERPLATE(Utopian Assassin, Utopian Assassin - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+
+
+<style>
+#include "../writing/indent.css"
+</style>
 
 
 #include "trucks_a_cash.html"
