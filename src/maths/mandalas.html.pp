@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define SCANS_CSS_LINK    <link href="/capitalism/assets/scan.css" rel="stylesheet" />
 #define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/capitalism/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
-                                  src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=/capitalism/assets/MathJax-config.js"></script>
+                                  src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/capitalism/assets/MathJax-config.js"></script>
 BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
 
 

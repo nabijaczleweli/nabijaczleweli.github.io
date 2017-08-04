@@ -64,22 +64,22 @@
     <meta name="theme-color" content="#ffffff">
 
 
-#define BOILERPLATE(pagename, description, ...)                                                                           \
-<!DOCTYPE html>                                                                                            FORCED_NEWLINE \
-<html lang="en">                                                                                           FORCED_NEWLINE \
-  <head>                                                                                                   FORCED_NEWLINE \
-    <meta charset="utf-8">                                                                                 FORCED_NEWLINE \
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">                                                  FORCED_NEWLINE \
-    <meta name="viewport" content="width=device-width,initial-scale=1">                                    FORCED_NEWLINE \
-    <meta name="author" content="nabijaczleweli">                                                          FORCED_NEWLINE \
-    <meta name="description" content=#description>                                                         FORCED_NEWLINE \
-    <title>pagename — nabijaczleweli</title>                                                               FORCED_NEWLINE \
-                                                                                                           FORCED_NEWLINE \
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> FORCED_NEWLINE \
-    <link href="/capitalism/assets/common.css" rel="stylesheet" />                                         FORCED_NEWLINE \
-    ICONS_HEADER_PART                                                                                      FORCED_NEWLINE \
-    __VA_ARGS__                                                                                            FORCED_NEWLINE \
-  </head>                                                                                                  FORCED_NEWLINE \
+#define BOILERPLATE(pagename, description, ...)                                                                               \
+<!DOCTYPE html>                                                                                                FORCED_NEWLINE \
+<html lang="en">                                                                                               FORCED_NEWLINE \
+  <head>                                                                                                       FORCED_NEWLINE \
+    <meta charset="utf-8">                                                                                     FORCED_NEWLINE \
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">                                                      FORCED_NEWLINE \
+    <meta name="viewport" content="width=device-width,initial-scale=1">                                        FORCED_NEWLINE \
+    <meta name="author" content="nabijaczleweli">                                                              FORCED_NEWLINE \
+    <meta name="description" content=#description>                                                             FORCED_NEWLINE \
+    <title>pagename — nabijaczleweli</title>                                                                   FORCED_NEWLINE \
+                                                                                                               FORCED_NEWLINE \
+    <link href="//cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css" rel="stylesheet" /> FORCED_NEWLINE \
+    <link href="/capitalism/assets/common.css" rel="stylesheet" />                                             FORCED_NEWLINE \
+    ICONS_HEADER_PART                                                                                          FORCED_NEWLINE \
+    __VA_ARGS__                                                                                                FORCED_NEWLINE \
+  </head>                                                                                                      FORCED_NEWLINE \
   <body>
 
 #define BOILERPLATE_END()                                                                                                                                 \
