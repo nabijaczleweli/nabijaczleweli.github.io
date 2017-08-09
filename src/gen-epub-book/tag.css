@@ -1,0 +1,11 @@
+.tag {
+	border-radius: calc(1em / 3);
+	padding-left: calc(1em / 10);
+	padding-right: calc(1em / 10);
+	padding-top: calc(1em / 20);
+	padding-bottom: calc(1em / 20);
+}
+
+.tag-white {
+	background-color: #eee;
+}

@@ -1,0 +1,9 @@
+th, td {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	text-align: left;
+}
+
+td {
+	font-size: calc(9em / 10);
+}

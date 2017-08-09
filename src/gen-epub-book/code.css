@@ -1,0 +1,50 @@
+.highlit-code {
+	border-radius: calc(1em / 3);
+
+	padding-left: calc(1em / 5);
+	padding-right: calc(1em / 5);
+	padding-top: calc(1em / 4);
+	padding-bottom: calc(1em / 4);
+
+	margin-top: 0;
+	margin-bottom: 0;
+
+	color: #e6e1dc;
+	background-color: #232323;
+}
+
+
+.highlit-code .code-line {
+	width: 100%;
+	display: inline-block;
+  transition: all 0.25s;
+}
+
+.highlit-code .code-line:hover {
+	background-color: #333435;
+}
+
+
+.highlit-code .punctuation {
+	color: #cc7833;
+}
+
+.highlit-code .comment {
+	color: #bc9458;
+}
+
+.highlit-code .keyword {
+	color: #da4939;
+}
+
+.highlit-code .verb {
+	color: #e8bf6a;
+}
+
+.highlit-code .string {
+	color: #a5c261;
+}
+
+.highlit-code .variable {
+	color: #d0d0ff;
+}
