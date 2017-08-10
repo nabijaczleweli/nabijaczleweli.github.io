@@ -15,12 +15,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../devicon.h"
 
 
-#define GEB(...)          <code class="nowrap">gen-epub-book​__VA_ARGS__</code>
+#define GEB(...)          <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>
 #define GEB_HREF(...)     href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
 #define GEB_CDN_HREF(...) href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
 
 #define CSPAN(clas, ...)        <span class=STR(clas)>__VA_ARGS__</span>
 #define HIGHLIT_CODE(clas, ...) <kbd class="highlit-code nowrap">CSPAN(clas,__VA_ARGS__)</kbd>
+
+#define HEADING_LINK(id)                  <a class="hash-link" href=STR(HASH##id)>HASH</a>
+#define HEADING_S(level, hid, style, ...) <h##level id=STR(hid) class="smallcaps" style>HEADING_LINK(hid) __VA_ARGS__</h##level>
+#define HEADING(level, id, ...)           HEADING_S(level, id, , __VA_ARGS__)
 
 #define AWK_ICON(...)                                                                                               \
 	<span style="font-weight: normal;" class="icon nowrap" __VA_ARGS__>                                FORCED_NEWLINE \
@@ -55,9 +59,9 @@ BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-bo
 
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
 <p></p>
-<h1 id="main">GEB()</h1>
+HEADING(1, main, GEB())
 
-<h2 id="description" class="smallcaps" style="margin-top: initial;">Description</h2>
+HEADING_S(2, description, style="margin-top: initial;", Description)
 
 <p id="description-paragraph">
 GEB() is a loose-file–to–ePub conversion tool for everyone not afraid of not using Word.
@@ -78,7 +82,7 @@ GEB() is free software, available under the MIT open source license.
 See the <a href="#license">License</a> heading for more information.
 </p>
 
-<h2 id="discussion" class="smallcaps">Discussion</h2>
+HEADING(2, discussion, Discussion)
 
 <p id="discussion-paragraph">
 Any topic related to GEB() – both the descriptor syntax and the software –
@@ -95,7 +99,7 @@ I'<!--'-->ve also set up a <a GEB_HREF(/issues/1)>GitHub issue for simple questi
 I hope that GitHub issue system will lead to good ideas for future improvements to GEB().
 </p>
 
-<h2 id="variants" class="smallcaps">Variants</h2>
+HEADING(2, variants, Variants)
 
 <div id="variants-paragraph">
 <p></p>
@@ -120,14 +124,14 @@ Here is the current list of GEB()'s variations, chronologically: <!--'-->
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
 </p>
 
-<h2 id="installation-and-requirements" class="smallcaps">Installation and requirements</h2>
+HEADING(2, installation-and-requirements, Installation and requirements)
 
 <p id="installation-and-requirements-paragraph">
 All compiled variations of GEB() are stand-alone in that they don't depend on any files other than themselves. <!--'-->
 Some of them, however, require additional software during building/installation.
 </p>
 
-<h3 id="installation-and-requirements-awk">GEB(.awk)</h3>
+HEADING(3, installation-and-requirements-awk, GEB(.awk))
 
 <p id="installation-and-requirements-awk-paragraph">
 GEB(.awk) does not require compilation, which makes it require external binary tools.
@@ -192,7 +196,7 @@ Drop a question over at one of the issue trackers –
 	<a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon">DEVICON(html5)</a>!
 </p>
 
-<h3 id="installation-and-requirements-rs">GEB(.rs)</h3>
+HEADING(3, installation-and-requirements-rs, GEB(.rs))
 
 <div id="installation-and-requirements-rs-paragraph">
 <p></p>
@@ -207,7 +211,7 @@ The resulting executable is fully stand-alone and available in your HIGHLIT_CODE
 </p>
 </div>
 
-<h3 id="installation-and-requirements-cpp">GEB(.cpp)</h3>
+HEADING(3, installation-and-requirements-cpp, GEB(.cpp))
 
 <div id="installation-and-requirements-cpp-paragraph">
 <p></p>
@@ -223,13 +227,13 @@ The resulting executable is fully stand-alone.
 <p></p>
 </div>
 
-<h3 id="installation-and-requirements-scala">GEB(.scala)</h3>
+HEADING(3, installation-and-requirements-scala, GEB(.scala))
 
 <p id="installation-and-requirements-scala-paragraph">
 To build, GEB(.scala) requires the <a href="//scala-lang.org">Scala</a> compiler.
 The resulting `.jar`s depend only on the Scala runtime library.
 
-<h2 id="configuration">Configuration</h3>
+HEADING(2, configuration, Configuration)
 
 <p id="configuration-paragraph">
 The same descriptor syntax put into any GEB() variant with any options passed shall produce (functionally) the same e-book
@@ -237,7 +241,7 @@ The same descriptor syntax put into any GEB() variant with any options passed sh
 Subheadings include links to manpages with more information.
 </p>
 
-<h3 id="configuration-awk">GEB(.awk) <a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)>FA(book)</a></h3>
+HEADING(3, configuration-awk, GEB(.awk) <a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)>FA(book)</a>)
 
 <p id="configuration-awk-paragraph">
 A HIGHLIT_CODE(variable, temp) variable passed from the commandline containing the desired temporary directory (usually HIGHLIT_CODE(variable, $TEMP)).
@@ -246,19 +250,20 @@ This usually yields for
 	full argument.
 </p>
 
-<h3 id="configuration-rs">GEB(.rs) <a GEB_CDN_HREF(/man/gen-epub-book.rs.1.html)>FA(book)</a></h3>
+HEADING(3, configuration-rs, GEB(.rs) <a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)>FA(book)</a>)
 
 <p id="configuration-rs-paragraph">
 The `--verbose` flag makes GEB(.rs) print information about what it's currently doing. <!--'-->
 </p>
 
-<h2 id="getting-the-gist"><span class="smallcaps">Getting the gist of</span> GEB()<span class="smallcaps">'s descriptor syntax</span></h2> <!--'-->
+<h2 id="getting-the-gist">HEADING_LINK(getting-the-gist)
+                          <span class="smallcaps">Getting the gist of</span> GEB()<span class="smallcaps">'s descriptor syntax</span></h2> <!--'-->
 
 <p id="getting-the-gist-paragraph">
 This section offers a complete, detailed documentation for the descriptor syntax.
 </p>
 
-<h3 id="getting-the-gist-overview" class="smallcaps">Overview</h3>
+HEADING(3, getting-the-gist-overview, Overview)
 
 <div id="getting-the-gist-overview-paragraph">
 <p></p>
@@ -277,7 +282,8 @@ HIGHLIT_CODE(keyword, key) is any sequence of characters up to the HIGHLIT_CODE(
 </p>
 
 <p id="getting-the-gist-overview-elements-separator-paragraph">
-HIGHLIT_CODE(punctuation, separator) is just HIGHLIT_CODE(punctuation, :), unless the <a href="#features-custom-separator">custom separator</a> feature is enabled.
+HIGHLIT_CODE(punctuation, separator) is just HIGHLIT_CODE(punctuation, :),
+	unless the <a href="#features-custom-separator">custom separator</a> feature is enabled.
 </p>
 
 <p id="getting-the-gist-overview-elements-value-paragraph">
@@ -314,7 +320,7 @@ CSPAN(comment, ^ missing key)
 <p></p>
 </div>
 
-<h3 id="getting-the-gist-elements" class="smallcaps">Elements</h3>
+HEADING(3, getting-the-gist-elements, Elements)
 
 <p id="getting-the-gist-elements-paragraph">
 Each non-HIGHLIT_CODE(comment, comment) <em>line</em> forms is an <em>element</em> –
@@ -444,13 +450,13 @@ In addition, all HIGHLIT_CODE(keyword, Content) files are checked for the
 	the name to give the content in the Table of Contents.
 </p>
 
-<h2 id="features" class="smallcaps">Features</h2>
+HEADING(2, features, Features)
 
 <p id="features-paragraph">
 Features are extensions to the GEB() descriptor syntax, modifying the behaviour and validity of some <em>lines</em>.
 </p>
 
-<h3 id="features-custom-separator" class="smallcaps">Custom separator</h3>
+HEADING(3, features-custom-separator, Custom separator)
 
 <div id="features-custom-separator-paragraph">
 <p></p>
@@ -465,7 +471,7 @@ CSPAN(keyword, Name) CSPAN(punctuation, INCREDIBLE COMMUNISM) CSPAN(string, The 
 <p></p>
 </div>
 
-<h3 id="features-free-date-format" class="smallcaps">Free date format</h3>
+HEADING(3, features-free-date-format, Free date format)
 
 <div id="features-free-date-format-paragraph">
 <p></p>
@@ -479,7 +485,7 @@ CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 1503177751)
 <p></p>
 </div>
 
-<h3 id="features-include-dirs" class="smallcaps">`-I`nclude dirs</h3>
+HEADING(3, features-include-dirs, `-I`nclude dirs)
 
 <p id="features-include-dirs-paragraph">
 This feature allows for specifying more root directories for finding local files.
@@ -525,7 +531,7 @@ book.epub
 <p></p>
 </div>
 
-<h3 id="features-support" class="smallcaps">Support table</h3>
+HEADING(3, features-support, Support table)
 
 <table id="features-support-table">
 	<tr><th></th>
@@ -550,7 +556,7 @@ book.epub
 	    <td>No.</td></tr>
 </table>
 
-<h2 id="license" class="smallcaps">License</h2>
+HEADING(2, license, License)
 
 <pre id="license-paragraph">
 The MIT License (MIT)
@@ -576,8 +582,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre>
 
-
-<h2 id="afterword" class="smallcaps">Afterword</h2>
+HEADING(2, afterword, Afterword)
 
 <p id="afterword-paragraph">
 Thank you for making it this far.
