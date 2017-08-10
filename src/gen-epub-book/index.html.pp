@@ -415,6 +415,7 @@ The following table enumerates supported HIGHLIT_CODE(keyword, key)s and their p
 
 <p id="getting-the-gist-naming-paths-paragraph">
 All local paths are relative to the descriptor file.
+This can be changed with the <a href="#features-include-dirs">`-I`nclude dirs</a> feature.
 </p>
 
 <div id="getting-the-gist-naming-local-paragraph">
@@ -478,6 +479,52 @@ CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 1503177751)
 <p></p>
 </div>
 
+<h3 id="features-include-dirs" class="smallcaps">`-I`nclude dirs</h3>
+
+<p id="features-include-dirs-paragraph">
+This feature allows for specifying more root directories for finding local files.
+</p>
+
+<p id="features-include-dirs-variants-paragraph">
+An include directory can be <em>named</em> or <em>unnamed</em>, which affects their packed name:
+	<em>unnamed</em> directories act transparently – their packed name is exactly as specified and transformed, while
+	<em>named</em> directories put their files in a dedicated subdirectory named themafter, then their specified path transformed.
+</p>
+
+<div id="features-include-dirs-examples-paragraph">
+<p></p>
+For example, given the following directory tree:
+<kbd><pre class="highlit-code numberise">
+special_book
+├── rendered
+| ​ ​ ​└── output
+| ​ ​ ​ ​ ​ ​ ​├── intro.html
+| ​ ​ ​ ​ ​ ​ ​├── main.html
+| ​ ​ ​ ​ ​ ​ ​└── ending.html
+├── previews
+| ​ ​ ​└── generated
+| ​ ​ ​ ​ ​ ​ ​└── out
+| ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├── intro.html
+| ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └── main.html
+└── gep
+ ​ ​ ​ ​└── special
+ ​ ​ ​ ​ ​ ​ ​ ​├── intro.html
+ ​ ​ ​ ​ ​ ​ ​ ​└── book.epupp
+</pre></kbd>
+If `gep/special/book.epupp`, specifying "intro.html", "main.html" and "ending.html" is built with
+	<em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then
+	<em>unnamed</em> include dir pointing at `rendered/output`,
+	the content inside would be laid out as follows:
+<kbd><pre class="highlit-code numberise">
+book.epub
+├── intro.html ​ ​ ​ ​ ​CSPAN(comment, # From gep/special/)
+├── previews
+| ​ ​ ​└── main.html ​ ​CSPAN(comment, # From previews/generated/out/)
+└── ending.html ​ ​ ​ ​CSPAN(comment, # From rendered/output/)
+</pre></kbd>
+<p></p>
+</div>
+
 <h3 id="features-support" class="smallcaps">Support table</h3>
 
 <table id="features-support-table">
@@ -492,6 +539,11 @@ CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 1503177751)
 	    <td>No.</td>
 	    <td>No.</td></tr>
 	<tr><td>Free date format</td>
+	    <td>No.</td>
+	    <td>No.</td>
+	    <td>No.</td>
+	    <td>No.</td></tr>
+	<tr><td>`-I`nclude dirs</td>
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td>
