@@ -62,7 +62,7 @@ ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*
 .PHONY : all clean assets books preprocess rss
 
 
-all : assets books preprocess rss
+all : assets preprocess books rss
 
 clean :
 	rm -rf $(OUTDIR)
