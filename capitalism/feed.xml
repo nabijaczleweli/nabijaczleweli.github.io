@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 16 Aug 2017 18:35:13 +0000
+      Wed, 16 Aug 2017 22:16:43 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 16 Aug 2017 18:35:13 +0000
+      Wed, 16 Aug 2017 22:16:43 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -28,17 +28,26 @@
 
     <item>
       <title>Mandalas — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;div&gt;
-&lt;p&gt;
-&amp;emsp;The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
+      <description>BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
+
+&lt;style&gt;
+.indented {
+	text-indent: 1em;
+}
+&lt;/style&gt;
+
+
+&lt;div&gt;
+&lt;p class=&quot;indented&quot;&gt;
+The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
 &lt;/p&gt;
 &lt;a href=&quot;/capitalism/assets/mandalas/900x900.png&quot; target=&quot;_blank&quot;&gt;
 	&lt;img src=&quot;/capitalism/assets/mandalas/900x900.png&quot; class=&quot;bigimage&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;small&gt;Click for big version.&lt;/small&gt;
-&lt;p&gt;
-&amp;emsp;It uses a very simple process (see &lt;a href=&quot;#show-scans&quot;&gt;below&lt;/a&gt;), which can be used in any
-	&amp;lt;AsciiMath&amp;gt;beta in NN ∖ {0}&amp;lt;/AsciiMath&amp;gt;-dimensional space, so, as an example, the same-sized mandala,
-	but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):&lt;!--'--&gt;
+&lt;p class=&quot;indented&quot;&gt;
+It uses a very simple process (see &lt;a href=&quot;#show-scans&quot;&gt;below&lt;/a&gt;), which can be used in any
+MATHJAX(beta in NN ∖ {0})-dimensional space, so, as an example, the same-sized mandala,
+but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):&lt;!--'--&gt;
 &lt;/p&gt;
 &amp;emsp;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; frameborder=&quot;0&quot; allowfullscreen
               style=&quot;max-width: 100%;&quot;&gt;
@@ -50,10 +59,10 @@
 &lt;strong&gt;&quot;How long does rendering a thing such as this take?&quot;&lt;/strong&gt;, one might ask.
 	Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
   one need run the algorithm body many times, an acceptable amount I found was:&lt;br /&gt;
-	&amp;lt;AsciiMath&amp;gt;log(n_max) = |~log(prod_i size_i)~| + 1&amp;lt;/AsciiMath&amp;gt;,&lt;br /&gt;
+	MATHJAX(log(n_max) = |~log(prod_i size_i)~| + 1),&lt;br /&gt;
 	(which still doesn't perfectly fill more complex corner setups), so for&lt;!--'--&gt;
-	&amp;lt;AsciiMath&amp;gt;size = [900, 900, 900] =&gt; n_max = 10^10&amp;lt;/AsciiMath&amp;gt;,
-	which takes about &amp;lt;AsciiMath&amp;gt;7 1/2 h&amp;lt;/AsciiMath&amp;gt; on my PC if I try to not cook it (and I generally do).
+	MATHJAX(size = [900, 900, 900] =&gt; n_max = 10^10),
+	which takes about MATHJAX(7 1/2 h) on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -61,7 +70,7 @@ A different question to be asked is
 	&lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
 	&lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
 	&lt;strong&gt;play around with the code that generates these myself?&quot;&lt;/strong&gt;.&lt;!--&quot;--&gt;
-	Well, thanks to the wonders of the &amp;lt;AsciiMath&amp;gt;fr &quot;Internet&quot;&amp;lt;/AsciiMath&amp;gt;, you can! In most-to-least bad order:&lt;br /&gt;
+	Well, thanks to the wonders of the MATHJAX(fr &quot;Internet&quot;), you can! In most-to-least bad order:&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s an early version in C++,&lt;!--'--&gt;
 	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.&lt;!--'--&gt;&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;/capitalism/assets/mandalas/mandalas-js.zip&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s the very first version, in JavaScript,&lt;!--'--&gt;
@@ -78,7 +87,8 @@ A different question to be asked is
 	&lt;em&gt;really&lt;/em&gt; big in a couple places.&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//youtu.be/D2Xk6O9x-yk&amp;list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
 	a playlist with some 3-dimensional mandalas and classical music atop.&lt;br /&gt;
-&amp;emsp;I'm out of things to put here, because I'm not a cool person &lt;em&gt;en general&lt;/em&gt;. &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;&lt;br /&gt;
+&amp;emsp;I'm out of things to put here, because I'm not a cool person &lt;em&gt;en general&lt;/em&gt;.
+	&lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;&lt;br /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -86,16 +96,41 @@ A different question to be asked is
 	then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
 &lt;/p&gt;
 
-&lt;div&gt;
-&lt;p&gt;
-&lt;span id=&quot;show-scans&quot;&gt;Show algorithm scans (warning: bloody humongous).&lt;/span&gt;
-&lt;/p&gt;
+&lt;div class=&quot;indented&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version:&lt;br /&gt; &lt;!--'--&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&amp;emsp;MATHJAX(sf &quot;Mandala Generation - Ton&quot; hat(sf &quot;c&quot;) sf &quot;i Juri&quot; hat(sf &quot;c&quot;) sf &quot;ev-Grgin&quot;)&lt;br /&gt;
+&lt;br /&gt;
+MATHJAX(alpha in NN ∖ {0} - sf &quot;colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)&quot;)&lt;br /&gt;
+MATHJAX(c nn (: 3, +oo ) - sf &quot;amount of corners in c-gonal mandala base&quot;)&lt;br /&gt;
+MATHJAX(C - sf &quot;set of point&quot; - sf &quot;corner points of c-gon mandala base&quot;)&lt;br /&gt;
+MATHJAX(bar C = c)&lt;br /&gt;
+&lt;br /&gt;
+MATHJAX(n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;)&lt;br /&gt;
+MATHJAX(d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;)&lt;br /&gt;
+&lt;br /&gt;
+MATHJAX(P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|)&lt;br /&gt;
+&lt;br /&gt;
+MATHJAX(e_m = |P_n P_(n-m)|)&lt;br /&gt;
+MATHJAX(E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :))))&lt;br /&gt;
+&lt;br /&gt;
+MATHJAX(colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha}))&lt;br /&gt;
+MATHJAX(or)&lt;br /&gt;
+MATHJAX(f = max E)&lt;br /&gt;
+MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha)&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+(I'm not a real mathematician, so it's most likely not done properly.)&lt;br /&gt;
+&lt;br /&gt;
+And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned handdrawn version with examples (warning, &lt;em&gt;very&lt;/em&gt; big, expand at own risk): &lt;!--'--&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;div id=&quot;scans&quot; class=&quot;hidden&quot;&gt;
 &amp;emsp;&lt;a href=&quot;/capitalism/assets/mandalas/scan-page1.png&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/capitalism/assets/mandalas/scan-page1.png&quot; class=&quot;scan&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;/capitalism/assets/mandalas/scan-page2.png&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/capitalism/assets/mandalas/scan-page2.png&quot; class=&quot;scan&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
 &amp;emsp;&lt;small&gt;Click for big version.&lt;/small&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>

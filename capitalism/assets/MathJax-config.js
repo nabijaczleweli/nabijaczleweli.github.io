@@ -2,8 +2,8 @@ MathJax.Hub.Config({
   jax: ["input/AsciiMath", "output/HTML-CSS"],
   extensions: ["asciimath2jax.js"],
   asciimath2jax: {
-    delimiters: [['<AsciiMath>', '</AsciiMath>']],
-    preview: "[math]"
+    delimiters: [['[​[​', '​]​]']],
+    preview: "[[math]]"
   },
   AsciiMath: {
     decimal: "."
