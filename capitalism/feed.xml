@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Tue, 15 Aug 2017 09:10:24 +0000
+      Wed, 16 Aug 2017 16:06:40 +0000
     </pubDate>
     <lastBuildDate>
-      Tue, 15 Aug 2017 09:10:24 +0000
+      Wed, 16 Aug 2017 16:06:40 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -179,7 +179,16 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;Preface&lt;/title&gt;
+		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+&lt;!--)--&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;Preface&lt;br /&gt;&lt;!--)--&gt;
 
@@ -191,6 +200,11 @@ and as such is kept in the same state as it was in&lt;!--SOFT_BR--&gt;
 when it was turned over to a potential third-party at&lt;!--SOFT_BR--&gt;
 that specific time, in that specific context.
 &lt;/p&gt;
+
+&lt;!--EBOOK_ONLY(--&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)--&gt;
 &lt;!-- ePub title: &quot;Każdy koniec to nowy początek&quot; --&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
@@ -661,6 +675,142 @@ Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
     </item>
 
     <item>
+      <title>The Taste of MI — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>&lt;style&gt;
+.ss {
+	text-decoration: line-through;
+}
+
+.ruby {
+	/* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
+	color: #E0115F;
+}
+
+.smol {
+#ifndef EBOOK
+	font-size-adjust: 0.333333333333333;
+#else
+	font-size: 0.75em;
+#endif
+}
+.continued {
+	margin-bottom: 0;
+}
+
+.continuing {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.continuation {
+	margin-top: 0;
+}
+.indented {
+	text-indent: 1em;
+}
+&lt;/style&gt;
+
+
+#define __LICENSE                                                  \
+// nabijaczleweli.xyz (c) by nabijaczleweli                        \
+​//                                                                 \
+// nabijaczleweli.xyz is licensed under a                          \
+// Creative Commons Attribution 4.0 International License.         \
+​//                                                                 \
+// You should have received a copy of the license along with this  \
+// work. If not, see &lt;https://creativecommons.org/licenses/by/4.0/&gt;.
+#undef __LICENSE
+
+
+#pragma once
+
+
+#ifdef EBOOK
+
+#define CSS_EBOOK_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
+#define CSS_HTML_ONLY(...)
+
+#define EBOOK_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
+#define HTML_ONLY(...)
+
+#else
+
+#define CSS_EBOOK_ONLY(...)
+#define CSS_HTML_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
+
+#define EBOOK_ONLY(...)
+#define HTML_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
+
+#endif
+#define __LICENSE                                                  \
+// nabijaczleweli.xyz (c) by nabijaczleweli                        \
+​//                                                                 \
+// nabijaczleweli.xyz is licensed under a                          \
+// Creative Commons Attribution 4.0 International License.         \
+​//                                                                 \
+// You should have received a copy of the license along with this  \
+// work. If not, see &lt;https://creativecommons.org/licenses/by/4.0/&gt;.
+#undef __LICENSE
+
+
+#pragma once
+
+
+#ifdef EBOOK
+
+#define CSS_EBOOK_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
+#define CSS_HTML_ONLY(...)
+
+#define EBOOK_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
+#define HTML_ONLY(...)
+
+#else
+
+#define CSS_EBOOK_ONLY(...)
+#define CSS_HTML_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
+
+#define EBOOK_ONLY(...)
+#define HTML_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
+
+#endif
+&lt;p&gt;​&lt;/p&gt;
+&lt;!--EBOOK_ONLY(--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+&lt;!--)--&gt;
+
+&lt;p class=&quot;indented&quot;&gt;
+This is a work of fiction.
+Names, characters, businesses, places, events and incidents
+	are either the products of the author's imagination or used in a fictitious manner. &lt;!--'--&gt;
+Any resemblance to actual persons, living or dead, or actual events is purely coincidental.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Ten utwór jest utworem fikcji.
+Imiona, postacie, biznesy, miejsca, zdarzenia i wypadki
+	są wynikiem wyobraźni autora lub są użyte w sposób fikcyjny.
+Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
+	lub zdarzeń rzeczywistych jest czysto przypadkowe.
+&lt;/p&gt;
+
+&lt;!--EBOOK_ONLY(--&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)--&gt;
+</description>
+      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
+      <pubDate><!--#define RSS_PUB_DATE--></pubDate>
+      <guid>https://nabijaczleweli.xyz/capitalism/writing/the_taste_of_mi/</guid>
+      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+    </item>
+
+    <item>
       <title>Świat to kilka takich pokoi — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style&gt;
 .indented {
@@ -671,7 +821,16 @@ Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
 
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;Preface&lt;/title&gt;
+		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+&lt;!--)--&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;Preface&lt;br /&gt;&lt;!--)--&gt;
 
@@ -683,6 +842,11 @@ and as such is kept in the same state as it was in&lt;!--SOFT_BR--&gt;
 when it was turned over to a potential third-party at&lt;!--SOFT_BR--&gt;
 that specific time, in that specific context.
 &lt;/p&gt;
+
+&lt;!--EBOOK_ONLY(--&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)--&gt;
 &lt;!-- ePub title: &quot;Świat to kilka takich pokoi&quot; --&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
