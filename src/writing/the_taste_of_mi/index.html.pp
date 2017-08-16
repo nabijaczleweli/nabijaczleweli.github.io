@@ -1,0 +1,40 @@
+<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+
+
+#include "../../common.h"
+#include "../variable-selectors.h"
+#include "../writing.h"
+
+
+<!--#define RSS_PUB_DATE-->
+
+
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" /> FORCED_NEWLINE \
+                    <link href="MathJax-font.css" rel="stylesheet" />            FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet" />
+BOILERPLATE(The Taste of MI, The Taste of MI, WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT STYLESHEETS)
+
+
+<style>
+#include "effects.css.eppe"
+#include "spacing.css"
+#include "../indent.css"
+</style>
+
+
+#include "book.html.eppe"
+<p>​</p>
+#include "disclaimer.html"
+
+
+WORD_COUNTER_END_NON_ENGLISH()
+WRITING_END()
+BOILERPLATE_END()

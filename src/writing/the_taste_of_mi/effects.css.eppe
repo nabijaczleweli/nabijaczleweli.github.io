@@ -1,0 +1,16 @@
+.ss {
+	text-decoration: line-through;
+}
+
+.ruby {
+	/* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
+	color: #E0115F;
+}
+
+.smol {
+#ifndef EBOOK
+	font-size-adjust: 0.333333333333333;
+#else
+	font-size: 0.75em;
+#endif
+}

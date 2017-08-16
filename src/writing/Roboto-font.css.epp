@@ -1,0 +1,49 @@
+SLASH_ASTERIX
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+*/
+
+
+#include "variable-selectors.h"
+#include "../util.h"
+
+
+#define ROBOTO_FACE(name, variant, dirname, lstyle, cstyle, wght)                                                         FORCED_NEWLINE \
+	@font-face {                                                                                                            FORCED_NEWLINE \
+		font-family: STR(name);                                                                                               FORCED_NEWLINE \
+		font-style: lstyle;                                                                                                   FORCED_NEWLINE \
+		font-weight: wght;                                                                                                    FORCED_NEWLINE \
+		src: local(STR(name cstyle)), local(STR(Roboto##variant-cstyle)),                                                     FORCED_NEWLINE \
+		     SLASH_ASTERIX CSS_HTML_ONLY(                                                                                                    \
+		       url(STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/google/fonts/97f2a0e2/apache/dirname/Roboto##variant-cstyle.ttf))                \
+		     ) SLASH_ASTERIX */                                                                                                              \
+		     SLASH_ASTERIX CSS_EBOOK_ONLY(url(STR(Roboto##variant-cstyle.ttf))) SLASH_ASTERIX */                                             \
+		     format("truetype");                                                                                              FORCED_NEWLINE \
+	}
+
+
+ROBOTO_FACE(Roboto Slab, Slab, robotoslab, normal, Regular, normal)
+ROBOTO_FACE(Roboto Slab, Slab, robotoslab, normal, Bold,    bold  )
+ROBOTO_FACE(Roboto     ,     , roboto,     normal, Regular, normal)
+ROBOTO_FACE(Roboto     ,     , roboto,     italic, Italic,  normal)
+
+
+.roboto {
+	font-family: "Roboto Slab", serif;
+	/* Normalise to "default" size (22px->19px) */
+	font-size: calc(19em / 22);
+}
+
+.roboto-unscale {
+	/* Normalise to "normal" size (e.g. for other fornts) ((22px->19px)->22px) */
+	font-size: calc(22em / 19);
+}
+
+.roboto-em {
+	font-family: "Roboto", serif;
+}

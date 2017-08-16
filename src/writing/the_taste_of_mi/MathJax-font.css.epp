@@ -1,0 +1,42 @@
+SLASH_ASTERIX
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+*/
+
+
+#include "../variable-selectors.h"
+#include "../../util.h"
+
+
+#define MATHJAX_FACE(fam, variant, ...)                                                                                                                \
+	@font-face {                                                                                                                          FORCED_NEWLINE \
+		font-family: STR(fam);                                                                                                              FORCED_NEWLINE \
+		__VA_ARGS__                                                                                                                         FORCED_NEWLINE \
+		src:                                                                                                                                               \
+			SLASH_ASTERIX CSS_HTML_ONLY(                                                                                                                     \
+			url(STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/fam-variant.woff)) format("woff"),    FORCED_NEWLINE \
+				url(STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/fam-variant.otf)) format("opentype")                \
+			) SLASH_ASTERIX */                                                                                                                               \
+			SLASH_ASTERIX CSS_EBOOK_ONLY( SLASH_ASTERIX */                                                                                                   \
+			url(STR(fam-variant.woff)) format("woff"),                                                                                                       \
+				url(STR(fam-variant.otf)) format("opentype") ) SLASH_ASTERIX */ ;                                                               FORCED_NEWLINE \
+	}
+
+
+MATHJAX_FACE(MathJax_Math, Italic, font-style: italic;)
+MATHJAX_FACE(MathJax_Main, Regular,)
+
+
+.math-font-normal {
+	font-family: "MathJax_Main";
+}
+
+.math-font-italic {
+	font-family: "MathJax_Math";
+	font-style: italic;
+}

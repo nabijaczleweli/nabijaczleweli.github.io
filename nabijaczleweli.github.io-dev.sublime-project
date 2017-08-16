@@ -2,25 +2,23 @@
 	"build_systems":
 	[
 		{
-			"working_dir": "$project_path",
 			"cmd": "make -j10",
-			"name": "Build nabijaczleweli.github.io"
+			"name": "Build nabijaczleweli.github.io",
+			"working_dir": "$project_path"
 		},
 		{
-			"working_dir": "$project_path",
 			"cmd": "make -j10 clean",
-			"name": "Clean nabijaczleweli.github.io"
+			"name": "Clean nabijaczleweli.github.io",
+			"working_dir": "$project_path"
 		}
 	],
 	"folders":
 	[
 		{
-			"follow_symlinks": true,
 			"name": "Source",
 			"path": "src"
 		},
 		{
-			"follow_symlinks": true,
 			"name": "Assets",
 			"path": "assets"
 		},
@@ -35,7 +33,6 @@
 			[
 				"*"
 			],
-			"follow_symlinks": true,
 			"name": "Build files",
 			"path": "."
 		}
