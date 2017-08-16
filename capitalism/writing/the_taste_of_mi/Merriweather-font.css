@@ -1,0 +1,27 @@
+/*
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+*/
+
+
+       
+       
+
+
+@font-face {
+ font-family: "Merriweather";
+ src: local("Merriweather Regular"), local("Merriweather-Regular"),
+       url("https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf") 
+      
+      format("truetype");
+}
+
+
+.merriweather {
+ font-family: 'Merriweather', serif;
+}
