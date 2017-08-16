@@ -21,7 +21,7 @@ BOILERPLATE(The-less, Write a story without using the word "the" - writing promp
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

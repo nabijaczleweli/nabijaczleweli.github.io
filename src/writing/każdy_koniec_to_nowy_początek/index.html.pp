@@ -22,7 +22,7 @@ BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL
 
 
 <style>
-#include "../indent.css"
+#include "../../indent.css"
 </style>
 
 

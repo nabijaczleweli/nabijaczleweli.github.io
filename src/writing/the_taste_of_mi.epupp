@@ -1,6 +1,6 @@
 Name: The Taste of MI
 
-Include: indent.css
+Include: ../indent.css
 Include: ../../LICENSE-Roboto
 Include: ../../LICENSE-CREATIVE
 Include: ../../LICENSE-Merriweather

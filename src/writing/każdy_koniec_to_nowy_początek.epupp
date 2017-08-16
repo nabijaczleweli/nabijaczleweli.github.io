@@ -1,6 +1,6 @@
 Name: Każdy koniec to nowy początek
 
-Include: indent.css
+Include: ../indent.css
 
 Content: preface.html
 Content: każdy_koniec_to_nowy_początek/book.html

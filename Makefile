@@ -96,11 +96,11 @@ $(OUTDIR)%.epub : $(GEN_EPUB_BOOK) src/%.epupp
 	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
 
 $(OUTDIR)%.mobi : $(OUTDIR)%.epub
-	@mkdir -p $(dir $(TEMP_DIR)/$(subst $(OUTDIR),,$^))
+	@mkdir -p $(dir $@)
 	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
 
 $(OUTDIR)%.pdf : $(OUTDIR)%.epub
-	@mkdir -p $(dir $(TEMP_DIR)/$(subst $(OUTDIR),,$^))
+	@mkdir -p $(dir $@)
 	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
 
 $(OUTDIR)assets/% : assets/%

@@ -21,7 +21,7 @@ BOILERPLATE(Cucumber Dog, Cucumber Dog - writing prompt, COLUMN_CSS_LINK WORD_CO
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

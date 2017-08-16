@@ -21,7 +21,7 @@ BOILERPLATE(Six Minutes, Six Minutes - writing prompt, COLUMN_CSS_LINK WORD_COUN
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

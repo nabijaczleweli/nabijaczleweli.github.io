@@ -21,7 +21,7 @@ BOILERPLATE(No gifts this year, No gifts this year - writing prompt, COLUMN_CSS_
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

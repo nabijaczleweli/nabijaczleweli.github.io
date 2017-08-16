@@ -21,7 +21,7 @@ BOILERPLATE(The Last Eye, The Last Eye - writing prompt, COLUMN_CSS_LINK WORD_CO
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

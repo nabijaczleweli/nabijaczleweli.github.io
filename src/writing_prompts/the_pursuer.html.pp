@@ -20,7 +20,7 @@ BOILERPLATE(The Pursuer, The Pursuer - writing prompt, COLUMN_CSS_LINK WORD_COUN
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

@@ -23,7 +23,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 

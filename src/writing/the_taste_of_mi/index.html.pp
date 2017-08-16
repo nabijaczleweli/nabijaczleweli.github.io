@@ -27,7 +27,7 @@ BOILERPLATE(The Taste of MI, The Taste of MI, WORD_COUNT_SCRIPT BOOK_URL_SETTER_
 <style>
 #include "effects.css.eppe"
 #include "spacing.css"
-#include "../indent.css"
+#include "../../indent.css"
 </style>
 
 

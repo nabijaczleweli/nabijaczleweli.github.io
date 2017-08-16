@@ -21,7 +21,7 @@ BOILERPLATE(Degenerate Watch, Degenerate Watch - writing prompt, COLUMN_CSS_LINK
 
 
 <style>
-#include "../writing/indent.css"
+#include "../indent.css"
 </style>
 
 
