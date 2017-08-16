@@ -1,4 +1,5 @@
 #include "../variable-selectors.h"
+#include "../../util.h"
 
 
 <!--EBOOK_ONLY(<!--
@@ -12,26 +13,39 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 -->)-->
 
 
+#define HASH #
+
+#ifndef EBOOK
+#define NOTE_PREFIX
+#else
+#define NOTE_PREFIX out-writing-the_taste_of_mi-endnotes.html
+#endif
+
+#define NOTE(num) <a href=STR(NOTE_PREFIX/**/HASH/**/endnote-num)><sup class="math-font-normal">num</sup></a>
+
+
 <!-- ePub title: "The Taste of MI" -->
 
 
 <!--EBOOK_ONLY(<!---->
-<!DOCTYPE html>                                                                       FORCED_NEWLINE
-<html>                                                                                FORCED_NEWLINE
-	<head>                                                                              FORCED_NEWLINE
-		<title>The Taste of MI</title>                                                    FORCED_NEWLINE
-		<meta name="author" content="nabijaczleweli">                                     FORCED_NEWLINE
-		<link href="out-writing-the_taste_of_mi-ebook-MathJax-font.css" rel="stylesheet"> FORCED_NEWLINE
-		<link href="out-writing-ebook-Roboto-font.css" rel="stylesheet">                  FORCED_NEWLINE
-		<link href="the_taste_of_mi-spacing.css" rel="stylesheet">                        FORCED_NEWLINE
-		<link href="out-writing-the_taste_of_mi-effects.css" rel="stylesheet">            FORCED_NEWLINE
-		<link href="indent.css" rel="stylesheet">                                         FORCED_NEWLINE
-	</head>                                                                             FORCED_NEWLINE
-	<body>                                                                              FORCED_NEWLINE
+<!DOCTYPE html>                                                                            FORCED_NEWLINE
+<html>                                                                                     FORCED_NEWLINE
+	<head>                                                                                   FORCED_NEWLINE
+		<title>The Taste of MI</title>                                                         FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                          FORCED_NEWLINE
+		<link href="out-writing-the_taste_of_mi-ebook-MathJax-font.css" rel="stylesheet">      FORCED_NEWLINE
+		<link href="out-writing-ebook-Roboto-font.css" rel="stylesheet">                       FORCED_NEWLINE
+		<link href="out-writing-the_taste_of_mi-ebook-Merriweather-font.css" rel="stylesheet"> FORCED_NEWLINE
+		<link href="the_taste_of_mi-spacing.css" rel="stylesheet">                             FORCED_NEWLINE
+		<link href="out-writing-the_taste_of_mi-effects.css" rel="stylesheet">                 FORCED_NEWLINE
+		<link href="indent.css" rel="stylesheet">                                              FORCED_NEWLINE
+	</head>                                                                                  FORCED_NEWLINE
+	<body>                                                                                   FORCED_NEWLINE
 <!--)-->
 
 
-<center><h2 style="font-family: serif;">The Taste of MI</h2></center>
+<p></p>
+<center><h2 class="merriweather">The Taste of MI</h2></center>
 
 <!-- Page 01/12 -->
 <p class="writing indented roboto">                                                          <!-- * ctx: Ася - 24 lata (8 lat po kl. 1 liceum) -->
@@ -199,10 +213,10 @@ Asia obróciła się, i nadstawiając pół ucha próbowała połączyć słucha
 Lucynki z dyskretną observacją Emilii, ale nie udało
 jej się, bo…
 </p>
-<p class="writing indented roboto continuing">
+<p class="writing indented roboto continuing" id="hejka-paragraph">
 — Hejka! — Towarzyszka Lucynkowej niedoli odezwała się
 pierwsza, a z takim metaforycznym bananem, że niemożliwym
-było nieodebranie nieskończonych pokładów pozytywizmu<!--*-->                                <!-- * to jest ruch renesansowy, co prawda, ale… -->
+było nieodebranie nieskończonych pokładów pozytywizmu​NOTE(1)
 
 <!-- Page 05/12 -->
 emanującego z każdego poru jej skóry; Asia bezoporowo
@@ -212,14 +226,14 @@ poddała się jego działaniu.
 — Cześć! — Zaczęła, promieniejąc coraz bardziej —                                            <!-- ~9.7.17 -> -->
 Więc…
 </p>
-<p class="writing indented roboto continuation">
+<p class="writing indented roboto continuation" id="ruby-paragraph">
 Reszta rozmowy nie zapisała się w żaden sposób w
 jej pamięci, bo następnym, co pamiętała było wstawanie
 zza ławki i udawanie się w stronę wyjścia
 z resztą tłuszczy połączone z gorącem policzków
 niemającym wiele wspólnego z wysokostojącym wrześniowym
 słońcem. Jakby jej głowa gorącą nie była, zaczął kiełkować w
-niej plan, kryptonim „Ammo”<!--*-->, wraz z harmonogramem,                                   <!-- * Ammo, Amis, Amat -->
+niej plan, kryptonim „Amo”NOTE(2), wraz z harmonogramem,
 który w większości miejsc pobłyskiwał rubinowym <strong class="ruby">ASAP</strong>.
 <p class="writing indented roboto continued">
 A potem cały świat złożył się na dwa, na cztery, na osiem,
@@ -240,18 +254,18 @@ wpatrywałaby się w gwiazdy, gdyby nie parę warstw
 cegieł, papy i blachy. Z błąkającym się uśmiechem                                            <!-- * pl.wikipedia.org/wiki/Kamienica_(architektura) -->
 poddaje się napływającym obrazom. Wspomina.
 </p>
-<p class="writing indented roboto">
+<p class="writing indented roboto" id="stoned-paragraph">
 Ostry aromat płonącej sosny i ciche huczenie ognia uspokajało.
 A może to nie ogień huczał, tylko te dwa, trzy?, drinki
 
 <!-- Page 06/12 -->
 robiły swoje? Obraz co chwilę tracił ostrość, i, jak to
 właśnie zrobił, urywał się. („Tak się kończy zalewanie sobie płata
-skroniowego neuroinhibitorami…”<!--*-->)                                                     <!-- * płat skroniowy - formowanie pamięci długoterminowej -->
+skroniowego neuroinhibitorami…”NOTE(3))
 </p>
-<p class="writing indented roboto continued">
+<p class="writing indented roboto continued" id="asphalt-paragraph">
 Asfalt pod stopami. Czerwcowe słońce grzeje, ale nie tak
-bardzo jak wyczuwalna szóstym<!--*--> zmysłem obecność Emilii (wyczuwalna                    <!-- * ludzie mają zdecydowanie więcej zmysłów ale proverbium -->
+bardzo jak wyczuwalna szóstym zmysłem​NOTE(4) obecność Emilii (wyczuwalna
 większością innych zmysłów obecność lokalnego emola była
 pomijalna, lecz okazała się kluczowa w identyfikacji czasoprzestrzennej
 – ognisko częścioklasowe zwołane w celu celebracji zakończenia                               <!-- 15.07.17 -> -->
@@ -262,7 +276,7 @@ mimo, że wiedziała przecież, jak ta scena się rozegra). Zostawiły
 już za sobą większość paskudnych pseudowioskowych „posiadłości”,                             <!-- 17.07.17 -> -->
 i tylko zdezelowane <span class="roboto-em">Prawdziwe Wiejskie Domy™</span> malowniczo
 straszyły ubiegłowiecznymi wykuszami zza świerków, na któryżto widok
-<span class="roboto-em">Павлов</span><!--*-->owym gestem sięgnęła po aparat, którego tam nie <!-- * ru.wikipedia.org/wiki/Павлов,_Иван_Петрович -->
+<span class="roboto-em">Павлов</span>owym​NOTE(5) gestem sięgnęła po aparat, którego tam nie
 było (yeah, grupa mało trzeźwych nastolatków + sprzęt
 warty parę(naście) kilozłotych to mniej więcej tak dobry pomysł
 jak najeżdżanie Rosji w lecie bez uprzedniego adekwatnego
@@ -359,7 +373,7 @@ poważny jak, nie przymierzając, świeżo upieczony
 grabarz przymuszony do przeszukania trumny denata
 po „wypadku” z prasą do kształtek żelazowęglowych.
 </p>
-<p class="writing indented roboto continuing">
+<p class="writing indented roboto continuing" id="alexandrov-paragraph">
 Mrużąc powiekę (tą z drugiej strony,
 aż taka dobra nie była) szukała w pamięci i
 powietrzu kontekstu z hibiskusem w roli niepośledniej i/<!--
@@ -388,7 +402,7 @@ gramach etanolu na kilogram to tylko wołać chór                              
 <!-- Five lines taken up biscale drawing here. -->
 <!-- Five lines taken up biscale drawing here. -->
 <!-- Five lines taken up biscale drawing here. -->
-Aleksandrowa<!--*--> i certyfikaty lepić. Wszystkie,                                        <!-- * pl.wikipedia.org/wiki/Ch%C3%B3r_Aleksandrowa -->
+Aleksandrowa​NOTE(6) i certyfikaty lepić. Wszystkie,
 jednak, śmiechy, nawet te symptomatyczne
 w dziewiętnastym jeszcze wieku „histerii”,
 muszą się skończyć, więc, po osiągnięciu szczytu,
@@ -404,20 +418,20 @@ się wódą w wieku lat <span class="math-font-normal roboto-unscale">17</span> 
 <em class="roboto-em">yadda yadda yadda</em> jednym, ale intuicja psychologa drugim).
 </p>
 <p class="writing indented roboto continuing">
-— I za to cię, <span class="roboto-em">cholera</span><!--*-->, kocham. — Palnęła.           <!-- * „cholero”? -->
+— I za to cię, <span class="roboto-em">cholera</span>, kocham. — Palnęła.
 </p>
-<p class="writing indented roboto continuing">
+<p class="writing indented roboto continuing" id="memory-paragraph">
 — Za co? — Chociaż w sumie równie dobrze mogło było                                         <!-- 10.8.17 -> -->
-to być „Że co”, ale liczyła na pamięć natychmiastową                                        <!-- I mean en.wikipedia.org/wiki/Working_memory, is->? -->
-żeby się nie powtarzać (nomen omen nie przeszłoby jej to przez gardło).                     <!-- pl.wikipedia.org/wiki/Neurologia -->
-</p>                                                                                        <!--                       #Badanie_neurologiczne_obejmuje -->
+to być „Że co”, ale liczyła na pamięć natychmiastową​NOTE(7)
+żeby się nie powtarzać (nomen omen nie przeszłoby jej to przez gardło).
+</p>
 <p class="writing indented roboto continuing">
 — Za ten humor, no.
 </p>
-<p class="writing indented roboto continuation">
+<p class="writing indented roboto continuation" id="bessemer-paragraph">
 Emilia trawiła. I o ile przeważnie procesy trawienne
 nie są przewaćnie bardziej interesujące
-niż <span class="roboto-em">Proces Bessemera</span>, ale                                    <!-- en.wikipedia.org/wiki/Bessemer_process Konwertorowanie -->
+niż <span class="roboto-em">Proces Bessemera</span>NOTE(8), ale
 teraz trawiła uprzednią wymianę zdań, i,
 mimo, że na nią wychodzi(ło) te <span class="math-font-normal roboto-unscale">9</span>
 
@@ -425,7 +439,7 @@ mimo, że na nią wychodzi(ło) te <span class="math-font-normal roboto-unscale"
 procent więcej, to wychodziło jej to zdecydowanie za wolno, I już,
 kiedy Asia zaczęła dopuszczać
 do siebie myśl, że może kompletnie spieprzyła sprawę,
-Emi sprężyła się<!--*-->                                                                    <!-- * w sobie? -->
+Emi sprężyła się w sobie
 i, zdecydowanie tym razem za szybko, zamnęła dystans między
 ich wargami, zwiększyła między swoimi, i zwyczajnie
 ją wzięła pocałowała. Smakowała, hmmm, mlaskanie było
@@ -447,23 +461,23 @@ się z Sopotu po nocy – ot, wystawa jakich dużo.
 <p class="writing indented roboto continuation">
 Asia wzrusza ramionami i oddycha głęboko. Wspomina.
 </p>
-<p class="writing indented roboto">
+<p class="writing indented roboto" id="ian-morris-paragraph">
 Sewencja obrazów: Studniówka, wybory
 <span class="roboto-em">Jaśnie Oświeconego Z Bożego Nadania</span> (bo i o tym
 aspekcie bycia władcą absolutnym nie należy zapominać, bo
-jest on szczególnie ważny do jej utrzymania<!--*-->) <span class="roboto-em">Władcy         <!-- * odw. do Morrisa Iana -->
+jest on szczególnie ważny do jej utrzymania​NOTE(9)) <span class="roboto-em">Władcy
 Jedynego <span class="ss">Rzplitej Nam Drogiej Wielce</span> Balu
 Wielce Pięknego (Z Małżonką)</span> ze zdjęciem;
 taki sam szelmowski uśmiech, gdy
 ciągnie ją na wernisaż, taki
 z werwą, i adekwatnie, bo inaugurował wystawę
-„jednego z największych talentów nowożytności”<!--*-->                                      <!-- * za GW -->
+„jednego z największych talentów nowożytności”NOTE(10)
 (rozważania, której z nich trafiło sięlepiej, zostawiała
 
 <!-- Page 12/12 -->
-w.w. emolowi); oddanie do użytku jej praktyki<!--*--> psychologicznej;                      <!-- * chuj wiem o zawodzie psychologa -->
+w.w. emolowi); oddanie do użytku jej praktyki​NOTE(11) psychologicznej;
 mikrowystawa fotograficzna z jej
-„odważnymi prezentacjami klasycznych zagadnień”<!--*-->,                                    <!-- * cytat za GW -->
+„odważnymi prezentacjami klasycznych zagadnień”NOTE(10),
 co w pseudomowie paradziennikarskiej
 jest nulem werbalnym (i, w połączeniu z resztą
 artykułu, testamentem rażącej niekompetencji
@@ -494,11 +508,7 @@ Jednak z uśmiechem zasypia w objęciach
 Emilii, bo wie, że Emi, <em class="roboto-em">jej</em> Emi smakuje, jak nikt
 inny.
 </p>
-<br />
-<p class="roboto">
-30.06.2017-12.08.2017 Kraków–Wysowa-Zdrój–Παλαιό Τρίκερι–Βόλος–Grecka przestrzeń powietrzna<br />
-Jędrzej A. Łopaciński
-</p>
+<!-- One line taken up by dates and places here. -->
 
 <!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
                           ---------- ))-->
@@ -507,3 +517,8 @@ Jędrzej A. Łopaciński
 	</body>
 </html>
 <!--)​-->
+
+
+#undef HASH
+#undef NOTE_PREFIX
+#undef NOTE
