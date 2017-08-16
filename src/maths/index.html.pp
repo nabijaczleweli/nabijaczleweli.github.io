@@ -9,8 +9,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
-#include "../common.h"
 #include "../fontawesome.h"
+#include "../common.h"
 
 
 BOILERPLATE(Mathematics, Various mathematics-based things, <link href="/capitalism/assets/image-header.css" rel="stylesheet" />)

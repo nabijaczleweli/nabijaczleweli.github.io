@@ -15,6 +15,9 @@
 #include "util.h"
 
 
+#define FONTAWESOME_LINK <link href="//cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css" rel="stylesheet" />
+
+
 #define FA(iconname)            <i class=STR(fa fa-iconname)></i>
 #define FA_R90(iconname)        <i class=STR(fa fa-iconname fa-rotate-90)></i>
 #define FA_R180(iconname)       <i class=STR(fa fa-iconname fa-rotate-180)></i>

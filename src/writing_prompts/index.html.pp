@@ -9,9 +9,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
-#include "../common.h"
-#include "../fontawesome.h"
 #include "../writing/writing.h"
+#include "../fontawesome.h"
+#include "../common.h"
 
 
 #define WP(story_semiurl, post_id, title, ...) WP_RAW(story_semiurl, post_id, title, — __VA_ARGS__)

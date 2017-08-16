@@ -9,9 +9,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
-#include "util.h"
-#include "common.h"
 #include "fontawesome.h"
+#include "common.h"
+#include "util.h"
 
 
 #define DOC(name, cratename, cratename_code, ...) USER_DOC(nabijaczleweli, name, cratename, cratename_code, __VA_ARGS__)
