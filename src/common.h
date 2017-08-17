@@ -64,10 +64,6 @@
     <meta name="theme-color" content="#ffffff">
 
 
-#ifndef FONTAWESOME_LINK
-#define FONTAWESOME_LINK
-#endif
-
 #define BOILERPLATE(pagename, description, ...)                                         \
 <!DOCTYPE html>                                                          FORCED_NEWLINE \
 <html lang="en">                                                         FORCED_NEWLINE \
@@ -79,7 +75,6 @@
     <meta name="description" content=#description>                       FORCED_NEWLINE \
     <title>pagename — nabijaczleweli</title>                             FORCED_NEWLINE \
                                                                          FORCED_NEWLINE \
-    FONTAWESOME_LINK                                                     FORCED_NEWLINE \
     <link href="/capitalism/assets/common.css" rel="stylesheet" />       FORCED_NEWLINE \
     ICONS_HEADER_PART                                                    FORCED_NEWLINE \
     __VA_ARGS__                                                          FORCED_NEWLINE \

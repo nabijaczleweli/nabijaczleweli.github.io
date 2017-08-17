@@ -24,7 +24,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 </li>
 
 
-BOILERPLATE(main(), Landing page for things)
+BOILERPLATE(main(), Landing page for things, FONTAWESOME_LINK)
 
 
 Things I handwrote and then transcribed, because I like laborious work:

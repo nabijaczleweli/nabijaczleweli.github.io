@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define HTML_ONLY(...) -->__VA_ARGS__<!--
 
 
-BOILERPLATE(Poetry, Things technically poetic‚ depending whom you ask, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Poetry, Things technically poetic‚ depending whom you ask, FONTAWESOME_LINK COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 #include "intro.html"
