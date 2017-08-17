@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(Ghostly Lasers, Ghostly Lasers - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Ghostly Lasers, Ghostly Lasers - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 <style>

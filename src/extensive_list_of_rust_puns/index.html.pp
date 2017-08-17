@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming language)
+BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming language, en-US)
 
 
 Extensive list of <a href="//www.rust-lang.org">Rust</a> puns,

@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(A Widowꞌs Trace, A Widowꞌs Trace, WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(A Widowꞌs Trace, A Widowꞌs Trace, en-GB, WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 <style>

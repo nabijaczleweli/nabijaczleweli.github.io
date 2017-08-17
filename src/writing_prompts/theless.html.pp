@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(The-less, Write a story without using the word "the" - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(The-less, Write a story without using the word "the" - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 <style>

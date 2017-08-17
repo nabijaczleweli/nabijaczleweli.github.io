@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(End = Start, You must start and end by using the same sentence - writing prompt, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(End = Start, You must start and end by using the same sentence - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
 
 
 <style>

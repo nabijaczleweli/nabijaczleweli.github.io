@@ -24,7 +24,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 </li>
 
 
-BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to /r/WritingPrompts, FONTAWESOME_LINK BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Writing prompts, The result of boredom and semi-insomniac visits to /r/WritingPrompts, en-GB, FONTAWESOME_LINK BOOK_URL_SETTER_SCRIPT)
 
 
 List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> completed by me:

@@ -20,7 +20,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/capitalism/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
                                   src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/capitalism/assets/MathJax-config.js"></script>
-BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
+BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
 
 <style>
 #include "../indent.css"

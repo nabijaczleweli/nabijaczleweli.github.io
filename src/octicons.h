@@ -15,16 +15,11 @@
 #include "util.h"
 
 
-#define OCTICONS_SCRIPT      <script type="text/javascript" src="/capitalism/assets/octicons.js"></script>
-#define OCTICONS_LINK        <link href="/capitalism/assets/octicons.min.css" rel="stylesheet" /> FORCED_NEWLINE
+#define OCTICONS_SCRIPT      <script type="text/javascript" src="/capitalism/assets/octicons.js"></script> FORCED_NEWLINE
+#define OCTICONS_LINK        <link href="/capitalism/assets/octicons.min.css" rel="stylesheet" />          FORCED_NEWLINE
 #define OCTICONS_PLACEHOLDER <span class="hidden" id="octicons-placeholder"></span>
 #define OCTICONS_DATA OCTICONS_SCRIPT OCTICONS_LINK
 
-
-#define _OCTICON(hash, iconname, ...) \
-	<svg version="1.1" width="12" height="16" viewBox="0 0 12 16" class=STR(octicon octicon-iconname) __VA_ARGS__> \
-		<use xlink:href=STR(HASHiconname) /> \
-	</svg>
 
 #define CMT // D = only decorative
 #undef CMT  // "Note: to improve web accessibility, we recommend using aria-hidden="true" to hide icons used purely for decoration."
