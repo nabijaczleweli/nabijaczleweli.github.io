@@ -44,14 +44,16 @@ endif
 
 # Args: $<, $@, additional defines
 # `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
-preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$(1)\"" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/[[:space:]]+^/\\n/g" > $(CURDIR)/$(2)
+preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="\"$(1)\"" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/​FORCED_SPACER​//g" -e "s/HASH/\#/g" -e "s/[[:space:]]+^/\\n/g" > $(CURDIR)/$(2)
 
 AWK := awk
 SED := sed
 CPP := cpp
+NPM := npm
 CALIBRE_CONVERT := ebook-convert
 GEN_EPUB_BOOK := ext/gen-epub-book/gen-epub-book.awk
 OUTDIR := out/
+BLDDIR := build/
 
 PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
 EBOOK_PREPROCESS_SOURCES := $(sort $(wildcard src/*.eppe src/**/*.eppe src/**/**/*.eppe src/**/**/**/*.eppe))
@@ -59,24 +61,41 @@ COMBINED_PREPROCESS_SOURCES := $(sort $(wildcard src/*.epp src/**/*.epp src/**/*
 BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp))
 ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.*))
 
-.PHONY : all clean assets books preprocess rss
+.PHONY : all clean assets octicons books preprocess rss
 
 
-all : assets preprocess books rss
+all :  assets octicons preprocess books rss
 
 clean :
-	rm -rf $(OUTDIR)
+	rm -rf $(OUTDIR) $(BLDDIR)
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
+octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(OUTDIR)%,$(EBOOK_PREPROCESS_SOURCES)) $(patsubst src/%.epp,$(OUTDIR)%,$(COMBINED_PREPROCESS_SOURCES))
 books : $(GEN_EPUB_BOOK) $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(OUTDIR)$(l).epub $(OUTDIR)$(l).mobi $(OUTDIR)$(l).pdf)
 rss : $(OUTDIR)feed.xml
 
 
+$(BLDDIR)octicons/package.json : ext/octicons/package.json
+	@mkdir -p $(dir $@)
+	cp -r $(dir $^) $(abspath $(dir $@)..)/
+
+$(BLDDIR)octicons/build/octicons.min.css : $(BLDDIR)octicons/package.json
+	@mkdir -p $(dir $@)
+	cd $(dir $@) && $(NPM) install ..
+
+$(OUTDIR)assets/LICENSE-octicons : ext/octicons/LICENSE
+	@mkdir -p $(dir $@)
+	cp $^ $@
+
 $(OUTDIR)feed.xml : gen-feed.awk $(PREPROCESS_SOURCES)
 	@mkdir -p $(dir $@)
 	echo $(filter-out $<,$^) | $(SED) "s/ /\n/g" | $(AWK) -f $< -v awk="$(AWK)" > $@
 
+
+$(OUTDIR)assets/octicons/% : $(BLDDIR)octicons/build/octicons.min.css
+	@mkdir -p $(dir $@)
+	cp $(subst $(OUTDIR)assets/octicons,$(BLDDIR)octicons/build,$@) $@
 
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)

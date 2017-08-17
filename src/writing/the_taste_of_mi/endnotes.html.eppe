@@ -13,8 +13,6 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 -->)-->
 
 
-#define HASH #
-
 #ifndef EBOOK
 #define NOTE_PREFIX
 #else
@@ -114,6 +112,5 @@ NOTE(11, ian-morris) Praktyka psychologiczna –
 <!--)-->
 
 
-#undef HASH
 #undef NOTE_PREFIX
 #undef NOTE
