@@ -43,7 +43,8 @@
     <hr />                                       FORCED_NEWLINE \
     Get what in                                  FORCED_NEWLINE \
     <a href="#" id="epub_book_link">ePub</a>,    FORCED_NEWLINE \
-    <a href="#" id="mobi_book_link">MOBI</a>, or FORCED_NEWLINE \
+    <a href="#" id="mobi_book_link">MOBI</a>,    FORCED_NEWLINE \
+    <a href="#" id="azw3_book_link">AZW3</a>, or FORCED_NEWLINE \
     <a href="#" id="pdf_book_link">PDF</a>.
 
 #define WRITING_END() WRITING_CUSTOM_NAME_END(this)

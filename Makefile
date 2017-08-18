@@ -72,7 +72,7 @@ clean :
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(OUTDIR)%,$(EBOOK_PREPROCESS_SOURCES)) $(patsubst src/%.epp,$(OUTDIR)%,$(COMBINED_PREPROCESS_SOURCES))
-books : $(GEN_EPUB_BOOK) $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(OUTDIR)$(l).epub $(OUTDIR)$(l).mobi $(OUTDIR)$(l).pdf)
+books : $(GEN_EPUB_BOOK) $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
 
 
@@ -115,6 +115,10 @@ $(OUTDIR)%.epub : $(GEN_EPUB_BOOK) src/%.epupp
 	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
 
 $(OUTDIR)%.mobi : $(OUTDIR)%.epub
+	@mkdir -p $(dir $@)
+	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
+
+$(OUTDIR)%.azw3 : $(OUTDIR)%.epub
 	@mkdir -p $(dir $@)
 	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
 
