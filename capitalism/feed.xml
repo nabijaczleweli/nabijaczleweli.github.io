@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Fri, 18 Aug 2017 01:58:44 +0000
+      Fri, 18 Aug 2017 10:24:07 +0000
     </pubDate>
     <lastBuildDate>
-      Fri, 18 Aug 2017 01:58:44 +0000
+      Fri, 18 Aug 2017 10:24:07 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -712,10 +712,6 @@ Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
     <item>
       <title>The Taste of MI — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style&gt;
-.ss {
-	text-decoration: line-through;
-}
-
 .ruby {
 	/* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
 	color: #E0115F;
