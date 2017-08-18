@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-	const EXTENSIONS = ["epub", "mobi", "pdf"];
+	const EXTENSIONS = ["epub", "mobi", "azw3", "pdf"];
 	const URL_FN = window.custom_book_url || function() {
 		return document.URL.substr(0, document.URL.lastIndexOf('/'));
 	};

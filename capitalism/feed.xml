@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Thu, 17 Aug 2017 12:38:37 +0000
+      Fri, 18 Aug 2017 01:58:44 +0000
     </pubDate>
     <lastBuildDate>
-      Thu, 17 Aug 2017 12:38:37 +0000
+      Fri, 18 Aug 2017 01:58:44 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -28,7 +28,7 @@
 
     <item>
       <title>Mandalas — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
+      <description>BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
 
 &lt;style&gt;
 .indented {
@@ -872,7 +872,7 @@ Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
 #endif
 &lt;!--EBOOK_ONLY(--&gt;
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang=&quot;pl&quot;&gt;
 	&lt;head&gt;
 		&lt;title&gt;&lt;/title&gt;
 		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
@@ -884,9 +884,16 @@ Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
 &lt;!--)--&gt;
 
 
+&lt;style&gt;
+.nowrap {
+	white-space: nowrap;
+}
+&lt;/style&gt;
+
+
 &lt;p class=&quot;roboto&quot;&gt;
 30.06.2017-12.08.2017&lt;br /&gt;
-Kraków–Wysowa-Zdrój–Παλαιό Τρίκερι–Βόλος–Grecka przestrzeń powietrzna&lt;br /&gt;
+Kraków–&lt;span class=&quot;nowrap&quot;&gt;Wysowa-Zdrój&lt;/span&gt;–&lt;span class=&quot;nowrap&quot;&gt;Παλαιό Τρίκερι&lt;/span&gt;–Βόλος–&lt;span class=&quot;nowrap&quot;&gt;Grecka przestrzeń powietrzna&lt;/span&gt;&lt;br /&gt;
 Jędrzej A. Łopaciński
 &lt;/p&gt;
 
@@ -900,7 +907,7 @@ Jędrzej A. Łopaciński
 &lt;p&gt;​&lt;/p&gt;
 &lt;!--EBOOK_ONLY(--&gt;
 &lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;html&gt;
 	&lt;head&gt;
 		&lt;title&gt;&lt;/title&gt;
 		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
