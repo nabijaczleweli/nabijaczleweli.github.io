@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
   <channel>
-    <atom:link href="https://nabijaczleweli.xyz/capitalism/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nabijaczleweli.xyz/content/feed.xml" rel="self" type="application/rss+xml" />
     <title>nabijaczleweli's page</title>
-    <link>https://nabijaczleweli.xyz/capitalism</link>
+    <link>https://nabijaczleweli.xyz/content</link>
     <description>Newest articles on nabijaczleweli.xyz</description>
     <language>en-BR</language>
     <copyright>Copyright (c) 2016 nabijaczleweli</copyright>
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sun, 20 Aug 2017 13:10:39 +0000
+      Sun, 20 Aug 2017 13:51:14 +0000
     </pubDate>
     <lastBuildDate>
-      Sun, 20 Aug 2017 13:10:39 +0000
+      Sun, 20 Aug 2017 13:51:14 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 4.0.1
@@ -23,7 +23,7 @@
     <image>
       <url>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</url>
       <title>nabijaczleweli's page</title>
-      <link>https://nabijaczleweli.xyz/capitalism</link>
+      <link>https://nabijaczleweli.xyz/content</link>
     </image>
 
     <item>
@@ -250,7 +250,7 @@ Here is the current list of GEB()'s variations, chronologically: &lt;!--'--&gt;
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
 &lt;/p&gt;
 &lt;p id=&quot;variants-binary-paragraphs&quot;&gt;
-Binary releases are available for download for compiled variants on the realeases pages
+Binary releases for Windows and Linux are available for download for compiled variants on the realeases pages
 	&lt;a GEB_HREF(.rs/releases)              &gt;MFIZZ(rust)&lt;/a&gt;
 	&lt;a GEB_HREF(.cpp/releases) class=&quot;icon&quot;&gt;DEVICON(cplusplus)&lt;/a&gt;.
 &lt;/p&gt;
@@ -726,8 +726,8 @@ I hope that this document is clear or informative, if not,
 &lt;/div&gt;</description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 30 Aug 2017 03:38:21 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/gen-epub-book/</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/gen-epub-book/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -839,8 +839,8 @@ And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned handdraw
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Tue, 13 Jun 2017 22:42:51 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/maths/mandalas.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/maths/mandalas.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -903,8 +903,8 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Fri, 19 May 2017 12:25:37 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/poetry/</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/poetry/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -1103,8 +1103,8 @@ Utwór napisany ok. 31.03.2016 przez Jędrzeja A. Łopacińskiego.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 22 Sep 2016 01:20:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing/każdy_koniec_to_nowy_początek/</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing/każdy_koniec_to_nowy_początek/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -1113,33 +1113,37 @@ Utwór napisany ok. 31.03.2016 przez Jędrzeja A. Łopacińskiego.
 .indented {
 	text-indent: 1em;
 }
+.badindented::before {
+	content: &quot; &quot;;
+}
 &lt;/style&gt;
 
 
 &lt;!-- ePub title: &quot;A Widow's Trace&quot; --&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;badindent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
 
 &quot;A Widow's Trace&quot;&lt;br /&gt;
 
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;— &lt;em&gt;Tien, tien.&lt;/em&gt; Looks like we'&lt;!--'--&gt;ɹe woɹking rogetheɹ. —&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;Tien, tien.&lt;/em&gt; Looks like we'&lt;!--'--&gt;ɹe woɹking rogetheɹ. —&lt;!--SOFT_BR--&gt;
 &lt;em&gt;Some&lt;/em&gt;thing made Widowmaker say, as it always did, ruining her&lt;!--SOFT_BR--&gt;
-chances. From her standpoint, anyway.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Don't think I'm happy about that! — Tracer exclaimed&lt;!--SOFT_BR--&gt;
+chances. From her standpoint, anyway.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Don't think I'm happy about that! — Tracer exclaimed&lt;!--SOFT_BR--&gt;
 back, the same &lt;em&gt;some&lt;/em&gt;thing making her so. And ruining&lt;!--SOFT_BR--&gt;
-&lt;em&gt;her&lt;/em&gt; chances, too. Or, from her standpoint, at least.&lt;br /&gt;&lt;/div&gt;
+&lt;em&gt;her&lt;/em&gt; chances, too. Or, from her standpoint, at least.&lt;br /&gt;&lt;/span&gt;
 &quot;Attack commences in 30 seconds.&quot; A cold&lt;!--SOFT_BR--&gt;
 female voice interrupted their bickering&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— We both know that's not quite true, is it? — Mercy's whisper&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— We both know that's not quite true, is it? — Mercy's whisper&lt;!--SOFT_BR--&gt;
 sent a wave of electricity through Tracer's body.&lt;!--'--&gt;&lt;br /&gt;
 Tracer checked for Widow, but she was reassembling her&lt;!--SOFT_BR--&gt;
 beloved rifle on a table next to them, facing away in&lt;!--SOFT_BR--&gt;
 total concentration, so she nodded, very deeply, lost&lt;!--SOFT_BR--&gt;
-in her own world of fantasy.&lt;/div&gt;
+in her own world of fantasy.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;&quot;Five&quot; Tracer snapped back to reality.&lt;br /&gt;
+&lt;span class=&quot;badindented&quot;&gt;&quot;Five&quot; Tracer snapped back to reality.&lt;br /&gt;
 &quot;Four&quot; Widowmaker cycles the bolt on her rifle.&lt;br /&gt;
 &quot;Three&quot; Seven-Six checks his utility belt.&lt;br /&gt;
 &quot;Two&quot; McCree pulls out and cocks his Peacekeeper&lt;!--SOFT_BR--&gt;
@@ -1147,59 +1151,59 @@ incredibly tense.&lt;br /&gt;
 &quot;One&quot; Zenyatta wakes from meditation.&lt;br /&gt;
 &quot;Attack&quot; Everyone dashes out. Except that Tracer&lt;!--SOFT_BR--&gt;
 trails behind Widow, who aims her Grapple. Tracer's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-eyes start glowing; figuratively, of course.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Oi, before you get up there, grab me!&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;what?&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Come on, just do it! — Tracer first got hold of Widow's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+eyes start glowing; figuratively, of course.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Oi, before you get up there, grab me!&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;what?&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Come on, just do it! — Tracer first got hold of Widow's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 waist, to which she reciprocated. — Right, now grapple us up&lt;!--SOFT_BR--&gt;
-there!&lt;br /&gt;&lt;/div&gt;
+there!&lt;br /&gt;&lt;/span&gt;
 The sharp yank wasn't as sharp as she expected and rather&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 soon they were stood on a narrow passage made of sandstone.&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Y'ready? Hold me very tight now, this thing is...&lt;!--'--&gt;&lt;br /&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Y'ready? Hold me very tight now, this thing is...&lt;!--'--&gt;&lt;br /&gt;
 But she didn't finish and was navigating the air,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 which you hafta admit is hard, if you can only maneuver&lt;!--SOFT_BR--&gt;
 horizontally. A couple terrifying seconds later they&lt;!--SOFT_BR--&gt;
 landed way behind enemy lines, with a clear view on all of&lt;!--SOFT_BR--&gt;
-them.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Now's your opening, luv!&lt;!--'--&gt;&lt;/div&gt;
+them.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Now's your opening, luv!&lt;!--'--&gt;&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;Widow hoisted the firearm to her shoulder, aimed in, and&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;Widow hoisted the firearm to her shoulder, aimed in, and&lt;!--SOFT_BR--&gt;
 fired. Reaper's head seemed to have exploded. She leaned&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 leftward, sighted in and fired again. Reinhardt befell&lt;!--SOFT_BR--&gt;
 upon his knees; then collapsed fully as the second shot sounded.&lt;!--SOFT_BR--&gt;
-Tracer was humming some melody, leaned back against a wall.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Ssh! — Widow raised her free hand.&lt;br /&gt;
+Tracer was humming some melody, leaned back against a wall.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Ssh! — Widow raised her free hand.&lt;br /&gt;
 Tracer froze mid-hum and mid-headsway as Widow's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 head locked at an extraordinary angle,&lt;!--SOFT_BR--&gt;
-listening to the faintest of sounds.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Get ɹeady to get us out of 'eɹe. — She alerted&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-and grappled directly upwards.&lt;/div&gt;
+listening to the faintest of sounds.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Get ɹeady to get us out of 'eɹe. — She alerted&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+and grappled directly upwards.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;On the way down she sighted in and last time on Symmetra;&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;On the way down she sighted in and last time on Symmetra;&lt;!--SOFT_BR--&gt;
 she lost precision due to a very narrow&lt;!--SOFT_BR--&gt;
 angle of opening, though, so she just started crawling&lt;!--SOFT_BR--&gt;
 around with her knee in shatters. Widow landed next&lt;!--SOFT_BR--&gt;
-to Tracer perfectly quietly.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Ready, luv?&lt;br /&gt;
+to Tracer perfectly quietly.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Ready, luv?&lt;br /&gt;
 Widow just nodded as she grasped for Tracer's torso. She didn't&lt;!--SOFT_BR--&gt;
 feel the yank of Tracer's Chronal Accelerator – she&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 passed out. Tracer stroked her hair and somehow navigated&lt;!--SOFT_BR--&gt;
 the air with much more ease than even when she was alone.&lt;!--SOFT_BR--&gt;
 She had to cease quite shortly, though, as Widowmaker woke just&lt;!--SOFT_BR--&gt;
-seconds after passing out.&lt;/div&gt;
+seconds after passing out.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;— Ah, magnifique. — She sighed, looking at the battlefield,&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Ah, magnifique. — She sighed, looking at the battlefield,&lt;!--SOFT_BR--&gt;
 or at Tracer (it was rather hard to tell, especially from Tracer's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-perspective).&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Aye, that was a most impressive display.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;what? — Widow was still somewhat confounded,&lt;!--SOFT_BR--&gt;
+perspective).&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Aye, that was a most impressive display.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;what? — Widow was still somewhat confounded,&lt;!--SOFT_BR--&gt;
 then noticed the ambiguity in her statement and&lt;!--SOFT_BR--&gt;
 suddenly became flustered. Tracer didn't notice, as&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 she was cherishing how Widow was confused enough&lt;!--SOFT_BR--&gt;
-not to let her go.&lt;br /&gt;&lt;/div&gt;
+not to let her go.&lt;br /&gt;&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing indented&quot;&gt;
 And so they lasted, seemingly endlessly, cherishing a moment&lt;!--SOFT_BR--&gt;
@@ -1210,48 +1214,48 @@ As many of these moments, this one was saved by the party&lt;!--SOFT_BR--&gt;
 returning with figurative spoils.&lt;!--SOFT_BR--&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;— Hey, aren't these our lost gals? — McCree,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Hey, aren't these our lost gals? — McCree,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 suddenly alert, re-holstered&lt;!--SOFT_BR--&gt;
-his Peacekeeper.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— It would seem that they are. — Zenyatta send out&lt;!--SOFT_BR--&gt;
+his Peacekeeper.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— It would seem that they are. — Zenyatta send out&lt;!--SOFT_BR--&gt;
 his Orb t (a) treat their potential injuries and&lt;!--SOFT_BR--&gt;
 (b) to harvest data about the situation. — I suggest&lt;!--SOFT_BR--&gt;
-a delicate approach.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Well, they did a magnificent job out there, made our&lt;!--SOFT_BR--&gt;
+a delicate approach.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Well, they did a magnificent job out there, made our&lt;!--SOFT_BR--&gt;
 work exceedingly easy. — Growled Seven-Six. — &lt;!--SOFT_BR--&gt;
-We've gotta congratulate and/or thank them.&lt;!--'--&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— No medical assistance necessary, I presume? —&lt;!--SOFT_BR--&gt;
-Inquired Mercy to Zenyatta.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Indeed.&lt;/div&gt;
+We've gotta congratulate and/or thank them.&lt;!--'--&gt;&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— No medical assistance necessary, I presume? —&lt;!--SOFT_BR--&gt;
+Inquired Mercy to Zenyatta.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Indeed.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;By this time they'd approached Tracer&amp;amp;Widow to&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;By this time they'd approached Tracer&amp;amp;Widow to&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 a distance at which a converstaion could&lt;!--SOFT_BR--&gt;
-be held comfortably.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Nice work out there; innovative in the ery deed. Our&lt;!--SOFT_BR--&gt;
-job was just cleanup duty after that. — Seven-Six broke the silence&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Cheers, mate. — Tracer smiled and looked at Widow to see why&lt;!--SOFT_BR--&gt;
+be held comfortably.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Nice work out there; innovative in the ery deed. Our&lt;!--SOFT_BR--&gt;
+job was just cleanup duty after that. — Seven-Six broke the silence&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Cheers, mate. — Tracer smiled and looked at Widow to see why&lt;!--SOFT_BR--&gt;
 she was being so uncharacteristically&lt;!--SOFT_BR--&gt;
 quiet and reacted not to the compliment, and quite a big one&lt;!--SOFT_BR--&gt;
 at that, coming from Seven-Six. — Oh, she's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 asleep, the poor thing — She gently poked Widow&lt;!--SOFT_BR--&gt;
 and wispered in her ear. — Soldier here says you&lt;!--SOFT_BR--&gt;
-did a good job.&lt;br /&gt;&lt;/div&gt;
-Widowmaker woke. — Ah, merci.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Yaes? — Mercy tilted her head away from her conversation&lt;!--SOFT_BR--&gt;
+did a good job.&lt;br /&gt;&lt;/span&gt;
+Widowmaker woke. — Ah, merci.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Yaes? — Mercy tilted her head away from her conversation&lt;!--SOFT_BR--&gt;
 with McCree. Then, realising her mistake,&lt;!--SOFT_BR--&gt;
-giggled softly.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Y'all fancy a drink? All this Peacekeeping's making me&lt;!--SOFT_BR--&gt;
-thirsty&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— I don't see why not. — Vocalised his approval&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-Seven-Six as everyone else nodded.&lt;/div&gt;
+giggled softly.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Y'all fancy a drink? All this Peacekeeping's making me&lt;!--SOFT_BR--&gt;
+thirsty&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— I don't see why not. — Vocalised his approval&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+Seven-Six as everyone else nodded.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;As everyone was getting settled, Zen noted,&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;As everyone was getting settled, Zen noted,&lt;!--SOFT_BR--&gt;
 that Lena wasn't, as was usual, avoiding&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 Amélie, and, indeed, didn't as much as flinch when she&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-took a seat next to her.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Four whiskeys, please. — Inquired McCree the barman.&lt;br /&gt;
+took a seat next to her.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Four whiskeys, please. — Inquired McCree the barman.&lt;br /&gt;
 Upon receiving the order, and many orders thereafter,&lt;!--SOFT_BR--&gt;
 unsurprisingly, everyone was rather intoxicated, yet&lt;!--SOFT_BR--&gt;
 was holding strong (okay, barring Zenyatta, who vacated the&lt;!--SOFT_BR--&gt;
@@ -1274,7 +1278,7 @@ it atop them. For the first time in however many years&lt;!--SOFT_BR--&gt;
 she fell asleep quickly and without longing for Gérard;&lt;!--SOFT_BR--&gt;
 as if knowingly, Lena's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 head found her back and remained there. And that was the last thing&lt;!--SOFT_BR--&gt;
-she remembered.&lt;/div&gt;
+she remembered.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing indented&quot;&gt;
 Sunlight hit the window blinds, dimly illuminating the small hotel&lt;!--SOFT_BR--&gt;
@@ -1308,11 +1312,11 @@ her, but, instead, she just grabbed her and&lt;!--SOFT_BR--&gt;
 hugged her closed to her chest.
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;Moments like this don't last; this&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;Moments like this don't last; this&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 one did. It wasn't broken, it just transformed&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-when Lena felt Amélie's hot tears upon her face.&lt;br /&gt;&lt;!--'--&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— What's wrong, luv?&lt;br /&gt;&lt;!--'--&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— I don't know... Eveɹything's coming back to me... I 'aven't&lt;!--SOFT_BR--&gt;
+when Lena felt Amélie's hot tears upon her face.&lt;br /&gt;&lt;!--'--&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— What's wrong, luv?&lt;br /&gt;&lt;!--'--&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— I don't know... Eveɹything's coming back to me... I 'aven't&lt;!--SOFT_BR--&gt;
 felt this way since Gérard died. May I? — She interrupted,&lt;!--SOFT_BR--&gt;
 pulling Lena in for a kiss. Lena reciprocated&lt;!--SOFT_BR--&gt;
 with the highest degree of passion. Suddenly, she&lt;!--SOFT_BR--&gt;
@@ -1326,12 +1330,12 @@ then pleasantly surprised the jacket having&lt;!--SOFT_BR--&gt;
 slod off while her vision was obscured. As she&lt;!--SOFT_BR--&gt;
 reached for Lena's trouser button, she was stopped&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 by her surprisingly strong, yet gentle, hands. Their&lt;!--SOFT_BR--&gt;
-eyes met.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— One more thing, luv.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— &lt;em&gt;Hmmmm&lt;/em&gt;? — Amélie was having problems with phrasing&lt;!--SOFT_BR--&gt;
-anything coherent.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— I'm still pissed. — Lena's tone was hard to decypher&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— I know, I know, I know. — Her hands were set free and&lt;!--SOFT_BR--&gt;
+eyes met.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— One more thing, luv.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;Hmmmm&lt;/em&gt;? — Amélie was having problems with phrasing&lt;!--SOFT_BR--&gt;
+anything coherent.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— I'm still pissed. — Lena's tone was hard to decypher&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— I know, I know, I know. — Her hands were set free and&lt;!--SOFT_BR--&gt;
 felt her tears being butterfly kissed away by Lena's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 soft lips, somehow managing to undo the button she&lt;!--SOFT_BR--&gt;
 was struggling with &amp;amp; sliding the trousers down, finding&lt;!--SOFT_BR--&gt;
@@ -1345,23 +1349,23 @@ their moans melding into one as they did. No words were uttered&lt;!--SOFT_BR--&
 no sounds were made, a moment eternally&lt;!--SOFT_BR--&gt;
 tranquil; moments like that aren't made to last,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 yet this one, again, did, and drifted off as they fell asleep.&lt;!--SOFT_BR--&gt;
-in each other's arms.&lt;!--'--&gt;&lt;/div&gt;
+in each other's arms.&lt;!--'--&gt;&lt;/span&gt;
 &lt;!--On placement of the apostrophe here: https://jakubmarian.com/each-others-vs-each-others-in-english--&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;The sun set and they awoke again, conscious now of&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;The sun set and they awoke again, conscious now of&lt;!--SOFT_BR--&gt;
 everthing they had together. Or, well, most of it, anyway.&lt;!--SOFT_BR--&gt;
 Some things needed to still be sorted out and made sure&lt;!--SOFT_BR--&gt;
-about.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— So...&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Yaes?&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Aren't you hungry, luv?&lt;br /&gt;&lt;!--'--&gt;
-&lt;div class=&quot;indented&quot;&gt;— For you... — Amélie smiled. — But otheɹwise, no.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Well, then, you obviously have something on your mind, so go first&lt;!--SOFT_BR--&gt;
-first.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;why now, afteɹ all this time? When did you stop to despise&lt;!--SOFT_BR--&gt;
-me? — Amélie flushed, or, well, as best as she could.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— That purple's really cute, you should do that more&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+about.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— So...&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Yaes?&lt;br /&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Aren't you hungry, luv?&lt;br /&gt;&lt;!--'--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— For you... — Amélie smiled. — But otheɹwise, no.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Well, then, you obviously have something on your mind, so go first&lt;!--SOFT_BR--&gt;
+first.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;why now, afteɹ all this time? When did you stop to despise&lt;!--SOFT_BR--&gt;
+me? — Amélie flushed, or, well, as best as she could.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— That purple's really cute, you should do that more&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 often. Or I guess I could. — Lena's mind suggested the view of&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 Amélie's cheeks as she came. — But, anyway, there&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 was something in you passing out in my arms, your body&lt;!--SOFT_BR--&gt;
@@ -1370,10 +1374,10 @@ crack. As for my despising you... Shortly after I got out of the&lt;!--SOFT_BR--
 black void my filfe became after Emily's death. I realised&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 you're just acting on orders and, well, you did get brainwashed&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 by Talon... — Lena sighed. — You fancy a cuppa?&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Suɹe. You 'ave questions, too?&lt;!--'--&gt;&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Ya, how'd you know to take me up here yesterday?&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Suɹe. You 'ave questions, too?&lt;!--'--&gt;&lt;br /&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Ya, how'd you know to take me up here yesterday?&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 When'd you know you dig me?&lt;!--'--&gt;&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Pfh, did you ɹeally think I passed out foɹ so long? — Now it was&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Pfh, did you ɹeally think I passed out foɹ so long? — Now it was&lt;!--SOFT_BR--&gt;
 Lena's turn to flush, which had nothing to do with the steam&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 from the Earl Grey she was making, Amélie grinned. — Not 'aɹd&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 to pɹetend to be &lt;em&gt;h&lt;/em&gt;when youɹ pulse is almost as good as dead.&lt;!--SOFT_BR--&gt;
@@ -1383,18 +1387,18 @@ But must of all, it was you, afteɹ I passed out,&lt;!--SOFT_BR--&gt;
 you made me feel – foɹ the fiɹst time in a long time&lt;!--SOFT_BR--&gt;
 caɹed foɹ, loved, even, I guess. — Lena leaned in with&lt;!--SOFT_BR--&gt;
 the tea. — Ah, merci. — She took a sip. — Merdé, chaud!&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Oi? It's obviously hot, (a) because it's how you do it&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Oi? It's obviously hot, (a) because it's how you do it&lt;!--SOFT_BR--&gt;
 properly. — Lena looked temporarily stuck with love&lt;!--SOFT_BR--&gt;
 to her homeland and the Queen, but composed herself&lt;!--SOFT_BR--&gt;
 quickly – and (b) &lt;em&gt;you're&lt;/em&gt; hot, so it seemed appropriate.&lt;!--'--&gt;&lt;br /&gt;
-&lt;div class=&quot;indented&quot;&gt;— Oh, you. — Amélie took another sip. — Dɹinkable.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Heyyy, you like it. Pass the test,&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Oh, you. — Amélie took another sip. — Dɹinkable.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Heyyy, you like it. Pass the test,&lt;!--SOFT_BR--&gt;
 you did. — Lena giggled softly. — Also, I'd hoped that if I gave&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 you very hot tea you'll blush again, the purple's much&lt;!--SOFT_BR--&gt;
-beter a colour than your usual blue.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Seeing that Amélie's finished her tea, Lena leaned in again&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+beter a colour than your usual blue.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Seeing that Amélie's finished her tea, Lena leaned in again&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
 to kiss her, snatching the saucer&amp;amp;cup and setting&lt;!--SOFT_BR--&gt;
-them down in relative safety. Into a kiss they pertained.&lt;/div&gt;
+them down in relative safety. Into a kiss they pertained.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing indented&quot;&gt;
 Moments like that aren't made to last, but sometimes,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
@@ -1409,8 +1413,8 @@ Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 23 Apr 2017 03:37:41 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing/moments/</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing/moments/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -1637,13 +1641,16 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 16 Aug 2017 19:15:09 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing/the_taste_of_mi/</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing/the_taste_of_mi/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
       <title>Świat to kilka takich pokoi — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style&gt;
+.badindented::before {
+	content: &quot; &quot;;
+}
 .indented {
 	text-indent: 1em;
 }
@@ -1681,6 +1688,7 @@ that specific time, in that specific context.
 &lt;!-- ePub title: &quot;Świat to kilka takich pokoi&quot; --&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;badindent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
 
 &lt;p&gt;
 Interludium&lt;br /&gt;
@@ -1694,65 +1702,65 @@ drogą. I, jak to wszystkim &lt;i&gt;homo sapiens&lt;/i&gt;om się dzieje&lt;!--
 filozofować poczęli.&lt;!--SOFT_BR--&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;— My w takim gównianym, za przeproszeniem&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;— My w takim gównianym, za przeproszeniem&lt;!--SOFT_BR--&gt;
 kolegów, pokoju mieszkamy, a Austro-Węgrom&lt;!--SOFT_BR--&gt;
 Franz-Ferdinand fundnął tamten wykur-&lt;i&gt;hic&lt;/i&gt;-wisty&lt;!--SOFT_BR--&gt;
-apartament.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Panowie, mam plan.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Давай!&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Przywrócimy Wielką Serbię!&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— O!&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Zastrzelim Franz-Ferdinanda, przywrócimy&lt;!--SOFT_BR--&gt;
+apartament.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Panowie, mam plan.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Давай!&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Przywrócimy Wielką Serbię!&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— O!&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Zastrzelim Franz-Ferdinanda, przywrócimy&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; naszych rodaków buta&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Austryackiego spode, y zajmiem oba pokoje, tako,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; jako dawniej było.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Wiwat Wel'&lt;!--'--&gt;ka Srbija! — stuknęło szkło&lt;/div&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; jako dawniej było.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Wiwat Wel'&lt;!--'--&gt;ka Srbija! — stuknęło szkło&lt;/span&gt;
 &lt;/p&gt;
 &lt;br /&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;Dnia następnego zebrali się i omówili plan&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Wchodzę, strzelam, wychodzę?&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Ano, a my czekamy pod drzwiami z wódą i&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;Dnia następnego zebrali się i omówili plan&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Wchodzę, strzelam, wychodzę?&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Ano, a my czekamy pod drzwiami z wódą i&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; demonstrujemy z tobą, jak już wyjdziesz,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; przykładnych wschodnich słowian zachowanie.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Haraszo, paechali!&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Jak postanowili tak i poszli, dwaj chleją na korytarzu&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; przykładnych wschodnich słowian zachowanie.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Haraszo, paechali!&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Jak postanowili tak i poszli, dwaj chleją na korytarzu&lt;!--SOFT_BR--&gt;
 w pobliżu drzwi Franz-Ferdinandzkich.&lt;!--SOFT_BR--&gt;
-Trzeci wchodzi.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Zamek ustępuje pod piętnastoma kilo Newtonami.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Książę śpi. Podejść. Wycelować. Pociągnąć. Strzelić.&lt;br /&gt;
-Schować. Wycofać się. Zamknąć drzwi.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Spawa&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt;? — wybełkotała grupa zewnętrzna&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Przykładnie — odpowiedział i chlusnął sobie&lt;br /&gt;
-Oddalili się lekkim zatoczem.&lt;/div&gt;
+Trzeci wchodzi.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Zamek ustępuje pod piętnastoma kilo Newtonami.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Książę śpi. Podejść. Wycelować. Pociągnąć. Strzelić.&lt;br /&gt;
+Schować. Wycofać się. Zamknąć drzwi.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Spawa&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt;? — wybełkotała grupa zewnętrzna&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Przykładnie — odpowiedział i chlusnął sobie&lt;br /&gt;
+Oddalili się lekkim zatoczem.&lt;/span&gt;
 &lt;/p&gt;
 &lt;br /&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;Franz-Josef zapukał do drzwi apartamentu&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;Franz-Josef zapukał do drzwi apartamentu&lt;!--SOFT_BR--&gt;
 swojego ulubieńca. Gdy nie usłyszał odpowiedzi naci-&lt;!--SOFT_BR--&gt;
 snął klamkę, która ustąpiła wyjątkowo topornie.&lt;!--SOFT_BR--&gt;
 Przed wejściem jednak przygotował nóż i&lt;!--SOFT_BR--&gt;
 chwycił go w prawą dłoń. Lewym biodrem&lt;!--SOFT_BR--&gt;
 pchnął drzwi, zawiasy zabrzmiały złowieszczo.&lt;!--SOFT_BR--&gt;
 Zaczął metodycznie czyścić apartament. Gdy&lt;!--SOFT_BR--&gt;
-doszedł do sypialni nóż wypadł mu z ręki.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Sacrébleu! — Eksklamację tę dało się słyszeć nawet&lt;!--SOFT_BR--&gt;
+doszedł do sypialni nóż wypadł mu z ręki.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Sacrébleu! — Eksklamację tę dało się słyszeć nawet&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; u Serbów — Taka dobra pościel — zrujno-&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; wana! A ty; дебилу pierdolony wstawaj&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; i zbieraj to, a potem иди нахуй. — po nieuzyka-&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; niu reakcji od, nomen-omen matrwego, Franz-Ferdi-&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; nanda, powtórzył — Wstawaj! — Reakcji dalej zero.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Szturchnął Franz-Ferdinanda, a on odwrócił&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; nanda, powtórzył — Wstawaj! — Reakcji dalej zero.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Szturchnął Franz-Ferdinanda, a on odwrócił&lt;!--SOFT_BR--&gt;
 się na plecy, dziura wlotowa jasno widoczna się&lt;!--SOFT_BR--&gt;
-stała, po czym rzygnął gazem i cieczą rozkładowemi.&lt;!--SOFT_BR--&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Franz-Josef widział już w życiu wiele trupów, ale&lt;!--SOFT_BR--&gt;
+stała, po czym rzygnął gazem i cieczą rozkładowemi.&lt;!--SOFT_BR--&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Franz-Josef widział już w życiu wiele trupów, ale&lt;!--SOFT_BR--&gt;
 nigdy coś tak obrzydliwego, co &lt;em&gt;&lt;strong&gt;tak&lt;/strong&gt;&lt;/em&gt; jebało i od razu,&lt;!--SOFT_BR--&gt;
 nim zdążył się powstrzymać, złożył się w pół, pozby-&lt;!--SOFT_BR--&gt;
 wając się sutego obiadu, który zjadł przed chwil&lt;!--SOFT_BR--&gt;
-kilkoma.&lt;/div&gt;
+kilkoma.&lt;/span&gt;
 &lt;/p&gt;
 &lt;br /&gt;
-&lt;div class=&quot;p indented&quot;&gt;
+&lt;span class=&quot;p badindented&quot;&gt;
 Gdy pozbierał się i uspokoił do punktu, w którem&lt;!--SOFT_BR--&gt;
 nie padnie z arytmii w drodze, pobiegł do Rodziny i&lt;!--SOFT_BR--&gt;
 zaraportował sytuację; ustąpiła gotująca się wście-&lt;!--SOFT_BR--&gt;
@@ -1762,74 +1770,74 @@ Uformował hipoplan:&lt;br /&gt;
   &lt;li&gt;Znaleźć sprawcę&lt;/li&gt;
   &lt;li&gt;Zajebać kurwiego syna w męczarniach.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;indented&quot;&gt;Jako więc zaplanował, tako i zrobił. Zaczął od punktu&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;Jako więc zaplanował, tako i zrobił. Zaczął od punktu&lt;!--SOFT_BR--&gt;
 pierwszego: zaopatrzył się w perfumowaną chusteczkę i&lt;!--SOFT_BR--&gt;
 wrócił do Franz-Ferdinanda, zanotował sforsowany&lt;!--SOFT_BR--&gt;
 zamek, który wcześniej przeoczył, przeszedł&lt;!--SOFT_BR--&gt;
 do sypialni i bezceremonialnie&lt;!--SOFT_BR--&gt;
-rozpoczął egzaminację rany.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Standardowy niemiecki neunmillimeter, ale&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; dziwnie... wolny? Pewnie gówniana broń ogniowa.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Przeszedł się trochę poza apartamentem, ale aż&lt;!--SOFT_BR--&gt;
-go odrzuciło.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Tani samogon — pociągnął nosem — z ziemniaków.&lt;!--SOFT_BR--&gt;
+rozpoczął egzaminację rany.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Standardowy niemiecki neunmillimeter, ale&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; dziwnie... wolny? Pewnie gówniana broń ogniowa.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Przeszedł się trochę poza apartamentem, ale aż&lt;!--SOFT_BR--&gt;
+go odrzuciło.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Tani samogon — pociągnął nosem — z ziemniaków.&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; A jeżeli tak, to na pewno Serbi tu&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; byli, kurwia ich mać.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— To by się nawet zgadzało — wtrącił się jakiś&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; byli, kurwia ich mać.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— To by się nawet zgadzało — wtrącił się jakiś&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; ćwierćkuzyn po stronie matki — Serbiańcy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; robią gówniane pistolety od jakoś niedawna.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Łi — jakiś popieprzeniec z Francuskiej strony&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; robią gówniane pistolety od jakoś niedawna.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Łi — jakiś popieprzeniec z Francuskiej strony&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; rodziny tym razem — oni mieli jakieś&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; soczyste mięcho o Wielką Serbię czy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; coś.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Taa — skinieniem głowy Franz-Jo-&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; coś.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Taa — skinieniem głowy Franz-Jo-&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; sef podziękował i zbył delikwentów —&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; chcą Wel'kiej Srbii to dostaną Wel'ką&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Srbiję, hy hy hy.&lt;/div&gt;
-&lt;/div&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Srbiję, hy hy hy.&lt;br /&gt;&lt;/span&gt;
+&lt;/span&gt;
 &lt;br /&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;Po zapadnięciu zmroku wziął standardowego czter-&lt;!--SOFT_BR--&gt;
+&lt;span class=&quot;badindented&quot;&gt;Po zapadnięciu zmroku wziął standardowego czter-&lt;!--SOFT_BR--&gt;
 dziesto milimetrowego fraga&lt;a href=&quot;#asterix2&quot;&gt;**&lt;/a&gt; i zapieczętowaną kopertę.&lt;!--SOFT_BR--&gt;
 Granat bardzo ładnie przelatuje przez zamk-&lt;!--SOFT_BR--&gt;
 nięte okno, a list, tj. deklarację wojny, przelatuje&lt;!--SOFT_BR--&gt;
-za nim na cegle, przez brak okna.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Niestety, taka ich parszywa właściwość, granaty&lt;!--SOFT_BR--&gt;
+za nim na cegle, przez brak okna.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Niestety, taka ich parszywa właściwość, granaty&lt;!--SOFT_BR--&gt;
 odłamkowe do najcichszych nie należą, więc o jakiejś&lt;!--SOFT_BR--&gt;
 pierwszej obudziło Franz-Josefa pukanie, nie,&lt;!--SOFT_BR--&gt;
-rąbanie w drzwi.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Чего хотите?&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Mamy do pogadania — niski, tubalny wręcz głos,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; militarny wschodniosłowiański akcent.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Car Mikołaj — już szeptem — to przejebane. Idę!&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;Narzucił na siebie ubranie i otwarł drzwi, po czem&lt;!--SOFT_BR--&gt;
+rąbanie w drzwi.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Чего хотите?&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Mamy do pogadania — niski, tubalny wręcz głos,&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; militarny wschodniosłowiański akcent.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Car Mikołaj — już szeptem — to przejebane. Idę!&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;Narzucił na siebie ubranie i otwarł drzwi, po czem&lt;!--SOFT_BR--&gt;
 cofnął się, gdy zobaczył wycelowaną w niego&lt;!--SOFT_BR--&gt;
-ППШę.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— A teraz przedyskutujem, czemu jesteś teraz w&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; wojnie z resztą cywilizowanego świata i Francją&lt;a href=&quot;#asterix3&quot;&gt;***&lt;/a&gt;.&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Dobsz... — przerwał, gdy skrzypnęły za nim drzwi,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; odwrócił się.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Not too late to the party, I hope? —&lt;!--SOFT_BR--&gt;
+ППШę.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— A teraz przedyskutujem, czemu jesteś teraz w&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; wojnie z resztą cywilizowanego świata i Francją&lt;a href=&quot;#asterix3&quot;&gt;***&lt;/a&gt;.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Dobsz... — przerwał, gdy skrzypnęły za nim drzwi,&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; odwrócił się.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Not too late to the party, I hope? —&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; soczysty Queen'&lt;!--'--&gt;s English sprawił, że pod Franz-&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; -Josefem usiły się kolana; a może to LKM&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Bren skierowany w jego&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; miednicę.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Nu nie, dopierom poczęli. A teraz, powiedz nam,&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; miednicę.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Nu nie, dopierom poczęli. A teraz, powiedz nam,&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; товорищ Josef, coś ty se, kurwa, myślał atakując&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; i wypowiadając wojnę СССР?&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— O tym nie pomyślałem. Zaatakowałem Serbów jako&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; takich, nie Ruskich.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— No, a jak jużeście zaatakowali Rosję, to Ruscy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; sprzymierzyli się z nami, a Francja dołączyła.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Oj, to ja biorę Niemców i Italię. Zaraz do nich zadzwonię.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Deal. Zobaczymy&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; i wypowiadając wojnę СССР?&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— O tym nie pomyślałem. Zaatakowałem Serbów jako&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; takich, nie Ruskich.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— No, a jak jużeście zaatakowali Rosję, to Ruscy&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; sprzymierzyli się z nami, a Francja dołączyła.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Oj, to ja biorę Niemców i Italię. Zaraz do nich zadzwonię.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Deal. Zobaczymy&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; się... wkrótce. — z groźbą w głosie powiedział&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Brytol i ewakuował się bezszelestnie salutując&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; w drzwiach; Ruski oddał honor.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— To jest ostatni raz, który się widzimy — wyraźna&lt;!--SOFT_BR--&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; w drzwiach; Ruski oddał honor.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— To jest ostatni raz, który się widzimy — wyraźna&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; kpina w głosie Ruskiego, który,&lt;!--SOFT_BR--&gt;
 &lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; po wypowiedzeniu tej kwestii opuścił ciężkim krokiem&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; przybytek.&lt;/div&gt;
+&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; przybytek.&lt;/span&gt;
 &lt;/p&gt;
 &lt;br /&gt;
 &lt;p class=&quot;writing indented&quot;&gt;
@@ -1851,8 +1859,8 @@ Utwór napisany od 01.06.2016 do 03.06.2016 przez Jędrzeja A. Łopacińskiego.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 06 Jun 2016 23:40:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing/świat_to_kilka_takich_pokoi/</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing/świat_to_kilka_takich_pokoi/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -1916,8 +1924,8 @@ Utwór napisany od 01.06.2016 do 03.06.2016 przez Jędrzeja A. Łopacińskiego.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 26 Dec 2016 02:01:20 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/dead_santa.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/dead_santa.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -1969,8 +1977,8 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 08 Jan 2017 04:00:46 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/degenerate.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/degenerate.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2045,8 +2053,8 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 02 Feb 2017 13:45:35 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/eye_see.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/eye_see.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2101,8 +2109,8 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 29 Dec 2016 15:37:19 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/green_ass_dog.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/green_ass_dog.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2146,8 +2154,8 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 30 Jan 2017 00:07:59 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/laser_cats.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/laser_cats.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2230,8 +2238,8 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 29 Dec 2016 21:51:50 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/not_dead_yet.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/not_dead_yet.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2309,8 +2317,8 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 28 Dec 2016 01:54:52 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/six_minutes.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/six_minutes.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2342,8 +2350,8 @@ Not ever would she expect this.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 24 Dec 2016 15:00:32 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/start_eq_end.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/start_eq_end.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2352,12 +2360,16 @@ Not ever would she expect this.
 .indented {
 	text-indent: 1em;
 }
+.badindented::before {
+	content: &quot; &quot;;
+}
 &lt;/style&gt;
 
 
 &lt;!-- ePub title: &quot;The-less&quot; --&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;writing-badindent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5ihrpc/cw_write_a_story_without_using_the_word_the&quot;&gt;&quot;The-less&quot;&lt;/a&gt;&lt;br /&gt;
 
@@ -2375,14 +2387,14 @@ Having a close relative (like, for example, a spouse) in a governmental position
   but having an easy, regular access to said government'&lt;!--'--&gt;s secrets greatly outweighs ever increasing risk of discovery.
 &lt;/p&gt;
 &lt;p class=&quot;writing&quot;&gt;
-&lt;div class=&quot;indented&quot;&gt;— You?! But... Why? – Sarah broke down&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Oh, you didn'&lt;!--'--&gt;t catch on? You were even more stupid than I thought. –
-  Fenella shrugged, now affixing a silencer to a run-down pistol with numbers sanded off.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— So that'&lt;!--'--&gt;s all I was to you? A tool?, a means to an end? – She regained her composure.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Mostly, yes. I mean, your coital expertise is extraordinary, too, but it was just a bonus, really.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— So, before you kill me, just one more thing, luv. My so-called last words, if you will?&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— Sure, I guess it &lt;em&gt;is&lt;/em&gt; your priviledge as an executee.&lt;br /&gt;&lt;/div&gt;
-&lt;div class=&quot;indented&quot;&gt;— &quot;Painted Black&quot;&lt;br /&gt;&lt;/div&gt;
+&lt;span class=&quot;badindented&quot;&gt;— You?! But... Why? – Sarah broke down&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Oh, you didn'&lt;!--'--&gt;t catch on? You were even more stupid than I thought. –
+  Fenella shrugged, now affixing a silencer to a run-down pistol with numbers sanded off.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— So that'&lt;!--'--&gt;s all I was to you? A tool?, a means to an end? – She regained her composure.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Mostly, yes. I mean, your coital expertise is extraordinary, too, but it was just a bonus, really.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— So, before you kill me, just one more thing, luv. My so-called last words, if you will?&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— Sure, I guess it &lt;em&gt;is&lt;/em&gt; your priviledge as an executee.&lt;br /&gt;&lt;/span&gt;
+&lt;span class=&quot;badindented&quot;&gt;— &quot;Painted Black&quot;&lt;br /&gt;&lt;/span&gt;
 &lt;br /&gt;
 Snipers fire.
 &lt;/p&gt;
@@ -2396,8 +2408,8 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 24 Dec 2016 02:04:36 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/theless.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/theless.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
@@ -2475,8 +2487,8 @@ Life'&lt;!--'--&gt;s easy. Now for Cubans and me, too.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 31 Dec 2016 18:30:49 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/capitalism/writing_prompts/trucks_a_cash.html</guid>
-      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+      <guid>https://nabijaczleweli.xyz/content/writing_prompts/trucks_a_cash.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
   </channel>
 </rss>
