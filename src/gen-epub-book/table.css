@@ -7,3 +7,15 @@ th, td {
 td {
 	font-size: calc(9em / 10);
 }
+
+tr:nth-child(1) {
+  background-color: #aaaaaaa0;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeeea0;
+}
+
+tr:hover {
+  background-color: #cccccca0;
+}

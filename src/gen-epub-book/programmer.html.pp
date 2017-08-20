@@ -97,7 +97,7 @@ Here is the current list of GEB()'s variations, chronologically: <!--'-->
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
 </p>
 <p id="variants-binary-paragraphs">
-Binary releases for Windows and Linux are available for download for compiled variants on the realeases pages
+Binary releases of compiled variants are available for download, for Windows and Ubuntu, on the releases pages
 	<a GEB_HREF(.rs/releases)              >MFIZZ(rust)</a>
 	<a GEB_HREF(.cpp/releases) class="icon">DEVICON(cplusplus)</a>.
 </p>
@@ -193,7 +193,7 @@ HEADING(3, installation-and-requirements-cpp, GEB(.cpp))
 
 <div id="installation-and-requirements-cpp-paragraph">
 <p></p>
-To be built build, GEB(.cpp) requires:
+To be built, GEB(.cpp) requires:
 <ul>
 	<li>a `C++14`-compliant C++ compiler,</li>
 	<li>a `C11`-compliant C compiler,</li>
@@ -335,7 +335,7 @@ The following table enumerates supported HIGHLIT_CODE(keyword, key)s and their p
 		  <td>Yes.</td>
 		  <td>1</td>
 		  <td></td></tr>
-	<tr><td>HIGHLIT_CODE(keyword, Author)</td>
+	<tr><td>HIGHLIT_CODE(keyword, Date)</td>
 		  <td><a href="//tools.ietf.org/html/rfc3339">RFC3339</a>-compliant date.</td>
 		  <td>Sets book authoring/publishing date.</td>
 		  <td>Yes.</td>
@@ -454,7 +454,7 @@ HEADING(3, features-free-date-format, Free date format)
 <div id="features-free-date-format-paragraph">
 <p></p>
 This feature allows a GEB() to accept non-<a href="//tools.ietf.org/html/rfc3339">RFC3339</a> date formats, whichever it can.
-For example, with custom separator feature on these can become equivalent:
+For example, with free date format feature on these can become equivalent:
 <kbd><pre class="highlit-code numberise">
 CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 2017-08-19T21:22:31+0200)
 CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, Sat, 19 Aug 2017 21:22:31 +02:00)
@@ -495,10 +495,13 @@ CSPAN(punctuation,  ​ ​ ​ ​└──) CSPAN(string, special)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, intro.html)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, book.epupp)
 </pre></kbd>
-If `gep/special/book.epupp`, specifying "intro.html", "main.html" and "ending.html" is built with
-	<em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then
-	<em>unnamed</em> include dir pointing at `rendered/output`,
-	the content inside would be laid out as follows:
+If `gep/special/book.epupp`
+<ul>
+	<li>specifying `intro.html`, `main.html` and `ending.html` is built with</li>
+	<li><em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then an</li>
+	<li><em>unnamed</em> include dir pointing at `rendered/output`,</li>
+</ul>
+the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
 CSPAN(string, book.epub)
 CSPAN(punctuation, ├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​CSPAN(comment, # From gep/special/)
