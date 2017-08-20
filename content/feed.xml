@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sun, 20 Aug 2017 16:45:42 +0000
+      Sun, 20 Aug 2017 18:00:59 +0000
     </pubDate>
     <lastBuildDate>
-      Sun, 20 Aug 2017 16:45:42 +0000
+      Sun, 20 Aug 2017 18:00:59 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -203,7 +203,7 @@ The &quot;design goal&quot; of GEB()’s descriptor syntax is to make it as cons
 The idea is that a GEB() descriptor should be writable by any person with &lt;em&gt;minimal&lt;/em&gt; technical knowledge.
 &lt;/p&gt;
 &lt;p id=&quot;description-for-whom-paragraph&quot;&gt;
-This guide is designated for non-programmers. If you're a programmer, see the more in-depth &lt;a href=&quot;programmer.html&quot;&gt;programmer's variant&lt;/a&gt;.
+This guide is designated for non-programmers. If you're a programmer, see the more in-depth &lt;a href=&quot;programmer.html&quot;&gt;programmer's version&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;description-license-paragraph&quot;&gt;
 GEB() is free software, available under the MIT open source license.
@@ -292,7 +292,7 @@ For a complete rundown of all accepted &lt;em&gt;lines&lt;/em&gt;, see &lt;a hre
 &lt;div id=&quot;getting-started-syntax-explanation-path-paragraph&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 All local paths are relative to the descriptor file.
-The comments in the following following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, gep/special/book.epupp):
+The comments in the following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, gep/special/book.epupp):
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
 CSPAN(string, first-book)
 CSPAN(punctuation, ├──) CSPAN(string, rendered)
