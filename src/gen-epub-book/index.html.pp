@@ -67,7 +67,7 @@ HEADING(1, main, GEB())
 HEADING_S(2, description, style="margin-top: initial;", Description)
 
 <p id="description-paragraph">
-GEB() is a loose-file–to–ePub conversion tool for everyone not afraid of not using Word.
+GEB() is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
 GEB() allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
 </p>
 <p id="description-what-is-it-paragraph">
@@ -123,8 +123,13 @@ Here is the current list of GEB()'s variations, chronologically: <!--'-->
 </ul>
 <p></p>
 </div>
-<p id="description-variations-paragraph">
+<p id="variants-variations-paragraph">
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
+</p>
+<p id="variants-binary-paragraphs">
+Binary releases are available for download for compiled variants on the realeases pages
+	<a GEB_HREF(.rs/releases)              >MFIZZ(rust)</a>
+	<a GEB_HREF(.cpp/releases) class="icon">DEVICON(cplusplus)</a>.
 </p>
 
 HEADING(2, installation-and-requirements, Installation and requirements)
