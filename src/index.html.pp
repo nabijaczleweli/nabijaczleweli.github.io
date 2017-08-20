@@ -49,6 +49,10 @@ Things I handwrote and then transcribed, because I like laborious work:
 </p>
 
 <p>
+	A complete writeup on <a href="gen-epub-book"><code>gen-epub-book</code>(s)</a>.
+</p>
+
+<p>
 	The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
 </p>
 
