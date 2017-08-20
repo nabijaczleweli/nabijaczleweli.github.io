@@ -1,0 +1,16 @@
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+a > i.fa {
+	color: black;
+}
+
+.hidden {
+	display: none;
+}
+
+.smallcaps {
+	font-variant: small-caps;
+}

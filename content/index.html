@@ -1,0 +1,234 @@
+/* Copyright (C) 1991-2014 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses ISO/IEC 10646 (2nd ed., published 2011-03-15) /
+   Unicode 6.0.  */
+/* We do not support C11 <threads.h>.  */
+<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+       
+       
+       
+<!DOCTYPE html>
+ <html lang="en-GB">
+ <head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="author" content="nabijaczleweli">
+ <meta name="description" content="Landing page for things">
+ <title>main() — nabijaczleweli</title>
+ <link href="/content/assets/common.css" rel="stylesheet" />
+ <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+ <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+ <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+ <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+ <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+ <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+ <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+ <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+ <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+ <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+ <link rel="manifest" href="/assets/favicons/manifest.json">
+ <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+ <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+ <meta name="apple-mobile-web-app-title" content="nabijaczleweli">
+ <meta name="application-name" content="nabijaczleweli">
+ <meta name="msapplication-TileColor" content="#da532c">
+ <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+ <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+ <meta name="theme-color" content="#ffffff">
+ <link href="//cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css" rel="stylesheet" />
+ </head>
+ <body>
+Things I handwrote and then transcribed, because I like laborious work:
+<ul>
+  <li><a href="writing/świat_to_kilka_takich_pokoi/">"Świat to kilka takich pokoi"</a> [PL] — wherein I abstract the causes of WWI in
+                                                                                              the context of a stereotypical social building;
+                                                                                              01.06.2016 - 03.06.2016.</li>
+  <li><a href="writing/każdy_koniec_to_nowy_początek/">"Każdy koniec to nowy początek"</a> [PL] — wherein sociological (r)evolutions happen
+                                                                                                  and we're<!--'--> there to observe it;
+                                                                                                  ~31.03.2016.</li>
+  <li><a href="writing/moments/">"A Widow's Trace"</a> — Overwatch smut, enter at own risk; ~10-20.03.2017.</li>
+  <li><a href="writing/the_taste_of_mi/">"The Taste of MI"</a> [PL] — lass reminsces about her key life points while waiting for her wife;
+                                                                      30.06.2017 - 12.08.2017.</li>
+</ul>
+<p>
+ Some <a href="writing_prompts">writing prompts</a> done by me.
+</p>
+<p>
+ Some pretty (? or so I hope) things I made with <a href="maths">maths</a>.
+</p>
+<p>
+ The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
+</p>
+Documentation for my various projects:
+<ul>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/rust-embed-resource/doc/embed_resource/index.html"><samp>rust-embed-resource</samp></a>
+ <a href="https://github.com/nabijaczleweli/rust-embed-resource"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/embed-resource"><i class="fa fa-archive"></i></a>
+ — A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources in the most resilient fashion imaginable
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/BearLibTerminal.rs/doc/bear_lib_terminal/index.html"><samp>BearLibTerminal.rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/BearLibTerminal.rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/bear-lib-terminal"><i class="fa fa-archive"></i></a>
+ — <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/trivial-colours-rs/doc/trivial_colours/index.html"><samp>trivial-colours-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/trivial-colours-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/trivial_colours"><i class="fa fa-archive"></i></a>
+ — Very simple and naive colour changing for your terminal, but that'<!--'-->s exactly what you need sometimes
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/safe-transmute-rs/doc/safe_transmute/index.html"><samp>safe-transmute-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/safe-transmute-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/safe-transmute"><i class="fa fa-archive"></i></a>
+ — A safeguarded <samp>transmute()</samp> for Rust
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/gen-epub-book.rs/doc/gen_epub_book/index.html"><samp>gen-epub-book.rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book.rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/gen-epub-book"><i class="fa fa-archive"></i></a>
+ — Generate an ePub book from a simple plaintext descriptor in Rust
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/bidir-map-rs/doc/bidir_map/index.html"><samp>bidir-map-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/bidir-map-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/bidir-map"><i class="fa fa-archive"></i></a>
+ — Bidirectional maps for Rust
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/cargo-update/doc/cargo_update/index.html"><samp>cargo-update</samp></a>
+ <a href="https://github.com/nabijaczleweli/cargo-update"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/cargo-update"><i class="fa fa-archive"></i></a>
+ — Cargo subcommand for checking and applying updates to installed executables
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/poke-a-mango/doc/poke_a_mango/index.html"><samp>poke-a-mango</samp></a>
+ <a href="https://github.com/nabijaczleweli/poke-a-mango"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/poke-a-mango"><i class="fa fa-archive"></i></a>
+ — What all the kool kidz are playing these days
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/whereami-rs/doc/whereami/index.html"><samp>whereami-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/whereami-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/whereami-rs"><i class="fa fa-archive"></i></a>
+ — <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/index.html"><samp>mandalas-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/mandalas-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/mandalas"><i class="fa fa-archive"></i></a>
+ — A mandala generator using Tonči Juričev-Grgin's<!--'--> method
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/rfsapi-rs/doc/rfsapi/index.html"><samp>rfsapi-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/rfsapi-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/rfsapi"><i class="fa fa-archive"></i></a>
+ — Raw Filesystem API for Rust -- enable simpler browsing with ease
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/checksums/doc/checksums/index.html"><samp>checksums</samp></a>
+ <a href="https://github.com/nabijaczleweli/checksums"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/checksums"><i class="fa fa-archive"></i></a>
+ — Tool for making/verifying checksums of directory trees
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/termimage/doc/termimage/index.html"><samp>termimage</samp></a>
+ <a href="https://github.com/nabijaczleweli/termimage"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/termimage"><i class="fa fa-archive"></i></a>
+ — Display images in your terminal, kind of
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/blake-rs/doc/blake/index.html"><samp>blake-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/blake-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/blake"><i class="fa fa-archive"></i></a>
+ — Implementation of the <a href="https://131002.net/blake">BLAKE</a> hash function for Rust via FFI
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/dishub/doc/dishub/index.html"><samp>dishub</samp></a>
+ <a href="https://github.com/nabijaczleweli/dishub"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/dishub"><i class="fa fa-archive"></i></a>
+ — App for posting GitHub activity on Discord
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/tweetr/doc/tweetr/index.html"><samp>tweetr</samp></a>
+ <a href="https://github.com/nabijaczleweli/tweetr"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/tweetr"><i class="fa fa-archive"></i></a>
+ — tweetr is a platform that allows you to create and queue tweets to be shared when YOU want. You create content when you have time and then use FOSS and NOT pay whatever-ridiculous amount of $$$ for posting them automatically
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/pls-rs/doc/pls/index.html"><samp>pls-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/pls-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/pls"><i class="fa fa-archive"></i></a>
+ — Rust crate for parsing and writing the PLS playlist format
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/nabijaczleweli/md6-rs/doc/md6/index.html"><samp>md6-rs</samp></a>
+ <a href="https://github.com/nabijaczleweli/md6-rs"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/md6"><i class="fa fa-archive"></i></a>
+ — Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI
+ </li>
+ <li>
+ <a href="https://cdn.rawgit.com/thecoshman/doh/doc/doh/index.html"><samp>doh</samp></a>
+ <a href="https://github.com/thecoshman/doh"><i class="fa fa-github"></i></a>
+ <a href="https://crates.io/crates/doh"><i class="fa fa-archive"></i></a>
+ — D'<!--'-->Oh - Directories Over HTTP
+ </li>
+</ul>
+<hr />
+ Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,
+ code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>.
+ <hr />
+ This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>,
+ and contributt and/or yell at me there.
+ <hr />
+ Do you consider this some <i>good shit, right there</i>?<br />
+ Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,
+ or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.
+ <hr />
+ Automatically generated with GCC version 4‍.‍8‍.‍4'<!--'-->s C preprocessor on 20.08.2017 13:09:55 UTC from "src/index.html.pp".
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/266499985">See job on TravisCI</a>.
+ <hr />
+ <a href="/content/feed.xml">RSS feed</a>
+ </body>
+ </html>
