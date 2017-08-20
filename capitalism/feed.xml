@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sun, 20 Aug 2017 01:37:06 +0000
+      Sun, 20 Aug 2017 01:41:04 +0000
     </pubDate>
     <lastBuildDate>
-      Sun, 20 Aug 2017 01:37:06 +0000
+      Sun, 20 Aug 2017 01:41:04 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -25,6 +25,705 @@
       <title>nabijaczleweli's page</title>
       <link>https://nabijaczleweli.xyz/capitalism</link>
     </image>
+
+    <item>
+      <title>gen-epub-book general — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-book implementations, en-GB, STYLESHEETS SCRIPTS)
+
+&lt;style&gt;
+.overlay-container {
+	display: inline-block;
+	position: relative;
+}
+
+.overlay-target {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+h1 {
+	margin-top: 0;
+	margin-bottom: 0.4em;
+}
+
+h2, h3, p {
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+h2 {
+	margin-top: 2em;
+}
+
+h3 {
+	margin-top: 1.5em;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+code, samp {
+	font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+
+h1, h2, h3, h4, h5, h6, .merriweather {
+	font-family: &quot;Merriweather&quot;, serif;
+}
+
+.roboto {
+	font-family: &quot;Roboto Slab&quot;, serif;
+}
+
+
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+	visibility: visible;
+	opacity: 1;
+}
+
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+	float: left;
+	visibility: hidden;
+	opacity: 0;
+	padding-right: calc(1em / 5.5);
+	margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+
+
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa,  a[class*=&quot;icon&quot;],  a[class*=&quot;devicon&quot;]   {
+	color: black;
+	text-decoration: none;
+}
+th, td {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	text-align: left;
+}
+
+td {
+	font-size: calc(9em / 10);
+}
+.highlit-code {
+	border-radius: calc(1em / 3);
+
+	padding-left: calc(1em / 5);
+	padding-right: calc(1em / 5);
+	padding-top: calc(1em / 4);
+	padding-bottom: calc(1em / 4);
+
+	margin-top: 0;
+	margin-bottom: 0;
+
+	color: #e6e1dc;
+	background-color: #232323;
+}
+
+
+.highlit-code .code-line {
+	width: 100%;
+	display: inline-block;
+  transition: all 0.25s;
+}
+
+.highlit-code .code-line:hover {
+	background-color: #333435;
+}
+
+
+.highlit-code .punctuation {
+	color: #cc7833;
+}
+
+.highlit-code .comment {
+	color: #bc9458;
+}
+
+.highlit-code .keyword {
+	color: #da4939;
+}
+
+.highlit-code .verb {
+	color: #e8bf6a;
+}
+
+.highlit-code .string {
+	color: #a5c261;
+}
+
+.highlit-code .variable {
+	color: #d0d0ff;
+}
+.tag {
+	border-radius: calc(1em / 3);
+	padding-left: calc(1em / 10);
+	padding-right: calc(1em / 10);
+	padding-top: calc(1em / 20);
+	padding-bottom: calc(1em / 20);
+}
+
+.tag-white {
+	background-color: #eee;
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;roboto&quot;&gt;
+
+
+&lt;!-- Style based on https://daringfireball.net/projects/markdown/ --&gt;
+&lt;p&gt;&lt;/p&gt;
+HEADING(1, main, GEB())
+
+HEADING_S(2, description, style=&quot;margin-top: initial;&quot;, Description)
+
+&lt;p id=&quot;description-paragraph&quot;&gt;
+GEB() is a loose-file–to–ePub conversion tool for everyone not afraid of not using Word.
+GEB() allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
+&lt;/p&gt;
+&lt;p id=&quot;description-what-is-it-paragraph&quot;&gt;
+Thus, &quot;&lt;!--&quot;--&gt;GEB()&lt;!--&quot;--&gt;&quot; is two things:
+(1) a plaintext descriptor syntax; and
+(2) a (set of) software tool(s), written in a multitude of languages, that assemble that descriptor and files referenced thereby into an ePub e-book.
+See the &lt;a href=&quot;#getting-the-gist&quot;&gt;Getting the gist&lt;/a&gt; heading for details pertaining to GEB()'s descriptor syntax. &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p id=&quot;description-inspiration-paragraph&quot;&gt;
+The &quot;design goal&quot; of GEB()’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
+The idea is that a GEB() descriptor should be writable by any person with &lt;em&gt;minimal&lt;/em&gt; technical knowledge.
+&lt;/p&gt;
+&lt;p id=&quot;description-license-paragraph&quot;&gt;
+GEB() is free software, available under the MIT open source license.
+See the &lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt; heading for more information.
+&lt;/p&gt;
+
+HEADING(2, discussion, Discussion)
+
+&lt;p id=&quot;discussion-paragraph&quot;&gt;
+Any topic related to GEB() – both the descriptor syntax and the software –
+is fair game for discussion over at the GEB() issue trackers
+	&lt;a GEB_HREF(/issues)       class=&quot;icon&quot;&gt;AWK_ICON()&lt;/a&gt;
+	&lt;a GEB_HREF(.rs/issues)                &gt;MFIZZ(rust)&lt;/a&gt;
+	&lt;a GEB_HREF(.cpp/issues)   class=&quot;icon&quot;&gt;DEVICON(cplusplus)&lt;/a&gt;
+	&lt;a GEB_HREF(.scala/issues)             &gt;MFIZZ(scala)&lt;/a&gt;
+and this site's issue tracker &lt;!--'--&gt;
+	&lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;DEVICON(html5)&lt;/a&gt;.
+I'&lt;!--'--&gt;ve also set up a &lt;a GEB_HREF(/issues/1)&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p id=&quot;discussion-hopes-paragraph&quot;&gt;
+I hope that GitHub issue system will lead to good ideas for future improvements to GEB().
+&lt;/p&gt;
+
+HEADING(2, variants, Variants)
+
+&lt;div id=&quot;variants-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+As mentioned before, GEB() is actually also a &lt;em&gt;set&lt;/em&gt; of software tools each of which performing mostly the same function,
+but being written in a different language.
+Here is the current list of GEB()'s variations, chronologically: &lt;!--'--&gt;
+&lt;ul&gt;
+	&lt;li&gt;GEB(.awk ​ ​) &lt;a GEB_HREF()&gt;     FA(github)&lt;/a&gt;
+	    &lt;a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)&gt;FA(book)&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;GEB(.rs ​ ​ ​) &lt;a GEB_HREF(.rs)&gt;  FA(github)&lt;/a&gt;
+	    &lt;a GEB_CDN_HREF(/man/gen-epub-book.rs.1.html)&gt;FA(book)&lt;/a&gt;
+	    &lt;a GEB_CDN_HREF(.rs/doc/gen_epub_book/index.html) class=&quot;overlay-container&quot;&gt;
+	    	&lt;span class=&quot;overlay-target&quot;&gt;FA(file-o)&lt;/span&gt; &lt;span style=&quot;font-size: 0.7em;&quot;&gt;FA(cogs)&lt;/span&gt;&lt;/a&gt;
+	    &lt;a href=&quot;//crates.io/crates/gen-epub-book&quot;&gt;FA(archive)&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;GEB(.cpp ​ ​) &lt;a GEB_HREF(.cpp)&gt;  FA(github)&lt;/a&gt;
+	    &lt;a GEB_CDN_HREF(/man/gen-epub-book.cpp.1.html)&gt;FA(book)&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;GEB(.scala) &lt;a GEB_HREF(.scala)&gt;FA(github)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p id=&quot;description-variations-paragraph&quot;&gt;
+These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
+&lt;/p&gt;
+
+HEADING(2, installation-and-requirements, Installation and requirements)
+
+&lt;p id=&quot;installation-and-requirements-paragraph&quot;&gt;
+All compiled variations of GEB() are stand-alone in that they don't depend on any files other than themselves. &lt;!--'--&gt;
+Some of them, however, require additional software during building/installation.
+&lt;/p&gt;
+
+HEADING(3, installation-and-requirements-awk, GEB(.awk))
+
+&lt;p id=&quot;installation-and-requirements-awk-paragraph&quot;&gt;
+GEB(.awk) does not require compilation, which makes it require external binary tools.
+Here's the list outlining them, their uses, and where to get them: &lt;!--'--&gt;
+&lt;/p&gt;
+
+&lt;table id=&quot;installation-and-requirements-awk-table&quot;&gt;
+	&lt;tr&gt;&lt;th&gt;Tool&lt;/th&gt; &lt;th&gt;Use&lt;/th&gt; &lt;th&gt;Where&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;//curl.haxx.se&quot;&gt;&lt;img src=&quot;//curl.haxx.se/logo/curl-logo.svg&quot; alt=&quot;curl&quot; style=&quot;height: 1.25em;&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+		  &lt;td&gt;Downloading HIGHLIT_CODE(keyword, Network-*) data.&lt;br /&gt;
+		      Getting random UUID.&lt;/td&gt;
+		  &lt;td&gt;&lt;samp&gt;*x&lt;/samp&gt;: usually shipped with system, package manager, &lt;a href=&quot;//curl.haxx.se/download.html&quot;&gt;binary releases&lt;/a&gt;.&lt;br /&gt;
+		      Windows:         &lt;a href=&quot;//curl.haxx.se/download.html&quot;&gt;binary releases&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;//gnu.org/software/grep&quot;&gt;`grep`&lt;/a&gt;&lt;/td&gt;
+		  &lt;td&gt;Searching for chapter titles.&lt;/td&gt;
+		  &lt;td&gt;&lt;samp&gt;*x&lt;/samp&gt;: shipped with system, package manager.&lt;br /&gt;
+		      Windows:         &lt;a href=&quot;http://gnuwin32.sourceforge.net/packages/grep.htm&quot;&gt;port&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;`cat`&lt;/td&gt;
+		  &lt;td&gt;Outputting final result.&lt;/td&gt;
+		  &lt;td&gt;&lt;samp&gt;*x&lt;/samp&gt;: shipped with system, package manager.&lt;br /&gt;
+		      Windows:         &lt;a href=&quot;//sourceforge.net/projects/mingw/files/MinGW/Base/binutils&quot;&gt;contained in ported `binutils`&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;`rm`&lt;/td&gt;
+		  &lt;td&gt;Pre-generation cleanup.&lt;/td&gt;
+		  &lt;td&gt;&lt;samp&gt;*x&lt;/samp&gt;: shipped with system, package manager.&lt;br /&gt;
+		      Windows:         &lt;a href=&quot;//sourceforge.net/projects/mingw/files/MinGW/Base/binutils&quot;&gt;contained in ported `binutils`&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;`cp`&lt;/td&gt;
+		  &lt;td&gt;Assembling e-book in temporary directory.&lt;/td&gt;
+		  &lt;td&gt;&lt;samp&gt;*x&lt;/samp&gt;: shipped with system, package manager.&lt;br /&gt;
+		      Windows:         &lt;a href=&quot;//sourceforge.net/projects/mingw/files/MinGW/Base/binutils&quot;&gt;contained in ported `binutils`&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;`mkdir`&lt;/td&gt;
+		  &lt;td&gt;Creating temporary directories.&lt;/td&gt;
+		  &lt;td&gt;Available everywhere.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;`cd`&lt;/td&gt;
+		  &lt;td&gt;Proper path handling for less configurable tools.&lt;/td&gt;
+		  &lt;td&gt;Available everywhere.&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p id=&quot;installation-and-requirements-awk-accessibility-paragraph&quot;&gt;
+These tools need to be callable as in the first column – in HIGHLIT_CODE(variable, $PATH) or otherwise.
+&lt;/p&gt;
+
+&lt;p id=&quot;installation-and-requirements-awk-compatibility-paragraph&quot;&gt;
+GEB(.awk), of course, requires an implementation of AWK_ICON().
+Each implementation of AWK_ICON() has its own quirks and therefore might not work as well as other implementations.
+Here'&lt;!--'--&gt;s the list outlining some tested AWK_ICON() implementations and their support:
+&lt;/p&gt;
+
+&lt;table id=&quot;installation-and-requirements-awk-compatibility-table&quot;&gt;
+	&lt;tr&gt;&lt;th&gt;Variant&lt;/th&gt; &lt;th&gt;Support&lt;/th&gt; &lt;th&gt;Note&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;//gnu.org/software/gawk&quot;&gt;`gawk`&lt;/a&gt;&lt;/td&gt;
+		  &lt;td&gt;Yes.&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;//invisible-island.net/mawk/mawk.html&quot;&gt;`mawk`&lt;/a&gt;&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Max supported string length exceeded. &lt;code class=&quot;tag tag-white&quot;&gt;wontfix&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p id=&quot;installation-and-requirements-awk-support-paragraph&quot;&gt;
+Not sure if your preferred implementation's supported? &lt;!--'--&gt;
+Drop a question over at one of the issue trackers –
+	&lt;a GEB_HREF(/issues) class=&quot;icon&quot;&gt;AWK_ICON()&lt;/a&gt;
+	&lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;DEVICON(html5)&lt;/a&gt;!
+&lt;/p&gt;
+
+HEADING(3, installation-and-requirements-rs, GEB(.rs))
+
+&lt;div id=&quot;installation-and-requirements-rs-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+GEB(.rs) just requires a roughly modern version of the &lt;a href=&quot;//rust-lang.org&quot;&gt;Rust&lt;/a&gt; compiler.
+Since GEB(.rs) is uploaded to &lt;a href=&quot;//crates.io&quot;&gt;crates.io&lt;/a&gt; &lt;a href=&quot;//crates.io/crates/gen-epub-book&quot;&gt;FA(archive)&lt;/a&gt;,
+	you need simply run
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(punctuation, $) cargo install CSPAN(string, gen-epub-book)
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;
+The resulting executable is fully stand-alone and available in your HIGHLIT_CODE(variable, $PATH) if installed via &lt;kbd&gt;cargo install&lt;/kbd&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+
+HEADING(3, installation-and-requirements-cpp, GEB(.cpp))
+
+&lt;div id=&quot;installation-and-requirements-cpp-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+To be built build, GEB(.cpp) requires:
+&lt;ul&gt;
+	&lt;li&gt;a `C++14`-compliant C++ compiler,&lt;/li&gt;
+	&lt;li&gt;a `C11`-compliant C compiler,&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;//ninja-build.org&quot;&gt;`ninja`&lt;/a&gt;,&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;//cmake.org&quot;&gt;CMake&lt;/a&gt; 2.8+,&lt;/li&gt;
+	&lt;li&gt;a dev installation of &lt;a href=&quot;//curl.haxx.se&quot;&gt;`libcurl`&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+The resulting executable is fully stand-alone.
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+HEADING(3, installation-and-requirements-scala, GEB(.scala))
+
+&lt;p id=&quot;installation-and-requirements-scala-paragraph&quot;&gt;
+To build, GEB(.scala) requires the &lt;a href=&quot;//scala-lang.org&quot;&gt;Scala&lt;/a&gt; compiler.
+The resulting `.jar`s depend only on the Scala runtime library.
+
+HEADING(2, configuration, Configuration)
+
+&lt;p id=&quot;configuration-paragraph&quot;&gt;
+The same descriptor syntax put into any GEB() variant with any options passed shall produce (functionally) the same e-book
+	(if they support a compatible featureset), but some GEB() variants are configurable in their non–e-book output.
+Subheadings include links to manpages with more information.
+&lt;/p&gt;
+
+HEADING(3, configuration-awk, GEB(.awk) &lt;a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)&gt;FA(book)&lt;/a&gt;)
+
+&lt;p id=&quot;configuration-awk-paragraph&quot;&gt;
+A HIGHLIT_CODE(variable, temp) variable passed from the commandline containing the desired temporary directory (usually HIGHLIT_CODE(variable, $TEMP)).
+This usually yields for
+	&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;CSPAN(verb, -v) CSPAN(variable, temp)CSPAN(punctuation, ​=)CSPAN(string, &quot;$TEMP&quot;)&lt;/kbd&gt;
+	full argument.
+&lt;/p&gt;
+
+HEADING(3, configuration-rs, GEB(.rs) &lt;a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)&gt;FA(book)&lt;/a&gt;)
+
+&lt;p id=&quot;configuration-rs-paragraph&quot;&gt;
+The `--verbose` flag makes GEB(.rs) print information about what it's currently doing. &lt;!--'--&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-the-gist&quot;&gt;HEADING_LINK(getting-the-gist)
+                          &lt;span class=&quot;smallcaps&quot;&gt;Getting the gist of&lt;/span&gt; GEB()&lt;span class=&quot;smallcaps&quot;&gt;'s descriptor syntax&lt;/span&gt;&lt;/h2&gt; &lt;!--'--&gt;
+
+&lt;p id=&quot;getting-the-gist-paragraph&quot;&gt;
+This section offers a complete, detailed documentation for the descriptor syntax.
+&lt;/p&gt;
+
+HEADING(3, getting-the-gist-overview, Overview)
+
+&lt;div id=&quot;getting-the-gist-overview-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+GEB()'s descriptor syntax can be divided into &lt;em&gt;lines&lt;/em&gt;. &lt;!--'--&gt;
+Each &lt;em&gt;line&lt;/em&gt; is either (a) comprised of three elements:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(keyword, key)CSPAN(punctuation, :) CSPAN(string, value)
+CSPAN(comment, # ​ ​^ separator)
+&lt;/pre&gt;&lt;/kbd&gt;
+or (b) is a comment if that format is not met for the line.
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;getting-the-gist-overview-elements-key-paragraph&quot;&gt;
+HIGHLIT_CODE(keyword, key) is any sequence of characters up to the HIGHLIT_CODE(punctuation, separator).
+&lt;/p&gt;
+
+&lt;p id=&quot;getting-the-gist-overview-elements-separator-paragraph&quot;&gt;
+HIGHLIT_CODE(punctuation, separator) is just HIGHLIT_CODE(punctuation, :),
+	unless the &lt;a href=&quot;#features-custom-separator&quot;&gt;custom separator&lt;/a&gt; feature is enabled.
+&lt;/p&gt;
+
+&lt;p id=&quot;getting-the-gist-overview-elements-value-paragraph&quot;&gt;
+HIGHLIT_CODE(string, value) is any sequence of characters till the end of &lt;em&gt;line&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;p id=&quot;getting-the-gist-overview-elements-whitespace-paragraph&quot;&gt;
+All whitespace before and after every element is stripped (removed).
+&lt;/p&gt;
+
+&lt;div id=&quot;getting-the-gist-overview-elements-examples-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+Every &lt;em&gt;line&lt;/em&gt; in the following descriptor is equivalent:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(keyword, Name)CSPAN(punctuation, :) CSPAN(string, The Taste of MI)
+CSPAN(keyword, Name)CSPAN(punctuation, :)CSPAN(string, The Taste of MI)
+ ​	​ CSPAN(keyword, Name) ​	​ CSPAN(punctuation, :) CSPAN(string, The Taste of MI) ​	​  ​	​
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;&lt;/p&gt;
+All these &lt;em&gt;lines&lt;/em&gt; are comments:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(comment, # A marked comment (not that it changes much))
+CSPAN(comment, An unmarked comment (what))
+​
+CSPAN(comment, Name The Taste of MI)
+CSPAN(comment, ​ ​ ​ ​ ​^ missing separator)
+​
+CSPAN(comment, Name:)
+CSPAN(comment, ​ ​ ​ ​ ​ ​ ​^ missing value)
+​
+CSPAN(comment,  : The Taste of MI)
+CSPAN(comment, ^ missing key)
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+HEADING(3, getting-the-gist-elements, Elements)
+
+&lt;p id=&quot;getting-the-gist-elements-paragraph&quot;&gt;
+Each non-HIGHLIT_CODE(comment, comment) &lt;em&gt;line&lt;/em&gt; forms is an &lt;em&gt;element&lt;/em&gt; –
+	a &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;(CSPAN(keyword, key)CSPAN(punctuation, ,) CSPAN(string, value))&lt;/kbd&gt; pair.
+&lt;/p&gt;
+
+&lt;div id=&quot;getting-the-gist-elements-validity-paragraph&quot;&gt;
+A descriptor is considered valid if the following conditions are met:
+&lt;ul&gt;
+	&lt;li&gt;all required &lt;em&gt;elements&lt;/em&gt; are present,&lt;/li&gt;
+	&lt;li&gt;all path &lt;em&gt;element&lt;/em&gt; HIGHLIT_CODE(string, value)s point to existing files,&lt;/li&gt;
+	&lt;li&gt;all network &lt;em&gt;element&lt;/em&gt; HIGHLIT_CODE(string, value)s are valid URLs,&lt;/li&gt;
+	&lt;li&gt;all files pointed to by network &lt;em&gt;element&lt;/em&gt; HIGHLIT_CODE(string, value)s can be downloaded, and&lt;/li&gt;
+	&lt;li&gt;all date &lt;em&gt;element&lt;/em&gt; HIGHLIT_CODE(string, value)s are valid &lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt; dates
+	    (see the &lt;a href=&quot;#features-free-date-format&quot;&gt;free date format&lt;/a&gt; feature for accepting more date formats).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;getting-the-gist-elements-list-paragraph&quot;&gt;
+The following table enumerates supported HIGHLIT_CODE(keyword, key)s and their properties:
+&lt;/p&gt;
+
+&lt;table id=&quot;getting-the-gist-elements-table&quot;&gt;
+	&lt;tr&gt;&lt;th&gt;HIGHLIT_CODE(keyword, key)&lt;/th&gt; &lt;th&gt;Value type&lt;/th&gt; &lt;th&gt;Effect&lt;/th&gt; &lt;th&gt;Required&lt;/th&gt; &lt;th&gt;Amount&lt;/th&gt; &lt;th&gt;Remarks&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Name)&lt;/td&gt;
+		  &lt;td&gt;Plain text.&lt;/td&gt;
+		  &lt;td&gt;Sets book name/title tag.&lt;/td&gt;
+		  &lt;td&gt;Yes.&lt;/td&gt;
+		  &lt;td&gt;1&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Author)&lt;/td&gt;
+		  &lt;td&gt;Plain text.&lt;/td&gt;
+		  &lt;td&gt;Sets book author tag.&lt;/td&gt;
+		  &lt;td&gt;Yes.&lt;/td&gt;
+		  &lt;td&gt;1&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Author)&lt;/td&gt;
+		  &lt;td&gt;&lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt;-compliant date.&lt;/td&gt;
+		  &lt;td&gt;Sets book authoring/publishing date.&lt;/td&gt;
+		  &lt;td&gt;Yes.&lt;/td&gt;
+		  &lt;td&gt;1&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Language)&lt;/td&gt;
+		  &lt;td&gt;&lt;a href=&quot;//tools.ietf.org/html/bcp47&quot;&gt;BCP47&lt;/a&gt;-compliant language code.&lt;/td&gt;
+		  &lt;td&gt;Sets book language tag.&lt;/td&gt;
+		  &lt;td&gt;Yes.&lt;/td&gt;
+		  &lt;td&gt;1&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Content)&lt;/td&gt;
+		  &lt;td&gt;Path to HTML file.&lt;/td&gt;
+		  &lt;td&gt;Includes specified file in e-book.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Any.&lt;/td&gt;
+		  &lt;td&gt;See &lt;a href=&quot;#getting-the-gist-additional-content-processing-paragraph&quot;&gt;additional content processing&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, String-Content)&lt;/td&gt;
+		  &lt;td&gt;HTML text.&lt;/td&gt;
+		  &lt;td&gt;Includes raw HTML in e-book.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Any.&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Image-Content)&lt;/td&gt;
+		  &lt;td&gt;Path to image file.&lt;/td&gt;
+		  &lt;td&gt;Packs specified image file in the e-book and includes centered content therewith.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Any.&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Network-Image-Content)&lt;/td&gt;
+		  &lt;td&gt;URL to remote image file.&lt;/td&gt;
+		  &lt;td&gt;Downloads and packs specified image file in the e-book and adds centered content therewith.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Any.&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Cover)&lt;/td&gt;
+		  &lt;td&gt;Path to image file.&lt;/td&gt;
+		  &lt;td&gt;Packs specified image and sets cover to content pointing thereat.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;0-1&lt;/td&gt;
+		  &lt;td&gt;Exclusive with HIGHLIT_CODE(keyword, Network-Cover).&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Network-Cover)&lt;/td&gt;
+		  &lt;td&gt;URL to remote image file.&lt;/td&gt;
+		  &lt;td&gt;Downloads and packs specified image and sets cover to content pointing thereat.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;0-1&lt;/td&gt;
+		  &lt;td&gt;Exclusive with HIGHLIT_CODE(keyword, Cover).&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Include)&lt;/td&gt;
+		  &lt;td&gt;File path.&lt;/td&gt;
+		  &lt;td&gt;Packs specified file.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Any.&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;HIGHLIT_CODE(keyword, Network-Include)&lt;/td&gt;
+		  &lt;td&gt;Remote file URL.&lt;/td&gt;
+		  &lt;td&gt;Downloads and packs specified file.&lt;/td&gt;
+		  &lt;td&gt;No.&lt;/td&gt;
+		  &lt;td&gt;Any.&lt;/td&gt;
+		  &lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p id=&quot;getting-the-gist-naming-paths-paragraph&quot;&gt;
+All local paths are relative to the descriptor file.
+This can be changed with the &lt;a href=&quot;#features-include-dirs&quot;&gt;`-I`nclude dirs&lt;/a&gt; feature.
+&lt;/p&gt;
+
+&lt;div id=&quot;getting-the-gist-naming-local-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+The included local files' packed names are the paths by which they've been included with all instances of
+	HIGHLIT_CODE(string, \) replaced with HIGHLIT_CODE(string, /), of
+	HIGHLIT_CODE(string, ../) and HIGHLIT_CODE(string, ./) removed, and of
+	HIGHLIT_CODE(string, /) replaced with HIGHLIT_CODE(string, -).
+Examples:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(string, simple-content.html) ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​CSPAN(punctuation, =&gt;) CSPAN(string, simple-content_html)
+CSPAN(string, ../cover.jpg) ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​CSPAN(punctuation, =&gt;) CSPAN(string, cover.jpg)
+CSPAN(string, .\../books/../covers/cover.jpg) ​CSPAN(punctuation, =&gt;) CSPAN(string, books-covers-cover.jpg)
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;getting-the-gist-naming-remote-paragraph&quot;&gt;
+The included remote files' packed names are the last segment (i.e. the filename) of their URL. &lt;!--'--&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;getting-the-gist-additional-content-processing-paragraph&quot;&gt;
+In addition, all HIGHLIT_CODE(keyword, Content) files are checked for the
+	&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;CSPAN(comment, &lt;​!​-​-) CSPAN(keyword, ePub title)CSPAN(punctuation, :) CSPAN(string, &quot;TOC_NAME&quot;) CSPAN(comment, -​-&gt;)&lt;/kbd&gt;
+	sequence, where HIGHLIT_CODE(string, TOC_NAME) is a sequence of any character except HIGHLIT_CODE(string, &quot;&lt;!--&quot;--&gt;) which is
+	the name to give the content in the Table of Contents.
+&lt;/p&gt;
+
+HEADING(2, features, Features)
+
+&lt;p id=&quot;features-paragraph&quot;&gt;
+Features are extensions to the GEB() descriptor syntax, modifying the behaviour and validity of some &lt;em&gt;lines&lt;/em&gt;.
+&lt;/p&gt;
+
+HEADING(3, features-custom-separator, Custom separator)
+
+&lt;div id=&quot;features-custom-separator-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+This feature allows a custom set of characters to be used as the HIGHLIT_CODE(punctuation, separator). For example:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(keyword, Name)CSPAN(punctuation, :) CSPAN(string, The Taste of MI)
+CSPAN(comment, # With custom separator set to &quot;=&quot; becomes)
+CSPAN(keyword, Name)CSPAN(punctuation, =) CSPAN(string, The Taste of MI)
+CSPAN(comment, # Or, with custom separator set to &quot;INCREDIBLE COMMUNISM&quot; becomes)
+CSPAN(keyword, Name) CSPAN(punctuation, INCREDIBLE COMMUNISM) CSPAN(string, The Taste of MI)
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+HEADING(3, features-free-date-format, Free date format)
+
+&lt;div id=&quot;features-free-date-format-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+This feature allows a GEB() to accept non-&lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt; date formats, whichever it can.
+For example, with custom separator feature on these can become equivalent:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 2017-08-19T21:22:31+0200)
+CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, Sat, 19 Aug 2017 21:22:31 +02:00)
+CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 1503177751)
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+HEADING(3, features-include-dirs, `-I`nclude dirs)
+
+&lt;p id=&quot;features-include-dirs-paragraph&quot;&gt;
+This feature allows for specifying more root directories for finding local files.
+&lt;/p&gt;
+
+&lt;p id=&quot;features-include-dirs-variants-paragraph&quot;&gt;
+An include directory can be &lt;em&gt;named&lt;/em&gt; or &lt;em&gt;unnamed&lt;/em&gt;, which affects their packed name:
+	&lt;em&gt;unnamed&lt;/em&gt; directories act transparently – their packed name is exactly as specified and transformed, while
+	&lt;em&gt;named&lt;/em&gt; directories put their files in a dedicated subdirectory named themafter, then their specified path transformed.
+&lt;/p&gt;
+
+&lt;div id=&quot;features-include-dirs-examples-paragraph&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+For example, given the following directory tree:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+special_book
+├── rendered
+| ​ ​ ​└── output
+| ​ ​ ​ ​ ​ ​ ​├── intro.html
+| ​ ​ ​ ​ ​ ​ ​├── main.html
+| ​ ​ ​ ​ ​ ​ ​└── ending.html
+├── previews
+| ​ ​ ​└── generated
+| ​ ​ ​ ​ ​ ​ ​└── out
+| ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├── intro.html
+| ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └── main.html
+└── gep
+ ​ ​ ​ ​└── special
+ ​ ​ ​ ​ ​ ​ ​ ​├── intro.html
+ ​ ​ ​ ​ ​ ​ ​ ​└── book.epupp
+&lt;/pre&gt;&lt;/kbd&gt;
+If `gep/special/book.epupp`, specifying &quot;intro.html&quot;, &quot;main.html&quot; and &quot;ending.html&quot; is built with
+	&lt;em&gt;named&lt;/em&gt; include dir &quot;previews&quot; pointing at `../../previews/generated/out`, then
+	&lt;em&gt;unnamed&lt;/em&gt; include dir pointing at `rendered/output`,
+	the content inside would be laid out as follows:
+&lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
+book.epub
+├── intro.html ​ ​ ​ ​ ​CSPAN(comment, # From gep/special/)
+├── previews
+| ​ ​ ​└── main.html ​ ​CSPAN(comment, # From previews/generated/out/)
+└── ending.html ​ ​ ​ ​CSPAN(comment, # From rendered/output/)
+&lt;/pre&gt;&lt;/kbd&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+HEADING(3, features-support, Support table)
+
+&lt;table id=&quot;features-support-table&quot;&gt;
+	&lt;tr&gt;&lt;th&gt;&lt;/th&gt;
+	    &lt;th&gt;&lt;a GEB_HREF()       class=&quot;icon&quot;&gt;AWK_ICON()&lt;/a&gt;&lt;/th&gt;
+	    &lt;th&gt;&lt;a GEB_HREF(.rs)                &gt;MFIZZ(rust)&lt;/a&gt;&lt;/th&gt;
+	    &lt;th&gt;&lt;a GEB_HREF(.cpp)   class=&quot;icon&quot;&gt;DEVICON(cplusplus)&lt;/a&gt;&lt;/th&gt;
+	    &lt;th&gt;&lt;a GEB_HREF(.scala)             &gt;MFIZZ(scala)&lt;/a&gt;&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;Custom separator&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;Free date format&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;`-I`nclude dirs&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;
+	    &lt;td&gt;No.&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+HEADING(2, license, License)
+
+&lt;pre id=&quot;license-paragraph&quot;&gt;
+The MIT License (MIT)
+​
+Copyright (c) 2017 nabijaczleweli
+​
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+​
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+​
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+&lt;/pre&gt;
+
+HEADING(2, afterword, Afterword)
+
+&lt;p id=&quot;afterword-paragraph&quot;&gt;
+Thank you for making it this far.
+I hope that this document is clear or informative, if not,
+	why don'&lt;!--'--&gt;t you pop into the &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;issues DEVICON(html5)&lt;/a&gt; and
+	help yourself, others and me?
+&lt;/p&gt;
+
+
+&lt;/div&gt;</description>
+      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
+      <pubDate>Sun, 30 Aug 2017 03:38:21 +0200</pubDate>
+      <guid>https://nabijaczleweli.xyz/capitalism/gen-epub-book/</guid>
+      <source url="https://nabijaczleweli.xyz/capitalism/feed.xml">nabijaczleweli's page</source>
+    </item>
 
     <item>
       <title>Mandalas — nabijaczleweli@gmail.com (nabijaczleweli)</title>
