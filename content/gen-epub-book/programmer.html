@@ -134,6 +134,15 @@ th, td {
 td {
  font-size: calc(9em / 10);
 }
+tr:nth-child(1) {
+  background-color: #aaaaaaa0;
+}
+tr:nth-child(even) {
+  background-color: #eeeeeea0;
+}
+tr:hover {
+  background-color: #cccccca0;
+}
 .highlit-code {
  border-radius: calc(1em / 3);
  padding-left: calc(1em / 5);
@@ -250,7 +259,7 @@ Here is the current list of <code class="nowrap" style="font-variant: normal;">g
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
 </p>
 <p id="variants-binary-paragraphs">
-Binary releases for Windows and Linux are available for download for compiled variants on the realeases pages
+Binary releases of compiled variants are available for download, for Windows and Ubuntu, on the releases pages
  <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases" ><i class="icon-rust" ></i></a>
  <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases" class="icon"><i class="devicon-cplusplus-plain" ></i></a>.
 </p>
@@ -357,7 +366,7 @@ The resulting executable is fully stand-alone and available in your <kbd class="
 <h3 id="installation-and-requirements-cpp" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-cpp">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp</code></h3>
 <div id="installation-and-requirements-cpp-paragraph">
 <p></p>
-To be built build, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp</code> requires:
+To be built, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp</code> requires:
 <ul>
  <li>a `C++14`-compliant C++ compiler,</li>
  <li>a `C11`-compliant C compiler,</li>
@@ -477,7 +486,7 @@ The following table enumerates supported <kbd class="highlit-code nowrap"><span 
     <td>Yes.</td>
     <td>1</td>
     <td></td></tr>
- <tr><td><kbd class="highlit-code nowrap"><span class="keyword">Author</span></kbd></td>
+ <tr><td><kbd class="highlit-code nowrap"><span class="keyword">Date</span></kbd></td>
     <td><a href="//tools.ietf.org/html/rfc3339">RFC3339</a>-compliant date.</td>
     <td>Sets book authoring/publishing date.</td>
     <td>Yes.</td>
@@ -586,7 +595,7 @@ This feature allows a custom set of characters to be used as the <kbd class="hig
 <div id="features-free-date-format-paragraph">
 <p></p>
 This feature allows a <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> to accept non-<a href="//tools.ietf.org/html/rfc3339">RFC3339</a> date formats, whichever it can.
-For example, with custom separator feature on these can become equivalent:
+For example, with free date format feature on these can become equivalent:
 <kbd><pre class="highlit-code numberise">
 <span class="keyword">Date</span><span class="punctuation">:</span> <span class="string">2017-08-19T21:22:31+0200</span>
 <span class="keyword">Date</span><span class="punctuation">:</span> <span class="string">Sat, 19 Aug 2017 21:22:31 +02:00</span>
@@ -623,10 +632,13 @@ For example, given the following directory tree:
 <span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">intro.html</span>
 <span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">book.epupp</span>
 </pre></kbd>
-If `gep/special/book.epupp`, specifying "intro.html", "main.html" and "ending.html" is built with
- <em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then
- <em>unnamed</em> include dir pointing at `rendered/output`,
- the content inside would be laid out as follows:
+If `gep/special/book.epupp`
+<ul>
+ <li>specifying `intro.html`, `main.html` and `ending.html` is built with</li>
+ <li><em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then an</li>
+ <li><em>unnamed</em> include dir pointing at `rendered/output`,</li>
+</ul>
+the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
 <span class="string">book.epub</span>
 <span class="punctuation">├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​<span class="comment"># From gep/special/</span>
@@ -708,8 +720,8 @@ I hope that this document is clear and/or informative, if not,
  Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,
  or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.
  <hr />
- Automatically generated with GCC version 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 20.08.2017 18:00:30 UTC from "src/gen-epub-book/programmer.html.pp".
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/266564766">See job on TravisCI</a>.
+ Automatically generated with GCC version 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 20.08.2017 20:26:59 UTC from "src/gen-epub-book/programmer.html.pp".
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/266597481">See job on TravisCI</a>.
  <hr />
  <a href="/content/feed.xml">RSS feed</a>
  </body>
