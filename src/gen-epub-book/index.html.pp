@@ -39,8 +39,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 	</span>
 
 
-#define SCRIPTS     <script type="text/javascript" src="/capitalism/assets/markdownlike-code.js"></script>                               FORCED_NEWLINE \
-                    <script type="text/javascript" src="/capitalism/assets/numberise-code.js"></script>                                  FORCED_NEWLINE
+#define SCRIPTS     <script type="text/javascript" src="/content/assets/markdownlike-code.js"></script>                                  FORCED_NEWLINE \
+                    <script type="text/javascript" src="/content/assets/numberise-code.js"></script>                                     FORCED_NEWLINE
 #define STYLESHEETS FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                                                                             FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                                                         FORCED_NEWLINE \
                     <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">                                     FORCED_NEWLINE \

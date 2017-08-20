@@ -12,14 +12,14 @@
 #pragma once
 
 
-#define COLUMN_CSS_LINK <link href="/capitalism/assets/column.css" rel="stylesheet" />
+#define COLUMN_CSS_LINK <link href="/content/assets/column.css" rel="stylesheet" />
 
-#define WORD_COUNT_SCRIPT                                                                       \
-  <script type="text/javascript" src="/capitalism/assets/syllable.js"></script>  FORCED_NEWLINE \
-  <script type="text/javascript" src="/capitalism/assets/pluralize.js"></script> FORCED_NEWLINE \
-  <script type="text/javascript" src="/capitalism/assets/word_count.js"></script>
+#define WORD_COUNT_SCRIPT                                                                    \
+  <script type="text/javascript" src="/content/assets/syllable.js"></script>  FORCED_NEWLINE \
+  <script type="text/javascript" src="/content/assets/pluralize.js"></script> FORCED_NEWLINE \
+  <script type="text/javascript" src="/content/assets/word_count.js"></script>
 
-#define BOOK_URL_SETTER_SCRIPT <script type="text/javascript" src="/capitalism/assets/book_setter.js"></script>
+#define BOOK_URL_SETTER_SCRIPT <script type="text/javascript" src="/content/assets/book_setter.js"></script>
 #define CUSTOM_BOOK_URL_SETTER_SCRIPT(url_code)  \
   <script type="text/javascript"> FORCED_NEWLINE \
     function custom_book_url() {  FORCED_NEWLINE \

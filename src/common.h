@@ -75,7 +75,7 @@
     <meta name="description" content=#description>                       FORCED_NEWLINE \
     <title>pagename — nabijaczleweli</title>                             FORCED_NEWLINE \
                                                                          FORCED_NEWLINE \
-    <link href="/capitalism/assets/common.css" rel="stylesheet" />       FORCED_NEWLINE \
+    <link href="/content/assets/common.css" rel="stylesheet" />          FORCED_NEWLINE \
     ICONS_HEADER_PART                                                    FORCED_NEWLINE \
     __VA_ARGS__                                                          FORCED_NEWLINE \
   </head>                                                                FORCED_NEWLINE \
@@ -83,8 +83,8 @@
 
 #define BOILERPLATE_END()                                                                                                                                 \
     <hr />                                                                                                                                 FORCED_NEWLINE \
-    Creative text licensed under <a href="/capitalism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                  FORCED_NEWLINE \
-    code licensed under <a href="/capitalism/LICENSE-CODE">The MIT License</a>.                                                            FORCED_NEWLINE \
+    Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                     FORCED_NEWLINE \
+    code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>.                                                               FORCED_NEWLINE \
     <hr />                                                                                                                                 FORCED_NEWLINE \
     This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, FORCED_NEWLINE \
     and contributt and/or yell at me there.                                                                                                FORCED_NEWLINE \
@@ -96,6 +96,6 @@
     Automatically generated with COMPILER_NAME version COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from FILE_NAME.              FORCED_NEWLINE \
     CI_LINK_FOOTER_PART                                                                                                                    FORCED_NEWLINE \
     <hr />                                                                                                                                 FORCED_NEWLINE \
-    <a href="/capitalism/feed.xml">RSS feed</a>                                                                                            FORCED_NEWLINE \
+    <a href="/content/feed.xml">RSS feed</a>                                                                                               FORCED_NEWLINE \
   </body>                                                                                                                                  FORCED_NEWLINE \
 </html>

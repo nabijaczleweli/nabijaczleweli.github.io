@@ -15,7 +15,7 @@ install:
   - ebook-convert --version
 
 script:
-  - make OUTDIR=../capitalism/
+  - make OUTDIR=../content/
 
 after_success:
   - if [ -n "$TRAVIS_PULL_REQUEST" ]; then
@@ -27,8 +27,8 @@ after_success:
       mkdir -p ~/.ssh && cp gh_rsa ~/.ssh/id_rsa && chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa;
       git clone -b master git@github.com:$TRAVIS_REPO_SLUG.git $TRAVIS_BUILD_DIR-master;
       pushd $TRAVIS_BUILD_DIR-master/;
-      rm -rf capitalism/;
-      mv ../capitalism/ .;
+      rm -rf content/;
+      mv ../content/ .;
       git config --global user.email "nabijaczleweli@gmail.com";
       git config --global user.name "Nabijaczleweli Autouploader Bot";
       git config --global push.default simple;

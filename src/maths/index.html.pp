@@ -13,12 +13,12 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-BOILERPLATE(Mathematics, Various mathematics-based things, en-GB, FONTAWESOME_LINK <link href="/capitalism/assets/image-header.css" rel="stylesheet" />)
+BOILERPLATE(Mathematics, Various mathematics-based things, en-GB, FONTAWESOME_LINK <link href="/content/assets/image-header.css" rel="stylesheet" />)
 
 
 <div>
 <p></p>
-<a href="mandalas.html"><img src="/capitalism/assets/mandalas/900x900.png" class="header" /></a>
+<a href="mandalas.html"><img src="/content/assets/mandalas/900x900.png" class="header" /></a>
 Mandalas generated Tonči Juričev-Grgin's method.<!--'--><br />
 Algorithm, examples, etc. <a href="mandalas.html">inside</a>.<br />
 Videos of more complex mandalas over at

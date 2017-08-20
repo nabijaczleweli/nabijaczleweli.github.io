@@ -16,10 +16,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define MATHJAX(...) [​[​__VA_ARGS__​]​]
 
-#define SCANS_CSS_LINK    <link href="/capitalism/assets/scan.css" rel="stylesheet" />
-#define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/capitalism/assets/scans_show.js"></script>
+#define SCANS_CSS_LINK    <link href="/content/assets/scan.css" rel="stylesheet" />
+#define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/content/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
-                                  src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/capitalism/assets/MathJax-config.js"></script>
+                                  src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/content/assets/MathJax-config.js"></script>
 BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
 
 <style>
@@ -31,8 +31,8 @@ BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK 
 <p class="indented">
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:
 </p>
-<a href="/capitalism/assets/mandalas/900x900.png" target="_blank">
-	<img src="/capitalism/assets/mandalas/900x900.png" class="bigimage" /></a><br />
+<a href="/content/assets/mandalas/900x900.png" target="_blank">
+	<img src="/content/assets/mandalas/900x900.png" class="bigimage" /></a><br />
 <small>Click for big version.</small>
 <p class="indented">
 It uses a very simple process (see <a href="#show-scans">below</a>), which can be used in any
@@ -63,7 +63,7 @@ A different question to be asked is
 	Well, thanks to the wonders of the MATHJAX(fr "Internet"), you can! In most-to-least bad order:<br />
 &emsp;<a href="//github.com/nabijaczleweli/mandalas" target="_blank">Here</a>'s an early version in C++,<!--'-->
 	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.<!--'--><br />
-&emsp;<a href="/capitalism/assets/mandalas/mandalas-js.zip" target="_blank">Here</a>'s the very first version, in JavaScript,<!--'-->
+&emsp;<a href="/content/assets/mandalas/mandalas-js.zip" target="_blank">Here</a>'s the very first version, in JavaScript,<!--'-->
 	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version.<br />
 &emsp;<a href="//github.com/nabijaczleweli/mandalas-rs" target="_blank">Here</a>'s a pretty-much release version in Rust,<!--'-->
 	used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
@@ -117,8 +117,8 @@ MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha)<br 
 And <span id="show-scans">here</span>'s a scanned handdrawn version with examples (warning, <em>very</em> big, expand at own risk): <!--'-->
 <p></p>
 <div id="scans" class="hidden">
-&emsp;<a href="/capitalism/assets/mandalas/scan-page1.png" target="_blank"><img src="/capitalism/assets/mandalas/scan-page1.png" class="scan" /></a><br />
-&emsp;<a href="/capitalism/assets/mandalas/scan-page2.png" target="_blank"><img src="/capitalism/assets/mandalas/scan-page2.png" class="scan" /></a><br />
+&emsp;<a href="/content/assets/mandalas/scan-page1.png" target="_blank"><img src="/content/assets/mandalas/scan-page1.png" class="scan" /></a><br />
+&emsp;<a href="/content/assets/mandalas/scan-page2.png" target="_blank"><img src="/content/assets/mandalas/scan-page2.png" class="scan" /></a><br />
 &emsp;<small>Click for big version.</small>
 </div>
 </div>
