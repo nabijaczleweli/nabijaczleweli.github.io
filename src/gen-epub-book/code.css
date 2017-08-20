@@ -25,26 +25,26 @@
 }
 
 
-.highlit-code .punctuation {
+.highlit-code .punctuation, .highlit-code .punctuation * {
 	color: #cc7833;
 }
 
-.highlit-code .comment {
+.highlit-code .comment, .highlit-code .comment * {
 	color: #bc9458;
 }
 
-.highlit-code .keyword {
+.highlit-code .keyword, .highlit-code .keyword * {
 	color: #da4939;
 }
 
-.highlit-code .verb {
+.highlit-code .verb, .highlit-code .verb * {
 	color: #e8bf6a;
 }
 
-.highlit-code .string {
+.highlit-code .string, .highlit-code .string * {
 	color: #a5c261;
 }
 
-.highlit-code .variable {
+.highlit-code .variable, .highlit-code .variable * {
 	color: #d0d0ff;
 }
