@@ -1,35 +1,3 @@
-/* Copyright (C) 1991-2014 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <http://www.gnu.org/licenses/>.  */
-/* This header is separate from features.h so that the compiler can
-   include it implicitly at the start of every compilation.  It must
-   not itself include <features.h> or any other header that includes
-   <features.h> because the implicit include comes before any feature
-   test macros that may be defined in a source file before it first
-   explicitly includes a system header.  GCC knows the name of this
-   header in order to preinclude it.  */
-/* glibc's intent is to support the IEC 559 math functionality, real
-   and complex.  If the GCC (4.9 and later) predefined macros
-   specifying compiler intent are available, use them to determine
-   whether the overall intent is to support these features; otherwise,
-   presume an older compiler has intent to support these features and
-   define these macros by default.  */
-/* wchar_t uses ISO/IEC 10646 (2nd ed., published 2011-03-15) /
-   Unicode 6.0.  */
-/* We do not support C11 <threads.h>.  */
 <!--
 nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
 ​
@@ -39,18 +7,17 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-       
-       
+
 <!DOCTYPE html>
  <html lang="en-GB">
  <head>
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+ <meta http-equiv="refresh" content="3;url=/content/maths/mandalas.html" />
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <meta name="author" content="nabijaczleweli">
  <meta name="description" content="Tonči Juričev-Grginꞌs Mandalas">
  <title>Mandalas — nabijaczleweli</title>
- <link href="/capitalism/assets/common.css" rel="stylesheet" />
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
@@ -73,118 +40,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
  <meta name="theme-color" content="#ffffff">
- <link href="/capitalism/assets/scan.css" rel="stylesheet" /> <script type="text/javascript" src="/capitalism/assets/scans_show.js"></script> <script type="text/javascript" src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/capitalism/assets/MathJax-config.js"></script>
  </head>
  <body>
-<style>
-.indented {
- text-indent: 1em;
-}
-</style>
-<div>
-<p class="indented">
-The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:
-</p>
-<a href="/capitalism/assets/mandalas/900x900.png" target="_blank">
- <img src="/capitalism/assets/mandalas/900x900.png" class="bigimage" /></a><br />
-<small>Click for big version.</small>
-<p class="indented">
-It uses a very simple process (see <a href="#show-scans">below</a>), which can be used in any
-[​[​beta in NN ∖ {0}​]​]-dimensional space, so, as an example, the same-sized mandala,
-but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):<!--'-->
-</p>
-&emsp;<iframe width="560" height="315" src="//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" frameborder="0" allowfullscreen
-              style="max-width: 100%;">
-      </iframe>
-<p></p>
-</div>
-<p>
-<strong>"How long does rendering a thing such as this take?"</strong>, one might ask.
- Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness<!--'-->
-  one need run the algorithm body many times, an acceptable amount I found was:<br />
- [​[​log(n_max) = |~log(prod_i size_i)~| + 1​]​],<br />
- (which still doesn't perfectly fill more complex corner setups), so for<!--'-->
- [​[​size = [900, 900, 900] => n_max = 10^10​]​],
- which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
-</p>
-<p>
-A different question to be asked is
- <strong>"How does one</strong><!--"-->
- <span style="text-decoration: line-through;">laugh at the shitty code</span>
- <strong>play around with the code that generates these myself?"</strong>.<!--"-->
- Well, thanks to the wonders of the [​[​fr "Internet"​]​], you can! In most-to-least bad order:<br />
-&emsp;<a href="//github.com/nabijaczleweli/mandalas" target="_blank">Here</a>'s an early version in C++,<!--'-->
- featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.<!--'--><br />
-&emsp;<a href="/capitalism/assets/mandalas/mandalas-js.zip" target="_blank">Here</a>'s the very first version, in JavaScript,<!--'-->
- used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version.<br />
-&emsp;<a href="//github.com/nabijaczleweli/mandalas-rs" target="_blank">Here</a>'s a pretty-much release version in Rust,<!--'-->
- used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
- make things based on the algorithm. Will work and build pretty much anywhere.<br />
-</p>
-<p>
-<strong>"I don't care, I just wanna look at more cool shit!"</strong> — I got you covered on this front, too:<br />
-&emsp;<a href="//gist.github.com/nabijaczleweli/8c408e706c097850f5b7b4260035f45c" target="_blank">Here</a>'s<!--'-->
- just a lot of mandalas in various sizes, colours, and shapes. Make sure to be on Wi-Fi, because they get really,
- <em>really</em> big in a couple places.<br />
-&emsp;<a href="//youtu.be/D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" target="_blank">Here</a>'s<!--'-->
- a playlist with some 3-dimensional mandalas and classical music atop.<br />
-&emsp;I'm out of things to put here, because I'm not a cool person <em>en general</em>.
- <small>(What else did you expect, I do maths for fun)</small><br />
-</p>
-<p>
-<strong>"I like/don't like this thing and/or would like to tell/contact you about it/something else."</strong>,
- then reach me over at anything listed <a href="/" target="_blank">here</a>. I don't have a life so I'll probably respond uncannily quickly.
-</p>
-<div class="indented">
-<p></p>
-<strong>"But where's the <em>algorithm</em>?"</strong> – Here's the raw version:<br /> <!--'-->
-<br />
-<br />
-&emsp;[​[​sf "Mandala Generation - Ton" hat(sf "c") sf "i Juri" hat(sf "c") sf "ev-Grgin"​]​]<br />
-<br />
-[​[​alpha in NN ∖ {0} - sf "colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)"​]​]<br />
-[​[​c nn (: 3, +oo ) - sf "amount of corners in c-gonal mandala base"​]​]<br />
-[​[​C - sf "set of point" - sf "corner points of c-gon mandala base"​]​]<br />
-[​[​bar C = c​]​]<br />
-<br />
-[​[​n in NN nn (: alpha + 2; +oo ) - sf "current point number"​]​]<br />
-[​[​d = ra\nd((:0, c) nn NN) - sf "current chosen corner"​]​]<br />
-<br />
-[​[​P_n = (C_d + P_(n-1)) / 2 => a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]<br />
-<br />
-[​[​e_m = |P_n P_(n-m)|​]​]<br />
-[​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]<br />
-<br />
-[​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]<br />
-[​[​or​]​]<br />
-[​[​f = max E​]​]<br />
-[​[​colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha​]​]<br />
-<br />
-<br />
-(I'm not a real mathematician, so it's most likely not done properly.)<br />
-<br />
-And <span id="show-scans">here</span>'s a scanned handdrawn version with examples (warning, <em>very</em> big, expand at own risk): <!--'-->
-<p></p>
-<div id="scans" class="hidden">
-&emsp;<a href="/capitalism/assets/mandalas/scan-page1.png" target="_blank"><img src="/capitalism/assets/mandalas/scan-page1.png" class="scan" /></a><br />
-&emsp;<a href="/capitalism/assets/mandalas/scan-page2.png" target="_blank"><img src="/capitalism/assets/mandalas/scan-page2.png" class="scan" /></a><br />
-&emsp;<small>Click for big version.</small>
-</div>
-</div>
-<hr />
- Creative text licensed under <a href="/capitalism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,
- code licensed under <a href="/capitalism/LICENSE-CODE">The MIT License</a>.
- <hr />
- This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>,
- and contributt and/or yell at me there.
- <hr />
- Do you consider this some <i>good shit, right there</i>?<br />
- Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,
- or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.
- <hr />
- Automatically generated with GCC version 4‍.‍8‍.‍4'<!--'-->s C preprocessor on 20.08.2017 13:04:58 UTC from "src/maths/mandalas.html.pp".
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/266498992">See job on TravisCI</a>.
- <hr />
- <a href="/capitalism/feed.xml">RSS feed</a>
+<strong style="color: red;">This content has moved to <a href="/content/maths/mandalas.html">/content/maths/mandalas.html</a>.</strong>
  </body>
  </html>
