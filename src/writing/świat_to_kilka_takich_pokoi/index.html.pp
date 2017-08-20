@@ -23,6 +23,7 @@ BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], pl,
 
 
 <style>
+#include "../badindent.css"
 #include "../../indent.css"
 </style>
 

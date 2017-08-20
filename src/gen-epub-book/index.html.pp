@@ -127,7 +127,7 @@ Here is the current list of GEB()'s variations, chronologically: <!--'-->
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
 </p>
 <p id="variants-binary-paragraphs">
-Binary releases are available for download for compiled variants on the realeases pages
+Binary releases for Windows and Linux are available for download for compiled variants on the realeases pages
 	<a GEB_HREF(.rs/releases)              >MFIZZ(rust)</a>
 	<a GEB_HREF(.cpp/releases) class="icon">DEVICON(cplusplus)</a>.
 </p>

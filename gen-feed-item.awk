@@ -80,7 +80,7 @@ END {
 	print "      <description>" escape_html(everything) "</description>"
 	print "      <author>" author "</author>"
 	print "      <pubDate>" pubDate "</pubDate>"
-	print "      <guid>https://nabijaczleweli.xyz/capitalism/" filename "</guid>"
-	print "      <source url=\"https://nabijaczleweli.xyz/capitalism/feed.xml\">nabijaczleweli's page</source>"
+	print "      <guid>https://nabijaczleweli.xyz/content/" filename "</guid>"
+	print "      <source url=\"https://nabijaczleweli.xyz/content/feed.xml\">nabijaczleweli's page</source>"
 	print "    </item>"
 }

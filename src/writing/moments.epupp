@@ -1,6 +1,7 @@
 Name: A Widow's Trace
 
 Include: ../indent.css
+Include: badindent.css
 Content: moments/book.html
 
 Author: Jędrzej Aleksander Łopaciński
