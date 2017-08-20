@@ -1,3 +1,35 @@
+/* Copyright (C) 1991-2014 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses ISO/IEC 10646 (2nd ed., published 2011-03-15) /
+   Unicode 6.0.  */
+/* We do not support C11 <threads.h>.  */
 <!--
 nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
 ​
@@ -7,8 +39,6 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-
-
        
        
        
@@ -78,12 +108,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 <!-- ePub title: "The Taste of MI" -->
 
-
-
-
 <p></p>
 <center><h2 class="merriweather">The Taste of MI</h2></center>
-
 <!-- Page 01/12 -->
 <p class="writing indented roboto"> <!-- * ctx: Ася - 24 lata (8 lat po kl. 1 liceum) -->
 Noc. Asia rzuca ostatnie spojrzenie na smyrofon, marszczy <!-- 30.6.17 -> -->
@@ -123,7 +149,6 @@ głowę, wzdychając nad widokiem, ale…
 <p class="writing indented roboto">
 Czoło, miast na łopatkę, albo przynajmniej na
 obręcz barkową, trafia w pustkę, i Asia budzi
-
 <!-- Page 02/12 -->
 się, z frustracją odpycha z powrotem na plecy i próbuje
 dokończyć wzdech, ale niewiele się może równać orgazmicznemu
@@ -166,7 +191,6 @@ W szczególności witamy pierwsze klasy…
 <p class="writing indented roboto continuing">
 Dyrektorka pewnie dronowała dalej, ale została wycięta.
 Natychmiast przez większość gremium, i wykładniczo w
-
 <!-- Page 03/12 -->
 czasie, po zorientowaniu się, że jest to dokładnie to
 samo, co przez ostatnie dziesięć lat.
@@ -205,7 +229,6 @@ więc z ulgą dała się porwać tłumowi, który usłyszał dyrektywę
 Lucynki i zdążał na zapoznawczo-organizacyjną część
 dnia. W grupie swoich dziesięcioklasistów udało ustawić
 się jej za zniewalająco-pobudzającą współklasowiczką.
-
 <!-- Page 04/12 -->
 Korciło ją, co prawda, władowanie się jej prosto w
 biznes, a szczególnie dokonanie nosowłośnej transakcji zapachowej,
@@ -254,7 +277,6 @@ jej się, bo…
 — Hejka! — Towarzyszka Lucynkowej niedoli odezwała się
 pierwsza, a z takim metaforycznym bananem, że niemożliwym
 było nieodebranie nieskończonych pokładów pozytywizmu​<a href="#endnote-1"><sup class="math-font-normal">1</sup></a>
-
 <!-- Page 05/12 -->
 emanującego z każdego poru jej skóry; Asia bezoporowo
 poddała się jego działaniu.
@@ -294,7 +316,6 @@ poddaje się napływającym obrazom. Wspomina.
 <p class="writing indented roboto" id="stoned-paragraph">
 Ostry aromat płonącej sosny i ciche huczenie ognia uspokajało.
 A może to nie ogień huczał, tylko te dwa, trzy?, drinki
-
 <!-- Page 06/12 -->
 robiły swoje? Obraz co chwilę tracił ostrość, i, jak to
 właśnie zrobił, urywał się. („Tak się kończy zalewanie sobie płata
@@ -327,7 +348,6 @@ równowagi, spowodowało malowniczą <em class="roboto-em">biglebę poplątaną<
 poza <span class="roboto-em">New Hampshire</span>), szczęśliwie na trawę obok
 asfaltu miast na asfalt sam w sobie, bo, miast
 przerzucania winy, łatania się i samobójstwa w
-
 <!-- Page 07/12 -->
 perspektywie następnych dwóch lat, siedziały
 bark w bark na trawie i chichrały się niemożebnie,
@@ -362,7 +382,6 @@ miejscami nawet podobnych do rodziny), wysoce
 apetyczny bark, odbitka bliżej nieokreślonego, a dalej
 rozmazanego czegoś, a, nie, to tylko podłoże zafalowało
 w unisonie z barkiem wapetyczniającym
-
 <!-- Page 08/12 -->
 <!-- Nine lines taken up by maths here. -->
 <!-- Nine lines taken up by maths here. -->
@@ -393,7 +412,6 @@ trzy cale przed <!-- ** bardziej 3.5 ale v0v -->
 nimi uśmiechające
 się szelmowsko w komitywie z większością
 swojego jestestwa, do Emilli Zet<span class="smol">(kropka)</span>,
-
 <!-- Page 09/12 -->
 która zareagowała na operacje płucnonosowe <!-- 7.8.17 -> -->
 w własnymi, i, marszcząc nosek…
@@ -432,7 +450,6 @@ gramach etanolu na kilogram to tylko wołać chór <!-- swoją drogą taka jest 
 <!-- Four lines taken up by futile attempts at writing Greek here. -->
 <!-- Four lines taken up by futile attempts at writing Greek here. -->
 <!-- Four lines taken up by futile attempts at writing Greek here. -->
-
 <!-- Page 10/12 -->
 <!-- Five lines taken up biscale drawing here. -->
 <!-- Five lines taken up biscale drawing here. -->
@@ -471,7 +488,6 @@ nie są przewaćnie bardziej interesujące
 niż <span class="roboto-em">Proces Bessemera</span><a href="#endnote-8"><sup class="math-font-normal">8</sup></a>, ale
 teraz trawiła uprzednią wymianę zdań, i,
 mimo, że na nią wychodzi(ło) te <span class="math-font-normal roboto-unscale">9</span>
-
 <!-- Page 11/12 -->
 procent więcej, to wychodziło jej to zdecydowanie za wolno, I już,
 kiedy Asia zaczęła dopuszczać
@@ -510,7 +526,6 @@ ciągnie ją na wernisaż, taki
 z werwą, i adekwatnie, bo inaugurował wystawę
 „jednego z największych talentów nowożytności”<a href="#endnote-10"><sup class="math-font-normal">10</sup></a>
 (rozważania, której z nich trafiło sięlepiej, zostawiała
-
 <!-- Page 12/12 -->
 w.w. emolowi); oddanie do użytku jej praktyki​<a href="#endnote-11"><sup class="math-font-normal">11</sup></a> psychologicznej;
 mikrowystawa fotograficzna z jej
@@ -546,10 +561,7 @@ Emilii, bo wie, że Emi, <em class="roboto-em">jej</em> Emi smakuje, jak nikt
 inny.
 </p>
 <!-- One line taken up by dates and places here. -->
-
  
-
-
 <!--​-->
 
 <!-- ePub title: "Przypisy" -->
@@ -658,8 +670,8 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
  Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,
  or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.
  <hr />
- Automatically generated with GCC version 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 20.08.2017 01:40:34 UTC from "src/writing/the_taste_of_mi/index.html.pp".
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/266410496">See job on TravisCI</a>.
+ Automatically generated with GCC version 4‍.‍8‍.‍4'<!--'-->s C preprocessor on 20.08.2017 13:04:58 UTC from "src/writing/the_taste_of_mi/index.html.pp".
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/266498992">See job on TravisCI</a>.
  <hr />
  <a href="/capitalism/feed.xml">RSS feed</a>
  </body>

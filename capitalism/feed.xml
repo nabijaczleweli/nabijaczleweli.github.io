@@ -10,13 +10,13 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sun, 20 Aug 2017 01:41:04 +0000
+      Sun, 20 Aug 2017 13:05:55 +0000
     </pubDate>
     <lastBuildDate>
-      Sun, 20 Aug 2017 01:41:04 +0000
+      Sun, 20 Aug 2017 13:05:55 +0000
     </lastBuildDate>
     <generator>
-      GNU Awk 3.1.8
+      GNU Awk 4.0.1
     </generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>60</ttl>
@@ -190,7 +190,7 @@ HEADING(1, main, GEB())
 HEADING_S(2, description, style=&quot;margin-top: initial;&quot;, Description)
 
 &lt;p id=&quot;description-paragraph&quot;&gt;
-GEB() is a loose-file–to–ePub conversion tool for everyone not afraid of not using Word.
+GEB() is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
 GEB() allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
 &lt;/p&gt;
 &lt;p id=&quot;description-what-is-it-paragraph&quot;&gt;
@@ -246,8 +246,13 @@ Here is the current list of GEB()'s variations, chronologically: &lt;!--'--&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;p id=&quot;description-variations-paragraph&quot;&gt;
+&lt;p id=&quot;variants-variations-paragraph&quot;&gt;
 These variations have mostly the same features, and all differences will be highlighted in this document as they come up.
+&lt;/p&gt;
+&lt;p id=&quot;variants-binary-paragraphs&quot;&gt;
+Binary releases are available for download for compiled variants on the realeases pages
+	&lt;a GEB_HREF(.rs/releases)              &gt;MFIZZ(rust)&lt;/a&gt;
+	&lt;a GEB_HREF(.cpp/releases) class=&quot;icon&quot;&gt;DEVICON(cplusplus)&lt;/a&gt;.
 &lt;/p&gt;
 
 HEADING(2, installation-and-requirements, Installation and requirements)
