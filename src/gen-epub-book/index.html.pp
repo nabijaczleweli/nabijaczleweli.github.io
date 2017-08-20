@@ -15,6 +15,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../devicon.h"
 
 
+#define RSS_PUB_DATE Sun, 30 Aug 2017 03:38:21 +0200
+
+
 #define GEB(...)          <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>
 #define GEB_HREF(...)     href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
 #define GEB_CDN_HREF(...) href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
