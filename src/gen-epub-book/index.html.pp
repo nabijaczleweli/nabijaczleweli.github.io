@@ -53,7 +53,7 @@ The "design goal" of GEB()’s descriptor syntax is to make it as consistent and
 The idea is that a GEB() descriptor should be writable by any person with <em>minimal</em> technical knowledge.
 </p>
 <p id="description-for-whom-paragraph">
-This guide is designated for non-programmers. If you're a programmer, see the more in-depth <a href="programmer.html">programmer's variant</a>.
+This guide is designated for non-programmers. If you're a programmer, see the more in-depth <a href="programmer.html">programmer's version</a>.
 </p>
 <p id="description-license-paragraph">
 GEB() is free software, available under the MIT open source license.
@@ -142,7 +142,7 @@ For a complete rundown of all accepted <em>lines</em>, see <a href="programmer.h
 <div id="getting-started-syntax-explanation-path-paragraph">
 <p></p>
 All local paths are relative to the descriptor file.
-The comments in the following following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, gep/special/book.epupp):
+The comments in the following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, gep/special/book.epupp):
 <kbd><pre class="highlit-code numberise">
 CSPAN(string, first-book)
 CSPAN(punctuation, ├──) CSPAN(string, rendered)
