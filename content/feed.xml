@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Mon, 21 Aug 2017 18:40:43 +0000
+      Mon, 21 Aug 2017 22:05:53 +0000
     </pubDate>
     <lastBuildDate>
-      Mon, 21 Aug 2017 18:40:43 +0000
+      Mon, 21 Aug 2017 22:05:53 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -128,6 +128,7 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #cccccca0;
+  transition: all 0.25s;
 }
 .highlit-code {
 	border-radius: calc(1em / 3);
