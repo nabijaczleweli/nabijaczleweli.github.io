@@ -112,7 +112,7 @@ $(OUTDIR)% : src/%.eppe
 
 $(OUTDIR)%.epub : $(GEN_EPUB_BOOK) src/%.epupp
 	@mkdir -p $(dir $@)
-	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)" > $@
+	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)"
 
 $(OUTDIR)%.mobi : $(OUTDIR)%.epub
 	@mkdir -p $(dir $@)

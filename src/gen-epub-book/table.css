@@ -18,4 +18,5 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #cccccca0;
+  transition: all 0.25s;
 }

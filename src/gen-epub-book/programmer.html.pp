@@ -123,14 +123,9 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
 		      Getting random UUID.</td>
 		  <td><samp>*x</samp>: usually shipped with system, package manager, <a href="//curl.haxx.se/download.html">binary releases</a>.<br />
 		      Windows:         <a href="//curl.haxx.se/download.html">binary releases</a>.</td></tr>
-	<tr><td><a href="//gnu.org/software/grep">`grep`</a></td>
-		  <td>Searching for chapter titles.</td>
-		  <td><samp>*x</samp>: shipped with system, package manager.<br />
-		      Windows:         <a href="http://gnuwin32.sourceforge.net/packages/grep.htm">port</a>.</td></tr>
-	<tr><td>`cat`</td>
-		  <td>Outputting final result.</td>
-		  <td><samp>*x</samp>: shipped with system, package manager.<br />
-		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported `binutils`</a>.</td></tr>
+	<tr><td><a href="http://info-zip.org/Zip.html"><img src="/content/assets/InfoZIP-gold2.png" alt="InfoZip" style="height: 1.25em;"></a></td>
+		  <td>Packing ePub.</td>
+		  <td><a href="http://info-zip.org/Zip.html#Downloads">binary releases</a>.</td></tr>
 	<tr><td>`rm`</td>
 		  <td>Pre-generation cleanup.</td>
 		  <td><samp>*x</samp>: shipped with system, package manager.<br />
@@ -143,7 +138,7 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
 		  <td>Creating temporary directories.</td>
 		  <td>Available everywhere.</td></tr>
 	<tr><td>`cd`</td>
-		  <td>Proper path handling for less configurable tools.</td>
+		  <td>Proper relative paths for `Info-ZIP` (no, there'<!--'-->s no way around that).</td>
 		  <td>Available everywhere.</td></tr>
 </table>
 
