@@ -81,21 +81,20 @@
   </head>                                                                FORCED_NEWLINE \
   <body>
 
-#define BOILERPLATE_END()                                                                                                                                 \
-    <hr />                                                                                                                                 FORCED_NEWLINE \
-    Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                                     FORCED_NEWLINE \
-    code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>.                                                               FORCED_NEWLINE \
-    <hr />                                                                                                                                 FORCED_NEWLINE \
-    This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, FORCED_NEWLINE \
-    and contributt and/or yell at me there.                                                                                                FORCED_NEWLINE \
-    <hr />                                                                                                                                 FORCED_NEWLINE \
-    Do you consider this some <i>good shit, right there</i>?<br />                                                                         FORCED_NEWLINE \
-    Follow me on GitHub, where I'm<!--'--> <a href="https://github.com/nabijaczleweli">nabijaczleweli</a>,                                 FORCED_NEWLINE \
-    or on Twitter, where I'm<!--'--> <sub>(surprise, surprise)</sub> <a href="https://twitter.com/nabijaczleweli">@nabijaczleweli</a>.     FORCED_NEWLINE \
-    <hr />                                                                                                                                 FORCED_NEWLINE \
-    Automatically generated with COMPILER_NAME version COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from FILE_NAME.              FORCED_NEWLINE \
-    CI_LINK_FOOTER_PART                                                                                                                    FORCED_NEWLINE \
-    <hr />                                                                                                                                 FORCED_NEWLINE \
-    <a href="/content/feed.xml">RSS feed</a>                                                                                               FORCED_NEWLINE \
-  </body>                                                                                                                                  FORCED_NEWLINE \
+#define BOILERPLATE_END()                                                                                                                           \
+    <hr />                                                                                                                           FORCED_NEWLINE \
+    Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                               FORCED_NEWLINE \
+    code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>.                                                         FORCED_NEWLINE \
+    <hr />                                                                                                                           FORCED_NEWLINE \
+    This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, FORCED_NEWLINE \
+    and contribute and/or yell at me there.                                                                                          FORCED_NEWLINE \
+    <hr />                                                                                                                           FORCED_NEWLINE \
+    Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>.                                FORCED_NEWLINE \
+    <hr />                                                                                                                           FORCED_NEWLINE \
+    Automatically generated with COMPILER_NAME COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from                           FORCED_NEWLINE \
+    <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a>.          FORCED_NEWLINE \
+    CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
+    <hr />                                                                                                                           FORCED_NEWLINE \
+    <a href="/content/feed.xml">RSS feed</a>                                                                                         FORCED_NEWLINE \
+  </body>                                                                                                                            FORCED_NEWLINE \
 </html>
