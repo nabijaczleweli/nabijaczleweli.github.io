@@ -20,7 +20,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/content/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
                                   src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/content/assets/MathJax-config.js"></script>
-BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
+#define ZIPPING_SCRIPTS   <script type="text/javascript" src="//cdn.rawgit.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script> \
+                          <script type="text/javascript" src="//cdn.rawgit.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script> \
+                          <script type="text/javascript" src="/content/assets/pack_specified.js"></script>
+BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
 
 <style>
 #include "../indent.css"
@@ -63,8 +66,9 @@ A different question to be asked is
 	Well, thanks to the wonders of the MATHJAX(fr "Internet"), you can! In most-to-least bad order:<br />
 &emsp;<a href="//github.com/nabijaczleweli/mandalas" target="_blank">Here</a>'s an early version in C++,<!--'-->
 	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.<!--'--><br />
-&emsp;<a href="/content/assets/mandalas/mandalas-js.zip" target="_blank">Here</a>'s the very first version, in JavaScript,<!--'-->
-	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version.<br />
+&emsp;<a href="/content/assets/mandalas/mandalas-js/mandele.html">Here</a>'s the very first version, in JavaScript, <!--'-->
+	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version
+	(<a href="javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')">download as ZIP</a>).<br />
 &emsp;<a href="//github.com/nabijaczleweli/mandalas-rs" target="_blank">Here</a>'s a pretty-much release version in Rust,<!--'-->
 	used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
 	make things based on the algorithm. Will work and build pretty much anywhere.<br />
