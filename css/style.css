@@ -1,5 +1,6 @@
 img {
   border-radius: 3.90625%;
+  box-shadow: calc(1em / 7) calc(1em / 2.8) calc(1em / 2) rgba(0, 0, 0, 0.5);
 }
 
 body {
