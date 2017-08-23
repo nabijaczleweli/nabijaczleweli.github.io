@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "gep.h"
 
 
-BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-book implementations, en-GB, STYLESHEETS SCRIPTS)
+BOILERPLATE(gen-epub-book for programmers, feature sets and links to various gen-epub-book implementations, en-GB, STYLESHEETS SCRIPTS)
 
 <style>
 #include "overlay.css"
@@ -32,7 +32,7 @@ BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-bo
 
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
 <p></p>
-HEADING(1, main, GEB() for Programmers)
+HEADING(1, main, GEB() For Programmers)
 
 HEADING_S(2, description, style="margin-top: initial;", Description)
 
@@ -126,19 +126,19 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
 	<tr><td><a href="http://info-zip.org/Zip.html"><img src="/content/assets/InfoZIP-gold2.png" alt="InfoZip" style="height: 1.25em;"></a></td>
 		  <td>Packing ePub.</td>
 		  <td><a href="http://info-zip.org/Zip.html#Downloads">binary releases</a>.</td></tr>
-	<tr><td>`rm`</td>
+	<tr><td><code>rm</code></td>
 		  <td>Pre-generation cleanup.</td>
 		  <td><samp>*x</samp>: shipped with system, package manager.<br />
-		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported `binutils`</a>.</td></tr>
-	<tr><td>`cp`</td>
+		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported <code>binutils</code></a>.</td></tr>
+	<tr><td><code>cp</code></td>
 		  <td>Assembling e-book in temporary directory.</td>
 		  <td><samp>*x</samp>: shipped with system, package manager.<br />
-		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported `binutils`</a>.</td></tr>
-	<tr><td>`mkdir`</td>
+		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported <code>binutils</code></a>.</td></tr>
+	<tr><td><code>mkdir</code></td>
 		  <td>Creating temporary directories.</td>
 		  <td>Available everywhere.</td></tr>
-	<tr><td>`cd`</td>
-		  <td>Proper relative paths for `Info-ZIP` (no, there'<!--'-->s no way around that).</td>
+	<tr><td><code>cd</code></td>
+		  <td>Proper relative paths for <code>Info-ZIP</code> (no, there'<!--'-->s no way around that).</td>
 		  <td>Available everywhere.</td></tr>
 </table>
 
@@ -154,10 +154,10 @@ Here'<!--'-->s the list outlining some tested AWK_ICON() implementations and the
 
 <table id="installation-and-requirements-awk-compatibility-table">
 	<tr><th>Variant</th> <th>Support</th> <th>Note</th></tr>
-	<tr><td><a href="//gnu.org/software/gawk">`gawk`</a></td>
+	<tr><td><a href="//gnu.org/software/gawk"><code>gawk</code></a></td>
 		  <td>Yes.</td>
 		  <td></td></tr>
-	<tr><td><a href="//invisible-island.net/mawk/mawk.html">`mawk`</a></td>
+	<tr><td><a href="//invisible-island.net/mawk/mawk.html"><code>mawk</code></a></td>
 		  <td>No.</td>
 		  <td>Max supported string length exceeded. <code class="tag tag-white">wontfix</code></td></tr>
 </table>
@@ -190,11 +190,11 @@ HEADING(3, installation-and-requirements-cpp, GEB(.cpp))
 <p></p>
 To be built, GEB(.cpp) requires:
 <ul>
-	<li>a `C++14`-compliant C++ compiler,</li>
-	<li>a `C11`-compliant C compiler,</li>
-	<li><a href="//ninja-build.org">`ninja`</a>,</li>
+	<li>a <code>C++14</code>-compliant C++ compiler,</li>
+	<li>a <code>C11</code>-compliant C compiler,</li>
+	<li><a href="//ninja-build.org"><code>ninja</code></a>,</li>
 	<li><a href="//cmake.org">CMake</a> 2.8+,</li>
-	<li>a dev installation of <a href="//curl.haxx.se">`libcurl`</a>.</li>
+	<li>a dev installation of <a href="//curl.haxx.se"><code>libcurl</code></a>.</li>
 </ul>
 The resulting executable is fully stand-alone.
 <p></p>
@@ -204,7 +204,7 @@ HEADING(3, installation-and-requirements-scala, GEB(.scala))
 
 <p id="installation-and-requirements-scala-paragraph">
 To build, GEB(.scala) requires the <a href="//scala-lang.org">Scala</a> compiler.
-The resulting `.jar`s depend only on the Scala runtime library.
+The resulting <code>.jar</code>s depend only on the Scala runtime library.
 
 HEADING(2, configuration, Configuration)
 
@@ -226,7 +226,7 @@ This usually yields for
 HEADING(3, configuration-rs, GEB(.rs) <a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)>FA(book)</a>)
 
 <p id="configuration-rs-paragraph">
-The `--verbose` flag makes GEB(.rs) print information about what it's currently doing. <!--'-->
+The <code>--verbose</code> flag makes GEB(.rs) print information about what it's currently doing. <!--'-->
 </p>
 
 <h2 id="getting-the-gist">HEADING_LINK(getting-the-gist)
@@ -394,7 +394,7 @@ The following table enumerates supported HIGHLIT_CODE(keyword, key)s and their p
 
 <p id="getting-the-gist-naming-paths-paragraph">
 All local paths are relative to the descriptor file.
-This can be changed with the <a href="#features-include-dirs">`-I`nclude dirs</a> feature.
+This can be changed with the <a href="#features-include-dirs"><code>-I</code>nclude dirs</a> feature.
 </p>
 
 <div id="getting-the-gist-naming-local-paragraph">
@@ -458,7 +458,7 @@ CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 1503177751)
 <p></p>
 </div>
 
-HEADING(3, features-include-dirs, `-I`nclude dirs)
+HEADING(3, features-include-dirs, <code>-I</code>nclude dirs)
 
 <p id="features-include-dirs-paragraph">
 This feature allows for specifying more root directories for finding local files.
@@ -490,11 +490,11 @@ CSPAN(punctuation,  ​ ​ ​ ​└──) CSPAN(string, special)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, intro.html)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, book.epupp)
 </pre></kbd>
-If `gep/special/book.epupp`
+If <code>gep/special/book.epupp</code>
 <ul>
-	<li>specifying `intro.html`, `main.html` and `ending.html` is built with</li>
-	<li><em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then an</li>
-	<li><em>unnamed</em> include dir pointing at `rendered/output`,</li>
+	<li>specifying <code>intro.html</code>, <code>main.html</code> and <code>ending.html</code> is built with</li>
+	<li><em>named</em> include dir "previews" pointing at <code>../../previews/generated/out</code>, then an</li>
+	<li><em>unnamed</em> include dir pointing at <code>rendered/output</code>,</li>
 </ul>
 the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
@@ -519,17 +519,17 @@ HEADING(3, features-support, Support table)
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td>
-	    <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0">`v1.1.0`</a></td></tr>
+	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
 	<tr><td>Free date format</td>
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td></tr>
-	<tr><td>`-I`nclude dirs</td>
+	<tr><td><code>-I</code>nclude dirs</td>
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td>
-	    <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0">`v1.1.0`</a></td></tr>
+	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
 </table>
 
 HEADING(2, license, License)

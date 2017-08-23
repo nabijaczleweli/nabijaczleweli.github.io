@@ -204,7 +204,7 @@ If you have your descriptor and are ready to assemble it into an e-book open the
 <kbd><pre class="highlit-code numberise">
 CSPAN(punctuation, $) gen-epub-book CSPAN(string, first-book.epupp) CSPAN(string, first-book.epub)
 </pre></kbd>
-After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called `first-book.epub`. <!--'-->
+After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called <code>first-book.epub</code>. <!--'-->
 Congratulations! You can now read, verify and convert it using, e.g., <a href="//calibre-ebook.com/">Calibre</a>.
 </div>
 
