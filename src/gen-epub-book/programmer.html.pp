@@ -511,15 +511,15 @@ HEADING(3, features-support, Support table)
 
 <table id="features-support-table">
 	<tr><th></th>
-	    <th><a GEB_HREF()       class="icon">AWK_ICON()</a></th>
-	    <th><a GEB_HREF(.rs)                >MFIZZ(rust)</a></th>
-	    <th><a GEB_HREF(.cpp)   class="icon">DEVICON(cplusplus)</a></th>
-	    <th><a GEB_HREF(.scala)             >MFIZZ(scala)</a></th></tr>
+	    <th><center><a GEB_HREF()       class="icon">AWK_ICON()</a></center></th>
+	    <th><center><a GEB_HREF(.rs)                >MFIZZ(rust)</a></center></th>
+	    <th><center><a GEB_HREF(.cpp)   class="icon">DEVICON(cplusplus)</a></center></th>
+	    <th><center><a GEB_HREF(.scala)             >MFIZZ(scala)</a></center></th></tr>
 	<tr><td>Custom separator</td>
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td>
-	    <td>No.</td></tr>
+	    <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0">`v1.1.0`</a></td></tr>
 	<tr><td>Free date format</td>
 	    <td>No.</td>
 	    <td>No.</td>
@@ -529,7 +529,7 @@ HEADING(3, features-support, Support table)
 	    <td>No.</td>
 	    <td>No.</td>
 	    <td>No.</td>
-	    <td>No.</td></tr>
+	    <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0">`v1.1.0`</a></td></tr>
 </table>
 
 HEADING(2, license, License)
