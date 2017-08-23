@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 23 Aug 2017 02:49:05 +0000
+      Wed, 23 Aug 2017 16:18:07 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 23 Aug 2017 02:49:05 +0000
+      Wed, 23 Aug 2017 16:18:07 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -367,7 +367,7 @@ If you have your descriptor and are ready to assemble it into an e-book open the
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
 CSPAN(punctuation, $) gen-epub-book CSPAN(string, first-book.epupp) CSPAN(string, first-book.epub)
 &lt;/pre&gt;&lt;/kbd&gt;
-After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called `first-book.epub`. &lt;!--'--&gt;
+After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called &lt;code&gt;first-book.epub&lt;/code&gt;. &lt;!--'--&gt;
 Congratulations! You can now read, verify and convert it using, e.g., &lt;a href=&quot;//calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.
 &lt;/div&gt;
 

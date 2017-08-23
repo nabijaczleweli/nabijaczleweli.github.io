@@ -24,7 +24,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <meta name="author" content="nabijaczleweli">
  <meta name="description" content="feature sets and links to various gen-epub-book implementations">
- <title>gen-epub-book general — nabijaczleweli</title>
+ <title>gen-epub-book for programmers — nabijaczleweli</title>
  <link href="/content/assets/common.css" rel="stylesheet" />
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
@@ -55,7 +55,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
  <link href="//fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
  <link href="//fonts.googleapis.com/css?family=Merriweather&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
- <script type="text/javascript" src="/content/assets/markdownlike-code.js"></script>
  <script type="text/javascript" src="/content/assets/numberise-code.js"></script>
  </head>
  <body>
@@ -195,7 +194,7 @@ tr:hover {
 <div class="roboto">
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
 <p></p>
-<h1 id="main" class="smallcaps" ><a class="hash-link" href="#main">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> for Programmers</h1>
+<h1 id="main" class="smallcaps" ><a class="hash-link" href="#main">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> For Programmers</h1>
 <h2 id="description" class="smallcaps" style="margin-top: initial;"><a class="hash-link" href="#description">#</a> Description</h2>
 <p id="description-paragraph">
 <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
@@ -284,19 +283,19 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
  <tr><td><a href="http://info-zip.org/Zip.html"><img src="/content/assets/InfoZIP-gold2.png" alt="InfoZip" style="height: 1.25em;"></a></td>
     <td>Packing ePub.</td>
     <td><a href="http://info-zip.org/Zip.html#Downloads">binary releases</a>.</td></tr>
- <tr><td>`rm`</td>
+ <tr><td><code>rm</code></td>
     <td>Pre-generation cleanup.</td>
     <td><samp>*x</samp>: shipped with system, package manager.<br />
-        Windows: <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported `binutils`</a>.</td></tr>
- <tr><td>`cp`</td>
+        Windows: <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported <code>binutils</code></a>.</td></tr>
+ <tr><td><code>cp</code></td>
     <td>Assembling e-book in temporary directory.</td>
     <td><samp>*x</samp>: shipped with system, package manager.<br />
-        Windows: <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported `binutils`</a>.</td></tr>
- <tr><td>`mkdir`</td>
+        Windows: <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported <code>binutils</code></a>.</td></tr>
+ <tr><td><code>mkdir</code></td>
     <td>Creating temporary directories.</td>
     <td>Available everywhere.</td></tr>
- <tr><td>`cd`</td>
-    <td>Proper relative paths for `Info-ZIP` (no, there'<!--'-->s no way around that).</td>
+ <tr><td><code>cd</code></td>
+    <td>Proper relative paths for <code>Info-ZIP</code> (no, there'<!--'-->s no way around that).</td>
     <td>Available everywhere.</td></tr>
 </table>
 <p id="installation-and-requirements-awk-accessibility-paragraph">
@@ -327,10 +326,10 @@ Here'<!--'-->s the list outlining some tested <span style="font-weight: normal;"
 </p>
 <table id="installation-and-requirements-awk-compatibility-table">
  <tr><th>Variant</th> <th>Support</th> <th>Note</th></tr>
- <tr><td><a href="//gnu.org/software/gawk">`gawk`</a></td>
+ <tr><td><a href="//gnu.org/software/gawk"><code>gawk</code></a></td>
     <td>Yes.</td>
     <td></td></tr>
- <tr><td><a href="//invisible-island.net/mawk/mawk.html">`mawk`</a></td>
+ <tr><td><a href="//invisible-island.net/mawk/mawk.html"><code>mawk</code></a></td>
     <td>No.</td>
     <td>Max supported string length exceeded. <code class="tag tag-white">wontfix</code></td></tr>
 </table>
@@ -364,11 +363,11 @@ The resulting executable is fully stand-alone and available in your <kbd class="
 <p></p>
 To be built, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp</code> requires:
 <ul>
- <li>a `C++14`-compliant C++ compiler,</li>
- <li>a `C11`-compliant C compiler,</li>
- <li><a href="//ninja-build.org">`ninja`</a>,</li>
+ <li>a <code>C++14</code>-compliant C++ compiler,</li>
+ <li>a <code>C11</code>-compliant C compiler,</li>
+ <li><a href="//ninja-build.org"><code>ninja</code></a>,</li>
  <li><a href="//cmake.org">CMake</a> 2.8+,</li>
- <li>a dev installation of <a href="//curl.haxx.se">`libcurl`</a>.</li>
+ <li>a dev installation of <a href="//curl.haxx.se"><code>libcurl</code></a>.</li>
 </ul>
 The resulting executable is fully stand-alone.
 <p></p>
@@ -376,7 +375,7 @@ The resulting executable is fully stand-alone.
 <h3 id="installation-and-requirements-scala" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-scala">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code></h3>
 <p id="installation-and-requirements-scala-paragraph">
 To build, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code> requires the <a href="//scala-lang.org">Scala</a> compiler.
-The resulting `.jar`s depend only on the Scala runtime library.
+The resulting <code>.jar</code>s depend only on the Scala runtime library.
 <h2 id="configuration" class="smallcaps" ><a class="hash-link" href="#configuration">#</a> Configuration</h2>
 <p id="configuration-paragraph">
 The same descriptor syntax put into any <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> variant with any options passed shall produce (functionally) the same e-book
@@ -392,7 +391,7 @@ This usually yields for
 </p>
 <h3 id="configuration-rs" class="smallcaps" ><a class="hash-link" href="#configuration-rs">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> <a href="https://cdn.rawgit.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.awk.1.html"><i class="fa fa-book"></i></a></h3>
 <p id="configuration-rs-paragraph">
-The `--verbose` flag makes <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> print information about what it's currently doing. <!--'-->
+The <code>--verbose</code> flag makes <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> print information about what it's currently doing. <!--'-->
 </p>
 <h2 id="getting-the-gist"><a class="hash-link" href="#getting-the-gist">#</a>
                           <span class="smallcaps">Getting the gist of</span> <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code><span class="smallcaps">'s descriptor syntax</span></h2> <!--'-->
@@ -545,7 +544,7 @@ The following table enumerates supported <kbd class="highlit-code nowrap"><span 
 </table>
 <p id="getting-the-gist-naming-paths-paragraph">
 All local paths are relative to the descriptor file.
-This can be changed with the <a href="#features-include-dirs">`-I`nclude dirs</a> feature.
+This can be changed with the <a href="#features-include-dirs"><code>-I</code>nclude dirs</a> feature.
 </p>
 <div id="getting-the-gist-naming-local-paragraph">
 <p></p>
@@ -599,7 +598,7 @@ For example, with free date format feature on these can become equivalent:
 </pre></kbd>
 <p></p>
 </div>
-<h3 id="features-include-dirs" class="smallcaps" ><a class="hash-link" href="#features-include-dirs">#</a> `-I`nclude dirs</h3>
+<h3 id="features-include-dirs" class="smallcaps" ><a class="hash-link" href="#features-include-dirs">#</a> <code>-I</code>nclude dirs</h3>
 <p id="features-include-dirs-paragraph">
 This feature allows for specifying more root directories for finding local files.
 </p>
@@ -628,11 +627,11 @@ For example, given the following directory tree:
 <span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">intro.html</span>
 <span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">book.epupp</span>
 </pre></kbd>
-If `gep/special/book.epupp`
+If <code>gep/special/book.epupp</code>
 <ul>
- <li>specifying `intro.html`, `main.html` and `ending.html` is built with</li>
- <li><em>named</em> include dir "previews" pointing at `../../previews/generated/out`, then an</li>
- <li><em>unnamed</em> include dir pointing at `rendered/output`,</li>
+ <li>specifying <code>intro.html</code>, <code>main.html</code> and <code>ending.html</code> is built with</li>
+ <li><em>named</em> include dir "previews" pointing at <code>../../previews/generated/out</code>, then an</li>
+ <li><em>unnamed</em> include dir pointing at <code>rendered/output</code>,</li>
 </ul>
 the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
@@ -661,17 +660,17 @@ the content inside would be laid out as follows:
      <td>No.</td>
      <td>No.</td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0">`v1.1.0`</a></td></tr>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td></tr>
  <tr><td>Free date format</td>
      <td>No.</td>
      <td>No.</td>
      <td>No.</td>
      <td>No.</td></tr>
- <tr><td>`-I`nclude dirs</td>
+ <tr><td><code>-I</code>nclude dirs</td>
      <td>No.</td>
      <td>No.</td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0">`v1.1.0`</a></td></tr>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td></tr>
 </table>
 <h2 id="license" class="smallcaps" ><a class="hash-link" href="#license">#</a> License</h2>
 <pre id="license-paragraph">
@@ -714,9 +713,9 @@ I hope that this document is clear and/or informative, if not,
  <hr />
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>.
  <hr />
- Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 23.08.2017 02:48:37 UTC from
+ Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 23.08.2017 16:17:37 UTC from
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/gen-epub-book/programmer.html.pp">src/gen-epub-book/programmer.html.pp</a>.
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/267430077">See job on TravisCI</a>.
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/267649104">See job on TravisCI</a>.
  <hr />
  <a href="/content/feed.xml">RSS feed</a>
  </body>
