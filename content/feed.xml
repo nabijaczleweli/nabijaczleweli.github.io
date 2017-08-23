@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 23 Aug 2017 16:18:07 +0000
+      Wed, 23 Aug 2017 19:05:38 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 23 Aug 2017 16:18:07 +0000
+      Wed, 23 Aug 2017 19:05:38 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -416,7 +416,7 @@ I hope that this document is clear and/or informative, if not,
 
     <item>
       <title>Mandalas — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT)
+      <description>BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
 
 &lt;style&gt;
 .indented {
@@ -461,8 +461,9 @@ A different question to be asked is
 	Well, thanks to the wonders of the MATHJAX(fr &quot;Internet&quot;), you can! In most-to-least bad order:&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s an early version in C++,&lt;!--'--&gt;
 	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.&lt;!--'--&gt;&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;/content/assets/mandalas/mandalas-js.zip&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s the very first version, in JavaScript,&lt;!--'--&gt;
-	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version.&lt;br /&gt;
+&amp;emsp;&lt;a href=&quot;/content/assets/mandalas/mandalas-js/mandele.html&quot;&gt;Here&lt;/a&gt;'s the very first version, in JavaScript, &lt;!--'--&gt;
+	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version
+	(&lt;a href=&quot;javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')&quot;&gt;download as ZIP&lt;/a&gt;).&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas-rs&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s a pretty-much release version in Rust,&lt;!--'--&gt;
 	used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
 	make things based on the algorithm. Will work and build pretty much anywhere.&lt;br /&gt;
