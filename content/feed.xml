@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 23 Aug 2017 19:05:38 +0000
+      Fri, 25 Aug 2017 23:44:52 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 23 Aug 2017 19:05:38 +0000
+      Fri, 25 Aug 2017 23:44:52 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -351,7 +351,19 @@ The HIGHLIT_CODE(keyword, Date) &lt;em&gt;line&lt;/em&gt; must be in the &lt;a h
  --&gt;CSPAN(string, TM)&lt;/kbd&gt;.
 Okay, that still looks scary.
 You can just use the online &lt;a href=&quot;//infobyip.com/epochtimeconverter.php&quot;&gt;epoch time converter&lt;/a&gt; to convert any date to RFC3339.
-&lt;!-- Mention free-date-format feature here when lands. --&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;getting-started-syntax-explanation-date-free-paragraph&quot;&gt;
+If you specify the &lt;code&gt;--free-date&lt;/code&gt; switch as an argument on the command-line, GEB() will also accept
+	&lt;a href=&quot;//tools.ietf.org/html/rfc2822&quot;&gt;RFC2822&lt;/a&gt; and
+	&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;!--
+ --&gt;CSPAN(string, Unix timestamp)&lt;!--
+ --&gt;CSPAN(punctuation, +)&lt;!--
+ --&gt;CSPAN(string, TH)&lt;!--
+ --&gt;CSPAN(punctuation, :)&lt;!--
+ --&gt;CSPAN(string, TM)&lt;!--
+ --&gt;&lt;/kbd&gt;,
+	since these formats might be easier to use,
 &lt;/p&gt;
 
 &lt;p id=&quot;getting-started-syntax-explanation-language-paragraph&quot;&gt;
