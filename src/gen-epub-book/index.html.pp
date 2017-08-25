@@ -188,7 +188,19 @@ The HIGHLIT_CODE(keyword, Date) <em>line</em> must be in the <a href="//tools.ie
  -->CSPAN(string, TM)</kbd>.
 Okay, that still looks scary.
 You can just use the online <a href="//infobyip.com/epochtimeconverter.php">epoch time converter</a> to convert any date to RFC3339.
-<!-- Mention free-date-format feature here when lands. -->
+</p>
+
+<p id="getting-started-syntax-explanation-date-free-paragraph">
+If you specify the <code>--free-date</code> switch as an argument on the command-line, GEB() will also accept
+	<a href="//tools.ietf.org/html/rfc2822">RFC2822</a> and
+	<kbd class="highlit-code nowrap"><!--
+ -->CSPAN(string, Unix timestamp)<!--
+ -->CSPAN(punctuation, +)<!--
+ -->CSPAN(string, TH)<!--
+ -->CSPAN(punctuation, :)<!--
+ -->CSPAN(string, TM)<!--
+ --></kbd>,
+	since these formats might be easier to use,
 </p>
 
 <p id="getting-started-syntax-explanation-language-paragraph">

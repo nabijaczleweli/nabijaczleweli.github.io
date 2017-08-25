@@ -494,7 +494,7 @@ If <code>gep/special/book.epupp</code>
 <ul>
 	<li>specifying <code>intro.html</code>, <code>main.html</code> and <code>ending.html</code> is built with</li>
 	<li><em>named</em> include dir "previews" pointing at <code>../../previews/generated/out</code>, then an</li>
-	<li><em>unnamed</em> include dir pointing at <code>rendered/output</code>,</li>
+	<li><em>unnamed</em> include dir pointing at <code>../../rendered/output</code>,</li>
 </ul>
 the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
@@ -517,17 +517,17 @@ HEADING(3, features-support, Support table)
 	    <th><center><a GEB_HREF(.scala)             >MFIZZ(scala)</a></center></th></tr>
 	<tr><td>Custom separator</td>
 	    <td>No.</td>
-	    <td>No.</td>
+	    <td><a GEB_HREF(.rs/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
 	<tr><td>Free date format</td>
 	    <td>No.</td>
-	    <td>No.</td>
+	    <td><a GEB_HREF(.rs/releases/tag/v2.1.0)><code>v2.1.0</code></a></td>
 	    <td>No.</td>
 	    <td>No.</td></tr>
 	<tr><td><code>-I</code>nclude dirs</td>
 	    <td>No.</td>
-	    <td>No.</td>
+	    <td><a GEB_HREF(.rs/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
 </table>
