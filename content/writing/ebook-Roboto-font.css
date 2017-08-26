@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  font-style: normal;
  font-weight: normal;
  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
-   url("RobotoSlab-Regular.ttf")  format("truetype");
+   url("../RobotoSlab-Regular.ttf")  format("truetype");
  }
 
  @font-face {
@@ -25,7 +25,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  font-style: normal;
  font-weight: bold;
  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"),
-   url("RobotoSlab-Bold.ttf")  format("truetype");
+   url("../RobotoSlab-Bold.ttf")  format("truetype");
  }
 
  @font-face {
@@ -33,7 +33,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  font-style: normal;
  font-weight: normal;
  src: local("Roboto Regular"), local("Roboto-Regular"),
-   url("Roboto-Regular.ttf")  format("truetype");
+   url("../Roboto-Regular.ttf")  format("truetype");
  }
 
  @font-face {
@@ -41,7 +41,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  font-style: italic;
  font-weight: normal;
  src: local("Roboto Italic"), local("Roboto-Italic"),
-   url("Roboto-Italic.ttf")  format("truetype");
+   url("../Roboto-Italic.ttf")  format("truetype");
  }
 .roboto {
  font-family: "Roboto Slab", serif;

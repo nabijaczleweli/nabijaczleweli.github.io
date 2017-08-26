@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  font-family: "Merriweather";
  src: local("Merriweather Regular"), local("Merriweather-Regular"),
       
-       url("Merriweather-Regular.ttf") 
+       url("../Merriweather-Regular.ttf") 
       format("truetype");
 }
 

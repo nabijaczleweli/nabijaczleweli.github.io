@@ -14,11 +14,11 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 @font-face {
  font-family: "MathJax_Math";
  font-style: italic;
- src:    url("MathJax_Math-Italic.woff") format("woff"), url("MathJax_Math-Italic.otf") format("opentype")  ;
+ src:    url("../MathJax_Math-Italic.woff") format("woff"), url("../MathJax_Math-Italic.otf") format("opentype")  ;
  }
 @font-face {
  font-family: "MathJax_Main";
- src:    url("MathJax_Main-Regular.woff") format("woff"), url("MathJax_Main-Regular.otf") format("opentype")  ;
+ src:    url("../MathJax_Main-Regular.woff") format("woff"), url("../MathJax_Main-Regular.otf") format("opentype")  ;
  }
 .math-font-normal {
  font-family: "MathJax_Main";
