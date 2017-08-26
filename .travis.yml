@@ -16,7 +16,9 @@ install:
   - curl -SL https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; import os; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(os.getenv('HOME'))"
   - ebook-convert --version
   - mkdir "$HOME/bin"
-  - curl -SL $(curl -SsL https://api.github.com/repos/nabijaczleweli/gen-epub-book.rs/releases/latest | grep 'browser_' | cut -d\" -f4 | grep -v exe | grep -v tbz2) -o "$HOME/bin/gen-epub-book"
+  - GEN_EPUB_BOOK_RS_VERSION="$(curl -SL https://github.com/nabijaczleweli/gen-epub-book.rs/releases | awk '/h1.*release-title/,/\/h1/' | grep '<a' | awk -F/ '{print($6)}' | awk '-F"' '{print($1); exit}')"
+  - echo "$GEN_EPUB_BOOK_RS_VERSION"
+  - curl -SL "https://github.com/nabijaczleweli/gen-epub-book.rs/releases/download/$GEN_EPUB_BOOK_RS_VERSION/gen-epub-book.rs-$GEN_EPUB_BOOK_RS_VERSION" -o "$HOME/bin/gen-epub-book"
   - chmod +x "$HOME/bin/gen-epub-book"
 
 script:
