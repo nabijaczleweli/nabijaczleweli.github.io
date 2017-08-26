@@ -523,12 +523,12 @@ HEADING(3, features-support, Support table)
 	<tr><td>Free date format</td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.rs/releases/tag/v2.1.0)><code>v2.1.0</code></a></td>
-	    <td>No.</td>
+	    <td><a GEB_HREF(.cpp/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
 	    <td>No.</td></tr>
 	<tr><td><code>-I</code>nclude dirs</td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.rs/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
-	    <td>No.</td>
+	    <td><a GEB_HREF(.cpp/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
 	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
 </table>
 
