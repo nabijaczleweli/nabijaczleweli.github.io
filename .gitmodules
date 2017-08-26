@@ -1,6 +1,3 @@
-[submodule "ext/gen-epub-book"]
-	path = ext/gen-epub-book
-	url = https://github.com/nabijaczleweli/gen-epub-book
 [submodule "ext/octicons"]
 	path = ext/octicons
 	url = https://github.com/primer/octicons
