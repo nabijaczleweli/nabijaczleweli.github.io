@@ -12,9 +12,12 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_63c9d3fcdbeb_key -iv $encrypted_63c9d3fcdbeb_iv -in gh_rsa.enc -out gh_rsa -d
 
 install:
-  - export PATH="$HOME/calibre:$PATH"
+  - export PATH="$HOME/calibre:$HOME/bin:$PATH"
   - curl -SL https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; import os; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(os.getenv('HOME'))"
   - ebook-convert --version
+  - mkdir "$HOME/bin"
+  - curl -SL $(curl -SsL https://api.github.com/repos/nabijaczleweli/gen-epub-book.rs/releases/latest | grep 'browser_' | cut -d\" -f4 | grep -v exe | grep -v tbz2) -o "$HOME/bin/gen-epub-book"
+  - chmod +x "$HOME/bin/gen-epub-book"
 
 script:
   - make OUTDIR=../content/

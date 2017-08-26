@@ -23,8 +23,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 				url(STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/fam-variant.otf)) format("opentype")                \
 			) SLASH_ASTERIX */                                                                                                                               \
 			SLASH_ASTERIX CSS_EBOOK_ONLY( SLASH_ASTERIX */                                                                                                   \
-			url(STR(fam-variant.woff)) format("woff"),                                                                                                       \
-				url(STR(fam-variant.otf)) format("opentype") ) SLASH_ASTERIX */ ;                                                               FORCED_NEWLINE \
+			url(STR(../fam-variant.woff)) format("woff"),                                                                                                    \
+				url(STR(../fam-variant.otf)) format("opentype") ) SLASH_ASTERIX */ ;                                                            FORCED_NEWLINE \
 	}
 
 

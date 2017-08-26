@@ -1,14 +1,14 @@
 Name: The Taste of MI
 
 Include: ../indent.css
-Include: ../../LICENSE-Roboto
-Include: ../../LICENSE-CREATIVE
-Include: ../../LICENSE-Merriweather
+Include: LICENSE-Roboto
+Include: LICENSE-CREATIVE
+Include: LICENSE-Merriweather
 Include: the_taste_of_mi/spacing.css
-Include: ../../out/writing/ebook-Roboto-font.css
-Include: ../../out/writing/the_taste_of_mi/effects.css
-Include: ../../out/writing/the_taste_of_mi/ebook-MathJax-font.css
-Include: ../../out/writing/the_taste_of_mi/ebook-Merriweather-font.css
+Include: writing/ebook-Roboto-font.css
+Include: writing/the_taste_of_mi/effects.css
+Include: writing/the_taste_of_mi/ebook-MathJax-font.css
+Include: writing/the_taste_of_mi/ebook-Merriweather-font.css
 
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf
@@ -24,8 +24,8 @@ Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Robo
 Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf
 
 Content: the_taste_of_mi/disclaimer.html
-Content: ../../out/writing/the_taste_of_mi/book.html
-Content: ../../out/writing/the_taste_of_mi/endnotes.html
+Content: writing/the_taste_of_mi/book.html
+Content: writing/the_taste_of_mi/endnotes.html
 Content: the_taste_of_mi/end.html
 
 Author: Jędrzej Aleksander Łopaciński

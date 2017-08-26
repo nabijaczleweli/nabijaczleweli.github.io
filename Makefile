@@ -50,8 +50,8 @@ AWK := awk
 SED := sed
 CPP := cpp
 NPM := npm
+GEN_EPUB_BOOK := gen-epub-book
 CALIBRE_CONVERT := ebook-convert
-GEN_EPUB_BOOK := ext/gen-epub-book/gen-epub-book.awk
 OUTDIR := out/
 BLDDIR := build/
 
@@ -72,7 +72,7 @@ clean :
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(OUTDIR)%,$(EBOOK_PREPROCESS_SOURCES)) $(patsubst src/%.epp,$(OUTDIR)%,$(COMBINED_PREPROCESS_SOURCES))
-books : $(GEN_EPUB_BOOK) $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
+books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
 
 
@@ -110,21 +110,21 @@ $(OUTDIR)% : src/%.eppe
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,-DEBOOK)
 
-$(OUTDIR)%.epub : $(GEN_EPUB_BOOK) src/%.epupp
+$(OUTDIR)%.epub : src/%.epupp
 	@mkdir -p $(dir $@)
-	$(ECHO) "Self: $(filter-out $<,$^)\nOut: $@" | cat - $(filter-out $<,$^) | $(AWK) -f $< -v temp="$(TEMP_DIR)"
+	$(GEN_EPUB_BOOK) "$^" "$@" -I. -Iout="$(OUTDIR)"
 
 $(OUTDIR)%.mobi : $(OUTDIR)%.epub
 	@mkdir -p $(dir $@)
-	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
+	$(CALIBRE_CONVERT) "$^" "$@"
 
 $(OUTDIR)%.azw3 : $(OUTDIR)%.epub
 	@mkdir -p $(dir $@)
-	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
+	$(CALIBRE_CONVERT) "$^" "$@"
 
 $(OUTDIR)%.pdf : $(OUTDIR)%.epub
 	@mkdir -p $(dir $@)
-	$(CALIBRE_CONVERT) "$^" "$@" > /dev/null 2>&1
+	$(CALIBRE_CONVERT) "$^" "$@"
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)
