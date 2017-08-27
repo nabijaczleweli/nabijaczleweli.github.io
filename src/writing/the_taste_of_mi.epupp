@@ -5,10 +5,10 @@ Include: LICENSE-Roboto
 Include: LICENSE-CREATIVE
 Include: LICENSE-Merriweather
 Include: the_taste_of_mi/spacing.css
-Include: writing/ebook-Roboto-font.css
+Include: writing/Roboto-font.css
 Include: writing/the_taste_of_mi/effects.css
-Include: writing/the_taste_of_mi/ebook-MathJax-font.css
-Include: writing/the_taste_of_mi/ebook-Merriweather-font.css
+Include: writing/the_taste_of_mi/MathJax-font.css
+Include: writing/the_taste_of_mi/Merriweather-font.css
 
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf

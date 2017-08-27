@@ -64,14 +64,14 @@ ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*
 .PHONY : all clean assets octicons books preprocess rss
 
 
-all :  assets octicons preprocess books rss
+all : assets octicons preprocess books rss
 
 clean :
 	rm -rf $(OUTDIR) $(BLDDIR)
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
-preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(OUTDIR)%,$(EBOOK_PREPROCESS_SOURCES)) $(patsubst src/%.epp,$(OUTDIR)%,$(COMBINED_PREPROCESS_SOURCES))
+preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(BLDDIR)out/%,$(EBOOK_PREPROCESS_SOURCES)) $(foreach l,$(patsubst src/%.epp,%,$(COMBINED_PREPROCESS_SOURCES)),$(OUTDIR)$(l) $(BLDDIR)out/$(l))
 books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
 
@@ -82,7 +82,7 @@ $(BLDDIR)octicons/package.json : ext/octicons/package.json
 
 $(BLDDIR)octicons/build/octicons.min.css : $(BLDDIR)octicons/package.json
 	@mkdir -p $(dir $@)
-	cd $(dir $@) && $(NPM) install ..
+	cd $(dir $@) && $(NPM) install --verbose ..
 
 $(OUTDIR)assets/LICENSE-octicons : ext/octicons/LICENSE
 	@mkdir -p $(dir $@)
@@ -104,15 +104,18 @@ $(OUTDIR)% : src/%.pp
 $(OUTDIR)% : src/%.epp
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,)
-	$(call preprocess_file,$<,$(dir $@)ebook-$(notdir $@),-DEBOOK)
 
-$(OUTDIR)% : src/%.eppe
+$(BLDDIR)out/% : src/%.epp
+	@mkdir -p $(dir $@)
+	$(call preprocess_file,$<,$@,-DEBOOK)
+
+$(BLDDIR)out/% : src/%.eppe
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,-DEBOOK)
 
 $(OUTDIR)%.epub : src/%.epupp
 	@mkdir -p $(dir $@)
-	$(GEN_EPUB_BOOK) "$^" "$@" -I. -Iout="$(OUTDIR)"
+	$(GEN_EPUB_BOOK) "$^" "$@" -I. -Iout="$(BLDDIR)out"
 
 $(OUTDIR)%.mobi : $(OUTDIR)%.epub
 	@mkdir -p $(dir $@)
