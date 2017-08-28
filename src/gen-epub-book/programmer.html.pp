@@ -126,14 +126,12 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
 	<tr><td><code>zip</code></td>
 		  <td>Packing ePub.</td>
 		  <td><a href="http://info-zip.org/Zip.html#Downloads">Binary releases</a>.</td></tr>
-	<tr><td><code>rm</code></td>
+	<tr><td><code>rm</code>/<code>del</code></td>
 		  <td>Pre-generation cleanup.</td>
-		  <td><samp>Linux</samp>: shipped with system, package manager.<br />
-		      Windows:            <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">contained in ported <code>coreutils</code></a>.</td></tr>
-	<tr><td><code>cp</code></td>
+		  <td>Shipped with system.</td></tr>
+	<tr><td><code>cp</code>/<code>copy</code></td>
 		  <td>Assembling e-book in temporary directory.</td>
-		  <td><samp>Linux</samp>: shipped with system, package manager.<br />
-		      Windows:            <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">contained in ported <code>coreutils</code></a>.</td></tr>
+		  <td>Shipped with system.</td></tr>
 	<tr><td><code>mkdir</code></td>
 		  <td>Creating temporary directories.</td>
 		  <td>Available everywhere.</td></tr>
