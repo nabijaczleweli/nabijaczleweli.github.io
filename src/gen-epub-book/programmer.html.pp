@@ -121,19 +121,19 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
 	<tr><td><a href="//curl.haxx.se"><img src="//curl.haxx.se/logo/curl-logo.svg" alt="curl" style="height: 1.25em;"></a></td>
 		  <td>Downloading HIGHLIT_CODE(keyword, Network-*) data.<br />
 		      Getting random UUID.</td>
-		  <td><samp>*x</samp>: usually shipped with system, package manager, <a href="//curl.haxx.se/download.html">binary releases</a>.<br />
-		      Windows:         <a href="//curl.haxx.se/download.html">binary releases</a>.</td></tr>
-	<tr><td><a href="http://info-zip.org/Zip.html"><img src="/content/assets/InfoZIP-gold2.png" alt="InfoZip" style="height: 1.25em;"></a></td>
+		  <td><samp>Linux</samp>: usually shipped with system, package manager, <a href="//curl.haxx.se/download.html">binary releases</a>.<br />
+		      Windows:            <a href="//curl.haxx.se/download.html">binary releases</a>.</td></tr>
+	<tr><td><code>zip</code></td>
 		  <td>Packing ePub.</td>
-		  <td><a href="http://info-zip.org/Zip.html#Downloads">binary releases</a>.</td></tr>
+		  <td><a href="http://info-zip.org/Zip.html#Downloads">Binary releases</a>.</td></tr>
 	<tr><td><code>rm</code></td>
 		  <td>Pre-generation cleanup.</td>
-		  <td><samp>*x</samp>: shipped with system, package manager.<br />
-		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported <code>binutils</code></a>.</td></tr>
+		  <td><samp>Linux</samp>: shipped with system, package manager.<br />
+		      Windows:            <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">contained in ported <code>coreutils</code></a>.</td></tr>
 	<tr><td><code>cp</code></td>
 		  <td>Assembling e-book in temporary directory.</td>
-		  <td><samp>*x</samp>: shipped with system, package manager.<br />
-		      Windows:         <a href="//sourceforge.net/projects/mingw/files/MinGW/Base/binutils">contained in ported <code>binutils</code></a>.</td></tr>
+		  <td><samp>Linux</samp>: shipped with system, package manager.<br />
+		      Windows:            <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">contained in ported <code>coreutils</code></a>.</td></tr>
 	<tr><td><code>mkdir</code></td>
 		  <td>Creating temporary directories.</td>
 		  <td>Available everywhere.</td></tr>
