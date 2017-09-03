@@ -64,6 +64,7 @@ is fair game for discussion over at the GEB() issue trackers
 	<a GEB_HREF(.rs/issues)                >MFIZZ(rust)</a>
 	<a GEB_HREF(.cpp/issues)   class="icon">DEVICON(cplusplus)</a>
 	<a GEB_HREF(.scala/issues)             >MFIZZ(scala)</a>
+	<a GEB_HREF(.js/issues)    class="icon">DEVICON(javascript)</a>
 and this site's issue tracker <!--'-->
 	<a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon">DEVICON(html5)</a>.
 I'<!--'-->ve also set up a <a GEB_HREF(/issues/1)>GitHub issue for simple questions and clarifications</a>.
@@ -90,6 +91,9 @@ Here is the current list of GEB()'s variations, chronologically: <!--'-->
 	<li>GEB(.cpp ​ ​) <a GEB_HREF(.cpp)>  FA(github)</a>
 	    <a GEB_CDN_HREF(/man/gen-epub-book.cpp.1.html)>FA(book)</a></li>
 	<li>GEB(.scala) <a GEB_HREF(.scala)>FA(github)</a></li>
+	<li>GEB(.js ​ ​ ​) <a GEB_HREF(.js)>  FA(github)</a>
+	    <a GEB_CDN_HREF(/man/gen-epub-book.js.1.html)>FA(book)</a>
+	    <a href="//npmjs.com/package/epubify" class="icon">DEVICON(nodejs)</a></li>
 </ul>
 <p></p>
 </div>
@@ -98,8 +102,9 @@ These variations have mostly the same features, and all differences will be high
 </p>
 <p id="variants-binary-paragraphs">
 Binary releases of compiled variants are available for download, for Windows and Ubuntu, on the releases pages
-	<a GEB_HREF(.rs/releases)              >MFIZZ(rust)</a>
-	<a GEB_HREF(.cpp/releases) class="icon">DEVICON(cplusplus)</a>.
+	<a GEB_HREF(.rs/releases)                >MFIZZ(rust)</a>
+	<a GEB_HREF(.cpp/releases)   class="icon">DEVICON(cplusplus)</a>
+	<a GEB_HREF(.js/tree/bundle) class="icon">DEVICON(javascript)</a>.
 </p>
 
 HEADING(2, installation-and-requirements, Installation and requirements)
@@ -203,6 +208,18 @@ HEADING(3, installation-and-requirements-scala, GEB(.scala))
 <p id="installation-and-requirements-scala-paragraph">
 To build, GEB(.scala) requires the <a href="//scala-lang.org">Scala</a> compiler.
 The resulting <code>.jar</code>s depend only on the Scala runtime library.
+</p>
+
+HEADING(3, installation-and-requirements-js, GEB(.js))
+
+<p id="installation-and-requirements-js-paragraph">
+Due to the specificity of the <a href="//nodejs.org">Node.js</a> environment,
+	GEB(.js) depends on about 110 other packages. To install it, simply run
+<kbd><pre class="highlit-code numberise">
+CSPAN(punctuation, $) npm install -g CSPAN(string, epubify)
+</pre></kbd>
+The resulting "executable" will be in your HIGHLIT_CODE(variable, $PATH).
+</p>
 
 HEADING(2, configuration, Configuration)
 
@@ -512,22 +529,26 @@ HEADING(3, features-support, Support table)
 	    <th><center><a GEB_HREF()       class="icon">AWK_ICON()</a></center></th>
 	    <th><center><a GEB_HREF(.rs)                >MFIZZ(rust)</a></center></th>
 	    <th><center><a GEB_HREF(.cpp)   class="icon">DEVICON(cplusplus)</a></center></th>
-	    <th><center><a GEB_HREF(.scala)             >MFIZZ(scala)</a></center></th></tr>
+	    <th><center><a GEB_HREF(.scala)             >MFIZZ(scala)</a></center></th></th>
+	    <th><center><a GEB_HREF(.js)    class="icon">DEVICON(javascript)</a></center></th></tr>
 	<tr><td>Custom separator</td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.rs/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
 	    <td>No.</td>
-	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
+	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td>
+	    <td>No.</td></tr>
 	<tr><td>Free date format</td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.rs/releases/tag/v2.1.0)><code>v2.1.0</code></a></td>
 	    <td><a GEB_HREF(.cpp/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
+	    <td>No.</td>
 	    <td>No.</td></tr>
 	<tr><td><code>-I</code>nclude dirs</td>
 	    <td>No.</td>
 	    <td><a GEB_HREF(.rs/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
 	    <td><a GEB_HREF(.cpp/releases/tag/v2.0.0)><code>v2.0.0</code></a></td>
-	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td></tr>
+	    <td><a GEB_HREF(.scala/releases/tag/v1.1.0)><code>v1.1.0</code></a></td>
+	    <td>No.</td></tr>
 </table>
 
 HEADING(2, license, License)
