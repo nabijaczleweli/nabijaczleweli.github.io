@@ -228,6 +228,7 @@ is fair game for discussion over at the <code class="nowrap" style="font-variant
  <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/issues" ><i class="icon-rust" ></i></a>
  <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/issues" class="icon"><i class="devicon-cplusplus-plain" ></i></a>
  <a href="https://github.com/nabijaczleweli/gen-epub-book.scala/issues" ><i class="icon-scala" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book.js/issues" class="icon"><i class="devicon-javascript-plain" ></i></a>
 and this site's issue tracker <!--'-->
  <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon"><i class="devicon-html5-plain" ></i></a>.
 I'<!--'-->ve also set up a <a href="https://github.com/nabijaczleweli/gen-epub-book/issues/1">GitHub issue for simple questions and clarifications</a>.
@@ -252,6 +253,9 @@ Here is the current list of <code class="nowrap" style="font-variant: normal;">g
  <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp ​ ​</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp"> <i class="fa fa-github"></i></a>
      <a href="https://cdn.rawgit.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.cpp.1.html"><i class="fa fa-book"></i></a></li>
  <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.scala"><i class="fa fa-github"></i></a></li>
+ <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.js ​ ​ ​</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.js"> <i class="fa fa-github"></i></a>
+     <a href="https://cdn.rawgit.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.js.1.html"><i class="fa fa-book"></i></a>
+     <a href="//npmjs.com/package/epubify" class="icon"><i class="devicon-nodejs-plain" ></i></a></li>
 </ul>
 <p></p>
 </div>
@@ -261,7 +265,8 @@ These variations have mostly the same features, and all differences will be high
 <p id="variants-binary-paragraphs">
 Binary releases of compiled variants are available for download, for Windows and Ubuntu, on the releases pages
  <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases" ><i class="icon-rust" ></i></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases" class="icon"><i class="devicon-cplusplus-plain" ></i></a>.
+ <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases" class="icon"><i class="devicon-cplusplus-plain" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book.js/tree/bundle" class="icon"><i class="devicon-javascript-plain" ></i></a>.
 </p>
 <h2 id="installation-and-requirements" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements">#</a> Installation and requirements</h2>
 <p id="installation-and-requirements-paragraph">
@@ -374,6 +379,16 @@ The resulting executable is fully stand-alone.
 <p id="installation-and-requirements-scala-paragraph">
 To build, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code> requires the <a href="//scala-lang.org">Scala</a> compiler.
 The resulting <code>.jar</code>s depend only on the Scala runtime library.
+</p>
+<h3 id="installation-and-requirements-js" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-js">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.js</code></h3>
+<p id="installation-and-requirements-js-paragraph">
+Due to the specificity of the <a href="//nodejs.org">Node.js</a> environment,
+ <code class="nowrap" style="font-variant: normal;">gen-epub-book​.js</code> depends on about 110 other packages. To install it, simply run
+<kbd><pre class="highlit-code numberise">
+<span class="punctuation">$</span> npm install -g <span class="string">epubify</span>
+</pre></kbd>
+The resulting "executable" will be in your <kbd class="highlit-code nowrap"><span class="variable">$PATH</span></kbd>.
+</p>
 <h2 id="configuration" class="smallcaps" ><a class="hash-link" href="#configuration">#</a> Configuration</h2>
 <p id="configuration-paragraph">
 The same descriptor syntax put into any <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> variant with any options passed shall produce (functionally) the same e-book
@@ -653,22 +668,26 @@ the content inside would be laid out as follows:
  </span></a></center></th>
      <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.rs" ><i class="icon-rust" ></i></a></center></th>
      <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.cpp" class="icon"><i class="devicon-cplusplus-plain" ></i></a></center></th>
-     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.scala" ><i class="icon-scala" ></i></a></center></th></tr>
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.scala" ><i class="icon-scala" ></i></a></center></th></th>
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.js" class="icon"><i class="devicon-javascript-plain" ></i></a></center></th></tr>
  <tr><td>Custom separator</td>
      <td>No.</td>
      <td><a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td></tr>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td>
+     <td>No.</td></tr>
  <tr><td>Free date format</td>
      <td>No.</td>
      <td><a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases/tag/v2.1.0"><code>v2.1.0</code></a></td>
      <td><a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
+     <td>No.</td>
      <td>No.</td></tr>
  <tr><td><code>-I</code>nclude dirs</td>
      <td>No.</td>
      <td><a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
      <td><a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td></tr>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td>
+     <td>No.</td></tr>
 </table>
 <h2 id="license" class="smallcaps" ><a class="hash-link" href="#license">#</a> License</h2>
 <pre id="license-paragraph">
@@ -711,9 +730,9 @@ I hope that this document is clear and/or informative, if not,
  <hr />
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>.
  <hr />
- Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 28.08.2017 19:39:51 UTC from
+ Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 03.09.2017 21:52:04 UTC from
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/gen-epub-book/programmer.html.pp">src/gen-epub-book/programmer.html.pp</a>.
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/269323396">See job on TravisCI</a>.
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/271487191">See job on TravisCI</a>.
  <hr />
  <a href="/content/feed.xml">RSS feed</a>
  </body>
