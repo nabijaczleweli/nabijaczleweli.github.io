@@ -121,8 +121,8 @@ MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha)<br 
 And <span id="show-scans">here</span>'s a scanned handdrawn version with examples (warning, <em>very</em> big, expand at own risk): <!--'-->
 <p></p>
 <div id="scans" class="hidden">
-&emsp;<a href="/content/assets/mandalas/scan-page1.png" target="_blank"><img src="/content/assets/mandalas/scan-page1.png" class="scan" /></a><br />
-&emsp;<a href="/content/assets/mandalas/scan-page2.png" target="_blank"><img src="/content/assets/mandalas/scan-page2.png" class="scan" /></a><br />
+&emsp;<a href="/content/assets/mandalas/scan-page1.jpg" target="_blank"><img src="/content/assets/mandalas/scan-page1.jpg" class="scan" /></a><br />
+&emsp;<a href="/content/assets/mandalas/scan-page2.jpg" target="_blank"><img src="/content/assets/mandalas/scan-page2.jpg" class="scan" /></a><br />
 &emsp;<small>Click for big version.</small>
 </div>
 </div>

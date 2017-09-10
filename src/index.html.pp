@@ -56,7 +56,7 @@ Things I handwrote and then transcribed, because I like laborious work:
 	The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
 </p>
 
-Documentation for my various projects:
+Documentation for my Rust projects:
 <ul>
 	DOC(rust-embed-resource, embed-resource, embed_resource,
 	    A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources

@@ -89,7 +89,13 @@
     This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, FORCED_NEWLINE \
     and contribute and/or yell at me there.                                                                                          FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
-    Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>.                                FORCED_NEWLINE \
+    Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a                               \
+    <a href="bitcoin:1MoSyGZp3SKpoiXPXfZDFK7cDUFCVtEDeS?label=nabijaczleweli&message=Donation%20for%20nabijaczleweli">donation</a>                  \
+    <a href="/content/assets/btc-donate-qr.svg" title="Bitcoin donation QR code"                                                                    \
+       style="background: url('https://cdn.rawgit.com/reduxframework/elusive-iconfont/master/dev/icons-svg/qrcode.svg');                            \
+              background-size: 100% 100%; display: inline-block;                                                                                    \
+              width: 1em; height: 1em; margin-bottom: -.2em; font: 14px/1 normal;"></a>,                                                            \
+    if my software helped you in some significant way?                                                                               FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
     Automatically generated with COMPILER_NAME COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from                           FORCED_NEWLINE \
     <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a>.          FORCED_NEWLINE \
