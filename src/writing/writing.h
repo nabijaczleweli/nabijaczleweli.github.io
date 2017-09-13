@@ -19,15 +19,6 @@
   <script type="text/javascript" src="/content/assets/pluralize.js"></script> FORCED_NEWLINE \
   <script type="text/javascript" src="/content/assets/word_count.js"></script>
 
-#define BOOK_URL_SETTER_SCRIPT <script type="text/javascript" src="/content/assets/book_setter.js"></script>
-#define CUSTOM_BOOK_URL_SETTER_SCRIPT(url_code)  \
-  <script type="text/javascript"> FORCED_NEWLINE \
-    function custom_book_url() {  FORCED_NEWLINE \
-      return (url_code);          FORCED_NEWLINE \
-    }                             FORCED_NEWLINE \
-  </script>                       FORCED_NEWLINE \
-  BOOK_URL_SETTER_SCRIPT
-
 
 #define _WORD_COUNTER_END(...)                                       \
     <span id="wordcount_wrapper" class="hidden">      FORCED_NEWLINE \
@@ -39,12 +30,13 @@
 #define WORD_COUNTER_END() _WORD_COUNTER_END(<span id="syllable_count">0</span> syllables,)
 #define WORD_COUNTER_END_NON_ENGLISH() _WORD_COUNTER_END()
 
-#define WRITING_CUSTOM_NAME_END(what)                           \
+#define WRITING_CUSTOM_NAME_STUB_END(what, stub)                \
     <hr />                                       FORCED_NEWLINE \
     Get what in                                  FORCED_NEWLINE \
-    <a href="#" id="epub_book_link">ePub</a>,    FORCED_NEWLINE \
-    <a href="#" id="mobi_book_link">MOBI</a>,    FORCED_NEWLINE \
-    <a href="#" id="azw3_book_link">AZW3</a>, or FORCED_NEWLINE \
-    <a href="#" id="pdf_book_link">PDF</a>.
+    <a href=STR(/content/stub.epub)>ePub</a>,    FORCED_NEWLINE \
+    <a href=STR(/content/stub.mobi)>MOBI</a>,    FORCED_NEWLINE \
+    <a href=STR(/content/stub.azw3)>AZW3</a>, or FORCED_NEWLINE \
+    <a href=STR(/content/stub.pdf)>PDF</a>.
 
+#define WRITING_CUSTOM_NAME_END(what) WRITING_CUSTOM_NAME_STUB_END(what, FILE_NAME_STUB)
 #define WRITING_END() WRITING_CUSTOM_NAME_END(this)

@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], pl, WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], pl, WORD_COUNT_SCRIPT)
 
 
 <style>

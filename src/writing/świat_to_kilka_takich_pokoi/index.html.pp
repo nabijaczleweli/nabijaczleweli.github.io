@@ -19,7 +19,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], pl, WORD_COUNT_SCRIPT BOOK_URL_SETTER_SCRIPT)
+BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], pl, WORD_COUNT_SCRIPT)
 
 
 <style>
