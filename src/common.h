@@ -90,7 +90,7 @@
     and contribute and/or yell at me there.                                                                                          FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
     Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a                               \
-    <a href="bitcoin:1MoSyGZp3SKpoiXPXfZDFK7cDUFCVtEDeS?label=nabijaczleweli&message=Donation%20for%20nabijaczleweli">donation</a>                  \
+    <a href="bitcoin:1MoSyGZp3SKpoiXPXfZDFK7cDUFCVtEDeS?label=nabijaczleweli&message=Donation%20to%20nabijaczleweli">donation</a>                   \
     <a href="/content/assets/btc-donate-qr.svg" title="Bitcoin donation QR code"                                                                    \
        style="background: url('https://cdn.rawgit.com/reduxframework/elusive-iconfont/master/dev/icons-svg/qrcode.svg');                            \
               background-size: 100% 100%; display: inline-block;                                                                                    \

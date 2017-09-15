@@ -73,6 +73,8 @@ Documentation for my Rust projects:
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
 	    Cargo subcommand for checking and applying updates to installed executables)
+	DOC(openalias.rs, openalias, openalias,
+	    Look up and parse <a href="https://openalias.org">OpenAlias</a> data)
 	DOC(poke-a-mango, poke-a-mango, poke_a_mango,
 	    What all the kool kidz are playing these days)
 	DOC(whereami-rs, whereami-rs, whereami,
