@@ -14,11 +14,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Thu, 22 Sep 2016 01:20:31 +0200
-#define SOFT_BR --><br /><!--
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], pl, WORD_COUNT_SCRIPT)
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], pl, WORD_COUNT_SCRIPT STYLESHEETS)
 
 
 <style>
@@ -27,7 +29,9 @@ BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL
 
 
 #include "../preface.html"
+<br />
 #include "book.html"
+#include "end.html"
 
 
 WORD_COUNTER_END_NON_ENGLISH()

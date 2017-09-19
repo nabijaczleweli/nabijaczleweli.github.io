@@ -14,16 +14,17 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define RSS_PUB_DATE Mon, 06 Jun 2016 23:40:31 +0200
-#define SOFT_BR --><br /><!--
-#define SOFT_EMSP -->&emsp;<!--
 #define EBOOK_ONLY(...)
 
 
-BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], pl, WORD_COUNT_SCRIPT)
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+BOILERPLATE(Świat to kilka takich pokoi, Świat to kilka takich pokoi [PL], pl, WORD_COUNT_SCRIPT, STYLESHEETS)
 
 
 <style>
-#include "../badindent.css"
+#include "../the_taste_of_mi/spacing.css"
 #include "../../indent.css"
 </style>
 

@@ -1,10 +1,24 @@
 Name: Świat to kilka takich pokoi
 
 Include: ../indent.css
-Include: badindent.css
+Include: LICENSE-Roboto
+Include: LICENSE-CREATIVE
+Include: assets/common.css
+Include: LICENSE-Merriweather
+Include: the_taste_of_mi/spacing.css
+Include: writing/Roboto-font.css
+Include: writing/the_taste_of_mi/Merriweather-font.css
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf
 
 Content: preface.html
 Content: świat_to_kilka_takich_pokoi/book.html
+Content: świat_to_kilka_takich_pokoi/end.html
 
 Author: Jędrzej Aleksander Łopaciński
 Date: 2016-03-06T11:41:53+02:00

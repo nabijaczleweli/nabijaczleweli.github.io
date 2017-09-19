@@ -1,6 +1,19 @@
 Name: Każdy koniec to nowy początek
 
 Include: ../indent.css
+Include: LICENSE-Roboto
+Include: LICENSE-CREATIVE
+Include: LICENSE-Merriweather
+Include: the_taste_of_mi/spacing.css
+Include: writing/Roboto-font.css
+Include: writing/the_taste_of_mi/Merriweather-font.css
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf
 
 Content: preface.html
 Content: każdy_koniec_to_nowy_początek/book.html
