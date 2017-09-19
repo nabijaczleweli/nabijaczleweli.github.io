@@ -1,8 +1,22 @@
 Name: A Widow's Trace
 
 Include: ../indent.css
-Include: badindent.css
+Include: LICENSE-Roboto
+Include: LICENSE-CREATIVE
+Include: LICENSE-Merriweather
+Include: the_taste_of_mi/spacing.css
+Include: writing/Roboto-font.css
+Include: writing/the_taste_of_mi/Merriweather-font.css
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf
+
 Content: moments/book.html
+Content: moments/end.html
 
 Author: Jędrzej Aleksander Łopaciński
 Date: 2017-04-23T03:38:52+02:00

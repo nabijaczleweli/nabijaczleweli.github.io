@@ -12,6 +12,9 @@
 #pragma once
 
 
+#include "../util.h"
+
+
 #define COLUMN_CSS_LINK <link href="/content/assets/column.css" rel="stylesheet" />
 
 #define WORD_COUNT_SCRIPT                                                                    \
