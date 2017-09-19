@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sat, 16 Sep 2017 14:23:02 +0000
+      Tue, 19 Sep 2017 17:59:20 +0000
     </pubDate>
     <lastBuildDate>
-      Sat, 16 Sep 2017 14:23:02 +0000
+      Tue, 19 Sep 2017 17:59:20 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -810,99 +810,182 @@ Utwór napisany ok. 31.03.2016 przez Jędrzeja A. Łopacińskiego.
 .indented {
 	text-indent: 1em;
 }
-.badindented::before {
-	content: &quot; &quot;;
+.continued {
+	margin-bottom: 0;
+}
+
+.continuing {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.continuation {
+	margin-top: 0;
 }
 &lt;/style&gt;
 
 
 &lt;!-- ePub title: &quot;A Widow's Trace&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;badindent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
 
-&quot;A Widow's Trace&quot;&lt;br /&gt;
+&lt;!--EBOOK_ONLY(--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pl&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;A Widow's Trace&lt;/title&gt;&lt;!--'--&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;out/writing-the_taste_of_mi-Merriweather-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+&lt;!--)--&gt;
 
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;Tien, tien.&lt;/em&gt; Looks like we'&lt;!--'--&gt;ɹe woɹking rogetheɹ. —&lt;!--SOFT_BR--&gt;
-&lt;em&gt;Some&lt;/em&gt;thing made Widowmaker say, as it always did, ruining her&lt;!--SOFT_BR--&gt;
-chances. From her standpoint, anyway.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Don't think I'm happy about that! — Tracer exclaimed&lt;!--SOFT_BR--&gt;
-back, the same &lt;em&gt;some&lt;/em&gt;thing making her so. And ruining&lt;!--SOFT_BR--&gt;
-&lt;em&gt;her&lt;/em&gt; chances, too. Or, from her standpoint, at least.&lt;br /&gt;&lt;/span&gt;
-&quot;Attack commences in 30 seconds.&quot; A cold&lt;!--SOFT_BR--&gt;
+
+&lt;style&gt;
+.inv-r {
+	font-size: calc(22em / 19);
+}
+&lt;/style&gt;
+
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;A Widow's Trace&lt;/h2&gt;&lt;/center&gt;&lt;!--'--&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+— &lt;em&gt;Tien, tien.&lt;/em&gt; Looks like we'&lt;!--'--&gt;&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;e wo&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;king rogethe&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;. —
+&lt;em&gt;Some&lt;/em&gt;thing made Widowmaker say, as it always did, ruining her
+chances. From her standpoint, anyway.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Don't think I'm happy about that! — Tracer exclaimed
+back, the same &lt;em&gt;some&lt;/em&gt;thing making her so. And ruining
+&lt;em&gt;her&lt;/em&gt; chances, too. Or, from her standpoint, at least.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+&quot;Attack commences in 30 seconds.&quot; A cold
 female voice interrupted their bickering&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— We both know that's not quite true, is it? — Mercy's whisper&lt;!--SOFT_BR--&gt;
-sent a wave of electricity through Tracer's body.&lt;!--'--&gt;&lt;br /&gt;
-Tracer checked for Widow, but she was reassembling her&lt;!--SOFT_BR--&gt;
-beloved rifle on a table next to them, facing away in&lt;!--SOFT_BR--&gt;
-total concentration, so she nodded, very deeply, lost&lt;!--SOFT_BR--&gt;
-in her own world of fantasy.&lt;/span&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;&quot;Five&quot; Tracer snapped back to reality.&lt;br /&gt;
-&quot;Four&quot; Widowmaker cycles the bolt on her rifle.&lt;br /&gt;
-&quot;Three&quot; Seven-Six checks his utility belt.&lt;br /&gt;
-&quot;Two&quot; McCree pulls out and cocks his Peacekeeper&lt;!--SOFT_BR--&gt;
-incredibly tense.&lt;br /&gt;
-&quot;One&quot; Zenyatta wakes from meditation.&lt;br /&gt;
-&quot;Attack&quot; Everyone dashes out. Except that Tracer&lt;!--SOFT_BR--&gt;
-trails behind Widow, who aims her Grapple. Tracer's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-eyes start glowing; figuratively, of course.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Oi, before you get up there, grab me!&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;what?&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Come on, just do it! — Tracer first got hold of Widow's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-waist, to which she reciprocated. — Right, now grapple us up&lt;!--SOFT_BR--&gt;
-there!&lt;br /&gt;&lt;/span&gt;
-The sharp yank wasn't as sharp as she expected and rather&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-soon they were stood on a narrow passage made of sandstone.&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Y'ready? Hold me very tight now, this thing is...&lt;!--'--&gt;&lt;br /&gt;
-But she didn't finish and was navigating the air,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-which you hafta admit is hard, if you can only maneuver&lt;!--SOFT_BR--&gt;
-horizontally. A couple terrifying seconds later they&lt;!--SOFT_BR--&gt;
-landed way behind enemy lines, with a clear view on all of&lt;!--SOFT_BR--&gt;
-them.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Now's your opening, luv!&lt;!--'--&gt;&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— We both know that's not quite true, is it? — Mercy's whisper
+sent a wave of electricity through Tracer's body.&lt;!--'--&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;Widow hoisted the firearm to her shoulder, aimed in, and&lt;!--SOFT_BR--&gt;
-fired. Reaper's head seemed to have exploded. She leaned&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-leftward, sighted in and fired again. Reinhardt befell&lt;!--SOFT_BR--&gt;
-upon his knees; then collapsed fully as the second shot sounded.&lt;!--SOFT_BR--&gt;
-Tracer was humming some melody, leaned back against a wall.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Ssh! — Widow raised her free hand.&lt;br /&gt;
-Tracer froze mid-hum and mid-headsway as Widow's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-head locked at an extraordinary angle,&lt;!--SOFT_BR--&gt;
-listening to the faintest of sounds.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Get ɹeady to get us out of 'eɹe. — She alerted&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-and grappled directly upwards.&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Tracer checked for Widow, but she was reassembling her
+beloved rifle on a table next to them, facing away in
+total concentration, so she nodded, very deeply, lost
+in her own world of fantasy.
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;On the way down she sighted in and last time on Symmetra;&lt;!--SOFT_BR--&gt;
-she lost precision due to a very narrow&lt;!--SOFT_BR--&gt;
-angle of opening, though, so she just started crawling&lt;!--SOFT_BR--&gt;
-around with her knee in shatters. Widow landed next&lt;!--SOFT_BR--&gt;
-to Tracer perfectly quietly.&lt;br /&gt;&lt;/span&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+&quot;Five&quot; Tracer snapped back to reality.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+&quot;Four&quot; Widowmaker cycles the bolt on her rifle.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+&quot;Three&quot; Seven-Six checks his utility belt.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+&quot;Two&quot; McCree pulls out and cocks his Peacekeeper
+incredibly tense.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+&quot;One&quot; Zenyatta wakes from meditation.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+&quot;Attack&quot; Everyone dashes out. Except that Tracer
+trails behind Widow, who aims her Grapple. Tracer's&lt;!--'--&gt;
+eyes start glowing; figuratively, of course.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Oi, before you get up there, grab me!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— &lt;em&gt;H&lt;/em&gt;what?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Come on, just do it! — Tracer first got hold of Widow's&lt;!--'--&gt;
+waist, to which she reciprocated. — Right, now grapple us up
+there!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+The sharp yank wasn't as sharp as she expected and rather&lt;!--'--&gt;
+soon they were stood on a narrow passage made of sandstone.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Y'ready? Hold me very tight now, this thing is...&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+But she didn't finish and was navigating the air,&lt;!--'--&gt;
+which you hafta admit is hard, if you can only maneuver
+horizontally. A couple terrifying seconds later they
+landed way behind enemy lines, with a clear view on all of
+them.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— Now's your opening, luv!&lt;!--'--&gt;
+&lt;/p&gt;
+
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Widow hoisted the firearm to her shoulder, aimed in, and
+fired. Reaper's head seemed to have exploded. She leaned&lt;!--'--&gt;
+leftward, sighted in and fired again. Reinhardt befell
+upon his knees; then collapsed fully as the second shot sounded.
+Tracer was humming some melody, leaned back against a wall.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Ssh! — Widow raised her free hand.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Tracer froze mid-hum and mid-headsway as Widow's&lt;!--'--&gt;
+head locked at an extraordinary angle,
+listening to the faintest of sounds.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— Get &lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;eady to get us out of 'e&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;e. — She alerted&lt;!--'--&gt;
+and grappled directly upwards.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+On the way down she sighted in and last time on Symmetra;
+she lost precision due to a very narrow
+angle of opening, though, so she just started crawling
+around with her knee in shatters. Widow landed next
+to Tracer perfectly quietly.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
 &lt;span class=&quot;badindented&quot;&gt;— Ready, luv?&lt;br /&gt;
-Widow just nodded as she grasped for Tracer's torso. She didn't&lt;!--SOFT_BR--&gt;
-feel the yank of Tracer's Chronal Accelerator – she&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-passed out. Tracer stroked her hair and somehow navigated&lt;!--SOFT_BR--&gt;
-the air with much more ease than even when she was alone.&lt;!--SOFT_BR--&gt;
-She had to cease quite shortly, though, as Widowmaker woke just&lt;!--SOFT_BR--&gt;
-seconds after passing out.&lt;/span&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Ah, magnifique. — She sighed, looking at the battlefield,&lt;!--SOFT_BR--&gt;
-or at Tracer (it was rather hard to tell, especially from Tracer's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-perspective).&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Aye, that was a most impressive display.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;what? — Widow was still somewhat confounded,&lt;!--SOFT_BR--&gt;
-then noticed the ambiguity in her statement and&lt;!--SOFT_BR--&gt;
-suddenly became flustered. Tracer didn't notice, as&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-she was cherishing how Widow was confused enough&lt;!--SOFT_BR--&gt;
-not to let her go.&lt;br /&gt;&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Widow just nodded as she grasped for Tracer's torso. She didn't
+feel the yank of Tracer's Chronal Accelerator – she&lt;!--'--&gt;
+passed out. Tracer stroked her hair and somehow navigated
+the air with much more ease than even when she was alone.
+She had to cease quite shortly, though, as Widowmaker woke just
+seconds after passing out.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+— Ah, magnifique. — She sighed, looking at the battlefield,
+or at Tracer (it was rather hard to tell, especially from Tracer's&lt;!--'--&gt;
+perspective).
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Aye, that was a most impressive display.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— &lt;em&gt;H&lt;/em&gt;what? — Widow was still somewhat confounded,
+then noticed the ambiguity in her statement and
+suddenly became flustered. Tracer didn't notice, as&lt;!--'--&gt;
+she was cherishing how Widow was confused enough
+not to let her go.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto&quot;&gt;
 And so they lasted, seemingly endlessly, cherishing a moment&lt;!--SOFT_BR--&gt;
 tranquil as very few are for soldiers at war. Then it all&lt;!--SOFT_BR--&gt;
 came down crashing like a broken mirror as adrenaline&lt;!--SOFT_BR--&gt;
@@ -910,203 +993,301 @@ made way for endorphins and endorphins – for exhaustion.&lt;!--SOFT_BR--&gt;
 As many of these moments, this one was saved by the party&lt;!--SOFT_BR--&gt;
 returning with figurative spoils.&lt;!--SOFT_BR--&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Hey, aren't these our lost gals? — McCree,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-suddenly alert, re-holstered&lt;!--SOFT_BR--&gt;
-his Peacekeeper.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— It would seem that they are. — Zenyatta send out&lt;!--SOFT_BR--&gt;
-his Orb t (a) treat their potential injuries and&lt;!--SOFT_BR--&gt;
-(b) to harvest data about the situation. — I suggest&lt;!--SOFT_BR--&gt;
-a delicate approach.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Well, they did a magnificent job out there, made our&lt;!--SOFT_BR--&gt;
-work exceedingly easy. — Growled Seven-Six. — &lt;!--SOFT_BR--&gt;
-We've gotta congratulate and/or thank them.&lt;!--'--&gt;&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— No medical assistance necessary, I presume? —&lt;!--SOFT_BR--&gt;
-Inquired Mercy to Zenyatta.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Indeed.&lt;/span&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+— Hey, aren't these our lost gals? — McCree,&lt;!--'--&gt;
+suddenly alert, re-holstered
+his Peacekeeper.
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;By this time they'd approached Tracer&amp;amp;Widow to&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-a distance at which a converstaion could&lt;!--SOFT_BR--&gt;
-be held comfortably.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Nice work out there; innovative in the ery deed. Our&lt;!--SOFT_BR--&gt;
-job was just cleanup duty after that. — Seven-Six broke the silence&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Cheers, mate. — Tracer smiled and looked at Widow to see why&lt;!--SOFT_BR--&gt;
-she was being so uncharacteristically&lt;!--SOFT_BR--&gt;
-quiet and reacted not to the compliment, and quite a big one&lt;!--SOFT_BR--&gt;
-at that, coming from Seven-Six. — Oh, she's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-asleep, the poor thing — She gently poked Widow&lt;!--SOFT_BR--&gt;
-and wispered in her ear. — Soldier here says you&lt;!--SOFT_BR--&gt;
-did a good job.&lt;br /&gt;&lt;/span&gt;
-Widowmaker woke. — Ah, merci.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Yaes? — Mercy tilted her head away from her conversation&lt;!--SOFT_BR--&gt;
-with McCree. Then, realising her mistake,&lt;!--SOFT_BR--&gt;
-giggled softly.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Y'all fancy a drink? All this Peacekeeping's making me&lt;!--SOFT_BR--&gt;
-thirsty&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— I don't see why not. — Vocalised his approval&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-Seven-Six as everyone else nodded.&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— It would seem that they are. — Zenyatta send out
+his Orb to (a) treat their potential injuries and
+(b) to harvest data about the situation. — I suggest
+a delicate approach.
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;As everyone was getting settled, Zen noted,&lt;!--SOFT_BR--&gt;
-that Lena wasn't, as was usual, avoiding&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-Amélie, and, indeed, didn't as much as flinch when she&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-took a seat next to her.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Four whiskeys, please. — Inquired McCree the barman.&lt;br /&gt;
-Upon receiving the order, and many orders thereafter,&lt;!--SOFT_BR--&gt;
-unsurprisingly, everyone was rather intoxicated, yet&lt;!--SOFT_BR--&gt;
-was holding strong (okay, barring Zenyatta, who vacated the&lt;!--SOFT_BR--&gt;
-scene after Angela stopped being coherent). Even Amélie&lt;!--SOFT_BR--&gt;
-and Lena, temporarily forgoing their differences, were leaning upon&lt;!--SOFT_BR--&gt;
-each other, chanting a French-Brit love song. After&lt;!--SOFT_BR--&gt;
-yet another round, Lena lost the delicate balance and fell onto&lt;!--SOFT_BR--&gt;
-Amélie's thighs, fast asleep. Amélie shuddered, she&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-yearned for this, ever since Gérard died.&lt;!--SOFT_BR--&gt;
-She sat Lena (mostly) upright, managed to&lt;!--SOFT_BR--&gt;
-stand up herself, waved at the remaining party, someway&lt;!--SOFT_BR--&gt;
-lifted Lena from under the table, where she managed to&lt;!--SOFT_BR--&gt;
-slide, and thanking some lord for leaving her with perfect&lt;!--SOFT_BR--&gt;
-motoric function despite her drunkedness, going up several&lt;!--SOFT_BR--&gt;
-flights of stairs and fishng out the key to her room from&lt;!--SOFT_BR--&gt;
-her vest. Having semi-sat-semi-laid Lena on her bed,&lt;!--SOFT_BR--&gt;
-she untied both sets of shoes and slid them off,&lt;!--SOFT_BR--&gt;
-wrangled the duvet from under Lena, laid next to her and then&lt;!--SOFT_BR--&gt;
-it atop them. For the first time in however many years&lt;!--SOFT_BR--&gt;
-she fell asleep quickly and without longing for Gérard;&lt;!--SOFT_BR--&gt;
-as if knowingly, Lena's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-head found her back and remained there. And that was the last thing&lt;!--SOFT_BR--&gt;
-she remembered.&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Well, they did a magnificent job out there, made our
+work exceedingly easy. — Growled Seven-Six. —
+We've gotta congratulate and/or thank them.&lt;!--'--&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Sunlight hit the window blinds, dimly illuminating the small hotel&lt;!--SOFT_BR--&gt;
-room as it did. The brightness, however suppressed, had woken&lt;!--SOFT_BR--&gt;
-Lena, who lay against a back, eyes closed, reveling&lt;!--SOFT_BR--&gt;
-in the sensation she'd been longing for ever since Emily's&lt;!--SOFT_BR--&gt;
-passing. But, as such moments often are, this one needed to be interrupted,&lt;!--SOFT_BR--&gt;
-this time but the need to dull out Lena's growing hangover headache by consuming&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-a sizeable amount of water, a task of monumental&lt;!--SOFT_BR--&gt;
-difficulty, (a) because the headache got worse as she&lt;!--SOFT_BR--&gt;
-moved and moving itself was already heavily impaired and (b) she was&lt;!--SOFT_BR--&gt;
-extremely comfortable, and at the moment cared naught for&lt;!--SOFT_BR--&gt;
-whose back her forehead was against. Eventually,&lt;!--SOFT_BR--&gt;
-though, the moment had to be broken, for if she didn't&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-move at once she'd deface the shoulderblades in front of her,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-herself and what she presumed to be the bed shie lie on with&lt;!--SOFT_BR--&gt;
-the contents of her stomach. Somehow she managed to roll&lt;!--SOFT_BR--&gt;
-off onto the floor and stumbled towards the nearest sink,&lt;!--SOFT_BR--&gt;
-located in the bathroom, where she drank vigorously and&lt;!--SOFT_BR--&gt;
-managed to keep her stomach in check, and began&lt;!--SOFT_BR--&gt;
-to crawl back to where she lie before and froze temporarily as&lt;!--SOFT_BR--&gt;
-her gaze fell upon Amélie. &quot;So she's gone and bloody&lt;!--&quot;--&gt;&lt;!--SOFT_BR--&gt;
-done it.&quot; She thought. &quot;Oh well.&quot; And&lt;!--&quot;--&gt;&lt;!--SOFT_BR--&gt;
-continuted along, as she did. Laying back down and&lt;!--SOFT_BR--&gt;
-re-emplacing her forehead at Amélie's back, but, alas (or&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-not?) the temperature difference was enough to wake her.&lt;!--SOFT_BR--&gt;
-Lena intook a breath sharplyand exhaled slowly,&lt;!--SOFT_BR--&gt;
-shutting her eyes, making the moment last as logg as possible,&lt;!--SOFT_BR--&gt;
-expecting it to be broken as soon as Amélie shifted over to face&lt;!--SOFT_BR--&gt;
-her, but, instead, she just grabbed her and&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— No medical assistance necessary, I presume? —
+Inquired Mercy to Zenyatta.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— Indeed.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+By this time they'd approached Tracer&amp;amp;Widow to&lt;!--'--&gt;
+a distance at which a converstaion could
+be held comfortably.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Nice work out there; innovative in the ery deed. Our
+job was just cleanup duty after that. — Seven-Six broke the silence
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Cheers, mate. — Tracer smiled and looked at Widow to see why
+she was being so uncharacteristically
+quiet and reacted not to the compliment, and quite a big one
+at that, coming from Seven-Six. — Oh, she's&lt;!--'--&gt;
+asleep, the poor thing — She gently poked Widow
+and wispered in her ear. — Soldier here says you
+did a good job.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Widowmaker woke. — Ah, merci.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Yaes? — Mercy tilted her head away from her conversation
+with McCree. Then, realising her mistake,
+giggled softly.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Y'all fancy a drink? All this Peacekeeping's making me
+thirsty
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— I don't see why not. — Vocalised his approval&lt;!--'--&gt;
+Seven-Six as everyone else nodded.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+As everyone was getting settled, Zen noted,
+that Lena wasn't, as was usual, avoiding&lt;!--'--&gt;
+Amélie, and, indeed, didn't as much as flinch when she&lt;!--'--&gt;
+took a seat next to her.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Four whiskeys, please. — Inquired McCree the barman.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Upon receiving the order, and many orders thereafter,
+unsurprisingly, everyone was rather intoxicated, yet
+was holding strong (okay, barring Zenyatta, who vacated the
+scene after Angela stopped being coherent). Even Amélie
+and Lena, temporarily forgoing their differences, were leaning upon
+each other, chanting a French-Brit love song. After
+yet another round, Lena lost the delicate balance and fell onto
+Amélie's thighs, fast asleep. Amélie shuddered, she&lt;!--'--&gt;
+yearned for this, ever since Gérard died.
+She sat Lena (mostly) upright, managed to
+stand up herself, waved at the remaining party, someway
+lifted Lena from under the table, where she managed to
+slide, and thanking some lord for leaving her with perfect
+motoric function despite her drunkedness, going up several
+flights of stairs and fishng out the key to her room from
+her vest. Having semi-sat-semi-laid Lena on her bed,
+she untied both sets of shoes and slid them off,
+wrangled the duvet from under Lena, laid next to her and then
+it atop them. For the first time in however many years
+she fell asleep quickly and without longing for Gérard;
+as if knowingly, Lena's&lt;!--'--&gt;
+head found her back and remained there. And that was the last thing
+she remembered.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Sunlight hit the window blinds, dimly illuminating the small hotel
+room as it did. The brightness, however suppressed, had woken
+Lena, who lay against a back, eyes closed, reveling
+in the sensation she'd been longing for ever since Emily's
+passing. But, as such moments often are, this one needed to be interrupted,
+this time but the need to dull out Lena's growing hangover headache by consuming&lt;!--'--&gt;
+a sizeable amount of water, a task of monumental
+difficulty, (a) because the headache got worse as she
+moved and moving itself was already heavily impaired and (b) she was
+extremely comfortable, and at the moment cared naught for
+whose back her forehead was against. Eventually,
+though, the moment had to be broken, for if she didn't&lt;!--'--&gt;
+move at once she'd deface the shoulderblades in front of her,&lt;!--'--&gt;
+herself and what she presumed to be the bed shie lie on with
+the contents of her stomach. Somehow she managed to roll
+off onto the floor and stumbled towards the nearest sink,
+located in the bathroom, where she drank vigorously and
+managed to keep her stomach in check, and began
+to crawl back to where she lie before and froze temporarily as
+her gaze fell upon Amélie. &quot;So she's gone and bloody&lt;!--&quot;--&gt;
+done it.&quot; She thought. &quot;Oh well.&quot; And&lt;!--&quot;--&gt;
+continuted along, as she did. Laying back down and
+re-emplacing her forehead at Amélie's back, but, alas (or&lt;!--'--&gt;
+not?) the temperature difference was enough to wake her.
+Lena intook a breath sharplyand exhaled slowly,
+shutting her eyes, making the moment last as logg as possible,
+expecting it to be broken as soon as Amélie shifted over to face
+her, but, instead, she just grabbed her and
 hugged her closed to her chest.
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;Moments like this don't last; this&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-one did. It wasn't broken, it just transformed&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-when Lena felt Amélie's hot tears upon her face.&lt;br /&gt;&lt;!--'--&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— What's wrong, luv?&lt;br /&gt;&lt;!--'--&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— I don't know... Eveɹything's coming back to me... I 'aven't&lt;!--SOFT_BR--&gt;
-felt this way since Gérard died. May I? — She interrupted,&lt;!--SOFT_BR--&gt;
-pulling Lena in for a kiss. Lena reciprocated&lt;!--SOFT_BR--&gt;
-with the highest degree of passion. Suddenly, she&lt;!--SOFT_BR--&gt;
-couldn't wait any longer. She reached down to Amélie's waist and&lt;!--SOFT_BR--&gt;
-put her hand under her shirt against the cold blue&lt;!--SOFT_BR--&gt;
-back, sending shivers through both of them,&lt;!--SOFT_BR--&gt;
-using it to slide the shirt off while Amélie&lt;!--SOFT_BR--&gt;
-scrambled for the zipper on Lena's jacket, being&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-interrupted, however, by her shirt sliding past her eyes,&lt;!--SOFT_BR--&gt;
-then pleasantly surprised the jacket having&lt;!--SOFT_BR--&gt;
-slod off while her vision was obscured. As she&lt;!--SOFT_BR--&gt;
-reached for Lena's trouser button, she was stopped&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-by her surprisingly strong, yet gentle, hands. Their&lt;!--SOFT_BR--&gt;
-eyes met.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— One more thing, luv.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;Hmmmm&lt;/em&gt;? — Amélie was having problems with phrasing&lt;!--SOFT_BR--&gt;
-anything coherent.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— I'm still pissed. — Lena's tone was hard to decypher&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— I know, I know, I know. — Her hands were set free and&lt;!--SOFT_BR--&gt;
-felt her tears being butterfly kissed away by Lena's&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-soft lips, somehow managing to undo the button she&lt;!--SOFT_BR--&gt;
-was struggling with &amp;amp; sliding the trousers down, finding&lt;!--SOFT_BR--&gt;
-Lena's hands doing the same to hers. Soon they were&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-both relieved of their trousers, and adequately, Lena&lt;!--SOFT_BR--&gt;
-was the first to plunge her fingers inside Amélie, implanting her&lt;!--SOFT_BR--&gt;
-mouth on the Frenchie's, swallowing her moan as she reciprocated.&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-Both of them came fast and hard,&lt;!--SOFT_BR--&gt;
-starved almost beyond belief (or, well, beforehand),&lt;!--SOFT_BR--&gt;
-their moans melding into one as they did. No words were uttered&lt;!--SOFT_BR--&gt;
-no sounds were made, a moment eternally&lt;!--SOFT_BR--&gt;
-tranquil; moments like that aren't made to last,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-yet this one, again, did, and drifted off as they fell asleep.&lt;!--SOFT_BR--&gt;
-in each other's arms.&lt;!--'--&gt;&lt;/span&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Moments like this don't last; this&lt;!--'--&gt;
+one did. It wasn't broken, it just transformed&lt;!--'--&gt;
+when Lena felt Amélie's hot tears upon her face.&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— What's wrong, luv?&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— I don't know... Eve&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;ything's coming back to me... I 'aven't
+felt this way since Gérard died. May I? — She interrupted,
+pulling Lena in for a kiss. Lena reciprocated
+with the highest degree of passion. Suddenly, she
+couldn't wait any longer. She reached down to Amélie's waist and
+put her hand under her shirt against the cold blue
+back, sending shivers through both of them,
+using it to slide the shirt off while Amélie
+scrambled for the zipper on Lena's jacket, being&lt;!--'--&gt;
+interrupted, however, by her shirt sliding past her eyes,
+then pleasantly surprised the jacket having
+slod off while her vision was obscured. As she
+reached for Lena's trouser button, she was stopped&lt;!--'--&gt;
+by her surprisingly strong, yet gentle, hands. Their
+eyes met.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— One more thing, luv.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— &lt;em&gt;Hmmmm&lt;/em&gt;? — Amélie was having problems with phrasing
+anything coherent.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— I'm still pissed. — Lena's tone was hard to decypher
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— I know, I know, I know. — Her hands were set free and
+felt her tears being butterfly kissed away by Lena's&lt;!--'--&gt;
+soft lips, somehow managing to undo the button she
+was struggling with &amp;amp; sliding the trousers down, finding
+Lena's hands doing the same to hers. Soon they were&lt;!--'--&gt;
+both relieved of their trousers, and adequately, Lena
+was the first to plunge her fingers inside Amélie, implanting her
+mouth on the Frenchie's, swallowing her moan as she reciprocated.&lt;!--'--&gt;
+Both of them came fast and hard,
+starved almost beyond belief (or, well, beforehand),
+their moans melding into one as they did. No words were uttered
+no sounds were made, a moment eternally
+tranquil; moments like that aren't made to last,&lt;!--'--&gt;
+yet this one, again, did, and drifted off as they fell asleep.
+in each other's arms.&lt;!--'--&gt;
 &lt;!--On placement of the apostrophe here: https://jakubmarian.com/each-others-vs-each-others-in-english--&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;The sun set and they awoke again, conscious now of&lt;!--SOFT_BR--&gt;
-everthing they had together. Or, well, most of it, anyway.&lt;!--SOFT_BR--&gt;
-Some things needed to still be sorted out and made sure&lt;!--SOFT_BR--&gt;
-about.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— So...&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Yaes?&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Aren't you hungry, luv?&lt;br /&gt;&lt;!--'--&gt;
-&lt;span class=&quot;badindented&quot;&gt;— For you... — Amélie smiled. — But otheɹwise, no.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Well, then, you obviously have something on your mind, so go first&lt;!--SOFT_BR--&gt;
-first.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— &lt;em&gt;H&lt;/em&gt;why now, afteɹ all this time? When did you stop to despise&lt;!--SOFT_BR--&gt;
-me? — Amélie flushed, or, well, as best as she could.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— That purple's really cute, you should do that more&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-often. Or I guess I could. — Lena's mind suggested the view of&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-Amélie's cheeks as she came. — But, anyway, there&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-was something in you passing out in my arms, your body&lt;!--SOFT_BR--&gt;
-against mine, in the withering Egyptian heat that made me finally&lt;!--SOFT_BR--&gt;
-crack. As for my despising you... Shortly after I got out of the&lt;!--SOFT_BR--&gt;
-black void my filfe became after Emily's death. I realised&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-you're just acting on orders and, well, you did get brainwashed&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-by Talon... — Lena sighed. — You fancy a cuppa?&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Suɹe. You 'ave questions, too?&lt;!--'--&gt;&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Ya, how'd you know to take me up here yesterday?&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-When'd you know you dig me?&lt;!--'--&gt;&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Pfh, did you ɹeally think I passed out foɹ so long? — Now it was&lt;!--SOFT_BR--&gt;
-Lena's turn to flush, which had nothing to do with the steam&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-from the Earl Grey she was making, Amélie grinned. — Not 'aɹd&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-to pɹetend to be &lt;em&gt;h&lt;/em&gt;when youɹ pulse is almost as good as dead.&lt;!--SOFT_BR--&gt;
-As foɹ shoveling, I always 'ad a wild cɹush on you, especially&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-afteɹ I out of &lt;em&gt;my&lt;/em&gt; black void afteɹ I killed Gérard.&lt;!--SOFT_BR--&gt;
-But must of all, it was you, afteɹ I passed out,&lt;!--SOFT_BR--&gt;
-you made me feel – foɹ the fiɹst time in a long time&lt;!--SOFT_BR--&gt;
-caɹed foɹ, loved, even, I guess. — Lena leaned in with&lt;!--SOFT_BR--&gt;
-the tea. — Ah, merci. — She took a sip. — Merdé, chaud!&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Oi? It's obviously hot, (a) because it's how you do it&lt;!--SOFT_BR--&gt;
-properly. — Lena looked temporarily stuck with love&lt;!--SOFT_BR--&gt;
-to her homeland and the Queen, but composed herself&lt;!--SOFT_BR--&gt;
-quickly – and (b) &lt;em&gt;you're&lt;/em&gt; hot, so it seemed appropriate.&lt;!--'--&gt;&lt;br /&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Oh, you. — Amélie took another sip. — Dɹinkable.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Heyyy, you like it. Pass the test,&lt;!--SOFT_BR--&gt;
-you did. — Lena giggled softly. — Also, I'd hoped that if I gave&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-you very hot tea you'll blush again, the purple's much&lt;!--SOFT_BR--&gt;
-beter a colour than your usual blue.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Seeing that Amélie's finished her tea, Lena leaned in again&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
-to kiss her, snatching the saucer&amp;amp;cup and setting&lt;!--SOFT_BR--&gt;
-them down in relative safety. Into a kiss they pertained.&lt;/span&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+The sun set and they awoke again, conscious now of
+everthing they had together. Or, well, most of it, anyway.
+Some things needed to still be sorted out and made sure
+about.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Moments like that aren't made to last, but sometimes,&lt;!--'--&gt;&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— So...
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Yaes?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Aren't you hungry, luv?&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— For you... — Amélie smiled. — But othe&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;wise, no.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Well, then, you obviously have something on your mind, so go first
+first.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— &lt;em&gt;H&lt;/em&gt;why now, afte&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; all this time? When did you stop to despise
+me? — Amélie flushed, or, well, as best as she could.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— That purple's really cute, you should do that more&lt;!--'--&gt;
+often. Or I guess I could. — Lena's mind suggested the view of&lt;!--'--&gt;
+Amélie's cheeks as she came. — But, anyway, there&lt;!--'--&gt;
+was something in you passing out in my arms, your body
+against mine, in the withering Egyptian heat that made me finally
+crack. As for my despising you... Shortly after I got out of the
+black void my filfe became after Emily's death. I realised&lt;!--'--&gt;
+you're just acting on orders and, well, you did get brainwashed&lt;!--'--&gt;
+by Talon... — Lena sighed. — You fancy a cuppa?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Su&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;e. You 'ave questions, too?&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Ya, how'd you know to take me up here yesterday?&lt;!--'--&gt;
+When'd you know you dig me?&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Pfh, did you &lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;eally think I passed out fo&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; so long? — Now it was
+Lena's turn to flush, which had nothing to do with the steam&lt;!--'--&gt;
+from the Earl Grey she was making, Amélie grinned. — Not 'a&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;d&lt;!--'--&gt;
+to p&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;etend to be &lt;em&gt;h&lt;/em&gt;when you&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; pulse is almost as good as dead.
+As fo&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; shoveling, I always 'ad a wild c&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;ush on you, especially&lt;!--'--&gt;
+afte&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; I out of &lt;em&gt;my&lt;/em&gt; black void afte&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; I killed Gérard.
+But must of all, it was you, afte&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; I passed out,
+you made me feel – fo&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt; the fi&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;st time in a long time
+ca&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;ed fo&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;, loved, even, I guess. — Lena leaned in with
+the tea. — Ah, merci. — She took a sip. — Merdé, chaud!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Oi? It's obviously hot, (a) because it's how you do it
+properly. — Lena looked temporarily stuck with love
+to her homeland and the Queen, but composed herself
+quickly – and (b) &lt;em&gt;you're&lt;/em&gt; hot, so it seemed appropriate.&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Oh, you. — Amélie took another sip. — D&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;inkable.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Heyyy, you like it. Pass the test,
+you did. — Lena giggled softly. — Also, I'd hoped that if I gave&lt;!--'--&gt;
+you very hot tea you'll blush again, the purple's much
+beter a colour than your usual blue.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Seeing that Amélie's finished her tea, Lena leaned in again&lt;!--'--&gt;
+to kiss her, snatching the saucer&amp;amp;cup and setting
+them down in relative safety. Into a kiss they pertained.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Moments like that aren't made to last, but sometimes,&lt;!--'--&gt;
 just timetimes, they do. And they change the world.
 &lt;/p&gt;
 
-&lt;br /&gt;
-&lt;p&gt;
-&lt;!--This is titled either &quot;A Widow's Trace&quot; or &quot;Moments&quot;, both the pun and the self-reference are good.--&gt;
-Jędrzej A. Łopaciński, ~10-20.03.2017 Kraków
+
+&lt;!--EBOOK_ONLY(--&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)​--&gt;
+&lt;!--EBOOK_ONLY(--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pl&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+	&lt;body style=&quot;display: table;&quot;&gt;
+		&lt;div style=&quot;display: table-cell; vertical-align: middle; text-align: center;&quot;&gt;
+			&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;!--)--&gt;
+
+
+&lt;p class=&quot;roboto&quot;&gt;
+~10-20.03.2017&lt;br /&gt;
+Kraków&lt;br /&gt;
+Jędrzej A. Łopaciński
 &lt;/p&gt;
+
+
+&lt;!--EBOOK_ONLY(--&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 23 Apr 2017 03:37:41 +0200</pubDate>
