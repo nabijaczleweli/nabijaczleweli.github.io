@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Tue, 19 Sep 2017 20:50:42 +0000
+      Tue, 19 Sep 2017 21:05:57 +0000
     </pubDate>
     <lastBuildDate>
-      Tue, 19 Sep 2017 20:50:42 +0000
+      Tue, 19 Sep 2017 21:05:57 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -999,7 +999,7 @@ around with her knee in shatters. Widow landed next
 to Tracer perfectly quietly.
 &lt;/p&gt;
 &lt;p class=&quot;writing indented roboto continuing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Ready, luv?&lt;br /&gt;
+— Ready, luv?
 &lt;/p&gt;
 &lt;p class=&quot;writing indented roboto continuation&quot;&gt;
 Widow just nodded as she grasped for Tracer's torso. She didn't
@@ -2380,8 +2380,17 @@ Not ever would she expect this.
 .indented {
 	text-indent: 1em;
 }
-.badindented::before {
-	content: &quot; &quot;;
+.continued {
+	margin-bottom: 0;
+}
+
+.continuing {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.continuation {
+	margin-top: 0;
 }
 &lt;/style&gt;
 
@@ -2389,7 +2398,7 @@ Not ever would she expect this.
 &lt;!-- ePub title: &quot;The-less&quot; --&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;writing-badindent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;writing-the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5ihrpc/cw_write_a_story_without_using_the_word_the&quot;&gt;&quot;The-less&quot;&lt;/a&gt;&lt;br /&gt;
 
@@ -2400,28 +2409,46 @@ No, she wasn'&lt;!--'--&gt;t exactly unhappy with it, as her salary was surprisi
 Not that she had much choice, anyway. There were certain forces at play that would notify much more certain authorities of some
   high-treason-sentence-worthy activity from her past should she leave or do anything untoward with regards to her work.
 &lt;/p&gt;
+
 &lt;p class=&quot;writing indented&quot;&gt;
 Capitalist ventures like that of Mrs. Burnham are commonplace around Britain.
 What is much less common is for them to be undiscovered foreign government spy outposts, still quite like that of Mrs. Burnham.
 Having a close relative (like, for example, a spouse) in a governmental position doesn'&lt;!--'--&gt;t help keeping up a front like that (regular background checks),
   but having an easy, regular access to said government'&lt;!--'--&gt;s secrets greatly outweighs ever increasing risk of discovery.
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;— You?! But... Why? – Sarah broke down&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Oh, you didn'&lt;!--'--&gt;t catch on? You were even more stupid than I thought. –
-  Fenella shrugged, now affixing a silencer to a run-down pistol with numbers sanded off.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— So that'&lt;!--'--&gt;s all I was to you? A tool?, a means to an end? – She regained her composure.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Mostly, yes. I mean, your coital expertise is extraordinary, too, but it was just a bonus, really.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— So, before you kill me, just one more thing, luv. My so-called last words, if you will?&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Sure, I guess it &lt;em&gt;is&lt;/em&gt; your priviledge as an executee.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— &quot;Painted Black&quot;&lt;br /&gt;&lt;/span&gt;
-&lt;br /&gt;
+
+&lt;p class=&quot;writing indented continued&quot;&gt;
+— You?! But... Why? – Sarah broke down
+&lt;/p&gt;
+&lt;p class=&quot;writing indented continuing&quot;&gt;
+— Oh, you didn'&lt;!--'--&gt;t catch on? You were even more stupid than I thought. –
+  Fenella shrugged, now affixing a silencer to a run-down pistol with numbers sanded off.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented continuing&quot;&gt;
+— So that'&lt;!--'--&gt;s all I was to you? A tool?, a means to an end? – She regained her composure.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented continuing&quot;&gt;
+— Mostly, yes. I mean, your coital expertise is extraordinary, too, but it was just a bonus, really.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented continuing&quot;&gt;
+— So, before you kill me, just one more thing, luv. My so-called last words, if you will?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented continuing&quot;&gt;
+— Sure, I guess it &lt;em&gt;is&lt;/em&gt; your priviledge as an executee.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented continuation&quot;&gt;
+— &quot;Painted Black&quot;
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented&quot;&gt;
 Snipers fire.
 &lt;/p&gt;
+
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;Here lies Fenella Burnham, 1983-2016. Beloved wife and dedicated merchant.&quot;&lt;br /&gt;
 Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engraved.
 &lt;/p&gt;
+
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;Here lies Sarah Burnham, 1984-2057. Beloved wife and selfless defender of Queen And Country.&quot;
 &lt;/p&gt;
