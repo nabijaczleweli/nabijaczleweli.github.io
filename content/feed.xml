@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Tue, 19 Sep 2017 18:01:06 +0000
+      Tue, 19 Sep 2017 20:50:42 +0000
     </pubDate>
     <lastBuildDate>
-      Tue, 19 Sep 2017 18:01:06 +0000
+      Tue, 19 Sep 2017 20:50:42 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -621,6 +621,7 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 	&lt;head&gt;
 		&lt;title&gt;Preface&lt;/title&gt;
 		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
 		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
@@ -628,7 +629,7 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 
 &lt;!--EBOOK_ONLY(--&gt;Preface&lt;br /&gt;&lt;!--)--&gt;
 
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented roboto&quot;&gt;
 The following work is a product of its own time,&lt;!--SOFT_BR--&gt;
 and as such doesn't represent the author's current views&lt;!--SOFT_BR--&gt;
 and skillset. It also references context from that time,&lt;!--SOFT_BR--&gt;
@@ -641,162 +642,202 @@ that specific time, in that specific context.
 	&lt;/body&gt;
 &lt;/html&gt;
 &lt;!--)--&gt;
+&lt;br /&gt;
 &lt;!-- ePub title: &quot;Każdy koniec to nowy początek&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(&lt;!----&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pl&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;Każdy koniec to nowy początek&lt;/title&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;out/writing-the_taste_of_mi-Merriweather-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+&lt;!--)--&gt;
 
-&quot;Każdy koniec to nowy początek&quot;&lt;br /&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Każdy koniec to nowy początek&lt;/h2&gt;&lt;/center&gt;
 
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt; 238 po Powstaniu. Kapitalizm rosprzestrzenia się po&lt;!--SOFT_BR--&gt;
-Þyffenþarru terenach, i, как то kapitalizm, egoizm&lt;!--SOFT_BR--&gt;
-szerząc i propagując. Jakkolwiek negatywne konotacje słowo&lt;!--SOFT_BR--&gt;
-to posiadać się wydaje, wielce jest to rzeczą pozytowną,&lt;!--SOFT_BR--&gt;
-jako, że egoizm (i, co za tem idzie, przetrwanie własne)&lt;!--SOFT_BR--&gt;
-przeżyć naszemu gatunkowi przez lat milijony pozwalał.&lt;!--SOFT_BR--&gt;
-Cóż, naszemu; Naszemu (przez duże 'N'), jed-&lt;!--SOFT_BR--&gt;
-nakowóż, nie. Niektórzy twierdzą że atrybutować&lt;!--SOFT_BR--&gt;
-przynależy ową właściwość innemu mózgowi i układowi&lt;!--SOFT_BR--&gt;
-jego, ja jednak, iże ubocznem produktem jest&lt;!--SOFT_BR--&gt;
-ona psionicznem&lt;a href=&quot;#asterix2&quot;&gt;**&lt;/a&gt; właściwościom Naszem,&lt;!--SOFT_BR--&gt;
-co też powoduje naturalny&lt;!--SOFT_BR--&gt;
-ciąg do socjalizmu i innych unitarnych&lt;!--SOFT_BR--&gt;
-społecznych systemów. Sprawia to,&lt;!--SOFT_BR--&gt;
-wraz z tradycją, że kapitalism jest czemś nowem i&lt;!--SOFT_BR--&gt;
-od czegokolwiek innego przez Nas znanego innem,&lt;!--SOFT_BR--&gt;
-toteż szedł lat opornie przez pierwszych lat parę,&lt;!--SOFT_BR--&gt;
-więc i ruchy pseudopolityczne utworzyły się, ale wkrótce&lt;!--SOFT_BR--&gt;
-rozpadły się pod Naciskiem y po logicznemu rozumowaniu.&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt; 238 po Powstaniu. Kapitalizm rosprzestrzenia się po
+Þyffenþarru terenach, i, как то kapitalizm, egoizm
+szerząc i propagując. Jakkolwiek negatywne konotacje słowo
+to posiadać się wydaje, wielce jest to rzeczą pozytowną,
+jako, że egoizm (i, co za tem idzie, przetrwanie własne)
+przeżyć naszemu gatunkowi przez lat milijony pozwalał.
+Cóż, naszemu; Naszemu (przez duże 'N'), jed-
+nakowóż, nie. Niektórzy twierdzą że atrybutować
+przynależy ową właściwość innemu mózgowi i układowi
+jego, ja jednak, iże ubocznem produktem jest
+ona psionicznem&lt;a href=&quot;#asterix2&quot;&gt;**&lt;/a&gt; właściwościom Naszem,
+co też powoduje naturalny
+ciąg do socjalizmu i innych unitarnych
+społecznych systemów. Sprawia to,
+wraz z tradycją, że kapitalism jest czemś nowem i
+od czegokolwiek innego przez Nas znanego innem,
+toteż szedł lat opornie przez pierwszych lat parę,
+więc i ruchy pseudopolityczne utworzyły się, ale wkrótce
+rozpadły się pod Naciskiem y po logicznemu rozumowaniu.
 Do czasu, anyway.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 1328 po Powstaniu. Wraz z kapitalizmem rozwijają&lt;!--SOFT_BR--&gt;
-się psioniczne właściwości Nasze. U niektórych (&lt;i&gt;nota bene&lt;/i&gt;&lt;!--SOFT_BR--&gt;
-głównie w klasie średniej i wyższej) moc psioniczna&lt;!--SOFT_BR--&gt;
-rosnąć poczęła do poziomów zgoła niespotykanych, a u innych&lt;!--SOFT_BR--&gt;
-recesować delikatnie i kontrolowalną być&lt;!--SOFT_BR--&gt;
-zaczęła. Niewielu, jednakże, zauważyło zmiany te,&lt;!--SOFT_BR--&gt;
-boż od kapitalizmu adwentu nikt uwagi większej na&lt;!--SOFT_BR--&gt;
-sieć psioniczną nie zwracał uwagi, jednak jedni&lt;!--SOFT_BR--&gt;
-słyszą/czują więcej, a drudzy spokijniejsi są. Podział&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 1328 po Powstaniu. Wraz z kapitalizmem rozwijają
+się psioniczne właściwości Nasze. U niektórych (&lt;em&gt;nota bene&lt;/em&gt;
+głównie w klasie średniej i wyższej) moc psioniczna
+rosnąć poczęła do poziomów zgoła niespotykanych, a u innych
+recesować delikatnie i kontrolowalną być
+zaczęła. Niewielu, jednakże, zauważyło zmiany te,
+boż od kapitalizmu adwentu nikt uwagi większej na
+sieć psioniczną nie zwracał uwagi, jednak jedni
+słyszą/czują więcej, a drudzy spokijniejsi są. Podział
 rozpoczyna się, niewidoczny.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 1942 po Powstaniu. Podział rośnie, wykształcają się&lt;!--SOFT_BR--&gt;
-dwie definitywne grupy społeczne. Proletariat, kontrolujący,&lt;!--SOFT_BR--&gt;
-głównie w celu swojej Siły&lt;!--SOFT_BR--&gt;
-ograniczenia powierzchni influencji, y Elyta&lt;!--SOFT_BR--&gt;
-jako jeden umysł wspólny działając kontrolę nad Prole-&lt;!--SOFT_BR--&gt;
-tariatem całkowitą usiłując pozyskać, czemu Oni skutecznie&lt;!--SOFT_BR--&gt;
-opierali się. Jako kolektyw indywiduów, każdy z Elyty&lt;!--SOFT_BR--&gt;
-dbał o własne interesy przed interesami Kolektywu i dzię-&lt;!--SOFT_BR--&gt;
-ki temu wyłącznie trzymał się. Elyta kontroluje 97.875%&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 1942 po Powstaniu. Podział rośnie, wykształcają się
+dwie definitywne grupy społeczne. Proletariat, kontrolujący,
+głównie w celu swojej Siły
+ograniczenia powierzchni influencji, y Elyta
+jako jeden umysł wspólny działając kontrolę nad Prole-
+tariatem całkowitą usiłując pozyskać, czemu Oni skutecznie
+opierali się. Jako kolektyw indywiduów, każdy z Elyty
+dbał o własne interesy przed interesami Kolektywu i dzię-
+ki temu wyłącznie trzymał się. Elyta kontroluje 97.875%
 kapitału światowego.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 2391 po Powstaniu. kilka ledwie&lt;!--SOFT_BR--&gt;
-komórek oporu pozostało przy istnieniu.&lt;!--SOFT_BR--&gt;
-Jednością, już nie Kolektywem, stalim się. Myśli o&lt;!--SOFT_BR--&gt;
-Nas, nie o sobie, pierwyje się stały, a my - Jednoś-&lt;!--SOFT_BR--&gt;
-cią, a myśli osobistej nie stało&lt;a href=&quot;#asterix3&quot;&gt;***&lt;/a&gt;. Czym był Świat,&lt;!--SOFT_BR--&gt;
-czym był Kapitał? Byliśmy My. MY. MY! My.&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 2391 po Powstaniu. kilka ledwie
+komórek oporu pozostało przy istnieniu.
+Jednością, już nie Kolektywem, stalim się. Myśli o
+Nas, nie o sobie, pierwyje się stały, a my - Jednoś-
+cią, a myśli osobistej nie stało&lt;a href=&quot;#asterix3&quot;&gt;***&lt;/a&gt;. Czym był Świat,
+czym był Kapitał? Byliśmy My. MY. MY! My.
 My. mymymymymymymymy. My.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 2483 po Powstaniu. Jakim Powstaniu? Wszys-&lt;!--SOFT_BR--&gt;
-cy jesteśmy Jednością. Myśl. Myśl? Nie ma Myśli,&lt;!--SOFT_BR--&gt;
-jest Świadomość. Indywi- Hmph. Używaj-li&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 2483 po Powstaniu. Jakim Powstaniu? Wszys-
+cy jesteśmy Jednością. Myśl. Myśl? Nie ma Myśli,
+jest Świadomość. Indywi- Hmph. Używaj-li
 słów mających Znaczenie. To Dziś. Dziś. dziś. dziś dziś
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 208 po Dziś. Populacja na łeb, i&lt;!--SOFT_BR--&gt;
-jakby na to nie patrzeć, szyję, spada. Leci. Sieć&lt;!--SOFT_BR--&gt;
-psioniczna słabnie. My. My?&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 208 po Dziś. Populacja na łeb, i
+jakby na to nie patrzeć, szyję, spada. Leci. Sieć
+psioniczna słabnie. My. My?
 Ty i Ja. Jak to? Nie, nie. My.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 713 po Dziś. A może... Może i jednak Ja.&lt;!--SOFT_BR--&gt;
-Ale żeby tak... Ty? Ty i Ja. Ty i ja. ty i ja. my.&lt;!--SOFT_BR--&gt;
-I zaiste, w związku z osad wymieraniem,&lt;!--SOFT_BR--&gt;
-grupy formować się poczęły. Grupy psionicznie&lt;!--SOFT_BR--&gt;
-zwarte, lecz nie Kolektyw już. Grupy. Oni. My. My&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 713 po Dziś. A może... Może i jednak Ja.
+Ale żeby tak... Ty? Ty i Ja. Ty i ja. ty i ja. my.
+I zaiste, w związku z osad wymieraniem,
+grupy formować się poczęły. Grupy psionicznie
+zwarte, lecz nie Kolektyw już. Grupy. Oni. My. My
 i Oni.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 1128 po Dziś. Repopulacja. Wiele, oj wiele&lt;!--SOFT_BR--&gt;
-Nowtch. Nowi - niewyszkoleni. Nowi - nierozumni.&lt;!--SOFT_BR--&gt;
-Nowi - niepanujący. Nowym wpajać trzeba.&lt;!--SOFT_BR--&gt;
-Ten miot, jednakże, dziwnem był. Nie władał on&lt;!--SOFT_BR--&gt;
-Potęgą w ógóle prawie. Wykształ-&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 1128 po Dziś. Repopulacja. Wiele, oj wiele
+Nowtch. Nowi - niewyszkoleni. Nowi - nierozumni.
+Nowi - niepanujący. Nowym wpajać trzeba.
+Ten miot, jednakże, dziwnem był. Nie władał on
+Potęgą w ógóle prawie. Wykształ-
 cać Oni systemy poczęli, jako i my robili byśmy.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 1493 po Dziś. Nowych siły psioniczne limitowane&lt;!--SOFT_BR--&gt;
-wytworzenia popchnęły, toteż przestał System gloablny&lt;!--SOFT_BR--&gt;
-socyalistyczny perfekcyjny wykształcony. Pasuje on&lt;!--SOFT_BR--&gt;
-i Nam, bo jedyny słuszny umysłowy nurt&lt;!--SOFT_BR--&gt;
-unitarny i Nowym, który potrzebują&lt;!--SOFT_BR--&gt;
-go, by Jedność zachować. Niechaj więc, k uczczeniu, dzień&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 1493 po Dziś. Nowych siły psioniczne limitowane
+wytworzenia popchnęły, toteż przestał System gloablny
+socyalistyczny perfekcyjny wykształcony. Pasuje on
+i Nam, bo jedyny słuszny umysłowy nurt
+unitarny i Nowym, który potrzebują
+go, by Jedność zachować. Niechaj więc, k uczczeniu, dzień
 ten Unią się nazywa,
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 304 po Unii. Gospodarka globalna wspierana Jedno-&lt;!--SOFT_BR--&gt;
-ścią prosperuje y rozwija się ponad normy, populac-&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 304 po Unii. Gospodarka globalna wspierana Jedno-
+ścią prosperuje y rozwija się ponad normy, populac-
 ja Unifikuje się i rośnie do stałej wartości.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 728 po Unii. Potrzeby psionicznej siły braku-&lt;!--SOFT_BR--&gt;
-jąc, substytowaną poprzez system będąc, recesować&lt;!--SOFT_BR--&gt;
-ona zaczyna. Pokład&lt;a href=&quot;#asterix4&quot;&gt;****&lt;/a&gt; trzęsie się od fabryk, ale&lt;!--SOFT_BR--&gt;
-również coraz chłodniejszy się staje, как by&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 728 po Unii. Potrzeby psionicznej siły braku-
+jąc, substytowaną poprzez system będąc, recesować
+ona zaczyna. Pokład&lt;a href=&quot;#asterix4&quot;&gt;****&lt;/a&gt; trzęsie się od fabryk, ale
+również coraz chłodniejszy się staje, как by
 powoli dogorywał.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 1326 po Unii. Psioniczny reces sprawia&lt;!--SOFT_BR--&gt;
-rozkład globalnej Sieci, głównym problemem to jednak&lt;!--SOFT_BR--&gt;
-nie jest. Bez Potęgi, Unia podtrzymywana jest wyłącznie&lt;!--SOFT_BR--&gt;
-systemem. A system przestaje wystarczać. Pojawia się&lt;!--SOFT_BR--&gt;
-opór, a raczej komórki małe jego. &lt;i&gt;Vigilo Confido&lt;/i&gt;.
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 1326 po Unii. Psioniczny reces sprawia
+rozkład globalnej Sieci, głównym problemem to jednak
+nie jest. Bez Potęgi, Unia podtrzymywana jest wyłącznie
+systemem. A system przestaje wystarczać. Pojawia się
+opór, a raczej komórki małe jego. &lt;em&gt;Vigilo Confido&lt;/em&gt;.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 1911 po Unii. Opór powoli ogarnia większość globu. Brak&lt;!--SOFT_BR--&gt;
-prawie całkowity Unii i rozkład Sieci&lt;!--SOFT_BR--&gt;
-o sobie myśli propagują. Nowego&lt;!--SOFT_BR--&gt;
-systemu poszukiwania rozpoczynają się. Nie ma&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 1911 po Unii. Opór powoli ogarnia większość globu. Brak
+prawie całkowity Unii i rozkład Sieci
+o sobie myśli propagują. Nowego
+systemu poszukiwania rozpoczynają się. Nie ma
 od-ni powrotu dla Elity, Unii i Sieci.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 2503 po Unii. To jest to. Oporu&lt;!--SOFT_BR--&gt;
-ruchu kulminacyjny punkt. Po bezpośrednich psionicznych&lt;!--SOFT_BR--&gt;
-połączeniach przesuwa się jedna myśl, jedna komenda: &lt;i&gt;Los!&lt;/i&gt;&lt;a href=&quot;#asterix5&quot;&gt;*****&lt;/a&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 2503 po Unii. To jest to. Oporu
+ruchu kulminacyjny punkt. Po bezpośrednich psionicznych
+połączeniach przesuwa się jedna myśl, jedna komenda: &lt;em&gt;Los!&lt;/em&gt;&lt;a href=&quot;#asterix5&quot;&gt;*****&lt;/a&gt;
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 2620 po Unii. Opór wygrał. System padł. Już mniej&lt;!--SOFT_BR--&gt;
-&lt;i&gt;Vigilo&lt;/i&gt;, definitywnie nie &lt;i&gt;Confido&lt;/i&gt;. Nowy system, Kapitalizm?&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 2620 po Unii. Opór wygrał. System padł. Już mniej
+&lt;em&gt;Vigilo&lt;/em&gt;, definitywnie nie &lt;em&gt;Confido&lt;/em&gt;. Nowy system, Kapitalizm?
 Tak, dobra decyzja. Dzień ten wspominają Powstaniem.
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
-Rok 238 po Powstaniu. Kapitalizm rosprzestrzenia się po&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Rok 238 po Powstaniu. Kapitalizm rosprzestrzenia się po
 Þyffenþarru terenach, i, как то kapitalizm, egoizm szerząc i...
 &lt;/p&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
 Remember, we will be watching.
 &lt;/p&gt;
 
 &lt;br /&gt;
 &lt;p&gt;
-&lt;span id=&quot;asterix1&quot;&gt;*rok — &lt;i&gt;nota bene&lt;/i&gt;: implikacja, że rok=długi jest niepoprawna&lt;/span&gt;&lt;br /&gt;
+&lt;span id=&quot;asterix1&quot;&gt;*rok — &lt;em&gt;nota bene&lt;/em&gt;: implikacja, że rok=długi jest niepoprawna&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix2&quot;&gt;**psionicznem — &quot;sionicznym&quot;, ew. &quot;zajonicznym&quot;&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix3&quot;&gt;***stało — as in - było&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix4&quot;&gt;****pokład — podłoga w Marines&lt;/span&gt;&lt;br /&gt;
-&lt;span id=&quot;asterix5&quot;&gt;*****&lt;i&gt;los&lt;/i&gt; — niem.&lt;/span&gt;&lt;br /&gt;
+&lt;span id=&quot;asterix5&quot;&gt;*****&lt;em&gt;los&lt;/em&gt; — niem.&lt;/span&gt;&lt;br /&gt;
 &lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;
-Każdy koniec to nowy początek&lt;br /&gt;
-&lt;br /&gt;
-Utwór napisany ok. 31.03.2016 przez Jędrzeja A. Łopacińskiego.
+
+
+&lt;!--EBOOK_ONLY(--&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)​--&gt;
+&lt;!--EBOOK_ONLY(--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pl&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+	&lt;body style=&quot;display: table;&quot;&gt;
+		&lt;div style=&quot;display: table-cell; vertical-align: middle; text-align: center;&quot;&gt;
+			&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;!--)--&gt;
+
+
+&lt;p class=&quot;roboto&quot;&gt;
+~31.03.2016&lt;br /&gt;
+Jędrzej A. Łopaciński
 &lt;/p&gt;
+
+
+&lt;!--EBOOK_ONLY(--&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 22 Sep 2016 01:20:31 +0200</pubDate>
@@ -1526,8 +1567,17 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
     <item>
       <title>Świat to kilka takich pokoi — nabijaczleweli@gmail.com (nabijaczleweli)</title>
       <description>&lt;style&gt;
-.badindented::before {
-	content: &quot; &quot;;
+.continued {
+	margin-bottom: 0;
+}
+
+.continuing {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.continuation {
+	margin-top: 0;
 }
 .indented {
 	text-indent: 1em;
@@ -1543,6 +1593,7 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
 	&lt;head&gt;
 		&lt;title&gt;Preface&lt;/title&gt;
 		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
 		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
@@ -1550,7 +1601,7 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
 
 &lt;!--EBOOK_ONLY(--&gt;Preface&lt;br /&gt;&lt;!--)--&gt;
 
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented roboto&quot;&gt;
 The following work is a product of its own time,&lt;!--SOFT_BR--&gt;
 and as such doesn't represent the author's current views&lt;!--SOFT_BR--&gt;
 and skillset. It also references context from that time,&lt;!--SOFT_BR--&gt;
@@ -1565,175 +1616,266 @@ that specific time, in that specific context.
 &lt;!--)--&gt;
 &lt;!-- ePub title: &quot;Świat to kilka takich pokoi&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;badindent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
+&lt;!--EBOOK_ONLY(&lt;!----&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pl&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;Świat to kilka takich pokoi&lt;/title&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
+		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;out/writing-the_taste_of_mi-Merriweather-font.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;
+		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+&lt;!--)--&gt;
 
-&lt;p&gt;
-Interludium&lt;br /&gt;
-&quot;Świat to kilka takich pokoi&quot;
+&lt;p&gt;&lt;/p&gt;
+&lt;center class=&quot;merriweather&quot;&gt;
+	&lt;h2 class=&quot;continued&quot;&gt;Interludium&lt;/h2&gt;
+	&lt;h3 class=&quot;continuation&quot;&gt;Świat to kilka takich pokoi&lt;/h3&gt;
+&lt;/center&gt;
+
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Serbiańcy znowu się pochlali, ale w sumie
+czegoż się po wschodnich słowianach spodziewać, swoją
+drogą. I, jak to wszystkim &lt;em&gt;homo sapiens&lt;/em&gt;om się dzieje
+filozofować poczęli.
 &lt;/p&gt;
 
-&lt;p class=&quot;writing indented&quot;&gt;
-Serbiańcy znowu się pochlali, ale w sumie&lt;!--SOFT_BR--&gt;
-czegoż się po wschodnich słowianach spodziewać, swoją&lt;!--SOFT_BR--&gt;
-drogą. I, jak to wszystkim &lt;i&gt;homo sapiens&lt;/i&gt;om się dzieje&lt;!--SOFT_BR--&gt;
-filozofować poczęli.&lt;!--SOFT_BR--&gt;
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+— My w takim gównianym, za przeproszeniem
+kolegów, pokoju mieszkamy, a Austro-Węgrom
+Franz-Ferdinand fundnął tamten wykur-&lt;em&gt;hic&lt;/em&gt;-wisty
+apartament.
 &lt;/p&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;— My w takim gównianym, za przeproszeniem&lt;!--SOFT_BR--&gt;
-kolegów, pokoju mieszkamy, a Austro-Węgrom&lt;!--SOFT_BR--&gt;
-Franz-Ferdinand fundnął tamten wykur-&lt;i&gt;hic&lt;/i&gt;-wisty&lt;!--SOFT_BR--&gt;
-apartament.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Panowie, mam plan.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Давай!&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Przywrócimy Wielką Serbię!&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— O!&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Zastrzelim Franz-Ferdinanda, przywrócimy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; naszych rodaków buta&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Austryackiego spode, y zajmiem oba pokoje, tako,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; jako dawniej było.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Wiwat Wel'&lt;!--'--&gt;ka Srbija! — stuknęło szkło&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Panowie, mam plan.
 &lt;/p&gt;
-&lt;br /&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;Dnia następnego zebrali się i omówili plan&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Wchodzę, strzelam, wychodzę?&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Ano, a my czekamy pod drzwiami z wódą i&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; demonstrujemy z tobą, jak już wyjdziesz,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; przykładnych wschodnich słowian zachowanie.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Haraszo, paechali!&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Jak postanowili tak i poszli, dwaj chleją na korytarzu&lt;!--SOFT_BR--&gt;
-w pobliżu drzwi Franz-Ferdinandzkich.&lt;!--SOFT_BR--&gt;
-Trzeci wchodzi.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Zamek ustępuje pod piętnastoma kilo Newtonami.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Książę śpi. Podejść. Wycelować. Pociągnąć. Strzelić.&lt;br /&gt;
-Schować. Wycofać się. Zamknąć drzwi.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Spawa&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt;? — wybełkotała grupa zewnętrzna&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Przykładnie — odpowiedział i chlusnął sobie&lt;br /&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Давай!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Przywrócimy Wielką Serbię!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— O!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Zastrzelim Franz-Ferdinanda, przywrócimy
+naszych rodaków buta
+Austryackiego spode, y zajmiem oba pokoje, tako,
+jako dawniej było.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— Wiwat Wel'&lt;!--'--&gt;ka Srbija! — stuknęło szkło
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Dnia następnego zebrali się i omówili plan
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Wchodzę, strzelam, wychodzę?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Ano, a my czekamy pod drzwiami z wódą i
+demonstrujemy z tobą, jak już wyjdziesz,
+przykładnych wschodnich słowian zachowanie.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Haraszo, paechali!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Jak postanowili tak i poszli, dwaj chleją na korytarzu
+w pobliżu drzwi Franz-Ferdinandzkich.
+Trzeci wchodzi.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Zamek ustępuje pod piętnastoma kilo Newtonami.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Książę śpi. Podejść. Wycelować. Pociągnąć. Strzelić.
+Schować. Wycofać się. Zamknąć drzwi.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Spawa&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt;? — wybełkotała grupa zewnętrzna
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Przykładnie — odpowiedział i chlusnął sobie
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
 Oddalili się lekkim zatoczem.&lt;/span&gt;
 &lt;/p&gt;
-&lt;br /&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;Franz-Josef zapukał do drzwi apartamentu&lt;!--SOFT_BR--&gt;
-swojego ulubieńca. Gdy nie usłyszał odpowiedzi naci-&lt;!--SOFT_BR--&gt;
-snął klamkę, która ustąpiła wyjątkowo topornie.&lt;!--SOFT_BR--&gt;
-Przed wejściem jednak przygotował nóż i&lt;!--SOFT_BR--&gt;
-chwycił go w prawą dłoń. Lewym biodrem&lt;!--SOFT_BR--&gt;
-pchnął drzwi, zawiasy zabrzmiały złowieszczo.&lt;!--SOFT_BR--&gt;
-Zaczął metodycznie czyścić apartament. Gdy&lt;!--SOFT_BR--&gt;
-doszedł do sypialni nóż wypadł mu z ręki.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Sacrébleu! — Eksklamację tę dało się słyszeć nawet&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; u Serbów — Taka dobra pościel — zrujno-&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; wana! A ty; дебилу pierdolony wstawaj&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; i zbieraj to, a potem иди нахуй. — po nieuzyka-&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; niu reakcji od, nomen-omen matrwego, Franz-Ferdi-&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; nanda, powtórzył — Wstawaj! — Reakcji dalej zero.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Szturchnął Franz-Ferdinanda, a on odwrócił&lt;!--SOFT_BR--&gt;
-się na plecy, dziura wlotowa jasno widoczna się&lt;!--SOFT_BR--&gt;
-stała, po czym rzygnął gazem i cieczą rozkładowemi.&lt;!--SOFT_BR--&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Franz-Josef widział już w życiu wiele trupów, ale&lt;!--SOFT_BR--&gt;
-nigdy coś tak obrzydliwego, co &lt;em&gt;&lt;strong&gt;tak&lt;/strong&gt;&lt;/em&gt; jebało i od razu,&lt;!--SOFT_BR--&gt;
-nim zdążył się powstrzymać, złożył się w pół, pozby-&lt;!--SOFT_BR--&gt;
-wając się sutego obiadu, który zjadł przed chwil&lt;!--SOFT_BR--&gt;
-kilkoma.&lt;/span&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Franz-Josef zapukał do drzwi apartamentu
+swojego ulubieńca. Gdy nie usłyszał odpowiedzi nacisnął
+klamkę, która ustąpiła wyjątkowo topornie.
+Przed wejściem jednak przygotował nóż i
+chwycił go w prawą dłoń. Lewym biodrem
+pchnął drzwi, zawiasy zabrzmiały złowieszczo.
+Zaczął metodycznie czyścić apartament. Gdy
+doszedł do sypialni nóż wypadł mu z ręki.
 &lt;/p&gt;
-&lt;br /&gt;
-&lt;span class=&quot;p badindented&quot;&gt;
-Gdy pozbierał się i uspokoił do punktu, w którem&lt;!--SOFT_BR--&gt;
-nie padnie z arytmii w drodze, pobiegł do Rodziny i&lt;!--SOFT_BR--&gt;
-zaraportował sytuację; ustąpiła gotująca się wście-&lt;!--SOFT_BR--&gt;
-kłość, na jej miejsce pojawiła się zimna ninenawiść.&lt;!--SOFT_BR--&gt;
-Uformował hipoplan:&lt;br /&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Sacrébleu! — Eksklamację tę dało się słyszeć nawet
+u Serbów — Taka dobra pościel — zrujnowana!
+A ty; дебилу pierdolony wstawaj
+i zbieraj to, a potem иди нахуй. — po nieuzykaniu
+reakcji od, nomen-omen matrwego, Franz-Ferdinanda,
+powtórzył — Wstawaj! — Reakcji dalej zero.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Szturchnął Franz-Ferdinanda, a on odwrócił
+się na plecy, dziura wlotowa jasno widoczna się
+stała, po czym rzygnął gazem i cieczą rozkładowemi.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Franz-Josef widział już w życiu wiele trupów, ale
+nigdy coś tak obrzydliwego, co &lt;em&gt;&lt;strong&gt;tak&lt;/strong&gt;&lt;/em&gt; jebało i od razu,
+nim zdążył się powstrzymać, złożył się w pół, pozbywając
+się sutego obiadu, który zjadł przed chwil
+kilkoma.
+&lt;/p&gt;
+
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Gdy pozbierał się i uspokoił do punktu, w którem
+nie padnie z arytmii w drodze, pobiegł do Rodziny i
+zaraportował sytuację; ustąpiła gotująca się wściekłość,
+na jej miejsce pojawiła się zimna ninenawiść.
+Uformował hipoplan:
+&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Znaleźć sprawcę&lt;/li&gt;
   &lt;li&gt;Zajebać kurwiego syna w męczarniach.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;span class=&quot;badindented&quot;&gt;Jako więc zaplanował, tako i zrobił. Zaczął od punktu&lt;!--SOFT_BR--&gt;
-pierwszego: zaopatrzył się w perfumowaną chusteczkę i&lt;!--SOFT_BR--&gt;
-wrócił do Franz-Ferdinanda, zanotował sforsowany&lt;!--SOFT_BR--&gt;
-zamek, który wcześniej przeoczył, przeszedł&lt;!--SOFT_BR--&gt;
-do sypialni i bezceremonialnie&lt;!--SOFT_BR--&gt;
-rozpoczął egzaminację rany.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Standardowy niemiecki neunmillimeter, ale&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; dziwnie... wolny? Pewnie gówniana broń ogniowa.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Przeszedł się trochę poza apartamentem, ale aż&lt;!--SOFT_BR--&gt;
-go odrzuciło.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Tani samogon — pociągnął nosem — z ziemniaków.&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; A jeżeli tak, to na pewno Serbi tu&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; byli, kurwia ich mać.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— To by się nawet zgadzało — wtrącił się jakiś&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; ćwierćkuzyn po stronie matki — Serbiańcy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; robią gówniane pistolety od jakoś niedawna.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Łi — jakiś popieprzeniec z Francuskiej strony&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; rodziny tym razem — oni mieli jakieś&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; soczyste mięcho o Wielką Serbię czy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; coś.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Taa — skinieniem głowy Franz-Jo-&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; sef podziękował i zbył delikwentów —&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; chcą Wel'kiej Srbii to dostaną Wel'ką&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Srbiję, hy hy hy.&lt;br /&gt;&lt;/span&gt;
-&lt;/span&gt;
-&lt;br /&gt;
-&lt;p class=&quot;writing&quot;&gt;
-&lt;span class=&quot;badindented&quot;&gt;Po zapadnięciu zmroku wziął standardowego czter-&lt;!--SOFT_BR--&gt;
-dziesto milimetrowego fraga&lt;a href=&quot;#asterix2&quot;&gt;**&lt;/a&gt; i zapieczętowaną kopertę.&lt;!--SOFT_BR--&gt;
-Granat bardzo ładnie przelatuje przez zamk-&lt;!--SOFT_BR--&gt;
-nięte okno, a list, tj. deklarację wojny, przelatuje&lt;!--SOFT_BR--&gt;
-za nim na cegle, przez brak okna.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Niestety, taka ich parszywa właściwość, granaty&lt;!--SOFT_BR--&gt;
-odłamkowe do najcichszych nie należą, więc o jakiejś&lt;!--SOFT_BR--&gt;
-pierwszej obudziło Franz-Josefa pukanie, nie,&lt;!--SOFT_BR--&gt;
-rąbanie w drzwi.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Чего хотите?&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Mamy do pogadania — niski, tubalny wręcz głos,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; militarny wschodniosłowiański akcent.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Car Mikołaj — już szeptem — to przejebane. Idę!&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;Narzucił na siebie ubranie i otwarł drzwi, po czem&lt;!--SOFT_BR--&gt;
-cofnął się, gdy zobaczył wycelowaną w niego&lt;!--SOFT_BR--&gt;
-ППШę.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— A teraz przedyskutujem, czemu jesteś teraz w&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; wojnie z resztą cywilizowanego świata i Francją&lt;a href=&quot;#asterix3&quot;&gt;***&lt;/a&gt;.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Dobsz... — przerwał, gdy skrzypnęły za nim drzwi,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; odwrócił się.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Not too late to the party, I hope? —&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; soczysty Queen'&lt;!--'--&gt;s English sprawił, że pod Franz-&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; -Josefem usiły się kolana; a może to LKM&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Bren skierowany w jego&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; miednicę.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Nu nie, dopierom poczęli. A teraz, powiedz nam,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; товорищ Josef, coś ty se, kurwa, myślał atakując&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; i wypowiadając wojnę СССР?&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— O tym nie pomyślałem. Zaatakowałem Serbów jako&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; takich, nie Ruskich.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— No, a jak jużeście zaatakowali Rosję, to Ruscy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; sprzymierzyli się z nami, a Francja dołączyła.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Oj, to ja biorę Niemców i Italię. Zaraz do nich zadzwonię.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— Deal. Zobaczymy&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; się... wkrótce. — z groźbą w głosie powiedział&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; Brytol i ewakuował się bezszelestnie salutując&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; w drzwiach; Ruski oddał honor.&lt;br /&gt;&lt;/span&gt;
-&lt;span class=&quot;badindented&quot;&gt;— To jest ostatni raz, który się widzimy — wyraźna&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; kpina w głosie Ruskiego, który,&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; po wypowiedzeniu tej kwestii opuścił ciężkim krokiem&lt;!--SOFT_BR--&gt;
-&lt;!--SOFT_EMSP--&gt;&lt;!--SOFT_EMSP--&gt; przybytek.&lt;/span&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Jako więc zaplanował, tako i zrobił. Zaczął od punktu
+pierwszego: zaopatrzył się w perfumowaną chusteczkę i
+wrócił do Franz-Ferdinanda, zanotował sforsowany
+zamek, który wcześniej przeoczył, przeszedł
+do sypialni i bezceremonialnie
+rozpoczął egzaminację rany.
 &lt;/p&gt;
-&lt;br /&gt;
-&lt;p class=&quot;writing indented&quot;&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Standardowy niemiecki neunmillimeter, ale
+dziwnie... wolny? Pewnie gówniana broń ogniowa.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Przeszedł się trochę poza apartamentem, ale aż
+go odrzuciło.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Tani samogon — pociągnął nosem — z ziemniaków.
+A jeżeli tak, to na pewno Serbi tu
+byli, kurwia ich mać.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— To by się nawet zgadzało — wtrącił się jakiś
+ćwierćkuzyn po stronie matki — Serbiańcy
+robią gówniane pistolety od jakoś niedawna.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Łi — jakiś popieprzeniec z Francuskiej strony
+rodziny tym razem — oni mieli jakieś
+soczyste mięcho o Wielką Serbię czy
+coś.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— Taa — skinieniem głowy Franz-Josef
+podziękował i zbył delikwentów —
+chcą Wel'kiej Srbii to dostaną Wel'ką
+Srbiję, hy hy hy.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Po zapadnięciu zmroku wziął standardowego czterdziesto
+milimetrowego fraga&lt;a href=&quot;#asterix2&quot;&gt;**&lt;/a&gt; i zapieczętowaną kopertę.
+Granat bardzo ładnie przelatuje przez zamknięte
+okno, a list, tj. deklarację wojny, przelatuje
+za nim na cegle, przez brak okna.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Niestety, taka ich parszywa właściwość, granaty
+odłamkowe do najcichszych nie należą, więc o jakiejś
+pierwszej obudziło Franz-Josefa pukanie, nie,
+rąbanie w drzwi.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Чего хотите?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Mamy do pogadania — niski, tubalny wręcz głos,
+militarny wschodniosłowiański akcent.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Car Mikołaj — już szeptem — to przejebane. Idę!
+Narzucił na siebie ubranie i otwarł drzwi, po czem
+cofnął się, gdy zobaczył wycelowaną w niego
+ППШę.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— A teraz przedyskutujem, czemu jesteś teraz w
+wojnie z resztą cywilizowanego świata i Francją&lt;a href=&quot;#asterix3&quot;&gt;***&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Dobsz... — przerwał, gdy skrzypnęły za nim drzwi,
+odwrócił się.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Not too late to the party, I hope? —
+soczysty Queen'&lt;!--'--&gt;s English sprawił, że pod Franz-Josefem
+usiły się kolana; a może to LKM
+Bren skierowany w jego
+miednicę.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Nu nie, dopierom poczęli. A teraz, powiedz nam,
+товорищ Josef, coś ty se, kurwa, myślał atakując
+i wypowiadając wojnę СССР?
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— O tym nie pomyślałem. Zaatakowałem Serbów jako
+takich, nie Ruskich.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— No, a jak jużeście zaatakowali Rosję, to Ruscy
+sprzymierzyli się z nami, a Francja dołączyła.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Oj, to ja biorę Niemców i Italię. Zaraz do nich zadzwonię.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Deal. Zobaczymy
+się... wkrótce. — z groźbą w głosie powiedział
+Brytol i ewakuował się bezszelestnie salutując
+w drzwiach; Ruski oddał honor.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— To jest ostatni raz, który się widzimy — wyraźna
+kpina w głosie Ruskiego, który,
+po wypowiedzeniu tej kwestii opuścił ciężkim krokiem
+przybytek.
+&lt;/p&gt;
+
+&lt;p class=&quot;writing indented roboto&quot;&gt;
 I tak, drogie dzieci, zaczęła sie WWI.
 &lt;/p&gt;
 
 &lt;br /&gt;
+
 &lt;p&gt;
 &lt;span id=&quot;asterix1&quot;&gt;*spawa — śpi, chłe chłe&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix2&quot;&gt;**frag — granat odłamkowy fragmentacyjny.&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix3&quot;&gt;***Nie lubię Francji&lt;/span&gt;&lt;br /&gt;
 &lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;
-Świat to kilka takich pokoi&lt;br /&gt;
-&lt;br /&gt;
-Utwór napisany od 01.06.2016 do 03.06.2016 przez Jędrzeja A. Łopacińskiego.
-&lt;/p&gt;
+
+
+&lt;!--EBOOK_ONLY(--&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+&lt;!--)​--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 06 Jun 2016 23:40:31 +0200</pubDate>
