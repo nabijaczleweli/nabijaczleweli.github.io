@@ -13,9 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming language, en-US)
+BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming language, en-US, <link href="/kaschism/assets/column.css" rel="stylesheet" />)
 
-
+<p></p>
 Extensive list of <a href="//www.rust-lang.org">Rust</a> puns,
 as <a href="//chat.stackoverflow.com/transcript/62927?m=35242527#35242527">requested</a>
 by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>:
