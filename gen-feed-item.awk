@@ -46,7 +46,7 @@ BEGIN {
 }
 
 /<title>(.+)<\/title>/ {
-	title = gensub(/<title>(.+)<\/title>/, "\\1", "g") " — " author
+	title = gensub(/<title>(.+)<\/title>/, "\\1", "g")
 }
 
 /<meta name="description" content="([^"]+)">/ {
