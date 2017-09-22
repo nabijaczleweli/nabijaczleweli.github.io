@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Mon, 30 Jan 2017 00:07:59 +0100
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Mon, 30 Jan 2017 00:07:59 +0100" -->
 
 
 BOILERPLATE(Ghostly Lasers, Ghostly Lasers - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT)

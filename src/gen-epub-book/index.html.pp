@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "gep.h"
 
 
-#define RSS_PUB_DATE Sun, 30 Aug 2017 03:38:21 +0200
+<!-- RSS_PUB_DATE: "Sun, 30 Aug 2017 03:38:21 +0200" -->
 
 
 BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-book implementations, en-GB, STYLESHEETS SCRIPTS)

@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Sat, 24 Dec 2016 15:00:32 +0100
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Sat, 24 Dec 2016 15:00:32 +0100" -->
 
 
 BOILERPLATE(End = Start, You must start and end by using the same sentence - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT)

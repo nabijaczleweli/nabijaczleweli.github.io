@@ -12,7 +12,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-#define RSS_PUB_DATE Tue, 13 Jun 2017 22:42:51 +0200
+<!-- RSS_PUB_DATE: "Tue, 13 Jun 2017 22:42:51 +0200" -->
 
 #define MATHJAX(...) [​[​__VA_ARGS__​]​]
 

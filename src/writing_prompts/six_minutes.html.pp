@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Wed, 28 Dec 2016 01:54:52 +0100
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Wed, 28 Dec 2016 01:54:52 +0100" -->
 
 
 BOILERPLATE(Six Minutes, Six Minutes - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT)

@@ -82,7 +82,7 @@
   <body>
 
 #define BOILERPLATE_END()                                                                                                                           \
-    <hr />                                                                                                                           FORCED_NEWLINE \
+    <!-- CTNT_END --> <hr />                                                                                                         FORCED_NEWLINE \
     Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                               FORCED_NEWLINE \
     code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>.                                                         FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \

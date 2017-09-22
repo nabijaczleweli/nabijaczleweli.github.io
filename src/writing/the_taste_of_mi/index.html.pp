@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing.h"
 
 
-#define RSS_PUB_DATE Wed, 16 Aug 2017 19:15:09 +0200
+<!-- RSS_PUB_DATE: "Wed, 16 Aug 2017 19:15:09 +0200" -->
 
 
 #define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" /> FORCED_NEWLINE \

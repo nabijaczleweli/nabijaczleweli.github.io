@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Sat, 31 Dec 2016 18:30:49 +0100
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Sat, 31 Dec 2016 18:30:49 +0100" -->
 
 
 BOILERPLATE(Utopian Assassin, Utopian Assassin - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT)

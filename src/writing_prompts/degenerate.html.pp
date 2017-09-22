@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Sun, 08 Jan 2017 04:00:46 +0100
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Sun, 08 Jan 2017 04:00:46 +0100" -->
 
 
 BOILERPLATE(Degenerate Watch, Degenerate Watch - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT)

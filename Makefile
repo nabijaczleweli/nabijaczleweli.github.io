@@ -88,7 +88,7 @@ $(OUTDIR)assets/LICENSE-octicons : ext/octicons/LICENSE
 	@mkdir -p $(dir $@)
 	cp $^ $@
 
-$(OUTDIR)feed.xml : gen-feed.awk $(PREPROCESS_SOURCES)
+$(OUTDIR)feed.xml : gen-feed.awk $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
 	@mkdir -p $(dir $@)
 	echo $(filter-out $<,$^) | $(SED) "s/ /\n/g" | $(AWK) -f $< -v awk="$(AWK)" > $@
 

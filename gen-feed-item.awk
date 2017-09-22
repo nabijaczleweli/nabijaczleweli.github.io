@@ -28,18 +28,6 @@ function escape_html(text) {
 	return text
 }
 
-function handle_line(line, fname) {
-	if(line ~ /^#include ".+"/) {
-		inc_f = gensub(/\/\//, "/", "g", gensub(/^#include "([^"]+)"/, gensub(/(.+)\/.*/, "\\1", "g", fname) "/\\1", "g", line))
-		while(("cat " inc_f | getline line) > 0) {
-			handle_line(line, inc_f)
-		}
-		close("cat " inc_f)
-	} else {
-		everything = everything line "\n"
-	}
-}
-
 
 BEGIN {
 	title = ""
@@ -47,23 +35,30 @@ BEGIN {
 	author = ""
 	pubDate = ""
 	everything = ""
+
+	# Avoid links ending in "//"
+	if(filename == "/")
+		filename = ""
 }
 
 / \(c\) by / {
 	author = gensub(/.* \(c\) by (.*)/, "\\1", "g")
 }
 
-/^BOILERPLATE\(.*\)/ {
-	title = gensub(/BOILERPLATE\(([^,]+), ([^,]+).*\)/, "\\1", "g") " — " author
-	description = gensub(/BOILERPLATE\(([^,]+), ([^,]+).*\)/, "\\2", "g")
+/<title>(.+)<\/title>/ {
+	title = gensub(/<title>(.+)<\/title>/, "\\1", "g") " — " author
 }
 
-/#define RSS_PUB_DATE/ {
-	pubDate = gensub(/#define RSS_PUB_DATE (.*)/, "\\1", "g")
+/<meta name="description" content="([^"]+)">/ {
+	description = gensub(/^[[:space:]]*<meta name="description" content="([^"]+)">/, "\\1", "g")
 }
 
-/^BOILERPLATE/,/^BOILERPLATE_END/ {
-	handle_line($0, "src/" filename)
+/<!-- RSS_PUB_DATE: "([^"]+)" -->/ {
+	pubDate = gensub(/<!-- RSS_PUB_DATE: "([^"]+)" -->/, "\\1", "g")
+}
+
+/^[[:space:]]*<body>/,/<!-- CTNT_END -->/ {
+	everything = everything $0 "\n"
 }
 
 END {
@@ -71,8 +66,8 @@ END {
 	if(pubDate == "")
 		exit
 
-	everything = gensub(/^BOILERPLATE\(.*\)\n\n\n/, "", "g", everything)
-	everything = gensub(/\n\n[ABCDEFGHIJKLMNOPQRSTUVWXYZ_]*_END.*/, "", "g", everything)
+	everything = gensub(/^[[:space:]]*<body>/, "", "g", everything)
+	everything = gensub(/<!-- CTNT_END -->.*/, "", "g", everything)
 
 	print ""
 	print "    <item>"

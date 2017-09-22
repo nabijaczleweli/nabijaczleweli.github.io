@@ -14,8 +14,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Fri, 19 May 2017 12:25:37 +0200
 #define HTML_ONLY(...) -->__VA_ARGS__<!--
+
+<!-- RSS_PUB_DATE: "Fri, 19 May 2017 12:25:37 +0200" -->
 
 
 BOILERPLATE(Poetry, Things technically poetic‚ depending whom you ask, en-GB, FONTAWESOME_LINK COLUMN_CSS_LINK WORD_COUNT_SCRIPT)

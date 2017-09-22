@@ -23,18 +23,18 @@
   <script type="text/javascript" src="/content/assets/word_count.js"></script>
 
 
-#define _WORD_COUNTER_END(...)                                       \
-    <span id="wordcount_wrapper" class="hidden">      FORCED_NEWLINE \
-      <hr />                                          FORCED_NEWLINE \
-      <span id="word_count">0</span> words,           FORCED_NEWLINE \
-      __VA_ARGS__                                     FORCED_NEWLINE \
-      <span id="character_count">0</span> characters. FORCED_NEWLINE \
+#define _WORD_COUNTER_END(...)                                                    \
+    <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> FORCED_NEWLINE \
+      <hr />                                                       FORCED_NEWLINE \
+      <span id="word_count">0</span> words,                        FORCED_NEWLINE \
+      __VA_ARGS__                                                  FORCED_NEWLINE \
+      <span id="character_count">0</span> characters.              FORCED_NEWLINE \
     </span>
 #define WORD_COUNTER_END() _WORD_COUNTER_END(<span id="syllable_count">0</span> syllables,)
 #define WORD_COUNTER_END_NON_ENGLISH() _WORD_COUNTER_END()
 
 #define WRITING_CUSTOM_NAME_STUB_END(what, stub)                \
-    <hr />                                       FORCED_NEWLINE \
+    <!-- CTNT_END --> <hr />                     FORCED_NEWLINE \
     Get what in                                  FORCED_NEWLINE \
     <a href=STR(/content/stub.epub)>ePub</a>,    FORCED_NEWLINE \
     <a href=STR(/content/stub.mobi)>MOBI</a>,    FORCED_NEWLINE \

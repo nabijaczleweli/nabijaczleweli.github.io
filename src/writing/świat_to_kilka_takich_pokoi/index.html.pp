@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing.h"
 
 
-#define RSS_PUB_DATE Mon, 06 Jun 2016 23:40:31 +0200
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Mon, 06 Jun 2016 23:40:31 +0200" -->
 
 
 #define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \

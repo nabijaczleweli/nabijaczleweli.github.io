@@ -13,8 +13,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../writing/writing.h"
 
 
-#define RSS_PUB_DATE Thu, 02 Feb 2017 13:45:35 +0100
 #define EBOOK_ONLY(...)
+
+<!-- RSS_PUB_DATE: "Thu, 02 Feb 2017 13:45:35 +0100" -->
 
 
 BOILERPLATE(The Last Eye, The Last Eye - writing prompt, en-GB, COLUMN_CSS_LINK WORD_COUNT_SCRIPT)
