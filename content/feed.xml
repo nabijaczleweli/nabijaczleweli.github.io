@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 20 Sep 2017 14:25:17 +0000
+      Fri, 22 Sep 2017 21:07:14 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 20 Sep 2017 14:25:17 +0000
+      Fri, 22 Sep 2017 21:07:14 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -27,364 +27,313 @@
     </image>
 
     <item>
-      <title>gen-epub-book general — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-book implementations, en-GB, STYLESHEETS SCRIPTS)
+      <title> gen-epub-book general — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
 
 &lt;style&gt;
 .overlay-container {
-	display: inline-block;
-	position: relative;
+ display: inline-block;
+ position: relative;
 }
-
 .overlay-target {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
 }
 h1 {
-	margin-top: 0;
-	margin-bottom: 0.4em;
+ margin-top: 0;
+ margin-bottom: 0.4em;
 }
-
 h2, h3, p {
-	margin-top: 0.4em;
-	margin-bottom: 0.4em;
+ margin-top: 0.4em;
+ margin-bottom: 0.4em;
 }
-
 h2 {
-	margin-top: 2em;
+ margin-top: 2em;
 }
-
 h3 {
-	margin-top: 1.5em;
+ margin-top: 1.5em;
 }
-
 .nowrap {
-	white-space: nowrap;
+ white-space: nowrap;
 }
 code, samp {
-	font-family: &quot;Droid Sans Mono&quot;, monospace;
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-
 h1, h2, h3, h4, h5, h6, .merriweather {
-	font-family: &quot;Merriweather&quot;, serif;
+ font-family: &quot;Merriweather&quot;, serif;
 }
-
 .roboto {
-	font-family: &quot;Roboto Slab&quot;, serif;
+ font-family: &quot;Roboto Slab&quot;, serif;
 }
-
-
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
 h6:hover a.hash-link {
-	visibility: visible;
-	opacity: 1;
+ visibility: visible;
+ opacity: 1;
 }
-
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
 h6 a.hash-link {
-	float: left;
-	visibility: hidden;
-	opacity: 0;
-	padding-right: calc(1em / 5.5);
-	margin-left: calc(-1em / 1.1);
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-
-
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa,  a[class*=&quot;icon&quot;],  a[class*=&quot;devicon&quot;]   {
-	color: black;
-	text-decoration: none;
+a.fa, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
 }
 th, td {
-	padding-left: 0.25em;
-	padding-right: 0.25em;
-	text-align: left;
+ padding-left: 0.25em;
+ padding-right: 0.25em;
+ text-align: left;
 }
-
 td {
-	font-size: calc(9em / 10);
+ font-size: calc(9em / 10);
 }
-
 tr:nth-child(1) {
   background-color: #aaaaaaa0;
 }
-
 tr:nth-child(even) {
   background-color: #eeeeeea0;
 }
-
 tr:hover {
   background-color: #cccccca0;
   transition: all 0.25s;
 }
 .highlit-code {
-	border-radius: calc(1em / 3);
-
-	padding-left: calc(1em / 5);
-	padding-right: calc(1em / 5);
-	padding-top: calc(1em / 4);
-	padding-bottom: calc(1em / 4);
-
-	margin-top: 0;
-	margin-bottom: 0;
-
-	color: #e6e1dc;
-	background-color: #232323;
+ border-radius: calc(1em / 3);
+ padding-left: calc(1em / 5);
+ padding-right: calc(1em / 5);
+ padding-top: calc(1em / 4);
+ padding-bottom: calc(1em / 4);
+ margin-top: 0;
+ margin-bottom: 0;
+ color: #e6e1dc;
+ background-color: #232323;
 }
-
-
 .highlit-code .code-line {
-	width: 100%;
-	display: inline-block;
+ width: 100%;
+ display: inline-block;
   transition: all 0.25s;
 }
-
 .highlit-code .code-line:hover {
-	background-color: #333435;
+ background-color: #333435;
 }
-
-
 .highlit-code .punctuation, .highlit-code .punctuation * {
-	color: #cc7833;
+ color: #cc7833;
 }
-
 .highlit-code .comment, .highlit-code .comment * {
-	color: #bc9458;
+ color: #bc9458;
 }
-
 .highlit-code .keyword, .highlit-code .keyword * {
-	color: #da4939;
+ color: #da4939;
 }
-
 .highlit-code .verb, .highlit-code .verb * {
-	color: #e8bf6a;
+ color: #e8bf6a;
 }
-
 .highlit-code .string, .highlit-code .string * {
-	color: #a5c261;
+ color: #a5c261;
 }
-
 .highlit-code .variable, .highlit-code .variable * {
-	color: #d0d0ff;
+ color: #d0d0ff;
 }
 .tag {
-	border-radius: calc(1em / 3);
-	padding-left: calc(1em / 10);
-	padding-right: calc(1em / 10);
-	padding-top: calc(1em / 20);
-	padding-bottom: calc(1em / 20);
+ border-radius: calc(1em / 3);
+ padding-left: calc(1em / 10);
+ padding-right: calc(1em / 10);
+ padding-top: calc(1em / 20);
+ padding-bottom: calc(1em / 20);
 }
-
 .tag-white {
-	background-color: #eee;
+ background-color: #eee;
 }
 &lt;/style&gt;
-
 &lt;div class=&quot;roboto&quot;&gt;
-
-
 &lt;!-- Style based on https://daringfireball.net/projects/markdown/ --&gt;
 &lt;p&gt;&lt;/p&gt;
-HEADING(1, main, GEB())
-
-HEADING_S(2, description, style=&quot;margin-top: initial;&quot;, Description)
-
+&lt;h1 id=&quot;main&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#main&quot;&gt;#&lt;/a&gt; &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;description&quot; class=&quot;smallcaps&quot; style=&quot;margin-top: initial;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#description&quot;&gt;#&lt;/a&gt; Description&lt;/h2&gt;
 &lt;p id=&quot;description-paragraph&quot;&gt;
-GEB() is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
-GEB() allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
 &lt;/p&gt;
 &lt;p id=&quot;description-what-is-it-paragraph&quot;&gt;
-Thus, &quot;&lt;!--&quot;--&gt;GEB()&lt;!--&quot;--&gt;&quot; is two things:
+Thus, &quot;&lt;!--&quot;--&gt;&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;&lt;!--&quot;--&gt;&quot; is two things:
 (1) a plaintext descriptor syntax; and
 (2) a software tool, that assembles that descriptor and files referenced thereby into an ePub e-book.
 &lt;/p&gt;
 &lt;p id=&quot;description-inspiration-paragraph&quot;&gt;
-The &quot;design goal&quot; of GEB()’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
-The idea is that a GEB() descriptor should be writable by any person with &lt;em&gt;minimal&lt;/em&gt; technical knowledge.
+The &quot;design goal&quot; of &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
+The idea is that a &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; descriptor should be writable by any person with &lt;em&gt;minimal&lt;/em&gt; technical knowledge.
 &lt;/p&gt;
 &lt;p id=&quot;description-for-whom-paragraph&quot;&gt;
 This guide is designated for non-programmers. If you're a programmer, see the more in-depth &lt;a href=&quot;programmer.html&quot;&gt;programmer's version&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;description-license-paragraph&quot;&gt;
-GEB() is free software, available under the MIT open source license.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; is free software, available under the MIT open source license.
 See the &lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt; heading for more information.
 &lt;/p&gt;
-
-HEADING(2, discussion, Discussion)
-
+&lt;h2 id=&quot;discussion&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#discussion&quot;&gt;#&lt;/a&gt; Discussion&lt;/h2&gt;
 &lt;p id=&quot;discussion-paragraph&quot;&gt;
-Any topic related to GEB() – both the descriptor syntax and the software –
-is fair game for discussion over at GEB()'s and this webpage's issue trackers
-	&lt;a GEB_HREF(.rs/issues)&gt;MFIZZ(rust)&lt;/a&gt;
-	&lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;DEVICON(html5)&lt;/a&gt;.
-I'&lt;!--'--&gt;ve also set up a &lt;a GEB_HREF(/issues/1)&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
-If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail FA_D(envelope-o)&lt;/a&gt;.
+Any topic related to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; – both the descriptor syntax and the software –
+is fair game for discussion over at &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;'s and this webpage's issue trackers
+ &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/issues&quot;&gt;&lt;i class=&quot;icon-rust&quot; &gt;&lt;/i&gt;&lt;/a&gt;
+ &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;&lt;i class=&quot;devicon-html5-plain&quot; &gt;&lt;/i&gt;&lt;/a&gt;.
+I'&lt;!--'--&gt;ve also set up a &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book/issues/1&quot;&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
+If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;fa fa-envelope-o&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;discussion-hopes-paragraph&quot;&gt;
-I hope that these facilities will lead to good ideas for future improvements to GEB().
+I hope that these facilities will lead to good ideas for future improvements to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;.
 &lt;/p&gt;
-
-HEADING(2, installation, Installation)
-
+&lt;h2 id=&quot;installation&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installation&quot;&gt;#&lt;/a&gt; Installation&lt;/h2&gt;
 &lt;p id=&quot;installation-paragraph&quot;&gt;
-If you'&lt;!--'--&gt;re running Ubuntu or Windows, you can simply grab a GEB(.rs) executable from the  &lt;a GEB_HREF(.rs/releases)&gt;releases&lt;/a&gt; page.
+If you'&lt;!--'--&gt;re running Ubuntu or Windows, you can simply grab a &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​.rs&lt;/code&gt; executable from the &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/releases&quot;&gt;releases&lt;/a&gt; page.
 Those executables should work when ran from anywhere and without any external dependencies.
 &lt;/p&gt;
-
-HEADING(2, getting-started, Getting started)
-
-HEADING(3, getting-started-syntax, Descriptor)
-
+&lt;h2 id=&quot;getting-started&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#getting-started&quot;&gt;#&lt;/a&gt; Getting started&lt;/h2&gt;
+&lt;h3 id=&quot;getting-started-syntax&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#getting-started-syntax&quot;&gt;#&lt;/a&gt; Descriptor&lt;/h3&gt;
 &lt;div id=&quot;getting-started-syntax-paragraph&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-GEB()'&lt;!--'--&gt;s descriptor syntax is &lt;em&gt;line-based&lt;/em&gt; – each &lt;em&gt;line&lt;/em&gt; in the file specifies one element of the e-book.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;'&lt;!--'--&gt;s descriptor syntax is &lt;em&gt;line-based&lt;/em&gt; – each &lt;em&gt;line&lt;/em&gt; in the file specifies one element of the e-book.
 Here'&lt;!--'--&gt;s an example of how a descriptor for a simple book can look:
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
-CSPAN(keyword, Name)CSPAN(punctuation, :) CSPAN(string, A Widow'&lt;!--'--&gt;s Trace)
+&lt;span class=&quot;keyword&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;A Widow'&lt;!--'--&gt;s Trace&lt;/span&gt;
 ​
-CSPAN(keyword, Include)CSPAN(punctuation, :) CSPAN(string, ../indent.css)
-CSPAN(keyword, Include)CSPAN(punctuation, :) CSPAN(string, effects.css)
-CSPAN(keyword, Content)CSPAN(punctuation, :) CSPAN(string, moments/book.html)
+&lt;span class=&quot;keyword&quot;&gt;Include&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;../indent.css&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Include&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;effects.css&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;moments/book.html&lt;/span&gt;
 ​
-CSPAN(keyword, Author)CSPAN(punctuation, :) CSPAN(string, Jędrzej Aleksander Łopaciński)
-CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 2017-04-23T03:38:52+02:00)
-CSPAN(keyword, Language)CSPAN(punctuation, :) CSPAN(string, pl)
+&lt;span class=&quot;keyword&quot;&gt;Author&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;Jędrzej Aleksander Łopaciński&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;2017-04-23T03:38:52+02:00&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Language&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;pl&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
 And here's another one, but this time with comments explaining what's what:
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
-CSPAN(comment, # This e-book'&lt;!--'--&gt;s title or name)
-CSPAN(keyword, Name)CSPAN(punctuation, :) CSPAN(string, Writing prompt collection)
-CSPAN(comment, # Relative path to image file used for cover)
-CSPAN(keyword, Cover)CSPAN(punctuation, :) CSPAN(string, writing_prompts/cover.png)
+&lt;span class=&quot;comment&quot;&gt;# This e-book'&lt;!--'--&gt;s title or name&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;Writing prompt collection&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Relative path to image file used for cover&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Cover&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;writing_prompts/cover.png&lt;/span&gt;
 ​
-CSPAN(comment, # Relative path to image file to put in the e-book on its own)
-CSPAN(keyword, Image-Content)CSPAN(punctuation, :) CSPAN(string, writing_prompts/no_the.png)
-CSPAN(comment, # HTML file to put in the e-book after the previous line)
-CSPAN(keyword, Content)CSPAN(punctuation, :) CSPAN(string, writing_prompts/theless.html)
+&lt;span class=&quot;comment&quot;&gt;# Relative path to image file to put in the e-book on its own&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Image-Content&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;writing_prompts/no_the.png&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# HTML file to put in the e-book after the previous line&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;writing_prompts/theless.html&lt;/span&gt;
 ​
-CSPAN(comment, # URL to image file on the internet to put in the e-book on its own)
-CSPAN(keyword, Network-Image-Content)CSPAN(punctuation, :) CSPAN(string, httpsCOLON_SLASH_SLASHi.imgur.com/gkevfag.jpg)
-CSPAN(comment, # URL to HTML file on the internet to put in the e-book)
-CSPAN(keyword, Network-Content)CSPAN(punctuation, :) CSPAN(string, httpsCOLON_SLASH_SLASHnabijaczleweli.xyz/content/writing_prompts/dead_santa.html)
+&lt;span class=&quot;comment&quot;&gt;# URL to image file on the internet to put in the e-book on its own&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Network-Image-Content&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;https://i.imgur.com/gkevfag.jpg&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# URL to HTML file on the internet to put in the e-book&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Network-Content&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;https://nabijaczleweli.xyz/content/writing_prompts/dead_santa.html&lt;/span&gt;
 ​
-CSPAN(comment, # Relative path to a file to pack in the e-book (without displaying it))
-CSPAN(keyword, Include)CSPAN(punctuation, :) CSPAN(string, indent.css)
-CSPAN(comment, # URL to a file on the internet to pack in the e-book (without displaying it))
-CSPAN(keyword, Network-Include)CSPAN(punctuation, :) CSPAN(string, httpsCOLON_SLASH_SLASHnabijaczleweli.xyz/content/assets/common.css)
+&lt;span class=&quot;comment&quot;&gt;# Relative path to a file to pack in the e-book (without displaying it)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Include&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;indent.css&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# URL to a file on the internet to pack in the e-book (without displaying it)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Network-Include&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;https://nabijaczleweli.xyz/content/assets/common.css&lt;/span&gt;
 ​
-CSPAN(comment, # e-book'&lt;!--'--&gt;s author (that'&lt;!--'--&gt;s you!))
-CSPAN(keyword, Author)CSPAN(punctuation, :) CSPAN(string, nabijaczleweli)
-CSPAN(comment, # e-book'&lt;!--'--&gt;s publication date (in &lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt; format, see below))
-CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 2017-02-02T13:45:47+01:00)
-CSPAN(comment, # e-book content'&lt;!--'--&gt;s language (in &lt;a href=&quot;//tools.ietf.org/html/bcp47&quot;&gt;BCP47&lt;/a&gt; format, see below))
-CSPAN(keyword, Language)CSPAN(punctuation, :) CSPAN(string, en-GB)
+&lt;span class=&quot;comment&quot;&gt;# e-book'&lt;!--'--&gt;s author (that'&lt;!--'--&gt;s you!)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Author&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;nabijaczleweli&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# e-book'&lt;!--'--&gt;s publication date (in &lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt; format, see below)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;2017-02-02T13:45:47+01:00&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# e-book content'&lt;!--'--&gt;s language (in &lt;a href=&quot;//tools.ietf.org/html/bcp47&quot;&gt;BCP47&lt;/a&gt; format, see below)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Language&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;en-GB&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;p id=&quot;getting-started-syntax-explanation-paragraph&quot;&gt;
 As you can see, there are four required &lt;em&gt;lines&lt;/em&gt;:
-	HIGHLIT_CODE(keyword, Name), HIGHLIT_CODE(keyword, Author), HIGHLIT_CODE(keyword, Date) and HIGHLIT_CODE(keyword, Language),
-	one or none CSPAN(keyword, Cover) &lt;em&gt;line&lt;/em&gt;, and any number of CSPAN(keyword, Content) and CSPAN(keyword, Image) keys.
+ &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Name&lt;/span&gt;&lt;/kbd&gt;, &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Author&lt;/span&gt;&lt;/kbd&gt;, &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Date&lt;/span&gt;&lt;/kbd&gt; and &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Language&lt;/span&gt;&lt;/kbd&gt;,
+ one or none &lt;span class=&quot;keyword&quot;&gt;Cover&lt;/span&gt; &lt;em&gt;line&lt;/em&gt;, and any number of &lt;span class=&quot;keyword&quot;&gt;Content&lt;/span&gt; and &lt;span class=&quot;keyword&quot;&gt;Image&lt;/span&gt; keys.
 For a complete rundown of all accepted &lt;em&gt;lines&lt;/em&gt;, see &lt;a href=&quot;programmer.html#getting-the-gist-elements-list-paragraph&quot;&gt;this table&lt;/a&gt;.
 &lt;/p&gt;
-
 &lt;div id=&quot;getting-started-syntax-explanation-path-paragraph&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 All local paths are relative to the descriptor file.
-The comments in the following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, gep/special/book.epupp):
+The comments in the following directory tree show the paths to the files, relative to &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;string&quot;&gt;gep/special/book.epupp&lt;/span&gt;&lt;/kbd&gt;:
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
-CSPAN(string, first-book)
-CSPAN(punctuation, ├──) CSPAN(string, rendered)
-CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, output)
-CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​ ​CSPAN(comment, # ../../rendered/output/intro.html)
-CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, main.html) ​ ​ ​ ​ ​ ​ ​CSPAN(comment, # ../../rendered/output/main.html)
-CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, ending.html) ​ ​ ​ ​ ​​CSPAN(comment, # ../../rendered/output/ending.html)
-CSPAN(punctuation, ├──) CSPAN(string, previews)
-CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, generated)
-CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, out)
-CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──) CSPAN(string, intro.html) ​ ​CSPAN(comment, # ../../previews/generated/out/intro.html)
-CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──) CSPAN(string, main.html) ​ ​ ​CSPAN(comment, # ../../previews/generated/out/main.html)
-CSPAN(punctuation, └──) CSPAN(string, gep)
-CSPAN(punctuation,  ​ ​ ​ ​└──) CSPAN(string, first)
-CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​ ​CSPAN(comment, # intro.html)
-CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, book.epupp) ​ ​ ​ ​ ​ ​CSPAN(comment, # book.epupp)
+&lt;span class=&quot;string&quot;&gt;first-book&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;rendered&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;output&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../rendered/output/intro.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../rendered/output/main.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;ending.html&lt;/span&gt; ​ ​ ​ ​ ​​&lt;span class=&quot;comment&quot;&gt;# ../../rendered/output/ending.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;previews&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;generated&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;out&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../previews/generated/out/intro.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../previews/generated/out/main.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;gep&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;first&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# intro.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;book.epupp&lt;/span&gt; ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# book.epupp&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
 When referenced from HTML, their names must be known.
 The specified names are processed and packed under the names resulting from
-	&lt;a href=&quot;programmer.html#getting-the-gist-naming-local-paragraph&quot;&gt;this&lt;/a&gt; algorithm.
+ &lt;a href=&quot;programmer.html#getting-the-gist-naming-local-paragraph&quot;&gt;this&lt;/a&gt; algorithm.
 Packed names of files from the internet is their URL name.
 &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;p id=&quot;getting-started-syntax-explanation-date-paragraph&quot;&gt;
-The HIGHLIT_CODE(keyword, Date) &lt;em&gt;line&lt;/em&gt; must be in the &lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt; format,
-	which, while sounding scary, can be summarised as
-	&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;!--
- --&gt;CSPAN(string, YYYY)&lt;!--
- --&gt;CSPAN(punctuation, -)&lt;!--
- --&gt;CSPAN(string, MM)&lt;!--
- --&gt;CSPAN(punctuation, -)&lt;!--
- --&gt;CSPAN(string, DD)&lt;!--
- --&gt;CSPAN(punctuation, T)&lt;!--
- --&gt;CSPAN(string, HH)&lt;!--
- --&gt;CSPAN(punctuation, :)&lt;!--
- --&gt;CSPAN(string, MM)&lt;!--
- --&gt;CSPAN(punctuation, :)&lt;!--
- --&gt;CSPAN(string, SS)&lt;!--
- --&gt;CSPAN(punctuation, +/-)&lt;!--
- --&gt;CSPAN(string, TH)&lt;!--
- --&gt;CSPAN(punctuation, :)&lt;!--
- --&gt;CSPAN(string, TM)&lt;/kbd&gt;.
+The &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Date&lt;/span&gt;&lt;/kbd&gt; &lt;em&gt;line&lt;/em&gt; must be in the &lt;a href=&quot;//tools.ietf.org/html/rfc3339&quot;&gt;RFC3339&lt;/a&gt; format,
+ which, while sounding scary, can be summarised as
+ &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;YYYY&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;-&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;MM&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;-&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;DD&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;T&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;HH&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;MM&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;SS&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;+/-&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;TH&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;TM&lt;/span&gt;&lt;/kbd&gt;.
 Okay, that still looks scary.
 You can just use the online &lt;a href=&quot;//infobyip.com/epochtimeconverter.php&quot;&gt;epoch time converter&lt;/a&gt; to convert any date to RFC3339.
 &lt;/p&gt;
-
 &lt;p id=&quot;getting-started-syntax-explanation-date-free-paragraph&quot;&gt;
-If you specify the &lt;code&gt;--free-date&lt;/code&gt; switch as an argument on the command-line, GEB() will also accept
-	&lt;a href=&quot;//tools.ietf.org/html/rfc2822&quot;&gt;RFC2822&lt;/a&gt; and
-	&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;!--
- --&gt;CSPAN(string, Unix timestamp)&lt;!--
- --&gt;CSPAN(punctuation, +)&lt;!--
- --&gt;CSPAN(string, TH)&lt;!--
- --&gt;CSPAN(punctuation, :)&lt;!--
- --&gt;CSPAN(string, TM)&lt;!--
+If you specify the &lt;code&gt;--free-date&lt;/code&gt; switch as an argument on the command-line, &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; will also accept
+ &lt;a href=&quot;//tools.ietf.org/html/rfc2822&quot;&gt;RFC2822&lt;/a&gt; and
+ &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;Unix timestamp&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;+&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;TH&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt;&lt;!--
+ --&gt;&lt;span class=&quot;string&quot;&gt;TM&lt;/span&gt;&lt;!--
  --&gt;&lt;/kbd&gt;,
-	since these formats might be easier to use,
+ since these formats might be easier to use,
 &lt;/p&gt;
-
 &lt;p id=&quot;getting-started-syntax-explanation-language-paragraph&quot;&gt;
-The HIGHLIT_CODE(keyword, Language) &lt;em&gt;line&lt;/em&gt; must be in the &lt;a href=&quot;//tools.ietf.org/html/bcp47&quot;&gt;BCP47&lt;/a&gt; format,
-	which effectively means a shorthand for the language in lowercase (HIGHLIT_CODE(string, en), HIGHLIT_CODE(string, pl)),
-	optionally followed by a hyphen and the language'&lt;!--'--&gt;s variant (HIGHLIT_CODE(string, en-GB)).
+The &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Language&lt;/span&gt;&lt;/kbd&gt; &lt;em&gt;line&lt;/em&gt; must be in the &lt;a href=&quot;//tools.ietf.org/html/bcp47&quot;&gt;BCP47&lt;/a&gt; format,
+ which effectively means a shorthand for the language in lowercase (&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;string&quot;&gt;en&lt;/span&gt;&lt;/kbd&gt;, &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;string&quot;&gt;pl&lt;/span&gt;&lt;/kbd&gt;),
+ optionally followed by a hyphen and the language'&lt;!--'--&gt;s variant (&lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;string&quot;&gt;en-GB&lt;/span&gt;&lt;/kbd&gt;).
 &lt;/p&gt;
-
-HEADING(3, getting-started-running, Running&amp;amp;assembling)
-
+&lt;h3 id=&quot;getting-started-running&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#getting-started-running&quot;&gt;#&lt;/a&gt; Running&amp;amp;assembling&lt;/h3&gt;
 &lt;div id=&quot;getting-started-explanation-language-paragraph&quot;&gt;
 If you have your descriptor and are ready to assemble it into an e-book open the console and run:
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
-CSPAN(punctuation, $) gen-epub-book CSPAN(string, first-book.epupp) CSPAN(string, first-book.epub)
+&lt;span class=&quot;punctuation&quot;&gt;$&lt;/span&gt; gen-epub-book &lt;span class=&quot;string&quot;&gt;first-book.epupp&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;first-book.epub&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
 After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called &lt;code&gt;first-book.epub&lt;/code&gt;. &lt;!--'--&gt;
 Congratulations! You can now read, verify and convert it using, e.g., &lt;a href=&quot;//calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.
 &lt;/div&gt;
-
-HEADING(2, license, License)
-
+&lt;h2 id=&quot;license&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#license&quot;&gt;#&lt;/a&gt; License&lt;/h2&gt;
 &lt;pre id=&quot;license-paragraph&quot;&gt;
 The MIT License (MIT)
 ​
@@ -408,45 +357,39 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 &lt;/pre&gt;
-
-HEADING(2, afterword, Afterword)
-
+&lt;h2 id=&quot;afterword&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#afterword&quot;&gt;#&lt;/a&gt; Afterword&lt;/h2&gt;
 &lt;p id=&quot;afterword-paragraph&quot;&gt;
 Thank you for making it this far.
 I hope that this document is clear and/or informative, if not,
-	why don'&lt;!--'--&gt;t you pop into the &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;issues DEVICON_D(html5)&lt;/a&gt;
-	or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail FA_D(envelope)&lt;/a&gt;?
+ why don'&lt;!--'--&gt;t you pop into the &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;issues &lt;i class=&quot;devicon-html5-plain&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+ or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
 &lt;/p&gt;
-
-
-&lt;/div&gt;</description>
+&lt;/div&gt;
+</description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 30 Aug 2017 03:38:21 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/gen-epub-book/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Mandalas — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
-
+      <title> Mandalas — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
 &lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;div&gt;
 &lt;p class=&quot;indented&quot;&gt;
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
 &lt;/p&gt;
 &lt;a href=&quot;/content/assets/mandalas/900x900.png&quot; target=&quot;_blank&quot;&gt;
-	&lt;img src=&quot;/content/assets/mandalas/900x900.png&quot; class=&quot;bigimage&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+ &lt;img src=&quot;/content/assets/mandalas/900x900.png&quot; class=&quot;bigimage&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;small&gt;Click for big version.&lt;/small&gt;
 &lt;p class=&quot;indented&quot;&gt;
 It uses a very simple process (see &lt;a href=&quot;#show-scans&quot;&gt;below&lt;/a&gt;), which can be used in any
-MATHJAX(beta in NN ∖ {0})-dimensional space, so, as an example, the same-sized mandala,
+[​[​beta in NN ∖ {0}​]​]-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):&lt;!--'--&gt;
 &lt;/p&gt;
 &amp;emsp;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; frameborder=&quot;0&quot; allowfullscreen
@@ -454,73 +397,68 @@ but in one more dimension (also with classical music atop it because it'd be unb
       &lt;/iframe&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;p&gt;
 &lt;strong&gt;&quot;How long does rendering a thing such as this take?&quot;&lt;/strong&gt;, one might ask.
-	Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
+ Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
   one need run the algorithm body many times, an acceptable amount I found was:&lt;br /&gt;
-	MATHJAX(log(n_max) = |~log(prod_i size_i)~| + 1),&lt;br /&gt;
-	(which still doesn't perfectly fill more complex corner setups), so for&lt;!--'--&gt;
-	MATHJAX(size = [900, 900, 900] =&gt; n_max = 10^10),
-	which takes about MATHJAX(7 1/2 h) on my PC if I try to not cook it (and I generally do).
+ [​[​log(n_max) = |~log(prod_i size_i)~| + 1​]​],&lt;br /&gt;
+ (which still doesn't perfectly fill more complex corner setups), so for&lt;!--'--&gt;
+ [​[​size = [900, 900, 900] =&gt; n_max = 10^10​]​],
+ which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
-
 &lt;p&gt;
 A different question to be asked is
-	&lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
-	&lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
-	&lt;strong&gt;play around with the code that generates these myself?&quot;&lt;/strong&gt;.&lt;!--&quot;--&gt;
-	Well, thanks to the wonders of the MATHJAX(fr &quot;Internet&quot;), you can! In most-to-least bad order:&lt;br /&gt;
+ &lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
+ &lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
+ &lt;strong&gt;play around with the code that generates these myself?&quot;&lt;/strong&gt;.&lt;!--&quot;--&gt;
+ Well, thanks to the wonders of the [​[​fr &quot;Internet&quot;​]​], you can! In most-to-least bad order:&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s an early version in C++,&lt;!--'--&gt;
-	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.&lt;!--'--&gt;&lt;br /&gt;
+ featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.&lt;!--'--&gt;&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;/content/assets/mandalas/mandalas-js/mandele.html&quot;&gt;Here&lt;/a&gt;'s the very first version, in JavaScript, &lt;!--'--&gt;
-	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version
-	(&lt;a href=&quot;javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')&quot;&gt;download as ZIP&lt;/a&gt;).&lt;br /&gt;
+ used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version
+ (&lt;a href=&quot;javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')&quot;&gt;download as ZIP&lt;/a&gt;).&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas-rs&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s a pretty-much release version in Rust,&lt;!--'--&gt;
-	used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
-	make things based on the algorithm. Will work and build pretty much anywhere.&lt;br /&gt;
+ used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
+ make things based on the algorithm. Will work and build pretty much anywhere.&lt;br /&gt;
 &lt;/p&gt;
-
 &lt;p&gt;
 &lt;strong&gt;&quot;I don't care, I just wanna look at more cool shit!&quot;&lt;/strong&gt; — I got you covered on this front, too:&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//gist.github.com/nabijaczleweli/8c408e706c097850f5b7b4260035f45c&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
-	just a lot of mandalas in various sizes, colours, and shapes. Make sure to be on Wi-Fi, because they get really,
-	&lt;em&gt;really&lt;/em&gt; big in a couple places.&lt;br /&gt;
+ just a lot of mandalas in various sizes, colours, and shapes. Make sure to be on Wi-Fi, because they get really,
+ &lt;em&gt;really&lt;/em&gt; big in a couple places.&lt;br /&gt;
 &amp;emsp;&lt;a href=&quot;//youtu.be/D2Xk6O9x-yk&amp;list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
-	a playlist with some 3-dimensional mandalas and classical music atop.&lt;br /&gt;
+ a playlist with some 3-dimensional mandalas and classical music atop.&lt;br /&gt;
 &amp;emsp;I'm out of things to put here, because I'm not a cool person &lt;em&gt;en general&lt;/em&gt;.
-	&lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;&lt;br /&gt;
+ &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;&lt;br /&gt;
 &lt;/p&gt;
-
 &lt;p&gt;
 &lt;strong&gt;&quot;I like/don't like this thing and/or would like to tell/contact you about it/something else.&quot;&lt;/strong&gt;,
-	then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
+ then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
 &lt;/p&gt;
-
 &lt;div class=&quot;indented&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version:&lt;br /&gt; &lt;!--'--&gt;
 &lt;br /&gt;
 &lt;br /&gt;
-&amp;emsp;MATHJAX(sf &quot;Mandala Generation - Ton&quot; hat(sf &quot;c&quot;) sf &quot;i Juri&quot; hat(sf &quot;c&quot;) sf &quot;ev-Grgin&quot;)&lt;br /&gt;
+&amp;emsp;[​[​sf &quot;Mandala Generation - Ton&quot; hat(sf &quot;c&quot;) sf &quot;i Juri&quot; hat(sf &quot;c&quot;) sf &quot;ev-Grgin&quot;​]​]&lt;br /&gt;
 &lt;br /&gt;
-MATHJAX(alpha in NN ∖ {0} - sf &quot;colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)&quot;)&lt;br /&gt;
-MATHJAX(c nn (: 3, +oo ) - sf &quot;amount of corners in c-gonal mandala base&quot;)&lt;br /&gt;
-MATHJAX(C - sf &quot;set of point&quot; - sf &quot;corner points of c-gon mandala base&quot;)&lt;br /&gt;
-MATHJAX(bar C = c)&lt;br /&gt;
+[​[​alpha in NN ∖ {0} - sf &quot;colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)&quot;​]​]&lt;br /&gt;
+[​[​c nn (: 3, +oo ) - sf &quot;amount of corners in c-gonal mandala base&quot;​]​]&lt;br /&gt;
+[​[​C - sf &quot;set of point&quot; - sf &quot;corner points of c-gon mandala base&quot;​]​]&lt;br /&gt;
+[​[​bar C = c​]​]&lt;br /&gt;
 &lt;br /&gt;
-MATHJAX(n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;)&lt;br /&gt;
-MATHJAX(d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;)&lt;br /&gt;
+[​[​n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;​]​]&lt;br /&gt;
+[​[​d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;​]​]&lt;br /&gt;
 &lt;br /&gt;
-MATHJAX(P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|)&lt;br /&gt;
+[​[​P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]&lt;br /&gt;
 &lt;br /&gt;
-MATHJAX(e_m = |P_n P_(n-m)|)&lt;br /&gt;
-MATHJAX(E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :))))&lt;br /&gt;
+[​[​e_m = |P_n P_(n-m)|​]​]&lt;br /&gt;
+[​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]&lt;br /&gt;
 &lt;br /&gt;
-MATHJAX(colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha}))&lt;br /&gt;
-MATHJAX(or)&lt;br /&gt;
-MATHJAX(f = max E)&lt;br /&gt;
-MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha)&lt;br /&gt;
+[​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]&lt;br /&gt;
+[​[​or​]​]&lt;br /&gt;
+[​[​f = max E​]​]&lt;br /&gt;
+[​[​colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha​]​]&lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;
 (I'm not a real mathematician, so it's most likely not done properly.)&lt;br /&gt;
@@ -536,38 +474,33 @@ And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned handdraw
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Tue, 13 Jun 2017 22:42:51 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/maths/mandalas.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/maths/mandalas.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Poetry — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;!-- ePub title: &quot;Introduction&quot; --&gt;
-
-&lt;!--HTML_ONLY(&lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#introduction&quot;&gt;)--&gt;&lt;h3 id=&quot;introduction&quot;&gt;Editorial comment&lt;/h3&gt;&lt;!--HTML_ONLY(&lt;/a&gt;)--&gt;
-
+      <title> Poetry — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+&lt;!-- ePub title: &quot;Introduction&quot; --&gt;
+&lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#introduction&quot;&gt;&lt;h3 id=&quot;introduction&quot;&gt;Editorial comment&lt;/h3&gt;&lt;/a&gt;
 &lt;p class=&quot;writing&quot;&gt;
 &amp;emsp;Some might argue that this garbage ain't poetry, and I agree it's not much &lt;em&gt;good&lt;/em&gt;, but,
 according to everyone's favourite unreliable source of knowledge, &lt;a href=&quot;https://en.wikipedia.org/wiki/Poetry&quot;&gt;Wikipedia&lt;/a&gt;:&lt;!--'--&gt;
 &lt;/p&gt;
-
 &lt;div&gt;
 &lt;blockquote cite=&quot;https://en.wikipedia.org/wiki/Poetry&quot;&gt;
 Poetry is a form of literature that uses aesthetic and rhythmic qualities of language to evoke meanings in addition to,
 or in place of, the prosaic ostensible meaning.
 &lt;/blockquote&gt;
 &lt;/div&gt;
-
 &lt;p class=&quot;writing&quot;&gt;
 &amp;emsp;Which makes this &lt;em&gt;technically&lt;/em&gt; actually poetry, despite not meaning it's any good at all, really.&lt;!--'--&gt;
 &lt;/p&gt;
 &lt;!-- ePub title: &quot;The East Wind&quot; --&gt;
-
-&lt;!--HTML_ONLY(&lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#east_wind&quot;&gt;)--&gt;
+&lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#east_wind&quot;&gt;
 &lt;h3 id=&quot;east_wind&quot;&gt;The East Wind,&lt;br /&gt;
 &lt;span style=&quot;font-size: 90%;&quot;&gt;A front-line letter&lt;/span&gt;&lt;/h3&gt;
-&lt;!--HTML_ONLY(&lt;/a&gt;)--&gt;
-
+&lt;/a&gt;
 &lt;div class=&quot;writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &amp;emsp;My loving Emily,&lt;br /&gt;
@@ -600,34 +533,22 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Fri, 19 May 2017 12:25:37 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/poetry/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/poetry/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Każdy koniec to nowy początek — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Każdy koniec to nowy początek — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;Preface&lt;/title&gt;
-		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-&lt;!--)--&gt;
-
-&lt;!--EBOOK_ONLY(--&gt;Preface&lt;br /&gt;&lt;!--)--&gt;
 
 &lt;p class=&quot;indented roboto&quot;&gt;
 The following work is a product of its own time,&lt;!--SOFT_BR--&gt;
@@ -638,30 +559,11 @@ when it was turned over to a potential third-party at&lt;!--SOFT_BR--&gt;
 that specific time, in that specific context.
 &lt;/p&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)--&gt;
 &lt;br /&gt;
 &lt;!-- ePub title: &quot;Każdy koniec to nowy początek&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(&lt;!----&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;pl&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;Każdy koniec to nowy początek&lt;/title&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;out/writing-the_taste_of_mi-Merriweather-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-&lt;!--)--&gt;
-
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Każdy koniec to nowy początek&lt;/h2&gt;&lt;/center&gt;
-
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Rok&lt;a href=&quot;#asterix1&quot;&gt;*&lt;/a&gt; 238 po Powstaniu. Kapitalizm rosprzestrzenia się po
 Þyffenþarru terenach, i, как то kapitalizm, egoizm
@@ -797,7 +699,6 @@ Rok 238 po Powstaniu. Kapitalizm rosprzestrzenia się po
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Remember, we will be watching.
 &lt;/p&gt;
-
 &lt;br /&gt;
 &lt;p&gt;
 &lt;span id=&quot;asterix1&quot;&gt;*rok — &lt;em&gt;nota bene&lt;/em&gt;: implikacja, że rok=długi jest niepoprawna&lt;/span&gt;&lt;br /&gt;
@@ -806,94 +707,49 @@ Remember, we will be watching.
 &lt;span id=&quot;asterix4&quot;&gt;****pokład — podłoga w Marines&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix5&quot;&gt;*****&lt;em&gt;los&lt;/em&gt; — niem.&lt;/span&gt;&lt;br /&gt;
 &lt;/p&gt;
-
-
-&lt;!--EBOOK_ONLY(--&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)​--&gt;
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;pl&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;&lt;/title&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-	&lt;body style=&quot;display: table;&quot;&gt;
-		&lt;div style=&quot;display: table-cell; vertical-align: middle; text-align: center;&quot;&gt;
-			&lt;div style=&quot;display: inline-block;&quot;&gt;
-&lt;!--)--&gt;
-
+&lt;!--​--&gt;
 
 &lt;p class=&quot;roboto&quot;&gt;
 ~31.03.2016&lt;br /&gt;
 Jędrzej A. Łopaciński
 &lt;/p&gt;
 
-
-&lt;!--EBOOK_ONLY(--&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 22 Sep 2016 01:20:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing/każdy_koniec_to_nowy_początek/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>A Widowꞌs Trace — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
-.indented {
-	text-indent: 1em;
-}
-.continued {
-	margin-bottom: 0;
-}
-
-.continuing {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.continuation {
-	margin-top: 0;
-}
-&lt;/style&gt;
-
-
-&lt;!-- ePub title: &quot;A Widow's Trace&quot; --&gt;
-
-
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;pl&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;A Widow's Trace&lt;/title&gt;&lt;!--'--&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;out/writing-the_taste_of_mi-Merriweather-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-&lt;!--)--&gt;
+      <title> A Widowꞌs Trace — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
 
 
 &lt;style&gt;
-.inv-r {
-	font-size: calc(22em / 19);
+.indented {
+ text-indent: 1em;
+}
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
 }
 &lt;/style&gt;
+&lt;!-- ePub title: &quot;A Widow's Trace&quot; --&gt;
 
-
+&lt;style&gt;
+.inv-r {
+ font-size: calc(22em / 19);
+}
+&lt;/style&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;A Widow's Trace&lt;/h2&gt;&lt;/center&gt;&lt;!--'--&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 — &lt;em&gt;Tien, tien.&lt;/em&gt; Looks like we'&lt;!--'--&gt;&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;e wo&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;king rogethe&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;. —
 &lt;em&gt;Some&lt;/em&gt;thing made Widowmaker say, as it always did, ruining her
@@ -918,7 +774,6 @@ beloved rifle on a table next to them, facing away in
 total concentration, so she nodded, very deeply, lost
 in her own world of fantasy.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 &quot;Five&quot; Tracer snapped back to reality.
 &lt;/p&gt;
@@ -940,7 +795,6 @@ incredibly tense.
 trails behind Widow, who aims her Grapple. Tracer's&lt;!--'--&gt;
 eyes start glowing; figuratively, of course.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continuing&quot;&gt;
 — Oi, before you get up there, grab me!
 &lt;/p&gt;
@@ -969,8 +823,6 @@ them.
 &lt;p class=&quot;writing indented roboto continuation&quot;&gt;
 — Now's your opening, luv!&lt;!--'--&gt;
 &lt;/p&gt;
-
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 Widow hoisted the firearm to her shoulder, aimed in, and
 fired. Reaper's head seemed to have exploded. She leaned&lt;!--'--&gt;
@@ -990,7 +842,6 @@ listening to the faintest of sounds.
 — Get &lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;eady to get us out of 'e&lt;span class=&quot;inv-r&quot;&gt;ʁ&lt;/span&gt;e. — She alerted&lt;!--'--&gt;
 and grappled directly upwards.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 On the way down she sighted in and last time on Symmetra;
 she lost precision due to a very narrow
@@ -1009,7 +860,6 @@ the air with much more ease than even when she was alone.
 She had to cease quite shortly, though, as Widowmaker woke just
 seconds after passing out.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 — Ah, magnifique. — She sighed, looking at the battlefield,
 or at Tracer (it was rather hard to tell, especially from Tracer's&lt;!--'--&gt;
@@ -1025,7 +875,6 @@ suddenly became flustered. Tracer didn't notice, as&lt;!--'--&gt;
 she was cherishing how Widow was confused enough
 not to let her go.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 And so they lasted, seemingly endlessly, cherishing a moment&lt;!--SOFT_BR--&gt;
 tranquil as very few are for soldiers at war. Then it all&lt;!--SOFT_BR--&gt;
@@ -1034,7 +883,6 @@ made way for endorphins and endorphins – for exhaustion.&lt;!--SOFT_BR--&gt;
 As many of these moments, this one was saved by the party&lt;!--SOFT_BR--&gt;
 returning with figurative spoils.&lt;!--SOFT_BR--&gt;
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 — Hey, aren't these our lost gals? — McCree,&lt;!--'--&gt;
 suddenly alert, re-holstered
@@ -1058,7 +906,6 @@ Inquired Mercy to Zenyatta.
 &lt;p class=&quot;writing indented roboto continuation&quot;&gt;
 — Indeed.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 By this time they'd approached Tracer&amp;amp;Widow to&lt;!--'--&gt;
 a distance at which a converstaion could
@@ -1093,7 +940,6 @@ thirsty
 — I don't see why not. — Vocalised his approval&lt;!--'--&gt;
 Seven-Six as everyone else nodded.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 As everyone was getting settled, Zen noted,
 that Lena wasn't, as was usual, avoiding&lt;!--'--&gt;
@@ -1128,7 +974,6 @@ as if knowingly, Lena's&lt;!--'--&gt;
 head found her back and remained there. And that was the last thing
 she remembered.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Sunlight hit the window blinds, dimly illuminating the small hotel
 room as it did. The brightness, however suppressed, had woken
@@ -1160,7 +1005,6 @@ expecting it to be broken as soon as Amélie shifted over to face
 her, but, instead, she just grabbed her and
 hugged her closed to her chest.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 Moments like this don't last; this&lt;!--'--&gt;
 one did. It wasn't broken, it just transformed&lt;!--'--&gt;
@@ -1214,7 +1058,6 @@ yet this one, again, did, and drifted off as they fell asleep.
 in each other's arms.&lt;!--'--&gt;
 &lt;!--On placement of the apostrophe here: https://jakubmarian.com/each-others-vs-each-others-in-english--&gt;
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 The sun set and they awoke again, conscious now of
 everthing they had together. Or, well, most of it, anyway.
@@ -1291,30 +1134,11 @@ Seeing that Amélie's finished her tea, Lena leaned in again&lt;!--'--&gt;
 to kiss her, snatching the saucer&amp;amp;cup and setting
 them down in relative safety. Into a kiss they pertained.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Moments like that aren't made to last, but sometimes,&lt;!--'--&gt;
 just timetimes, they do. And they change the world.
 &lt;/p&gt;
-
-
-&lt;!--EBOOK_ONLY(--&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)​--&gt;
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;pl&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;&lt;/title&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-	&lt;body style=&quot;display: table;&quot;&gt;
-		&lt;div style=&quot;display: table-cell; vertical-align: middle; text-align: center;&quot;&gt;
-			&lt;div style=&quot;display: inline-block;&quot;&gt;
-&lt;!--)--&gt;
-
+&lt;!--​--&gt;
 
 &lt;p class=&quot;roboto&quot;&gt;
 ~10-20.03.2017&lt;br /&gt;
@@ -1322,284 +1146,620 @@ Kraków&lt;br /&gt;
 Jędrzej A. Łopaciński
 &lt;/p&gt;
 
-
-&lt;!--EBOOK_ONLY(--&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 23 Apr 2017 03:37:41 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing/moments/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/moments/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>The Taste of MI — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
-.ruby {
-	/* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
-	color: #E0115F;
-}
+      <title> The Taste of MI — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
 
+
+&lt;style&gt;
+.ruby {
+ /* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
+ color: #E0115F;
+}
 .smol {
-#ifndef EBOOK
-	font-size-adjust: 0.333333333333333;
-#else
-	font-size: 0.75em;
-#endif
+ font-size-adjust: 0.333333333333333;
 }
 .continued {
-	margin-bottom: 0;
+ margin-bottom: 0;
 }
-
 .continuing {
-	margin-top: 0;
-	margin-bottom: 0;
+ margin-top: 0;
+ margin-bottom: 0;
 }
-
 .continuation {
-	margin-top: 0;
+ margin-top: 0;
 }
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
 
+&lt;!-- ePub title: &quot;The Taste of MI&quot; --&gt;
 
-#define __LICENSE                                                  \
-// nabijaczleweli.xyz (c) by nabijaczleweli                        \
-​//                                                                 \
-// nabijaczleweli.xyz is licensed under a                          \
-// Creative Commons Attribution 4.0 International License.         \
-​//                                                                 \
-// You should have received a copy of the license along with this  \
-// work. If not, see &lt;https://creativecommons.org/licenses/by/4.0/&gt;.
-#undef __LICENSE
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;The Taste of MI&lt;/h2&gt;&lt;/center&gt;
+&lt;!-- Page 01/12 --&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt; &lt;!-- * ctx: Ася - 24 lata (8 lat po kl. 1 liceum) --&gt;
+Noc. Asia rzuca ostatnie spojrzenie na smyrofon, marszczy &lt;!-- 30.6.17 -&gt; --&gt;
+nos, i wzdycha, po czem pada na łóżko. Jest zmęczona, przysypia
+prawie natychmiast. Odpływa jeszcze szybciej.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Stoi na wzgórzu, włosy ma wyblakłe, nie, szare. Dwa skórzane
+pasy krzyżują się na mostku, przyjemnie ciąży…
+Gubi słowo, wysila się, łapie je na powrót.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Pochwa. — Mruczy pod nosem, uśmiech marszczy jej
+twarz na ułamek sekundy.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+…ciąży pochwa, inkrustowana stalą z jednej–, srebrem z
+drugiej strony, opalizują runy – na stali krasnoludzkie, na
+srebrze elfickie. Znad barków wystają głownie – z prawej
+ciemniejsza, z resztą rękojeści owiniętą skórą, dalej
+nową, niewybłyszczałą, z lewej srebro świeci delikatnie
+nad mikrohaczykowatą skórą Rai. Odwraca się w
+półpiruecie i z rosnącą euforią biegnie prez las po
+oślizgłych belkach nad jarami pełnymi kości, wiotkich
+kładkach i podstępnych żwirowiskach. Rozmywa się
+w skokach nad jarami, sięgając po miecze dla
+zachowania równowagi w biegu i locie. Zza drzew zaczyna
+wyłaniać się warownia, a Asia, po horrendalnie skomplikowanym
+przeskoku z zawisem i podwójnym saltem zrywa z
+oczu opaskę i nim dotknie dotknie ziemi, siłą lądowania wpychając ją
+do skórzanej kurty. Ostatni odcinek pokonuje na bezdechu, ot tak,
+żeby sprawdzić czy jeszcze umie. Umie. Przstaje. Oddycha spokojnie,
+ale to normalne, kiedy jest jedną z niewielu, którzy
+umieją trafić do &lt;span class=&quot;roboto-em&quot;&gt;Kaer Morhen&lt;/span&gt;. Schyla
+głowę, wzdychając nad widokiem, ale…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Czoło, miast na łopatkę, albo przynajmniej na
+obręcz barkową, trafia w pustkę, i Asia budzi
+&lt;!-- Page 02/12 --&gt;
+się, z frustracją odpycha z powrotem na plecy i próbuje
+dokończyć wzdech, ale niewiele się może równać orgazmicznemu
+niemal wzdechnięciu po przebiegnięciu paru kilometrów w
+krystalicznym górskim powietrzu, więc, jeszcze bardziej sfrustrowana,
+unosi się na łokciu i mruży oczy w stronę zegarka, po czym
+zrezygnowana opada na łóżko. Nie zaśnie, to pewne. Obraca się
+do okna i bierze głęboki wdech. Wspomina.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Tłum, ot – jak tłum. Tam jakie dresy, tam jaki wyrzutek
+społeczny z za długim włosem i aurą niepewnostrachu, tam jakaś, &lt;!-- * hey, it me --&gt;
+a, nie, to skarlała nauczycielka. Ups.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Klasa pierwsza „A” prosz tutaj. — W synapsy wbiło jej się coś mniej mniejszego,
+ale za to parokrotnie szerszego, w sweterku nieporadnie
+kryjącym linię talii (cynicy powiedzieliby, że nie było
+czego kryć, co daleko od prawdy nie było), za to odjechanego
+w kosmos bardziej niż wyrzutek społeczny, który, po zaklasyfikowaniu
+zadania jako niewarte włożone weń energii z
+szalonym wyrazem twarzy coś liczył, mamrocząc. To musi
+być Lucyna O… No ni cholery o niej imieniem i nazwiskiem,
+Lucynka, bardziej.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Niezła zabawa się szykuje… — Mruknęła pod prowerbialnym
+wąsem, łypiąc na swoją wychowawczynię, która sama wyglądała
+jak potrzebująca opieki, ale zaraz przestała werbalizować swoje
+uwagi, bo „się zaczęło”.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Witajcie, kochani, na inauguracji roku dwa-tysiące-&lt;!--
+--&gt;szesnaście-dwa-tysiące-siedemnaście. — Zaczęła dyrektorka. —
+W szczególności witamy pierwsze klasy…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Dzieeeeeeń Doooo⸗bryyyy! — Wybełkotali mało składnie.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Dyrektorka pewnie dronowała dalej, ale została wycięta.
+Natychmiast przez większość gremium, i wykładniczo w
+&lt;!-- Page 03/12 --&gt;
+czasie, po zorientowaniu się, że jest to dokładnie to
+samo, co przez ostatnie dziesięć lat.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Początek roku w pierwszej klasie liceum
+(„To już osiem lat temu? Jezu, ale ja stara jestem…”)
+wyjaśniałoby, czemu jest o te parę cali niższa i brak… A, nie, nie brak. &lt;!-- * nie wiem cz dualizm Asiowo-asiowy --&gt;
+&lt;/p&gt; &lt;!-- jest wystarczająco oczywisty --&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Po odfiltrowaniu &lt;span class=&quot;roboto-em&quot;&gt;Szanownego Grona&lt;/span&gt; zabrała się za dalszą &lt;!-- &lt;- 2.7.17 --&gt;
+motłochobserwację – tam jakiś (pół)wyrzutek społeczny numer &lt;!-- 2.7.17 -&gt; --&gt;
+dwa ubrany „na górala” – czarna kamizelka narzucona na białą
+koszulę, do tego jeansy, co w połączeniu z ewidentnym
+przez ciemne, kręcone, sięgające do pasa włosy faktem
+bycia Żydówką stawiało obserwatora przed dylematem, czy
+kontrast ten wynika z ramieniowzruszu na ubiór, czy z głębokiego
+zamysłu autorki; tam jakaś z grubsza normalna dziewczyna obraca &lt;!-- * MI --&gt;
+głowę, z roztargnieniem&lt;!--*--&gt; rozglądając się po sali. Po chwili &lt;!-- * absent-mindedly --&gt;
+napotyka wzrok Asi i uśmiecha się. Prawdziwie, szeroko, słodko
+mrużąc oczy. Asia czuje, jak, przspieszając, jej serce gubi &lt;!-- ** misses a beat --&gt;
+jedno uderzenie. Odruchowo uśmiecha się półgębkiem w odpowiedzi, ale
+jej myśli galopują. Wyuczonym ruchem starego fotografa
+zaciska powieki na jakieś pół sekundy, coby &lt;del&gt;matrycę&lt;/del&gt;
+siatkówkę, przeczyścić, i otwiera je, by stwierdzić, że widok dalej
+wywołuje na niej efekt prowokująco-przyspieszający.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— &lt;span class=&quot;roboto-em&quot;&gt;O, kurwa.&lt;/span&gt; — Skomentowała bezgłośnie,
+bo na wiele więcej nie boło ją
+w tym momencie stać.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Resztę apelu spędziła na doprowadzaniu się do stanu zgrubszej używalności,
+więc z ulgą dała się porwać tłumowi, który usłyszał dyrektywę
+Lucynki i zdążał na zapoznawczo-organizacyjną część
+dnia. W grupie swoich dziesięcioklasistów udało ustawić
+się jej za zniewalająco-pobudzającą współklasowiczką.
+&lt;!-- Page 04/12 --&gt;
+Korciło ją, co prawda, władowanie się jej prosto w
+biznes, a szczególnie dokonanie nosowłośnej transakcji zapachowej,
+ale resztki rozsądku oznaczyły ten manewr jako „&lt;strong&gt;NIE&lt;/strong&gt;”, więc się,
+z trudem, powstrzymała. Dzięki swojej sprytnie wybranej pozycji
+udało się jej usiąść w ławce z… W sumie dobre pytanie,
+bo jeszcze do siebie się nic nie powiedziały, no i usiłowała na
+nią nie patrzeć, żęby zachować samokontrolę i nie strzelić
+jakiegoś głupstwa. Ale już niedługo, bo…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— No, to zaczynamy z listą obecności, kochani. Dziś bez
+nazwisk, bo one nie sprzyjają &lt;span class=&quot;roboto-em&quot;&gt;atmosferze&lt;/span&gt;… — Lucynka
+wykazała się jednak szczątkowym rozgarnięciem. —
+Kuba!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Jestem! — Ktoś przed nimi podniósł dłoń.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Rus… łan? — Lucynce szło jak &lt;em class=&quot;roboto-em&quot;&gt;dress sense&lt;/em&gt; półwyrzutki
+społecznej, znaczy nie bardzo.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Jezdem! — Z bliskowschodnim zaśpiewem zgłosił się
+dres.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Asia skupiała się, żeby nie przegapić imienia dziewczyny
+z lewej, że na własne imię zareagowała dopiero za drugim razem.
+Ale skupianie opłaciło się:
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Emilia!
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Tutaj! — Z entuzjazmem, któru chyba nigdy jej nie opuszczał,
+współławkowiczka Asi zamachała.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Asia obróciła się, i nadstawiając pół ucha próbowała połączyć słuchanie
+Lucynki z dyskretną observacją Emilii, ale nie udało
+jej się, bo…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;hejka-paragraph&quot;&gt;
+— Hejka! — Towarzyszka Lucynkowej niedoli odezwała się
+pierwsza, a z takim metaforycznym bananem, że niemożliwym
+było nieodebranie nieskończonych pokładów pozytywizmu​&lt;a href=&quot;#endnote-1&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;1&lt;/sup&gt;&lt;/a&gt;
+&lt;!-- Page 05/12 --&gt;
+emanującego z każdego poru jej skóry; Asia bezoporowo
+poddała się jego działaniu.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Cześć! — Zaczęła, promieniejąc coraz bardziej — &lt;!-- ~9.7.17 -&gt; --&gt;
+Więc…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot; id=&quot;ruby-paragraph&quot;&gt;
+Reszta rozmowy nie zapisała się w żaden sposób w
+jej pamięci, bo następnym, co pamiętała było wstawanie
+zza ławki i udawanie się w stronę wyjścia
+z resztą tłuszczy połączone z gorącem policzków
+niemającym wiele wspólnego z wysokostojącym wrześniowym
+słońcem. Jakby jej głowa gorącą nie była, zaczął kiełkować w
+niej plan, kryptonim „Amo”&lt;a href=&quot;#endnote-2&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;2&lt;/sup&gt;&lt;/a&gt;, wraz z harmonogramem,
+który w większości miejsc pobłyskiwał rubinowym &lt;strong class=&quot;ruby&quot;&gt;ASAP&lt;/strong&gt;.
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+A potem cały świat złożył się na dwa, na cztery, na osiem,
+na szesnaście, i znowu leży w łóżku, patrzy na na falującą
+światłami panoramę miasta. Uśmiecha się lekko. Nastepny
+rok (dobra, dziesięć miesięcy) był zdecydowanie ciekawy – jak
+poderwać kogoś, żeby ten ktoś nie zorientował się, że jest podrywany?
+A co za filozofia?&lt;!--*--&gt; Toż z człowiekiem jak z jego uchem – małych &lt;!-- * Kuzynki :) --&gt;
+liniowych zmian nie zauważa, nawet jeśli skokowa
+sumaryczna zmiana byłaby szokiem. Kręci głową. Takie
+porównania to zdecydowane nie jej działka, ale, jak się postara
+to potrafi. Nie po to psuła parokrotnie słuchawki, żeby &lt;!-- * hue hue hue --&gt;
+nie potrafić.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Odwraca się z powrotem na plecy i kładzie ręce pod karkiem,
+wpatrywałaby się w gwiazdy, gdyby nie parę warstw
+cegieł, papy i blachy. Z błąkającym się uśmiechem &lt;!-- * pl.wikipedia.org/wiki/Kamienica_(architektura) --&gt;
+poddaje się napływającym obrazom. Wspomina.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto&quot; id=&quot;stoned-paragraph&quot;&gt;
+Ostry aromat płonącej sosny i ciche huczenie ognia uspokajało.
+A może to nie ogień huczał, tylko te dwa, trzy?, drinki
+&lt;!-- Page 06/12 --&gt;
+robiły swoje? Obraz co chwilę tracił ostrość, i, jak to
+właśnie zrobił, urywał się. („Tak się kończy zalewanie sobie płata
+skroniowego neuroinhibitorami…”&lt;a href=&quot;#endnote-3&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;3&lt;/sup&gt;&lt;/a&gt;)
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continued&quot; id=&quot;asphalt-paragraph&quot;&gt;
+Asfalt pod stopami. Czerwcowe słońce grzeje, ale nie tak
+bardzo jak wyczuwalna szóstym zmysłem​&lt;a href=&quot;#endnote-4&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;4&lt;/sup&gt;&lt;/a&gt; obecność Emilii (wyczuwalna
+większością innych zmysłów obecność lokalnego emola była
+pomijalna, lecz okazała się kluczowa w identyfikacji czasoprzestrzennej
+– ognisko częścioklasowe zwołane w celu celebracji zakończenia &lt;!-- 15.07.17 -&gt; --&gt;
+dziesiątej klasy, czyli kulminacja całego roku (okej, dziesięciu
+miesięcy) intensywnej pracy nad biologiczną siecią neuronową &lt;!-- 16.07.17 -&gt; --&gt;
+pod pseudonimem MI&lt;!--*--&gt;; „Don't fuck it up…”, mruknęła,                                   &lt;!-- * title reference '--&gt;
+mimo, że wiedziała przecież, jak ta scena się rozegra). Zostawiły
+już za sobą większość paskudnych pseudowioskowych „posiadłości”, &lt;!-- 17.07.17 -&gt; --&gt;
+i tylko zdezelowane &lt;span class=&quot;roboto-em&quot;&gt;Prawdziwe Wiejskie Domy™&lt;/span&gt; malowniczo
+straszyły ubiegłowiecznymi wykuszami zza świerków, na któryżto widok
+&lt;span class=&quot;roboto-em&quot;&gt;Павлов&lt;/span&gt;owym​&lt;a href=&quot;#endnote-5&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;5&lt;/sup&gt;&lt;/a&gt; gestem sięgnęła po aparat, którego tam nie
+było (yeah, grupa mało trzeźwych nastolatków + sprzęt
+warty parę(naście) kilozłotych to mniej więcej tak dobry pomysł
+jak najeżdżanie Rosji w lecie bez uprzedniego adekwatnego
+przygotowania na tameczną zimę), co spowodowało
+zaplątanie się w emilię kończyną górną, co spowodowało &lt;!-- 21.7.17 -&gt; --&gt;
+wypadnięcie z rytmu lokonomicznego, co spowodowało
+współrozdeptanie, co, po następnych kilku sekundach
+rodeptywania i ogólnego postępującego gubienia
+równowagi, spowodowało malowniczą &lt;em class=&quot;roboto-em&quot;&gt;biglebę poplątaną&lt;/em&gt;
+(gatunek chroniony we wszystkich pięćdziesięciu stanach
+poza &lt;span class=&quot;roboto-em&quot;&gt;New Hampshire&lt;/span&gt;), szczęśliwie na trawę obok
+asfaltu miast na asfalt sam w sobie, bo, miast
+przerzucania winy, łatania się i samobójstwa w
+&lt;!-- Page 07/12 --&gt;
+perspektywie następnych dwóch lat, siedziały
+bark w bark na trawie i chichrały się niemożebnie,
+w zasadzie z niczego
+(niepomierna jest moc neuroinhibitorów). Gdy &lt;!-- 23.7.17 -&gt; --&gt;
+ocierając łzę, podniosła wzrok na Emilię, pchnięta
+impulsem…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+— Kocham cię, psiamać. — Rozbrzmiało w… No właśnie,
+i tutaj problem, bo, po werbalizacji, struny głosowe
+pozostały nieruchome, a idea spseudowerbalizowała
+się tylko między nosem a potylicą. I tam też odbijało &lt;!-- 24.7.17 -&gt; --&gt;
+się teraz &lt;span class=&quot;roboto-em&quot;&gt;Bardzo Dużo&lt;/span&gt; mało sładnych, ale ogólnie
+panicznych wątków, które, wytracając energię formwały jedną,
+perfekcyjnie klarowną myśl — kategoryczny imperatyw
+wokalizacji. Ale, pomyślała, opierając skroń na ramieniu
+Emilii, nie teraz. I z tymi dwoma walczącymi o wszechogarniającość
+konceptami, obraz rozmył się, aż one były jedynymi
+odczuwalnymi bodźcami.
+&lt;/p&gt;
+&lt;!-- Three lines painted over here. --&gt; &lt;!-- 26.7.17 -&gt; --&gt;
+&lt;!-- Three lines painted over here. --&gt;
+&lt;!-- Three lines painted over here. --&gt;
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+Pierwszą zauważalną rzeczą była horyzontalizacja,
+drugą – domowy (i więcej, &lt;em class=&quot;roboto-em&quot;&gt;wink wink nudge nudge&lt;/em&gt;)
+zapach, trzecią – błyszczące zdjęcie Emilii (plus &lt;!-- 3.8.17 -&gt; --&gt;
+rodziny), lampa, polaroid z rodziną (plus palcem
+Emilii), sufit, zdjęcie gór (plus świerków, &lt;!-- 5.8.17 -&gt; --&gt;
+miejscami nawet podobnych do rodziny), wysoce
+apetyczny bark, odbitka bliżej nieokreślonego, a dalej
+rozmazanego czegoś, a, nie, to tylko podłoże zafalowało
+w unisonie z barkiem wapetyczniającym
+
+&lt;!-- Page 08/12 --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+&lt;!-- Nine lines taken up by maths here. --&gt;
+się weń wraz z resztą współprzymiotnikowej osoby,
+no to powtórka z rozrywki i reklasyfikacja bliży-dali-&lt;!--
+--&gt;mni-bardzi-nieokreślono-rozmytego na Emiliję,
+&lt;em class=&quot;roboto-em&quot;&gt;sans&lt;/em&gt; rodzina, &lt;em class=&quot;roboto-em&quot;&gt;avec&lt;/em&gt;&lt;!--*--&gt; niżej
+podpisana. Ta, więc, kupka obejrzana, należy zbadać zatem kupkę polimerów opartych
+na węglu („Na taki cynizm dostaniesz zezwolenie
+po piątym krzyżyku dopiero.” Zaśmiała się. „No, ewentualnie
+jak z różowym papierkiem »smutni« przyjdą,
+ale to nie Чечня.” Po wspomnieniu o Чечне zaśmiewała
+się zdeka mniej, ale co na starego cynika poradzisz…),
+toteż tytanicznym wysiłkiem woli &lt;!-- 6.8.17 -&gt; --&gt;
+obróciła czaszkę o dziewięćdziesiąt stopni w
+lewo, i na tamten tychmiast skorygowała
+o minus dzisięć po wtwarzowaniu się w prosty
+blondwłos, należący, jeżeli nos jej nie mylił, ani,
+po korekcie, również oczy – i jej, i te srebrnobłękitne,
+trzy cale przed &lt;!-- ** bardziej 3.5 ale v0v --&gt;
+nimi uśmiechające
+się szelmowsko w komitywie z większością
+swojego jestestwa, do Emilli Zet&lt;span class=&quot;smol&quot;&gt;(kropka)&lt;/span&gt;,
+
+&lt;!-- Page 09/12 --&gt;
+która zareagowała na operacje płucnonosowe &lt;!-- 7.8.17 -&gt; --&gt;
+w własnymi, i, marszcząc nosek…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Hibiskus? — Zapytała.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Jaki, &lt;span class=&quot;roboto-em&quot;&gt;kuna&lt;/span&gt;, Ibiskus? — Asia uniosła brew.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Coś ty Gibiskusa w życiu nie wąchała? — Ton dalej
+poważny jak, nie przymierzając, świeżo upieczony
+grabarz przymuszony do przeszukania trumny denata
+po „wypadku” z prasą do kształtek żelazowęglowych.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;alexandrov-paragraph&quot;&gt;
+Mrużąc powiekę (tą z drugiej strony,
+aż taka dobra nie była) szukała w pamięci i
+powietrzu kontekstu z hibiskusem w roli niepośledniej i/&lt;!--
+--&gt;lub aromatycznej, czego nie ułatwiało niezerowe
+&lt;span class=&quot;math-font-italic roboto-unscale&quot;&gt;n&lt;/span&gt; col z wódką (wódek z colą?)
+przepuszczonych przez jelito cienkie, ani –
+może nie do końca obezwładniająca, ale zdecydowanie utrudniająca
+koherentne myślenie – obecność w.w. Emilii
+(dla przyjaciół „Emi”, dla osób jeszcze &lt;em class=&quot;roboto-em&quot;&gt;*cough*&lt;/em&gt;
+bliższych &lt;em class=&quot;roboto-em&quot;&gt;*cough*&lt;/em&gt;… cóż, jak jej dobrze pójdzie to
+do rana się dowie; nu, precedens uzyska
+przynajmniej), jednak, nim zdążyła się dobrze naszukać, &lt;!-- 8.8.17 -&gt; --&gt;
+wyrwał ją z głębi płata skroniowego tłumiony bulgot
+przechodzący w gorzej tłumiony chichot, i potem
+obie rychnęły śmiechem serdecznym, słowiańskim,
+a po tych circa &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;.789&lt;/span&gt;&lt;!--*--&gt; &lt;!-- * mogłem się pieprznąć; --&gt;
+gramach etanolu na kilogram to tylko wołać chór &lt;!-- swoją drogą taka jest gęstość etanolu --&gt;
+&lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
+&lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
+&lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
+&lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
+
+&lt;!-- Page 10/12 --&gt;
+&lt;!-- Five lines taken up biscale drawing here. --&gt;
+&lt;!-- Five lines taken up biscale drawing here. --&gt;
+&lt;!-- Five lines taken up biscale drawing here. --&gt;
+&lt;!-- Five lines taken up biscale drawing here. --&gt;
+&lt;!-- Five lines taken up biscale drawing here. --&gt;
+Aleksandrowa​&lt;a href=&quot;#endnote-6&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;6&lt;/sup&gt;&lt;/a&gt; i certyfikaty lepić. Wszystkie,
+jednak, śmiechy, nawet te symptomatyczne
+w dziewiętnastym jeszcze wieku „histerii”,
+muszą się skończyć, więc, po osiągnięciu szczytu,
+kiedy serio myślała, że jedna przynajmniej z nich się
+uduśnie (ale, co oczywiste, udało się nie), nastąpiła
+krawędź opadająca, czyli coraz głębsze
+wdechy, coraz rzadsze i wolniejsze
+kurcze wydechu, coraz lepszy kontekst &lt;!-- 9.8.17 -&gt; --&gt;
+do rzucenia czegokolwiek, żeby spotkało się ono z rozważeniem
+rychłymi i szybkim, ale głębokim,
+toteż, nie zastanawiając się głębiej (tak tak, zalewanie
+się wódą w wieku lat &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;17&lt;/span&gt; (ledwo,
+&lt;em class=&quot;roboto-em&quot;&gt;yadda yadda yadda&lt;/em&gt; jednym, ale intuicja psychologa drugim).
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— I za to cię, &lt;span class=&quot;roboto-em&quot;&gt;cholera&lt;/span&gt;, kocham. — Palnęła.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;memory-paragraph&quot;&gt;
+— Za co? — Chociaż w sumie równie dobrze mogło było &lt;!-- 10.8.17 -&gt; --&gt;
+to być „Że co”, ale liczyła na pamięć natychmiastową​&lt;a href=&quot;#endnote-7&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;7&lt;/sup&gt;&lt;/a&gt;
+żeby się nie powtarzać (nomen omen nie przeszłoby jej to przez gardło).
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+— Za ten humor, no.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot; id=&quot;bessemer-paragraph&quot;&gt;
+Emilia trawiła. I o ile przeważnie procesy trawienne
+nie są przewaćnie bardziej interesujące
+niż &lt;span class=&quot;roboto-em&quot;&gt;Proces Bessemera&lt;/span&gt;&lt;a href=&quot;#endnote-8&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;8&lt;/sup&gt;&lt;/a&gt;, ale
+teraz trawiła uprzednią wymianę zdań, i,
+mimo, że na nią wychodzi(ło) te &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;9&lt;/span&gt;
+
+&lt;!-- Page 11/12 --&gt;
+procent więcej, to wychodziło jej to zdecydowanie za wolno, I już,
+kiedy Asia zaczęła dopuszczać
+do siebie myśl, że może kompletnie spieprzyła sprawę,
+Emi sprężyła się w sobie
+i, zdecydowanie tym razem za szybko, zamnęła dystans między
+ich wargami, zwiększyła między swoimi, i zwyczajnie
+ją wzięła pocałowała. Smakowała, hmmm, mlaskanie było
+w tej sytuacji nie tylko utrudnione, ale również wysoce
+niestosowne, ale
+&lt;em class=&quot;roboto-em&quot;&gt;tertio&lt;/em&gt; wódą, &lt;em class=&quot;roboto-em&quot;&gt;secundo&lt;/em&gt; po prostu
+Emilką, a &lt;em class=&quot;roboto-em&quot;&gt;primo&lt;/em&gt;…
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continued&quot;&gt;
+— Hibiskusem. — Parska śmiechem i otwiera oczy na
+sufit ich apartamentu na starym mieście.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot;&gt;
+Tak, bycie udaną malarką zdecydowanie miało swoje
+plusy, ale, jak powiedziałby każdy weekendowy &lt;!-- 11.8.17 -&gt; --&gt;
+powieściopisarz&lt;!--*--&gt;, ma też swoje minusy, jak, na przykład, tłuczenie &lt;!-- * hue hue hue, to ja --&gt;
+się z Sopotu po nocy – ot, wystawa jakich dużo.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuation&quot;&gt;
+Asia wzrusza ramionami i oddycha głęboko. Wspomina.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto&quot; id=&quot;ian-morris-paragraph&quot;&gt;
+Sewencja obrazów: Studniówka, wybory
+&lt;span class=&quot;roboto-em&quot;&gt;Jaśnie Oświeconego Z Bożego Nadania&lt;/span&gt; (bo i o tym
+aspekcie bycia władcą absolutnym nie należy zapominać, bo
+jest on szczególnie ważny do jej utrzymania​&lt;a href=&quot;#endnote-9&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;9&lt;/sup&gt;&lt;/a&gt;) &lt;span class=&quot;roboto-em&quot;&gt;Władcy
+Jedynego &lt;del&gt;Rzplitej Nam Drogiej Wielce&lt;/del&gt; Balu
+Wielce Pięknego (Z Małżonką)&lt;/span&gt; ze zdjęciem;
+taki sam szelmowski uśmiech, gdy
+ciągnie ją na wernisaż, taki
+z werwą, i adekwatnie, bo inaugurował wystawę
+„jednego z największych talentów nowożytności”&lt;a href=&quot;#endnote-10&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;10&lt;/sup&gt;&lt;/a&gt;
+(rozważania, której z nich trafiło sięlepiej, zostawiała
+
+&lt;!-- Page 12/12 --&gt;
+w.w. emolowi); oddanie do użytku jej praktyki​&lt;a href=&quot;#endnote-11&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;11&lt;/sup&gt;&lt;/a&gt; psychologicznej;
+mikrowystawa fotograficzna z jej
+„odważnymi prezentacjami klasycznych zagadnień”&lt;a href=&quot;#endnote-10&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;10&lt;/sup&gt;&lt;/a&gt;,
+co w pseudomowie paradziennikarskiej
+jest nulem werbalnym (i, w połączeniu z resztą
+artykułu, testamentem rażącej niekompetencji
+autora) brzmiącym na tyle pompatycznie, żeby
+„koneserzy sztuki nowoczesnej” czyli &lt;span class=&quot;roboto-em&quot;&gt;„Bufoniaste
+Pedały”&lt;/span&gt;, jak ich nazywały, pokiwali w udawanym
+zadumaniu durnymi łbami; zamieszczenie
+jej zdjęć w &lt;em class=&quot;roboto-em&quot;&gt;Photo Camera&lt;/em&gt; i &lt;!-- 12.8.17 -&gt; --&gt;
+&lt;em class=&quot;roboto-em&quot;&gt;National Geographic&lt;/em&gt;. Hej, dobre czasy.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Z zamyślenia wyrywa ją chrobot zamków
+i metaliczne
+trzaśnięcie klamki, słyszy
+zrzucane buty i szelest odwieszanego płaszca,
+marszczy nos na długi, zmęczony wydech i
+przesuwa się nieznacznie
+gdy EmI pada obok niej na łóżko. W jej
+objęciu, przy jej obręczy barkowej czuje się
+bezpiecznie. Ich wargi
+odnajdują się na ułamek chwili, ale na języku
+zostaje jej aromat kawy ze stacji
+benzynowej, hibiskusa i czegoś jeszcze, czego nie
+potrafi nazwać.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto&quot;&gt;
+Jednak z uśmiechem zasypia w objęciach
+Emilii, bo wie, że Emi, &lt;em class=&quot;roboto-em&quot;&gt;jej&lt;/em&gt; Emi smakuje, jak nikt
+inny.
+&lt;/p&gt;
+&lt;!-- One line taken up by dates and places here. --&gt;
+
+ 
 
 
-#pragma once
+&lt;!--​--&gt;
 
+&lt;!-- ePub title: &quot;Przypisy&quot; --&gt;
 
-#ifdef EBOOK
-
-#define CSS_EBOOK_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-#define CSS_HTML_ONLY(...)
-
-#define EBOOK_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-#define HTML_ONLY(...)
-
-#else
-
-#define CSS_EBOOK_ONLY(...)
-#define CSS_HTML_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-
-#define EBOOK_ONLY(...)
-#define HTML_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-
-#endif
-#define __LICENSE                                                  \
-// nabijaczleweli.xyz (c) by nabijaczleweli                        \
-​//                                                                 \
-// nabijaczleweli.xyz is licensed under a                          \
-// Creative Commons Attribution 4.0 International License.         \
-​//                                                                 \
-// You should have received a copy of the license along with this  \
-// work. If not, see &lt;https://creativecommons.org/licenses/by/4.0/&gt;.
-#undef __LICENSE
-
-
-#pragma once
-
-
-#ifdef EBOOK
-
-#define CSS_EBOOK_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-#define CSS_HTML_ONLY(...)
-
-#define EBOOK_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-#define HTML_ONLY(...)
-
-#else
-
-#define CSS_EBOOK_ONLY(...)
-#define CSS_HTML_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-
-#define EBOOK_ONLY(...)
-#define HTML_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-
-#endif
-#define __LICENSE                                                  \
-// nabijaczleweli.xyz (c) by nabijaczleweli                        \
-​//                                                                 \
-// nabijaczleweli.xyz is licensed under a                          \
-// Creative Commons Attribution 4.0 International License.         \
-​//                                                                 \
-// You should have received a copy of the license along with this  \
-// work. If not, see &lt;https://creativecommons.org/licenses/by/4.0/&gt;.
-#undef __LICENSE
-
-
-#pragma once
-
-
-#ifdef EBOOK
-
-#define CSS_EBOOK_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-#define CSS_HTML_ONLY(...)
-
-#define EBOOK_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-#define HTML_ONLY(...)
-
-#else
-
-#define CSS_EBOOK_ONLY(...)
-#define CSS_HTML_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-
-#define EBOOK_ONLY(...)
-#define HTML_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-
-#endif
-#define __LICENSE                                                  \
-// nabijaczleweli.xyz (c) by nabijaczleweli                        \
-​//                                                                 \
-// nabijaczleweli.xyz is licensed under a                          \
-// Creative Commons Attribution 4.0 International License.         \
-​//                                                                 \
-// You should have received a copy of the license along with this  \
-// work. If not, see &lt;https://creativecommons.org/licenses/by/4.0/&gt;.
-#undef __LICENSE
-
-
-#pragma once
-
-
-#ifdef EBOOK
-
-#define CSS_EBOOK_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-#define CSS_HTML_ONLY(...)
-
-#define EBOOK_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-#define HTML_ONLY(...)
-
-#else
-
-#define CSS_EBOOK_ONLY(...)
-#define CSS_HTML_ONLY(...) */ __VA_ARGS__ SLASH_ASTERIX
-
-#define EBOOK_ONLY(...)
-#define HTML_ONLY(...) --&gt; __VA_ARGS__ &lt;!--
-
-#endif
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;pl&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;&lt;/title&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-	&lt;body style=&quot;display: table;&quot;&gt;
-		&lt;div style=&quot;display: table-cell; vertical-align: middle; text-align: center;&quot;&gt;
-			&lt;div style=&quot;display: inline-block;&quot;&gt;
-&lt;!--)--&gt;
+&lt;center&gt;&lt;h4 class=&quot;merriweather&quot;&gt;Przypisy&lt;/h4&gt;&lt;/center&gt;
+&lt;p class=&quot;writing indented roboto continued&quot; id=&quot;endnote-1&quot;&gt;
+&lt;a href=&quot;#hejka-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;1&lt;/sup&gt;&lt;/a&gt; Pokłady pozytywizmu –
+ pozytywizm to co prawda ruch renesansowy, ale dobrze to brzmi, więc weszło do mowy potocznej.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-2&quot;&gt;
+&lt;a href=&quot;#ruby-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;em class=&quot;roboto-em&quot;&gt;Amo&lt;/em&gt; –
+ łac. „kocham”
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-3&quot;&gt;
+&lt;a href=&quot;#stoned-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;3&lt;/sup&gt;&lt;/a&gt; Płat skroniowy –
+ odbywa znaczącą rolę w formowaniu pamięci długoterminowej.
+ &lt;a href=&quot;http://human-memory.net/brain_parts.html&quot;&gt;Źródło.&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-4&quot;&gt;
+&lt;a href=&quot;#asphalt-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;4&lt;/sup&gt;&lt;/a&gt; Szósty zmysł –
+ ludzie mają &lt;a href=&quot;https://en.wikipedia.org/wiki/Sense#Non-traditional_senses&quot;&gt;zdecydowanie więcej zmysłów&lt;/a&gt; ale proverbium jest jakie jest.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-5&quot;&gt;
+&lt;a href=&quot;#asphalt-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;5&lt;/sup&gt;&lt;/a&gt; Иван Петрович Павлов –
+ Rosyjski uczony prowadzący badania nad &lt;a href=&quot;https://en.wikipedia.org/wiki/Classical_conditioning&quot;&gt;warunkowaniem klasycznym (pawłowowskim)&lt;/a&gt;.
+ &lt;a href=&quot;https://ru.wikipedia.org/wiki/Павлов,_Иван_Петрович&quot;&gt;Więcej.&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-6&quot;&gt;
+&lt;a href=&quot;#alexandrov-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;6&lt;/sup&gt;&lt;/a&gt; Chór Aleksandrowa –
+ męski chór Armii Rosyjskiej.
+ &lt;a href=&quot;https://pl.wikipedia.org/wiki/Ch%C3%B3r_Aleksandrowa&quot;&gt;Więcej.&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-7&quot;&gt;
+&lt;a href=&quot;#memory-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;7&lt;/sup&gt;&lt;/a&gt; Pamięć natychmiastowa –
+ eng. &lt;a href=&quot;https://en.wikipedia.org/wiki/Working_memory&quot;&gt;working/immediate memory&lt;/a&gt;, pamięć o długości rzędu paru sekund,
+ z niej podpowiadane jest przeważnie w sytuacji gdy natychmiast po niedosłyszeniu odpowiedzi pyta się „Co?” i,
+ do czasu wypowiedzenia go, się przypomina.
+ &lt;!-- Zakładam że to to https://pl.wikipedia.org/wiki/Neurologia#Badanie_neurologiczne_obejmuje --&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-8&quot;&gt;
+&lt;a href=&quot;#bessemer-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;8&lt;/sup&gt;&lt;/a&gt; Proces Bessemera –
+ eng. na, po prostu, &lt;a href=&quot;https://pl.wikipedia.org/wiki/Konwertorowanie&quot;&gt;Konwertorowanie&lt;/a&gt;,
+ ale &lt;em class=&quot;roboto-em&quot;&gt;Bessemer Steel Process&lt;/em&gt; brzmi znacznie lepiej.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-9&quot;&gt;
+&lt;a href=&quot;#ian-morris-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;9&lt;/sup&gt;&lt;/a&gt; Władcy absolutni –
+ na podstawie &lt;a href=&quot;https://www.amazon.com/dp/0312611692&quot;&gt;Why the West Rules--for Now: The Patterns of History, and What They Reveal About the Future,
+                                                             Ian Morris 2011&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-10&quot;&gt;
+&lt;a href=&quot;#ian-morris-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;10&lt;/sup&gt;&lt;/a&gt; „Cytaty” –
+ byłyby za GW gdybym ich nie wymyślił.
+&lt;/p&gt;
+&lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;endnote-11&quot;&gt;
+&lt;a href=&quot;#ian-morris-paragraph&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;11&lt;/sup&gt;&lt;/a&gt; Praktyka psychologiczna –
+ wiem na temat dokładnie &lt;span class=&quot;math-font-normal&quot;&gt;∅&lt;/span&gt;, więc nie ręczę, za istnienie czegoś takiego.
+&lt;/p&gt;
 
 
 &lt;style&gt;
 .nowrap {
-	white-space: nowrap;
+ white-space: nowrap;
 }
 &lt;/style&gt;
-
-
 &lt;p class=&quot;roboto&quot;&gt;
 30.06.2017-12.08.2017&lt;br /&gt;
 Kraków–&lt;span class=&quot;nowrap&quot;&gt;Wysowa-Zdrój&lt;/span&gt;–&lt;span class=&quot;nowrap&quot;&gt;Παλαιό Τρίκερι&lt;/span&gt;–Βόλος–&lt;span class=&quot;nowrap&quot;&gt;Grecka przestrzeń powietrzna&lt;/span&gt;&lt;br /&gt;
 Jędrzej A. Łopaciński
 &lt;/p&gt;
 
-
-&lt;!--EBOOK_ONLY(--&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)--&gt;
 &lt;p&gt;​&lt;/p&gt;
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-		&lt;title&gt;&lt;/title&gt;
-		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-&lt;!--)--&gt;
 
 &lt;p class=&quot;indented&quot;&gt;
 This is a work of fiction.
 Names, characters, businesses, places, events and incidents
-	are either the products of the author's imagination or used in a fictitious manner. &lt;!--'--&gt;
+ are either the products of the author's imagination or used in a fictitious manner. &lt;!--'--&gt;
 Any resemblance to actual persons, living or dead, or actual events is purely coincidental.
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
 Ten utwór jest utworem fikcji.
 Imiona, postacie, biznesy, miejsca, zdarzenia i wypadki
-	są wynikiem wyobraźni autora lub są użyte w sposób fikcyjny.
+ są wynikiem wyobraźni autora lub są użyte w sposób fikcyjny.
 Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
-	lub zdarzeń rzeczywistych jest czysto przypadkowe.
+ lub zdarzeń rzeczywistych jest czysto przypadkowe.
 &lt;/p&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 16 Aug 2017 19:15:09 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing/the_taste_of_mi/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Świat to kilka takich pokoi — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Świat to kilka takich pokoi — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .continued {
-	margin-bottom: 0;
+ margin-bottom: 0;
 }
-
 .continuing {
-	margin-top: 0;
-	margin-bottom: 0;
+ margin-top: 0;
+ margin-bottom: 0;
 }
-
 .continuation {
-	margin-top: 0;
+ margin-top: 0;
 }
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;Preface&lt;/title&gt;
-		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;nabijaczleweli&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-&lt;!--)--&gt;
-
-&lt;!--EBOOK_ONLY(--&gt;Preface&lt;br /&gt;&lt;!--)--&gt;
 
 &lt;p class=&quot;indented roboto&quot;&gt;
 The following work is a product of its own time,&lt;!--SOFT_BR--&gt;
@@ -1610,39 +1770,19 @@ when it was turned over to a potential third-party at&lt;!--SOFT_BR--&gt;
 that specific time, in that specific context.
 &lt;/p&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)--&gt;
 &lt;!-- ePub title: &quot;Świat to kilka takich pokoi&quot; --&gt;
-
-&lt;!--EBOOK_ONLY(&lt;!----&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;pl&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;Świat to kilka takich pokoi&lt;/title&gt;
-		&lt;meta name=&quot;author&quot; content=&quot;Jędrzej A. Łopaciński&quot;&gt;
-		&lt;link href=&quot;out/writing-Roboto-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;out/writing-the_taste_of_mi-Merriweather-font.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;
-		&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-&lt;!--)--&gt;
 
 &lt;p&gt;&lt;/p&gt;
 &lt;center class=&quot;merriweather&quot;&gt;
-	&lt;h2 class=&quot;continued&quot;&gt;Interludium&lt;/h2&gt;
-	&lt;h3 class=&quot;continuation&quot;&gt;Świat to kilka takich pokoi&lt;/h3&gt;
+ &lt;h2 class=&quot;continued&quot;&gt;Interludium&lt;/h2&gt;
+ &lt;h3 class=&quot;continuation&quot;&gt;Świat to kilka takich pokoi&lt;/h3&gt;
 &lt;/center&gt;
-
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Serbiańcy znowu się pochlali, ale w sumie
 czegoż się po wschodnich słowianach spodziewać, swoją
 drogą. I, jak to wszystkim &lt;em&gt;homo sapiens&lt;/em&gt;om się dzieje
 filozofować poczęli.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 — My w takim gównianym, za przeproszeniem
 kolegów, pokoju mieszkamy, a Austro-Węgrom
@@ -1670,7 +1810,6 @@ jako dawniej było.
 &lt;p class=&quot;writing indented roboto continuation&quot;&gt;
 — Wiwat Wel'&lt;!--'--&gt;ka Srbija! — stuknęło szkło
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 Dnia następnego zebrali się i omówili plan
 &lt;/p&gt;
@@ -1706,7 +1845,6 @@ Schować. Wycofać się. Zamknąć drzwi.
 &lt;p class=&quot;writing indented roboto continuation&quot;&gt;
 Oddalili się lekkim zatoczem.&lt;/span&gt;
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 Franz-Josef zapukał do drzwi apartamentu
 swojego ulubieńca. Gdy nie usłyszał odpowiedzi nacisnął
@@ -1737,8 +1875,6 @@ nim zdążył się powstrzymać, złożył się w pół, pozbywając
 się sutego obiadu, który zjadł przed chwil
 kilkoma.
 &lt;/p&gt;
-
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 Gdy pozbierał się i uspokoił do punktu, w którem
 nie padnie z arytmii w drodze, pobiegł do Rodziny i
@@ -1788,7 +1924,6 @@ podziękował i zbył delikwentów —
 chcą Wel'kiej Srbii to dostaną Wel'ką
 Srbiję, hy hy hy.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
 Po zapadnięciu zmroku wziął standardowego czterdziesto
 milimetrowego fraga&lt;a href=&quot;#asterix2&quot;&gt;**&lt;/a&gt; i zapieczętowaną kopertę.
@@ -1858,46 +1993,36 @@ kpina w głosie Ruskiego, który,
 po wypowiedzeniu tej kwestii opuścił ciężkim krokiem
 przybytek.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 I tak, drogie dzieci, zaczęła sie WWI.
 &lt;/p&gt;
-
 &lt;br /&gt;
-
 &lt;p&gt;
 &lt;span id=&quot;asterix1&quot;&gt;*spawa — śpi, chłe chłe&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix2&quot;&gt;**frag — granat odłamkowy fragmentacyjny.&lt;/span&gt;&lt;br /&gt;
 &lt;span id=&quot;asterix3&quot;&gt;***Nie lubię Francji&lt;/span&gt;&lt;br /&gt;
 &lt;/p&gt;
-
-
-&lt;!--EBOOK_ONLY(--&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--)​--&gt;
+&lt;!--​--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 06 Jun 2016 23:40:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing/świat_to_kilka_takich_pokoi/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>No gifts this year — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> No gifts this year — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;No gifts this year&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5j7m3m/ip_no_gifts_this_year&quot;&gt;&quot;No gifts this year&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;&lt;em&gt;Fuck&lt;/em&gt;, this one was supposed to be Othala, not Jera!&quot;&lt;br /&gt;
 &quot;Well, it's too late now... Run for your goddamn lives!&quot;&lt;br /&gt;
@@ -1944,25 +2069,23 @@ I tak, drogie dzieci, zaczęła sie WWI.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 26 Dec 2016 02:01:20 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/dead_santa.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Degenerate Watch — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Degenerate Watch — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Degenerate Watch&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5l09xc/wp_write_a_story_where_the_plot_is_based_on_some&quot;&gt;&quot;Degenerate Watch&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Degenerate call 2016, the biggest annual source of income for many governmental workers, including me.
 Hell, it'&lt;!--'--&gt;s not even that the job'&lt;!--'--&gt;s hard or requires special training, which it doesn'&lt;!--'--&gt;t,
@@ -1989,7 +2112,6 @@ Regardless of how obvious that makes the puppetry,
 &lt;em&gt;*Vocal scratch.*&lt;/em&gt;
 &lt;/p&gt;
 &lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &lt;em&gt;There'&lt;!--'--&gt;s no time for that, it matters naught, now the only relief is in dance.
 Dance and fly, high as a kite. The highest praise – the sighs of amazement from the crowd.&lt;/em&gt;
@@ -1997,25 +2119,23 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 08 Jan 2017 04:00:46 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/degenerate.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>The Last Eye — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> The Last Eye — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;The Last Eye&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5qfb3c/cw_write_a_story_in_the_firstperson_in_which_the&quot;&gt;&quot;The Last Eye&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;This is it, then, ay?&quot; A rhetorical question to a person long gone lingers in the air.&lt;br /&gt;
 &lt;em&gt;*Sigh.*&lt;/em&gt; &quot;The big day...&quot; Muttering to myself was quite a weakness of mine. So was not checking my surroundings before rolling about in bed.&lt;br /&gt;
@@ -2073,25 +2193,23 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 02 Feb 2017 13:45:35 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/eye_see.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Cucumber Dog — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Cucumber Dog — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Cucumber Dog&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5kt8x0/wp_you_meet_a_dog_who_stands_upright_with_his&quot;&gt;&quot;Cucumber Dog&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Jakub was returning from the pub when he stumbled upon a stray.
 Normally he'&lt;!--'--&gt;d just kick it and stumble forward but this thing had a toxic-green knapsack and was somehow resilient to his multiple kicks.
@@ -2120,7 +2238,6 @@ He pulled out his trusty brake cord with a loop on the end, and, like many befor
 Assessing his haul, he nodded affirmatively: a couple days'&lt;!--'--&gt; worth of fresh meat and an unused toxic-green knapsack,
   a perfect gift for his grandson when he comes over for holidays.
 &lt;/p&gt;
-
 &lt;br /&gt;
 &lt;p&gt;
 This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipiuk&quot;&gt;Andrzej Pilipiuk&lt;/a&gt;'&lt;!--'--&gt;s
@@ -2129,25 +2246,23 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 29 Dec 2016 15:37:19 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/green_ass_dog.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Ghostly Lasers — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Ghostly Lasers — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Ghostly Lasers&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5qv165/wp_cats_interpret_laser_pointers_the_same_way&quot;&gt;&quot;Ghostly Lasers&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;Speak to me, father&quot;, I called loudly, &quot;for I am in need of advice.&quot;&lt;br /&gt;
 &lt;em&gt;&quot;Oh what is it with this bloody cat, it's getting louder by the day!&quot; *Sigh.* &quot;Might as well try calm it down with this, eh?&quot;&lt;/em&gt;&lt;br /&gt;
@@ -2174,25 +2289,23 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 30 Jan 2017 00:07:59 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/laser_cats.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Get up，soldier — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Get up，soldier — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Get up，soldier&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5ks29s/wp_get_up_soldier_youre_not_dead_yet&quot;&gt;&quot;Get up，soldier&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Pain, left shoulder. Reocurring every three seconds.
 Inhalation. Sharp pain in back of right lung and dull, dry pain in throat.
@@ -2258,25 +2371,23 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 29 Dec 2016 21:51:50 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/not_dead_yet.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Six Minutes — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Six Minutes — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Six Minutes&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5kb0q6/cw_two_people_talking_the_scene_only_lasts_a_few&quot;&gt;&quot;Six Minutes&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;'Ello, luv! What can do for ya'?&quot;&lt;br /&gt;
 &lt;em&gt;Pfft.&lt;/em&gt; &quot;Drop the damn pretense. Glad you're here. Pass me that pouch, would ya'?&quot;&lt;br /&gt;
@@ -2326,7 +2437,6 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
 &lt;em&gt;Reassured. Determined.&lt;/em&gt; &quot;Make Satan sorry he's met you!&quot; &lt;em&gt;*Distant sound of bootsteps.*&lt;/em&gt;&lt;br /&gt;
 &lt;em&gt;*Brass clatters in a leather pouch.*&lt;/em&gt;
 &lt;/p&gt;
-
 &lt;p&gt;
 &lt;span id=&quot;asterix1&quot;&gt;*Новинка &lt;sub&gt;(rus)&lt;/sub&gt;&lt;/span&gt; – novelty/gimmick.&lt;br /&gt;
 &lt;span id=&quot;asterix2&quot;&gt;**Cancer in the form of full brain calcification&lt;/span&gt; – I'&lt;!--'--&gt;m not a doctor but I think I heard that'&lt;!--'--&gt;s possible?
@@ -2337,25 +2447,23 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 28 Dec 2016 01:54:52 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/six_minutes.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>End = Start — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> End = Start — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;End = Start&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5jor6i/cw_you_must_start_and_end_your_story_by_using_the&quot;&gt;&quot;End = Start&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Not ever would she expect this.&lt;br /&gt;
 She was supposed to be dead weeks ago,&lt;br /&gt;
@@ -2370,38 +2478,34 @@ Not ever would she expect this.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 24 Dec 2016 15:00:32 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/start_eq_end.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>The-less — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> The-less — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 .continued {
-	margin-bottom: 0;
+ margin-bottom: 0;
 }
-
 .continuing {
-	margin-top: 0;
-	margin-bottom: 0;
+ margin-top: 0;
+ margin-bottom: 0;
 }
-
 .continuation {
-	margin-top: 0;
+ margin-top: 0;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;The-less&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;writing-the_taste_of_mi-spacing.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5ihrpc/cw_write_a_story_without_using_the_word_the&quot;&gt;&quot;The-less&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Now, she didn'&lt;!--'--&gt;t want &lt;em&gt;any&lt;/em&gt; of this. All that Queen&amp;amp;Country service was putting a tax on her.
 No, she wasn'&lt;!--'--&gt;t exactly unhappy with it, as her salary was surprisingly high for a governmental worker,
@@ -2409,14 +2513,12 @@ No, she wasn'&lt;!--'--&gt;t exactly unhappy with it, as her salary was surprisi
 Not that she had much choice, anyway. There were certain forces at play that would notify much more certain authorities of some
   high-treason-sentence-worthy activity from her past should she leave or do anything untoward with regards to her work.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Capitalist ventures like that of Mrs. Burnham are commonplace around Britain.
 What is much less common is for them to be undiscovered foreign government spy outposts, still quite like that of Mrs. Burnham.
 Having a close relative (like, for example, a spouse) in a governmental position doesn'&lt;!--'--&gt;t help keeping up a front like that (regular background checks),
   but having an easy, regular access to said government'&lt;!--'--&gt;s secrets greatly outweighs ever increasing risk of discovery.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented continued&quot;&gt;
 — You?! But... Why? – Sarah broke down
 &lt;/p&gt;
@@ -2439,41 +2541,36 @@ Having a close relative (like, for example, a spouse) in a governmental position
 &lt;p class=&quot;writing indented continuation&quot;&gt;
 — &quot;Painted Black&quot;
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Snipers fire.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;Here lies Fenella Burnham, 1983-2016. Beloved wife and dedicated merchant.&quot;&lt;br /&gt;
 Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engraved.
 &lt;/p&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;Here lies Sarah Burnham, 1984-2057. Beloved wife and selfless defender of Queen And Country.&quot;
 &lt;/p&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 24 Dec 2016 02:04:36 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/theless.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
     <item>
-      <title>Utopian Assassin — nabijaczleweli@gmail.com (nabijaczleweli)</title>
-      <description>&lt;style&gt;
+      <title> Utopian Assassin — nabijaczleweli — nabijaczleweli@gmail.com (nabijaczleweli)</title>
+      <description>
+
+
+&lt;style&gt;
 .indented {
-	text-indent: 1em;
+ text-indent: 1em;
 }
 &lt;/style&gt;
-
-
 &lt;!-- ePub title: &quot;Utopian Assassin&quot; --&gt;
 
-&lt;!--EBOOK_ONLY(--&gt;&lt;link href=&quot;indent.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;!--)--&gt;
-
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5l4iqi/wp_in_a_futuristic_utopia_the_government_mails&quot;&gt;&quot;Utopian Assassin&quot;&lt;/a&gt;&lt;br /&gt;
-
 &lt;p class=&quot;writing indented&quot;&gt;
 Life'&lt;!--'--&gt;s easy. For ordinary people. You do something good, you get money in up to 7 days processing time plus postal service delays.
 You make someone happy, you get money in up to 7 days processing time plus postal service delays. You get the idea.
@@ -2534,7 +2631,7 @@ Life'&lt;!--'--&gt;s easy. Now for Cubans and me, too.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 31 Dec 2016 18:30:49 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/writing_prompts/trucks_a_cash.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
   </channel>
