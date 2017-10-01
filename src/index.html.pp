@@ -27,22 +27,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK)
 
 
-Things I handwrote and then transcribed, because I like laborious work:
+Some things I'<!--'-->ve written:
 <ul>
-  <li><a href="writing/świat_to_kilka_takich_pokoi/">"Świat to kilka takich pokoi"</a> [PL] — wherein I abstract the causes of WWI in
-                                                                                              the context of a stereotypical social building;
-                                                                                              01.06.2016 - 03.06.2016.</li>
-  <li><a href="writing/każdy_koniec_to_nowy_początek/">"Każdy koniec to nowy początek"</a> [PL] — wherein sociological (r)evolutions happen
-                                                                                                  and we're<!--'--> there to observe it;
-                                                                                                  ~31.03.2016.</li>
-  <li><a href="writing/moments/">"A Widow's Trace"</a> — Overwatch smut, enter at own risk; ~10-20.03.2017.</li>
-  <li><a href="writing/the_taste_of_mi/">"The Taste of MI"</a> [PL] — lass reminsces about her key life points while waiting for her wife;
-                                                                      30.06.2017 - 12.08.2017.</li>
+	<li><a href="writing/moments/">"A Widow's Trace"</a> — Overwatch smut, enter at own risk; ~10-20.03.2017.</li>
+	<li><a href="writing/the_taste_of_mi/">"The Taste of MI"</a> [PL] — lass reminsces about her key life points while waiting for her wife;
+	                                                                    30.06.2017 - 12.08.2017.</li>
+	<li><a href="writing/">More…</a></li>
 </ul>
-
-<p>
-	Some <a href="writing_prompts">writing prompts</a> done by me.
-</p>
 
 <p>
 	Some pretty (? or so I hope) things I made with <a href="maths">maths</a>.
