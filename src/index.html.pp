@@ -76,10 +76,14 @@ Documentation for my Rust projects:
 	    Raw Filesystem API for Rust -- enable simpler browsing with ease)
 	DOC(checksums, checksums, checksums,
 	    Tool for making/verifying checksums of directory trees)
+	DOC(dumplingh, dumplingh, dumplingh,
+	    Issue/PR exporter for GitHub)
 	DOC(termimage, termimage, termimage,
 	    Display images in your terminal, kind of)
 	DOC(blake-rs, blake, blake,
 	    Implementation of the <a href="https://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
+	DOC(OWAPI.rs, owapi, owapi,
+	    Overwatch JSON API bindings for Rust)
 	DOC(dishub, dishub, dishub,
 	    App for posting GitHub activity on Discord)
 	DOC(tweetr, tweetr, tweetr,
