@@ -23,5 +23,5 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 .merriweather {
-	font-family: 'Merriweather', serif;
+	font-family: "Merriweather", serif;
 }

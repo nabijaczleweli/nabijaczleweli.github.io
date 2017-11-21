@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../fontawesome.h"
 #include "../font-mfizz.h"
 #include "../devicon.h"
-#include "gep.h"
+#include "geb.h"
 
 
 <!-- RSS_PUB_DATE: "Sun, 30 Aug 2017 03:38:21 +0200" -->
@@ -142,7 +142,7 @@ For a complete rundown of all accepted <em>lines</em>, see <a href="programmer.h
 <div id="getting-started-syntax-explanation-path-paragraph">
 <p></p>
 All local paths are relative to the descriptor file.
-The comments in the following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, gep/special/book.epupp):
+The comments in the following directory tree show the paths to the files, relative to HIGHLIT_CODE(string, geb/special/book.epupp):
 <kbd><pre class="highlit-code numberise">
 CSPAN(string, first-book)
 CSPAN(punctuation, ├──) CSPAN(string, rendered)
@@ -155,7 +155,7 @@ CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, generated)
 CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, out)
 CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──) CSPAN(string, intro.html) ​ ​CSPAN(comment, # ../../previews/generated/out/intro.html)
 CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──) CSPAN(string, main.html) ​ ​ ​CSPAN(comment, # ../../previews/generated/out/main.html)
-CSPAN(punctuation, └──) CSPAN(string, gep)
+CSPAN(punctuation, └──) CSPAN(string, geb)
 CSPAN(punctuation,  ​ ​ ​ ​└──) CSPAN(string, first)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​ ​CSPAN(comment, # intro.html)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, book.epupp) ​ ​ ​ ​ ​ ​CSPAN(comment, # book.epupp)
@@ -216,7 +216,7 @@ If you have your descriptor and are ready to assemble it into an e-book open the
 <kbd><pre class="highlit-code numberise">
 CSPAN(punctuation, $) gen-epub-book CSPAN(string, first-book.epupp) CSPAN(string, first-book.epub)
 </pre></kbd>
-After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called <code>first-book.epub</code>. <!--'-->
+After which, if you did everything right and GEB() didn't throw you an error, you should now have a file called <code>first-book.epub</code>. <!--'-->
 Congratulations! You can now read, verify and convert it using, e.g., <a href="//calibre-ebook.com/">Calibre</a>.
 </div>
 

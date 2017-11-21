@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../fontawesome.h"
 #include "../font-mfizz.h"
 #include "../devicon.h"
-#include "gep.h"
+#include "geb.h"
 
 
 BOILERPLATE(gen-epub-book for programmers, feature sets and links to various gen-epub-book implementations, en-GB, STYLESHEETS SCRIPTS)
@@ -500,12 +500,12 @@ CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, generated)
 CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, out)
 CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──) CSPAN(string, intro.html)
 CSPAN(punctuation, │ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──) CSPAN(string, main.html)
-CSPAN(punctuation, └──) CSPAN(string, gep)
+CSPAN(punctuation, └──) CSPAN(string, geb)
 CSPAN(punctuation,  ​ ​ ​ ​└──) CSPAN(string, special)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​├──) CSPAN(string, intro.html)
 CSPAN(punctuation,  ​ ​ ​ ​ ​ ​ ​ ​└──) CSPAN(string, book.epupp)
 </pre></kbd>
-If <code>gep/special/book.epupp</code>
+If <code>geb/special/book.epupp</code>
 <ul>
 	<li>specifying <code>intro.html</code>, <code>main.html</code> and <code>ending.html</code> is built with</li>
 	<li><em>named</em> include dir "previews" pointing at <code>../../previews/generated/out</code>, then an</li>
@@ -514,7 +514,7 @@ If <code>gep/special/book.epupp</code>
 the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
 CSPAN(string, book.epub)
-CSPAN(punctuation, ├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​CSPAN(comment, # From gep/special/)
+CSPAN(punctuation, ├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​CSPAN(comment, # From geb/special/)
 CSPAN(punctuation, ├──) CSPAN(string, previews)
 CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, main.html) ​ ​CSPAN(comment, # From previews/generated/out/)
 CSPAN(punctuation, └──) CSPAN(string, ending.html) ​ ​ ​ ​CSPAN(comment, # From rendered/output/)
