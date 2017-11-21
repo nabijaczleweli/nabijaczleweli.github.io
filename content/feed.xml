@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 15 Nov 2017 19:00:25 +0000
+      Tue, 21 Nov 2017 22:08:22 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 15 Nov 2017 19:00:25 +0000
+      Tue, 21 Nov 2017 22:08:22 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -261,7 +261,7 @@ For a complete rundown of all accepted &lt;em&gt;lines&lt;/em&gt;, see &lt;a hre
 &lt;div id=&quot;getting-started-syntax-explanation-path-paragraph&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 All local paths are relative to the descriptor file.
-The comments in the following directory tree show the paths to the files, relative to &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;string&quot;&gt;gep/special/book.epupp&lt;/span&gt;&lt;/kbd&gt;:
+The comments in the following directory tree show the paths to the files, relative to &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;span class=&quot;string&quot;&gt;geb/special/book.epupp&lt;/span&gt;&lt;/kbd&gt;:
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
 &lt;span class=&quot;string&quot;&gt;first-book&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;rendered&lt;/span&gt;
@@ -274,7 +274,7 @@ The comments in the following directory tree show the paths to the files, relati
 &lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;out&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../previews/generated/out/intro.html&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../previews/generated/out/main.html&lt;/span&gt;
-&lt;span class=&quot;punctuation&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;gep&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;geb&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;first&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# intro.html&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;book.epupp&lt;/span&gt; ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# book.epupp&lt;/span&gt;
@@ -330,7 +330,7 @@ If you have your descriptor and are ready to assemble it into an e-book open the
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
 &lt;span class=&quot;punctuation&quot;&gt;$&lt;/span&gt; gen-epub-book &lt;span class=&quot;string&quot;&gt;first-book.epupp&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;first-book.epub&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
-After which, if you did everything right and GEP() didn't throw you an error, you should now have a file called &lt;code&gt;first-book.epub&lt;/code&gt;. &lt;!--'--&gt;
+After which, if you did everything right and &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; didn't throw you an error, you should now have a file called &lt;code&gt;first-book.epub&lt;/code&gt;. &lt;!--'--&gt;
 Congratulations! You can now read, verify and convert it using, e.g., &lt;a href=&quot;//calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.
 &lt;/div&gt;
 &lt;h2 id=&quot;license&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#license&quot;&gt;#&lt;/a&gt; License&lt;/h2&gt;

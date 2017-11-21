@@ -49,7 +49,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  font-size: calc(19em / 22);
 }
 .roboto-unscale {
- /* Normalise to "normal" size (e.g. for other fornts) ((22px->19px)->22px) */
+ /* Normalise to "normal" size (e.g. for other fonts) ((22px->19px)->22px) */
  font-size: calc(22em / 19);
 }
 .roboto-em {
