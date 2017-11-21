@@ -3,6 +3,57 @@ img {
   box-shadow: calc(1em / 7) calc(1em / 2.8) calc(1em / 2) rgba(0, 0, 0, 0.5);
 }
 
+#logo-img-container {
+  height: 256px;
+  display: inline-block;
+  position: relative;
+}
+
+#logo-img {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+#logo-img:hover {
+  opacity: 0;
+}
+
+#logo-img-founding-fathers {
+  opacity: 0;
+  position: fixed;
+  top: -90000px;
+  transition: opacity 0.3s;
+}
+
+#logo-img-founding-fathers.active {
+  position: relative;
+  top: -256px;
+}
+
+#logo-img-founding-fathers.active:hover {
+  opacity: 1;
+}
+
+#logo-img-DMX {
+  opacity: 0;
+  position: fixed;
+  top: -90000px;
+  transition: opacity 0.3s;
+}
+
+#logo-img-DMX.active {
+  position: relative;
+  top: -256px;
+}
+
+#logo-img-DMX.active:hover {
+  opacity: 1;
+}
+
 body {
   background: #0d2125 url('../assets/background.png') no-repeat center center fixed;
 
@@ -14,4 +65,8 @@ body {
 
 body .container {
   max-width: 600px;
+}
+
+.invisible {
+  display: none;
 }
