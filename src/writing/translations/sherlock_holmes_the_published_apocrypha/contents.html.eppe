@@ -1,0 +1,153 @@
+#include "../../variable-selectors.h"
+#include "../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "Spis Treści" -->
+
+
+#ifdef EBOOK
+
+#define CONTENT(id) href=STR(id.html) class="content-link"
+
+#else
+
+#define CONTENT(id) href=STR(HASH​FORCED_SPACER​id) class="content-link"
+
+#endif
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                  FORCED_NEWLINE
+<html lang="pl">                                                                 FORCED_NEWLINE
+	<head>                                                                         FORCED_NEWLINE
+		<title>Spis Treści</title>                                                   FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">      FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                       FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet"> FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-effects.css" rel="stylesheet">           FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                 FORCED_NEWLINE
+	</head>                                                                        FORCED_NEWLINE
+	<body>                                                                         FORCED_NEWLINE
+<!--)-->
+
+<style>
+.content-link {
+	color: initial;
+}
+</style>
+
+
+<p></p>
+<center><h2 class="merriweather">Spis Treści</h2></center>
+
+<p class="writing indented">
+<a CONTENT(introduction)>Wprowadzenie</a>
+</p>
+
+<p class="writing continued">
+<strong><a CONTENT(the-parodies)>Parodie</a></strong>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-field-bazaar)>The Field Bazaar</a> <!-- TODO -->
+</p>
+<p class="writing indented continuing">
+<a CONTENT(how-watson-learned-the-trick)>Jak Watson Nauczył Się Sztuczki</a>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-adventure-of-the-two-collaborators)>Przygoda Dwóch Współpracowników</a>
+</p>
+<p class="writing indented continuation">
+J. M. Barrie
+</p>
+
+<p class="writing continued">
+<strong><a CONTENT(the-stories-of-mystery)>Historie Tajemnicy</a></strong>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-man-with-the-watches)>Człowiek z Zegarkami</a>
+</p>
+<p class="writing indented continuation">
+<a CONTENT(the-lost-special)>Zaginiony Pociąg Specjalny</a>
+</p>
+
+<p class="writing continued">
+<strong><a CONTENT(william-gillette-as-sherlock-holmes)>William Gillette jako Sherlock Holmes</a></strong>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(sherlock-holmes)>Sherlock Holmes</a>
+</p>
+<p class="writing indented continuing">
+<em class="roboto-em">Dramat w Czterech Aktach</em>
+</p>
+<p class="writing indented continuing">
+Sir Arthur Conan Doyle i William Gillette
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-painful-predicament-of-sherlock-holmes)>Bolesne Położenie Sherlocka Holmesa</a>
+</p>
+<p class="writing indented continuing">
+<em class="roboto-em">Fikcja w Około Jednej Dziesiątej Aktu</em>
+</p>
+<p class="writing indented continuation">
+William Gillette
+</p>
+
+<p class="writing continued">
+<strong><a CONTENT(conan-doyle-as-dramatist)>Conan Doyle jako Dramaturg</a></strong>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-speckled-band)>Nakrapiana Wstęga</a>
+</p>
+<p class="writing indented continuing">
+<em class="roboto-em">Przygoda Sherlocka Holmesa</em>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-crown-diamond)>Diament Koronny</a>
+</p>
+<p class="writing indented continuation">
+<em class="roboto-em">Wieczór z Sherlockiem Holemesem</em>
+</p>
+
+<p class="writing continued">
+<strong><a CONTENT(an-outline)>Szkic</a></strong>
+</p>
+<p class="writing indented continuation">
+<a CONTENT(plot-for-sherlock-holmes-story)>Fabuła Do Historii o Sherlocku Holmesie</a>
+</p>
+
+<p class="writing continued">
+<strong><a CONTENT(the-discovery)>Odkrycie</a></strong>
+</p>
+<p class="writing indented continuing">
+<a CONTENT(the-case-of-the-man-who-was-wanted)>Przypadek Człowieka, Który Był Poszukiwany</a>
+</p>
+<p class="writing indented continuation">
+Arthur Whitaker
+</p>
+
+
+</p>
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
+                          ---------- ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef CONTENT

@@ -1,0 +1,32 @@
+Name: Sherlock Holmes, the Published Apocrypha (ew. Sherlock Holmes, Opublikowane Apokryfy)
+
+Include: LICENSE-Roboto
+Include: LICENSE-CREATIVE
+Include: LICENSE-Merriweather
+Include: ../../indent.css
+Include: writing/Roboto-font.css
+Include: ../the_taste_of_mi/spacing.css
+Include: writing/the_taste_of_mi/effects.css
+Include: writing/the_taste_of_mi/MathJax-font.css
+Include: writing/the_taste_of_mi/Merriweather-font.css
+
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf
+
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf
+
+Content: sherlock_holmes_the_published_apocrypha/title.html
+Content: sherlock_holmes_the_published_apocrypha/dedication.html
+Content: writing/translations/sherlock_holmes_the_published_apocrypha/contents.html
+
+Author: Jędrzej Aleksander Łopaciński
+Date: 2018-06-20T18:05:01+02:00
+Language: pl

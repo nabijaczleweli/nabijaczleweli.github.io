@@ -28,7 +28,7 @@ BEGIN {
 	print "    <title>nabijaczleweli's page</title>"
 	print "    <link>https://nabijaczleweli.xyz/content</link>"
 	print "    <description>Newest articles on nabijaczleweli.xyz</description>"
-	print "    <language>en-BR</language>"
+	print "    <language>en-GB</language>"
 	print "    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>"
 	print "    <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>"
 	print "    <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>"
