@@ -20,7 +20,7 @@ install:
   -
   - mkdir "$HOME/bin"
   - curl https://sh.rustup.rs | bash -s -- -y --no-modify-path
-  - cargo install gen-epub-book
+  - cargo install gen-epub-book || true
 
 script:
   - make OUTDIR=../content/
@@ -41,7 +41,7 @@ after_success:
       git config --global user.name "Nabijaczleweli Autouploader Bot";
       git config --global push.default simple;
       git add -A .;
-      git commit -F ../DOC_UPDATE_MSG;
+      git commit -F ../DOC_UPDATE_MSG --date="$(git log "$TRAVIS_COMMIT_RANGE" -1 --pretty="%aI")";
       git push;
       popd;
     fi
