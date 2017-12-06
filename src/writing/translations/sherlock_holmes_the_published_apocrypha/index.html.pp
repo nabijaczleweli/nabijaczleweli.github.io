@@ -30,22 +30,18 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 
 <style>
 #include "../../../indent.css"
+#include "Roboto-additions.css"
 #include "../../the_taste_of_mi/spacing.css"
 </style>
-<span>
 
 
 #include "title.html"
 <h1>&nbsp;</h1>
-<span class="roboto">
 #include "dedication.html"
 <h1>&nbsp;</h1>
 #include "contents.html.eppe"
 <h1>&nbsp;</h1>
 #include "introduction.html.eppe"
-</span>
-
-</span>
 
 WORD_COUNTER_END_NON_ENGLISH()
 WRITING_END()

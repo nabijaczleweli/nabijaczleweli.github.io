@@ -17,71 +17,73 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 
 #define MATH(...) <span class="math-font-normal roboto-unscale">__VA_ARGS__</span>
+#define EM(...) <em class="roboto-em">__VA_ARGS__</em>
 
 
 <!--EBOOK_ONLY(<!---->
-<!DOCTYPE html>                                                                  FORCED_NEWLINE
-<html lang="pl">                                                                 FORCED_NEWLINE
-	<head>                                                                         FORCED_NEWLINE
-		<title>Spis Treści</title>                                                   FORCED_NEWLINE
-		<meta name="author" content="nabijaczleweli">                                FORCED_NEWLINE
-		<link href="../indent.css" rel="stylesheet">                                 FORCED_NEWLINE
-		<link href="writing-Roboto-font.css" rel="stylesheet">                       FORCED_NEWLINE
-		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                FORCED_NEWLINE
-		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">      FORCED_NEWLINE
-		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet"> FORCED_NEWLINE
-	</head>                                                                        FORCED_NEWLINE
-	<body>                                                                         FORCED_NEWLINE
+<!DOCTYPE html>                                                                                                   FORCED_NEWLINE
+<html lang="pl">                                                                                                  FORCED_NEWLINE
+	<head>                                                                                                          FORCED_NEWLINE
+		<title>Spis Treści</title>                                                                                    FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                                                 FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                                                  FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                                                        FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                                                 FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">                                       FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                  FORCED_NEWLINE
+		<link href="writing-translations-sherlock_holmes_the_published_apocrypha-MathJax-font.css" rel="stylesheet">  FORCED_NEWLINE
+	</head>                                                                                                         FORCED_NEWLINE
+	<body>                                                                                                          FORCED_NEWLINE
 <!--)-->
 
 
 <p></p>
 <center><h2 id="introduction" class="merriweather">Wprowadzenie</h2></center>
 
-<p class="writing indented continued">
+<p class="writing roboto indented continued">
 Jest miarą gigantycznej popularności Sherlocka Holmesa,
 że jest on najwięcej imitowaną postacią literacką. Prawie od
 momentu swojego stworzenia, mistrz sztuki detekcji Sir Arthura Conana Doyle'a<!--'-->
 był tematem większej ilości satyr, parodii, pastiszy,
 i adaptacji dramatycznych, niż nawet najgorliwszy z "Sherlockian"
-może policzyć. Suma w <em>The World Bibliography of Sherlock Holmes
-and Dr. Watson</em> Ronalda B. De Waalsa (MATH(1974)) to osiem-
+może policzyć. Suma w EM(The World Bibliography of Sherlock Holmes
+and Dr. Watson) Ronalda B. De Waalsa (MATH(1974)) to osiem-
 czy dziewięćset, a i liczba ta nieustająco wzrasta.
 </p>
-<p class="writing indented continuing">
+<p class="writing roboto indented continuing">
 Według badaczy Anthony'ego Bouchera, najwcześniejsza<!--'-->
-Sherlockowa podróbka pojawiła się w <em>The Idler</em> na Maj MATH(1892)–magazyn
+Sherlockowa podróbka pojawiła się w EM(The Idler) na Maj MATH(1892)–magazyn
 do którego Conan Doyle pisywał wiele swoich
 nie-Holmesowskich dzieł. Mark Twain również napisał jedno z pierwszych–i najgorszych.
 Poważne pastisze Augusta Derletha z Solar Pons w roli głównej
 obrosły swoją własną publicznością fanów, i oburzający
 Schlock Homes Roberta L. Fisha ma legion lojalnych zwolenników. Powieści o Holmesie
 Nicholasa Meyera zainspirowały całą nową branżę pseudo-Sherlockowych
-ripoffów o różnych stopniach okropności.                                                              <!-- TODO ripoff -->
+ripoffów o różnych stopniach okropności.                                                          <!-- TODO ripoff -->
 </p>
-<p class="writing indented continuing">
+<p class="writing roboto indented continuing">
 W MATH(1944) the Conan Doyle Estate zakazała publikacji pod groźbą postępowania
 prawnego antologii pastiszy złożonej przez Ellery Queen nazwanej
-<em>The Misadventures of Sherlock Holmes</em>. Dwa czy trzy lata później
-miała miejsce mało entuzjastyczna próba zatrzymania publikacji <em>Baker
-Street Journal</em> na podstawie naruszania prawa autorskiego na Sherlocku Holmesie. Ale Estate       <!-- TODO jak copyright zrobić? -->
+EM(The Misadventures of Sherlock Holmes). Dwa czy trzy lata później
+miała miejsce mało entuzjastyczna próba zatrzymania publikacji EM(Baker
+Street Journal) na podstawie naruszania prawa autorskiego na Sherlocku Holmesie. Ale Estate       <!-- TODO jak copyright zrobić? -->
 wkrótce ustąpiła, i syn Sir Arthura Adrian Conan Doyle napisał
-wybitną serię pastiszy zatytułowaną <em>The Exploits of Sherlock
-Holmes</em> we współpracy z Johnem Dickinsonem Carrem.
+wybitną serię pastiszy zatytułowaną EM(The Exploits of Sherlock
+Holmes) we współpracy z Johnem Dickinsonem Carrem.
 </p>
-<p class="writing indented continuing">
+<p class="writing roboto indented continuing">
 Adrian był w świetnym towarzystwie–bo nawet sam Sir Arthur
 Conan Doyle nie uniknął pokusy imitacji swojego
 własnego stworzenia.
 </p>
-<p class="writing indented continuing">
+<p class="writing roboto indented continuing">
 W dodatku do czterech powieści i pięćdziesięciu sześciu historyjek które
 stanowią "kompletnego" Sherlocka Holmesa, Doyle napisał dziewięć innych
 dzieł w których występuje wielki detektyw. Jedno zostało
 nieodzyskiwalnie zagubione. Dwa pozostają nieopublikowane przy naleganiu jego
 dziedziców. Pozostałe sześć jest zebrane w tym tomie po raz pierwszy.
 </p>
-<p class="writing indented continuing">
+<p class="writing roboto indented continuing">
 Tak jak sześćdziesiąt "kompletnych" opowieści znane jest jako "Kanon", albo
 "Święte Pisma", Sherlockianie nazwali ową resztę
 tworów "Apokryfami". Doyle je napisał–nie ma żadnej
@@ -89,12 +91,12 @@ wątpliwości–ale z różnych powodów nigdy nie uznał zebrania ich za stosow
 i pozostały przez to ukryte, znane tylko tym niewielu
 Sherlockianom których wspólną rozrywką jest wiedzenie tego rodzaju rzeczy.
 </p>
-<p class="writing indented continuing">
+<p class="writing roboto indented continuing">
 I do teraz ich antologizacja nie była możliwa. Sir
 Arthur był swoim najgorszym krytykiem–w więcej niż jeden sposób, bo
 jego samoosąd nie zawsze był dobry. Gorzko oburzał się na
 nieautoryzowaną publikację tych dzieł, które uważał za
-niegodne, i po jego śierci w MATH(1930) jego dzieci stały się
+niegodne, i po jego śmierci w MATH(1930) jego dzieci stały się
 jeszcze bardziej opiekuńcze, agresywnie ograniczając, które z
 pisarstwa ich ojca może dotrzeć do społeczeństwa. Przez prawie czterdzieści lat
 Sherlockianie skarżyli się, bezradnie i uprzejmie, na tych "krnąbrnych<!--"-->
@@ -102,24 +104,24 @@ spadkobierców", ale ostatnio prawa autorskie zostały sprzedane i nowi<!--"-->
 właściciele są bardziej otwarci na argumenty. Wymagane zezwolenie zostało
 w końcu przyznane.
 </p>
-<p class="writing indented continuing">
-Ta książka jest podtytułowana "<em>Opublikowane</em> Apokryfy". Dalej są
-te <em>nieopublikowane</em> Apokryfy–dwie zwodnicze dzieła z ręki własnej Sir
+<p class="writing roboto indented continuing">
+Ta książka jest podtytułowana "<!--"-->EM(Opublikowane) Apokryfy". Dalej pozostają<!--"-->
+te EM(nieopublikowane) Apokryfy–dwie zwodnicze dzieła z ręki własnej Sir
 Arthura Conana Doyle'a–których publikacja pozostaje zakazana.<!--'-->
-To <em>The Angels Of Darkness</em>, trzyaktowa sztuka, napisana
-MATH(1980), bazowana na Mormońskiej retrospekcji w <em>A Study in Scarlet</em>, ustawionej w
+To EM(The Angels Of Darkness), trzyaktowa sztuka, napisana
+MATH(1980), bazowana na Mormońskiej retrospekcji w EM(A Study in Scarlet), ustawionej w
 San Francisco, i mającej za swoją główną postać Doktora Watsona;
-i <em>The Stonor Case</em>, "pierwsza wersja" dramatu <em>The Speckled Band</em> z MATH(1910).
-<em>The Angels Of Darkness</em> zostało odkryte około MATH(1946). <em>The Stonor Case</em> było widziane przez Pierre'a<!--'-->
-Nordona kiedy badał swoją biografię Doyle'a<!--'--> z MATH(1966).
+i EM(The Stonor Case), "pierwsza wersja" dramatu EM(The Speckled Band) z MATH(1910).
+EM(The Angels Of Darkness) zostało odkryte około MATH(1946). EM(The Stonor Case) było widziane przez Pierre'a<!--'-->
+Nordona kiedy prowadził badania do swojej swoją biografii Doyle'a<!--'--> z MATH(1966).
 </p>
-<p class="writing indented continuing">
-Więc <em>nieopublikowane</em> Apokryfy takimi pozostają. "Mój ojciec nie<!--"-->
+<p class="writing roboto indented continuing">
+Więc EM(nieopublikowane) Apokryfy takimi pozostają. "Mój ojciec nie<!--"-->
 życzył sobie ich opublikowanymi, moi bracia również, ani ja", Dame Jean<!--"-->
 Conan Doyle, ostatni bezpośredni potomek, napisała do
 nas. Z pojawieniem się tego woluminu, fani i naukowcy
 Sherlocka Holmesa mają wiele do bycia wdzięcznym za–i wiele do
-oczekiwania na.                                                                                           <!-- TODO niezręcznie -->
+oczekiwania na.                                                                                   <!-- TODO niezręcznie -->
 </p>
 
 
