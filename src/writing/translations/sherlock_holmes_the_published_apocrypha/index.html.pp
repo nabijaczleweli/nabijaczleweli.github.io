@@ -13,8 +13,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../../writing.h"
 
 
-#define MATH(...) <span class="math-font-normal roboto-unscale">__VA_ARGS__</span>
-
 <!-- TODO RSS_PUB_DATE -->
 
 
@@ -43,6 +41,8 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 #include "dedication.html"
 <h1>&nbsp;</h1>
 #include "contents.html.eppe"
+<h1>&nbsp;</h1>
+#include "introduction.html.eppe"
 </span>
 
 </span>
