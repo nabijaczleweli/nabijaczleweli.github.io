@@ -3,7 +3,7 @@ MathJax.Hub.Config({
   extensions: ["asciimath2jax.js"],
   asciimath2jax: {
     delimiters: [['[​[​', '​]​]']],
-    preview: "[[math]]"
+    preview: "[[maths]]"
   },
   AsciiMath: {
     decimal: "."

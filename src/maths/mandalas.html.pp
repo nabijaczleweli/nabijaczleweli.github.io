@@ -27,62 +27,79 @@ BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK 
 
 <style>
 #include "../indent.css"
+#include "../writing/the_taste_of_mi/spacing.css"
 </style>
 
 
-<div>
-<p class="indented">
+<p class="indented continued">
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:
 </p>
 <a href="/content/assets/mandalas/900x900.png" target="_blank">
-	<img src="/content/assets/mandalas/900x900.png" class="bigimage" /></a><br />
+	<img src="/content/assets/mandalas/900x900.png" alt="Two-dimensional RGB mandala" class="bigimage zoomable" /></a>
+<p class="indented continuation">
 <small>Click for big version.</small>
-<p class="indented">
+</p>
+<p class="indented continued">
 It uses a very simple process (see <a href="#show-scans">below</a>), which can be used in any
 MATHJAX(beta in NN ∖ {0})-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):<!--'-->
 </p>
-&emsp;<iframe width="560" height="315" src="//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" frameborder="0" allowfullscreen
-              style="max-width: 100%;">
-      </iframe>
-<p></p>
+<div class="indented continuation">
+<iframe width="560" height="315" src="//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" frameborder="0" allowfullscreen style="max-width: 100%;">
+</iframe>
 </div>
 
-<p>
+<p class="continued">
 <strong>"How long does rendering a thing such as this take?"</strong>, one might ask.
 	Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness<!--'-->
-  one need run the algorithm body many times, an acceptable amount I found was:<br />
-	MATHJAX(log(n_max) = |~log(prod_i size_i)~| + 1),<br />
+  one need run the algorithm body many times, an acceptable amount I found was:
+</p>
+<p class="continuing">
+	MATHJAX(log(n_max) = |~log(prod_i size_i)~| + 1),
+</p>
+<p class="continuation">
 	(which still doesn't perfectly fill more complex corner setups), so for<!--'-->
 	MATHJAX(size = [900, 900, 900] => n_max = 10^10),
 	which takes about MATHJAX(7 1/2 h) on my PC if I try to not cook it (and I generally do).
 </p>
 
-<p>
+<p class="continued">
 A different question to be asked is
 	<strong>"How does one</strong><!--"-->
 	<span style="text-decoration: line-through;">laugh at the shitty code</span>
 	<strong>play around with the code that generates these myself?"</strong>.<!--"-->
-	Well, thanks to the wonders of the MATHJAX(fr "Internet"), you can! In most-to-least bad order:<br />
-&emsp;<a href="//github.com/nabijaczleweli/mandalas" target="_blank">Here</a>'s an early version in C++,<!--'-->
-	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.<!--'--><br />
-&emsp;<a href="/content/assets/mandalas/mandalas-js/mandele.html">Here</a>'s the very first version, in JavaScript, <!--'-->
+	Well, thanks to the wonders of the MATHJAX(fr "Internet"), you can! In most-to-least bad order:
+</p>
+<p class="indented continuing">
+<a href="//github.com/nabijaczleweli/mandalas" target="_blank">Here</a>'s an early version in C++,<!--'-->
+	featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.<!--'-->
+</p>
+<p class="indented continuing">
+<a href="/content/assets/mandalas/mandalas-js/mandele.html">Here</a>'s the very first version, in JavaScript, <!--'-->
 	used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version
-	(<a href="javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')">download as ZIP</a>).<br />
-&emsp;<a href="//github.com/nabijaczleweli/mandalas-rs" target="_blank">Here</a>'s a pretty-much release version in Rust,<!--'-->
+	(<a href="javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')">download as ZIP</a>).
+</p>
+<p class="indented continuation">
+<a href="//github.com/nabijaczleweli/mandalas-rs" target="_blank">Here</a>'s a pretty-much release version in Rust,<!--'-->
 	used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
-	make things based on the algorithm. Will work and build pretty much anywhere.<br />
+	make things based on the algorithm. Will work and build pretty much anywhere.
 </p>
 
-<p>
-<strong>"I don't care, I just wanna look at more cool shit!"</strong> — I got you covered on this front, too:<br />
-&emsp;<a href="//gist.github.com/nabijaczleweli/8c408e706c097850f5b7b4260035f45c" target="_blank">Here</a>'s<!--'-->
+<p class="continued">
+<strong>"I don't care, I just wanna look at more cool shit!"</strong> — I got you covered on this front, too:
+</p>
+<p class="indented continuing">
+<a href="//gist.github.com/nabijaczleweli/8c408e706c097850f5b7b4260035f45c" target="_blank">Here</a>'s<!--'-->
 	just a lot of mandalas in various sizes, colours, and shapes. Make sure to be on Wi-Fi, because they get really,
-	<em>really</em> big in a couple places.<br />
-&emsp;<a href="//youtu.be/D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" target="_blank">Here</a>'s<!--'-->
-	a playlist with some 3-dimensional mandalas and classical music atop.<br />
-&emsp;I'm out of things to put here, because I'm not a cool person <em>en general</em>.
-	<small>(What else did you expect, I do maths for fun)</small><br />
+	<em>really</em> big in a couple places.
+</p>
+<p class="indented continuing">
+<a href="//youtu.be/D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" target="_blank">Here</a>'s<!--'-->
+	a playlist with some 3-dimensional mandalas and classical music atop.
+</p>
+<p class="indented continuation">
+I'm out of things to put here, because I'm not a cool person <em>en general</em>.
+	<small>(What else did you expect, I do maths for fun)</small>
 </p>
 
 <p>
@@ -90,41 +107,74 @@ A different question to be asked is
 	then reach me over at anything listed <a href="/" target="_blank">here</a>. I don't have a life so I'll probably respond uncannily quickly.
 </p>
 
-<div class="indented">
-<p></p>
-<strong>"But where's the <em>algorithm</em>?"</strong> – Here's the raw version:<br /> <!--'-->
-<br />
-<br />
-&emsp;MATHJAX(sf "Mandala Generation - Ton" hat(sf "c") sf "i Juri" hat(sf "c") sf "ev-Grgin")<br />
-<br />
-MATHJAX(alpha in NN ∖ {0} - sf "colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)")<br />
-MATHJAX(c nn (: 3, +oo ) - sf "amount of corners in c-gonal mandala base")<br />
-MATHJAX(C - sf "set of point" - sf "corner points of c-gon mandala base")<br />
-MATHJAX(bar C = c)<br />
-<br />
-MATHJAX(n in NN nn (: alpha + 2; +oo ) - sf "current point number")<br />
-MATHJAX(d = ra\nd((:0, c) nn NN) - sf "current chosen corner")<br />
-<br />
-MATHJAX(P_n = (C_d + P_(n-1)) / 2 => a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|)<br />
-<br />
-MATHJAX(e_m = |P_n P_(n-m)|)<br />
-MATHJAX(E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :))))<br />
-<br />
-MATHJAX(colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha}))<br />
-MATHJAX(or)<br />
-MATHJAX(f = max E)<br />
-MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha)<br />
-<br />
-<br />
-(I'm not a real mathematician, so it's most likely not done properly.)<br />
-<br />
-And <span id="show-scans">here</span>'s a scanned handdrawn version with examples (warning, <em>very</em> big, expand at own risk): <!--'-->
+<p class="indented">
+<strong>"But where's the <em>algorithm</em>?"</strong> – Here's the raw version: <!--'-->
+</p>
+<p class="indented">
+MATHJAX(sf "Mandala Generation - Ton" hat(sf "c") sf "i Juri" hat(sf "c") sf "ev-Grgin")
+</p>
+<p class="continued">
+MATHJAX(alpha in NN ∖ {0} - sf "colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)")
+</p>
+<p class="continuing">
+MATHJAX(c nn (: 3, +oo ) - sf "amount of corners in c-gonal mandala base")
+</p>
+<p class="continuing">
+MATHJAX(C - sf "set of point" - sf "corner points of c-gon mandala base")
+</p>
+<p class="continuation">
+MATHJAX(bar C = c)
+</p>
+
+<p class="continued">
+MATHJAX(n in NN nn (: alpha + 2; +oo ) - sf "current point number")
+</p>
+<p class="continuation">
+MATHJAX(d = ra\nd((:0, c) nn NN) - sf "current chosen corner")
+</p>
+
+<p>
+MATHJAX(P_n = (C_d + P_(n-1)) / 2 => a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|)
+</p>
+
+<p class="continued">
+MATHJAX(e_m = |P_n P_(n-m)|)
+</p>
+<p class="continuation">
+MATHJAX(E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :))))
+</p>
+
+<p class="continued">
+MATHJAX(colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha}))
+</p>
+<p class="continuing">
+MATHJAX(or)
+</p>
+<p class="continuing">
+MATHJAX(f = max E)
+</p>
+<p class="continuation">
+MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha)
+</p>
+
+<p>
+(I'm not a real mathematician, so it's most likely not done properly.)
+</p>
+
+And <span id="show-scans">here</span>'s a scanned hand-drawn version with examples (warning, <em>very</em> big, expand at own risk): <!--'-->
 <p></p>
 <div id="scans" class="hidden">
-&emsp;<a href="/content/assets/mandalas/scan-page1.jpg" target="_blank"><img src="/content/assets/mandalas/scan-page1.jpg" class="scan" /></a><br />
-&emsp;<a href="/content/assets/mandalas/scan-page2.jpg" target="_blank"><img src="/content/assets/mandalas/scan-page2.jpg" class="scan" /></a><br />
-&emsp;<small>Click for big version.</small>
-</div>
+<p class="indented continued">
+<a href="/content/assets/mandalas/scan-page1.jpg" target="_blank">
+	<img src="/content/assets/mandalas/scan-page1.jpg" alt="Page 1 of mandala generation algorithm, including hand-drawn step-by-step sketches" class="zoomable" /></a>
+</p>
+<p class="indented continuing">
+<a href="/content/assets/mandalas/scan-page2.jpg" target="_blank">
+	<img src="/content/assets/mandalas/scan-page2.jpg" alt="Page 2 of mandala generation algorithm, including hand-drawn step-by-step sketches" class="zoomable" /></a>
+</p>
+<p class="indented continuation">
+<small>Click for big version.</small>
+</p>
 </div>
 
 
