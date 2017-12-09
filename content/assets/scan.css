@@ -29,7 +29,7 @@
 	}
 }
 
-img.scan {
+img.zoomable {
 	cursor: -moz-zoom-in;
 	cursor: -webkit-zoom-in;
 	cursor: zoom-in;

@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Tue, 21 Nov 2017 22:08:22 +0000
+      Sat, 09 Dec 2017 13:55:07 +0000
     </pubDate>
     <lastBuildDate>
-      Tue, 21 Nov 2017 22:08:22 +0000
+      Sat, 09 Dec 2017 13:55:07 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -379,98 +379,199 @@ I hope that this document is clear and/or informative, if not,
 .indented {
  text-indent: 1em;
 }
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
 &lt;/style&gt;
-&lt;div&gt;
-&lt;p class=&quot;indented&quot;&gt;
+
+
+&lt;p class=&quot;indented continued&quot;&gt;
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
 &lt;/p&gt;
 &lt;a href=&quot;/content/assets/mandalas/900x900.png&quot; target=&quot;_blank&quot;&gt;
- &lt;img src=&quot;/content/assets/mandalas/900x900.png&quot; class=&quot;bigimage&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+ &lt;img src=&quot;/content/assets/mandalas/900x900.png&quot; alt=&quot;Two-dimensional RGB mandala&quot; class=&quot;bigimage zoomable&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
 &lt;small&gt;Click for big version.&lt;/small&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
 It uses a very simple process (see &lt;a href=&quot;#show-scans&quot;&gt;below&lt;/a&gt;), which can be used in any
 [​[​beta in NN ∖ {0}​]​]-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):&lt;!--'--&gt;
 &lt;/p&gt;
-&amp;emsp;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; frameborder=&quot;0&quot; allowfullscreen
-              style=&quot;max-width: 100%;&quot;&gt;
-      &lt;/iframe&gt;
-&lt;p&gt;&lt;/p&gt;
+&lt;div class=&quot;indented continuation&quot;&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; frameborder=&quot;0&quot; allowfullscreen style=&quot;max-width: 100%;&quot;&gt;
+&lt;/iframe&gt;
 &lt;/div&gt;
-&lt;p&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
 &lt;strong&gt;&quot;How long does rendering a thing such as this take?&quot;&lt;/strong&gt;, one might ask.
  Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
-  one need run the algorithm body many times, an acceptable amount I found was:&lt;br /&gt;
- [​[​log(n_max) = |~log(prod_i size_i)~| + 1​]​],&lt;br /&gt;
+  one need run the algorithm body many times, an acceptable amount I found was:
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+ [​[​log(n_max) = |~log(prod_i size_i)~| + 1​]​],
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
  (which still doesn't perfectly fill more complex corner setups), so for&lt;!--'--&gt;
  [​[​size = [900, 900, 900] =&gt; n_max = 10^10​]​],
  which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
-&lt;p&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
 A different question to be asked is
  &lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
  &lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
  &lt;strong&gt;play around with the code that generates these myself?&quot;&lt;/strong&gt;.&lt;!--&quot;--&gt;
- Well, thanks to the wonders of the [​[​fr &quot;Internet&quot;​]​], you can! In most-to-least bad order:&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s an early version in C++,&lt;!--'--&gt;
- featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.&lt;!--'--&gt;&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;/content/assets/mandalas/mandalas-js/mandele.html&quot;&gt;Here&lt;/a&gt;'s the very first version, in JavaScript, &lt;!--'--&gt;
+ Well, thanks to the wonders of the [​[​fr &quot;Internet&quot;​]​], you can! In most-to-least bad order:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;//github.com/nabijaczleweli/mandalas&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s an early version in C++,&lt;!--'--&gt;
+ featuring layers upon layers of terrible code from late-2015/early-2016. You probably don't want to try to build it, headaches afore.&lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;/content/assets/mandalas/mandalas-js/mandele.html&quot;&gt;Here&lt;/a&gt;'s the very first version, in JavaScript, &lt;!--'--&gt;
  used to demostrate as PoC to Tonči himself. You probably want to fuck around, if at all, in that version
- (&lt;a href=&quot;javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')&quot;&gt;download as ZIP&lt;/a&gt;).&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;//github.com/nabijaczleweli/mandalas-rs&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s a pretty-much release version in Rust,&lt;!--'--&gt;
+ (&lt;a href=&quot;javascript:pack_specified_fileset('/content/assets/mandalas/mandalas-js.json')&quot;&gt;download as ZIP&lt;/a&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;a href=&quot;//github.com/nabijaczleweli/mandalas-rs&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s a pretty-much release version in Rust,&lt;!--'--&gt;
  used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
- make things based on the algorithm. Will work and build pretty much anywhere.&lt;br /&gt;
+ make things based on the algorithm. Will work and build pretty much anywhere.
 &lt;/p&gt;
-&lt;p&gt;
-&lt;strong&gt;&quot;I don't care, I just wanna look at more cool shit!&quot;&lt;/strong&gt; — I got you covered on this front, too:&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;//gist.github.com/nabijaczleweli/8c408e706c097850f5b7b4260035f45c&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
+&lt;strong&gt;&quot;I don't care, I just wanna look at more cool shit!&quot;&lt;/strong&gt; — I got you covered on this front, too:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;//gist.github.com/nabijaczleweli/8c408e706c097850f5b7b4260035f45c&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
  just a lot of mandalas in various sizes, colours, and shapes. Make sure to be on Wi-Fi, because they get really,
- &lt;em&gt;really&lt;/em&gt; big in a couple places.&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;//youtu.be/D2Xk6O9x-yk&amp;list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
- a playlist with some 3-dimensional mandalas and classical music atop.&lt;br /&gt;
-&amp;emsp;I'm out of things to put here, because I'm not a cool person &lt;em&gt;en general&lt;/em&gt;.
- &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;&lt;br /&gt;
+ &lt;em&gt;really&lt;/em&gt; big in a couple places.
 &lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;//youtu.be/D2Xk6O9x-yk&amp;list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s&lt;!--'--&gt;
+ a playlist with some 3-dimensional mandalas and classical music atop.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+I'm out of things to put here, because I'm not a cool person &lt;em&gt;en general&lt;/em&gt;.
+ &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;
+&lt;/p&gt;
+
 &lt;p&gt;
 &lt;strong&gt;&quot;I like/don't like this thing and/or would like to tell/contact you about it/something else.&quot;&lt;/strong&gt;,
  then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
 &lt;/p&gt;
-&lt;div class=&quot;indented&quot;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version:&lt;br /&gt; &lt;!--'--&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&amp;emsp;[​[​sf &quot;Mandala Generation - Ton&quot; hat(sf &quot;c&quot;) sf &quot;i Juri&quot; hat(sf &quot;c&quot;) sf &quot;ev-Grgin&quot;​]​]&lt;br /&gt;
-&lt;br /&gt;
-[​[​alpha in NN ∖ {0} - sf &quot;colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)&quot;​]​]&lt;br /&gt;
-[​[​c nn (: 3, +oo ) - sf &quot;amount of corners in c-gonal mandala base&quot;​]​]&lt;br /&gt;
-[​[​C - sf &quot;set of point&quot; - sf &quot;corner points of c-gon mandala base&quot;​]​]&lt;br /&gt;
-[​[​bar C = c​]​]&lt;br /&gt;
-&lt;br /&gt;
-[​[​n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;​]​]&lt;br /&gt;
-[​[​d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;​]​]&lt;br /&gt;
-&lt;br /&gt;
-[​[​P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]&lt;br /&gt;
-&lt;br /&gt;
-[​[​e_m = |P_n P_(n-m)|​]​]&lt;br /&gt;
-[​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]&lt;br /&gt;
-&lt;br /&gt;
-[​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]&lt;br /&gt;
-[​[​or​]​]&lt;br /&gt;
-[​[​f = max E​]​]&lt;br /&gt;
-[​[​colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha​]​]&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-(I'm not a real mathematician, so it's most likely not done properly.)&lt;br /&gt;
-&lt;br /&gt;
-And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned handdrawn version with examples (warning, &lt;em&gt;very&lt;/em&gt; big, expand at own risk): &lt;!--'--&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;div id=&quot;scans&quot; class=&quot;hidden&quot;&gt;
-&amp;emsp;&lt;a href=&quot;/content/assets/mandalas/scan-page1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/content/assets/mandalas/scan-page1.jpg&quot; class=&quot;scan&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
-&amp;emsp;&lt;a href=&quot;/content/assets/mandalas/scan-page2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/content/assets/mandalas/scan-page2.jpg&quot; class=&quot;scan&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
-&amp;emsp;&lt;small&gt;Click for big version.&lt;/small&gt;
+
+&lt;p class=&quot;indented&quot;&gt;
+&lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version: &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+[​[​sf &quot;Mandala Generation - Ton&quot; hat(sf &quot;c&quot;) sf &quot;i Juri&quot; hat(sf &quot;c&quot;) sf &quot;ev-Grgin&quot;​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continued&quot;&gt;
+[​[​alpha in NN ∖ {0} - sf &quot;colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)&quot;​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+[​[​c nn (: 3, +oo ) - sf &quot;amount of corners in c-gonal mandala base&quot;​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+[​[​C - sf &quot;set of point&quot; - sf &quot;corner points of c-gon mandala base&quot;​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+[​[​bar C = c​]​]
+&lt;/p&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
+[​[​n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+[​[​d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;​]​]
+&lt;/p&gt;
+
+&lt;p&gt;
+[​[​P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]
+&lt;/p&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
+[​[​e_m = |P_n P_(n-m)|​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+[​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]
+&lt;/p&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
+[​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+[​[​or​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+[​[​f = max E​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+[​[​colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha​]​]
+&lt;/p&gt;
+
+&lt;p&gt;
+(I'm not a real mathematician, so it's most likely not done properly.)
+&lt;/p&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
+And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned hand-drawn version with examples &lt;!--'--&gt;
+ (warning: &lt;em&gt;very&lt;/em&gt; big, expand at own risk)&lt;span id=&quot;show-scans-punctuation&quot;&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;div id=&quot;scans&quot; class=&quot;continuation hidden&quot;&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;/content/assets/mandalas/scan-page1.jpg&quot; target=&quot;_blank&quot;&gt;
+ &lt;img src=&quot;/content/assets/mandalas/scan-page1.jpg&quot; alt=&quot;Page 1 of mandala generation algorithm, including hand-drawn step-by-step sketches&quot; class=&quot;zoomable&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;/content/assets/mandalas/scan-page2.jpg&quot; target=&quot;_blank&quot;&gt;
+ &lt;img src=&quot;/content/assets/mandalas/scan-page2.jpg&quot; alt=&quot;Page 2 of mandala generation algorithm, including hand-drawn step-by-step sketches&quot; class=&quot;zoomable&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;small&gt;Click for big version.&lt;/small&gt;
+&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+
+&lt;p class=&quot;continued&quot;&gt;
+&lt;strong&gt;On some of the more arbitrary colourspaces.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Since the output image format (PNG) and the video format (H.264) only support RGB
+ (&lt;em&gt;nota bene&lt;/em&gt;: I am omitting a scheissload of detail and specificites I either do not know or that are not relevant
+ &lt;!-- (I mean, there's probably some gamut narrowing depending on the output colour range of your display device, but that is really not useful data) --&gt; &lt;!--'--&gt;
+ because &lt;a href=&quot;//xkcd.com/1882&quot; target=&quot;_blank&quot;&gt;colours are hard&lt;/a&gt;)
+ a conversion is required when going from e.g. CMYK or YUV thereto.
+ More often than not (which is to say, in all spaces but LUMA), that conversion is lossy, which means that &quot;in &lt;code&gt;colourspace&lt;/code&gt;&quot; is a lie,
+ whereas the non-lie version is closer to &quot;in an RGB approximation to &lt;code&gt;colourspace&lt;/code&gt;&quot;.
+ However, most conversions were already set in stone well before I was born and are therefore widely accepted as accurate enough.
+ Some, however, like ROYGBP or, &lt;em&gt;ahem&lt;/em&gt;, RPPDIBLCTGLLYAODBGB, have been made up by yours truly upon the following basis:
+&lt;/p&gt;
+&lt;p class=&quot;continued&quot;&gt;
+[​[​S - sf &quot;set of 3-dimensional vectors&quot; - sf &quot;RGB samples of each colour in a space&quot;​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+[​[​bar S = alpha​]​]
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+[​[​colour P_n - sf &quot;as above&quot;​]​]
+&lt;/p&gt;
+&lt;p&gt;
+[​[​AA c in {r,g,b} : C_(out_c) = (sum_(theta=1)^alpha colour P_(ntheta) S_(theta_c))/(sum_(theta=1)^alpha S_(theta_c))​]​]
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+A full list of conversions and their implementations can be found at the
+ &lt;a href=&quot;//cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html&quot; target=&quot;_blank&quot;&gt;mandalas-rs API documentation&lt;/a&gt;.
+&lt;/p&gt;
+
+
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Tue, 13 Jun 2017 22:42:51 +0200</pubDate>
