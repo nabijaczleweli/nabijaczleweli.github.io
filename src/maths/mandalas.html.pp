@@ -161,10 +161,12 @@ MATHJAX(colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha)
 (I'm not a real mathematician, so it's most likely not done properly.)
 </p>
 
-And <span id="show-scans">here</span>'s a scanned hand-drawn version with examples (warning, <em>very</em> big, expand at own risk): <!--'-->
-<p></p>
-<div id="scans" class="hidden">
-<p class="indented continued">
+<p class="continued">
+And <span id="show-scans">here</span>'s a scanned hand-drawn version with examples <!--'-->
+	(warning: <em>very</em> big, expand at own risk)<span id="show-scans-punctuation">.</span>
+</p>
+<div id="scans" class="continuation hidden">
+<p class="indented continuing">
 <a href="/content/assets/mandalas/scan-page1.jpg" target="_blank">
 	<img src="/content/assets/mandalas/scan-page1.jpg" alt="Page 1 of mandala generation algorithm, including hand-drawn step-by-step sketches" class="zoomable" /></a>
 </p>
@@ -176,6 +178,37 @@ And <span id="show-scans">here</span>'s a scanned hand-drawn version with exampl
 <small>Click for big version.</small>
 </p>
 </div>
+
+<p class="continued">
+<strong>On some of the more arbitrary colourspaces.</strong>
+</p>
+<p class="indented continuation">
+Since the output image format (PNG) and the video format (H.264) only support RGB
+	(<em>nota bene</em>: I am omitting a scheissload of detail and specificites I either do not know or that are not relevant
+	<!-- (I mean, there's probably some gamut narrowing depending on the output colour range of your display device, but that is really not useful data) --> <!--'-->
+	because <a href="//xkcd.com/1882" target="_blank">colours are hard</a>)
+	a conversion is required when going from e.g. CMYK or YUV thereto.
+	More often than not (which is to say, in all spaces but LUMA), that conversion is lossy, which means that "in <code>colourspace</code>" is a lie,
+	whereas the non-lie version is closer to "in an RGB approximation to <code>colourspace</code>".
+	However, most conversions were already set in stone well before I was born and are therefore widely accepted as accurate enough.
+	Some, however, like ROYGBP or, <em>ahem</em>, RPPDIBLCTGLLYAODBGB, have been made up by yours truly upon the following basis:
+</p>
+<p class="continued">
+MATHJAX(S - sf "set of 3-dimensional vectors" - sf "RGB samples of each colour in a space")
+</p>
+<p class="continuing">
+MATHJAX(bar S = alpha)
+</p>
+<p class="continuation">
+MATHJAX(colour P_n - sf "as above")
+</p>
+<p>
+MATHJAX(AA c in {r,g,b} : C_(out_c) = (sum_(theta=1)^alpha colour P_(ntheta) S_(theta_c))/(sum_(theta=1)^alpha S_(theta_c)))
+</p>
+<p class="indented continued">
+A full list of conversions and their implementations can be found at the
+	<a href="//cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html" target="_blank">mandalas-rs API documentation</a>.
+</p>
 
 
 BOILERPLATE_END()
