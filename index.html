@@ -12,7 +12,9 @@
 
     <link href="/css/style.css" rel="stylesheet" />
 
+    <script src="//cdn.rawgit.com/zenorocha/clipboard.js/v1.7.1/dist/clipboard.min.js"></script>
     <script type="text/javascript" src="/js/add_icons.js" id="icon-placeholder"></script>
+    <script type="text/javascript" src="/js/scuttlebutt.js" id="icon-placeholder"></script>
     <script type="text/javascript" src="/js/change_logos.js" id="icon-placeholder"></script>
 
     <title>nabijaczleweli's page</title>
@@ -47,6 +49,17 @@
                 <i class="fa fa-lock" aria-hidden="true"></i>
                 Keybase
               </a>
+            </p>
+            <p>
+              <span class="btn btn-block btn--black" id="scuttlebutt-button">
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                Scuttlebutt
+                <span id="scuttlebutt-status" class="small width-animated width-0">&nbsp;(Copied!)</span>
+              </span>
+            </p>
+            <p id="scuttlebutt-container" class="height-animated">
+              <input type="text" value="@Fv5NC77/OgEkfBeWn5zuqjB0KfQbrlL3xRKX2PtbJh0=.ed25519" readonly="readonly" class="btn btn-block btn--black monospace"
+                     id="scuttlebutt-input" data-clipboard-target="#scuttlebutt-input" ></input>
             </p>
             <p>
               <a href="https://youtube.com/user/nabijaczleweli" class="btn btn-block btn--black">
