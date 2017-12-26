@@ -95,7 +95,7 @@ body .container {
   transition: transform 0.15s ease-in;
   transform-origin: 0 50%;
   display: inline-block;
-  position: fixed;
+  position: absolute;
 }
 
 .width-0 {
