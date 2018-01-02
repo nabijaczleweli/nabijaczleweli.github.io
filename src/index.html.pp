@@ -60,6 +60,8 @@ Documentation for my Rust projects:
 	    A safeguarded <samp>transmute()</samp> for Rust)
 	DOC(gen-epub-book.rs, gen-epub-book, gen_epub_book,
 	    Generate an ePub book from a simple plaintext descriptor in Rust)
+	DOC(registry.pol-rs, registry-pol, registry_pol,
+	    Parser for the <a href="https://msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a>)
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
