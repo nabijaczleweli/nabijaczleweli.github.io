@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define PUN(pun_id, user_id, user_name, msg_id, msg_time, ...)                                                                                          \
 	<li id=STR(pun_id)>__VA_ARGS__                                                                                                         FORCED_NEWLINE \
-	               — <a href=STR(httpsCOLON_SLASH_SLASHchat.stackoverflow.com/users/user_id)>user_name</a>                                FORCED_NEWLINE \
+	               — <a href=STR(httpsCOLON_SLASH_SLASHchat.stackoverflow.com/users/user_id)>user_name</a>                                 FORCED_NEWLINE \
 	               - <a href=STR(httpsCOLON_SLASH_SLASHchat.stackoverflow.com/transcript/message/msg_id##HASH##msg_id)>MATH(msg_time)</a></li>
 
 
@@ -43,6 +43,8 @@ by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>:
 	    "Indiana Jones and the Raiders of the Lost <samp>Arc&lt;T&gt;</samp>")
 	PUN(one-does-not-simply-implement-Sync, 1233251, E_net4, 39687034, 20.10.17  2:34 PM,
 	    "One does not simply implement <samp>Sync</samp>", on top of a man from Lord of the Rings)
+	PUN(would-you-like-some-T, 2408867, Lukas Kalbertodt, 30846902, 30.05.16  8:22 AM,
+	    "Would you like <samp>Some(T)</samp>?")
 </ul>
 
 </span>
