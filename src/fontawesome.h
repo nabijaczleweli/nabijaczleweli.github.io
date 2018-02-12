@@ -15,7 +15,7 @@
 #include "util.h"
 
 
-#define FONTAWESOME_LINK <link href="//cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css" rel="stylesheet" /> FORCED_NEWLINE
+#define FONTAWESOME_LINK <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> FORCED_NEWLINE
 
 
 #define FA(iconname)            <i class=STR(fa fa-iconname)></i>
