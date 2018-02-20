@@ -31,7 +31,7 @@ BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK 
 </style>
 
 
-<p class="indented continued">
+<p class="indented continued" id="intro">
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:
 </p>
 <a href="/content/assets/mandalas/900x900.png" target="_blank">
@@ -49,7 +49,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
 </iframe>
 </div>
 
-<p class="continued">
+<p class="continued" id="render-time">
 <strong>"How long does rendering a thing such as this take?"</strong>, one might ask.
 	Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness<!--'-->
   one need run the algorithm body many times, an acceptable amount I found was:
@@ -63,7 +63,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
 	which takes about MATHJAX(7 1/2 h) on my PC if I try to not cook it (and I generally do).
 </p>
 
-<p class="continued">
+<p class="continued" id="code">
 A different question to be asked is
 	<strong>"How does one</strong><!--"-->
 	<span style="text-decoration: line-through;">laugh at the shitty code</span>
@@ -85,7 +85,7 @@ A different question to be asked is
 	make things based on the algorithm. Will work and build pretty much anywhere.
 </p>
 
-<p class="continued">
+<p class="continued" id="more">
 <strong>"I don't care, I just wanna look at more cool shit!"</strong> — I got you covered on this front, too:
 </p>
 <p class="indented continuing">
@@ -102,12 +102,12 @@ I'm out of things to put here, because I'm not a cool person <em>en general</em>
 	<small>(What else did you expect, I do maths for fun)</small>
 </p>
 
-<p>
+<p id="contact">
 <strong>"I like/don't like this thing and/or would like to tell/contact you about it/something else."</strong>,
 	then reach me over at anything listed <a href="/" target="_blank">here</a>. I don't have a life so I'll probably respond uncannily quickly.
 </p>
 
-<p class="indented">
+<p class="indented" id="algorithm">
 <strong>"But where's the <em>algorithm</em>?"</strong> – Here's the raw version: <!--'-->
 </p>
 <p class="indented">
@@ -179,7 +179,7 @@ And <span id="show-scans">here</span>'s a scanned hand-drawn version with exampl
 </p>
 </div>
 
-<p class="continued">
+<p class="continued" id="colourspace">
 <strong>On some of the more arbitrary colourspaces.</strong>
 </p>
 <p class="indented continuation">
