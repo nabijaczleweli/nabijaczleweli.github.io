@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Mon, 12 Feb 2018 17:47:44 +0000
+      Tue, 20 Feb 2018 15:38:34 +0000
     </pubDate>
     <lastBuildDate>
-      Mon, 12 Feb 2018 17:47:44 +0000
+      Tue, 20 Feb 2018 15:38:34 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -392,7 +392,7 @@ I hope that this document is clear and/or informative, if not,
 &lt;/style&gt;
 
 
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;intro&quot;&gt;
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
 &lt;/p&gt;
 &lt;a href=&quot;/content/assets/mandalas/900x900.png&quot; target=&quot;_blank&quot;&gt;
@@ -410,7 +410,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
 &lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;p class=&quot;continued&quot;&gt;
+&lt;p class=&quot;continued&quot; id=&quot;render-time&quot;&gt;
 &lt;strong&gt;&quot;How long does rendering a thing such as this take?&quot;&lt;/strong&gt;, one might ask.
  Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
   one need run the algorithm body many times, an acceptable amount I found was:
@@ -424,7 +424,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
  which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
 
-&lt;p class=&quot;continued&quot;&gt;
+&lt;p class=&quot;continued&quot; id=&quot;code&quot;&gt;
 A different question to be asked is
  &lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
  &lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
@@ -446,7 +446,7 @@ A different question to be asked is
  make things based on the algorithm. Will work and build pretty much anywhere.
 &lt;/p&gt;
 
-&lt;p class=&quot;continued&quot;&gt;
+&lt;p class=&quot;continued&quot; id=&quot;more&quot;&gt;
 &lt;strong&gt;&quot;I don't care, I just wanna look at more cool shit!&quot;&lt;/strong&gt; — I got you covered on this front, too:
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -463,12 +463,12 @@ I'm out of things to put here, because I'm not a cool person &lt;em&gt;en genera
  &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;
 &lt;/p&gt;
 
-&lt;p&gt;
+&lt;p id=&quot;contact&quot;&gt;
 &lt;strong&gt;&quot;I like/don't like this thing and/or would like to tell/contact you about it/something else.&quot;&lt;/strong&gt;,
  then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
 &lt;/p&gt;
 
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;algorithm&quot;&gt;
 &lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version: &lt;!--'--&gt;
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
@@ -540,7 +540,7 @@ And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned hand-dra
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p class=&quot;continued&quot;&gt;
+&lt;p class=&quot;continued&quot; id=&quot;colourspace&quot;&gt;
 &lt;strong&gt;On some of the more arbitrary colourspaces.&lt;/strong&gt;
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
