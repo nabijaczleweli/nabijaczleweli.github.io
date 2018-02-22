@@ -405,6 +405,24 @@ The following table enumerates supported HIGHLIT_CODE(keyword, key)s and their p
 		  <td>No.</td>
 		  <td>Any.</td>
 		  <td></td></tr>
+	<tr><td>HIGHLIT_CODE(keyword, Description)</td>
+		  <td>File path.</td>
+		  <td>Sets the book's description to the specified file's contents.</td>
+		  <td>No.</td>
+		  <td>0-1</td>
+		  <td>Exclusive with HIGHLIT_CODE(keyword, String-Description) and HIGHLIT_CODE(keyword, Network-Description).</td></tr>
+	<tr><td>HIGHLIT_CODE(keyword, String-Description)</td>
+		  <td>HTML text.</td>
+		  <td>Sets the book's description to the specified string.</td> <!--'-->
+		  <td>No.</td>
+		  <td>0-1</td>
+		  <td>Exclusive with HIGHLIT_CODE(keyword, Description) and HIGHLIT_CODE(keyword, Network-Description).</td></tr>
+	<tr><td>HIGHLIT_CODE(keyword, Network-Description)</td>
+		  <td>URL to remote HTML file.</td>
+		  <td>Sets the book's description to the remote file's contents.</td>
+		  <td>No.</td>
+		  <td>0-1</td>
+		  <td>Exclusive with HIGHLIT_CODE(keyword, Description) and HIGHLIT_CODE(keyword, String-Description).</td></tr>
 </table>
 
 <p id="getting-the-gist-naming-paths-paragraph">
