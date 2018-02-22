@@ -5,9 +5,7 @@ window.addEventListener("load", function() {
 
 	var just_switched = false;
 	Array.from(EXTRA_IMAGES).forEach(function(img, idx) {
-		var next_idx = idx + 1;
-		if(next_idx == EXTRA_IMAGES.length)
-			next_idx = 0;
+		var next_idx = (idx + 1) % EXTRA_IMAGES.length;
 
 		// Only triggered on active alt images
 		img.addEventListener("mouseover", function() {
