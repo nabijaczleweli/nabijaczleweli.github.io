@@ -11,6 +11,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #include "../common.h"
 #include "../fontawesome.h"
+#include "translations/translations.h"
 #include "../writing_prompts/writing_prompts.h"
 
 
@@ -85,6 +86,7 @@ Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly r
 		<li><a href="//4kulturka.blogspot.com/2017/06/moon-is-harsh-mistress.html">Moon Is Harsh Mistress</a> [PL] —
 			Review of Robert A. Heinlein's "Moon Is Harsh Mistress"; <!--'-->
 			MATH(06.04.2017).</li>
+		TRANSLATIONS_LIST()
 	</ul>
 	<p></p>
 </div>
