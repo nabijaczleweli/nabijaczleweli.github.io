@@ -6,20 +6,21 @@ dist: precise
 cache:
   directories:
     - /tmp/calibre-installer-cache
+    - $HOME/.rustup
+    - $HOME/.cargo
     - build
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_63c9d3fcdbeb_key -iv $encrypted_63c9d3fcdbeb_iv -in gh_rsa.enc -out gh_rsa -d
 
 install:
-  - export PATH="$HOME/calibre:$HOME/bin:$PATH"
+  - export PATH="$HOME/calibre:$HOME/.cargo/bin:$PATH"
   - curl -SL https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; import os; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(os.getenv('HOME'))"
   - ebook-convert --version
+  -
   - mkdir "$HOME/bin"
-  - GEN_EPUB_BOOK_RS_VERSION="$(curl -SL https://github.com/nabijaczleweli/gen-epub-book.rs/releases | awk '/h1.*release-title/,/\/h1/' | grep '<a' | awk -F/ '{print($6)}' | awk '-F"' '{print($1); exit}')"
-  - echo "$GEN_EPUB_BOOK_RS_VERSION"
-  - curl -SL "https://github.com/nabijaczleweli/gen-epub-book.rs/releases/download/$GEN_EPUB_BOOK_RS_VERSION/gen-epub-book.rs-$GEN_EPUB_BOOK_RS_VERSION" -o "$HOME/bin/gen-epub-book"
-  - chmod +x "$HOME/bin/gen-epub-book"
+  - curl https://sh.rustup.rs | bash -s -- -y --no-modify-path
+  - cargo install gen-epub-book
 
 script:
   - make OUTDIR=../content/
