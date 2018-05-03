@@ -8,6 +8,7 @@ Include: writing/Roboto-font.css
 Include: ../the_taste_of_mi/spacing.css
 Include: writing/the_taste_of_mi/MathJax-font.css
 Include: writing/the_taste_of_mi/Merriweather-font.css
+Include: sherlock_holmes_the_published_apocrypha/headings.css
 Include: sherlock_holmes_the_published_apocrypha/Roboto-additions.css
 
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
@@ -27,6 +28,7 @@ Content: sherlock_holmes_the_published_apocrypha/title.html
 Content: sherlock_holmes_the_published_apocrypha/dedication.html
 Content: writing/translations/sherlock_holmes_the_published_apocrypha/contents.html
 Content: writing/translations/sherlock_holmes_the_published_apocrypha/introduction.html
+Content: writing/translations/sherlock_holmes_the_published_apocrypha/the-parodies/index.html
 
 Author: Jędrzej Aleksander Łopaciński
 Date: 2018-06-20T18:05:01+02:00

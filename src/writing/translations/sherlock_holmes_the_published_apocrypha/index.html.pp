@@ -29,6 +29,7 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 
 
 <style>
+#include "headings.css"
 #include "../../../indent.css"
 #include "Roboto-additions.css"
 #include "../../the_taste_of_mi/spacing.css"
@@ -42,6 +43,9 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 #include "contents.html.eppe"
 <h1>&nbsp;</h1>
 #include "introduction.html.eppe"
+<h1>&nbsp;</h1>
+#include "the-parodies/index.html.eppe"
+
 
 WORD_COUNTER_END_NON_ENGLISH()
 WRITING_END()

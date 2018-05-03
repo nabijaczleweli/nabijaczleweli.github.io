@@ -1,0 +1,10 @@
+h1.main-heading > a,
+h2.main-heading > a,
+h3.main-heading > a,
+h4.main-heading > a,
+h5.main-heading > a,
+h6.main-heading > a,
+h7.main-heading > a {
+	text-decoration: initial;
+	color: initial;
+}

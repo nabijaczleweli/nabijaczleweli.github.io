@@ -55,11 +55,11 @@ CALIBRE_CONVERT := ebook-convert
 OUTDIR := out/
 BLDDIR := build/
 
-PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp))
-EBOOK_PREPROCESS_SOURCES := $(sort $(wildcard src/*.eppe src/**/*.eppe src/**/**/*.eppe src/**/**/**/*.eppe))
-COMBINED_PREPROCESS_SOURCES := $(sort $(wildcard src/*.epp src/**/*.epp src/**/**/*.epp src/**/**/**/*.epp))
-BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp))
-ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.*))
+PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/**/**/**/*.pp src/**/**/**/**/*.pp src/**/**/**/**/**/*.pp))
+EBOOK_PREPROCESS_SOURCES := $(sort $(wildcard src/*.eppe src/**/*.eppe src/**/**/*.eppe src/**/**/**/*.eppe src/**/**/**/**/*.eppe src/**/**/**/**/**/*.eppe))
+COMBINED_PREPROCESS_SOURCES := $(sort $(wildcard src/*.epp src/**/*.epp src/**/**/*.epp src/**/**/**/*.epp src/**/**/**/**/*.epp src/**/**/**/**/**/*.epp))
+BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp src/**/**/**/**/*.epupp src/**/**/**/**/*.epupp))
+ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.* assets/**/**/**/**/*.* assets/**/**/**/**/**/*.*))
 
 .PHONY : all clean assets octicons books preprocess rss
 
