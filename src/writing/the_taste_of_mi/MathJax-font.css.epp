@@ -29,6 +29,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 MATHJAX_FACE(MathJax_Math, Italic, font-style: italic;)
+MATHJAX_FACE(MathJax_Main, Italic, font-style: italic;)
 MATHJAX_FACE(MathJax_Main, Regular,)
 
 
