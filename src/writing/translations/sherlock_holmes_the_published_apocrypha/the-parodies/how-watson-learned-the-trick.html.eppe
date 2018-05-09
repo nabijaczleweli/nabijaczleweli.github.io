@@ -1,0 +1,179 @@
+#include "../../../variable-selectors.h"
+#include "../../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "Jak Watson nauczył się sztuczki (How Watson Learned the Trick)" -->
+
+
+#define EM(...) <em class="roboto-em">__VA_ARGS__</em>
+
+#ifdef EBOOK
+
+#define MAIN_HEADING(id, ...) __VA_ARGS__
+
+#else
+
+#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+
+#endif
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                                                       FORCED_NEWLINE
+<html lang="pl">                                                                                                      FORCED_NEWLINE
+	<head>                                                                                                              FORCED_NEWLINE
+		<title>Jak Watson nauczył się sztuczki (How Watson Learned the Trick)</title>                                     FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                                                     FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                                                      FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                                                            FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                                                     FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                      FORCED_NEWLINE
+		<link href="writing-translations-sherlock_holmes_the_published_apocrypha-Roboto-additions.css" rel="stylesheet">  FORCED_NEWLINE
+	</head>                                                                                                             FORCED_NEWLINE
+	<body>                                                                                                              FORCED_NEWLINE
+<!--)-->
+
+
+<p></p>
+<center><h2 id="the-parodies/how-watson-learned-the-trick" class="merriweather main-heading">
+	MAIN_HEADING(the-parodies/how-watson-learned-the-trick, Jak Watson nauczył się sztuczki (How Watson Learned the Trick))
+</h2></center>
+
+<p class="writing roboto indented continued">
+Watson w skupieniu obserwował swojego towarzysza od kiedy ten
+usiadł przy stole śniadaniowym. Holmes przypadkiem popatrzył w górę
+i złapał jego uwagę.
+</p>
+<p class="writing roboto indented continuing">
+— Cóż, Watsonie, o czym myślisz?
+</p>
+<p class="writing roboto indented continuing">
+— O tobie.
+</p>
+<p class="writing roboto indented continuing">
+— O mnie?
+</p>
+<p class="writing roboto indented continuing">
+— Tak, Holmesie, myślałem o tym, jak powierzchowne są te
+twoje sztuczki i jak cudownie jest, że publiczność dalej
+okazuje nimi zainteresowanie.
+</p>
+<p class="writing roboto indented continuing">
+— Całkowicie się zgadzam. Faktycznie, przypominam sobie, że
+ja sam wyrażałem podobną uwagę.
+</p>
+<p class="writing roboto indented continuing">
+— Twoje metody, — powiedział Watson poważnie — są bardzo proste
+do nabycia.
+</p>
+<p class="writing roboto indented continuing">
+— Bez wątpienia. — Holmes odpowiedział z uśmiechem — Może
+sam przedstawisz przykład tej metody rozumowania.
+</p>
+<p class="writing roboto indented continuing">
+— Z przyjemnością. Jestem w stanie powiedzieć, że byłeś
+czymś wielce zaabsorbowany kiedy wstałeś dziś rano.
+</p>
+<p class="writing roboto indented continuing">
+— Doskonale! Jak mogłeś do tego dojść?
+</p>
+<p class="writing roboto indented continuing">
+— Bo przeważnie jesteś bardzo schludnym człowiekiem, a dzisiaj
+zapomniałeś się ogolić.
+</p>
+<p class="writing roboto indented continuing">
+— Ojej! Jak bystrze! Nie miałem pojęcia,
+Watsonie, że byłeś tak uzdolnionym uczniem. czy twe sokole oko dostrzegło
+coś jeszcze?
+</p>
+<p class="writing roboto indented continuing">
+— Tak, Holmesie. Masz klienta zwanego Barlow, i nie
+odniosłeś sukcesu w jego sprawie.
+</p>
+<p class="writing roboto indented continuing">
+— Ojej, jakże mogłeś to wiedzieć?
+</p>
+<p class="writing roboto indented continuing">
+— Widziałem imię na jego kopercie. Kiedy ją otwarłeś,
+jęknąłeś i wepchnąłeś ją do kieszeni ze skrzywioną
+twarzą.
+</p>
+<p class="writing roboto indented continuing">
+— Godne podziwu! Jesteś zaiste spostrzegawczy. Jakieś inne uwagi?
+</p>
+<p class="writing roboto indented continuing">
+— Obawiam się, Holmesie, że zabrałeś się za spekulacje finansowe.
+</p>
+<p class="writing roboto indented continuing">
+— Jakże EM(mogłeś) do tego dojść, Watsonie?
+</p>
+<p class="writing roboto indented continuing">
+— Otwarłeś gazetę na stronie finansowej, i wydałeś
+głośny okrzyk zainteresowania.
+</p>
+<p class="writing roboto indented continuing">
+— Cóż, to bardzo sprytne z twojej strony, Watsonie. Coś jeszcze?
+</p>
+<p class="writing roboto indented continuing">
+— Tak, Holmesie, włożyłeś czarny płaszcz zamiast
+szlafroka, co znaczy, że oczekujesz jakiegoś ważnego
+gościa.
+</p>
+<p class="writing roboto indented continuing">
+— Cokolwiek innego?
+</p>
+<p class="writing roboto indented continuing">
+— Nie mam wątpliwości, że mógłbym znaleźć inne rzeczy, Holmesie, ale
+mogę ci przekazać tylko te, żeby pokazać ci, że są na świecie inni
+ludzie którzy mogą być tak sprytni jak ty.
+</p>
+<p class="writing roboto indented continuing">
+— A niektórzy nie tak sprytni. Przyznaję, że jest ich
+niewielu, ale obawiam się, że muszę cię, drogi Watsonie,
+do nich zaliczyć.
+</p>
+<p class="writing roboto indented continuing">
+— Co masz na myśli, Holmesie?
+</p>
+<p class="writing roboto indented continuing">
+— Cóż, mój drogi towarzyszu, obawiam się, że twoje dedukcje nie były tak
+szczęśliwe, jakbym sobie życzył.
+</p>
+<p class="writing roboto indented continuing">
+— Chodzi ci o to, że się myliłem.
+</p>
+<p class="writing roboto indented continuing">
+— Tylko troszkę, obawiam się. Zaweźmy twe uwagi po
+kolei: nie ogoliłem się bo wysłałem moją brzytwę do
+naostrzenia. Włożyłem płaszcz ponieważ mam, pechowiej,
+wczesną wizytę u dentysty. Nazywa się Barlow, a list służył jej
+potwierdzeniu. Strona z krykietem jest obok finansowej,
+a przewróciłem na nią by sprawdzić, czy Surrey nie poddawało się
+Kent. Ale kontynuuj, Watsonie, kontynuuj! To jest bardzo powierzchowna sztuczka i
+bez wątpliwości wkrótce ją nabędziesz.
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
+                          ----------
+                          work - dzieło ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef MAIN_HEADING
+#undef EM
