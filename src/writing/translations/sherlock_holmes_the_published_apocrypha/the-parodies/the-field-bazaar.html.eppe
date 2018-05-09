@@ -13,7 +13,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 -->)-->
 
 
-<!-- ePub title: "Parodie" -->
+<!-- ePub title: "Targi o pole (The Field Bazaar)" -->
 
 
 #define EM(...) <em class="roboto-em">__VA_ARGS__</em>
@@ -33,7 +33,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 <!DOCTYPE html>                                                                                                       FORCED_NEWLINE
 <html lang="pl">                                                                                                      FORCED_NEWLINE
 	<head>                                                                                                              FORCED_NEWLINE
-		<title>Parodie</title>                                                                                            FORCED_NEWLINE
+		<title>Targi o pole (The Field Bazaar)</title>                                                                    FORCED_NEWLINE
 		<meta name="author" content="nabijaczleweli">                                                                     FORCED_NEWLINE
 		<link href="../indent.css" rel="stylesheet">                                                                      FORCED_NEWLINE
 		<link href="writing-Roboto-font.css" rel="stylesheet">                                                            FORCED_NEWLINE
@@ -46,7 +46,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 
 <p></p>
-<center><h2 id="the-parodies/the-field-bazaar" class="merriweather main-heading">MAIN_HEADING(the-parodies/the-field-bazaar, Targi o pole)</h2></center>
+<center><h2 id="the-parodies/the-field-bazaar" class="merriweather main-heading">MAIN_HEADING(the-parodies/the-field-bazaar, Targi o pole (The Field Bazaar))</h2></center>
 
 <p class="writing roboto indented continued">
 — Tak, zdecydowanie powinienem, — powiedział Sherlock Holmes.
@@ -187,7 +187,7 @@ wydarzenie będzie tematem twojego artykułu.
 <p class="writing roboto indented continuing">
 — Ależ jak! — wykrzyknąłem.
 </p>
-<p class="writing roboto indented continuing">
+<p class="writing roboto indented continuation">
 — To jest tak łatwe, jak tylko możliwe, toteż zostawiam rozwiązanie tej łamigłówki
 twojej własnej pomysłowości. W międzyczasie, — dodał, unosząc swoją
 gazetę — wybaczysz mi, jeżeli powrócę do wysoce interesującego
