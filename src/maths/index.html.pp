@@ -19,7 +19,7 @@ BOILERPLATE(Mathematics, Various mathematics-based things, en-GB, FONTAWESOME_LI
 <div>
 <p></p>
 <a href="mandalas.html"><img src="/content/assets/mandalas/900x900.png" class="header" /></a>
-Mandalas generated Tonči Juričev-Grgin's method.<!--'--><br />
+Mandalas generated with Tonči Juričev-Grgin's method.<!--'--><br />
 Algorithm, examples, etc. <a href="mandalas.html">inside</a>.<br />
 Videos of more complex mandalas over at
   <a href="https://www.youtube.com/watch?v=D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC">YouTube</a>
