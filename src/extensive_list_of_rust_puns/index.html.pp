@@ -34,9 +34,11 @@ BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming languag
 
 <p></p>
 Extensive list of <a href="//rust-lang.org">Rust</a> puns,
-as <a href="//chat.stackoverflow.com/transcript/62927?m=35242527#35242527">requested</a>
-by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>:
+	as <a href="//chat.stackoverflow.com/transcript/62927?m=35242527#35242527">requested</a>
+	by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>:
 <ul>
+	PUN(sharing-Cell-with-threads-but-let-idea-Sync, 3650362, trentcl, 43287198, 17.17.17 06:14 PM,
+	    "Do <samp>Cow</samp>s consume <samp>Hay</samp>?")
 	PUN(sharing-Cell-with-threads-but-let-idea-Sync, 1233251, E_net4, 35262129, 23.01.17 11:30 PM,
 	    "Kept wondering what was preventing me from sharing a <samp>Cell</samp> with multiple threads, but then I let the idea <samp>Sync</samp> in.")
 	PUN(Indiana-Jones-and-the-Raiders-of-the-Lost-ArcT, 2408867, Lukas Kalbertodt, 35262129, 20.10.17  11:30 PM,
