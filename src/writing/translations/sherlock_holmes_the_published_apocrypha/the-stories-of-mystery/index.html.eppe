@@ -1,0 +1,128 @@
+#include "../../../variable-selectors.h"
+#include "../../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "Historie Tajemnicy" -->
+
+
+#define MATH(...) <span class="math-font-normal roboto-unscale">__VA_ARGS__</span>
+#define SC(...) <span class="smallcaps">__VA_ARGS__</span>
+#define EM(...) <em class="roboto-em">__VA_ARGS__</em>
+
+#ifdef EBOOK
+
+#define MAIN_HEADING(id, ...) __VA_ARGS__
+
+#else
+
+#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+
+#endif
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                                                       FORCED_NEWLINE
+<html lang="pl">                                                                                                      FORCED_NEWLINE
+	<head>                                                                                                              FORCED_NEWLINE
+		<title>Historie Tajemnicy</title>                                                                                 FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                                                     FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                                                      FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                                                            FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                                                     FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">                                           FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                      FORCED_NEWLINE
+		<link href="writing-translations-sherlock_holmes_the_published_apocrypha-Roboto-additions.css" rel="stylesheet">  FORCED_NEWLINE
+	</head>                                                                                                             FORCED_NEWLINE
+	<body>                                                                                                              FORCED_NEWLINE
+<!--)-->
+
+
+<p></p>
+<center><h1 id="the-stories-of-mystery" class="merriweather main-heading">MAIN_HEADING(the-stories-of-mystery, Historie Tajemnicy)</h1></center>
+
+<p class="writing roboto indented continued">
+EM(Conan Doyle nigdy nie żałował pozbycia się Holmesa. Ani    FORCED_NEWLINE
+jego powszechny powab nie zdał się z tego powodu ucierpieć.)
+</p>
+<p class="writing roboto indented continuing">
+EM(Był twórcą i głównym praktykującym całkowicie nowego rodzaju                           FORCED_NEWLINE
+magazynowej fikcji–serii samodzielnych historyjek                                         FORCED_NEWLINE
+z tym samym bohaterem w roli głównej–który wymyślił dla Sherlocka                         FORCED_NEWLINE
+Holmesa i który wyparł powieść w odcinkach jako dominującą formę fikcji, przynajmniej w)
+SC(Strand)EM(zie. Teraz napisał                                                           FORCED_NEWLINE
+powieść historyczną w tej epizodycznej formie–)SC(Rodney Stone)EM(, o                     FORCED_NEWLINE
+życiu zawodowych bokserów w regencyjnej Anglii–którą również puścił w)                    <!-- v TODO: thought so much of himself, but still more of his Emperor -->
+SC(Strand)EM(zie. Dla tegoż magazynu stworzył również Brygadiera Gerarda,                 FORCED_NEWLINE
+oficera kawalerii w armii Napoleona, "który cenił<!--"-->                                 FORCED_NEWLINE
+siebie wysoko, ale swego cesarza jeszcze wyżej", i którego wyczyny<!--"-->                FORCED_NEWLINE
+ujawiały się sporadycznie przez następne piętnaście lat.)
+</p>
+<p class="writing roboto indented continuing">
+EM(W MATH(1898) zapoczątkował nową odmianę tej techniki.                           FORCED_NEWLINE
+Wymyślił historie) SC(Round The Fire) EM(jako dwanaście opowieści, niepowiązanych  FORCED_NEWLINE
+poza wspólnym motywem przewodnim dziwactw i tajemnic,                              FORCED_NEWLINE
+mających się od początku ukazać pod wspólnym tytułem.                              FORCED_NEWLINE
+Dwie z historii w tej "planowanej antologii" to "The Man<!--"-->                   FORCED_NEWLINE
+with the Watches" i "The Lost Special"<!--"-->.)
+</p>
+<p class="writing roboto indented continuing">
+EM(W nich Doyle lekko obraża swojego wielkiego detektywa mając                             FORCED_NEWLINE
+nienazwanego "jakiejś sławy amatora rozumowania" prezentującego rozwiązanie                FORCED_NEWLINE
+każdej tajemnicy, okazujące się kompletnie błędnym.                                        FORCED_NEWLINE
+Postęp logiczny, slogany, "protekcjonalny<!--"-->                                          FORCED_NEWLINE  <!-- TODO: catch-phrases -->
+dydaktyzm", oczywiście wskazuje, że zamierzonym autorem listów do<!--"-->                  FORCED_NEWLINE
+Londyńskich gazet był nikt inny, tylko właśnie                                             FORCED_NEWLINE
+Sherlock Holmes–i było tak samo widoczne, że ów "jeden z<!--"-->                           FORCED_NEWLINE
+najprzenikliwszych mózgów w Anglii", który obmyślił nierozwiązywalną łamigłówkę w<!--"-->  FORCED_NEWLINE
+"The Lost Special", to Profesor Moriarty. Wielką wagę przywiązał do tego                   FORCED_NEWLINE
+Edgar W. Smith, wieloletnia dusza przewodnia                                               FORCED_NEWLINE
+Baker Street Irregulars, narodowej społeczności wielbicieli Holmesa,                       FORCED_NEWLINE
+i fundatora) SC(Baker Street Journal) EM(w 1949.)
+</p>
+<p class="writing roboto indented continuing">
+EM(Smith
+argumentował, że "The Man with the Watches" i "The Lost Special" powinny być "zaliczone do" oficjalnego  FORCED_NEWLINE
+Kanonu Sherlocka Holmesa. Jego poruszenie, jednak, na niewiele się zdało. Obie zostały                   FORCED_NEWLINE
+opublikowane w) SC(Round The Fire Stories) EM(w MATH(1908), a nie w żadnej                               FORCED_NEWLINE
+z Holmesowych zbiorów. Sam Doyle nigdy nie uważał                                                        FORCED_NEWLINE
+ich za część "kompletnego" Sherlocka Holmesa ani trochę bardziej niż                                     FORCED_NEWLINE
+"The Field Bazaar" czy "How Watson Learned the Trick".                                                   FORCED_NEWLINE
+Inni Sherlockiści pisali by obalać twierdzenia Smitha równie                                             FORCED_NEWLINE
+płytkimi kontrargumentami, i po jego śmierci w MATH(1960) cała                                           FORCED_NEWLINE
+dobroduszna kontrowersja ucichła.)
+</p>
+<p class="writing roboto indented continuing">
+EM(Z tym podkreślona jest ich Apokryfalna natura.                                  FORCED_NEWLINE
+Prawdziwe znaczenie tych dwóch historii, wydaje się, to ich pojawienie się w)
+SC(STRAND)EM(zie na Lipiec i Sierpień MATH(1898). Prawie pięć lat po "The<!--"-->  FORCED_NEWLINE
+Final Problem" i rzekomej śmierci jego detektywczego wyrobu,<!--"-->               FORCED_NEWLINE
+Conan Doyle dalej nie mógł ani zapomnieć  o Sherlocku Holmesie, ani nawet          FORCED_NEWLINE
+oprzeć się pokusie pisania o nim.)
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
+                          ----------
+                          work - dzieło ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef MAIN_HEADING
+#undef SC
+#undef EM
+#undef MATH

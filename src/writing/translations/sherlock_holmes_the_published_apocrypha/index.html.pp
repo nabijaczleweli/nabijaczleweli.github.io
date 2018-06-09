@@ -49,6 +49,8 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 #include "the-parodies/the-field-bazaar.html.eppe"
 #include "the-parodies/how-watson-learned-the-trick.html.eppe"
 #include "the-parodies/the-adventure-of-the-two-collaborators.html.eppe"
+<h1>&nbsp;</h1>
+#include "the-stories-of-mystery/index.html.eppe"
 
 
 WORD_COUNTER_END_NON_ENGLISH()
