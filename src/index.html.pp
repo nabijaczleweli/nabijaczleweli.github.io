@@ -22,6 +22,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
   <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                   FORCED_NEWLINE \
   — __VA_ARGS__                                                                                                   FORCED_NEWLINE \
 </li>
+#define UNPUBLISHED_USER_DOC(user, name, cratename_code, ...)                                                                    \
+<li>                                                                                                              FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/user/name/doc/cratename_code/index.html)><samp>name</samp></a> FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FA(github)</a>                                          FORCED_NEWLINE \
+  <span style="opacity: .5;">FA(archive)</span>                                                                   FORCED_NEWLINE \
+  — __VA_ARGS__                                                                                                   FORCED_NEWLINE \
+</li>
 
 
 BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK)
@@ -52,6 +59,9 @@ Documentation for my Rust projects:
 	DOC(rust-embed-resource, embed-resource, embed_resource,
 	    A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
 	    in the most resilient fashion imaginable)
+	UNPUBLISHED_USER_DOC(nabijaczleweli, chattium-oxide-lib, chattium_oxide_lib,
+	    Common files for <a href="https://github.com/nabijaczleweli/chattium-oxide-client">chattium-oxide-client</a>
+	                 and <a href="https://github.com/nabijaczleweli/chattium-oxide-server">chattium-oxide-server</a>)
 	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
 	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
 	DOC(trivial-colours-rs, trivial_colours, trivial_colours,
@@ -62,10 +72,18 @@ Documentation for my Rust projects:
 	    Generate an ePub book from a simple plaintext descriptor in Rust)
 	DOC(registry.pol-rs, registry-pol, registry_pol,
 	    Parser for the <a href="https://msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a>)
+	<li>
+		<a href="httpsCOLON_SLASH_SLASHcdn.rawgit.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
+		<a href="httpsCOLON_SLASH_SLASHgithub.com/Galactim/Sudoku">FA(github)</a>
+		<span style="opacity: .5;">FA(archive)</span>
+		— Back-end for modern, API-based Sudoku app
+	</li>
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
 	    Cargo subcommand for checking and applying updates to installed executables)
+	DOC(codepage-437, codepage-437, codepage_437,
+	    <a href="https://en.wikipedia.org/wiki/Code_page_437">Code page 437</a> transcoding for Rust)
 	DOC(openalias.rs, openalias, openalias,
 	    Look up and parse <a href="https://openalias.org">OpenAlias</a> data)
 	DOC(poke-a-mango, poke-a-mango, poke_a_mango,
@@ -86,6 +104,8 @@ Documentation for my Rust projects:
 	    Implementation of the <a href="https://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
 	DOC(OWAPI.rs, owapi, owapi,
 	    Overwatch JSON API bindings for Rust)
+	DOC(bloguen, bloguen, bloguen,
+	    Generate a blogue from Markdown (again) )
 	DOC(dishub, dishub, dishub,
 	    App for posting GitHub activity on Discord)
 	DOC(tweetr, tweetr, tweetr,
