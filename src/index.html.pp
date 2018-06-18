@@ -59,11 +59,11 @@ Documentation for my Rust projects:
 	DOC(rust-embed-resource, embed-resource, embed_resource,
 	    A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
 	    in the most resilient fashion imaginable)
+	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
+	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
 	UNPUBLISHED_USER_DOC(nabijaczleweli, chattium-oxide-lib, chattium_oxide_lib,
 	    Common files for <a href="https://github.com/nabijaczleweli/chattium-oxide-client">chattium-oxide-client</a>
 	                 and <a href="https://github.com/nabijaczleweli/chattium-oxide-server">chattium-oxide-server</a>)
-	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
-	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
 	DOC(trivial-colours-rs, trivial_colours, trivial_colours,
 	    Very simple and naive colour changing for your terminal, but that'<!--'-->s exactly what you need sometimes)
 	DOC(safe-transmute-rs, safe-transmute, safe_transmute,
