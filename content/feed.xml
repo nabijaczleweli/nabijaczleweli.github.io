@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sat, 04 Aug 2018 17:46:07 +0000
+      Sat, 04 Aug 2018 20:41:07 +0000
     </pubDate>
     <lastBuildDate>
-      Sat, 04 Aug 2018 17:46:07 +0000
+      Sat, 04 Aug 2018 20:41:07 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -389,8 +389,14 @@ I hope that this document is clear and/or informative, if not,
 .continuation {
  margin-top: 0;
 }
+
+
+
 &lt;/style&gt;
 
+
+&lt;span class=&quot;roboto&quot;&gt;
+&lt;h2 class=&quot;merriweather&quot;&gt;Tonči Juričev-Grgin mandalas&lt;/h2&gt;
 
 &lt;p class=&quot;indented continued&quot; id=&quot;intro&quot;&gt;
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
@@ -401,7 +407,7 @@ The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt
 &lt;small&gt;Click for big version.&lt;/small&gt;
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-It uses a very simple process (see &lt;a href=&quot;#show-scans&quot;&gt;below&lt;/a&gt;), which can be used in any
+It uses a very simple process (see &lt;a href=&quot;#algorithm&quot;&gt;below&lt;/a&gt;), which can be used in any
 [​[​beta in NN ∖ {0}​]​]-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):&lt;!--'--&gt;
 &lt;/p&gt;
@@ -410,7 +416,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
 &lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;p class=&quot;continued&quot; id=&quot;render-time&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;render-time&quot;&gt;
 &lt;strong&gt;&quot;How long does rendering a thing such as this take?&quot;&lt;/strong&gt;, one might ask.
  Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
   one need run the algorithm body many times, an acceptable amount I found was:
@@ -424,7 +430,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
  which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
 
-&lt;p class=&quot;continued&quot; id=&quot;code&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;code&quot;&gt;
 A different question to be asked is
  &lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
  &lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
@@ -446,7 +452,7 @@ A different question to be asked is
  make things based on the algorithm. Will work and build pretty much anywhere.
 &lt;/p&gt;
 
-&lt;p class=&quot;continued&quot; id=&quot;more&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;more&quot;&gt;
 &lt;strong&gt;&quot;I don't care, I just wanna look at more cool shit!&quot;&lt;/strong&gt; — I got you covered on this front, too:
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -463,7 +469,7 @@ I'm out of things to put here, because I'm not a cool person &lt;em&gt;en genera
  &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;
 &lt;/p&gt;
 
-&lt;p id=&quot;contact&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;contact&quot;&gt;
 &lt;strong&gt;&quot;I like/don't like this thing and/or would like to tell/contact you about it/something else.&quot;&lt;/strong&gt;,
  then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
 &lt;/p&gt;
@@ -549,8 +555,8 @@ Since the output image format (PNG) and the video format (H.264) only support RG
  &lt;!-- (I mean, there's probably some gamut narrowing depending on the output colour range of your display device, but that is really not useful data) --&gt; &lt;!--'--&gt;
  because &lt;a href=&quot;//xkcd.com/1882&quot; target=&quot;_blank&quot;&gt;colours are hard&lt;/a&gt;)
  a conversion is required when going from e.g. CMYK or YUV thereto.
- More often than not (which is to say, in all spaces but LUMA), that conversion is lossy, which means that &quot;in &lt;code&gt;colourspace&lt;/code&gt;&quot; is a lie,
- whereas the non-lie version is closer to &quot;in an RGB approximation to &lt;code&gt;colourspace&lt;/code&gt;&quot;.
+ More often than not (which is to say, in all spaces but LUMA), that conversion is lossy, which means that &quot;in &lt;code class=&quot;roboto-unscale&quot;&gt;colourspace&lt;/code&gt;&quot; is a lie,
+ whereas the non-lie version is closer to &quot;in an RGB approximation to &lt;code class=&quot;roboto-unscale&quot;&gt;colourspace&lt;/code&gt;&quot;.
  However, most conversions were already set in stone well before I was born and are therefore widely accepted as accurate enough.
  Some, however, like ROYGBP or, &lt;em&gt;ahem&lt;/em&gt;, RPPDIBLCTGLLYAODBGB, have been made up by yours truly upon the following basis:
 &lt;/p&gt;
@@ -570,6 +576,8 @@ Since the output image format (PNG) and the video format (H.264) only support RG
 A full list of conversions and their implementations can be found at the
  &lt;a href=&quot;//cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html&quot; target=&quot;_blank&quot;&gt;mandalas-rs API documentation&lt;/a&gt;.
 &lt;/p&gt;
+
+&lt;/span&gt;
 
 
 </description>
