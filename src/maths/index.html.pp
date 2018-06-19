@@ -15,7 +15,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define STYLESHEETS FONTAWESOME_LINK                                                                  FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                      FORCED_NEWLINE \
-                    <!-- <link href="MathJax-font.css" rel="stylesheet" /> -->                        FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> FORCED_NEWLINE \
                     <link href="/content/assets/image-header.css" rel="stylesheet" />

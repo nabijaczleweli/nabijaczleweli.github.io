@@ -17,19 +17,25 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define MATHJAX(...) [​[​__VA_ARGS__​]​]
 
 #define SCANS_CSS_LINK    <link href="/content/assets/scan.css" rel="stylesheet" />
+#define COLUMN_LINKS      <link href="/kaschism/assets/column.css" rel="stylesheet" />                       \
+                          <link href="../writing/Roboto-font.css" rel="stylesheet" />                        \
+                          <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 #define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/content/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
                                   src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/content/assets/MathJax-config.js"></script>
 #define ZIPPING_SCRIPTS   <script type="text/javascript" src="//cdn.rawgit.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script> \
                           <script type="text/javascript" src="//cdn.rawgit.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script> \
                           <script type="text/javascript" src="/content/assets/pack_specified.js"></script>
-BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
+BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK COLUMN_LINKS SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
 
 <style>
 #include "../indent.css"
 #include "../writing/the_taste_of_mi/spacing.css"
 </style>
 
+
+<span class="roboto">
+<h2 class="merriweather">Tonči Juričev-Grgin mandalas</h2>
 
 <p class="indented continued" id="intro">
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:
@@ -40,7 +46,7 @@ The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumr
 <small>Click for big version.</small>
 </p>
 <p class="indented continued">
-It uses a very simple process (see <a href="#show-scans">below</a>), which can be used in any
+It uses a very simple process (see <a href="#algorithm">below</a>), which can be used in any
 MATHJAX(beta in NN ∖ {0})-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):<!--'-->
 </p>
@@ -49,7 +55,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
 </iframe>
 </div>
 
-<p class="continued" id="render-time">
+<p class="indented continued" id="render-time">
 <strong>"How long does rendering a thing such as this take?"</strong>, one might ask.
 	Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness<!--'-->
   one need run the algorithm body many times, an acceptable amount I found was:
@@ -63,7 +69,7 @@ but in one more dimension (also with classical music atop it because it'd be unb
 	which takes about MATHJAX(7 1/2 h) on my PC if I try to not cook it (and I generally do).
 </p>
 
-<p class="continued" id="code">
+<p class="indented continued" id="code">
 A different question to be asked is
 	<strong>"How does one</strong><!--"-->
 	<span style="text-decoration: line-through;">laugh at the shitty code</span>
@@ -85,7 +91,7 @@ A different question to be asked is
 	make things based on the algorithm. Will work and build pretty much anywhere.
 </p>
 
-<p class="continued" id="more">
+<p class="indented continued" id="more">
 <strong>"I don't care, I just wanna look at more cool shit!"</strong> — I got you covered on this front, too:
 </p>
 <p class="indented continuing">
@@ -102,7 +108,7 @@ I'm out of things to put here, because I'm not a cool person <em>en general</em>
 	<small>(What else did you expect, I do maths for fun)</small>
 </p>
 
-<p id="contact">
+<p class="indented" id="contact">
 <strong>"I like/don't like this thing and/or would like to tell/contact you about it/something else."</strong>,
 	then reach me over at anything listed <a href="/" target="_blank">here</a>. I don't have a life so I'll probably respond uncannily quickly.
 </p>
@@ -188,8 +194,8 @@ Since the output image format (PNG) and the video format (H.264) only support RG
 	<!-- (I mean, there's probably some gamut narrowing depending on the output colour range of your display device, but that is really not useful data) --> <!--'-->
 	because <a href="//xkcd.com/1882" target="_blank">colours are hard</a>)
 	a conversion is required when going from e.g. CMYK or YUV thereto.
-	More often than not (which is to say, in all spaces but LUMA), that conversion is lossy, which means that "in <code>colourspace</code>" is a lie,
-	whereas the non-lie version is closer to "in an RGB approximation to <code>colourspace</code>".
+	More often than not (which is to say, in all spaces but LUMA), that conversion is lossy, which means that "in <code class="roboto-unscale">colourspace</code>" is a lie,
+	whereas the non-lie version is closer to "in an RGB approximation to <code class="roboto-unscale">colourspace</code>".
 	However, most conversions were already set in stone well before I was born and are therefore widely accepted as accurate enough.
 	Some, however, like ROYGBP or, <em>ahem</em>, RPPDIBLCTGLLYAODBGB, have been made up by yours truly upon the following basis:
 </p>
@@ -209,6 +215,8 @@ MATHJAX(AA c in {r,g,b} : C_(out_c) = (sum_(theta=1)^alpha colour P_(ntheta) S_(
 A full list of conversions and their implementations can be found at the
 	<a href="//cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html" target="_blank">mandalas-rs API documentation</a>.
 </p>
+
+</span>
 
 
 BOILERPLATE_END()
