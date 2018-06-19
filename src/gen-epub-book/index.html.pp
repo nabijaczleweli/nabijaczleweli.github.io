@@ -96,7 +96,7 @@ CSPAN(keyword, Include)CSPAN(punctuation, :) CSPAN(string, ../indent.css)
 CSPAN(keyword, Include)CSPAN(punctuation, :) CSPAN(string, effects.css)
 CSPAN(keyword, Content)CSPAN(punctuation, :) CSPAN(string, moments/book.html)
 ​
-CSPAN(keyword, Author)CSPAN(punctuation, :) CSPAN(string, Jędrzej Aleksander Łopaciński)
+CSPAN(keyword, Author)CSPAN(punctuation, :) CSPAN(string, Aleksandra Łopacińska)
 CSPAN(keyword, Date)CSPAN(punctuation, :) CSPAN(string, 2017-04-23T03:38:52+02:00)
 CSPAN(keyword, Language)CSPAN(punctuation, :) CSPAN(string, pl)
 </pre></kbd>

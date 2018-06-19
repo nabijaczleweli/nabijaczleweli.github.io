@@ -72,7 +72,7 @@ Bo nic już dobrym nie może być.            <br />
 </p>
 
 <p class="indented">
-Jędrzej A. Łopaciński, Kraków, MATH(18.04.2018)
+A. Łopacińska, Kraków, MATH(18.04.2018)
 </p>
 
 </span>
