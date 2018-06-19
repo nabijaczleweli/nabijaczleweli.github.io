@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sat, 04 Aug 2018 23:34:52 +0000
+      Sun, 12 Aug 2018 17:33:07 +0000
     </pubDate>
     <lastBuildDate>
-      Sat, 04 Aug 2018 23:34:52 +0000
+      Sun, 12 Aug 2018 17:33:07 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -217,7 +217,7 @@ Here'&lt;!--'--&gt;s an example of how a descriptor for a simple book can look:
 &lt;span class=&quot;keyword&quot;&gt;Include&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;effects.css&lt;/span&gt;
 &lt;span class=&quot;keyword&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;moments/book.html&lt;/span&gt;
 ​
-&lt;span class=&quot;keyword&quot;&gt;Author&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;Jędrzej Aleksander Łopaciński&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;Author&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;Aleksandra Łopacińska&lt;/span&gt;
 &lt;span class=&quot;keyword&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;2017-04-23T03:38:52+02:00&lt;/span&gt;
 &lt;span class=&quot;keyword&quot;&gt;Language&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;pl&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
@@ -820,7 +820,7 @@ Remember, we will be watching.
 
 &lt;p class=&quot;roboto&quot;&gt;
 ~31.03.2016&lt;br /&gt;
-Jędrzej A. Łopaciński
+A. Łopacińska
 &lt;/p&gt;
 
 </description>
@@ -1252,7 +1252,7 @@ just timetimes, they do. And they change the world.
 &lt;p class=&quot;roboto&quot;&gt;
 ~10-20.03.2017&lt;br /&gt;
 Kraków&lt;br /&gt;
-Jędrzej A. Łopaciński
+A. Łopacińska
 &lt;/p&gt;
 
 </description>
@@ -1821,7 +1821,7 @@ inny.
 &lt;p class=&quot;roboto&quot;&gt;
 30.06.2017-12.08.2017&lt;br /&gt;
 Kraków–&lt;span class=&quot;nowrap&quot;&gt;Wysowa-Zdrój&lt;/span&gt;–&lt;span class=&quot;nowrap&quot;&gt;Παλαιό Τρίκερι&lt;/span&gt;–Βόλος–&lt;span class=&quot;nowrap&quot;&gt;Grecka przestrzeń powietrzna&lt;/span&gt;&lt;br /&gt;
-Jędrzej A. Łopaciński
+A. Łopacińska
 &lt;/p&gt;
 
 &lt;p&gt;​&lt;/p&gt;
@@ -1899,7 +1899,7 @@ Bo nic już dobrym nie może być. &lt;br /&gt;
 &lt;/p&gt;
 
 &lt;p class=&quot;indented&quot;&gt;
-Jędrzej A. Łopaciński, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;18.04.2018&lt;/span&gt;
+A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;18.04.2018&lt;/span&gt;
 &lt;/p&gt;
 
 &lt;/span&gt;
