@@ -51,8 +51,9 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 #include "the-parodies/the-adventure-of-the-two-collaborators.html.eppe"
 <h1>&nbsp;</h1>
 #include "the-stories-of-mystery/index.html.eppe"
+#include "the-stories-of-mystery/the-man-with-the-watches.html.eppe"
 
 
-WORD_COUNTER_END_NON_ENGLISH()
+WORD_COUNTER_END()
 WRITING_END()
 BOILERPLATE_END()
