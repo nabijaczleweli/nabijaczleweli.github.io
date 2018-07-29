@@ -16,6 +16,8 @@ window.addEventListener("load", function() {
 
 	Array.from(writings).forEach(function(w) {
 		let words = w.innerText.match(WORD_REGEX);
+		if(!words)
+			return;
 
 		word_c += words.length;
 		if(syllable_count)
