@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 24 Oct 2018 18:44:40 +0000
+      Wed, 24 Oct 2018 18:52:59 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 24 Oct 2018 18:44:40 +0000
+      Wed, 24 Oct 2018 18:52:59 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -2220,7 +2220,7 @@ that specific time, in that specific context.
 &lt;!-- ePub title: &quot;Наган&quot; --&gt;
 
 &lt;p&gt;&lt;/p&gt;
-&lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Наган&lt;/h2&gt;&lt;/center&gt;
+&lt;center&gt;&lt;h2 class=&quot;merriweather&quot; id=&quot;наган&quot;&gt;Наган&lt;/h2&gt;&lt;/center&gt;
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Batalistyka w trzech aktach, przez Jędrzeja
 Aleksandra Łopacińskiego spisana, w światowych wojen
@@ -2230,7 +2230,7 @@ czasach ustawiona.
 &lt;!-- ePub title: &quot;Non Possumus&quot; --&gt;
 
 &lt;p&gt;&lt;/p&gt;
-&lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Non Possumus&lt;/h2&gt;&lt;/center&gt;
+&lt;center&gt;&lt;h2 class=&quot;merriweather&quot; id=&quot;non-possumus&quot;&gt;Non Possumus&lt;/h2&gt;&lt;/center&gt;
 &lt;p class=&quot;writing indented roboto&quot;&gt;
 Бетровка Мосина, powszechnie zwana Mosin-Nagant, to
 karabin bitewny cudownego, zaiste implementu (takoż, jako i bohatyr
