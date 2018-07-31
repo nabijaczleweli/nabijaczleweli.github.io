@@ -12,10 +12,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../../common.h"
 
 
-BOILERPLATE(Наган, Наган, pl, <meta http-equiv="refresh" content="0;url=/content/writing/наган" />)
+BOILERPLATE(Наган, Наган, pl, <meta http-equiv="refresh" content="0;url=/content/writing/наган/" />)
 
 
-This content resides at <a href="/content/writing/наган">/content/writing/наган</a>.
+This content resides at <a href="/content/writing/наган/">/content/writing/наган/</a>.
 
 
   </body>
