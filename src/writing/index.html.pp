@@ -57,6 +57,9 @@ Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly r
 		<li><a href="każdy_koniec_to_nowy_początek/">"Każdy koniec to nowy początek"</a> [PL] —
 			wherein sociological (r)evolutions happen and we're<!--'--> there to observe it;
 			MATH(~31.03.2016).</li>
+		<li><a href="наган/">"Наган"</a> [PL] —
+			slightly soviet sniper girlfriends win battle, but at what cost?;
+			MATH(04.2016–30.09.2016).</li>
 		<li><a href="świat_to_kilka_takich_pokoi/">"Świat to kilka takich pokoi"</a> [PL] —
 			wherein I abstract the causes of WWI in the context of a stereotypical social building;
 			MATH(01.06.2016–03.06.2016).</li>
