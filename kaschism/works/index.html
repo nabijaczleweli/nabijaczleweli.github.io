@@ -1,3 +1,35 @@
+/* Copyright (C) 1991-2014 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses ISO/IEC 10646 (2nd ed., published 2011-03-15) /
+   Unicode 6.0.  */
+/* We do not support C11 <threads.h>.  */
 <!--
 nabijaczleweli.xyz/kaschism (c) by nabijaczleweli@gmail.com (nabijaczleweli),
                                    stanislaw@gorski.be (Stanisław Górski),
@@ -9,14 +41,9 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-
-
        
        
-
 <!DOCTYPE html> <html lang="en-GB"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <meta name="viewport" content="width=device-width,initial-scale=1"> <meta name="author" content="nabijaczleweli"> <meta name="description" content="Kaschist works"> <title>Works — kaschism</title> <link href="/content/assets/common.css" rel="stylesheet" /> <link href="/kaschism/assets/column.css" rel="stylesheet" /> <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png"> <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png"> <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png"> <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png"> <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png"> <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192"> <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96"> <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16"> <link rel="manifest" href="/assets/favicons/manifest.json"> <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5"> <link rel="shortcut icon" href="/assets/favicons/favicon.ico"> <meta name="apple-mobile-web-app-title" content="nabijaczleweli"> <meta name="application-name" content="nabijaczleweli"> <meta name="msapplication-TileColor" content="#da532c"> <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> <meta name="theme-color" content="#ffffff"> </head> <body>
-
-
 <div>
  <p></p>
  Works on, by and about Kaschism:
@@ -29,6 +56,4 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  </ul>
  <p></p>
 </div>
-
-
-<hr /> Creative text licensed under <a href="/kaschism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>. <hr /> This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/kaschism">GitHub</a>, and contributt and/or tell us how you hate a couple of teenagers' evening project. Maybe you'll even call us nazis or something because you can't stand bloody puns? Who knows if not you! <hr /> Automatically generated with GCC 4‍.‍6‍.‍3's C preprocessor on 27.01.2018 17:40:31 UTC from <a href="https://github.com/nabijaczleweli/kaschism/blob/master/src/works/index.html.pp">src/works/index.html.pp</a>. <br /><a href="https://travis-ci.org/nabijaczleweli/kaschism/builds/334152847">See job on TravisCI</a>. <hr /> <a href="/kaschism/feed.xml">RSS feed</a> </body> </html>
+<hr /> Creative text licensed under <a href="/kaschism/LICENSE-CREATIVE">CC-BY-SA 4.0</a>. <hr /> This page is open-source, you can find it at <a href="https://github.com/nabijaczleweli/kaschism">GitHub</a>, and contributt and/or tell us how you hate a couple of teenagers' evening project. Maybe you'll even call us nazis or something because you can't stand bloody puns? Who knows if not you! <hr /> Automatically generated with GCC 4‍.‍8‍.‍4's C preprocessor on 12.08.2018 18:07:39 UTC from <a href="https://github.com/nabijaczleweli/kaschism/blob/master/src/works/index.html.pp">src/works/index.html.pp</a>. <br /><a href="https://travis-ci.org/nabijaczleweli/kaschism/builds/415166580">See job on TravisCI</a>. <hr /> <a href="/kaschism/feed.xml">RSS feed</a> </body> </html>
