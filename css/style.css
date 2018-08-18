@@ -54,6 +54,22 @@ img {
   opacity: 1;
 }
 
+#logo-img-high-priestess {
+  opacity: 0;
+  position: fixed;
+  top: -100%;
+  transition: opacity 0.3s;
+}
+
+#logo-img-high-priestess.active {
+  position: relative;
+  top: -256px;
+}
+
+#logo-img-high-priestess.active:hover {
+  opacity: 1;
+}
+
 body {
   background: #0d2125 url('../assets/background.png') no-repeat center center fixed;
 
