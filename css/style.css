@@ -22,51 +22,19 @@ img {
   opacity: 0;
 }
 
-#logo-img-founding-fathers {
+.alt-logo-img {
   opacity: 0;
   position: fixed;
   top: -100%;
   transition: opacity 0.3s;
 }
 
-#logo-img-founding-fathers.active {
+.alt-logo-img.active {
   position: relative;
   top: -256px;
 }
 
-#logo-img-founding-fathers.active:hover {
-  opacity: 1;
-}
-
-#logo-img-DMX {
-  opacity: 0;
-  position: fixed;
-  top: -100%;
-  transition: opacity 0.3s;
-}
-
-#logo-img-DMX.active {
-  position: relative;
-  top: -256px;
-}
-
-#logo-img-DMX.active:hover {
-  opacity: 1;
-}
-
-#logo-img-high-priestess {
-  opacity: 0;
-  position: fixed;
-  top: -100%;
-  transition: opacity 0.3s;
-}
-
-#logo-img-high-priestess.active {
-  position: relative;
-  top: -256px;
-}
-
-#logo-img-high-priestess.active:hover {
+.alt-logo-img.active:hover {
   opacity: 1;
 }
 
