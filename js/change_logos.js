@@ -7,14 +7,19 @@ window.addEventListener("load", function() {
 	Array.from(EXTRA_IMAGES).forEach(function(img, idx) {
 		var next_idx = (idx + 1) % EXTRA_IMAGES.length;
 
+		var toggle = function() {
+			img.classList.toggle("active");
+			EXTRA_IMAGES[next_idx].classList.toggle("active");
+			just_switched = true;
+		};
+
 		// Only triggered on active alt images
 		img.addEventListener("mouseover", function() {
-			if(!just_switched) {
-				img.classList.toggle("active");
-				EXTRA_IMAGES[next_idx].classList.toggle("active");
-				just_switched = true;
-			} else
+			if(!just_switched)
+				toggle();
+			else
 				just_switched = false;
 		});
+		img.addEventListener("touchend", toggle);
 	});
 });
