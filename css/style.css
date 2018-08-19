@@ -22,6 +22,10 @@ img {
   opacity: 0;
 }
 
+#logo-img.forced:hover {
+  opacity: 1;
+}
+
 .alt-logo-img {
   opacity: 0;
   position: fixed;
@@ -36,6 +40,10 @@ img {
 
 .alt-logo-img.active:hover {
   opacity: 1;
+}
+
+.alt-logo.img.hidden {
+  visibility: hidden;
 }
 
 body {
