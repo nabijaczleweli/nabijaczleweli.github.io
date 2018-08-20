@@ -41,7 +41,7 @@ In any case, these things go here, without any warranty.
 	<p></p>
 	One-off:
 	<ul>
-		<li><a href="/content/poetry/">The East Wind</a> —
+		<li><a href="the_east_wind/">The East Wind</a> —
 			a front-line letter;
 			MATH(19.05.2017).</li>
 	</ul>
