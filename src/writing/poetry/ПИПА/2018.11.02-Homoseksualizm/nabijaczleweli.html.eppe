@@ -1,0 +1,114 @@
+#include "../../../variable-selectors.h"
+#include "../../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "2018.11.02 – наб" -->
+
+
+#define EM(...) <em class="roboto-em">__VA_ARGS__</em>
+
+#ifdef EBOOK
+
+#define MAIN_HEADING(id, ...) __VA_ARGS__
+
+#else
+
+#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+
+#endif
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                                                  FORCED_NEWLINE
+<html lang="pl">                                                                                                 FORCED_NEWLINE
+	<head>                                                                                                         FORCED_NEWLINE
+		<title>2018.11.02 — наб</title>                                                                              FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                                                FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                                                 FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                                                       FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                                                FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                 FORCED_NEWLINE
+		<link href="../translations-sherlock_holmes_the_published_apocrypha-Roboto-additions.css" rel="stylesheet">  FORCED_NEWLINE
+	</head>                                                                                                        FORCED_NEWLINE
+	<body>                                                                                                         FORCED_NEWLINE
+<!--)-->
+
+
+<p></p>
+<center><h2 id="2018.11.02-Homoseksualizm/наб" class="merriweather main-heading">
+	MAIN_HEADING(2018.11.02-Homoseksualizm/наб, 2018.11.02 – наб)
+</h2></center>
+
+<p class="writing roboto continued">
+Widzę dwóch takich
+</p>
+<p class="writing roboto continuing indented">
+I mi się nóż w kieszeni otwiera
+</p>
+<p class="writing roboto continuing">
+Lecz nie na nich
+</p>
+<p class="writing roboto continuation indented">
+A na społeczeństwo, co ich sponiewiera
+</p>
+
+<p class="writing roboto continued">
+I dwie takie widzę
+</p>
+<p class="writing roboto continuing indented">
+Lecz nie jestem pewna
+</p>
+<p class="writing roboto continuing">
+Bo znikną te rydze
+</p>
+<p class="writing roboto continuation indented">
+Tak jak one – tego jestem pewna
+</p>
+
+<p class="writing roboto continued">
+Bo czyjaś krew kapie
+</p>
+<p class="writing roboto continuing indented">
+Dawczynią zostałaby niejedna
+</p>
+<p class="writing roboto continuing">
+Ale to krasny punkt na mapie
+</p>
+<p class="writing roboto continuation indented">
+Liczby nie dotrą nigdy do sedna
+</p>
+
+<p class="writing roboto continued">
+Pozywa stan i przegrywa
+</p>
+<p class="writing roboto continuing indented">
+„Ot – system felerny”
+</p>
+<p class="writing roboto continuing">
+Tutaj liczby nie kłamią, ba –
+</p>
+<p class="writing roboto continuation indented">
+Wyrik wyrokiem – <strong style="text-decoration: underline;">śmiertelny</strong>
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « … ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef MAIN_HEADING

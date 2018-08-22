@@ -1,0 +1,90 @@
+#include "../../../variable-selectors.h"
+#include "../../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "2018.11.02 – Bujak" -->
+
+
+#define EM(...) <em class="roboto-em">__VA_ARGS__</em>
+
+#ifdef EBOOK
+
+#define MAIN_HEADING(id, ...) __VA_ARGS__
+
+#else
+
+#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+
+#endif
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                                                  FORCED_NEWLINE
+<html lang="pl">                                                                                                 FORCED_NEWLINE
+	<head>                                                                                                         FORCED_NEWLINE
+		<title>2018.11.02 — Bujak</title>                                                                            FORCED_NEWLINE
+		<meta name="author" content="Szymon Bujak">                                                                  FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                                                 FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                                                       FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                                                FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                 FORCED_NEWLINE
+		<link href="../translations-sherlock_holmes_the_published_apocrypha-Roboto-additions.css" rel="stylesheet">  FORCED_NEWLINE
+	</head>                                                                                                        FORCED_NEWLINE
+	<body>                                                                                                         FORCED_NEWLINE
+	<body>                                                                                                         FORCED_NEWLINE
+<!--)-->
+
+
+<p></p>
+<center><h2 id="2018.11.02-Homoseksualizm/Bujak" class="merriweather main-heading">
+	MAIN_HEADING(2018.11.02-Homoseksualizm/Bujak, 2018.11.02 – Bujak)
+</h2></center>
+
+<!-- alien drawing -->
+<p class="writing roboto">
+Po cierpieniach losu dnia codziennego,<br />
+Gdy żadna akcja nei jest warta uwagi;<br />
+Widzisz istotę nieludzką z okna otwartego,<br />
+I chcesz wyskoczyć z niego w celu najwyższej wagi;<br />
+</p>
+
+<p class="writing roboto continued">
+EM(Bo jak to możliwe,<br />  FORCED_NEWLINE
+że dzieci uczciwe;<br />     FORCED_NEWLINE
+chodzą pewnie<br />          FORCED_NEWLINE
+i gadają wylewnie)
+</p>
+<p class="writing roboto indented continuing">
+EM(o ludziach karalnych,)
+</p>
+<p class="writing roboto indented continuation">
+EM(heteroseksualnych.)
+</p>
+
+<p class="writing roboto indented" style="font-size: calc(10em / 15);">
+EM(hetero<br />  FORCED_NEWLINE
+to zero.)
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « … ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef MAIN_HEADING
+#undef EM

@@ -1,0 +1,88 @@
+#include "../../variable-selectors.h"
+#include "../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "Spis Treści" -->
+
+
+#ifdef EBOOK
+
+#define CONTENT_BIFURCATED(id, file_root) href=STR(file_root.html) class="content-link"
+
+#else
+
+#define CONTENT_BIFURCATED(id, file_root) href=STR(HASH​FORCED_SPACER​id) class="content-link"
+
+#endif
+
+#define CONTENT(id) CONTENT_BIFURCATED(id, id)
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                  FORCED_NEWLINE
+<html lang="pl">                                                                 FORCED_NEWLINE
+	<head>                                                                         FORCED_NEWLINE
+		<title>Spis Treści</title>                                                   FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                 FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                       FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">      FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet"> FORCED_NEWLINE
+	</head>                                                                        FORCED_NEWLINE
+	<body>                                                                         FORCED_NEWLINE
+<!--)-->
+
+<style>
+.content-link {
+	color: initial;
+}
+</style>
+
+
+<p></p>
+<center><h2 class="merriweather">Spis Treści</h2></center>
+
+<p class="writing roboto indented">
+<a CONTENT(introduction)>Wprowadzenie</a>
+</p>
+
+<p class="writing roboto continued">
+<strong><a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm, 2018.11.02-Homoseksualizm/index)>2018.11.02 Homoseksualizm</a></strong>
+</p>
+<p class="writing roboto indented continuing">
+<a CONTENT(2018.11.02-Homoseksualizm/Zawadzka)>2018.11.02 – Zawadzka</a>
+</p>
+<p class="writing roboto indented continuing">
+<a CONTENT(2018.11.02-Homoseksualizm/Micherda)>2018.11.02 „HOMOsapiens” – Micherda</a>
+</p>
+<p class="writing roboto indented continuing">
+<a CONTENT(2018.11.02-Homoseksualizm/Bujak)>2018.11.02 – Bujak</a>
+</p>
+<p class="writing roboto indented continuation">
+<a CONTENT(2018.11.02-Homoseksualizm/наб)>2018.11.02 – наб</a>
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
+                          ---------- ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef CONTENT
+#undef CONTENT_BIFURCATED

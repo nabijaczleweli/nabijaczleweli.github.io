@@ -1,0 +1,75 @@
+#include "../../../variable-selectors.h"
+#include "../../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "2018.11.02 „HOMOsapiens” – Micherda" -->
+
+
+#ifdef EBOOK
+
+#define MAIN_HEADING(id, ...) __VA_ARGS__
+
+#else
+
+#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+
+#endif
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                                                  FORCED_NEWLINE
+<html lang="pl">                                                                                                 FORCED_NEWLINE
+	<head>                                                                                                         FORCED_NEWLINE
+		<title>2018.11.02 „HOMOsapiens” – Micherda</title>                                                           FORCED_NEWLINE
+		<meta name="author" content="Joanna Micherda">                                                               FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                                                       FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                 FORCED_NEWLINE
+	</head>                                                                                                        FORCED_NEWLINE
+	<body>                                                                                                         FORCED_NEWLINE
+<!--)-->
+
+
+<p></p>
+<center><h2 id="2018.11.02-Homoseksualizm/Micherda" class="merriweather main-heading">
+	MAIN_HEADING(2018.11.02-Homoseksualizm/Micherda, 2018.11.02 „HOMOsapiens” – Micherda)
+</h2></center>
+
+<p class="writing roboto">
+O homosapiens ze wszystkich świata stron<br />
+W waszą stronę wyciągam dziś dłoń<br />
+Prowadzę przez me wzburzone myśli i słowa<br />
+Bo jakieś lesbijska się we mnie obudziła mowa<br />
+I głosić piękno kobiet bym chciała<br />
+Ach, gdyby któraś mnie wyruchała!<br />
+Gdy leżąc wśród trawy przy pagórku zboczu<br />
+Obudziłabym się ze wzrokiem utkwionym w jej kroczu<br />
+I gdyby tak chętnie usta rozchylała.<br />
+Lecz cóż to człowieku zrobisz w tym kraju?<br />
+Prędzej ogień cię wchłonie, niż pójdziesz do raju.<br />
+Choć nie ma raju bez jej waginy,<br />
+Której wchłaniałabym wydzieliny<br />
+Więc pochłoń mnie płomieniu żałosny, bo<br />
+Jeszcze porucham do końca tej wiosny.
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « … ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef MAIN_HEADING

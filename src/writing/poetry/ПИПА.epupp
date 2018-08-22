@@ -1,0 +1,38 @@
+Name: ПИПА – Dzieła zebrane
+
+Include: LICENSE-Roboto
+Include: LICENSE-CREATIVE
+Include: LICENSE-Merriweather
+Include: ../../indent.css
+Include: writing/Roboto-font.css
+Include: ../the_taste_of_mi/spacing.css
+Include: writing/the_taste_of_mi/MathJax-font.css
+Include: writing/the_taste_of_mi/Merriweather-font.css
+Include: ../translations/sherlock_holmes_the_published_apocrypha/headings.css
+Include: ../translations/sherlock_holmes_the_published_apocrypha/Roboto-additions.css
+
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf
+
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf
+
+Network-Include: https://cdn.rawgit.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf
+
+Content: ПИПА/title.html
+Content: writing/poetry/ПИПА/contents.html
+Content: writing/poetry/ПИПА/introduction.html
+Content: writing/poetry/ПИПА/2018.11.02-Homoseksualizm/index.html
+Content: writing/poetry/ПИПА/2018.11.02-Homoseksualizm/Zawadzka.html
+Content: writing/poetry/ПИПА/2018.11.02-Homoseksualizm/Micherda.html
+Content: writing/poetry/ПИПА/2018.11.02-Homoseksualizm/Bujak.html
+Content: writing/poetry/ПИПА/2018.11.02-Homoseksualizm/nabijaczleweli.html
+
+Author: ПИПА
+Date: 2018-11-03T20:57:36+02:00
+Language: pl
