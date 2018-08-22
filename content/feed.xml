@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sat, 03 Nov 2018 21:11:05 +0000
+      Sat, 03 Nov 2018 21:17:33 +0000
     </pubDate>
     <lastBuildDate>
-      Sat, 03 Nov 2018 21:11:05 +0000
+      Sat, 03 Nov 2018 21:17:33 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -1259,6 +1259,256 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Fri, 19 May 2017 12:25:37 +0200</pubDate>
       <guid>https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
+    </item>
+
+    <item>
+      <title> ПИПА – Dzieła zebrane — nabijaczleweli</title>
+      <description>
+&lt;style&gt;
+.indented {
+ text-indent: 1em;
+}
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+h1.main-heading &gt; a,
+h2.main-heading &gt; a,
+h3.main-heading &gt; a,
+h4.main-heading &gt; a,
+h5.main-heading &gt; a,
+h6.main-heading &gt; a,
+h7.main-heading &gt; a {
+ text-decoration: initial;
+ color: initial;
+}
+.roboto-em {
+ /* Normalise to &quot;default&quot; size from inside of a &quot;roboto&quot; block ((22px-&gt;18px)-&gt;19px) */
+ font-size: calc(20em / 18);
+}
+&lt;/style&gt;
+&lt;!-- ePub title: &quot;Strona Tytułowa&quot; --&gt;
+
+ &lt;div style=&quot;display: table; width: 100%;&quot;&gt;
+  &lt;div style=&quot;display: table-cell; vertical-align: middle; text-align: center;&quot;&gt;
+   &lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;h2 class=&quot;writing merriweather continued&quot;&gt;ПИПА&lt;/h2&gt;
+&lt;h3 class=&quot;writing merriweather continuation&quot;&gt;&lt;em&gt;Поезия Интригующия Поетов Анахронических&lt;/em&gt;&lt;/h3&gt;
+&lt;h4 class=&quot;merriweather&quot;&gt;&amp;nbsp;&lt;/h4&gt;
+&lt;h4 class=&quot;writing merriweather smallcaps&quot;&gt;Dzieła zebrane&lt;/h4&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;h1&gt;&amp;nbsp;&lt;/h1&gt;
+
+&lt;!-- ePub title: &quot;Spis Treści&quot; --&gt;
+
+&lt;style&gt;
+.content-link {
+ color: initial;
+}
+&lt;/style&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Spis Treści&lt;/h2&gt;&lt;/center&gt;
+&lt;p class=&quot;writing roboto indented&quot;&gt;
+&lt;a href=&quot;#introduction&quot; class=&quot;content-link&quot;&gt;Wprowadzenie&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continued&quot;&gt;
+&lt;strong&gt;&lt;a href=&quot;#2018.11.02-Homoseksualizm&quot; class=&quot;content-link&quot;&gt;2018.11.02 Homoseksualizm&lt;/a&gt;&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented continuing&quot;&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/Zawadzka&quot; class=&quot;content-link&quot;&gt;2018.11.02 – Zawadzka&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented continuing&quot;&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/Micherda&quot; class=&quot;content-link&quot;&gt;2018.11.02 „HOMOsapiens” – Micherda&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented continuing&quot;&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/Bujak&quot; class=&quot;content-link&quot;&gt;2018.11.02 – Bujak&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented continuation&quot;&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/наб&quot; class=&quot;content-link&quot;&gt;2018.11.02 – наб&lt;/a&gt;
+&lt;/p&gt;
+ 
+&lt;!--​--&gt;
+&lt;h1&gt;&amp;nbsp;&lt;/h1&gt;
+
+&lt;!-- ePub title: &quot;Wprowadzenie&quot; --&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 id=&quot;introduction&quot; class=&quot;merriweather main-heading&quot;&gt;&lt;a href=&quot;#introduction&quot;&gt;Wprowadzenie&lt;/a&gt;&lt;/h2&gt;&lt;/center&gt;
+&lt;p class=&quot;writing roboto indented continued&quot;&gt;
+Przedstawiamy Wam, szanowny czytelniku,
+czynnie rozwijający się zbiór twórczości Felicjii –
+grupy wytwórczej &lt;em class=&quot;roboto-em&quot;&gt;Поезия Интригующия Поетов Анахронических&lt;/em&gt;.
+&lt;/p&gt;
+&lt;!-- TODO: history, members, kolejność, more verbosity --&gt;
+ 
+&lt;!--​--&gt;
+&lt;h1&gt;&amp;nbsp;&lt;/h1&gt;
+
+&lt;!-- ePub title: &quot;2018.11.02 „Homoseksualizm”&quot; --&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 id=&quot;2018.11.02-Homoseksualizm&quot; class=&quot;merriweather main-heading&quot;&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm&quot;&gt;2018.11.02 „Homoseksualizm”&lt;/a&gt;
+&lt;/h2&gt;&lt;/center&gt;
+&lt;p class=&quot;writing roboto indented&quot;&gt;
+&lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;2018.11.02&lt;/span&gt; &lt;em class=&quot;roboto-em&quot;&gt;nastąpiło pierwsze spotkanie wkrótce-Felicji
+ i z sugestii П. Zawadzkiej – pierwsza runda wytwórstwa.&lt;/em&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented&quot;&gt;
+&lt;em class=&quot;roboto-em&quot;&gt;Słowo przewodnie:&lt;/em&gt; &lt;strong&gt;&lt;span class=&quot;smallcaps&quot;&gt;homoseksualizm&lt;/span&gt;&lt;/strong&gt;&lt;em class=&quot;roboto-em&quot;&gt;.&lt;/em&gt;
+&lt;/p&gt;
+ 
+&lt;!--​--&gt;
+
+&lt;!-- ePub title: &quot;2018.11.02 – Zawadzka&quot; --&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 id=&quot;2018.11.02-Homoseksualizm/Zawadzka&quot; class=&quot;merriweather main-heading&quot;&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/Zawadzka&quot;&gt;2018.11.02 – Zawadzka&lt;/a&gt;
+&lt;/h2&gt;&lt;/center&gt;
+&lt;p class=&quot;writing roboto&quot;&gt;
+okropnie trzeszczy&lt;br /&gt;
+łóżko kochanków na górze&lt;br /&gt;
+ach, gdybym tylko mogła dać jej to&lt;br /&gt;
+co on dał&lt;br /&gt;
+nie musiałabym pokutować&lt;br /&gt;
+za grzech &quot;nie zabijaj&quot;&lt;br /&gt;
+a teraz pozostaje mi tylko&lt;br /&gt;
+stukać kijem od miotły&lt;br /&gt;
+w sufit&lt;br /&gt;
+piekła
+&lt;/p&gt;
+ 
+&lt;!--​--&gt;
+
+&lt;!-- ePub title: &quot;2018.11.02 „HOMOsapiens” – Micherda&quot; --&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 id=&quot;2018.11.02-Homoseksualizm/Micherda&quot; class=&quot;merriweather main-heading&quot;&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/Micherda&quot;&gt;2018.11.02 „HOMOsapiens” – Micherda&lt;/a&gt;
+&lt;/h2&gt;&lt;/center&gt;
+&lt;p class=&quot;writing roboto&quot;&gt;
+O homosapiens ze wszystkich świata stron&lt;br /&gt;
+W waszą stronę wyciągam dziś dłoń&lt;br /&gt;
+Prowadzę przez me wzburzone myśli i słowa&lt;br /&gt;
+Bo jakieś lesbijska się we mnie obudziła mowa&lt;br /&gt;
+I głosić piękno kobiet bym chciała&lt;br /&gt;
+Ach, gdyby któraś mnie wyruchała!&lt;br /&gt;
+Gdy leżąc wśród trawy przy pagórku zboczu&lt;br /&gt;
+Obudziłabym się ze wzrokiem utkwionym w jej kroczu&lt;br /&gt;
+I gdyby tak chętnie usta rozchylała.&lt;br /&gt;
+Lecz cóż to człowieku zrobisz w tym kraju?&lt;br /&gt;
+Prędzej ogień cię wchłonie, niż pójdziesz do raju.&lt;br /&gt;
+Choć nie ma raju bez jej waginy,&lt;br /&gt;
+Której wchłaniałabym wydzieliny&lt;br /&gt;
+Więc pochłoń mnie płomieniu żałosny, bo&lt;br /&gt;
+Jeszcze porucham do końca tej wiosny.
+&lt;/p&gt;
+ 
+&lt;!--​--&gt;
+
+&lt;!-- ePub title: &quot;2018.11.02 – Bujak&quot; --&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 id=&quot;2018.11.02-Homoseksualizm/Bujak&quot; class=&quot;merriweather main-heading&quot;&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/Bujak&quot;&gt;2018.11.02 – Bujak&lt;/a&gt;
+&lt;/h2&gt;&lt;/center&gt;
+&lt;!-- alien drawing --&gt;
+&lt;p class=&quot;writing roboto&quot;&gt;
+Po cierpieniach losu dnia codziennego,&lt;br /&gt;
+Gdy żadna akcja nei jest warta uwagi;&lt;br /&gt;
+Widzisz istotę nieludzką z okna otwartego,&lt;br /&gt;
+I chcesz wyskoczyć z niego w celu najwyższej wagi;&lt;br /&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continued&quot;&gt;
+&lt;em class=&quot;roboto-em&quot;&gt;Bo jak to możliwe,&lt;br /&gt;
+ że dzieci uczciwe;&lt;br /&gt;
+ chodzą pewnie&lt;br /&gt;
+ i gadają wylewnie&lt;/em&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented continuing&quot;&gt;
+&lt;em class=&quot;roboto-em&quot;&gt;o ludziach karalnych,&lt;/em&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented continuation&quot;&gt;
+&lt;em class=&quot;roboto-em&quot;&gt;heteroseksualnych.&lt;/em&gt;
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto indented&quot; style=&quot;font-size: calc(10em / 15);&quot;&gt;
+&lt;em class=&quot;roboto-em&quot;&gt;hetero&lt;br /&gt;
+ to zero.&lt;/em&gt;
+&lt;/p&gt;
+ 
+&lt;!--​--&gt;
+
+&lt;!-- ePub title: &quot;2018.11.02 – наб&quot; --&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;center&gt;&lt;h2 id=&quot;2018.11.02-Homoseksualizm/наб&quot; class=&quot;merriweather main-heading&quot;&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/наб&quot;&gt;2018.11.02 – наб&lt;/a&gt;
+&lt;/h2&gt;&lt;/center&gt;
+&lt;p class=&quot;writing roboto continued&quot;&gt;
+Widzę dwóch takich
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing indented&quot;&gt;
+I mi się nóż w kieszeni otwiera
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing&quot;&gt;
+Lecz nie na nich
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuation indented&quot;&gt;
+A na społeczeństwo, co ich sponiewiera
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continued&quot;&gt;
+I dwie takie widzę
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing indented&quot;&gt;
+Lecz nie jestem pewna
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing&quot;&gt;
+Bo znikną te rydze
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuation indented&quot;&gt;
+Tak jak one – tego jestem pewna
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continued&quot;&gt;
+Bo czyjaś krew kapie
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing indented&quot;&gt;
+Dawczynią zostałaby niejedna
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing&quot;&gt;
+Ale to krasny punkt na mapie
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuation indented&quot;&gt;
+Liczby nie dotrą nigdy do sedna
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continued&quot;&gt;
+Pozywa stan i przegrywa
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing indented&quot;&gt;
+„Ot – system felerny”
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuing&quot;&gt;
+Tutaj liczby nie kłamią, ba –
+&lt;/p&gt;
+&lt;p class=&quot;writing roboto continuation indented&quot;&gt;
+Wyrik wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;śmiertelny&lt;/strong&gt;
+&lt;/p&gt;
+ 
+&lt;!--​--&gt;
+</description>
+      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
+      <pubDate>Sat,  3 Nov 2018 21:03:25 +0100</pubDate>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
