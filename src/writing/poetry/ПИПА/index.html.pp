@@ -51,5 +51,5 @@ BOILERPLATE(ПИПА – Dzieła zebrane, Zbiór dzieł Felicji, pl, WORD_COUNT_
 
 
 WORD_COUNTER_END_NON_ENGLISH()
-WRITING_END()
+WRITING_CUSTOM_NAME_STUB_END(this, writing/poetry/ПИПА)  <!-- Can't use the auto one because the define degenerates to question marks '-->
 BOILERPLATE_END()
