@@ -26,8 +26,6 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 #endif
 
-#define CONTENT(id) CONTENT_BIFURCATED(id, id)
-
 
 <!--EBOOK_ONLY(<!---->
 <!DOCTYPE html>                                                                  FORCED_NEWLINE
@@ -55,28 +53,27 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 <center><h2 class="merriweather">Spis Treści</h2></center>
 
 <p class="writing roboto indented">
-<a CONTENT(introduction)>Wprowadzenie</a>
+<a CONTENT_BIFURCATED(introduction, writing-poetry-ПИПА-introduction)>Wprowadzenie</a>
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm, 2018.11.02-Homoseksualizm/index)>2018.11.02 Homoseksualizm</a></strong>
+<strong><a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm,  writing-poetry-ПИПА-2018.11.02-Homoseksualizm-index)>         2018.11.02 Homoseksualizm</a></strong>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(2018.11.02-Homoseksualizm/Zawadzka)>2018.11.02 – Zawadzka</a>
+<a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm/Zawadzka, writing-poetry-ПИПА-2018.11.02-Homoseksualizm-Zawadzka)>      2018.11.02 – Zawadzka</a>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(2018.11.02-Homoseksualizm/Micherda)>2018.11.02 „HOMOsapiens” – Micherda</a>
+<a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm/Micherda, writing-poetry-ПИПА-2018.11.02-Homoseksualizm-Micherda)>      2018.11.02 „HOMOsapiens” – Micherda</a>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(2018.11.02-Homoseksualizm/Bujak)>2018.11.02 – Bujak</a>
+<a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm/Bujak,    writing-poetry-ПИПА-2018.11.02-Homoseksualizm-Bujak)>         2018.11.02 – Bujak</a>
 </p>
 <p class="writing roboto indented continuation">
-<a CONTENT(2018.11.02-Homoseksualizm/наб)>2018.11.02 – наб</a>
+<a CONTENT_BIFURCATED(2018.11.02-Homoseksualizm/наб,      writing-poetry-ПИПА-2018.11.02-Homoseksualizm-nabijaczleweli)>2018.11.02 – наб</a>
 </p>
 
 
-<!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
-                          ---------- ))-->
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « … ))-->
 
 <!--EBOOK_ONLY(<!---->
 	</body>
@@ -84,5 +81,4 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 <!--)​-->
 
 
-#undef CONTENT
 #undef CONTENT_BIFURCATED

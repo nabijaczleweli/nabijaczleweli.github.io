@@ -11,9 +11,11 @@ Include: writing/the_taste_of_mi/Merriweather-font.css
 Include: ../translations/sherlock_holmes_the_published_apocrypha/headings.css
 Include: ../translations/sherlock_holmes_the_published_apocrypha/Roboto-additions.css
 
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf
 
+Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
 Network-Include: https://cdn.rawgit.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
 
