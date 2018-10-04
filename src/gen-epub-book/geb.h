@@ -1,6 +1,6 @@
 #define GEB(...)          <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>
 #define GEB_HREF(...)     href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
-#define GEB_CDN_HREF(...) href=STR(httpsCOLON_SLASH_SLASHcdn.rawgit.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
+#define GEB_CDN_HREF(...) href=STR(httpsCOLON_SLASH_SLASHrawcdn.githack.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
 
 #define CSPAN(clas, ...)        <span class=STR(clas)>__VA_ARGS__</span>
 #define HIGHLIT_CODE(clas, ...) <kbd class="highlit-code nowrap">CSPAN(clas,__VA_ARGS__)</kbd>

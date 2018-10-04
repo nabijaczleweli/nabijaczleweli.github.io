@@ -15,7 +15,7 @@
 #include "util.h"
 
 
-#define MFIZZ_LINK <link href="//cdn.rawgit.com/fizzed/font-mfizz/v2.4.1/dist/font-mfizz.css" rel="stylesheet" /> FORCED_NEWLINE
+#define MFIZZ_LINK <link href="//rawcdn.githack.com/fizzed/font-mfizz/v2.4.1/dist/font-mfizz.css" rel="stylesheet" /> FORCED_NEWLINE
 
 
 #define CMT // D = only decorative

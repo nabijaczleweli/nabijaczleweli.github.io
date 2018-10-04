@@ -22,9 +22,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                           <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 #define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/content/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
-                                  src="//cdn.rawgit.com/mathjax/MathJax/master/MathJax.js?config=/content/assets/MathJax-config.js"></script>
-#define ZIPPING_SCRIPTS   <script type="text/javascript" src="//cdn.rawgit.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script> \
-                          <script type="text/javascript" src="//cdn.rawgit.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script> \
+                                  src="//rawcdn.githack.com/mathjax/MathJax/master/MathJax.js?config=/content/assets/MathJax-config.js"></script>
+#define ZIPPING_SCRIPTS   <script type="text/javascript" src="//rawcdn.githack.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script> \
+                          <script type="text/javascript" src="//rawcdn.githack.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script> \
                           <script type="text/javascript" src="/content/assets/pack_specified.js"></script>
 BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK COLUMN_LINKS SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
 
@@ -213,7 +213,7 @@ MATHJAX(AA c in {r,g,b} : C_(out_c) = (sum_(theta=1)^alpha colour P_(ntheta) S_(
 </p>
 <p class="indented continued">
 A full list of conversions and their implementations can be found at the
-	<a href="//cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html" target="_blank">mandalas-rs API documentation</a>.
+	<a href="//rawcdn.githack.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html" target="_blank">mandalas-rs API documentation</a>.
 </p>
 
 </span>
