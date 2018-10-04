@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sat, 03 Nov 2018 22:25:53 +0000
+      Mon, 10 Dec 2018 21:27:16 +0000
     </pubDate>
     <lastBuildDate>
-      Sat, 03 Nov 2018 22:25:53 +0000
+      Mon, 10 Dec 2018 21:27:16 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -574,7 +574,7 @@ Since the output image format (PNG) and the video format (H.264) only support RG
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 A full list of conversions and their implementations can be found at the
- &lt;a href=&quot;//cdn.rawgit.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html&quot; target=&quot;_blank&quot;&gt;mandalas-rs API documentation&lt;/a&gt;.
+ &lt;a href=&quot;//rawcdn.githack.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html&quot; target=&quot;_blank&quot;&gt;mandalas-rs API documentation&lt;/a&gt;.
 &lt;/p&gt;
 
 &lt;/span&gt;
