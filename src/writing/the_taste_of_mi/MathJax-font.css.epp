@@ -13,18 +13,18 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../../util.h"
 
 
-#define MATHJAX_FACE(fam, variant, ...)                                                                                                                \
-	@font-face {                                                                                                                          FORCED_NEWLINE \
-		font-family: STR(fam);                                                                                                              FORCED_NEWLINE \
-		__VA_ARGS__                                                                                                                         FORCED_NEWLINE \
-		src:                                                                                                                                               \
-			SLASH_ASTERIX CSS_HTML_ONLY(                                                                                                                     \
+#define MATHJAX_FACE(fam, variant, ...)                                                                                                                    \
+	@font-face {                                                                                                                              FORCED_NEWLINE \
+		font-family: STR(fam);                                                                                                                  FORCED_NEWLINE \
+		__VA_ARGS__                                                                                                                             FORCED_NEWLINE \
+		src:                                                                                                                                                   \
+			SLASH_ASTERIX CSS_HTML_ONLY(                                                                                                                         \
 			url(STR(httpsCOLON_SLASH_SLASHrawcdn.githack.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/fam-variant.woff)) format("woff"),    FORCED_NEWLINE \
 				url(STR(httpsCOLON_SLASH_SLASHrawcdn.githack.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/fam-variant.otf)) format("opentype")                \
-			) SLASH_ASTERIX */                                                                                                                               \
-			SLASH_ASTERIX CSS_EBOOK_ONLY( SLASH_ASTERIX */                                                                                                   \
-			url(STR(../fam-variant.woff)) format("woff"),                                                                                                    \
-				url(STR(../fam-variant.otf)) format("opentype") ) SLASH_ASTERIX */ ;                                                            FORCED_NEWLINE \
+			) SLASH_ASTERIX */                                                                                                                                   \
+			SLASH_ASTERIX CSS_EBOOK_ONLY( SLASH_ASTERIX */                                                                                                       \
+			url(STR(../fam-variant.woff)) format("woff"),                                                                                                        \
+				url(STR(../fam-variant.otf)) format("opentype") ) SLASH_ASTERIX */ ;                                                                FORCED_NEWLINE \
 	}
 
 
