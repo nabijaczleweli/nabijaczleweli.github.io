@@ -1,0 +1,78 @@
+#include "../../variable-selectors.h"
+#include "../../../util.h"
+
+
+<!--EBOOK_ONLY(<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)             FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+nabijaczleweli.xyz is licensed under a                                          FORCED_NEWLINE
+Creative Commons Attribution 4.0 International License.                         FORCED_NEWLINE
+​                                                                                FORCED_NEWLINE
+You should have received a copy of the license along with this                  FORCED_NEWLINE
+work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. FORCED_NEWLINE
+-->)-->
+
+
+<!-- ePub title: "Spis Treści" -->
+
+
+#ifdef EBOOK
+
+#define CONTENT_BIFURCATED(id, file_root) href=STR(file_root.html) class="content-link"
+
+#else
+
+#define CONTENT_BIFURCATED(id, file_root) href=STR(HASH​FORCED_SPACER​id) class="content-link"
+
+#endif
+
+#define CONTENT(id) CONTENT_BIFURCATED(id, id)
+
+
+<!--EBOOK_ONLY(<!---->
+<!DOCTYPE html>                                                                  FORCED_NEWLINE
+<html lang="pl">                                                                 FORCED_NEWLINE
+	<head>                                                                         FORCED_NEWLINE
+		<title>Spis Treści</title>                                                   FORCED_NEWLINE
+		<meta name="author" content="nabijaczleweli">                                FORCED_NEWLINE
+		<link href="../indent.css" rel="stylesheet">                                 FORCED_NEWLINE
+		<link href="writing-Roboto-font.css" rel="stylesheet">                       FORCED_NEWLINE
+		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">      FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet"> FORCED_NEWLINE
+	</head>                                                                        FORCED_NEWLINE
+	<body>                                                                         FORCED_NEWLINE
+<!--)-->
+
+<style>
+.content-link {
+	color: initial;
+}
+
+.title {
+	padding-left: 2.5em; /* TODO replace this with something reasonably reflecting the original layout, but this is good enough for now */
+}
+</style>
+
+
+<p></p>
+<center><h2 class="merriweather"><em>SPIS TREŚCI</em></h2></center>
+
+<p class="writing roboto">
+<strong><a CONTENT_BIFURCATED(danger, danger/index)>NIEBEZPIECZEŃSTWO</a></strong>
+</p>
+<p class="writing roboto">
+<a CONTENT(danger/the-bloody-chamber)>Angela Carter</a> <span class="title"><a CONTENT(danger/the-bloody-chamber)>Krwawa komnata (The Bloody Chamber)</a></span>
+</p>
+
+
+<!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
+                          ---------- ))-->
+
+<!--EBOOK_ONLY(<!---->
+	</body>
+</html>
+<!--)​-->
+
+
+#undef CONTENT
