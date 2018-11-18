@@ -4,6 +4,7 @@ Include: LICENSE-Roboto
 Include: LICENSE-CREATIVE
 Include: LICENSE-Merriweather
 Include: ../../indent.css
+Include: erotica/lettering.css
 Include: writing/Roboto-font.css
 Include: ../the_taste_of_mi/spacing.css
 Include: writing/the_taste_of_mi/MathJax-font.css
@@ -27,8 +28,8 @@ Network-Include: https://rawcdn.githack.com/google/fonts/97f2a0e2/ofl/merriweath
 Content: erotica/title.html
 Content: erotica/dedication.html
 Content: writing/translations/erotica/contents.html
-# Content: writing/translations/erotica/the-parodies/index.html
-# Content: writing/translations/erotica/the-parodies/the-field-bazaar.html
+Content: writing/translations/erotica/danger/index.html
+Content: writing/translations/erotica/danger/the-bloody-chamber.html
 
 Author: Aleksandra Łopacińska
 Date: 2019-01-15T23:47:01+01:00

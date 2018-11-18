@@ -30,6 +30,7 @@ BOILERPLATE(Erotica, Polish translation of Erotica, pl, WORD_COUNT_SCRIPT STYLES
 
 
 <style>
+#include "lettering.css"
 #include "../../../indent.css"
 #include "../../the_taste_of_mi/spacing.css"
 #include "../sherlock_holmes_the_published_apocrypha/headings.css"
@@ -43,7 +44,8 @@ BOILERPLATE(Erotica, Polish translation of Erotica, pl, WORD_COUNT_SCRIPT STYLES
 <h1>&nbsp;</h1>
 #include "contents.html.eppe"
 <h1>&nbsp;</h1>
-<!-- #include "danger/the-bloody-chamber.html.eppe" -->
+#include "danger/index.html.eppe"
+#include "danger/the-bloody-chamber.html.eppe"
 
 
 WORD_COUNTER_END()

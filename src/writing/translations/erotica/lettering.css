@@ -1,0 +1,6 @@
+.initialised::first-letter {
+  float: left;
+  font-size: 3.1em;
+  font-weight: bold;
+	margin-top: 0.065em;
+}
