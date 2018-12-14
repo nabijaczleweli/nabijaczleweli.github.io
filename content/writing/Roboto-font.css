@@ -9,39 +9,39 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 */
 
 
-       
-       
 
- @font-face {
- font-family: "Roboto Slab";
- font-style: normal;
- font-weight: normal;
- src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
-  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf")   format("truetype");
+
+
+ @font-face { 
+ font-family: "Roboto Slab"; 
+ font-style: normal; 
+ font-weight: normal; 
+ src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), 
+  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf")   format("truetype"); 
  }
 
- @font-face {
- font-family: "Roboto Slab";
- font-style: normal;
- font-weight: bold;
- src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"),
-  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf")   format("truetype");
+ @font-face { 
+ font-family: "Roboto Slab"; 
+ font-style: normal; 
+ font-weight: bold; 
+ src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), 
+  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf")   format("truetype"); 
  }
 
- @font-face {
- font-family: "Roboto";
- font-style: normal;
- font-weight: normal;
- src: local("Roboto Regular"), local("Roboto-Regular"),
-  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf")   format("truetype");
+ @font-face { 
+ font-family: "Roboto"; 
+ font-style: normal; 
+ font-weight: normal; 
+ src: local("Roboto Regular"), local("Roboto-Regular"), 
+  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Regular.ttf")   format("truetype"); 
  }
 
- @font-face {
- font-family: "Roboto";
- font-style: italic;
- font-weight: normal;
- src: local("Roboto Italic"), local("Roboto-Italic"),
-  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf")   format("truetype");
+ @font-face { 
+ font-family: "Roboto"; 
+ font-style: italic; 
+ font-weight: normal; 
+ src: local("Roboto Italic"), local("Roboto-Italic"), 
+  url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf")   format("truetype"); 
  }
 .roboto {
  font-family: "Roboto Slab", serif;
