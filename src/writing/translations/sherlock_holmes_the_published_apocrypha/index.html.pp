@@ -19,6 +19,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define STYLESHEETS <link href="../../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                  FORCED_NEWLINE \
+                    <link href="/kaschism/assets/pagebreak.css" rel="stylesheet" />               FORCED_NEWLINE \
                     <link href="../../the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
                     <link href="../../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
                     <style>                                                                       FORCED_NEWLINE \
