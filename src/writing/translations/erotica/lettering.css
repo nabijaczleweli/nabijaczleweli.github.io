@@ -1,3 +1,7 @@
+.initialised {
+  text-indent: 0.15em;
+}
+
 .initialised::first-letter {
   float: left;
   font-size: 3.1em;
