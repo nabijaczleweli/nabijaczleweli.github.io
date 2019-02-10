@@ -39,6 +39,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 		<link href="../indent.css" rel="stylesheet">                                                                      FORCED_NEWLINE
 		<link href="writing-Roboto-font.css" rel="stylesheet">                                                            FORCED_NEWLINE
 		<link href="../the_taste_of_mi-spacing.css" rel="stylesheet">                                                     FORCED_NEWLINE
+		<link href="writing-the_taste_of_mi-MathJax-font.css" rel="stylesheet">                                           FORCED_NEWLINE
 		<link href="writing-translations-erotica-lettering.css" rel="stylesheet">                                         FORCED_NEWLINE
 		<link href="writing-the_taste_of_mi-Merriweather-font.css" rel="stylesheet">                                      FORCED_NEWLINE
 		<link href="writing-translations-sherlock_holmes_the_published_apocrypha-Roboto-additions.css" rel="stylesheet">  FORCED_NEWLINE
@@ -57,7 +58,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 <p class="writing roboto continued initialised">
 Rozkosz i ból są intymnie połączone. Oba sprawiają ciało boleśnie                                  <!-- TODO: "pleasure" -->
 wrażliwym. W miłości, jak i w cierpieniu, nie może być miejsca na powstrzymywanie się,             <!-- TODO: "no holding back" -->
-powściągliwość, tajemne miejsca. W swoim opowiadaniu Angeli Carter mówi:
+powściągliwość, tajemne miejsca. W swoim opowiadaniu Angela Carter mówi:
 ‘jest pewne uderzające podobieństwo pomiędzy aktem miłości i machinacjami                          <!-- TODO: "ministrations" -->
 kata’.
 </p>
@@ -89,6 +90,28 @@ pokazuje, to jak przekonująco i bezustannie te elementy
 są wmuszane w życia kobiet. Tak bardzo że, w końcu,
 stają się nierozerwalną częścią ich płciowej egsystencji.                                          <!-- TODO: "sexual" -->
 </p>
+<p class="writing roboto indented continuing">
+Ciche przyzwolenie jest niebezpieczne. Dla Margaret Watson i Jean Lachlan,
+skazanych za czary w MATH(1645), było śmiertelne. Protokoły                                        <!-- TODO: "found guilty" -->
+<!-- Page 133 -->
+zeznania Watson ujawniają przyjmowanie przezeń bierności kiedy                                     <!-- TODO: "confession" -->
+‘całkowicie oddaje duszę swą oraz ciało swe Szatanowi we władanie’. Przez
+powiedzenie jej o mocy płciowej (‘...ukazał się o lasce, za pierwszym                              <!-- TODO: "telling her story of sexual power" -->
+razem jako czarny mąż i schwycił pobliskiego łuszczyka po czem
+cieleśnie zeń obcował’), Watson stała się poddaną innej mocy
+– państwa.
+</p>
+<p class="writing roboto indented continuing">
+Śmierć jest najekstremelniejszym z końców płciowej usłużności. Strata
+indywidualności jest ceną trochę tylko niższą. W wierszu Stevie Smith
+‘piękna pani’ zanurza się <!-- TODO: tonie? --> w swojej fantastycznej kochance.
+W tekście Monique Wittig Ganimedea jest zachwycona przez piorunującą moc Zeyny, W                  <!-- TODO: "Zeyna" -->
+opowiadaniu Charlotte Mew autorytet kościoła równa władzy erotycznej oddawanej
+mężczyznom przez kobiety. Ella jest na swoim miesiącu miodowym kiedy jest świadkiem
+ofiarowanie kobiety. Widowisko zostawia ją ‘w rozsypce’;
+jej brata za to pozostawia rozradowanego, podziwiającego ‘ciche przystanie na
+dosyć wspaniałą zbrodnię’ martwej kobiety.
+</p>
 
 
 <!--HTML_ONLY(EBOOK_ONLY( „ ” ‘ ’ » « …
@@ -102,5 +125,5 @@ stają się nierozerwalną częścią ich płciowej egsystencji.                
 
 
 #undef MAIN_HEADING
-#undef MAIN
+#undef MATH
 #undef EM
