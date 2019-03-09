@@ -238,20 +238,13 @@ Brutal przerażony zatopił się w fotel.
 <p class="writing roboto indented continuing">
 Drugi autor ani mrugnął.
 </p>
-<span style="display: inline-block; width: 100%;">
-	<p class="writing roboto continuing" style="float: right; margin-right: 4em;">
-		EM(Dla A. Conan Doyle'<!--'-->a,)
-	</p>
-	<br />
-	<p class="writing roboto continuing" style="float: right; margin-right: 2em;">
-		EM(od jego przyjaciela)
-	</p>
-	<br />
-	<p class="writing roboto continuation" style="float: right;">
-		EM(J. M. Barrie'<!--'-->ego.)
-	</p>
-	<br />
-</span>
+<p class="writing roboto continuing" style="text-align: right;">
+	<span style="display: inline-block; text-align: left;">
+		                                 EM(Dla A. Conan Doyle'<!--'-->a,)<br />
+		<span style="padding-left: 5em;">EM(od jego przyjaciela)<br /></span>
+		<span style="padding-left: 8em;">EM(J. M. Barrie'<!--'-->ego.)</span>
+	</span>
+</p>
 
 
 <!--HTML_ONLY(EBOOK_ONLY( „ ” » « …
