@@ -55,6 +55,6 @@ BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opu
 #include "the-stories-of-mystery/the-man-with-the-watches.html.eppe"
 
 
-WORD_COUNTER_END()
+WORD_COUNTER_END_NON_ENGLISH()
 WRITING_END()
 BOILERPLATE_END()
