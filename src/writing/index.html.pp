@@ -75,6 +75,15 @@ Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly r
 
 <div>
 	<p></p>
+	Translations:
+	<ul>
+		TRANSLATIONS_LIST()
+	</ul>
+	<p></p>
+</div>
+
+<div>
+	<p></p>
 	<a href="https://www.reddit.com/r/WritingPrompts">Writing prompts</a>:
 	<ul>
 		WRITING_PROMPT_LIST()
@@ -89,7 +98,6 @@ Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly r
 		<li><a href="//4kulturka.blogspot.com/2017/06/moon-is-harsh-mistress.html">Moon Is Harsh Mistress</a> [PL] —
 			Review of Robert A. Heinlein's "Moon Is Harsh Mistress"; <!--'-->
 			MATH(06.04.2017).</li>
-		TRANSLATIONS_LIST()
 	</ul>
 	<p></p>
 </div>
