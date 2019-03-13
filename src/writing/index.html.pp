@@ -98,6 +98,9 @@ Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly r
 		<li><a href="//4kulturka.blogspot.com/2017/06/moon-is-harsh-mistress.html">Moon Is Harsh Mistress</a> [PL] —
 			Review of Robert A. Heinlein's "Moon Is Harsh Mistress"; <!--'-->
 			MATH(06.04.2017).</li>
+		<li><a href="poetry/ПИПА/">ПИПА</a> [PL] —
+			an actively developing collection of the creations of Felicia – the artistic cooperative Поезия Интригующия Поетов Анахронических;
+			MATH(02.11.2018–?).</li>
 	</ul>
 	<p></p>
 </div>
