@@ -27,7 +27,6 @@ BOILERPLATE(Written creative(?) things, Non-code things набꞌs written, en-G
 
 
 <style>
-#include "the_taste_of_mi/spacing.css"
 #include "../indent.css"
 </style>
 <span class="roboto">
@@ -36,18 +35,8 @@ BOILERPLATE(Written creative(?) things, Non-code things набꞌs written, en-G
 <h2 class="merriweather">(Creative?) writing<span style="font-size: calc(4em/7);">(s)</span></h2>
 
 
-<p class="indented continued">
-Just a general preface: I do <em>not</em> offer any kind of guarantees about the quality (other than that it increases over time), well-writtenness,
-	readability (what is "correct" word order, what do you mean sextuply-compound sentences are unreadable, what do you mean they can'<!--'-->t be MATH(331) words long),
-	or comedic value (save for the fact that it's usually high-context and maths based (I mean I'm a programmer, so))
-	of anything that follows (also I really like parens).
-</p>
-<p class="indented continuation">
-Some of these require some specific context to make sense, some do not make sense at all, but they're all presented in some <!--'-->
-	(more-less original, see individual prefaces) form here.
-Some are just bad, or hold some <em>scheiss</em> biases – I'<!--'-->m mostly referring to the ones released before MATH(2017),
-	as MATH(09.2016–06.2017) was an extremely formative period in, among other things, erasing <em>shit</em> that comes bundled with being from Poland,
-	but cut fifteeen-year-old наб some slack.
+<p class="indented">
+No Warranties Provided™
 </p>
 
 <div>
