@@ -25,6 +25,6 @@
 	TRANSLATION_RAW(funeral_blues.html, Funeral Blues (ew. Pogrzebowy Blues),                                                                                          \
 		              PL, 19.04.2018, Translation of W. H. Auden's<!--'--> "Funeral Blues" for a contest)                                                                \
 	TRANSLATION_RAW(sherlock_holmes_the_published_apocrypha/, Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opublikowane Apokryfy),                    \
-	                PL, 07.12.2017–WIP, Ongoing effort to translate the entirety of "Sherlock Holmes, the Published Apocrypha"，currently roughly on page 22 from 330)  \
+	                PL, 07.12.2017–WIP, Ongoing effort to translate the entirety of "Sherlock Holmes, the Published Apocrypha"，currently roughly on page 22 of 330)   \
 	TRANSLATION_RAW(erotica, Erotica,                                                                                                                                  \
 		              PL, 18.11.2018–WIP, Ongoing translation of some of my faves from Reynolds'<!--'--> "Erotica")
