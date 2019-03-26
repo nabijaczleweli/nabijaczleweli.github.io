@@ -1,0 +1,32 @@
+body {
+	background: black;
+	color: white;
+}
+
+html {
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* IE 10+ */
+}
+
+html::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+}
+
+
+.art-box {
+	display: grid;
+	height: 100%;
+	margin: 1em 0 1em 0;
+}
+
+.art-box .label {
+	margin-bottom: 0.1em;
+}
+
+.art-box * {
+	max-width: 100%;
+	max-height: 100vh;
+	margin: auto;
+}
