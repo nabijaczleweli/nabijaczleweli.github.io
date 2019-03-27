@@ -3,6 +3,7 @@ body {
 	color: white;
 }
 
+
 html {
 	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */
@@ -12,6 +13,38 @@ html {
 html::-webkit-scrollbar { /* WebKit */
 	width: 0;
 	height: 0;
+}
+
+
+@media screen and (orientation: landscape) {
+	@keyframes arrow {
+	  0% {
+	  	bottom: 0.2em;
+	  	opacity: 0;
+	  }
+	  30% {
+	  	opacity: .7;
+	  }
+	  100% {
+	  	bottom: calc((147 / 103) * -5em);
+	  }
+	}
+
+	#arrow {
+		background-image: url('down_arrow.png');
+		background-size: 100%;
+
+		width: 5em;
+		height: calc((147 / 103) * 5em);
+
+		position: fixed;
+		right: 2.5em;
+
+	  animation-name: arrow;
+		animation-delay: 0.5s;
+	  animation-duration: 2.5s;
+	  animation-fill-mode: both;
+	}
 }
 
 
