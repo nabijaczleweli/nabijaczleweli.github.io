@@ -12,7 +12,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Tue, 13 Jun 2017 22:42:51 +0200" -->
+<!-- RSS_PUB_DATE: "Thu, 9 May 2019 22:54:19 +0200" -->
 
 #define PIECE(pid, fname, ...)                                                   \
 	<div class="art-box">                                                          \
@@ -41,6 +41,9 @@ PIECE(r0_sngllines_rgba_1600x900_60              , r0_sngllines_2x_w1.5_rgba_160
 PIECE(r0_skiplines_rgba_1600x900_60              , r0_skiplines_2x_w1.5_rgba_1600x900_60,               drop-ped)
 PIECE(r0_skiplines_comp-step_rgba_1600x900_60__2 , r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2,  c o m p e n s a t e)
 PIECE(r0_skiplines2..4_comp-step_rgba_1600x900_60, r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60, {2,3,4}-drop)
+
+
+<span id="arrow"></span>
 
 
 BOILERPLATE_END()
