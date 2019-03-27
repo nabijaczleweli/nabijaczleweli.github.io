@@ -2,3 +2,7 @@
 	path = ext/octicons
 	url = https://github.com/primer/octicons
 	branch = v6.0.1
+[submodule "ext/prism"]
+	path = ext/prism
+	url = https://github.com/PrismJS/prism
+	branch = v1.16.0
