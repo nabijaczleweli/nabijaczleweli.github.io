@@ -7,6 +7,7 @@
 !assets/**
 !*.enc
 !*.awk
+!*.js
 !.git*
 !.travis.yml
 !*Makefile
