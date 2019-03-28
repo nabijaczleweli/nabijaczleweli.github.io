@@ -21,16 +21,16 @@
 
 
 const fs = require("fs");
-
 const Prism = require("./ext/prism/prism.js");
 Prism.loadLanguages = require('./ext/prism/components/');
 
-Prism.loadLanguages(['haml']);
+
+const LANGUAGE_REMAPS = {"js": "javascript"};
 
 
-const in_file = process.argv[2];
+const in_file  = process.argv[2];
 const out_file = process.argv[3];
-const language = process.argv[4];
+let   language = process.argv[4];
 
 if(!in_file) {
 	console.error("Input file unspecified.")
@@ -46,6 +46,10 @@ if(!language) {
 	console.error("Language unspecified.")
 	process.exit(3);
 }
+
+
+language = LANGUAGE_REMAPS[language] || language;
+Prism.loadLanguages([language]);
 
 if(!Prism.languages[language]) {
 	console.error("Unknown language", language)
