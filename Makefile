@@ -50,6 +50,7 @@ AWK := awk
 SED := sed
 CPP := cpp
 NPM := npm
+NODE := node
 GEN_EPUB_BOOK := gen-epub-book
 CALIBRE_CONVERT := ebook-convert
 OUTDIR := out/
@@ -59,18 +60,20 @@ PREPROCESS_SOURCES := $(sort $(wildcard src/*.pp src/**/*.pp src/**/**/*.pp src/
 EBOOK_PREPROCESS_SOURCES := $(sort $(wildcard src/*.eppe src/**/*.eppe src/**/**/*.eppe src/**/**/**/*.eppe src/**/**/**/**/*.eppe src/**/**/**/**/**/*.eppe))
 COMBINED_PREPROCESS_SOURCES := $(sort $(wildcard src/*.epp src/**/*.epp src/**/**/*.epp src/**/**/**/*.epp src/**/**/**/**/*.epp src/**/**/**/**/**/*.epp))
 BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp src/**/**/**/**/*.epupp src/**/**/**/**/*.epupp))
+HIGHLIGHT_SOURCES := $(sort $(wildcard src/*.hlpp src/**/*.hlpp src/**/**/*.hlpp src/**/**/**/*.hlpp src/**/**/**/**/*.hlpp src/**/**/**/**/*.hlpp))
 ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.* assets/**/**/**/**/*.* assets/**/**/**/**/**/*.*))
 
-.PHONY : all clean assets octicons books preprocess rss
+.PHONY : all clean assets octicons highlight preprocess books rss
 
 
-all : assets octicons preprocess books rss
+all : assets octicons highlight preprocess books rss
 
 clean :
 	rm -rf $(OUTDIR) $(BLDDIR)
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
+highlight : highlight.js ext/prism/prism.js $(patsubst src/%.hlpp,$(BLDDIR)out/%.html,$(HIGHLIGHT_SOURCES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(BLDDIR)out/%,$(EBOOK_PREPROCESS_SOURCES)) $(foreach l,$(patsubst src/%.epp,%,$(COMBINED_PREPROCESS_SOURCES)),$(OUTDIR)$(l) $(BLDDIR)out/$(l))
 books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
@@ -104,6 +107,10 @@ $(OUTDIR)% : src/%.pp
 $(OUTDIR)% : src/%.epp
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,)
+
+$(BLDDIR)out/%.html : highlight.js src/%.hlpp
+	@mkdir -p $(dir $@)
+	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(patsubst $(BLDDIR)out/%.html,%,$@)))
 
 $(BLDDIR)out/% : src/%.epp
 	@mkdir -p $(dir $@)
