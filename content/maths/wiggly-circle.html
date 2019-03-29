@@ -46,7 +46,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
  <meta name="theme-color" content="#ffffff"> 
- <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" /> <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" /> <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
  </head> 
  <body>
 <div class="art-box"><h2 class="merriweather">wiggly-circle</h2></div>
@@ -61,6 +61,98 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <div class="art-box"> <h4 class="merriweather label">drop-ped</h4> <a href="#r0_skiplines_rgba_1600x900_60"> <img id="r0_skiplines_rgba_1600x900_60" src="/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png" /> </a> </div>
 <div class="art-box"> <h4 class="merriweather label">c o m p e n s a t e</h4> <a href="#r0_skiplines_comp-step_rgba_1600x900_60__2"> <img id="r0_skiplines_comp-step_rgba_1600x900_60__2" src="/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png" /> </a> </div>
 <div class="art-box"> <h4 class="merriweather label">{2,3,4}-drop</h4> <a href="#r0_skiplines2..4_comp-step_rgba_1600x900_60"> <img id="r0_skiplines2..4_comp-step_rgba_1600x900_60" src="/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png" /> </a> </div>
+<div class="art-box">
+ <h2 class="merriweather">Code</h2>
+<pre class="language-js"><code class="language-js"><span class="token comment">// The MIT License (MIT)</span>
+
+<span class="token comment">// Copyright (c) 2019 nabijaczleweli</span>
+
+<span class="token comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of</span>
+<span class="token comment">// this software and associated documentation files (the "Software"), to deal in</span>
+<span class="token comment">// the Software without restriction, including without limitation the rights to</span>
+<span class="token comment">// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of</span>
+<span class="token comment">// the Software, and to permit persons to whom the Software is furnished to do so,</span>
+<span class="token comment">// subject to the following conditions:</span>
+
+<span class="token comment">// The above copyright notice and this permission notice shall be included in all</span>
+<span class="token comment">// copies or substantial portions of the Software.</span>
+
+<span class="token comment">// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="token comment">// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS</span>
+<span class="token comment">// FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR</span>
+<span class="token comment">// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER</span>
+<span class="token comment">// IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="token comment">// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;SFML/Graphics.hpp></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdlib></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;random></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+
+
+<span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> tau         <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> std<span class="token operator">::</span><span class="token function">acos</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> increase    <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">10.</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> wiggle      <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">2.</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">1.5</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> min_opacity <span class="token operator">=</span> <span class="token number">.3</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  std<span class="token operator">::</span>clog <span class="token operator">&lt;&lt;</span> <span class="token string">"Pre-c\n"</span><span class="token punctuation">;</span>
+
+  sf<span class="token operator">::</span>RenderTexture img<span class="token punctuation">;</span>
+  img<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token number">1600</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">900</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  img<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  std<span class="token operator">::</span>clog <span class="token operator">&lt;&lt;</span> <span class="token string">"Created\n"</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token keyword">auto</span> img_s  <span class="token operator">=</span> img<span class="token punctuation">.</span><span class="token function">getSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token keyword">auto</span> center <span class="token operator">=</span> img_s <span class="token operator">/</span> <span class="token number">2u</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token keyword">auto</span> radius <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">//(((img_s.x + img_s.y) / 2.) / 2.) * .6;</span>
+
+  std<span class="token operator">::</span><span class="token function">srand</span><span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  std<span class="token operator">::</span>mt19937 rng<span class="token punctuation">{</span><span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  std<span class="token operator">::</span>uniform_real_distribution<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> wiggle_dist<span class="token punctuation">{</span><span class="token operator">-</span>wiggle<span class="token punctuation">,</span> <span class="token operator">+</span>wiggle<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  std<span class="token operator">::</span>uniform_real_distribution<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> opacity_dist<span class="token punctuation">{</span>min_opacity<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+  std<span class="token operator">::</span>vector<span class="token operator">&lt;</span>sf<span class="token operator">::</span>Vertex<span class="token operator">></span> points<span class="token punctuation">;</span>
+  points<span class="token punctuation">.</span><span class="token function">reserve</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span>'<span class="token number">000</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0u</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">60</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span>clog <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'/'</span> <span class="token operator">&lt;&lt;</span> <span class="token number">60</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+    <span class="token comment">// for(auto alpha = 0.; alpha &lt;= tau; alpha += tau / (1'000 * (i / 60.))) {</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> alpha <span class="token operator">=</span> <span class="token number">0.</span><span class="token punctuation">;</span> alpha <span class="token operator">&lt;=</span> tau<span class="token punctuation">;</span> alpha <span class="token operator">+=</span> tau <span class="token operator">/</span> <span class="token number">1</span>'<span class="token number">000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token keyword">auto</span> r <span class="token operator">=</span> radius <span class="token operator">+</span> <span class="token function">wiggle_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">+</span> increase <span class="token operator">*</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> alpha <span class="token operator">/</span> tau<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">auto</span> colour <span class="token operator">=</span> sf<span class="token operator">::</span>Color<span class="token operator">::</span>White<span class="token punctuation">;</span>
+      colour<span class="token punctuation">.</span>r    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
+      colour<span class="token punctuation">.</span>g    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
+      colour<span class="token punctuation">.</span>b    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
+      colour<span class="token punctuation">.</span>a    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
+
+      sf<span class="token operator">::</span>Vertex v<span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>center<span class="token punctuation">.</span>x <span class="token operator">+</span> std<span class="token operator">::</span><span class="token function">cos</span><span class="token punctuation">(</span>alpha<span class="token punctuation">)</span> <span class="token operator">*</span> r<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span>center<span class="token punctuation">.</span>y <span class="token operator">+</span> std<span class="token operator">::</span><span class="token function">sin</span><span class="token punctuation">(</span>alpha<span class="token punctuation">)</span> <span class="token operator">*</span> r<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span> colour<span class="token punctuation">}</span><span class="token punctuation">;</span>
+      points<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">move</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// std::cout &lt;&lt; v.position.x &lt;&lt; ' ' &lt;&lt; v.position.y &lt;&lt; ": " &lt;&lt; r &lt;&lt; ", " &lt;&lt; static_cast&lt;unsigned int>(colour.a) &lt;&lt; '\n';</span>
+      <span class="token comment">// img.draw(&amp;v, 1, sf::PrimitiveType::Points);</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> skip <span class="token operator">=</span> <span class="token number">2u</span><span class="token punctuation">;</span> skip <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token operator">++</span>skip<span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0ull</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> points<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> skip<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sf<span class="token operator">::</span>Vertex pts<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> points<span class="token punctuation">[</span>i <span class="token operator">+</span> skip<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+      img<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span>pts<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>pts<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token operator">*</span>pts<span class="token punctuation">)</span><span class="token punctuation">,</span> sf<span class="token operator">::</span>PrimitiveType<span class="token operator">::</span>LinesStrip<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token comment">// img.draw(points.data(), points.size(), sf::PrimitiveType::LinesStrip);</span>
+
+  img<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  img<span class="token punctuation">.</span><span class="token function">getTexture</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">copyToImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">saveToFile</span><span class="token punctuation">(</span><span class="token string">"output.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></code>
+</div>
 <span id="arrow"></span>
 <!-- CTNT_END --> <hr /> 
  Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
@@ -71,9 +163,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a <a href="bitcoin:1MoSyGZp3SKpoiXPXfZDFK7cDUFCVtEDeS?label=nabijaczleweli&message=Donation%20to%20nabijaczleweli">donation</a> <a href="/content/assets/btc-donate-qr.svg" title="Bitcoin donation QR code" style="background: url('https://rawcdn.githack.com/reduxframework/elusive-iconfont/master/dev/icons-svg/qrcode.svg');                                      background-size: 100% 100%; display: inline-block;                                                                                                  width: 1em; height: 1em; margin-bottom: -.2em; font: 14px/1 normal;"></a>, if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 11.05.2019 16:49:30 UTC from 
+ Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 11.05.2019 17:07:47 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/maths/wiggly-circle.html.pp">src/maths/wiggly-circle.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/531181831">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/531187315">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
