@@ -23,6 +23,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 	</div>
 
 #define LINKS <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" />               \
+              <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />            \
               <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 BOILERPLATE(wiggly-circle, A selexion of circles‚ most of them wiggly‚ some of them colourful, en-GB, LINKS)
 
@@ -41,6 +42,14 @@ PIECE(r0_sngllines_rgba_1600x900_60              , r0_sngllines_2x_w1.5_rgba_160
 PIECE(r0_skiplines_rgba_1600x900_60              , r0_skiplines_2x_w1.5_rgba_1600x900_60,               drop-ped)
 PIECE(r0_skiplines_comp-step_rgba_1600x900_60__2 , r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2,  c o m p e n s a t e)
 PIECE(r0_skiplines2..4_comp-step_rgba_1600x900_60, r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60, {2,3,4}-drop)
+
+
+<div class="art-box">
+	<h2 class="merriweather">Code</h2>
+
+#include "maths/wiggly-circle.cpp.html"
+
+</div>
 
 
 <span id="arrow"></span>

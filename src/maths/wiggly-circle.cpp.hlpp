@@ -1,0 +1,88 @@
+// The MIT License (MIT)
+
+// Copyright (c) 2019 nabijaczleweli
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy of
+// this software and associated documentation files (the "Software"), to deal in
+// the Software without restriction, including without limitation the rights to
+// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+// the Software, and to permit persons to whom the Software is furnished to do so,
+// subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+// FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+// IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+#include <SFML/Graphics.hpp>
+#include <cmath>
+#include <cstdlib>
+#include <iostream>
+#include <random>
+#include <vector>
+
+
+static const auto tau         = 4 * std::acos(0);
+static const auto increase    = 2 * 10. * 2;
+static const auto wiggle      = 2 * 2. * 2 * 1.5;
+static const auto min_opacity = .3;
+
+
+int main() {
+	std::clog << "Pre-c\n";
+
+	sf::RenderTexture img;
+	img.create(1600 * 2, 900 * 2);
+	img.clear();
+
+	std::clog << "Created\n";
+
+	const auto img_s  = img.getSize();
+	const auto center = img_s / 2u;
+	const auto radius = 0;  //(((img_s.x + img_s.y) / 2.) / 2.) * .6;
+
+	std::srand(std::time(nullptr));
+	std::mt19937 rng{static_cast<unsigned int>(std::rand())};
+	std::uniform_real_distribution<double> wiggle_dist{-wiggle, +wiggle};
+	std::uniform_real_distribution<double> opacity_dist{min_opacity, 1.};
+
+
+	std::vector<sf::Vertex> points;
+	points.reserve((60 + 1) * (1'000 + 2));
+
+	for(auto i = 0u; i < 60; ++i) {
+		std::clog << (i + 1) << '/' << 60 << '\n';
+		// for(auto alpha = 0.; alpha <= tau; alpha += tau / (1'000 * (i / 60.))) {
+		for(auto alpha = 0.; alpha <= tau; alpha += tau / 1'000) {
+			const auto r = radius + wiggle_dist(rng) + increase * (i + alpha / tau);
+
+			auto colour = sf::Color::White;
+			colour.r    = opacity_dist(rng) * 255;
+			colour.g    = opacity_dist(rng) * 255;
+			colour.b    = opacity_dist(rng) * 255;
+			colour.a    = opacity_dist(rng) * 255;
+
+			sf::Vertex v{{static_cast<float>(center.x + std::cos(alpha) * r), static_cast<float>(center.y + std::sin(alpha) * r)}, colour};
+			points.emplace_back(std::move(v));
+
+			// std::cout << v.position.x << ' ' << v.position.y << ": " << r << ", " << static_cast<unsigned int>(colour.a) << '\n';
+			// img.draw(&v, 1, sf::PrimitiveType::Points);
+		}
+	}
+
+	for(auto skip = 2u; skip <= 3; ++skip)
+		for(auto i = 0ull; i < points.size() - skip; ++i) {
+			sf::Vertex pts[]{points[i], points[i + skip]};
+			img.draw(pts, sizeof(pts) / sizeof(*pts), sf::PrimitiveType::LinesStrip);
+		}
+	// img.draw(points.data(), points.size(), sf::PrimitiveType::LinesStrip);
+
+	img.display();
+	img.getTexture().copyToImage().saveToFile("output.png");
+}

@@ -27,7 +27,8 @@
 			[
 				"*Makefile*",
 				".travis.yml",
-				"*.awk"
+				"*.awk",
+				"highlight.js"
 			],
 			"folder_exclude_patterns":
 			[
