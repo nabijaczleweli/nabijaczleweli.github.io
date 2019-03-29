@@ -44,8 +44,9 @@ endif
 
 # Args: $<, $@, additional defines
 # `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
-preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/​FORCED_SPACER​//g" -e "s/HASH/\#/g" -e "s/[[:space:]]+$$//g" > $(CURDIR)/$(2)
+preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -I$(abspath $(BLDDIR)/highlit) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/​FORCED_SPACER​//g" -e "s/HASH/\#/g" -e "s/[[:space:]]+$$//g" > $(CURDIR)/$(2)
 
+TR := tr
 AWK := awk
 SED := sed
 CPP := cpp
@@ -73,7 +74,7 @@ clean :
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
-highlight : highlight.js ext/prism/prism.js $(patsubst src/%.hlpp,$(BLDDIR)out/%.html,$(HIGHLIGHT_SOURCES))
+highlight : highlight.js ext/prism/prism.js $(OUTDIR)assets/prism-twilight.min.css $(OUTDIR)assets/LICENSE-prism $(patsubst src/%.hlpp,$(BLDDIR)highlit/%.html,$(HIGHLIGHT_SOURCES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(BLDDIR)out/%,$(EBOOK_PREPROCESS_SOURCES)) $(foreach l,$(patsubst src/%.epp,%,$(COMBINED_PREPROCESS_SOURCES)),$(OUTDIR)$(l) $(BLDDIR)out/$(l))
 books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
@@ -90,6 +91,14 @@ $(BLDDIR)octicons/build/octicons.min.css : $(BLDDIR)octicons/package.json
 $(OUTDIR)assets/LICENSE-octicons : ext/octicons/LICENSE
 	@mkdir -p $(dir $@)
 	cp $^ $@
+
+$(OUTDIR)assets/LICENSE-prism : ext/prism/LICENSE
+	@mkdir -p $(dir $@)
+	cp $^ $@
+
+$(OUTDIR)assets/prism-twilight.min.css : ext/prism/themes/prism-twilight.css
+	@mkdir -p $(dir $@)
+	$(SED) -r ":a; s%(.*)/\*.*\*/%\1%; ta; /\/\*/ !b; N; ba" $^ | $(TR) -d "\\n" | $(SED) -r "s/[[:space:]]*([}{;:=+-]|,)[[:space:]]*/\\1/g" > $@
 
 $(OUTDIR)feed.xml : gen-feed.awk $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
 	@mkdir -p $(dir $@)
@@ -108,9 +117,9 @@ $(OUTDIR)% : src/%.epp
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,)
 
-$(BLDDIR)out/%.html : highlight.js src/%.hlpp
+$(BLDDIR)highlit/%.html : highlight.js src/%.hlpp
 	@mkdir -p $(dir $@)
-	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(patsubst $(BLDDIR)out/%.html,%,$@)))
+	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(subst $(suffix $@),,$@)))
 
 $(BLDDIR)out/% : src/%.epp
 	@mkdir -p $(dir $@)
