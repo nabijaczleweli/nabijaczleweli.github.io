@@ -14,10 +14,12 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 <!-- RSS_PUB_DATE: "Thu, 9 May 2019 22:54:19 +0200" -->
 
+
 #define PIECE(pid, fname, ...)                                                   \
 	<div class="art-box">                                                          \
-		<h4 class="merriweather label">__VA_ARGS__</h4>                              \
-		<a href=STR(HASH##pid)>                                                      \
+		<h4 class="merriweather label"><a href=STR(HASH##pid)>__VA_ARGS__</a></h4>   \
+		                                                                             \
+		<a href=STR(/content/assets/wiggly-circle/output_##fname.png)>               \
 			<img id=#pid src=STR(/content/assets/wiggly-circle/output_##fname.png) />  \
 		</a>                                                                         \
 	</div>
@@ -28,7 +30,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 BOILERPLATE(wiggly-circle, A selexion of circles‚ most of them wiggly‚ some of them colourful, en-GB, LINKS)
 
 
-<div class="art-box"><h2 class="merriweather">wiggly-circle</h2></div>
+<div class="art-box">
+	<h2 class="merriweather label" id="top"><a href="#top">wiggly-circle</a></h2>
+
+	<p class="merriweather">
+		Inspired by <a href="//inconvergent.net">Inconvergent</a>'s <a href="//twitter.com/inconvergent/status/1122463283586510848">"path test"</a>.<!--'-->
+	</p>
+</div>
 
 
 PIECE(lines                                      , lines_2x_w1.5,                                       the return to the fight)
@@ -45,7 +53,7 @@ PIECE(r0_skiplines2..4_comp-step_rgba_1600x900_60, r0_skiplines2..4_2x_w1.5_comp
 
 
 <div class="art-box">
-	<h2 class="merriweather">Code</h2>
+	<h2 class="merriweather label" id="code"><a href="#code">Code</a></h2>
 
 #include "maths/wiggly-circle.cpp.html"
 
