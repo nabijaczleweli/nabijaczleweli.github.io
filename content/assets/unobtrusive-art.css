@@ -82,3 +82,7 @@ html::-webkit-scrollbar {    /* WebKit */
 	max-height: 100vh;
 	margin: auto;
 }
+
+.art-box pre[class*="language-"] {
+	max-height: initial;
+}
