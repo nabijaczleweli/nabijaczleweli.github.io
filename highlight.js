@@ -64,6 +64,6 @@ const content = fs.readFileSync(in_file, {encoding: "utf8"});
 const highlit = Prism.highlight(content, Prism.languages[language], language);
 
 const out = fs.createWriteStream(out_file);
-out.write("<pre class=\"language-js\"><code class=\"language-js\">");
+out.write(`<pre class="language-${language}"><code class="language-${language}">`);
 out.write(highlit.replace(/\n/g, "FORCED_NEWLINE").replace(/\t/g, "TAB_INDENT"));
 out.write("</pre></code>");
