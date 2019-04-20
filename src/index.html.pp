@@ -115,6 +115,8 @@ Documentation for my Rust projects:
 	    Rust crate for parsing and writing the PLS playlist format)
 	DOC(md6-rs, md6, md6,
 	    Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
+	DOC(hrx, hrx, hrx,
+	    Rust implementation of the <a href="//http://github.com/google/hrx">HRX plain text archive format</a>)
 	USER_DOC(thecoshman, doh, doh, doh,
 	         D'<!--'-->Oh - Directories Over HTTP)
 </ul>
