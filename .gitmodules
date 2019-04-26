@@ -5,4 +5,3 @@
 [submodule "ext/prism"]
 	path = ext/prism
 	url = https://github.com/PrismJS/prism
-	branch = v1.16.0
