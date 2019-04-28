@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 29 May 2019 00:03:08 +0000
+      Wed, 05 Jun 2019 14:16:31 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 29 May 2019 00:03:08 +0000
+      Wed, 05 Jun 2019 14:16:31 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 3.1.8
@@ -91,8 +91,8 @@ h6 a.hash-link {
   transition: all 0.5s;
 }
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
-a .fa, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
  text-decoration: none;
 }
@@ -194,7 +194,7 @@ is fair game for discussion over at &lt;code class=&quot;nowrap&quot; style=&quo
  &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/issues&quot;&gt;&lt;i class=&quot;icon-rust&quot; &gt;&lt;/i&gt;&lt;/a&gt;
  &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;&lt;i class=&quot;devicon-html5-plain&quot; &gt;&lt;/i&gt;&lt;/a&gt;.
 I'&lt;!--'--&gt;ve also set up a &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book/issues/1&quot;&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
-If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;fa fa-envelope-o&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
+If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;far fa-envelope-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;discussion-hopes-paragraph&quot;&gt;
 I hope that these facilities will lead to good ideas for future improvements to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;.
@@ -596,17 +596,83 @@ A full list of conversions and their implementations can be found at the
   Inspired by &lt;a href=&quot;//inconvergent.net&quot;&gt;Inconvergent&lt;/a&gt;'s &lt;a href=&quot;//twitter.com/inconvergent/status/1122463283586510848&quot;&gt;&quot;path test&quot;&lt;/a&gt;.&lt;!--'--&gt;
  &lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#lines&quot;&gt;the return to the fight&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot;&gt; &lt;img id=&quot;lines&quot; src=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts&quot;&gt;centrism&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot;&gt; &lt;img id=&quot;r0_pts&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines&quot;&gt;pointless breadth&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot;&gt; &lt;img id=&quot;r0_lines&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_40__2&quot;&gt;volumous&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot;&gt; &lt;img id=&quot;r0_lines_40__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_1600x900_40&quot;&gt;breathe&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot;&gt; &lt;img id=&quot;r0_lines_1600x900_40&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts_o.8_1600x900_60&quot;&gt;pointedly degenerative&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot;&gt; &lt;img id=&quot;r0_pts_o.8_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_rgba_1600x900_60&quot;&gt;trans-gressive&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; &lt;img id=&quot;r0_lines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines_rgba_1600x900_60&quot;&gt;pointedly home-of-sexual&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; &lt;img id=&quot;r0_sngllines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_rgba_1600x900_60&quot;&gt;drop-ped&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; &lt;img id=&quot;r0_skiplines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_comp-step_rgba_1600x900_60__2&quot;&gt;c o m p e n s a t e&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot;&gt; &lt;img id=&quot;r0_skiplines_comp-step_rgba_1600x900_60__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_comp-step_rgba_1600x900_60&quot;&gt;{2,3,4}-drop&lt;/a&gt;&lt;/h4&gt; &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot;&gt; &lt;img id=&quot;r0_skiplines2..4_comp-step_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#lines&quot;&gt;the return to the fight&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot;&gt; 
+ &lt;img id=&quot;lines&quot; src=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts&quot;&gt;centrism&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot;&gt; 
+ &lt;img id=&quot;r0_pts&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines&quot;&gt;pointless breadth&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot;&gt; 
+ &lt;img id=&quot;r0_lines&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_40__2&quot;&gt;volumous&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot;&gt; 
+ &lt;img id=&quot;r0_lines_40__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_1600x900_40&quot;&gt;breathe&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot;&gt; 
+ &lt;img id=&quot;r0_lines_1600x900_40&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts_o.8_1600x900_60&quot;&gt;pointedly degenerative&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot;&gt; 
+ &lt;img id=&quot;r0_pts_o.8_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_rgba_1600x900_60&quot;&gt;trans-gressive&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; 
+ &lt;img id=&quot;r0_lines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines_rgba_1600x900_60&quot;&gt;pointedly home-of-sexual&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; 
+ &lt;img id=&quot;r0_sngllines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_rgba_1600x900_60&quot;&gt;drop-ped&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; 
+ &lt;img id=&quot;r0_skiplines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_comp-step_rgba_1600x900_60__2&quot;&gt;c o m p e n s a t e&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot;&gt; 
+ &lt;img id=&quot;r0_skiplines_comp-step_rgba_1600x900_60__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
+&lt;div class=&quot;art-box&quot;&gt; 
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_comp-step_rgba_1600x900_60&quot;&gt;{2,3,4}-drop&lt;/a&gt;&lt;/h4&gt; 
+ 
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot;&gt; 
+ &lt;img id=&quot;r0_skiplines2..4_comp-step_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot; /&gt; 
+ &lt;/a&gt; 
+ &lt;/div&gt;
 &lt;div class=&quot;art-box&quot;&gt;
  &lt;h2 class=&quot;merriweather label&quot; id=&quot;code&quot;&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// The MIT License (MIT)&lt;/span&gt;
