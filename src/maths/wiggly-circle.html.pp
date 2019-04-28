@@ -15,17 +15,17 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <!-- RSS_PUB_DATE: "Thu, 9 May 2019 22:54:19 +0200" -->
 
 
-#define PIECE(pid, fname, ...)                                                   \
-	<div class="art-box">                                                          \
-		<h4 class="merriweather label"><a href=STR(HASH##pid)>__VA_ARGS__</a></h4>   \
-		                                                                             \
-		<a href=STR(/content/assets/wiggly-circle/output_##fname.png)>               \
-			<img id=#pid src=STR(/content/assets/wiggly-circle/output_##fname.png) />  \
-		</a>                                                                         \
+#define PIECE(pid, fname, ...)                                                                  \
+	<div class="art-box">                                                          FORCED_NEWLINE \
+		<h4 class="merriweather label"><a href=STR(HASH##pid)>__VA_ARGS__</a></h4>   FORCED_NEWLINE \
+		                                                                             FORCED_NEWLINE \
+		<a href=STR(/content/assets/wiggly-circle/output_##fname.png)>               FORCED_NEWLINE \
+			<img id=#pid src=STR(/content/assets/wiggly-circle/output_##fname.png) />  FORCED_NEWLINE \
+		</a>                                                                         FORCED_NEWLINE \
 	</div>
 
-#define LINKS <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" />               \
-              <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />            \
+#define LINKS <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" />               FORCED_NEWLINE \
+              <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />            FORCED_NEWLINE \
               <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 BOILERPLATE(wiggly-circle, A selexion of circles‚ most of them wiggly‚ some of them colourful, en-GB, LINKS)
 

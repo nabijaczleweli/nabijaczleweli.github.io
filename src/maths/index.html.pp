@@ -57,7 +57,7 @@ Mandalas generated with Tonči Juričev-Grgin's method.<!--'--><br />
 Algorithm, examples, etc. <a href="mandalas.html">inside</a>.<br />
 Videos of more complex mandalas over at
   <a href="https://www.youtube.com/watch?v=D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC">YouTube</a></span>
-  <a href="https://www.youtube.com/watch?v=D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC">FA(youtube-play)</a>.<br />
+  <a href="https://www.youtube.com/watch?v=D2Xk6O9x-yk&list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC">FAB(youtube)</a>.<br />
 <!-- Spacing for header image - is there a way to force the div to accomodate it? -->
 <br />
 <p></p>

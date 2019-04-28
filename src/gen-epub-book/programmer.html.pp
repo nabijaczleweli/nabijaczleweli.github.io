@@ -27,6 +27,7 @@ BOILERPLATE(gen-epub-book for programmers, feature sets and links to various gen
 #include "tag.css"
 </style>
 
+
 <div class="roboto">
 
 
@@ -81,17 +82,17 @@ As mentioned before, GEB() is actually also a <em>set</em> of software tools eac
 but being written in a different language.
 Here is the current list of GEB()'s variations, chronologically: <!--'-->
 <ul>
-	<li>GEB(.awk ​ ​) <a GEB_HREF()>     FA(github)</a>
+	<li>GEB(.awk ​ ​) <a GEB_HREF()>     FAB(github)</a>
 	    <a GEB_CDN_HREF(/man/gen-epub-book.awk.1.html)>FA(book)</a></li>
-	<li>GEB(.rs ​ ​ ​) <a GEB_HREF(.rs)>  FA(github)</a>
+	<li>GEB(.rs ​ ​ ​) <a GEB_HREF(.rs)>  FAB(github)</a>
 	    <a GEB_CDN_HREF(/man/gen-epub-book.rs.1.html)>FA(book)</a>
 	    <a GEB_CDN_HREF(.rs/doc/gen_epub_book/index.html) class="overlay-container">
-	    	<span class="overlay-target">FA(file-o)</span> <span style="font-size: 0.7em;">FA(cogs)</span></a>
+	    	<span class="overlay-target">FAR(file)</span> <span style="font-size: 0.7em;">FA(cogs)</span></a>
 	    <a href="//crates.io/crates/gen-epub-book">FA(archive)</a></li>
-	<li>GEB(.cpp ​ ​) <a GEB_HREF(.cpp)>  FA(github)</a>
+	<li>GEB(.cpp ​ ​) <a GEB_HREF(.cpp)>  FAB(github)</a>
 	    <a GEB_CDN_HREF(/man/gen-epub-book.cpp.1.html)>FA(book)</a></li>
-	<li>GEB(.scala) <a GEB_HREF(.scala)>FA(github)</a></li>
-	<li>GEB(.js ​ ​ ​) <a GEB_HREF(.js)>  FA(github)</a>
+	<li>GEB(.scala) <a GEB_HREF(.scala)>FAB(github)</a></li>
+	<li>GEB(.js ​ ​ ​) <a GEB_HREF(.js)>   FAB(github)</a>
 	    <a GEB_CDN_HREF(/man/gen-epub-book.js.1.html)>FA(book)</a>
 	    <a href="//npmjs.com/package/epubify" class="icon">DEVICON(nodejs)</a></li>
 </ul>

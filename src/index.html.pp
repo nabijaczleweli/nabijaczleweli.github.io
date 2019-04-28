@@ -18,14 +18,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define USER_DOC(user, name, cratename, cratename_code, ...)                                                                         \
 <li>                                                                                                                  FORCED_NEWLINE \
   <a href=STR(httpsCOLON_SLASH_SLASHrawcdn.githack.com/user/name/doc/cratename_code/index.html)><samp>name</samp></a> FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FA(github)</a>                                              FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FAB(github)</a>                                             FORCED_NEWLINE \
   <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                       FORCED_NEWLINE \
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
 #define UNPUBLISHED_USER_DOC(user, name, cratename_code, ...)                                                                        \
 <li>                                                                                                                  FORCED_NEWLINE \
   <a href=STR(httpsCOLON_SLASH_SLASHrawcdn.githack.com/user/name/doc/cratename_code/index.html)><samp>name</samp></a> FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FA(github)</a>                                              FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FAB(github)</a>                                             FORCED_NEWLINE \
   <span style="opacity: .5;">FA(archive)</span>                                                                       FORCED_NEWLINE \
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
@@ -74,7 +74,7 @@ Documentation for my Rust projects:
 	    Parser for the <a href="https://msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a>)
 	<li>
 		<a href="httpsCOLON_SLASH_SLASHrawcdn.githack.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
-		<a href="httpsCOLON_SLASH_SLASHgithub.com/Galactim/Sudoku">FA(github)</a>
+		<a href="httpsCOLON_SLASH_SLASHgithub.com/Galactim/Sudoku">FAB(github)</a>
 		<span style="opacity: .5;">FA(archive)</span>
 		— Back-end for modern, API-based Sudoku app
 	</li>

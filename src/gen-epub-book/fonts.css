@@ -37,8 +37,8 @@ h6 a.hash-link {
 
 
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
-a .fa, a [class*="icon"], a [class*="devicon"],
-a.fa,  a[class*="icon"],  a[class*="devicon"]   {
+a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
+a.fa,  a.far,  a.fab,  a[class*="icon"],  a[class*="devicon"]   {
 	color: black;
 	text-decoration: none;
 }

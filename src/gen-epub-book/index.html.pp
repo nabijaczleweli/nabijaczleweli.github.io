@@ -68,7 +68,7 @@ is fair game for discussion over at GEB()'s and this webpage's issue trackers
 	<a GEB_HREF(.rs/issues)>MFIZZ(rust)</a>
 	<a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon">DEVICON(html5)</a>.
 I'<!--'-->ve also set up a <a GEB_HREF(/issues/1)>GitHub issue for simple questions and clarifications</a>.
-If you don'<!--'-->t have a GitHub account, you can <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail FA_D(envelope-o)</a>.
+If you don'<!--'-->t have a GitHub account, you can <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail FAR_D(envelope-open)</a>.
 </p>
 <p id="discussion-hopes-paragraph">
 I hope that these facilities will lead to good ideas for future improvements to GEB().
