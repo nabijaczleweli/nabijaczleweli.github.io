@@ -90,11 +90,8 @@
     and contribute and/or yell at me there.                                                                                          FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
     Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a                               \
-    <a href="bitcoin:1MoSyGZp3SKpoiXPXfZDFK7cDUFCVtEDeS?label=nabijaczleweli&message=Donation%20to%20nabijaczleweli">donation</a>                   \
-    <a href="/content/assets/btc-donate-qr.svg" title="Bitcoin donation QR code"                                                                    \
-       style="background: url('https://rawcdn.githack.com/reduxframework/elusive-iconfont/master/dev/icons-svg/qrcode.svg');                        \
-              background-size: 100% 100%; display: inline-block;                                                                                    \
-              width: 1em; height: 1em; margin-bottom: -.2em; font: 14px/1 normal;"></a>,                                                            \
+    sending a <a href="//paypal.me/nabijaczleweli">buck</a> or                                                                                      \
+    <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way                                                  \
     if my software helped you in some significant way?                                                                               FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
     Automatically generated with COMPILER_NAME COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from                           FORCED_NEWLINE \
