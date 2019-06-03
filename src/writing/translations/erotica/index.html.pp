@@ -49,6 +49,6 @@ BOILERPLATE(Erotica, Polish translation of Erotica, pl, WORD_COUNT_SCRIPT STYLES
 #include "danger/the-bloody-chamber.html.eppe"
 
 
-WORD_COUNTER_END()
+WORD_COUNTER_END_NON_ENGLISH()
 WRITING_END()
 BOILERPLATE_END()
