@@ -33,6 +33,15 @@ static const auto increase    = 2 * 10. * 2;
 static const auto wiggle      = 2 * 2. * 2 * 1.5;
 static const auto min_opacity = .3;
 
+static const sf::Color colour_set[]{
+    {0x75, 0x07, 0x87},  //
+    {0x00, 0x4d, 0xff},  //
+    {0x00, 0x80, 0x26},  //
+    {0xff, 0xed, 0x00},  //
+    {0xff, 0x8c, 0x00},  //
+    {0xe4, 0x03, 0x03},  //
+};
+
 
 int main() {
 	std::clog << "Pre-c\n";
@@ -52,6 +61,8 @@ int main() {
 	std::uniform_real_distribution<double> wiggle_dist{-wiggle, +wiggle};
 	std::uniform_real_distribution<double> opacity_dist{min_opacity, 1.};
 
+	std::uniform_int_distribution<std::size_t> colour_idx_dist{0, (sizeof(colour_set) / sizeof(*colour_set)) - 1};
+
 
 	std::vector<sf::Vertex> points;
 	points.reserve((60 + 1) * (1'000 + 2));
@@ -62,7 +73,7 @@ int main() {
 		for(auto alpha = 0.; alpha <= tau; alpha += tau / 1'000) {
 			const auto r = radius + wiggle_dist(rng) + increase * (i + alpha / tau);
 
-			auto colour = sf::Color::White;
+			auto colour = colour_set[colour_idx_dist(rng)];
 			colour.r    = opacity_dist(rng) * 255;
 			colour.g    = opacity_dist(rng) * 255;
 			colour.b    = opacity_dist(rng) * 255;
@@ -76,11 +87,13 @@ int main() {
 		}
 	}
 
-	for(auto skip = 2u; skip <= 3; ++skip)
-		for(auto i = 0ull; i < points.size() - skip; ++i) {
-			sf::Vertex pts[]{points[i], points[i + skip]};
-			img.draw(pts, sizeof(pts) / sizeof(*pts), sf::PrimitiveType::LinesStrip);
-		}
+	// for(auto skip = 2u; skip <= 3; ++skip)
+	//	 for(auto i = 0ull; i < points.size() - skip; ++i) {
+	//		 sf::Vertex pts[]{points[i], points[i + skip]};
+	//		 img.draw(pts, sizeof(pts) / sizeof(*pts), sf::PrimitiveType::LinesStrip);
+	//	 }
+	for(auto i = 0ull; i < points.size() - 4; i += 4)
+		img.draw(points.data() + i, 4, sf::PrimitiveType::LinesStrip);
 	// img.draw(points.data(), points.size(), sf::PrimitiveType::LinesStrip);
 
 	img.display();

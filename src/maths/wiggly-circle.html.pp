@@ -39,17 +39,23 @@ BOILERPLATE(wiggly-circle, A selexion of circles‚ most of them wiggly‚ some 
 </div>
 
 
-PIECE(lines                                      , lines_2x_w1.5,                                       the return to the fight)
-PIECE(r0_pts                                     , r0_pts,                                              centrism)
-PIECE(r0_lines                                   , r0_lines_2x_w1.5,                                    pointless breadth)
-PIECE(r0_lines_40__2                             , r0_lines_2x_w1.5_40__2,                              volumous)
-PIECE(r0_lines_1600x900_40                       , r0_lines_2x_w1.5_1600x900_40,                        breathe)
-PIECE(r0_pts_o.8_1600x900_60                     , r0_pts_2x_w1.5_o.8_1600x900_60,                      pointedly degenerative)
-PIECE(r0_lines_rgba_1600x900_60                  , r0_lines_2x_w1.5_rgba_1600x900_60,                   trans-gressive)
-PIECE(r0_sngllines_rgba_1600x900_60              , r0_sngllines_2x_w1.5_rgba_1600x900_60,               pointedly home-of-sexual)
-PIECE(r0_skiplines_rgba_1600x900_60              , r0_skiplines_2x_w1.5_rgba_1600x900_60,               drop-ped)
-PIECE(r0_skiplines_comp-step_rgba_1600x900_60__2 , r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2,  c o m p e n s a t e)
-PIECE(r0_skiplines2..4_comp-step_rgba_1600x900_60, r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60, {2,3,4}-drop)
+PIECE(lines                                              , lines_2x_w1.5,                                               the return to the fight)
+PIECE(r0_pts                                             , r0_pts,                                                      centrism)
+PIECE(r0_lines                                           , r0_lines_2x_w1.5,                                            pointless breadth)
+PIECE(r0_lines_40__2                                     , r0_lines_2x_w1.5_40__2,                                      volumous)
+PIECE(r0_lines_1600x900_40                               , r0_lines_2x_w1.5_1600x900_40,                                breathe)
+PIECE(r0_pts_o.8_1600x900_60                             , r0_pts_2x_w1.5_o.8_1600x900_60,                              pointedly degenerative)
+PIECE(r0_lines_rgba_1600x900_60                          , r0_lines_2x_w1.5_rgba_1600x900_60,                           trans-gressive)
+PIECE(r0_sngllines_rgba_1600x900_60                      , r0_sngllines_2x_w1.5_rgba_1600x900_60,                       pointedly home-of-sexual)
+PIECE(r0_skiplines_rgba_1600x900_60                      , r0_skiplines_2x_w1.5_rgba_1600x900_60,                       drop-ped)
+PIECE(r0_skiplines_comp-step_rgba_1600x900_60__2         , r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2,          c o m p e n s a t e)
+PIECE(r0_skiplines2..4_comp-step_rgba_1600x900_60        , r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60,         {2,3,4}-drop)
+PIECE(r0_lines_flagtrans_1600x900_60                     , r0_lines_2x_w1.5_flagtrans_1600x900_60,                      back and ready for more trans jokes)
+PIECE(r0_lines_flagbi-wgh_1600x900_60                    , r0_lines_2x_w1.5_flagbi-wgh_1600x900_60,                     from beyond the bilines)
+PIECE(r0_sngllines2_flagpan_1600x900_60                  , r0_sngllines2_2x_w1.5_flagpan_1600x900_60,                   pancontinental)
+PIECE(r0_skiplines2..4_flagace_1600x900_60               , r0_skiplines2..4_2x_w1.5_flagace_1600x900_60,                amorphous)
+PIECE(r0_skiplines2..4_flaggay_alpha_1600x900_60         , r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60,          re-homing)
+PIECE(r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60, r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60, anachronistic)
 
 
 <div class="art-box">
