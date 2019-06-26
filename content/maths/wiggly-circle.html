@@ -134,6 +134,48 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <img id="r0_skiplines2..4_comp-step_rgba_1600x900_60" src="/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png" /> 
  </a> 
  </div>
+<div class="art-box"> 
+ <h4 class="merriweather label"><a href="#r0_lines_flagtrans_1600x900_60">back and ready for more trans jokes</a></h4> 
+ 
+ <a href="/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagtrans_1600x900_60.png"> 
+ <img id="r0_lines_flagtrans_1600x900_60" src="/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagtrans_1600x900_60.png" /> 
+ </a> 
+ </div>
+<div class="art-box"> 
+ <h4 class="merriweather label"><a href="#r0_lines_flagbi-wgh_1600x900_60">from beyond the bilines</a></h4> 
+ 
+ <a href="/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagbi-wgh_1600x900_60.png"> 
+ <img id="r0_lines_flagbi-wgh_1600x900_60" src="/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagbi-wgh_1600x900_60.png" /> 
+ </a> 
+ </div>
+<div class="art-box"> 
+ <h4 class="merriweather label"><a href="#r0_sngllines2_flagpan_1600x900_60">pancontinental</a></h4> 
+ 
+ <a href="/content/assets/wiggly-circle/output_r0_sngllines2_2x_w1.5_flagpan_1600x900_60.png"> 
+ <img id="r0_sngllines2_flagpan_1600x900_60" src="/content/assets/wiggly-circle/output_r0_sngllines2_2x_w1.5_flagpan_1600x900_60.png" /> 
+ </a> 
+ </div>
+<div class="art-box"> 
+ <h4 class="merriweather label"><a href="#r0_skiplines2..4_flagace_1600x900_60">amorphous</a></h4> 
+ 
+ <a href="/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flagace_1600x900_60.png"> 
+ <img id="r0_skiplines2..4_flagace_1600x900_60" src="/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flagace_1600x900_60.png" /> 
+ </a> 
+ </div>
+<div class="art-box"> 
+ <h4 class="merriweather label"><a href="#r0_skiplines2..4_flaggay_alpha_1600x900_60">re-homing</a></h4> 
+ 
+ <a href="/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60.png"> 
+ <img id="r0_skiplines2..4_flaggay_alpha_1600x900_60" src="/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60.png" /> 
+ </a> 
+ </div>
+<div class="art-box"> 
+ <h4 class="merriweather label"><a href="#r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60">anachronistic</a></h4> 
+ 
+ <a href="/content/assets/wiggly-circle/output_r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60.png"> 
+ <img id="r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60" src="/content/assets/wiggly-circle/output_r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60.png" /> 
+ </a> 
+ </div>
 <div class="art-box">
  <h2 class="merriweather label" id="code"><a href="#code">Code</a></h2>
 <pre class="language-cpp"><code class="language-cpp"><span class="token comment">// The MIT License (MIT)</span>
@@ -171,6 +213,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> wiggle      <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">2.</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">1.5</span><span class="token punctuation">;</span>
 <span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> min_opacity <span class="token operator">=</span> <span class="token number">.3</span><span class="token punctuation">;</span>
 
+<span class="token keyword">static</span> <span class="token keyword">const</span> sf<span class="token operator">::</span>Color colour_set<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+    <span class="token punctuation">{</span><span class="token number">0x75</span><span class="token punctuation">,</span> <span class="token number">0x07</span><span class="token punctuation">,</span> <span class="token number">0x87</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment">//</span>
+    <span class="token punctuation">{</span><span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x4d</span><span class="token punctuation">,</span> <span class="token number">0xff</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment">//</span>
+    <span class="token punctuation">{</span><span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x80</span><span class="token punctuation">,</span> <span class="token number">0x26</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment">//</span>
+    <span class="token punctuation">{</span><span class="token number">0xff</span><span class="token punctuation">,</span> <span class="token number">0xed</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment">//</span>
+    <span class="token punctuation">{</span><span class="token number">0xff</span><span class="token punctuation">,</span> <span class="token number">0x8c</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment">//</span>
+    <span class="token punctuation">{</span><span class="token number">0xe4</span><span class="token punctuation">,</span> <span class="token number">0x03</span><span class="token punctuation">,</span> <span class="token number">0x03</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment">//</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   std<span class="token operator">::</span>clog <span class="token operator">&lt;&lt;</span> <span class="token string">"Pre-c\n"</span><span class="token punctuation">;</span>
@@ -190,6 +241,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
   std<span class="token operator">::</span>uniform_real_distribution<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> wiggle_dist<span class="token punctuation">{</span><span class="token operator">-</span>wiggle<span class="token punctuation">,</span> <span class="token operator">+</span>wiggle<span class="token punctuation">}</span><span class="token punctuation">;</span>
   std<span class="token operator">::</span>uniform_real_distribution<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> opacity_dist<span class="token punctuation">{</span>min_opacity<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
+  std<span class="token operator">::</span>uniform_int_distribution<span class="token operator">&lt;</span>std<span class="token operator">::</span>size_t<span class="token operator">></span> colour_idx_dist<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>colour_set<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token operator">*</span>colour_set<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
 
   std<span class="token operator">::</span>vector<span class="token operator">&lt;</span>sf<span class="token operator">::</span>Vertex<span class="token operator">></span> points<span class="token punctuation">;</span>
   points<span class="token punctuation">.</span><span class="token function">reserve</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1'000</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -200,7 +253,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> alpha <span class="token operator">=</span> <span class="token number">0.</span><span class="token punctuation">;</span> alpha <span class="token operator">&lt;=</span> tau<span class="token punctuation">;</span> alpha <span class="token operator">+=</span> tau <span class="token operator">/</span> <span class="token number">1'000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">const</span> <span class="token keyword">auto</span> r <span class="token operator">=</span> radius <span class="token operator">+</span> <span class="token function">wiggle_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">+</span> increase <span class="token operator">*</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> alpha <span class="token operator">/</span> tau<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      <span class="token keyword">auto</span> colour <span class="token operator">=</span> sf<span class="token operator">::</span>Color<span class="token operator">::</span>White<span class="token punctuation">;</span>
+      <span class="token keyword">auto</span> colour <span class="token operator">=</span> colour_set<span class="token punctuation">[</span><span class="token function">colour_idx_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
       colour<span class="token punctuation">.</span>r    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
       colour<span class="token punctuation">.</span>g    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
       colour<span class="token punctuation">.</span>b    <span class="token operator">=</span> <span class="token function">opacity_dist</span><span class="token punctuation">(</span>rng<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">255</span><span class="token punctuation">;</span>
@@ -214,11 +267,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> skip <span class="token operator">=</span> <span class="token number">2u</span><span class="token punctuation">;</span> skip <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token operator">++</span>skip<span class="token punctuation">)</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0ull</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> points<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> skip<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      sf<span class="token operator">::</span>Vertex pts<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> points<span class="token punctuation">[</span>i <span class="token operator">+</span> skip<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-      img<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span>pts<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>pts<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token operator">*</span>pts<span class="token punctuation">)</span><span class="token punctuation">,</span> sf<span class="token operator">::</span>PrimitiveType<span class="token operator">::</span>LinesStrip<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+  <span class="token comment">// for(auto skip = 2u; skip &lt;= 3; ++skip)</span>
+  <span class="token comment">//   for(auto i = 0ull; i &lt; points.size() - skip; ++i) {</span>
+  <span class="token comment">//     sf::Vertex pts[]{points[i], points[i + skip]};</span>
+  <span class="token comment">//     img.draw(pts, sizeof(pts) / sizeof(*pts), sf::PrimitiveType::LinesStrip);</span>
+  <span class="token comment">//   }</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0ull</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> points<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">4</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    img<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span>points<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> i<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> sf<span class="token operator">::</span>PrimitiveType<span class="token operator">::</span>LinesStrip<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment">// img.draw(points.data(), points.size(), sf::PrimitiveType::LinesStrip);</span>
 
   img<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -236,9 +291,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 24.06.2019 22:27:13 UTC from 
+ Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 26.06.2019 00:06:53 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/maths/wiggly-circle.html.pp">src/maths/wiggly-circle.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/549975313">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/550562921">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
