@@ -98,6 +98,8 @@ Documentation for my Rust projects:
 	    Tool for making/verifying checksums of directory trees)
 	DOC(dumplingh, dumplingh, dumplingh,
 	    Issue/PR exporter for GitHub)
+	USER_DOC(LoungeCPP, pir-8-emu, pir-8-emu, pir_8_emu,
+	         Assembler, dissassembler, emulator and full library representation for/of the <a href="https://github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
 	DOC(termimage, termimage, termimage,
 	    Display images in your terminal, kind of)
 	DOC(blake-rs, blake, blake,
