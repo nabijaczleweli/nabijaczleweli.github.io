@@ -35,7 +35,8 @@ BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming languag
 <p></p>
 Extensive list of <a href="//rust-lang.org">Rust</a> puns,
 	as <a href="//chat.stackoverflow.com/transcript/62927?m=35242527#35242527">requested</a>
-	by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>:
+	by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>;
+	also consult the <a href="//github.com/Enet4/rust-tropes/blob/master/rust-tropes.md">Rust Tropes Dictionary</a>:
 <ul>
 	PUN(sharing-Cell-with-threads-but-let-idea-Sync, 3650362, trentcl, 43287198, 17.17.17 06:14 PM,
 	    "Do <samp>Cow</samp>s consume <samp>Hay</samp>?")
