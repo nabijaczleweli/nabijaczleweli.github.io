@@ -38,6 +38,8 @@ Extensive list of <a href="//rust-lang.org">Rust</a> puns,
 	by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>;
 	also consult the <a href="//github.com/Enet4/rust-tropes/blob/master/rust-tropes.md">Rust Tropes Dictionary</a>:
 <ul>
+	PUN(dont-build-an-Arc, 1233251, E_net4, 45776570, 28.03.19 01:45 PM,
+	    "Don't build an <samp>Arc</samp> unless you expect a flood (of borrows).")
 	PUN(do-Cows-consume-Hay, 3650362, trentcl, 43287198, 17.17.17 06:14 PM,
 	    "Do <samp>Cow</samp>s consume <samp>Hay</samp>?")
 	PUN(sharing-Cell-with-threads-but-let-idea-Sync, 1233251, E_net4, 35262129, 23.01.17 11:30 PM,
