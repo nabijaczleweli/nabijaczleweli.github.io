@@ -38,7 +38,7 @@ Extensive list of <a href="//rust-lang.org">Rust</a> puns,
 	by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>;
 	also consult the <a href="//github.com/Enet4/rust-tropes/blob/master/rust-tropes.md">Rust Tropes Dictionary</a>:
 <ul>
-	PUN(sharing-Cell-with-threads-but-let-idea-Sync, 3650362, trentcl, 43287198, 17.17.17 06:14 PM,
+	PUN(do-Cows-consume-Hay, 3650362, trentcl, 43287198, 17.17.17 06:14 PM,
 	    "Do <samp>Cow</samp>s consume <samp>Hay</samp>?")
 	PUN(sharing-Cell-with-threads-but-let-idea-Sync, 1233251, E_net4, 35262129, 23.01.17 11:30 PM,
 	    "Kept wondering what was preventing me from sharing a <samp>Cell</samp> with multiple threads, but then I let the idea <samp>Sync</samp> in.")
