@@ -107,7 +107,7 @@ Documentation for my Rust projects:
 	DOC(OWAPI.rs, owapi, owapi,
 	    Overwatch JSON API bindings for Rust)
 	DOC(bloguen, bloguen, bloguen,
-	    Generate a blogue from Markdown (again) )
+	    Generate a blogue from a flat TOML-based descriptor)
 	DOC(dishub, dishub, dishub,
 	    App for posting GitHub activity on Discord)
 	DOC(tweetr, tweetr, tweetr,
