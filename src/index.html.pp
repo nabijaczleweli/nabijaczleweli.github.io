@@ -10,6 +10,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "fontawesome.h"
+#include "font-mfizz.h"
+#include "devicon.h"
 #include "common.h"
 #include "util.h"
 
@@ -30,8 +32,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
 
+#define USER_REPO(user, name, icons, ...)                                                                                            \
+<li>                                                                                                                  FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)><samp>user/name</samp></a>                                  FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FAB_D(github)</a>                                           FORCED_NEWLINE \
+  icons                                                                                                               FORCED_NEWLINE \
+  — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
+</li>
 
-BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK)
+
+BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK)
 
 
 Some things I'<!--'-->ve written:
@@ -54,7 +64,27 @@ Some things I'<!--'-->ve written:
 	The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
 </p>
 
-Documentation for my Rust projects:
+Most of my code can be found under <a href="//github.com/nabijaczleweli">my GitHub account</a>,
+	I'<!--'-->m also the author/main maintainer of the following repositories:
+<ul>
+	USER_REPO(LoungeCPP, PicturaMediocritas, DEVICON(cplusplus),
+	          Like aurea mediocritas, but with frames in a video instead, or get an average frame from a video)
+	USER_REPO(LoungeCPP, pir-8-emu, MFIZZ(rust),
+	          Assembler, dissassembler, emulator and full library representation for/of the <a href="https://github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
+	USER_REPO(LoungeCPP, Tatsoryk, MFIZZ(rust) DEVICON(html5),
+	          A Lounge&lt;Discord&gt; gaem project that gets completed – a 2D top-down pvp arena shooter)
+	USER_REPO(ThePhD, infoware, DEVICON(cplusplus),
+	          C++ Library for pulling system and hardware information, without hitting the command line)
+	USER_REPO(thecoshman, http, MFIZZ(rust),
+	          Host These Things Please - a basic HTTP server for hosting a folder fast and simply)
+	USER_REPO(thecoshman, doh, MFIZZ(rust),
+	          D'<!--'-->Oh - Directories Over HTTP)
+	USER_REPO(Skorezore, Gaem, DEVICON(cplusplus),
+	          Absolutely the best gaem on earth, if it exists)
+</ul>
+<br />
+
+Documentation for my Rust crates:
 <ul>
 	DOC(rust-embed-resource, embed-resource, embed_resource,
 	    A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
@@ -118,7 +148,7 @@ Documentation for my Rust projects:
 	DOC(md6-rs, md6, md6,
 	    Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
 	DOC(hrx, hrx, hrx,
-	    Rust implementation of the <a href="//http://github.com/google/hrx">HRX plain text archive format</a>)
+	    Rust implementation of the <a href="//github.com/google/hrx">HRX plain text archive format</a>)
 	USER_DOC(thecoshman, doh, doh, doh,
 	         D'<!--'-->Oh - Directories Over HTTP)
 </ul>
