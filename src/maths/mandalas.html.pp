@@ -22,7 +22,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                           <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 #define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/content/assets/scans_show.js"></script>
 #define MATHJAX_SCRIPT    <script type="text/javascript" \
-                                  src="//rawcdn.githack.com/mathjax/MathJax/master/MathJax.js?config=/content/assets/MathJax-config.js"></script>
+                                  src="//rawcdn.githack.com/mathjax/MathJax/2.7.6/MathJax.js?config=/content/assets/MathJax-config.js"></script>
 #define ZIPPING_SCRIPTS   <script type="text/javascript" src="//rawcdn.githack.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script>          \
                           <script type="text/javascript" src="//rawcdn.githack.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script>  \
                           <script type="text/javascript" src="/content/assets/pack_specified.js"></script>
