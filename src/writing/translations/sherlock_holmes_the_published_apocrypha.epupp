@@ -11,11 +11,11 @@ Include: writing/the_taste_of_mi/Merriweather-font.css
 Include: sherlock_holmes_the_published_apocrypha/headings.css
 Include: sherlock_holmes_the_published_apocrypha/Roboto-additions.css
 
-Network-Include: https://rawcdn.githack.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
-Network-Include: https://rawcdn.githack.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf
+Network-Include: https://rawcdn.githack.com/mathjax/MathJax/2.7.6/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf
+Network-Include: https://rawcdn.githack.com/mathjax/MathJax/2.7.6/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf
 
-Network-Include: https://rawcdn.githack.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
-Network-Include: https://rawcdn.githack.com/mathjax/MathJax/master/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
+Network-Include: https://rawcdn.githack.com/mathjax/MathJax/2.7.6/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
+Network-Include: https://rawcdn.githack.com/mathjax/MathJax/2.7.6/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
 
 Network-Include: https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Regular.ttf
 Network-Include: https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/robotoslab/RobotoSlab-Bold.ttf

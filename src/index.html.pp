@@ -87,13 +87,13 @@ Most of my code can be found under <a href="//github.com/nabijaczleweli">my GitH
 Documentation for my Rust crates:
 <ul>
 	DOC(rust-embed-resource, embed-resource, embed_resource,
-	    A <a href="http://doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
+	    A <a href="//doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
 	    in the most resilient fashion imaginable)
 	DOC(BearLibTerminal.rs, bear-lib-terminal, bear_lib_terminal,
-	    <a href="https://bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
+	    <a href="//bitbucket.org/cfyzium/bearlibterminal"><samp>BearLibTerminal</samp></a> for Rust)
 	UNPUBLISHED_USER_DOC(nabijaczleweli, chattium-oxide-lib, chattium_oxide_lib,
-	    Common files for <a href="https://github.com/nabijaczleweli/chattium-oxide-client">chattium-oxide-client</a>
-	                 and <a href="https://github.com/nabijaczleweli/chattium-oxide-server">chattium-oxide-server</a>)
+	    Common files for <a href="//github.com/nabijaczleweli/chattium-oxide-client">chattium-oxide-client</a>
+	                 and <a href="//github.com/nabijaczleweli/chattium-oxide-server">chattium-oxide-server</a>)
 	DOC(trivial-colours-rs, trivial_colours, trivial_colours,
 	    Very simple and naive colour changing for your terminal, but that'<!--'-->s exactly what you need sometimes)
 	DOC(safe-transmute-rs, safe-transmute, safe_transmute,
@@ -101,7 +101,7 @@ Documentation for my Rust crates:
 	DOC(gen-epub-book.rs, gen-epub-book, gen_epub_book,
 	    Generate an ePub book from a simple plaintext descriptor in Rust)
 	DOC(registry.pol-rs, registry-pol, registry_pol,
-	    Parser for the <a href="https://msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a>)
+	    Parser for the <a href="//msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a>)
 	<li>
 		<a href="httpsCOLON_SLASH_SLASHrawcdn.githack.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
 		<a href="httpsCOLON_SLASH_SLASHgithub.com/Galactim/Sudoku">FAB(github)</a>
@@ -113,13 +113,13 @@ Documentation for my Rust crates:
 	DOC(cargo-update, cargo-update, cargo_update,
 	    Cargo subcommand for checking and applying updates to installed executables)
 	DOC(codepage-437, codepage-437, codepage_437,
-	    <a href="https://en.wikipedia.org/wiki/Code_page_437">Code page 437</a> transcoding for Rust)
+	    <a href="//en.wikipedia.org/wiki/Code_page_437">Code page 437</a> transcoding for Rust)
 	DOC(openalias.rs, openalias, openalias,
-	    Look up and parse <a href="https://openalias.org">OpenAlias</a> data)
+	    Look up and parse <a href="//openalias.org">OpenAlias</a> data)
 	DOC(poke-a-mango, poke-a-mango, poke_a_mango,
 	    What all the kool kidz are playing these days)
 	DOC(whereami-rs, whereami-rs, whereami,
-	    <a href="https://github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
+	    <a href="//github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(mandalas-rs, mandalas, mandalas,
 	    A mandala generator using Tonči Juričev-Grgin's<!--'--> method)
 	DOC(rfsapi-rs, rfsapi, rfsapi,
@@ -129,11 +129,11 @@ Documentation for my Rust crates:
 	DOC(dumplingh, dumplingh, dumplingh,
 	    Issue/PR exporter for GitHub)
 	USER_DOC(LoungeCPP, pir-8-emu, pir-8-emu, pir_8_emu,
-	         Assembler, dissassembler, emulator and full library representation for/of the <a href="https://github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
+	         Assembler, dissassembler, emulator and full library representation for/of the <a href="//github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
 	DOC(termimage, termimage, termimage,
 	    Display images in your terminal, kind of)
 	DOC(blake-rs, blake, blake,
-	    Implementation of the <a href="https://131002.net/blake">BLAKE</a> hash function for Rust via FFI)
+	    Implementation of the <a href="//131002.net/blake">BLAKE</a> hash function for Rust via FFI)
 	DOC(OWAPI.rs, owapi, owapi,
 	    Overwatch JSON API bindings for Rust)
 	DOC(bloguen, bloguen, bloguen,
@@ -146,7 +146,7 @@ Documentation for my Rust crates:
 	DOC(pls-rs, pls, pls,
 	    Rust crate for parsing and writing the PLS playlist format)
 	DOC(md6-rs, md6, md6,
-	    Implementation of the <a href="https://groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
+	    Implementation of the <a href="//groups.csail.mit.edu/cis/md6">MD6</a> hash function for Rust via FFI)
 	DOC(hrx, hrx, hrx,
 	    Rust implementation of the <a href="//github.com/google/hrx">HRX plain text archive format</a>)
 	USER_DOC(thecoshman, doh, doh, doh,
