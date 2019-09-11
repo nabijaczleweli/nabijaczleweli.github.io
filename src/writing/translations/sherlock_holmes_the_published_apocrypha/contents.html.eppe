@@ -18,15 +18,17 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 #ifdef EBOOK
 
-#define CONTENT_BIFURCATED(id, file_root) href=STR(file_root.html) class="content-link"
+#define CONTENT(top, bottom) href=STR(writing-translations-sherlock_holmes_the_published_apocrypha-top-bottom.html) class="content-link"
+#define CONTENT_MONO(suff)   href=STR(writing-translations-sherlock_holmes_the_published_apocrypha-suff.html)       class="content-link"
+#define CONTENT_IDX(suff)    CONTENT_MONO(suff-index)
 
 #else
 
-#define CONTENT_BIFURCATED(id, file_root) href=STR(HASH​FORCED_SPACER​id) class="content-link"
+#define CONTENT(top, bottom) href=STR(HASH​FORCED_SPACER​top/bottom) class="content-link"
+#define CONTENT_MONO(id)     href=STR(HASH​FORCED_SPACER​id)         class="content-link"
+#define CONTENT_IDX(id)      CONTENT_MONO(id)
 
 #endif
-
-#define CONTENT(id) CONTENT_BIFURCATED(id, id)
 
 
 <!--EBOOK_ONLY(<!---->
@@ -55,45 +57,45 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 <center><h2 class="merriweather">Spis Treści</h2></center>
 
 <p class="writing roboto indented">
-<a CONTENT(introduction)>Wprowadzenie</a>
+<a CONTENT_MONO(introduction)>Wprowadzenie</a>
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(the-parodies, the-parodies/index)>Parodie</a></strong>
+<strong><a CONTENT_IDX(the-parodies)>Parodie</a></strong>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(the-parodies/the-field-bazaar)>Targi o pole
-                                          (The Field Bazaar)</a>
+<a CONTENT(the-parodies, the-field-bazaar)>Targi o pole
+                                           (The Field Bazaar)</a>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(the-parodies/how-watson-learned-the-trick)>Jak Watson nauczył się sztuczki
-                                                      (How Watson Learned the Trick)</a>
+<a CONTENT(the-parodies, how-watson-learned-the-trick)>Jak Watson nauczył się sztuczki
+                                                       (How Watson Learned the Trick)</a>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(the-parodies/the-adventure-of-the-two-collaborators)>Przygoda dwóch współpracowników
-                                                                (The Adventure of the Two Collaborators)</a>
+<a CONTENT(the-parodies, the-adventure-of-the-two-collaborators)>Przygoda dwóch współpracowników
+                                                                 (The Adventure of the Two Collaborators)</a>
 </p>
 <p class="writing roboto indented continuation">
 J. M. Barrie
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(the-stories-of-mystery, the-stories-of-mystery/index)>Historie Tajemnicy</a></strong>
+<strong><a CONTENT_IDX(the-stories-of-mystery)>Historie Tajemnicy</a></strong>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(the-stories-of-mystery/the-man-with-the-watches)>Człowiek z zegarkami
-                                                            (The Man with the Watches)</a>
+<a CONTENT(the-stories-of-mystery, the-man-with-the-watches)>Człowiek z zegarkami
+                                                             (The Man with the Watches)</a>
 </p>
 <p class="writing roboto indented continuation">
-<a CONTENT(the-stories-of-mystery/the-lost-special)>Zaginiony pociąg specjalny
-                                                    (The Lost Special)</a>
+<a CONTENT(the-stories-of-mystery, the-lost-special)>Zaginiony pociąg specjalny
+                                                     (The Lost Special)</a>
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(william-gillette-as-sherlock-holmes, william-gillette-as-sherlock-holmes/index)>William Gillette jako Sherlock Holmes</a></strong>
+<strong><a CONTENT_IDX(william-gillette-as-sherlock-holmes)>William Gillette jako Sherlock Holmes</a></strong>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(william-gillette-as-sherlock-holmes/sherlock-holmes)>Sherlock Holmes</a>
+<a CONTENT(william-gillette-as-sherlock-holmes, sherlock-holmes)>Sherlock Holmes</a>
 </p>
 <p class="writing roboto indented continuing">
 <em class="roboto-em">Dramat w Czterech Aktach</em>
@@ -102,8 +104,8 @@ J. M. Barrie
 Sir Arthur Conan Doyle i William Gillette
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(william-gillette-as-sherlock-holmes/the-painful-predicament-of-sherlock-holmes)>Bolesne położenie Sherlocka Holmesa
-                                                                                           (The Painful Predicament of Sherlock Holmes)</a>
+<a CONTENT(william-gillette-as-sherlock-holmes, the-painful-predicament-of-sherlock-holmes)>Bolesne położenie Sherlocka Holmesa
+                                                                                            (The Painful Predicament of Sherlock Holmes)</a>
 </p>
 <p class="writing roboto indented continuing">
 <em class="roboto-em">Fikcja w Około Jednej Dziesiątej Aktu</em>
@@ -113,37 +115,37 @@ William Gillette
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(conan-doyle-as-dramatist, conan-doyle-as-dramatist/index)>Conan Doyle jako Dramaturg</a></strong>
+<strong><a CONTENT_IDX(conan-doyle-as-dramatist)>Conan Doyle jako Dramaturg</a></strong>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(conan-doyle-as-dramatist/the-speckled-band)>Nakrapiana wstęga
-                                                       (The Speckled Band)</a>
+<a CONTENT(conan-doyle-as-dramatist, the-speckled-band)>Nakrapiana wstęga
+                                                        (The Speckled Band)</a>
 </p>
 <p class="writing roboto indented continuing">
 <em class="roboto-em">Przygoda Sherlocka Holmesa</em>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(conan-doyle-as-dramatist/the-crown-diamond)>Diament koronny
-                                                       (The Crown Diamond)</a>
+<a CONTENT(conan-doyle-as-dramatist, the-crown-diamond)>Diament koronny
+                                                        (The Crown Diamond)</a>
 </p>
 <p class="writing roboto indented continuation">
 <em class="roboto-em">Wieczór z Sherlockiem Holmesem</em>
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(an-outline, an-outline/index)>Szkic</a></strong>
+<strong><a CONTENT_IDX(an-outline)>Szkic</a></strong>
 </p>
 <p class="writing roboto indented continuation">
-<a CONTENT(an-outline/plot-for-sherlock-holmes-story)>Fabuła do historii o Sherlocku Holmesie
-                                                      (Plot for Sherlock Holmes Story)</a>
+<a CONTENT(an-outline, plot-for-sherlock-holmes-story)>Fabuła do historii o Sherlocku Holmesie
+                                                       (Plot for Sherlock Holmes Story)</a>
 </p>
 
 <p class="writing roboto continued">
-<strong><a CONTENT_BIFURCATED(the-discovery, the-discovery/index)>Odkrycie</a></strong>
+<strong><a CONTENT_IDX(the-discovery)>Odkrycie</a></strong>
 </p>
 <p class="writing roboto indented continuing">
-<a CONTENT(the-discovery/the-case-of-the-man-who-was-wanted)>Sprawa człowieka, który był poszukiwany
-                                                             (The Case of the Man Who Was Wanted)</a>
+<a CONTENT(the-discovery, the-case-of-the-man-who-was-wanted)>Sprawa człowieka, który był poszukiwany
+                                                              (The Case of the Man Who Was Wanted)</a>
 </p>
 <p class="writing roboto indented continuation">
 Arthur Whitaker

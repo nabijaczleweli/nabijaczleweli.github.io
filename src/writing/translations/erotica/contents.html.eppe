@@ -18,15 +18,17 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 #ifdef EBOOK
 
-#define CONTENT_BIFURCATED(id, file_root) href=STR(file_root.html) class="content-link"
+#define CONTENT(top, bottom) href=STR(writing-translations-erotica-top-bottom.html) class="content-link"
+#define CONTENT_MONO(suff)   href=STR(writing-translations-erotica-suff.html)       class="content-link"
+#define CONTENT_IDX(suff)    CONTENT_MONO(suff-index)
 
 #else
 
-#define CONTENT_BIFURCATED(id, file_root) href=STR(HASH​FORCED_SPACER​id) class="content-link"
+#define CONTENT(top, bottom) href=STR(HASH​FORCED_SPACER​top/bottom) class="content-link"
+#define CONTENT_MONO(id)     href=STR(HASH​FORCED_SPACER​id)         class="content-link"
+#define CONTENT_IDX(id)      CONTENT_MONO(id)
 
 #endif
-
-#define CONTENT(id) CONTENT_BIFURCATED(id, id)
 
 
 <!--EBOOK_ONLY(<!---->
@@ -59,10 +61,13 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 <center><h2 class="merriweather"><em>SPIS TREŚCI</em></h2></center>
 
 <p class="writing roboto">
-<strong><a CONTENT_BIFURCATED(danger, danger/index)>NIEBEZPIECZEŃSTWO</a></strong>
+<strong><a CONTENT_IDX(danger)>NIEBEZPIECZEŃSTWO</a></strong>
 </p>
 <p class="writing roboto">
-<a CONTENT(danger/the-bloody-chamber)>Angela Carter</a> <span class="title"><a CONTENT(danger/the-bloody-chamber)>Krwawa komnata (The Bloody Chamber)</a></span>
+<a CONTENT(danger, the-bloody-chamber)>Angela Carter</a>
+	<span class="title"><a CONTENT(danger, the-bloody-chamber)>
+		Krwawa komnata (The Bloody Chamber)
+	</a></span>
 </p>
 
 
