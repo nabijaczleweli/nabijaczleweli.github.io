@@ -1,3 +1,36 @@
+/* Copyright (C) 1991-2016 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses Unicode 8.0.0.  Version 8.0 of the Unicode Standard is
+   synchronized with ISO/IEC 10646:2014, plus Amendment 1 (published
+   2015-05-15).  */
+/* We do not support C11 <threads.h>.  */
 <!--
 nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
 ​
@@ -11,16 +44,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 
-
-
-
 <!-- RSS_PUB_DATE: "Wed, 16 Aug 2017 19:15:09 +0200" -->
-
-
-
-
-
-
 <!DOCTYPE html> 
  <html lang="pl"> 
  <head> 
@@ -62,8 +86,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <link href="Merriweather-font.css" rel="stylesheet" /> 
  </head> 
  <body>
-
-
 <style>
 .ruby {
  /* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
@@ -363,7 +385,6 @@ miejscami nawet podobnych do rodziny), wysoce
 apetyczny bark, odbitka bliżej nieokreślonego, a dalej
 rozmazanego czegoś, a, nie, to tylko podłoże zafalowało
 w unisonie z barkiem wapetyczniającym
-
 <!-- Page 08/12 -->
 <!-- Nine lines taken up by maths here. -->
 <!-- Nine lines taken up by maths here. -->
@@ -394,7 +415,6 @@ trzy cale przed <!-- ** bardziej 3.5 ale v0v -->
 nimi uśmiechające
 się szelmowsko w komitywie z większością
 swojego jestestwa, do Emilli Zet<span class="smol">(kropka)</span>,
-
 <!-- Page 09/12 -->
 która zareagowała na operacje płucnonosowe <!-- 7.8.17 -> -->
 w własnymi, i, marszcząc nosek…
@@ -433,7 +453,6 @@ gramach etanolu na kilogram to tylko wołać chór <!-- swoją drogą taka jest 
 <!-- Four lines taken up by futile attempts at writing Greek here. -->
 <!-- Four lines taken up by futile attempts at writing Greek here. -->
 <!-- Four lines taken up by futile attempts at writing Greek here. -->
-
 <!-- Page 10/12 -->
 <!-- Five lines taken up biscale drawing here. -->
 <!-- Five lines taken up biscale drawing here. -->
@@ -472,7 +491,6 @@ nie są przewaćnie bardziej interesujące
 niż <span class="roboto-em">Proces Bessemera</span><a href="#endnote-8"><sup class="math-font-normal">8</sup></a>, ale
 teraz trawiła uprzednią wymianę zdań, i,
 mimo, że na nią wychodzi(ło) te <span class="math-font-normal roboto-unscale">9</span>
-
 <!-- Page 11/12 -->
 procent więcej, to wychodziło jej to zdecydowanie za wolno, I już,
 kiedy Asia zaczęła dopuszczać
@@ -511,7 +529,6 @@ ciągnie ją na wernisaż, taki
 z werwą, i adekwatnie, bo inaugurował wystawę
 „jednego z największych talentów nowożytności”<a href="#endnote-10"><sup class="math-font-normal">10</sup></a>
 (rozważania, której z nich trafiło sięlepiej, zostawiała
-
 <!-- Page 12/12 -->
 w.w. emolowi); oddanie do użytku jej praktyki​<a href="#endnote-11"><sup class="math-font-normal">11</sup></a> psychologicznej;
 mikrowystawa fotograficzna z jej
@@ -547,9 +564,6 @@ Emilii, bo wie, że Emi, <em class="roboto-em">jej</em> Emi smakuje, jak nikt
 inny.
 </p>
 <!-- One line taken up by dates and places here. -->
-
-
-
 
 <!--​-->
 
@@ -658,9 +672,9 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 11.09.2019 10:37:49 UTC from 
+ Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 02.12.2019 04:15:51 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/writing/the_taste_of_mi/index.html.pp">src/writing/the_taste_of_mi/index.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/583594518">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/619434978">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

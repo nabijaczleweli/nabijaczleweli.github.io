@@ -10,13 +10,13 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Wed, 11 Sep 2019 10:38:37 +0000
+      Mon, 02 Dec 2019 04:16:43 +0000
     </pubDate>
     <lastBuildDate>
-      Wed, 11 Sep 2019 10:38:37 +0000
+      Mon, 02 Dec 2019 04:16:43 +0000
     </lastBuildDate>
     <generator>
-      GNU Awk 3.1.8
+      GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
     </generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>60</ttl>
@@ -29,7 +29,6 @@
     <item>
       <title> gen-epub-book general — nabijaczleweli </title>
       <description>
-
 &lt;style&gt;
 .overlay-container {
  display: inline-block;
@@ -389,15 +388,9 @@ I hope that this document is clear and/or informative, if not,
 .continuation {
  margin-top: 0;
 }
-
-
-
 &lt;/style&gt;
-
-
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;h2 class=&quot;merriweather&quot;&gt;Tonči Juričev-Grgin mandalas&lt;/h2&gt;
-
 &lt;p class=&quot;indented continued&quot; id=&quot;intro&quot;&gt;
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
 &lt;/p&gt;
@@ -415,7 +408,6 @@ but in one more dimension (also with classical music atop it because it'd be unb
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC&quot; frameborder=&quot;0&quot; allowfullscreen style=&quot;max-width: 100%;&quot;&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
-
 &lt;p class=&quot;indented continued&quot; id=&quot;render-time&quot;&gt;
 &lt;strong&gt;&quot;How long does rendering a thing such as this take?&quot;&lt;/strong&gt;, one might ask.
  Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness&lt;!--'--&gt;
@@ -429,7 +421,6 @@ but in one more dimension (also with classical music atop it because it'd be unb
  [​[​size = [900, 900, 900] =&gt; n_max = 10^10​]​],
  which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
-
 &lt;p class=&quot;indented continued&quot; id=&quot;code&quot;&gt;
 A different question to be asked is
  &lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
@@ -451,7 +442,6 @@ A different question to be asked is
  used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
  make things based on the algorithm. Will work and build pretty much anywhere.
 &lt;/p&gt;
-
 &lt;p class=&quot;indented continued&quot; id=&quot;more&quot;&gt;
 &lt;strong&gt;&quot;I don't care, I just wanna look at more cool shit!&quot;&lt;/strong&gt; — I got you covered on this front, too:
 &lt;/p&gt;
@@ -468,12 +458,10 @@ A different question to be asked is
 I'm out of things to put here, because I'm not a cool person &lt;em&gt;en general&lt;/em&gt;.
  &lt;small&gt;(What else did you expect, I do maths for fun)&lt;/small&gt;
 &lt;/p&gt;
-
 &lt;p class=&quot;indented&quot; id=&quot;contact&quot;&gt;
 &lt;strong&gt;&quot;I like/don't like this thing and/or would like to tell/contact you about it/something else.&quot;&lt;/strong&gt;,
  then reach me over at anything listed &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. I don't have a life so I'll probably respond uncannily quickly.
 &lt;/p&gt;
-
 &lt;p class=&quot;indented&quot; id=&quot;algorithm&quot;&gt;
 &lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version: &lt;!--'--&gt;
 &lt;/p&gt;
@@ -492,25 +480,21 @@ I'm out of things to put here, because I'm not a cool person &lt;em&gt;en genera
 &lt;p class=&quot;continuation&quot;&gt;
 [​[​bar C = c​]​]
 &lt;/p&gt;
-
 &lt;p class=&quot;continued&quot;&gt;
 [​[​n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 [​[​d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;​]​]
 &lt;/p&gt;
-
 &lt;p&gt;
 [​[​P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]
 &lt;/p&gt;
-
 &lt;p class=&quot;continued&quot;&gt;
 [​[​e_m = |P_n P_(n-m)|​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 [​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]
 &lt;/p&gt;
-
 &lt;p class=&quot;continued&quot;&gt;
 [​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]
 &lt;/p&gt;
@@ -523,11 +507,9 @@ I'm out of things to put here, because I'm not a cool person &lt;em&gt;en genera
 &lt;p class=&quot;continuation&quot;&gt;
 [​[​colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha​]​]
 &lt;/p&gt;
-
 &lt;p&gt;
 (I'm not a real mathematician, so it's most likely not done properly.)
 &lt;/p&gt;
-
 &lt;p class=&quot;continued&quot;&gt;
 And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned hand-drawn version with examples &lt;!--'--&gt;
  (warning: &lt;em&gt;very&lt;/em&gt; big, expand at own risk)&lt;span id=&quot;show-scans-punctuation&quot;&gt;.&lt;/span&gt;
@@ -545,7 +527,6 @@ And &lt;span id=&quot;show-scans&quot;&gt;here&lt;/span&gt;'s a scanned hand-dra
 &lt;small&gt;Click for big version.&lt;/small&gt;
 &lt;/p&gt;
 &lt;/div&gt;
-
 &lt;p class=&quot;continued&quot; id=&quot;colourspace&quot;&gt;
 &lt;strong&gt;On some of the more arbitrary colourspaces.&lt;/strong&gt;
 &lt;/p&gt;
@@ -576,10 +557,7 @@ Since the output image format (PNG) and the video format (H.264) only support RG
 A full list of conversions and their implementations can be found at the
  &lt;a href=&quot;//rawcdn.githack.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html&quot; target=&quot;_blank&quot;&gt;mandalas-rs API documentation&lt;/a&gt;.
 &lt;/p&gt;
-
 &lt;/span&gt;
-
-
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Tue, 13 Jun 2017 22:42:51 +0200</pubDate>
@@ -831,8 +809,6 @@ A full list of conversions and their implementations can be found at the
     <item>
       <title> Każdy koniec to nowy początek — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -1015,8 +991,6 @@ A. Łopacińska
     <item>
       <title> A Widowꞌs Trace — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -1757,8 +1731,6 @@ Wyrok wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;�
     <item>
       <title> The Taste of MI — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .ruby {
  /* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
@@ -2058,7 +2030,6 @@ miejscami nawet podobnych do rodziny), wysoce
 apetyczny bark, odbitka bliżej nieokreślonego, a dalej
 rozmazanego czegoś, a, nie, to tylko podłoże zafalowało
 w unisonie z barkiem wapetyczniającym
-
 &lt;!-- Page 08/12 --&gt;
 &lt;!-- Nine lines taken up by maths here. --&gt;
 &lt;!-- Nine lines taken up by maths here. --&gt;
@@ -2089,7 +2060,6 @@ trzy cale przed &lt;!-- ** bardziej 3.5 ale v0v --&gt;
 nimi uśmiechające
 się szelmowsko w komitywie z większością
 swojego jestestwa, do Emilli Zet&lt;span class=&quot;smol&quot;&gt;(kropka)&lt;/span&gt;,
-
 &lt;!-- Page 09/12 --&gt;
 która zareagowała na operacje płucnonosowe &lt;!-- 7.8.17 -&gt; --&gt;
 w własnymi, i, marszcząc nosek…
@@ -2128,7 +2098,6 @@ gramach etanolu na kilogram to tylko wołać chór &lt;!-- swoją drogą taka je
 &lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
 &lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
 &lt;!-- Four lines taken up by futile attempts at writing Greek here. --&gt;
-
 &lt;!-- Page 10/12 --&gt;
 &lt;!-- Five lines taken up biscale drawing here. --&gt;
 &lt;!-- Five lines taken up biscale drawing here. --&gt;
@@ -2167,7 +2136,6 @@ nie są przewaćnie bardziej interesujące
 niż &lt;span class=&quot;roboto-em&quot;&gt;Proces Bessemera&lt;/span&gt;&lt;a href=&quot;#endnote-8&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;8&lt;/sup&gt;&lt;/a&gt;, ale
 teraz trawiła uprzednią wymianę zdań, i,
 mimo, że na nią wychodzi(ło) te &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;9&lt;/span&gt;
-
 &lt;!-- Page 11/12 --&gt;
 procent więcej, to wychodziło jej to zdecydowanie za wolno, I już,
 kiedy Asia zaczęła dopuszczać
@@ -2206,7 +2174,6 @@ ciągnie ją na wernisaż, taki
 z werwą, i adekwatnie, bo inaugurował wystawę
 „jednego z największych talentów nowożytności”&lt;a href=&quot;#endnote-10&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;10&lt;/sup&gt;&lt;/a&gt;
 (rozważania, której z nich trafiło sięlepiej, zostawiała
-
 &lt;!-- Page 12/12 --&gt;
 w.w. emolowi); oddanie do użytku jej praktyki​&lt;a href=&quot;#endnote-11&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;11&lt;/sup&gt;&lt;/a&gt; psychologicznej;
 mikrowystawa fotograficzna z jej
@@ -2242,9 +2209,6 @@ Emilii, bo wie, że Emi, &lt;em class=&quot;roboto-em&quot;&gt;jej&lt;/em&gt; Em
 inny.
 &lt;/p&gt;
 &lt;!-- One line taken up by dates and places here. --&gt;
-
-
-
 
 &lt;!--​--&gt;
 
@@ -2342,8 +2306,6 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
     <item>
       <title> Funeral Blues (ew. Pogrzebowy Blues) — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -2351,21 +2313,18 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
 &lt;/style&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;h2 class=&quot;merriweather&quot;&gt;Funeral Blues (ew. Pogrzebowy Blues)&lt;/h2&gt;
-
 &lt;p&gt;
 Zatrzymaj zegary wsze, telefon oderżnij, &lt;br /&gt;
 Mordę psu soczystą kością zawrzyj, &lt;br /&gt;
 Ucisz fortepiano, i z cichym bębna biciem &lt;br /&gt;
 Wystaw trumnę na żałosne żałobników wycie. &lt;br /&gt;
 &lt;/p&gt;
-
 &lt;p&gt;
 Pozwól planom powietrznym ciągiem nad głowami pijać &lt;br /&gt;
 „Martwy jest” niebieską czcionką pisać. &lt;br /&gt;
 Kokardami białe szyje gołębic udekoruj, &lt;br /&gt;
 Drogowej policji z czarnej wełny rękawice rozdaj. &lt;br /&gt;
 &lt;/p&gt;
-
 &lt;p&gt;
 Był mą północą, południem, wschodem i zachodem, &lt;br /&gt;
 Tygodniem mym i odpoczynkiem niedzielnem, &lt;br /&gt;
@@ -2382,18 +2341,15 @@ Pieśnią mą i mową, północą i południem; &lt;br /&gt;
  &lt;br /&gt;
 &lt;/span&gt;
 &lt;/p&gt;
-
 &lt;p&gt;
 Gwiazdy niechcianymi już; każdą pochowaj, &lt;br /&gt;
 Słońce rozłóż i księżyc spakuj, &lt;br /&gt;
 Ocean wylej i lasy zmieć, &lt;br /&gt;
 Bo nic już dobrym nie może być. &lt;br /&gt;
 &lt;/p&gt;
-
 &lt;p class=&quot;indented&quot;&gt;
 A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;18.04.2018&lt;/span&gt;
 &lt;/p&gt;
-
 &lt;/span&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
@@ -2405,8 +2361,6 @@ A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&q
     <item>
       <title> Świat to kilka takich pokoi — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .continued {
  margin-bottom: 0;
@@ -2677,8 +2631,6 @@ I tak, drogie dzieci, zaczęła sie WWI.
     <item>
       <title> Наган — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3080,8 +3032,6 @@ zrozumieją dopiero w czasach innych, lepszych.
     <item>
       <title> No gifts this year — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3143,8 +3093,6 @@ zrozumieją dopiero w czasach innych, lepszych.
     <item>
       <title> Degenerate Watch — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3193,8 +3141,6 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
     <item>
       <title> The Last Eye — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3267,8 +3213,6 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
     <item>
       <title> Cucumber Dog — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3320,8 +3264,6 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
     <item>
       <title> Ghostly Lasers — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3363,8 +3305,6 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
     <item>
       <title> Get up，soldier — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3445,8 +3385,6 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
     <item>
       <title> Six Minutes — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3521,8 +3459,6 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
     <item>
       <title> End = Start — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3552,8 +3488,6 @@ Not ever would she expect this.
     <item>
       <title> The-less — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3628,8 +3562,6 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
     <item>
       <title> Utopian Assassin — nabijaczleweli </title>
       <description>
-
-
 &lt;style&gt;
 .indented {
  text-indent: 1em;

@@ -1,3 +1,36 @@
+/* Copyright (C) 1991-2016 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses Unicode 8.0.0.  Version 8.0 of the Unicode Standard is
+   synchronized with ISO/IEC 10646:2014, plus Amendment 1 (published
+   2015-05-15).  */
+/* We do not support C11 <threads.h>.  */
 <!--
 nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
 ​
@@ -7,9 +40,6 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-
-
-
 
 
 <!-- RSS_PUB_DATE: "Tue, 13 Jun 2017 22:42:51 +0200" -->
@@ -63,15 +93,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 .continuation {
  margin-top: 0;
 }
-
-
-
 </style>
-
-
 <span class="roboto">
 <h2 class="merriweather">Tonči Juričev-Grgin mandalas</h2>
-
 <p class="indented continued" id="intro">
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:
 </p>
@@ -89,7 +113,6 @@ but in one more dimension (also with classical music atop it because it'd be unb
 <iframe width="560" height="315" src="//youtube.com/embed/D2Xk6O9x-yk?list=PL3chI5PWwNA_c1nG57ittUq4op7ZmIveC" frameborder="0" allowfullscreen style="max-width: 100%;">
 </iframe>
 </div>
-
 <p class="indented continued" id="render-time">
 <strong>"How long does rendering a thing such as this take?"</strong>, one might ask.
  Two answers, the short one - too sodding long, the not-quite-as-short one is that due to the process' inherent randomness<!--'-->
@@ -103,7 +126,6 @@ but in one more dimension (also with classical music atop it because it'd be unb
  [​[​size = [900, 900, 900] => n_max = 10^10​]​],
  which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 </p>
-
 <p class="indented continued" id="code">
 A different question to be asked is
  <strong>"How does one</strong><!--"-->
@@ -125,7 +147,6 @@ A different question to be asked is
  used to generate all here-featured examples. You probably want to use this if you want to generate your own mandalas or
  make things based on the algorithm. Will work and build pretty much anywhere.
 </p>
-
 <p class="indented continued" id="more">
 <strong>"I don't care, I just wanna look at more cool shit!"</strong> — I got you covered on this front, too:
 </p>
@@ -142,12 +163,10 @@ A different question to be asked is
 I'm out of things to put here, because I'm not a cool person <em>en general</em>.
  <small>(What else did you expect, I do maths for fun)</small>
 </p>
-
 <p class="indented" id="contact">
 <strong>"I like/don't like this thing and/or would like to tell/contact you about it/something else."</strong>,
  then reach me over at anything listed <a href="/" target="_blank">here</a>. I don't have a life so I'll probably respond uncannily quickly.
 </p>
-
 <p class="indented" id="algorithm">
 <strong>"But where's the <em>algorithm</em>?"</strong> – Here's the raw version: <!--'-->
 </p>
@@ -166,25 +185,21 @@ I'm out of things to put here, because I'm not a cool person <em>en general</em>
 <p class="continuation">
 [​[​bar C = c​]​]
 </p>
-
 <p class="continued">
 [​[​n in NN nn (: alpha + 2; +oo ) - sf "current point number"​]​]
 </p>
 <p class="continuation">
 [​[​d = ra\nd((:0, c) nn NN) - sf "current chosen corner"​]​]
 </p>
-
 <p>
 [​[​P_n = (C_d + P_(n-1)) / 2 => a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]
 </p>
-
 <p class="continued">
 [​[​e_m = |P_n P_(n-m)|​]​]
 </p>
 <p class="continuation">
 [​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]
 </p>
-
 <p class="continued">
 [​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]
 </p>
@@ -197,11 +212,9 @@ I'm out of things to put here, because I'm not a cool person <em>en general</em>
 <p class="continuation">
 [​[​colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha​]​]
 </p>
-
 <p>
 (I'm not a real mathematician, so it's most likely not done properly.)
 </p>
-
 <p class="continued">
 And <span id="show-scans">here</span>'s a scanned hand-drawn version with examples <!--'-->
  (warning: <em>very</em> big, expand at own risk)<span id="show-scans-punctuation">.</span>
@@ -219,7 +232,6 @@ And <span id="show-scans">here</span>'s a scanned hand-drawn version with exampl
 <small>Click for big version.</small>
 </p>
 </div>
-
 <p class="continued" id="colourspace">
 <strong>On some of the more arbitrary colourspaces.</strong>
 </p>
@@ -250,10 +262,7 @@ Since the output image format (PNG) and the video format (H.264) only support RG
 A full list of conversions and their implementations can be found at the
  <a href="//rawcdn.githack.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html" target="_blank">mandalas-rs API documentation</a>.
 </p>
-
 </span>
-
-
 <!-- CTNT_END --> <hr /> 
  Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
  code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
@@ -263,9 +272,9 @@ A full list of conversions and their implementations can be found at the
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 4‍.‍6‍.‍3'<!--'-->s C preprocessor on 11.09.2019 10:37:49 UTC from 
+ Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 02.12.2019 04:15:51 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/maths/mandalas.html.pp">src/maths/mandalas.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/583594518">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/619434978">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
