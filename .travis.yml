@@ -51,7 +51,7 @@ after_success:
       git config --global user.name "Nabijaczleweli Autouploader Bot";
       git config --global push.default simple;
       git add -A .;
-      git commit -F ../DOC_UPDATE_MSG --date="$(git log "$TRAVIS_COMMIT_RANGE" -1 --pretty="%ai")";
+      git commit -F ../DOC_UPDATE_MSG --date="$(git log -1 --pretty="%ai")";
       git push;
       popd;
     fi
