@@ -122,6 +122,8 @@ Documentation for my Rust crates:
 	    <a href="//github.com/gpakosz/whereami"><samp>whereami</samp></a> for Rust)
 	DOC(mandalas-rs, mandalas, mandalas,
 	    A mandala generator using Tonči Juričev-Grgin's<!--'--> method)
+	DOC(flac-bound, flac-bound, flac_bound,
+	    FLAC encoding via libflac FFI)
 	DOC(rfsapi-rs, rfsapi, rfsapi,
 	    Raw Filesystem API for Rust -- enable simpler browsing with ease)
 	DOC(checksums, checksums, checksums,
