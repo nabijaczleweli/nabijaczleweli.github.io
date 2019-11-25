@@ -9,9 +9,8 @@ cache:
     - $HOME/.rustup
     - $HOME/.cargo
     - build
-env:
-  # From last working build https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/583594518#L213
-  - CALIBRE_VERSION=3.47.1
+#    From last working build https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/583594518#L213
+env: CALIBRE_VERSION=3.47.1
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_63c9d3fcdbeb_key -iv $encrypted_63c9d3fcdbeb_iv -in gh_rsa.enc -out gh_rsa -d
@@ -51,7 +50,7 @@ after_success:
       git config --global user.name "Nabijaczleweli Autouploader Bot";
       git config --global push.default simple;
       git add -A .;
-      git commit -F ../DOC_UPDATE_MSG --date="$(git log -1 --pretty="%ai")";
+      git commit -F ../DOC_UPDATE_MSG --date="$(git log "$TRAVIS_COMMIT_RANGE" -1 --pretty="%ai" || date -Iseconds)";
       git push;
       popd;
     fi
