@@ -44,11 +44,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 .roboto {
  font-family: "Roboto Slab", serif;
  /* Normalise to "default" size (22px->19px) */
- font-size: calc(19em / 22);
+ /*font-size: calc(19em / 22);*/
+ /* Decided that was too small, but 110% looked good, so (19/22)*1.1=0.95 */
+ font-size: 0.95em;
 }
 .roboto-unscale {
  /* Normalise to "normal" size (e.g. for other fonts) ((22px->19px)->22px) */
- font-size: calc(22em / 19);
+ /*font-size: calc(22em / 19);*/
+ font-size: calc(1 / 0.95em);
 }
 .roboto-em {
  font-family: "Roboto", serif;
