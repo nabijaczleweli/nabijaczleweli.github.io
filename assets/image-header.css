@@ -1,6 +1,10 @@
+.has-header {
+	min-height: 10em;
+}
+
 .header {
-	width: 5em;
-	height: 5em;
+	width: 10em;
+	height: 10em;
 	vertical-align: text-bottom;
 	float: left;
 	margin-right: .25em;

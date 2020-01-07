@@ -41,7 +41,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 </li>
 
 
-BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK)
+
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />                    FORCED_NEWLINE \
+                    <link href="writing/the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
+                    <link href="writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
+                    <link href="writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK STYLESHEETS)
+
+
+<h2 class="merriweather">наб'<!--'-->s web-site, hi!</h2>
+<span class="roboto">
 
 
 <p>
@@ -152,4 +161,5 @@ Documentation for my Rust crates:
 </ul>
 
 
+</span>
 BOILERPLATE_END()
