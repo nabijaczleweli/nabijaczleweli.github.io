@@ -44,24 +44,20 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 BOILERPLATE(main(), Landing page for things, en-GB, FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK)
 
 
-Some things I'<!--'-->ve written:
-<ul>
-	<li><a href="writing/moments/">"A Widow's Trace"</a> — Overwatch smut, enter at own risk; ~10-20.03.2017.</li>
-	<li><a href="writing/the_taste_of_mi/">"The Taste of MI"</a> [PL] — lass reminsces about her key life points while lying in wait for her wife;
-	                                                                    30.06.2017 - 12.08.2017.</li>
-	<li><a href="writing/">More…</a></li>
-</ul>
-
 <p>
-	Some pretty (? or so I hope) things I made with <a href="maths">maths</a>.
+	Read some things I'<!--'-->ve <a href="writing">written</a>…
 </p>
 
 <p>
-	A complete writeup on <a href="gen-epub-book"><code>gen-epub-book</code>(s)</a>.
+	See some pretty things I made with <a href="maths">maths</a>…
 </p>
 
 <p>
-	The <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a> needs your suggestions!
+	Read complete writeup on <a href="gen-epub-book"><code>gen-epub-book</code>(s)</a>…
+</p>
+
+<p>
+	Consider contributing to the <a href="extensive_list_of_rust_puns">Extensive List of Rust Puns</a>!
 </p>
 
 Most of my code can be found under <a href="//github.com/nabijaczleweli">my GitHub account</a>,
