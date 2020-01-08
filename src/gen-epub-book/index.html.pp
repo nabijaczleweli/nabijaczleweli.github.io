@@ -30,7 +30,7 @@ BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-bo
 #include "tag.css"
 </style>
 
-<div class="roboto">
+<div class="roboto"><span class="roboto-unscale">
 
 
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
@@ -256,6 +256,6 @@ I hope that this document is clear and/or informative, if not,
 </p>
 
 
-</div>
+</span></div>
 
 BOILERPLATE_END()
