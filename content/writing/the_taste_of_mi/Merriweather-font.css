@@ -11,7 +11,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 @font-face {
  font-family: "Merriweather";
  src: local("Merriweather Regular"), local("Merriweather-Regular"),
-       url("https://rawcdn.githack.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf")
+      /* "https://rawcdn.githack.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf" */
+       url("https://fonts.googleapis.com/css?family=Merriweather&subset=cyrillic,cyrillic-ext,latin-ext")
 
       format("truetype");
 }

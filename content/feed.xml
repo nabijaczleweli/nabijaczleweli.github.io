@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Fri, 21 Feb 2020 05:04:14 +0000
+      Fri, 21 Feb 2020 17:16:17 +0000
     </pubDate>
     <lastBuildDate>
-      Fri, 21 Feb 2020 05:04:14 +0000
+      Fri, 21 Feb 2020 17:16:17 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
@@ -61,11 +61,8 @@ h3 {
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6, .merriweather {
+h1, h2, h3, h4, h5, h6 {
  font-family: &quot;Merriweather&quot;, serif;
-}
-.roboto {
- font-family: &quot;Roboto Slab&quot;, serif;
 }
 h1:hover a.hash-link,
 h2:hover a.hash-link,
@@ -161,7 +158,7 @@ tr:hover {
  background-color: #eee;
 }
 &lt;/style&gt;
-&lt;div class=&quot;roboto&quot;&gt;
+&lt;div class=&quot;roboto&quot;&gt;&lt;span class=&quot;roboto-unscale&quot;&gt;
 &lt;!-- Style based on https://daringfireball.net/projects/markdown/ --&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h1 id=&quot;main&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#main&quot;&gt;#&lt;/a&gt; &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;&lt;/h1&gt;
@@ -363,7 +360,7 @@ I hope that this document is clear and/or informative, if not,
  why don'&lt;!--'--&gt;t you pop into the &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;issues &lt;i class=&quot;devicon-html5-plain&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
  or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
 &lt;/p&gt;
-&lt;/div&gt;
+&lt;/span&gt;&lt;/div&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 30 Aug 2017 03:38:21 +0200</pubDate>

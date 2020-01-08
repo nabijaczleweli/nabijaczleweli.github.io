@@ -51,7 +51,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 .roboto-unscale {
  /* Normalise to "normal" size (e.g. for other fonts) ((22px->19px)->22px) */
  /*font-size: calc(22em / 19);*/
- font-size: calc(1 / 0.95em);
+ font-size: calc(1em / 0.95);
 }
 .roboto-em {
  font-family: "Roboto", serif;
