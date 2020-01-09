@@ -12,6 +12,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../fontawesome.h"
 #include "../font-mfizz.h"
 #include "../devicon.h"
+#include "../heading.h"
 #include "../common.h"
 #include "../util.h"
 
@@ -42,14 +43,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 
-#define STYLESHEETS FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                                           FORCED_NEWLINE \
+#define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                        FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 BOILERPLATE(Docs&code, Documentation and code, en-GB, STYLESHEETS)
 
 
-<h2 class="merriweather">Documentation and mistakes</h2>
+MAIN_HEADING(Documentation and mistakes)
 <span class="roboto">
 
 
