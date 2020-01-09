@@ -1,3 +1,17 @@
+#define __LICENSE                                                  \
+// nabijaczleweli.xyz (c) by nabijaczleweli                        \
+​//                                                                 \
+// nabijaczleweli.xyz is licensed under a                          \
+// Creative Commons Attribution 4.0 International License.         \
+​//                                                                 \
+// You should have received a copy of the license along with this  \
+// work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+#undef __LICENSE
+
+
+#pragma once
+
+
 #define GEB(...)          <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>
 #define GEB_HREF(...)     href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
 #define GEB_CDN_HREF(...) href=STR(httpsCOLON_SLASH_SLASHrawcdn.githack.com/nabijaczleweli/gen-epub-book​FORCED_SPACER​__VA_ARGS__)
@@ -22,7 +36,7 @@
 
 
 #define SCRIPTS     <script type="text/javascript" src="/content/assets/numberise-code.js"></script>  FORCED_NEWLINE
-#define STYLESHEETS FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                                          FORCED_NEWLINE \
+#define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                       FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                      FORCED_NEWLINE \
                     <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">  FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                       FORCED_NEWLINE \

@@ -10,6 +10,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../common.h"
+#include "../heading.h"
 #include "../fontawesome.h"
 #include "../font-mfizz.h"
 #include "../devicon.h"
@@ -35,7 +36,7 @@ BOILERPLATE(gen-epub-book general, feature sets and links to various gen-epub-bo
 
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
 <p></p>
-HEADING(1, main, GEB())
+MAIN_HEADING_ALT(1, .., GEB())
 
 HEADING_S(2, description, style="margin-top: initial;", Description)
 

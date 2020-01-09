@@ -11,6 +11,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #include "../util.h"
 #include "../common.h"
+#include "../heading.h"
 #include "../writing/writing.h"
 
 
@@ -22,7 +23,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 	               - <a href=STR(httpsCOLON_SLASH_SLASHchat.stackoverflow.com/transcript/message/msg_id##HASH##msg_id)>MATH(msg_time)</a></li>
 
 
-#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE
+#define STYLESHEETS MAIN_HEADING_STYLE                                                                 FORCED_NEWLINE \
+                    <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
@@ -33,8 +35,9 @@ BOILERPLATE(Extensive List of Rust puns, Puns about the Rust programming languag
 
 
 <p></p>
-Extensive list of <a href="//rust-lang.org">Rust</a> puns,
-	as <a href="//chat.stackoverflow.com/transcript/62927?m=35242527#35242527">requested</a>
+MAIN_HEADING(Extensive list of <a href="//rust-lang.org">Rust</a> puns)
+
+As <a href="//chat.stackoverflow.com/transcript/62927?m=35242527#35242527">requested</a>
 	by <a href="//chat.stackoverflow.com/users/2408867">Lukas Kalbertodt</a>;
 	also consult the <a href="//github.com/Enet4/rust-tropes/blob/master/rust-tropes.md">Rust Tropes Dictionary</a>:
 <ul>

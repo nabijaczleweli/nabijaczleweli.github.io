@@ -10,10 +10,11 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../fontawesome.h"
+#include "../heading.h"
 #include "../common.h"
 
 
-#define STYLESHEETS FONTAWESOME_LINK                                                                  FORCED_NEWLINE \
+#define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                                                  FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                      FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> FORCED_NEWLINE \
@@ -34,7 +35,7 @@ HASHwiggly-circle-header {
 </style>
 
 
-<h2 class="merriweather">(Pretty?) Maths-based things</h2>
+MAIN_HEADING((Pretty?) Maths-based things)
 <span class="roboto">
 
 <p class="indented continued">

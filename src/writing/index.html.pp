@@ -10,6 +10,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../common.h"
+#include "../heading.h"
 #include "../fontawesome.h"
 #include "translations/translations.h"
 #include "../writing_prompts/writing_prompts.h"
@@ -18,7 +19,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define MATH(...) <span class="math-font-normal roboto-unscale">__VA_ARGS__</span>
 
 
-#define STYLESHEETS FONTAWESOME_LINK                                                        FORCED_NEWLINE \
+#define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                     FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />            FORCED_NEWLINE \
                     <link href="the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
                     <link href="Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
@@ -32,7 +33,7 @@ BOILERPLATE(Written creative(?) things, Non-code things набꞌs written, en-G
 <span class="roboto">
 
 
-<h2 class="merriweather">(Creative?) writing<span style="font-size: calc(4em/7);">(s)</span></h2>
+MAIN_HEADING((Creative?) writing<span style="font-size: calc(4em/7);">(s)</span>)
 
 
 <p class="indented">
