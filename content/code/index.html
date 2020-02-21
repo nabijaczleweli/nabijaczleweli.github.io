@@ -45,7 +45,22 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
  <meta name="theme-color" content="#ffffff"> 
- <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
+ <style> 
+ #go-back > a#go-back-link { 
+ float: left; 
+ visibility: hidden; 
+ opacity: 0; 
+ padding-right: calc(1em / 5.5); 
+ margin-left: calc(-1em / 0.9); 
+ transition: all 0.5s; 
+ color: black; 
+ text-decoration: none; 
+ } 
+ #go-back:hover > a#go-back-link { 
+ visibility: visible; 
+ opacity: 1; 
+ } 
+ </style> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
  <link href="//rawcdn.githack.com/fizzed/font-mfizz/v2.4.1/dist/font-mfizz.css" rel="stylesheet" /> 
  <link href="//rawcdn.githack.com/konpa/devicon/v2.2/devicon.min.css" rel="stylesheet" /> 
  
@@ -54,7 +69,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
  </head> 
  <body>
-<h2 class="merriweather">Documentation and mistakes</h2>
+<h2 id="go-back" class="smallcaps merriweather"><a id="go-back-link" href="..">↩</a> Documentation and mistakes</h2>
 <span class="roboto">
 Most of my code can be found under <a href="//github.com/nabijaczleweli">my GitHub account</a>,
  I'<!--'-->m also the author/main maintainer of the following repositories:
@@ -287,7 +302,7 @@ Documentation for my Rust crates:
  </li>
 </ul>
 </span>
-<!-- CTNT_END --> <hr /> 
+<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
  Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
  code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
  <hr /> 
@@ -296,9 +311,9 @@ Documentation for my Rust crates:
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 21.02.2020 17:15:31 UTC from 
+ Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 21.02.2020 17:50:14 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/code/index.html.pp">src/code/index.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/653549384">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/653563918">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
