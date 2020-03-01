@@ -10,6 +10,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../common.h"
+#include "../heading.h"
 
 
 <!-- RSS_PUB_DATE: "Tue, 13 Jun 2017 22:42:51 +0200" -->
@@ -26,7 +27,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define ZIPPING_SCRIPTS   <script type="text/javascript" src="//rawcdn.githack.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script>          \
                           <script type="text/javascript" src="//rawcdn.githack.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script>  \
                           <script type="text/javascript" src="/content/assets/pack_specified.js"></script>
-BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK COLUMN_LINKS SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS)
+BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK COLUMN_LINKS SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS MAIN_HEADING_STYLE)
 
 <style>
 #include "../indent.css"
@@ -35,7 +36,7 @@ BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK 
 
 
 <span class="roboto">
-<h2 class="merriweather">Tonči Juričev-Grgin mandalas</h2>
+MAIN_HEADING_ALT(2, ., Tonči Juričev-Grgin mandalas)
 
 <p class="indented continued" id="intro">
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumroll please</em>, generate mandalas like this one:

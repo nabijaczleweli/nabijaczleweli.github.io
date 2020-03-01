@@ -10,6 +10,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../common.h"
+#include "../heading.h"
 
 
 <!-- RSS_PUB_DATE: "Thu, 9 May 2019 22:54:19 +0200" -->
@@ -24,14 +25,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 		</a>                                                                         FORCED_NEWLINE \
 	</div>
 
-#define LINKS <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" />               FORCED_NEWLINE \
+#define LINKS MAIN_HEADING_STYLE_ALT(color: #acacac;)                                            FORCED_NEWLINE \
+              <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" />               FORCED_NEWLINE \
               <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />            FORCED_NEWLINE \
               <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
 BOILERPLATE(wiggly-circle, A selexion of circles‚ most of them wiggly‚ some of them colourful, en-GB, LINKS)
 
 
 <div class="art-box">
-	<h2 class="merriweather label" id="top"><a href="#top">wiggly-circle</a></h2>
+	<span id="top">MAIN_HEADING_ALT(2, ., wiggly-circle)</span>
 
 	<p class="merriweather">
 		Inspired by <a href="//inconvergent.net">Inconvergent</a>'s <a href="//twitter.com/inconvergent/status/1122463283586510848">"path test"</a>.<!--'-->
