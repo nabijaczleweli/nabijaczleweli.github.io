@@ -35,7 +35,7 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
-	Visit my Debian <a href="//foreign.nabijaczleweli.xyz/debian/README">repository</a>…
+	Visit my Debian <a href="//debian.nabijaczleweli.xyz/README">repository</a>…
 </p>
 
 <p>
