@@ -1,0 +1,386 @@
+<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+
+
+
+
+
+<!-- RSS_PUB_DATE: "Thu, 9 Apr 2020 01:44:47 +0200" -->
+<!DOCTYPE html> 
+ <html lang="en-US"> 
+ <head> 
+ <meta charset="utf-8"> 
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+ <meta name="viewport" content="width=device-width,initial-scale=1"> 
+ <meta name="author" content="nabijaczleweli"> 
+ <meta name="description" content="001. installing Debianꞌs x32 port in 2020"> 
+ <title>001. installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli</title> 
+ 
+ <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
+ <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
+ <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
+ <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png"> 
+ <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png"> 
+ <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png"> 
+ <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png"> 
+ <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png"> 
+ <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16"> 
+ <link rel="manifest" href="/assets/favicons/manifest.json"> 
+ <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5"> 
+ <link rel="shortcut icon" href="/assets/favicons/favicon.ico"> 
+ <meta name="apple-mobile-web-app-title" content="nabijaczleweli"> 
+ <meta name="application-name" content="nabijaczleweli"> 
+ <meta name="msapplication-TileColor" content="#da532c"> 
+ <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
+ <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
+ <meta name="theme-color" content="#ffffff"> 
+ <link href="/content/assets/heading.css" rel="stylesheet" /> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
+ <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
+ <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ </head> 
+ <body>
+<style>
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: "Droid Sans Mono", monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: "Merriweather", serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
+a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+.bigtable td {
+ vertical-align: top;
+ padding-top: 0;
+ padding-bottom: 0;
+}
+/** Two wide columns on big screens, first above second on small */
+@media all and (max-device-width: 800px) {
+ .bigtable, .bigcode {
+  width: 100%;
+ }
+ .bigtable td {
+  display: block;
+ }
+}
+@media all and (min-device-width: 800px) {
+ .bigtable {
+  width: 175%;
+  margin-left: -37.5%; /* (175 - 100) / 2 */
+ }
+ .bigcode {
+  width: 125%;
+  margin-left: -12.5%; /* (125 - 100) / 2 */
+ }
+ .bigtable td:nth-child(2) {
+  min-width: 55%;
+ }
+}
+</style>
+<span class="roboto writing">
+<p></p>
+<h2 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <samp><code>001. Installing Debian'<!--'-->s x32 port in 2020</code></samp></h2> 
+ <h4 id="post-date">Thu, 9 Apr 2020 01:44:47 +0200</h4>
+<p class="indented continued">
+Some time ago I bought an <a href="//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455">HP rp5700</a> <del>Piece of Shit</del> Point of Sale system
+  with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
+ follow <a href="//twitter.com/nabijaczleweli/status/1204465652628672512">this Twitter thread</a> to experience this machine as its story'<!--'-->d unravelled.
+<p class="indented continuation">
+Some time later, I decided to make a router out of it, and, having heard of <code>x32</code> – 32-bit ABI/userland, with a long-mode kernel/CPU –
+ some time prior, that had become the architecture of choice.
+<code>x32</code>'s proponents tout increased performance compared to <code>amd64</code>, but I couldn't care less;
+ if you're looking for performance comparisons, this ain't it, I did this entirely because it was weird and rife with funny corner cases.
+</p>
+<p class="indented continued">
+The Debian wiki <a href="//wiki.debian.org/X32Port">X32Port</a> page dates back to around when <code>x32</code> was introduced in 2012 with such beautiful excerpts as:
+</p>
+<blockquote class="continuing">
+The second [system] is the QEMU/Chroot guest, and it must run Debian 8/Jessie Unstable.
+</blockquote>
+<p class="continuing">
+Which, while amusing, isn'<!--'-->t very conducive to getting an <code>x32</code> system up, nor are the outdated-at-best instructions.
+So this is the combination of the things I'<!--'-->ve read and tried in order to install Debian "bullseye/sid" <code>x32</code> <a href="//twitter.com/nabijaczleweli/status/1245500423370309632">on <samp class="nobr">Wed Apr &nbsp;1 22:02:50 UTC 2020<samp></a> (it was already <samp>0:02:50</samp> the next day in my timezone but I forgot to set it; oh well):
+</p>
+<center><a href="//twitter.com/nabijaczleweli/status/1245500423370309632">
+ <img class="main-screenshot continuing" alt="Login screen showing the aforementioned date and dpkg --print-architecture returning x32"
+      src="//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large" /></a></center>
+<p class="continuation"></p>
+<p class="indented continued">
+<code>debian-installer</code> existing for x32 would have solved most (all) of the problems with this install,
+ but <a href="//bugs.debian.org/778195"><code>#778195</code></a> is open since Feb 2015, and dead as of that very November.
+The <a href="//bugs.debian.org/cgi-bin/bugreport.cgi?att=1;bug=778195;filename=0001-Add-x32-support.patch;msg=15">patch</a>
+ from message #15 applied (relatively) cleanly on top of <code>1ab40c5</code> from <a href="//salsa.debian.org/installer-team/debian-installer">Salsa</a>,
+ barring one trivial conflict in <code>debian/control</code>, but I couldn'<!--'-->t figure out how to build it for <code>x32</code> on my <code>amd64</code> machine
+ (or in general, frankly).
+</p>
+<p class="continuing">
+Just for the fucks, I also tried to add and build a kernel config for <code>x32</code>, which ended exactly like all my kernel-building endeavours of the past
+ (plus, tracking and building Debian updates ad infinitum sounds like a horrible time).
+</p>
+<p class="continuing">
+I also tried to <a href="//wiki.debian.org/CrossGrading">cross-grade</a> an installed <code>amd64</code> system,
+ but doing it through buster-to-sid just™ refused to work,
+ and sid-to-sid broke on <code>+b2</code> "Rebuild with ruby2.5 support dropped" <a href="//wiki.debian.org/binNMU">binNMUs</a>
+ existing for <code>i386</code> and <code>amd64</code> but not for <code>x32</code>
+ (being a few versions behind on some packages didn'<!--'-->t help, either),
+ although, in the few days it's taken me to write this, it'd started to look like the rest of the architectures are catching up.
+</p>
+<p class="continuation">
+And so, it came time to install Debian without <code>d-i</code>, like some sort of Arch user.
+</p>
+<h2 id="requirements" ><a class="hash-link" href="#requirements">#</a> What you'<!--'-->ll need</h2>
+<p class="indented continued">
+<a href="//manpages.debian.org/stretch/debootstrap/debootstrap.8.en.html"><code>debootstrap</code></a> and root privileges.
+</p>
+<p class="continuation">
+Also a kernel that can run <code>x32</code> binaries; Debian <code>amd64</code> kernels <em>can</em>,
+ but have it <a href="//salsa.debian.org/kernel-team/linux/-/blob/6ae9ea8461605132b4628b5fbedd558ac1df10f7/debian/patches/features/x86/x86-make-x32-syscall-support-conditional.patch">disabled by default</a>, and need a <code>syscall.x32=y</code> parameter to do so
+ (I looked, out of curiosity:
+  Arch <a href="//git.archlinux.org/svntogit/packages.git/tree/trunk/config?h=packages/linux&id=a794e88873fed3637d98563f73629651b1faf1b1#n672">
+  doesn'<!--'-->t support <code>x32</code> at all</a>, Gentoo
+  <a href="//gitweb.gentoo.org/repo/gentoo.git/tree/sys-kernel/vanilla-kernel/vanilla-kernel-5.5.14.ebuild?id=d193a0f3de9e106971405c3acb27d5ca90f8bc21#n55">does</a>,
+  Fedora and RHEL <a href="//src.fedoraproject.org/rpms/kernel/blob/2703d9b16cc4a0cf8b5c25c8af390663092f455b/f/kernel-x86_64-fedora.config#_6885">don'<!--'-->t</a>;
+  FreeBSD'<!--'-->s <a href="//www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/linuxemu.html">"Linux® Binary Compatibility"</a>
+               does <a href="//twitter.com/nabijaczleweli/status/1246919228877426688">not</a> (as of 12.1)).
+</p>
+<p class="indented">
+I used <code>d-i</code>'<!--'-->s rescue mode (<code>rescue/enable=true</code> parameter) and added <code>syscall.x32=y</code> in the bootloader manually,
+ this allowed me to use <code>d-i</code> for some of the annoying config parts (hostname, network), and PXE-booting it was the most convenient for me.
+</p>
+<h2 id="target_requirements" ><a class="hash-link" href="#target_requirements">#</a> What you'<!--'-->ll want</h2>
+<p class="indented continued">
+In (reverse-)chronological order: a disklabel, a bootloader, an initramfs (generator),
+ a kernel (at time of writing this means Linux, since
+           FreeBSD is <a href="//www.freebsd.org/cgi/man.cgi?query=arch&manpath=FreeBSD+12-current"><code>i386</code>/<code>amd64</code>-only</a> on x86,
+           Hurd is <a href="//git.savannah.gnu.org/cgit/hurd/hurd.git/tree/README?id=f9cb35bcb40fd9a2a553469242189871fd558f87"><code>i386</code>-only</a>),
+ an init, a user, configs –
+ <code>/etc/fstab</code>, <code>/etc/hosts</code>, timezone.
+</p>
+<p class="continuing">
+My target disklabel is a standard GPT-on-BIOS setup with a separate <code>/boot</code>
+(this helps by allowing the use of partlabels throughout, since <kbd>SZAROTKA-BOOT</kbd> is longer than the <code>vfat</code> maximum of 11):
+<div class="bigcode">
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">fdisk</span> -l</span></span>
+<span class="token output">Disk /dev/sda: 149.5 GiB, 160041885696 bytes, 312581808 sectors
+Disk model: WDC WD1600AAJS-6
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 22C172F7-4E1F-D244-A6DC-260DEE716A5F
+
+Device         Start       End   Sectors  Size Type
+/dev/sda1       2048      4095      2048    1M BIOS boot
+/dev/sda2       4096 312377343 312373248  149G Linux root (x86-64)
+/dev/sda3  312377344 312581774    204431 99.8M Linux extended boot
+
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> blkid</span></span>
+<span class="token output">/dev/sda1: PARTLABEL="szarotka-bios-boot" PARTUUID="a331980b-475a-1f43-b985-0849341df04b"
+/dev/sda2: LABEL="szarotka-root-ng" UUID="d9e8441a-1a97-47af-b002-d764ac46121b" TYPE="ext4"
+           PARTLABEL="szarotka-root" PARTUUID="52695edc-4993-654c-9e04-e30d9cc1e367"
+/dev/sda3: SEC_TYPE="msdos" LABEL_FATBOOT="SZAROTKA-BO" LABEL="SZAROTKA-BO" UUID="F4E6-9A90"
+           TYPE="vfat" PARTLABEL="szarotka-boot" PARTUUID="c817f3e5-e3e5-2449-b0f2-23dbb523a239"
+</span></pre></code>
+</div>
+</p>
+<h2 id="building" ><a class="hash-link" href="#building">#</a> Assembling the system</h2>
+<p class="indented continued">
+Pressing <kbd>Tab</kbd> in ISOLINUX et al. pops up the command-line, which looks vaguely like this:
+</p>
+<center><img class="main-screenshot continuing" alt="ISOLINUX boot menu, showing Expert Install, Rescue Mode, and Automated Install; below it a editing prompt to edit the kernel command-line, the last element being syscall.x32=y"
+            src="/content/assets/blogn_t/001.01-ISOLINUX.png" /></center>
+<p class="continuing">
+Going through the rescue up to this menu ensures all the small annoying things are configured:
+</p>
+<center><img class="main-screenshot continuing" alt="Two QEMU windows, both showing a debian-installer 'Enter rescue mode' screen; the one at the top says that 'The installer could not find any partitions' with a <Go Back> and <Continue> buttons; the one at the bottom says to 'Enter a device you wish to use as your root file system' with a list of drives between /dev/sda1 and /dev/sda3, an 'Assemble RAID array' and 'Do not use a root file system' options as well as a <Go Back> button"
+            src="/content/assets/blogn_t/001.02-enter-rescue-mode.png" /></center>
+<p class="continuation">
+You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual terminal with a usable background and <code>$TERM</code>.
+</p>
+<table class="bigtable">
+ <tr><td>Prepare the target VFS with all the partitions mounted first.</td>
+     <td><samp>~ # <kbd>mkdir target</kbd></samp><br />
+         <samp>~ # <kbd>mount /dev/disk/by-partlabel/szarotka-root target</kbd></samp><br />
+         <samp>~ # <kbd>mkdir target/boot</kbd></samp><br />
+         <samp>~ # <kbd>mount /dev/disk/by-partlabel/szarotka-boot target/boot</kbd></samp></td></tr>
+ <tr><td>Start off with a simple chroot.<br />
+         Note the ill-advised <samp>--no-check-gpg</samp>,
+         but finding/downloading/extracting that <code>.deb</code> in a bare *X environment is too annoying to warrant itself.<br />
+         Note also the <samp>sid</samp> suite — no <samp>stable</samp> for as long as <code>x32</code> is a port.</td>
+     <td><samp>~ #
+       <kbd>debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports</kbd>
+     </samp></td></tr>
+ <tr><td>Now you can (try to) chroot into the new system; if you see <samp class="nobr">chroot: can'<!--'-->t execute '/bin/sh': exec format error</samp>,
+         your kernel doesn'<!--'-->t support <code>x32</code> executables.
+         On Debian kernels, verify that you have <samp>syscall.x32=y</samp> in <code>/proc/cmdline</code>.<br />
+         The bind-mounts of <samp>/dev</samp>, <samp>/sys</samp>, and <samp>/proc</samp> are there for the GRUB install and <samp>dracut</samp>'<!--'-->s host-only mode;
+         of <samp>/tmp</samp> and <samp>/run</samp> – to avoid leaving some mounted-over garbage in the target system.</td>
+     <td><samp>~ # <kbd>mount --bind /dev target/dev</kbd></samp><br />
+         <samp>~ # <kbd>mount --bind /sys target/sys</kbd></samp><br />
+         <samp>~ # <kbd>mount --bind /proc target/proc</kbd></samp><br />
+         <samp>~ # <kbd>mount --bind /run target/run</kbd></samp><br />
+         <samp>~ # <kbd>mount -t tmpfs tmpfs target/tmp</kbd></samp><br />
+         <samp>~ # <kbd>chroot target /bin/bash</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd># Huzzah!</kbd></samp></td></tr>
+ <tr><td>Sprinkle in your favourite init and initramfs generator.</td>
+     <td><samp>root@szarotka:/# <kbd>apt install systemd-sysv</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>apt install dracut --no-install-recommends</kbd></samp></td></tr>
+ <tr><td>The time has come to add a kernel, which is the only <em>required</em> <code>amd64</code> part of the system
+         (if you need something from the <code class="nobr">non-free</code> or <code>contrib</code> components (e.g. microcode tools),
+          you'<!--'-->ll still need the <code>amd64</code> packages, or to <samp>apt source</samp> and rebuild them for <code>x32</code>).<br />
+         Note the <a href="//manpages.debian.org/buster/apt/sources.list.5.en.html#THE_DEB_AND_DEB-SRC_TYPES:_OPTIONS"><code>[arch]</code></a> options –
+         those are to avoid errors from <code>apt</code> as it tries to find <code>x32</code> in the non-ports repositories, and vice versa.<br />
+         Note also lack of <code>deb-src</code> spec for the ports repository,
+         as it <a href="//deb.debian.org/debian-ports/dists/sid/Release">doesn'<!--'-->t</a> have sources at all
+         (<a href="//deb.debian.org/debian/dists/sid/Release">compare</a>).</td>
+     <td><samp>root@szarotka:/# <kbd>sed -i 's/deb/deb [arch=x32]/' /etc/apt/sources.list</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>cat >> /etc/apt/sources.list</kbd></samp><br />
+         <samp><kbd>deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free</kbd></samp><br />
+         <samp><kbd>deb-src              https://deb.debian.org/debian sid main contrib non-free</kbd></samp><br />
+         <samp><kbd>^D</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>dpkg --add-architecture amd64</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>apt update</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>apt install 1 -image-amd64 --no-install-recommends</kbd></samp></td></tr>
+ <tr><td>And a bootloader (at time of writing <samp>grub2</samp> recommends <samp class="nobr">os-prober</samp> –
+         if you don'<!--'-->t plan on running other OSs this can be <kbd>--no-install-recommends</kbd>ed).<br />
+         Remember: at the prompt, if unsure about the choice offered by GRUB,
+         you can switch VTs again (<kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd>) and use <samp>blkid</samp> or <samp>lsblk</samp>.<br />
+         In case the default ever changes: the <samp>sed</samp> replaces the <code>quiet</code> inside <code>GRUB_CMDLINE_LINUX_DEFAULT</code>
+         (I'<!--'-->m not using a text editor because, despite <samp>ed</samp> being the standard text editor,
+          using <samp>sed</samp>/<samp>awk</samp>/<samp>cat</samp> is less annoying and easier to spec like this
+          (also, the normal <samp>vi</samp> derivatives were broken due to the aforementioned <samp>ruby2.5</samp>-related problem
+           (I ended up using <samp>nvi</samp>))).</td>
+     <td><samp>root@szarotka:/# <kbd>apt install grub2</kbd></samp><br />
+         <samp>Configuring grub-pc</samp><br />
+         <samp>-------------------</samp><br />
+         <br />
+         <samp>  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)</samp><br />
+         <br />
+         <samp>GRUB install devices: <kbd><strong>/dev/sda</strong></kbd></samp><br />
+         <br />
+         <samp>Installing for i386-pc platform.</samp><br />
+         <samp>root@szarotka:/# <kbd>sed -i 's/quiet/syscall.x32=y/' /etc/default/grub</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>update-grub</kbd></samp></tr>
+ <tr><td>Various bits and bobs; <samp>/etc/resolv.conf</samp> was already set up during <samp>debootstrap</samp>.<br />
+         If using <code>vfat</code> for your <code>/boot</code>, check if your kernel sets <code>FAT_DEFAULT_UTF8=y</code>,
+         or specify <code>utf8=y</code> instead of <code>defaults</code>.<br />
+         This <code>/etc/hosts</code> is really bare-bones and the <samp>d-i</samp> one is too long to reproduce here in full;
+         I'<!--'-->d recommend copying and modifying one from another host on your network.<br />
+         If you're not using systemd, here is where you'd link <samp>/etc/localtime</samp> to somewhere in <samp>/usr/share/zoneinfo</samp>
+         (see <samp><a href="//manpages.debian.org/buster/systemd/localtime.5.en.html">localtime(5)</a></samp>), otherwise run
+         <samp class="nobr"><a href="//manpages.debian.org/buster/systemd/timedatectl.1.en.html">timedatectl(1)</a> set-timezone CET</samp>
+         after rebooting.</td>
+     <td><samp>root@szarotka:/# <kbd>cat > /etc/fstab</kbd></samp><br />
+         <samp>PARTLABEL=szarotka-root  /      ext4  noatime   0  1</samp><br />
+         <samp>PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2</samp><br />
+         <samp><kbd>^D</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>cat > /etc/hosts</kbd></samp><br />
+         <samp>127.0.0.1 localhost</samp><br />
+         <samp>127.0.1.1 szarotka szarotka.local.nabijaczleweli.xyz</samp><br />
+         <samp><kbd>^D</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>apt install sudo</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>adduser --ingroup users nabijaczleweli</kbd></samp><br />
+         <samp>root@szarotka:/# <kbd>adduser nabijaczleweli sudo</kbd></samp><br />
+         </td></tr>
+</table>
+<p class="indented continued">
+This should ensure the system boots and is usable enough after doing so — press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> and find out!
+</p>
+<center><img class="main-screenshot continuing" alt="Linux console in QEMU window, showing a login, uname output of 'Linux szarotka 5.5.0-1-amd64', dpkg --print-architecture yielding 'x32', dpkg listing of amd64 packages yielding just two kernel packages, and the output of file on a system executable starting with 'ELF 32-bit LSB shared object, x86-64'"
+            src="/content/assets/blogn_t/001.03-live-terminal.png" /></center>
+<p class="continuation">
+If that didn't get your system to boot, please do <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail</a>, but if it did, then that's all from me for today,
+except, maybe, one last thing?
+</p>
+<p class="indented continued">
+Ever wondered what'd happen if you had inits but the kernel couldn't execute them? <a href="//twitter.com/nabijaczleweli/status/1246438561735413760">So did I</a>:
+</p>
+<center><img class="main-screenshot continuing" alt="Linux console during init in QEMU windows, first complaining about 'modprobe bindfmt-464c' not being processable, then 'Starting init: /sbin/init exists but couldn't execute it (error: -8)', then 'Run /etc/init as init process', then /bin/init, then /bin/sh, yielding the same error as /sbin/init, finishing with a kernel panic 'not syncing: No working init found.  Try passing init= option to kernel.'"
+            src="/content/assets/blogn_t/001.04-kernel-death.png" /></center>
+<p class="continuation">
+Alright, bye!
+</p>
+<p> 
+ <br /> 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@gmail.com">post</a> 
+ or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
+ </p>
+</span>
+<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
+ <hr /> 
+ <span id="word_count">0</span> words, 
+ <span id="syllable_count">0</span> syllables, 
+ <span id="character_count">0</span> characters. 
+ </span>
+<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
+ Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
+ code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
+ <hr /> 
+ This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, 
+ and contribute and/or yell at me there. 
+ <hr /> 
+ Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
+ <hr /> 
+ Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 09.04.2020 00:00:40 UTC from 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/001-x32-in-2020.html.pp">src/blogn_t/001-x32-in-2020.html.pp</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/672755505">See job on TravisCI</a>. 
+ <hr /> 
+ <a href="/content/feed.xml">RSS feed</a> 
+ </body> 
+ </html>

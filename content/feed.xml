@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Sun, 01 Mar 2020 14:56:44 +0000
+      Thu, 09 Apr 2020 00:01:34 +0000
     </pubDate>
     <lastBuildDate>
-      Sun, 01 Mar 2020 14:56:44 +0000
+      Thu, 09 Apr 2020 00:01:34 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
@@ -25,6 +25,321 @@
       <title>nabijaczleweli's page</title>
       <link>https://nabijaczleweli.xyz/content</link>
     </image>
+
+    <item>
+      <title> 001. installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
+      <description>
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+.bigtable td {
+ vertical-align: top;
+ padding-top: 0;
+ padding-bottom: 0;
+}
+/** Two wide columns on big screens, first above second on small */
+@media all and (max-device-width: 800px) {
+ .bigtable, .bigcode {
+  width: 100%;
+ }
+ .bigtable td {
+  display: block;
+ }
+}
+@media all and (min-device-width: 800px) {
+ .bigtable {
+  width: 175%;
+  margin-left: -37.5%; /* (175 - 100) / 2 */
+ }
+ .bigcode {
+  width: 125%;
+  margin-left: -12.5%; /* (125 - 100) / 2 */
+ }
+ .bigtable td:nth-child(2) {
+  min-width: 55%;
+ }
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;Thu, 9 Apr 2020 01:44:47 +0200&lt;/h4&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Some time ago I bought an &lt;a href=&quot;//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455&quot;&gt;HP rp5700&lt;/a&gt; &lt;del&gt;Piece of Shit&lt;/del&gt; Point of Sale system
+  with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
+ follow &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1204465652628672512&quot;&gt;this Twitter thread&lt;/a&gt; to experience this machine as its story'&lt;!--'--&gt;d unravelled.
+&lt;p class=&quot;indented continuation&quot;&gt;
+Some time later, I decided to make a router out of it, and, having heard of &lt;code&gt;x32&lt;/code&gt; – 32-bit ABI/userland, with a long-mode kernel/CPU –
+ some time prior, that had become the architecture of choice.
+&lt;code&gt;x32&lt;/code&gt;'s proponents tout increased performance compared to &lt;code&gt;amd64&lt;/code&gt;, but I couldn't care less;
+ if you're looking for performance comparisons, this ain't it, I did this entirely because it was weird and rife with funny corner cases.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The Debian wiki &lt;a href=&quot;//wiki.debian.org/X32Port&quot;&gt;X32Port&lt;/a&gt; page dates back to around when &lt;code&gt;x32&lt;/code&gt; was introduced in 2012 with such beautiful excerpts as:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+The second [system] is the QEMU/Chroot guest, and it must run Debian 8/Jessie Unstable.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Which, while amusing, isn'&lt;!--'--&gt;t very conducive to getting an &lt;code&gt;x32&lt;/code&gt; system up, nor are the outdated-at-best instructions.
+So this is the combination of the things I'&lt;!--'--&gt;ve read and tried in order to install Debian &quot;bullseye/sid&quot; &lt;code&gt;x32&lt;/code&gt; &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;on &lt;samp class=&quot;nobr&quot;&gt;Wed Apr &amp;nbsp;1 22:02:50 UTC 2020&lt;samp&gt;&lt;/a&gt; (it was already &lt;samp&gt;0:02:50&lt;/samp&gt; the next day in my timezone but I forgot to set it; oh well):
+&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Login screen showing the aforementioned date and dpkg --print-architecture returning x32&quot;
+      src=&quot;//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;continuation&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;code&gt;debian-installer&lt;/code&gt; existing for x32 would have solved most (all) of the problems with this install,
+ but &lt;a href=&quot;//bugs.debian.org/778195&quot;&gt;&lt;code&gt;#778195&lt;/code&gt;&lt;/a&gt; is open since Feb 2015, and dead as of that very November.
+The &lt;a href=&quot;//bugs.debian.org/cgi-bin/bugreport.cgi?att=1;bug=778195;filename=0001-Add-x32-support.patch;msg=15&quot;&gt;patch&lt;/a&gt;
+ from message #15 applied (relatively) cleanly on top of &lt;code&gt;1ab40c5&lt;/code&gt; from &lt;a href=&quot;//salsa.debian.org/installer-team/debian-installer&quot;&gt;Salsa&lt;/a&gt;,
+ barring one trivial conflict in &lt;code&gt;debian/control&lt;/code&gt;, but I couldn'&lt;!--'--&gt;t figure out how to build it for &lt;code&gt;x32&lt;/code&gt; on my &lt;code&gt;amd64&lt;/code&gt; machine
+ (or in general, frankly).
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Just for the fucks, I also tried to add and build a kernel config for &lt;code&gt;x32&lt;/code&gt;, which ended exactly like all my kernel-building endeavours of the past
+ (plus, tracking and building Debian updates ad infinitum sounds like a horrible time).
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+I also tried to &lt;a href=&quot;//wiki.debian.org/CrossGrading&quot;&gt;cross-grade&lt;/a&gt; an installed &lt;code&gt;amd64&lt;/code&gt; system,
+ but doing it through buster-to-sid just™ refused to work,
+ and sid-to-sid broke on &lt;code&gt;+b2&lt;/code&gt; &quot;Rebuild with ruby2.5 support dropped&quot; &lt;a href=&quot;//wiki.debian.org/binNMU&quot;&gt;binNMUs&lt;/a&gt;
+ existing for &lt;code&gt;i386&lt;/code&gt; and &lt;code&gt;amd64&lt;/code&gt; but not for &lt;code&gt;x32&lt;/code&gt;
+ (being a few versions behind on some packages didn'&lt;!--'--&gt;t help, either),
+ although, in the few days it's taken me to write this, it'd started to look like the rest of the architectures are catching up.
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+And so, it came time to install Debian without &lt;code&gt;d-i&lt;/code&gt;, like some sort of Arch user.
+&lt;/p&gt;
+&lt;h2 id=&quot;requirements&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#requirements&quot;&gt;#&lt;/a&gt; What you'&lt;!--'--&gt;ll need&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;a href=&quot;//manpages.debian.org/stretch/debootstrap/debootstrap.8.en.html&quot;&gt;&lt;code&gt;debootstrap&lt;/code&gt;&lt;/a&gt; and root privileges.
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Also a kernel that can run &lt;code&gt;x32&lt;/code&gt; binaries; Debian &lt;code&gt;amd64&lt;/code&gt; kernels &lt;em&gt;can&lt;/em&gt;,
+ but have it &lt;a href=&quot;//salsa.debian.org/kernel-team/linux/-/blob/6ae9ea8461605132b4628b5fbedd558ac1df10f7/debian/patches/features/x86/x86-make-x32-syscall-support-conditional.patch&quot;&gt;disabled by default&lt;/a&gt;, and need a &lt;code&gt;syscall.x32=y&lt;/code&gt; parameter to do so
+ (I looked, out of curiosity:
+  Arch &lt;a href=&quot;//git.archlinux.org/svntogit/packages.git/tree/trunk/config?h=packages/linux&amp;id=a794e88873fed3637d98563f73629651b1faf1b1#n672&quot;&gt;
+  doesn'&lt;!--'--&gt;t support &lt;code&gt;x32&lt;/code&gt; at all&lt;/a&gt;, Gentoo
+  &lt;a href=&quot;//gitweb.gentoo.org/repo/gentoo.git/tree/sys-kernel/vanilla-kernel/vanilla-kernel-5.5.14.ebuild?id=d193a0f3de9e106971405c3acb27d5ca90f8bc21#n55&quot;&gt;does&lt;/a&gt;,
+  Fedora and RHEL &lt;a href=&quot;//src.fedoraproject.org/rpms/kernel/blob/2703d9b16cc4a0cf8b5c25c8af390663092f455b/f/kernel-x86_64-fedora.config#_6885&quot;&gt;don'&lt;!--'--&gt;t&lt;/a&gt;;
+  FreeBSD'&lt;!--'--&gt;s &lt;a href=&quot;//www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/linuxemu.html&quot;&gt;&quot;Linux® Binary Compatibility&quot;&lt;/a&gt;
+               does &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1246919228877426688&quot;&gt;not&lt;/a&gt; (as of 12.1)).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+I used &lt;code&gt;d-i&lt;/code&gt;'&lt;!--'--&gt;s rescue mode (&lt;code&gt;rescue/enable=true&lt;/code&gt; parameter) and added &lt;code&gt;syscall.x32=y&lt;/code&gt; in the bootloader manually,
+ this allowed me to use &lt;code&gt;d-i&lt;/code&gt; for some of the annoying config parts (hostname, network), and PXE-booting it was the most convenient for me.
+&lt;/p&gt;
+&lt;h2 id=&quot;target_requirements&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#target_requirements&quot;&gt;#&lt;/a&gt; What you'&lt;!--'--&gt;ll want&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+In (reverse-)chronological order: a disklabel, a bootloader, an initramfs (generator),
+ a kernel (at time of writing this means Linux, since
+           FreeBSD is &lt;a href=&quot;//www.freebsd.org/cgi/man.cgi?query=arch&amp;manpath=FreeBSD+12-current&quot;&gt;&lt;code&gt;i386&lt;/code&gt;/&lt;code&gt;amd64&lt;/code&gt;-only&lt;/a&gt; on x86,
+           Hurd is &lt;a href=&quot;//git.savannah.gnu.org/cgit/hurd/hurd.git/tree/README?id=f9cb35bcb40fd9a2a553469242189871fd558f87&quot;&gt;&lt;code&gt;i386&lt;/code&gt;-only&lt;/a&gt;),
+ an init, a user, configs –
+ &lt;code&gt;/etc/fstab&lt;/code&gt;, &lt;code&gt;/etc/hosts&lt;/code&gt;, timezone.
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+My target disklabel is a standard GPT-on-BIOS setup with a separate &lt;code&gt;/boot&lt;/code&gt;
+(this helps by allowing the use of partlabels throughout, since &lt;kbd&gt;SZAROTKA-BOOT&lt;/kbd&gt; is longer than the &lt;code&gt;vfat&lt;/code&gt; maximum of 11):
+&lt;div class=&quot;bigcode&quot;&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nabijaczleweli@szarotka&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; -l&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;Disk /dev/sda: 149.5 GiB, 160041885696 bytes, 312581808 sectors
+Disk model: WDC WD1600AAJS-6
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 22C172F7-4E1F-D244-A6DC-260DEE716A5F
+
+Device         Start       End   Sectors  Size Type
+/dev/sda1       2048      4095      2048    1M BIOS boot
+/dev/sda2       4096 312377343 312373248  149G Linux root (x86-64)
+/dev/sda3  312377344 312581774    204431 99.8M Linux extended boot
+
+&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nabijaczleweli@szarotka&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; blkid&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/sda1: PARTLABEL=&quot;szarotka-bios-boot&quot; PARTUUID=&quot;a331980b-475a-1f43-b985-0849341df04b&quot;
+/dev/sda2: LABEL=&quot;szarotka-root-ng&quot; UUID=&quot;d9e8441a-1a97-47af-b002-d764ac46121b&quot; TYPE=&quot;ext4&quot;
+           PARTLABEL=&quot;szarotka-root&quot; PARTUUID=&quot;52695edc-4993-654c-9e04-e30d9cc1e367&quot;
+/dev/sda3: SEC_TYPE=&quot;msdos&quot; LABEL_FATBOOT=&quot;SZAROTKA-BO&quot; LABEL=&quot;SZAROTKA-BO&quot; UUID=&quot;F4E6-9A90&quot;
+           TYPE=&quot;vfat&quot; PARTLABEL=&quot;szarotka-boot&quot; PARTUUID=&quot;c817f3e5-e3e5-2449-b0f2-23dbb523a239&quot;
+&lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;building&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#building&quot;&gt;#&lt;/a&gt; Assembling the system&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Pressing &lt;kbd&gt;Tab&lt;/kbd&gt; in ISOLINUX et al. pops up the command-line, which looks vaguely like this:
+&lt;/p&gt;
+&lt;center&gt;&lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;ISOLINUX boot menu, showing Expert Install, Rescue Mode, and Automated Install; below it a editing prompt to edit the kernel command-line, the last element being syscall.x32=y&quot;
+            src=&quot;/content/assets/blogn_t/001.01-ISOLINUX.png&quot; /&gt;&lt;/center&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Going through the rescue up to this menu ensures all the small annoying things are configured:
+&lt;/p&gt;
+&lt;center&gt;&lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Two QEMU windows, both showing a debian-installer 'Enter rescue mode' screen; the one at the top says that 'The installer could not find any partitions' with a &lt;Go Back&gt; and &lt;Continue&gt; buttons; the one at the bottom says to 'Enter a device you wish to use as your root file system' with a list of drives between /dev/sda1 and /dev/sda3, an 'Assemble RAID array' and 'Do not use a root file system' options as well as a &lt;Go Back&gt; button&quot;
+            src=&quot;/content/assets/blogn_t/001.02-enter-rescue-mode.png&quot; /&gt;&lt;/center&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3&lt;/kbd&gt; to switch to a virtual terminal with a usable background and &lt;code&gt;$TERM&lt;/code&gt;.
+&lt;/p&gt;
+&lt;table class=&quot;bigtable&quot;&gt;
+ &lt;tr&gt;&lt;td&gt;Prepare the target VFS with all the partitions mounted first.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;~ # &lt;kbd&gt;mkdir target&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mount /dev/disk/by-partlabel/szarotka-root target&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mkdir target/boot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mount /dev/disk/by-partlabel/szarotka-boot target/boot&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Start off with a simple chroot.&lt;br /&gt;
+         Note the ill-advised &lt;samp&gt;--no-check-gpg&lt;/samp&gt;,
+         but finding/downloading/extracting that &lt;code&gt;.deb&lt;/code&gt; in a bare *X environment is too annoying to warrant itself.&lt;br /&gt;
+         Note also the &lt;samp&gt;sid&lt;/samp&gt; suite — no &lt;samp&gt;stable&lt;/samp&gt; for as long as &lt;code&gt;x32&lt;/code&gt; is a port.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;~ #
+       &lt;kbd&gt;debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports&lt;/kbd&gt;
+     &lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Now you can (try to) chroot into the new system; if you see &lt;samp class=&quot;nobr&quot;&gt;chroot: can'&lt;!--'--&gt;t execute '/bin/sh': exec format error&lt;/samp&gt;,
+         your kernel doesn'&lt;!--'--&gt;t support &lt;code&gt;x32&lt;/code&gt; executables.
+         On Debian kernels, verify that you have &lt;samp&gt;syscall.x32=y&lt;/samp&gt; in &lt;code&gt;/proc/cmdline&lt;/code&gt;.&lt;br /&gt;
+         The bind-mounts of &lt;samp&gt;/dev&lt;/samp&gt;, &lt;samp&gt;/sys&lt;/samp&gt;, and &lt;samp&gt;/proc&lt;/samp&gt; are there for the GRUB install and &lt;samp&gt;dracut&lt;/samp&gt;'&lt;!--'--&gt;s host-only mode;
+         of &lt;samp&gt;/tmp&lt;/samp&gt; and &lt;samp&gt;/run&lt;/samp&gt; – to avoid leaving some mounted-over garbage in the target system.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;~ # &lt;kbd&gt;mount --bind /dev target/dev&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mount --bind /sys target/sys&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mount --bind /proc target/proc&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mount --bind /run target/run&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;mount -t tmpfs tmpfs target/tmp&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;~ # &lt;kbd&gt;chroot target /bin/bash&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;# Huzzah!&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Sprinkle in your favourite init and initramfs generator.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install systemd-sysv&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install dracut --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;The time has come to add a kernel, which is the only &lt;em&gt;required&lt;/em&gt; &lt;code&gt;amd64&lt;/code&gt; part of the system
+         (if you need something from the &lt;code class=&quot;nobr&quot;&gt;non-free&lt;/code&gt; or &lt;code&gt;contrib&lt;/code&gt; components (e.g. microcode tools),
+          you'&lt;!--'--&gt;ll still need the &lt;code&gt;amd64&lt;/code&gt; packages, or to &lt;samp&gt;apt source&lt;/samp&gt; and rebuild them for &lt;code&gt;x32&lt;/code&gt;).&lt;br /&gt;
+         Note the &lt;a href=&quot;//manpages.debian.org/buster/apt/sources.list.5.en.html#THE_DEB_AND_DEB-SRC_TYPES:_OPTIONS&quot;&gt;&lt;code&gt;[arch]&lt;/code&gt;&lt;/a&gt; options –
+         those are to avoid errors from &lt;code&gt;apt&lt;/code&gt; as it tries to find &lt;code&gt;x32&lt;/code&gt; in the non-ports repositories, and vice versa.&lt;br /&gt;
+         Note also lack of &lt;code&gt;deb-src&lt;/code&gt; spec for the ports repository,
+         as it &lt;a href=&quot;//deb.debian.org/debian-ports/dists/sid/Release&quot;&gt;doesn'&lt;!--'--&gt;t&lt;/a&gt; have sources at all
+         (&lt;a href=&quot;//deb.debian.org/debian/dists/sid/Release&quot;&gt;compare&lt;/a&gt;).&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;sed -i 's/deb/deb [arch=x32]/' /etc/apt/sources.list&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt;&gt; /etc/apt/sources.list&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;deb-src              https://deb.debian.org/debian sid main contrib non-free&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;dpkg --add-architecture amd64&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt update&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install 1 -image-amd64 --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;And a bootloader (at time of writing &lt;samp&gt;grub2&lt;/samp&gt; recommends &lt;samp class=&quot;nobr&quot;&gt;os-prober&lt;/samp&gt; –
+         if you don'&lt;!--'--&gt;t plan on running other OSs this can be &lt;kbd&gt;--no-install-recommends&lt;/kbd&gt;ed).&lt;br /&gt;
+         Remember: at the prompt, if unsure about the choice offered by GRUB,
+         you can switch VTs again (&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3&lt;/kbd&gt;) and use &lt;samp&gt;blkid&lt;/samp&gt; or &lt;samp&gt;lsblk&lt;/samp&gt;.&lt;br /&gt;
+         In case the default ever changes: the &lt;samp&gt;sed&lt;/samp&gt; replaces the &lt;code&gt;quiet&lt;/code&gt; inside &lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/code&gt;
+         (I'&lt;!--'--&gt;m not using a text editor because, despite &lt;samp&gt;ed&lt;/samp&gt; being the standard text editor,
+          using &lt;samp&gt;sed&lt;/samp&gt;/&lt;samp&gt;awk&lt;/samp&gt;/&lt;samp&gt;cat&lt;/samp&gt; is less annoying and easier to spec like this
+          (also, the normal &lt;samp&gt;vi&lt;/samp&gt; derivatives were broken due to the aforementioned &lt;samp&gt;ruby2.5&lt;/samp&gt;-related problem
+           (I ended up using &lt;samp&gt;nvi&lt;/samp&gt;))).&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install grub2&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Configuring grub-pc&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;-------------------&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;GRUB install devices: &lt;kbd&gt;&lt;strong&gt;/dev/sda&lt;/strong&gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;Installing for i386-pc platform.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;sed -i 's/quiet/syscall.x32=y/' /etc/default/grub&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;update-grub&lt;/kbd&gt;&lt;/samp&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Various bits and bobs; &lt;samp&gt;/etc/resolv.conf&lt;/samp&gt; was already set up during &lt;samp&gt;debootstrap&lt;/samp&gt;.&lt;br /&gt;
+         If using &lt;code&gt;vfat&lt;/code&gt; for your &lt;code&gt;/boot&lt;/code&gt;, check if your kernel sets &lt;code&gt;FAT_DEFAULT_UTF8=y&lt;/code&gt;,
+         or specify &lt;code&gt;utf8=y&lt;/code&gt; instead of &lt;code&gt;defaults&lt;/code&gt;.&lt;br /&gt;
+         This &lt;code&gt;/etc/hosts&lt;/code&gt; is really bare-bones and the &lt;samp&gt;d-i&lt;/samp&gt; one is too long to reproduce here in full;
+         I'&lt;!--'--&gt;d recommend copying and modifying one from another host on your network.&lt;br /&gt;
+         If you're not using systemd, here is where you'd link &lt;samp&gt;/etc/localtime&lt;/samp&gt; to somewhere in &lt;samp&gt;/usr/share/zoneinfo&lt;/samp&gt;
+         (see &lt;samp&gt;&lt;a href=&quot;//manpages.debian.org/buster/systemd/localtime.5.en.html&quot;&gt;localtime(5)&lt;/a&gt;&lt;/samp&gt;), otherwise run
+         &lt;samp class=&quot;nobr&quot;&gt;&lt;a href=&quot;//manpages.debian.org/buster/systemd/timedatectl.1.en.html&quot;&gt;timedatectl(1)&lt;/a&gt; set-timezone CET&lt;/samp&gt;
+         after rebooting.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt; /etc/fstab&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;PARTLABEL=szarotka-root  /      ext4  noatime   0  1&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt; /etc/hosts&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;127.0.0.1 localhost&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;127.0.1.1 szarotka szarotka.local.nabijaczleweli.xyz&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install sudo&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;adduser --ingroup users nabijaczleweli&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;adduser nabijaczleweli sudo&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+This should ensure the system boots and is usable enough after doing so — press &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; and find out!
+&lt;/p&gt;
+&lt;center&gt;&lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Linux console in QEMU window, showing a login, uname output of 'Linux szarotka 5.5.0-1-amd64', dpkg --print-architecture yielding 'x32', dpkg listing of amd64 packages yielding just two kernel packages, and the output of file on a system executable starting with 'ELF 32-bit LSB shared object, x86-64'&quot;
+            src=&quot;/content/assets/blogn_t/001.03-live-terminal.png&quot; /&gt;&lt;/center&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+If that didn't get your system to boot, please do &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail&lt;/a&gt;, but if it did, then that's all from me for today,
+except, maybe, one last thing?
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Ever wondered what'd happen if you had inits but the kernel couldn't execute them? &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1246438561735413760&quot;&gt;So did I&lt;/a&gt;:
+&lt;/p&gt;
+&lt;center&gt;&lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Linux console during init in QEMU windows, first complaining about 'modprobe bindfmt-464c' not being processable, then 'Starting init: /sbin/init exists but couldn't execute it (error: -8)', then 'Run /etc/init as init process', then /bin/init, then /bin/sh, yielding the same error as /sbin/init, finishing with a kernel panic 'not syncing: No working init found.  Try passing init= option to kernel.'&quot;
+            src=&quot;/content/assets/blogn_t/001.04-kernel-death.png&quot; /&gt;&lt;/center&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Alright, bye!
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</description>
+      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
+      <pubDate>Thu, 9 Apr 2020 01:44:47 +0200</pubDate>
+      <guid>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</guid>
+      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
+    </item>
 
     <item>
       <title> gen-epub-book general — nabijaczleweli </title>
@@ -722,18 +1037,18 @@ A full list of conversions and their implementations can be found at the
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;vector&gt;&lt;/span&gt;&lt;/span&gt;
 
 
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; tau         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;acos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; increase    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; wiggle      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; tau         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;acos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; increase    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; wiggle      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; min_opacity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;.3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Color colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x75&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x07&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x87&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x4d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x26&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x8c&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xe4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x75&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x07&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x87&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x4d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x26&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x8c&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xe4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 
@@ -746,9 +1061,9 @@ A full list of conversions and their implementations can be found at the
 
   std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Created\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; img_s  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getSize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; img_s  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getSize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; center &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img_s &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2u&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//(((img_s.x + img_s.y) / 2.) / 2.) * .6;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//(((img_s.x + img_s.y) / 2.) / 2.) * .6;&lt;/span&gt;
 
   std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;srand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;mt19937 rng&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -768,10 +1083,10 @@ A full list of conversions and their implementations can be found at the
       &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wiggle_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; increase &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; tau&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
       &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; colour &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;colour_idx_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;r    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;g    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;r    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;g    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
       sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Vertex v&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; colour&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
       points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;emplace_back&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
