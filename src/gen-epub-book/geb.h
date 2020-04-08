@@ -19,7 +19,7 @@
 #define CSPAN(clas, ...)        <span class=STR(clas)>__VA_ARGS__</span>
 #define HIGHLIT_CODE(clas, ...) <kbd class="highlit-code nowrap">CSPAN(clas,__VA_ARGS__)</kbd>
 
-#define CMT Also used in heading.h, make sure to update both with fixes
+#define CMT Also used in heading.h and blogn_t, make sure to update both with fixes
 #undef CMT
 #define HEADING_LINK(id)                  <a class="hash-link" href=STR(HASH##id)>HASH</a>
 #define HEADING_S(level, hid, style, ...) <h##level id=STR(hid) class="smallcaps" style>HEADING_LINK(hid) __VA_ARGS__</h##level>

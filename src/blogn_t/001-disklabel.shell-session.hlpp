@@ -1,0 +1,20 @@
+nabijaczleweli@szarotka:~$ sudo fdisk -l
+Disk /dev/sda: 149.5 GiB, 160041885696 bytes, 312581808 sectors
+Disk model: WDC WD1600AAJS-6
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 22C172F7-4E1F-D244-A6DC-260DEE716A5F
+
+Device         Start       End   Sectors  Size Type
+/dev/sda1       2048      4095      2048    1M BIOS boot
+/dev/sda2       4096 312377343 312373248  149G Linux root (x86-64)
+/dev/sda3  312377344 312581774    204431 99.8M Linux extended boot
+
+nabijaczleweli@szarotka:~$ sudo blkid
+/dev/sda1: PARTLABEL="szarotka-bios-boot" PARTUUID="a331980b-475a-1f43-b985-0849341df04b"
+/dev/sda2: LABEL="szarotka-root-ng" UUID="d9e8441a-1a97-47af-b002-d764ac46121b" TYPE="ext4"
+           PARTLABEL="szarotka-root" PARTUUID="52695edc-4993-654c-9e04-e30d9cc1e367"
+/dev/sda3: SEC_TYPE="msdos" LABEL_FATBOOT="SZAROTKA-BO" LABEL="SZAROTKA-BO" UUID="F4E6-9A90"
+           TYPE="vfat" PARTLABEL="szarotka-boot" PARTUUID="c817f3e5-e3e5-2449-b0f2-23dbb523a239"

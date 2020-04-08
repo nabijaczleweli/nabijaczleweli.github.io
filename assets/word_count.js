@@ -36,6 +36,6 @@ window.addEventListener("load", function() {
 
 	// Stolen from http://stackoverflow.com/a/2901298/2851815
 	function separatedNumber(num) {
-		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "`");
 	}
 });

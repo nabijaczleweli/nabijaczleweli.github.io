@@ -1,0 +1,37 @@
+code, samp, kbd {
+	font-family: "Droid Sans Mono", monospace;
+}
+
+blockquote {
+	margin-left: 1em;
+	padding-left: 0.25em;
+	border-left: 0.25em solid;
+}
+
+#go-back {
+	margin-bottom: 0;
+}
+
+#post-date {
+	margin-top: 0;
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+img.main-screenshot {
+	max-width: 100%;
+}
+
+@media all and (min-device-width: 600px) {
+	img.main-screenshot {
+		max-width: 95%;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	img.main-screenshot {
+		max-width: 90%;
+	}
+}
