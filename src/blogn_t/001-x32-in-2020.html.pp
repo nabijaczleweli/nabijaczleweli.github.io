@@ -88,13 +88,14 @@ Some time later, I decided to make a router out of it, and, having heard of <cod
 The Debian wiki <a href="//wiki.debian.org/X32Port">X32Port</a> page dates back to around when <code>x32</code> was introduced in 2012 with such beautiful excerpts as:
 </p>
 <blockquote class="continuing">
-The second [system] is the QEMU/Chroot guest, and it must run Debian 8/Jessie Unstable.
+The second [system] is the QEMU/Chroot guest, and it <em>must</em> run Debian 8/Jessie Unstable.
 </blockquote>
 <p class="continuing">
 Which, while amusing, isn'<!--'-->t very conducive to getting an <code>x32</code> system up, nor are the outdated-at-best instructions.
 So this is the combination of the things I'<!--'-->ve read and tried in order to install Debian "bullseye/sid" <code>x32</code> <a href="//twitter.com/nabijaczleweli/status/1245500423370309632">on <samp class="nobr">Wed Apr &nbsp;1 22:02:50 UTC 2020<samp></a> (it was already <samp>0:02:50</samp> the next day in my timezone but I forgot to set it; oh well):
 </p>
 <center><a href="//twitter.com/nabijaczleweli/status/1245500423370309632">
+	<!-- DSCN0443.JPG -->
 	<img class="main-screenshot continuing" alt="Login screen showing the aforementioned date and dpkg --print-architecture returning x32"
 	     src="//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large" /></a></center>
 <p class="continuation"></p>
