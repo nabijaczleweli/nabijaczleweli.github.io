@@ -10,10 +10,10 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Thu, 09 Apr 2020 00:01:34 +0000
+      Thu, 09 Apr 2020 11:54:21 +0000
     </pubDate>
     <lastBuildDate>
-      Thu, 09 Apr 2020 00:01:34 +0000
+      Thu, 09 Apr 2020 11:54:21 +0000
     </lastBuildDate>
     <generator>
       GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
@@ -123,13 +123,14 @@ Some time later, I decided to make a router out of it, and, having heard of &lt;
 The Debian wiki &lt;a href=&quot;//wiki.debian.org/X32Port&quot;&gt;X32Port&lt;/a&gt; page dates back to around when &lt;code&gt;x32&lt;/code&gt; was introduced in 2012 with such beautiful excerpts as:
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
-The second [system] is the QEMU/Chroot guest, and it must run Debian 8/Jessie Unstable.
+The second [system] is the QEMU/Chroot guest, and it &lt;em&gt;must&lt;/em&gt; run Debian 8/Jessie Unstable.
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 Which, while amusing, isn'&lt;!--'--&gt;t very conducive to getting an &lt;code&gt;x32&lt;/code&gt; system up, nor are the outdated-at-best instructions.
 So this is the combination of the things I'&lt;!--'--&gt;ve read and tried in order to install Debian &quot;bullseye/sid&quot; &lt;code&gt;x32&lt;/code&gt; &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;on &lt;samp class=&quot;nobr&quot;&gt;Wed Apr &amp;nbsp;1 22:02:50 UTC 2020&lt;samp&gt;&lt;/a&gt; (it was already &lt;samp&gt;0:02:50&lt;/samp&gt; the next day in my timezone but I forgot to set it; oh well):
 &lt;/p&gt;
 &lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;
+ &lt;!-- DSCN0443.JPG --&gt;
  &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Login screen showing the aforementioned date and dpkg --print-architecture returning x32&quot;
       src=&quot;//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p class=&quot;continuation&quot;&gt;&lt;/p&gt;
