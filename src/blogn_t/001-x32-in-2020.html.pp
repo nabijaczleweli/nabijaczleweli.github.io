@@ -96,8 +96,9 @@ So this is the combination of the things I'<!--'-->ve read and tried in order to
 </p>
 <center><a href="//twitter.com/nabijaczleweli/status/1245500423370309632">
 	<!-- DSCN0443.JPG -->
+	<!-- This used to be "//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large", but that link only worked if you were logged into twitter, somehow -->
 	<img class="main-screenshot continuing" alt="Login screen showing the aforementioned date and dpkg --print-architecture returning x32"
-	     src="//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large" /></a></center>
+	     src="/content/assets/blogn_t/001.01-success.jpg" /></a></center>
 <p class="continuation"></p>
 
 <p class="indented continued">
@@ -169,12 +170,12 @@ HEADING(2, building, Assembling the system)
 Pressing <kbd>Tab</kbd> in ISOLINUX et al. pops up the command-line, which looks vaguely like this:
 </p>
 <center><img class="main-screenshot continuing" alt="ISOLINUX boot menu, showing Expert Install, Rescue Mode, and Automated Install; below it a editing prompt to edit the kernel command-line, the last element being syscall.x32=y"
-	           src="/content/assets/blogn_t/001.01-ISOLINUX.png" /></center>
+	           src="/content/assets/blogn_t/001.02-ISOLINUX.png" /></center>
 <p class="continuing">
 Going through the rescue up to this menu ensures all the small annoying things are configured:
 </p>
 <center><img class="main-screenshot continuing" alt="Two QEMU windows, both showing a debian-installer 'Enter rescue mode' screen; the one at the top says that 'The installer could not find any partitions' with a <Go Back> and <Continue> buttons; the one at the bottom says to 'Enter a device you wish to use as your root file system' with a list of drives between /dev/sda1 and /dev/sda3, an 'Assemble RAID array' and 'Do not use a root file system' options as well as a <Go Back> button"
-	           src="/content/assets/blogn_t/001.02-enter-rescue-mode.png" /></center>
+	           src="/content/assets/blogn_t/001.03-enter-rescue-mode.png" /></center>
 <p class="continuation">
 You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual terminal with a usable background and <code>$TERM</code>.
 </p>
@@ -270,7 +271,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 This should ensure the system boots and is usable enough after doing so — press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> and find out!
 </p>
 <center><img class="main-screenshot continuing" alt="Linux console in QEMU window, showing a login, uname output of 'Linux szarotka 5.5.0-1-amd64', dpkg --print-architecture yielding 'x32', dpkg listing of amd64 packages yielding just two kernel packages, and the output of file on a system executable starting with 'ELF 32-bit LSB shared object, x86-64'"
-	           src="/content/assets/blogn_t/001.03-live-terminal.png" /></center>
+	           src="/content/assets/blogn_t/001.04-live-terminal.png" /></center>
 <p class="continuation">
 If that didn't get your system to boot, please do <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail</a>, but if it did, then that's all from me for today,
 except, maybe, one last thing?
@@ -280,7 +281,7 @@ except, maybe, one last thing?
 Ever wondered what'd happen if you had inits but the kernel couldn't execute them? <a href="//twitter.com/nabijaczleweli/status/1246438561735413760">So did I</a>:
 </p>
 <center><img class="main-screenshot continuing" alt="Linux console during init in QEMU windows, first complaining about 'modprobe bindfmt-464c' not being processable, then 'Starting init: /sbin/init exists but couldn't execute it (error: -8)', then 'Run /etc/init as init process', then /bin/init, then /bin/sh, yielding the same error as /sbin/init, finishing with a kernel panic 'not syncing: No working init found.  Try passing init= option to kernel.'"
-	           src="/content/assets/blogn_t/001.04-kernel-death.png" /></center>
+	           src="/content/assets/blogn_t/001.05-kernel-death.png" /></center>
 <p class="continuation">
 Alright, bye!
 </p>
