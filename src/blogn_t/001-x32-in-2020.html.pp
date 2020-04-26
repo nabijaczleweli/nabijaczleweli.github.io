@@ -228,8 +228,9 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        if you don'<!--'-->t plan on running other OSs this can be <kbd>--no-install-recommends</kbd>ed).<br />
 	        Remember: at the prompt, if unsure about the choice offered by GRUB,
 	        you can switch VTs again (<kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd>) and use <samp>blkid</samp> or <samp>lsblk</samp>.<br />
-	        In case the default ever changes: the <samp>sed</samp> replaces the <code>quiet</code> inside <code>GRUB_CMDLINE_LINUX_DEFAULT</code>
-	        (I'<!--'-->m not using a text editor because, despite <samp>ed</samp> being the standard text editor,
+	        The <samp>sed</samp> adds the syscall toggle inside <code>GRUB_CMDLINE_LINUX</code>, rather than <code>_DEFAULT</code>,
+	        since it's required to boot the system at all
+	        (not using a text editor because, despite <samp>ed</samp> being the standard text editor,
 	         using <samp>sed</samp>/<samp>awk</samp>/<samp>cat</samp> is less annoying and easier to spec like this
 	         (also, the normal <samp>vi</samp> derivatives were broken due to the aforementioned <samp>ruby2.5</samp>-related problem
 	          (I ended up using <samp>nvi</samp>))).</td>
@@ -242,7 +243,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp>GRUB install devices: <kbd><strong>/dev/sda</strong></kbd></samp><br />
 	        <br />
 	        <samp>Installing for i386-pc platform.</samp><br />
-	        <samp>root@szarotka:/# <kbd>sed -i 's/quiet/syscall.x32=y/' /etc/default/grub</kbd></samp><br />
+	        <samp>root@szarotka:/# <kbd>sed -ri 's/(CMDLINE_LINUX=)""/\1"syscall.x32=y"/' /etc/default/grub</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>update-grub</kbd></samp></tr>
 	<tr><td>Various bits and bobs; <samp>/etc/resolv.conf</samp> was already set up during <samp>debootstrap</samp>.<br />
 	        If using <code>vfat</code> for your <code>/boot</code>, check if your kernel sets <code>FAT_DEFAULT_UTF8=y</code>,
