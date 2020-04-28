@@ -14,8 +14,9 @@
 
 #include "../heading.h"
 
+
 #define BLOGN_T_HEADING(...)  MAIN_HEADING_ALT(2, ., <samp>__VA_ARGS__</samp>)  FORCED_NEWLINE \
-                              <h4 id="post-date">POST_DATE</h4>
+                              <h4 id="post-date"><span style="white-space: nowrap">POST_DATE</span>POST_POST_DATE</h4>
 #define BLOGN_T_FOOTER()                                                                                                                                    \
 <p>                                                                                                                                          FORCED_NEWLINE \
 	<br />                                                                                                                                     FORCED_NEWLINE \

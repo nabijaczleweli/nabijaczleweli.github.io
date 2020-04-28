@@ -14,8 +14,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "blogn_t.h"
 
 
-<!-- RSS_PUB_DATE: "Thu, 9 Apr 2020 01:44:47 +0200" -->
-#define POST_DATE   Thu, 9 Apr 2020 01:44:47 +0200
+                                                     <!-- RSS_PUB_DATE: "Thu, 9 Apr 2020 01:44:47 +0200" -->
+#define POST_DATE                                                        Thu, 9 Apr 2020 01:44:47 +0200
+#define POST_POST_DATE , last updated <span style="white-space: nowrap">Tue, 28 Apr 2020 02:54:07 +0200</span>
 
 #define CMT Also used in heading.h, make sure to update both with fixes
 #undef CMT
@@ -229,7 +230,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        Remember: at the prompt, if unsure about the choice offered by GRUB,
 	        you can switch VTs again (<kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd>) and use <samp>blkid</samp> or <samp>lsblk</samp>.<br />
 	        The <samp>sed</samp> adds the syscall toggle inside <code>GRUB_CMDLINE_LINUX</code>, rather than <code>_DEFAULT</code>,
-	        since it's required to boot the system at all
+	        since it'<!--'-->s required to boot the system at all
 	        (not using a text editor because, despite <samp>ed</samp> being the standard text editor,
 	         using <samp>sed</samp>/<samp>awk</samp>/<samp>cat</samp> is less annoying and easier to spec like this
 	         (also, the normal <samp>vi</samp> derivatives were broken due to the aforementioned <samp>ruby2.5</samp>-related problem
@@ -238,7 +239,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp>Configuring grub-pc</samp><br />
 	        <samp>-------------------</samp><br />
 	        <br />
-	        <samp>  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)</samp><br />
+	        <samp>  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)</samp><br />
 	        <br />
 	        <samp>GRUB install devices: <kbd><strong>/dev/sda</strong></kbd></samp><br />
 	        <br />
@@ -250,10 +251,12 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        or specify <code>utf8=y</code> instead of <code>defaults</code>.<br />
 	        This <code>/etc/hosts</code> is really bare-bones and the <samp>d-i</samp> one is too long to reproduce here in full;
 	        I'<!--'-->d recommend copying and modifying one from another host on your network.<br />
-	        If you're not using systemd, here is where you'd link <samp>/etc/localtime</samp> to somewhere in <samp>/usr/share/zoneinfo</samp>
+	        Previously this paragraph contained some ill-advised init-specific bollocks about setting timezones, reproduced below,
+	        instead of the <samp>dpkg-reconfigure</samp>; mistakes of my youth slash two weeks ago I guess.<br />
+	        <del>If you're not using systemd, here is where you'd link <samp>/etc/localtime</samp> to somewhere in <samp>/usr/share/zoneinfo</samp>
 	        (see <samp><a href="//manpages.debian.org/buster/systemd/localtime.5.en.html">localtime(5)</a></samp>), otherwise run
 	        <samp class="nobr"><a href="//manpages.debian.org/buster/systemd/timedatectl.1.en.html">timedatectl(1)</a> set-timezone CET</samp>
-	        after rebooting.</td>
+	        after rebooting.</del></td>
 	    <td><samp>root@szarotka:/# <kbd>cat > /etc/fstab</kbd></samp><br />
 	        <samp>PARTLABEL=szarotka-root  /      ext4  noatime   0  1</samp><br />
 	        <samp>PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2</samp><br />
@@ -262,6 +265,19 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp>127.0.0.1  localhost</samp><br />
 	        <samp>127.0.1.1  szarotka szarotka.local.nabijaczleweli.xyz</samp><br />
 	        <samp><kbd>^D</kbd></samp><br />
+	        <samp>root@szarotka:/# <kbd>dpkg-reconfigure tzdata</kbd></samp><br />
+	        <samp>Configuring tzdata</samp><br />
+	        <samp>------------------</samp><br />
+	        <br />
+	        <samp>  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]</samp><br >
+	        <samp>Geographic area: <kbd><strong>8</strong></kbd></samp><br />
+	        <br />
+	        <samp>  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw</samp><br >
+	        <samp>Time zone: <kbd><strong>60</strong></kbd></samp><br />
+	        <br />
+	        <samp>Current default time zone: 'Europe/Warsaw'</samp><br />
+	        <samp>Local time is now:      Tue Apr 28 02:25:44 CEST 2020.</samp><br />
+	        <samp>Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.</samp><br />
 	        <samp>root@szarotka:/# <kbd>apt install sudo</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>adduser --ingroup users nabijaczleweli</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>adduser nabijaczleweli sudo</kbd></samp><br />
