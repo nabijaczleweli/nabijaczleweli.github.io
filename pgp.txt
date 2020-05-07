@@ -1,5 +1,5 @@
 # You should be able to import this key by running
-# curl -SL https://nabijaczleweli.xyz/pgp | gpg --import
+# curl -SL https://nabijaczleweli.xyz/pgp.txt | gpg --import
 
 
 pub   rsa4096 2015-08-23 [SCA] [expires: 2025-08-20]
