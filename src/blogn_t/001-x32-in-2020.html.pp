@@ -28,7 +28,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
 
-BOILERPLATE(001. installing Debianꞌs x32 port in 2020 — blognꞌt, 001. installing Debianꞌs x32 port in 2020, en-US, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(001. installing Debianꞌs x32 port in 2020 — blognꞌt, 001. installing Debianꞌs x32 port in 2020, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"

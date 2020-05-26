@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define POST(post_id, post_time, post_time_2, ...)                                                                                        \
-	<samp id=STR(post_id)><a href=STR(post_id.html)>__VA_ARGS__</a>; <span style="white-space: nowrap">post_time, post_time_2</span></samp>
+	<p><samp id=STR(post_id)><a href=STR(post_id.html)>__VA_ARGS__</a>; <span style="white-space: nowrap">post_time, post_time_2</span></samp></p>
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE                                                                 FORCED_NEWLINE \
@@ -25,7 +25,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
                     <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">   FORCED_NEWLINE \
                     <style>samp { font-family: "Droid Sans Mono", monospace; }</style>
-BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-US, STYLESHEETS)
+BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-GB, STYLESHEETS)
 <span class="roboto">
 
 
@@ -36,7 +36,8 @@ I <a href="https://crates.io/crates/bloguen">wrote</a> a blog generator but neve
  so here'<!--'-->s some non-blogue blogue posts, I guess.
 
 <p class="roboto-unscale">
-	POST(001-x32-in-2020, Thu, 9 Apr 2020 01:44:47 +0200, 001. Installing Debian'<!--'-->s x32 port in 2020)
+	POST(001-x32-in-2020,          Thu, 9 Apr 2020 01:44:47 +0200,  001. Installing Debian'<!--'-->s x32 port in 2020)
+	POST(002-ncurses-gpm-segfault, Mon, 25 May 2020 00:12:30 +0200, 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
 </p>
 
 BLOGN_T_FOOTER()
