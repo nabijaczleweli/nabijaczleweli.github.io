@@ -32,7 +32,7 @@ install:
   - cargo install gen-epub-book || true
 
 script:
-  - make OUTDIR=../content/
+  - make OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book"
 
 after_success:
   - if [ -n "$TRAVIS_PULL_REQUEST" ]; then
