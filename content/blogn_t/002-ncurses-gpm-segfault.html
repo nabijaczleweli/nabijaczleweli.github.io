@@ -11,6 +11,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 
+
+   <!-- RSS_PUB_DATE: "Mon, 25 May 2020 00:12:30 +0200" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -18,8 +20,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
  <meta name="viewport" content="width=device-width,initial-scale=1"> 
  <meta name="author" content="nabijaczleweli"> 
- <meta name="description" content="itꞌs not a blog‚ but then again‚ what is?"> 
- <title>blognꞌt — nabijaczleweli</title> 
+ <meta name="description" content="002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users"> 
+ <title>002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli</title> 
  
  <link href="/content/assets/common.css" rel="stylesheet" /> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
@@ -46,20 +48,54 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="theme-color" content="#ffffff"> 
  <link href="/content/assets/heading.css" rel="stylesheet" /> 
  <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
  <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
  <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
- <style>samp { font-family: "Droid Sans Mono", monospace; }</style> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
+ <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
+ <script type="text/javascript" src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
-<span class="roboto">
+<style>
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+.indented {
+ text-indent: 1em;
+}
+</style>
+<span class="roboto writing">
 <p></p>
-<h2 id="go-back" class="merriweather"><a id="go-back-link" href="..">↩</a> blogn't<!--'--></h2>
-I <a href="https://crates.io/crates/bloguen">wrote</a> a blog generator but never deployed it because I'<!--'-->m not proud of it,
- so here'<!--'-->s some non-blogue blogue posts, I guess.
-<p class="roboto-unscale">
- <p><samp id="001-x32-in-2020"><a href="001-x32-in-2020.html">001. Installing Debian'<!--'-->s x32 port in 2020</a>; <span style="white-space: nowrap">Thu, 9 Apr 2020 01:44:47 +0200</span></samp></p>
- <p><samp id="002-ncurses-gpm-segfault"><a href="002-ncurses-gpm-segfault.html">002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users</a>; <span style="white-space: nowrap">Mon, 25 May 2020 00:12:30 +0200</span></samp></p>
+<h2 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <samp><code>002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users</code></samp></h2> 
+ <h4 id="post-date"><span style="white-space: nowrap">Mon, 25 May 2020 00:12:30 +0200</span></h4>
+<p class="indented continued">
+The post I made for <a href="https://bugs.debian.org/961097#35">#961097</a>,
+ which went through three packages (
+</p>
+<ol class="continuing">
+ <li>htop: segfaults after ^Z+fg on x32</li>
+ <li>gpm: SIGTSTP handler segfaults programs</li>
+ <li>libncurses6: unloads libgpm2 in SIGTSTP handler, process returns to unmapped address on resume</li>
+</ol>
+<p class="continuing">
+ ) is roughly the length of a blog post and something I would read as a blog post, so it may be interesting to other viewers as well.
+<p class="indented continuation">
+Plus, it took me an entire day to write and the better part of a week to hunt down (by god it'<!--'-->s bigger than either of the screenshots),
+ so it definitely qualifies.
+</p>
+<p class="indented continued">
+You can read it on <a href="https://bugs.debian.org/961097#35">debbugs</a>, since reproducing plaintext with boxes in HTML is a massive pain
+ (plus there'<!--'-->s context there).
+</p>
+<p class="indented continuation">
+You may also be interested in the corresponding <a href="https://twitter.com/nabijaczleweli/status/1263652757803724800">twitter thread</a>.
 </p>
 <p> 
  <br /> 
@@ -67,6 +103,12 @@ I <a href="https://crates.io/crates/bloguen">wrote</a> a blog generator but neve
  or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
  </p>
 </span>
+<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
+ <hr /> 
+ <span id="word_count">0</span> words, 
+ <span id="syllable_count">0</span> syllables, 
+ <span id="character_count">0</span> characters. 
+ </span>
 <!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
  Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
  code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
@@ -77,7 +119,7 @@ I <a href="https://crates.io/crates/bloguen">wrote</a> a blog generator but neve
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
  Automatically generated with GCC 9‍.‍3‍.‍0'<!--'-->s C preprocessor on 29.05.2020 17:20:10 CEST from 
- <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/index.html.pp">src/blogn_t/index.html.pp</a>. 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/002-ncurses-gpm-segfault.html.pp">src/blogn_t/002-ncurses-gpm-segfault.html.pp</a>. 
  
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
