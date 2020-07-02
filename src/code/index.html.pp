@@ -130,6 +130,8 @@ Documentation for my Rust crates:
 	    Overwatch JSON API bindings for Rust)
 	DOC(bloguen, bloguen, bloguen,
 	    Generate a blogue from a flat TOML-based descriptor)
+	DOC(feembox, feembox, feembox,
+	    What if a feed, but it'<!--'-->s a mailbox?)
 	DOC(dishub, dishub, dishub,
 	    App for posting GitHub activity on Discord)
 	DOC(tweetr, tweetr, tweetr,
