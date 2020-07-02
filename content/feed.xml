@@ -10,13 +10,13 @@
     <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
     <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
     <pubDate>
-      Fri, 29 May 2020 17:20:28 +0200
+      Thu, 02 Jul 2020 23:45:16 +0000
     </pubDate>
     <lastBuildDate>
-      Fri, 29 May 2020 17:20:28 +0200
+      Thu, 02 Jul 2020 23:45:16 +0000
     </lastBuildDate>
     <generator>
-      GNU Awk 5.0.1, API: 2.0 (GNU MPFR 4.0.2, GNU MP 6.2.0)
+      GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
     </generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>60</ttl>
@@ -270,7 +270,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;dpkg --add-architecture amd64&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt update&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install linux-image-amd64 --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install 1 -image-amd64 --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;And a bootloader (at time of writing &lt;samp&gt;grub2&lt;/samp&gt; recommends &lt;samp class=&quot;nobr&quot;&gt;os-prober&lt;/samp&gt; –
          if you don'&lt;!--'--&gt;t plan on running other OSs this can be &lt;kbd&gt;--no-install-recommends&lt;/kbd&gt;ed).&lt;br /&gt;
          Remember: at the prompt, if unsure about the choice offered by GRUB,
@@ -355,7 +355,7 @@ Alright, bye!
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>                                                     Thu, 9 Apr 2020 01:44:47 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/blogn_t/001-x32-in-2020.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -412,7 +412,7 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>   Mon, 25 May 2020 00:12:30 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/blogn_t/002-ncurses-gpm-segfault.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -754,7 +754,7 @@ I hope that this document is clear and/or informative, if not,
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 30 Aug 2017 03:38:21 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/gen-epub-book/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -948,7 +948,7 @@ A full list of conversions and their implementations can be found at the
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Tue, 13 Jun 2017 22:42:51 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/maths/mandalas.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/maths/mandalas.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -1189,7 +1189,7 @@ A full list of conversions and their implementations can be found at the
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 9 May 2019 22:54:19 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/maths/wiggly-circle.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -1371,7 +1371,7 @@ A. Łopacińska
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 22 Sep 2016 01:20:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/każdy_koniec_to_nowy_początek/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -1801,7 +1801,7 @@ A. Łopacińska
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 23 Apr 2017 03:37:41 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/moments/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/moments/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -1860,7 +1860,7 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Fri, 19 May 2017 12:25:37 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/poetry/the_east_wind/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -2111,7 +2111,7 @@ Wyrok wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;�
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat,  3 Nov 2018 21:03:25 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/poetry/ПИПА/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -2686,7 +2686,7 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 16 Aug 2017 19:15:09 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/the_taste_of_mi/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -2741,7 +2741,7 @@ A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&q
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 29 Apr 2018 04:28:25 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/translations/funeral_blues.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3011,7 +3011,7 @@ I tak, drogie dzieci, zaczęła sie WWI.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 06 Jun 2016 23:40:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/świat_to_kilka_takich_pokoi/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3412,7 +3412,7 @@ zrozumieją dopiero w czasach innych, lepszych.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 24 Oct 2018 20:12:57 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing/наган/</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing/наган/</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3473,7 +3473,7 @@ zrozumieją dopiero w czasach innych, lepszych.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 26 Dec 2016 02:01:20 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/dead_santa.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3521,7 +3521,7 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sun, 08 Jan 2017 04:00:46 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/degenerate.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3593,7 +3593,7 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 02 Feb 2017 13:45:35 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/eye_see.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3644,7 +3644,7 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 29 Dec 2016 15:37:19 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/green_ass_dog.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3685,7 +3685,7 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Mon, 30 Jan 2017 00:07:59 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/laser_cats.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3765,7 +3765,7 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Thu, 29 Dec 2016 21:51:50 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/not_dead_yet.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3839,7 +3839,7 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Wed, 28 Dec 2016 01:54:52 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/six_minutes.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3868,7 +3868,7 @@ Not ever would she expect this.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 24 Dec 2016 15:00:32 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/start_eq_end.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -3942,7 +3942,7 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 24 Dec 2016 02:04:36 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/theless.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
 
@@ -4017,7 +4017,7 @@ Life'&lt;!--'--&gt;s easy. Now for Cubans and me, too.
 </description>
       <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
       <pubDate>Sat, 31 Dec 2016 18:30:49 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../nabijaczleweli.github.io/content/writing_prompts/trucks_a_cash.html</guid>
+      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html</guid>
       <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
     </item>
   </channel>
