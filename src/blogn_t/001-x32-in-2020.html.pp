@@ -17,6 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                                                      <!-- RSS_PUB_DATE: "Thu, 9 Apr 2020 01:44:47 +0200" -->
 #define POST_DATE                                                        Thu, 9 Apr 2020 01:44:47 +0200
 #define POST_POST_DATE , last updated <span style="white-space: nowrap">Tue, 28 Apr 2020 02:54:07 +0200</span>
+                                                 <!-- RSS_UPDATE_DATE: "Tue, 28 Apr 2020 02:54:07 +0200" -->
 
 #define CMT Also used in heading.h, make sure to update both with fixes
 #undef CMT

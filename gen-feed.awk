@@ -22,39 +22,25 @@
 
 BEGIN {
 	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-	print "<rss version=\"2.0\" xmlns:atom=\"https://www.w3.org/2005/Atom\">"
-	print "  <channel>"
-	print "    <atom:link href=\"https://nabijaczleweli.xyz/content/feed.xml\" rel=\"self\" type=\"application/rss+xml\" />"
-	print "    <title>nabijaczleweli's page</title>"
-	print "    <link>https://nabijaczleweli.xyz/content</link>"
-	print "    <description>Newest articles on nabijaczleweli.xyz</description>"
-	print "    <language>en-GB</language>"
-	print "    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>"
-	print "    <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>"
-	print "    <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>"
+	print "<feed xmlns=\"http://www.w3.org/2005/Atom\" xml:base=\"https://nabijaczleweli.xyz\">"
+	print "  <title>nabijaczleweli's page</title>"
+	print "  <id>https://nabijaczleweli.xyz/content</id>"
+	print "  <icon>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</icon>"
+	print "  <link rel=\"alternate\" href=\"https://nabijaczleweli.xyz/content\" type=\"text/html\"/>"
+	print "  <link rel=\"self\" href=\"https://nabijaczleweli.xyz/content/feed.xml\" type=\"application/atom+xml\"/>"
+	print "  <author>"
+	print "    <name>nabijaczleweli</name>"
+	print "    <email>nabijaczleweli@nabijaczleweli.xyz</email>"
+	print "    <uri>https://nabijaczleweli.xyz</uri>"
+	print "  </author>"
+	print "  <rights>Copyright (c) 2016 nabijaczleweli</rights>"
 
-	print "    <pubDate>"
-	printf "      "
-	system("date -R | cat")
-	print "    </pubDate>"
+	print "  <updated>" gensub(/[+-]00:00/, "", 1, gensub(/(.+)(..)$/, "\\1:\\2", 1, strftime("%FT%T%z"))) "</updated>"
 
-	print "    <lastBuildDate>"
-	printf "      "
-	system("date -R | cat")
-	print "    </lastBuildDate>"
-
-	print "    <generator>"
-	printf "      "
+	print "  <generator>"
+	printf "    "
 	system(awk " -Wversion | head -1")
-	print "    </generator>"
-
-	print "    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>"
-	print "    <ttl>60</ttl>"
-	print "    <image>"
-	print "      <url>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</url>"
-	print "      <title>nabijaczleweli's page</title>"
-	print "      <link>https://nabijaczleweli.xyz/content</link>"
-	print "    </image>"
+	print "  </generator>"
 }
 
 {
@@ -64,6 +50,5 @@ BEGIN {
 }
 
 END {
-	print "  </channel>"
-	print "</rss>"
+	print "</feed>"
 }
