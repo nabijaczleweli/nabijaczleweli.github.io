@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
-  <channel>
-    <atom:link href="https://nabijaczleweli.xyz/content/feed.xml" rel="self" type="application/rss+xml" />
-    <title>nabijaczleweli's page</title>
-    <link>https://nabijaczleweli.xyz/content</link>
-    <description>Newest articles on nabijaczleweli.xyz</description>
-    <language>en-GB</language>
-    <copyright>Copyright (c) 2016 nabijaczleweli</copyright>
-    <managingEditor>nabijaczleweli@gmail.com (nabijaczleweli)</managingEditor>
-    <webMaster>nabijaczleweli@gmail.com (nabijaczleweli)</webMaster>
-    <pubDate>
-      Thu, 02 Jul 2020 23:45:16 +0000
-    </pubDate>
-    <lastBuildDate>
-      Thu, 02 Jul 2020 23:45:16 +0000
-    </lastBuildDate>
-    <generator>
-      GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
-    </generator>
-    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <ttl>60</ttl>
-    <image>
-      <url>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</url>
-      <title>nabijaczleweli's page</title>
-      <link>https://nabijaczleweli.xyz/content</link>
-    </image>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://nabijaczleweli.xyz">
+  <title>nabijaczleweli's page</title>
+  <id>https://nabijaczleweli.xyz/content</id>
+  <icon>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</icon>
+  <link rel="alternate" href="https://nabijaczleweli.xyz/content" type="text/html"/>
+  <link rel="self" href="https://nabijaczleweli.xyz/content/feed.xml" type="application/atom+xml"/>
+  <author>
+    <name>nabijaczleweli</name>
+    <email>nabijaczleweli@nabijaczleweli.xyz</email>
+    <uri>https://nabijaczleweli.xyz</uri>
+  </author>
+  <rights>Copyright (c) 2016 nabijaczleweli</rights>
+  <updated>2020-07-06T11:57:32</updated>
+  <generator>
+    GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
+  </generator>
 
-    <item>
-      <title> 001. installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</id>
+    <title> 001. installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
+    <updated>2020-04-28T02:54:07+02:00</updated>
+    <published>2020-04-09T01:44:47+02:00</published>
+    <content type="html">
 &lt;style&gt;
 .continued {
  margin-bottom: 0;
@@ -352,16 +345,14 @@ Alright, bye!
  or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
  &lt;/p&gt;
 &lt;/span&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>                                                     Thu, 9 Apr 2020 01:44:47 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html</id>
+    <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli </title>
+    <updated>2020-05-25T00:12:30+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .continued {
  margin-bottom: 0;
@@ -409,16 +400,14 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
  or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
  &lt;/p&gt;
 &lt;/span&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>   Mon, 25 May 2020 00:12:30 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> gen-epub-book general — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</id>
+    <title> gen-epub-book general — nabijaczleweli </title>
+    <updated>2017-08-30T03:38:21+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .overlay-container {
  display: inline-block;
@@ -751,16 +740,14 @@ I hope that this document is clear and/or informative, if not,
  or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
 &lt;/p&gt;
 &lt;/span&gt;&lt;/div&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sun, 30 Aug 2017 03:38:21 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Mandalas — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/maths/mandalas.html</id>
+    <title> Mandalas — nabijaczleweli </title>
+    <updated>2017-06-13T22:42:51+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -945,16 +932,14 @@ A full list of conversions and their implementations can be found at the
  &lt;a href=&quot;//rawcdn.githack.com/nabijaczleweli/mandalas-rs/doc/mandalas/util/index.html&quot; target=&quot;_blank&quot;&gt;mandalas-rs API documentation&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/span&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Tue, 13 Jun 2017 22:42:51 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/maths/mandalas.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> wiggly-circle — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html</id>
+    <title> wiggly-circle — nabijaczleweli </title>
+    <updated>2019-05-09T22:54:19+02:00</updated>
+    <content type="html">
 &lt;div class=&quot;art-box&quot;&gt;
  &lt;span id=&quot;top&quot;&gt;&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; wiggly-circle&lt;/h2&gt;&lt;/span&gt;
  &lt;p class=&quot;merriweather&quot;&gt;
@@ -1186,16 +1171,14 @@ A full list of conversions and their implementations can be found at the
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;span id=&quot;arrow&quot;&gt;&lt;/span&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Thu, 9 May 2019 22:54:19 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Każdy koniec to nowy początek — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/</id>
+    <title> Każdy koniec to nowy początek — nabijaczleweli </title>
+    <updated>2016-09-22T01:20:31+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -1368,16 +1351,14 @@ Remember, we will be watching.
 A. Łopacińska
 &lt;/p&gt;
 
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Thu, 22 Sep 2016 01:20:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> A Widowꞌs Trace — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/moments/</id>
+    <title> A Widowꞌs Trace — nabijaczleweli </title>
+    <updated>2017-04-23T03:37:41+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -1798,16 +1779,14 @@ Kraków&lt;br /&gt;
 A. Łopacińska
 &lt;/p&gt;
 
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sun, 23 Apr 2017 03:37:41 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/moments/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Poetry — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/</id>
+    <title> Poetry — nabijaczleweli </title>
+    <updated>2017-05-19T12:25:37+02:00</updated>
+    <content type="html">
 &lt;!-- ePub title: &quot;Introduction&quot; --&gt;
 &lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#introduction&quot;&gt;&lt;h3 id=&quot;introduction&quot;&gt;Editorial comment&lt;/h3&gt;&lt;/a&gt;
 &lt;p class=&quot;writing&quot;&gt;
@@ -1857,16 +1836,14 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 &amp;emsp;&amp;emsp;Maggie
 &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Fri, 19 May 2017 12:25:37 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> ПИПА – Dzieła zebrane — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/</id>
+    <title> ПИПА – Dzieła zebrane — nabijaczleweli </title>
+    <updated>2018-11-03T21:03:25+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -2108,16 +2085,14 @@ Wyrok wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;�
 &lt;/p&gt;
 
 &lt;!--​--&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sat,  3 Nov 2018 21:03:25 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> The Taste of MI — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/</id>
+    <title> The Taste of MI — nabijaczleweli </title>
+    <updated>2017-08-16T19:15:09+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .ruby {
  /* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
@@ -2683,16 +2658,14 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
  lub zdarzeń rzeczywistych jest czysto przypadkowe.
 &lt;/p&gt;
 
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Wed, 16 Aug 2017 19:15:09 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Funeral Blues (ew. Pogrzebowy Blues) — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html</id>
+    <title> Funeral Blues (ew. Pogrzebowy Blues) — nabijaczleweli </title>
+    <updated>2018-04-29T04:28:25+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -2738,16 +2711,14 @@ Bo nic już dobrym nie może być. &lt;br /&gt;
 A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;18.04.2018&lt;/span&gt;
 &lt;/p&gt;
 &lt;/span&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sun, 29 Apr 2018 04:28:25 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Świat to kilka takich pokoi — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/</id>
+    <title> Świat to kilka takich pokoi — nabijaczleweli </title>
+    <updated>2016-06-06T23:40:31+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .continued {
  margin-bottom: 0;
@@ -3008,16 +2979,14 @@ I tak, drogie dzieci, zaczęła sie WWI.
 &lt;span id=&quot;asterix3&quot;&gt;***Nie lubię Francji&lt;/span&gt;&lt;br /&gt;
 &lt;/p&gt;
 &lt;!--​--&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Mon, 06 Jun 2016 23:40:31 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Наган — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing/наган/</id>
+    <title> Наган — nabijaczleweli </title>
+    <updated>2018-10-24T20:12:57+02:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3409,16 +3378,14 @@ zrozumieją dopiero w czasach innych, lepszych.
 &lt;/p&gt;
  &lt;!-- --&gt;
 &lt;!--​--&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Wed, 24 Oct 2018 20:12:57 +0200</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing/наган/</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> No gifts this year — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html</id>
+    <title> No gifts this year — nabijaczleweli </title>
+    <updated>2016-12-26T02:01:20+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3470,16 +3437,14 @@ zrozumieją dopiero w czasach innych, lepszych.
 &quot;At least he killed the thing...&quot;&lt;br /&gt;
 &quot;...but it mutilated him first. Let's get out of here. Shit makes me queasy.&quot;
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Mon, 26 Dec 2016 02:01:20 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Degenerate Watch — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html</id>
+    <title> Degenerate Watch — nabijaczleweli </title>
+    <updated>2017-01-08T04:00:46+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3518,16 +3483,14 @@ Regardless of how obvious that makes the puppetry,
 &lt;em&gt;There'&lt;!--'--&gt;s no time for that, it matters naught, now the only relief is in dance.
 Dance and fly, high as a kite. The highest praise – the sighs of amazement from the crowd.&lt;/em&gt;
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sun, 08 Jan 2017 04:00:46 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> The Last Eye — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html</id>
+    <title> The Last Eye — nabijaczleweli </title>
+    <updated>2017-02-02T13:45:35+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3590,16 +3553,14 @@ Denise collapsed at the side of her wife'&lt;!--'--&gt;s bed, grasping her hand 
   They were supposed to save us... Save you!&quot;&lt;!--&quot;--&gt;&lt;br /&gt;
 She felt a rush of blood through her temples. Ten seconds before doctor man and hospital man would, she vanished.
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Thu, 02 Feb 2017 13:45:35 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Cucumber Dog — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html</id>
+    <title> Cucumber Dog — nabijaczleweli </title>
+    <updated>2016-12-29T15:37:19+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3641,16 +3602,14 @@ Assessing his haul, he nodded affirmatively: a couple days'&lt;!--'--&gt; worth 
 This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipiuk&quot;&gt;Andrzej Pilipiuk&lt;/a&gt;'&lt;!--'--&gt;s
   book series about &lt;a href=&quot;https://pl.wikipedia.org/wiki/Jakub_W%C4%99drowycz&quot;&gt;Jakub Wędrowycz&lt;/a&gt;.
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Thu, 29 Dec 2016 15:37:19 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Ghostly Lasers — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html</id>
+    <title> Ghostly Lasers — nabijaczleweli </title>
+    <updated>2017-01-30T00:07:59+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3682,16 +3641,14 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
     &quot;As is clearly evident. So what should we do with the notes?&quot;&lt;br /&gt;
     &quot;No earthly idea, let's stash them somewhere and append to them next time.&quot;&lt;/em&gt;
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Mon, 30 Jan 2017 00:07:59 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Get up，soldier — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html</id>
+    <title> Get up，soldier — nabijaczleweli </title>
+    <updated>2016-12-29T21:51:50+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3762,16 +3719,14 @@ It was too late before he realised that he was turning into an equivalent of a r
  just for the U.S. Military; and that he was surprisingly okay with that.&lt;br /&gt;
 He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was his last conscious thought.
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Thu, 29 Dec 2016 21:51:50 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Six Minutes — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html</id>
+    <title> Six Minutes — nabijaczleweli </title>
+    <updated>2016-12-28T01:54:52+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3836,16 +3791,14 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
 &lt;p&gt;
 I took the liberty of considering nonverbal parts of a conversation &quot;dialogue&quot;, too.
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Wed, 28 Dec 2016 01:54:52 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> End = Start — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html</id>
+    <title> End = Start — nabijaczleweli </title>
+    <updated>2016-12-24T15:00:32+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3865,16 +3818,14 @@ And there she stood, reborn; and hungry for blood.&lt;br /&gt;
 The procedure worked.&lt;br /&gt;
 Not ever would she expect this.
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sat, 24 Dec 2016 15:00:32 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> The-less — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html</id>
+    <title> The-less — nabijaczleweli </title>
+    <updated>2016-12-24T02:04:36+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -3939,16 +3890,14 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
 &lt;p class=&quot;writing indented&quot;&gt;
 &quot;Here lies Sarah Burnham, 1984-2057. Beloved wife and selfless defender of Queen And Country.&quot;
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sat, 24 Dec 2016 02:04:36 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
+</content>
+  </entry>
 
-    <item>
-      <title> Utopian Assassin — nabijaczleweli </title>
-      <description>
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html</id>
+    <title> Utopian Assassin — nabijaczleweli </title>
+    <updated>2016-12-31T18:30:49+01:00</updated>
+    <content type="html">
 &lt;style&gt;
 .indented {
  text-indent: 1em;
@@ -4014,11 +3963,6 @@ And so I did. &quot;&lt;em&gt;Recent reports suggest that the leader of the comm
 &lt;p class=&quot;writing indented&quot;&gt;
 Life'&lt;!--'--&gt;s easy. Now for Cubans and me, too.
 &lt;/p&gt;
-</description>
-      <author>nabijaczleweli@gmail.com (nabijaczleweli)</author>
-      <pubDate>Sat, 31 Dec 2016 18:30:49 +0100</pubDate>
-      <guid>https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html</guid>
-      <source url="https://nabijaczleweli.xyz/content/feed.xml">nabijaczleweli's page</source>
-    </item>
-  </channel>
-</rss>
+</content>
+  </entry>
+</feed>
