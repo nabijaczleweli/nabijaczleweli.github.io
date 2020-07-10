@@ -191,7 +191,7 @@ nabijaczleweli: 07/10/20 16:05 >&lt; MODE (nabijaczleweli): +i
 </pre></code>
 </div>
 <p class="continuing">
-should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and
+should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and:
 </p>
 <div class="bigcode continuing">
   <pre class="language-plaintext"><code class="language-plaintext">hasix       : 07/10/20 16:07 &lt;nabijaczleweli&gt; owo</pre></code>
@@ -240,7 +240,7 @@ Subject: &lt;hasix> owo
 </pre></code>
 </div>
 <p class="continuing">
-both in the teletype and the mailbox. At this point pointing the MUA at it should work and the message should show up:
+both in the teletype and the mailbox. At this point pointing the MUA at it should work and the messages should show up:
 </p>
 <img class="continuing" src="/content/assets/blogn_t/003.03-should_show_up.png"
      alt="neomutt window showing two messages, one from nabijaczleweli@irc. with subject '<hasix> owo'; second from hasix@irc. with subject '<nabijaczleweli> owo'" />
@@ -254,7 +254,7 @@ Now it'<!--'-->s time to convince postfix to do a big crime, by:
 <ul class="continuation">
   <li>adding "irc" to <code>mydestination</code> in <code>/etc/postfix/main.cf</code> and ensuring <code>transport_maps = hash:/etc/postfix/transport</code> therein,</li>
   <li>appending "irc  irc:" to <code>/etc/postfix/transport</code> (and running <code>postmap</code> on it),
-      which will make messages to <kbd>@irc,</kbd> use the <kbd>irc:</kbd> protocol,</li>
+      which will make messages to <kbd>@irc.</kbd> use the <kbd>irc:</kbd> protocol,</li>
   <li>appending what follows to <code>/etc/postfix/master.cf</code> (I stole this from the internet,
       <a href="//manpages.debian.org/buster/postfix/pipe.8postfix.en.html">pipe(8postfix)</a> or
       <a href="//manpages.debian.org/buster/postfix/master.5.en.html"> master(5)</a> will probably be very insightful):
@@ -334,9 +334,9 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 10.07.2020 22:49:03 UTC from 
+ Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 10.07.2020 22:58:10 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/003-maircl-poc.html.pp">src/blogn_t/003-maircl-poc.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/707051350">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/707052936">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

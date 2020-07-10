@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-07-10T22:51:24</updated>
+  <updated>2020-07-10T23:00:33</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -545,7 +545,7 @@ nabijaczleweli: 07/10/20 16:05 &gt;&amp;lt; MODE (nabijaczleweli): +i
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-should appear, and typing &quot;&lt;kbd&gt;:m hasix owo&lt;/kbd&gt;&quot; should produce a message in the web client and
+should appear, and typing &quot;&lt;kbd&gt;:m hasix owo&lt;/kbd&gt;&quot; should produce a message in the web client and:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
   &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;hasix       : 07/10/20 16:07 &amp;lt;nabijaczleweli&amp;gt; owo&lt;/pre&gt;&lt;/code&gt;
@@ -594,7 +594,7 @@ Subject: &amp;lt;hasix&gt; owo
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-both in the teletype and the mailbox. At this point pointing the MUA at it should work and the message should show up:
+both in the teletype and the mailbox. At this point pointing the MUA at it should work and the messages should show up:
 &lt;/p&gt;
 &lt;img class=&quot;continuing&quot; src=&quot;/content/assets/blogn_t/003.03-should_show_up.png&quot;
      alt=&quot;neomutt window showing two messages, one from nabijaczleweli@irc. with subject '&lt;hasix&gt; owo'; second from hasix@irc. with subject '&lt;nabijaczleweli&gt; owo'&quot; /&gt;
@@ -608,7 +608,7 @@ Now it'&lt;!--'--&gt;s time to convince postfix to do a big crime, by:
 &lt;ul class=&quot;continuation&quot;&gt;
   &lt;li&gt;adding &quot;irc&quot; to &lt;code&gt;mydestination&lt;/code&gt; in &lt;code&gt;/etc/postfix/main.cf&lt;/code&gt; and ensuring &lt;code&gt;transport_maps = hash:/etc/postfix/transport&lt;/code&gt; therein,&lt;/li&gt;
   &lt;li&gt;appending &quot;irc  irc:&quot; to &lt;code&gt;/etc/postfix/transport&lt;/code&gt; (and running &lt;code&gt;postmap&lt;/code&gt; on it),
-      which will make messages to &lt;kbd&gt;@irc,&lt;/kbd&gt; use the &lt;kbd&gt;irc:&lt;/kbd&gt; protocol,&lt;/li&gt;
+      which will make messages to &lt;kbd&gt;@irc.&lt;/kbd&gt; use the &lt;kbd&gt;irc:&lt;/kbd&gt; protocol,&lt;/li&gt;
   &lt;li&gt;appending what follows to &lt;code&gt;/etc/postfix/master.cf&lt;/code&gt; (I stole this from the internet,
       &lt;a href=&quot;//manpages.debian.org/buster/postfix/pipe.8postfix.en.html&quot;&gt;pipe(8postfix)&lt;/a&gt; or
       &lt;a href=&quot;//manpages.debian.org/buster/postfix/master.5.en.html&quot;&gt; master(5)&lt;/a&gt; will probably be very insightful):
