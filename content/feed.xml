@@ -11,13 +11,14 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-07-06T11:57:32</updated>
+  <updated>2020-07-10T22:48:02</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html" />
     <title> 001. installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
     <updated>2020-04-28T02:54:07+02:00</updated>
     <published>2020-04-09T01:44:47+02:00</published>
@@ -341,7 +342,7 @@ Alright, bye!
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;post&lt;/a&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
  or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
  &lt;/p&gt;
 &lt;/span&gt;
@@ -350,6 +351,7 @@ Alright, bye!
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html" />
     <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli </title>
     <updated>2020-05-25T00:12:30+02:00</updated>
     <content type="html">
@@ -396,7 +398,277 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;post&lt;/a&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/003-maircl-poc.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/003-maircl-poc.html" />
+    <title> 003. A proof-of-concept IRC/mail bridge — blognꞌt — nabijaczleweli </title>
+    <updated>2020-07-11T00:34:50+02:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+video, img {
+ max-width: 100%;
+}
+@media all and (max-device-width: 800px) {
+ .bigcode {
+  width: 100%;
+ }
+}
+@media all and (min-device-width: 800px) {
+ .bigcode {
+  width: 125%;
+  margin-left: -12.5%; /* (125 - 100) / 2 */
+ }
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;003. A proof-of-concept IRC/mail bridge&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 11 Jul 2020 00:34:50 +0200&lt;/span&gt;&lt;/h4&gt;
+&lt;h2 id=&quot;what&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#what&quot;&gt;#&lt;/a&gt; What?&lt;/h2&gt;
+&lt;p class=&quot;indented&quot;&gt;
+A video'&lt;!--'--&gt;s worth a few interrobangs, so:
+&lt;video src=&quot;/content/assets/blogn_t/003.01-2020-07-10_01-42-57.mp4&quot;
+      poster=&quot;/content/assets/blogn_t/003.02-2020-07-10_01-42-57.mp4_snapshot_00.04_[2020.07.10_15.53.59].png&quot; alt=&quot;Demo video&quot; controls preload&gt;&lt;/video&gt;
+&lt;/p&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Herein we can see:
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+  &lt;li&gt;In the back: freenode'&lt;!--'--&gt;s web client, with username &quot;hasix&quot;, focused on the DM to &quot;nabijaczleweli&quot;,&lt;/li&gt;
+  &lt;li&gt;At the center: neomutt open on &lt;code&gt;~/uwu/mbox&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;Near the top-right: output of &lt;code&gt;journalctl -fu postfix@-&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;Toward the bottom-right: a tee of mails going into &lt;code&gt;~/uwu/mbox&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;continued&quot;&gt;
+The play-by-play:
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;code&gt;0:05&lt;/code&gt;: mail is composed to &quot;hasix@irc.&quot; with subject &quot;hewwo&quot;,&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;0:15&lt;/code&gt;: mail is sent, with activity in the journal window and one new mail showing up both in neomutt and the mail tee window (from &quot;hasix@irc.&quot;, subject &quot;&amp;lt;nabijaczleweli&amp;gt; hewwo&quot;), the message shows up in the web client to a click sound,&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;0:23&lt;/code&gt;: message &quot;стинкы&quot; is sent from the web client,&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;0:25&lt;/code&gt;: the tee window comes back into view, it lists a new mail (from &quot;nabijaczleweli@irc.&quot;, subject &quot;&amp;lt;hasix&amp;gt; стинкы&quot;),&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;0:28&lt;/code&gt;: neomutt index is scrolled, revealing the new mail,&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;0:48&lt;/code&gt;: mail is composed to &quot;hasix@irc&quot; with subject &quot;thank you very cool :)&quot;,&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;1:01&lt;/code&gt;: mail is sent, with activity in the journal window and one new mail showing up both in neomutt and the mail tee window (from &quot;hasix@irc.&quot;, subject &quot;&amp;lt;nabijaczleweli&amp;gt; thank you very cool :)&quot;), the message shows up in the web client to a click sound,&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;1:05&lt;/code&gt;: a tired voice proclaims &quot;oh, I hate this!&quot;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;why&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#why&quot;&gt;#&lt;/a&gt; Why‽&lt;/h2&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Intrusive thought when I noticed that messages from whitenotifier hit &lt;a href=&quot;//freenode.irclog.whitequark.org/solvespace/2020-07-09&quot;&gt;#solvespace&lt;/a&gt;
+  slightly sooner than my e-mail notifications.
+The gin helped.
+&lt;/p&gt;
+&lt;h2 id=&quot;how&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#how&quot;&gt;#&lt;/a&gt; How?&lt;/h2&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Apart from blatant disregard for common decency:
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;code&gt;1&lt;/code&gt; postfix smarthost&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;1&lt;/code&gt; &lt;a href=&quot;//tools.suckless.org/sic&quot;&gt;sic(1)&lt;/a&gt; process&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;1&lt;/code&gt; MUA that handles a continuously-updating mbox gracefully&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;2&lt;/code&gt; FIFOs&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;11&lt;/code&gt; lines of AWK to &quot;deliver&quot; messages from sic to a mbox&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;10&lt;/code&gt; lines of AWK to deliver messages from postfix to sic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;how-irc&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#how-irc&quot;&gt;#&lt;/a&gt; The IRC&lt;/h3&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Start with a simple connection:
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuation&quot;&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token output&quot;&gt;mkfifo input output
+sic -h irc.freenode.net &amp;lt; input &gt; output &amp;amp;
+&lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Now &lt;kbd&gt;cat &amp;lt; output &amp;&lt;/kbd&gt; to see what'&lt;!--'--&gt;s up and &lt;kbd&gt;cat &amp;gt;&amp;gt; input&lt;/kbd&gt; to open the connection, something like
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;verne.freenode.net: 07/10/20 16:05 &gt;&amp;lt; 372 (nabijaczleweli): -
+verne.freenode.net: 07/10/20 16:05 &gt;&amp;lt; 372 (nabijaczleweli): - Thank you for using freenode!
+verne.freenode.net: 07/10/20 16:05 &gt;&amp;lt; 376 (nabijaczleweli): End of /MOTD command.
+nabijaczleweli: 07/10/20 16:05 &gt;&amp;lt; MODE (nabijaczleweli): +i
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+should appear, and typing &quot;&lt;kbd&gt;:m hasix owo&lt;/kbd&gt;&quot; should produce a message in the web client and
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+  &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;hasix       : 07/10/20 16:07 &amp;lt;nabijaczleweli&amp;gt; owo&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+a message that comes back should show up as well:
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuation&quot;&gt;
+  &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;nabijaczleweli: 07/10/20 16:09 &amp;lt;hasix&amp;gt; :)&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;how-mbox&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#how-mbox&quot;&gt;#&lt;/a&gt; The mbox&lt;/h3&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Great. Suspend the input &lt;code&gt;cat&lt;/code&gt; (killing it will slam &lt;code&gt;sic&lt;/code&gt;'&lt;!--'--&gt;s pipe and kill it) and kill the output &lt;code&gt;cat&lt;/code&gt;,
+  replacing it with a (GNU) AWK process running this
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-awk&quot;&gt;&lt;code class=&quot;language-awk&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# /(?&amp;lt;poster&gt;[^:]+): (?&amp;lt;month&gt;[[:digit:]]{2})\/(?&amp;lt;day&gt;[[:digit:]]{2})\/(?&amp;lt;year&gt;[[:digit:]]{2}) (?&amp;lt;hour&gt;[[:digit:]]{2}):(?&amp;lt;monute&gt;[[:digit:]]{2}) &amp;lt;(?&amp;lt;channel&gt;[^&gt;]+)&gt; (?&amp;lt;message&gt;.+)/ {&lt;/span&gt;
+&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt; {
+  poster = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
+  channel = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\2&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
+  message = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\3&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;From &quot;&lt;/span&gt; poster &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;strftime&lt;/span&gt;(&lt;span class=&quot;token string&quot;&gt;&quot;%a %b %e %H:%M:%S %Y&quot;&lt;/span&gt;)
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;From: &quot;&lt;/span&gt; poster &lt;span class=&quot;token string&quot;&gt;&quot;@irc.&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Date: &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;strftime&lt;/span&gt;(&lt;span class=&quot;token string&quot;&gt;&quot;%a, %d %b %Y %T %z&quot;&lt;/span&gt;)
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Subject: &amp;lt;&quot;&lt;/span&gt; channel &lt;span class=&quot;token string&quot;&gt;&quot;&gt; &quot;&lt;/span&gt; message
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin&quot;&gt;fflush&lt;/span&gt;()
+}
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+i.e.
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuation&quot;&gt;
+  &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;gawk &lt;span class=&quot;token string&quot;&gt;'&amp;lt;&amp;lt;that&amp;gt;&amp;gt;'&lt;/span&gt; output | tee -a mbox &amp;&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Now if a message arrives (from the web client) or is sent (&quot;:m hasix msg&quot;), it should show up with
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;From nabijaczleweli Fri Jul 10 16:17:13 2020
+From: nabijaczleweli@irc.
+Date: Fri, 10 Jul 2020 16:17:13 +0200
+Subject: &amp;lt;hasix&gt; owo
+
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+both in the teletype and the mailbox. At this point pointing the MUA at it should work and the message should show up:
+&lt;/p&gt;
+&lt;img class=&quot;continuing&quot; src=&quot;/content/assets/blogn_t/003.03-should_show_up.png&quot;
+     alt=&quot;neomutt window showing two messages, one from nabijaczleweli@irc. with subject '&lt;hasix&gt; owo'; second from hasix@irc. with subject '&lt;nabijaczleweli&gt; owo'&quot; /&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+If they don'&lt;!--'--&gt;t, see if the messages are flushed, or if the MUA handles this in general.
+&lt;/p&gt;
+&lt;h3 id=&quot;how-postfix&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#how-postfix&quot;&gt;#&lt;/a&gt; The MX&lt;/h3&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Now it'&lt;!--'--&gt;s time to convince postfix to do a big crime, by:
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+  &lt;li&gt;adding &quot;irc&quot; to &lt;code&gt;mydestination&lt;/code&gt; in &lt;code&gt;/etc/postfix/main.cf&lt;/code&gt; and ensuring &lt;code&gt;transport_maps = hash:/etc/postfix/transport&lt;/code&gt; therein,&lt;/li&gt;
+  &lt;li&gt;appending &quot;irc  irc:&quot; to &lt;code&gt;/etc/postfix/transport&lt;/code&gt; (and running &lt;code&gt;postmap&lt;/code&gt; on it),
+      which will make messages to &lt;kbd&gt;@irc,&lt;/kbd&gt; use the &lt;kbd&gt;irc:&lt;/kbd&gt; protocol,&lt;/li&gt;
+  &lt;li&gt;appending what follows to &lt;code&gt;/etc/postfix/master.cf&lt;/code&gt; (I stole this from the internet,
+      &lt;a href=&quot;//manpages.debian.org/buster/postfix/pipe.8postfix.en.html&quot;&gt;pipe(8postfix)&lt;/a&gt; or
+      &lt;a href=&quot;//manpages.debian.org/buster/postfix/master.5.en.html&quot;&gt; master(5)&lt;/a&gt; will probably be very insightful):
+      &lt;div class=&quot;bigcode&quot;&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# service type  private unpriv  chroot  wakeup  maxproc command + args&lt;/span&gt;
+irc       1  -       n       n       -       -       pipe
+  &lt;span class=&quot;token assign-left variable&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nabijaczleweli &lt;span class=&quot;token assign-left variable&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/home/nabijaczleweli/uwu/ircmail
+&lt;/pre&gt;&lt;/code&gt;
+      &lt;/div&gt;
+      &lt;/li&gt;
+  &lt;li&gt;reloading postfix.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;code&gt;ircmail&lt;/code&gt; should be executable and something like this
+  (note that the From: parsing is entirely superfluous, but might be useful for scaling this to multi-user):
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuation&quot;&gt;
+&lt;pre class=&quot;language-awk&quot;&gt;&lt;code class=&quot;language-awk&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!/bin/gawk -f&lt;/span&gt;
+&lt;span class=&quot;token regex&quot;&gt;/^From: ([^ ]+)( .+)?/&lt;/span&gt; {
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+  from = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^From: ([^ ]+)( .+)?/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, 1)
+}
+&lt;span class=&quot;token regex&quot;&gt;/^To: ([^@]+)(@.+)?/&lt;/span&gt; {
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+  to = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^To: ([^@]+)(@.+)?/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, 1)
+}
+&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt; {
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:m &quot;&lt;/span&gt; to &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, 1) &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:m &quot;&lt;/span&gt; to &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, 1) &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/input&quot;&lt;/span&gt;
+}
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Now, sending a mail to &quot;hasix@irc&quot;, &quot;##test@irc&quot;, &amp;c. should yield something like
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;Jul 10 14:43:11 tarta postfix/submission/smtpd[32260]: connect from unknown[192.168.1.250]
+Jul 10 14:43:12 tarta postfix/submission/smtpd[32260]: E291B360636: client=unknown[192.168.1.250], sasl_method=PLAIN, sasl_username=nabijaczleweli
+Jul 10 14:43:12 tarta postfix/cleanup[32270]: E291B360636: message-id=&amp;lt;20200710124311.m26cki7rgslw6deg@tarta.local.nabijaczleweli.xyz&gt;
+Jul 10 14:43:12 tarta postfix/qmgr[32125]: E291B360636: from=&amp;lt;nabijaczleweli@nabijaczleweli.xyz&gt;, size=596, nrcpt=1 (queue active)
+Jul 10 14:43:12 tarta postfix/submission/smtpd[32260]: disconnect from unknown[192.168.1.250] ehlo=2 starttls=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=8
+Jul 10 14:43:13 tarta postfix/pipe[32271]: E291B360636: to=&amp;lt;nabijaczleweli@irc&gt;, orig_to=&amp;lt;nabijaczleweli@irc.&gt;, relay=irc, delay=0.09, delays=0.07/0.01/0/0, dsn=2.0.0, status=sent (delivered via irc service)
+Jul 10 14:43:13 tarta postfix/qmgr[32125]: E291B360636: removed
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+in the journal, and the corresponding commands in sic'&lt;!--'--&gt;s input.
+&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusion&quot;&gt;#&lt;/a&gt; Conclusion?&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Despite this technically making an open IRC relay, since anyone can connect on port 25 with &lt;code&gt;RCPT TO:&amp;lt;whomever@irc&amp;gt;&lt;/code&gt;,
+  this is perfect and I wholeheartedly recommend it for when your workflow includes a MUA but not IRC!
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+I am, as ever, morbidly curious so as to scaling this to a multi-user/auto-join solution, but, well, even I have my limits.
+Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch me eat my words in, like, a year, I guess?
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
  or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
  &lt;/p&gt;
 &lt;/span&gt;
@@ -405,6 +677,7 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/gen-epub-book/" />
     <title> gen-epub-book general — nabijaczleweli </title>
     <updated>2017-08-30T03:38:21+02:00</updated>
     <content type="html">
@@ -745,6 +1018,7 @@ I hope that this document is clear and/or informative, if not,
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/maths/mandalas.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/maths/mandalas.html" />
     <title> Mandalas — nabijaczleweli </title>
     <updated>2017-06-13T22:42:51+02:00</updated>
     <content type="html">
@@ -937,6 +1211,7 @@ A full list of conversions and their implementations can be found at the
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html" />
     <title> wiggly-circle — nabijaczleweli </title>
     <updated>2019-05-09T22:54:19+02:00</updated>
     <content type="html">
@@ -1176,6 +1451,7 @@ A full list of conversions and their implementations can be found at the
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/" />
     <title> Każdy koniec to nowy początek — nabijaczleweli </title>
     <updated>2016-09-22T01:20:31+02:00</updated>
     <content type="html">
@@ -1356,6 +1632,7 @@ A. Łopacińska
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/moments/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/moments/" />
     <title> A Widowꞌs Trace — nabijaczleweli </title>
     <updated>2017-04-23T03:37:41+02:00</updated>
     <content type="html">
@@ -1784,6 +2061,7 @@ A. Łopacińska
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/" />
     <title> Poetry — nabijaczleweli </title>
     <updated>2017-05-19T12:25:37+02:00</updated>
     <content type="html">
@@ -1841,6 +2119,7 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/" />
     <title> ПИПА – Dzieła zebrane — nabijaczleweli </title>
     <updated>2018-11-03T21:03:25+01:00</updated>
     <content type="html">
@@ -2090,6 +2369,7 @@ Wyrok wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;�
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/" />
     <title> The Taste of MI — nabijaczleweli </title>
     <updated>2017-08-16T19:15:09+02:00</updated>
     <content type="html">
@@ -2663,6 +2943,7 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html" />
     <title> Funeral Blues (ew. Pogrzebowy Blues) — nabijaczleweli </title>
     <updated>2018-04-29T04:28:25+02:00</updated>
     <content type="html">
@@ -2716,6 +2997,7 @@ A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&q
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/" />
     <title> Świat to kilka takich pokoi — nabijaczleweli </title>
     <updated>2016-06-06T23:40:31+02:00</updated>
     <content type="html">
@@ -2984,6 +3266,7 @@ I tak, drogie dzieci, zaczęła sie WWI.
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing/наган/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing/наган/" />
     <title> Наган — nabijaczleweli </title>
     <updated>2018-10-24T20:12:57+02:00</updated>
     <content type="html">
@@ -3383,6 +3666,7 @@ zrozumieją dopiero w czasach innych, lepszych.
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html" />
     <title> No gifts this year — nabijaczleweli </title>
     <updated>2016-12-26T02:01:20+01:00</updated>
     <content type="html">
@@ -3442,6 +3726,7 @@ zrozumieją dopiero w czasach innych, lepszych.
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html" />
     <title> Degenerate Watch — nabijaczleweli </title>
     <updated>2017-01-08T04:00:46+01:00</updated>
     <content type="html">
@@ -3488,6 +3773,7 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html" />
     <title> The Last Eye — nabijaczleweli </title>
     <updated>2017-02-02T13:45:35+01:00</updated>
     <content type="html">
@@ -3558,6 +3844,7 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html" />
     <title> Cucumber Dog — nabijaczleweli </title>
     <updated>2016-12-29T15:37:19+01:00</updated>
     <content type="html">
@@ -3607,6 +3894,7 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html" />
     <title> Ghostly Lasers — nabijaczleweli </title>
     <updated>2017-01-30T00:07:59+01:00</updated>
     <content type="html">
@@ -3646,6 +3934,7 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html" />
     <title> Get up，soldier — nabijaczleweli </title>
     <updated>2016-12-29T21:51:50+01:00</updated>
     <content type="html">
@@ -3724,6 +4013,7 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html" />
     <title> Six Minutes — nabijaczleweli </title>
     <updated>2016-12-28T01:54:52+01:00</updated>
     <content type="html">
@@ -3796,6 +4086,7 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html" />
     <title> End = Start — nabijaczleweli </title>
     <updated>2016-12-24T15:00:32+01:00</updated>
     <content type="html">
@@ -3823,6 +4114,7 @@ Not ever would she expect this.
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html" />
     <title> The-less — nabijaczleweli </title>
     <updated>2016-12-24T02:04:36+01:00</updated>
     <content type="html">
@@ -3895,6 +4187,7 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html" />
     <title> Utopian Assassin — nabijaczleweli </title>
     <updated>2016-12-31T18:30:49+01:00</updated>
     <content type="html">
