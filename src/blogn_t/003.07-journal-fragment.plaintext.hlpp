@@ -1,0 +1,7 @@
+Jul 10 14:43:11 tarta postfix/submission/smtpd[32260]: connect from unknown[192.168.1.250]
+Jul 10 14:43:12 tarta postfix/submission/smtpd[32260]: E291B360636: client=unknown[192.168.1.250], sasl_method=PLAIN, sasl_username=nabijaczleweli
+Jul 10 14:43:12 tarta postfix/cleanup[32270]: E291B360636: message-id=<20200710124311.m26cki7rgslw6deg@tarta.local.nabijaczleweli.xyz>
+Jul 10 14:43:12 tarta postfix/qmgr[32125]: E291B360636: from=<nabijaczleweli@nabijaczleweli.xyz>, size=596, nrcpt=1 (queue active)
+Jul 10 14:43:12 tarta postfix/submission/smtpd[32260]: disconnect from unknown[192.168.1.250] ehlo=2 starttls=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=8
+Jul 10 14:43:13 tarta postfix/pipe[32271]: E291B360636: to=<nabijaczleweli@irc>, orig_to=<nabijaczleweli@irc.>, relay=irc, delay=0.09, delays=0.07/0.01/0/0, dsn=2.0.0, status=sent (delivered via irc service)
+Jul 10 14:43:13 tarta postfix/qmgr[32125]: E291B360636: removed

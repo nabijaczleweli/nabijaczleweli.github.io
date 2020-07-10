@@ -1,0 +1,3 @@
+# service type  private unpriv  chroot  wakeup  maxproc command + args
+irc       unix  -       n       n       -       -       pipe
+  user=nabijaczleweli argv=/home/nabijaczleweli/uwu/ircmail

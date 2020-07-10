@@ -1,0 +1,2 @@
+mkfifo input output
+sic -h irc.freenode.net < input > output &

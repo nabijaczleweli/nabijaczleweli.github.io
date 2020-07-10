@@ -1,0 +1,12 @@
+# /(?<poster>[^:]+): (?<month>[[:digit:]]{2})\/(?<day>[[:digit:]]{2})\/(?<year>[[:digit:]]{2}) (?<hour>[[:digit:]]{2}):(?<monute>[[:digit:]]{2}) <(?<channel>[^>]+)> (?<message>.+)/ {
+/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} <([^>]+)> (.+)/ {
+	poster = gensub(/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} <([^>]+)> (.+)/, "\\1", "g")
+	channel = gensub(/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} <([^>]+)> (.+)/, "\\2", "g")
+	message = gensub(/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} <([^>]+)> (.+)/, "\\3", "g")
+	print "From " poster " " strftime("%a %b %e %H:%M:%S %Y")
+	print "From: " poster "@irc."
+	print "Date: " strftime("%a, %d %b %Y %T %z")
+	print "Subject: <" channel "> " message
+	print ""
+	fflush()
+}

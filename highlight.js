@@ -25,7 +25,33 @@ const Prism = require("./ext/prism/prism.js");
 Prism.loadLanguages = require('./ext/prism/components/');
 
 
-const LANGUAGE_REMAPS = {"js": "javascript"};
+const LANGUAGE_REMAPS = {js: "javascript"};
+const LANGUAGES       = {
+	plaintext: {},
+	// Based on https://github.com/JohnNilsson/awk-sublime/blob/1ce5f90d444d80b12af41bc051507e914730d4ef/AWK.sublime-syntax
+	awk: {
+		comment: {
+			pattern: /#.*/,
+			lookbehind: true
+		},
+
+		keyword: /\b(?:break|continue|do|while|exit|for|if|else|return)\b/,
+		builtin: /\b(?:next|print|printf|close|getline|delete|system|fflush|nextfile|gensub|strftime)\b/,
+
+		// Stolen from prism-clike.js
+		string: {
+			pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+			greedy: true
+		},
+
+		// Stolen from prism-javascript.js
+		regex: {
+			pattern: /\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*[\s\S]*?\*\/)*)/,
+			lookbehind: true,
+			greedy: true
+		}
+	}
+};
 
 
 const in_file  = process.argv[2];
@@ -49,7 +75,10 @@ if(!language) {
 
 
 language = LANGUAGE_REMAPS[language] || language;
-Prism.loadLanguages([language]);
+if(LANGUAGES[language])
+	Prism.languages[language] = LANGUAGES[language];
+else
+	Prism.loadLanguages([language]);
 
 if(!Prism.languages[language]) {
 	console.error("Unknown language", language)

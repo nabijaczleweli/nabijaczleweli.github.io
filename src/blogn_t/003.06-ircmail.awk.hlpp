@@ -1,0 +1,14 @@
+#!/bin/gawk -f
+/^From: ([^ ]+)( .+)?/ {
+	print >> "/home/nabijaczleweli/uwu/ircmaillog"
+	from = gensub(/^From: ([^ ]+)( .+)?/, "\\1", 1)
+}
+/^To: ([^@]+)(@.+)?/ {
+	print >> "/home/nabijaczleweli/uwu/ircmaillog"
+	to = gensub(/^To: ([^@]+)(@.+)?/, "\\1", 1)
+}
+/^Subject: / {
+	print >> "/home/nabijaczleweli/uwu/ircmaillog"
+	print ":m " to " " gensub(/^Subject: /, "", 1) >> "/home/nabijaczleweli/uwu/ircmaillog"
+	print ":m " to " " gensub(/^Subject: /, "", 1) >> "/home/nabijaczleweli/uwu/input"
+}
