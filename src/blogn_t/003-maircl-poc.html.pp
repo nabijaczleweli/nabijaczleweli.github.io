@@ -130,7 +130,7 @@ Now <kbd>cat &lt; output &</kbd> to see what'<!--'-->s up and <kbd>cat &gt;&gt; 
   #include "blogn_t/003.02-conn-blurb.plaintext.html"
 </div>
 <p class="continuing">
-should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and
+should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and:
 </p>
 <div class="bigcode continuing">
   <pre class="language-plaintext"><code class="language-plaintext">hasix       : 07/10/20 16:07 &lt;nabijaczleweli&gt; owo</pre></code>
@@ -165,7 +165,7 @@ Now if a message arrives (from the web client) or is sent (":m hasix msg"), it s
   #include "blogn_t/003.04-first-mail.plaintext.html"
 </div>
 <p class="continuing">
-both in the teletype and the mailbox. At this point pointing the MUA at it should work and the message should show up:
+both in the teletype and the mailbox. At this point pointing the MUA at it should work and the messages should show up:
 </p>
 <img class="continuing" src="/content/assets/blogn_t/003.03-should_show_up.png"
      alt="neomutt window showing two messages, one from nabijaczleweli@irc. with subject '<hasix> owo'; second from hasix@irc. with subject '<nabijaczleweli> owo'" />
@@ -181,7 +181,7 @@ Now it'<!--'-->s time to convince postfix to do a big crime, by:
 <ul class="continuation">
   <li>adding "irc" to <code>mydestination</code> in <code>/etc/postfix/main.cf</code> and ensuring <code>transport_maps = hash:/etc/postfix/transport</code> therein,</li>
   <li>appending "irc  irc:" to <code>/etc/postfix/transport</code> (and running <code>postmap</code> on it),
-      which will make messages to <kbd>@irc,</kbd> use the <kbd>irc:</kbd> protocol,</li>
+      which will make messages to <kbd>@irc.</kbd> use the <kbd>irc:</kbd> protocol,</li>
   <li>appending what follows to <code>/etc/postfix/master.cf</code> (I stole this from the internet,
       <a href="//manpages.debian.org/buster/postfix/pipe.8postfix.en.html">pipe(8postfix)</a> or
       <a href="//manpages.debian.org/buster/postfix/master.5.en.html">     master(5)</a> will probably be very insightful):
