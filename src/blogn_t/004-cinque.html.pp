@@ -40,7 +40,7 @@ At <a href="//twitter.com/nabijaczleweli/status/1284582399838478339">10:14 pm ·
 <a href="//nabijaczleweli.bandcamp.com/album/cinque"><img src="//lfs.nabijaczleweli.xyz/0004-cinque/hill-all+2160x.png" alt="cinque album art" /></a>
 
 <p class="indented">
-Go get it at <a href="//nabijaczleweli.bandcamp.com/album/cinque">Bandcamp</a>!<br />
+Go get it on <a href="//nabijaczleweli.bandcamp.com/album/cinque">Bandcamp</a>!<br />
 </p>
 
 <p class="indented">
