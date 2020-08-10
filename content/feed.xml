@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-07-18T21:02:09</updated>
+  <updated>2020-08-10T13:07:25</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -264,7 +264,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;dpkg --add-architecture amd64&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt update&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install 1 -image-amd64 --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+         &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install linux-image-amd64 --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;And a bootloader (at time of writing &lt;samp&gt;grub2&lt;/samp&gt; recommends &lt;samp class=&quot;nobr&quot;&gt;os-prober&lt;/samp&gt; –
          if you don'&lt;!--'--&gt;t plan on running other OSs this can be &lt;kbd&gt;--no-install-recommends&lt;/kbd&gt;ed).&lt;br /&gt;
          Remember: at the prompt, if unsure about the choice offered by GRUB,
