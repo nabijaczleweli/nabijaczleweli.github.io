@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-08-10T13:07:25</updated>
+  <updated>2020-09-11T12:01:16</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -71,33 +71,6 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 .indented {
  text-indent: 1em;
 }
-.bigtable td {
- vertical-align: top;
- padding-top: 0;
- padding-bottom: 0;
-}
-/** Two wide columns on big screens, first above second on small */
-@media all and (max-device-width: 800px) {
- .bigtable, .bigcode {
-  width: 100%;
- }
- .bigtable td {
-  display: block;
- }
-}
-@media all and (min-device-width: 800px) {
- .bigtable {
-  width: 175%;
-  margin-left: -37.5%; /* (175 - 100) / 2 */
- }
- .bigcode {
-  width: 125%;
-  margin-left: -12.5%; /* (125 - 100) / 2 */
- }
- .bigtable td:nth-child(2) {
-  min-width: 55%;
- }
-}
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -107,6 +80,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 Some time ago I bought an &lt;a href=&quot;//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455&quot;&gt;HP rp5700&lt;/a&gt; &lt;del&gt;Piece of Shit&lt;/del&gt; Point of Sale system
   with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
  follow &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1204465652628672512&quot;&gt;this Twitter thread&lt;/a&gt; to experience this machine as its story'&lt;!--'--&gt;d unravelled.
+&lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 Some time later, I decided to make a router out of it, and, having heard of &lt;code&gt;x32&lt;/code&gt; – 32-bit ABI/userland, with a long-mode kernel/CPU –
  some time prior, that had become the architecture of choice.

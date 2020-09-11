@@ -1,0 +1,32 @@
+.bigtable td {
+	vertical-align: top;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/** Two wide columns on big screens, first above second on small */
+@media all and (max-device-width: 800px) {
+	.bigtable, .bigcode {
+		width: 100%;
+	}
+
+	.bigtable td {
+		display: block;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	.bigtable {
+		width: 175%;
+		margin-left: -37.5%; /* (175 - 100) / 2 */
+	}
+
+	.bigcode {
+		width: 125%;
+		margin-left: -12.5%; /* (125 - 100) / 2 */
+	}
+
+	.bigtable td:nth-child(2) {
+		min-width: 55%;
+	}
+}
