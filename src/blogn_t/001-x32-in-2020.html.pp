@@ -31,46 +31,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #endif
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />  FORCED_NEWLINE \
+                    <link href="/content/assets/bigtable.css"           rel="stylesheet" />
 
 BOILERPLATE(001. installing Debianꞌs x32 port in 2020 — blognꞌt, 001. installing Debianꞌs x32 port in 2020, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
 #include "../indent.css"
-
-.bigtable td {
-	vertical-align: top;
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
-/** Two wide columns on big screens, first above second on small */
-@media all and (max-device-width: 800px) {
-	.bigtable, .bigcode {
-		width: 100%;
-	}
-
-	.bigtable td {
-		display: block;
-	}
-}
-
-@media all and (min-device-width: 800px) {
-	.bigtable {
-		width: 175%;
-		margin-left: -37.5%; /* (175 - 100) / 2 */
-	}
-
-	.bigcode {
-		width: 125%;
-		margin-left: -12.5%; /* (125 - 100) / 2 */
-	}
-
-	.bigtable td:nth-child(2) {
-		min-width: 55%;
-	}
-}
 </style>
 
 <span class="roboto writing">
@@ -83,6 +51,7 @@ BLOGN_T_HEADING(<code>001. Installing Debian'<!--'-->s x32 port in 2020</code>)
 Some time ago I bought an <a href="//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455">HP rp5700</a> <del>Piece of Shit</del> Point of Sale system
   with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
 	follow <a href="//twitter.com/nabijaczleweli/status/1204465652628672512">this Twitter thread</a> to experience this machine as its story'<!--'-->d unravelled.
+</p>
 <p class="indented continuation">
 Some time later, I decided to make a router out of it, and, having heard of <code>x32</code> – 32-bit ABI/userland, with a long-mode kernel/CPU –
 	some time prior, that had become the architecture of choice.
