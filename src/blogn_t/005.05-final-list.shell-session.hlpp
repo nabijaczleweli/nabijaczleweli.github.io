@@ -1,0 +1,15 @@
+root@zoot:~# zpool list
+NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+zoot    15G   777M  14.2G        -         -     0%     5%  1.00x    ONLINE  -
+root@zoot:~# zpool status
+  pool: zoot
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME                         STATE     READ WRITE CKSUM
+        zoot                         ONLINE       0     0     0
+          ata-QEMU_HARDDISK_QM00002  ONLINE       0     0     0
+          zoot-root                  ONLINE       0     0     0
+
+errors: No known data errors

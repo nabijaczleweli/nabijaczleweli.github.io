@@ -1,0 +1,12 @@
+nabijaczleweli@tarta:~$ man zpool-features | grep READ-ONLY.*no -B4 | sed 's/GUID//' | \
+                        awk '!/^$/ && !/COMPATIBLE/ && !/--/ \
+                             {if(last == "") last = $1; else {print last "\t" $1; last = ""}}' |
+                        grep -v 'lz4_compress|hole_birth|embedded_data|extensible_dataset|large_blocks' | column -t
+bookmark_v2            com.datto:bookmark_v2
+device_removal         com.delphix:device_removal
+edonr                  org.illumos:edonr
+encryption             com.datto:encryption
+large_dnode            org.zfsonlinux:large_dnode
+multi_vdev_crash_dump  com.joyent:multi_vdev_crash_dump
+sha512                 org.illumos:sha512
+skein                  org.illumos:skein

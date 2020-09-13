@@ -34,7 +34,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />  FORCED_NEWLINE \
                     <link href="/content/assets/bigtable.css"           rel="stylesheet" />
 
-BOILERPLATE(001. installing Debianꞌs x32 port in 2020 — blognꞌt, 001. installing Debianꞌs x32 port in 2020, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(001. Installing Debianꞌs x32 port in 2020 — blognꞌt, 001. Installing Debianꞌs x32 port in 2020, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"

@@ -1,0 +1,14 @@
+/*
+ * List of pool features that the grub implementation of ZFS supports for
+ * read. Note that features that are only required for write do not need
+ * to be listed here since grub opens pools in read-only mode.
+ */
+#define MAX_SUPPORTED_FEATURE_STRLEN 50
+static const char *spa_feature_names[] = {
+  "org.illumos:lz4_compress",
+  "com.delphix:hole_birth",
+  "com.delphix:embedded_data",
+  "com.delphix:extensible_dataset",
+  "org.open-zfs:large_blocks",
+  NULL
+};

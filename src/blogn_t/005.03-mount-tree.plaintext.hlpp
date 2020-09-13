@@ -1,0 +1,15 @@
+               zoot/
+/              zoot/root
+├── boot       zoot/boot
+├── home       zoot/home
+│   └── nab    zoot/home/nab
+├── root       zoot/home/root
+├── opt        zoot/opt
+├── srv        zoot/srv
+│              zoot/usr
+├── usr/local  zoot/usr/local
+│              zoot/var
+├── var/cache  zoot/var/cache
+│              zoot/var/lib
+├── var/log    zoot/var/log
+└── var/tmp    zoot/var/tmp

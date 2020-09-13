@@ -27,7 +27,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />  FORCED_NEWLINE \
+                    <link href="/content/assets/bigtable.css"           rel="stylesheet" />
 
 BOILERPLATE(003. A proof-of-concept IRC/mail bridge — blognꞌt, 003. A proof-of-concept IRC/mail bridge, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
@@ -37,19 +38,6 @@ BOILERPLATE(003. A proof-of-concept IRC/mail bridge — blognꞌt, 003. A proof-
 
 video, img {
 	max-width: 100%;
-}
-
-@media all and (max-device-width: 800px) {
-	.bigcode {
-		width: 100%;
-	}
-}
-
-@media all and (min-device-width: 800px) {
-	.bigcode {
-		width: 125%;
-		margin-left: -12.5%; /* (125 - 100) / 2 */
-	}
 }
 </style>
 

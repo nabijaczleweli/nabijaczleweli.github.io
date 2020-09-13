@@ -1,0 +1,12 @@
+nab@zoot:~$ findmnt | grep zfs
+/                              zoot/root      zfs        rw,relatime,xattr,noacl
+├─/home                        zoot/home      zfs        rw,relatime,xattr,noacl
+│ └─/home/nab                  zoot/home/nab  zfs        rw,relatime,xattr,noacl
+├─/opt                         zoot/opt       zfs        rw,relatime,xattr,noacl
+├─/boot                        zoot/boot      zfs        rw,relatime,xattr,noacl
+├─/srv                         zoot/srv       zfs        rw,relatime,xattr,noacl
+├─/var/cache                   zoot/var/cache zfs        rw,relatime,xattr,noacl
+├─/root                        zoot/home/root zfs        rw,relatime,xattr,noacl
+├─/var/log                     zoot/var/log   zfs        rw,relatime,xattr,posixacl
+├─/usr/local                   zoot/usr/local zfs        rw,relatime,xattr,noacl
+└─/var/tmp                     zoot/var/tmp   zfs        rw,relatime,xattr,noacl

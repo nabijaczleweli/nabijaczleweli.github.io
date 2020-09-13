@@ -13,6 +13,11 @@
 	.bigtable td {
 		display: block;
 	}
+
+	.bigtable tr:nth-child(n+1) td:nth-child(1) {
+		margin-top: 0.75em;
+		margin-bottom: 0.5em;
+	}
 }
 
 @media all and (min-device-width: 800px) {
@@ -24,6 +29,10 @@
 	.bigcode {
 		width: 125%;
 		margin-left: -12.5%; /* (125 - 100) / 2 */
+	}
+
+	.bigtable td:nth-child(1) {
+		padding-right: 0.2em;
 	}
 
 	.bigtable td:nth-child(2) {
