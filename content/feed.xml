@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-09-11T12:01:16</updated>
+  <updated>2020-09-13T22:24:19</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -19,7 +19,7 @@
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</id>
     <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html" />
-    <title> 001. installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
+    <title> 001. Installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
     <updated>2020-04-28T02:54:07+02:00</updated>
     <published>2020-04-09T01:44:47+02:00</published>
     <content type="html">
@@ -435,17 +435,6 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 }
 video, img {
  max-width: 100%;
-}
-@media all and (max-device-width: 800px) {
- .bigcode {
-  width: 100%;
- }
-}
-@media all and (min-device-width: 800px) {
- .bigcode {
-  width: 125%;
-  margin-left: -12.5%; /* (125 - 100) / 2 */
- }
 }
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
