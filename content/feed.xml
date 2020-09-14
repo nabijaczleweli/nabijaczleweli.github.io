@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-09-13T22:24:19</updated>
+  <updated>2020-09-14T00:34:17</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -667,6 +667,623 @@ Go get it on &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/cinque&quot;&g
 &lt;p class=&quot;indented&quot;&gt;
 You can find assorted extras (full-sized track and album art, programs to make them) &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0004-cinque&quot;&gt;here&lt;/a&gt;.
 &lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html" />
+    <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt — nabijaczleweli </title>
+    <updated>2020-09-14T00:20:20+02:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+.main-screenshot {
+ margin-top: 0.2em;
+ margin-bottom: 0.15em;
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;&lt;/h4&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//twitter.com/Guriwesu&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
+sporting two two-terabyte drives and, naturally, you'&lt;!--'--&gt;d like to have a single continuous volume spanning both of them to do whatever your heart desires.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+After the shock at willingly staying in the American empire and paying it for the privilege wears off, two approaches reveal themselves:
+&lt;/p&gt;
+&lt;ol class=&quot;continuing&quot;&gt;
+ &lt;li&gt;LVM, with its native &lt;samp&gt;debian-installer&lt;/samp&gt; support, and&lt;/li&gt;
+ &lt;li&gt;ZFS, without it,
+    but with the ability to do &lt;samp&gt;&lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs.8.en.html&quot;&gt;zfs(8)&lt;/a&gt;-send&lt;/samp&gt; backups,
+    live-mirroring to an external enclosure with a &lt;samp&gt;[mirror[internal, external], mirror[internal, external]]&lt;/samp&gt; topology, and
+     me egging you on to do it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Now, I also wanted to do a ZFS-on-root for my own nefarious uses, and so it was decided:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuation&quot;&gt;
+ &lt;!-- https://discord.com/channels/145079846832308224/150317232239542272/752226540808437770 --&gt;
+ Good, do it before I buy the p15 and report back &lt;a href=&quot;//wiki.jvflux.fr/Noel&quot;&gt;&lt;img src=&quot;/content/assets/noel.gif&quot; alt=&quot;:noel:&quot; title=&quot;:noel:&quot; style=&quot;margin-bottom: -5px;&quot; /&gt;&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;!--
+&lt;h2 id=&quot;toc&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#toc&quot;&gt;#&lt;/a&gt; Contents&lt;/h2&gt;
+&lt;ol class=&quot;continuation&quot;&gt;
+ &lt;li&gt;&lt;a href=&quot;#setup&quot; &gt;Set-up&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;#bootloader&quot; &gt;Bootloader&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;#zfs&quot; &gt;The ZFS bit&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;#layout&quot; &gt;Layout&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt; --&gt;
+&lt;h2 id=&quot;setup&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#setup&quot;&gt;#&lt;/a&gt; Set-up&lt;/h2&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+To minimise how cursed this is, the following restrixions are in place:
+&lt;/p&gt;
+&lt;ul class=&quot;continuing&quot;&gt;
+ &lt;li&gt;EFI booting, because GRUB'&lt;!--'--&gt;s ZFS detexion and handling blows ass, and&lt;/li&gt;
+ &lt;li&gt;a normal &lt;samp&gt;d-i&lt;/samp&gt; installation and no external computer &lt;em&gt;nor&lt;/em&gt; drives required,
+     since doing &lt;samp&gt;d-i&lt;/samp&gt;'s job by hand was covered previously in &lt;a href=&quot;001-x32-in-2020.html&quot;&gt;Installing Debian's x32 port in 2020&lt;/a&gt;,
+     and it'&lt;!--'--&gt;s a similarly good experience (plus building the modules in a chroot is a good time at any rate).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+This means that all you need is an EFI-compatible multi-disk platform and some way to EFI boot it into &lt;samp&gt;d-i&lt;/samp&gt;.
+&lt;/p&gt;
+&lt;!-- For reference:
+ qemu-system-x86_64 -enable-kvm -bios /usr/share/qemu/OVMF.fd -smp 6 -m 4g -drive file=vda,format=raw,id=vda,if=none -drive file=vdb,format=raw,id=vdb,if=none -drive file=vdc,format=raw,id=vdc,if=none -device virtio-blk-pci,drive=vda -device virtio-blk-pci,drive=vdb -device virtio-blk-pci,drive=vdc
+ qemu-system-x86_64 -enable-kvm -bios /usr/share/qemu/OVMF.fd -smp 6 -m 4g -drive file=vda,format=raw -drive file=vdb,format=raw -net user,hostfwd=tcp::10023-:22 -net nic,model=virtio-net-pci --&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The test setup is QEMU &lt;code&gt;-bios OVMF.fd&lt;/code&gt; and two 8G drives, one of which is designated as primary.
+Filesystem tuning is not covered, encryption is supported, SecureBoot is not covered because I haven'&lt;!--'--&gt;t figured it out yet,
+most-all gotchas are hopefully explained,
+there'&lt;!--'--&gt;s a &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html&quot;&gt;prior art&lt;/a&gt; that was of little help, and
+&lt;code&gt;zfs-{initramfs,dracut}&lt;/code&gt; are full of &lt;a href=&quot;//github.com/openzfs/zfs/issues/10908&quot;&gt;problems&lt;/a&gt; that I try to work around here:
+&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1303858705788801024&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;Excerpt from zfs-initramfs, function load_module_initrd that starts with 'if [ $variable &gt; 0 ]'&quot;
+      src=&quot;/content/assets/blogn_t/005.01-zfs-initramfs-gt-0.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;h2 id=&quot;installation&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installation&quot;&gt;#&lt;/a&gt; Installation&lt;/h2&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The restrixions to the original installation are all during the partitioning phase and as follows:
+&lt;/p&gt;
+&lt;ol class=&quot;continuing&quot;&gt;
+ &lt;li&gt;Stick to just the primary drive,&lt;/li&gt;
+ &lt;li&gt;pick an EFI partition large enough for a few kernels and initrds, and&lt;/li&gt;
+ &lt;li&gt;stuff everything onto the rootfs:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.02-i-t-partitioning.png&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;initramfs-tools partitioning screen showing one of two disks used with a 250MB EFI System Partiition marked 'zoot-EFI' and rest for the root FS, marked 'zoot-root'&quot;
+      src=&quot;/content/assets/blogn_t/005.02-i-t-partitioning.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Either installing sid or enabling backports for buster is required,
+since &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html&quot;&gt;&lt;code&gt;zfs-mount-generator(8)&lt;/code&gt;&lt;/a&gt; appeared in 0.8.0;
+if you don't install GRUB you'll have to boot
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/efi-stub.rst?h=v5.8&quot;&gt;manually&lt;/a&gt;
+from the EFI shell after copying the kernel and initrd from &lt;code&gt;target/boot/&lt;/code&gt; to &lt;code&gt;target/boot/efi/&lt;/code&gt;.
+&lt;/p&gt;
+&lt;h2 id=&quot;bootloader&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bootloader&quot;&gt;#&lt;/a&gt; Bootloader&lt;/h2&gt;
+&lt;p class=&quot;continuing indented&quot;&gt;
+Using GRUB and a unified boot-on-root is, for better or for worse, not possible;
+GRUB &lt;a href=&quot;//git.savannah.gnu.org/cgit/grub.git/tree/grub-core/fs/zfs/zfs.c?id=3f05d693d1274965ffbe4ba99080dc2c570944c6#n280&quot;&gt;supports&lt;/a&gt; these
+non-R/O zpool features:
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/*
+ * List of pool features that the grub implementation of ZFS supports for
+ * read. Note that features that are only required for write do not need
+ * to be listed here since grub opens pools in read-only mode.
+ */&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; MAX_SUPPORTED_FEATURE_STRLEN 50&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;spa_feature_names&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;org.illumos:lz4_compress&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:hole_birth&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:embedded_data&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:extensible_dataset&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;org.open-zfs:large_blocks&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Which means that these, as of OpenZFS 0.8.4, are the ones that it doesn'&lt;!--'--&gt;t support:
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nabijaczleweli@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;man&lt;/span&gt; zpool-features &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; READ-ONLY.*no -B4 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'s/GUID//'&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
+                        awk '!/^&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/COMPATIBLE/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/--/ &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;                             {if(last == &quot;&quot;) last = &lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;print last &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\t&quot;&gt;\t&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; last &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;' |
+                        grep -v '&lt;/span&gt;lz4_compress&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;hole_birth&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;embedded_data&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;extensible_dataset&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;large_blocks&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;' | column -t
+bookmark_v2            com.datto:bookmark_v2
+device_removal         com.delphix:device_removal
+edonr                  org.illumos:edonr
+encryption             com.datto:encryption
+large_dnode            org.zfsonlinux:large_dnode
+multi_vdev_crash_dump  com.joyent:multi_vdev_crash_dump
+sha512                 org.illumos:sha512
+skein                  org.illumos:skein
+&lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Confer &lt;a href=&quot;//manpages.debian.org/buster-backports/zfsutils-linux/zpool-features.5.en.html&quot;&gt;&lt;samp&gt;zpool-features(5)&lt;/samp&gt;&lt;/a&gt;
+for details so as to why this is not acceptable
+(remember: you couldn't any of these even by accident on your root pool, and most of them can't ever be turned off).
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Using a separate &lt;code&gt;/boot&lt;/code&gt; on ZFS required a lot of dicking around with the options for GRUB to recognise the filesystem at all
+(confer &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html#step-2-disk-formatting&quot;&gt;prior art&lt;/a&gt;,
+ Step 2: Disk Formatting, 4. Create the boot pool, with its 12 lines of options for pool features alone)
+&lt;!-- In case that goes away:
+zpool create -o ashift=12 -d -o feature@async_destroy=enabled -o feature@bookmarks=enabled -o feature@embedded_data=enabled -o feature@empty_bpobj=enabled -o feature@enabled_txg=enabled -o feature@extensible_dataset=enabled -o feature@filesystem_limits=enabled -o feature@hole_birth=enabled -o feature@large_blocks=enabled -o feature@lz4_compress=enabled -o feature@spacemap_histogram=enabled -o feature@zpool_checkpoint=enabled -O acltype=posixacl -O canmount=off -O compression=lz4 -O devices=off -O normalization=formD -O relatime=on -O xattr=sa -O mountpoint=/boot -R /mnt bpool ${DISK}-part3
+--&gt;
+and GRUB had difficulties generating the right &lt;code&gt;root=&lt;/code&gt; cmdline options for a normal pool anyway.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Using a separate &lt;code&gt;/boot&lt;/code&gt; on ext*/FAT didn'&lt;!--'--&gt;t make much sense for booting on EFI, either,
+so cutting GRUB out was a simple way to cut out a lot of bollocks.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Boot into your freshly installed system, become root, and:
+&lt;/p&gt;
+&lt;table class=&quot;bigtable&quot;&gt;
+ &lt;tr&gt;&lt;td&gt;Get rid of GRUB, optionally keeping EFI tools.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt-mark manual efibootmgr mokutil&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+          &lt;samp&gt;efibootmgr, mokutil set to manually installed.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# apt purge grub* &amp;&amp; apt autopurge&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following packages will be REMOVED:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  libfuse2* libpng16-16* shim-helpers-amd64-signed* shim-signed-common* shim-unsigned*&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;0 upgraded, 0 newly installed, 15 to remove and 0 not upgraded.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;After this operation, 44.9 MB disk space will be freed.&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Verify that you only have GRUB here before cleaning it out!&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;tree /boot/efi/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;/boot/efi/&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;├── EFI&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   └── debian&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── BOOTX64.CSV&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── fbx64.efi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── grub.cfg&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── grubx64.efi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── mmx64.efi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       └── shimx64.efi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;└── NvVars&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;rm -rf /boot/efi/EFI/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Install &lt;samp&gt;systemd-boot&lt;/samp&gt; and enable a timeout.&lt;br /&gt;
+         This &lt;em&gt;might&lt;/em&gt; not be required on platforms that support the systemd &lt;a href=&quot;//systemd.io/BOOT_LOADER_SPECIFICATION/&quot;&gt;Boot Loader Specification&lt;/a&gt;
+         (are there any?); in that case, you'&lt;!--'--&gt;ll need to &lt;samp class=&quot;nobr&quot;&gt;&lt;kbd&gt;mkdir &quot;/boot/efi/$(cat /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt; instead,
+         since &lt;samp&gt;kernel-install&lt;/samp&gt; won'&lt;!--'--&gt;t make it by itself.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;bootctl install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Created &quot;/boot/efi/EFI&quot;, other directories.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Copied &quot;/usr/lib/systemd/boot/efi/systemd-bootx64.efi&quot; to &quot;/boot/efi/EFI/{systemd/systemd-bootx64.efi,BOOT/BOOTX64.EFI}&quot;.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Random seed file /boot/efi/loader/random-seed successfully written (512 bytes).&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Created EFI boot entry &quot;Linux Boot Manager&quot;.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -i 's/#timeout/timeout/' /boot/efi/loader/loader.conf&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Add kernel version to loader entry.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;cp /{usr/lib,etc}/kernel/install.d/90-loaderentry.install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;diff -U2 /{usr/lib,etc}/kernel/install.d/90-loaderentry.install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;+++ /etc/kernel/install.d/90-loaderentry.install        2020-09-13 05:06:49.541120128 +0200&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;@@ -44,4 +44,6 @@&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt; if ! [[ $PRETTY_NAME ]]; then&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;     PRETTY_NAME=&quot;Linux $KERNEL_VERSION&quot;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;+else&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;+    PRETTY_NAME+=&quot; with Linux $KERNEL_VERSION&quot;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt; fi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;​&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Disable a
+         &lt;a href=&quot;https://salsa.debian.org/systemd-team/systemd/-/blob/3e2db72b37d72527eca2474a4e08f44fa3f342e8/debian/extra/kernel-install.d/85-initrd.install&quot;&gt;Debian&lt;/a&gt;
+         &lt;code&gt;.install&lt;/code&gt; hook, which copies the initrd into &lt;code&gt;\MID\VER\initrd&lt;/code&gt;
+         despite that being handled by &lt;code&gt;90-loaderentry.install&lt;/code&gt;, which copies it into &lt;code&gt;\MID\VER\BASENAME&lt;/code&gt;,
+         thereby duplicating it. This will &lt;a href=&quot;//bugs.debian.org/970213&quot;&gt;not be required&lt;/a&gt; in the future.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /dev/null /etc/kernel/install.d/85-initrd.install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;Add sd-boot hooks, for integration with the normal kernel installation/removal flow.&lt;br /&gt;
+         GRUB installs these as &lt;code&gt;zz-update-grub&lt;/code&gt;, but &lt;code&gt;kernel-install&lt;/code&gt; sorts later than any other thing I saw there myself.
+         I hope to integrate this and make it not required in the future.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;cat &gt; /etc/kernel/postinst.d/kernel-install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;#!/bin/sh&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;bootctl is-installed &gt; /dev/null || exit 0&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;exec kernel-install add &quot;$1&quot; &quot;/boot/vmlinuz-$1&quot; &quot;/boot/initrd.img-$1&quot;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;cat &gt; /etc/kernel/postrm.d/kernel-install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;#!/bin/sh&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;bootctl is-installed &gt; /dev/null || exit 0&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;exec kernel-install remove &quot;$1&quot;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;chmod +x /etc/kernel/post{inst,rm}.d/kernel-install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Install the kernel.&lt;br /&gt;
+         The initial run takes a long time, hence the &lt;code&gt;-v&lt;/code&gt;; &lt;code&gt;62dd03a4928c412180b3024ac6c03a90&lt;/code&gt; is this machine'&lt;!--'--&gt;s ID.&lt;br /&gt;
+         The current cmdline will be used for the boot entry, overridable with &lt;code&gt;/etc/kernel/cmdline&lt;/code&gt;.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;kernel-install -v add $(uname -r) /boot/vml&amp;lt;TAB&amp;gt; /boot/ini&amp;lt;TAB&amp;gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Running depmod -a 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp style=&quot;word-break: break-all;&quot;&gt;Installing /boot/efi/62dd03a4928c412180b3024ac6c03a90/5.8.0-1-amd64/vmlinuz-5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp style=&quot;word-break: break-all;&quot;&gt;Creating /boot/efi/loader/entries/62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;tree /boot/efi/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;/boot/efi/&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;├── 62dd03a4928c412180b3024ac6c03a90&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   └── 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── initrd&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── linux&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       └── vmlinuz-5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;├── EFI&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   ├── BOOT&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   │   └── BOOTX64.EFI&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   ├── Linux&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   └── systemd&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       └── systemd-bootx64.efi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;├── loader&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   ├── entries&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp style=&quot;word-break: break-all;&quot;&gt;│   │   └── 62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   ├── loader.conf&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│   └── random-seed&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;└── NvVars&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;8 directories, 9 files&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+I'&lt;!--'--&gt;d recommend rebooting now to verify that this works, which should look like this:
+&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.03-sd-boot.png&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;text-mode QEMU window with two centered lines, the first one, selected, saying 'Debian GNU/Linux bullseye/sid with Linux 5.8.0-1-amd64', the second saying 'Reboot Into Firmware Interface'&quot;
+      src=&quot;/content/assets/blogn_t/005.03-sd-boot.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+If not, and &lt;code&gt;sd-boot&lt;/code&gt; shows errors or doesn'&lt;!--'--&gt;t start at all; boot into the EFI shell,
+&lt;kbd&gt;fs0:&lt;/kbd&gt;, and &lt;kbd&gt;\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\linux initrd=\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\initrd root=/dev/sda2&lt;/kbd&gt;
+(the shell should support tab-completion, you might need to add a space before completing the initrd)
+(the &lt;code&gt;root=&lt;/code&gt; option assumes you installed to the second partition of the first SCSI drive, as I did; adjust to taste),
+then write me an &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;e-mail&lt;/a&gt; or a &lt;a href=&quot;//twitter.com/nabijaczleweli&quot;&gt;DM&lt;/a&gt;
+or whatever else is listed &lt;a href=&quot;/&quot;&gt;here&lt;/a&gt; so I can issue a correxion; thanks in advance, &amp;c.:
+&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.04-EFI-shell.png&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;EFI shell, demonstrating the above command&quot;
+      src=&quot;/content/assets/blogn_t/005.04-EFI-shell.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Now we can boot without dealing with GRUB. On to the ZFS bit:
+&lt;/p&gt;
+&lt;h2 id=&quot;zfs&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#zfs&quot;&gt;#&lt;/a&gt; The ZFS bit&lt;/h2&gt;
+&lt;table class=&quot;bigtable&quot;&gt;
+ &lt;tr&gt;&lt;td&gt;Install the prerequisites, remember to match the headers to your kernel!&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install --no-install-recommends linux-headers-amd64 build-essential&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  g++ g++-10 gcc gcc-10 libasan6 libatomic1 libbinutils libc-dev-bin libc6-dev&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-10-dev&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  libgdbm-compat4 libgdbm6 libgomp1 libitm1 liblsan0 libperl5.30 libquadmath0&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  libstdc++-10-dev libtsan0 libubsan1 linux-compiler-gcc-10-x86&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  linux-headers-5.8.0-1-amd64 linux-headers-5.8.0-1-common linux-headers-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  linux-kbuild-5.8 linux-libc-dev make patch perl perl-modules-5.30&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;0 upgraded, 40 newly installed, 0 to remove and 0 not upgraded.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;After this operation, 286 MB of additional disk space will be used.&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;And ZFS.&lt;br /&gt;
+         Depending on dependency ordering, starting the services sometimes fails; simply re-running the command will fix it.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install zfs-dkms&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  distro-info-data dkms fakeroot libfakeroot libnvpair1linux libuutil1linux&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  libzfs2linux libzpool2linux lsb-release python3-distutils python3-lib2to3&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  zfs-dkms zfs-zed zfsutils-linux&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;After this operation, 22.3 MB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Building for 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Building initial module for 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Done.&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;zfs.ko:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Running module version sanity check.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt; - Original module&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;   - No original module exists within this kernel&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt; - Installation&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;   - Installing to /lib/modules/5.8.0-1-amd64/updates/dkms/&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&amp;c.&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;DKMS: install completed.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool list&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;no pools available&lt;/samp&gt;&lt;br /&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Here'&lt;!--'--&gt;s the thing: &lt;code&gt;zfs-initramfs&lt;/code&gt; is much more broken than &lt;code&gt;zfs-dracut&lt;/code&gt;;
+        I've made sure that what follows works with both of them, but I'd recommend using dracut anyway.&lt;br /&gt;
+        If you want to be really sure after this, you can reboot, add &lt;code&gt;break&lt;/code&gt; or &lt;code&gt;rd.break&lt;/code&gt; to the cmdline,
+        and run a ZFS command in the initrd.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install zfs-initramfs&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  zfs-initramfs&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;After this operation, 108 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install --no-install-recommends dracut zfs-dracut &amp;&amp; apt autopurge initramfs-tools&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following packages will be REMOVED:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  initramfs-tools* initramfs-tools-core* klibc-utils* libklibc*&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  dracut dracut-core kpartx libglib2.0-0 pkg-config zfs-dracut&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;After this operation, 4,644 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;/etc/kernel/postinst.d/kernel-install $(uname -r)&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+And now a brief interlude on the layout of ZFS datasets in the VFS.
+&lt;/p&gt;
+&lt;h2 id=&quot;layout&quot; class=&quot;continuation&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#layout&quot;&gt;#&lt;/a&gt; Layout&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html#step-3-system-installation&quot;&gt;Prior art&lt;/a&gt;,
+Step 3: System Installation issues a lot of commands and doesn'&lt;!--'--&gt;t really explain why.
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+The final mount tree is as such:
+&lt;/p&gt;
+&lt;div class=&quot;bigcode&quot;&gt;
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;               zoot/
+/              zoot/root
+├── boot       zoot/boot
+├── home       zoot/home
+│   └── nab    zoot/home/nab
+├── root       zoot/home/root
+├── opt        zoot/opt
+├── srv        zoot/srv
+│              zoot/usr
+├── usr/local  zoot/usr/local
+│              zoot/var
+├── var/cache  zoot/var/cache
+│              zoot/var/lib
+├── var/log    zoot/var/log
+└── var/tmp    zoot/var/tmp
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Why?
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+ &lt;li&gt;The root dataset is not mounted, because the explicit initrd'&lt;!--'--&gt;s &lt;code&gt;root=&lt;/code&gt; parameter requires a dataset to mount,
+     and the scripts don'&lt;!--'--&gt;t behave too well when the detected bootfs is the root; &lt;code&gt;zoot/root&lt;/code&gt; is filling that role instead;&lt;/li&gt;
+ &lt;li&gt;&lt;code&gt;/var&lt;/code&gt;, &lt;code&gt;/var/lib&lt;/code&gt;, and &lt;code&gt;/usr&lt;/code&gt; are all required for the system to boot
+     (I didn't try a split-&lt;code&gt;/usr&lt;/code&gt; system, but don't have much hope either way),
+     and the initrd
+     &lt;a href=&quot;//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/dracut/90zfs/mount-zfs.sh.in#L80&quot;&gt;only&lt;/a&gt;
+     &lt;a href=&quot;//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/initramfs/scripts/zfs#L966&quot;&gt;mounts&lt;/a&gt;
+     the root filesystem — things don't go well when these aren't there,
+     but the descendant filesystems are only used after the real init remounts everything;&lt;/li&gt;
+ &lt;li&gt;additionally, &lt;code&gt;/var/log&lt;/code&gt; needs POSIX ACLs for &lt;code&gt;sd-journald&lt;/code&gt; and &lt;code&gt;/var/tmp&lt;/code&gt; needs to be sticky &lt;code&gt;a+rwx&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+And so:
+&lt;/p&gt;
+&lt;table class=&quot;bigtable&quot;&gt;
+ &lt;tr&gt;&lt;td&gt;Move &lt;code&gt;/tmp&lt;/code&gt; to tmpfs.
+         The Debian default is to keep it on &lt;code&gt;/&lt;/code&gt;; if you, for some reason, prefer this, you can treat it like &lt;code&gt;/var/tmp&lt;/code&gt; later.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /usr/share/systemd/tmp.mount /etc/systemd/system/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl enable tmp.mount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/share/systemd/tmp.mount.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;mv /tmp{,_} &amp;&amp; systemctl start tmp.mount &amp;&amp; mv /tmp{_,}&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Now the pool on the &lt;em&gt;second&lt;/em&gt;, heretofor unused, disk.&lt;br /&gt;
+        &lt;br /&gt;
+        As promised, filesystem tuning is not included, so I'&lt;!--'--&gt;m not speccing &lt;samp&gt;&lt;kbd&gt;-o ashift=12 -O relatime=on -O compress=lz4&lt;/kbd&gt;&lt;/samp&gt;
+         and whateverelse, but I am adding encryption with &lt;samp&gt;&lt;kbd&gt;-O encryption=on -O keyformat=passphrase&lt;/kbd&gt;&lt;/samp&gt;.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ls -l /dev/disk/by-id/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;ata-QEMU_DVD-ROM_QM00003 -&gt; ../../sr0&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;ata-QEMU_HARDDISK_QM00001 -&gt; ../../sda&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;ata-QEMU_HARDDISK_QM00001-part1 -&gt; ../../sda1&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;ata-QEMU_HARDDISK_QM00001-part2 -&gt; ../../sda2&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;ata-QEMU_HARDDISK_QM00002 -&gt; ../../sdb&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool create -O mountpoint=/ -O canmount=off -R /mnt zoot ata-QEMU_HARDDISK_QM00002&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# zpool list&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot  7.50G   564K  7.50G        -         -     0%     0%  1.00x    ONLINE  /mnt&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# zfs list&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;NAME   USED  AVAIL     REFER  MOUNTPOINT&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot   492K  7.27G      192K  /mnt&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Enable &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html&quot;&gt;&lt;code&gt;zfs-mount-generator(8)&lt;/code&gt;&lt;/a&gt;
+         via &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html&quot;&gt;&lt;code&gt;zed(8)&lt;/code&gt;&lt;/a&gt; for mount ordering; this makes systemd aware of,
+         i.a. &lt;code&gt;/boot/efi&lt;/code&gt; depending on &lt;code&gt;/boot&lt;/code&gt; and mount &lt;code&gt;/var/log&lt;/code&gt; before starting journald there,
+         making both mounts both (a) behave as expected and (b) work.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;mkdir -p /etc/zfs/zfs-list.cache&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;touch /etc/zfs/zfs-list.cache/zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl restart zfs-zed&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;And the filesystems, as discussed above.&lt;br /&gt;
+         &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html#step-3-system-installation&quot;&gt;Prior art&lt;/a&gt;,
+         Step 3: System Installation, 3. Create datasets uses the &lt;code&gt;com.sun:auto-snapshot&lt;/code&gt; property,
+         but as far as I can tell it'&lt;!--'--&gt;s used only by third-party tools.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs create -o mountpoint=/ zoot/root&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;for f in zoot/{home{,/nab},boot,var{,/lib,/log,/cache,/tmp},opt,srv,usr{,/local}}; do zfs create $f; done&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs create -o mountpoint=/root zoot/home/root&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs set canmount=off zoot/{usr,var{,/lib}}&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs set com.sun:auto-snapshot=false zoot/var/{cache,tmp}&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs set acltype=posixacl xattr=sa zoot/var/log&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;chmod 1777 /mnt/var/tmp&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs list -o name,used,mountpoint,canmount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;NAME            MOUNTPOINT      CANMOUNT&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot            /mnt                 off&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/boot       /mnt/boot             on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/home       /mnt/home             on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/home/nab   /mnt/home/nab         on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/home/root  /mnt/root             on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/opt        /mnt/opt              on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/root       /mnt                  on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/srv        /mnt/srv              on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/usr        /mnt/usr             off&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/usr/local  /mnt/usr/local        on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/var        /mnt/var             off&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/var/cache  /mnt/var/cache        on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/var/lib    /mnt/var/lib         off&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/var/log    /mnt/var/log          on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;zoot/var/tmp    /mnt/var/tmp          on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl stop zfs-zed&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -Ei 's;/mnt/?;/;' /etc/zfs/zfs-list.cache/zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/initramfs/scripts/zfs#L751&quot;&gt;These&lt;/a&gt; or
+         &lt;a href=&quot;//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/dracut/90zfs/parse-zfs.sh.in#L22&quot;&gt;these&lt;/a&gt;
+         are all the valid forms.&lt;br /&gt;
+         If &lt;code&gt;bootfs=&lt;/code&gt; is set, &lt;code&gt;root=zfs:AUTO&lt;/code&gt; becomes valid, but an explicit pool can always be specified.
+         The documentation mentions no &lt;code&gt;root=&lt;/code&gt; at all,
+         but dracut hangs waiting for &lt;code&gt;/dev/gpt-auto-root&lt;/code&gt; if one isn'&lt;!--'--&gt;t specified.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool set bootfs=zoot/root zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;cat /proc/cmdline &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;echo 'root=zfs:zoot/root' &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;# Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste.&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Comment out old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -i 's;.* / .*ext.*;#&amp;;' /etc/fstab&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;run-parts --arg=$(uname -r) /etc/kernel/postinst.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;And now copy the system to the pool; this is the cursed bit.&lt;br /&gt;
+         Note the CWD and ignore the few &quot;file exists&quot; errors for the directories — those are by design.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install dump&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  dump liblzo2-2&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;After this operation, 539 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;dump -f - / | restore rf -&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: Dumping /dev/sda2 (/) to standard output&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: Label: zoot-root&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;restore: ./boot, ./var, ./&amp;c.: File exists&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: 1357080 blocks (1325.27MB)&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: finished in 50 seconds, throughput 27141 kBytes/sec&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: Date this dump completed: Sat Sep 12 02:11:53 2020&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;  DUMP: DUMP IS DONE&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;rm restoresymtable&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;reboot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+       &lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+If all went well, the system should now prompt for a password:
+&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.05-type-password.png&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;'Encrypted ZFS password for zoot/root' prompt after boot with many messages&quot;
+      src=&quot;/content/assets/blogn_t/005.05-type-password.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+dracut might try to use a stored mount option like &lt;code&gt;errors=remount-ro&lt;/code&gt; for the rootfs;
+in that case &lt;kbd&gt;mount -t zfs -o zfsutil zoot/root /sysroot&lt;/kbd&gt; and regenerating the initrd will help.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+If it says something to the effect of
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+&lt;samp&gt;[FAILED] Failed to start Import ZFS pools by cache file.&lt;/samp&gt;&lt;br /&gt;
+&lt;samp&gt;See 'systemctl status zfs-import-cache.service' for details.&lt;/samp&gt;
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+instead, it'&lt;!--'--&gt;s likely that &lt;code&gt;/etc/zfs/zpool.cache&lt;/code&gt; exists and is zero-length, and was copied like this from the real root,
+which is like this for god-knows-why.
+&lt;kbd&gt;zpool import zoot&lt;/kbd&gt; and the same &lt;kbd&gt;mount&lt;/kbd&gt; invocation will let it boot,
+then removing the file and regenerating the initrd should fix the problem permanently.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Post-login, the mounts should now be all ZFS:
+&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.06-findmnt.png&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;findmnt output, showing that all filesystems that should be ZFS (/, /home, &amp;c.) are&quot;
+      src=&quot;/content/assets/blogn_t/005.06-findmnt.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Or:
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nab@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;findmnt &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; zfs&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/                              zoot/root      zfs        rw,relatime,xattr,noacl
+├─/home                        zoot/home      zfs        rw,relatime,xattr,noacl
+│ └─/home/nab                  zoot/home/nab  zfs        rw,relatime,xattr,noacl
+├─/opt                         zoot/opt       zfs        rw,relatime,xattr,noacl
+├─/boot                        zoot/boot      zfs        rw,relatime,xattr,noacl
+├─/srv                         zoot/srv       zfs        rw,relatime,xattr,noacl
+├─/var/cache                   zoot/var/cache zfs        rw,relatime,xattr,noacl
+├─/root                        zoot/home/root zfs        rw,relatime,xattr,noacl
+├─/var/log                     zoot/var/log   zfs        rw,relatime,xattr,posixacl
+├─/usr/local                   zoot/usr/local zfs        rw,relatime,xattr,noacl
+└─/var/tmp                     zoot/var/tmp   zfs        rw,relatime,xattr,noacl
+&lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+And, yes, the chrome of the windows changed from Windows 10 to i3, this is a goddamn mess of a post.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+One last part now, to actually use both disks:
+&lt;/p&gt;
+&lt;table class=&quot;bigtable&quot;&gt;
+ &lt;tr&gt;&lt;td&gt;I'm specifying the primary disk's rootfs partition by &lt;a href=&quot;#installation&quot;&gt;its partlabel&lt;/a&gt;,
+         but &lt;code&gt;ata-QEMU_HARDDISK_QM00001-part2&lt;/code&gt; would also work in this case.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;gdisk -l /dev/disk/by-id/ata-QEMU_HARDDISK_QM00001&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Disk /dev/disk/by-id/ata-QEMU_HARDDISK_QM00001: 16777216 sectors, 8.0 GiB&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Disk identifier (GUID): 0D47FC01-7947-4DDE-9506-3BBBCFF572FF&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;
+         &lt;samp&gt;Number  Start (sector)    End (sector)  Size       Code  Name&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;   1            2048          487423   237.0 MiB   EF00  zoot-EFI&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;   2          487424        16775167   7.8 GiB     8300  zoot-root&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool add zoot zoot-root&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;invalid vdev specification&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;use '-f' to override the following errors:&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;/dev/disk/by-partlabel/zoot-root contains a filesystem of type 'ext4'&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;dd if=/dev/zero of=/dev/disk/by-partlabel/zoot-root count=16&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool add zoot zoot-root&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+&lt;/table&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+And that's it. There ain't much fan-fare to it, since this took only the very best part of a week to get right.
+&lt;/p&gt;
+&lt;div class=&quot;bigcode&quot;&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool list&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+zoot    15G   777M  14.2G        -         -     0%     5%  1.00x    ONLINE  -
+&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool status&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;  pool: zoot
+ state: ONLINE
+  scan: none requested
+config:
+
+        NAME                         STATE     READ WRITE CKSUM
+        zoot                         ONLINE       0     0     0
+          ata-QEMU_HARDDISK_QM00002  ONLINE       0     0     0
+          zoot-root                  ONLINE       0     0     0
+
+errors: No known data errors
+&lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Or, as was succinctly put by the instigator of all this mess:
+&lt;/p&gt;
+&lt;!-- https://discord.com/channels/145079846832308224/150317232239542272/754853633031536670 --&gt;
+&lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.07-final-review.png&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[01:58] Griwes: okay, *to be fair* this looks less cursed than I thought it would be, so kudos :noel:&quot;
+      src=&quot;/content/assets/blogn_t/005.07-final-review.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
