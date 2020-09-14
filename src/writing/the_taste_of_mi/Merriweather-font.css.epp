@@ -15,8 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 @font-face {
 	font-family: "Merriweather";
 	src: local("Merriweather Regular"), local("Merriweather-Regular"),
-	     /* "https://rawcdn.githack.com/google/fonts/97f2a0e2/ofl/merriweather/Merriweather-Regular.ttf" */
-	     SLASH_ASTERIX CSS_HTML_ONLY(url("https://fonts.googleapis.com/css?family=Merriweather&subset=cyrillic,cyrillic-ext,latin-ext")) SLASH_ASTERIX */
+	     SLASH_ASTERIX CSS_HTML_ONLY(url("https://rawcdn.githack.com/google/fonts/b848f42f0bc0a8bc53588c3688ca37890e1db0bd/ofl/merriweather/Merriweather-Regular.ttf")) SLASH_ASTERIX */
 	     SLASH_ASTERIX CSS_EBOOK_ONLY(url("../Merriweather-Regular.ttf")) SLASH_ASTERIX */
 	     format("truetype");
 }

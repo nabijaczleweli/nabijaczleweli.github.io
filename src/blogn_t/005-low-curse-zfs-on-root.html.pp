@@ -14,8 +14,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "blogn_t.h"
 
 
-<!-- RSS_PAB_DATE: "??????????????????????????????" -->
-#define POST_DATE   ??????????????????????????????
+<!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
+#define POST_DATE   Mon, 14 Sep 2020 00:20:20 +0200
 #define POST_POST_DATE
 
 #define CMT Also used in heading.h, make sure to update both with fixes
@@ -33,7 +33,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />  FORCED_NEWLINE \
                     <link href="/content/assets/bigtable.css"           rel="stylesheet" />
 
-BOILERPLATE(005. Low-curse ZFS-on-root for new installations on multi-disk systems — blognꞌt, 005. Low-curse ZFS-on-root for new installations on multi-disk systems, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
@@ -49,7 +49,7 @@ BOILERPLATE(005. Low-curse ZFS-on-root for new installations on multi-disk syste
 
 
 <p></p>
-BLOGN_T_HEADING(<code>005. Low-curse ZFS-on-root for new installations on multi-disk systems</code>)
+BLOGN_T_HEADING(<code>005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</code>)
 
 <p class="indented continued">
 In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//twitter.com/Guriwesu">an american</a> and acquiring a ThinkPad P15,
@@ -120,7 +120,7 @@ The restrixions to the original installation are all during the partitioning pha
 	<li>stuff everything onto the rootfs:</li>
 </ol>
 <center><a href="/content/assets/blogn_t/005.02-i-t-partitioning.png">
-	<img class="main-screenshot continuing" alt=""
+	<img class="main-screenshot continuing" alt="initramfs-tools partitioning screen showing one of two disks used with a 250MB EFI System Partiition marked 'zoot-EFI' and rest for the root FS, marked 'zoot-root'"
 	     src="/content/assets/blogn_t/005.02-i-t-partitioning.png" /></a></center>
 
 <p class="indented">
@@ -149,7 +149,7 @@ Which means that these, as of OpenZFS 0.8.4, are the ones that it doesn'<!--'-->
 <p class="continuation">
 Confer <a href="//manpages.debian.org/buster-backports/zfsutils-linux/zpool-features.5.en.html"><samp>zpool-features(5)</samp></a>
 for details so as to why this is not acceptable
-(remember: you can't do any of these even by accident on your root pool, and most of them can't ever be turned off).
+(remember: you couldn't any of these even by accident on your root pool, and most of them can't ever be turned off).
 </p>
 
 <p class="indented continued">
@@ -287,7 +287,7 @@ Boot into your freshly installed system, become root, and:
 I'<!--'-->d recommend rebooting now to verify that this works, which should look like this:
 </p>
 <center><a href="/content/assets/blogn_t/005.03-sd-boot.png">
-	<img class="main-screenshot continuation" alt="EFI shell, demonstrating the above command"
+	<img class="main-screenshot continuation" alt="text-mode QEMU window with two centered lines, the first one, selected, saying 'Debian GNU/Linux bullseye/sid with Linux 5.8.0-1-amd64', the second saying 'Reboot Into Firmware Interface'"
 	     src="/content/assets/blogn_t/005.03-sd-boot.png" /></a></center>
 <p class="indented continuing">
 If not, and <code>sd-boot</code> shows errors or doesn'<!--'-->t start at all; boot into the EFI shell,
@@ -381,7 +381,7 @@ Why?
 	<li>The root dataset is not mounted, because the explicit initrd'<!--'-->s <code>root=</code> parameter requires a dataset to mount,
 	    and the scripts don'<!--'-->t behave too well when the detected bootfs is the root; <code>zoot/root</code> is filling that role instead;</li>
 	<li><code>/var</code>, <code>/var/lib</code>, and <code>/usr</code> are all required for the system to boot
-	    (I didn't try a split-<code>/usr</code> system, but I don't have much hope either way),
+	    (I didn't try a split-<code>/usr</code> system, but don't have much hope either way),
 	    and the initrd
 	    <a href="//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/dracut/90zfs/mount-zfs.sh.in#L80">only</a>
 	    <a href="//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/initramfs/scripts/zfs#L966">mounts</a>
@@ -466,7 +466,7 @@ And so:
 	        <samp>root@zoot:~# <kbd>cat /proc/cmdline > /etc/kernel/cmdline</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>echo 'root=zfs:zoot/root' > /etc/kernel/cmdline</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd># Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste.</kbd></samp></td></tr>
-	<tr><td>Comment out rootfs to prevent trying to re-mount the one being replaced and regenerate+reinstall initrds.</td>
+	<tr><td>Comment out old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.</td>
 	    <td><samp>root@zoot:~# <kbd>sed -i 's;.* / .*ext.*;#&;' /etc/fstab</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>run-parts --arg=$(uname -r) /etc/kernel/postinst.d/</kbd></samp></td></tr>
 	<tr><td>And now copy the system to the pool; this is the cursed bit.<br />
@@ -558,6 +558,14 @@ And that's it. There ain't much fan-fare to it, since this took only the very be
 <div class="bigcode">
 #include "blogn_t/005.05-final-list.shell-session.html"
 </div>
+
+<p class="indented continued">
+Or, as was succinctly put by the instigator of all this mess:
+</p>
+<!-- https://discord.com/channels/145079846832308224/150317232239542272/754853633031536670 -->
+<center><a href="/content/assets/blogn_t/005.07-final-review.png">
+	<img class="main-screenshot continuation" alt="[01:58] Griwes: okay, *to be fair* this looks less cursed than I thought it would be, so kudos :noel:"
+	     src="/content/assets/blogn_t/005.07-final-review.png" style="min-width: 75%;" /></a></center>
 
 BLOGN_T_FOOTER()
 
