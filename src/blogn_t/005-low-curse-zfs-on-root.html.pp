@@ -96,8 +96,7 @@ To minimise how cursed this is, the following restrixions are in place:
 </ul>
 <p class="continuing">
 This means that all you need is an EFI-compatible multi-disk platform and some way to EFI boot it into <samp>d-i</samp> —
-the bootloader will be fixed and ZFS installed normally after booting into the target system,
-after which the rootfs can be <samp>dump</samp>ed/<samp>restore</samp>d thereonto.
+the bootloader will be fixed, ZFS installed normally, and the rootfs <samp>dump</samp>ed/<samp>restore</samp>d thereonto after normally booting into the target system.
 </p>
 <!-- For reference:
 	qemu-system-x86_64 -enable-kvm -bios /usr/share/qemu/OVMF.fd -smp 6 -m 4g -drive file=vda,format=raw,id=vda,if=none -drive file=vdb,format=raw,id=vdb,if=none -drive file=vdc,format=raw,id=vdc,if=none -device virtio-blk-pci,drive=vda -device virtio-blk-pci,drive=vdb -device virtio-blk-pci,drive=vdc
