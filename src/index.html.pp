@@ -27,6 +27,15 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
+	Become cursed by my <a href="blogn_t/">blog</a>…<br />
+	Latest post:<br />
+	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
+		<a href="blogn_t/005-low-curse-zfs-on-root.html">005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</a>;
+		<span style="white-space: nowrap;">Mon, 14 Sep 2020 00:20:20 +0200</span>
+	</samp>
+</p>
+
+<p>
 	Read some things I'<!--'-->ve <a href="writing/">written</a>…
 </p>
 
