@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-09-15T18:14:23</updated>
+  <updated>2020-09-15T18:15:29</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -782,8 +782,7 @@ To minimise how cursed this is, the following restrixions are in place:
 &lt;/ul&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 This means that all you need is an EFI-compatible multi-disk platform and some way to EFI boot it into &lt;samp&gt;d-i&lt;/samp&gt; —
-the bootloader will be fixed and ZFS installed normally after booting into the target system,
-after which the rootfs can be &lt;samp&gt;dump&lt;/samp&gt;ed/&lt;samp&gt;restore&lt;/samp&gt;d thereonto.
+the bootloader will be fixed, ZFS installed normally, and the rootfs &lt;samp&gt;dump&lt;/samp&gt;ed/&lt;samp&gt;restore&lt;/samp&gt;d thereonto after normally booting into the target system.
 &lt;/p&gt;
 &lt;!-- For reference:
  qemu-system-x86_64 -enable-kvm -bios /usr/share/qemu/OVMF.fd -smp 6 -m 4g -drive file=vda,format=raw,id=vda,if=none -drive file=vdb,format=raw,id=vdb,if=none -drive file=vdc,format=raw,id=vdc,if=none -device virtio-blk-pci,drive=vda -device virtio-blk-pci,drive=vdb -device virtio-blk-pci,drive=vdc
