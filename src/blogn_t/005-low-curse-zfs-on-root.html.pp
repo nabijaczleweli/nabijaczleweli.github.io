@@ -14,9 +14,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "blogn_t.h"
 
 
-<!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
-#define POST_DATE   Mon, 14 Sep 2020 00:20:20 +0200
-#define POST_POST_DATE
+   <!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
+#define POST_DATE      Mon, 14 Sep 2020 00:20:20 +0200
+#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200
+          <!-- RSS_UPDATE_DATE: "Tue, 15 Sep 2020 20:08:12 +0200" -->
 
 #define CMT Also used in heading.h, make sure to update both with fixes
 #undef CMT
@@ -94,7 +95,9 @@ To minimise how cursed this is, the following restrixions are in place:
 	    and it'<!--'-->s a similarly good experience (plus building the modules in a chroot is a good time at any rate).</li>
 </ul>
 <p class="continuing">
-This means that all you need is an EFI-compatible multi-disk platform and some way to EFI boot it into <samp>d-i</samp>.
+This means that all you need is an EFI-compatible multi-disk platform and some way to EFI boot it into <samp>d-i</samp> —
+the bootloader will be fixed and ZFS installed normally after booting into the target system,
+after which the rootfs can be <samp>dump</samp>ed/<samp>restore</samp>d thereonto.
 </p>
 <!-- For reference:
 	qemu-system-x86_64 -enable-kvm -bios /usr/share/qemu/OVMF.fd -smp 6 -m 4g -drive file=vda,format=raw,id=vda,if=none -drive file=vdb,format=raw,id=vdb,if=none -drive file=vdc,format=raw,id=vdc,if=none -device virtio-blk-pci,drive=vda -device virtio-blk-pci,drive=vdb -device virtio-blk-pci,drive=vdc
@@ -180,7 +183,7 @@ and GRUB had difficulties generating the right <code>root=</code> cmdline option
 </p>
 <p class="indented continuation">
 Using a separate <code>/boot</code> on ext*/FAT didn'<!--'-->t make much sense for booting on EFI, either,
-so cutting GRUB out was a simple way to cut out a lot of bollocks.
+so cutting GRUB out was a simple way to berid of a lot of bollocks.
 </p>
 
 <p class="indented continued">
