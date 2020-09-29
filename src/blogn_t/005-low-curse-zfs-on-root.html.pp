@@ -268,9 +268,8 @@ Boot into your freshly installed system, become root, and:
 	        <samp>/boot/efi/</samp><br />
 	        <samp>├── 62dd03a4928c412180b3024ac6c03a90</samp><br />
 	        <samp>│   └── 5.8.0-1-amd64</samp><br />
-	        <samp>│       ├── initrd</samp><br />
-	        <samp>│       ├── linux</samp><br />
-	        <samp>│       └── vmlinuz-5.8.0-1-amd64</samp><br />
+	        <samp>│       ├── initrd-5.8.0-1-amd64</samp><br />
+	        <samp>│       └── linux</samp><br />
 	        <samp>├── EFI</samp><br />
 	        <samp>│   ├── BOOT</samp><br />
 	        <samp>│   │   └── BOOTX64.EFI</samp><br />
