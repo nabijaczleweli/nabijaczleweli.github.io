@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-09-29T21:15:49</updated>
+  <updated>2020-09-29T22:18:17</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -957,9 +957,8 @@ Boot into your freshly installed system, become root, and:
          &lt;samp&gt;/boot/efi/&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;├── 62dd03a4928c412180b3024ac6c03a90&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;│   └── 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── initrd&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── linux&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       └── vmlinuz-5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       ├── initrd-5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;│       └── linux&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;├── EFI&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;│   ├── BOOT&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;│   │   └── BOOTX64.EFI&lt;/samp&gt;&lt;br /&gt;
