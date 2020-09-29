@@ -16,8 +16,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
 #define POST_DATE      Mon, 14 Sep 2020 00:20:20 +0200
-#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200
-          <!-- RSS_UPDATE_DATE: "Tue, 15 Sep 2020 20:08:12 +0200" -->
+#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200 and Tue, 29 Sep 2020 23:06:46 +0200
+                                              <!-- RSS_UPDATE_DATE: "Tue, 29 Sep 2020 23:06:46 +0200" -->
 
 #define CMT Also used in heading.h, make sure to update both with fixes
 #undef CMT
@@ -222,7 +222,9 @@ Boot into your freshly installed system, become root, and:
 	        <samp>Random seed file /boot/efi/loader/random-seed successfully written (512 bytes).</samp><br />
 	        <samp>Created EFI boot entry "Linux Boot Manager".</samp><br />
 	        <samp>root@zoot:~# <kbd>sed -i 's/#timeout/timeout/' /boot/efi/loader/loader.conf</kbd></samp></td></tr>
-	<tr><td>Add kernel version to loader entry.</td>
+	<tr><td><del>Add kernel version to loader entry.</del>
+		      This is <a href="https://github.com/systemd/systemd/pull/17072">not required</a> for a normal installation,
+		      since sd-boot will disambugate entries by version as needed, but may be useful to distinguish monokernel VM installs or something.</td>
 	    <td><samp>root@zoot:~# <kbd>cp /{usr/lib,etc}/kernel/install.d/90-loaderentry.install</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>diff -U2 /{usr/lib,etc}/kernel/install.d/90-loaderentry.install</kbd></samp><br />
 	        <samp>--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200</samp><br />
