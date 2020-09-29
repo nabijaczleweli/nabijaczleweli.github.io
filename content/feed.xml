@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-09-15T18:15:29</updated>
+  <updated>2020-09-29T21:15:49</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -680,7 +680,7 @@ You can find assorted extras (full-sized track and album art, programs to make t
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html</id>
     <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html" />
     <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt — nabijaczleweli </title>
-    <updated>2020-09-15T20:08:12+02:00</updated>
+    <updated>2020-09-29T23:06:46+02:00</updated>
     <published>2020-09-14T00:20:20+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -739,7 +739,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200 and Tue, 29 Sep 2020 23:06:46 +0200&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//twitter.com/Guriwesu&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'&lt;!--'--&gt;d like to have a single continuous volume spanning both of them to do whatever your heart desires.
@@ -912,7 +912,9 @@ Boot into your freshly installed system, become root, and:
          &lt;samp&gt;Random seed file /boot/efi/loader/random-seed successfully written (512 bytes).&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Created EFI boot entry &quot;Linux Boot Manager&quot;.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -i 's/#timeout/timeout/' /boot/efi/loader/loader.conf&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;Add kernel version to loader entry.&lt;/td&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;del&gt;Add kernel version to loader entry.&lt;/del&gt;
+        This is &lt;a href=&quot;https://github.com/systemd/systemd/pull/17072&quot;&gt;not required&lt;/a&gt; for a normal installation,
+        since sd-boot will disambugate entries by version as needed, but may be useful to distinguish monokernel VM installs or something.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;cp /{usr/lib,etc}/kernel/install.d/90-loaderentry.install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;diff -U2 /{usr/lib,etc}/kernel/install.d/90-loaderentry.install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200&lt;/samp&gt;&lt;br /&gt;
