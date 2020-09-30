@@ -423,7 +423,7 @@ And so:
 	        <samp>zoot   492K  7.27G      192K  /mnt</samp></td></tr>
 	<tr><td>Enable <a href="//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html"><code>zfs-mount-generator(8)</code></a>
 	        via <a href="//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html"><code>zed(8)</code></a> for mount ordering; this makes systemd aware of,
-	        i.a. <code>/boot/efi</code> depending on <code>/boot</code> and mount <code>/var/log</code> before starting journald there,
+	        i.a., <code>/boot/efi</code> depending on <code>/boot</code> and mount <code>/var/log</code> before starting journald there,
 	        making both mounts both (a) behave as expected and (b) work.</td>
 	    <td><samp>root@zoot:~# <kbd>ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>mkdir -p /etc/zfs/zfs-list.cache</kbd></samp><br />
@@ -569,6 +569,14 @@ Or, as was succinctly put by the instigator of all this mess:
 <center><a href="/content/assets/blogn_t/005.07-final-review.png">
 	<img class="main-screenshot continuation" alt="[01:58] Griwes: okay, *to be fair* this looks less cursed than I thought it would be, so kudos :noel:"
 	     src="/content/assets/blogn_t/005.07-final-review.png" style="min-width: 75%;" /></a></center>
+
+<p class="indented continued">
+On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been done, with a recommendation of the highest order:
+</p>
+<!-- https://discordapp.com/channels/145079846832308224/150317232239542272/760731829304688640 -->
+<center><a href="//twitter.com/nabijaczleweli/status/1311318328510644225">
+	<img class="main-screenshot continuation" alt="[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic"
+	     src="/content/assets/blogn_t/005.08-success.png" style="min-width: 75%;" /></a></center>
 
 BLOGN_T_FOOTER()
 
