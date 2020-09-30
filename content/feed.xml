@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-09-29T22:18:17</updated>
+  <updated>2020-09-30T15:26:36</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -1120,7 +1120,7 @@ And so:
          &lt;samp&gt;zoot   492K  7.27G      192K  /mnt&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Enable &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html&quot;&gt;&lt;code&gt;zfs-mount-generator(8)&lt;/code&gt;&lt;/a&gt;
          via &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html&quot;&gt;&lt;code&gt;zed(8)&lt;/code&gt;&lt;/a&gt; for mount ordering; this makes systemd aware of,
-         i.a. &lt;code&gt;/boot/efi&lt;/code&gt; depending on &lt;code&gt;/boot&lt;/code&gt; and mount &lt;code&gt;/var/log&lt;/code&gt; before starting journald there,
+         i.a., &lt;code&gt;/boot/efi&lt;/code&gt; depending on &lt;code&gt;/boot&lt;/code&gt; and mount &lt;code&gt;/var/log&lt;/code&gt; before starting journald there,
          making both mounts both (a) behave as expected and (b) work.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;mkdir -p /etc/zfs/zfs-list.cache&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
@@ -1287,6 +1287,13 @@ Or, as was succinctly put by the instigator of all this mess:
 &lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.07-final-review.png&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[01:58] Griwes: okay, *to be fair* this looks less cursed than I thought it would be, so kudos :noel:&quot;
       src=&quot;/content/assets/blogn_t/005.07-final-review.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been done, with a recommendation of the highest order:
+&lt;/p&gt;
+&lt;!-- https://discordapp.com/channels/145079846832308224/150317232239542272/760731829304688640 --&gt;
+&lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1311318328510644225&quot;&gt;
+ &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic&quot;
+      src=&quot;/content/assets/blogn_t/005.08-success.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
