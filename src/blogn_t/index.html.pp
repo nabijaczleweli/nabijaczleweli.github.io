@@ -37,11 +37,12 @@ Not banged out in an hour.
 </p>
 
 <span class="roboto-unscale">
-	POST(001-x32-in-2020,           Thu, 9 Apr 2020 01:44:47 +0200,  001. Installing Debian'<!--'-->s x32 port in 2020)
-	POST(002-ncurses-gpm-segfault,  Mon, 25 May 2020 00:12:30 +0200, 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
-	POST(003-maircl-poc,            Sat, 11 Jul 2020 00:34:50 +0200, 003. A proof-of-concept IRC/mail bridge)
-	POST(004-cinque,                Sat, 18 Jul 2020 22:14:33 +0200, 004. New album: cinque)
-	POST(005-low-curse-zfs-on-root, Mon, 14 Sep 2020 00:20:20 +0200, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
+	POST(001-x32-in-2020,                        Thu, 9 Apr 2020 01:44:47 +0200,  001. Installing Debian'<!--'-->s x32 port in 2020)
+	POST(002-ncurses-gpm-segfault,               Mon, 25 May 2020 00:12:30 +0200, 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
+	POST(003-maircl-poc,                         Sat, 11 Jul 2020 00:34:50 +0200, 003. A proof-of-concept IRC/mail bridge)
+	POST(004-cinque,                             Sat, 18 Jul 2020 22:14:33 +0200, 004. New album: cinque)
+	POST(005-low-curse-zfs-on-root,              Mon, 14 Sep 2020 00:20:20 +0200, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
+	POST(005a-zfs-on-root-single-disk-corollary, Thu, 05 Nov 2020 22:06:30 +0100, 005a. A single-disk but slightly more cursed ZFS-on-root corollary)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

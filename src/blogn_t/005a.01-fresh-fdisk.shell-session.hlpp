@@ -1,0 +1,8 @@
+root@zoot:~# fdisk -l /dev/sda
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
+
+Device       Start      End Sectors  Size Type
+/dev/sda1     2048   487423  485376  237M EFI System
+/dev/sda2  9940992 16775167 6834176  3.3G Linux filesystem

@@ -1,0 +1,39 @@
+root@zoot:~# fdisk /dev/sda
+Welcome to fdisk (util-linux 2.36).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Command (m for help): n
+Partition number (3-128, default 3):
+First sector (487424-16777182, default 487424):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (487424-9940991, default 9940991):
+Created a new partition 3 of type 'Linux filesystem' and of size 4.5 GiB.
+
+Command (m for help): x
+
+Expert command (m for help): n
+Partition number (1-3, default 3):
+New name: zoot-zoot
+Partition name changed from '' to 'zoot-zoot'.
+
+Expert command (m for help): f
+Partitions order fixed.
+
+Expert command (m for help): r
+
+Command (m for help): t
+Partition number (1-3, default 3):
+Partition type or alias (type L to list all): 24
+Changed type of partition 'Linux filesystem' to 'Linux root (x86-64)'.
+
+Command (m for help): w
+The partition table has been altered.
+Failed to remove partition 2 from system: Device or resource busy
+Failed to add partition 2 to system: Device or resource busy
+Failed to add partition 3 to system: Device or resource busy
+The kernel still uses the old partitions. The new table will be used at the next reboot.
+Syncing disks.
+
+Command (m for help): w
+The partition table has been altered.
+Syncing disks.

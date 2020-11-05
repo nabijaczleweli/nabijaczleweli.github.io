@@ -1,0 +1,12 @@
+root@zoot:~# fdisk -l /dev/sda
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
+
+Device      Start      End  Sectors  Size Type
+/dev/sda1    2048   487423   485376  237M EFI System
+/dev/sda2  487424 16777182 16289759  7.8G Linux root (x86-64)
+
+root@zoot:~# zpool list
+NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+zoot  4.50G  1.20G  3.30G        -         -     3%    26%  1.00x    ONLINE  -

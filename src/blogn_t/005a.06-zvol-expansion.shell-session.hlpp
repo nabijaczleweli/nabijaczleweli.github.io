@@ -1,0 +1,7 @@
+root@zoot:~# zpool list
+NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+zoot  4.50G  1.20G  3.30G        -        3G     3%    26%  1.00x    ONLINE  -
+root@zoot:~# zpool online -e zoot zoot-zoot
+root@zoot:~# zpool list
+NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00x    ONLINE  -
