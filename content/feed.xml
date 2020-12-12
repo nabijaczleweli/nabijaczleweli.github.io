@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2020-11-05T22:02:43</updated>
+  <updated>2020-12-12T02:25:51</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -680,7 +680,7 @@ You can find assorted extras (full-sized track and album art, programs to make t
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html</id>
     <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html" />
     <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt — nabijaczleweli </title>
-    <updated>2020-09-29T23:06:46+02:00</updated>
+    <updated>2020-12-12T01:22:52+01:00</updated>
     <published>2020-09-14T00:20:20+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -739,7 +739,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200 and Tue, 29 Sep 2020 23:06:46 +0200&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, and Sat, 12 Dec 2020 01:22:52 +0100&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//twitter.com/Guriwesu&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'&lt;!--'--&gt;d like to have a single continuous volume spanning both of them to do whatever your heart desires.
@@ -926,11 +926,13 @@ Boot into your freshly installed system, become root, and:
          &lt;samp&gt;+    PRETTY_NAME+=&quot; with Linux $KERNEL_VERSION&quot;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt; fi&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;​&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;Disable a
+ &lt;tr&gt;&lt;td&gt;&lt;del&gt;Disable a
          &lt;a href=&quot;https://salsa.debian.org/systemd-team/systemd/-/blob/3e2db72b37d72527eca2474a4e08f44fa3f342e8/debian/extra/kernel-install.d/85-initrd.install&quot;&gt;Debian&lt;/a&gt;
          &lt;code&gt;.install&lt;/code&gt; hook, which copies the initrd into &lt;code&gt;\MID\VER\initrd&lt;/code&gt;
          despite that being handled by &lt;code&gt;90-loaderentry.install&lt;/code&gt;, which copies it into &lt;code&gt;\MID\VER\BASENAME&lt;/code&gt;,
-         thereby duplicating it. This will &lt;a href=&quot;//bugs.debian.org/970213&quot;&gt;not be required&lt;/a&gt; in the future.&lt;/td&gt;
+         thereby duplicating it. This will &lt;a href=&quot;//bugs.debian.org/970213&quot;&gt;not be required&lt;/a&gt; in the future.&lt;/del&gt;&lt;br /&gt;
+         This hook was &lt;a href=&quot;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970213#27&quot;&gt;fixed&lt;/a&gt; in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
+         and this step can be avoided.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /dev/null /etc/kernel/install.d/85-initrd.install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;
  &lt;tr&gt;&lt;td&gt;Add sd-boot hooks, for integration with the normal kernel installation/removal flow.&lt;br /&gt;
          GRUB installs these as &lt;code&gt;zz-update-grub&lt;/code&gt;, but &lt;code&gt;kernel-install&lt;/code&gt; sorts later than any other thing I saw there myself.

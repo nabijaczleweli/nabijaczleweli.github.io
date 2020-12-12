@@ -13,7 +13,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
-                                              <!-- RSS_UPDATE_DATE: "Tue, 29 Sep 2020 23:06:46 +0200" -->
+                                                                                <!-- RSS_UPDATE_DATE: "Sat, 12 Dec 2020 01:22:52 +0100" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -115,7 +115,7 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
 <span class="roboto writing">
 <p></p>
 <h2 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <samp><code>005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</code></samp></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Mon, 14 Sep 2020 00:20:20 +0200</span>, updated Tue, 15 Sep 2020 20:08:12 +0200 and Tue, 29 Sep 2020 23:06:46 +0200</h4>
+ <h4 id="post-date"><span style="white-space: nowrap">Mon, 14 Sep 2020 00:20:20 +0200</span>, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, and Sat, 12 Dec 2020 01:22:52 +0100</h4>
 <p class="indented continued">
 In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//twitter.com/Guriwesu">an american</a> and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'<!--'-->d like to have a single continuous volume spanning both of them to do whatever your heart desires.
@@ -302,11 +302,13 @@ Boot into your freshly installed system, become root, and:
          <samp>+    PRETTY_NAME+=" with Linux $KERNEL_VERSION"</samp><br />
          <samp> fi</samp><br />
          <samp>​</samp></td></tr>
- <tr><td>Disable a
+ <tr><td><del>Disable a
          <a href="https://salsa.debian.org/systemd-team/systemd/-/blob/3e2db72b37d72527eca2474a4e08f44fa3f342e8/debian/extra/kernel-install.d/85-initrd.install">Debian</a>
          <code>.install</code> hook, which copies the initrd into <code>\MID\VER\initrd</code>
          despite that being handled by <code>90-loaderentry.install</code>, which copies it into <code>\MID\VER\BASENAME</code>,
-         thereby duplicating it. This will <a href="//bugs.debian.org/970213">not be required</a> in the future.</td>
+         thereby duplicating it. This will <a href="//bugs.debian.org/970213">not be required</a> in the future.</del><br />
+         This hook was <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970213#27">fixed</a> in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
+         and this step can be avoided.</td>
      <td><samp>root@zoot:~# <kbd>ln -s /dev/null /etc/kernel/install.d/85-initrd.install</kbd></samp></td>
  <tr><td>Add sd-boot hooks, for integration with the normal kernel installation/removal flow.<br />
          GRUB installs these as <code>zz-update-grub</code>, but <code>kernel-install</code> sorts later than any other thing I saw there myself.
@@ -691,9 +693,9 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 05.11.2020 22:00:09 UTC from 
+ Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 12.12.2020 02:23:16 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/005-low-curse-zfs-on-root.html.pp">src/blogn_t/005-low-curse-zfs-on-root.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/741736939">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/749183701">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
