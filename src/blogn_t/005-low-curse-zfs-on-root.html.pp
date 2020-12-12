@@ -16,8 +16,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
 #define POST_DATE      Mon, 14 Sep 2020 00:20:20 +0200
-#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200 and Tue, 29 Sep 2020 23:06:46 +0200
-                                              <!-- RSS_UPDATE_DATE: "Tue, 29 Sep 2020 23:06:46 +0200" -->
+#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, and Sat, 12 Dec 2020 01:22:52 +0100
+                                                                                <!-- RSS_UPDATE_DATE: "Sat, 12 Dec 2020 01:22:52 +0100" -->
 
 #define CMT Also used in heading.h, make sure to update both with fixes
 #undef CMT
@@ -236,11 +236,13 @@ Boot into your freshly installed system, become root, and:
 	        <samp>+    PRETTY_NAME+=" with Linux $KERNEL_VERSION"</samp><br />
 	        <samp> fi</samp><br />
 	        <samp>​</samp></td></tr>
-	<tr><td>Disable a
+	<tr><td><del>Disable a
 	        <a href="https://salsa.debian.org/systemd-team/systemd/-/blob/3e2db72b37d72527eca2474a4e08f44fa3f342e8/debian/extra/kernel-install.d/85-initrd.install">Debian</a>
 	        <code>.install</code> hook, which copies the initrd into <code>\MID\VER\initrd</code>
 	        despite that being handled by <code>90-loaderentry.install</code>, which copies it into <code>\MID\VER\BASENAME</code>,
-	        thereby duplicating it. This will <a href="//bugs.debian.org/970213">not be required</a> in the future.</td>
+	        thereby duplicating it. This will <a href="//bugs.debian.org/970213">not be required</a> in the future.</del><br />
+	        This hook was <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970213#27">fixed</a> in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
+	        and this step can be avoided.</td>
 	    <td><samp>root@zoot:~# <kbd>ln -s /dev/null /etc/kernel/install.d/85-initrd.install</kbd></samp></td>
 	<tr><td>Add sd-boot hooks, for integration with the normal kernel installation/removal flow.<br />
 	        GRUB installs these as <code>zz-update-grub</code>, but <code>kernel-install</code> sorts later than any other thing I saw there myself.
