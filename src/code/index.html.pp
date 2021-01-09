@@ -33,10 +33,26 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
 
+#define SRHT_DOC(name, gitname, cratename, cratename_code, ...) USER_SRHT_DOC(nabijaczleweli, name, gitname, cratename, cratename_code, __VA_ARGS__)
+#define USER_SRHT_DOC(user, name, gitname, cratename, cratename_code, ...)                                                                        \
+<li>                                                                                                                               FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHsrhtcdn.githack.com/~user/gitname/blob/doc/cratename_code/index.html)><samp>gitname</samp></a> FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~user/name)>FAR(circle)</a>                                                              FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                                    FORCED_NEWLINE \
+  — __VA_ARGS__                                                                                                                    FORCED_NEWLINE \
+</li>
+
 #define USER_REPO(user, name, icons, ...)                                                                                            \
 <li>                                                                                                                  FORCED_NEWLINE \
   <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)><samp>user/name</samp></a>                                  FORCED_NEWLINE \
   <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/user/name)>FAB_D(github)</a>                                           FORCED_NEWLINE \
+  icons                                                                                                               FORCED_NEWLINE \
+  — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
+</li>
+#define SRHT_SET(name, icons, ...)                                                                                                   \
+<li>                                                                                                                  FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~nabijaczleweli/name)><samp>name</samp></a>                                 FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~nabijaczleweli/name)>FAR(circle)</a>                                       FORCED_NEWLINE \
   icons                                                                                                               FORCED_NEWLINE \
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
@@ -47,18 +63,20 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
-BOILERPLATE(Docs&code, Documentation and code, en-GB, STYLESHEETS)
+BOILERPLATE(Documentation and mistakes, Documentation and code, en-GB, STYLESHEETS)
 
 
 MAIN_HEADING(Documentation and mistakes)
 <span class="roboto">
 
 
-Most of my code can be found under <a href="//github.com/nabijaczleweli">my GitHub account</a>,
-	I'<!--'-->m also the author/main maintainer of the following repositories:
+Most of my output can be found under my <a href="//github.com/nabijaczleweli">GitHub</a> and <a href="//sr.ht/~nabijaczleweli">SourceHut</a> accounts,
+	but I also wrote or maintain these to some nontrivial degree:
 <ul>
 	USER_REPO(LoungeCPP, PicturaMediocritas, DEVICON(cplusplus),
 	          Like aurea mediocritas, but with frames in a video instead, or get an average frame from a video)
+	USER_REPO(systemd, zram-generator, MFIZZ(rust),
+	          Systemd unit generator for zram swap devices)
 	USER_REPO(LoungeCPP, pir-8-emu, MFIZZ(rust),
 	          Assembler, dissassembler, emulator and full library representation for/of the <a href="https://github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
 	USER_REPO(LoungeCPP, Tatsoryk, MFIZZ(rust) DEVICON(html5),
@@ -71,6 +89,15 @@ Most of my code can be found under <a href="//github.com/nabijaczleweli">my GitH
 	          D'<!--'-->Oh - Directories Over HTTP)
 	USER_REPO(Skorezore, Gaem, DEVICON(cplusplus),
 	          Absolutely the best gaem on earth, if it exists)
+</ul>
+<br />
+
+A brief subsection of non-Rust non-mistakes:
+<ul>
+	SRHT_SET(klapki, DEVICON(cplusplus),
+	         EFI boot manager; or, well, an EFI bootorder compiler)
+	SRHT_SET(tzpfms, DEVICON(cplusplus),
+	         TPM-based encryption keys for ZFS datasets)
 </ul>
 <br />
 
@@ -98,6 +125,8 @@ Documentation for my Rust crates:
 		<span style="opacity: .5;">FA(archive)</span>
 		— Back-end for modern, API-based Sudoku app
 	</li>
+	SRHT_DOC(yaxpeax-friends, yaxpeax-superh, yaxpeax-superh, yaxpeax_superh,
+	         SuperH decoder with optional <a href="//git.iximeow.net/yaxpeax-arch/about/">yaxpeax</a> support)
 	DOC(bidir-map-rs, bidir-map, bidir_map,
 	    Bidirectional maps for Rust)
 	DOC(cargo-update, cargo-update, cargo_update,
