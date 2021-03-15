@@ -24,7 +24,7 @@
 #endif
 
 #ifdef __clang__
-  #define COMPILER_VERSION __clang_major__‍.‍__clang_minor__‍.‍__clang_patchlevel__
+  #define COMPILER_VERSION __clang_major__
 #elif defined(__GNUC__)
   #define COMPILER_VERSION __GNUC__‍.‍__GNUC_MINOR__‍.‍__GNUC_PATCHLEVEL__
 #else
