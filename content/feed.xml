@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-01-09T11:47:37</updated>
+  <updated>2021-03-15T23:04:42</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -680,7 +680,7 @@ You can find assorted extras (full-sized track and album art, programs to make t
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html</id>
     <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html" />
     <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt — nabijaczleweli </title>
-    <updated>2020-12-12T01:22:52+01:00</updated>
+    <updated>2021-03-15T23:49:31+01:00</updated>
     <published>2020-09-14T00:20:20+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -739,7 +739,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, and Sat, 12 Dec 2020 01:22:52 +0100&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, and Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs!&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//twitter.com/Guriwesu&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'&lt;!--'--&gt;d like to have a single continuous volume spanning both of them to do whatever your heart desires.
@@ -869,7 +869,8 @@ Using a separate &lt;code&gt;/boot&lt;/code&gt; on ZFS required a lot of dicking
 &lt;!-- In case that goes away:
 zpool create -o ashift=12 -d -o feature@async_destroy=enabled -o feature@bookmarks=enabled -o feature@embedded_data=enabled -o feature@empty_bpobj=enabled -o feature@enabled_txg=enabled -o feature@extensible_dataset=enabled -o feature@filesystem_limits=enabled -o feature@hole_birth=enabled -o feature@large_blocks=enabled -o feature@lz4_compress=enabled -o feature@spacemap_histogram=enabled -o feature@zpool_checkpoint=enabled -O acltype=posixacl -O canmount=off -O compression=lz4 -O devices=off -O normalization=formD -O relatime=on -O xattr=sa -O mountpoint=/boot -R /mnt bpool ${DISK}-part3
 --&gt;
-and GRUB had difficulties generating the right &lt;code&gt;root=&lt;/code&gt; cmdline options for a normal pool anyway.
+and GRUB has &lt;a href=&quot;https://bugs.debian.org/848945#30&quot;&gt;difficulties&lt;/a&gt; generating the right &lt;code&gt;root=&lt;/code&gt; cmdline options for a normal pool anyway
+(but it does work if you convince it hard enough and have no other options, like on EFI-less systems).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 Using a separate &lt;code&gt;/boot&lt;/code&gt; on ext*/FAT didn'&lt;!--'--&gt;t make much sense for booting on EFI, either,
@@ -882,7 +883,7 @@ Boot into your freshly installed system, become root, and:
  &lt;tr&gt;&lt;td&gt;Get rid of GRUB, optionally keeping EFI tools.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt-mark manual efibootmgr mokutil&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
           &lt;samp&gt;efibootmgr, mokutil set to manually installed.&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# apt purge grub* &amp;&amp; apt autopurge&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# apt autopurge grub*&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following packages will be REMOVED:&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*&lt;/samp&gt;&lt;br /&gt;
@@ -902,10 +903,20 @@ Boot into your freshly installed system, become root, and:
          &lt;samp&gt;│       └── shimx64.efi&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;└── NvVars&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;rm -rf /boot/efi/EFI/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Depending on the firmware state there may be a lot of boot entries, but the GRUB one is very likely the &lt;samp&gt;BootCurrent&lt;/samp&gt; and called &quot;debian&quot;.&lt;/td&gt;
+     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;efibootmgr -v&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;BootCurrent: 0001&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;BootOrder: 0001,0000,0002,…&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Boot0001*: debian        HD(1,GPT,GUID)/File(\EFI\debian\shimx64.efi)&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Boot0002*: UEFI QEMU DVD-ROM QM00003     PciRoot(0x0)/…&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;efibootmgr -Bb 1&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;BootCurrent: 0001&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;Boot0002*: UEFI QEMU DVD-ROM QM00003&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Install &lt;samp&gt;systemd-boot&lt;/samp&gt; and enable a timeout.&lt;br /&gt;
          This &lt;em&gt;might&lt;/em&gt; not be required on platforms that support the systemd &lt;a href=&quot;//systemd.io/BOOT_LOADER_SPECIFICATION/&quot;&gt;Boot Loader Specification&lt;/a&gt;
-         (are there any?); in that case, you'&lt;!--'--&gt;ll need to &lt;samp class=&quot;nobr&quot;&gt;&lt;kbd&gt;mkdir &quot;/boot/efi/$(cat /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt; instead,
-         since &lt;samp&gt;kernel-install&lt;/samp&gt; won'&lt;!--'--&gt;t make it by itself.&lt;/td&gt;
+         (are there any?).&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;bootctl install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Created &quot;/boot/efi/EFI&quot;, other directories.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Copied &quot;/usr/lib/systemd/boot/efi/systemd-bootx64.efi&quot; to &quot;/boot/efi/EFI/{systemd/systemd-bootx64.efi,BOOT/BOOTX64.EFI}&quot;.&lt;/samp&gt;&lt;br /&gt;
@@ -950,6 +961,12 @@ Boot into your freshly installed system, become root, and:
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;chmod +x /etc/kernel/post{inst,rm}.d/kernel-install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Install the kernel.&lt;br /&gt;
          The initial run takes a long time, hence the &lt;code&gt;-v&lt;/code&gt;; &lt;code&gt;62dd03a4928c412180b3024ac6c03a90&lt;/code&gt; is this machine'&lt;!--'--&gt;s ID.&lt;br /&gt;
+         sd-boot wouldn'&lt;!--'--&gt;t make &lt;samp&gt;\&amp;lt;MID&amp;gt;&lt;/samp&gt; for
+           &lt;a href=&quot;https://github.com/systemd/systemd/commit/31e57550b552e113bd3d44355b237c41e42beb58&quot;&gt;some&lt;/a&gt;
+           &lt;a href=&quot;https://github.com/systemd/systemd/pull/19006&quot;&gt;time&lt;/a&gt; –
+           if you don'&lt;!--'--&gt;t get the &quot;Installing&quot; and &quot;Creating&quot; lines on a systemd pre-TODO:NUMBER system,
+           you'&lt;!--'--&gt;ll need to &lt;samp class=&quot;nobr&quot;&gt;&lt;kbd&gt;mkdir &quot;/boot/efi/$(cat /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt; manually
+           and &lt;samp&gt;&lt;kbd&gt;kernel-install&lt;/kbd&gt;&lt;/samp&gt; again.&lt;br /&gt;
          The current cmdline will be used for the boot entry, overridable with &lt;code&gt;/etc/kernel/cmdline&lt;/code&gt;.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;kernel-install -v add $(uname -r) /boot/vml&amp;lt;TAB&amp;gt; /boot/ini&amp;lt;TAB&amp;gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Running depmod -a 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
@@ -1103,9 +1120,10 @@ And so:
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl enable tmp.mount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/share/systemd/tmp.mount.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;mv /tmp{,_} &amp;&amp; systemctl start tmp.mount &amp;&amp; mv /tmp{_,}&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;Now the pool on the &lt;em&gt;second&lt;/em&gt;, heretofor unused, disk.&lt;br /&gt;
+ &lt;tr&gt;&lt;td&gt;Now the pool on the &lt;em&gt;second&lt;/em&gt;, heretofor unused, disk
+         (note that virtio devices don'&lt;!--'--&gt;t have standard SCSI IDs, but are otherwise stably ordered).&lt;br /&gt;
         &lt;br /&gt;
-        As promised, filesystem tuning is not included, so I'&lt;!--'--&gt;m not speccing &lt;samp&gt;&lt;kbd&gt;-o ashift=12 -O relatime=on -O compress=lz4&lt;/kbd&gt;&lt;/samp&gt;
+        As promised, filesystem tuning is not included, so I'&lt;!--'--&gt;m not speccing &lt;samp&gt;&lt;kbd&gt;-o ashift=12 -O relatime=on -O compress=zstd&lt;/kbd&gt;&lt;/samp&gt;
          and whateverelse, but I am adding encryption with &lt;samp&gt;&lt;kbd&gt;-O encryption=on -O keyformat=passphrase&lt;/kbd&gt;&lt;/samp&gt;.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ls -l /dev/disk/by-id/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;ata-QEMU_DVD-ROM_QM00003 -&gt; ../../sr0&lt;/samp&gt;&lt;br /&gt;
@@ -1123,8 +1141,9 @@ And so:
  &lt;tr&gt;&lt;td&gt;Enable &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html&quot;&gt;&lt;code&gt;zfs-mount-generator(8)&lt;/code&gt;&lt;/a&gt;
          via &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html&quot;&gt;&lt;code&gt;zed(8)&lt;/code&gt;&lt;/a&gt; for mount ordering; this makes systemd aware of,
          i.a., &lt;code&gt;/boot/efi&lt;/code&gt; depending on &lt;code&gt;/boot&lt;/code&gt; and mount &lt;code&gt;/var/log&lt;/code&gt; before starting journald there,
-         making both mounts both (a) behave as expected and (b) work.&lt;/td&gt;
-     &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         making both mounts both (a) behave as expected and (b) work.&lt;br /&gt;
+         &lt;samp&gt;history_event-zfs-list-cacher.sh&lt;/samp&gt; is enabled by default sinze zfs-zed 2.0.1-1&lt;/td&gt;
+     &lt;td&gt;&lt;del&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;/del&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;mkdir -p /etc/zfs/zfs-list.cache&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;touch /etc/zfs/zfs-list.cache/zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl restart zfs-zed&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
@@ -1139,7 +1158,7 @@ And so:
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs set com.sun:auto-snapshot=false zoot/var/{cache,tmp}&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs set acltype=posixacl xattr=sa zoot/var/log&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;chmod 1777 /mnt/var/tmp&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs list -o name,used,mountpoint,canmount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs list -o name,mountpoint,canmount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;NAME            MOUNTPOINT      CANMOUNT&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;zoot            /mnt                 off&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;zoot/boot       /mnt/boot             on&lt;/samp&gt;&lt;br /&gt;
@@ -1166,9 +1185,9 @@ And so:
          but dracut hangs waiting for &lt;code&gt;/dev/gpt-auto-root&lt;/code&gt; if one isn'&lt;!--'--&gt;t specified.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool set bootfs=zoot/root zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;cat /proc/cmdline &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;echo 'root=zfs:zoot/root' &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;# Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste.&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;Comment out old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.&lt;/td&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;# Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste, and/or&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;echo 'root=zfs:zoot/root' &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Comment out the old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -i 's;.* / .*ext.*;#&amp;;' /etc/fstab&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;run-parts --arg=$(uname -r) /etc/kernel/postinst.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;And now copy the system to the pool; this is the cursed bit.&lt;br /&gt;
@@ -1199,20 +1218,23 @@ If all went well, the system should now prompt for a password:
       src=&quot;/content/assets/blogn_t/005.05-type-password.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 dracut might try to use a stored mount option like &lt;code&gt;errors=remount-ro&lt;/code&gt; for the rootfs;
-in that case &lt;kbd&gt;mount -t zfs -o zfsutil zoot/root /sysroot&lt;/kbd&gt; and regenerating the initrd will help.
+in that case &lt;kbd&gt;mount -t zfs -o zfsutil zoot/root /sysroot&lt;/kbd&gt; and regenerating the initrd (then committing it to the ESP!) will help.
 &lt;/p&gt;
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;del&gt;&lt;p class=&quot;indented continued&quot;&gt;
 If it says something to the effect of
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;samp&gt;[FAILED] Failed to start Import ZFS pools by cache file.&lt;/samp&gt;&lt;br /&gt;
 &lt;samp&gt;See 'systemctl status zfs-import-cache.service' for details.&lt;/samp&gt;
 &lt;/p&gt;
-&lt;p class=&quot;continuation&quot;&gt;
+&lt;p class=&quot;continuing&quot;&gt;
 instead, it'&lt;!--'--&gt;s likely that &lt;code&gt;/etc/zfs/zpool.cache&lt;/code&gt; exists and is zero-length, and was copied like this from the real root,
 which is like this for god-knows-why.
 &lt;kbd&gt;zpool import zoot&lt;/kbd&gt; and the same &lt;kbd&gt;mount&lt;/kbd&gt; invocation will let it boot,
 then removing the file and regenerating the initrd should fix the problem permanently.
+&lt;/p&gt;&lt;/del&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+This was &lt;a href=&quot;https://github.com/openzfs/zfs/pull/11568&quot;&gt;fixed&lt;/a&gt; in &lt;a href=&quot;https://github.com/openzfs/zfs/releases/tag/zfs-2.0.3&quot;&gt;OpenZFS 2.0.3&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Post-login, the mounts should now be all ZFS:
