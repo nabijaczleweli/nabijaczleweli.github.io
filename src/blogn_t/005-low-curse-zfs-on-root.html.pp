@@ -16,8 +16,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
 #define POST_DATE      Mon, 14 Sep 2020 00:20:20 +0200
-#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, and Sat, 12 Dec 2020 01:22:52 +0100
-                                                                                <!-- RSS_UPDATE_DATE: "Sat, 12 Dec 2020 01:22:52 +0100" -->
+#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, and Mon, 15 Mar 2021 23:49:31 +0100, with thanks to <a href="//github.com/ik5pvx">Pierfrancesco</a> for many pre-bullseye bugs!
+                                                                                                                 <!-- RSS_UPDATE_DATE: "Mon, 15 Mar 2021 23:49:31 +0100" -->
+
+
 
 #define CMT Also used in heading.h, make sure to update both with fixes
 #undef CMT
@@ -178,7 +180,8 @@ zpool create \
     -O mountpoint=/boot -R /mnt \
     bpool ${DISK}-part3
 -->
-and GRUB had difficulties generating the right <code>root=</code> cmdline options for a normal pool anyway.
+and GRUB has <a href="https://bugs.debian.org/848945#30">difficulties</a> generating the right <code>root=</code> cmdline options for a normal pool anyway
+(but it does work if you convince it hard enough and have no other options, like on EFI-less systems).
 </p>
 <p class="indented continuation">
 Using a separate <code>/boot</code> on ext*/FAT didn'<!--'-->t make much sense for booting on EFI, either,
@@ -192,7 +195,7 @@ Boot into your freshly installed system, become root, and:
 	<tr><td>Get rid of GRUB, optionally keeping EFI tools.</td>
 	    <td><samp>root@zoot:~# <kbd>apt-mark manual efibootmgr mokutil</kbd></samp><br />
           <samp>efibootmgr, mokutil set to manually installed.</samp><br />
-	        <samp>root@zoot:~# apt purge grub* && apt autopurge</samp><br />
+	        <samp>root@zoot:~# apt autopurge grub*</samp><br />
 	        <samp>The following packages will be REMOVED:</samp><br />
 	        <samp>  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*</samp><br />
 	        <samp>  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*</samp><br />
@@ -212,10 +215,20 @@ Boot into your freshly installed system, become root, and:
 	        <samp>│       └── shimx64.efi</samp><br />
 	        <samp>└── NvVars</samp><br />
 	        <samp>root@zoot:~# <kbd>rm -rf /boot/efi/EFI/</kbd></samp></td></tr>
+	<tr><td>Depending on the firmware state there may be a lot of boot entries, but the GRUB one is very likely the <samp>BootCurrent</samp> and called "debian".</td>
+	    <td><samp>root@zoot:~# <kbd>efibootmgr -v</kbd></samp><br />
+	        <samp>BootCurrent: 0001</samp><br />
+	        <samp>BootOrder: 0001,0000,0002,…</samp><br />
+	        <samp>Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)</samp><br />
+	        <samp>Boot0001*: debian        HD(1,GPT,GUID)/File(\EFI\debian\shimx64.efi)</samp><br />
+	        <samp>Boot0002*: UEFI QEMU DVD-ROM QM00003     PciRoot(0x0)/…</samp><br />
+	        <samp>root@zoot:~# <kbd>efibootmgr -Bb 1</kbd></samp><br />
+	        <samp>BootCurrent: 0001</samp><br />
+	        <samp>Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)</samp><br />
+	        <samp>Boot0002*: UEFI QEMU DVD-ROM QM00003</samp></td></tr>
 	<tr><td>Install <samp>systemd-boot</samp> and enable a timeout.<br />
 	        This <em>might</em> not be required on platforms that support the systemd <a href="//systemd.io/BOOT_LOADER_SPECIFICATION/">Boot Loader Specification</a>
-	        (are there any?); in that case, you'<!--'-->ll need to <samp class="nobr"><kbd>mkdir "/boot/efi/$(cat /etc/machine-id)"</kbd></samp> instead,
-	        since <samp>kernel-install</samp> won'<!--'-->t make it by itself.</td>
+	        (are there any?).</td>
 	    <td><samp>root@zoot:~# <kbd>bootctl install</kbd></samp><br />
 	        <samp>Created "/boot/efi/EFI", other directories.</samp><br />
 	        <samp>Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/efi/EFI/{systemd/systemd-bootx64.efi,BOOT/BOOTX64.EFI}".</samp><br />
@@ -261,6 +274,12 @@ Boot into your freshly installed system, become root, and:
 #define BSAMP(...) <samp style="word-break: break-all;">__VA_ARGS__</samp>
 	<tr><td>Install the kernel.<br />
 	        The initial run takes a long time, hence the <code>-v</code>; <code>62dd03a4928c412180b3024ac6c03a90</code> is this machine'<!--'-->s ID.<br />
+	        sd-boot wouldn'<!--'-->t make <samp>\&lt;MID&gt;</samp> for
+	          <a href="https://github.com/systemd/systemd/commit/31e57550b552e113bd3d44355b237c41e42beb58">some</a>
+	          <a href="https://github.com/systemd/systemd/pull/19006">time</a> –
+	          if you don'<!--'-->t get the "Installing" and "Creating" lines on a systemd pre-TODO:NUMBER system,
+	          you'<!--'-->ll need to <samp class="nobr"><kbd>mkdir "/boot/efi/$(cat /etc/machine-id)"</kbd></samp> manually
+	          and <samp><kbd>kernel-install</kbd></samp> again.<br />
 	        The current cmdline will be used for the boot entry, overridable with <code>/etc/kernel/cmdline</code>.</td>
 	    <td><samp>root@zoot:~# <kbd>kernel-install -v add $(uname -r) /boot/vml&lt;TAB&gt; /boot/ini&lt;TAB&gt;</kbd></samp><br />
 	        <samp>Running depmod -a 5.8.0-1-amd64</samp><br />
@@ -406,9 +425,10 @@ And so:
 	        <samp>Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/share/systemd/tmp.mount.</samp><br />
 	        <samp>root@zoot:~# <kbd>mv /tmp{,_} && systemctl start tmp.mount && mv /tmp{_,}</kbd></samp></td></tr>
 
-	<tr><td>Now the pool on the <em>second</em>, heretofor unused, disk.<br />
+	<tr><td>Now the pool on the <em>second</em>, heretofor unused, disk
+	        (note that virtio devices don'<!--'-->t have standard SCSI IDs, but are otherwise stably ordered).<br />
 		      <br />
-		      As promised, filesystem tuning is not included, so I'<!--'-->m not speccing <samp><kbd>-o ashift=12 -O relatime=on -O compress=lz4</kbd></samp>
+		      As promised, filesystem tuning is not included, so I'<!--'-->m not speccing <samp><kbd>-o ashift=12 -O relatime=on -O compress=zstd</kbd></samp>
 	        and whateverelse, but I am adding encryption with <samp><kbd>-O encryption=on -O keyformat=passphrase</kbd></samp>.</td>
 	    <td><samp>root@zoot:~# <kbd>ls -l /dev/disk/by-id/</kbd></samp><br />
 	        <samp>ata-QEMU_DVD-ROM_QM00003 -> ../../sr0</samp><br />
@@ -426,8 +446,9 @@ And so:
 	<tr><td>Enable <a href="//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html"><code>zfs-mount-generator(8)</code></a>
 	        via <a href="//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html"><code>zed(8)</code></a> for mount ordering; this makes systemd aware of,
 	        i.a., <code>/boot/efi</code> depending on <code>/boot</code> and mount <code>/var/log</code> before starting journald there,
-	        making both mounts both (a) behave as expected and (b) work.</td>
-	    <td><samp>root@zoot:~# <kbd>ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/</kbd></samp><br />
+	        making both mounts both (a) behave as expected and (b) work.<br />
+	        <samp>history_event-zfs-list-cacher.sh</samp> is enabled by default sinze zfs-zed 2.0.1-1</td>
+	    <td><del><samp>root@zoot:~# <kbd>ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d/</kbd></samp></del><br />
 	        <samp>root@zoot:~# <kbd>mkdir -p /etc/zfs/zfs-list.cache</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>touch /etc/zfs/zfs-list.cache/zoot</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>systemctl restart zfs-zed</kbd></samp></td></tr>
@@ -442,7 +463,7 @@ And so:
 	        <samp>root@zoot:~# <kbd>zfs set com.sun:auto-snapshot=false zoot/var/{cache,tmp}</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>zfs set acltype=posixacl xattr=sa zoot/var/log</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>chmod 1777 /mnt/var/tmp</kbd></samp><br />
-	        <samp>root@zoot:~# <kbd>zfs list -o name,used,mountpoint,canmount</kbd></samp><br />
+	        <samp>root@zoot:~# <kbd>zfs list -o name,mountpoint,canmount</kbd></samp><br />
 	        <samp>NAME            MOUNTPOINT      CANMOUNT</samp><br />
 	        <samp>zoot            /mnt                 off</samp><br />
 	        <samp>zoot/boot       /mnt/boot             on</samp><br />
@@ -469,9 +490,9 @@ And so:
 	        but dracut hangs waiting for <code>/dev/gpt-auto-root</code> if one isn'<!--'-->t specified.</td>
 	    <td><samp>root@zoot:~# <kbd>zpool set bootfs=zoot/root zoot</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>cat /proc/cmdline > /etc/kernel/cmdline</kbd></samp><br />
-	        <samp>root@zoot:~# <kbd>echo 'root=zfs:zoot/root' > /etc/kernel/cmdline</kbd></samp><br />
-	        <samp>root@zoot:~# <kbd># Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste.</kbd></samp></td></tr>
-	<tr><td>Comment out old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.</td>
+	        <samp>root@zoot:~# <kbd># Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste, and/or</kbd></samp><br />
+	        <samp>root@zoot:~# <kbd>echo 'root=zfs:zoot/root' > /etc/kernel/cmdline</kbd></samp></td></tr>
+	<tr><td>Comment out the old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.</td>
 	    <td><samp>root@zoot:~# <kbd>sed -i 's;.* / .*ext.*;#&;' /etc/fstab</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>run-parts --arg=$(uname -r) /etc/kernel/postinst.d/</kbd></samp></td></tr>
 	<tr><td>And now copy the system to the pool; this is the cursed bit.<br />
@@ -503,21 +524,24 @@ If all went well, the system should now prompt for a password:
 	     src="/content/assets/blogn_t/005.05-type-password.png" /></a></center>
 <p class="continuation">
 dracut might try to use a stored mount option like <code>errors=remount-ro</code> for the rootfs;
-in that case <kbd>mount -t zfs -o zfsutil zoot/root /sysroot</kbd> and regenerating the initrd will help.
+in that case <kbd>mount -t zfs -o zfsutil zoot/root /sysroot</kbd> and regenerating the initrd (then committing it to the ESP!) will help.
 </p>
 
-<p class="indented continued">
+<del><p class="indented continued">
 If it says something to the effect of
 </p>
 <p class="continuing">
 <samp>[FAILED] Failed to start Import ZFS pools by cache file.</samp><br />
 <samp>See 'systemctl status zfs-import-cache.service' for details.</samp>
 </p>
-<p class="continuation">
+<p class="continuing">
 instead, it'<!--'-->s likely that <code>/etc/zfs/zpool.cache</code> exists and is zero-length, and was copied like this from the real root,
 which is like this for god-knows-why.
 <kbd>zpool import zoot</kbd> and the same <kbd>mount</kbd> invocation will let it boot,
 then removing the file and regenerating the initrd should fix the problem permanently.
+</p></del>
+<p class="continuation">
+This was <a href="https://github.com/openzfs/zfs/pull/11568">fixed</a> in <a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.0.3">OpenZFS 2.0.3</a>.
 </p>
 
 <p class="indented continued">
