@@ -541,7 +541,8 @@ which is like this for god-knows-why.
 then removing the file and regenerating the initrd should fix the problem permanently.
 </p></del>
 <p class="continuation">
-This was <a href="https://github.com/openzfs/zfs/pull/11568">fixed</a> in <a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.0.3">OpenZFS 2.0.3</a>.
+This was <a href="https://github.com/openzfs/zfs/pull/11568">fixed</a> in
+<a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.0.3">OpenZFS 2.0.3</a> (Fri, 12 Feb 2021 16:30:01 +0800).
 </p>
 
 <p class="indented continued">

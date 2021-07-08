@@ -30,12 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/005-low-curse-zfs-on-root.html">005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</a>;
-		<span style="white-space: nowrap;">Mon, 14 Sep 2020 00:20:20 +0200</span>
-	</samp><br />
-	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/005a-zfs-on-root-single-disk-corollary.html">005a. A single-disk but slightly more cursed ZFS-on-root corollary</a>;
-		<span style="white-space: nowrap;">Thu, 05 Nov 2020 22:06:30 +0100</span>
+		<a href="blogn_t/006-UNIX-r-ATT.html">006. ¹UNIX® is a registered trademark of AT&T.</a>;
+		<span style="white-space: nowrap;">Thu, 08 Jul 2021 20:26:38 +0200</span>
 	</samp>
 </p>
 
