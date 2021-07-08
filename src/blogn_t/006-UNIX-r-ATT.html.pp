@@ -62,8 +62,8 @@ BLOGN_T_HEADING(<code>006. ¹UNIX® is a registered trademark of AT&T.</code>)
 <p class="indented">
 It isn'<!--'-->t, of course – <span class="smallcaps">unix</span> belongs to the Open Group nowadays,
 but it wouldn'<!--'-->t be unheard of to have a note like this on the first page of a document in the bad old days,
-and the concept of unironically encountering this in the wild in year of the hog 2020,
-that a terrible urge <a href="//twitter.com/nabijaczleweli/status/1408975129707794434">came over</a> me.
+and the concept of unironically encountering this in the wild in year of the hog 2020 was too hilarious to pass up
+as a terrible urge <a href="//twitter.com/nabijaczleweli/status/1408975129707794434">came over</a> me.
 </p>
 
 <p class="indented continued">
