@@ -11,14 +11,14 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-03-15T23:04:42</updated>
+  <updated>2021-07-08T20:30:13+02:00</updated>
   <generator>
-    GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
+    GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/001-x32-in-2020.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/001-x32-in-2020.html" />
     <title> 001. Installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
     <updated>2020-04-28T02:54:07+02:00</updated>
     <published>2020-04-09T01:44:47+02:00</published>
@@ -324,8 +324,8 @@ Alright, bye!
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/002-ncurses-gpm-segfault.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/002-ncurses-gpm-segfault.html" />
     <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli </title>
     <updated>2020-05-25T00:12:30+02:00</updated>
     <content type="html">
@@ -372,7 +372,7 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;post&lt;/a&gt; 
  or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
  &lt;/p&gt;
 &lt;/span&gt;
@@ -380,8 +380,8 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/003-maircl-poc.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/003-maircl-poc.html" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/003-maircl-poc.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/003-maircl-poc.html" />
     <title> 003. A proof-of-concept IRC/mail bridge — blognꞌt — nabijaczleweli </title>
     <updated>2020-07-11T00:34:50+02:00</updated>
     <content type="html">
@@ -577,7 +577,7 @@ Now it'&lt;!--'--&gt;s time to convince postfix to do a big crime, by:
       &lt;a href=&quot;//manpages.debian.org/buster/postfix/master.5.en.html&quot;&gt; master(5)&lt;/a&gt; will probably be very insightful):
       &lt;div class=&quot;bigcode&quot;&gt;
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# service type  private unpriv  chroot  wakeup  maxproc command + args&lt;/span&gt;
-irc       1  -       n       n       -       -       pipe
+irc       unix  -       n       n       -       -       pipe
   &lt;span class=&quot;token assign-left variable&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nabijaczleweli &lt;span class=&quot;token assign-left variable&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/home/nabijaczleweli/uwu/ircmail
 &lt;/pre&gt;&lt;/code&gt;
       &lt;/div&gt;
@@ -640,8 +640,8 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/004-cinque.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/004-cinque.html" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/004-cinque.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/004-cinque.html" />
     <title> 004. New album: cinque — blognꞌt — nabijaczleweli </title>
     <updated>2020-07-18T22:14:33+02:00</updated>
     <content type="html">
@@ -677,29 +677,35 @@ You can find assorted extras (full-sized track and album art, programs to make t
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/005-low-curse-zfs-on-root.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/005-low-curse-zfs-on-root.html" />
     <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt — nabijaczleweli </title>
     <updated>2021-03-15T23:49:31+01:00</updated>
     <published>2020-09-14T00:20:20+02:00</published>
     <content type="html">
 &lt;style&gt;
+
 .continued {
  margin-bottom: 0;
 }
+
 .continuing {
  margin-top: 0;
  margin-bottom: 0;
 }
+
 .continuation {
  margin-top: 0;
 }
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
+
 h1, h2, h3, h4, h5, h6 {
  font-family: &quot;Merriweather&quot;, serif;
 }
+
+
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
@@ -709,6 +715,7 @@ h6:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
+
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
@@ -722,6 +729,8 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
+
+
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
@@ -731,15 +740,20 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 .indented {
  text-indent: 1em;
 }
+
 .main-screenshot {
  margin-top: 0.2em;
  margin-bottom: 0.15em;
 }
 &lt;/style&gt;
+
 &lt;span class=&quot;roboto writing&quot;&gt;
+
+
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, and Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs!&lt;/h4&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//twitter.com/Guriwesu&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'&lt;!--'--&gt;d like to have a single continuous volume spanning both of them to do whatever your heart desires.
@@ -761,6 +775,7 @@ Now, I also wanted to do a ZFS-on-root for my own nefarious uses, and so it was 
  &lt;!-- https://discord.com/channels/145079846832308224/150317232239542272/752226540808437770 --&gt;
  Good, do it before I buy the p15 and report back &lt;a href=&quot;//wiki.jvflux.fr/Noel&quot;&gt;&lt;img src=&quot;/content/assets/noel.gif&quot; alt=&quot;:noel:&quot; title=&quot;:noel:&quot; style=&quot;margin-bottom: -5px;&quot; /&gt;&lt;/a&gt;
 &lt;/blockquote&gt;
+
 &lt;!--
 &lt;h2 id=&quot;toc&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#toc&quot;&gt;#&lt;/a&gt; Contents&lt;/h2&gt;
 &lt;ol class=&quot;continuation&quot;&gt;
@@ -770,6 +785,7 @@ Now, I also wanted to do a ZFS-on-root for my own nefarious uses, and so it was 
  &lt;li&gt;&lt;a href=&quot;#zfs&quot; &gt;The ZFS bit&lt;/a&gt;&lt;/li&gt;
  &lt;li&gt;&lt;a href=&quot;#layout&quot; &gt;Layout&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt; --&gt;
+
 &lt;h2 id=&quot;setup&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#setup&quot;&gt;#&lt;/a&gt; Set-up&lt;/h2&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 To minimise how cursed this is, the following restrixions are in place:
@@ -797,6 +813,7 @@ there'&lt;!--'--&gt;s a &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Gettin
 &lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1303858705788801024&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;Excerpt from zfs-initramfs, function load_module_initrd that starts with 'if [ $variable &gt; 0 ]'&quot;
       src=&quot;/content/assets/blogn_t/005.01-zfs-initramfs-gt-0.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+
 &lt;h2 id=&quot;installation&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installation&quot;&gt;#&lt;/a&gt; Installation&lt;/h2&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 The restrixions to the original installation are all during the partitioning phase and as follows:
@@ -809,6 +826,7 @@ The restrixions to the original installation are all during the partitioning pha
 &lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.02-i-t-partitioning.png&quot;&gt;
  &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;initramfs-tools partitioning screen showing one of two disks used with a 250MB EFI System Partiition marked 'zoot-EFI' and rest for the root FS, marked 'zoot-root'&quot;
       src=&quot;/content/assets/blogn_t/005.02-i-t-partitioning.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+
 &lt;p class=&quot;indented&quot;&gt;
 Either installing sid or enabling backports for buster is required,
 since &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html&quot;&gt;&lt;code&gt;zfs-mount-generator(8)&lt;/code&gt;&lt;/a&gt; appeared in 0.8.0;
@@ -816,6 +834,7 @@ if you don't install GRUB you'll have to boot
 &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/efi-stub.rst?h=v5.8&quot;&gt;manually&lt;/a&gt;
 from the EFI shell after copying the kernel and initrd from &lt;code&gt;target/boot/&lt;/code&gt; to &lt;code&gt;target/boot/efi/&lt;/code&gt;.
 &lt;/p&gt;
+
 &lt;h2 id=&quot;bootloader&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bootloader&quot;&gt;#&lt;/a&gt; Bootloader&lt;/h2&gt;
 &lt;p class=&quot;continuing indented&quot;&gt;
 Using GRUB and a unified boot-on-root is, for better or for worse, not possible;
@@ -823,6 +842,7 @@ GRUB &lt;a href=&quot;//git.savannah.gnu.org/cgit/grub.git/tree/grub-core/fs/zfs
 non-R/O zpool features:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
+
 &lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/*
  * List of pool features that the grub implementation of ZFS supports for
  * read. Note that features that are only required for write do not need
@@ -843,6 +863,7 @@ non-R/O zpool features:
 Which means that these, as of OpenZFS 0.8.4, are the ones that it doesn'&lt;!--'--&gt;t support:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
+
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nabijaczleweli@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;man&lt;/span&gt; zpool-features &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; READ-ONLY.*no -B4 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'s/GUID//'&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
                         awk '!/^&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/COMPATIBLE/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/--/ &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
 &lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;                             {if(last == &quot;&quot;) last = &lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;print last &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\t&quot;&gt;\t&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; last &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;' |
@@ -862,6 +883,7 @@ Confer &lt;a href=&quot;//manpages.debian.org/buster-backports/zfsutils-linux/zp
 for details so as to why this is not acceptable
 (remember: you couldn't any of these even by accident on your root pool, and most of them can't ever be turned off).
 &lt;/p&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 Using a separate &lt;code&gt;/boot&lt;/code&gt; on ZFS required a lot of dicking around with the options for GRUB to recognise the filesystem at all
 (confer &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html#step-2-disk-formatting&quot;&gt;prior art&lt;/a&gt;,
@@ -876,6 +898,7 @@ and GRUB has &lt;a href=&quot;https://bugs.debian.org/848945#30&quot;&gt;difficu
 Using a separate &lt;code&gt;/boot&lt;/code&gt; on ext*/FAT didn'&lt;!--'--&gt;t make much sense for booting on EFI, either,
 so cutting GRUB out was a simple way to berid of a lot of bollocks.
 &lt;/p&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 Boot into your freshly installed system, become root, and:
 &lt;/p&gt;
@@ -959,6 +982,7 @@ Boot into your freshly installed system, become root, and:
          &lt;samp&gt;&lt;kbd&gt;exec kernel-install remove &quot;$1&quot;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;chmod +x /etc/kernel/post{inst,rm}.d/kernel-install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+
  &lt;tr&gt;&lt;td&gt;Install the kernel.&lt;br /&gt;
          The initial run takes a long time, hence the &lt;code&gt;-v&lt;/code&gt;; &lt;code&gt;62dd03a4928c412180b3024ac6c03a90&lt;/code&gt; is this machine'&lt;!--'--&gt;s ID.&lt;br /&gt;
          sd-boot wouldn'&lt;!--'--&gt;t make &lt;samp&gt;\&amp;lt;MID&amp;gt;&lt;/samp&gt; for
@@ -993,6 +1017,7 @@ Boot into your freshly installed system, become root, and:
          &lt;br /&gt;
          &lt;samp&gt;8 directories, 9 files&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 I'&lt;!--'--&gt;d recommend rebooting now to verify that this works, which should look like this:
 &lt;/p&gt;
@@ -1010,6 +1035,7 @@ or whatever else is listed &lt;a href=&quot;/&quot;&gt;here&lt;/a&gt; so I can i
 &lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.04-EFI-shell.png&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;EFI shell, demonstrating the above command&quot;
       src=&quot;/content/assets/blogn_t/005.04-EFI-shell.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 Now we can boot without dealing with GRUB. On to the ZFS bit:
 &lt;/p&gt;
@@ -1066,10 +1092,12 @@ Now we can boot without dealing with GRUB. On to the ZFS bit:
          &lt;samp&gt;After this operation, 4,644 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;/etc/kernel/postinst.d/kernel-install $(uname -r)&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 And now a brief interlude on the layout of ZFS datasets in the VFS.
 &lt;/p&gt;
 &lt;h2 id=&quot;layout&quot; class=&quot;continuation&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#layout&quot;&gt;#&lt;/a&gt; Layout&lt;/h2&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html#step-3-system-installation&quot;&gt;Prior art&lt;/a&gt;,
 Step 3: System Installation issues a lot of commands and doesn'&lt;!--'--&gt;t really explain why.
@@ -1078,6 +1106,7 @@ Step 3: System Installation issues a lot of commands and doesn'&lt;!--'--&gt;t r
 The final mount tree is as such:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
+
 &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;               zoot/
 /              zoot/root
 ├── boot       zoot/boot
@@ -1095,6 +1124,7 @@ The final mount tree is as such:
 └── var/tmp    zoot/var/tmp
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 Why?
 &lt;/p&gt;
@@ -1110,6 +1140,7 @@ Why?
      but the descendant filesystems are only used after the real init remounts everything;&lt;/li&gt;
  &lt;li&gt;additionally, &lt;code&gt;/var/log&lt;/code&gt; needs POSIX ACLs for &lt;code&gt;sd-journald&lt;/code&gt; and &lt;code&gt;/var/tmp&lt;/code&gt; needs to be sticky &lt;code&gt;a+rwx&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 And so:
 &lt;/p&gt;
@@ -1120,6 +1151,7 @@ And so:
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl enable tmp.mount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/share/systemd/tmp.mount.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;mv /tmp{,_} &amp;&amp; systemctl start tmp.mount &amp;&amp; mv /tmp{_,}&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+
  &lt;tr&gt;&lt;td&gt;Now the pool on the &lt;em&gt;second&lt;/em&gt;, heretofor unused, disk
          (note that virtio devices don'&lt;!--'--&gt;t have standard SCSI IDs, but are otherwise stably ordered).&lt;br /&gt;
         &lt;br /&gt;
@@ -1210,6 +1242,7 @@ And so:
          &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;reboot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
        &lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 If all went well, the system should now prompt for a password:
 &lt;/p&gt;
@@ -1220,6 +1253,7 @@ If all went well, the system should now prompt for a password:
 dracut might try to use a stored mount option like &lt;code&gt;errors=remount-ro&lt;/code&gt; for the rootfs;
 in that case &lt;kbd&gt;mount -t zfs -o zfsutil zoot/root /sysroot&lt;/kbd&gt; and regenerating the initrd (then committing it to the ESP!) will help.
 &lt;/p&gt;
+
 &lt;del&gt;&lt;p class=&quot;indented continued&quot;&gt;
 If it says something to the effect of
 &lt;/p&gt;
@@ -1234,8 +1268,10 @@ which is like this for god-knows-why.
 then removing the file and regenerating the initrd should fix the problem permanently.
 &lt;/p&gt;&lt;/del&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-This was &lt;a href=&quot;https://github.com/openzfs/zfs/pull/11568&quot;&gt;fixed&lt;/a&gt; in &lt;a href=&quot;https://github.com/openzfs/zfs/releases/tag/zfs-2.0.3&quot;&gt;OpenZFS 2.0.3&lt;/a&gt;.
+This was &lt;a href=&quot;https://github.com/openzfs/zfs/pull/11568&quot;&gt;fixed&lt;/a&gt; in
+&lt;a href=&quot;https://github.com/openzfs/zfs/releases/tag/zfs-2.0.3&quot;&gt;OpenZFS 2.0.3&lt;/a&gt; (Fri, 12 Feb 2021 16:30:01 +0800).
 &lt;/p&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 Post-login, the mounts should now be all ZFS:
 &lt;/p&gt;
@@ -1246,6 +1282,7 @@ Post-login, the mounts should now be all ZFS:
 Or:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
+
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nab@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;findmnt &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; zfs&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token output&quot;&gt;/                              zoot/root      zfs        rw,relatime,xattr,noacl
 ├─/home                        zoot/home      zfs        rw,relatime,xattr,noacl
@@ -1263,6 +1300,7 @@ Or:
 &lt;p class=&quot;indented continuation&quot;&gt;
 And, yes, the chrome of the windows changed from Windows 10 to i3, this is a goddamn mess of a post.
 &lt;/p&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 One last part now, to actually use both disks:
 &lt;/p&gt;
@@ -1283,10 +1321,12 @@ One last part now, to actually use both disks:
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;dd if=/dev/zero of=/dev/disk/by-partlabel/zoot-root count=16&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool add zoot zoot-root&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
 &lt;/table&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 And that's it. There ain't much fan-fare to it, since this took only the very best part of a week to get right.
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
+
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool list&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token output&quot;&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
 zoot    15G   777M  14.2G        -         -     0%     5%  1.00x    ONLINE  -
@@ -1304,6 +1344,7 @@ config:
 errors: No known data errors
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 Or, as was succinctly put by the instigator of all this mess:
 &lt;/p&gt;
@@ -1311,6 +1352,7 @@ Or, as was succinctly put by the instigator of all this mess:
 &lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.07-final-review.png&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[01:58] Griwes: okay, *to be fair* this looks less cursed than I thought it would be, so kudos :noel:&quot;
       src=&quot;/content/assets/blogn_t/005.07-final-review.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been done, with a recommendation of the highest order:
 &lt;/p&gt;
@@ -1318,18 +1360,20 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 &lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1311318328510644225&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic&quot;
       src=&quot;/content/assets/blogn_t/005.08-success.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
  or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
  &lt;/p&gt;
+
 &lt;/span&gt;
 </content>
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005a-zfs-on-root-single-disk-corollary.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005a-zfs-on-root-single-disk-corollary.html" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/005a-zfs-on-root-single-disk-corollary.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/005a-zfs-on-root-single-disk-corollary.html" />
     <title> 005a. A single-disk but slightly more cursed ZFS-on-root corollary — blognꞌt — nabijaczleweli </title>
     <updated>2020-11-05T22:06:30+01:00</updated>
     <content type="html">
@@ -1465,7 +1509,7 @@ other home nations are available.
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; /dev/sda&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-1 2.36).
+&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 
@@ -1540,7 +1584,7 @@ Which consists of removing the partition with the previous rootfs and expanding 
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; /dev/sda&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-1 2.36).
+&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 
@@ -1621,8 +1665,169 @@ zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/gen-epub-book/" />
+    <id>https://nabijaczleweli.xyz/content/blogn_t/006-UNIX-r-ATT.html</id>
+    <link href="https://nabijaczleweli.xyz/content/blogn_t/006-UNIX-r-ATT.html" />
+    <title> 006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt — nabijaczleweli </title>
+    <updated>2021-07-08T20:26:38+02:00</updated>
+    <content type="html">
+&lt;style&gt;
+
+.continued {
+ margin-bottom: 0;
+}
+
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+
+
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+
+
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+.main-screenshot {
+ margin-top: 0.2em;
+ margin-bottom: 0.15em;
+ width: 100%;
+}
+
+.main-font {
+ margin-top: 0.15em;
+ margin-bottom: 0.15em;
+ max-width: 100%;
+}
+
+@media all and (min-device-width: 400px) {
+ .main-font {
+  width: 100%;
+ }
+}
+
+@media all and (min-device-width: 800px) {
+ .main-font {
+  margin-left: 1em;
+  min-width: 75%;
+ }
+}
+
+
+&lt;/style&gt;
+
+&lt;span class=&quot;roboto writing&quot;&gt;
+
+
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p class=&quot;indented&quot;&gt;
+It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
+but it wouldn'&lt;!--'--&gt;t be unheard of to have a note like this on the first page of a document in the bad old days,
+and the concept of unironically encountering this in the wild in year of the hog 2020,
+that a terrible urge &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1408975129707794434&quot;&gt;came over&lt;/a&gt; me.
+&lt;/p&gt;
+
+&lt;p class=&quot;indented continued&quot;&gt;
+Indeed, what better font to celebrate with than with something from the &lt;span class=&quot;smallcaps&quot;&gt;amix&lt;/span&gt; distribution
+(this will be a link when I finally publish those).
+My first thought was, of course, &lt;samp&gt;sunfont.s&lt;/samp&gt;:
+&lt;/p&gt;
+&lt;img class=&quot;continuing main-font&quot; alt=&quot;'UNIX is a registered trademark of AT&amp;T.' in a tall, proportional, narrow-stroke font with typewriter-like typography and a really goofy ampersand.&quot; src=&quot;/content/assets/blogn_t/006.01-isunfont-tp.png&quot; /&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+but it'&lt;!--'--&gt;s way too thin, and lacks both &lt;samp&gt;®&lt;/samp&gt; and &lt;samp&gt;¹&lt;/samp&gt;.
+The latter could be emulated, of course, but it'&lt;!--'--&gt;d render the already-hardly-legible digit unreadable and the width would just scream off
+(and it's a difficult problem to solve in an obviously-correct mechanical fashion; I'm assembling these with ImageMagick in stitch mode on individual 4x glyphs).
+&lt;/p&gt;
+
+&lt;p class=&quot;indented continued&quot;&gt;
+The next obvious direxion to go (rather, the last font before I fell back to trying something with cursed groff invocations) was &lt;samp&gt;topaz.s&lt;/samp&gt;:
+&lt;/p&gt;
+&lt;img class=&quot;continuing main-font&quot; alt=&quot;'UNIX is a registered trademark of AT&amp;T.' in a square, thick-stroke 8x8 font, the g is kinda goofy&quot; src=&quot;/content/assets/blogn_t/006.02-itopaz-tp.png&quot; /&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+or, rather,
+&lt;/p&gt;
+&lt;img class=&quot;continuing main-font&quot; alt=&quot;'¹UNIX® is a registered trademark of AT&amp;T.' in that same font.&quot; src=&quot;/content/assets/blogn_t/006.03-itopaz-tp+r-sp.png&quot; /&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Now, if that ain'&lt;!--'--&gt;t perfect.
+&lt;/p&gt;
+
+&lt;img class=&quot;main-screenshot&quot; alt=&quot;Variations of UNIX is a registered trademark of AT&amp;T printed in multiple orientations and fonts on an A4 sheet&quot; src=&quot;/content/assets/blogn_t/006.04-preprints.jpg&quot; /&gt;
+
+&lt;p class=&quot;indented continued&quot;&gt;
+The final dimensions are 3.5mm text + 3mm padding, based on 12dpmm,
+as that worked out well for the native resolution and the 300-350dpi restrixion from my local print shop,
+pictured here with 1px(=1pt) cut line and 3mm padding:
+&lt;/p&gt;
+&lt;!-- Firefox does not like (any/multilayer/CMYK) TIFFs; yes, it's a JPEG: no other browser format supports CMYK '--&gt;
+&lt;img class=&quot;continuing main-font&quot; alt=&quot;'¹UNIX® is a registered trademark of AT&amp;T.' in that same font, white on black, surrounded by green, a single-pixel black line, and another layer of red&quot; src=&quot;/content/assets/blogn_t/006.05-UNIX-tp+r-sp-120dpcm+3mm.jpg&quot; /&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Properly-dimensioned print-ready CMYK TIFFs and measurements can be had &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT&quot;&gt;here&lt;/a&gt;. CC BY 4.0.
+Works out to 9.5x149.5, which my shop tiled to 40 stickers to SRA3 sheet.
+&lt;/p&gt;
+
+&lt;p class=&quot;indented continued&quot;&gt;
+Anyway, glam shots.
+&lt;/p&gt;
+&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;A small black anodised aluminium laptop on a light wood floor, a window very softly reflects on the chassis, which has a OneMix logo stickered over with a neon orange BONELESS sticker, and a ¹UNIX® is a registered trademark of AT&amp;T. sticker in the bottom left, crooked, near the hinge&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7479ccc.png&quot; /&gt;
+&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;Same laptop, but on a dark wood floor in direct hard summer sun. The edges of the sticker meld into the texture of the chassis in the highlight, and are lost in the shadow&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7491ccc.png&quot; /&gt;
+&lt;img class=&quot;continuation main-screenshot&quot; alt=&quot;Two matt SRA3 sheets in the same spot, one on top of the other, at a slight angle, with ¹UNIX® is a registered trademark of AT&amp;T. stickers tiled on them. The left is entirely opaque, but shows a tiny bit through the right.&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7497ccc.png&quot; /&gt;
+
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/gen-epub-book/</id>
+    <link href="https://nabijaczleweli.xyz/content/gen-epub-book/" />
     <title> gen-epub-book general — nabijaczleweli </title>
     <updated>2017-08-30T03:38:21+02:00</updated>
     <content type="html">
@@ -1962,9 +2167,9 @@ I hope that this document is clear and/or informative, if not,
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/maths/mandalas.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/maths/mandalas.html" />
-    <title> Mandalas — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/maths/mandalas.html</id>
+    <link href="https://nabijaczleweli.xyz/content/maths/mandalas.html" />
+    <title> Mandalas — nabijaczleweli</title>
     <updated>2017-06-13T22:42:51+02:00</updated>
     <content type="html">
 &lt;style&gt;
@@ -2155,9 +2360,9 @@ A full list of conversions and their implementations can be found at the
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/maths/wiggly-circle.html" />
-    <title> wiggly-circle — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/maths/wiggly-circle.html</id>
+    <link href="https://nabijaczleweli.xyz/content/maths/wiggly-circle.html" />
+    <title> wiggly-circle — nabijaczleweli</title>
     <updated>2019-05-09T22:54:19+02:00</updated>
     <content type="html">
 &lt;div class=&quot;art-box&quot;&gt;
@@ -2166,124 +2371,124 @@ A full list of conversions and their implementations can be found at the
   Inspired by &lt;a href=&quot;//inconvergent.net&quot;&gt;Inconvergent&lt;/a&gt;'s &lt;a href=&quot;//twitter.com/inconvergent/status/1122463283586510848&quot;&gt;&quot;path test&quot;&lt;/a&gt;.&lt;!--'--&gt;
  &lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#lines&quot;&gt;the return to the fight&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot;&gt; 
- &lt;img id=&quot;lines&quot; src=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#lines&quot;&gt;the return to the fight&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot;&gt;
+ &lt;img id=&quot;lines&quot; src=&quot;/content/assets/wiggly-circle/output_lines_2x_w1.5.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts&quot;&gt;centrism&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot;&gt; 
- &lt;img id=&quot;r0_pts&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts&quot;&gt;centrism&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot;&gt;
+ &lt;img id=&quot;r0_pts&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines&quot;&gt;pointless breadth&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot;&gt; 
- &lt;img id=&quot;r0_lines&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines&quot;&gt;pointless breadth&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot;&gt;
+ &lt;img id=&quot;r0_lines&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_40__2&quot;&gt;volumous&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot;&gt; 
- &lt;img id=&quot;r0_lines_40__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_40__2&quot;&gt;volumous&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot;&gt;
+ &lt;img id=&quot;r0_lines_40__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_40__2.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_1600x900_40&quot;&gt;breathe&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot;&gt; 
- &lt;img id=&quot;r0_lines_1600x900_40&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_1600x900_40&quot;&gt;breathe&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot;&gt;
+ &lt;img id=&quot;r0_lines_1600x900_40&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_1600x900_40.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts_o.8_1600x900_60&quot;&gt;pointedly degenerative&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_pts_o.8_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_pts_o.8_1600x900_60&quot;&gt;pointedly degenerative&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_pts_o.8_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_pts_2x_w1.5_o.8_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_rgba_1600x900_60&quot;&gt;trans-gressive&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_lines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_rgba_1600x900_60&quot;&gt;trans-gressive&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_lines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines_rgba_1600x900_60&quot;&gt;pointedly home-of-sexual&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_sngllines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines_rgba_1600x900_60&quot;&gt;pointedly home-of-sexual&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_sngllines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_rgba_1600x900_60&quot;&gt;drop-ped&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_skiplines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_rgba_1600x900_60&quot;&gt;drop-ped&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_skiplines_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_rgba_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_comp-step_rgba_1600x900_60__2&quot;&gt;c o m p e n s a t e&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot;&gt; 
- &lt;img id=&quot;r0_skiplines_comp-step_rgba_1600x900_60__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines_comp-step_rgba_1600x900_60__2&quot;&gt;c o m p e n s a t e&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot;&gt;
+ &lt;img id=&quot;r0_skiplines_comp-step_rgba_1600x900_60__2&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines_2x_w1.5_comp-step_rgba_1600x900_60__2.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_comp-step_rgba_1600x900_60&quot;&gt;{2,3,4}-drop&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_skiplines2..4_comp-step_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_comp-step_rgba_1600x900_60&quot;&gt;{2,3,4}-drop&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_skiplines2..4_comp-step_rgba_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_comp-step_rgba_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_flagtrans_1600x900_60&quot;&gt;back and ready for more trans jokes&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagtrans_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_lines_flagtrans_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagtrans_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_flagtrans_1600x900_60&quot;&gt;back and ready for more trans jokes&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagtrans_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_lines_flagtrans_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagtrans_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_flagbi-wgh_1600x900_60&quot;&gt;from beyond the bilines&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagbi-wgh_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_lines_flagbi-wgh_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagbi-wgh_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_lines_flagbi-wgh_1600x900_60&quot;&gt;from beyond the bilines&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagbi-wgh_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_lines_flagbi-wgh_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_lines_2x_w1.5_flagbi-wgh_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines2_flagpan_1600x900_60&quot;&gt;pancontinental&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines2_2x_w1.5_flagpan_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_sngllines2_flagpan_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines2_2x_w1.5_flagpan_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines2_flagpan_1600x900_60&quot;&gt;pancontinental&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines2_2x_w1.5_flagpan_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_sngllines2_flagpan_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines2_2x_w1.5_flagpan_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_flagace_1600x900_60&quot;&gt;amorphous&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flagace_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_skiplines2..4_flagace_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flagace_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_flagace_1600x900_60&quot;&gt;amorphous&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flagace_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_skiplines2..4_flagace_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flagace_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_flaggay_alpha_1600x900_60&quot;&gt;re-homing&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_skiplines2..4_flaggay_alpha_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_skiplines2..4_flaggay_alpha_1600x900_60&quot;&gt;re-homing&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_skiplines2..4_flaggay_alpha_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_skiplines2..4_2x_w1.5_flaggay_alpha_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
-&lt;div class=&quot;art-box&quot;&gt; 
- &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60&quot;&gt;anachronistic&lt;/a&gt;&lt;/h4&gt; 
- 
- &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60.png&quot;&gt; 
- &lt;img id=&quot;r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60.png&quot; /&gt; 
- &lt;/a&gt; 
+&lt;div class=&quot;art-box&quot;&gt;
+ &lt;h4 class=&quot;merriweather label&quot;&gt;&lt;a href=&quot;#r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60&quot;&gt;anachronistic&lt;/a&gt;&lt;/h4&gt;
+
+ &lt;a href=&quot;/content/assets/wiggly-circle/output_r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60.png&quot;&gt;
+ &lt;img id=&quot;r0_sngllines7_comp-step_flagace_alpha.5_1600x900_60&quot; src=&quot;/content/assets/wiggly-circle/output_r0_sngllines7_2x_w1.5_comp-step_flagace_alpha.5_1600x900_60.png&quot; /&gt;
+ &lt;/a&gt;
  &lt;/div&gt;
 &lt;div class=&quot;art-box&quot;&gt;
  &lt;h2 class=&quot;merriweather label&quot; id=&quot;code&quot;&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/h2&gt;
@@ -2317,18 +2522,18 @@ A full list of conversions and their implementations can be found at the
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;vector&gt;&lt;/span&gt;&lt;/span&gt;
 
 
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; tau         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;acos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; increase    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; wiggle      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; tau         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;acos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; increase    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; wiggle      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; min_opacity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;.3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Color colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x75&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x07&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x87&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x4d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x26&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x8c&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xe4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x75&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x07&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x87&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x4d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x26&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x8c&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xe4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 
@@ -2341,9 +2546,9 @@ A full list of conversions and their implementations can be found at the
 
   std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Created\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; img_s  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getSize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; img_s  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getSize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; center &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img_s &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2u&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//(((img_s.x + img_s.y) / 2.) / 2.) * .6;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//(((img_s.x + img_s.y) / 2.) / 2.) * .6;&lt;/span&gt;
 
   std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;srand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;mt19937 rng&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -2363,10 +2568,10 @@ A full list of conversions and their implementations can be found at the
       &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wiggle_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; increase &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; tau&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
       &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; colour &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;colour_idx_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;r    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;g    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;r    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;g    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
       sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Vertex v&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; colour&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
       points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;emplace_back&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -2395,8 +2600,8 @@ A full list of conversions and their implementations can be found at the
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/każdy_koniec_to_nowy_początek/" />
+    <id>https://nabijaczleweli.xyz/content/writing/każdy_koniec_to_nowy_początek/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/każdy_koniec_to_nowy_początek/" />
     <title> Każdy koniec to nowy początek — nabijaczleweli </title>
     <updated>2016-09-22T01:20:31+02:00</updated>
     <content type="html">
@@ -2576,8 +2781,8 @@ A. Łopacińska
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/moments/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/moments/" />
+    <id>https://nabijaczleweli.xyz/content/writing/moments/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/moments/" />
     <title> A Widowꞌs Trace — nabijaczleweli </title>
     <updated>2017-04-23T03:37:41+02:00</updated>
     <content type="html">
@@ -3005,8 +3210,8 @@ A. Łopacińska
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/poetry/the_east_wind/" />
+    <id>https://nabijaczleweli.xyz/content/writing/poetry/the_east_wind/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/poetry/the_east_wind/" />
     <title> Poetry — nabijaczleweli </title>
     <updated>2017-05-19T12:25:37+02:00</updated>
     <content type="html">
@@ -3063,8 +3268,8 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/poetry/ПИПА/" />
+    <id>https://nabijaczleweli.xyz/content/writing/poetry/ПИПА/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/poetry/ПИПА/" />
     <title> ПИПА – Dzieła zebrane — nabijaczleweli </title>
     <updated>2018-11-03T21:03:25+01:00</updated>
     <content type="html">
@@ -3313,8 +3518,8 @@ Wyrok wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;�
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/the_taste_of_mi/" />
+    <id>https://nabijaczleweli.xyz/content/writing/the_taste_of_mi/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/the_taste_of_mi/" />
     <title> The Taste of MI — nabijaczleweli </title>
     <updated>2017-08-16T19:15:09+02:00</updated>
     <content type="html">
@@ -3887,8 +4092,8 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/translations/funeral_blues.html" />
+    <id>https://nabijaczleweli.xyz/content/writing/translations/funeral_blues.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/translations/funeral_blues.html" />
     <title> Funeral Blues (ew. Pogrzebowy Blues) — nabijaczleweli </title>
     <updated>2018-04-29T04:28:25+02:00</updated>
     <content type="html">
@@ -3941,8 +4146,8 @@ A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&q
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/świat_to_kilka_takich_pokoi/" />
+    <id>https://nabijaczleweli.xyz/content/writing/świat_to_kilka_takich_pokoi/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/świat_to_kilka_takich_pokoi/" />
     <title> Świat to kilka takich pokoi — nabijaczleweli </title>
     <updated>2016-06-06T23:40:31+02:00</updated>
     <content type="html">
@@ -4210,8 +4415,8 @@ I tak, drogie dzieci, zaczęła sie WWI.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing/наган/</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing/наган/" />
+    <id>https://nabijaczleweli.xyz/content/writing/наган/</id>
+    <link href="https://nabijaczleweli.xyz/content/writing/наган/" />
     <title> Наган — nabijaczleweli </title>
     <updated>2018-10-24T20:12:57+02:00</updated>
     <content type="html">
@@ -4610,8 +4815,8 @@ zrozumieją dopiero w czasach innych, lepszych.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/dead_santa.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/dead_santa.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/dead_santa.html" />
     <title> No gifts this year — nabijaczleweli </title>
     <updated>2016-12-26T02:01:20+01:00</updated>
     <content type="html">
@@ -4670,8 +4875,8 @@ zrozumieją dopiero w czasach innych, lepszych.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/degenerate.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/degenerate.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/degenerate.html" />
     <title> Degenerate Watch — nabijaczleweli </title>
     <updated>2017-01-08T04:00:46+01:00</updated>
     <content type="html">
@@ -4717,8 +4922,8 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/eye_see.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/eye_see.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/eye_see.html" />
     <title> The Last Eye — nabijaczleweli </title>
     <updated>2017-02-02T13:45:35+01:00</updated>
     <content type="html">
@@ -4788,8 +4993,8 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/green_ass_dog.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/green_ass_dog.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/green_ass_dog.html" />
     <title> Cucumber Dog — nabijaczleweli </title>
     <updated>2016-12-29T15:37:19+01:00</updated>
     <content type="html">
@@ -4838,8 +5043,8 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/laser_cats.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/laser_cats.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/laser_cats.html" />
     <title> Ghostly Lasers — nabijaczleweli </title>
     <updated>2017-01-30T00:07:59+01:00</updated>
     <content type="html">
@@ -4878,8 +5083,8 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/not_dead_yet.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/not_dead_yet.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/not_dead_yet.html" />
     <title> Get up，soldier — nabijaczleweli </title>
     <updated>2016-12-29T21:51:50+01:00</updated>
     <content type="html">
@@ -4957,8 +5162,8 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/six_minutes.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/six_minutes.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/six_minutes.html" />
     <title> Six Minutes — nabijaczleweli </title>
     <updated>2016-12-28T01:54:52+01:00</updated>
     <content type="html">
@@ -5030,8 +5235,8 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/start_eq_end.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/start_eq_end.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/start_eq_end.html" />
     <title> End = Start — nabijaczleweli </title>
     <updated>2016-12-24T15:00:32+01:00</updated>
     <content type="html">
@@ -5058,8 +5263,8 @@ Not ever would she expect this.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/theless.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/theless.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/theless.html" />
     <title> The-less — nabijaczleweli </title>
     <updated>2016-12-24T02:04:36+01:00</updated>
     <content type="html">
@@ -5131,8 +5336,8 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/writing_prompts/trucks_a_cash.html" />
+    <id>https://nabijaczleweli.xyz/content/writing_prompts/trucks_a_cash.html</id>
+    <link href="https://nabijaczleweli.xyz/content/writing_prompts/trucks_a_cash.html" />
     <title> Utopian Assassin — nabijaczleweli </title>
     <updated>2016-12-31T18:30:49+01:00</updated>
     <content type="html">
