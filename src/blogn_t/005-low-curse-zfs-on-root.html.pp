@@ -20,14 +20,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                                                                                                                  <!-- RSS_UPDATE_DATE: "Mon, 15 Mar 2021 23:49:31 +0100" -->
 
 
-
-#define CMT Also used in heading.h, make sure to update both with fixes
-#undef CMT
-#define HEADING_LINK(id)                  <a class="hash-link" href=STR(HASH##id)>HASH</a>
-#define HEADING_S(level, hid, style, ...) <h##level id=STR(hid) style>HEADING_LINK(hid) __VA_ARGS__</h##level>
-#define HEADING(level, id, ...)           HEADING_S(level, id, , __VA_ARGS__)
-
-
 #ifdef linux
 #undef linux
 #endif

@@ -1,0 +1,36 @@
+nabijaczleweli@tarta:~/uwu$ groff -Kutf8 -Tps -mdoc -tp < frag.1 | gs
+GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS<1>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<3>GS<1>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS<2>GS<5>GS<13>GS<22>GS<31>GS<40>GS<48>GS<61>GS<82>GS<97>GS<124>GS<132>GS<139>GS<150>GS<159>GS<168>GS<174>GS<181>GS<188>GS<193>GS<201>GS<209>GS<217>GS<225>GS<234>GS<242>GS<251>GS>Querying operating system for font files...
+Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-BoldItalic.
+Can't find (or can't open) font file CourierPrime-BoldItalic.
+Didn't find this font on the system!
+Substituting font Courier-BoldOblique for CourierPrime-BoldItalic.
+Loading NimbusMonoPS-BoldItalic font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-BoldItalic... 4371456 2971386 7864932 6531275 1 done.
+GS>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-Italic.
+Can't find (or can't open) font file LiberationSans-Italic.
+Loading LiberationSans-Italic font from /usr/share/fonts/truetype/liberation2/LiberationSans-Italic.ttf... 4572808 3202292 8735964 7377991 1 done.
+GS<1>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime.
+Can't find (or can't open) font file CourierPrime.
+Didn't find this font on the system!
+Substituting font Courier for CourierPrime.
+Loading NimbusMonoPS-Regular font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-Regular... 4707152 3390954 8777444 7417724 1 done.
+Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-Italic.
+Can't find (or can't open) font file CourierPrime-Italic.
+Didn't find this font on the system!
+Substituting font Courier-Oblique for CourierPrime-Italic.
+Loading NimbusMonoPS-Italic font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-Italic... 4955064 3635291 8797644 7430341 1 done.
+GS>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-Bold.
+Can't find (or can't open) font file CourierPrime-Bold.
+Didn't find this font on the system!
+Substituting font Courier-Bold for CourierPrime-Bold.
+Loading NimbusMonoPS-Bold font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-Bold... 5223176 3896909 8797644 7439279 1 done.
+GS<1>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-Bold.
+Can't find (or can't open) font file LiberationSans-Bold.
+Loading LiberationSans-Bold font from /usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf... 5255944 3939182 9686752 8286341 1 done.
+Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans.
+Can't find (or can't open) font file LiberationSans.
+Loading LiberationSans font from /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf... 5313240 3985493 10080064 8668213 1 done.
+GS>GS<9>GS<18>GS<27>GS<36>GS<45>GS<54>GS<63>GS<72>GS<81>GS<90>GS<99>GS<108>GS<117>GS<126>GS<135>GS<144>GS<153>GS<162>GS<171>GS<180>GS<189>GS<198>GS<207>GS<216>GS<225>GS<234>GS<243>GS<252>GS>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-BoldItalic.
+Can't find (or can't open) font file LiberationSans-BoldItalic.
+Loading LiberationSans-BoldItalic font from /usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf... 5333440 4004198 10467904 9033893 1 done.
+GS>GS<9>GS<18>GS<27>GS<36>GS<45>GS<54>GS<63>GS<72>GS<81>GS<90>GS<99>GS<108>GS<117>GS<126>GS<135>GS<144>GS<153>GS<162>GS<171>GS<180>GS<189>GS<198>GS<207>GS<216>GS<225>GS<234>GS<243>GS<252>GS>GS<2>GS<11>GS<20>GS<29>GS<38>GS<47>GS<56>GS<65>GS<74>GS<83>GS<92>GS<101>GS<110>GS<119>GS<128>GS<137>GS<146>GS<155>GS<164>GS<173>GS<182>GS<191>GS<200>GS<209>GS<218>GS<227>GS<236>GS<245>GS<254>GS<2>GS<7>GS<16>GS<25>GS<34>GS<43>GS<52>GS<61>GS<70>GS<79>GS<88>GS<97>GS<106>GS<115>GS<124>GS<133>GS<142>GS<151>GS<160>GS<169>GS<178>GS<187>GS<196>GS<205>GS<214>GS<223>GS<232>GS<241>GS<250>GS>GS<4>GS<13>GS<22>GS<31>GS<40>GS<49>GS<58>GS<67>GS<76>GS<84>GS<92>GS<100>GS<108>GS<117>GS<125>GS<133>GS<141>GS<149>GS<158>GS<167>GS<176>GS<185>GS<194>GS<203>GS<212>GS<221>GS<230>GS<239>GS<248>GS<257>GS<3>GS<9>GS<18>GS<27>GS<36>GS<45>GS<54>GS<63>GS<72>GS<80>GS<88>GS<96>GS<104>GS<113>GS<122>GS<130>GS<138>GS<146>GS<154>GS<163>GS<172>GS<181>GS<190>GS<199>GS<208>GS<217>GS<226>GS<235>GS<244>GS<253>GS<1>GS<6>GS<15>GS<24>GS<33>GS<42>GS<51>GS<60>GS<69>GS<78>GS<86>GS<94>GS<102>GS<111>GS<120>GS<128>GS<136>GS<144>GS<152>GS<161>GS<170>GS<179>GS<188>GS<197>GS<206>GS<215>GS<224>GS<233>GS<242>GS<251>GS>GS<3>GS<12>GS<21>GS<30>GS<39>GS<48>GS<57>GS<66>GS<74>GS<82>GS<90>GS<98>GS<106>GS<115>GS<124>GS<132>GS<140>GS<148>GS<157>GS<166>GS<175>GS<184>GS<193>GS<202>GS<211>GS<220>GS<229>GS<238>GS<247>GS<255>GS>GS<9>GS<18>GS<27>GS<36>GS<45>GS<54>GS<63>GS<72>GS<81>GS<90>GS<99>GS<108>GS<117>GS<126>GS<135>GS<144>GS<153>GS<162>GS<171>GS<180>GS<189>GS<198>GS<207>GS<216>GS<225>GS<234>GS<243>GS<252>GS<1>GS<6>GS<15>GS<24>GS<33>GS<42>GS<51>GS<60>GS<68>GS<77>GS<86>GS<95>GS<104>GS<113>GS<122>GS<131>GS<140>GS<149>GS<158>GS<167>GS<176>GS<185>GS<194>GS<203>GS<212>GS<221>GS<230>GS<239>GS<248>GS<257>GS>GS<9>GS<18>GS<27>GS<36>GS<45>GS<54>GS<63>GS<72>GS<81>GS<90>GS<99>GS<108>GS<117>GS<126>GS<135>GS<144>GS<153>GS<162>GS<171>GS<180>GS<189>GS<198>GS<207>GS<216>GS<225>GS<234>GS<243>GS<252>GS>GS<3>GS<12>GS<21>GS<30>GS<39>GS<48>GS<57>GS<66>GS<75>GS<84>GS<93>GS<102>GS<111>GS<120>GS<129>GS<138>GS<147>GS<155>GS<164>GS<173>GS<182>GS<191>GS<200>GS<209>GS<218>GS<227>GS<236>GS<245>GS<254>GS<2>GS<7>GS<16>GS<25>GS<33>GS<42>GS<51>GS<60>GS<69>GS<78>GS<87>GS<96>GS<104>GS<113>GS<122>GS<131>GS<140>GS<149>GS<158>GS<167>GS<176>GS<185>GS<194>GS<203>GS<212>GS<221>GS<230>GS<239>GS<248>GS<257>GS>GS>GS>GS>GS>GS>GS>GS<2>GS<1>GS<1>GS<2>GS<2>GS<2>GS<1>GS<1>GS<1>GS>GS>GS>GS<2>GS<1>GS>GS<1>GS>GS>GS<1>GS>GS<1>GS>GS<1>GS<2>GS<1>GS>GS>GS>GS<2>GS>GS<1>GS<1>GS>GS<2>GS>GS>GS>GS<1>GS>GS<1>GS<2>GS>GS>GS<1>GS<1>GS>GS<2>GS<1>GS>GS<1>GS<1>GS>GS>GS<2>GS>GS<2>GS<2>GS>GS<1>GS>GS<2>GS<1>GS>GS>GS<2>GS>GS<1>GS<4>GS<2>GS>GS>GS<1>GS<1>GS<1>GS>>>showpage, press <return> to continue<<
+GS>GS>GS>GS>

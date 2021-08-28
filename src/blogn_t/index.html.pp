@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define POST(post_id, post_time, post_time_2, ...)  \
-	<p><samp id=STR(post_id)><a href=STR(post_id.html)>__VA_ARGS__</a>; <span style="white-space: nowrap">post_time, post_time_2</span></samp></p>
+	<p><samp id=STR(post_id)><a href=STR(post_id.html)>__VA_ARGS__</a>; <span style="white-space: nowrap;">post_time, post_time_2</span></samp></p>
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE                                                                 FORCED_NEWLINE \
@@ -44,6 +44,7 @@ Not banged out in an hour.
 	POST(005-low-curse-zfs-on-root,              Mon, 14 Sep 2020 00:20:20 +0200, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
 	POST(005a-zfs-on-root-single-disk-corollary, Thu, 05 Nov 2020 22:06:30 +0100, 005a. A single-disk but slightly more cursed ZFS-on-root corollary)
 	POST(006-UNIX-r-ATT,                         Thu, 08 Jul 2021 20:26:38 +0200, 006. ¹UNIX® is a registered trademark of AT&T.)
+	POST(007-groff-Tps-cyrillic-et-al,           Sat, 28 Aug 2021 18:36:44 +0200, 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

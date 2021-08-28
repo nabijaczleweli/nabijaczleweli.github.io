@@ -1,0 +1,54 @@
+# apt install fonts-liberation2
+
+$ for v in Regular Bold Italic BoldItalic; do
+  	fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' /usr/share/fonts/truetype/liberation2/LiberatSans-$v.ttf LiberatSans-$v.afm;
+  
+  	afmtodit -cmi0 \
+  		-d /usr/share/groff/current/font/devps/DESC \
+  		-e /usr/share/groff/current/font/devps/text.enc \
+  		LiberationSans-$v.afm /usr/share/groff/current/font/devps/generate/textmap "T$(echo $v | tr -d '[:lower:]-')";
+  done
+This font contains both a 'kern' table and a 'GPOS' table.
+  The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
+The glyph named macron is mapped to U+02C9.
+But its name indicates it should be mapped to U+00AF.
+The glyph named Delta is mapped to U+0394.
+But its name indicates it should be mapped to U+2206.
+The glyph named Omega is mapped to U+03A9.
+But its name indicates it should be mapped to U+2126.
+The glyph named mu is mapped to U+03BC.
+But its name indicates it should be mapped to U+00B5.
+The glyph named periodcentered is mapped to U+2219.
+But its name indicates it should be mapped to U+00B7.
+
+both S_BE and S_PE map to u0053 at /bin/afmtodit line 6519.
+both S_BE and S_TE map to u0053 at /bin/afmtodit line 6519.
+both anoteleia and middot map to u00B7 at /bin/afmtodit line 6519.
+both mu and mu1 map to mc at /bin/afmtodit line 6411.
+both hookabovecomb and uni0309 map to u0309 at /bin/afmtodit line 6519.
+both gravecomb and uni0340 map to u0300 at /bin/afmtodit line 6519.
+both acutecomb and uni0341 map to u0301 at /bin/afmtodit line 6519.
+both uni0313 and uni0343 map to u0313 at /bin/afmtodit line 6519.
+both uni02B9 and uni0374 map to u02B9 at /bin/afmtodit line 6519.
+both alphatonos and uni1F71 map to u03B1_0301 at /bin/afmtodit line 6519.
+both epsilontonos and uni1F73 map to u03B5_0301 at /bin/afmtodit line 6519.
+both etatonos and uni1F75 map to u03B7_0301 at /bin/afmtodit line 6519.
+both iotatonos and uni1F77 map to u03B9_0301 at /bin/afmtodit line 6519.
+both omicrontonos and uni1F79 map to u03BF_0301 at /bin/afmtodit line 6519.
+both omegatonos and uni1F7D map to u03C9_0301 at /bin/afmtodit line 6519.
+both Alphatonos and uni1FBB map to u0391_0301 at /bin/afmtodit line 6519.
+both Epsilontonos and uni1FC9 map to u0395_0301 at /bin/afmtodit line 6519.
+both Etatonos and uni1FCB map to u0397_0301 at /bin/afmtodit line 6519.
+both iotadieresistonos and uni1FD3 map to u03B9_0308_0301 at /bin/afmtodit line 6519.
+both Iotatonos and uni1FDB map to u0399_0301 at /bin/afmtodit line 6519.
+both Upsilontonos and uni1FEB map to u03A5_0301 at /bin/afmtodit line 6519.
+both dieresistonos and uni1FEE map to u00A8_0301 at /bin/afmtodit line 6519.
+both Omicrontonos and uni1FF9 map to u039F_0301 at /bin/afmtodit line 6519.
+both Omegatonos and uni1FFB map to u03A9_0301 at /bin/afmtodit line 6519.
+both uni2000 and uni2002 map to u2002 at /bin/afmtodit line 6519.
+both uni2001 and uni2003 map to u2003 at /bin/afmtodit line 6519.
+both uni1FE3 and upsilondieresistonos map to u03C5_0308_0301 at /bin/afmtodit line 6519.
+both uni1F7B and upsilontonos map to u03C5_0301 at /bin/afmtodit line 6519.
+both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
+
+# cp T* /usr/local/share/groff/site-font/devps/

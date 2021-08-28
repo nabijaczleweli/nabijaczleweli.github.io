@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/006-UNIX-r-ATT.html">006. ¹UNIX® is a registered trademark of AT&T.</a>;
-		<span style="white-space: nowrap;">Thu, 08 Jul 2021 20:26:38 +0200</span>
+		<a href="blogn_t/007-groff-Tps-cyrillic-et-al.html">007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</a>;
+		<span style="white-space: nowrap;">Sat, 28 Aug 2021 18:36:44 +0200</span>
 	</samp>
 </p>
 

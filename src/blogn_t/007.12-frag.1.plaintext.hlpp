@@ -1,0 +1,102 @@
+.Dd
+.Dt CUT 1
+.Os
+.
+.Sh NAME
+.Nm cut
+.Nd extract bytes, characters, or fields
+.Sh SYNOPSIS
+.Nm
+.Fl f Ar range Ns Oo , Ns Ar range Oc Ns …
+.Op Fl Czs
+.Op Fl d Ar elimiter
+.Op Fl O Ar out-delimiter
+.Oo Ar file Oc Ns …
+.
+.Sh DESCRIPTION
+Copies bytes, characters, or fieflds specified by
+.Ar range Ns s
+from each line of the input
+.Ar file Ns s Pq standard input stream if none or Sq Ar -
+to the standard output stream.
+.Pp
+.Ar range Ns s
+can be separated by commas or spaces, and each can be in the format:
+.Bl -tag -compact -offset Ds -width "from-to"
+.It Ar number
+.Brq Ar number
+.It Ar from Ns Cm -
+.Ar [ from , No \[if] )
+.It Ar from Ns Cm - Ns Ar to
+.Ar [ number , to ]
+.It Li "   " Cm - Ns Ar to
+.Li [ 1 , Ar to ]
+.El
+Indices are
+.Em 1 Ns -based ,
+and a union is taken of all
+.Ar range Ns s .
+.Pp
+With
+.Fl b ,
+bytes are extracted; with
+.Fl n
+characters are never interrupted mid-sequence, with rounding preferred down
+.Pq see Sx EXAMPLES .
+.Pp
+The newline
+.Pq NUL with Fl z
+is never matched and always printed
+.Pq unless the entire line was removed with Fl fs .
+.
+.Sh OPTIONS (ŁĄĘĆŻŹŃ łąęćżźń)
+.Bl -tag -compact -width "-O, --output-delimiter=out-delim"
+.It Fl b , -bytes Ns = Ns Ar range Ns Oo , Ns Ar range Oc Ns …
+Extract bytes.
+.It Fl n
+Don't interrupt multi-byte character sequences.
+.Pp
+.It Fl C , -complement
+Invert
+.Ar range Ns s :
+select all
+.Em but
+what they match
+.Pq \&[ Ns Sy 1 , No \[if] ) \- \[*S] Ns Ar range .
+.\" TODO?: this should be a Big Union, but, well
+For the purposes of
+.Fl n ,
+the most minimal set of
+.Ar range Ns s
+is constructed.
+.El
+.
+.Sh EXAMPLES
+.Bd -literal -compact
+.Li $ Nm printf Li '\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07' \&| Nm  Fl zb Ar 1,3- Li \&| Nm hexdump Fl C
+00000000  01 03 04 00 05 07 00                              |.......|
+00000007
+.Ed
+.Pp
+.Bd -literal -compact
+.Li $ Nm printf Li 'яйцо\enЯЙЦО'\f(CB'яйцо\enЯЙЦО'\fP\f(CI'яйцо\enЯЙЦО'\fP\f[CBI]'яйцо\enЯЙЦО'\fP \&| Nm  Fl c Ar 1,3-
+яцо\fRяцо\fP\fBяцо\fP\fIяцо\fP\f(BIяцо\fP
+ЯЦО\fRЯЦО\fP\fBЯЦО\fP\fIЯЦО\fP\f(BIЯЦО\fP
+.Ed
+.Pp
+.Bd -literal -compact
+# name, IDs, homedir, shell, ...
+.Li $ Nm Fl f Ar 1,3-4,6- Fl d Ns Ar \&: Fl O Ns Li \&"$( Ns Nm printf Li '\et')" Pa /etc/passwd
+root    0       0       /root   /bin/bash
+bin     2       2       /bin    /usr/sbin/nologin
+irc     39      39      /var/run/ircd   /usr/sbin/nologin
+cicada  1000    100     /home/cicada    /bin/bash
+nobody  65534   65534   /nonexistent    /usr/sbin/nologin
+# Everything else: password and GNATS
+.Li $ Nm Fl Cf Ar 1,3-4,6- Fl d Ns Ar \&: Fl O Ns Li \&"$( Ns Nm printf Li '\et')" Pa /etc/passwd
+x       root
+x       bin
+x       ircd
+x       ŁĄĘĆŻŹŃ łąęćżźń,,,
+x       nobody
+.Ed

@@ -1,0 +1,8 @@
+nabijaczleweli@tarta:~/uwu/devps$ file /usr/share/fonts/type1/gsfonts/{n022004l,n022023l}.*
+/usr/share/fonts/type1/gsfonts/n022004l.afm: ASCII font metrics
+/usr/share/fonts/type1/gsfonts/n022004l.pfb: PostScript Type 1 font program data
+/usr/share/fonts/type1/gsfonts/n022004l.pfm: Printer Font Metrics NimbusMonL-Bold, 2738 bytes, Nimbus Mono L bold
+
+/usr/share/fonts/type1/gsfonts/n022023l.afm: ASCII font metrics
+/usr/share/fonts/type1/gsfonts/n022023l.pfb: PostScript Type 1 font program data
+/usr/share/fonts/type1/gsfonts/n022023l.pfm: Printer Font Metrics NimbusMonL-ReguObli, 2742 bytes, Nimbus Mono L italic

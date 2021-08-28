@@ -25,6 +25,13 @@
 </p>
 
 
+#define CMT Also used in heading.h, make sure to update both with fixes
+#undef CMT
+#define HEADING_LINK(id)                  <a class="hash-link" href=STR(HASH##id)>HASH</a>
+#define HEADING_S(level, hid, style, ...) <h##level id=STR(hid) style>HEADING_LINK(hid) __VA_ARGS__</h##level>
+#define HEADING(level, id, ...)           HEADING_S(level, id, , __VA_ARGS__)
+
+
 #define BLOGN_T_STYLESHEETS MAIN_HEADING_STYLE                                                                 FORCED_NEWLINE \
                             <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
                             <link href="/content/assets/blogn_t.css" rel="stylesheet" />                       FORCED_NEWLINE \
