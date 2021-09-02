@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Sat, 28 Aug 2021 18:36:44 +0200" -->
 #define POST_DATE      Sat, 28 Aug 2021 18:36:44 +0200
-#define POST_POST_DATE 
+#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
@@ -174,7 +174,7 @@ This yields:
 
 <p class="indented continued">
 A great time!
-The Arch Wiki says that to <a href="https://wiki.archlinux.org/title/Groff#Correctly_display_Polish_diacritics">"Correctly display Polish diacritics"</a>,
+The Arch Wiki says that to <a href="//wiki.archlinux.org/title/Groff#Correctly_display_Polish_diacritics">"Correctly display Polish diacritics"</a>,
 you can <code>groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi</code>, so:
 </p>
 <div class="bigcode continuing">
@@ -282,7 +282,7 @@ but is clasically unhelpful in achieving, so:
 
 HEADING_S(3, alternative-art-foreign-font, class="continued", A foreign font)
 <p class="indented continuing">
-In this case: <a href="https://dimkanovikov.pro/courierprime/">Курьер Прайм</a>, a Courier Prime with Cyrillic characters, that, unlike the latter,
+In this case: <a href="//dimkanovikov.pro/courierprime/">Курьер Прайм</a>, a Courier Prime with Cyrillic characters, that, unlike the latter,
 isn't in Debian (merging them is an <a href="//bugs.debian.org/992739">ongoing adventure</a>):  <!--'-->
 </p>
 
@@ -303,6 +303,7 @@ Warning: Mac and Windows entries in the 'name' table differ for the
  Fullname string in the language English (US)
  Mac String: Courier Prime Bold Italic
 Windows String: CourierPrime-BoldItalic
+‌# cp *.pfa /usr/local/share/groff/site-font/devps/
 
 $ for v in "" -Bold -Italic -Bold-Italic; do
   	afmtodit -ncmi0 \
@@ -348,6 +349,7 @@ Warning: Mac and Windows entries in the 'name' table differ for the
  Fullname string in the language English (US)
  Mac String: Courier Prime Bold Italic
 Windows String: CourierPrime-BoldItalic
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">cp *.pfa /usr/local/share/groff/site-font/devps/</span></span></code>
 
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
   TAB_INDENTafmtodit -ncmi<span class="token number">0</span> \FORCED_NEWLINE
