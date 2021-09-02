@@ -161,7 +161,7 @@ ol.wide-explanation > li {
 
 <p></p>
 <h2 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <samp><code>007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</code></samp></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Sat, 28 Aug 2021 18:36:44 +0200</span></h4>
+ <h4 id="post-date"><span style="white-space: nowrap">Sat, 28 Aug 2021 18:36:44 +0200</span>, updated Thu, 02 Sep 2021 20:41:02 +0200</h4>
 
 <!-- With manual corrections and welding the separately-highlit AWK bits:
 for f in {C,T}{R,B,I,BI}; do
@@ -334,7 +334,7 @@ request id is PDF-978 (0 file(s))
 
 <p class="indented continued">
 A great time!
-The Arch Wiki says that to <a href="https://wiki.archlinux.org/title/Groff#Correctly_display_Polish_diacritics">"Correctly display Polish diacritics"</a>,
+The Arch Wiki says that to <a href="//wiki.archlinux.org/title/Groff#Correctly_display_Polish_diacritics">"Correctly display Polish diacritics"</a>,
 you can <code>groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi</code>, so:
 </p>
 <div class="bigcode continuing">
@@ -498,7 +498,7 @@ but is clasically unhelpful in achieving, so:
 
 <h3 id="alternative-art-foreign-font" class="continued"><a class="hash-link" href="#alternative-art-foreign-font">#</a> A foreign font</h3>
 <p class="indented continuing">
-In this case: <a href="https://dimkanovikov.pro/courierprime/">Курьер Прайм</a>, a Courier Prime with Cyrillic characters, that, unlike the latter,
+In this case: <a href="//dimkanovikov.pro/courierprime/">Курьер Прайм</a>, a Courier Prime with Cyrillic characters, that, unlike the latter,
 isn't in Debian (merging them is an <a href="//bugs.debian.org/992739">ongoing adventure</a>):  <!--'-->
 </p>
 
@@ -519,6 +519,7 @@ Warning: Mac and Windows entries in the 'name' table differ for the
  Fullname string in the language English (US)
  Mac String: Courier Prime Bold Italic
 Windows String: CourierPrime-BoldItalic
+‌# cp *.pfa /usr/local/share/groff/site-font/devps/
 
 $ for v in "" -Bold -Italic -Bold-Italic; do
    afmtodit -ncmi0 -d /usr/share/groff/current/font/devps/DESC -e /usr/share/groff/current/font/devps/text.enc Courier-Prime$v.afm /usr/share/groff/current/font/devps/generate/textmap "C$(expr "$(echo $v | tr -d '[:lower:]-')" \| R)";
@@ -564,6 +565,7 @@ Warning: Mac and Windows entries in the 'name' table differ for the
  Fullname string in the language English (US)
  Mac String: Courier Prime Bold Italic
 Windows String: CourierPrime-BoldItalic
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">cp *.pfa /usr/local/share/groff/site-font/devps/</span></span></code>
 
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
     afmtodit -ncmi<span class="token number">0</span> \
@@ -847,7 +849,7 @@ x       nobody
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 11'<!--'-->s C preprocessor on 28.08.2021 18:37:11 CEST from 
+ Automatically generated with Clang 11'<!--'-->s C preprocessor on 02.09.2021 20:40:45 CEST from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp</a>. 
  
  <hr /> 
