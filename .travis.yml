@@ -9,6 +9,10 @@ cache:
     - $HOME/.rustup
     - $HOME/.cargo
     - build
+addons:
+  apt:
+    packages:
+      - clang
 #    From last working build https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/583594518#L213
 env: CALIBRE_VERSION=3.47.1
 
@@ -32,9 +36,9 @@ install:
   - cargo install gen-epub-book || true
 
 script:
-  - make OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book" ||
-    (sleep 1m; make OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book") ||
-    (sleep 1m; make OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book")
+  - make CC=clang OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book" ||
+    (sleep 1m; make CC=clang OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book") ||
+    (sleep 1m; make CC=clang OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book")
 
 after_success:
   - if [ -n "$TRAVIS_PULL_REQUEST" ]; then

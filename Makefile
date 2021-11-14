@@ -44,12 +44,12 @@ endif
 
 # Args: $<, $@, additional defines
 # `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
-preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -nostdinc -Wno-trigraphs -I$(abspath $(BLDDIR)/highlit) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/​FORCED_SPACER​//g" -e "s/HASH/\#/g" -e "s/[[:space:]]+$$//g" -e "s/TAB_INDENT/  /g" > $(CURDIR)/$(2)
+preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -pipe -nostdinc -Wno-trigraphs -I$(abspath $(BLDDIR)/highlit) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/​FORCED_SPACER​//g" -e "s/HASH/\#/g" -e "s/[[:space:]]+$$//g" -e "s/TAB_INDENT/  /g" > $(CURDIR)/$(2)
 
 TR := tr
 AWK := awk
 SED := sed
-CPP := cpp
+CPP := $(CC) -E -x c
 NPM := npm
 NODE := node
 GEN_EPUB_BOOK := gen-epub-book
