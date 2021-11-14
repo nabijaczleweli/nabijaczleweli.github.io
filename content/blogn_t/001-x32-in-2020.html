@@ -13,6 +13,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
                                                      <!-- RSS_PUB_DATE: "Thu, 9 Apr 2020 01:44:47 +0200" -->
+
+
                                                  <!-- RSS_UPDATE_DATE: "Tue, 28 Apr 2020 02:54:07 +0200" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
@@ -60,22 +62,28 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  </head> 
  <body>
 <style>
+
 .continued {
  margin-bottom: 0;
 }
+
 .continuing {
  margin-top: 0;
  margin-bottom: 0;
 }
+
 .continuation {
  margin-top: 0;
 }
 code, samp {
  font-family: "Droid Sans Mono", monospace;
 }
+
 h1, h2, h3, h4, h5, h6 {
  font-family: "Merriweather", serif;
 }
+
+
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
@@ -85,6 +93,7 @@ h6:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
+
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
@@ -98,6 +107,8 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
+
+
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
@@ -108,10 +119,14 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
  text-indent: 1em;
 }
 </style>
+
 <span class="roboto writing">
+
+
 <p></p>
 <h2 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <samp><code>001. Installing Debian'<!--'-->s x32 port in 2020</code></samp></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Thu, 9 Apr 2020 01:44:47 +0200</span>, last updated <span style="white-space: nowrap">Tue, 28 Apr 2020 02:54:07 +0200</span></h4>
+
 <p class="indented continued">
 Some time ago I bought an <a href="//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455">HP rp5700</a> <del>Piece of Shit</del> Point of Sale system
   with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
@@ -123,6 +138,7 @@ Some time later, I decided to make a router out of it, and, having heard of <cod
 <code>x32</code>'s proponents tout increased performance compared to <code>amd64</code>, but I couldn't care less;
  if you're looking for performance comparisons, this ain't it, I did this entirely because it was weird and rife with funny corner cases.
 </p>
+
 <p class="indented continued">
 The Debian wiki <a href="//wiki.debian.org/X32Port">X32Port</a> page dates back to around when <code>x32</code> was introduced in 2012 with such beautiful excerpts as:
 </p>
@@ -139,6 +155,7 @@ So this is the combination of the things I'<!--'-->ve read and tried in order to
  <img class="main-screenshot continuing" alt="Login screen showing the aforementioned date and dpkg --print-architecture returning x32"
       src="/content/assets/blogn_t/001.01-success.jpg" /></a></center>
 <p class="continuation"></p>
+
 <p class="indented continued">
 <code>debian-installer</code> existing for x32 would have solved most (all) of the problems with this install,
  but <a href="//bugs.debian.org/778195"><code>#778195</code></a> is open since Feb 2015, and dead as of that very November.
@@ -162,6 +179,7 @@ I also tried to <a href="//wiki.debian.org/CrossGrading">cross-grade</a> an inst
 <p class="continuation">
 And so, it came time to install Debian without <code>d-i</code>, like some sort of Arch user.
 </p>
+
 <h2 id="requirements" ><a class="hash-link" href="#requirements">#</a> What you'<!--'-->ll need</h2>
 <p class="indented continued">
 <a href="//manpages.debian.org/stretch/debootstrap/debootstrap.8.en.html"><code>debootstrap</code></a> and root privileges.
@@ -177,10 +195,12 @@ Also a kernel that can run <code>x32</code> binaries; Debian <code>amd64</code> 
   FreeBSD'<!--'-->s <a href="//www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/linuxemu.html">"Linux® Binary Compatibility"</a>
                does <a href="//twitter.com/nabijaczleweli/status/1246919228877426688">not</a> (as of 12.1)).
 </p>
+
 <p class="indented">
 I used <code>d-i</code>'<!--'-->s rescue mode (<code>rescue/enable=true</code> parameter) and added <code>syscall.x32=y</code> in the bootloader manually,
  this allowed me to use <code>d-i</code> for some of the annoying config parts (hostname, network), and PXE-booting it was the most convenient for me.
 </p>
+
 <h2 id="target_requirements" ><a class="hash-link" href="#target_requirements">#</a> What you'<!--'-->ll want</h2>
 <p class="indented continued">
 In (reverse-)chronological order: a disklabel, a bootloader, an initramfs (generator),
@@ -194,6 +214,7 @@ In (reverse-)chronological order: a disklabel, a bootloader, an initramfs (gener
 My target disklabel is a standard GPT-on-BIOS setup with a separate <code>/boot</code>
 (this helps by allowing the use of partlabels throughout, since <kbd>SZAROTKA-BOOT</kbd> is longer than the <code>vfat</code> maximum of 11):
 <div class="bigcode">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">fdisk</span> -l</span></span>
 <span class="token output">Disk /dev/sda: 149.5 GiB, 160041885696 bytes, 312581808 sectors
 Disk model: WDC WD1600AAJS-6
@@ -217,7 +238,10 @@ Device         Start       End   Sectors  Size Type
 </span></pre></code>
 </div>
 </p>
+
+
 <h2 id="building" ><a class="hash-link" href="#building">#</a> Assembling the system</h2>
+
 <p class="indented continued">
 Pressing <kbd>Tab</kbd> in ISOLINUX et al. pops up the command-line, which looks vaguely like this:
 </p>
@@ -231,6 +255,7 @@ Going through the rescue up to this menu ensures all the small annoying things a
 <p class="continuation">
 You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual terminal with a usable background and <code>$TERM</code>.
 </p>
+
 <table class="bigtable">
  <tr><td>Prepare the target VFS with all the partitions mounted first.</td>
      <td><samp>~ # <kbd>mkdir target</kbd></samp><br />
@@ -333,6 +358,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
          <samp>root@szarotka:/# <kbd>adduser nabijaczleweli sudo</kbd></samp><br />
          </td></tr>
 </table>
+
 <p class="indented continued">
 This should ensure the system boots and is usable enough after doing so — press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> and find out!
 </p>
@@ -342,6 +368,7 @@ This should ensure the system boots and is usable enough after doing so — pres
 If that didn't get your system to boot, please do <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail</a>, but if it did, then that's all from me for today,
 except, maybe, one last thing?
 </p>
+
 <p class="indented continued">
 Ever wondered what'd happen if you had inits but the kernel couldn't execute them? <a href="//twitter.com/nabijaczleweli/status/1246438561735413760">So did I</a>:
 </p>
@@ -350,11 +377,13 @@ Ever wondered what'd happen if you had inits but the kernel couldn't execute the
 <p class="continuation">
 Alright, bye!
 </p>
+
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
  or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
  </p>
+
 </span>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
@@ -371,9 +400,9 @@ Alright, bye!
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 14.11.2021 14:17:01 UTC from 
+ Automatically generated with Clang 7'<!--'-->s C preprocessor on 14.11.2021 14:49:52 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/001-x32-in-2020.html.pp">src/blogn_t/001-x32-in-2020.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/241736888">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/241737371">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

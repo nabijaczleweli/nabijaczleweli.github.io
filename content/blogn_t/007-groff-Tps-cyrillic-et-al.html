@@ -13,6 +13,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Sat, 28 Aug 2021 18:36:44 +0200" -->
+
+
+
+
+
+
+
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -58,22 +65,28 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  </head> 
  <body>
 <style>
+
 .continued {
  margin-bottom: 0;
 }
+
 .continuing {
  margin-top: 0;
  margin-bottom: 0;
 }
+
 .continuation {
  margin-top: 0;
 }
 code, samp {
  font-family: "Droid Sans Mono", monospace;
 }
+
 h1, h2, h3, h4, h5, h6 {
  font-family: "Merriweather", serif;
 }
+
+
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
@@ -83,6 +96,7 @@ h6:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
+
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
@@ -96,6 +110,8 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
+
+
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
@@ -105,36 +121,48 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
 .indented {
  text-indent: 1em;
 }
+
 .fragment {
  max-width: 100%;
 }
+
 .main-font {
  margin-top: 0.15em;
  margin-bottom: 0.15em;
  max-width: 100%;
 }
+
 ol.wide-explanation {
  padding-left: 1em; /* matches .indented  */
 }
+
 ol.wide-explanation > li {
  margin-bottom: 0.9em;
 }
+
 @media all and (min-device-width: 400px) {
  .main-font {
   width: 100%;
  }
 }
+
 @media all and (min-device-width: 800px) {
  .main-font {
   margin-left: 1em;
   min-width: 75%;
  }
 }
+
+
 </style>
+
 <span class="roboto writing">
+
+
 <p></p>
 <h2 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <samp><code>007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</code></samp></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Sat, 28 Aug 2021 18:36:44 +0200</span>, updated Thu, 02 Sep 2021 20:41:02 +0200</h4>
+
 <!-- With manual corrections and welding the separately-highlit AWK bits:
 for f in {C,T}{R,B,I,BI}; do
  in="$(awk '$1 == "internalname" {print $2; exit}' "/usr/share/groff/current/font/devps/$f")";
@@ -208,6 +236,7 @@ TI: Times-Italic
 /usr/share/fonts/type1/gsfonts/n021023l.afm
 TBI: Times-BoldItalic
 /usr/share/fonts/type1/gsfonts/n021024l.afm
+
 </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">ln</span> -s /usr/local/share/groff/site-font /usr/share/groff</span></span>
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">mkdir</span> -p /usr/local/share/groff/site-font</span></span>
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cp</span> -r ../devps /usr/local/share/groff/site-font</span></span>
@@ -221,6 +250,8 @@ because unlike <code>Times</code>, Nimbus is an actual font.
 </p>
 <!-- gs -d{Text,Graphics}AlphaBits=4 -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pngmono -r600 -sOutputFile=976.png ~/PDF/job_976-stdin___jaczleweli_PDF.pdf -->
 <a href="/content/assets/blogn_t/007.01-result.png"><img class="continuation main-font" alt="Example manual page with Cyrillic and Polish characters" src="/content/assets/blogn_t/007.01-result.png" /></a>
+
+
 <h2 id="prior-art" class="continued"><a class="hash-link" href="#prior-art">#</a> Prior art</h2>
 <p class="indented continuing">
 We've all been there, writing a manual that needs example text wider than US-ASCII, or to accredit a Russian.  <!--'-->
@@ -229,6 +260,7 @@ It, of course, is rather tempting to, then, "just write something", as it is, af
 This yields:
 </p>
 <div class="bigcode continuing">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | lp -dPDF
 pic:&lt;standard input>:10: invalid input character code 128
 pic:&lt;standard input>:14: invalid input character code 128
@@ -299,12 +331,14 @@ request id is PDF-978 (0 file(s))
 <a href="/content/assets/blogn_t/007.02-original.pdf">And</a>:
 </p>
 <a href="/content/assets/blogn_t/007.02-original.png"><img class="continuation main-font" alt="Same page, but non-ASCII characters are replaced with garbage, usually variant on the 'Å'" src="/content/assets/blogn_t/007.02-original.png" /></a>
+
 <p class="indented continued">
 A great time!
 The Arch Wiki says that to <a href="//wiki.archlinux.org/title/Groff#Correctly_display_Polish_diacritics">"Correctly display Polish diacritics"</a>,
 you can <code>groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi</code>, so:
 </p>
 <div class="bigcode continuing">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Kutf8 -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | lp -dPDF
 troff: &lt;standard input>:52: warning: can't find special character 'u0041_0328'
 troff: &lt;standard input>:52: warning: can't find special character 'u0045_0328'
@@ -331,11 +365,13 @@ request id is PDF-979 (0 file(s))
 <a href="/content/assets/blogn_t/007.03-Kutf8.pdf">And</a>:
 </p>
 <a href="/content/assets/blogn_t/007.03-Kutf8.png"><img class="continuation main-font" alt="Same page, the ellipsis is rendered, but non-ASCII characters apart from ŁĆ are entirely missing" src="/content/assets/blogn_t/007.03-Kutf8.png" /></a>
+
 <p class="indented">
 This is, arguably, not better – <kbd>ł</kbd>, <kbd>ć</kbd>, and the ellipsis have appeared, but everything else <em>dis</em>appeared.
 It's unclear why exactly those three, considering the ellipsis can't be reached by a classic <samp>groff_char(7)</samp> escape,
 and all three become <code>\[uXXXX]</code>-style escapes after passing through preconv.
 </p>
+
 <p class="indented continued">
 The same Arch Wiki article says that as part of "Adding support for cyrillic fonts",
 you can preprocess with <code>iconv -f utf-8 -t koi8-r</code>.
@@ -349,6 +385,7 @@ It's impossible to tell how the author expects literally any other Times variant
 or any of the four fixed-width fonts, to render Cyrillic.
 And it ignores the obvious point that it <em>replaces the font</em>, which means the pages <em>will</em> look different.
 </p>
+
 <p class="indented continued">
 It's only reasonable to expect the Russosphere to have some sort of answer to this, and,   <!--'-->
 indeed, <a href="//linuxtravel.blogspot.com/2015/03/cygwin-groff-cyrillic-russian-fonts.html">a 2015 post</a> has a workable solution;
@@ -362,6 +399,7 @@ More formally, <b>groff</b> does not have metrics for russian fonts. But I do ha
 Indeed! <code>devps.tar</code> contains a perfectly serviceable set of <code>usr/share/groff/current/font/devps/T{R,B,I,BI}</code> metrics:
 </p>
 <div class="bigcode continuing">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Kutf8 -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | lp -dPDF
 troff: &lt;standard input>:82: warning: can't find special character 'u044F'
 troff: &lt;standard input>:82: warning: can't find special character 'u0438_0306'
@@ -388,12 +426,14 @@ request id is PDF-980 (0 file(s))
 <a href="/content/assets/blogn_t/007.04-linuxtravels.pdf">Rendering to</a>:
 </p>
 <a href="/content/assets/blogn_t/007.04-linuxtravels.png"><img class="continuation main-font" alt="Same page, proportional non-ASCII characters rendered, monospace ones missing" src="/content/assets/blogn_t/007.04-linuxtravels.png" /></a>
+
 <p class="indented">
 A cursory inspection of the metric reveals that they're for <code>internalname NimbusRomNo9L-Regu</code> and friends,  <!--'-->
 generated Thu Aug 2 13:14:49 2007, as was the Nimbus in Buster;
 a cursory correlation with the provided <code>Fontmap</code> reveals that the mappings are as today.
 But it's still undistributable, still missing the Courier variants, and, regardless, still quite different from a metric generated with up-to-date groff.  <!--'-->
 </p>
+
 <h2 id="current-art" class="continued"><a class="hash-link" href="#current-art">#</a> Current art</h2>
 <p class="continuing">
 This is the bit where I vaguely explain how that big hunk at the top generates the unsolvable:
@@ -409,15 +449,17 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
      but doing anything besides name/alias/path mapping has thankfully <a href="//wiki.debian.org/gs-undefoma#line-254">died down</a> as a practice),
      with the interesting mappings being in the format:
    <div class="bigcode continuing">
+
 <pre class="language-plaintext"><code class="language-plaintext">/NimbusRomNo9L-ReguItal (/usr/share/fonts/type1/gsfonts/n021023l.pfb) ;
 /Times-Italic /NimbusRomNo9L-ReguItal ;
 /NimbusMonL-ReguObli (/usr/share/fonts/type1/gsfonts/n022023l.pfb) ;
 /Courier-Oblique /NimbusMonL-ReguObli ;
 </pre></code>
-     </div>
+ </div>
      This can be trivially walked by first exhausting all name/name mappings, then resolving the final name/path mapping.</li>
  <li>For each font in <code>/usr/share/fonts/type1/gsfonts/</code>, there are three files:
      <div class="bigcode continuing">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu/devps</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">file</span> /usr/share/fonts/type1/gsfonts/<span class="token punctuation">{</span>n022004l,n022023l<span class="token punctuation">}</span>.*</span></span>
 <span class="token output">/usr/share/fonts/type1/gsfonts/n022004l.afm: ASCII font metrics
 /usr/share/fonts/type1/gsfonts/n022004l.pfb: PostScript Type 1 font program data
@@ -427,7 +469,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
 /usr/share/fonts/type1/gsfonts/n022023l.pfb: PostScript Type 1 font program data
 /usr/share/fonts/type1/gsfonts/n022023l.pfm: Printer Font Metrics NimbusMonL-ReguObli, 2742 bytes, Nimbus Mono L italic
 </span></pre></code>
-     </div>
+ </div>
      The second is the actual font, the other two are metrics.</li>
  <li>These metrics must be converted to groff's internal format,  <!--'-->
      the flags gracefully provided by <code>/usr/share/groff/current/font/devps/generate/Makefile</code>;
@@ -436,6 +478,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
      ).</li>
  <li>groff searches for site-specific fonts in <code>/usr/share/groff/site-font/dev<em>DEV</em></code>.</li>
 </ol>
+
 <p class="continued">
 This is not without its own delta from the original:
 </p>
@@ -444,16 +487,21 @@ This is not without its own delta from the original:
 But these differences are not only minute even at their worst (1.92pt in the synopsis line, 0.96pt in the third description line),
 but a result of the tighter kerning matching the font better.
 </p>
+
+
 <h2 id="alternative-art" class="continued"><a class="hash-link" href="#alternative-art">#</a> Alternative art</h2>
 <p class="indented continuation">
 In the three-day process of "printing a cyrillic document in 2020", I've also done what <code>grops(1)</code> says you can,  <!--'-->
 but is clasically unhelpful in achieving, so:
 </p>
+
+
 <h3 id="alternative-art-foreign-font" class="continued"><a class="hash-link" href="#alternative-art-foreign-font">#</a> A foreign font</h3>
 <p class="indented continuing">
 In this case: <a href="//dimkanovikov.pro/courierprime/">Курьер Прайм</a>, a Courier Prime with Cyrillic characters, that, unlike the latter,
 isn't in Debian (merging them is an <a href="//bugs.debian.org/992739">ongoing adventure</a>):  <!--'-->
 </p>
+
 <!-- This, but manually fixed:
 $ unzip ../courierprime.zip
 Archive: ../courierprime.zip
@@ -472,10 +520,15 @@ Warning: Mac and Windows entries in the 'name' table differ for the
  Mac String: Courier Prime Bold Italic
 Windows String: CourierPrime-BoldItalic
 ‌# cp *.pfa /usr/local/share/groff/site-font/devps/
+
 $ for v in "" -Bold -Italic -Bold-Italic; do
    afmtodit -ncmi0 -d /usr/share/groff/current/font/devps/DESC -e /usr/share/groff/current/font/devps/text.enc Courier-Prime$v.afm /usr/share/groff/current/font/devps/generate/textmap "C$(expr "$(echo $v | tr -d '[:lower:]-')" \| R)";
+
+
+
   done
 ‌# cp C{R,B,I,BI} /usr/local/share/groff/site-font/devps/
+
 ‌# {
    cat /usr/share/groff/current/font/devps/download; echo;
    for v in "" -Bold -Italic -Bold-Italic; do
@@ -484,9 +537,11 @@ $ for v in "" -Bold -Italic -Bold-Italic; do
   } | tee /usr/local/share/groff/site-font/devps/download
 ‌# List of downloadable fonts
 ‌# PostScript-name Filename
+
 Symbol-Slanted symbolsl.pfa
 ZapfDingbats-Reverse zapfdr.pfa
 FreeEuro freeeuro.pfa
+
 CourierPrime Courier-Prime.pfa
 CourierPrime-Bold Courier-Prime-Bold.pfa
 CourierPrime-Italic Courier-Prime-Italic.pfa
@@ -511,6 +566,7 @@ Warning: Mac and Windows entries in the 'name' table differ for the
  Mac String: Courier Prime Bold Italic
 Windows String: CourierPrime-BoldItalic
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">cp *.pfa /usr/local/share/groff/site-font/devps/</span></span></code>
+
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
     afmtodit -ncmi<span class="token number">0</span> \
       -d /usr/share/groff/current/font/devps/DESC \
@@ -518,6 +574,7 @@ Windows String: CourierPrime-BoldItalic
       <span class="token string">Courier-Prime<span class="token variable">$v</span>.afm</span> /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"C$(expr "<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $v <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">'[:lower:]-'</span><span class="token variable">)</span></span>"</span> <span class="token punctuation">\</span><span class="token operator">|</span> R<span class="token punctuation">)</span><span class="token string">"</span><span class="token punctuation">;</span></span></span>
   <span class="token keyword">done</span>
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">cp C{R,B,I,BI} /usr/local/share/groff/site-font/devps/</span></span></code>
+
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token punctuation">{</span>
     cat /usr/share/groff/current/font/devps/download<span class="token punctuation">;</span> <span class="token builtin">echo</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span>
@@ -526,9 +583,11 @@ Windows String: CourierPrime-BoldItalic
   <span class="token punctuation">}</span> <span class="token operator">|</span> tee /usr/local/share/groff/site-font/devps/download
 </span><span class="token output"># List of downloadable fonts
 ‌# PostScript-name       Filename
+
 Symbol-Slanted          symbolsl.pfa
 ZapfDingbats-Reverse    zapfdr.pfa
 FreeEuro                freeeuro.pfa
+
 CourierPrime    Courier-Prime.pfa
 CourierPrime-Bold       Courier-Prime-Bold.pfa
 CourierPrime-Italic     Courier-Prime-Italic.pfa
@@ -539,11 +598,14 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 <a href="/content/assets/blogn_t/007.09-Курьер.pdf">Yielding</a>:
 </p>
 <a href="/content/assets/blogn_t/007.09-Курьер.png"><img class="continuation main-font" alt="Same page, monospace non-ASCII characters rendered in a different, rounder, heavier font, with a long f, and proportional ones missing" src="/content/assets/blogn_t/007.09-Курьер.png" /></a>
+
+
 <h3 id="alternative-art-distribution-font" class="continued"><a class="hash-link" href="#alternative-art-distribution-font">#</a> A distribution font</h3>
 <p class="continuing indented">
 GhostScript can directly load TrueType and OpenType fonts, so for a properly-packaged one all that's needed is:  <!--'-->
 </p>
 <div class="bigcode continuing">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">apt</span> <span class="token function">install</span> fonts-liberation2</span></span>
 
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> Regular Bold Italic BoldItalic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
@@ -604,6 +666,8 @@ both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
 <a href="/content/assets/blogn_t/007.10-liberation2.pdf">And just like that</a>:
 </p>
 <a href="/content/assets/blogn_t/007.10-liberation2.png"><img class="continuation main-font" alt="Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing" src="/content/assets/blogn_t/007.10-liberation2.png" /></a>
+
+
 <!-- https://twitter.com/nabijaczleweli/status/1429503115947020297 -->
 <h2 id="jajco" class="continued"><a class="hash-link" href="#jajco">#</a> <a style="color: inherit;" href="//twitter.com/kgbcatboy/status/1429605955994533889">\nЯЙЦО</a></h2> <!-- https://web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889 -->
 <!-- <h2 id="jajco" class="continued"><a class="hash-link" href="#jajco">#</a> \nЯЙЦО</h2> -->
@@ -611,6 +675,7 @@ both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
 A <del>powerful</del> sufficient diagnostic tool can also be plainly piping groff into Ghostscript:
 </p>
 <div class="bigcode continuation">
+
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Kutf8 -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | gs
 GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS&lt;1>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;1>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS&lt;2>GS&lt;5>GS&lt;13>GS&lt;22>GS&lt;31>GS&lt;40>GS&lt;48>GS&lt;61>GS&lt;82>GS&lt;97>GS&lt;124>GS&lt;132>GS&lt;139>GS&lt;150>GS&lt;159>GS&lt;168>GS&lt;174>GS&lt;181>GS&lt;188>GS&lt;193>GS&lt;201>GS&lt;209>GS&lt;217>GS&lt;225>GS&lt;234>GS&lt;242>GS&lt;251>GS>Querying operating system for font files...
 Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-BoldItalic.
@@ -649,11 +714,13 @@ GS>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;
 GS>GS>GS>GS>
 </span></pre></code>
 </div>
+
 <p class="continued indented">
 <code>frag.1</code> in question, as minimised from <a href="//git.sr.ht/~nabijaczleweli/voreutils">voreutils</a>'  <!--'-->
 <a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/cut.1.html"><code>cut.1</code></a>:
 </p>
 <div class="bigcode continuation">
+
 <pre class="language-plaintext"><code class="language-plaintext">.Dd
 .Dt CUT 1
 .Os
@@ -758,11 +825,14 @@ x       nobody
 .Ed
 <!--'--></pre></code>
 </div>
+
+
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
  or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
  </p>
+
 </span>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
@@ -779,9 +849,9 @@ x       nobody
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 14.11.2021 14:17:01 UTC from 
+ Automatically generated with Clang 7'<!--'-->s C preprocessor on 14.11.2021 14:49:52 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/241736888">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/241737371">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

@@ -12,8 +12,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 
-
-
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -59,11 +57,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  
  </head> 
  <body>
+
 <style>
+
 .overlay-container {
  display: inline-block;
  position: relative;
 }
+
 .overlay-target {
  position: absolute;
  top: 0;
@@ -75,25 +76,32 @@ h1 {
  margin-top: 0;
  margin-bottom: 0.4em;
 }
+
 h2, h3, p {
  margin-top: 0.4em;
  margin-bottom: 0.4em;
 }
+
 h2 {
  margin-top: 2em;
 }
+
 h3 {
  margin-top: 1.5em;
 }
+
 .nowrap {
  white-space: nowrap;
 }
 code, samp {
  font-family: "Droid Sans Mono", monospace;
 }
+
 h1, h2, h3, h4, h5, h6 {
  font-family: "Merriweather", serif;
 }
+
+
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
@@ -103,6 +111,7 @@ h6:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
+
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
@@ -116,6 +125,8 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
+
+
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
@@ -127,53 +138,70 @@ th, td {
  padding-right: 0.25em;
  text-align: left;
 }
+
 td {
  font-size: calc(9em / 10);
 }
+
 tr:nth-child(1) {
   background-color: #aaaaaaa0;
 }
+
 tr:nth-child(even) {
   background-color: #eeeeeea0;
 }
+
 tr:hover {
   background-color: #cccccca0;
   transition: all 0.25s;
 }
 .highlit-code {
  border-radius: calc(1em / 3);
+
  padding-left: calc(1em / 5);
  padding-right: calc(1em / 5);
  padding-top: calc(1em / 4);
  padding-bottom: calc(1em / 4);
+
  margin-top: 0;
  margin-bottom: 0;
+
  color: #e6e1dc;
  background-color: #232323;
 }
+
+
 .highlit-code .code-line {
  width: 100%;
  display: inline-block;
   transition: all 0.25s;
 }
+
 .highlit-code .code-line:hover {
  background-color: #333435;
 }
+
+
 .highlit-code .punctuation, .highlit-code .punctuation * {
  color: #cc7833;
 }
+
 .highlit-code .comment, .highlit-code .comment * {
  color: #bc9458;
 }
+
 .highlit-code .keyword, .highlit-code .keyword * {
  color: #da4939;
 }
+
 .highlit-code .verb, .highlit-code .verb * {
  color: #e8bf6a;
 }
+
 .highlit-code .string, .highlit-code .string * {
  color: #a5c261;
 }
+
 .highlit-code .variable, .highlit-code .variable * {
  color: #d0d0ff;
 }
@@ -184,74 +212,85 @@ tr:hover {
  padding-top: calc(1em / 20);
  padding-bottom: calc(1em / 20);
 }
+
 .tag-white {
  background-color: #eee;
 }
 </style>
+
+
 <div class="roboto">
+
+
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
 <p></p>
-<h1 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> For Programmers</h1>
+<h1 id="go-back" class="merriweather"><a id="go-back-link" href=".">↩</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> For Programmers</h1>
+
 <h2 id="description" class="smallcaps" style="margin-top: initial;"><a class="hash-link" href="#description">#</a> Description</h2>
+
 <p id="description-paragraph">
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
 </p>
 <p id="description-what-is-it-paragraph">
-Thus, "<!--"--><code class="nowrap" style="font-variant: normal;">gen-epub-book​</code><!--"-->" is two things:
+Thus, "<!--"--><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code><!--"-->" is two things:
 (1) a plaintext descriptor syntax; and
 (2) a (set of) software tool(s), written in a multitude of languages, that assemble that descriptor and files referenced thereby into an ePub e-book.
-See the <a href="#getting-the-gist">Getting the gist</a> heading for details pertaining to <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>'s descriptor syntax. <!--'-->
+See the <a href="#getting-the-gist">Getting the gist</a> heading for details pertaining to <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>'s descriptor syntax. <!--'-->
 </p>
 <p id="description-inspiration-paragraph">
-The "design goal" of <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
-The idea is that a <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> descriptor should be writable by any person with <em>minimal</em> technical knowledge.
+The "design goal" of <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
+The idea is that a <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> descriptor should be writable by any person with <em>minimal</em> technical knowledge.
 </p>
 <p id="description-license-paragraph">
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> is free software, available under the MIT open source license.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> is free software, available under the MIT open source license.
 See the <a href="#license">License</a> heading for more information.
 </p>
+
 <h2 id="discussion" class="smallcaps" ><a class="hash-link" href="#discussion">#</a> Discussion</h2>
+
 <p id="discussion-paragraph">
-Any topic related to <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> – both the descriptor syntax and the software –
-is fair game for discussion over at the <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> issue trackers
- <a href="https://github.com/nabijaczleweli/gen-epub-book/issues" class="icon"><span style="font-weight: normal;" class="icon nowrap" > 
+Any topic related to <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> – both the descriptor syntax and the software –
+is fair game for discussion over at the <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> issue trackers
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><span style="font-weight: normal;" class="icon nowrap" > 
  <strong>A</strong><!-- 
  --><span class="overlay-container"> 
  <sup class="overlay-target smallcaps" style="top: calc(-1em / 4); left: calc(-1em/6);">w</sup> 
  <sub class="smallcaps" style="margin-left: calc(1em / 16);">k</sub> 
  </span> 
  </span></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/issues" ><i class="icon-rust" ></i></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/issues" class="icon"><i class="devicon-cplusplus-plain" ></i></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.scala/issues" ><i class="icon-scala" ></i></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.js/issues" class="icon"><i class="devicon-javascript-plain" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" ><i class="icon-rust" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><i class="devicon-cplusplus-plain" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" ><i class="icon-scala" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><i class="devicon-javascript-plain" ></i></a>
 and this site's issue tracker <!--'-->
  <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon"><i class="devicon-html5-plain" ></i></a>.
-I'<!--'-->ve also set up a <a href="https://github.com/nabijaczleweli/gen-epub-book/issues/1">GitHub issue for simple questions and clarifications</a>.
+I'<!--'-->ve also set up a <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__">GitHub issue for simple questions and clarifications</a>.
 </p>
 <p id="discussion-hopes-paragraph">
-I hope that GitHub issue system will lead to good ideas for future improvements to <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>.
+I hope that GitHub issue system will lead to good ideas for future improvements to <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>.
 </p>
+
 <h2 id="variants" class="smallcaps" ><a class="hash-link" href="#variants">#</a> Variants</h2>
+
 <div id="variants-paragraph">
 <p></p>
-As mentioned before, <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> is actually also a <em>set</em> of software tools each of which performing mostly the same function,
+As mentioned before, <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> is actually also a <em>set</em> of software tools each of which performing mostly the same function,
 but being written in a different language.
-Here is the current list of <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>'s variations, chronologically: <!--'-->
+Here is the current list of <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>'s variations, chronologically: <!--'-->
 <ul>
- <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.awk ​ ​</code> <a href="https://github.com/nabijaczleweli/gen-epub-book"> <i class="fab fa-github"></i></a>
-     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.awk.1.html"><i class="fa fa-book"></i></a></li>
- <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs ​ ​ ​</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.rs"> <i class="fab fa-github"></i></a>
-     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.rs.1.html"><i class="fa fa-book"></i></a>
-     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book.rs/doc/gen_epub_book/index.html" class="overlay-container">
+ <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"> <i class="fab fa-github"></i></a>
+     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fa fa-book"></i></a></li>
+ <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"> <i class="fab fa-github"></i></a>
+     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fa fa-book"></i></a>
+     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="overlay-container">
       <span class="overlay-target"><i class="far fa-file"></i></span> <span style="font-size: 0.7em;"><i class="fa fa-cogs"></i></span></a>
      <a href="//crates.io/crates/gen-epub-book"><i class="fa fa-archive"></i></a></li>
- <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp ​ ​</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp"> <i class="fab fa-github"></i></a>
-     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.cpp.1.html"><i class="fa fa-book"></i></a></li>
- <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.scala"><i class="fab fa-github"></i></a></li>
- <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​.js ​ ​ ​</code> <a href="https://github.com/nabijaczleweli/gen-epub-book.js"> <i class="fab fa-github"></i></a>
-     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.js.1.html"><i class="fa fa-book"></i></a>
+ <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"> <i class="fab fa-github"></i></a>
+     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fa fa-book"></i></a></li>
+ <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fab fa-github"></i></a></li>
+ <li><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"> <i class="fab fa-github"></i></a>
+     <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fa fa-book"></i></a>
      <a href="//npmjs.com/package/epubify" class="icon"><i class="devicon-nodejs-plain" ></i></a></li>
 </ul>
 <p></p>
@@ -261,20 +300,25 @@ These variations have mostly the same features, and all differences will be high
 </p>
 <p id="variants-binary-paragraphs">
 Binary releases of compiled variants are available for download, for Windows and Ubuntu, on the releases pages
- <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases" ><i class="icon-rust" ></i></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases" class="icon"><i class="devicon-cplusplus-plain" ></i></a>
- <a href="https://github.com/nabijaczleweli/gen-epub-book.js/tree/bundle" class="icon"><i class="devicon-javascript-plain" ></i></a>.
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" ><i class="icon-rust" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><i class="devicon-cplusplus-plain" ></i></a>
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><i class="devicon-javascript-plain" ></i></a>.
 </p>
+
 <h2 id="installation-and-requirements" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements">#</a> Installation and requirements</h2>
+
 <p id="installation-and-requirements-paragraph">
-All compiled variations of <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> are stand-alone in that they don't depend on any files other than themselves. <!--'-->
+All compiled variations of <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> are stand-alone in that they don't depend on any files other than themselves. <!--'-->
 Some of them, however, require additional software during building/installation.
 </p>
-<h3 id="installation-and-requirements-awk" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-awk">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.awk</code></h3>
+
+<h3 id="installation-and-requirements-awk" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-awk">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code></h3>
+
 <p id="installation-and-requirements-awk-paragraph">
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​.awk</code> does not require compilation, which makes it require external binary tools.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> does not require compilation, which makes it require external binary tools.
 Here's the list outlining them, their uses, and where to get them: <!--'-->
 </p>
+
 <table id="installation-and-requirements-awk-table">
  <tr><th>Tool</th> <th>Use</th> <th>Where</th></tr>
  <tr><td><a href="//curl.haxx.se"><img src="//curl.haxx.se/logo/curl-logo.svg" alt="curl" style="height: 1.25em;"></a></td>
@@ -298,11 +342,13 @@ Here's the list outlining them, their uses, and where to get them: <!--'-->
     <td>Proper relative paths for <code>Info-ZIP</code> (no, there'<!--'-->s no way around that).</td>
     <td>Available everywhere.</td></tr>
 </table>
+
 <p id="installation-and-requirements-awk-accessibility-paragraph">
 These tools need to be callable as in the first column – in <kbd class="highlit-code nowrap"><span class="variable">$PATH</span></kbd> or otherwise.
 </p>
+
 <p id="installation-and-requirements-awk-compatibility-paragraph">
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​.awk</code>, of course, requires an implementation of <span style="font-weight: normal;" class="icon nowrap" > 
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>, of course, requires an implementation of <span style="font-weight: normal;" class="icon nowrap" > 
  <strong>A</strong><!-- 
  --><span class="overlay-container"> 
  <sup class="overlay-target smallcaps" style="top: calc(-1em / 4); left: calc(-1em/6);">w</sup> 
@@ -324,6 +370,7 @@ Here'<!--'-->s the list outlining some tested <span style="font-weight: normal;"
  </span> 
  </span> implementations and their support:
 </p>
+
 <table id="installation-and-requirements-awk-compatibility-table">
  <tr><th>Variant</th> <th>Support</th> <th>Note</th></tr>
  <tr><td><a href="//gnu.org/software/gawk"><code>gawk</code></a></td>
@@ -333,10 +380,11 @@ Here'<!--'-->s the list outlining some tested <span style="font-weight: normal;"
     <td>No.</td>
     <td>Max supported string length exceeded. <code class="tag tag-white">wontfix</code></td></tr>
 </table>
+
 <p id="installation-and-requirements-awk-support-paragraph">
 Not sure if your preferred implementation's supported? <!--'-->
 Drop a question over at one of the issue trackers –
- <a href="https://github.com/nabijaczleweli/gen-epub-book/issues" class="icon"><span style="font-weight: normal;" class="icon nowrap" > 
+ <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><span style="font-weight: normal;" class="icon nowrap" > 
  <strong>A</strong><!-- 
  --><span class="overlay-container"> 
  <sup class="overlay-target smallcaps" style="top: calc(-1em / 4); left: calc(-1em/6);">w</sup> 
@@ -345,11 +393,13 @@ Drop a question over at one of the issue trackers –
  </span></a>
  <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon"><i class="devicon-html5-plain" ></i></a>!
 </p>
-<h3 id="installation-and-requirements-rs" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-rs">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code></h3>
+
+<h3 id="installation-and-requirements-rs" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-rs">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code></h3>
+
 <div id="installation-and-requirements-rs-paragraph">
 <p></p>
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> just requires a roughly modern version of the <a href="//rust-lang.org">Rust</a> compiler.
-Since <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> is uploaded to <a href="//crates.io">crates.io</a> <a href="//crates.io/crates/gen-epub-book"><i class="fa fa-archive"></i></a>,
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> just requires a roughly modern version of the <a href="//rust-lang.org">Rust</a> compiler.
+Since <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> is uploaded to <a href="//crates.io">crates.io</a> <a href="//crates.io/crates/gen-epub-book"><i class="fa fa-archive"></i></a>,
  you need simply run
 <kbd><pre class="highlit-code numberise">
 <span class="punctuation">$</span> cargo install <span class="string">gen-epub-book</span>
@@ -358,10 +408,12 @@ Since <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</co
 The resulting executable is fully stand-alone and available in your <kbd class="highlit-code nowrap"><span class="variable">$PATH</span></kbd> if installed via <kbd>cargo install</kbd>.
 </p>
 </div>
-<h3 id="installation-and-requirements-cpp" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-cpp">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp</code></h3>
+
+<h3 id="installation-and-requirements-cpp" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-cpp">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code></h3>
+
 <div id="installation-and-requirements-cpp-paragraph">
 <p></p>
-To be built, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.cpp</code> requires:
+To be built, <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> requires:
 <ul>
  <li>a <code>C++14</code>-compliant C++ compiler,</li>
  <li>a <code>C11</code>-compliant C compiler,</li>
@@ -372,46 +424,60 @@ To be built, <code class="nowrap" style="font-variant: normal;">gen-epub-book​
 The resulting executable is fully stand-alone.
 <p></p>
 </div>
-<h3 id="installation-and-requirements-scala" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-scala">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code></h3>
+
+<h3 id="installation-and-requirements-scala" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-scala">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code></h3>
+
 <p id="installation-and-requirements-scala-paragraph">
-To build, <code class="nowrap" style="font-variant: normal;">gen-epub-book​.scala</code> requires the <a href="//scala-lang.org">Scala</a> compiler.
+To build, <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> requires the <a href="//scala-lang.org">Scala</a> compiler.
 The resulting <code>.jar</code>s depend only on the Scala runtime library.
 </p>
-<h3 id="installation-and-requirements-js" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-js">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.js</code></h3>
+
+<h3 id="installation-and-requirements-js" class="smallcaps" ><a class="hash-link" href="#installation-and-requirements-js">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code></h3>
+
 <p id="installation-and-requirements-js-paragraph">
 Due to the specificity of the <a href="//nodejs.org">Node.js</a> environment,
- <code class="nowrap" style="font-variant: normal;">gen-epub-book​.js</code> depends on about 110 other packages. To install it, simply run
+ <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> depends on about 110 other packages. To install it, simply run
 <kbd><pre class="highlit-code numberise">
 <span class="punctuation">$</span> npm install -g <span class="string">epubify</span>
 </pre></kbd>
 The resulting "executable" will be in your <kbd class="highlit-code nowrap"><span class="variable">$PATH</span></kbd>.
 </p>
+
 <h2 id="configuration" class="smallcaps" ><a class="hash-link" href="#configuration">#</a> Configuration</h2>
+
 <p id="configuration-paragraph">
-The same descriptor syntax put into any <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> variant with any options passed shall produce (functionally) the same e-book
- (if they support a compatible featureset), but some <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> variants are configurable in their non–e-book output.
+The same descriptor syntax put into any <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> variant with any options passed shall produce (functionally) the same e-book
+ (if they support a compatible featureset), but some <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> variants are configurable in their non–e-book output.
 Subheadings include links to manpages with more information.
 </p>
-<h3 id="configuration-awk" class="smallcaps" ><a class="hash-link" href="#configuration-awk">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.awk</code> <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.awk.1.html"><i class="fa fa-book"></i></a></h3>
+
+<h3 id="configuration-awk" class="smallcaps" ><a class="hash-link" href="#configuration-awk">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fa fa-book"></i></a></h3>
+
 <p id="configuration-awk-paragraph">
 A <kbd class="highlit-code nowrap"><span class="variable">temp</span></kbd> variable passed from the commandline containing the desired temporary directory (usually <kbd class="highlit-code nowrap"><span class="variable">$TEMP</span></kbd>).
 This usually yields for
  <kbd class="highlit-code nowrap"><span class="verb">-v</span> <span class="variable">temp</span><span class="punctuation">​=</span><span class="string">"$TEMP"</span></kbd>
  full argument.
 </p>
-<h3 id="configuration-rs" class="smallcaps" ><a class="hash-link" href="#configuration-rs">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book/man/gen-epub-book.awk.1.html"><i class="fa fa-book"></i></a></h3>
+
+<h3 id="configuration-rs" class="smallcaps" ><a class="hash-link" href="#configuration-rs">#</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a href="https://rawcdn.githack.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="fa fa-book"></i></a></h3>
+
 <p id="configuration-rs-paragraph">
-The <code>--verbose</code> flag makes <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> print information about what it's currently doing. <!--'-->
+The <code>--verbose</code> flag makes <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> print information about what it's currently doing. <!--'-->
 </p>
+
 <h2 id="getting-the-gist"><a class="hash-link" href="#getting-the-gist">#</a>
-                          <span class="smallcaps">Getting the gist of</span> <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code><span class="smallcaps">'s descriptor syntax</span></h2> <!--'-->
+                          <span class="smallcaps">Getting the gist of</span> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code><span class="smallcaps">'s descriptor syntax</span></h2> <!--'-->
+
 <p id="getting-the-gist-paragraph">
 This section offers a complete, detailed documentation for the descriptor syntax.
 </p>
+
 <h3 id="getting-the-gist-overview" class="smallcaps" ><a class="hash-link" href="#getting-the-gist-overview">#</a> Overview</h3>
+
 <div id="getting-the-gist-overview-paragraph">
 <p></p>
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>'s descriptor syntax can be divided into <em>lines</em>. <!--'-->
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>'s descriptor syntax can be divided into <em>lines</em>. <!--'-->
 Each <em>line</em> is either (a) comprised of three elements:
 <kbd><pre class="highlit-code numberise">
 <span class="keyword">key</span><span class="punctuation">:</span> <span class="string">value</span>
@@ -420,19 +486,24 @@ Each <em>line</em> is either (a) comprised of three elements:
 or (b) is a comment if that format is not met for the line.
 <p></p>
 </div>
+
 <p id="getting-the-gist-overview-elements-key-paragraph">
 <kbd class="highlit-code nowrap"><span class="keyword">key</span></kbd> is any sequence of characters up to the <kbd class="highlit-code nowrap"><span class="punctuation">separator</span></kbd>.
 </p>
+
 <p id="getting-the-gist-overview-elements-separator-paragraph">
 <kbd class="highlit-code nowrap"><span class="punctuation">separator</span></kbd> is just <kbd class="highlit-code nowrap"><span class="punctuation">:</span></kbd>,
  unless the <a href="#features-custom-separator">custom separator</a> feature is enabled.
 </p>
+
 <p id="getting-the-gist-overview-elements-value-paragraph">
 <kbd class="highlit-code nowrap"><span class="string">value</span></kbd> is any sequence of characters till the end of <em>line</em>.
 </p>
+
 <p id="getting-the-gist-overview-elements-whitespace-paragraph">
 All whitespace before and after every element is stripped (removed).
 </p>
+
 <div id="getting-the-gist-overview-elements-examples-paragraph">
 <p></p>
 Every <em>line</em> in the following descriptor is equivalent:
@@ -458,11 +529,14 @@ All these <em>lines</em> are comments:
 </pre></kbd>
 <p></p>
 </div>
+
 <h3 id="getting-the-gist-elements" class="smallcaps" ><a class="hash-link" href="#getting-the-gist-elements">#</a> Elements</h3>
+
 <p id="getting-the-gist-elements-paragraph">
 Each non-<kbd class="highlit-code nowrap"><span class="comment">comment</span></kbd> <em>line</em> forms is an <em>element</em> –
  a <kbd class="highlit-code nowrap">(<span class="keyword">key</span><span class="punctuation">,</span> <span class="string">value</span>)</kbd> pair.
 </p>
+
 <div id="getting-the-gist-elements-validity-paragraph">
 A descriptor is considered valid if the following conditions are met:
 <ul>
@@ -474,9 +548,11 @@ A descriptor is considered valid if the following conditions are met:
      (see the <a href="#features-free-date-format">free date format</a> feature for accepting more date formats).</li>
 </ul>
 </div>
+
 <p id="getting-the-gist-elements-list-paragraph">
 The following table enumerates supported <kbd class="highlit-code nowrap"><span class="keyword">key</span></kbd>s and their properties:
 </p>
+
 <table id="getting-the-gist-elements-table">
  <tr><th><kbd class="highlit-code nowrap"><span class="keyword">key</span></kbd></th> <th>Value type</th> <th>Effect</th> <th>Required</th> <th>Amount</th> <th>Remarks</th></tr>
  <tr><td><kbd class="highlit-code nowrap"><span class="keyword">Name</span></kbd></td>
@@ -570,10 +646,12 @@ The following table enumerates supported <kbd class="highlit-code nowrap"><span 
     <td>0-1</td>
     <td>Exclusive with <kbd class="highlit-code nowrap"><span class="keyword">Description</span></kbd> and <kbd class="highlit-code nowrap"><span class="keyword">String-Description</span></kbd>.</td></tr>
 </table>
+
 <p id="getting-the-gist-naming-paths-paragraph">
 All local paths are relative to the descriptor file.
 This can be changed with the <a href="#features-include-dirs"><code>-I</code>nclude dirs</a> feature.
 </p>
+
 <div id="getting-the-gist-naming-local-paragraph">
 <p></p>
 The included local files' packed names are the paths by which they've been included with all instances of
@@ -582,26 +660,32 @@ The included local files' packed names are the paths by which they've been inclu
  <kbd class="highlit-code nowrap"><span class="string">/</span></kbd> replaced with <kbd class="highlit-code nowrap"><span class="string">-</span></kbd>.
 Examples:
 <kbd><pre class="highlit-code numberise">
-<span class="string">simple-content.html</span> ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<span class="punctuation"> =></span> <span class="string">simple-content_html</span>
-<span class="string">../cover.jpg</span> ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<span class="punctuation"> =></span> <span class="string">cover.jpg</span>
-<span class="string">.\../books/../covers/cover.jpg</span> ​<span class="punctuation"> =></span> <span class="string">books-covers-cover.jpg</span>
+<span class="string">simple-content.html</span> ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​CSPAN(punctuation, =>) <span class="string">simple-content_html</span>
+<span class="string">../cover.jpg</span> ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​CSPAN(punctuation, =>) <span class="string">cover.jpg</span>
+<span class="string">.\../books/../covers/cover.jpg</span> ​CSPAN(punctuation, =>) <span class="string">books-covers-cover.jpg</span>
 </pre></kbd>
 <p></p>
 </div>
+
 <p id="getting-the-gist-naming-remote-paragraph">
 The included remote files' packed names are the last segment (i.e. the filename) of their URL. <!--'-->
 </p>
+
 <p id="getting-the-gist-additional-content-processing-paragraph">
 In addition, all <kbd class="highlit-code nowrap"><span class="keyword">Content</span></kbd> files are checked for the
  <kbd class="highlit-code nowrap"><span class="comment"><​!​-​-</span> <span class="keyword">ePub title</span><span class="punctuation">:</span> <span class="string">"TOC_NAME"</span> <span class="comment">-​-></span></kbd>
  sequence, where <kbd class="highlit-code nowrap"><span class="string">TOC_NAME</span></kbd> is a sequence of any character except <kbd class="highlit-code nowrap"><span class="string">"<!--"--></span></kbd> which is
  the name to give the content in the Table of Contents.
 </p>
+
 <h2 id="features" class="smallcaps" ><a class="hash-link" href="#features">#</a> Features</h2>
+
 <p id="features-paragraph">
-Features are extensions to the <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> descriptor syntax, modifying the behaviour and validity of some <em>lines</em>.
+Features are extensions to the <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> descriptor syntax, modifying the behaviour and validity of some <em>lines</em>.
 </p>
+
 <h3 id="features-custom-separator" class="smallcaps" ><a class="hash-link" href="#features-custom-separator">#</a> Custom separator</h3>
+
 <div id="features-custom-separator-paragraph">
 <p></p>
 This feature allows a custom set of characters to be used as the <kbd class="highlit-code nowrap"><span class="punctuation">separator</span></kbd>. For example:
@@ -614,10 +698,12 @@ This feature allows a custom set of characters to be used as the <kbd class="hig
 </pre></kbd>
 <p></p>
 </div>
+
 <h3 id="features-free-date-format" class="smallcaps" ><a class="hash-link" href="#features-free-date-format">#</a> Free date format</h3>
+
 <div id="features-free-date-format-paragraph">
 <p></p>
-This feature allows a <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> to accept non-<a href="//tools.ietf.org/html/rfc3339">RFC3339</a> date formats, whichever it can.
+This feature allows a <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> to accept non-<a href="//tools.ietf.org/html/rfc3339">RFC3339</a> date formats, whichever it can.
 For example, with free date format feature on these can become equivalent:
 <kbd><pre class="highlit-code numberise">
 <span class="keyword">Date</span><span class="punctuation">:</span> <span class="string">2017-08-19T21:22:31+0200</span>
@@ -626,15 +712,19 @@ For example, with free date format feature on these can become equivalent:
 </pre></kbd>
 <p></p>
 </div>
+
 <h3 id="features-include-dirs" class="smallcaps" ><a class="hash-link" href="#features-include-dirs">#</a> <code>-I</code>nclude dirs</h3>
+
 <p id="features-include-dirs-paragraph">
 This feature allows for specifying more root directories for finding local files.
 </p>
+
 <p id="features-include-dirs-variants-paragraph">
 An include directory can be <em>named</em> or <em>unnamed</em>, which affects their packed name:
  <em>unnamed</em> directories act transparently – their packed name is exactly as specified and transformed, while
  <em>named</em> directories put their files in a dedicated subdirectory named themafter, then their specified path transformed.
 </p>
+
 <div id="features-include-dirs-examples-paragraph">
 <p></p>
 For example, given the following directory tree:
@@ -664,47 +754,51 @@ If <code>geb/special/book.epupp</code>
 the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
 <span class="string">book.epub</span>
-<span class="punctuation">├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​<span class="comment"># From geb/special/</span>
+<span class="punctuation">├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​CSPAN(comment, # From geb/special/)
 <span class="punctuation">├──</span> <span class="string">previews</span>
-<span class="punctuation">│ ​ ​ ​└──</span> <span class="string">main.html</span> ​ ​<span class="comment"># From previews/generated/out/</span>
-<span class="punctuation">└──</span> <span class="string">ending.html</span> ​ ​ ​ ​<span class="comment"># From rendered/output/</span>
+<span class="punctuation">│ ​ ​ ​└──</span> <span class="string">main.html</span> ​ ​CSPAN(comment, # From previews/generated/out/)
+<span class="punctuation">└──</span> <span class="string">ending.html</span> ​ ​ ​ ​CSPAN(comment, # From rendered/output/)
 </pre></kbd>
 <p></p>
 </div>
+
 <h3 id="features-support" class="smallcaps" ><a class="hash-link" href="#features-support">#</a> Support table</h3>
+
 <table id="features-support-table">
  <tr><th></th>
-     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book" class="icon"><span style="font-weight: normal;" class="icon nowrap" > 
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><span style="font-weight: normal;" class="icon nowrap" > 
  <strong>A</strong><!-- 
  --><span class="overlay-container"> 
  <sup class="overlay-target smallcaps" style="top: calc(-1em / 4); left: calc(-1em/6);">w</sup> 
  <sub class="smallcaps" style="margin-left: calc(1em / 16);">k</sub> 
  </span> 
  </span></a></center></th>
-     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.rs" ><i class="icon-rust" ></i></a></center></th>
-     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.cpp" class="icon"><i class="devicon-cplusplus-plain" ></i></a></center></th>
-     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.scala" ><i class="icon-scala" ></i></a></center></th></th>
-     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book.js" class="icon"><i class="devicon-javascript-plain" ></i></a></center></th></tr>
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" ><i class="icon-rust" ></i></a></center></th>
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><i class="devicon-cplusplus-plain" ></i></a></center></th>
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" ><i class="icon-scala" ></i></a></center></th></th>
+     <th><center><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__" class="icon"><i class="devicon-javascript-plain" ></i></a></center></th></tr>
  <tr><td>Custom separator</td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v2.0.0</code></a></td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.js/releases/tag/v0.2.0"><code>v0.2.0</code></a></td></tr>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v1.1.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v0.2.0</code></a></td></tr>
  <tr><td>Free date format</td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases/tag/v2.1.0"><code>v2.1.0</code></a></td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v2.1.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v2.0.0</code></a></td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.js/releases/tag/v0.2.0"><code>v0.2.0</code></a></td></tr>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v0.2.0</code></a></td></tr>
  <tr><td><code>-I</code>nclude dirs</td>
      <td>No.</td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.cpp/releases/tag/v2.0.0"><code>v2.0.0</code></a></td>
-     <td><a href="https://github.com/nabijaczleweli/gen-epub-book.scala/releases/tag/v1.1.0"><code>v1.1.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v2.0.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v2.0.0</code></a></td>
+     <td><a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><code>v1.1.0</code></a></td>
      <td>No.</td></tr>
 </table>
+
 <h2 id="license" class="smallcaps" ><a class="hash-link" href="#license">#</a> License</h2>
+
 <pre id="license-paragraph">
 The MIT License (MIT)
 ​
@@ -728,14 +822,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre>
+
 <h2 id="afterword" class="smallcaps" ><a class="hash-link" href="#afterword">#</a> Afterword</h2>
+
 <p id="afterword-paragraph">
 Thank you for making it this far.
 I hope that this document is clear and/or informative, if not,
  why don'<!--'-->t you pop into the <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon">issues <i class="devicon-html5-plain" ></i></a> and
  help yourself, others and me?
 </p>
+
+
 </div>
+
 <!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
  Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
  code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
@@ -745,9 +844,9 @@ I hope that this document is clear and/or informative, if not,
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with GCC 5‍.‍4‍.‍0'<!--'-->s C preprocessor on 14.11.2021 14:17:01 UTC from 
+ Automatically generated with Clang 7'<!--'-->s C preprocessor on 14.11.2021 14:49:52 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/gen-epub-book/programmer.html.pp">src/gen-epub-book/programmer.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/241736888">See job on TravisCI</a>. 
+ <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/241737371">See job on TravisCI</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
