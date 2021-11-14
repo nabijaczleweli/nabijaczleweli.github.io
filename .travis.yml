@@ -19,7 +19,7 @@ install:
   - export PATH="$HOME/calibre:$HOME/.cargo/bin:$PATH"
   -
   - mkdir -p /tmp/calibre-installer-cache && pushd /tmp/calibre-installer-cache
-  - wget -nc "https://download.calibre-ebook.com/$CALIBRE_VERSION/calibre-$CALIBRE_VERSION-x86_64.txz"
+  - wget --no-check-certificate -nc "https://download.calibre-ebook.com/$CALIBRE_VERSION/calibre-$CALIBRE_VERSION-x86_64.txz"
   - popd
   - mkdir -p "$HOME/calibre" && pushd "$HOME/calibre"
   - tar -xaf "/tmp/calibre-installer-cache/calibre-$CALIBRE_VERSION-x86_64.txz"
