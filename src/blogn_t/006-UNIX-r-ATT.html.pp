@@ -13,11 +13,12 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 #include "blogn_t.h"
 
-#undef unix
 
    <!-- RSS_PUB_DATE: "Thu, 08 Jul 2021 20:26:38 +0200" -->
 #define POST_DATE      Thu, 08 Jul 2021 20:26:38 +0200
 #define POST_POST_DATE 
+
+#undef unix
 
 
 BOILERPLATE(006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt, 006. ¹UNIX® is a registered trademark of AT&T., en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT)

@@ -67,7 +67,7 @@ The second [system] is the QEMU/Chroot guest, and it <em>must</em> run Debian 8/
 </blockquote>
 <p class="continuing">
 Which, while amusing, isn'<!--'-->t very conducive to getting an <code>x32</code> system up, nor are the outdated-at-best instructions.
-So this is the combination of the things I'<!--'-->ve read and tried in order to install Debian "bullseye/sid" <code>x32</code> <a href="//twitter.com/nabijaczleweli/status/1245500423370309632">on <samp class="nobr">Wed Apr &nbsp;1 22:02:50 UTC 2020<samp></a> (it was already <samp>0:02:50</samp> the next day in my timezone but I forgot to set it; oh well):
+So this is the combination of the things I'<!--'-->ve read and tried in order to install Debian "bullseye/sid" <code>x32</code> <a href="//twitter.com/nabijaczleweli/status/1245500423370309632">on <samp style="white-space: nowrap;">Wed Apr &nbsp;1 22:02:50 UTC 2020<samp></a> (it was already <samp>0:02:50</samp> the next day in my timezone but I forgot to set it; oh well):
 </p>
 <center><a href="//twitter.com/nabijaczleweli/status/1245500423370309632">
 	<!-- DSCN0443.JPG -->
@@ -168,7 +168,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	    <td><samp>~ #
 	      <kbd>debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports</kbd>
 	    </samp></td></tr>
-	<tr><td>Now you can (try to) chroot into the new system; if you see <samp class="nobr">chroot: can'<!--'-->t execute '/bin/sh': exec format error</samp>,
+	<tr><td>Now you can (try to) chroot into the new system; if you see <samp style="white-space: nowrap;">chroot: can'<!--'-->t execute '/bin/sh': exec format error</samp>,
 	        your kernel doesn'<!--'-->t support <code>x32</code> executables.
 	        On Debian kernels, verify that you have <samp>syscall.x32=y</samp> in <code>/proc/cmdline</code>.<br />
 	        The bind-mounts of <samp>/dev</samp>, <samp>/sys</samp>, and <samp>/proc</samp> are there for the GRUB install and <samp>dracut</samp>'<!--'-->s host-only mode;
@@ -184,7 +184,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	    <td><samp>root@szarotka:/# <kbd>apt install systemd-sysv</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>apt install dracut --no-install-recommends</kbd></samp></td></tr>
 	<tr><td>The time has come to add a kernel, which is the only <em>required</em> <code>amd64</code> part of the system
-	        (if you need something from the <code class="nobr">non-free</code> or <code>contrib</code> components (e.g. microcode tools),
+	        (if you need something from the <code style="white-space: nowrap;">non-free</code> or <code>contrib</code> components (e.g. microcode tools),
 	         you'<!--'-->ll still need the <code>amd64</code> packages, or to <samp>apt source</samp> and rebuild them for <code>x32</code>).<br />
 	        Note the <a href="//manpages.debian.org/buster/apt/sources.list.5.en.html#THE_DEB_AND_DEB-SRC_TYPES:_OPTIONS"><code>[arch]</code></a> options –
 	        those are to avoid errors from <code>apt</code> as it tries to find <code>x32</code> in the non-ports repositories, and vice versa.<br />
@@ -199,7 +199,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp>root@szarotka:/# <kbd>dpkg --add-architecture amd64</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>apt update</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>apt install linux-image-amd64 --no-install-recommends</kbd></samp></td></tr>
-	<tr><td>And a bootloader (at time of writing <samp>grub2</samp> recommends <samp class="nobr">os-prober</samp> –
+	<tr><td>And a bootloader (at time of writing <samp>grub2</samp> recommends <samp style="white-space: nowrap;">os-prober</samp> –
 	        if you don'<!--'-->t plan on running other OSs this can be <kbd>--no-install-recommends</kbd>ed).<br />
 	        Remember: at the prompt, if unsure about the choice offered by GRUB,
 	        you can switch VTs again (<kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd>) and use <samp>blkid</samp> or <samp>lsblk</samp>.<br />
@@ -229,7 +229,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        instead of the <samp>dpkg-reconfigure</samp>; mistakes of my youth slash two weeks ago I guess.<br />
 	        <del>If you're not using systemd, here is where you'd link <samp>/etc/localtime</samp> to somewhere in <samp>/usr/share/zoneinfo</samp>
 	        (see <samp><a href="//manpages.debian.org/buster/systemd/localtime.5.en.html">localtime(5)</a></samp>), otherwise run
-	        <samp class="nobr"><a href="//manpages.debian.org/buster/systemd/timedatectl.1.en.html">timedatectl(1)</a> set-timezone CET</samp>
+	        <samp style="white-space: nowrap;"><a href="//manpages.debian.org/buster/systemd/timedatectl.1.en.html">timedatectl(1)</a> set-timezone CET</samp>
 	        after rebooting.</del></td>
 	    <td><samp>root@szarotka:/# <kbd>cat > /etc/fstab</kbd></samp><br />
 	        <samp>PARTLABEL=szarotka-root  /      ext4  noatime   0  1</samp><br />

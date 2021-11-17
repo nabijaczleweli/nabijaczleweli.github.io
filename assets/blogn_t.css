@@ -16,10 +16,6 @@ blockquote {
 	margin-top: 0;
 }
 
-.nobr {
-	white-space: nowrap;
-}
-
 img.main-screenshot {
 	max-width: 100%;
 }

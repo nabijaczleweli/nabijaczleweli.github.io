@@ -270,7 +270,7 @@ Boot into your freshly installed system, become root, and:
 	          <a href="https://github.com/systemd/systemd/commit/31e57550b552e113bd3d44355b237c41e42beb58">some</a>
 	          <a href="https://github.com/systemd/systemd/pull/19006">time</a> –
 	          if you don'<!--'-->t get the "Installing" and "Creating" lines on a systemd pre-TODO:NUMBER system,
-	          you'<!--'-->ll need to <samp class="nobr"><kbd>mkdir "/boot/efi/$(cat /etc/machine-id)"</kbd></samp> manually
+	          you'<!--'-->ll need to <samp style="white-space: nowrap;"><kbd>mkdir "/boot/efi/$(cat /etc/machine-id)"</kbd></samp> manually
 	          and <samp><kbd>kernel-install</kbd></samp> again.<br />
 	        The current cmdline will be used for the boot entry, overridable with <code>/etc/kernel/cmdline</code>.</td>
 	    <td><samp>root@zoot:~# <kbd>kernel-install -v add $(uname -r) /boot/vml&lt;TAB&gt; /boot/ini&lt;TAB&gt;</kbd></samp><br />
