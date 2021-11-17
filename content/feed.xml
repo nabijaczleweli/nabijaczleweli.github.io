@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-11-17T02:01:21</updated>
+  <updated>2021-11-17T20:34:59</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -109,7 +109,7 @@ The second [system] is the QEMU/Chroot guest, and it &lt;em&gt;must&lt;/em&gt; r
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 Which, while amusing, isn'&lt;!--'--&gt;t very conducive to getting an &lt;code&gt;x32&lt;/code&gt; system up, nor are the outdated-at-best instructions.
-So this is the combination of the things I'&lt;!--'--&gt;ve read and tried in order to install Debian &quot;bullseye/sid&quot; &lt;code&gt;x32&lt;/code&gt; &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;on &lt;samp class=&quot;nobr&quot;&gt;Wed Apr &amp;nbsp;1 22:02:50 UTC 2020&lt;samp&gt;&lt;/a&gt; (it was already &lt;samp&gt;0:02:50&lt;/samp&gt; the next day in my timezone but I forgot to set it; oh well):
+So this is the combination of the things I'&lt;!--'--&gt;ve read and tried in order to install Debian &quot;bullseye/sid&quot; &lt;code&gt;x32&lt;/code&gt; &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;on &lt;samp style=&quot;white-space: nowrap;&quot;&gt;Wed Apr &amp;nbsp;1 22:02:50 UTC 2020&lt;samp&gt;&lt;/a&gt; (it was already &lt;samp&gt;0:02:50&lt;/samp&gt; the next day in my timezone but I forgot to set it; oh well):
 &lt;/p&gt;
 &lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;
  &lt;!-- DSCN0443.JPG --&gt;
@@ -231,7 +231,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
      &lt;td&gt;&lt;samp&gt;~ #
        &lt;kbd&gt;debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports&lt;/kbd&gt;
      &lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;Now you can (try to) chroot into the new system; if you see &lt;samp class=&quot;nobr&quot;&gt;chroot: can'&lt;!--'--&gt;t execute '/bin/sh': exec format error&lt;/samp&gt;,
+ &lt;tr&gt;&lt;td&gt;Now you can (try to) chroot into the new system; if you see &lt;samp style=&quot;white-space: nowrap;&quot;&gt;chroot: can'&lt;!--'--&gt;t execute '/bin/sh': exec format error&lt;/samp&gt;,
          your kernel doesn'&lt;!--'--&gt;t support &lt;code&gt;x32&lt;/code&gt; executables.
          On Debian kernels, verify that you have &lt;samp&gt;syscall.x32=y&lt;/samp&gt; in &lt;code&gt;/proc/cmdline&lt;/code&gt;.&lt;br /&gt;
          The bind-mounts of &lt;samp&gt;/dev&lt;/samp&gt;, &lt;samp&gt;/sys&lt;/samp&gt;, and &lt;samp&gt;/proc&lt;/samp&gt; are there for the GRUB install and &lt;samp&gt;dracut&lt;/samp&gt;'&lt;!--'--&gt;s host-only mode;
@@ -247,7 +247,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
      &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install systemd-sysv&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install dracut --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;The time has come to add a kernel, which is the only &lt;em&gt;required&lt;/em&gt; &lt;code&gt;amd64&lt;/code&gt; part of the system
-         (if you need something from the &lt;code class=&quot;nobr&quot;&gt;non-free&lt;/code&gt; or &lt;code&gt;contrib&lt;/code&gt; components (e.g. microcode tools),
+         (if you need something from the &lt;code style=&quot;white-space: nowrap;&quot;&gt;non-free&lt;/code&gt; or &lt;code&gt;contrib&lt;/code&gt; components (e.g. microcode tools),
           you'&lt;!--'--&gt;ll still need the &lt;code&gt;amd64&lt;/code&gt; packages, or to &lt;samp&gt;apt source&lt;/samp&gt; and rebuild them for &lt;code&gt;x32&lt;/code&gt;).&lt;br /&gt;
          Note the &lt;a href=&quot;//manpages.debian.org/buster/apt/sources.list.5.en.html#THE_DEB_AND_DEB-SRC_TYPES:_OPTIONS&quot;&gt;&lt;code&gt;[arch]&lt;/code&gt;&lt;/a&gt; options –
          those are to avoid errors from &lt;code&gt;apt&lt;/code&gt; as it tries to find &lt;code&gt;x32&lt;/code&gt; in the non-ports repositories, and vice versa.&lt;br /&gt;
@@ -262,7 +262,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;dpkg --add-architecture amd64&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt update&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install linux-image-amd64 --no-install-recommends&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
- &lt;tr&gt;&lt;td&gt;And a bootloader (at time of writing &lt;samp&gt;grub2&lt;/samp&gt; recommends &lt;samp class=&quot;nobr&quot;&gt;os-prober&lt;/samp&gt; –
+ &lt;tr&gt;&lt;td&gt;And a bootloader (at time of writing &lt;samp&gt;grub2&lt;/samp&gt; recommends &lt;samp style=&quot;white-space: nowrap;&quot;&gt;os-prober&lt;/samp&gt; –
          if you don'&lt;!--'--&gt;t plan on running other OSs this can be &lt;kbd&gt;--no-install-recommends&lt;/kbd&gt;ed).&lt;br /&gt;
          Remember: at the prompt, if unsure about the choice offered by GRUB,
          you can switch VTs again (&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3&lt;/kbd&gt;) and use &lt;samp&gt;blkid&lt;/samp&gt; or &lt;samp&gt;lsblk&lt;/samp&gt;.&lt;br /&gt;
@@ -292,7 +292,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          instead of the &lt;samp&gt;dpkg-reconfigure&lt;/samp&gt;; mistakes of my youth slash two weeks ago I guess.&lt;br /&gt;
          &lt;del&gt;If you're not using systemd, here is where you'd link &lt;samp&gt;/etc/localtime&lt;/samp&gt; to somewhere in &lt;samp&gt;/usr/share/zoneinfo&lt;/samp&gt;
          (see &lt;samp&gt;&lt;a href=&quot;//manpages.debian.org/buster/systemd/localtime.5.en.html&quot;&gt;localtime(5)&lt;/a&gt;&lt;/samp&gt;), otherwise run
-         &lt;samp class=&quot;nobr&quot;&gt;&lt;a href=&quot;//manpages.debian.org/buster/systemd/timedatectl.1.en.html&quot;&gt;timedatectl(1)&lt;/a&gt; set-timezone CET&lt;/samp&gt;
+         &lt;samp style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;//manpages.debian.org/buster/systemd/timedatectl.1.en.html&quot;&gt;timedatectl(1)&lt;/a&gt; set-timezone CET&lt;/samp&gt;
          after rebooting.&lt;/del&gt;&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt; /etc/fstab&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;PARTLABEL=szarotka-root  /      ext4  noatime   0  1&lt;/samp&gt;&lt;br /&gt;
@@ -1080,7 +1080,7 @@ Boot into your freshly installed system, become root, and:
            &lt;a href=&quot;https://github.com/systemd/systemd/commit/31e57550b552e113bd3d44355b237c41e42beb58&quot;&gt;some&lt;/a&gt;
            &lt;a href=&quot;https://github.com/systemd/systemd/pull/19006&quot;&gt;time&lt;/a&gt; –
            if you don'&lt;!--'--&gt;t get the &quot;Installing&quot; and &quot;Creating&quot; lines on a systemd pre-TODO:NUMBER system,
-           you'&lt;!--'--&gt;ll need to &lt;samp class=&quot;nobr&quot;&gt;&lt;kbd&gt;mkdir &quot;/boot/efi/$(cat /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt; manually
+           you'&lt;!--'--&gt;ll need to &lt;samp style=&quot;white-space: nowrap;&quot;&gt;&lt;kbd&gt;mkdir &quot;/boot/efi/$(cat /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt; manually
            and &lt;samp&gt;&lt;kbd&gt;kernel-install&lt;/kbd&gt;&lt;/samp&gt; again.&lt;br /&gt;
          The current cmdline will be used for the boot entry, overridable with &lt;code&gt;/etc/kernel/cmdline&lt;/code&gt;.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;kernel-install -v add $(uname -r) /boot/vml&amp;lt;TAB&amp;gt; /boot/ini&amp;lt;TAB&amp;gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
