@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-11-14T14:53:16</updated>
+  <updated>2021-11-17T02:01:21</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -648,7 +648,7 @@ Now it'&lt;!--'--&gt;s time to convince postfix to do a big crime, by:
       &lt;div class=&quot;bigcode&quot;&gt;
 
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# service type  private unpriv  chroot  wakeup  maxproc command + args&lt;/span&gt;
-irc       1  -       n       n       -       -       pipe
+irc       unix  -       n       n       -       -       pipe
   &lt;span class=&quot;token assign-left variable&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nabijaczleweli &lt;span class=&quot;token assign-left variable&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/home/nabijaczleweli/uwu/ircmail
 &lt;/pre&gt;&lt;/code&gt;
  &lt;/div&gt;
@@ -1890,7 +1890,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;indented&quot;&gt;
-It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;1&lt;/span&gt; belongs to the Open Group nowadays,
+It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
 but it wouldn'&lt;!--'--&gt;t be unheard of to have a note like this on the first page of a document in the bad old days,
 and the concept of unironically encountering this in the wild in year of the hog 2020 was too hilarious to pass up
 as a terrible urge &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1408975129707794434&quot;&gt;came over&lt;/a&gt; me.
