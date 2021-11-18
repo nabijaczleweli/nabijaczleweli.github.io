@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-11-17T20:34:59</updated>
+  <updated>2021-11-18T22:48:01</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -86,7 +86,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 9 Apr 2020 01:44:47 +0200&lt;/span&gt;, last updated &lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 28 Apr 2020 02:54:07 +0200&lt;/span&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -379,7 +379,7 @@ Alright, bye!
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 25 May 2020 00:12:30 +0200&lt;/span&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -489,7 +489,7 @@ video, img {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;003. A proof-of-concept IRC/mail bridge&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;003. A proof-of-concept IRC/mail bridge&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 11 Jul 2020 00:34:50 +0200&lt;/span&gt;&lt;/h4&gt;
 
 As seen on &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1281342937226510342&quot;&gt;Twitter&lt;/a&gt;.
@@ -739,7 +739,7 @@ img {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;004. New album: cinque&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;004. New album: cinque&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 18 Jul 2020 22:14:33 +0200&lt;/span&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;indented&quot;&gt;
@@ -842,7 +842,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, and Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs!&lt;/h4&gt;
 
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -1536,7 +1536,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 05 Nov 2020 22:06:30 +0100&lt;/span&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -1886,7 +1886,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;indented&quot;&gt;
@@ -2053,7 +2053,7 @@ ol.wide-explanation &gt; li {
 
 
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/code&gt;&lt;/samp&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200&lt;/h4&gt;
 
 &lt;!-- With manual corrections and welding the separately-highlit AWK bits:
@@ -2902,7 +2902,7 @@ tr:hover {
 
 &lt;!-- Style based on https://daringfireball.net/projects/markdown/ --&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h1 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h1&gt;
 
 &lt;h2 id=&quot;description&quot; class=&quot;smallcaps&quot; style=&quot;margin-top: initial;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#description&quot;&gt;#&lt;/a&gt; Description&lt;/h2&gt;
 
@@ -3156,7 +3156,7 @@ I hope that this document is clear and/or informative, if not,
 
 
 &lt;span class=&quot;roboto&quot;&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; Tonči Juričev-Grgin mandalas&lt;/h2&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; Tonči Juričev-Grgin mandalas &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p class=&quot;indented continued&quot; id=&quot;intro&quot;&gt;
 The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt;drumroll please&lt;/em&gt;, generate mandalas like this one:
@@ -3352,7 +3352,7 @@ A full list of conversions and their implementations can be found at the
 
 
 &lt;div class=&quot;art-box&quot;&gt;
- &lt;span id=&quot;top&quot;&gt;&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a id=&quot;go-back-link&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; wiggly-circle&lt;/h2&gt;&lt;/span&gt;
+ &lt;span id=&quot;top&quot;&gt;&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; wiggly-circle &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;&lt;/span&gt;
 
  &lt;p class=&quot;merriweather&quot;&gt;
   Inspired by &lt;a href=&quot;//inconvergent.net&quot;&gt;Inconvergent&lt;/a&gt;'s &lt;a href=&quot;//twitter.com/inconvergent/status/1122463283586510848&quot;&gt;&quot;path test&quot;&lt;/a&gt;.&lt;!--'--&gt;
