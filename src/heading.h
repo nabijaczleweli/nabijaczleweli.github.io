@@ -18,7 +18,7 @@
 #define CMT Based on gen-epub-book'<!--'-->s hash-on-the-left, make sure to update both if fixing something
 #undef CMT
 
-#define MAIN_HEADING_ALT(level, back_url, ...) <h##level id="go-back" class="merriweather"><a id="go-back-link" href=STR(back_url)>↩</a> __VA_ARGS__</h##level>
+#define MAIN_HEADING_ALT(level, back_url, ...) <h##level id="go-back" class="merriweather"><a class="go-back-link left" href=STR(back_url)>↩</a> __VA_ARGS__ <a class="go-back-link right" href=STR(back_url)>↩</a></h##level>
 #define MAIN_HEADING(...)                      MAIN_HEADING_ALT(2, .., __VA_ARGS__)
 
 

@@ -1,16 +1,50 @@
-#go-back > a#go-back-link {
-	float: left;
-	visibility: hidden;
-	opacity: 0;
-	padding-right: calc(1em / 5.5);
-	margin-left: calc(-1em / 0.9);
-	transition: all 0.5s;
+#go-back {
+	position: relative;
+}
 
-	color: black;
+#go-back > a.go-back-link {
+	transition: all 0.5s;
+	color: inherit;
 	text-decoration: none;
 }
 
-#go-back:hover > a#go-back-link {
+#go-back > a.go-back-link.left {
+	float: left;
+	padding-right: calc(1em / 5.5);
+	margin-left: calc(-1em / 0.9);
+}
+
+#go-back > a.go-back-link.right {
+	opacity: 0.3;
+	position: absolute;
+	margin-left: 0.5em;
+}
+
+
+@media all {
+	#go-back > a.go-back-link.left {
+		display: none;
+	}
+}
+
+@media all and (min-device-width: 400px) {
+	#go-back > a.go-back-link.left {
+		display: initial;
+		opacity: 0.3;
+	}
+	#go-back > a.go-back-link.right {
+		display: none;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	#go-back > a.go-back-link.left {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+#go-back:hover > a.go-back-link {
 	visibility: visible;
 	opacity: 1;
 }
