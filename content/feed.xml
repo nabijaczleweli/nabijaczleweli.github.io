@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-11-19T16:56:41</updated>
+  <updated>2021-12-01T01:34:52</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -1793,7 +1793,7 @@ zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/006-UNIX-r-ATT.html</id>
     <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/006-UNIX-r-ATT.html" />
-    <title> 006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt — nabijaczleweli </title>
+    <title> 006. ¹UNIX® is a registered trademark of AT&amp;T. — blognꞌt — nabijaczleweli </title>
     <updated>2021-07-08T20:26:38+02:00</updated>
     <content type="html">
 &lt;style&gt;
