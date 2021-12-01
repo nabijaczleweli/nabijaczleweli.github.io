@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2021-12-01T01:34:52</updated>
+  <updated>2021-12-01T01:37:39</updated>
   <generator>
     GNU Awk 4.1.3, API: 1.1 (GNU MPFR 3.1.4, GNU MP 6.1.0)
   </generator>
@@ -1622,7 +1622,7 @@ other home nations are available.
 &lt;div class=&quot;bigcode&quot;&gt;
 
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; /dev/sda&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-1 2.36).
+&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 
@@ -1703,7 +1703,7 @@ Which consists of removing the partition with the previous rootfs and expanding 
 &lt;div class=&quot;bigcode&quot;&gt;
 
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; /dev/sda&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-1 2.36).
+&lt;span class=&quot;token output&quot;&gt;Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 
