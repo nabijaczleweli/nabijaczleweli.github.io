@@ -108,7 +108,7 @@ END {
 	print "  <entry>"
 	print "    <id>https://nabijaczleweli.xyz/content/" filename "</id>"
 	print "    <link href=\"https://nabijaczleweli.xyz/content/" filename "\" />"
-	print "    <title>" title "</title>"
+	print "    <title>" escape_html(title) "</title>"
 	print "    <updated>" updated "</updated>"
 	if(published != "")
 		print "    <published>" published "</published>"
