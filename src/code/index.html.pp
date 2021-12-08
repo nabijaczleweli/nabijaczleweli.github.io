@@ -98,6 +98,8 @@ A brief subsection of non-Rust non-mistakes:
 	         EFI boot manager; or, well, an EFI bootorder compiler)
 	SRHT_SET(tzpfms, DEVICON(cplusplus),
 	         TPM-based encryption keys for ZFS datasets)
+	SRHT_SET(febug, DEVICON(cplusplus),
+	         User-space cooperative debugging à la debugfs)
 </ul>
 <br />
 
