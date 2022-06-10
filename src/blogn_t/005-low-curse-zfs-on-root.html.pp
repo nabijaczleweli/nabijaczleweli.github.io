@@ -16,8 +16,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Mon, 14 Sep 2020 00:20:20 +0200" -->
 #define POST_DATE      Mon, 14 Sep 2020 00:20:20 +0200
-#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, and Mon, 15 Mar 2021 23:49:31 +0100, with thanks to <a href="//github.com/ik5pvx">Pierfrancesco</a> for many pre-bullseye bugs!
-                                                                                                                 <!-- RSS_UPDATE_DATE: "Mon, 15 Mar 2021 23:49:31 +0100" -->
+#define POST_POST_DATE , updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, Mon, 15 Mar 2021 23:49:31 +0100, with thanks to <a href="//github.com/ik5pvx">Pierfrancesco</a> for many pre-bullseye bugs! and Sat, 11 Jun 2022 00:19:37 +0200
+                                                                        <!-- RSS_UPDATE_DATE: "Sat, 11 Jun 2022 00:19:37 +0200" -->
 
 
 #ifdef linux
@@ -187,7 +187,7 @@ Boot into your freshly installed system, become root, and:
 	<tr><td>Get rid of GRUB, optionally keeping EFI tools.</td>
 	    <td><samp>root@zoot:~# <kbd>apt-mark manual efibootmgr mokutil</kbd></samp><br />
           <samp>efibootmgr, mokutil set to manually installed.</samp><br />
-	        <samp>root@zoot:~# apt autopurge grub*</samp><br />
+	        <samp>root@zoot:~# <kbd>apt autopurge grub*</kbd></samp><br />
 	        <samp>The following packages will be REMOVED:</samp><br />
 	        <samp>  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*</samp><br />
 	        <samp>  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*</samp><br />
@@ -220,8 +220,14 @@ Boot into your freshly installed system, become root, and:
 	        <samp>Boot0002*: UEFI QEMU DVD-ROM QM00003</samp></td></tr>
 	<tr><td>Install <samp>systemd-boot</samp> and enable a timeout.<br />
 	        This <em>might</em> not be required on platforms that support the systemd <a href="//systemd.io/BOOT_LOADER_SPECIFICATION/">Boot Loader Specification</a>
-	        (are there any?).</td>
-	    <td><samp>root@zoot:~# <kbd>bootctl install</kbd></samp><br />
+	        (are there any?).<br />
+	        Since systemd 251.2-3 (Wed, 08 Jun 2022 23:56:04 +0100), <samp>systemd-boot</samp> resides in its own homonymous package.</td>
+	    <td><samp>root@zoot:~# <kbd>apt install systemd-boot</kbd></samp><br />
+	        <samp>The following NEW packages will be installed:</samp><br />
+	        <samp>  systemd-boot systemd-boot-efi</samp><br />
+          <samp>0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.</samp><br />
+          <samp>After this operation, 739 kB of additional disk space will be used.</samp><br />
+	        <samp>root@zoot:~# <kbd>bootctl install</kbd></samp><br />
 	        <samp>Created "/boot/efi/EFI", other directories.</samp><br />
 	        <samp>Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/efi/EFI/{systemd/systemd-bootx64.efi,BOOT/BOOTX64.EFI}".</samp><br />
 	        <samp>Random seed file /boot/efi/loader/random-seed successfully written (512 bytes).</samp><br />
