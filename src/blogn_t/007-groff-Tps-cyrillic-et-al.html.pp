@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Sat, 28 Aug 2021 18:36:44 +0200" -->
 #define POST_DATE      Sat, 28 Aug 2021 18:36:44 +0200
-#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200
+#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200 and Wed, 22 Jun 2022 18:33:54 +0200
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
@@ -91,8 +91,11 @@ for f in {C,T}{R,B,I,BI}; do
 				exit 1
 			}
 		}' /var/lib/ghostscript/fonts/Fontmap)";  #'
-	echo "${src}afm";
-	afmtodit $(expr "$f" : C > /dev/null && printf -- -n) -c -d /usr/share/groff/current/font/devps/DESC -e /usr/share/groff/current/font/devps/text.enc -i 0 -m "${src}afm" /usr/share/groff/current/font/devps/generate/textmap "$f";
+	echo "${src}afm; $(expr "$f" : C > /dev/null && echo -nk)"
+	afmtodit $([ "${f#C}" = "$f" ] || echo -nk) -cmi0 \
+		-d /usr/share/groff/current/font/devps/DESC \
+		-e /usr/share/groff/current/font/devps/text.enc \
+		"${src}afm" /usr/share/groff/current/font/devps/generate/textmap "$f";
 done
 -->
 <div class="bigcode continued">
@@ -120,7 +123,7 @@ done
   TAB_INDENTTAB_INDENTTAB_INDENT}
   TAB_INDENTTAB_INDENT}</span><span class="token string">'</span> /var/lib/ghostscript/fonts/Fontmap<span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span>  <!--'-->
   TAB_INDENT<span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">{</span>src<span class="token punctuation">}</span>afm<span class="token punctuation">;</span></span></span>
-  TAB_INDENTafmtodit <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>expr <span class="token string">"<span class="token variable">$f</span>"</span> <span class="token builtin class-name">:</span> C <span class="token operator">></span> /dev/null <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">printf</span> -- -n<span class="token punctuation">)</span> -cmi<span class="token number">0</span> \FORCED_NEWLINE
+  TAB_INDENTafmtodit <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span><span class="token keyword">[</span> <span class="token string">"<span class="token variable">${f#C}</span>"</span> = <span class="token string">"<span class="token variable">$f</span>"</span> <span class="token keyword">]</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> -kn<span class="token punctuation">)</span> -cmi<span class="token number">0</span> \FORCED_NEWLINE
   TAB_INDENTTAB_INDENT-d /usr/share/groff/current/font/devps/DESC \FORCED_NEWLINE
   TAB_INDENTTAB_INDENT-e /usr/share/groff/current/font/devps/text.enc \FORCED_NEWLINE
   TAB_INDENTTAB_INDENT<span class="token string">"<span class="token variable">${src}</span>afm"</span> /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"<span class="token variable">$f</span>"</span><span class="token punctuation">;</span></span></span>
@@ -155,6 +158,15 @@ because unlike <code>Times</code>, Nimbus is an actual font.
 </p>
 <!-- gs -d{Text,Graphics}AlphaBits=4 -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pngmono -r600  -sOutputFile=976.png  ~/PDF/job_976-stdin___jaczleweli_PDF.pdf -->
 <a href="/content/assets/blogn_t/007.01-result.png"><img class="continuation main-font" alt="Example manual page with Cyrillic and Polish characters" src="/content/assets/blogn_t/007.01-result.png" /></a>
+<p class="indented">
+Versions of this document prior to
+Wed, 22 Jun 2022 18:33:54 +0200
+didn't specify  <!--'-->
+<kbd>-k</kbd>
+to remove kerning on fixed-width fonts,
+which <a href="//twitter.com/nabijaczleweli/status/1539638664548044800">broke</a> alignment in space-delimited tables.
+We apologise for the error.
+</p>
 
 
 HEADING_S(2, prior-art, class="continued", Prior art)
