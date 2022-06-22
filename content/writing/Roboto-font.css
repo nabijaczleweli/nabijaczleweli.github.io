@@ -8,9 +8,6 @@ You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 */
 
-
-
-
  @font-face { 
  font-family: "Roboto Slab"; 
  font-style: normal; 
@@ -42,8 +39,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  src: local("Roboto Italic"), local("Roboto-Italic"), 
   url("https://rawcdn.githack.com/google/fonts/97f2a0e2/apache/roboto/Roboto-Italic.ttf")   format("truetype"); 
  }
-
-
 .roboto {
  font-family: "Roboto Slab", serif;
  /* Normalise to "default" size (22px->19px) */
@@ -51,13 +46,11 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  /* Decided that was too small, but 110% looked good, so (19/22)*1.1=0.95 */
  font-size: 0.95em;
 }
-
 .roboto-unscale {
  /* Normalise to "normal" size (e.g. for other fonts) ((22px->19px)->22px) */
  /*font-size: calc(22em / 19);*/
  font-size: calc(1em / 0.95);
 }
-
 .roboto-em {
  font-family: "Roboto", serif;
 }

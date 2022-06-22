@@ -7,12 +7,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-
-
-
-
-
-   <!-- RSS_PUB_DATE: "Sat, 11 Jul 2020 00:34:50 +0200" -->
+ <!-- RSS_PUB_DATE: "Sat, 11 Jul 2020 00:34:50 +0200" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -59,28 +54,22 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  </head> 
  <body>
 <style>
-
 .continued {
  margin-bottom: 0;
 }
-
 .continuing {
  margin-top: 0;
  margin-bottom: 0;
 }
-
 .continuation {
  margin-top: 0;
 }
 code, samp {
  font-family: "Droid Sans Mono", monospace;
 }
-
 h1, h2, h3, h4, h5, h6 {
  font-family: "Merriweather", serif;
 }
-
-
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
@@ -90,7 +79,6 @@ h6:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
-
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
@@ -104,8 +92,6 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-
-
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
@@ -120,23 +106,17 @@ video, img {
  max-width: 100%;
 }
 </style>
-
 <span class="roboto writing">
-
-
 <p></p>
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp><code>003. A proof-of-concept IRC/mail bridge</code></samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Sat, 11 Jul 2020 00:34:50 +0200</span></h4>
-
 As seen on <a href="//twitter.com/nabijaczleweli/status/1281342937226510342">Twitter</a>.
-
 <h2 id="what" ><a class="hash-link" href="#what">#</a> What?</h2>
 <p class="indented">
 A video'<!--'-->s worth a few interrobangs, so:
 <video src="/content/assets/blogn_t/003.01-2020-07-10_01-42-57.mp4"
       poster="/content/assets/blogn_t/003.02-2020-07-10_01-42-57.mp4_snapshot_00.04_[2020.07.10_15.53.59].png" alt="Demo video" controls preload></video>
 </p>
-
 <p class="continued">
 Herein we can see:
 </p>
@@ -146,7 +126,6 @@ Herein we can see:
   <li>Near the top-right: output of <code>journalctl -fu postfix@-</code>,</li>
   <li>Toward the bottom-right: a tee of mails going into <code>~/uwu/mbox</code>.</li>
 </ul>
-
 <p class="continued">
 The play-by-play:
 </p>
@@ -160,16 +139,12 @@ The play-by-play:
   <li><code>1:01</code>: mail is sent, with activity in the journal window and one new mail showing up both in neomutt and the mail tee window (from "hasix@irc.", subject "&lt;nabijaczleweli&gt; thank you very cool :)"), the message shows up in the web client to a click sound,</li>
   <li><code>1:05</code>: a tired voice proclaims "oh, I hate this!".</li>
 </ul>
-
-
 <h2 id="why" ><a class="hash-link" href="#why">#</a> Why‽</h2>
 <p class="indented">
 Intrusive thought when I noticed that messages from whitenotifier hit <a href="//freenode.irclog.whitequark.org/solvespace/2020-07-09">#solvespace</a>
   slightly sooner than my e-mail notifications.
 The gin helped.
 </p>
-
-
 <h2 id="how" ><a class="hash-link" href="#how">#</a> How?</h2>
 <p class="continued">
 Apart from blatant disregard for common decency:
@@ -182,24 +157,19 @@ Apart from blatant disregard for common decency:
   <li><code>11</code> lines of AWK to "deliver" messages from sic to a mbox</li>
   <li><code>10</code> lines of AWK to deliver messages from postfix to sic</li>
 </ul>
-
-
 <h3 id="how-irc" ><a class="hash-link" href="#how-irc">#</a> The IRC</h3>
 <p class="continued">
 Start with a simple connection:
 </p>
 <div class="bigcode continuation">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token output">mkfifo input output
 sic -h irc.freenode.net &lt; input > output &amp;
 </span></pre></code>
 </div>
-
 <p class="indented">
 Now <kbd>cat &lt; output &</kbd> to see what'<!--'-->s up and <kbd>cat &gt;&gt; input</kbd> to open the connection, something like
 </p>
 <div class="bigcode continuing">
-
 <pre class="language-plaintext"><code class="language-plaintext">verne.freenode.net: 07/10/20 16:05 >&lt; 372 (nabijaczleweli): -
 verne.freenode.net: 07/10/20 16:05 >&lt; 372 (nabijaczleweli): - Thank you for using freenode!
 verne.freenode.net: 07/10/20 16:05 >&lt; 376 (nabijaczleweli): End of /MOTD command.
@@ -218,15 +188,12 @@ a message that comes back should show up as well:
 <div class="bigcode continuation">
   <pre class="language-plaintext"><code class="language-plaintext">nabijaczleweli: 07/10/20 16:09 &lt;hasix&gt; :)</pre></code>
 </div>
-
-
 <h3 id="how-mbox" ><a class="hash-link" href="#how-mbox">#</a> The mbox</h3>
 <p class="indented continued">
 Great. Suspend the input <code>cat</code> (killing it will slam <code>sic</code>'<!--'-->s pipe and kill it) and kill the output <code>cat</code>,
   replacing it with a (GNU) AWK process running this
 </p>
 <div class="bigcode continuing">
-
 <pre class="language-awk"><code class="language-awk"><span class="token comment"># /(?&lt;poster>[^:]+): (?&lt;month>[[:digit:]]{2})\/(?&lt;day>[[:digit:]]{2})\/(?&lt;year>[[:digit:]]{2}) (?&lt;hour>[[:digit:]]{2}):(?&lt;monute>[[:digit:]]{2}) &lt;(?&lt;channel>[^>]+)> (?&lt;message>.+)/ {</span>
 <span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span> {
   poster = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\1"</span>, <span class="token string">"g"</span>)
@@ -247,12 +214,10 @@ i.e.
 <div class="bigcode continuation">
   <pre class="language-plaintext"><code class="language-plaintext">gawk <span class="token string">'&lt;&lt;that&gt;&gt;'</span> output | tee -a mbox &</pre></code>
 </div>
-
 <p class="indented continued">
 Now if a message arrives (from the web client) or is sent (":m hasix msg"), it should show up with
 </p>
 <div class="bigcode continuing">
-
 <pre class="language-plaintext"><code class="language-plaintext">From nabijaczleweli Fri Jul 10 16:17:13 2020
 From: nabijaczleweli@irc.
 Date: Fri, 10 Jul 2020 16:17:13 +0200
@@ -268,8 +233,6 @@ both in the teletype and the mailbox. At this point pointing the MUA at it shoul
 <p class="continuation">
 If they don'<!--'-->t, see if the messages are flushed, or if the MUA handles this in general.
 </p>
-
-
 <h3 id="how-postfix" ><a class="hash-link" href="#how-postfix">#</a> The MX</h3>
 <p class="continued">
 Now it'<!--'-->s time to convince postfix to do a big crime, by:
@@ -282,7 +245,6 @@ Now it'<!--'-->s time to convince postfix to do a big crime, by:
       <a href="//manpages.debian.org/buster/postfix/pipe.8postfix.en.html">pipe(8postfix)</a> or
       <a href="//manpages.debian.org/buster/postfix/master.5.en.html"> master(5)</a> will probably be very insightful):
       <div class="bigcode">
-
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># service type  private unpriv  chroot  wakeup  maxproc command + args</span>
 irc       unix  -       n       n       -       -       pipe
   <span class="token assign-left variable">user</span><span class="token operator">=</span>nabijaczleweli <span class="token assign-left variable">argv</span><span class="token operator">=</span>/home/nabijaczleweli/uwu/ircmail
@@ -291,13 +253,11 @@ irc       unix  -       n       n       -       -       pipe
       </li>
   <li>reloading postfix.</li>
 </ul>
-
 <p class="indented continued">
 <code>ircmail</code> should be executable and something like this
   (note that the From: parsing is entirely superfluous, but might be useful for scaling this to multi-user):
 </p>
 <div class="bigcode continuation">
-
 <pre class="language-awk"><code class="language-awk"><span class="token comment">#!/bin/gawk -f</span>
 <span class="token regex">/^From: ([^ ]+)( .+)?/</span> {
   <span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
@@ -314,12 +274,10 @@ irc       unix  -       n       n       -       -       pipe
 }
 </pre></code>
 </div>
-
 <p class="indented continued">
 Now, sending a mail to "hasix@irc", "##test@irc", &c. should yield something like
 </p>
 <div class="bigcode continuing">
-
 <pre class="language-plaintext"><code class="language-plaintext">Jul 10 14:43:11 tarta postfix/submission/smtpd[32260]: connect from unknown[192.168.1.250]
 Jul 10 14:43:12 tarta postfix/submission/smtpd[32260]: E291B360636: client=unknown[192.168.1.250], sasl_method=PLAIN, sasl_username=nabijaczleweli
 Jul 10 14:43:12 tarta postfix/cleanup[32270]: E291B360636: message-id=&lt;20200710124311.m26cki7rgslw6deg@tarta.local.nabijaczleweli.xyz>
@@ -332,7 +290,6 @@ Jul 10 14:43:13 tarta postfix/qmgr[32125]: E291B360636: removed
 <p class="continuation">
 in the journal, and the corresponding commands in sic'<!--'-->s input.
 </p>
-
 <h2 id="conclusion" ><a class="hash-link" href="#conclusion">#</a> Conclusion?</h2>
 <p class="indented continued">
 Despite this technically making an open IRC relay, since anyone can connect on port 25 with <code>RCPT TO:&lt;whomever@irc&gt;</code>,
@@ -342,14 +299,11 @@ Despite this technically making an open IRC relay, since anyone can connect on p
 I am, as ever, morbidly curious so as to scaling this to a multi-user/auto-join solution, but, well, even I have my limits.
 Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch me eat my words in, like, a year, I guess?
 </p>
-
-
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
  or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
  </p>
-
 </span>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
@@ -366,9 +320,9 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 7'<!--'-->s C preprocessor on 01.12.2021 01:35:09 UTC from 
+ Automatically generated with Clang 15'<!--'-->s C preprocessor on 22.06.2022 18:53:13 CEST from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/003-maircl-poc.html.pp">src/blogn_t/003-maircl-poc.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/242678446">See job on TravisCI</a>. 
+ 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

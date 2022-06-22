@@ -7,9 +7,6 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 */
-
-
-
 @font-face { 
  font-family: "MathJax_Math"; 
  font-style: italic; 
@@ -28,12 +25,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  src:  url("https://rawcdn.githack.com/mathjax/MathJax/2.7.6/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff") format("woff"), 
  url("https://rawcdn.githack.com/mathjax/MathJax/2.7.6/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf") format("opentype")   ; 
  }
-
-
 .math-font-normal {
  font-family: "MathJax_Main";
 }
-
 .math-font-italic {
  font-family: "MathJax_Math";
  font-style: italic;

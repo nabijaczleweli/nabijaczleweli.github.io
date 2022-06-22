@@ -7,12 +7,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-
-
-
-
-
-   <!-- RSS_PUB_DATE: "Thu, 05 Nov 2020 22:06:30 +0100" -->
+ <!-- RSS_PUB_DATE: "Thu, 05 Nov 2020 22:06:30 +0100" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -58,28 +53,22 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  </head> 
  <body>
 <style>
-
 .continued {
  margin-bottom: 0;
 }
-
 .continuing {
  margin-top: 0;
  margin-bottom: 0;
 }
-
 .continuation {
  margin-top: 0;
 }
 code, samp {
  font-family: "Droid Sans Mono", monospace;
 }
-
 h1, h2, h3, h4, h5, h6 {
  font-family: "Merriweather", serif;
 }
-
-
 h1:hover a.hash-link,
 h2:hover a.hash-link,
 h3:hover a.hash-link,
@@ -89,7 +78,6 @@ h6:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
-
 h1 a.hash-link,
 h2 a.hash-link,
 h3 a.hash-link,
@@ -103,8 +91,6 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-
-
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
@@ -120,14 +106,10 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
  margin-bottom: 0.15em;
 }
 </style>
-
 <span class="roboto writing">
-
-
 <p></p>
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp><code>005a. A single-disk but slightly more cursed ZFS-on-root corollary</code></samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Thu, 05 Nov 2020 22:06:30 +0100</span></h4>
-
 <p class="indented continued">
 Fujitsu's employed me, which means I'm empowered to make <a href="//twitter.com/nabijaczleweli/status/1321625051771375616">bad financial decisions</a>
 at a larger scale than previous — in this case, a <a href="//droix.net/products/one-netbook-mix-3-pro-ultrabook">OneMix 3 Pro</a>,
@@ -150,7 +132,6 @@ the manpage <a href="//github.com/openzfs/zfs/blob/a4246bce5024df202e7c41a682c3f
 <p class="continuation">
 Which, frankly, makes no fucking sense, especially, since that invocation didn'<!--'-->t claim unpartitioned space inside the GPT.
 </p>
-
 <p class="indented continued">
 However, what it did do was handle expanding entire drives (i.e. ones with space <em>beyond</em> the GPT), as well as manually grown partitions.
 And so, I'<!--'-->ve <a href="//github.com/openzfs/zfs/pull/11158">updated</a> the manpage, which should land in 2.0.0-rc6 to some semblance of sense:
@@ -169,8 +150,6 @@ And so, I'<!--'-->ve <a href="//github.com/openzfs/zfs/pull/11158">updated</a> t
 <p class="continuation">
 That doesn't mean I'm quite sure what a LUN is, but it gets the point across much better.
 </p>
-
-
 <p class="indented continued">
 This doesn'<!--'-->t change much during
 </p>
@@ -181,8 +160,6 @@ Except that the initial destination filesystem must go at the <em>end</em> of th
 <center><a href="/content/assets/blogn_t/005a.01-i-t-partitioning.png">
  <img class="main-screenshot continuing" alt="initramfs-tools partitioning screen showing an 8GB disk with a 250MB EFI System Partiition marked 'zoot-EFI', then 6GB of empty space, then 2GB ext4 filesystem for the root FS, marked 'zoot-root'"
       src="/content/assets/blogn_t/005a.01-i-t-partitioning.png" /></a></center>
-
-
 <p class="indented continued">
 What does change significantly, though, is the
 </p>
@@ -191,7 +168,6 @@ What does change significantly, though, is the
 Since currently there'<!--'-->s no partition for the pool to occupy:
 </p>
 <div class="bigcode">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> -l /dev/sda</span></span>
 <span class="token output">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Units: sectors of 1 * 512 = 512 bytes
@@ -202,14 +178,12 @@ Device       Start      End Sectors  Size Type
 /dev/sda2  9940992 16775167 6834176  3.3G Linux filesystem
 </span></pre></code>
 </div>
-
 <p class="continued">
 I'<!--'-->m using <code><a href="//manpages.debian.org/bullseye/fdisk/fdisk.8.en.html">fdisk(8)</a></code>
 (mainly because I'<!--'-->m too small-brain for <code><a href="//manpages.debian.org/bullseye/parted/parted.8.en.html">parted(8)</a></code>),
 other home nations are available.
 </p>
 <div class="bigcode">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> /dev/sda</span></span>
 <span class="token output">Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
@@ -258,12 +232,10 @@ Of note:
  <li>if reordering, a reboot is required afterward, as indicated by the kernel using old partition tables, because</li>
  <li>using <code>PARTLABEL=</code> or "Partition name" is the hardest to fuck up way to spec a partition vdev.</li>
 </ol>
-
 <p class="continued">
 The table is as follows for now:
 </p>
 <div class="bigcode">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> -x /dev/sda</span></span>
 <span class="token output">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Units: sectors of 1 * 512 = 512 bytes
@@ -275,13 +247,10 @@ Device       Start      End Sectors Type                Name    
 /dev/sda3  9940992 16775167 6834176 Linux filesystem    zoot-root
 </span></pre></code>
 </div>
-
 <p class="continued">
 This means, that the creation command turns into
 </p>
 <pre class="continuation indented roboto-unscale">zpool create -O mountpoint=/ -O canmount=off -R /mnt zoot zoot-zoot</pre>
-
-
 <p class="indented continued">
 Besides this, everything continues as previous until rebooted with ZFS as rootfs, when it'<!--'-->s time for
 </p>
@@ -290,7 +259,6 @@ Besides this, everything continues as previous until rebooted with ZFS as rootfs
 Which consists of removing the partition with the previous rootfs and expanding the one with the vdev, being sure to not wipe it:
 </p>
 <div class="bigcode">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> /dev/sda</span></span>
 <span class="token output">Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
@@ -332,12 +300,10 @@ The partition table has been altered.
 Syncing disks.
 </span></pre></code>
 </div>
-
 <p class="indented continued">
 Which yields a vdev partition the size of the rest of the disk, but ZFS will not recognise it until after a reboot:
 </p>
 <div class="bigcode">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> -l /dev/sda</span></span>
 <span class="token output">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Units: sectors of 1 * 512 = 512 bytes
@@ -352,12 +318,10 @@ Device      Start      End  Sectors  Size Type
 zoot  4.50G  1.20G  3.30G        -         -     3%    26%  1.00x    ONLINE  -
 </span></pre></code>
 </div>
-
 <p class="indented continued">
 But after one, the rest of the partition is recognised and can be claimed:
 </p>
 <div class="bigcode">
-
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
 <span class="token output">NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
 zoot  4.50G  1.20G  3.30G        -        3G     3%    26%  1.00x    ONLINE  -
@@ -367,14 +331,11 @@ zoot  4.50G  1.20G  3.30G        -        3G     3%    26%  1.00
 zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00x    ONLINE  -
 </span></pre></code>
 </div>
-
-
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
  or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
  </p>
-
 </span>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
@@ -391,9 +352,9 @@ zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 7'<!--'-->s C preprocessor on 01.12.2021 01:35:09 UTC from 
+ Automatically generated with Clang 15'<!--'-->s C preprocessor on 22.06.2022 18:53:13 CEST from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp">src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp</a>. 
- <br /><a href="https://travis-ci.org/nabijaczleweli/nabijaczleweli.github.io/builds/242678446">See job on TravisCI</a>. 
+ 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
