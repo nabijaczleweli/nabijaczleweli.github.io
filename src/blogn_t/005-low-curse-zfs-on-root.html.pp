@@ -252,12 +252,13 @@ Boot into your freshly installed system, become root, and:
 	        <code>.install</code> hook, which copies the initrd into <code>\MID\VER\initrd</code>
 	        despite that being handled by <code>90-loaderentry.install</code>, which copies it into <code>\MID\VER\BASENAME</code>,
 	        thereby duplicating it. This will <a href="//bugs.debian.org/970213">not be required</a> in the future.</del><br />
-	        This hook was <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970213#27">fixed</a> in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
+	        This hook was <a href="//bugs.debian.org/970213#27">fixed</a> in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
 	        and this step can be avoided.</td>
 	    <td><samp>root@zoot:~# <kbd>ln -s /dev/null /etc/kernel/install.d/85-initrd.install</kbd></samp></td>
-	<tr><td>Add sd-boot hooks, for integration with the normal kernel installation/removal flow.<br />
+	<tr><td><del>Add sd-boot hooks, for integration with the normal kernel installation/removal flow.<br />
 	        GRUB installs these as <code>zz-update-grub</code>, but <code>kernel-install</code> sorts later than any other thing I saw there myself.
-	        I hope to integrate this and make it not required in the future.</td>
+	        I hope to integrate this and make it not required in the future.</del><br />
+	        <a href="//bugs.debian.org/826045">Integrated</a> into base and <a href="//bugs.debian.org/1020396#25">fixed</a> in 251.5-1 (Sun, 02 Oct 2022 21:23:49 +0200).</td>
 	    <td><samp>root@zoot:~# <kbd>cat > /etc/kernel/postinst.d/kernel-install</kbd></samp><br />
 	        <samp><kbd>#!/bin/sh</kbd></samp><br />
 	        <samp><kbd>bootctl is-installed > /dev/null || exit 0</kbd></samp><br />
@@ -275,8 +276,9 @@ Boot into your freshly installed system, become root, and:
 	        sd-boot wouldn'<!--'-->t make <samp>\&lt;MID&gt;</samp> for
 	          <a href="https://github.com/systemd/systemd/commit/31e57550b552e113bd3d44355b237c41e42beb58">some</a>
 	          <a href="https://github.com/systemd/systemd/pull/19006">time</a> –
-	          if you don'<!--'-->t get the "Installing" and "Creating" lines on a systemd pre-TODO:NUMBER system,
-	          you'<!--'-->ll need to <samp style="white-space: nowrap;"><kbd>mkdir "/boot/efi/$(cat /etc/machine-id)"</kbd></samp> manually
+	          if you don'<!--'-->t get the "Installing" and "Creating" lines on a systemd pre-<a href="https://github.com/systemd/systemd/commit/641e2124de6047e6010cd2925ea22fba29b25309#diff-b225531058df363300d2d0d824bbbe7d16397269d9d225a9e7d6d2dfd548706bR95">v250</a> system,
+	          you'<!--'-->ll need to <samp style="white-space: nowrap;"><kbd>mkdir /boot/efi/Default</kbd></samp>
+	          (or <samp style="white-space: nowrap;"><kbd>"/boot/efi/$(< /etc/machine-id)"</kbd></samp>) manually
 	          and <samp><kbd>kernel-install</kbd></samp> again.<br />
 	        The current cmdline will be used for the boot entry, overridable with <code>/etc/kernel/cmdline</code>.</td>
 	    <td><samp>root@zoot:~# <kbd>kernel-install -v add $(uname -r) /boot/vml&lt;TAB&gt; /boot/ini&lt;TAB&gt;</kbd></samp><br />
@@ -313,7 +315,7 @@ I'<!--'-->d recommend rebooting now to verify that this works, which should look
 	     src="/content/assets/blogn_t/005.03-sd-boot.png" /></a></center>
 <p class="indented continuing">
 If not, and <code>sd-boot</code> shows errors or doesn'<!--'-->t start at all; boot into the EFI shell,
-<kbd>fs0:</kbd>, and <kbd>\&lt;MID&gt;\&lt;VER&gt;\linux initrd=\&lt;MID&gt;\&lt;VER&gt;\initrd root=/dev/sda2</kbd>
+<kbd>fs0:</kbd>, and <kbd>\&lt;MID&gt;\&lt;VER&gt;\linux initrd=\&lt;MID&gt;\&lt;VER&gt;\initrd.img-&lt;VER&gt; root=/dev/sda2</kbd>
 (the shell should support tab-completion, you might need to add a space before completing the initrd)
 (the <code>root=</code> option assumes you installed to the second partition of the first SCSI drive, as I did; adjust to taste),
 then write me an <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">e-mail</a> or a <a href="//twitter.com/nabijaczleweli">DM</a>
@@ -487,12 +489,12 @@ And so:
 	        The documentation mentions no <code>root=</code> at all,
 	        but dracut hangs waiting for <code>/dev/gpt-auto-root</code> if one isn'<!--'-->t specified.</td>
 	    <td><samp>root@zoot:~# <kbd>zpool set bootfs=zoot/root zoot</kbd></samp><br />
-	        <samp>root@zoot:~# <kbd>cat /proc/cmdline > /etc/kernel/cmdline</kbd></samp><br />
-	        <samp>root@zoot:~# <kbd># Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste, and/or</kbd></samp><br />
+	        <samp>root@zoot:~# <kbd>cp /proc/cmdline /etc/kernel/</kbd></samp><br />
+	        <samp>root@zoot:~# <kbd># Then trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste, and/or</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>echo 'root=zfs:zoot/root' > /etc/kernel/cmdline</kbd></samp></td></tr>
 	<tr><td>Comment out the old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.</td>
 	    <td><samp>root@zoot:~# <kbd>sed -i 's;.* / .*ext.*;#&;' /etc/fstab</kbd></samp><br />
-	        <samp>root@zoot:~# <kbd>run-parts --arg=$(uname -r) /etc/kernel/postinst.d/</kbd></samp></td></tr>
+	        <samp>root@zoot:~# <kbd>run-parts --arg={,/boot/vmlinuz-}$(uname -r) /etc/kernel/postinst.d/</kbd></samp></td></tr>
 	<tr><td>And now copy the system to the pool; this is the cursed bit.<br />
 	        Note the CWD and ignore the few "file exists" errors for the directories — those are by design.</td>
 	    <td><samp>root@zoot:~# <kbd>apt install dump</kbd></samp><br />
