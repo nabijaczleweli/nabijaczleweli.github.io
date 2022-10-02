@@ -11,9 +11,9 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2022-06-22T18:56:15+02:00</updated>
+  <updated>2022-10-02T23:41:58</updated>
   <generator>
-    GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.1.0)
+    GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
 
   <entry>
@@ -951,12 +951,13 @@ Boot into your freshly installed system, become root, and:
          &lt;code&gt;.install&lt;/code&gt; hook, which copies the initrd into &lt;code&gt;\MID\VER\initrd&lt;/code&gt;
          despite that being handled by &lt;code&gt;90-loaderentry.install&lt;/code&gt;, which copies it into &lt;code&gt;\MID\VER\BASENAME&lt;/code&gt;,
          thereby duplicating it. This will &lt;a href=&quot;//bugs.debian.org/970213&quot;&gt;not be required&lt;/a&gt; in the future.&lt;/del&gt;&lt;br /&gt;
-         This hook was &lt;a href=&quot;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970213#27&quot;&gt;fixed&lt;/a&gt; in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
+         This hook was &lt;a href=&quot;//bugs.debian.org/970213#27&quot;&gt;fixed&lt;/a&gt; in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
          and this step can be avoided.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /dev/null /etc/kernel/install.d/85-initrd.install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;
- &lt;tr&gt;&lt;td&gt;Add sd-boot hooks, for integration with the normal kernel installation/removal flow.&lt;br /&gt;
+ &lt;tr&gt;&lt;td&gt;&lt;del&gt;Add sd-boot hooks, for integration with the normal kernel installation/removal flow.&lt;br /&gt;
          GRUB installs these as &lt;code&gt;zz-update-grub&lt;/code&gt;, but &lt;code&gt;kernel-install&lt;/code&gt; sorts later than any other thing I saw there myself.
-         I hope to integrate this and make it not required in the future.&lt;/td&gt;
+         I hope to integrate this and make it not required in the future.&lt;/del&gt;&lt;br /&gt;
+         &lt;a href=&quot;//bugs.debian.org/826045&quot;&gt;Integrated&lt;/a&gt; into base and &lt;a href=&quot;//bugs.debian.org/1020396#25&quot;&gt;fixed&lt;/a&gt; in 251.5-1 (Sun, 02 Oct 2022 21:23:49 +0200).&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;cat &gt; /etc/kernel/postinst.d/kernel-install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;&lt;kbd&gt;#!/bin/sh&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;&lt;kbd&gt;bootctl is-installed &gt; /dev/null || exit 0&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
@@ -973,8 +974,9 @@ Boot into your freshly installed system, become root, and:
          sd-boot wouldn'&lt;!--'--&gt;t make &lt;samp&gt;\&amp;lt;MID&amp;gt;&lt;/samp&gt; for
            &lt;a href=&quot;https://github.com/systemd/systemd/commit/31e57550b552e113bd3d44355b237c41e42beb58&quot;&gt;some&lt;/a&gt;
            &lt;a href=&quot;https://github.com/systemd/systemd/pull/19006&quot;&gt;time&lt;/a&gt; –
-           if you don'&lt;!--'--&gt;t get the &quot;Installing&quot; and &quot;Creating&quot; lines on a systemd pre-TODO:NUMBER system,
-           you'&lt;!--'--&gt;ll need to &lt;samp style=&quot;white-space: nowrap;&quot;&gt;&lt;kbd&gt;mkdir &quot;/boot/efi/$(cat /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt; manually
+           if you don'&lt;!--'--&gt;t get the &quot;Installing&quot; and &quot;Creating&quot; lines on a systemd pre-&lt;a href=&quot;https://github.com/systemd/systemd/commit/641e2124de6047e6010cd2925ea22fba29b25309#diff-b225531058df363300d2d0d824bbbe7d16397269d9d225a9e7d6d2dfd548706bR95&quot;&gt;v250&lt;/a&gt; system,
+           you'&lt;!--'--&gt;ll need to &lt;samp style=&quot;white-space: nowrap;&quot;&gt;&lt;kbd&gt;mkdir /boot/efi/Default&lt;/kbd&gt;&lt;/samp&gt;
+           (or &lt;samp style=&quot;white-space: nowrap;&quot;&gt;&lt;kbd&gt;&quot;/boot/efi/$(&lt; /etc/machine-id)&quot;&lt;/kbd&gt;&lt;/samp&gt;) manually
            and &lt;samp&gt;&lt;kbd&gt;kernel-install&lt;/kbd&gt;&lt;/samp&gt; again.&lt;br /&gt;
          The current cmdline will be used for the boot entry, overridable with &lt;code&gt;/etc/kernel/cmdline&lt;/code&gt;.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;kernel-install -v add $(uname -r) /boot/vml&amp;lt;TAB&amp;gt; /boot/ini&amp;lt;TAB&amp;gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
@@ -1010,7 +1012,7 @@ I'&lt;!--'--&gt;d recommend rebooting now to verify that this works, which shoul
       src=&quot;/content/assets/blogn_t/005.03-sd-boot.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 If not, and &lt;code&gt;sd-boot&lt;/code&gt; shows errors or doesn'&lt;!--'--&gt;t start at all; boot into the EFI shell,
-&lt;kbd&gt;fs0:&lt;/kbd&gt;, and &lt;kbd&gt;\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\linux initrd=\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\initrd root=/dev/sda2&lt;/kbd&gt;
+&lt;kbd&gt;fs0:&lt;/kbd&gt;, and &lt;kbd&gt;\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\linux initrd=\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\initrd.img-&amp;lt;VER&amp;gt; root=/dev/sda2&lt;/kbd&gt;
 (the shell should support tab-completion, you might need to add a space before completing the initrd)
 (the &lt;code&gt;root=&lt;/code&gt; option assumes you installed to the second partition of the first SCSI drive, as I did; adjust to taste),
 then write me an &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;e-mail&lt;/a&gt; or a &lt;a href=&quot;//twitter.com/nabijaczleweli&quot;&gt;DM&lt;/a&gt;
@@ -1193,12 +1195,12 @@ And so:
          The documentation mentions no &lt;code&gt;root=&lt;/code&gt; at all,
          but dracut hangs waiting for &lt;code&gt;/dev/gpt-auto-root&lt;/code&gt; if one isn'&lt;!--'--&gt;t specified.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool set bootfs=zoot/root zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;cat /proc/cmdline &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;# Trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste, and/or&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;cp /proc/cmdline /etc/kernel/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;# Then trim out initrd= and add root=ZFS=zoot/root or root=zfs:AUTO to taste, and/or&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;echo 'root=zfs:zoot/root' &gt; /etc/kernel/cmdline&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Comment out the old rootfs to prevent re-mounting it on top of the new one and regenerate+reinstall initrds.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -i 's;.* / .*ext.*;#&amp;;' /etc/fstab&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;run-parts --arg=$(uname -r) /etc/kernel/postinst.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+         &lt;samp&gt;root@zoot:~# &lt;kbd&gt;run-parts --arg={,/boot/vmlinuz-}$(uname -r) /etc/kernel/postinst.d/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;And now copy the system to the pool; this is the cursed bit.&lt;br /&gt;
          Note the CWD and ignore the few &quot;file exists&quot; errors for the directories — those are by design.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install dump&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
