@@ -252,8 +252,8 @@ Boot into your freshly installed system, become root, and:
 	        <code>.install</code> hook, which copies the initrd into <code>\MID\VER\initrd</code>
 	        despite that being handled by <code>90-loaderentry.install</code>, which copies it into <code>\MID\VER\BASENAME</code>,
 	        thereby duplicating it. This will <a href="//bugs.debian.org/970213">not be required</a> in the future.</del><br />
-	        This hook was <a href="//bugs.debian.org/970213#27">fixed</a> in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
-	        and this step can be avoided.</td>
+	        This hook was <a href="//bugs.debian.org/970213#27">fixed</a> in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000);
+	        this step is detrimental to modern systems.</td>
 	    <td><samp>root@zoot:~# <kbd>ln -s /dev/null /etc/kernel/install.d/85-initrd.install</kbd></samp></td>
 	<tr><td><del>Add sd-boot hooks, for integration with the normal kernel installation/removal flow.<br />
 	        GRUB installs these as <code>zz-update-grub</code>, but <code>kernel-install</code> sorts later than any other thing I saw there myself.
