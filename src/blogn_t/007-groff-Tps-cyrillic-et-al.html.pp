@@ -84,7 +84,7 @@ for f in {C,T}{R,B,I,BI}; do
 				cur = aliases[cur];
 			if(cur in paths) {
 				sub(/^\(/, "", paths[cur]);
-				sub(/(pfb)?\)$/, "", paths[cur]);
+				sub(/(pfb|t1)?\)$/, "", paths[cur]);
 				print paths[cur]
 			} else {
 				print "last: " cur > "/dev/stderr";
@@ -115,7 +115,7 @@ done
   TAB_INDENTTAB_INDENTTAB_INDENTTAB_INDENTcur = aliases[cur];
   TAB_INDENTTAB_INDENTTAB_INDENT<span class="token keyword">if</span>(cur <span class="token keyword">in</span> paths) {
   TAB_INDENTTAB_INDENTTAB_INDENTTAB_INDENT<span class="token builtin">sub</span>(<span class="token regex">/^\(/</span>, <span class="token string">""</span>, paths[cur]);
-  TAB_INDENTTAB_INDENTTAB_INDENTTAB_INDENT<span class="token builtin">sub</span>(<span class="token regex">/(pfb)?\)$/</span>, <span class="token string">""</span>, paths[cur]);
+  TAB_INDENTTAB_INDENTTAB_INDENTTAB_INDENT<span class="token builtin">sub</span>(<span class="token regex">/(pfb|t1)?\)$/</span>, <span class="token string">""</span>, paths[cur]);
   TAB_INDENTTAB_INDENTTAB_INDENTTAB_INDENT<span class="token builtin">print</span> paths[cur]
   TAB_INDENTTAB_INDENTTAB_INDENT} <span class="token keyword">else</span> {
   TAB_INDENTTAB_INDENTTAB_INDENTTAB_INDENT<span class="token builtin">print</span> <span class="token string">"last: "</span> cur > <span class="token string">"/dev/stderr"</span>;
