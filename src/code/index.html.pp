@@ -100,6 +100,8 @@ A brief subsection of non-Rust non-mistakes:
 	         TPM-based encryption keys for ZFS datasets)
 	SRHT_SET(febug, DEVICON(cplusplus),
 	         User-space cooperative debugging à la debugfs)
+	SRHT_SET(ratrun, 🐀,
+	         atrun(8) for the rat race (mail-based calendaring system))
 </ul>
 <br />
 
