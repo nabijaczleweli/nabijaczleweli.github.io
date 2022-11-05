@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2022-10-02T23:41:58</updated>
+  <updated>2022-11-05T18:32:15</updated>
   <generator>
     GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -951,8 +951,8 @@ Boot into your freshly installed system, become root, and:
          &lt;code&gt;.install&lt;/code&gt; hook, which copies the initrd into &lt;code&gt;\MID\VER\initrd&lt;/code&gt;
          despite that being handled by &lt;code&gt;90-loaderentry.install&lt;/code&gt;, which copies it into &lt;code&gt;\MID\VER\BASENAME&lt;/code&gt;,
          thereby duplicating it. This will &lt;a href=&quot;//bugs.debian.org/970213&quot;&gt;not be required&lt;/a&gt; in the future.&lt;/del&gt;&lt;br /&gt;
-         This hook was &lt;a href=&quot;//bugs.debian.org/970213#27&quot;&gt;fixed&lt;/a&gt; in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000),
-         and this step can be avoided.&lt;/td&gt;
+         This hook was &lt;a href=&quot;//bugs.debian.org/970213#27&quot;&gt;fixed&lt;/a&gt; in 247.1-4 (Fri, 11 Dec 2020 20:48:44 +0000);
+         this step is detrimental to modern systems.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;ln -s /dev/null /etc/kernel/install.d/85-initrd.install&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;
  &lt;tr&gt;&lt;td&gt;&lt;del&gt;Add sd-boot hooks, for integration with the normal kernel installation/removal flow.&lt;br /&gt;
          GRUB installs these as &lt;code&gt;zz-update-grub&lt;/code&gt;, but &lt;code&gt;kernel-install&lt;/code&gt; sorts later than any other thing I saw there myself.
@@ -1870,7 +1870,7 @@ for f in {C,T}{R,B,I,BI}; do
     cur = aliases[cur];
    if(cur in paths) {
     sub(/^\(/, &quot;&quot;, paths[cur]);
-    sub(/(pfb)?\)$/, &quot;&quot;, paths[cur]);
+    sub(/(pfb|t1)?\)$/, &quot;&quot;, paths[cur]);
     print paths[cur]
    } else {
     print &quot;last: &quot; cur &gt; &quot;/dev/stderr&quot;;
@@ -1898,7 +1898,7 @@ done
           cur = aliases[cur];
         &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;(cur &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; paths) {
           &lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^\(/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
-          &lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/(pfb)?\)$/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
+          &lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/(pfb|t1)?\)$/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
           &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; paths[cur]
         } &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; {
           &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;last: &quot;&lt;/span&gt; cur &gt; &lt;span class=&quot;token string&quot;&gt;&quot;/dev/stderr&quot;&lt;/span&gt;;

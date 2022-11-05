@@ -147,7 +147,7 @@ for f in {C,T}{R,B,I,BI}; do
     cur = aliases[cur];
    if(cur in paths) {
     sub(/^\(/, "", paths[cur]);
-    sub(/(pfb)?\)$/, "", paths[cur]);
+    sub(/(pfb|t1)?\)$/, "", paths[cur]);
     print paths[cur]
    } else {
     print "last: " cur > "/dev/stderr";
@@ -175,7 +175,7 @@ done
           cur = aliases[cur];
         <span class="token keyword">if</span>(cur <span class="token keyword">in</span> paths) {
           <span class="token builtin">sub</span>(<span class="token regex">/^\(/</span>, <span class="token string">""</span>, paths[cur]);
-          <span class="token builtin">sub</span>(<span class="token regex">/(pfb)?\)$/</span>, <span class="token string">""</span>, paths[cur]);
+          <span class="token builtin">sub</span>(<span class="token regex">/(pfb|t1)?\)$/</span>, <span class="token string">""</span>, paths[cur]);
           <span class="token builtin">print</span> paths[cur]
         } <span class="token keyword">else</span> {
           <span class="token builtin">print</span> <span class="token string">"last: "</span> cur > <span class="token string">"/dev/stderr"</span>;
@@ -784,7 +784,7 @@ x       nobody
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 02.10.2022 23:38:53 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 05.11.2022 18:29:23 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp</a>. 
  
  <hr /> 
