@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2022-11-17T21:55:08</updated>
+  <updated>2022-11-17T23:04:52</updated>
   <generator>
     GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -2590,12 +2590,12 @@ As rendered by &lt;tt&gt;WINWORD.EXE&lt;/tt&gt; (yes, they're kinda goopy here; 
 As rendered by Photoshop CS6
 (AA disabled; the lines/checker-board from SYMBOLS FOR LEGACY COMPUTING got turned into flat squares, presumably because they post-date this product).
 &lt;/p&gt;
-&lt;p class=&quot;sunfont continued&quot; style=&quot;font-size: 3em;&quot;&gt;
+&lt;p class=&quot;sunfont continued&quot; style=&quot;font-size: 3em; overflow-wrap: anywhere;&quot;&gt;
 &amp;nbsp;!&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?&lt;br /&gt; &lt;!--&quot;--&gt;
 @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_&lt;br /&gt;
 `abcdefghijklmnopqrstuvwxyz{|}~▁&lt;br /&gt;
 &lt;/p&gt;
-&lt;p class=&quot;topaz continued&quot; style=&quot;font-size: 1.5em;&quot;&gt;
+&lt;p class=&quot;topaz continued&quot; style=&quot;font-size: 1.5em; overflow-wrap: anywhere;&quot;&gt;
 &amp;nbsp;!&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?&lt;br /&gt; &lt;!--&quot;--&gt;
 @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_&lt;br /&gt;
 `abcdefghijklmnopqrstuvwxyz{|}~🮕&lt;br /&gt;
