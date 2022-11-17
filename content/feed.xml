@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2022-11-05T18:32:15</updated>
+  <updated>2022-11-17T21:55:08</updated>
   <generator>
     GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -2486,6 +2486,183 @@ x       nobody
 .Ed
 &lt;!--'--&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/008-amix-fonts.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/008-amix-fonts.html" />
+    <title> 008. AMIX fonts — blognꞌt — nabijaczleweli </title>
+    <updated>2022-11-17T22:36:33+01:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+/* Measured against merriweather in the heading. */
+.sunfont {
+ font-family: sunfont;
+ font-size: 1.25em; /* 60/48 */
+}
+.topaz {
+ font-family: topaz;
+ font-size: 0.80em; /* 55/69 */
+}
+img {
+ max-width: 100%;
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Have been
+&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1297339377786511360&quot;&gt;featured&lt;/a&gt;
+&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1590177344467390465&quot;&gt;before&lt;/a&gt;,
+even
+&lt;a href=&quot;006-UNIX-r-ATT.html&quot;&gt;on this blog&lt;/a&gt;,
+but never in such style:
+&lt;/p&gt;
+&lt;center&gt;
+&lt;a href=&quot;/content/assets/blogn_t/008.02-sunfont-allchars-freetype.png&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Terminal screenshot with sunfont's all 96 glyphs displayed alongside the Unicode characters they represent in 2 columns&quot; src=&quot;/content/assets/blogn_t/008.02-sunfont-allchars-freetype.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/008.03-topaz-allchars-freetype.png&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Terminal screenshot with topaz's all 224 glyphs displayed alongside the Unicode characters they represent in 2 columns&quot; src=&quot;/content/assets/blogn_t/008.03-topaz-allchars-freetype.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by libfreetype 2.10.4+dfsg-1+deb11u1/libfontconfig 2.13.1-4.2.
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/008.04-winword.png&quot;&gt;&lt;img class=&quot;continued&quot; alt=&quot;Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts&quot; src=&quot;/content/assets/blogn_t/008.04-winword.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by &lt;tt&gt;WINWORD.EXE&lt;/tt&gt; (yes, they're kinda goopy here; needs a skilled operator probably).  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/008.05-photoshop.png&quot;&gt;&lt;img class=&quot;continued&quot; alt=&quot;Blocks of all characters in topaz and sunfont, surrounded in an ellipse by /* THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF */ in topaz /* UNIX System Laboratories, Inc. */ in sunfont&quot; src=&quot;/content/assets/blogn_t/008.05-photoshop.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by Photoshop CS6
+(AA disabled; the lines/checker-board from SYMBOLS FOR LEGACY COMPUTING got turned into flat squares, presumably because they post-date this product).
+&lt;/p&gt;
+&lt;p class=&quot;sunfont continued&quot; style=&quot;font-size: 3em;&quot;&gt;
+&amp;nbsp;!&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?&lt;br /&gt; &lt;!--&quot;--&gt;
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_&lt;br /&gt;
+`abcdefghijklmnopqrstuvwxyz{|}~▁&lt;br /&gt;
+&lt;/p&gt;
+&lt;p class=&quot;topaz continued&quot; style=&quot;font-size: 1.5em;&quot;&gt;
+&amp;nbsp;!&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?&lt;br /&gt; &lt;!--&quot;--&gt;
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_&lt;br /&gt;
+`abcdefghijklmnopqrstuvwxyz{|}~🮕&lt;br /&gt;
+▯¡¢£¤¥¦§¨©ª«¬―®¯˚±²³´µ¶·¸¹º»¼½¾¿&lt;br /&gt;
+ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß&lt;br /&gt;
+àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ&lt;br /&gt;
+◆■␉␌␍␊°∓␤␋┘┐┌└┼▔🭷🭸🭺▁├┤┴┬│≤≥ ≠₤⋅▒
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by your browser, hopefully.
+&lt;/p&gt;
+&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The procedure can be found &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.fonts&quot;&gt;here&lt;/a&gt;,
+and is pretty much the same as I used in &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.x&quot;&gt;2020&lt;/a&gt;,
+and generally uninteresting, except that it uses a &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.fonts/tree/trunk/item/02imagise.blk&quot;&gt;novel&lt;/a&gt; (instead of awful) approach to integer-scaling the images, so if you disagree with my design/assignment decisions, you can trivially re-generate them.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Not that I expect those to matter much, given that these fonts suck shit for normal use.
+sunfont only covers 7-bit ASCII; topaz, mostly covers the Latin-1 Supplement
++ box-drawing and &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.fonts/tree/trunk/item/07strike.map-topaz&quot;&gt;some dupes&lt;/a&gt;,
+which sounds great except that means no slavic languages, no greek, no…
+It's fun, the ducky &lt;span class=&quot;topaz&quot;&gt;g&lt;/span&gt; is cute, it's an art font, it's unsuitable for general use.  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+This distribution is made possible by potrace being configurable to not attempt to fix the paths,
+and generate 1:1 traces, including hard corners.
+It is additionally made easier by the image formats involved being entirely text, which makes hard-integer-scaling them trivial.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The distribution contains:
+&lt;/p&gt;
+&lt;center&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/sunfont-montage.png&quot;&gt;&lt;img class=&quot;continuing&quot; src=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/sunfont-montage.png&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+sunfont, a 96-character monospace 25x12px font, with baseline at 20px.
+(&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/sunfont-montage.svg&quot;&gt;SVG&lt;/a&gt;)
+&lt;/p&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png&quot;&gt;&lt;img class=&quot;continued&quot; src=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+sunfont, a 224-character monospace 8x8px font, with baseline at 7px.
+(&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.svg&quot;&gt;SVG&lt;/a&gt;)
+&lt;/p&gt;
+&lt;/center&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Both fonts include:
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+&lt;li&gt;Bitmap strikes at integer increments of [1, 16]x their original size, embedded in their respective OTFs.&lt;/li&gt;
+&lt;li&gt;BDFs of all of the above are also exported, if of dubious usefulness.&lt;/li&gt;
+&lt;li&gt;The original FontForge &lt;tt&gt;.sfd&lt;/tt&gt; files are also included, for export to other formats.&lt;/li&gt;
+&lt;li&gt;Images of the bitmap strikes at all sizes (in PBM P1 format, understood globally by all tooling).&lt;/li&gt;
+&lt;li&gt;A montage of all the characters in the fonts (from 4x scale), and an SVG tracing thereof.&lt;/li&gt;
+&lt;li&gt;FontForge demo PDFs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;indented&quot;&gt;
+It is worth-while to note that the &lt;a class=&quot;topaz&quot; style=&quot;color: white; background: black; text-decoration: none; padding: 1.5mm;&quot; href=&quot;006-UNIX-r-ATT.html&quot;&gt;¹UNIX® is a registered trademark of AT&amp;T.&lt;/a&gt;
+stickers consist of pasted-together PNGs from &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.x&quot;&gt;the first iteration&lt;/a&gt; of this extraction,
+and this technique is both sufficient and superiour, if you don't need to drag these along a path in Photoshop.  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Go wild: &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;https://lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+For the purposes of traceability, these were generated with bullseye programs, with the exception of patched FontForge,
+see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/typescript&quot;&gt;generation transcript&lt;/a&gt;.
+&lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
