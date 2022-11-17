@@ -14,8 +14,21 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />                    FORCED_NEWLINE \
                     <link href="writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+                    <link href="writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
+                    <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />
 BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
+<style>
+/* TODO: remove when we remove 008! */
+.sunfont {
+	font-family: sunfont;
+	font-size: 1.25em; /* 60/48 */
+}
+
+.topaz {
+	font-family: topaz;
+	font-size: 0.80em; /* 55/69 */
+}
+</style>
 
 
 <h2 class="merriweather">наб'<!--'-->s web-site, hi!</h2>
@@ -30,8 +43,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/007-groff-Tps-cyrillic-et-al.html">007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</a>;
-		<span style="white-space: nowrap;">Sat, 28 Aug 2021 18:36:44 +0200</span>
+		<a href="blogn_t/008-amix-fonts.html">008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span></a>;
+		<span style="white-space: nowrap;">Thu, 17 Nov 2022 22:36:33 +0100</span>
 	</samp>
 </p>
 

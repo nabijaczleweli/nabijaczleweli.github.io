@@ -76,12 +76,12 @@ As rendered by Photoshop CS6
 (AA disabled; the lines/checker-board from SYMBOLS FOR LEGACY COMPUTING got turned into flat squares, presumably because they post-date this product).
 </p>
 
-<p class="sunfont continued" style="font-size: 3em;">
+<p class="sunfont continued" style="font-size: 3em; overflow-wrap: anywhere;">
 &nbsp;!"#$%&'()*+,-./0123456789:;<=>?<br /> <!--"-->
 @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_<br />
 `abcdefghijklmnopqrstuvwxyz{|}~▁<br />
 </p>
-<p class="topaz continued" style="font-size: 1.5em;">
+<p class="topaz continued" style="font-size: 1.5em; overflow-wrap: anywhere;">
 &nbsp;!"#$%&'()*+,-./0123456789:;<=>?<br /> <!--"-->
 @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_<br />
 `abcdefghijklmnopqrstuvwxyz{|}~🮕<br />

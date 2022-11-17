@@ -24,8 +24,22 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
                     <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">   FORCED_NEWLINE \
+                    <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />     FORCED_NEWLINE \
                     <style>samp { font-family: "Droid Sans Mono", monospace; }</style>
 BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-GB, STYLESHEETS)
+<style>
+/* Measured against merriweather in the heading. */
+.sunfont {
+	font-family: sunfont;
+	font-size: 1.25em; /* 60/48 */
+}
+
+.topaz {
+	font-family: topaz;
+	font-size: 0.80em; /* 55/69 */
+}
+</style>
+
 <span class="roboto">
 
 
@@ -45,6 +59,7 @@ Not banged out in an hour.
 	POST(005a-zfs-on-root-single-disk-corollary, Thu, 05 Nov 2020 22:06:30 +0100, 005a. A single-disk but slightly more cursed ZFS-on-root corollary)
 	POST(006-UNIX-r-ATT,                         Thu, 08 Jul 2021 20:26:38 +0200, 006. ¹UNIX® is a registered trademark of AT&T.)
 	POST(007-groff-Tps-cyrillic-et-al,           Sat, 28 Aug 2021 18:36:44 +0200, 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
+	POST(008-amix-fonts,                         Thu, 17 Nov 2022 22:36:33 +0100, 008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span>)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 
