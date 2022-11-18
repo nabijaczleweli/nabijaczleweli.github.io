@@ -108,10 +108,10 @@ body .container {
 }
 
 .side-by-each {
-  width: 49%;
+  width: 48.5%;
 }
 
 .side-by-each + .side-by-each {
-  margin-left: 1%;
+  margin-left: 1.5%;
   margin-top: 0;  /* Override bootstrap braindeath */
 }
