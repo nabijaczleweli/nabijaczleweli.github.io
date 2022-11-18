@@ -106,3 +106,12 @@ body .container {
 .monospace {
   font-family: monospace;
 }
+
+.side-by-each {
+  width: 49%;
+}
+
+.side-by-each + .side-by-each {
+  margin-left: 1%;
+  margin-top: 0;  /* Override bootstrap braindeath */
+}
