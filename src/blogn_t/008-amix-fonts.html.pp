@@ -102,7 +102,7 @@ and generally uninteresting, except that it uses a <a href="//git.sr.ht/~nabijac
 </p>
 <p class="indented continuation">
 Not that I expect those to matter much, given that these fonts suck shit for normal use.
-sunfont only covers 7-bit ASCII; topaz, mostly covers the Latin-1 Supplement
+sunfont only covers 7-bit ASCII; topaz mostly covers the Latin-1 Supplement
 + box-drawing and <a href="//git.sr.ht/~nabijaczleweli/amix.fonts/tree/trunk/item/07strike.map-topaz">some dupes</a>,
 which sounds great except that means no slavic languages, no greek, no…
 It's fun, the ducky <span class="topaz">g</span> is cute, it's an art font, it's unsuitable for general use.  <!--'-->
