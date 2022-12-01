@@ -60,6 +60,7 @@ Not banged out in an hour.
 	POST(006-UNIX-r-ATT,                         Thu, 08 Jul 2021 20:26:38 +0200, 006. ¹UNIX® is a registered trademark of AT&T.)
 	POST(007-groff-Tps-cyrillic-et-al,           Sat, 28 Aug 2021 18:36:44 +0200, 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
 	POST(008-amix-fonts,                         Thu, 17 Nov 2022 22:36:33 +0100, 008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span>)
+	POST(009-XEROX-SIGMA-9-balls,                Thu, 01 Dec 2022 17:16:50 +0100, 009. XEROX SIGMA 9 balls)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 
