@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2022-11-17T23:04:52</updated>
+  <updated>2022-12-01T16:39:28</updated>
   <generator>
     GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -303,7 +303,7 @@ This should ensure the system boots and is usable enough after doing so — pres
 &lt;center&gt;&lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Linux console in QEMU window, showing a login, uname output of 'Linux szarotka 5.5.0-1-amd64', dpkg --print-architecture yielding 'x32', dpkg listing of amd64 packages yielding just two kernel packages, and the output of file on a system executable starting with 'ELF 32-bit LSB shared object, x86-64'&quot;
             src=&quot;/content/assets/blogn_t/001.04-live-terminal.png&quot; /&gt;&lt;/center&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-If that didn't get your system to boot, please do &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail&lt;/a&gt;, but if it did, then that's all from me for today,
+If that didn't get your system to boot, please do &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;shoot me an e-mail&lt;/a&gt;, but if it did, then that's all from me for today,
 except, maybe, one last thing?
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -2615,7 +2615,7 @@ and generally uninteresting, except that it uses a &lt;a href=&quot;//git.sr.ht/
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 Not that I expect those to matter much, given that these fonts suck shit for normal use.
-sunfont only covers 7-bit ASCII; topaz, mostly covers the Latin-1 Supplement
+sunfont only covers 7-bit &lt;span class=&quot;smallcaps&quot;&gt;ascii&lt;/span&gt;; topaz mostly covers the Latin-1 Supplement
 + box-drawing and &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.fonts/tree/trunk/item/07strike.map-topaz&quot;&gt;some dupes&lt;/a&gt;,
 which sounds great except that means no slavic languages, no greek, no…
 It's fun, the ducky &lt;span class=&quot;topaz&quot;&gt;g&lt;/span&gt; is cute, it's an art font, it's unsuitable for general use.  &lt;!--'--&gt;
@@ -2663,6 +2663,250 @@ Go wild: &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;htt
 For the purposes of traceability, these were generated with bullseye programs, with the exception of patched FontForge,
 see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/typescript&quot;&gt;generation transcript&lt;/a&gt;.
 &lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/009-XEROX-SIGMA-9-balls.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/009-XEROX-SIGMA-9-balls.html" />
+    <title> 009. XEROX SIGMA 9 balls — blognꞌt — nabijaczleweli </title>
+    <updated>2022-12-01T17:16:50+01:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+.main-screenshot {
+ margin-top: 0.2em;
+ margin-bottom: 0.15em;
+ width: 100%;
+}
+.overlay {
+ position: relative;
+}
+.overlay &gt; * {
+ width: 100%;
+}
+.overlay :first-child {
+ position: absolute;
+}
+.overlaid {
+ position: relative;
+ top: -100%;
+ opacity: 0;
+  animation-duration: 10s;
+  animation-name: overlaid;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes overlaid {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.side-by-each {
+ width: 100%;
+}
+.side-by-each &gt; * {
+ display: inline-block;
+ width: 48%;
+ vertical-align: top;
+}
+.side-by-each &gt; *:nth-child(2) {
+ margin-left: 1.5%;
+}
+.grid-by-each {
+ width: 100%;
+}
+.grid-by-each &gt; * {
+ display: inline-block;
+ width: 50%;
+}
+/* Measured against merriweather in the heading. */
+.sunfont {
+ font-family: sunfont;
+ font-size: 1.25em; /* 60/48 */
+}
+.topaz {
+ font-family: topaz;
+ font-size: 0.80em; /* 55/69 */
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;009. XEROX SIGMA 9 balls&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p class=&quot;indented&quot;&gt;
+I was quite taken by the &lt;span class=&quot;smallcaps&quot;&gt;xerox sigma 9&lt;/span&gt; tape decks, in particular the right one from
+&lt;a href=&quot;//www.livingcomputers.org/Computer-Collection/Vintage-Computers/Mainframes/Xerox-Sigma-9.aspx&quot;&gt;&lt;span class=&quot;smallcaps&quot;&gt;lcm+l&lt;/span&gt;'s collection&lt;/a&gt;.  &lt;!--'--&gt;
+Naturally, it was gonna be for a different thing, but after spending &gt;10h modeling it in everyone's favourite  &lt;!--'--&gt;
+&lt;span style=&quot;white-space: nowrap;&quot;&gt;Computer-Hindered&lt;/span&gt; Modelling suite (Illustrator),
+it's no longer fit for purpose therefor.  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;center class=&quot;side-by-each&quot;&gt;
+   &lt;img src=&quot;/content/assets/blogn_t/009-ref1.png&quot; alt=&quot;LCM+L attachment 1, cropped to just the right tape-deck&quot; /&gt;&lt;!--
+--&gt;&lt;div class=&quot;overlay&quot;&gt;
+    &lt;img src=&quot;/content/assets/blogn_t/009-ref2a.png&quot; alt=&quot;&quot; /&gt;
+    &lt;img src=&quot;/content/assets/blogn_t/009-ref2b.png&quot; class=&quot;overlaid&quot; alt=&quot;LCM+L attachment 3, cropped to just the right tape-deck, construction lines visible&quot; /&gt;
+   &lt;/div&gt;
+   The references.
+&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Some may call this &quot;shit&quot;, and it is, but it's also sufficient, if you dis-count the text, any details below the fold, and perfect dimensional accuracy:  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;center class=&quot;continuation&quot;&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/unmarred/sigma balls.svg&quot;&gt;&lt;img src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/unmarred/sigma balls.svg&quot; alt=&quot;The tape-deck from above, but rendered as an idealised vector rendering&quot; class=&quot;main-screenshot&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The keen-eyed viewer might also notice that the text above the buttons is missing.
+I've also just noticed, so call this an erratum.  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The only very obvious text is the big &lt;span class=&quot;smallcaps&quot;&gt;xds&lt;/span&gt; branding
+(represented by &lt;span class=&quot;topaz&quot;&gt;AMIX topaz&lt;/span&gt;,
+previously featured &lt;a href=&quot;008-amix-fonts.html&quot;&gt;on this blog&lt;/a&gt;,
+with squished kerning and horizontal scaling),
+and the &lt;span class=&quot;smallcaps&quot;&gt;3m&lt;/span&gt; on the removable spool (likewise, but nominal proportions).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The text on the name-plate is, naturally, just rectangles, but both pieces of text on the spool are
+(represented by &lt;span class=&quot;sunfont&quot;&gt;AMIX sunfont&lt;/span&gt;,
+&lt;a href=&quot;008-amix-fonts.html&quot;&gt;likewise&lt;/a&gt;, nominal proportions.
+They are sensibly lorem ipsumed to reproduce the average colour of the original.
+I overfit to &quot;&lt;!--&quot;--&gt;&lt;span class=&quot;smallcaps&quot;&gt;tops-10&lt;/span&gt;&lt;!--&quot;--&gt;&quot; for some reason in my late-hour delirium.
+Given that this isn'&lt;!--'--&gt;t a &lt;span class=&quot;smallcaps&quot;&gt;dec&lt;/span&gt; system, it definitely isn'&lt;!--'--&gt;t that; but it fits dimensionally, so.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+One bit that may not be obvious (well, I know from looking at it that it isn't, especially in blue winter lighting)  &lt;!--'--&gt;
+is that the tape itself has a ferric tint, which doesn't come out all that amazingly when actually printing, and I appear to've been mis-led by the deCMYKer.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Naturally, I hesitate to call Illustrator a CAM program not for no good reason:
+the cut-outs on the permanent spool, well,
+aren't, because you only get &lt;em&gt;one&lt;/em&gt; level of booleans at any time, so it's actually just the back-drop repeated on top of it.
+Like-wise, the tape going from that spool to the vacuum column is two different chunks, because the bottom one is at a layer below the spool,
+and the top one is at the front.
+Booleaning that correctly turned out to be impossible as well, so the clip mask consists of vertices cut out from the intersection
+of the rhombus that limits the circumferences and the double-circle that defines the radial dimension, and pasted together.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Originally, my complaints were limited to &quot;waa why can't I actually spec any dimensions&quot;, but maybe I'&lt;!--'--&gt;m spoiled by actual parametric CAMs,
+or &quot;why do I have to bang in the &lt;code&gt;sin&lt;/code&gt;/&lt;code&gt;cos&lt;/code&gt; to get a line with a precise angle or length&quot;,
+or &quot;why can't make a line's stroke be on one side&quot;
+(you may notice that the tape coming off the removable spool actually leaves it from within the body, rather than tangentially, for this reason),
+but this is, frankly, embarrassing; is this really what the monopoly's Best (only?) Vector Lay-out Product is capable of?  &lt;!--'--&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+This can then be scaled to a height of 85 (derived, naturally, from &quot;what'd fit on my palmtop&quot;), yielding a width of 44.13.
+Given the five natural columns and the 5-character length of &lt;span class=&quot;smallcaps&quot;&gt;xerox&lt;/span&gt; and &lt;span class=&quot;smallcaps&quot;&gt;sigma&lt;/span&gt;, the obvious ligma can be added, as well
+(&lt;span class=&quot;sunfont&quot;&gt;AMIX sunfont&lt;/span&gt;, even ⅑&lt;sup&gt;th&lt;/sup&gt; font-height, nominal proportions won the popular vote):
+&lt;/p&gt;
+&lt;center class=&quot;side-by-each continuing&quot;&gt;
+   &lt;img src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/for-print-notext.png&quot; alt=&quot;same as above&quot; /&gt;&lt;!--
+--&gt;&lt;img src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/for-print-yestext.png&quot; alt='likewise, but with &quot;XEROX SIGMA 9 BALLS&quot; in an archaic font across the bottom half' /&gt;
+&lt;/center&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Yes, these are PNGs; post-scaling, the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/for-print-yestext.svg&quot;&gt;SVG export&lt;/a&gt; suffers horrific precision loss,
+esp. on the name-plate.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Print-ready CMYK PDFs, raw Illustrator models, &amp;c. can be had &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls&quot;&gt;here&lt;/a&gt;. CC BY 4.0.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+But, if printing, and scaling text that's supposed to be normally-readable on a roll with a, like, 400 physical dimension or whatever,  &lt;!--'--&gt;
+just how small is it gonna be?
+Thankfully, all is possible through the power of НАТУРАЛИСТ микроскоп детский 60&lt;sup&gt;×&lt;/sup&gt;,
+which passed its factory QC in &lt;a href=&quot;//cohost.org/nabijaczleweli/post/460108-nevermind-im-a-lyin#post-439952&quot;&gt;January 1987&lt;/a&gt;.
+&lt;/p&gt;
+&lt;center class=&quot;grid-by-each continued&quot; style=&quot;line-height: 0;&quot;&gt;
+   &lt;a href=&quot;/content/assets/blogn_t/009-micro-date.png&quot; &gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;/content/assets/blogn_t/009-micro-date.png&quot; alt=&quot;A microscopic section of the printed model, including a sector of the spool with the manufacturer's branding in center frame, incl. 'date' in very blurry single-ink-dot text&quot; /&gt;&lt;/a&gt;&lt;!--
+--&gt;&lt;a href=&quot;/content/assets/blogn_t/009-micro-date+dimms.png&quot; &gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;/content/assets/blogn_t/009-micro-date+dimms.png&quot; alt=&quot;Likewise, but dimensions drawn atop – 200μm for 'a', 293μm for 'd', 584μm for the width of the white circle&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;center class=&quot;grid-by-each continued&quot; style=&quot;line-height: 0;&quot;&gt;
+   &lt;a href=&quot;/content/assets/blogn_t/009-micro-label.png&quot; &gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;/content/assets/blogn_t/009-micro-label.png&quot; alt=&quot;A microscopic section of the printed model, including a vertical slice of a sector of the spool with the user's label; barely anything is visible; the text appears to be an 'i', but it consists of a total of 5+1 lone dark dots in a sea of yellow&quot; /&gt;&lt;/a&gt;&lt;!--
+--&gt;&lt;a href=&quot;/content/assets/blogn_t/009-micro-label+dimms.png&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;/content/assets/blogn_t/009-micro-label+dimms.png&quot; alt=&quot;Likewise, but a dimension drawn across most of the dots, being the ı part, of 150μm&quot; /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;center class=&quot;grid-by-each continued&quot;&gt;
+   &lt;a href=&quot;/content/assets/blogn_t/009-micro-knob.png&quot; &gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;/content/assets/blogn_t/009-micro-knob.png&quot; alt=&quot;A microscopic section of the printed model, including the top half of the control panel, with most of the knob in frame&quot; /&gt;&lt;/a&gt;&lt;!--
+--&gt;&lt;a href=&quot;/content/assets/blogn_t/009-micro-knob+dimms.png&quot; &gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;/content/assets/blogn_t/009-micro-knob+dimms.png&quot; alt=&quot;Likewise, but dimensions drawn atop – 375μm between the top of the control panel and the knob legend, 50μm for the legend, and 369μm for the black bit of the knob, for a total of 794μm&quot; /&gt;&lt;/a&gt;
+   Resp. the manufacturer's label on the removable spool (200-micron x-height), the user's label (150-micron x-height), and the knob at the top control panel.
+&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The manufacturer's label is just about sharp enough to read it with the naked eye  &lt;!--'--&gt;
+(undoubtedly assisted by taking my glasses off, since comparative analysis against mother's fresh surgically-implanted zeroed lenses shows that she can't see shit).
+Conversely, the 50-micron drop and black-on-white to beige-grey-on-beige contrast downgrade yields absolutely nothing, it's a wisp, and that's better.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Given this analysis, we can make another observation, namely that the top resolution of this process ends up at appx. 50μm.
+The nominal advertised resolution is 300-350DPI, which is 85-72.5μm, for a ⅔&lt;sup&gt;rds'&lt;/sup&gt; bump of black-on-white resolution over advertised; pretty good.  &lt;!--'--&gt;
+Additionally, we can observe on &lt;a href=&quot;//www.copyshop.krakow.pl/produkt/kalkulator-naklejek/#tab-technology&quot;&gt;my print shop's process listing&lt;/a&gt;  &lt;!--'--&gt;
+that they printed this on a &lt;span class=&quot;smallcaps&quot;&gt;xerox versant 180 press&lt;/span&gt;, which funi.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Anyway, glam shots.
+&lt;/p&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0803ccc.JPG&quot;&gt;&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;A small black anodised aluminium laptop on a light wood floor in over-cast winter lighting. The outline of the sticker cuts sharply out of the back-ground, losing a large amount of dynamic range, but the text, which ends up roughly the same size as other stickers &amp;a. on the back of the laptop, is equally as sharp. If you really try you can just about make out the microscopic text on the roll&quot; src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0803ccc.JPG&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0792ccc.JPG&quot;&gt;&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;Same laptop, but the image of the sky washes out the colours, highlighting the very slight ferric tint on the tape itself&quot; src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0792ccc.JPG&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0807cc.JPG&quot;&gt;&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;Likewise, but this time under incandescent lighting on a dark wood surface; it does show a bit more I think&quot; src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0807cc.JPG&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0780cc.JPG&quot;&gt;&lt;img class=&quot;continuation main-screenshot&quot; alt='Two SRA4 sheets with the XDS XEROX SIGMA 9 stickers, side-by-each so as to produce a single SRA3 one; the only difference between them is that the left half has &quot;XEROX SIGMA 9 BALLS&quot; written on it' src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0780cc.JPG&quot; /&gt;&lt;/a&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
