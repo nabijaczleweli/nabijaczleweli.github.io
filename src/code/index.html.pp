@@ -105,6 +105,9 @@ A brief subsection of non-Rust non-mistakes:
 </ul>
 <br />
 
+LWN wrote about me once in the December 5, 2022 issue in <em><a href="//lwn.net/Articles/915163/">Losing the magic</a></em>.<br />
+<br />
+
 Documentation for my Rust crates:
 <ul>
 	DOC(rust-embed-resource, embed-resource, embed_resource,
