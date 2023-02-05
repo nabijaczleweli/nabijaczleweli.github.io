@@ -77,6 +77,8 @@ Most of my output can be found under my <a href="//github.com/nabijaczleweli">Gi
 	          Like aurea mediocritas, but with frames in a video instead, or get an average frame from a video)
 	USER_REPO(systemd, zram-generator, MFIZZ(rust),
 	          Systemd unit generator for zram swap devices)
+	USER_REPO(coreos, liboverdrop-rs, MFIZZ(rust),
+	          A simple Rust library to handle configuration fragments)
 	USER_REPO(LoungeCPP, pir-8-emu, MFIZZ(rust),
 	          Assembler, dissassembler, emulator and full library representation for/of the <a href="https://github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
 	USER_REPO(LoungeCPP, Tatsoryk, MFIZZ(rust) DEVICON(html5),
@@ -94,14 +96,16 @@ Most of my output can be found under my <a href="//github.com/nabijaczleweli">Gi
 
 A brief subsection of non-Rust non-mistakes:
 <ul>
+	SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a> MFIZZ(c),
+	         Extract V/A data from Supla (ZAMEL) MEW-01 for consumption with Prometheus)
 	SRHT_SET(klapki, DEVICON(cplusplus),
 	         EFI boot manager; or, well, an EFI bootorder compiler)
 	SRHT_SET(tzpfms, DEVICON(cplusplus),
 	         TPM-based encryption keys for ZFS datasets)
-	SRHT_SET(febug, DEVICON(cplusplus),
-	         User-space cooperative debugging à la debugfs)
 	SRHT_SET(ratrun, 🐀,
 	         atrun(8) for the rat race (mail-based calendaring system))
+	SRHT_SET(febug, DEVICON(cplusplus),
+	         User-space cooperative debugging à la debugfs)
 </ul>
 <br />
 
