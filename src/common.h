@@ -33,6 +33,8 @@
 
 #if defined(BUILD_ID) && defined(REPO_SLUG)
   #define CI_LINK_FOOTER_PART <br /><a href=STR(httpsCOLON_SLASH_SLASHtravis-ci.org/REPO_SLUG/builds/BUILD_ID)>See job on TravisCI</a>.
+#elif defined(JOB_URL)
+  #define CI_LINK_FOOTER_PART <br /><a href=STR(JOB_URL)>See job on builds.sr.ht</a>.
 #else
   #define CI_LINK_FOOTER_PART
 #endif

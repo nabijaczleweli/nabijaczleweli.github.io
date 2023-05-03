@@ -36,6 +36,10 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
+	Accrued <a href="recipes/">recipes</a>…
+</p>
+
+<p>
 	Read some things I'<!--'-->ve <a href="writing/">written</a>…
 </p>
 

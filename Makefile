@@ -22,24 +22,10 @@
 
 ifeq "$(TRAVIS)" "true"
 	ADDITIONAL_TRAVIS_ARGS := -DBUILD_ID=$(TRAVIS_BUILD_ID) -DREPO_SLUG=$(TRAVIS_REPO_SLUG)
+else ifneq "$(JOB_URL)" ""
+	ADDITIONAL_TRAVIS_ARGS := -DJOB_URL=$(JOB_URL)
 else
 	ADDITIONAL_TRAVIS_ARGS :=
-endif
-
-ifneq "$(TEMP)" ""
-	TEMP_DIR := $(TEMP)
-else
-	ifneq "$(TMP)" ""
-		TEMP_DIR := $(TMP)
-	else
-		TEMP_DIR := /tmp
-	endif
-endif
-
-ifeq "$(OS)" "Windows_NT"
-	ECHO := /bin/echo -e
-else
-	ECHO := echo
 endif
 
 # Args: $<, $@, additional defines
