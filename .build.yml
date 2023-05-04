@@ -1,0 +1,49 @@
+# git clone -b dev https://git.sr.ht/~nabijaczleweli/nabijaczleweli.github.io --recurse-submodules --shallow-submodules --depth 1
+#
+# . .buildenv
+# find \( -name '*.azw3' -or -name '*.mobi' -or -name '*.pdf' -or -name '*.epub' \) -exec git checkout {} +
+
+image: debian/sid
+secrets:
+  - e09fb755-681e-4b7f-ae71-a5aee6044ba9  # nabijaczleweli.github.io GitHub SSH key
+packages:
+  # should probably use distribution calibre
+  # the problem was that the fonts weren't included on either and i gave up
+  # - calibre
+  - libgl1
+  - libfontconfig1
+  - libfreetype6
+  - libqt5gui5
+  - libxcomposite1
+  - cargo
+  - clang
+  - gawk
+  - npm
+  - pkg-config
+  - libssl-dev
+tasks:
+  - install: |
+      CALIBRE_VERSION=3.47.1  # current sid ebook-convert has issues with embedded font paths we generate :v
+      cargo install gen-epub-book
+      curl -SOL "https://download.calibre-ebook.com/$CALIBRE_VERSION/calibre-$CALIBRE_VERSION-x86_64.txz"
+      mkdir calibre
+      tar -xaf "calibre-$CALIBRE_VERSION-x86_64.txz" -C calibre
+      echo 'PATH="$HOME/calibre:$HOME/.cargo/bin:$PATH"' >> .buildenv
+      echo 'LANG=C.UTF-8' >> .buildenv
+      echo 'export LANG' >> .buildenv
+  - build: |
+      cd nabijaczleweli.github.io
+      make CC="clang -Wno-unicode-zero-width -Wno-unicode-homoglyph" OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book -v"
+  - push: |
+      ssh-keyscan github.com > ~/.ssh/known_hosts
+      git clone -b master git@github.com:nabijaczleweli/nabijaczleweli.github.io.git nabijaczleweli.xyz
+      cd nabijaczleweli.xyz
+      rm -rf content/
+      mv ../content/ .
+      # TODO: validate and/or fix these
+      find \( -name '*.azw3' -or -name '*.mobi' -or -name '*.pdf' -or -name '*.epub' \) -exec git checkout {} +
+      git add .
+      git config user.email "nabijaczleweli/autouploader@nabijaczleweli.xyz"
+      git config user.name "наб autouploader"
+      git commit -m "Website update by $JOB_URL" || exit 0
+      git push

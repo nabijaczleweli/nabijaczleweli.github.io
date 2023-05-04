@@ -10,6 +10,7 @@
 !*.js
 !.git*
 !.travis.yml
+!.build.yml
 !*Makefile
 !*.sublime-project
 !LICENSE-*
