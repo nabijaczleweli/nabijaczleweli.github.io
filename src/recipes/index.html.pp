@@ -199,6 +199,35 @@ MAIN_HEADING(My answer to the replication crisis)
 	</p>
 </details>
 
+<details open>
+	SUMMARY(bubliki, Бублики)
+
+	<p class="continuing">
+		Originally derived from
+		<a href="//youtu.be/PPHy_1R7Xu4">Making the slavic bagel</a>,
+		by Life of Boris.
+		First replicated
+		REPLICATION(2022-06-06, twitter.com/nabijaczleweli/status/1533929176725594118),
+		but this was my sole bread in-take for the
+		REPLICATION(2022-07-06–2022-10-28, twitter.com/nabijaczleweli/status/1584894789878587392)
+		period (at which point I sustained multiple hand wounds, which don'<!--'-->t really cooperate well with this):</p>
+	<ol class="continuation">
+		<li>NUM(~400g) of flour,
+		    NUM(~100g) of water,
+		    NUM(2) eggs,
+		    NUM(1) spoon of malt,
+		    NUM(1) small spoon of salt,
+		    yeast;
+		    knead, adding flour until dry</li>
+		<li>ballify like six-wise and let rip for a bit – my notes just say "let rip", natch; cover with a rag, spray with water; either half an hour or an hour</li>
+		<li>unstick, gently skrungle and expand the hole in the middle, boil each guy NUM(30s)/side, flip once –
+		    you probably wanna dump some salt and the remaining flour to the medium;
+		    I do two at a time, whereupon they move to a plate and new guys enter, the plate ones get doused in salt/sesame/poppy, and</li>
+		<li>why do they call it oven when you of in the cold food of out the NUM(~185°) for NUM(15-40min) –
+		    harder flours rise less and need longer, full-pump white is the lower bound here</li>
+	</ol>
+</details>
+
 
 </span>
 BOILERPLATE_END()
