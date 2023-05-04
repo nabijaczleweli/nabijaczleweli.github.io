@@ -26,6 +26,7 @@ BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
 
 #define NUM(...) <span class="roboto-unscale math-font-normal">__VA_ARGS__</span>
 #define REPLICATION(date, url) <a href=STR(httpsCOLON_SLASH_SLASHurl)>NUM(date)</a>
+#define PREPLICATION(date)     NUM(date)
 
 #define HEADING_LINK(id)  <a class="hash-link" href=STR(HASH##id)>HASH</a>
 #define SUMMARY(hid, ...) <summary id=STR(hid) class="roboto-unscale" style="font-weight: bold;">HEADING_LINK(hid)__VA_ARGS__</summary>
@@ -84,7 +85,7 @@ MAIN_HEADING(My answer to the replication crisis)
 	<p class="continuing">with a spec gloop of</p>
 	<ol class="continuing">
 		<li>cold fried minced hog</li>
-		<li>minced ginger, "dark soy" (miso?), soy sus, thirteen spices, "chicken essence" (bit of a bullion cube?), oyster sus, salt</li>
+		<li>minced ginger, "dark soy" (miso?), soy sus, thirteen spices, "chicken essence" (bit of a boullion cube?), oyster sus, salt</li>
 		<li>rough-chopped scallions</li>
 	</ol>
 	<p class="continuing">and I had good (if lightly-loaded, wants more matter) results with</p>
@@ -92,9 +93,27 @@ MAIN_HEADING(My answer to the replication crisis)
 		<li>NUM(400g) of fried minced hog, most fat drained</li>
 		<li>most of the white bit of a leek</li>
 		<li>most of a big shallot</li>
+		<li>half a big carrot</li>
 		<li>a forefinger'<!--'-->s worth of ginger – go for the first two knuckles (or more meat) next time</li>
 		<li>a NUM(15g) miso packet</li>
 		<li>soy sus, fish sus, salt</li>
+	</ol>
+</details>
+
+<details open>
+	SUMMARY(topinambur-cream-soup, Topinambur cream soup)
+
+	<p class="continuing">
+		Top-most recipe from
+		<a href="//www.ugotowanepozamiatane.pl/top-5-potraw-topinambur/">Top 6 najlepszych przepisów na topinambur</a>,
+		by Ugotowane, Pozamiatane.
+		replicated PREPLICATION(2023-05-01):</p>
+	<ol class="continuation">
+		<li>NUM(1kg) of topinambur, NUM(1l) of milk, boil until "soft", and normal potato heuristics work –
+		    I had closer to NUM(700g) so everything'<!--'-->s scaled appropriately</li>
+		<li>drain of milk, put in NUM(1l) of boullion, NUM(100ml) of amaretto, a gloop of maple syrup, big pinch each of nutmeg, salt, and pepper</li>
+		<li>NUM(500ml) of NUM(36%) cream – this would be unbearably fat. for the scaled amount I used a NUM(400g) bucket of NUM(12%) and that worked well</li>
+		<li>blend</li>
 	</ol>
 </details>
 
