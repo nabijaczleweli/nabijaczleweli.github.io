@@ -85,7 +85,7 @@ h3 {
 code, samp {
  font-family: "Droid Sans Mono", monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: "Merriweather", serif;
 }
 h1:hover a.hash-link,
@@ -93,7 +93,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -102,7 +103,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -110,7 +112,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
  color: black;
@@ -185,50 +187,50 @@ tr:hover {
 <div class="roboto"><span class="roboto-unscale">
 <!-- Style based on https://daringfireball.net/projects/markdown/ -->
 <p></p>
-<h1 id="go-back" class="merriweather"><a class="go-back-link left" href="..">↩</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> <a class="go-back-link right" href="..">↩</a></h1>
+<h1 id="go-back" class="merriweather"><a class="go-back-link left" href="..">↩</a> <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> <a class="go-back-link right" href="..">↩</a></h1>
 <h2 id="description" class="smallcaps" style="margin-top: initial;"><a class="hash-link" href="#description">#</a> Description</h2>
 <p id="description-paragraph">
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
 </p>
 <p id="description-what-is-it-paragraph">
-Thus, "<!--"--><code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code><!--"-->" is two things:
+Thus, "<!--"--><code class="nowrap" style="font-variant: normal;">gen-epub-book​</code><!--"-->" is two things:
 (1) a plaintext descriptor syntax; and
 (2) a software tool, that assembles that descriptor and files referenced thereby into an ePub e-book.
 </p>
 <p id="description-inspiration-paragraph">
-The "design goal" of <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
-The idea is that a <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> descriptor should be writable by any person with <em>minimal</em> technical knowledge.
+The "design goal" of <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
+The idea is that a <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> descriptor should be writable by any person with <em>minimal</em> technical knowledge.
 </p>
 <p id="description-for-whom-paragraph">
 This guide is designated for non-programmers. If you're a programmer, see the more in-depth <a href="programmer.html">programmer's version</a>.
 </p>
 <p id="description-license-paragraph">
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> is free software, available under the MIT open source license.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> is free software, available under the MIT open source license.
 See the <a href="#license">License</a> heading for more information.
 </p>
 <h2 id="discussion" class="smallcaps" ><a class="hash-link" href="#discussion">#</a> Discussion</h2>
 <p id="discussion-paragraph">
-Any topic related to <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> – both the descriptor syntax and the software –
-is fair game for discussion over at <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>'s and this webpage's issue trackers
- <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__"><i class="icon-rust" ></i></a>
+Any topic related to <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> – both the descriptor syntax and the software –
+is fair game for discussion over at <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>'s and this webpage's issue trackers
+ <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/issues"><i class="icon-rust" ></i></a>
  <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon"><i class="devicon-html5-plain" ></i></a>.
-I'<!--'-->ve also set up a <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__">GitHub issue for simple questions and clarifications</a>.
+I'<!--'-->ve also set up a <a href="https://github.com/nabijaczleweli/gen-epub-book/issues/1">GitHub issue for simple questions and clarifications</a>.
 If you don'<!--'-->t have a GitHub account, you can <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail <i class="far fa-envelope-open" aria-hidden="true"></i></a>.
 </p>
 <p id="discussion-hopes-paragraph">
-I hope that these facilities will lead to good ideas for future improvements to <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>.
+I hope that these facilities will lead to good ideas for future improvements to <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>.
 </p>
 <h2 id="installation" class="smallcaps" ><a class="hash-link" href="#installation">#</a> Installation</h2>
 <p id="installation-paragraph">
-If you'<!--'-->re running Ubuntu or Windows, you can simply grab a <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> executable from the <a href="https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__">releases</a> page.
+If you'<!--'-->re running Ubuntu or Windows, you can simply grab a <code class="nowrap" style="font-variant: normal;">gen-epub-book​.rs</code> executable from the <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/releases">releases</a> page.
 Those executables should work when ran from anywhere and without any external dependencies.
 </p>
 <h2 id="getting-started" class="smallcaps" ><a class="hash-link" href="#getting-started">#</a> Getting started</h2>
 <h3 id="getting-started-syntax" class="smallcaps" ><a class="hash-link" href="#getting-started-syntax">#</a> Descriptor</h3>
 <div id="getting-started-syntax-paragraph">
 <p></p>
-<code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code>'<!--'-->s descriptor syntax is <em>line-based</em> – each <em>line</em> in the file specifies one element of the e-book.
+<code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>'<!--'-->s descriptor syntax is <em>line-based</em> – each <em>line</em> in the file specifies one element of the e-book.
 Here'<!--'-->s an example of how a descriptor for a simple book can look:
 <kbd><pre class="highlit-code numberise">
 <span class="keyword">Name</span><span class="punctuation">:</span> <span class="string">A Widow'<!--'-->s Trace</span>
@@ -286,18 +288,18 @@ The comments in the following directory tree show the paths to the files, relati
 <span class="string">first-book</span>
 <span class="punctuation">├──</span> <span class="string">rendered</span>
 <span class="punctuation">│ ​ ​ ​└──</span> <span class="string">output</span>
-<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​ ​CSPAN(comment, # ../../rendered/output/intro.html)
-<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">main.html</span> ​ ​ ​ ​ ​ ​ ​CSPAN(comment, # ../../rendered/output/main.html)
-<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">ending.html</span> ​ ​ ​ ​ ​​CSPAN(comment, # ../../rendered/output/ending.html)
+<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​ ​<span class="comment"># ../../rendered/output/intro.html</span>
+<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">main.html</span> ​ ​ ​ ​ ​ ​ ​<span class="comment"># ../../rendered/output/main.html</span>
+<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">ending.html</span> ​ ​ ​ ​ ​​<span class="comment"># ../../rendered/output/ending.html</span>
 <span class="punctuation">├──</span> <span class="string">previews</span>
 <span class="punctuation">│ ​ ​ ​└──</span> <span class="string">generated</span>
 <span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">out</span>
-<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──</span> <span class="string">intro.html</span> ​ ​CSPAN(comment, # ../../previews/generated/out/intro.html)
-<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──</span> <span class="string">main.html</span> ​ ​ ​CSPAN(comment, # ../../previews/generated/out/main.html)
+<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──</span> <span class="string">intro.html</span> ​ ​<span class="comment"># ../../previews/generated/out/intro.html</span>
+<span class="punctuation">│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──</span> <span class="string">main.html</span> ​ ​ ​<span class="comment"># ../../previews/generated/out/main.html</span>
 <span class="punctuation">└──</span> <span class="string">geb</span>
 <span class="punctuation">​ ​ ​ ​└──</span> <span class="string">first</span>
-<span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​ ​CSPAN(comment, # intro.html)
-<span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">book.epupp</span> ​ ​ ​ ​ ​ ​CSPAN(comment, # book.epupp)
+<span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​├──</span> <span class="string">intro.html</span> ​ ​ ​ ​ ​ ​ ​<span class="comment"># intro.html</span>
+<span class="punctuation">​ ​ ​ ​ ​ ​ ​ ​└──</span> <span class="string">book.epupp</span> ​ ​ ​ ​ ​ ​ ​<span class="comment"># book.epupp</span>
 </pre></kbd>
 When referenced from HTML, their names must be known.
 The specified names are processed and packed under the names resulting from
@@ -328,7 +330,7 @@ Okay, that still looks scary.
 You can just use the online <a href="//infobyip.com/epochtimeconverter.php">epoch time converter</a> to convert any date to RFC3339.
 </p>
 <p id="getting-started-syntax-explanation-date-free-paragraph">
-If you specify the <code>--free-date</code> switch as an argument on the command-line, <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> will also accept
+If you specify the <code>--free-date</code> switch as an argument on the command-line, <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> will also accept
  <a href="//tools.ietf.org/html/rfc2822">RFC2822</a> and
  <kbd class="highlit-code nowrap"><!--
  --><span class="string">Unix timestamp</span><!--
@@ -350,7 +352,7 @@ If you have your descriptor and are ready to assemble it into an e-book open the
 <kbd><pre class="highlit-code numberise">
 <span class="punctuation">$</span> gen-epub-book <span class="string">first-book.epupp</span> <span class="string">first-book.epub</span>
 </pre></kbd>
-After which, if you did everything right and <code class="nowrap" style="font-variant: normal;">gen-epub-book​__VA_ARGS__</code> didn't throw you an error, you should now have a file called <code>first-book.epub</code>. <!--'-->
+After which, if you did everything right and <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code> didn't throw you an error, you should now have a file called <code>first-book.epub</code>. <!--'-->
 Congratulations! You can now read, verify and convert it using, e.g., <a href="//calibre-ebook.com/">Calibre</a>.
 </div>
 <h2 id="license" class="smallcaps" ><a class="hash-link" href="#license">#</a> License</h2>
@@ -394,9 +396,9 @@ I hope that this document is clear and/or informative, if not,
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 05.02.2023 20:39:59 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 04.05.2023 01:37:47 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/gen-epub-book/index.html.pp">src/gen-epub-book/index.html.pp</a>. 
- 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/984207">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

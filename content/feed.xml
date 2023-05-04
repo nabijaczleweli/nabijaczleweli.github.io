@@ -11,9 +11,9 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-02-05T20:42:49</updated>
+  <updated>2023-05-04T01:40:31</updated>
   <generator>
-    GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)
+    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
 
   <entry>
@@ -37,7 +37,7 @@
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -45,7 +45,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -54,7 +55,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -62,7 +64,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -399,7 +401,7 @@ You may also be interested in the corresponding &lt;a href=&quot;https://twitter
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -407,7 +409,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -416,7 +419,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -424,7 +428,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -699,7 +703,7 @@ You can find assorted extras (full-sized track and album art, programs to make t
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -707,7 +711,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -716,7 +721,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -724,7 +730,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -1359,7 +1365,7 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -1367,7 +1373,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -1376,7 +1383,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -1384,7 +1392,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -1653,7 +1661,7 @@ zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -1661,7 +1669,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -1670,7 +1679,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -1678,7 +1688,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -1789,7 +1799,7 @@ Anyway, glam shots.
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -1797,7 +1807,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -1806,7 +1817,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -1814,7 +1826,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -2515,7 +2527,7 @@ x       nobody
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -2523,7 +2535,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -2532,7 +2545,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -2540,7 +2554,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -2692,7 +2706,7 @@ see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.ful
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -2700,7 +2714,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -2709,7 +2724,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -2717,7 +2733,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -2954,7 +2970,7 @@ h3 {
 code, samp {
  font-family: &quot;Droid Sans Mono&quot;, monospace;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
  font-family: &quot;Merriweather&quot;, serif;
 }
 h1:hover a.hash-link,
@@ -2962,7 +2978,8 @@ h2:hover a.hash-link,
 h3:hover a.hash-link,
 h4:hover a.hash-link,
 h5:hover a.hash-link,
-h6:hover a.hash-link {
+h6:hover a.hash-link,
+summary:hover a.hash-link {
  visibility: visible;
  opacity: 1;
 }
@@ -2971,7 +2988,8 @@ h2 a.hash-link,
 h3 a.hash-link,
 h4 a.hash-link,
 h5 a.hash-link,
-h6 a.hash-link {
+h6 a.hash-link,
+summary a.hash-link {
  float: left;
  visibility: hidden;
  opacity: 0;
@@ -2979,7 +2997,7 @@ h6 a.hash-link {
  margin-left: calc(-1em / 1.1);
   transition: all 0.5s;
 }
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link,
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  color: black;
@@ -3054,50 +3072,50 @@ tr:hover {
 &lt;div class=&quot;roboto&quot;&gt;&lt;span class=&quot;roboto-unscale&quot;&gt;
 &lt;!-- Style based on https://daringfireball.net/projects/markdown/ --&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h1 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id=&quot;description&quot; class=&quot;smallcaps&quot; style=&quot;margin-top: initial;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#description&quot;&gt;#&lt;/a&gt; Description&lt;/h2&gt;
 &lt;p id=&quot;description-paragraph&quot;&gt;
-&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
-&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; is a loose file to ePub assembly/conversion tool for everyone not afraid of not using Word.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; allows you to assemble ePub e-books using an easy-to-read, easy-to-write plaintext format.
 &lt;/p&gt;
 &lt;p id=&quot;description-what-is-it-paragraph&quot;&gt;
-Thus, &quot;&lt;!--&quot;--&gt;&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt;&lt;!--&quot;--&gt;&quot; is two things:
+Thus, &quot;&lt;!--&quot;--&gt;&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;&lt;!--&quot;--&gt;&quot; is two things:
 (1) a plaintext descriptor syntax; and
 (2) a software tool, that assembles that descriptor and files referenced thereby into an ePub e-book.
 &lt;/p&gt;
 &lt;p id=&quot;description-inspiration-paragraph&quot;&gt;
-The &quot;design goal&quot; of &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt;’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
-The idea is that a &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; descriptor should be writable by any person with &lt;em&gt;minimal&lt;/em&gt; technical knowledge.
+The &quot;design goal&quot; of &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;’s descriptor syntax is to make it as consistent and obvious at the first sight as possible.
+The idea is that a &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; descriptor should be writable by any person with &lt;em&gt;minimal&lt;/em&gt; technical knowledge.
 &lt;/p&gt;
 &lt;p id=&quot;description-for-whom-paragraph&quot;&gt;
 This guide is designated for non-programmers. If you're a programmer, see the more in-depth &lt;a href=&quot;programmer.html&quot;&gt;programmer's version&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;description-license-paragraph&quot;&gt;
-&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; is free software, available under the MIT open source license.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; is free software, available under the MIT open source license.
 See the &lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt; heading for more information.
 &lt;/p&gt;
 &lt;h2 id=&quot;discussion&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#discussion&quot;&gt;#&lt;/a&gt; Discussion&lt;/h2&gt;
 &lt;p id=&quot;discussion-paragraph&quot;&gt;
-Any topic related to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; – both the descriptor syntax and the software –
-is fair game for discussion over at &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt;'s and this webpage's issue trackers
- &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__&quot;&gt;&lt;i class=&quot;icon-rust&quot; &gt;&lt;/i&gt;&lt;/a&gt;
+Any topic related to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; – both the descriptor syntax and the software –
+is fair game for discussion over at &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;'s and this webpage's issue trackers
+ &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/issues&quot;&gt;&lt;i class=&quot;icon-rust&quot; &gt;&lt;/i&gt;&lt;/a&gt;
  &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;&lt;i class=&quot;devicon-html5-plain&quot; &gt;&lt;/i&gt;&lt;/a&gt;.
-I'&lt;!--'--&gt;ve also set up a &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__&quot;&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
+I'&lt;!--'--&gt;ve also set up a &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book/issues/1&quot;&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
 If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;far fa-envelope-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;discussion-hopes-paragraph&quot;&gt;
-I hope that these facilities will lead to good ideas for future improvements to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt;.
+I hope that these facilities will lead to good ideas for future improvements to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;.
 &lt;/p&gt;
 &lt;h2 id=&quot;installation&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installation&quot;&gt;#&lt;/a&gt; Installation&lt;/h2&gt;
 &lt;p id=&quot;installation-paragraph&quot;&gt;
-If you'&lt;!--'--&gt;re running Ubuntu or Windows, you can simply grab a &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; executable from the &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book__VA_ARGS__&quot;&gt;releases&lt;/a&gt; page.
+If you'&lt;!--'--&gt;re running Ubuntu or Windows, you can simply grab a &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​.rs&lt;/code&gt; executable from the &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/releases&quot;&gt;releases&lt;/a&gt; page.
 Those executables should work when ran from anywhere and without any external dependencies.
 &lt;/p&gt;
 &lt;h2 id=&quot;getting-started&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#getting-started&quot;&gt;#&lt;/a&gt; Getting started&lt;/h2&gt;
 &lt;h3 id=&quot;getting-started-syntax&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#getting-started-syntax&quot;&gt;#&lt;/a&gt; Descriptor&lt;/h3&gt;
 &lt;div id=&quot;getting-started-syntax-paragraph&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt;'&lt;!--'--&gt;s descriptor syntax is &lt;em&gt;line-based&lt;/em&gt; – each &lt;em&gt;line&lt;/em&gt; in the file specifies one element of the e-book.
+&lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;'&lt;!--'--&gt;s descriptor syntax is &lt;em&gt;line-based&lt;/em&gt; – each &lt;em&gt;line&lt;/em&gt; in the file specifies one element of the e-book.
 Here'&lt;!--'--&gt;s an example of how a descriptor for a simple book can look:
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
 &lt;span class=&quot;keyword&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;A Widow'&lt;!--'--&gt;s Trace&lt;/span&gt;
@@ -3155,18 +3173,18 @@ The comments in the following directory tree show the paths to the files, relati
 &lt;span class=&quot;string&quot;&gt;first-book&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;rendered&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;output&lt;/span&gt;
-&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​CSPAN(comment, # ../../rendered/output/intro.html)
-&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​ ​ ​ ​ ​CSPAN(comment, # ../../rendered/output/main.html)
-&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;ending.html&lt;/span&gt; ​ ​ ​ ​ ​​CSPAN(comment, # ../../rendered/output/ending.html)
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../rendered/output/intro.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../rendered/output/main.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;ending.html&lt;/span&gt; ​ ​ ​ ​ ​​&lt;span class=&quot;comment&quot;&gt;# ../../rendered/output/ending.html&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;previews&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;generated&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;out&lt;/span&gt;
-&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​CSPAN(comment, # ../../previews/generated/out/intro.html)
-&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​CSPAN(comment, # ../../previews/generated/out/main.html)
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../previews/generated/out/intro.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;│ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ └──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;main.html&lt;/span&gt; ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# ../../previews/generated/out/main.html&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;geb&lt;/span&gt;
 &lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;first&lt;/span&gt;
-&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​CSPAN(comment, # intro.html)
-&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;book.epupp&lt;/span&gt; ​ ​ ​ ​ ​ ​CSPAN(comment, # book.epupp)
+&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​├──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;intro.html&lt;/span&gt; ​ ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# intro.html&lt;/span&gt;
+&lt;span class=&quot;punctuation&quot;&gt;​ ​ ​ ​ ​ ​ ​ ​└──&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;book.epupp&lt;/span&gt; ​ ​ ​ ​ ​ ​ ​&lt;span class=&quot;comment&quot;&gt;# book.epupp&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
 When referenced from HTML, their names must be known.
 The specified names are processed and packed under the names resulting from
@@ -3197,7 +3215,7 @@ Okay, that still looks scary.
 You can just use the online &lt;a href=&quot;//infobyip.com/epochtimeconverter.php&quot;&gt;epoch time converter&lt;/a&gt; to convert any date to RFC3339.
 &lt;/p&gt;
 &lt;p id=&quot;getting-started-syntax-explanation-date-free-paragraph&quot;&gt;
-If you specify the &lt;code&gt;--free-date&lt;/code&gt; switch as an argument on the command-line, &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; will also accept
+If you specify the &lt;code&gt;--free-date&lt;/code&gt; switch as an argument on the command-line, &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; will also accept
  &lt;a href=&quot;//tools.ietf.org/html/rfc2822&quot;&gt;RFC2822&lt;/a&gt; and
  &lt;kbd class=&quot;highlit-code nowrap&quot;&gt;&lt;!--
  --&gt;&lt;span class=&quot;string&quot;&gt;Unix timestamp&lt;/span&gt;&lt;!--
@@ -3219,7 +3237,7 @@ If you have your descriptor and are ready to assemble it into an e-book open the
 &lt;kbd&gt;&lt;pre class=&quot;highlit-code numberise&quot;&gt;
 &lt;span class=&quot;punctuation&quot;&gt;$&lt;/span&gt; gen-epub-book &lt;span class=&quot;string&quot;&gt;first-book.epupp&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;first-book.epub&lt;/span&gt;
 &lt;/pre&gt;&lt;/kbd&gt;
-After which, if you did everything right and &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​__VA_ARGS__&lt;/code&gt; didn't throw you an error, you should now have a file called &lt;code&gt;first-book.epub&lt;/code&gt;. &lt;!--'--&gt;
+After which, if you did everything right and &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt; didn't throw you an error, you should now have a file called &lt;code&gt;first-book.epub&lt;/code&gt;. &lt;!--'--&gt;
 Congratulations! You can now read, verify and convert it using, e.g., &lt;a href=&quot;//calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.
 &lt;/div&gt;
 &lt;h2 id=&quot;license&quot; class=&quot;smallcaps&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#license&quot;&gt;#&lt;/a&gt; License&lt;/h2&gt;
@@ -3290,7 +3308,7 @@ The Tonči Juričev-Grgin mandala generation algorithm can be used to, &lt;em&gt
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 It uses a very simple process (see &lt;a href=&quot;#algorithm&quot;&gt;below&lt;/a&gt;), which can be used in any
-[​[​__VA_ARGS__​]​]-dimensional space, so, as an example, the same-sized mandala,
+[​[​beta in NN ∖ {0}​]​]-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):&lt;!--'--&gt;
 &lt;/p&gt;
 &lt;div class=&quot;indented continuation&quot;&gt;
@@ -3303,19 +3321,19 @@ but in one more dimension (also with classical music atop it because it'd be unb
   one need run the algorithm body many times, an acceptable amount I found was:
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
- [​[​__VA_ARGS__​]​],
+ [​[​log(n_max) = |~log(prod_i size_i)~| + 1​]​],
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
  (which still doesn't perfectly fill more complex corner setups), so for&lt;!--'--&gt;
- [​[​__VA_ARGS__​]​],
- which takes about [​[​__VA_ARGS__​]​] on my PC if I try to not cook it (and I generally do).
+ [​[​size = [900, 900, 900] =&gt; n_max = 10^10​]​],
+ which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot; id=&quot;code&quot;&gt;
 A different question to be asked is
  &lt;strong&gt;&quot;How does one&lt;/strong&gt;&lt;!--&quot;--&gt;
  &lt;span style=&quot;text-decoration: line-through;&quot;&gt;laugh at the shitty code&lt;/span&gt;
  &lt;strong&gt;play around with the code that generates these myself?&quot;&lt;/strong&gt;.&lt;!--&quot;--&gt;
- Well, thanks to the wonders of the [​[​__VA_ARGS__​]​], you can! In most-to-least bad order:
+ Well, thanks to the wonders of the [​[​fr &quot;Internet&quot;​]​], you can! In most-to-least bad order:
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 &lt;a href=&quot;//github.com/nabijaczleweli/mandalas&quot; target=&quot;_blank&quot;&gt;Here&lt;/a&gt;'s an early version in C++,&lt;!--'--&gt;
@@ -3355,46 +3373,46 @@ I'm out of things to put here, because I'm not a cool person &lt;em&gt;en genera
 &lt;strong&gt;&quot;But where's the &lt;em&gt;algorithm&lt;/em&gt;?&quot;&lt;/strong&gt; – Here's the raw version: &lt;!--'--&gt;
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​sf &quot;Mandala Generation - Ton&quot; hat(sf &quot;c&quot;) sf &quot;i Juri&quot; hat(sf &quot;c&quot;) sf &quot;ev-Grgin&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​alpha in NN ∖ {0} - sf &quot;colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​c nn (: 3, +oo ) - sf &quot;amount of corners in c-gonal mandala base&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​C - sf &quot;set of point&quot; - sf &quot;corner points of c-gon mandala base&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​bar C = c​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​n in NN nn (: alpha + 2; +oo ) - sf &quot;current point number&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​d = ra\nd((:0, c) nn NN) - sf &quot;current chosen corner&quot;​]​]
 &lt;/p&gt;
 &lt;p&gt;
-[​[​__VA_ARGS__​]​]
+[​[​P_n = (C_d + P_(n-1)) / 2 =&gt; a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​e_m = |P_n P_(n-m)|​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​or​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​f = max E​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​colour P_n = map(f(x) = x / f; E ∖ {f}) =&gt; bar(E ∖ {f}) = alpha​]​]
 &lt;/p&gt;
 &lt;p&gt;
 (I'm not a real mathematician, so it's most likely not done properly.)
@@ -3431,16 +3449,16 @@ Since the output image format (PNG) and the video format (H.264) only support RG
  Some, however, like ROYGBP or, &lt;em&gt;ahem&lt;/em&gt;, RPPDIBLCTGLLYAODBGB, have been made up by yours truly upon the following basis:
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​S - sf &quot;set of 3-dimensional vectors&quot; - sf &quot;RGB samples of each colour in a space&quot;​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​bar S = alpha​]​]
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-[​[​__VA_ARGS__​]​]
+[​[​colour P_n - sf &quot;as above&quot;​]​]
 &lt;/p&gt;
 &lt;p&gt;
-[​[​__VA_ARGS__​]​]
+[​[​AA c in {r,g,b} : C_(out_c) = (sum_(theta=1)^alpha colour P_(ntheta) S_(theta_c))/(sum_(theta=1)^alpha S_(theta_c))​]​]
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 A full list of conversions and their implementations can be found at the
@@ -3688,6 +3706,241 @@ A full list of conversions and their implementations can be found at the
 
 &lt;/div&gt;
 &lt;span id=&quot;arrow&quot;&gt;&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
+    <title> Recipes — nabijaczleweli </title>
+    <updated>2023-05-03T23:16:48+02:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+
+details {
+ margin-top: 1em;
+}
+&lt;/style&gt;
+&lt;script&gt;
+window.addEventListener(&quot;load&quot;, function() {
+ var all = Array.from(document.getElementsByTagName(&quot;details&quot;));
+ var cur = true;
+ document.getElementById(&quot;togglupa&quot;).addEventListener(&quot;click&quot;, function() {
+  cur = !cur;
+  all.forEach(function(el) {
+   el.open = cur;
+  });
+ });
+});
+&lt;/script&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
+&lt;span class=&quot;roboto&quot;&gt;
+&lt;p&gt;
+ Latest replication: &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-03&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ &lt;button id=&quot;togglupa&quot;&gt;Toggle all&lt;/button&gt;
+&lt;/p&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;leek-cake&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#leek-cake&quot;&gt;#&lt;/a&gt;Leek multi-layer cake&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/2rNbXgnnyQg&quot;&gt;Leek multi-layer cake is delicious and no skill&lt;/a&gt;,
+  by Haijuan Food,
+  replicated &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-03&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuing&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~2g&lt;/span&gt; of salt, flock with &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;150g&lt;/span&gt; of boiling water then &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;130g&lt;/span&gt; of normal&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;60g&lt;/span&gt; egg – I had good results with an uncompensated &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;70g&lt;/span&gt; one&lt;/li&gt;
+  &lt;li&gt;knead via pulling&lt;/li&gt;
+  &lt;li&gt;roll into cylinder, cut into &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;8&lt;/span&gt; guys, spin each guy flat then ball him; they all sleep on a tray for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1h&lt;/span&gt;, oiled and plasticked&lt;/li&gt;
+  &lt;li&gt;with oiled counter, stick, and hands, roll each guy into like a &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2:5&lt;/span&gt; rectangle&lt;/li&gt;
+  &lt;li&gt;&quot;not too thin&quot;, but you do want it quite thin, presumably the difference here is &quot;not paper-thin&quot;&lt;/li&gt;
+  &lt;li&gt;dispense gloop, omit &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~1-1.5cm&lt;/span&gt; from the edge, fold thrice (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4&lt;/span&gt; sections), roll and press the loose ends toward the face with the last fold&lt;/li&gt;
+  &lt;li&gt;these go on a hot oiled leccy pan, weld side down, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~1min&lt;/span&gt; on the first side until they set, then flip 1/min for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~6min&lt;/span&gt; total –
+      filling ought to be visible from the edges here but may not be if the dough's thick and you don't have much contrast in the gloop&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;p class=&quot;continuing&quot;&gt;with a spec gloop of&lt;/p&gt;
+ &lt;ol class=&quot;continuing&quot;&gt;
+  &lt;li&gt;cold fried minced hog&lt;/li&gt;
+  &lt;li&gt;minced ginger, &quot;dark soy&quot; (miso?), soy sus, thirteen spices, &quot;chicken essence&quot; (bit of a bullion cube?), oyster sus, salt&lt;/li&gt;
+  &lt;li&gt;rough-chopped scallions&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;p class=&quot;continuing&quot;&gt;and I had good (if lightly-loaded, wants more matter) results with&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;400g&lt;/span&gt; of fried minced hog, most fat drained&lt;/li&gt;
+  &lt;li&gt;most of the white bit of a leek&lt;/li&gt;
+  &lt;li&gt;most of a big shallot&lt;/li&gt;
+  &lt;li&gt;a forefinger'&lt;!--'--&gt;s worth of ginger – go for the first two knuckles (or more meat) next time&lt;/li&gt;
+  &lt;li&gt;a &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15g&lt;/span&gt; miso packet&lt;/li&gt;
+  &lt;li&gt;soy sus, fish sus, salt&lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/details&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;corn-freamed-buns&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#corn-freamed-buns&quot;&gt;#&lt;/a&gt;Corn freamed (fried steamed) rolls (buns), rose-shaped&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/7tZEh6uzcOo&quot;&gt;Cornmeal for rolls? Easy to make fluffy and soft&lt;/a&gt;,
+  by Haijuan Food,
+  replicated &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-04-29&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-02&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-02&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;200g&lt;/span&gt; of &lt;a href=&quot;//cohost.org/nabijaczleweli/post/1404618-this-user-just-got&quot;&gt;corn&lt;/a&gt;,
+      flock with &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;200g&lt;/span&gt; of boiling water,
+      let cool until not hot to second knuckle – with the eggs you want to get a good yeast temp&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3g&lt;/span&gt; of yeast, spoon of sugar, two eggs – mine are &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~70g&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;200g&lt;/span&gt; of flour – maybe my eggs are huge, maybe idk, but starting with &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;250g&lt;/span&gt; and likely adding slightly more to get to a reasonable &quot;dough&quot; consistency
+      — instead of a paste, which doesn'&lt;!--'--&gt;t rise; the spec is to &lt;em&gt;maybe add water&lt;/em&gt; which is insane to me —
+      worked for me to avoid the &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-02&lt;/span&gt;&lt;/a&gt; incident again&lt;/li&gt;
+  &lt;li&gt;flock, accrue, knead in bowl for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5min&lt;/span&gt;, he sleeps in the covered bowl for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40min&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;knead a bit on floured counter to de-gas, roll into cylinder, cut into &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~12&lt;/span&gt; guys –
+      there's a critical mass above which they won't re-rise(?), and &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;9&lt;/span&gt; left them too big
+      (again, &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-02&lt;/span&gt;&lt;/a&gt;),
+      &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;13&lt;/span&gt; and &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;12&lt;/span&gt; worked very well, and she does &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;12&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;for each guy:
+   &lt;ol&gt;
+    &lt;li&gt;spin spin him flat – thus averaging the crust that'&lt;!--'--&gt;s inevitably developed&lt;/li&gt;
+    &lt;li&gt;cylindrise, flatten, roll out long –
+        you want a high aspect ratio and relatively thin;
+        if he sticks to the counter then unstick him, flour the counter, and zoom him around so he'&lt;!--'--&gt;s free for the next step&lt;/li&gt;
+    &lt;li&gt;start a cut through the middle &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~.5-1cm&lt;/span&gt; from one edge, and through the other&lt;/li&gt;
+    &lt;li&gt;&quot;braid him like a braid&quot;, i.e. keep passing one over the other,
+                                       keep the top-facing faces facing the top and the counter-facing faces facing the counter&lt;/li&gt;
+    &lt;li&gt;at the end, weld the halves together again – the best-kept secret here is that no matter how badly you do any of this it'&lt;!--'--&gt;ll turn out great&lt;/li&gt;
+    &lt;li&gt;flip (dry side up wet side down now),
+        roll from the welded bit to the uncut bit,
+        stick the tongue that'&lt;!--'--&gt;s left to the side, may need water assist&lt;/li&gt;
+    &lt;li&gt;ass-down spin him around a bit to ensure flat perpendicular ass&lt;/li&gt;
+    &lt;li&gt;hide under a cover&lt;/li&gt;
+   &lt;/ol&gt;
+     – this took me like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50&lt;/span&gt; minutes the first time, and like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40&lt;/span&gt; the third
+   &lt;/li&gt;
+  &lt;li&gt;oil a pan, lay them there, they sleep covered for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15min&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;crank to medium for three minutes –
+      maybe her leccy pan is more powerful than my stove, I need like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1min&lt;/span&gt; on 9 then &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4min&lt;/span&gt; on 6,
+      you'&lt;!--'--&gt;re shooting for a well-developed brown crust on the ass&lt;/li&gt;
+  &lt;li&gt;pour water &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;⅓&lt;/span&gt;&lt;sup&gt;rd&lt;/sup&gt; way up – the guys? the pan? idk. – kill the heat, they steam until the water gets sucked off (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~10min&lt;/span&gt;)&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;p&gt;
+  These came out just about perfect &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-04-29&lt;/span&gt;&lt;/a&gt;,
+  but the water level is finnicky, and pouring in more and turning the heat back on turns out badly for me
+  (stuck to bottom; &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-02&lt;/span&gt;&lt;/a&gt;,
+                    &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-02&lt;/span&gt;&lt;/a&gt;).
+  Maybe this is easier if you have a plastic pan the right size, but my biggest (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;Φ245&lt;/span&gt;) is stainless (but the right size).
+  Operator error.
+ &lt;/p&gt;
+&lt;/details&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;flower-rolls&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#flower-rolls&quot;&gt;#&lt;/a&gt;Flower rolls (round steamed bread with an oil)&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/hpYrnQiGd6w&quot;&gt;Homemade flower rolls are delicious and no skills, suitable for novice making&lt;/a&gt;,
+  by Haijuan Food,
+  replicated &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-04-15&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-04-23&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour,
+      &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4g&lt;/span&gt; of yeast,
+      spoon of sugar,
+      flock with &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;300g&lt;/span&gt; of &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40°&lt;/span&gt; water,
+      accrue,
+      knead in bowl for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5min&lt;/span&gt;,
+      he sleeps in the covered bowl for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40min&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;knead a bit on floured counter to de-gas, roll into cylinder, cut at &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;⅖&lt;/span&gt;&lt;sup&gt;th&lt;/sup&gt;s or like a &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;⅓&lt;/span&gt;&lt;sup&gt;rd&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;both parts (small first, big goes around it):
+   &lt;ol&gt;
+    &lt;li&gt;flatten, roll out rectangularly –
+        the major dimension will inform the output &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;Φ&lt;/span&gt;, but it'&lt;!--'--&gt;s relatively forgiving,
+        and you can shorten and obversely elongate segments as required&lt;/li&gt;
+    &lt;li&gt;thoroughly brush with oil – it &quot;had better be cooked&quot;; olive and a smelly one are fine, blank kujawski sucks&lt;/li&gt;
+    &lt;li&gt;stochastically dust with dry flour a bit –
+        unclear what this achieves, the splotches achieved don'&lt;!--'--&gt;t form a coherent layer and are not enough to influence adhesion in any way&lt;/li&gt;
+    &lt;li&gt;roll tightly into a cylinder, preserving the major dimension&lt;/li&gt;
+    &lt;li&gt;make sure it's not stuck and won't easily stick to the counter&lt;/li&gt;
+    &lt;li&gt;cut &lt;em&gt;most&lt;/em&gt; of the way through every &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~3cm&lt;/span&gt; – you wanna leave like two layers alone&lt;/li&gt;
+    &lt;li&gt;push down stick A on an edge segment, then stick B on the next one, and squeeze them downward and together, thus exposing the internal edges&lt;/li&gt;
+    &lt;li&gt;apply stick C similarly on the subsequent segment, and squeeze it downward and together with stick B, then free stick A&lt;/li&gt;
+    &lt;li&gt;repeat through-out all the segments&lt;/li&gt;
+    &lt;li&gt;assemble into a circle in situ in a papered steamer&lt;/li&gt;
+   &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;give him half a date – this is life advice&lt;/li&gt;
+  &lt;li&gt;put the steamer on the pot, he sleeps for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;10min&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;boil the water, then let rip for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15min&lt;/span&gt;, kill the heat and leave alone for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3min&lt;/span&gt;, extract&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;p&gt;
+  The title'&lt;!--'--&gt;s right: suitable for completely inept imbeciles like me. 0 failure 0 technique.
+ &lt;/p&gt;
+&lt;/details&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;bubliki&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bubliki&quot;&gt;#&lt;/a&gt;Бублики&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  Originally derived from
+  &lt;a href=&quot;//youtu.be/PPHy_1R7Xu4&quot;&gt;Making the slavic bagel&lt;/a&gt;,
+  by Life of Boris.
+  First replicated
+  &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2022-06-06&lt;/span&gt;&lt;/a&gt;,
+  but this was my sole bread in-take for the
+  &lt;a href=&quot;https://url&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2022-07-06–2022-10-28&lt;/span&gt;&lt;/a&gt;
+  period (at which point I sustained multiple hand wounds, which don'&lt;!--'--&gt;t really cooperate well with this):&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~400g&lt;/span&gt; of flour,
+      &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~100g&lt;/span&gt; of water,
+      &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2&lt;/span&gt; eggs,
+      &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1&lt;/span&gt; spoon of malt,
+      &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1&lt;/span&gt; small spoon of salt,
+      yeast;
+      knead, adding flour until dry&lt;/li&gt;
+  &lt;li&gt;ballify like six-wise and let rip for a bit – my notes just say &quot;let rip&quot;, natch; cover with a rag, spray with water; either half an hour or an hour&lt;/li&gt;
+  &lt;li&gt;unstick, gently skrungle and expand the hole in the middle, boil each guy &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30s&lt;/span&gt;/side, flip once –
+      you probably wanna dump some salt and the remaining flour to the medium;
+      I do two at a time, whereupon they move to a plate and new guys enter, the plate ones get doused in salt/sesame/poppy, and&lt;/li&gt;
+  &lt;li&gt;why do they call it oven when you of in the cold food of out the &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~185°&lt;/span&gt; for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15-40min&lt;/span&gt; –
+      harder flours rise less and need longer, full-pump white is the lower bound here&lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/details&gt;
+&lt;/span&gt;
 </content>
   </entry>
 
@@ -4419,22 +4672,22 @@ h7.main-heading &gt; a {
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Spis Treści&lt;/h2&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto indented&quot;&gt;
-&lt;a href=&quot;#id&quot; class=&quot;content-link&quot;&gt;Wprowadzenie&lt;/a&gt;
+&lt;a href=&quot;#introduction&quot; class=&quot;content-link&quot;&gt;Wprowadzenie&lt;/a&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing roboto continued&quot;&gt;
-&lt;strong&gt;&lt;a href=&quot;#id&quot; class=&quot;content-link&quot;&gt; 2018.11.02 Homoseksualizm&lt;/a&gt;&lt;/strong&gt;
+&lt;strong&gt;&lt;a href=&quot;#2018.11.02-Homoseksualizm&quot; class=&quot;content-link&quot;&gt; 2018.11.02 Homoseksualizm&lt;/a&gt;&lt;/strong&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing roboto indented continuing&quot;&gt;
-&lt;a href=&quot;#id&quot; class=&quot;content-link&quot;&gt; 2018.11.02 – Zawadzka&lt;/a&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/Zawadzka&quot; class=&quot;content-link&quot;&gt; 2018.11.02 – Zawadzka&lt;/a&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing roboto indented continuing&quot;&gt;
-&lt;a href=&quot;#id&quot; class=&quot;content-link&quot;&gt; 2018.11.02 „HOMOsapiens” – Micherda&lt;/a&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/Micherda&quot; class=&quot;content-link&quot;&gt; 2018.11.02 „HOMOsapiens” – Micherda&lt;/a&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing roboto indented continuing&quot;&gt;
-&lt;a href=&quot;#id&quot; class=&quot;content-link&quot;&gt; 2018.11.02 – Bujak&lt;/a&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/Bujak&quot; class=&quot;content-link&quot;&gt; 2018.11.02 – Bujak&lt;/a&gt;
 &lt;/p&gt;
 &lt;p class=&quot;writing roboto indented continuation&quot;&gt;
-&lt;a href=&quot;#id&quot; class=&quot;content-link&quot;&gt;2018.11.02 – наб&lt;/a&gt;
+&lt;a href=&quot;#2018.11.02-Homoseksualizm/наб&quot; class=&quot;content-link&quot;&gt;2018.11.02 – наб&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;!--​--&gt;
@@ -4443,7 +4696,7 @@ h7.main-heading &gt; a {
 &lt;!-- ePub title: &quot;Wprowadzenie&quot; --&gt;
 
 &lt;p&gt;&lt;/p&gt;
-&lt;center&gt;&lt;h2 id=&quot;introduction&quot; class=&quot;merriweather main-heading&quot;&gt;&lt;a href=&quot;#id&quot;&gt;Wprowadzenie&lt;/a&gt;&lt;/h2&gt;&lt;/center&gt;
+&lt;center&gt;&lt;h2 id=&quot;introduction&quot; class=&quot;merriweather main-heading&quot;&gt;&lt;a href=&quot;#introduction&quot;&gt;Wprowadzenie&lt;/a&gt;&lt;/h2&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto indented continued&quot;&gt;
 Przedstawiamy Wam, szanowny czytelniku,
 czynnie rozwijający się zbiór twórczości Felicji –
@@ -4458,7 +4711,7 @@ grupy wytwórczej &lt;em class=&quot;roboto-em&quot;&gt;Поезия Интри�
 
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h2 id=&quot;2018.11.02-Homoseksualizm&quot; class=&quot;merriweather main-heading&quot;&gt;
- &lt;a href=&quot;#id&quot;&gt;2018.11.02 „Homoseksualizm”&lt;/a&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm&quot;&gt;2018.11.02 „Homoseksualizm”&lt;/a&gt;
 &lt;/h2&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto indented&quot;&gt;
 &lt;span class=&quot;math-font-normal roboto-unscale&quot;&gt;2018.11.02&lt;/span&gt; &lt;em class=&quot;roboto-em&quot;&gt;nastąpiło pierwsze spotkanie wkrótce-Felicji 
@@ -4474,7 +4727,7 @@ grupy wytwórczej &lt;em class=&quot;roboto-em&quot;&gt;Поезия Интри�
 
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h3 id=&quot;2018.11.02-Homoseksualizm/Zawadzka&quot; class=&quot;merriweather main-heading&quot;&gt;
- &lt;a href=&quot;#id&quot;&gt;2018.11.02 – Zawadzka&lt;/a&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/Zawadzka&quot;&gt;2018.11.02 – Zawadzka&lt;/a&gt;
 &lt;/h3&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto&quot;&gt;
 okropnie trzeszczy&lt;br /&gt;
@@ -4495,7 +4748,7 @@ piekła
 
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h3 id=&quot;2018.11.02-Homoseksualizm/Micherda&quot; class=&quot;merriweather main-heading&quot;&gt;
- &lt;a href=&quot;#id&quot;&gt;2018.11.02 „HOMOsapiens” – Micherda&lt;/a&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/Micherda&quot;&gt;2018.11.02 „HOMOsapiens” – Micherda&lt;/a&gt;
 &lt;/h3&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto&quot;&gt;
 O homosapiens ze wszystkich świata stron&lt;br /&gt;
@@ -4522,7 +4775,7 @@ Bo jeszcze porucham do końca tej wiosny.
 
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h3 id=&quot;2018.11.02-Homoseksualizm/Bujak&quot; class=&quot;merriweather main-heading&quot;&gt;
- &lt;a href=&quot;#id&quot;&gt;2018.11.02 – Bujak&lt;/a&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/Bujak&quot;&gt;2018.11.02 – Bujak&lt;/a&gt;
 &lt;/h3&gt;&lt;/center&gt;
 &lt;!-- alien drawing --&gt;
 &lt;p class=&quot;writing roboto&quot;&gt;
@@ -4554,7 +4807,7 @@ I chcesz wyskoczyć z niego w celu najwyższej wagi;&lt;br /&gt;
 
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h3 id=&quot;2018.11.02-Homoseksualizm/наб&quot; class=&quot;merriweather main-heading&quot;&gt;
- &lt;a href=&quot;#id&quot;&gt;2018.11.02 – наб&lt;/a&gt;
+ &lt;a href=&quot;#2018.11.02-Homoseksualizm/наб&quot;&gt;2018.11.02 – наб&lt;/a&gt;
 &lt;/h3&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto continued&quot;&gt;
 Widzę dwóch takich
@@ -4808,7 +5061,7 @@ jej się, bo…
 &lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;hejka-paragraph&quot;&gt;
 — Hejka! — Towarzyszka Lucynkowej niedoli odezwała się
 pierwsza, a z takim metaforycznym bananem, że niemożliwym
-było nieodebranie nieskończonych pokładów pozytywizmu​NOTE(1)
+było nieodebranie nieskończonych pokładów pozytywizmu​&lt;a href=&quot;#endnote-1&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;1&lt;/sup&gt;&lt;/a&gt;
 &lt;!-- Page 05/12 --&gt;
 emanującego z każdego poru jej skóry; Asia bezoporowo
 poddała się jego działaniu.
@@ -4855,7 +5108,7 @@ skroniowego neuroinhibitorami…”NOTE(3))
 &lt;/p&gt;
 &lt;p class=&quot;writing indented roboto continued&quot; id=&quot;asphalt-paragraph&quot;&gt;
 Asfalt pod stopami. Czerwcowe słońce grzeje, ale nie tak
-bardzo jak wyczuwalna szóstym zmysłem​NOTE(4) obecność Emilii (wyczuwalna
+bardzo jak wyczuwalna szóstym zmysłem​&lt;a href=&quot;#endnote-4&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;4&lt;/sup&gt;&lt;/a&gt; obecność Emilii (wyczuwalna
 większością innych zmysłów obecność lokalnego emola była
 pomijalna, lecz okazała się kluczowa w identyfikacji czasoprzestrzennej
 – ognisko częścioklasowe zwołane w celu celebracji zakończenia &lt;!-- 15.07.17 -&gt; --&gt;
@@ -4866,7 +5119,7 @@ mimo, że wiedziała przecież, jak ta scena się rozegra). Zostawiły
 już za sobą większość paskudnych pseudowioskowych „posiadłości”, &lt;!-- 17.07.17 -&gt; --&gt;
 i tylko zdezelowane &lt;span class=&quot;roboto-em&quot;&gt;Prawdziwe Wiejskie Domy™&lt;/span&gt; malowniczo
 straszyły ubiegłowiecznymi wykuszami zza świerków, na któryżto widok
-&lt;span class=&quot;roboto-em&quot;&gt;Павлов&lt;/span&gt;owym​NOTE(5) gestem sięgnęła po aparat, którego tam nie
+&lt;span class=&quot;roboto-em&quot;&gt;Павлов&lt;/span&gt;owym​&lt;a href=&quot;#endnote-5&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;5&lt;/sup&gt;&lt;/a&gt; gestem sięgnęła po aparat, którego tam nie
 było (yeah, grupa mało trzeźwych nastolatków + sprzęt
 warty parę(naście) kilozłotych to mniej więcej tak dobry pomysł
 jak najeżdżanie Rosji w lecie bez uprzedniego adekwatnego
@@ -4988,7 +5241,7 @@ gramach etanolu na kilogram to tylko wołać chór &lt;!-- swoją drogą taka je
 &lt;!-- Five lines taken up biscale drawing here. --&gt;
 &lt;!-- Five lines taken up biscale drawing here. --&gt;
 &lt;!-- Five lines taken up biscale drawing here. --&gt;
-Aleksandrowa​NOTE(6) i certyfikaty lepić. Wszystkie,
+Aleksandrowa​&lt;a href=&quot;#endnote-6&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;6&lt;/sup&gt;&lt;/a&gt; i certyfikaty lepić. Wszystkie,
 jednak, śmiechy, nawet te symptomatyczne
 w dziewiętnastym jeszcze wieku „histerii”,
 muszą się skończyć, więc, po osiągnięciu szczytu,
@@ -5008,7 +5261,7 @@ się wódą w wieku lat &lt;span class=&quot;math-font-normal roboto-unscale&quo
 &lt;/p&gt;
 &lt;p class=&quot;writing indented roboto continuing&quot; id=&quot;memory-paragraph&quot;&gt;
 — Za co? — Chociaż w sumie równie dobrze mogło było &lt;!-- 10.8.17 -&gt; --&gt;
-to być „Że co”, ale liczyła na pamięć natychmiastową​NOTE(7)
+to być „Że co”, ale liczyła na pamięć natychmiastową​&lt;a href=&quot;#endnote-7&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;7&lt;/sup&gt;&lt;/a&gt;
 żeby się nie powtarzać (nomen omen nie przeszłoby jej to przez gardło).
 &lt;/p&gt;
 &lt;p class=&quot;writing indented roboto continuing&quot;&gt;
@@ -5050,7 +5303,7 @@ Asia wzrusza ramionami i oddycha głęboko. Wspomina.
 Sewencja obrazów: Studniówka, wybory
 &lt;span class=&quot;roboto-em&quot;&gt;Jaśnie Oświeconego Z Bożego Nadania&lt;/span&gt; (bo i o tym
 aspekcie bycia władcą absolutnym nie należy zapominać, bo
-jest on szczególnie ważny do jej utrzymania​NOTE(9)) &lt;span class=&quot;roboto-em&quot;&gt;Władcy
+jest on szczególnie ważny do jej utrzymania​&lt;a href=&quot;#endnote-9&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;9&lt;/sup&gt;&lt;/a&gt;) &lt;span class=&quot;roboto-em&quot;&gt;Władcy
 Jedynego &lt;del&gt;Rzplitej Nam Drogiej Wielce&lt;/del&gt; Balu
 Wielce Pięknego (Z Małżonką)&lt;/span&gt; ze zdjęciem;
 taki sam szelmowski uśmiech, gdy
@@ -5059,7 +5312,7 @@ z werwą, i adekwatnie, bo inaugurował wystawę
 „jednego z największych talentów nowożytności”NOTE(10)
 (rozważania, której z nich trafiło sięlepiej, zostawiała
 &lt;!-- Page 12/12 --&gt;
-w.w. emolowi); oddanie do użytku jej praktyki​NOTE(11) psychologicznej;
+w.w. emolowi); oddanie do użytku jej praktyki​&lt;a href=&quot;#endnote-11&quot;&gt;&lt;sup class=&quot;math-font-normal&quot;&gt;11&lt;/sup&gt;&lt;/a&gt; psychologicznej;
 mikrowystawa fotograficzna z jej
 „odważnymi prezentacjami klasycznych zagadnień”NOTE(10),
 co w pseudomowie paradziennikarskiej

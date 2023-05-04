@@ -71,7 +71,7 @@ The Tonči Juričev-Grgin mandala generation algorithm can be used to, <em>drumr
 </p>
 <p class="indented continued">
 It uses a very simple process (see <a href="#algorithm">below</a>), which can be used in any
-[​[​__VA_ARGS__​]​]-dimensional space, so, as an example, the same-sized mandala,
+[​[​beta in NN ∖ {0}​]​]-dimensional space, so, as an example, the same-sized mandala,
 but in one more dimension (also with classical music atop it because it'd be unbearably bloody boring otherwise):<!--'-->
 </p>
 <div class="indented continuation">
@@ -84,19 +84,19 @@ but in one more dimension (also with classical music atop it because it'd be unb
   one need run the algorithm body many times, an acceptable amount I found was:
 </p>
 <p class="continuing">
- [​[​__VA_ARGS__​]​],
+ [​[​log(n_max) = |~log(prod_i size_i)~| + 1​]​],
 </p>
 <p class="continuation">
  (which still doesn't perfectly fill more complex corner setups), so for<!--'-->
- [​[​__VA_ARGS__​]​],
- which takes about [​[​__VA_ARGS__​]​] on my PC if I try to not cook it (and I generally do).
+ [​[​size = [900, 900, 900] => n_max = 10^10​]​],
+ which takes about [​[​7 1/2 h​]​] on my PC if I try to not cook it (and I generally do).
 </p>
 <p class="indented continued" id="code">
 A different question to be asked is
  <strong>"How does one</strong><!--"-->
  <span style="text-decoration: line-through;">laugh at the shitty code</span>
  <strong>play around with the code that generates these myself?"</strong>.<!--"-->
- Well, thanks to the wonders of the [​[​__VA_ARGS__​]​], you can! In most-to-least bad order:
+ Well, thanks to the wonders of the [​[​fr "Internet"​]​], you can! In most-to-least bad order:
 </p>
 <p class="indented continuing">
 <a href="//github.com/nabijaczleweli/mandalas" target="_blank">Here</a>'s an early version in C++,<!--'-->
@@ -136,46 +136,46 @@ I'm out of things to put here, because I'm not a cool person <em>en general</em>
 <strong>"But where's the <em>algorithm</em>?"</strong> – Here's the raw version: <!--'-->
 </p>
 <p class="indented">
-[​[​__VA_ARGS__​]​]
+[​[​sf "Mandala Generation - Ton" hat(sf "c") sf "i Juri" hat(sf "c") sf "ev-Grgin"​]​]
 </p>
 <p class="continued">
-[​[​__VA_ARGS__​]​]
+[​[​alpha in NN ∖ {0} - sf "colour space dimensionality (e.g. 3 for RGB, 4 for CMYK, 1 for LUMA)"​]​]
 </p>
 <p class="continuing">
-[​[​__VA_ARGS__​]​]
+[​[​c nn (: 3, +oo ) - sf "amount of corners in c-gonal mandala base"​]​]
 </p>
 <p class="continuing">
-[​[​__VA_ARGS__​]​]
+[​[​C - sf "set of point" - sf "corner points of c-gon mandala base"​]​]
 </p>
 <p class="continuation">
-[​[​__VA_ARGS__​]​]
+[​[​bar C = c​]​]
 </p>
 <p class="continued">
-[​[​__VA_ARGS__​]​]
+[​[​n in NN nn (: alpha + 2; +oo ) - sf "current point number"​]​]
 </p>
 <p class="continuation">
-[​[​__VA_ARGS__​]​]
+[​[​d = ra\nd((:0, c) nn NN) - sf "current chosen corner"​]​]
 </p>
 <p>
-[​[​__VA_ARGS__​]​]
+[​[​P_n = (C_d + P_(n-1)) / 2 => a = |C_d P_(n-1)| and b = a/2 = |C_d P_n| = |P_(n-1) P_n|​]​]
 </p>
 <p class="continued">
-[​[​__VA_ARGS__​]​]
+[​[​e_m = |P_n P_(n-m)|​]​]
 </p>
 <p class="continuation">
-[​[​__VA_ARGS__​]​]
+[​[​E = so\rt(map(f(x) = e_x, NN nn (: 1; alpha + 1 :)))​]​]
 </p>
 <p class="continued">
-[​[​__VA_ARGS__​]​]
+[​[​colour P_n = map(f(x) = E_x / E_alpha; E ∖ {E_alpha})​]​]
 </p>
 <p class="continuing">
-[​[​__VA_ARGS__​]​]
+[​[​or​]​]
 </p>
 <p class="continuing">
-[​[​__VA_ARGS__​]​]
+[​[​f = max E​]​]
 </p>
 <p class="continuation">
-[​[​__VA_ARGS__​]​]
+[​[​colour P_n = map(f(x) = x / f; E ∖ {f}) => bar(E ∖ {f}) = alpha​]​]
 </p>
 <p>
 (I'm not a real mathematician, so it's most likely not done properly.)
@@ -212,16 +212,16 @@ Since the output image format (PNG) and the video format (H.264) only support RG
  Some, however, like ROYGBP or, <em>ahem</em>, RPPDIBLCTGLLYAODBGB, have been made up by yours truly upon the following basis:
 </p>
 <p class="continued">
-[​[​__VA_ARGS__​]​]
+[​[​S - sf "set of 3-dimensional vectors" - sf "RGB samples of each colour in a space"​]​]
 </p>
 <p class="continuing">
-[​[​__VA_ARGS__​]​]
+[​[​bar S = alpha​]​]
 </p>
 <p class="continuation">
-[​[​__VA_ARGS__​]​]
+[​[​colour P_n - sf "as above"​]​]
 </p>
 <p>
-[​[​__VA_ARGS__​]​]
+[​[​AA c in {r,g,b} : C_(out_c) = (sum_(theta=1)^alpha colour P_(ntheta) S_(theta_c))/(sum_(theta=1)^alpha S_(theta_c))​]​]
 </p>
 <p class="indented continued">
 A full list of conversions and their implementations can be found at the
@@ -237,9 +237,9 @@ A full list of conversions and their implementations can be found at the
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 05.02.2023 20:39:59 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 04.05.2023 01:37:47 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/maths/mandalas.html.pp">src/maths/mandalas.html.pp</a>. 
- 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/984207">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
