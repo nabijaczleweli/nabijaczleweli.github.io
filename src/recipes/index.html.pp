@@ -27,9 +27,14 @@ BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
 #define NUM(...) <span class="roboto-unscale math-font-normal">__VA_ARGS__</span>
 #define REPLICATION(date, url) <a href=STR(httpsCOLON_SLASH_SLASHurl)>NUM(date)</a>
 
+#define HEADING_LINK(id)  <a class="hash-link" href=STR(HASH##id)>HASH</a>
+#define SUMMARY(hid, ...) <summary id=STR(hid) class="roboto-unscale" style="font-weight: bold;">HEADING_LINK(hid)__VA_ARGS__</summary>
+
+
 
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
+#include "../gen-epub-book/fonts.css"
 
 details {
 	margin-top: 1em;
@@ -59,7 +64,7 @@ MAIN_HEADING(My answer to the replication crisis)
 </p>
 
 <details open>
-	<summary class="merriweather roboto-unscale">Leek multi-layer cake</summary>
+	SUMMARY(leek-cake, Leek multi-layer cake)
 
 	<p class="continuing">
 		<a href="//youtu.be/2rNbXgnnyQg">Leek multi-layer cake is delicious and no skill</a>,
@@ -94,7 +99,7 @@ MAIN_HEADING(My answer to the replication crisis)
 </details>
 
 <details open>
-	<summary class="merriweather roboto-unscale">Corn freamed (fried steamed) rolls (buns), rose-shaped</summary>
+	SUMMARY(corn-freamed-buns, Corn freamed (fried steamed) rolls (buns), rose-shaped)
 
 	<p class="continuing">
 		<a href="//youtu.be/7tZEh6uzcOo">Cornmeal for rolls? Easy to make fluffy and soft</a>,
@@ -110,7 +115,7 @@ MAIN_HEADING(My answer to the replication crisis)
 		<li>NUM(200g) of flour – maybe my eggs are huge, maybe idk, but starting with NUM(250g) and likely adding slightly more to get to a reasonable "dough" consistency
 		    — instead of a paste, which doesn'<!--'-->t rise; the spec is to <em>maybe add water</em> which is insane to me —
 		    worked for me to avoid the REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris) incident again</li>
-		<li>flock, accrue, knead in bowl for NUM(5min), he sleeps covered for NUM(40min)</li>
+		<li>flock, accrue, knead in bowl for NUM(5min), he sleeps in the covered bowl for NUM(40min)</li>
 		<li>knead a bit on floured counter to de-gas, roll into cylinder, cut into NUM(~12) guys –
 		    there's a critical mass above which they won't re-rise(?), and NUM(9) left them too big
 		    (again, REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris)),
@@ -139,6 +144,7 @@ MAIN_HEADING(My answer to the replication crisis)
 		    you'<!--'-->re shooting for a well-developed brown crust on the ass</li>
 		<li>pour water NUM(⅓)<sup>rd</sup> way up – the guys? the pan? idk. – kill the heat, they steam until the water gets sucked off (NUM(~10min))</li>
 	</ol>
+
 	<p>
 		These came out just about perfect REPLICATION(2023-04-29, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c),
 		but the water level is finnicky, and pouring in more and turning the heat back on turns out badly for me
@@ -146,6 +152,50 @@ MAIN_HEADING(My answer to the replication crisis)
 		                  REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose)).
 		Maybe this is easier if you have a plastic pan the right size, but my biggest (NUM(Φ245)) is stainless (but the right size).
 		Operator error.
+	</p>
+</details>
+
+<details open>
+	SUMMARY(flower-rolls, Flower rolls (round steamed bread with an oil))
+
+	<p class="continuing">
+		<a href="//youtu.be/hpYrnQiGd6w">Homemade flower rolls are delicious and no skills, suitable for novice making</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-04-15, cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un),
+		           REPLICATION(2023-04-23, cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy):</p>
+	<ol class="continuation">
+		<li>NUM(500g) of flour,
+		    NUM(4g) of yeast,
+		    spoon of sugar,
+		    flock with NUM(300g) of NUM(40°) water,
+		    accrue,
+		    knead in bowl for NUM(5min),
+		    he sleeps in the covered bowl for NUM(40min)</li>
+		<li>knead a bit on floured counter to de-gas, roll into cylinder, cut at NUM(⅖)<sup>th</sup>s or like a NUM(⅓)<sup>rd</sup></li>
+		<li>both parts (small first, big goes around it):
+			<ol>
+				<li>flatten, roll out rectangularly –
+				    the major dimension will inform the output NUM(Φ), but it'<!--'-->s relatively forgiving,
+				    and you can shorten and obversely elongate segments as required</li>
+				<li>thoroughly brush with oil – it "had better be cooked"; olive and a smelly one are fine, blank kujawski sucks</li>
+				<li>stochastically dust with dry flour a bit –
+				    unclear what this achieves, the splotches achieved don'<!--'-->t form a coherent layer and are not enough to influence adhesion in any way</li>
+				<li>roll tightly into a cylinder, preserving the major dimension</li>
+				<li>make sure it's not stuck and won't easily stick to the counter</li>
+				<li>cut <em>most</em> of the way through every NUM(~3cm) – you wanna leave like two layers alone</li>
+				<li>push down stick A on an edge segment, then stick B on the next one, and squeeze them downward and together, thus exposing the internal edges</li>
+				<li>apply stick C similarly on the subsequent segment, and squeeze it downward and together with stick B, then free stick A</li>
+				<li>repeat through-out all the segments</li>
+				<li>assemble into a circle in situ in a papered steamer</li>
+			</ol>
+		</li>
+		<li>give him half a date – this is life advice</li>
+		<li>put the steamer on the pot, he sleeps for NUM(10min)</li>
+		<li>boil the water, then let rip for NUM(15min), kill the heat and leave alone for NUM(3min), extract</li>
+	</ol>
+
+	<p>
+		The title'<!--'-->s right: suitable for completely inept imbeciles like me. 0 failure 0 technique.
 	</p>
 </details>
 
