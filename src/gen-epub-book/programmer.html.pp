@@ -440,9 +440,9 @@ The included local files' packed names are the paths by which they've been inclu
 	HIGHLIT_CODE(string, /) replaced with HIGHLIT_CODE(string, -).
 Examples:
 <kbd><pre class="highlit-code numberise">
-CSPAN(string, simple-content.html) ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​CSPAN(punctuation, =>) CSPAN(string, simple-content_html)
-CSPAN(string, ../cover.jpg) ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​CSPAN(punctuation, =>) CSPAN(string, cover.jpg)
-CSPAN(string, .\../books/../covers/cover.jpg) ​CSPAN(punctuation, =>) CSPAN(string, books-covers-cover.jpg)
+CSPAN(string, simple-content.html) ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​(U+200B)CSPAN(punctuation, =>) CSPAN(string, simple-content_html)
+CSPAN(string, ../cover.jpg) ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​(U+200B)CSPAN(punctuation, =>) CSPAN(string, cover.jpg)
+CSPAN(string, .\../books/../covers/cover.jpg) ​(U+200B)CSPAN(punctuation, =>) CSPAN(string, books-covers-cover.jpg)
 </pre></kbd>
 <p></p>
 </div>
@@ -534,10 +534,10 @@ If <code>geb/special/book.epupp</code>
 the content inside would be laid out as follows:
 <kbd><pre class="highlit-code numberise">
 CSPAN(string, book.epub)
-CSPAN(punctuation, ├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​CSPAN(comment, # From geb/special/)
+CSPAN(punctuation, ├──) CSPAN(string, intro.html) ​ ​ ​ ​ ​(U+200B)CSPAN(comment, # From geb/special/)
 CSPAN(punctuation, ├──) CSPAN(string, previews)
-CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, main.html) ​ ​CSPAN(comment, # From previews/generated/out/)
-CSPAN(punctuation, └──) CSPAN(string, ending.html) ​ ​ ​ ​CSPAN(comment, # From rendered/output/)
+CSPAN(punctuation, │ ​ ​ ​└──) CSPAN(string, main.html) ​ ​(U+200B)CSPAN(comment, # From previews/generated/out/)
+CSPAN(punctuation, └──) CSPAN(string, ending.html) ​ ​ ​ ​(U+200B)CSPAN(comment, # From rendered/output/)
 </pre></kbd>
 <p></p>
 </div>

@@ -22,7 +22,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 #else
 
-#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+#define MAIN_HEADING(id, ...) <a href=STR(HASH(FORCED_SPACER)id)>__VA_ARGS__</a>
 
 #endif
 

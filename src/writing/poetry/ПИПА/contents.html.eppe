@@ -22,7 +22,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 #else
 
-#define CONTENT_BIFURCATED(id, file_root) href=STR(HASH​FORCED_SPACER​id) class="content-link"
+#define CONTENT_BIFURCATED(id, file_root) href=STR(HASH(FORCED_SPACER)id) class="content-link"
 
 #endif
 

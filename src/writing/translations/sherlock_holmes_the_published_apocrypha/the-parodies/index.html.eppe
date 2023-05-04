@@ -26,7 +26,7 @@ work. If not, see <httpsCOLON_SLASH_SLASHcreativecommons.org/licenses/by/4.0/>. 
 
 #else
 
-#define MAIN_HEADING(id, ...) <a href=STR(HASH​FORCED_SPACER​id)>__VA_ARGS__</a>
+#define MAIN_HEADING(id, ...) <a href=STR(HASH(FORCED_SPACER)id)>__VA_ARGS__</a>
 
 #endif
 
@@ -72,7 +72,7 @@ wolno ci!"<!--"-->)
 </p>
 <p class="writing roboto indented continuing">
 EM(Ale on to zrobił. W MATH(1893) w grudniowym numerze) SC(STRAND)EM(u i)              FORCED_NEWLINE
-McC​FORCED_SPACER​SC(lure's<!--'-->) EM(wrzucił Sherlocka Holmesa do "okropnego<!--"-->  FORCED_NEWLINE
+McC(FORCED_SPACER)SC(lure's<!--'-->) EM(wrzucił Sherlocka Holmesa do "okropnego<!--"-->  FORCED_NEWLINE
 kotła"<!--"--> wodospadu Reichenbach i zajął się innymi rzeczami.)
 </p>
 <p class="writing roboto indented continuing">
