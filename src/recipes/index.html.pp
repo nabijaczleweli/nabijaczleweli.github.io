@@ -40,6 +40,11 @@ BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
 details {
 	margin-top: 1em;
 }
+
+
+ol li ol {
+  list-style-type: lower-greek;  /* can't seem to get a functional 6.1., so this will have to do */
+}
 </style>
 
 <script>
@@ -143,7 +148,7 @@ MAIN_HEADING(My answer to the replication crisis)
 		    NUM(13) and NUM(12) worked very well, and she does NUM(12)</li>
 		<li>for each guy:
 			<ol>
-				<li>spin spin him flat – thus averaging the crust that'<!--'-->s inevitably developed</li>
+				<li>spin him flat – thus averaging the crust that'<!--'-->s inevitably developed</li>
 				<li>cylindrise, flatten, roll out long –
 				    you want a high aspect ratio and relatively thin;
 				    if he sticks to the counter then unstick him, flour the counter, and zoom him around so he'<!--'-->s free for the next step</li>
@@ -174,6 +179,27 @@ MAIN_HEADING(My answer to the replication crisis)
 		Maybe this is easier if you have a plastic pan the right size, but my biggest (NUM(Φ245)) is stainless (but the right size).
 		Operator error.
 	</p>
+</details>
+
+<details open>
+	SUMMARY(wężymorda, Gratin de salsifis)
+
+	<p class="continuing">
+		<a href="//www.swissmilk.ch/fr/recettes-idees/recettes/LM200711_21/gratin-de-salsifis/">Gratin de salsifis</a>,
+		by swissmilk,
+		replicated REPLICATION(2023-04-26, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat):</p>
+	<ol class="continuation">
+		<li>water, salt, and lemon juice in pot</li>
+		<li>peel NUM(1kg) of salsifis under the tap, trim to NUM(15cm)ish bits, directly into pot</li>
+		<li>boil NUM(15-20min) – until relatively not super hard</li>
+		<li>drain and replace with cold water</li>
+		<li>butter a baking dish – an oval NUM(18×27cm) one was a bit small for a NUM(500g)-scaled batch and it got filled instead of getting two layers</li>
+		<li>lay out the salsifi, wrap the top-most layer in ham</li>
+		<li>NUM(300ml) of "half-cream", pepper, half a small spoon each of salt and paprika are poured over and down –
+		    I used 18% and had to push it down a bit, maybe wants 12% or something</li>
+		<li>grate gruyère and dump some cut hazelnuts on top – smashed works too</li>
+		<li>bake at NUM(220°) for NUM(20-25min) – ideally you wanna get colour on the ham, but not burn the cheese</li>
+	</ol>
 </details>
 
 <details open>
