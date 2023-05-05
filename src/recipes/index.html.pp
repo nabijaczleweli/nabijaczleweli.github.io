@@ -25,7 +25,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
 
 #define NUM(...) <span class="roboto-unscale math-font-normal">__VA_ARGS__</span>
-#define REPLICATION(date, url) <a href=STR(httpsCOLON_SLASH_SLASHurl)>NUM(date)</a>
+#define REPLICATION(date, url) <a href=STR(httpsCOLON_SLASH_SLASH##url)>NUM(date)</a>
 #define PREPLICATION(date)     NUM(date)
 
 #define HEADING_LINK(id)  <a class="hash-link" href=STR(HASH##id)>HASH</a>
@@ -68,7 +68,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	SUMMARY(leek-cake, Leek multi-layer cake)
 
 	<p class="continuing">
-		<a href="//youtu.be/2rNbXgnnyQg">Leek multi-layer cake is delicious and no skill</a>,
+		<a href="//youtu.be/2rNbXgnnyQg">Leek multi-layer cake is delicious and no skill
+		                                 (<span lang="zh-CN"><!--"-->韭菜多层饼好吃无技巧，层层有饼层层有馅，咸香味美满嘴香！【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
 		replicated REPLICATION(2023-05-03, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye):</p>
 	<ol class="continuing">
@@ -106,11 +107,11 @@ MAIN_HEADING(My answer to the replication crisis)
 	<p class="continuing">
 		Top-most recipe from
 		<a href="//www.ugotowanepozamiatane.pl/top-5-potraw-topinambur/">Top 6 najlepszych przepisów na topinambur</a>,
-		by Ugotowane, Pozamiatane.
+		by Ugotowane, Pozamiatane,
 		replicated PREPLICATION(2023-05-01):</p>
 	<ol class="continuation">
 		<li>NUM(1kg) of topinambur, NUM(1l) of milk, boil until "soft", and normal potato heuristics work –
-		    I had closer to NUM(700g) so everything'<!--'-->s scaled appropriately</li>
+		    I had closer to NUM(700g) so everything'<!--'-->s scaled appropriately, with a small turmeric to generate the piss colour</li>
 		<li>drain of milk, put in NUM(1l) of boullion, NUM(100ml) of amaretto, a gloop of maple syrup, big pinch each of nutmeg, salt, and pepper</li>
 		<li>NUM(500ml) of NUM(36%) cream – this would be unbearably fat. for the scaled amount I used a NUM(400g) bucket of NUM(12%) and that worked well</li>
 		<li>blend</li>
@@ -121,7 +122,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	SUMMARY(corn-freamed-buns, Corn freamed (fried steamed) rolls (buns), rose-shaped)
 
 	<p class="continuing">
-		<a href="//youtu.be/7tZEh6uzcOo">Cornmeal for rolls? Easy to make fluffy and soft</a>,
+		<a href="//youtu.be/7tZEh6uzcOo">Cornmeal for rolls? Easy to make fluffy and soft
+		                                 (<span lang="zh-CN"><!--"-->玉米面不蒸馒头做花卷？蓬松柔软做法简单，全程无难度【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
 		replicated REPLICATION(2023-04-29, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c),
 		           REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris),
@@ -178,7 +180,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	SUMMARY(flower-rolls, Flower rolls (round steamed bread with an oil))
 
 	<p class="continuing">
-		<a href="//youtu.be/hpYrnQiGd6w">Homemade flower rolls are delicious and no skills, suitable for novice making</a>,
+		<a href="//youtu.be/hpYrnQiGd6w">Homemade flower rolls are delicious and no skills, suitable for novice making
+		                                 (<span lang="zh-CN"><!--"-->家常花卷好吃无技巧，松软白亮方法简单，适合新手制作【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
 		replicated REPLICATION(2023-04-15, cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un),
 		           REPLICATION(2023-04-23, cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy):</p>
