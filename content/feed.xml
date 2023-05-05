@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-05-05T13:40:58</updated>
+  <updated>2023-05-05T20:09:24</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -3766,6 +3766,9 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 details {
  margin-top: 1em;
 }
+ol li ol {
+  list-style-type: lower-greek; /* can't seem to get a functional 6.1., so this will have to do */
+}
 &lt;/style&gt;
 &lt;script&gt;
 window.addEventListener(&quot;load&quot;, function() {
@@ -3859,7 +3862,7 @@ window.addEventListener(&quot;load&quot;, function() {
       &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;13&lt;/span&gt; and &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;12&lt;/span&gt; worked very well, and she does &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;12&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;for each guy:
    &lt;ol&gt;
-    &lt;li&gt;spin spin him flat – thus averaging the crust that'&lt;!--'--&gt;s inevitably developed&lt;/li&gt;
+    &lt;li&gt;spin him flat – thus averaging the crust that'&lt;!--'--&gt;s inevitably developed&lt;/li&gt;
     &lt;li&gt;cylindrise, flatten, roll out long –
         you want a high aspect ratio and relatively thin;
         if he sticks to the counter then unstick him, flour the counter, and zoom him around so he'&lt;!--'--&gt;s free for the next step&lt;/li&gt;
@@ -3889,6 +3892,25 @@ window.addEventListener(&quot;load&quot;, function() {
   Maybe this is easier if you have a plastic pan the right size, but my biggest (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;Φ245&lt;/span&gt;) is stainless (but the right size).
   Operator error.
  &lt;/p&gt;
+&lt;/details&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;wężymorda&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#wężymorda&quot;&gt;#&lt;/a&gt;Gratin de salsifis&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//www.swissmilk.ch/fr/recettes-idees/recettes/LM200711_21/gratin-de-salsifis/&quot;&gt;Gratin de salsifis&lt;/a&gt;,
+  by swissmilk,
+  replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-04-26&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;water, salt, and lemon juice in pot&lt;/li&gt;
+  &lt;li&gt;peel &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1kg&lt;/span&gt; of salsifis under the tap, trim to &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15cm&lt;/span&gt;ish bits, directly into pot&lt;/li&gt;
+  &lt;li&gt;boil &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15-20min&lt;/span&gt; – until relatively not super hard&lt;/li&gt;
+  &lt;li&gt;drain and replace with cold water&lt;/li&gt;
+  &lt;li&gt;butter a baking dish – an oval &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;18×27cm&lt;/span&gt; one was a bit small for a &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt;-scaled batch and it got filled instead of getting two layers&lt;/li&gt;
+  &lt;li&gt;lay out the salsifi, wrap the top-most layer in ham&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;300ml&lt;/span&gt; of &quot;half-cream&quot;, pepper, half a small spoon each of salt and paprika are poured over and down –
+      I used 18% and had to push it down a bit, maybe wants 12% or something&lt;/li&gt;
+  &lt;li&gt;grate gruyère and dump some cut hazelnuts on top – smashed works too&lt;/li&gt;
+  &lt;li&gt;bake at &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;220°&lt;/span&gt; for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20-25min&lt;/span&gt; – ideally you wanna get colour on the ham, but not burn the cheese&lt;/li&gt;
+ &lt;/ol&gt;
 &lt;/details&gt;
 &lt;details open&gt;
  &lt;summary id=&quot;flower-rolls&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#flower-rolls&quot;&gt;#&lt;/a&gt;Flower rolls (round steamed bread with an oil)&lt;/summary&gt;
