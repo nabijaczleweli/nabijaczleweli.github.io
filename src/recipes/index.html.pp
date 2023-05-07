@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
+<!-- RSS_PUB_DATE: "Sun, 7 May 2023 21:36:47 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -65,9 +65,65 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-03, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye)</a>.
+	Latest replication: REPLICATION(2023-05-07, cohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well)</a>.
 	<button id="togglupa">Toggle all</button>
 </p>
+
+<details open>
+	SUMMARY(buns, Buns)
+
+	<p class="continuing">
+		<a href="//youtu.be/tghGkiw8feU">From snacks to big sauced meat buns, the skin is thin and the stuffing is big and soft
+		                                 (<span lang="zh-CN"><!--"-->从小吃到大的酱肉包子，皮薄馅大又暄软，不塌陷不回缩【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-05-07, cohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well):</p>
+	<ol class="continuing">
+		<li>NUM(300g) of like NUM(40°) water, NUM(4g) of yeast, NUM(5g) of sugar, stir to suspend</li>
+		<li>flock in NUM(500g) of flour</li>
+		<li>NUM(10g) of lard – I used hog fat from <a href="#leek-cake">last time</a>, worked very well</li>
+		<li>knead, he sleeps sleep in the bowl until he doubles in size –
+		    I was gonna try the usual NUM(40min), but I made and cooled the gloop in this time for NUM(100min); still worked well</li>
+		<li>knead to de-gas, roll into cylinder, divide NUM(16) ways</li>
+		<li>for each guy: spin him flat, ballify him, hide under plastic – or some magical plastic that doesn'<!--'-->t stick to it, because the one I had did</li>
+		<li>for each guy: flatten directly, roll out radially (somewhere in the vicinity of upward of NUM(2mm)) leaving a thicker area for the ass in the middle, re-hide –
+		    I misunderstood the video, and did this individually before packing each bun;
+		    worked fine tho;
+		    it really does help to have something that'<!--'-->s mostly round</li>
+		<li>for each guy: get him on your off-hand, center over the kuckles, NUM(3-4) spoons of gloop and squish it, close it, spin around to enforce the ass,
+		    deposit on paper in basket –
+		    this may've been because I've never shut up a bun before so I didn'<!--'-->t really know how I usually liked,
+		    or that I need mechanical assitance to bend my hand that way, or w/e, but I got in NUM(2-3) spoons at most; operator error</li>
+		<li>they sleep there covered for NUM(10min) –
+		    they only grow a bit sideways while sleeping but much more when steaming; I knew this and still put them too close together</li>
+		<li>boil the water, let rip for NUM(15min), kill the heat and leave alone for NUM(3min), extract</li>
+	</ol>
+	<p class="continuing">with a spec gloop of</p>
+	<ol class="continuation">
+		<li>NUM(two)(?) handfuls of pokchois, blanched in water with olive oil for NUM(1min), dumped in ice water, squeezed dry, shredded –
+		    idk how I'<!--'-->d get pokchois, so I used what came out to NUM(473g) of kapusta pekińska ("napa cabbage" apparently), and I had lower cook volume so NUM(2min),
+		    and that behaved like hers did</li>
+		<li>"a few washed shiitakes", thick cuboidsed, same cooking –
+		    looks like NUM(7) big ones; all the shrooms I had on hand was NUM(30g) of dried shiitakes, and those, re-wetted, worked fine in here,
+		    compensated with more leeks and that worked</li>
+		<li>big tall pan, considerable volume of oil, a "dozen peppercorns", NUM(1) star anise pod, fried until the pepper changes colour, plants removed –
+		    my pepper does not look like hers, unclear to me what I'<!--'-->d call what she put in there</li>
+		<li>chopped ginger – similar quantity to <a href="#leek-cake">last time</a> was a tad small –
+		    and all but half a handful of two medium-but-all-white-bit-leeks(?), halved length-wise and shredded, until they change colour</li>
+		<li>minced hog (but not too fine), fried until mostly-cooked –
+		    NUM(800g) was about right proportionally,
+		    but seemed leaner or drier than what she had, so compensated with remainder of the hog fat from <a href="#leek-cake">last time</a>,
+		    and the commercial stuff I got was in extrusions and pre-cutting them to like NUM(1.5cm) worked to get a similar granulation to what she has</li>
+		<li>pepper, "bean paste" (miso?), soy sus, oyster sus, salt, "chicken essence" (bit of a boullion cube?), fry to fully cook and disperse the colour –
+		    one and a most of a NUM(15g) miso packet was too little for this much schmeat; fish sus worked well I think; half a "strong" boullion cube</li>
+		<li>the shiitakes, keep frying for NUM(1min), extract, cool</li>
+		<li>the blanched pokchois, rest of the leek, mix</li>
+	</ol>
+
+	<p>
+		Quite easy (sans the wrapping, but the first pieróg you wrapped also looked like ass and now you can do them without looking, so);
+		the lard in the dough is magic.
+	</p>
+</details>
 
 <details open>
 	SUMMARY(leek-cake, Leek multi-layer cake)
@@ -193,8 +249,8 @@ MAIN_HEADING(My answer to the replication crisis)
 		<li>peel NUM(1kg) of salsifis under the tap, trim to NUM(15cm)ish bits, directly into pot</li>
 		<li>boil NUM(15-20min) – until relatively not super hard</li>
 		<li>drain and replace with cold water</li>
-		<li>butter a baking dish – an oval NUM(18×27cm) one was a bit small for a NUM(500g)-scaled batch and it got filled instead of getting two layers</li>
-		<li>lay out the salsifi, wrap the top-most layer in ham</li>
+		<li>butter a baking dish – an oval NUM(130×185) one was a bit small for a NUM(500g)-scaled batch and it got filled instead of getting two layers</li>
+		<li>lay out the salsifis, wrap the top-most layer in ham</li>
 		<li>NUM(300ml) of "half-cream", pepper, half a small spoon each of salt and paprika are poured over and down –
 		    I used 18% and had to push it down a bit, maybe wants 12% or something</li>
 		<li>grate gruyère and dump some cut hazelnuts on top – smashed works too</li>
