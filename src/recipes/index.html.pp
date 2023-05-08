@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Sun, 7 May 2023 21:36:47 +0200" -->
+<!-- RSS_PUB_DATE: "Mon, 08 May 2023 16:19:37 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -65,9 +65,49 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-07, cohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well)</a>.
+	Latest replication: REPLICATION(2023-05-08, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one)</a>.
 	<button id="togglupa">Toggle all</button>
 </p>
+
+<details open>
+	SUMMARY(onion-pancake, Green onion pancake)
+
+	<p class="continuing">
+		<a href="//youtu.be/i8fGjFvwNN0?t=886">How to make Haijuan Gourmet'<!--'-->s big white steamed buns with bright surface?
+		                                       (<span lang="zh-CN"><!--"-->【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】<!--"--></span>)</a>,
+		at 14:46,
+		by Haijuan Food,
+		replicated REPLICATION(2023-05-08, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one):</p>
+	<ol class="continuation">
+		<li>"small bowl" of flour – my similarly-profiled and probably-similarly-sized bowl came out to NUM(488g)</li>
+		<li>twice that many bolws of water – NUM(1470g)</li>
+		<li>salt, NUM(3) eggs</li>
+		<li>handful of a green onion – came out to NUM(~50g) of szczypiorek</li>
+		<li>whisk</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>brush oil on a hot pan</li>
+				<li>some mixture, roll to spread</li>
+				<li>when it sets a bit (changes colour?), drizzle oil</li>
+				<li>when it gets a bubble in the middle, flip</li>
+				<li>when it gets a bubble in the middle, roll around</li>
+				<li>roll around again within the minute</li>
+				<li>flip after just a little fried</li>
+				<li>extract after NUM(10s)</li>
+			</ol>
+		</li>
+	</ol>
+
+	<p>
+		Unclear what the hell happened, but she appears to be doing these on a well-maintained casting; it turned out all my normal-sized plastic pans are apparently ass.
+		Similarly, it appeared impossible to <em>not</em> get something much thicker than what she got,
+		with reduced volumes just yielding smaller pancakes of a constant depth.
+		Except for like three, none of them behaved at all.
+		The surface didn'<!--'-->t really change colour to yellower in the same way that hers did;
+		it did get a bubble in the middle, but it was only sufficiently stable to flip when either
+		(a) never because it burned on the ass pan, or (b) it was already quite fried, and hers were still white at this time.
+	</p>
+</details>
 
 <details open>
 	SUMMARY(buns, Buns)
@@ -99,7 +139,7 @@ MAIN_HEADING(My answer to the replication crisis)
 	</ol>
 	<p class="continuing">with a spec gloop of</p>
 	<ol class="continuation">
-		<li>NUM(two)(?) handfuls of pokchois, blanched in water with olive oil for NUM(1min), dumped in ice water, squeezed dry, shredded –
+		<li>NUM(2)(?) handfuls of pokchois, blanched in water with olive oil for NUM(1min), dumped in ice water, squeezed dry, shredded –
 		    idk how I'<!--'-->d get pokchois, so I used what came out to NUM(473g) of kapusta pekińska ("napa cabbage" apparently), and I had lower cook volume so NUM(2min),
 		    and that behaved like hers did</li>
 		<li>"a few washed shiitakes", thick cuboidsed, same cooking –
