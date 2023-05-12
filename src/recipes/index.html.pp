@@ -68,9 +68,50 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1483976-okay-this-shit-bomb)</a>.
+	Latest replication: REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus)</a>.
 	<button id="togglupa">Toggle all</button>
 </p>
+
+<details open>
+	SUMMARY(butter-bread, Butter bread)
+
+	<p class="continuing">
+		<a href="//youtu.be/i8fGjFvwNN0?t=441">How to make Haijuan Gourmet'<!--'-->s big white steamed buns with bright surface?
+		                                       (<span lang="zh-CN"><!--"-->【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】<!--"--></span>)</a>,
+		at 7:21,
+		by Haijuan Food,
+		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus):</p>
+	<ol class="continuation">
+		<li>NUM(50g) egg, NUM(260g) of water, NUM(100g) of milk, NUM(20g) of sugar, NUM(4g) of salt, NUM(5g) of yeast, NUM(50g) of corn oil, whisk
+		    – olive oil works fine; she doesn't say "warm water" so I used normal and it didn't really rise that well, so</li>
+		<li>whisk in NUM(650g) of flour – again, I needed a few hands more; she gets a floculent out of the whisking which is very much not what I got; idk</li>
+		<li>knead – "a little longer" is once again sensible</li>
+		<li>he sleeps for NUM(40min)</li>
+		<li>knead to de-gas, halve, cylindrise both, cut each nine-wise, ballise each</li>
+		<li>lay out in three rows, deploy a gloop of clarified butter on two – for lack of clarified, normal worked fine</li>
+		<li>flatten each guy directly</li>
+		<li>stack column-wise, unbuttered on buttered on buttered</li>
+		<li>they sleep covered for NUM(5min)</li>
+		<li>for each stack:
+			<ol class="continuing">
+				<li>flatten directly, flip, flatten directly, &c.</li>
+				<li>fold a point on the perimeter to the middle</li>
+				<li>repeat NUM(7) times NUM(45°) apart</li>
+				<li>hide weld-side down</li>
+			</ol>
+		</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>flatten directly</li>
+				<li>deploy weld-side down on hot buttered leccy pan</li>
+				<li>flatten the edge directly</li>
+				<li>brush butter on top – this step I forgor 💀 but then my pan was quite buttered</li>
+				<li>cover for NUM(1min) – I needed like NUM(1:20) to get even close to the displayed browning level</li>
+				<li>flip, let rip for another NUM(2min) – as above; "when both sides are golden brown, it can be out of the pan"</li>
+			</ol>
+		</li>
+	</ol>
+</details>
 
 <details open>
 	SUMMARY(hushi-confexion, Hushi confexion)
@@ -83,7 +124,7 @@ MAIN_HEADING(My answer to the replication crisis)
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(2g) of baking powder, NUM(1g) of baking soda, NUM(5g) of sugar, NUM(50g) egg, NUM(20g) of safflower oil, flock</li>
 		<li>flock in NUM(300g) of like NUM(40°) water</li>
-		<li>knead – "needs a little more kneading" is right, and it needs <em>much</em> more thanks to the oil</li>
+		<li>knead – "needs a little more kneading" is right, needs <em>much</em> more due to the oil</li>
 		<li>he sleeps for NUM(30min)</li>
 		<li>knead to de-gas, roll cylindrically, cut six-wise, spin each into ball, hide</li>
 		<li>NUM(180g) of flour, NUM(150g) of sesame oil, NUM(150g) of sugar, stir</li>
