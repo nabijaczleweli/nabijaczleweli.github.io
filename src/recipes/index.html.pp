@@ -45,6 +45,9 @@ details {
 ol li ol {
   list-style-type: lower-greek;  /* can't seem to get a functional 6.1., so this will have to do */
 }
+ol li ol li ol {
+  list-style-type: gujarati;
+}
 </style>
 
 <script>
@@ -65,9 +68,69 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-08, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one)</a>.
+	Latest replication: REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1483976-okay-this-shit-bomb)</a>.
 	<button id="togglupa">Toggle all</button>
 </p>
+
+<details open>
+	SUMMARY(hushi-confexion, Hushi confexion)
+
+	<p class="continuing">
+		<a href="//youtu.be/yW85JqGvy7M">Chinese rural specialty delicacy Hushi sugar baker
+		                                 (<span lang="zh-CN"><!--"-->中国农村特色美食呼市方糖焙子，从和面到制作油酥很详细，香甜可口还柔软【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1483976-okay-this-shit-bomb):</p>
+	<ol class="continuation">
+		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(2g) of baking powder, NUM(1g) of baking soda, NUM(5g) of sugar, NUM(50g) egg, NUM(20g) of safflower oil, flock</li>
+		<li>flock in NUM(300g) of like NUM(40°) water</li>
+		<li>knead – "needs a little more kneading" is right, and it needs <em>much</em> more thanks to the oil</li>
+		<li>he sleeps for NUM(30min)</li>
+		<li>knead to de-gas, roll cylindrically, cut six-wise, spin each into ball, hide</li>
+		<li>NUM(180g) of flour, NUM(150g) of sesame oil, NUM(150g) of sugar, stir</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>pull into hand-sized hemisphere</li>
+				<li>NUM(2-3) spoons of gloop</li>
+				<li>close like a bun with a flat top</li>
+				<li>spin on counter, weld-side down, to form the ass thereon</li>
+				<li>hide</li>
+			</ol>
+		</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>pat sides-on to rectangularise</li>
+				<li>roll out long, mostly save the very ends</li>
+				<li>correct for wide spots</li>
+				<li>flip</li>
+				<li>define folding as
+					<ol class="continuing">
+						<li>fold top edge to bottom third, press lightly</li>
+						<li>roll the weld and the uncovered third</li>
+						<li>fold the bottom edge to the new top, press strongly</li>
+						<li>quarter-turn</li>
+					</ol>
+				</li>
+				<li>folding</li>
+				<li>roll out long, mostly save the very ends</li>
+				<li>folding</li>
+				<li>roll out long, mostly save the very ends</li>
+				<li>folding</li>
+				<li>flip, roll rectangularly</li>
+				<li>hide on tray</li>
+			</ol>
+			– resist the temptation of doing it <em>super</em> thin, because it takes it very well, but I think it affected the rise a bit
+		</li>
+		<li>brush all with oil, they sleep covered for NUM(20min)</li>
+		<li>sprinkle with sesame and sugar</li>
+		<li>bake at NUM(190°) for NUM(20min)</li>
+	</ol>
+
+	<p>
+		Again, for me the recipe suffers from her flour having, oddly, since she lives in a hotter wetter climate, much more flour per flour
+		(I had three hands and three gloops of flour more to get the same consistency on both as she did);
+		conversely, her sugar is absolutely sodden.
+	</p>
+</details>
 
 <details open>
 	SUMMARY(onion-pancake, Green onion pancake)
