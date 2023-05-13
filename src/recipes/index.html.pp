@@ -30,6 +30,17 @@ BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
 
 #define HEADING_LINK(id)  <a class="hash-link" href=STR(HASH##id)>HASH</a>
 #define SUMMARY(hid, ...) <summary id=STR(hid) class="roboto-unscale" style="font-weight: bold;">HEADING_LINK(hid)__VA_ARGS__</summary>
+#define IMAGUS(i1, o1, i2, o2)                                                                                                       \
+  <center class="grid-by-each continued">                                                                             FORCED_NEWLINE \
+     <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a><!-- FORCED_NEWLINE \
+  --><a href=STR(httpsCOLON_SLASH_SLASH##o2)><img class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i2) /></a>     FORCED_NEWLINE \
+  </center>
+#define ONE_IMAGUS(i1, o1)                                                                                        \
+  <center class="grid-by-each continued">                                                                         \
+     <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a> \
+  </center>
+#define NO_IMAGUS() \
+  <center class="grid-by-each continued"></center>
 
 
 
@@ -41,6 +52,10 @@ details {
 	margin-top: 1em;
 }
 
+center {
+	margin-top: 2em;
+}
+
 
 ol li ol {
   list-style-type: lower-greek;  /* can't seem to get a functional 6.1., so this will have to do */
@@ -48,16 +63,29 @@ ol li ol {
 ol li ol li ol {
   list-style-type: gujarati;
 }
+
+
+.grid-by-each {  /* derived from 009-XEROX-SIGMA-9-balls */
+	width: 100%;
+	line-height: 0;
+}
+
+.grid-by-each > * {
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+}
 </style>
 
 <script>
 window.addEventListener("load", function() {
-	var all = Array.from(document.getElementsByTagName("details"));
-	var cur = true;
-	document.getElementById("togglupa").addEventListener("click", function() {
-		cur = !cur;
-		all.forEach(function(el) {
-			el.open = cur;
+	Array.from(document.getElementsByTagName("button")).forEach(function(butt) {
+		var all = Array.from(document.getElementsByTagName(butt.attributes["toggle-tag"].value));
+		var cur = true;
+		butt.addEventListener("click", function() {
+			cur = !cur;
+			all.forEach(
+				butt.attributes["toggle-tag"].value == "details" ? function(el) { el.open = cur; } : function(el) { el.hidden = !cur; });
 		});
 	});
 });
@@ -69,9 +97,13 @@ MAIN_HEADING(My answer to the replication crisis)
 
 <p>
 	Latest replication: REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus)</a>.
-	<button id="togglupa">Toggle all</button>
+	<button toggle-tag="details">Toggle all</button>
+	<button toggle-tag="center" >Toggle images</button>
 </p>
 
+
+IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/1683924925110.JPEG, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus,
+       staging.cohostcdn.org/attachment/6401196b-c17e-478d-9249-9593555e5531/DSC_2615a.JPG,      cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus)
 <details open>
 	SUMMARY(butter-bread, Butter bread)
 
@@ -113,6 +145,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</ol>
 </details>
 
+IMAGUS(staging.cohostcdn.org/attachment/04557df5-353c-4124-b10c-85973ccb57d0/DSC_2606.JPG,  cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus,
+       staging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG, cohost.org/nabijaczleweli/post/1486924-pog-moment)
 <details open>
 	SUMMARY(hushi-confexion, Hushi confexion)
 
@@ -120,7 +154,7 @@ MAIN_HEADING(My answer to the replication crisis)
 		<a href="//youtu.be/yW85JqGvy7M">Chinese rural specialty delicacy Hushi sugar baker
 		                                 (<span lang="zh-CN"><!--"-->中国农村特色美食呼市方糖焙子，从和面到制作油酥很详细，香甜可口还柔软【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1483976-okay-this-shit-bomb):</p>
+		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1486924-pog-moment):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(2g) of baking powder, NUM(1g) of baking soda, NUM(5g) of sugar, NUM(50g) egg, NUM(20g) of safflower oil, flock</li>
 		<li>flock in NUM(300g) of like NUM(40°) water</li>
@@ -173,6 +207,7 @@ MAIN_HEADING(My answer to the replication crisis)
 	</p>
 </details>
 
+ONE_IMAGUS(staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d/DSC_2596a.JPG, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one)
 <details open>
 	SUMMARY(onion-pancake, Green onion pancake)
 
@@ -213,6 +248,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</p>
 </details>
 
+IMAGUS(staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC_5798.JPG, cohost.org/nabijaczleweli/post/1461465-okay-thats-some-pret,
+       staging.cohostcdn.org/attachment/257ba15e-667f-44d0-badd-72b305e2f51d/DSC_5806.JPG, cohost.org/nabijaczleweli/post/1461581-dry-heat-cels-seethi)
 <details open>
 	SUMMARY(buns, Buns)
 
@@ -269,6 +306,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</p>
 </details>
 
+IMAGUS(staging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC_5775.JPG, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye,
+       staging.cohostcdn.org/attachment/660e5669-4349-4236-907a-dcec6f5c8003/DSC_5778.JPG, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye)
 <details open>
 	SUMMARY(leek-cake, Leek multi-layer cake)
 
@@ -306,6 +345,7 @@ MAIN_HEADING(My answer to the replication crisis)
 	</ol>
 </details>
 
+NO_IMAGUS()
 <details open>
 	SUMMARY(topinambur-cream-soup, Topinambur cream soup)
 
@@ -323,6 +363,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</ol>
 </details>
 
+IMAGUS(staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC_2584.JPG, cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose,
+       staging.cohostcdn.org/attachment/4cac1ee0-9abc-447d-ad26-bf841e4f6a2a/DSC_2571.JPG, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c)
 <details open>
 	SUMMARY(corn-freamed-buns, Corn freamed (fried steamed) rolls (buns), rose-shaped)
 
@@ -381,6 +423,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</p>
 </details>
 
+IMAGUS(staging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/1682517987967.JPEG, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat,
+       staging.cohostcdn.org/attachment/3bb8cd24-0ff4-40e8-8b0f-a554a2cf6714/1682517987996.JPEG, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat)
 <details open>
 	SUMMARY(wężymorda, Gratin de salsifis)
 
@@ -402,6 +446,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</ol>
 </details>
 
+IMAGUS(staging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC_2539.JPG, cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un,
+       staging.cohostcdn.org/attachment/87a35886-38b0-4092-b95d-b5940b45780d/DSC_2554.JPG, cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy)
 <details open>
 	SUMMARY(flower-rolls, Flower rolls (round steamed bread with an oil))
 
@@ -447,6 +493,8 @@ MAIN_HEADING(My answer to the replication crisis)
 	</p>
 </details>
 
+IMAGUS(pbs.twimg.com/media/FUmcYBvXwAA78H5?format=jpg&name=4096x4096, twitter.com/nabijaczleweli/status/1533929176725594118,
+       pbs.twimg.com/media/Ff6s7wOX0AQGK5f?format=jpg&name=4096x4096, twitter.com/nabijaczleweli/status/1584894789878587392)
 <details open>
 	SUMMARY(bubliki, Бублики)
 
