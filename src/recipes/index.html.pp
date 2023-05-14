@@ -84,8 +84,7 @@ window.addEventListener("load", function() {
 		var cur = true;
 		butt.addEventListener("click", function() {
 			cur = !cur;
-			all.forEach(
-				butt.attributes["toggle-tag"].value == "details" ? function(el) { el.open = cur; } : function(el) { el.hidden = !cur; });
+			all.forEach(butt.attributes["toggle-tag"].value == "details" ? function(el) { el.open = cur; } : function(el) { el.hidden = !cur; });
 		});
 	});
 });
@@ -96,7 +95,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus)</a>.
+	Latest replication: REPLICATION(2023-05-14, cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -145,7 +144,7 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 	</ol>
 </details>
 
-IMAGUS(staging.cohostcdn.org/attachment/04557df5-353c-4124-b10c-85973ccb57d0/DSC_2606.JPG,  cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus,
+IMAGUS(staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC_2617.JPG,  cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl,
        staging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG, cohost.org/nabijaczleweli/post/1486924-pog-moment)
 <details open>
 	SUMMARY(hushi-confexion, Hushi confexion)
@@ -154,14 +153,16 @@ IMAGUS(staging.cohostcdn.org/attachment/04557df5-353c-4124-b10c-85973ccb57d0/DSC
 		<a href="//youtu.be/yW85JqGvy7M">Chinese rural specialty delicacy Hushi sugar baker
 		                                 (<span lang="zh-CN"><!--"-->中国农村特色美食呼市方糖焙子，从和面到制作油酥很详细，香甜可口还柔软【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1486924-pog-moment):</p>
+		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1486924-pog-moment),
+		           REPLICATION(2023-05-14, cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl):</p>
 	<ol class="continuation">
-		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(2g) of baking powder, NUM(1g) of baking soda, NUM(5g) of sugar, NUM(50g) egg, NUM(20g) of safflower oil, flock</li>
+		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(2g) of baking powder, NUM(1g) of baking soda, NUM(5g) of sugar, NUM(50g) egg, NUM(20g) of safflower oil, flock
+		    – I needed NUM(585g)</li>
 		<li>flock in NUM(300g) of like NUM(40°) water</li>
 		<li>knead – "needs a little more kneading" is right, needs <em>much</em> more due to the oil</li>
 		<li>he sleeps for NUM(30min)</li>
 		<li>knead to de-gas, roll cylindrically, cut six-wise, spin each into ball, hide</li>
-		<li>NUM(180g) of flour, NUM(150g) of sesame oil, NUM(150g) of sugar, stir</li>
+		<li>NUM(180g) of flour, NUM(150g) of sesame oil, NUM(150g) of sugar, stir – I needed NUM(212g)</li>
 		<li>for each guy:
 			<ol class="continuing">
 				<li>pull into hand-sized hemisphere</li>
@@ -202,7 +203,7 @@ IMAGUS(staging.cohostcdn.org/attachment/04557df5-353c-4124-b10c-85973ccb57d0/DSC
 
 	<p>
 		Again, for me the recipe suffers from her flour having, oddly, since she lives in a hotter wetter climate, much more flour per flour
-		(I had three hands and three gloops of flour more to get the same consistency on both as she did);
+		(the first time I had three hands and three gloops of flour more to get the same consistency on both as she did; second time as above);
 		conversely, her sugar is absolutely sodden.
 	</p>
 </details>
