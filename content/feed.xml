@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-05-13T01:03:40</updated>
+  <updated>2023-05-14T01:59:44</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -3792,8 +3792,7 @@ window.addEventListener(&quot;load&quot;, function() {
   var cur = true;
   butt.addEventListener(&quot;click&quot;, function() {
    cur = !cur;
-   all.forEach(
-    butt.attributes[&quot;toggle-tag&quot;].value == &quot;details&quot; ? function(el) { el.open = cur; } : function(el) { el.hidden = !cur; });
+   all.forEach(butt.attributes[&quot;toggle-tag&quot;].value == &quot;details&quot; ? function(el) { el.open = cur; } : function(el) { el.hidden = !cur; });
   });
  });
 });
@@ -3801,7 +3800,7 @@ window.addEventListener(&quot;load&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-12&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-14&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -3849,7 +3848,7 @@ window.addEventListener(&quot;load&quot;, function() {
  &lt;/ol&gt;
 &lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
- &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/04557df5-353c-4124-b10c-85973ccb57d0/DSC_2606.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC_2617.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1486924-pog-moment&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
@@ -3858,14 +3857,16 @@ window.addEventListener(&quot;load&quot;, function() {
   &lt;a href=&quot;//youtu.be/yW85JqGvy7M&quot;&gt;Chinese rural specialty delicacy Hushi sugar baker
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;中国农村特色美食呼市方糖焙子，从和面到制作油酥很详细，香甜可口还柔软【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
   by Haijuan Food,
-  replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1486924-pog-moment&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-12&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+  replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1486924-pog-moment&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-12&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-14&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
-  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2g&lt;/span&gt; of baking powder, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1g&lt;/span&gt; of baking soda, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50g&lt;/span&gt; egg, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of safflower oil, flock&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2g&lt;/span&gt; of baking powder, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1g&lt;/span&gt; of baking soda, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50g&lt;/span&gt; egg, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of safflower oil, flock
+      – I needed &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;585g&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;300g&lt;/span&gt; of like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40°&lt;/span&gt; water&lt;/li&gt;
   &lt;li&gt;knead – &quot;needs a little more kneading&quot; is right, needs &lt;em&gt;much&lt;/em&gt; more due to the oil&lt;/li&gt;
   &lt;li&gt;he sleeps for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30min&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;knead to de-gas, roll cylindrically, cut six-wise, spin each into ball, hide&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;180g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;150g&lt;/span&gt; of sesame oil, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;150g&lt;/span&gt; of sugar, stir&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;180g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;150g&lt;/span&gt; of sesame oil, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;150g&lt;/span&gt; of sugar, stir – I needed &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;212g&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;for each guy:
    &lt;ol class=&quot;continuing&quot;&gt;
     &lt;li&gt;pull into hand-sized hemisphere&lt;/li&gt;
@@ -3905,7 +3906,7 @@ window.addEventListener(&quot;load&quot;, function() {
  &lt;/ol&gt;
  &lt;p&gt;
   Again, for me the recipe suffers from her flour having, oddly, since she lives in a hotter wetter climate, much more flour per flour
-  (I had three hands and three gloops of flour more to get the same consistency on both as she did);
+  (the first time I had three hands and three gloops of flour more to get the same consistency on both as she did; second time as above);
   conversely, her sugar is absolutely sodden.
  &lt;/p&gt;
 &lt;/details&gt;
