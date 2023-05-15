@@ -95,7 +95,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-14, cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl)</a>.
+	Latest replication: REPLICATION(2023-05-15, cohost.org/nabijaczleweli/post/1504203-remaining-4-5-not-p)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -111,11 +111,14 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 		                                       (<span lang="zh-CN"><!--"-->【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】<!--"--></span>)</a>,
 		at 7:21,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus):</p>
+		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus),
+		           REPLICATION(2023-05-15, cohost.org/nabijaczleweli/post/1504203-remaining-4-5-not-p):</p>
 	<ol class="continuation">
-		<li>NUM(50g) egg, NUM(260g) of water, NUM(100g) of milk, NUM(20g) of sugar, NUM(4g) of salt, NUM(5g) of yeast, NUM(50g) of corn oil, whisk
-		    – olive oil works fine; she doesn't say "warm water" so I used normal and it didn't really rise that well, so</li>
-		<li>whisk in NUM(650g) of flour – again, I needed a few hands more; she gets a floculent out of the whisking which is very much not what I got; idk</li>
+		<li>NUM(50g) egg, NUM(260g) of water, NUM(100g) of milk, NUM(20g) of sugar, NUM(4g) of salt, NUM(5g) of yeast, NUM(50g) of corn oil, whisk –
+		    olive oil works fine; she doesn't say "warm water" so I used normal and it didn't really rise that well, so;
+		    doing all but water and yeast first, then hot water to compensate the cold milk and eggs to a sensible temperature, then the oil</li>
+		<li>whisk in NUM(650g) of flour –
+		    again, I needed like NUM(55g) more; she gets a floculent out of the whisking which is very much not what I got; normal stick-based flocking worked better</li>
 		<li>knead – "a little longer" is once again sensible</li>
 		<li>he sleeps for NUM(40min)</li>
 		<li>knead to de-gas, halve, cylindrise both, cut each nine-wise, ballise each</li>
@@ -133,10 +136,12 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 		</li>
 		<li>for each guy:
 			<ol class="continuing">
-				<li>flatten directly</li>
+				<li>flatten directly – you want them really quite flat, otherwise the bulk ends up raw</li>
 				<li>deploy weld-side down on hot buttered leccy pan</li>
 				<li>flatten the edge directly</li>
-				<li>brush butter on top – this step I forgor 💀 but then my pan was quite buttered</li>
+				<li>brush butter on top –
+				    this step I forgor 💀 the first time but then my pan was quite buttered;
+				    it's crucial for a good effect if your guys are big and thus don't leave a lot of free butter post-flip</li>
 				<li>cover for NUM(1min) – I needed like NUM(1:20) to get even close to the displayed browning level</li>
 				<li>flip, let rip for another NUM(2min) – as above; "when both sides are golden brown, it can be out of the pan"</li>
 			</ol>
