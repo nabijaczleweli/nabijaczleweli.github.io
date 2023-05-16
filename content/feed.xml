@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-05-15T22:13:58</updated>
+  <updated>2023-05-16T13:37:39</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -3713,7 +3713,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-05-08T16:19:37+02:00</updated>
+    <updated>2023-05-16T00:02:06+02:00</updated>
     <content type="html">
 &lt;style&gt;
 .continued {
@@ -3820,7 +3820,7 @@ window.addEventListener(&quot;load&quot;, function() {
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50g&lt;/span&gt; egg, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;260g&lt;/span&gt; of water, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of milk, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4g&lt;/span&gt; of salt, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50g&lt;/span&gt; of corn oil, whisk –
       olive oil works fine; she doesn't say &quot;warm water&quot; so I used normal and it didn't really rise that well, so;
-      doing all but water and yeast first, then hot water to compensate the cold milk and eggs to a sensible temperature, then the oil&lt;/li&gt;
+      doing all but water and yeast first, then hot water to compensate the cold milk and eggs to a sensible temperature, then the yeast worked well&lt;/li&gt;
   &lt;li&gt;whisk in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;650g&lt;/span&gt; of flour –
       again, I needed like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;55g&lt;/span&gt; more; she gets a floculent out of the whisking which is very much not what I got; normal stick-based flocking worked better&lt;/li&gt;
   &lt;li&gt;knead – &quot;a little longer&quot; is once again sensible&lt;/li&gt;
