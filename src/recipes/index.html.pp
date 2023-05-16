@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Mon, 08 May 2023 16:19:37 +0200" -->
+<!-- RSS_PUB_DATE: "Tue, 16 May 2023 00:02:06 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -116,7 +116,7 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 	<ol class="continuation">
 		<li>NUM(50g) egg, NUM(260g) of water, NUM(100g) of milk, NUM(20g) of sugar, NUM(4g) of salt, NUM(5g) of yeast, NUM(50g) of corn oil, whisk –
 		    olive oil works fine; she doesn't say "warm water" so I used normal and it didn't really rise that well, so;
-		    doing all but water and yeast first, then hot water to compensate the cold milk and eggs to a sensible temperature, then the oil</li>
+		    doing all but water and yeast first, then hot water to compensate the cold milk and eggs to a sensible temperature, then the yeast worked well</li>
 		<li>whisk in NUM(650g) of flour –
 		    again, I needed like NUM(55g) more; she gets a floculent out of the whisking which is very much not what I got; normal stick-based flocking worked better</li>
 		<li>knead – "a little longer" is once again sensible</li>
