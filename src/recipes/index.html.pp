@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Tue, 16 May 2023 00:02:06 +0200" -->
+<!-- RSS_PUB_DATE: "Sat, 20 May 2023 17:03:40 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,10 +95,54 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-15, cohost.org/nabijaczleweli/post/1504203-remaining-4-5-not-p)</a>.
+	Latest replication: REPLICATION(2023-05-17, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+IMAGUS(staging.cohostcdn.org/attachment/8fdeacd8-c206-4cf4-a9b0-990118bd8a32/DSC_2629a.JPG, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog,
+       staging.cohostcdn.org/attachment/64a8b45c-13e5-4a1f-8bcc-1564da55fcd5/DSC_2630a.JPG, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog)
+<details open>
+	SUMMARY(pumpkin-hanamaki, Pumpkin hanamaki)
+
+	<p class="continuing">
+		<a href="//youtu.be/7_VBad4AzWI">Homemade Hanamaki is simple and practical, you can learn it in a minute
+		                                 (<span lang="zh-CN"><!--"-->家常花卷简单实用，一分钟就能学会，营养丰富层多柔软【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-05-17, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog):</p>
+	<ol class="continuation">
+		<li>half a pumpkin in NUM(4mm) slices, steamed for NUM(20min), blended with water for a loose gloop –
+		    I used an NUM(850g) <a href="//cohost.org/nabijaczleweli/post/1512219-this-is-half-a-pumpk">dynia piżmowa</a>,
+		    which is just about what her half a pumpkin looked like, but do not be fooled: she did not use the whole half a pumpkin</li>
+		<li>define dough over Ш as
+			<ol class="continuing">
+				<li>NUM(300g) of flour, NUM(2g) of yeast, NUM(1.5g) of baking powder, mixed</li>
+				<li>flock in NUM(180g) of like NUM(40°) Ш</li>
+				<li>knead, he sleeps for NUM(5min)</li>
+			</ol>
+		</li>
+		<li>dough over the gloop</li>
+		<li>dough over water</li>
+		<li>roll gloop dough into big NUM(1:2) rectangle – I ended up with NUM(38×35cm) and thats's much too thick</li>
+		<li>flour and roll up on a broom handle</li>
+		<li>roll water dough to same size</li>
+		<li>spray water</li>
+		<li>extract the broom rectangle, weld by light rolling</li>
+		<li>brush with oil</li>
+		<li>roll into tight cylinder, preserving the major dimension</li>
+		<li>cut into like NUM(6cm) pieces – I just used a szpachla, but you probably want something sharp instead. or not</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>squeeze the center third parallel to the cut edges</li>
+				<li>squeeze the corners belonging to the same uncut edge together</li>
+				<li>twist in opposite direxions and weld on the opposite side to the freshly-formed edge-face</li>
+				<li>hide for NUM(20min)</li>
+				<li>boil the water, deploy, let rip for NUM(15min), kill the heat and leave alone for NUM(2min)</li>
+			</ol>
+		</li>
+	</ol>
+</details>
 
 
 IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/1683924925110.JPEG, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus,
@@ -148,6 +192,7 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 		</li>
 	</ol>
 </details>
+
 
 IMAGUS(staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC_2617.JPG,  cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl,
        staging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG, cohost.org/nabijaczleweli/post/1486924-pog-moment)
@@ -213,6 +258,7 @@ IMAGUS(staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC
 	</p>
 </details>
 
+
 ONE_IMAGUS(staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d/DSC_2596a.JPG, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one)
 <details open>
 	SUMMARY(onion-pancake, Green onion pancake)
@@ -253,6 +299,7 @@ ONE_IMAGUS(staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d
 		(a) never because it burned on the ass pan, or (b) it was already quite fried, and hers were still white at this time.
 	</p>
 </details>
+
 
 IMAGUS(staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC_5798.JPG, cohost.org/nabijaczleweli/post/1461465-okay-thats-some-pret,
        staging.cohostcdn.org/attachment/257ba15e-667f-44d0-badd-72b305e2f51d/DSC_5806.JPG, cohost.org/nabijaczleweli/post/1461581-dry-heat-cels-seethi)
@@ -312,6 +359,7 @@ IMAGUS(staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC
 	</p>
 </details>
 
+
 IMAGUS(staging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC_5775.JPG, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye,
        staging.cohostcdn.org/attachment/660e5669-4349-4236-907a-dcec6f5c8003/DSC_5778.JPG, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye)
 <details open>
@@ -351,6 +399,7 @@ IMAGUS(staging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC
 	</ol>
 </details>
 
+
 NO_IMAGUS()
 <details open>
 	SUMMARY(topinambur-cream-soup, Topinambur cream soup)
@@ -368,6 +417,7 @@ NO_IMAGUS()
 		<li>blend</li>
 	</ol>
 </details>
+
 
 IMAGUS(staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC_2584.JPG, cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose,
        staging.cohostcdn.org/attachment/4cac1ee0-9abc-447d-ad26-bf841e4f6a2a/DSC_2571.JPG, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c)
@@ -429,6 +479,7 @@ IMAGUS(staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC
 	</p>
 </details>
 
+
 IMAGUS(staging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/1682517987967.JPEG, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat,
        staging.cohostcdn.org/attachment/3bb8cd24-0ff4-40e8-8b0f-a554a2cf6714/1682517987996.JPEG, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat)
 <details open>
@@ -451,6 +502,7 @@ IMAGUS(staging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/168
 		<li>bake at NUM(220°) for NUM(20-25min) – ideally you wanna get colour on the ham, but not burn the cheese</li>
 	</ol>
 </details>
+
 
 IMAGUS(staging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC_2539.JPG, cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un,
        staging.cohostcdn.org/attachment/87a35886-38b0-4092-b95d-b5940b45780d/DSC_2554.JPG, cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy)
@@ -498,6 +550,7 @@ IMAGUS(staging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC
 		The title'<!--'-->s right: suitable for completely inept imbeciles like me. 0 failure 0 technique.
 	</p>
 </details>
+
 
 IMAGUS(pbs.twimg.com/media/FUmcYBvXwAA78H5?format=jpg&name=4096x4096, twitter.com/nabijaczleweli/status/1533929176725594118,
        pbs.twimg.com/media/Ff6s7wOX0AQGK5f?format=jpg&name=4096x4096, twitter.com/nabijaczleweli/status/1584894789878587392)
