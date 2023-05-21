@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Sat, 20 May 2023 17:03:40 +0200" -->
+<!-- RSS_PUB_DATE: "Sun, 21 May 2023 22:55:04 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,10 +95,57 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-17, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog)</a>.
+	Latest replication: REPLICATION(2023-05-21, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC_2637a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town,
+       staging.cohostcdn.org/attachment/bb5f12d8-8cd5-47a2-980e-55501950da44/DSC_2635a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)
+<details open>
+	SUMMARY(brown-sugar-shortbread, Old-fashioned Brown sugar short-bread)
+
+	<p class="continuing">
+		<a href="//youtu.be/wzMPdyUy99g">Hometown gourmet brown sugar shortbread, step-by-step explanation
+		                                 (<span lang="zh-CN"><!--"-->家乡美食红糖酥饼，步骤详细讲解，酥脆香甜不用出去买【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-05-21, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town):</p>
+	<ol class="continuation">
+		<li>NUM(500g) of flour. NUM(1g) of yeast, NUM(1g) of baking soda, mix – I ended up wanting like half a hand more</li>
+		<li>flock in NUM(125g) of sesame oil, rub together in hands for full dispersal</li>
+		<li>flock in NUM(200g) of like NUM(40°) water</li>
+		<li>knead roughly, he sleeps in a bag for NUM(10min), shortly knead smooth, he sleeps hidden for NUM(30min)</li>
+		<li>gloop Ш: NUM(100g) of flour, NUM(65g) of sesame oil – I again needed a half-spoon to get the desired thick consistency</li>
+		<li>gloop Ё: NUM(100g) of flour, a few grams of water, mix, NUM(250g) of brown sugar, mix –
+		    hers is absolutely sodden and very dark; mine isn't and I don't think it'<!--'-->s available here; you need a reasonably wet-adsorbed gloop for it to set</li>
+		<li>flatten the dough directly, roll out rectangularly –
+		    keep in mind the post-cylindrisation aspect to be relatively square instead of long;
+		    I did it essentially the same aspect as for <a href="#flower-rolls">flower rolls</a> because it'<!--'-->s a happy one for the table and it was too wide</li>
+		<li>spackle gloop Ш</li>
+		<li>roll into tight cylinder, even out diameter</li>
+		<li>cut into NUM(8) guys, hide</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>pull into hand-sized roughly-equal-thickness hemisphere</li>
+				<li>deploy three spoons of gloop Ё</li>
+				<li>close like a bun, but really press it</li>
+				<li>spin around weld-side down to enforce the ass</li>
+			</ol>
+		</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>spin around ass-down, flatten directly</li>
+				<li>roll out and quarter-turn thrice</li>
+				<li>flip</li>
+				<li>roll out and quarter-turn more than thrice – you really can'<!--'-->t go too thin but you can go too thick</li>
+				<li>deploy ass-down on hot oiled leccy pan, brush with oil</li>
+				<li>flip when bottom brown</li>
+				<li>flip when bottom brown</li>
+				<li>flip when bottom browner – "<!--"-->overall NUM(8-9min)<!--"-->" was about right for me</li>
+			</ol>
+		</li>
+	</ol>
+</details>
 
 
 IMAGUS(staging.cohostcdn.org/attachment/8fdeacd8-c206-4cf4-a9b0-990118bd8a32/DSC_2629a.JPG, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog,
@@ -124,7 +171,7 @@ IMAGUS(staging.cohostcdn.org/attachment/8fdeacd8-c206-4cf4-a9b0-990118bd8a32/DSC
 		</li>
 		<li>dough over the gloop</li>
 		<li>dough over water</li>
-		<li>roll gloop dough into big NUM(1:2) rectangle – I ended up with NUM(38×35cm) and thats's much too thick</li>
+		<li>roll gloop dough into big NUM(1:2) rectangle – I ended up with NUM(38×35cm) and that'<!--'-->s much too thick</li>
 		<li>flour and roll up on a broom handle</li>
 		<li>roll water dough to same size</li>
 		<li>spray water</li>
