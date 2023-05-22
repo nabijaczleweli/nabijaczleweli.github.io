@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Sun, 21 May 2023 22:55:04 +0200" -->
+<!-- RSS_PUB_DATE: "Mon, 22 May 2023 17:41:08 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,7 +95,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-21, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)</a>.
+	Latest replication: REPLICATION(2023-05-22, cohost.org/nabijaczleweli/post/1538182-yes-im-still-working)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -103,7 +103,7 @@ MAIN_HEADING(My answer to the replication crisis)
 IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC_2637a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town,
        staging.cohostcdn.org/attachment/bb5f12d8-8cd5-47a2-980e-55501950da44/DSC_2635a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)
 <details open>
-	SUMMARY(brown-sugar-shortbread, Old-fashioned Brown sugar short-bread)
+	SUMMARY(brown-sugar-shortbread, Old-fashioned brown sugar short-bread)
 
 	<p class="continuing">
 		<a href="//youtu.be/wzMPdyUy99g">Hometown gourmet brown sugar shortbread, step-by-step explanation
@@ -148,7 +148,7 @@ IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/8fdeacd8-c206-4cf4-a9b0-990118bd8a32/DSC_2629a.JPG, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog,
+IMAGUS(staging.cohostcdn.org/attachment/7339792a-7d19-4344-acc1-4f0b2f928cef/DSC_2647.JPG,  cohost.org/nabijaczleweli/post/1538182-yes-im-still-working,
        staging.cohostcdn.org/attachment/64a8b45c-13e5-4a1f-8bcc-1564da55fcd5/DSC_2630a.JPG, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog)
 <details open>
 	SUMMARY(pumpkin-hanamaki, Pumpkin hanamaki)
@@ -157,7 +157,8 @@ IMAGUS(staging.cohostcdn.org/attachment/8fdeacd8-c206-4cf4-a9b0-990118bd8a32/DSC
 		<a href="//youtu.be/7_VBad4AzWI">Homemade Hanamaki is simple and practical, you can learn it in a minute
 		                                 (<span lang="zh-CN"><!--"-->家常花卷简单实用，一分钟就能学会，营养丰富层多柔软【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-17, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog):</p>
+		replicated REPLICATION(2023-05-17, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog),
+		           REPLICATION(2023-05-22, cohost.org/nabijaczleweli/post/1538182-yes-im-still-working):</p>
 	<ol class="continuation">
 		<li>half a pumpkin in NUM(4mm) slices, steamed for NUM(20min), blended with water for a loose gloop –
 		    I used an NUM(850g) <a href="//cohost.org/nabijaczleweli/post/1512219-this-is-half-a-pumpk">dynia piżmowa</a>,
@@ -171,14 +172,14 @@ IMAGUS(staging.cohostcdn.org/attachment/8fdeacd8-c206-4cf4-a9b0-990118bd8a32/DSC
 		</li>
 		<li>dough over the gloop</li>
 		<li>dough over water</li>
-		<li>roll gloop dough into big NUM(1:2) rectangle – I ended up with NUM(38×35cm) and that'<!--'-->s much too thick</li>
+		<li>roll gloop dough into big NUM(1:2) rectangle – NUM(38×35cm)'<!--'-->s much too thick, NUM(32×55cm) is better</li>
 		<li>flour and roll up on a broom handle</li>
 		<li>roll water dough to same size</li>
 		<li>spray water</li>
 		<li>extract the broom rectangle, weld by light rolling</li>
 		<li>brush with oil</li>
 		<li>roll into tight cylinder, preserving the major dimension</li>
-		<li>cut into like NUM(6cm) pieces – I just used a szpachla, but you probably want something sharp instead. or not</li>
+		<li>cut into like NUM(6cm) pieces with something sharp</li>
 		<li>for each guy:
 			<ol class="continuing">
 				<li>squeeze the center third parallel to the cut edges</li>
