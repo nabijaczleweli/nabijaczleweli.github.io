@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Mon, 22 May 2023 17:41:08 +0200" -->
+<!-- RSS_PUB_DATE: "Wed, 07 Jun 2023 20:46:23 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,10 +95,42 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-05-22, cohost.org/nabijaczleweli/post/1538182-yes-im-still-working)</a>.
+	Latest replication: REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC_2655a.JPG, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve,
+       staging.cohostcdn.org/attachment/81fc99fc-d95a-4cd4-b69d-5eed4470c701/DSC_2656.JPG,  cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve)
+<details open>
+	SUMMARY(dumpy, Steamed dumpling)
+
+	<p class="continuing">
+		<a href="//youtu.be/kwx-qZd9Epw">Home version of big steamed dumplings learn to do this, soft and chewy
+		                                 (<span lang="zh-CN"><!--"-->家庭版大蒸饺学会这样做，柔软筋道不破皮不漏馅，适合新手【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-06-04, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve),
+		           REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment):</p>
+	<ol class="continuation">
+		<li>NUM(500g) of flour. NUM(3g) of salt, mix</li>
+		<li>flock in NUM(150g) of boiling water in one half</li>
+		<li>flock in NUM(150g) of cold water in the other half</li>
+		<li>drizzle oil, knead roughly</li>
+		<li>he sleeps for NUM(10min), knead, he sleeps hidden for NUM(30min)</li>
+		<li>halve, roll out each into thick cylinder, divide each into NUM(~13), flatten each directly, hide</li>
+		<li>for each guy: flatten directly, roll out radially, deploy NUM(3) spoons of filling, close, deploy on boiling water for NUM(10min) –
+		    small scoops maybe? or my potatoes are small</li>
+	</ol>
+	<p class="continuing">with a spec gloop of</p>
+	<ol class="continuation">
+		<li>big potato and carrot grated long, washed twice in cold water, blanched for NUM(30s), extracted into cold water, squeezed, roughly shredded</li>
+		<li>half a sweet pepper and some green onion shredded</li>
+		<li>ginger, thirteen spices, bullion cube, salt</li>
+		<li>pour hot oil overtop, stir</li>
+	</ol>
+</details>
+
 
 IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC_2637a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town,
        staging.cohostcdn.org/attachment/bb5f12d8-8cd5-47a2-980e-55501950da44/DSC_2635a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)
