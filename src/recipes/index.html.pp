@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Wed, 07 Jun 2023 20:46:23 +0200" -->
+<!-- RSS_PUB_DATE: "Thu, 08 Jun 2023 22:38:07 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,7 +95,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment)</a>.
+	Latest replication: REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -111,7 +111,8 @@ IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC
 		                                 (<span lang="zh-CN"><!--"-->家庭版大蒸饺学会这样做，柔软筋道不破皮不漏馅，适合新手【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
 		replicated REPLICATION(2023-06-04, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve),
-		           REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment):</p>
+		           REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment),
+		           REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour. NUM(3g) of salt, mix</li>
 		<li>flock in NUM(150g) of boiling water in one half</li>
