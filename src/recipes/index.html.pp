@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Thu, 08 Jun 2023 22:38:07 +0200" -->
+<!-- RSS_PUB_DATE: "Sat, 10 Jun 2023 18:25:29 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,7 +95,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy)</a>.
+	Latest replication: REPLICATION(2023-06-10, cohost.org/nabijaczleweli/post/1658603-this-user-is-like)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -112,14 +112,15 @@ IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC
 		by Haijuan Food,
 		replicated REPLICATION(2023-06-04, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve),
 		           REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment),
-		           REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy):</p>
+		           REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy),
+		           REPLICATION(2023-06-10, cohost.org/nabijaczleweli/post/1658603-this-user-is-like):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour. NUM(3g) of salt, mix</li>
 		<li>flock in NUM(150g) of boiling water in one half</li>
 		<li>flock in NUM(150g) of cold water in the other half</li>
 		<li>drizzle oil, knead roughly</li>
 		<li>he sleeps for NUM(10min), knead, he sleeps hidden for NUM(30min)</li>
-		<li>halve, roll out each into thick cylinder, divide each into NUM(~13), flatten each directly, hide</li>
+		<li>halve, roll out each into thick cylinder, divide each into NUM(~12), flatten each directly, hide</li>
 		<li>for each guy: flatten directly, roll out radially, deploy NUM(3) spoons of filling, close, deploy on boiling water for NUM(10min) –
 		    small scoops maybe? or my potatoes are small</li>
 	</ol>
