@@ -14,7 +14,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "../common.h"
 
 
-<!-- RSS_PUB_DATE: "Sat, 10 Jun 2023 18:25:29 +0200" -->
+<!-- RSS_PUB_DATE: "Wed, 14 Jun 2023 00:51:11 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -95,10 +95,40 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-06-10, cohost.org/nabijaczleweli/post/1658603-this-user-is-like)</a>.
+	Latest replication: REPLICATION(2023-06-13, cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+ONE_IMAGUS(staging.cohostcdn.org/attachment/b3806ff1-048d-472c-b03c-b6a5bdec1189/DSC_2694.JPG, cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along)
+<details open>
+	SUMMARY(puckered-bread, Puckered bread)
+
+	<p class="continuing">
+		<a href="//youtu.be/z44JqGKyLBg">Blossom steamed bread delicious method is very simple
+		                                 (<span lang="zh-CN"><!--"-->开花馒头好吃方法很简单，学会这个做法，蓬松柔软个个开花【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2023-06-13, cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along):</p>
+	<ol class="continuation">
+		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
+		<li>flock in NUM(80g) of yogurt – I've been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
+		<li>flock in NUM(200g) of hot milk – to compensate the cold milk and "yogurt"</li>
+		<li>knead to accrue, stretch out on board, deposit NUM(15g) of butter, gloop in – she uses clarified, normal worked fine</li>
+		<li>he sleeps</li>
+		<li>tear him open, knead radially roll-wise, cylindrise. divide NUM(7)-wise</li>
+		<li>for each guy: knead, smooth, ballify</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>spin around on floured board</li>
+				<li>invert, indent radially</li>
+				<li>invert, spin around on floured board</li>
+				<li>deposit flour-side up to sleep for NUM(15min)</li>
+				<li>boil water, deploy, let rip for NUM(15min), kill the heat and leave alone for NUM(2min)</li>
+			</ol>
+		</li>
+	</ol>
+</details>
 
 
 IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC_2655a.JPG, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve,
@@ -115,7 +145,7 @@ IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC
 		           REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy),
 		           REPLICATION(2023-06-10, cohost.org/nabijaczleweli/post/1658603-this-user-is-like):</p>
 	<ol class="continuation">
-		<li>NUM(500g) of flour. NUM(3g) of salt, mix</li>
+		<li>NUM(500g) of flour, NUM(3g) of salt, mix</li>
 		<li>flock in NUM(150g) of boiling water in one half</li>
 		<li>flock in NUM(150g) of cold water in the other half</li>
 		<li>drizzle oil, knead roughly</li>
