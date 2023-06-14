@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Sat, 28 Aug 2021 18:36:44 +0200" -->
 #define POST_DATE      Sat, 28 Aug 2021 18:36:44 +0200
-#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200 and Wed, 22 Jun 2022 18:33:54 +0200
+#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, and Wed, 14 Jun 2023 14:46:03 +0200
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
@@ -67,6 +67,14 @@ ol.wide-explanation > li {
 
 <p></p>
 BLOGN_T_HEADING(<code>007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</code>)
+
+<p>
+	(This produced favourable results pre-bookworm, with <a href="//packages.debian.org/bullseye/gsfonts"><tt>gsfonts</tt></a> fonts.
+	 Since, with <tt>fonts-urw-base35</tt> fonts, the font quality is drastically reduced –
+	 the metrics appear to be off for groff <code>.Bl</code> use, the arrows are horrific, <tt>*</tt> appears broken entirely, &c.;
+	 <tt>afmtodit</tt> complains even when compiling.
+	 I'<!--'-->m continuing to use the <a href="/content/assets/blogn_t/007.11-bullseye.tar.zst">bullseye fonts</a> for the bookworm release cycle.)
+</p>
 
 <!-- With manual corrections and welding the separately-highlit AWK bits:
 for f in {C,T}{R,B,I,BI}; do
