@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-06-13T23:04:03</updated>
+  <updated>2023-06-15T17:13:00</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -1865,7 +1865,14 @@ ol.wide-explanation &gt; li {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200 and Wed, 22 Jun 2022 18:33:54 +0200&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, and Wed, 14 Jun 2023 14:46:03 +0200&lt;/h4&gt;
+&lt;p&gt;
+ (This produced favourable results pre-bookworm, with &lt;a href=&quot;//packages.debian.org/bullseye/gsfonts&quot;&gt;&lt;tt&gt;gsfonts&lt;/tt&gt;&lt;/a&gt; fonts.
+  Since, with &lt;tt&gt;fonts-urw-base35&lt;/tt&gt; fonts, the font quality is drastically reduced –
+  the metrics appear to be off for groff &lt;code&gt;.Bl&lt;/code&gt; use, the arrows are horrific, &lt;tt&gt;*&lt;/tt&gt; appears broken entirely, &amp;c.;
+  &lt;tt&gt;afmtodit&lt;/tt&gt; complains even when compiling.
+  I'&lt;!--'--&gt;m continuing to use the &lt;a href=&quot;/content/assets/blogn_t/007.11-bullseye.tar.zst&quot;&gt;bullseye fonts&lt;/a&gt; for the bookworm release cycle.)
+&lt;/p&gt;
 &lt;!-- With manual corrections and welding the separately-highlit AWK bits:
 for f in {C,T}{R,B,I,BI}; do
  in=&quot;$(awk '$1 == &quot;internalname&quot; {print $2; exit}' &quot;/usr/share/groff/current/font/devps/$f&quot;)&quot;;
@@ -3713,7 +3720,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-06-14T00:51:11+02:00</updated>
+    <updated>2023-06-15T18:59:26+02:00</updated>
     <content type="html">
 &lt;style&gt;
 .continued {
@@ -3800,22 +3807,26 @@ window.addEventListener(&quot;load&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-13&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688384-scale-comparison&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-15&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/b3806ff1-048d-472c-b03c-b6a5bdec1189/DSC_2694.JPG&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+ &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688343-idk-what-i-did-diffe&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC_2700.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ --&gt;&lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/b3806ff1-048d-472c-b03c-b6a5bdec1189/DSC_2694.JPG&quot; /&gt;&lt;/a&gt; 
+ &lt;/center&gt;
 &lt;details open&gt;
  &lt;summary id=&quot;puckered-bread&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#puckered-bread&quot;&gt;#&lt;/a&gt;Puckered bread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/z44JqGKyLBg&quot;&gt;Blossom steamed bread delicious method is very simple
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;开花馒头好吃方法很简单，学会这个做法，蓬松柔软个个开花【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
   by Haijuan Food,
-  replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-13&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+  replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-13&lt;/span&gt;&lt;/a&gt;,
+              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688384-scale-comparison&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-15&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;35g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50-60g&lt;/span&gt; egg, mix&lt;/li&gt;
-  &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;80g&lt;/span&gt; of yogurt – I've been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine&lt;/li&gt;
-  &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;200g&lt;/span&gt; of hot milk – to compensate the cold milk and &quot;yogurt&quot;&lt;/li&gt;
+  &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;80g&lt;/span&gt; of yogurt – I'&lt;!--'--&gt;ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine&lt;/li&gt;
+  &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;200g&lt;/span&gt; of hot milk – to compensate the cold egg and &quot;yogurt&quot;&lt;/li&gt;
   &lt;li&gt;knead to accrue, stretch out on board, deposit &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15g&lt;/span&gt; of butter, gloop in – she uses clarified, normal worked fine&lt;/li&gt;
   &lt;li&gt;he sleeps&lt;/li&gt;
   &lt;li&gt;tear him open, knead radially roll-wise, cylindrise. divide &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;7&lt;/span&gt;-wise&lt;/li&gt;
@@ -3830,6 +3841,9 @@ window.addEventListener(&quot;load&quot;, function() {
    &lt;/ol&gt;
   &lt;/li&gt;
  &lt;/ol&gt;
+ &lt;p&gt;
+  I haven't gotten an intentation technique that wasn't just a knife to work, idk how she does it.
+ &lt;/p&gt;
 &lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve&quot;&gt;&lt;img class=&quot;grid-by-each&quot; src=&quot;https://staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC_2655a.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
