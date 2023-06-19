@@ -1,0 +1,37 @@
+--- host/posix/posix-serial.c	2007-08-24 02:57:01.000000000 +0200
++++ host/posix/posix-serial.c	2023-06-19 01:26:46.891606875 +0200
+@@ -34,4 +34,5 @@
+  */
+ 
++#define _GNU_SOURCE
+ #include <tme/common.h>
+ _TME_RCSID("$Id: posix-serial.c,v 1.11 2007/08/24 00:57:01 fredette Exp $");
+@@ -43,4 +44,5 @@
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <signal.h>
+ #include <termios.h>
+ #include <sys/types.h>
+@@ -342,4 +344,6 @@
+     if (rc < 0) {
+       /* XXX diagnostic */
++      if (errno == EIO)
++        raise(SIGHUP);
+       continue;
+     }
+@@ -842,4 +846,5 @@
+   const char *filename_in;
+   const char *filename_out;
++  char *vt;
+   int fd_in, fd_out;
+   int usage;
+@@ -943,4 +948,9 @@
+       return (errno);
+     }
++    if (vt = ptsname(fd_in)) {
++      printf("opened %s\n", vt);
++      grantpt(fd_in);
++      unlockpt(fd_in);
++    }
+   }
+   if (fd_out < 0) {

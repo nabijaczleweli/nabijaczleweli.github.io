@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/009-XEROX-SIGMA-9-balls.html">009. XEROX SIGMA 9 balls</a>;
-		<span style="white-space: nowrap;">Thu, 01 Dec 2022 17:16:50 +0100</span>
+		<a href="blogn_t/010-tme-Sun-2-SunOS3-2023.html">010. tme booting SunOS 3 on Sun-2 in 2023</a>;
+		<span style="white-space: nowrap;">Mon, 19 Jun 2023 23:53:58 +0200</span>
 	</samp>
 </p>
 
