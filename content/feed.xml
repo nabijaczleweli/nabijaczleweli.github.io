@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-06-15T17:13:00</updated>
+  <updated>2023-06-19T22:14:17</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -2940,6 +2940,794 @@ Anyway, glam shots.
   </entry>
 
   <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/010-tme-Sun-2-SunOS3-2023.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/010-tme-Sun-2-SunOS3-2023.html" />
+    <title> 010. tme booting SunOS 3 on Sun-2 in 2023 — blognꞌt — nabijaczleweli </title>
+    <updated>2023-06-19T23:53:58+02:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+.main-screenshot {
+ margin-top: 0.2em;
+ margin-bottom: 0.15em;
+ width: 100%;
+}
+kbd {
+ font-weight: bold;
+}
+pre.bigcode {
+ white-space: pre-wrap;
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;010. tme booting SunOS 3 on Sun-2 in 2023&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 19 Jun 2023 23:53:58 +0200&lt;/span&gt;&lt;/h4&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+As usual, some program has seen disproportionate development on SunOS.
+This was (relatively-)easily-handled for &lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html&quot;&gt;&lt;code&gt;hostid&lt;/code&gt;&lt;/a&gt;.
+Text processing is impossible to guess from foreign-arch binaries, however, especially since all manuals consist primarily of lies;
+&lt;code&gt;fmt&lt;/code&gt; being part of the Mail package doesn'&lt;!--'--&gt;t help.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;em&gt;The&lt;/em&gt; Sun-2 emulator is, fittingly, &lt;a href=&quot;//people.csail.mit.edu/fredette/tme/&quot;&gt;&lt;code&gt;tme&lt;/code&gt;&lt;/a&gt;.
+This is great, since there'&lt;!--'--&gt;s not a dozen of half-broken emulators.
+This is bad, because 0.8 was published in 2010 and targets exclusively NetBSD through 2007-era autohell.
+This is good, since it seems to be &lt;em&gt;the&lt;/em&gt; porterbox for NetBSD/sun&lt;var&gt;?&lt;/var&gt;.
+This is sub-optimal, because the &lt;em&gt;only&lt;/em&gt; working guest is NetBSD.
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continued&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;curl https://people.csail.mit.edu/fredette/tme/tme-0.8.tar.gz | tar -xz&lt;/kbd&gt;
+$ &lt;kbd&gt;cd tme-0.8&lt;/kbd&gt;
+$ &lt;kbd&gt;./configure&lt;/kbd&gt;
+$ &lt;kbd&gt;find -name Makefile -exec sed -i s/-Werror// {} +&lt;/kbd&gt;&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;# the author's &quot;reasonably fast machine&quot; is a 500MHz Pentium III
+$ &lt;kbd&gt;find -name Makefile -exec sed -i 's/^all-local:/all-local: $(pkglib_LTLIBRARIES)/' {} +&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# unclear if this has ever worked or if the author had simply only ever ran single-job &lt;code&gt;make&lt;/code&gt;s
+$ &lt;kbd&gt;make -j25&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+If you have &lt;code&gt;libltdl-dev&lt;/code&gt; installed, you'&lt;!--'--&gt;ll get
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot;&gt;
+&lt;!--&quot;--&gt;module.c:93:3: error: use of undeclared identifier 'lt_preloaded_symbols'&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   93 |   LTDL_SET_PRELOADED_SYMBOLS();&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      |   ^&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;/usr/include/ltdl.h:109:23: note: expanded from macro 'LTDL_SET_PRELOADED_SYMBOLS'&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  109 |         lt_dlpreload_default(lt_preloaded_symbols)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      |                              ^&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+because for some reason the system – instead of the embedded – &lt;code&gt;libltdl&lt;/code&gt; is used.
+This is remedied by just commenting it out with
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;&lt;samp&gt;$ &lt;kbd&gt;ed libtme/module.c&lt;/kbd&gt;&lt;/samp&gt;&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;&lt;samp&gt;&lt;kbd&gt;93s:^://:&lt;/kbd&gt;&lt;/samp&gt;&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Usually, this ought to be enough; however, in this state it only boots NetBSD; thankfully,
+&lt;a href=&quot;//www.giga.nl/walter/computers/sun2-install.html&quot;&gt;other&lt;/a&gt;
+&lt;a href=&quot;//www.heeltoe.com/index.php?n=Retro.Sun2&quot;&gt;users&lt;/a&gt;
+have come up with patchsets that fix &lt;code&gt;tme&lt;/code&gt; enough to boot SunOS 3.
+SunOS 2 doesn'&lt;!--'--&gt;t bootstrap (and even if installed from SunOS 3, it still
+&lt;a href=&quot;//nabijaczleweli.xyz/content/assets/blogn_t/010.6-sunos2.png&quot;&gt;just but errors&lt;/a&gt;).
+The only SunOS 3 that worked for me was 3.5; earlier installation tapes were broken to varying extents.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Additionally, during SunOS 3 installation,
+&lt;a href=&quot;//cohost.org/nabijaczleweli/post/1709365-real-innovation-has#post-1706872&quot;&gt;the emulator will &lt;code&gt;SIGABRT&lt;/code&gt; in the tape driver&lt;/a&gt;,
+since WRITE MARKS is unimplemented.
+This is trivially fixed by turning it into a no-op instead.
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuation&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;curl http://www.heeltoe.com/download/sun2/diffs-20111125 | patch -p1&lt;/kbd&gt;
+patching file bus/multibus/sun-mie.c
+patching file generic/bus.c
+patching file generic/bus-el.c
+patching file host/posix/posix-memory.c
+patching file ic/i825x6.c
+patching file ic/m68k/m68010.c
+patching file ic/m68k/m68k-execute.c
+patching file ic/m68k/m68k-impl.h
+patching file ic/m68k/m68k-insns-auto.c
+patching file ic/m68k/m68k-misc.c
+patching file libtme/module.c
+patching file machine/sun/sun-bwtwo.c
+patching file machine/sun2/sun2-mainbus.c
+patching file machine/sun2/sun2-mmu.c
+patching file machine/sun3/sun3-mainbus.c
+patching file machine/sun4/sun4-mainbus.c
+patching file scsi/emulexmt02.c
+patching file tmesh/tmesh.c
+patching file tmesh/tmesh-cmds.c
+patching file tmesh/tmesh-input.y
+$ &lt;kbd&gt;ed scsi/scsi-tape.c&lt;/kbd&gt;
+38495
+&lt;kbd&gt;585&lt;/kbd&gt;
+  abort();
+&lt;kbd&gt;s:^://:&lt;/kbd&gt;
+&lt;kbd&gt;w&lt;/kbd&gt;
+38497
+&lt;kbd&gt;q&lt;/kbd&gt;
+$ &lt;kbd&gt;make -j25&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+With this, the &lt;a href=&quot;//people.csail.mit.edu/fredette/tme/sun2-120-nbsd.html&quot;&gt;official Sun-2 instructions&lt;/a&gt; may continue.
+Well.
+It'&lt;!--'--&gt;s said that when configuring with &lt;samp&gt;--disable-shared&lt;/samp&gt;, plugins will be linked in statically:
+this doesn'&lt;!--'--&gt;t hold (and I needed to manually edit the final linker run).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+It'&lt;!--'--&gt;s also said that to run &lt;code&gt;tme&lt;/code&gt; from the build directory, you can just export &lt;code&gt;LTDL_LIBRARY_PATH=$PWD&lt;/code&gt;;
+this almost works except it doesn'&lt;!--'--&gt;t (presumably because bookworm libtool lays the output out differently,
+and the final binary is still linked to the embedded libltdl(?).).
+Thus, on the first run, no system component will be loaded to a choir of ENOENTs.
+To save you some round-trips between
+&lt;kbd&gt;strace -oss tmesh/tmesh MY-SUN2&lt;/kbd&gt;,
+&lt;kbd&gt;grep 'tme_.*so' ss | grep ENOENT&lt;/kbd&gt;, and
+&lt;kbd&gt;find $PWD -name whatever.so.0&lt;/kbd&gt;,
+I found this sufficient for &lt;samp style=&quot;white-space: nowrap;&quot;&gt;SUN2-MULTIBUS&lt;/samp&gt;:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;&lt;samp&gt;$ &lt;kbd&gt;ln -s $PWD/bus/multibus/.libs/tme_bus_multibus.so.0 $PWD/generic/.libs/tme_generic.so.0 $PWD/host/gtk/.libs/tme_host_gtk.so.0 $PWD/host/posix/.libs/tme_host_posix.so.0 $PWD/ic/.libs/tme_ic_am9513.so.0 $PWD/ic/.libs/tme_ic_mm58167.so.0 $PWD/ic/.libs/tme_ic_z8530.so.0 $PWD/ic/m68k/.libs/tme_ic_m68k.so.0 $PWD/machine/sun2/.libs/tme_machine_sun2.so.0 $PWD/scsi/.libs/tme_scsi.so.0 $PWD/serial/.libs/tme_serial_kb.so.0 tme&lt;/kbd&gt;&lt;/samp&gt;&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+With this, the &lt;a href=&quot;//people.csail.mit.edu/fredette/tme/sun2-120-nbsd.html&quot;&gt;official Sun-2 instructions&lt;/a&gt; may continue:
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;curl -O https://people.csail.mit.edu/fredette/tme/sun2-multi-rev-R.bin&lt;/kbd&gt;
+$ &lt;kbd&gt;cp $(find -name SUN2-MULTIBUS) MY-SUN2&lt;/kbd&gt;
++ cp ./machine/sun2/SUN2-MULTIBUS MY-SUN2
+$ &lt;kbd&gt;perl -w $(find -name tme-sun-idprom) 2/120 8:0:20:0:0:0 &gt; my-sun2-idprom.bin&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# s/0:0:0/&lt;var&gt;whatever&lt;/var&gt;/ if you have other sunmicro hosts
++ perl -w ./machine/sun/tme-sun-idprom 2/120 8:0:20:0:0:0
+$ &lt;kbd&gt;find -name sun-keyboards.txt&lt;/kbd&gt;
+./machine/sun/sun-keyboards.txt
+$ &lt;kbd&gt;cp ./machine/sun/sun-keyboards.txt ./machine/sun/my-sun-macros.txt .&lt;/kbd&gt;
+$ &lt;kbd&gt;truncate -s 40G my-sun2-disk.img&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# fun: the emulator &lt;code&gt;SIGBUS&lt;/code&gt;ses if the guest reads past the end here!&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Thankfully, customisation points (and auto-boot) for SunOS enjoyers are outlined explicitly:
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;grep -nC3 SunOS MY-SUN2&lt;/kbd&gt;
+82-## a SCSI disk:
+83-##
+84:# if you'&lt;!--'--&gt;re using SunOS, change the disk type from tme-scsi-1 to
+85-# acb4000, to get an Adaptec ACB-4000 compatible disk:
+86-#
+87-sd0 at scsibus0: tme/scsi/disk id 0 type tme-scsi-1
+--
+90-## a SCSI tape:
+91-##
+92:# if you'&lt;!--'--&gt;re using SunOS, remove the vendor EMULEX and product &quot;MT-02 QIC&quot;
+93-# to get a 100% Emulex MT-02 compatible tape:
+94-#
+95-st0 at scsibus0: tme/scsi/tape id 4 type emulex-mt02 vendor EMULEX product &quot;MT-02 QIC&quot;
+$ &lt;kbd&gt;ed MY-SUN2&lt;/kbd&gt;
+3579
+&lt;kbd&gt;87s/tme-scsi-1/acb4000/p&lt;/kbd&gt;
+sd0 at scsibus0: tme/scsi/disk id 0 type acb4000
+&lt;kbd&gt;95s/ ve.*//p&lt;/kbd&gt;
+st0 at scsibus0: tme/scsi/tape id 4 type emulex-mt02
+&lt;kbd&gt;$s/# //p&lt;/kbd&gt;
+command mainbus0 power up
+&lt;kbd&gt;w&lt;/kbd&gt;
+3540
+&lt;kbd&gt;q&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+By default, the emulator boots with the GTK display.
+This is fine, it works the most; however, for the purposes of transcribing this tutorialisation I took advantage of the
+&lt;a href=&quot;//people.csail.mit.edu/fredette/tme/#system-tty&quot;&gt;serial I/O capability&lt;/a&gt;
+— which can be toggled by inverting the comments on both mentions of &quot;GTK&quot; in &lt;code&gt;MY-SUN2&lt;/code&gt; —
+to use my preferred xterm, which I can copy from, as the head.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Naturally, it only supports BSD PTYs, which Debian hasn'&lt;!--'--&gt;t configured with on &lt;em&gt;any&lt;/em&gt; arch since &lt;a href=&quot;//bugs.debian.org/338404&quot;&gt;&lt;em&gt;2007&lt;/em&gt;&lt;/a&gt;.
+Thankfully, all &lt;samp&gt;/dev/ptmx&lt;/samp&gt; needs is
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot;&gt;&lt;!--
+--&gt;--- host/posix/posix-serial.c 2007-08-24 02:57:01.000000000 +0200
++++ host/posix/posix-serial.c 2023-06-19 01:26:46.891606875 +0200
+@@ -34,4 +34,5 @@
+  */
+
++#define _GNU_SOURCE
+ #include &amp;lt;tme/common.h&gt;
+ _TME_RCSID(&quot;$Id: posix-serial.c,v 1.11 2007/08/24 00:57:01 fredette Exp $&quot;);
+@@ -43,4 +44,5 @@
+ #include &amp;lt;fcntl.h&gt;
+ #include &amp;lt;stdio.h&gt;
++#include &amp;lt;signal.h&gt;
+ #include &amp;lt;termios.h&gt;
+ #include &amp;lt;sys/types.h&gt;
+@@ -342,4 +344,6 @@
+     if (rc &lt; 0) {
+       /* XXX diagnostic */
+&lt;!--&quot;--&gt;+      if (errno == EIO)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+        raise(SIGHUP);&lt;!--&quot;--&gt;
+       continue;
+     }
+@@ -842,4 +846,5 @@
+   const char *filename_in;
+   const char *filename_out;
+&lt;!--&quot;--&gt;+  char *vt;&lt;!--&quot;--&gt;
+   int fd_in, fd_out;
+   int usage;
+@@ -943,4 +948,9 @@
+       return (errno);
+     }
+&lt;!--&quot;--&gt;+    if (vt = ptsname(fd_in)) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+      printf(&quot;opened %s\n&quot;, vt);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+      grantpt(fd_in);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+      unlockpt(fd_in);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+    }&lt;!--&quot;--&gt;
+   }
+   if (fd_out &lt; 0) {&lt;!--
+--&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+I'&lt;!--'--&gt;ve personally added
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot;&gt;
+      if (!fork())
+        _exit(execlp(&quot;st&quot;, &quot;st&quot;, &quot;-l&quot;, vt, (char *)0));
+&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+after the &lt;code&gt;unlockpt()&lt;/code&gt;, yielding an upgraded-over-stock UX of an xterm showing up on boot and closing the xterm killing the emulator
+(set &lt;var&gt;device&lt;/var&gt; to &lt;code&gt;/dev/ptmx&lt;/code&gt;).
+Strictly, this ought to be &lt;code&gt;st -l &lt;var&gt;vt&lt;/var&gt; -- -parenb 9600 clocal&lt;/code&gt; to match the author'&lt;!--'--&gt;s remote(5) line, but none of these do anything on a PTY.
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuation&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.1-tme-0.8-ptmx | patch&lt;/kbd&gt;
+$ &lt;kbd&gt;make -j25&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;em&gt;Now&lt;/em&gt;
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;LTDL_LIBRARY_PATH=$PWD tmesh/tmesh MY-SUN2&lt;/kbd&gt;
+[/display0.0]: cannot generate keysym 'Meta_R' directly, or through a macro: No such file or directory
+&lt;em&gt;# ...&lt;/em&gt;
+[/display0.0]: cannot generate keysym 'R1' directly, or through a macro: No such file or directory
+lt-tmesh&gt; &lt;kbd&gt;ls&lt;/kbd&gt;
+mainbus0: tme/machine/sun2 multibus my-sun2-idprom.bin
+cpu0 at mainbus0: tme/ic/m68010
+obio0 at mainbus0 obio: tme/generic/bus size 8MB
+obmem0 at mainbus0 obmem: tme/generic/bus size 16MB
+ram0 at obmem0 addr 0x0: tme/host/posix/memory ram 4MB
+rom0 at obmem0 addr 0xef0000: tme/host/posix/memory rom sun2-multi-rev-R.bin
+rom0 at obmem0 addr 0xef8000
+clock0 at obio0 addr 0x2800: tme/machine/sun2/clock
+tod0 at obio0 addr 0x3800: tme/machine/sun2/tod
+zs0 at obio0 addr 0x2000 ipl 6: tme/machine/sun2/zs
+mbio0 at mainbus0 mbio: tme/generic/bus size 8MB
+mbmem0 addr 0x00000 at mainbus0 mbmem: tme/generic/bus size 8MB
+sc0 at mbmem0 addr 0x80000 ipl 2: tme/bus/multibus/sun-sc
+scsibus0 at sc0: tme/scsi/bus
+bwtwo0 at obmem0 addr 0x700000 ipl 4: tme/machine/sun2/bwtwo type multibus
+zs1 at obmem0 addr 0x780000 ipl 6: tme/machine/sun2/zs
+kbd0 at zs1 channel A: tme/serial/keyboard type sun-type-2 macros my-sun-macros.txt map sun-keyboards.txt rate 20
+ms0 at zs1 channel B: tme/serial/mouse type mousesystems-5
+display0 at bwtwo0: tme/host/gtk/display
+display0 at kbd0
+display0 at ms0
+sd0 at scsibus0: tme/scsi/disk id 0 type acb4000
+disk0 at sd0: tme/host/posix/disk file my-sun2-disk.img
+st0 at scsibus0: tme/scsi/tape id 4 type emulex-mt02
+tape0 at st0: tme/host/posix/tape&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+or
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;LTDL_LIBRARY_PATH=$PWD tmesh/tmesh MY-SUN2&lt;/kbd&gt;
+opened /dev/pts/0
+lt-tmesh&gt; &lt;kbd&gt;ls&lt;/kbd&gt;
+mainbus0: tme/machine/sun2 multibus my-sun2-idprom.bin
+cpu0 at mainbus0: tme/ic/m68010
+obio0 at mainbus0 obio: tme/generic/bus size 8MB
+obmem0 at mainbus0 obmem: tme/generic/bus size 16MB
+ram0 at obmem0 addr 0x0: tme/host/posix/memory ram 4MB
+rom0 at obmem0 addr 0xef0000: tme/host/posix/memory rom sun2-multi-rev-R.bin
+rom0 at obmem0 addr 0xef8000
+clock0 at obio0 addr 0x2800: tme/machine/sun2/clock
+tod0 at obio0 addr 0x3800: tme/machine/sun2/tod
+zs0 at obio0 addr 0x2000 ipl 6: tme/machine/sun2/zs
+mbio0 at mainbus0 mbio: tme/generic/bus size 8MB
+mbmem0 addr 0x00000 at mainbus0 mbmem: tme/generic/bus size 8MB
+sc0 at mbmem0 addr 0x80000 ipl 2: tme/bus/multibus/sun-sc
+scsibus0 at sc0: tme/scsi/bus
+console0 at zs0 channel A: tme/host/posix/serial device /dev/ptmx break-carats
+sd0 at scsibus0: tme/scsi/disk id 0 type acb4000
+disk0 at sd0: tme/host/posix/disk file my-sun2-disk.img
+st0 at scsibus0: tme/scsi/tape id 4 type emulex-mt02
+tape0 at st0: tme/host/posix/tape&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+should hold.
+If you get any &lt;code&gt;ENOENT&lt;/code&gt;s that aren't due to keysyms, you're missing some plugins that need to be linked to &lt;code&gt;tme/&lt;/code&gt;.
+Since &lt;span class=&quot;smallcaps&quot;&gt;1&lt;/span&gt; is an exercise in writing programs for your programs in your programs, the &lt;code&gt;tmesh&lt;/code&gt; process is, per nom, a shell;
+unlike &lt;span class=&quot;smallcaps&quot;&gt;dec&lt;/span&gt;tapes everyone'&lt;!--'--&gt;s familiar with, tapes here consist of indexed partitions;
+thus, running &lt;kbd&gt;command tape0 load part0 part1 …&lt;/kbd&gt; inserts a tape consisting of &lt;var&gt;part&lt;/var&gt;s into &lt;code&gt;st0&lt;/code&gt;,
+&lt;kbd&gt;command tape0 unload&lt;/kbd&gt; does the obverse, and &lt;code&gt;load&lt;/code&gt;ing twice in a row yields a sensible error.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Conversely, &lt;kbd&gt;^D&lt;/kbd&gt;ing segfaults the emulator.
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.2-plain.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot&quot; src=&quot;/content/assets/blogn_t/010.2-plain.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The hard(-to-bear) part (other people'&lt;!--'--&gt;s C) is largely over, and can be followed by the hard(-to-bear) part of unpacking &lt;span class=&quot;smallcaps&quot;&gt;1&lt;/span&gt;.
+Western Electric and UCB licensees may obtain the SunOS 3.5/Sun-2 tape set from &lt;a href=&quot;//winworldpc.com/product/sunos/3x&quot;&gt;WinWorld&lt;/a&gt;,
+extract it somewhere, and ease their lives by running &lt;kbd&gt;ln -s &lt;var&gt;$somewhere&lt;/var&gt;/'Sun UNIX 4.2 Release 3.5 (Tape) [Sun-2]'/tape? .&lt;/kbd&gt;.
+All SunOS 3 tapes, contrary to their predecessors, have a TOC as the second partition:
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuation&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;cat tape1/02&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# Inter-tape distances enlarged to show texture
+TABLE OF CONTENTS
+MC68010 tape 1
+1 1 tape boot block
+1 2 toc
+1 3 copyright
+1 4 diag
+1 5 copy
+1 6 mini-root
+1 7 root
+1 8 pub
+1 9 client image
+1 10 copyright
+
+2 1 copyright
+2 2 toc
+2 3 Sys
+2 4 Networking tools and programs
+2 5 Debugging tools
+2 6 usr
+2 7 copyright
+
+3 1 copyright
+3 2 toc
+3 3 SunView User Programs
+3 4 SunView Programmers Files
+3 5 SunView and Demo Program source
+3 6 Text Processing tools
+3 7 Setup tools
+3 8 Standalone Diagnostics
+3 9 Fortran Compiler &amp; Libraries
+3 10 User Level Diagnostics
+3 11 SunCore &amp; CGI Libraries
+3 12 Pascal Interpreter &amp; Compiler
+3 13 Profiled Libraries
+3 14 uucp programs
+3 15 copyright
+
+4 1 copyright
+4 2 toc
+4 3 System V programs and libraries
+4 4 Manual Pages
+4 5 Demonstration Programs
+4 6 Games
+4 7 SunPro
+4 8 copyright
+
+5 1 copyright
+5 2 toc
+5 3 Versatec Printer Software
+5 4 copyright
+# This is, thus, not relevant, but is nevertheless humourous
+$ &lt;kbd&gt;paste &amp;lt;(ls -l tape?/* | cut -c35-) &amp;lt;(file tape?/* | cut -d: -f2-)&lt;/kbd&gt;
+&lt;!--&quot;--&gt;  30720 Mar 28  1994 tape1/01	data&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   1024 Mar 28  1994 tape1/02	GTA in-game text (GXT), version 3, used in GTA VC/LS/VCS&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;    512 Mar 28  1994 tape1/03	data&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  98816 Mar 28  1994 tape1/04	a.out SunOS mc68010 executable&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  41472 Mar 28  1994 tape1/05	a.out SunOS mc68010 executable not stripped&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;4718592 Mar 28  1994 tape1/06	Unix Fast File system [v1] (big-endian), last mounted on /mnt, last written at Wed Dec  2 18:02:04 1987, clean flag 0, number of blocks 4608, number of data blocks 4303, number of cylinder groups 3, block size 8192, fragment size 1024, minimum percentage of free blocks 0, rotational delay 4ms, disk rotational speed 60rps, TIME optimization&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1843200 Mar 28  1994 tape1/07	tar archive&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;4198400 Mar 28  1994 tape1/08	tar archive&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1740800 Mar 28  1994 tape1/09	tar archive&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;    512 Mar 28  1994 tape1/10	data&lt;!--&quot;--&gt;
+$ &lt;kbd&gt;echo tape1/*; echo tape2/*; echo tape3/*; echo tape4/*; echo tape5/*&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# and this is useful for later
+tape1/01 tape1/02 tape1/03 tape1/04 tape1/05 tape1/06 tape1/07 tape1/08 tape1/09 tape1/10
+tape2/01 tape2/02 tape2/03 tape2/04 tape2/05 tape2/06 tape2/07
+tape3/01 tape3/02 tape3/03 tape3/04 tape3/05 tape3/06 tape3/07 tape3/08 tape3/09 tape3/10 tape3/11 tape3/12 tape3/13 tape3/14 tape3/15
+tape4/01 tape4/02 tape4/03 tape4/04 tape4/05 tape4/06 tape4/07 tape4/08
+tape5/01 tape5/02 tape5/03 tape5/04&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Therefore
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;lt-tmesh&gt; &lt;kbd&gt;command tape0 load tape1/01 tape1/02 tape1/03 tape1/04 tape1/05 tape1/06 tape1/07 tape1/08 tape1/09 tape1/10&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and on the console:
+&lt;/p&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;Self Test completed successfully.
+
+Sun Workstation, Model Sun-2/120 or Sun-2/170, Sun-2 keyboard
+ROM Rev R, 4MB memory installed
+Serial #83661, Ethernet address 8:0:20:0:0:0
+
+Probing Multibus: sd
+Auto-boot in progress...
+Boot: sd(0,0,0)vmunix
+
+Exception 2C at 006000
+&gt;&lt;kbd&gt;b st()&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# equivalent to st(0,0,0)
+Boot: st(0,0,0)
+Boot: &lt;kbd&gt;st(0,0,3)&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;1 4 diag&quot;
+Size: 58636+33256+29072 bytes
+
+Version 1.3 86/07/25
+Disk Initialization and Diagnosis
+
+When asked if you are sure, respond with 'y' or 'Y'
+
+specify controller:
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;0 - Interphase SMD-2180
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1 - Xylogics 440 (prom set 926)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2 - Xylogics 450/451
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;3 - Adaptec ACB 4000 - SCSI/ST506
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;4 - Emulex MD21 - SCSI/ESDI
+which one? &lt;kbd&gt;4&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# even though the configuration includes the &lt;code&gt;acb4000&lt;/code&gt;; the &lt;span class=&quot;smallcaps&quot;&gt;emulex&lt;/span&gt; appears to be functionally equivalent but it has bigger disks available
+Specify controller address on the mainbus (in hex): &lt;kbd&gt;80000&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &lt;code&gt;disk0 at sd0 at scsibus0 at sc0 at mbmem0 addr 0x80000&lt;/code&gt;
+Device address: 80000
+
+Which target? &lt;kbd&gt;0&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# for a second disk, duplicate both lines mentioning &lt;code&gt;sd0&lt;/code&gt;, rename to &lt;code&gt;sd1&lt;/code&gt;, &lt;code&gt;disk1&lt;/code&gt;, &lt;code&gt;id 1&lt;/code&gt; and use &lt;kbd&gt;1&lt;/kbd&gt; here; this ends up being &lt;code&gt;/dev/sd2&lt;/code&gt;
+
+Which unit? &lt;kbd&gt;0&lt;/kbd&gt;
+
+Specify drive:
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;0 - Micropolis 1355
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1 - Toshiba MK 156F
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2 - Micropolis 1558
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;3 - Other
+which one? &lt;kbd&gt;2&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# this is the largest disk available; the 1355 is the second-largest, and the 1558 is not available on earlier systems
+
+ncyl 1218 acyl 2 nhead 15 nsect 35 interleave 1
+reset the SCSI bus...
+diag&gt; &lt;kbd&gt;label&lt;/kbd&gt;
+label this disk...
+OK to use logical partition map 'Micropolis 1558'? &lt;kbd&gt;y&lt;/kbd&gt;
+Are you sure you want to write? &lt;kbd&gt;y&lt;/kbd&gt;
+verify label
+id: &amp;lt;Micropolis 1558 cyl 1218 alt 2 hd 15 sec 35&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;Partition a: starting cyl=0, # blocks=16275
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;Partition b: starting cyl=31, # blocks=32550
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;Partition c: starting cyl=0, # blocks=639450
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;Partition g: starting cyl=93, # blocks=590625
+diag&gt; &lt;kbd&gt;q&lt;/kbd&gt;
+Boot: &lt;kbd&gt;st(,,4)&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;1 5 copy&quot;
+Size: 23088+5248+113452 bytes
+Standalone Copy
+From: &lt;kbd&gt;st(0,0,5)&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;1 6 mini-root&quot;
+To: &lt;kbd&gt;sd(0,0,1)&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# sd0b, conventionally swap
+Copy completed - 4720640 bytes
+Boot: &lt;kbd&gt;sd(0,0,1)vmunix -as&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# -a to prompt for /; -s for single-user
+Size: 481704+76100+64288 bytes
+Sun UNIX 4.2 Release 3.5 (GENERIC) #1: Tue Dec 1 16:56:07 PST 1987
+Copyright (c) 1986 by Sun Microsystems, Inc.
+mem = 4096K (0x400000)
+avail mem = 3280896
+Ethernet address = 8:0:20:0:0:0
+sc0 at mbmem 80000 pri 2
+sd0 at sc0 slave 0
+sd0:&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&amp;lt;Micropolis 1558 cyl 1218 alt 2 hd 15 sec 35&gt;
+sd1 at sc0 slave 1
+st0 at sc0 slave 32
+sd2 at sc0 slave 8
+st1 at sc0 slave 40
+zs0 at obio 2000 pri 3
+pi0 at obio 1800
+tod0 at obio 3800
+root device? &lt;kbd&gt;sd0*&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &lt;a href=&quot;/content/assets/blogn_t/010.3-setconf.png&quot;&gt;the &lt;code&gt;*&lt;/code&gt; enables cooperative swap-on-root&lt;/a&gt; (instead of normally dumping to sd0b, which instantly destroys the filesystem there); this doesn'&lt;!--'--&gt;t appear to be documented
+using 100 buffers containing 366592 bytes of main memory
+WARNING: TOD clock not initialized -- CHECK AND RESET THE DATE!
+Singleuser boot -- fsck not done
+# &lt;kbd&gt;stty erase \^H&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# (&lt;code&gt;^&lt;/code&gt; is special in the bourne shell) if using the graphical console; the keyboard mapping appears to match &lt;a href=&quot;//github.com/delan/usb3sun/blob/default/src/bindings.h#L132&quot;&gt;actual keyboards&lt;/a&gt; in backspace being ^H; the miniroot has no way of checking whether it'&lt;!--'--&gt;s run on /dev/console and always runs &lt;code&gt;stty dec&lt;/code&gt;; the installed system does, but also still does
+# &lt;kbd&gt;cd dev&lt;/kbd&gt;
+# &lt;kbd&gt;MAKEDEV st0&lt;/kbd&gt;
+# &lt;kbd&gt;newfs /dev/rsd0a&lt;/kbd&gt;
+/dev/rsd0a:&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;16274 sectors in 31 cylinders of 15 tracks, 35 sectors
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;8.3Mb in 2 cyl groups (16 c/g, 4.30Mb/g, 1920 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 8480,
+# &lt;kbd&gt;newfs /dev/rsd0g&lt;/kbd&gt;
+/dev/rsd0g:&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;590624 sectors in 1125 cylinders of 15 tracks, 35 sectors
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;302.4Mb in 71 cyl groups (16 c/g, 4.30Mb/g, 1984 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 8480, 16928, 25376, 33824, 42272, 50720, 59168, 67616, 76064,
+ 84512, 92960, 101408, 109856, 118304, 126752, 134432, 142880, 151328, 159776,
+ 168224, 176672, 185120, 193568, 202016, 210464, 218912, 227360, 235808, 244256,
+ 252704, 261152, 268832, 277280, 285728, 294176, 302624, 311072, 319520, 327968,
+ 336416, 344864, 353312, 361760, 370208, 378656, 387104, 395552, 403232, 411680,
+ 420128, 428576, 437024, 445472, 453920, 462368, 470816, 479264, 487712, 496160,
+ 504608, 513056, 521504, 529952, 537632, 546080, 554528, 562976, 571424, 579872,
+ 588320,
+# &lt;kbd&gt;mount sd0a /a&lt;/kbd&gt;
+# &lt;kbd&gt;cd /a&lt;/kbd&gt;
+# &lt;kbd&gt;mm() { mt -f /dev/nrst0 $*; }&lt;/kbd&gt;
+# &lt;kbd&gt;unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using &lt;code&gt;mm fsf $*&lt;/code&gt; here always runs &lt;code&gt;mm fsf rew&lt;/code&gt;
+# &lt;kbd&gt;set -x&lt;/kbd&gt;
+# &lt;kbd&gt;for i in 6 7 8; do unp; done&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;1 7 root&quot;, &quot;1 8 pub&quot;, &quot;1 9 client image&quot;
++ unp
++ mm rew
++ mt -f /dev/nrst0 rew
++ mm fsf 6
++ mt -f /dev/nrst0 fsf 6
++ tar xvpf /dev/nrst0
+x ./etc/nd.local, 270 bytes, 1 tape blocks
+x ./etc/dkinfo, 24576 bytes, 48 tape blocks
+x ./etc/nd, 49152 bytes, 96 tape blocks
+&lt;em&gt;# ...&lt;/em&gt;
+x ./pub/bin/sh, 65536 bytes, 128 tape blocks
+x ./.cshrc, 15 bytes, 1 tape blocks
+x ./.login, 84 bytes, 1 tape blocks
+x ./.profile, 70 bytes, 1 tape blocks
+x ./.rhosts, 0 bytes, 0 tape blocks
+x ./boot, 35020 bytes, 69 tape blocks
+# &lt;kbd&gt;cd dev&lt;/kbd&gt;
+# &lt;kbd&gt;MAKEDEV std ttys pty0 win0 sd0 st0&lt;/kbd&gt;
+# &lt;kbd&gt;mount sd0g /a/usr&lt;/kbd&gt;
+# &lt;kbd&gt;cd ../etc&lt;/kbd&gt;
+# &lt;kbd&gt;cat &gt; fstab&lt;/kbd&gt;
+&lt;!--&quot;--&gt;&lt;kbd&gt;/dev/sd0a	/	4.2	rw,noquota	1	1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;/dev/sd0g	/usr	4.2	rw,noquota	1	2&lt;!--&quot;--&gt;
+^D&lt;/kbd&gt;
+# &lt;kbd&gt;mv ypbind ypbind_&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# this disables ypbind(8), cf. rc.local
+lt-tmesh&gt; &lt;kbd&gt;command tape0 unload&lt;/kbd&gt;
+lt-tmesh&gt; &lt;kbd&gt;command tape0 load tape2/01 tape2/02 tape2/03 tape2/04 tape2/05 tape2/06 tape2/07&lt;/kbd&gt;
+# &lt;kbd&gt;cd ../usr&lt;/kbd&gt;
+# &lt;kbd&gt;for i in 2 3 4 5; do unp; done&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;2 3 Sys&quot;, &quot;2 4 Networking tools and programs&quot;, &quot;2 5 Debugging tools&quot;, &quot;2 6 usr&quot;
++ unp
++ mm rew
++ mt -f /dev/nrst0 rew
++ mm fsf 2
++ mt -f /dev/nrst0 fsf 2
++ tar xvpf /dev/nrst0
+x ./sys/OBJ/addupc.o, 354 bytes, 1 tape blocks
+x ./sys/OBJ/af.o, 526 bytes, 2 tape blocks
+x ./sys/OBJ/ar.h, 14 bytes, 1 tape blocks
+&lt;em&gt;# ...&lt;/em&gt;
+x ./sccs/helpdir/un, 559 bytes, 2 tape blocks
+x ./sccs/helpdir/ut, 2070 bytes, 5 tape blocks
+x ./sccs/helpdir/va, 101 bytes, 1 tape blocks
+x ./sccs/helpdir/vc, 2417 bytes, 5 tape blocks
+lt-tmesh&gt; &lt;kbd&gt;command tape0 unload&lt;/kbd&gt;
+lt-tmesh&gt; &lt;kbd&gt;command tape0 load tape3/01 tape3/02 tape3/03 tape3/04 tape3/05 tape3/06 tape3/07 tape3/08 tape3/09 tape3/10 tape3/11 tape3/12 tape3/13 tape3/14 tape3/15&lt;/kbd&gt;
+# &lt;kbd&gt;for i in 2 3 4 5 6 7 8 9 10 11 12 13; do unp; done&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;3 3 SunView User Programs&quot;, &quot;3 4 SunView Programmers Files&quot;, &quot;3 5 SunView and Demo Program source&quot;, &quot;3 6 Text Processing tools&quot;, &quot;3 7 Setup tools&quot;, &quot;3 8 Standalone Diagnostics&quot;, &quot;3 9 Fortran Compiler &amp; Libraries&quot;, &quot;3 10 User Level Diagnostics&quot;, &quot;3 11 SunCore &amp; CGI Libraries&quot;, &quot;3 12 Pascal Interpreter &amp; Compiler&quot;, &quot;3 13 Profiled Libraries&quot;, &quot;3 14 uucp programs&quot;
++ unp
++ mm rew
++ mt -f /dev/nrst0 rew
++ mm fsf 2
++ mt -f /dev/nrst0 fsf 2
++ tar xvpf /dev/nrst0
+x ./bin/adjacentscreens symbolic link to othertools
+x ./bin/align_equals symbolic link to suntools
+&lt;em&gt;# ...&lt;/em&gt;
+x ./spool/uucp/LOGFILE, 0 bytes, 0 tape blocks
+x ./spool/uucp/SYSLOG, 0 bytes, 0 tape blocks
+lt-tmesh&gt; &lt;kbd&gt;command tape0 unload&lt;/kbd&gt;
+lt-tmesh&gt; &lt;kbd&gt;command tape0 load tape4/01 tape4/02 tape4/03 tape4/04 tape4/05 tape4/06 tape4/07 tape4/08&lt;/kbd&gt;
+# &lt;kbd&gt;for i in 2 3 4 5 6; do unp; done&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;4 3 System V programs and libraries&quot;, &quot;4 4 Manual Pages&quot;, &quot;4 5 Demonstration Programs&quot;, &quot;4 6 Games&quot;, &quot;4 7 SunPro&quot;
+&lt;em&gt;# ...&lt;/em&gt;
++ unp
++ mm rew
++ mt -f /dev/nrst0 rew
++ mm fsf 6
++ mt -f /dev/nrst0 fsf 6
++ tar xvpf /dev/nrst0
+x ./sunpro/install_sunpro, 472 bytes, 1 tape blocks
+x ./sunpro/compile, 73728 bytes, 144 tape blocks
+x ./sunpro/cpp, 49152 bytes, 96 tape blocks
+x ./sunpro/ld, 57344 bytes, 112 tape blocks
+x ./sunpro/m4, 40960 bytes, 80 tape blocks
+x ./sunpro/make, 98304 bytes, 192 tape blocks
+x ./sunpro/make.1, 39910 bytes, 78 tape blocks
+x ./sunpro/default.mk, 3351 bytes, 7 tape blocks
+x ./sunpro/filemerge, 638976 bytes, 1248 tape blocks
+x ./sunpro/filemerge.1, 7165 bytes, 14 tape blocks
+# &lt;kbd&gt;cd /&lt;/kbd&gt;
+# &lt;kbd&gt;umount /a/usr&lt;/kbd&gt;
+# &lt;kbd&gt;umount /a&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+and kill the emulator: the miniroot doesn'&lt;!--'--&gt;t have &lt;code&gt;halt&lt;/code&gt;, not that it potentially getting corrupted matters.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+At this point we have SunOS, and it Just Boots.
+The miniroot environment didn'&lt;!--'--&gt;t have curses programs, but your fully-unpacked 46MiB system (more if you also unpacked the printer drivers) does;
+&lt;code&gt;TERM=sun&lt;/code&gt; works for the graphical console; termcap is hell, &lt;code&gt;TERM=ansi&lt;/code&gt;
+(&lt;samp&gt;sx|ansi|any ansi terminal with pessimistic assumptions:\&lt;/samp&gt;)
+doesn'&lt;!--'--&gt;t work under my preferred xterm, and I have neither the patience or the will to try others.
+Unless you're an ed fiend, I'd recommend just using the graphical console.
+(If you won't, you'll need to also fight getty to produce a sane login prompt.)
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.4-fresh.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot&quot; src=&quot;/content/assets/blogn_t/010.4-fresh.png&quot; /&gt;&lt;/a&gt;
+&lt;pre class=&quot;bigcode continued&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;LTDL_LIBRARY_PATH=$PWD tmesh/tmesh MY-SUN2&lt;/kbd&gt;
+Self Test completed successfully.
+
+Sun Workstation, Model Sun-2/120 or Sun-2/170, Sun-2 keyboard
+ROM Rev R, 4MB memory installed
+Serial #83661, Ethernet address 8:0:20:0:0:0
+
+Probing Multibus: sd
+Auto-boot in progress...
+Boot: sd(0,0,0)vmunix
+Load: sd(0,0,0)boot
+Boot: sd(0,0,0)vmunix
+Size: 481704+76100+64288 bytes
+Sun UNIX 4.2 Release 3.5 (GENERIC) #1: Tue Dec 1 16:56:07 PST 1987
+Copyright (c) 1986 by Sun Microsystems, Inc.
+mem = 4096K (0x400000)
+avail mem = 3280896
+Ethernet address = 8:0:20:0:0:0
+sc0 at mbmem 80000 pri 2
+sd0 at sc0 slave 0
+sd0:&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&amp;lt;Micropolis 1558 cyl 1218 alt 2 hd 15 sec 35&gt;
+sd1 at sc0 slave 1
+st0 at sc0 slave 32
+sd2 at sc0 slave 8
+st1 at sc0 slave 40
+zs0 at obio 2000 pri 3
+pi0 at obio 1800
+root on sd0
+using 100 buffers containing 366592 bytes of main memory
+WARNING: no TOD clock -- CHECK AND RESET THE DATE!
+/dev/sd0a: 257 files, 5903 used, 1705 free (1 frags, 213 blocks)
+/dev/rsd0g: 4749 files, 47151 used, 229399 free (311 frags, 28636 blocks)
+Automatic reboot in progress...
+Wed Dec&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;2 10:13:37 PST 1987
+starting rpc and net services: portmap router biod.
+local daemons: sendmail statd lockd.
+preserving editor files
+clearing /tmp
+standard daemons: update cron printer uucp.
+starting network: inet.
+Wed Dec&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;2 10:13:38 PST 1987
+�
+ �o���e�lo�i�:��
+                �o���e�lo�i�:��
+                               �o���e�lo�i�:�
+                                             �
+                                              �o���e�lo�i�:�t��t�re�et
+Password:
+Login incorrect
+login: &lt;kbd&gt;root&lt;/kbd&gt;
+Sun UNIX 4.2 Release 3.5 (GENERIC) #1: Tue Dec 1 16:56:07 PST 1987
+noname# &lt;kbd&gt;cat .login&lt;/kbd&gt;
+stty dec
+set path=($path /etc /usr/etc)
+set noglob; eval `tset -Q -s`; unset noglob
+noname# &lt;kbd&gt;ed .login&lt;/kbd&gt;
+84
+&lt;kbd&gt;1&lt;/kbd&gt;
+stty dec
+a
+&lt;kbd&gt;if (`tty` = /dev/console) stty erase ^H
+.
+w&lt;/kbd&gt;
+126
+&lt;kbd&gt;q&lt;/kbd&gt;
+noname# &lt;kbd&gt;cd /etc&lt;/kbd&gt;
+noname# &lt;kbd&gt;ed rc.boot&lt;/kbd&gt;
+1439
+&lt;kbd&gt;/host/&lt;/kbd&gt;
+hostname=noname
+&lt;kbd&gt;s/noname/&lt;var&gt;sunos3&lt;/var&gt;/
+w&lt;/kbd&gt;
+1439
+&lt;kbd&gt;q&lt;/kbd&gt;
+noname# &lt;kbd&gt;ed rc.local&lt;/kbd&gt;
+3079
+&lt;kbd&gt;/nona/&lt;/kbd&gt;
+/bin/domainname noname
+&lt;kbd&gt;s/noname/&lt;var&gt;nabijaczleweli.xyz&lt;/var&gt;/&lt;/kbd&gt;
+&lt;kbd&gt;w&lt;/kbd&gt;
+3091
+&lt;kbd&gt;q&lt;/kbd&gt;
+noname# &lt;kbd&gt;halt&lt;/kbd&gt;
+syncing disks... done
+Unix Halted
+
+&gt;&lt;kbd&gt;b&lt;/kbd&gt;
+Boot: sd(0,0,0)vmunix
+Load: sd(0,0,0)boot
+Boot: sd(0,0,0)vmunix
+Size: 481704+76100+64288 bytes
+Sun UNIX 4.2 Release 3.5 (GENERIC) #1: Tue Dec 1 16:56:07 PST 1987
+Copyright (c) 1986 by Sun Microsystems, Inc.
+mem = 4096K (0x400000)
+avail mem = 3280896
+Ethernet address = 8:0:20:0:0:0
+&lt;em&gt;# ...&lt;/em&gt;
+standard daemons: update cron printer uucp.
+starting network: inet.
+Wed Dec&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;2 10:16:12 PST 1987
+�
+ ���o�3�lo�i�:��
+                ���o�3�lo�i�:��
+                               ���o�3�lo�i�:����
+Password:
+Login incorrect
+login: &lt;kbd&gt;root&lt;/kbd&gt;
+Last login: Wed Dec&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;2 10:14:09 on console
+Sun UNIX 4.2 Release 3.5 (GENERIC) #1: Tue Dec 1 16:56:07 PST 1987
+sunos3# &lt;kbd&gt;suntools&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+starts &lt;del&gt;X&lt;/del&gt; (hover over the text that says &quot;Mouse is off&quot; in the bottom left and press something on the keyboard to capture the mouse):
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.5-suntools.png&quot;&gt;&lt;img alt=&quot;Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing&quot; class=&quot;main-screenshot continuation&quot; src=&quot;/content/assets/blogn_t/010.5-suntools.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;del&gt;X&lt;/del&gt; (and the console in general) achieve single-digit refresh rates on bookworm;
+this is likely related to the emulator being in a tight &lt;code&gt;pselect6()&lt;/code&gt; loop with a zero &lt;var&gt;timeout&lt;/var&gt;.
+I'&lt;!--'--&gt;d attribute this to a GDK incompatibility probably, idk what else it could be doing.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The emulator supposedly sleeps when kNetBSD does.
+This may be true even for kSunOS, but due to the above it sits at a constant 100% CPU always.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Host networking is only available via the BSD &lt;samp&gt;/dev/bpf&lt;var&gt;*&lt;/var&gt;&lt;/samp&gt; interface.
+That said, &lt;samp&gt;host/bsd/bsd-bpf.c&lt;/samp&gt; is just 1200 lines and most of that is likely able to be duplicated directly.
+OTOH it'&lt;!--'--&gt;s unclear if the &lt;code&gt;ie&lt;/code&gt; device itself would work under SunOS.
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
     <id>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/gen-epub-book/" />
     <title> gen-epub-book general — nabijaczleweli </title>
@@ -3720,7 +4508,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-06-15T18:59:26+02:00</updated>
+    <updated>2023-06-18T00:19:44+02:00</updated>
     <content type="html">
 &lt;style&gt;
 .continued {
@@ -3807,7 +4595,7 @@ window.addEventListener(&quot;load&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688384-scale-comparison&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-15&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-17&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -3822,7 +4610,8 @@ window.addEventListener(&quot;load&quot;, function() {
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;开花馒头好吃方法很简单，学会这个做法，蓬松柔软个个开花【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
   by Haijuan Food,
   replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-13&lt;/span&gt;&lt;/a&gt;,
-              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688384-scale-comparison&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-15&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688384-scale-comparison&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-15&lt;/span&gt;&lt;/a&gt;,
+              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-17&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;35g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50-60g&lt;/span&gt; egg, mix&lt;/li&gt;
   &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;80g&lt;/span&gt; of yogurt – I'&lt;!--'--&gt;ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine&lt;/li&gt;
