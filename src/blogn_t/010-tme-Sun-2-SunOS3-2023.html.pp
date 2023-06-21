@@ -839,10 +839,10 @@ and install by following the script (you want <kbd>suninstall</kbd> after reboot
 <p class="indented continuing">
 I got to the <a href="//cohost.org/nabijaczleweli/post/1728522-the-9-genders-briti">funniest time-zone selection menu in history</a>:
 </p>
-<a href="/content/assets/blogn_t/010.5-suntools.png"><img alt="TODO" class="main-screenshot continuing" src="/content/assets/blogn_t/010.5-suntools.png" /></a>
+<a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
 <p class="continuing">
 in the third-stage setup (and the hardware clock does work! <code>Poland</code>, at least, appears to be accurate still.
-Haven'<!--'-->t checked whether "euro-bit-of-the-СССР" matches any part of the РФ),
+Haven'<!--'-->t checked whether "euro-bit-of-the-СССР" matches any part of the РФ).
 The UID entry box is broken, and doesn'<!--'-->t accept the entered line: do not answer yes to making a new user in sys-setup.
 </p>
 <p class="indented continuing">
