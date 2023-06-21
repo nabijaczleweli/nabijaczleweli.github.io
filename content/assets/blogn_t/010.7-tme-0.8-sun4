@@ -1,0 +1,28 @@
+--- libtme/log-prf.c	2009-08-30 18:56:42.000000000 +0200
++++ libtme/log-prf.c	2023-06-21 18:23:33.286882822 +0200
+@@ -205,7 +205,7 @@
+       case 's':
+ 	prf_value_s = va_arg(prf_args, const char *);
+ 	PRF_OUT_ARG_CODE(TME_LOG_ARG_CODE_STRING);
+-	PRF_OUT_MEM(prf_value_s, strlen(prf_value_s));
++	PRF_OUT_MEM(prf_value_s, prf_value_s ? strlen(prf_value_s) : (size_t)0);
+ 
+ 	/* enter state zero: */
+ 	prf_agg = prf_format;
+--- libtme/host/x86/misc-x86.c	2009-11-08 18:21:18.000000000 +0100
++++ libtme/host/x86/misc-x86.c	2023-06-21 21:39:26.322610998 +0200
+@@ -49,10 +49,14 @@
+   unsigned long reg_d;
+   union tme_value64 value;
+ 
++#if 0
+   asm("	rdtsc	\n"
+       : "=a" (reg_a), "=d" (reg_d));
+   value.tme_value64_uint32_lo = reg_a;
+   value.tme_value64_uint32_hi = reg_d;
++#else
++  value.tme_value64_uint = __builtin_ia32_rdtsc();
++#endif
+   return (value);
+ }
+ #define TME_HAVE_MISC_CYCLES
