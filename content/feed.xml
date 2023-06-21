@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-06-19T22:14:17</updated>
+  <updated>2023-06-21T22:22:34</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -2943,7 +2943,8 @@ Anyway, glam shots.
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/010-tme-Sun-2-SunOS3-2023.html</id>
     <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/010-tme-Sun-2-SunOS3-2023.html" />
     <title> 010. tme booting SunOS 3 on Sun-2 in 2023 — blognꞌt — nabijaczleweli </title>
-    <updated>2023-06-19T23:53:58+02:00</updated>
+    <updated>2023-06-21T23:56:00+02:00</updated>
+    <published>2023-06-19T23:53:58+02:00</published>
     <content type="html">
 &lt;style&gt;
 .continued {
@@ -3011,7 +3012,7 @@ pre.bigcode {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;010. tme booting SunOS 3 on Sun-2 in 2023&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 19 Jun 2023 23:53:58 +0200&lt;/span&gt;&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 19 Jun 2023 23:53:58 +0200&lt;/span&gt;, &lt;a href=&quot;#sun4c&quot;&gt;Solaris on Sun-4c&lt;/a&gt; on &lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 21 Jun 2023 23:56:00 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 As usual, some program has seen disproportionate development on SunOS.
 This was (relatively-)easily-handled for &lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html&quot;&gt;&lt;code&gt;hostid&lt;/code&gt;&lt;/a&gt;.
@@ -3171,11 +3172,11 @@ Naturally, it only supports BSD PTYs, which Debian hasn'&lt;!--'--&gt;t configur
 Thankfully, all &lt;samp&gt;/dev/ptmx&lt;/samp&gt; needs is
 &lt;/p&gt;
 &lt;pre class=&quot;continuing&quot;&gt;&lt;!--
---&gt;--- host/posix/posix-serial.c 2007-08-24 02:57:01.000000000 +0200
-+++ host/posix/posix-serial.c 2023-06-19 01:26:46.891606875 +0200
+&quot;--&gt;--- host/posix/posix-serial.c	2007-08-24 02:57:01.000000000 +0200&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+++ host/posix/posix-serial.c	2023-06-19 01:26:46.891606875 +0200&lt;!--&quot;--&gt;
 @@ -34,4 +34,5 @@
   */
-
+&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;
 +#define _GNU_SOURCE
  #include &amp;lt;tme/common.h&gt;
  _TME_RCSID(&quot;$Id: posix-serial.c,v 1.11 2007/08/24 00:57:01 fredette Exp $&quot;);
@@ -3222,7 +3223,7 @@ after the &lt;code&gt;unlockpt()&lt;/code&gt;, yielding an upgraded-over-stock U
 Strictly, this ought to be &lt;code&gt;st -l &lt;var&gt;vt&lt;/var&gt; -- -parenb 9600 clocal&lt;/code&gt; to match the author'&lt;!--'--&gt;s remote(5) line, but none of these do anything on a PTY.
 &lt;/p&gt;
 &lt;pre class=&quot;bigcode continuation&quot;&gt;&lt;samp&gt;&lt;!--
---&gt;$ &lt;kbd&gt;curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.1-tme-0.8-ptmx | patch&lt;/kbd&gt;
+--&gt;$ &lt;kbd&gt;curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.1-tme-0.8-ptmx | patch -p0&lt;/kbd&gt;
 $ &lt;kbd&gt;make -j25&lt;/kbd&gt;&lt;!--
 --&gt;&lt;/samp&gt;&lt;/pre&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -3706,8 +3707,8 @@ starts &lt;del&gt;X&lt;/del&gt; (hover over the text that says &quot;Mouse is of
 &lt;a href=&quot;/content/assets/blogn_t/010.5-suntools.png&quot;&gt;&lt;img alt=&quot;Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing&quot; class=&quot;main-screenshot continuation&quot; src=&quot;/content/assets/blogn_t/010.5-suntools.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 &lt;del&gt;X&lt;/del&gt; (and the console in general) achieve single-digit refresh rates on bookworm;
-this is likely related to the emulator being in a tight &lt;code&gt;pselect6()&lt;/code&gt; loop with a zero &lt;var&gt;timeout&lt;/var&gt;.
-I'&lt;!--'--&gt;d attribute this to a GDK incompatibility probably, idk what else it could be doing.
+this is likely related to the emulator being in a tight &lt;code&gt;poll()&lt;/code&gt; loop with a zero &lt;var&gt;timeout&lt;/var&gt;.
+I'&lt;!--'--&gt;d attribute this to a GDK incompatibility probably (or the intrusive user-space scheduler), idk what else it could be doing.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 The emulator supposedly sleeps when kNetBSD does.
@@ -3717,6 +3718,80 @@ This may be true even for kSunOS, but due to the above it sits at a constant 100
 Host networking is only available via the BSD &lt;samp&gt;/dev/bpf&lt;var&gt;*&lt;/var&gt;&lt;/samp&gt; interface.
 That said, &lt;samp&gt;host/bsd/bsd-bpf.c&lt;/samp&gt; is just 1200 lines and most of that is likely able to be duplicated directly.
 OTOH it'&lt;!--'--&gt;s unclear if the &lt;code&gt;ie&lt;/code&gt; device itself would work under SunOS.
+&lt;/p&gt;
+&lt;h2 id=&quot;sun4c&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#sun4c&quot;&gt;#&lt;/a&gt; SunOS 4 (Solaris) on Sun-4c&lt;/h2&gt;
+&lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.7-tme-0.8-sun4 | patch -p0&lt;/kbd&gt;
+$ &lt;kbd&gt;make -j25&lt;/kbd&gt;
+$ &lt;kbd&gt;ln -s $PWD/bus/sbus/.libs/tme_bus_sbus.so.0 $PWD/ic/.libs/tme_ic_am7930.so.0 $PWD/ic/.libs/tme_ic_am7990.so.0 $PWD/ic/.libs/tme_ic_lsi64854.so.0 $PWD/ic/.libs/tme_ic_mk48txx.so.0 $PWD/ic/.libs/tme_ic_ncr53c9x.so.0 $PWD/ic/.libs/tme_ic_nec765.so.0 $PWD/ic/sparc/.libs/tme_ic_sparc.so.0 $PWD/machine/sun4/.libs/tme_machine_sun4.so.0 tme&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+wherein
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot;&gt;&lt;!--
+&quot;--&gt;--- libtme/log-prf.c	2009-08-30 18:56:42.000000000 +0200&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+++ libtme/log-prf.c	2023-06-21 18:23:33.286882822 +0200&lt;!--&quot;--&gt;
+@@ -205,7 +205,7 @@
+&lt;!--&quot;--&gt;       case 's':&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 	prf_value_s = va_arg(prf_args, const char *);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 	PRF_OUT_ARG_CODE(TME_LOG_ARG_CODE_STRING);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;-	PRF_OUT_MEM(prf_value_s, strlen(prf_value_s));&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+	PRF_OUT_MEM(prf_value_s, prf_value_s ? strlen(prf_value_s) : (size_t)0);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 	/* enter state zero: */&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 	prf_agg = prf_format;&lt;!--&quot;
+--&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+fixes a &lt;samp&gt;printf(&quot;%s&quot;)&lt;/samp&gt; implementation (why doess &lt;code&gt;tme&lt;/code&gt; ship its own printf body?) to not segfault when passed a null pointer,
+and
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot;&gt;&lt;!--
+&quot;--&gt;--- libtme/host/x86/misc-x86.c	2009-11-08 18:21:18.000000000 +0100&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;+++ libtme/host/x86/misc-x86.c	2023-06-21 21:39:26.322610998 +0200&lt;!--&quot;--&gt;
+@@ -49,10 +49,14 @@
+   unsigned long reg_d;
+   union tme_value64 value;
+&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;
++#if 0
+   asm(&quot;	rdtsc	\n&quot;
+       : &quot;=a&quot; (reg_a), &quot;=d&quot; (reg_d));
+   value.tme_value64_uint32_lo = reg_a;
+   value.tme_value64_uint32_hi = reg_d;
++#else
+&lt;!--&quot;--&gt;+  value.tme_value64_uint = __builtin_ia32_rdtsc();&lt;!--&quot;--&gt;
++#endif
+   return (value);
+ }
+ #define TME_HAVE_MISC_CYCLES&lt;!--
+--&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+fixes the instruction counter being truncated to 32 bits ⇒ no forward progress when measuring ⇒ tickrate estimation estimating zero ticks per second ⇒
+faulting &lt;code&gt;cpu0&lt;/code&gt; with an error on creation.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+With this, I could boot a Sun-4c machine as in &lt;a href=&quot;//people.csail.mit.edu/fredette/tme/sun4-75-nbsd.html&quot;&gt;the upstream instruxions&lt;/a&gt;
+(the &lt;code&gt;idle-type&lt;/code&gt; bit in the config may be adjusted for SunOS and the emulator does actually sleep;
+ the graphical console still updates at the same rate, and the serial variant doesn'&lt;!--'--&gt;t seem to work at all after the initial POST)
+with &lt;a href=&quot;//vetusware.com/download/Solaris%201.1.2%201.1.2/?id=8931&quot;&gt;&lt;code&gt;solaris1.1.2.7z&lt;/code&gt;&lt;/a&gt; from my good friend Juliano
+and install by following the script (you want &lt;kbd&gt;suninstall&lt;/kbd&gt; after rebooting to the miniroot).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+I got to the &lt;a href=&quot;//cohost.org/nabijaczleweli/post/1728522-the-9-genders-briti&quot;&gt;funniest time-zone selection menu in history&lt;/a&gt;:
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.8-sunos4-timezone.png&quot;&gt;&lt;img alt=&quot;SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union&quot; class=&quot;main-screenshot continuing&quot; src=&quot;/content/assets/blogn_t/010.8-sunos4-timezone.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+in the third-stage setup (and the hardware clock does work! &lt;code&gt;Poland&lt;/code&gt;, at least, appears to be accurate still.
+Haven'&lt;!--'--&gt;t checked whether &quot;euro-bit-of-the-СССР&quot; matches any part of the РФ).
+The UID entry box is broken, and doesn'&lt;!--'--&gt;t accept the entered line: do not answer yes to making a new user in sys-setup.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+I have found that the system is — regardless of disklabel — very liable to just hang when when quota-checking or fscking on boot,
+unpacking a bigger preset,
+or simply &lt;kbd&gt;cd /usr/etc/install; ls -l&lt;/kbd&gt;ling to recover from the above.
+In many ways I haven'&lt;!--'--&gt;t actually gotten the system to boot cleanly (indeed, at all) after the final post-installation reboot,
+so the time-zone selection menu is all you really get.
+Or just &lt;kbd&gt;^C&lt;/kbd&gt;ing it and hoping it doesn'&lt;!--'--&gt;t break before you manage to test what you need,
+but at that point you might as well just chroot after installing from the miniroot.
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
@@ -4509,6 +4584,7 @@ A full list of conversions and their implementations can be found at the
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
     <updated>2023-06-18T00:19:44+02:00</updated>
+    <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
 .continued {

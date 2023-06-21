@@ -5,7 +5,9 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
+<!-- https://cohost.org/nabijaczleweli/post/1717533-don-t-talk-to-me-or -->
  <!-- RSS_PUB_DATE: "Mon, 19 Jun 2023 23:53:58 +0200" -->
+                                                                              <!-- RSS_UPDATE_DATE: "Wed, 21 Jun 2023 23:56:00 +0200" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -116,7 +118,7 @@ pre.bigcode {
 <span class="roboto writing">
 <p></p>
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp><code>010. tme booting SunOS 3 on Sun-2 in 2023</code></samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Mon, 19 Jun 2023 23:53:58 +0200</span></h4>
+ <h4 id="post-date"><span style="white-space: nowrap">Mon, 19 Jun 2023 23:53:58 +0200</span>, <a href="#sun4c">Solaris on Sun-4c</a> on <span style="white-space: nowrap">Wed, 21 Jun 2023 23:56:00 +0200</span></h4>
 <p class="indented continued">
 As usual, some program has seen disproportionate development on SunOS.
 This was (relatively-)easily-handled for <a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html"><code>hostid</code></a>.
@@ -276,11 +278,11 @@ Naturally, it only supports BSD PTYs, which Debian hasn'<!--'-->t configured wit
 Thankfully, all <samp>/dev/ptmx</samp> needs is
 </p>
 <pre class="continuing"><!--
--->--- host/posix/posix-serial.c 2007-08-24 02:57:01.000000000 +0200
-+++ host/posix/posix-serial.c 2023-06-19 01:26:46.891606875 +0200
+"-->--- host/posix/posix-serial.c	2007-08-24 02:57:01.000000000 +0200<!--"-->
+<!--"-->+++ host/posix/posix-serial.c	2023-06-19 01:26:46.891606875 +0200<!--"-->
 @@ -34,4 +34,5 @@
   */
-
+<!--"--> <!--"-->
 +#define _GNU_SOURCE
  #include &lt;tme/common.h>
  _TME_RCSID("$Id: posix-serial.c,v 1.11 2007/08/24 00:57:01 fredette Exp $");
@@ -327,7 +329,7 @@ after the <code>unlockpt()</code>, yielding an upgraded-over-stock UX of an xter
 Strictly, this ought to be <code>st -l <var>vt</var> -- -parenb 9600 clocal</code> to match the author'<!--'-->s remote(5) line, but none of these do anything on a PTY.
 </p>
 <pre class="bigcode continuation"><samp><!--
--->$ <kbd>curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.1-tme-0.8-ptmx | patch</kbd>
+-->$ <kbd>curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.1-tme-0.8-ptmx | patch -p0</kbd>
 $ <kbd>make -j25</kbd><!--
 --></samp></pre>
 <p class="indented continued">
@@ -811,8 +813,8 @@ starts <del>X</del> (hover over the text that says "Mouse is off" in the bottom 
 <a href="/content/assets/blogn_t/010.5-suntools.png"><img alt="Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing" class="main-screenshot continuation" src="/content/assets/blogn_t/010.5-suntools.png" /></a>
 <p class="indented continued">
 <del>X</del> (and the console in general) achieve single-digit refresh rates on bookworm;
-this is likely related to the emulator being in a tight <code>pselect6()</code> loop with a zero <var>timeout</var>.
-I'<!--'-->d attribute this to a GDK incompatibility probably, idk what else it could be doing.
+this is likely related to the emulator being in a tight <code>poll()</code> loop with a zero <var>timeout</var>.
+I'<!--'-->d attribute this to a GDK incompatibility probably (or the intrusive user-space scheduler), idk what else it could be doing.
 </p>
 <p class="indented continuing">
 The emulator supposedly sleeps when kNetBSD does.
@@ -822,6 +824,80 @@ This may be true even for kSunOS, but due to the above it sits at a constant 100
 Host networking is only available via the BSD <samp>/dev/bpf<var>*</var></samp> interface.
 That said, <samp>host/bsd/bsd-bpf.c</samp> is just 1200 lines and most of that is likely able to be duplicated directly.
 OTOH it'<!--'-->s unclear if the <code>ie</code> device itself would work under SunOS.
+</p>
+<h2 id="sun4c" class="continued"><a class="hash-link" href="#sun4c">#</a> SunOS 4 (Solaris) on Sun-4c</h2>
+<pre class="bigcode continuing"><samp><!--
+-->$ <kbd>curl https://nabijaczleweli.xyz/content/assets/blogn_t/010.7-tme-0.8-sun4 | patch -p0</kbd>
+$ <kbd>make -j25</kbd>
+$ <kbd>ln -s $PWD/bus/sbus/.libs/tme_bus_sbus.so.0 $PWD/ic/.libs/tme_ic_am7930.so.0 $PWD/ic/.libs/tme_ic_am7990.so.0 $PWD/ic/.libs/tme_ic_lsi64854.so.0 $PWD/ic/.libs/tme_ic_mk48txx.so.0 $PWD/ic/.libs/tme_ic_ncr53c9x.so.0 $PWD/ic/.libs/tme_ic_nec765.so.0 $PWD/ic/sparc/.libs/tme_ic_sparc.so.0 $PWD/machine/sun4/.libs/tme_machine_sun4.so.0 tme</kbd><!--
+--></samp></pre>
+<p class="continuing">
+wherein
+</p>
+<pre class="continuing"><!--
+"-->--- libtme/log-prf.c	2009-08-30 18:56:42.000000000 +0200<!--"-->
+<!--"-->+++ libtme/log-prf.c	2023-06-21 18:23:33.286882822 +0200<!--"-->
+@@ -205,7 +205,7 @@
+<!--"-->       case 's':<!--"-->
+<!--"--> 	prf_value_s = va_arg(prf_args, const char *);<!--"-->
+<!--"--> 	PRF_OUT_ARG_CODE(TME_LOG_ARG_CODE_STRING);<!--"-->
+<!--"-->-	PRF_OUT_MEM(prf_value_s, strlen(prf_value_s));<!--"-->
+<!--"-->+	PRF_OUT_MEM(prf_value_s, prf_value_s ? strlen(prf_value_s) : (size_t)0);<!--"-->
+<!--"--> <!--"-->
+<!--"--> 	/* enter state zero: */<!--"-->
+<!--"--> 	prf_agg = prf_format;<!--"
+--></pre>
+<p class="continuing">
+fixes a <samp>printf("%s")</samp> implementation (why doess <code>tme</code> ship its own printf body?) to not segfault when passed a null pointer,
+and
+</p>
+<pre class="continuing"><!--
+"-->--- libtme/host/x86/misc-x86.c	2009-11-08 18:21:18.000000000 +0100<!--"-->
+<!--"-->+++ libtme/host/x86/misc-x86.c	2023-06-21 21:39:26.322610998 +0200<!--"-->
+@@ -49,10 +49,14 @@
+   unsigned long reg_d;
+   union tme_value64 value;
+<!--"--> <!--"-->
++#if 0
+   asm("	rdtsc	\n"
+       : "=a" (reg_a), "=d" (reg_d));
+   value.tme_value64_uint32_lo = reg_a;
+   value.tme_value64_uint32_hi = reg_d;
++#else
+<!--"-->+  value.tme_value64_uint = __builtin_ia32_rdtsc();<!--"-->
++#endif
+   return (value);
+ }
+ #define TME_HAVE_MISC_CYCLES<!--
+--></pre>
+<p class="continuation">
+fixes the instruction counter being truncated to 32 bits ⇒ no forward progress when measuring ⇒ tickrate estimation estimating zero ticks per second ⇒
+faulting <code>cpu0</code> with an error on creation.
+</p>
+<p class="indented continued">
+With this, I could boot a Sun-4c machine as in <a href="//people.csail.mit.edu/fredette/tme/sun4-75-nbsd.html">the upstream instruxions</a>
+(the <code>idle-type</code> bit in the config may be adjusted for SunOS and the emulator does actually sleep;
+ the graphical console still updates at the same rate, and the serial variant doesn'<!--'-->t seem to work at all after the initial POST)
+with <a href="//vetusware.com/download/Solaris%201.1.2%201.1.2/?id=8931"><code>solaris1.1.2.7z</code></a> from my good friend Juliano
+and install by following the script (you want <kbd>suninstall</kbd> after rebooting to the miniroot).
+</p>
+<p class="indented continuing">
+I got to the <a href="//cohost.org/nabijaczleweli/post/1728522-the-9-genders-briti">funniest time-zone selection menu in history</a>:
+</p>
+<a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
+<p class="continuing">
+in the third-stage setup (and the hardware clock does work! <code>Poland</code>, at least, appears to be accurate still.
+Haven'<!--'-->t checked whether "euro-bit-of-the-СССР" matches any part of the РФ).
+The UID entry box is broken, and doesn'<!--'-->t accept the entered line: do not answer yes to making a new user in sys-setup.
+</p>
+<p class="indented continuing">
+I have found that the system is — regardless of disklabel — very liable to just hang when when quota-checking or fscking on boot,
+unpacking a bigger preset,
+or simply <kbd>cd /usr/etc/install; ls -l</kbd>ling to recover from the above.
+In many ways I haven'<!--'-->t actually gotten the system to boot cleanly (indeed, at all) after the final post-installation reboot,
+so the time-zone selection menu is all you really get.
+Or just <kbd>^C</kbd>ing it and hoping it doesn'<!--'-->t break before you manage to test what you need,
+but at that point you might as well just chroot after installing from the miniroot.
 </p>
 <p> 
  <br /> 
@@ -844,9 +920,9 @@ OTOH it'<!--'-->s unclear if the <code>ie</code> device itself would work under 
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 19.06.2023 22:11:26 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 21.06.2023 22:19:44 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp">src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1010331">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1011574">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
