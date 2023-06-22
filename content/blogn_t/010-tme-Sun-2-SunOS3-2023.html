@@ -5,7 +5,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-<!-- https://cohost.org/nabijaczleweli/post/1717533-don-t-talk-to-me-or -->
+<!-- https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
  <!-- RSS_PUB_DATE: "Mon, 19 Jun 2023 23:53:58 +0200" -->
                                                                               <!-- RSS_UPDATE_DATE: "Wed, 21 Jun 2023 23:56:00 +0200" -->
 <!DOCTYPE html> 
@@ -137,7 +137,7 @@ This is sub-optimal, because the <em>only</em> working guest is NetBSD.
 $ <kbd>cd tme-0.8</kbd>
 $ <kbd>./configure</kbd>
 $ <kbd>find -name Makefile -exec sed -i s/-Werror// {} +</kbd><!--"-->    <!--"--># the author's "reasonably fast machine" is a 500MHz Pentium III
-$ <kbd>find -name Makefile -exec sed -i 's/^all-local:/all-local: $(pkglib_LTLIBRARIES)/' {} +</kbd><!--"-->  <!--"--># unclear if this has ever worked or if the author had simply only ever ran single-job <code>make</code>s
+$ <kbd>find -name Makefile -exec sed -i 's/^all-local:/& $(pkglib_LTLIBRARIES)/' {} +</kbd><!--"-->  <!--"--># unclear if this has ever worked or if the author had simply only ever ran single-job <code>make</code>s
 $ <kbd>make -j25</kbd><!--
 --></samp></pre>
 <p class="indented continuing">
@@ -213,7 +213,7 @@ this doesn'<!--'-->t hold (and I needed to manually edit the final linker run).
 <p class="indented continuing">
 It'<!--'-->s also said that to run <code>tme</code> from the build directory, you can just export <code>LTDL_LIBRARY_PATH=$PWD</code>;
 this almost works except it doesn'<!--'-->t (presumably because bookworm libtool lays the output out differently,
-and the final binary is still linked to the embedded libltdl(?).).
+and the final binary is still linked to the embedded libltdl(?)).
 Thus, on the first run, no system component will be loaded to a choir of ENOENTs.
 To save you some round-trips between
 <kbd>strace -oss tmesh/tmesh MY-SUN2</kbd>,
@@ -237,7 +237,7 @@ $ <kbd>cp ./machine/sun/sun-keyboards.txt ./machine/sun/my-sun-macros.txt .</kbd
 $ <kbd>truncate -s 40G my-sun2-disk.img</kbd><!--"-->  <!--"--># fun: the emulator <code>SIGBUS</code>ses if the guest reads past the end here!<!--
 --></samp></pre>
 <p class="indented continuing">
-Thankfully, customisation points (and auto-boot) for SunOS enjoyers are outlined explicitly:
+Thankfully, customisation points for SunOS enjoyers and auto-boot are outlined explicitly:
 </p>
 <pre class="bigcode continuing"><samp><!--
 -->$ <kbd>grep -nC3 SunOS MY-SUN2</kbd>
@@ -275,7 +275,7 @@ to use my preferred xterm, which I can copy from, as the head.
 </p>
 <p class="indented continuing">
 Naturally, it only supports BSD PTYs, which Debian hasn'<!--'-->t configured with on <em>any</em> arch since <a href="//bugs.debian.org/338404"><em>2007</em></a>.
-Thankfully, all <samp>/dev/ptmx</samp> needs is
+Thankfully, all <samp>/dev/ptmx</samp> support needs is
 </p>
 <pre class="continuing"><!--
 "-->--- host/posix/posix-serial.c	2007-08-24 02:57:01.000000000 +0200<!--"-->
@@ -598,7 +598,7 @@ super-block backups (for fsck -b#) at:
 # <kbd>mount sd0a /a</kbd>
 # <kbd>cd /a</kbd>
 # <kbd>mm() { mt -f /dev/nrst0 $*; }</kbd>
-# <kbd>unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }</kbd><!--"-->  <!--"--># I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using <code>mm fsf $*</code> here always runs <code>mm fsf rew</code>
+# <kbd>unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }</kbd><!--"-->  <!--"--># I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using <code>mm fsf $*</code> or <code>$1</code> here always runs <code>mm fsf rew</code>
 # <kbd>set -x</kbd>
 # <kbd>for i in 6 7 8; do unp; done</kbd><!--"-->  <!--"--># "1 7 root", "1 8 pub", "1 9 client image"
 + unp
@@ -753,10 +753,8 @@ set path=($path /etc /usr/etc)
 set noglob; eval `tset -Q -s`; unset noglob
 noname# <kbd>ed .login</kbd>
 84
-<kbd>1</kbd>
-stty dec
-a
-<kbd>if (`tty` = /dev/console) stty erase ^H
+<kbd>1a
+if (`tty` = /dev/console) stty erase ^H
 .
 w</kbd>
 126
@@ -920,9 +918,9 @@ but at that point you might as well just chroot after installing from the miniro
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 21.06.2023 22:19:44 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 22.06.2023 23:17:45 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp">src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1011574">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1012165">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-06-21T22:22:34</updated>
+  <updated>2023-06-22T23:20:29</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
   </generator>
@@ -3031,7 +3031,7 @@ This is sub-optimal, because the &lt;em&gt;only&lt;/em&gt; working guest is NetB
 $ &lt;kbd&gt;cd tme-0.8&lt;/kbd&gt;
 $ &lt;kbd&gt;./configure&lt;/kbd&gt;
 $ &lt;kbd&gt;find -name Makefile -exec sed -i s/-Werror// {} +&lt;/kbd&gt;&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;# the author's &quot;reasonably fast machine&quot; is a 500MHz Pentium III
-$ &lt;kbd&gt;find -name Makefile -exec sed -i 's/^all-local:/all-local: $(pkglib_LTLIBRARIES)/' {} +&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# unclear if this has ever worked or if the author had simply only ever ran single-job &lt;code&gt;make&lt;/code&gt;s
+$ &lt;kbd&gt;find -name Makefile -exec sed -i 's/^all-local:/&amp; $(pkglib_LTLIBRARIES)/' {} +&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# unclear if this has ever worked or if the author had simply only ever ran single-job &lt;code&gt;make&lt;/code&gt;s
 $ &lt;kbd&gt;make -j25&lt;/kbd&gt;&lt;!--
 --&gt;&lt;/samp&gt;&lt;/pre&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -3107,7 +3107,7 @@ this doesn'&lt;!--'--&gt;t hold (and I needed to manually edit the final linker 
 &lt;p class=&quot;indented continuing&quot;&gt;
 It'&lt;!--'--&gt;s also said that to run &lt;code&gt;tme&lt;/code&gt; from the build directory, you can just export &lt;code&gt;LTDL_LIBRARY_PATH=$PWD&lt;/code&gt;;
 this almost works except it doesn'&lt;!--'--&gt;t (presumably because bookworm libtool lays the output out differently,
-and the final binary is still linked to the embedded libltdl(?).).
+and the final binary is still linked to the embedded libltdl(?)).
 Thus, on the first run, no system component will be loaded to a choir of ENOENTs.
 To save you some round-trips between
 &lt;kbd&gt;strace -oss tmesh/tmesh MY-SUN2&lt;/kbd&gt;,
@@ -3131,7 +3131,7 @@ $ &lt;kbd&gt;cp ./machine/sun/sun-keyboards.txt ./machine/sun/my-sun-macros.txt 
 $ &lt;kbd&gt;truncate -s 40G my-sun2-disk.img&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# fun: the emulator &lt;code&gt;SIGBUS&lt;/code&gt;ses if the guest reads past the end here!&lt;!--
 --&gt;&lt;/samp&gt;&lt;/pre&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-Thankfully, customisation points (and auto-boot) for SunOS enjoyers are outlined explicitly:
+Thankfully, customisation points for SunOS enjoyers and auto-boot are outlined explicitly:
 &lt;/p&gt;
 &lt;pre class=&quot;bigcode continuing&quot;&gt;&lt;samp&gt;&lt;!--
 --&gt;$ &lt;kbd&gt;grep -nC3 SunOS MY-SUN2&lt;/kbd&gt;
@@ -3169,7 +3169,7 @@ to use my preferred xterm, which I can copy from, as the head.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 Naturally, it only supports BSD PTYs, which Debian hasn'&lt;!--'--&gt;t configured with on &lt;em&gt;any&lt;/em&gt; arch since &lt;a href=&quot;//bugs.debian.org/338404&quot;&gt;&lt;em&gt;2007&lt;/em&gt;&lt;/a&gt;.
-Thankfully, all &lt;samp&gt;/dev/ptmx&lt;/samp&gt; needs is
+Thankfully, all &lt;samp&gt;/dev/ptmx&lt;/samp&gt; support needs is
 &lt;/p&gt;
 &lt;pre class=&quot;continuing&quot;&gt;&lt;!--
 &quot;--&gt;--- host/posix/posix-serial.c	2007-08-24 02:57:01.000000000 +0200&lt;!--&quot;--&gt;
@@ -3492,7 +3492,7 @@ super-block backups (for fsck -b#) at:
 # &lt;kbd&gt;mount sd0a /a&lt;/kbd&gt;
 # &lt;kbd&gt;cd /a&lt;/kbd&gt;
 # &lt;kbd&gt;mm() { mt -f /dev/nrst0 $*; }&lt;/kbd&gt;
-# &lt;kbd&gt;unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using &lt;code&gt;mm fsf $*&lt;/code&gt; here always runs &lt;code&gt;mm fsf rew&lt;/code&gt;
+# &lt;kbd&gt;unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using &lt;code&gt;mm fsf $*&lt;/code&gt; or &lt;code&gt;$1&lt;/code&gt; here always runs &lt;code&gt;mm fsf rew&lt;/code&gt;
 # &lt;kbd&gt;set -x&lt;/kbd&gt;
 # &lt;kbd&gt;for i in 6 7 8; do unp; done&lt;/kbd&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;# &quot;1 7 root&quot;, &quot;1 8 pub&quot;, &quot;1 9 client image&quot;
 + unp
@@ -3647,10 +3647,8 @@ set path=($path /etc /usr/etc)
 set noglob; eval `tset -Q -s`; unset noglob
 noname# &lt;kbd&gt;ed .login&lt;/kbd&gt;
 84
-&lt;kbd&gt;1&lt;/kbd&gt;
-stty dec
-a
-&lt;kbd&gt;if (`tty` = /dev/console) stty erase ^H
+&lt;kbd&gt;1a
+if (`tty` = /dev/console) stty erase ^H
 .
 w&lt;/kbd&gt;
 126
