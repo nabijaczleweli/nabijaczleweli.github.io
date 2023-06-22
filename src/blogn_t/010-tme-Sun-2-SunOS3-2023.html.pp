@@ -5,7 +5,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-<!-- https://cohost.org/nabijaczleweli/post/1717533-don-t-talk-to-me-or -->
+<!-- https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
 
 
 #include "../writing/writing.h"
@@ -78,7 +78,7 @@ This is sub-optimal, because the <em>only</em> working guest is NetBSD.
 $ <kbd>cd tme-0.8</kbd>
 $ <kbd>./configure</kbd>
 $ <kbd>find -name Makefile -exec sed -i s/-Werror// {} +</kbd><!--"-->    <!--"--># the author's "reasonably fast machine" is a 500MHz Pentium III
-$ <kbd>find -name Makefile -exec sed -i 's/^all-local:/all-local: $(pkglib_LTLIBRARIES)/' {} +</kbd>COMMENT unclear if this has ever worked or if the author had simply only ever ran single-job <code>make</code>s
+$ <kbd>find -name Makefile -exec sed -i 's/^all-local:/& $(pkglib_LTLIBRARIES)/' {} +</kbd>COMMENT unclear if this has ever worked or if the author had simply only ever ran single-job <code>make</code>s
 $ <kbd>make -j25</kbd><!--
 --></samp></pre>
 <p class="indented continuing">
@@ -156,7 +156,7 @@ this doesn'<!--'-->t hold (and I needed to manually edit the final linker run).
 <p class="indented continuing">
 It'<!--'-->s also said that to run <code>tme</code> from the build directory, you can just export <code>LTDL_LIBRARY_PATH=$PWD</code>;
 this almost works except it doesn'<!--'-->t (presumably because bookworm libtool lays the output out differently,
-and the final binary is still linked to the embedded libltdl(?).).
+and the final binary is still linked to the embedded libltdl(?)).
 Thus, on the first run, no system component will be loaded to a choir of ENOENTs.
 To save you some round-trips between
 <kbd>strace -oss tmesh/tmesh MY-SUN2</kbd>,
@@ -181,7 +181,7 @@ $ <kbd>cp ./machine/sun/sun-keyboards.txt ./machine/sun/my-sun-macros.txt .</kbd
 $ <kbd>truncate -s 40G my-sun2-disk.img</kbd>COMMENT fun: the emulator <code>SIGBUS</code>ses if the guest reads past the end here!<!--
 --></samp></pre>
 <p class="indented continuing">
-Thankfully, customisation points (and auto-boot) for SunOS enjoyers are outlined explicitly:
+Thankfully, customisation points for SunOS enjoyers and auto-boot are outlined explicitly:
 </p>
 <pre class="bigcode continuing"><samp><!--
 -->$ <kbd>grep -nC3 SunOS MY-SUN2</kbd>
@@ -219,7 +219,7 @@ to use my preferred xterm, which I can copy from, as the head.
 </p>
 <p class="indented continuing">
 Naturally, it only supports BSD PTYs, which Debian hasn'<!--'-->t configured with on <em>any</em> arch since <a href="//bugs.debian.org/338404"><em>2007</em></a>.
-Thankfully, all <samp>/dev/ptmx</samp> needs is
+Thankfully, all <samp>/dev/ptmx</samp> support needs is
 </p>
 <pre class="continuing"><!--
 "-->--- host/posix/posix-serial.c	2007-08-24 02:57:01.000000000 +0200<!--"-->
@@ -546,7 +546,7 @@ super-block backups (for fsck -b#) at:
 <!----># <kbd>mount sd0a /a</kbd>
 <!----># <kbd>cd /a</kbd>
 <!----># <kbd>mm() { mt -f /dev/nrst0 $*; }</kbd>
-<!----># <kbd>unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }</kbd>COMMENT I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using <code>mm fsf $*</code> here always runs <code>mm fsf rew</code>
+<!----># <kbd>unp() { mm rew; mm fsf $i; tar xvpf /dev/nrst0; }</kbd>COMMENT I'm pretty sure the bourne shell on this system doesn't have scoped variables, because using <code>mm fsf $*</code> or <code>$1</code> here always runs <code>mm fsf rew</code>
 <!----># <kbd>set -x</kbd>
 <!----># <kbd>for i in 6 7 8; do unp; done</kbd>COMMENT "1 7 root", "1 8 pub", "1 9 client image"
 + unp
@@ -704,10 +704,8 @@ set path=($path /etc /usr/etc)
 set noglob; eval `tset -Q -s`; unset noglob
 noname# <kbd>ed .login</kbd>
 84
-<kbd>1</kbd>
-stty dec
-a
-<kbd>if (`tty` = /dev/console) stty erase ^H
+<kbd>1a
+if (`tty` = /dev/console) stty erase ^H
 .
 w</kbd>
 126
