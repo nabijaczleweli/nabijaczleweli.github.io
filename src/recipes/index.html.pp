@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Wed, 28 Jun 2023 23:43:51 +0200" -->
+<!-- RSS_UPDATE_DATE: "Fri, 30 Jun 2023 19:53:32 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-06-28, cohost.org/nabijaczleweli/post/1776589-they-made)</a>.
+	Latest replication: REPLICATION(2023-06-30, cohost.org/nabijaczleweli/post/1791054-empty)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -114,7 +114,8 @@ IMAGUS(staging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC
 		replicated REPLICATION(2023-06-13, cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along),
 	             REPLICATION(2023-06-15, cohost.org/nabijaczleweli/post/1688384-scale-comparison),
 	             REPLICATION(2023-06-17, cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i),
-	             REPLICATION(2023-06-28, cohost.org/nabijaczleweli/post/1776589-they-made):</p>
+	             REPLICATION(2023-06-28, cohost.org/nabijaczleweli/post/1776589-they-made),
+	             REPLICATION(2023-06-30, cohost.org/nabijaczleweli/post/1791054-empty):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
 		<li>flock in NUM(80g) of yogurt – I'<!--'-->ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
