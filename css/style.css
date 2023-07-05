@@ -115,3 +115,14 @@ body .container {
   margin-left: 1.5%;
   margin-top: 0;  /* Override bootstrap braindeath */
 }
+
+.side-by-each-by-each {
+  width: 32.3%;
+/*  min-width: 140px;*/
+  min-width: 11em;
+}
+
+.side-by-each-by-each + .side-by-each-by-each {
+  margin-left: 1.5%;
+  margin-top: 0;  /* Override bootstrap braindeath */
+}
