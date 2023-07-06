@@ -11,9 +11,9 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-06-22T23:20:29</updated>
+  <updated>2023-07-06T23:55:55</updated>
   <generator>
-    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.1.0, GNU MP 6.2.1)
+    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)
   </generator>
 
   <entry>
@@ -3801,6 +3801,246 @@ but at that point you might as well just chroot after installing from the miniro
   </entry>
 
   <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/011-linux-splice-exclusion.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/011-linux-splice-exclusion.html" />
+    <title> 011. pipe exclusion with splice() under Linux — blognꞌt — nabijaczleweli </title>
+    <updated>2023-07-07T01:42:34+02:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+kbd {
+  font-weight: bold;
+}
+.inline {
+  padding-left: 3em;
+}
+pre {
+  white-space: pre-wrap;
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;011. pipe exclusion with splice() under Linux&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Fri, 07 Jul 2023 01:42:34 +0200&lt;/span&gt;&lt;/h4&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Since apparently I'&lt;!--'--&gt;m
+&lt;a href=&quot;//lore.kernel.org/linux-fsdevel/jbyihkyk5dtaohdwjyivambb2gffyjs3dodpofafnkkunxq7bu@jngkdxx65pux/t/#u&quot;&gt;the only &lt;code&gt;splice&lt;/code&gt;(2) user&lt;/a&gt;,
+herein I demonstrate a &lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#u&quot;&gt;fun Linux BKL moment&lt;/a&gt;
+(but the BKL is on a pipe).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+If you use a &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/voreutils/tree/trunk/item/cmd/cat.cpp&quot;&gt;splicing &lt;code&gt;cat&lt;/code&gt;&lt;/a&gt;,
+you can do this right now from your teletype: just
+&lt;/p&gt;
+&lt;pre class=&quot;continuing inline&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;cat | whatever&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+and &lt;code&gt;whatever&lt;/code&gt; will sleep forever on reads from its standard input stream, even if it set &lt;code&gt;O_NONBLOCK&lt;/code&gt; on it.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+That'&lt;!--'--&gt;s boring tho, since anonymous pipes are, well, anonymous. What about
+&lt;/p&gt;
+&lt;pre class=&quot;continuing inline&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;mkfifo fifo&lt;/kbd&gt;
+$ &lt;kbd&gt;whatever &amp;lt; fifo &amp;&lt;/kbd&gt;
+$ &lt;kbd&gt;cat &gt; fifo&lt;/kbd&gt;
+&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+? The same applies! Even better:
+&lt;/p&gt;
+&lt;pre class=&quot;continuing inline&quot;&gt;&lt;samp&gt;&lt;!--
+--&gt;$ &lt;kbd&gt;&gt; fifo&lt;/kbd&gt;&lt;!--
+--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+from another teletype sleeps forever as well.
+So does the &lt;code&gt;&amp;lt;&lt;/code&gt; direxion.
+And &lt;code&gt;O_NONBLOCK&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+And &lt;em&gt;any&lt;/em&gt; operation on that pipe.
+Try sending a deadly signal to any of the afflicted (non-&lt;code&gt;cat&lt;/code&gt;) processes, too!.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+If you don'&lt;!--'--&gt;t, then
+&lt;/p&gt;
+&lt;div class=&quot;bigcode inline continuing&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; _GNU_SOURCE&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;fcntl.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdio.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  ssize_t rd&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; acc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    acc &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; rd&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sp=%zd: %m\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; acc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+can function as the pro-verbial &lt;code&gt;cat&lt;/code&gt;.
+You can also substitute the &lt;code&gt;splice(…)&lt;/code&gt; for a &lt;code&gt;sendfile(1, 0, 0, 128 * 1024 * 1024);&lt;/code&gt;,
+since, as a special case since 5.12,
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/fs/read_write.c?id=b964bf53e540262f2d12672b3cca10842c0172e7&quot;&gt;sendfile(any→pipe) is legal and equivalent to splice() of the same&lt;/a&gt;,
+even though otherwise it
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n905&quot;&gt;only allows seekable→any&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+But
+&lt;/p&gt;
+&lt;h2 id=&quot;how&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#how&quot;&gt;#&lt;/a&gt; how?&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Quite easily —
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n1111&quot;&gt;&lt;code&gt;splice_file_to_pipe()&lt;/code&gt;&lt;/a&gt;,
+which, shockingly, runs when splicing
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n1131&quot;&gt;from a non-pipe to a pipe&lt;/a&gt;,
+locks the output pipe, then does I/O, then unlocks it.
+Locking the pipe naturally excludes concurrent
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n1098&quot;&gt;&lt;code&gt;open()&lt;/code&gt;s&lt;/a&gt;,
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n231&quot;&gt;&lt;code&gt;read()&lt;/code&gt;s&lt;/a&gt;,
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n417&quot;&gt;&lt;code&gt;write()&lt;/code&gt;s&lt;/a&gt;.
+and
+&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n717&quot;&gt;final &lt;code&gt;close()&lt;/code&gt;s&lt;/a&gt;
+(incl. implicit ones on death).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Usually you wouldn'&lt;!--'--&gt;t think this to be a huge issue, since most I/O completes within some reasonably-bounded time,
+but teletype I/O, by design, never does
+&lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES&quot;&gt;until a newline/&lt;code&gt;eof&lt;/code&gt;/&lt;code&gt;eol&lt;/code&gt;/&lt;code&gt;eol2&lt;/code&gt;&lt;/a&gt;.
+And, thus, QED.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+But
+&lt;/p&gt;
+&lt;h2 id=&quot;notty&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#notty&quot;&gt;#&lt;/a&gt; I'&lt;!--'--&gt;m not at a teletype‽&lt;/h2&gt;
+&lt;div class=&quot;bigcode continuation&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; _GNU_SOURCE&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;fcntl.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdlib.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; pt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;posix_openpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;O_RDWR&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;grantpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;unlockpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; cl &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ptsname&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; O_RDONLY&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cl&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;bisexion&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bisexion&quot;&gt;#&lt;/a&gt; Bisexion&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+By rough-bisecting off snapshot.d.o kernel packages – since
+&lt;a href=&quot;//cohost.org/nabijaczleweli/post/1787015-two-hours-babysittin&quot;&gt;4.0, and even 5.0, don'&lt;!--'--&gt;t build on bookworm&lt;/a&gt; –
+to between
+&lt;code&gt;4.8.15-2&lt;/code&gt; and &lt;code&gt;4.9.1-1~exp1&lt;/code&gt;,
+&lt;!--
+3.16.36-1+deb8u1 is ok
+Linux (none) 4.5.0-2-amd64 #1 SMP Debian 4.5.5-1 (2016-05-29) x86_64 GNU/Linux is ok
+Linux (none) 4.8.0-2-amd64 #1 SMP Debian 4.8.15-2 (2017-01-04) x86_64 GNU/Linux is ok
+Linux (none) 4.9.0-trunk-rt-amd64 #1 SMP PREEMPT RT Debian 4.9.1-1~exp1 (2017-01-07) x86_64 GNU/Linux us borken
+vmlinuz-4.19.0-9-amd64 is borken
+--&gt;
+then manually bisecting between &lt;code&gt;v4.8&lt;/code&gt; and &lt;code&gt;v4.9&lt;/code&gt; – in a stretch chroot, naturally,
+since images built on buster hard-rebooted QEMU in a tight loop just after the decompressor and ELF parsing;
+strapping the chroot took two hours of baby-sitting due to the current state of s.d.o, and most revisions only build
+&lt;a href=&quot;//lists.ubuntu.com/archives/kernel-team/2016-May/077178.html&quot;&gt;with an ubuntu patch&lt;/a&gt;;
+so much for never breaking fucking userspace –
+&lt;/p&gt;
+&lt;pre class=&quot;continuing inline&quot;&gt;&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8924feff66f35fe22ce77aafe3f21eb8e5cff881&quot;&gt;commit 8924feff66f35fe22ce77aafe3f21eb8e5cff881 (&quot;splice: lift pipe_lock out of splice_to_pipe()&quot;)&lt;/a&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+is the first bad commit.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+(The smoketest is:
+&lt;/p&gt;
+&lt;pre class=&quot;continuing inline&quot;&gt;
+./v &gt; fifo &amp;
+read -r _ &lt; fifo &amp;
+echo zupa &gt; fifo
+&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+&lt;code&gt;good&lt;/code&gt; is it completes; &lt;code&gt;bad&lt;/code&gt; is it hangs.)
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+This aligns with the origin of the modern &lt;code&gt;pipe_lock()&lt;/code&gt; placement I got by recursive &lt;code&gt;blame&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+But
+&lt;/p&gt;
+&lt;h2 id=&quot;why&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#why&quot;&gt;#&lt;/a&gt; why'&lt;!--'--&gt;d I care?&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Depends if you'&lt;!--'--&gt;re running, like, nullmailer, in which case
+&lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#m69ed72a7e0ffa7da3ba9f8800cd85bb63f6da715&quot;&gt;&lt;code&gt;./v &gt; /var/spool/nullmailer/trigger&lt;/code&gt;&lt;/a&gt;
+makes it ⇒ any subsequent MUA ⇒ any subsequent sender (if &lt;code&gt;wait()&lt;/code&gt;ing synchronously) enter the signal-impervious mutex-sleeping state,
+which can only be recovered from by killing the splicing process.
+Good luck finding that, since this affects any ptracing process as well.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Or any other message or log collection system where – especially unprivileged – users write stuff to a pipe,
+since they'&lt;!--'--&gt;ve now been granted a total exclusion thereon.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Even in inocuous situations like QEMU with &lt;samp&gt;-chardev pipe,id=pipe,path=$HOME/uwu/q -serial chardev:pipe&lt;/samp&gt;, &lt;code&gt;cat&lt;/code&gt;ting to &lt;code&gt;~/uwu/q.in&lt;/code&gt;
+(besides only waking up every second line, which is just business as usual), excludes emulation.
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
     <id>https://nabijaczleweli.xyz/content/../content/gen-epub-book/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/gen-epub-book/" />
     <title> gen-epub-book general — nabijaczleweli </title>
@@ -4581,7 +4821,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-06-18T00:19:44+02:00</updated>
+    <updated>2023-06-30T19:53:32+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4669,7 +4909,7 @@ window.addEventListener(&quot;load&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-17&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1791054-empty&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-30&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -4685,7 +4925,9 @@ window.addEventListener(&quot;load&quot;, function() {
   by Haijuan Food,
   replicated &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-13&lt;/span&gt;&lt;/a&gt;,
               &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1688384-scale-comparison&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-15&lt;/span&gt;&lt;/a&gt;,
-              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-17&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-17&lt;/span&gt;&lt;/a&gt;,
+              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1776589-they-made&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-28&lt;/span&gt;&lt;/a&gt;,
+              &lt;a href=&quot;https://cohost.org/nabijaczleweli/post/1791054-empty&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-30&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;35g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50-60g&lt;/span&gt; egg, mix&lt;/li&gt;
   &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;80g&lt;/span&gt; of yogurt – I'&lt;!--'--&gt;ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine&lt;/li&gt;

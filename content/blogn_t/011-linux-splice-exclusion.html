@@ -1,0 +1,306 @@
+<!--
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+<!-- https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
+ <!-- RSS_PUB_DATE: "Fri, 07 Jul 2023 01:42:34 +0200" -->
+<!DOCTYPE html> 
+ <html lang="en-GB"> 
+ <head> 
+ <meta charset="utf-8"> 
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+ <meta name="viewport" content="width=device-width,initial-scale=1"> 
+ <meta name="author" content="nabijaczleweli"> 
+ <meta name="description" content="011. pipe exclusion with splice() under Linux"> 
+ <title>011. pipe exclusion with splice() under Linux — blognꞌt — nabijaczleweli</title> 
+ 
+ <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
+ <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
+ <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
+ <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png"> 
+ <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png"> 
+ <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png"> 
+ <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png"> 
+ <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png"> 
+ <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16"> 
+ <link rel="manifest" href="/assets/favicons/manifest.json"> 
+ <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5"> 
+ <link rel="shortcut icon" href="/assets/favicons/favicon.ico"> 
+ <meta name="apple-mobile-web-app-title" content="nabijaczleweli"> 
+ <meta name="application-name" content="nabijaczleweli"> 
+ <meta name="msapplication-TileColor" content="#da532c"> 
+ <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
+ <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
+ <meta name="theme-color" content="#ffffff"> 
+ <link href="/content/assets/heading.css" rel="stylesheet" /> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
+ <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
+ <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ </head> 
+ <body>
+<style>
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: "Droid Sans Mono", monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: "Merriweather", serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
+a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
+ color: black;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+kbd {
+  font-weight: bold;
+}
+.inline {
+  padding-left: 3em;
+}
+pre {
+  white-space: pre-wrap;
+}
+</style>
+<span class="roboto writing">
+<p></p>
+<h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp><code>011. pipe exclusion with splice() under Linux</code></samp> <a class="go-back-link right" href=".">↩</a></h2> 
+ <h4 id="post-date"><span style="white-space: nowrap">Fri, 07 Jul 2023 01:42:34 +0200</span></h4>
+<p class="indented continued">
+Since apparently I'<!--'-->m
+<a href="//lore.kernel.org/linux-fsdevel/jbyihkyk5dtaohdwjyivambb2gffyjs3dodpofafnkkunxq7bu@jngkdxx65pux/t/#u">the only <code>splice</code>(2) user</a>,
+herein I demonstrate a <a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#u">fun Linux BKL moment</a>
+(but the BKL is on a pipe).
+</p>
+<p class="indented continuing">
+If you use a <a href="//git.sr.ht/~nabijaczleweli/voreutils/tree/trunk/item/cmd/cat.cpp">splicing <code>cat</code></a>,
+you can do this right now from your teletype: just
+</p>
+<pre class="continuing inline"><samp><!--
+-->$ <kbd>cat | whatever</kbd><!--
+--></samp></pre>
+<p class="continuation">
+and <code>whatever</code> will sleep forever on reads from its standard input stream, even if it set <code>O_NONBLOCK</code> on it.
+</p>
+<p class="indented continued">
+That'<!--'-->s boring tho, since anonymous pipes are, well, anonymous. What about
+</p>
+<pre class="continuing inline"><samp><!--
+-->$ <kbd>mkfifo fifo</kbd>
+$ <kbd>whatever &lt; fifo &</kbd>
+$ <kbd>cat > fifo</kbd>
+</samp></pre>
+<p class="continuing">
+? The same applies! Even better:
+</p>
+<pre class="continuing inline"><samp><!--
+-->$ <kbd>> fifo</kbd><!--
+--></samp></pre>
+<p class="continuation">
+from another teletype sleeps forever as well.
+So does the <code>&lt;</code> direxion.
+And <code>O_NONBLOCK</code>.
+</p>
+<p class="indented">
+And <em>any</em> operation on that pipe.
+Try sending a deadly signal to any of the afflicted (non-<code>cat</code>) processes, too!.
+</p>
+<p class="indented continued">
+If you don'<!--'-->t, then
+</p>
+<div class="bigcode inline continuing">
+<pre class="language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _GNU_SOURCE</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ssize_t rd<span class="token punctuation">,</span> acc <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>rd <span class="token operator">=</span> <span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">128</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+    acc <span class="token operator">+=</span> rd<span class="token punctuation">;</span>
+  <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">"sp=%zd: %m\n"</span><span class="token punctuation">,</span> acc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></code>
+</div>
+<p class="continuation">
+can function as the pro-verbial <code>cat</code>.
+You can also substitute the <code>splice(…)</code> for a <code>sendfile(1, 0, 0, 128 * 1024 * 1024);</code>,
+since, as a special case since 5.12,
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/fs/read_write.c?id=b964bf53e540262f2d12672b3cca10842c0172e7">sendfile(any→pipe) is legal and equivalent to splice() of the same</a>,
+even though otherwise it
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n905">only allows seekable→any</a>.
+</p>
+<p class="indented continued">
+But
+</p>
+<h2 id="how" class="continuing"><a class="hash-link" href="#how">#</a> how?</h2>
+<p class="continuing">
+Quite easily —
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n1111"><code>splice_file_to_pipe()</code></a>,
+which, shockingly, runs when splicing
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n1131">from a non-pipe to a pipe</a>,
+locks the output pipe, then does I/O, then unlocks it.
+Locking the pipe naturally excludes concurrent
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n1098"><code>open()</code>s</a>,
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n231"><code>read()</code>s</a>,
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n417"><code>write()</code>s</a>.
+and
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/pipe.c?id=6995e2de6891c724bfeb2db33d7b87775f913ad1#n717">final <code>close()</code>s</a>
+(incl. implicit ones on death).
+</p>
+<p class="indented continuation">
+Usually you wouldn'<!--'-->t think this to be a huge issue, since most I/O completes within some reasonably-bounded time,
+but teletype I/O, by design, never does
+<a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES">until a newline/<code>eof</code>/<code>eol</code>/<code>eol2</code></a>.
+And, thus, QED.
+</p>
+<p class="indented continued">
+But
+</p>
+<h2 id="notty" class="continuing"><a class="hash-link" href="#notty">#</a> I'<!--'-->m not at a teletype‽</h2>
+<div class="bigcode continuation">
+<pre class="language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _GNU_SOURCE</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> pt <span class="token operator">=</span> <span class="token function">posix_openpt</span><span class="token punctuation">(</span>O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">grantpt</span><span class="token punctuation">(</span>pt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">unlockpt</span><span class="token punctuation">(</span>pt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> cl <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token function">ptsname</span><span class="token punctuation">(</span>pt<span class="token punctuation">)</span><span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+    <span class="token function">splice</span><span class="token punctuation">(</span>cl<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">128</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></code>
+</div>
+<h2 id="bisexion" ><a class="hash-link" href="#bisexion">#</a> Bisexion</h2>
+<p class="indented continued">
+By rough-bisecting off snapshot.d.o kernel packages – since
+<a href="//cohost.org/nabijaczleweli/post/1787015-two-hours-babysittin">4.0, and even 5.0, don'<!--'-->t build on bookworm</a> –
+to between
+<code>4.8.15-2</code> and <code>4.9.1-1~exp1</code>,
+<!--
+3.16.36-1+deb8u1 is ok
+Linux (none) 4.5.0-2-amd64 #1 SMP Debian 4.5.5-1 (2016-05-29) x86_64 GNU/Linux is ok
+Linux (none) 4.8.0-2-amd64 #1 SMP Debian 4.8.15-2 (2017-01-04) x86_64 GNU/Linux is ok
+Linux (none) 4.9.0-trunk-rt-amd64 #1 SMP PREEMPT RT Debian 4.9.1-1~exp1 (2017-01-07) x86_64 GNU/Linux us borken
+vmlinuz-4.19.0-9-amd64 is borken
+-->
+then manually bisecting between <code>v4.8</code> and <code>v4.9</code> – in a stretch chroot, naturally,
+since images built on buster hard-rebooted QEMU in a tight loop just after the decompressor and ELF parsing;
+strapping the chroot took two hours of baby-sitting due to the current state of s.d.o, and most revisions only build
+<a href="//lists.ubuntu.com/archives/kernel-team/2016-May/077178.html">with an ubuntu patch</a>;
+so much for never breaking fucking userspace –
+</p>
+<pre class="continuing inline"><a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8924feff66f35fe22ce77aafe3f21eb8e5cff881">commit 8924feff66f35fe22ce77aafe3f21eb8e5cff881 ("splice: lift pipe_lock out of splice_to_pipe()")</a></pre>
+<p class="continuation">
+is the first bad commit.
+</p>
+<p class="indented continued">
+(The smoketest is:
+</p>
+<pre class="continuing inline">
+./v > fifo &
+read -r _ < fifo &
+echo zupa > fifo
+</pre>
+<p class="continuation">
+<code>good</code> is it completes; <code>bad</code> is it hangs.)
+</p>
+<p class="indented">
+This aligns with the origin of the modern <code>pipe_lock()</code> placement I got by recursive <code>blame</code>.
+</p>
+<p class="indented continued">
+But
+</p>
+<h2 id="why" class="continuing"><a class="hash-link" href="#why">#</a> why'<!--'-->d I care?</h2>
+<p class="continuing">
+Depends if you'<!--'-->re running, like, nullmailer, in which case
+<a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#m69ed72a7e0ffa7da3ba9f8800cd85bb63f6da715"><code>./v > /var/spool/nullmailer/trigger</code></a>
+makes it ⇒ any subsequent MUA ⇒ any subsequent sender (if <code>wait()</code>ing synchronously) enter the signal-impervious mutex-sleeping state,
+which can only be recovered from by killing the splicing process.
+Good luck finding that, since this affects any ptracing process as well.
+</p>
+<p class="indented continuing">
+Or any other message or log collection system where – especially unprivileged – users write stuff to a pipe,
+since they'<!--'-->ve now been granted a total exclusion thereon.
+</p>
+<p class="indented continuing">
+Even in inocuous situations like QEMU with <samp>-chardev pipe,id=pipe,path=$HOME/uwu/q -serial chardev:pipe</samp>, <code>cat</code>ting to <code>~/uwu/q.in</code>
+(besides only waking up every second line, which is just business as usual), excludes emulation.
+</p>
+<p> 
+ <br /> 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
+ or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
+ </p>
+</span>
+<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
+ <hr /> 
+ <span id="word_count">0</span> words, 
+ <span id="syllable_count">0</span> syllables, 
+ <span id="character_count">0</span> characters. 
+ </span>
+<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
+ Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
+ code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
+ <hr /> 
+ This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, 
+ and contribute and/or yell at me there. 
+ <hr /> 
+ Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
+ <hr /> 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 06.07.2023 23:53:00 UTC from 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/011-1-splice-exclusion.html.pp">src/blogn_t/011-1 -splice-exclusion.html.pp</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1020024">See job on builds.sr.ht</a>. 
+ <hr /> 
+ <a href="/content/feed.xml">RSS feed</a> 
+ </body> 
+ </html>
