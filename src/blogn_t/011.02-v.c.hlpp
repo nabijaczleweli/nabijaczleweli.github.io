@@ -1,0 +1,11 @@
+#define _GNU_SOURCE
+#include <fcntl.h>
+#include <stdlib.h>
+int main() {
+  int pt = posix_openpt(O_RDWR);
+  grantpt(pt);
+  unlockpt(pt);
+  int cl = open(ptsname(pt), O_RDONLY);
+  for(;;)
+    splice(cl, 0, 1, 0, 128 * 1024 * 1024, 0);
+}

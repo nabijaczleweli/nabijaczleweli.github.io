@@ -1,0 +1,9 @@
+#define _GNU_SOURCE
+#include <fcntl.h>
+#include <stdio.h>
+int main() {
+  ssize_t rd, acc = 0;
+  while ((rd = splice(0, 0, 1, 0, 128 * 1024 * 1024, 0)) > 0)
+    acc += rd;
+  fprintf(stderr, "sp=%zd: %m\n", acc);
+}
