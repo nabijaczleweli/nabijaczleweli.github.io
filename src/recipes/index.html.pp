@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 30 Jun 2023 19:53:32 +0200" -->
+<!-- RSS_UPDATE_DATE: "Sun, 9 Jul 2023 17:14:00 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -33,12 +33,12 @@ BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
 #define SUMMARY(hid, ...) <summary id=STR(hid) class="roboto-unscale" style="font-weight: bold;">HEADING_LINK(hid)__VA_ARGS__</summary>
 #define IMAGUS(i1, o1, i2, o2)                                                                                                       \
   <center class="grid-by-each continued">                                                                             FORCED_NEWLINE \
-     <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a><!-- FORCED_NEWLINE \
-  --><a href=STR(httpsCOLON_SLASH_SLASH##o2)><img class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i2) /></a>     FORCED_NEWLINE \
+     <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img loading="lazy" class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a><!-- FORCED_NEWLINE \
+  --><a href=STR(httpsCOLON_SLASH_SLASH##o2)><img loading="lazy" class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i2) /></a>     FORCED_NEWLINE \
   </center>
 #define ONE_IMAGUS(i1, o1)                                                                                        \
   <center class="grid-by-each continued">                                                                         \
-     <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a> \
+     <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img loading="lazy" class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a> \
   </center>
 #define NO_IMAGUS() \
   <center class="grid-by-each continued"></center>
@@ -96,10 +96,47 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty)</a>.
+	Latest replication: REPLICATION(2023-07-08, $101010.pl/@nabijaczleweli/110684630031038414)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/669/573/055/938/291/original/c6b5c98e5242ace8.jpeg, $101010.pl/@nabijaczleweli/110669748656310055,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/670/199/586/607/127/original/2a6248ace16432df.jpeg, $101010.pl/@nabijaczleweli/110669748656310055)
+
+<details open>
+	SUMMARY(blooming-bread, 开花馒头)
+
+	<p class="continuing">
+		<a href="//youtu.be/NOZxFzMKnz4" lang="zh-CN"><!--"-->开花馒头，开不开花揉馒头方法很关键，做对了一出锅个个笑开花【三丰美食】<!--"--></a>,
+		by <span lang="zh-CN"><!--"-->三丰美食<!--"--></span>,
+		replicated REPLICATION(2023-07-06, $101010.pl/@nabijaczleweli/110669748656310055),
+		           REPLICATION(2023-07-08, $101010.pl/@nabijaczleweli/110684630031038414):</p>
+	<ol class="continuation">
+		<li>NUM(40g) of dark sugar, NUM(190g) of hot water, mix to solve, wait to cool to like NUM(40°)</li>
+		<li>some yeast, NUM(3g) of baking powder, mix –
+		    I had originally mis-taken this to be salt and put a spoon of salt in;
+		    this ended up tasting better, and I haven'<!--'-->t detected an appreciable change from the powder</li>
+		<li>NUM(350g) of flour, knead, he sleeps covered</li>
+		<li>pour hot water over NUM(11) jujube, cut up into small bits</li>
+		<li>flatten the risen dough in the bowl, deploy NUM(1g) of soda in NUM(10g)(?) of water, knead, he sleeps covered for NUM(15min)</li>
+		<li>flatten on board, deploy jujube, knead in, cylindrise, tear into NUM(7) guys</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>flatten directly(?)</li>
+				<li>fold a point at the bottom to the top on the same radius, rotate a bit, repeat for like two rotations</li>
+				<li>indent, form conically</li>
+				<li>sleep for NUM(15min)</li>
+				<li>boil water, deploy, let rip for NUM(15min)</li>
+			</ol>
+		</li>
+	</ol>
+
+	<p>
+		I haven't gotten these to work morphologically.
+	</p>
+</details>
 
 
 IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC_2700.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1688343-idk-what-i-did-diffe,
