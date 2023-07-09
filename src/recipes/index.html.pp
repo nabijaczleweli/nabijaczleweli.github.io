@@ -79,7 +79,7 @@ ol li ol li ol {
 </style>
 
 <script>
-window.addEventListener("load", function() {
+window.addEventListener("DOMContentLoaded", function() {
 	Array.from(document.getElementsByTagName("button")).forEach(function(butt) {
 		var all = Array.from(document.getElementsByTagName(butt.attributes["toggle-tag"].value));
 		var cur = true;
@@ -96,14 +96,14 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-06-30, cohost.org/nabijaczleweli/post/1791054-empty)</a>.
+	Latest replication: REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC_2700.JPG, cohost.org/nabijaczleweli/post/1688343-idk-what-i-did-diffe,
-       staging.cohostcdn.org/attachment/b3806ff1-048d-472c-b03c-b6a5bdec1189/DSC_2694.JPG, cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC_2700.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1688343-idk-what-i-did-diffe,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/b3806ff1-048d-472c-b03c-b6a5bdec1189/DSC_2694.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1676107-didn-t-explode-along)
 <details open>
 	SUMMARY(puckered-bread, Puckered bread)
 
@@ -111,11 +111,11 @@ IMAGUS(staging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC
 		<a href="//youtu.be/z44JqGKyLBg">Blossom steamed bread delicious method is very simple
 		                                 (<span lang="zh-CN"><!--"-->开花馒头好吃方法很简单，学会这个做法，蓬松柔软个个开花【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-06-13, cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along),
-	             REPLICATION(2023-06-15, cohost.org/nabijaczleweli/post/1688384-scale-comparison),
-	             REPLICATION(2023-06-17, cohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i),
-	             REPLICATION(2023-06-28, cohost.org/nabijaczleweli/post/1776589-they-made),
-	             REPLICATION(2023-06-30, cohost.org/nabijaczleweli/post/1791054-empty):</p>
+		replicated REPLICATION(2023-06-13, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1676107-didn-t-explode-along),
+		           REPLICATION(2023-06-15, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1688384-scale-comparison),
+		           REPLICATION(2023-06-17, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i),
+		           REPLICATION(2023-06-28, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1776589-they-made),
+		           REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
 		<li>flock in NUM(80g) of yogurt – I'<!--'-->ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
@@ -141,8 +141,8 @@ IMAGUS(staging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC_2655a.JPG, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve,
-       staging.cohostcdn.org/attachment/81fc99fc-d95a-4cd4-b69d-5eed4470c701/DSC_2656.JPG,  cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC_2655a.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/81fc99fc-d95a-4cd4-b69d-5eed4470c701/DSC_2656.JPG,  lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve)
 <details open>
 	SUMMARY(dumpy, Steamed dumpling)
 
@@ -150,10 +150,10 @@ IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC
 		<a href="//youtu.be/kwx-qZd9Epw">Home version of big steamed dumplings learn to do this, soft and chewy
 		                                 (<span lang="zh-CN"><!--"-->家庭版大蒸饺学会这样做，柔软筋道不破皮不漏馅，适合新手【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-06-04, cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve),
-		           REPLICATION(2023-06-06, cohost.org/nabijaczleweli/post/1636148-actually-fun-moment),
-		           REPLICATION(2023-06-08, cohost.org/nabijaczleweli/post/1647533-dzia-zy),
-		           REPLICATION(2023-06-10, cohost.org/nabijaczleweli/post/1658603-this-user-is-like):</p>
+		replicated REPLICATION(2023-06-04, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve),
+		           REPLICATION(2023-06-06, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1636148-actually-fun-moment),
+		           REPLICATION(2023-06-08, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1647533-dzia-zy),
+		           REPLICATION(2023-06-10, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1658603-this-user-is-like):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(3g) of salt, mix</li>
 		<li>flock in NUM(150g) of boiling water in one half</li>
@@ -174,8 +174,8 @@ IMAGUS(staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC_2637a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town,
-       staging.cohostcdn.org/attachment/bb5f12d8-8cd5-47a2-980e-55501950da44/DSC_2635a.JPG, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC_2637a.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1534159-idk-whose-home-town,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/bb5f12d8-8cd5-47a2-980e-55501950da44/DSC_2635a.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1534159-idk-whose-home-town)
 <details open>
 	SUMMARY(brown-sugar-shortbread, Old-fashioned brown sugar short-bread)
 
@@ -183,7 +183,7 @@ IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC
 		<a href="//youtu.be/wzMPdyUy99g">Hometown gourmet brown sugar shortbread, step-by-step explanation
 		                                 (<span lang="zh-CN"><!--"-->家乡美食红糖酥饼，步骤详细讲解，酥脆香甜不用出去买【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-21, cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town):</p>
+		replicated REPLICATION(2023-05-21, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1534159-idk-whose-home-town):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour. NUM(1g) of yeast, NUM(1g) of baking soda, mix – I ended up wanting like half a hand more</li>
 		<li>flock in NUM(125g) of sesame oil, rub together in hands for full dispersal</li>
@@ -222,8 +222,8 @@ IMAGUS(staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/7339792a-7d19-4344-acc1-4f0b2f928cef/DSC_2647.JPG,  cohost.org/nabijaczleweli/post/1538182-yes-im-still-working,
-       staging.cohostcdn.org/attachment/64a8b45c-13e5-4a1f-8bcc-1564da55fcd5/DSC_2630a.JPG, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/7339792a-7d19-4344-acc1-4f0b2f928cef/DSC_2647.JPG,  lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1538182-yes-im-still-working,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/64a8b45c-13e5-4a1f-8bcc-1564da55fcd5/DSC_2630a.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog)
 <details open>
 	SUMMARY(pumpkin-hanamaki, Pumpkin hanamaki)
 
@@ -231,11 +231,11 @@ IMAGUS(staging.cohostcdn.org/attachment/7339792a-7d19-4344-acc1-4f0b2f928cef/DSC
 		<a href="//youtu.be/7_VBad4AzWI">Homemade Hanamaki is simple and practical, you can learn it in a minute
 		                                 (<span lang="zh-CN"><!--"-->家常花卷简单实用，一分钟就能学会，营养丰富层多柔软【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-17, cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog),
-		           REPLICATION(2023-05-22, cohost.org/nabijaczleweli/post/1538182-yes-im-still-working):</p>
+		replicated REPLICATION(2023-05-17, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog),
+		           REPLICATION(2023-05-22, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1538182-yes-im-still-working):</p>
 	<ol class="continuation">
 		<li>half a pumpkin in NUM(4mm) slices, steamed for NUM(20min), blended with water for a loose gloop –
-		    I used an NUM(850g) <a href="//cohost.org/nabijaczleweli/post/1512219-this-is-half-a-pumpk">dynia piżmowa</a>,
+		    I used an NUM(850g) <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1512219-this-is-half-a-pumpk">dynia piżmowa</a>,
 		    which is just about what her half a pumpkin looked like, but do not be fooled: she did not use the whole half a pumpkin</li>
 		<li>define dough over Ш as
 			<ol class="continuing">
@@ -267,8 +267,8 @@ IMAGUS(staging.cohostcdn.org/attachment/7339792a-7d19-4344-acc1-4f0b2f928cef/DSC
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/1683924925110.JPEG, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus,
-       staging.cohostcdn.org/attachment/6401196b-c17e-478d-9249-9593555e5531/DSC_2615a.JPG,      cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/1683924925110.JPEG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/6401196b-c17e-478d-9249-9593555e5531/DSC_2615a.JPG,      lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus)
 <details open>
 	SUMMARY(butter-bread, Butter bread)
 
@@ -277,8 +277,8 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 		                                       (<span lang="zh-CN"><!--"-->【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】<!--"--></span>)</a>,
 		at 7:21,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus),
-		           REPLICATION(2023-05-15, cohost.org/nabijaczleweli/post/1504203-remaining-4-5-not-p):</p>
+		replicated REPLICATION(2023-05-12, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus),
+		           REPLICATION(2023-05-15, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1504203-remaining-4-5-not-p):</p>
 	<ol class="continuation">
 		<li>NUM(50g) egg, NUM(260g) of water, NUM(100g) of milk, NUM(20g) of sugar, NUM(4g) of salt, NUM(5g) of yeast, NUM(50g) of corn oil, whisk –
 		    olive oil works fine; she doesn't say "warm water" so I used normal and it didn't really rise that well, so;
@@ -316,8 +316,8 @@ IMAGUS(staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/168
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC_2617.JPG,  cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl,
-       staging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG, cohost.org/nabijaczleweli/post/1486924-pog-moment)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC_2617.JPG,  lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1494733-still-very-acceptabl,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1486924-pog-moment)
 <details open>
 	SUMMARY(hushi-confexion, Hushi confexion)
 
@@ -325,8 +325,8 @@ IMAGUS(staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC
 		<a href="//youtu.be/yW85JqGvy7M">Chinese rural specialty delicacy Hushi sugar baker
 		                                 (<span lang="zh-CN"><!--"-->中国农村特色美食呼市方糖焙子，从和面到制作油酥很详细，香甜可口还柔软【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-12, cohost.org/nabijaczleweli/post/1486924-pog-moment),
-		           REPLICATION(2023-05-14, cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl):</p>
+		replicated REPLICATION(2023-05-12, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1486924-pog-moment),
+		           REPLICATION(2023-05-14, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1494733-still-very-acceptabl):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(2g) of baking powder, NUM(1g) of baking soda, NUM(5g) of sugar, NUM(50g) egg, NUM(20g) of safflower oil, flock
 		    – I needed NUM(585g)</li>
@@ -381,7 +381,7 @@ IMAGUS(staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC
 </details>
 
 
-ONE_IMAGUS(staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d/DSC_2596a.JPG, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one)
+ONE_IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d/DSC_2596a.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1465853-this-is-the-only-one)
 <details open>
 	SUMMARY(onion-pancake, Green onion pancake)
 
@@ -390,7 +390,7 @@ ONE_IMAGUS(staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d
 		                                       (<span lang="zh-CN"><!--"-->【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】<!--"--></span>)</a>,
 		at 14:46,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-08, cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one):</p>
+		replicated REPLICATION(2023-05-08, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1465853-this-is-the-only-one):</p>
 	<ol class="continuation">
 		<li>"small bowl" of flour – my similarly-profiled and probably-similarly-sized bowl came out to NUM(488g)</li>
 		<li>twice that many bolws of water – NUM(1470g)</li>
@@ -423,8 +423,8 @@ ONE_IMAGUS(staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC_5798.JPG, cohost.org/nabijaczleweli/post/1461465-okay-thats-some-pret,
-       staging.cohostcdn.org/attachment/257ba15e-667f-44d0-badd-72b305e2f51d/DSC_5806.JPG, cohost.org/nabijaczleweli/post/1461581-dry-heat-cels-seethi)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC_5798.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461465-okay-thats-some-pret,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/257ba15e-667f-44d0-badd-72b305e2f51d/DSC_5806.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461581-dry-heat-cels-seethi)
 <details open>
 	SUMMARY(buns, Buns)
 
@@ -432,7 +432,7 @@ IMAGUS(staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC
 		<a href="//youtu.be/tghGkiw8feU">From snacks to big sauced meat buns, the skin is thin and the stuffing is big and soft
 		                                 (<span lang="zh-CN"><!--"-->从小吃到大的酱肉包子，皮薄馅大又暄软，不塌陷不回缩【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-07, cohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well):</p>
+		replicated REPLICATION(2023-05-07, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well):</p>
 	<ol class="continuing">
 		<li>NUM(300g) of like NUM(40°) water, NUM(4g) of yeast, NUM(5g) of sugar, stir to suspend</li>
 		<li>flock in NUM(500g) of flour</li>
@@ -482,8 +482,8 @@ IMAGUS(staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC_5775.JPG, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye,
-       staging.cohostcdn.org/attachment/660e5669-4349-4236-907a-dcec6f5c8003/DSC_5778.JPG, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC_5775.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1440206-leek-multi-laye,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/660e5669-4349-4236-907a-dcec6f5c8003/DSC_5778.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1440206-leek-multi-laye)
 <details open>
 	SUMMARY(leek-cake, Leek multi-layer cake)
 
@@ -491,7 +491,7 @@ IMAGUS(staging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC
 		<a href="//youtu.be/2rNbXgnnyQg">Leek multi-layer cake is delicious and no skill
 		                                 (<span lang="zh-CN"><!--"-->韭菜多层饼好吃无技巧，层层有饼层层有馅，咸香味美满嘴香！【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-03, cohost.org/nabijaczleweli/post/1440206-leek-multi-laye):</p>
+		replicated REPLICATION(2023-05-03, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1440206-leek-multi-laye):</p>
 	<ol class="continuing">
 		<li>NUM(500g) of flour, NUM(~2g) of salt, flock with NUM(150g) of boiling water then NUM(130g) of normal</li>
 		<li>NUM(60g) egg – I had good results with an uncompensated NUM(70g) one</li>
@@ -541,8 +541,8 @@ NO_IMAGUS()
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC_2584.JPG, cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose,
-       staging.cohostcdn.org/attachment/4cac1ee0-9abc-447d-ad26-bf841e4f6a2a/DSC_2571.JPG, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC_2584.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/4cac1ee0-9abc-447d-ad26-bf841e4f6a2a/DSC_2571.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c)
 <details open>
 	SUMMARY(corn-freamed-buns, Corn freamed (fried steamed) rolls (buns), rose-shaped)
 
@@ -550,21 +550,21 @@ IMAGUS(staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC
 		<a href="//youtu.be/7tZEh6uzcOo">Cornmeal for rolls? Easy to make fluffy and soft
 		                                 (<span lang="zh-CN"><!--"-->玉米面不蒸馒头做花卷？蓬松柔软做法简单，全程无难度【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-04-29, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c),
-		           REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris),
-		           REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose):</p>
+		replicated REPLICATION(2023-04-29, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c),
+		           REPLICATION(2023-05-02, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1433335-little-secondary-ris),
+		           REPLICATION(2023-05-02, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose):</p>
 	<ol class="continuation">
-		<li>NUM(200g) of <a href="//cohost.org/nabijaczleweli/post/1404618-this-user-just-got">corn</a>,
+		<li>NUM(200g) of <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1404618-this-user-just-got">corn</a>,
 		    flock with NUM(200g) of boiling water,
 		    let cool until not hot to second knuckle – with the eggs you want to get a good yeast temp</li>
 		<li>NUM(3g) of yeast, spoon of sugar, two eggs – mine are NUM(~70g)</li>
 		<li>NUM(200g) of flour – maybe my eggs are huge, maybe idk, but starting with NUM(250g) and likely adding slightly more to get to a reasonable "dough" consistency
 		    — instead of a paste, which doesn'<!--'-->t rise; the spec is to <em>maybe add water</em> which is insane to me —
-		    worked for me to avoid the REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris) incident again</li>
+		    worked for me to avoid the REPLICATION(2023-05-02, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1433335-little-secondary-ris) incident again</li>
 		<li>flock, accrue, knead in bowl for NUM(5min), he sleeps in the covered bowl for NUM(40min)</li>
 		<li>knead a bit on floured counter to de-gas, roll into cylinder, cut into NUM(~12) guys –
 		    there's a critical mass above which they won't re-rise(?), and NUM(9) left them too big
-		    (again, REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris)),
+		    (again, REPLICATION(2023-05-02, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1433335-little-secondary-ris)),
 		    NUM(13) and NUM(12) worked very well, and she does NUM(12)</li>
 		<li>for each guy:
 			<ol>
@@ -592,25 +592,25 @@ IMAGUS(staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC
 	</ol>
 
 	<p>
-		These came out just about perfect REPLICATION(2023-04-29, cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c),
+		These came out just about perfect REPLICATION(2023-04-29, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c),
 		but the water level is finnicky, and pouring in more and turning the heat back on turns out badly for me
-		(stuck to bottom; REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1433335-little-secondary-ris),
-		                  REPLICATION(2023-05-02, cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose)).
+		(stuck to bottom; REPLICATION(2023-05-02, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1433335-little-secondary-ris),
+		                  REPLICATION(2023-05-02, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose)).
 		Maybe this is easier if you have a plastic pan the right size, but my biggest (NUM(Φ245)) is stainless (but the right size).
 		Operator error.
 	</p>
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/1682517987967.JPEG, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat,
-       staging.cohostcdn.org/attachment/3bb8cd24-0ff4-40e8-8b0f-a554a2cf6714/1682517987996.JPEG, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/1682517987967.JPEG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/3bb8cd24-0ff4-40e8-8b0f-a554a2cf6714/1682517987996.JPEG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat)
 <details open>
 	SUMMARY(wężymorda, Gratin de salsifis)
 
 	<p class="continuing">
 		<a href="//www.swissmilk.ch/fr/recettes-idees/recettes/LM200711_21/gratin-de-salsifis/">Gratin de salsifis</a>,
 		by swissmilk,
-		replicated REPLICATION(2023-04-26, cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat):</p>
+		replicated REPLICATION(2023-04-26, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat):</p>
 	<ol class="continuation">
 		<li>water, salt, and lemon juice in pot</li>
 		<li>peel NUM(1kg) of salsifis under the tap, trim to NUM(15cm)ish bits, directly into pot</li>
@@ -626,8 +626,8 @@ IMAGUS(staging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/168
 </details>
 
 
-IMAGUS(staging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC_2539.JPG, cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un,
-       staging.cohostcdn.org/attachment/87a35886-38b0-4092-b95d-b5940b45780d/DSC_2554.JPG, cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy)
+IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC_2539.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un,
+       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/87a35886-38b0-4092-b95d-b5940b45780d/DSC_2554.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1383268-who-need-they-brussy)
 <details open>
 	SUMMARY(flower-rolls, Flower rolls (round steamed bread with an oil))
 
@@ -635,8 +635,8 @@ IMAGUS(staging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC
 		<a href="//youtu.be/hpYrnQiGd6w">Homemade flower rolls are delicious and no skills, suitable for novice making
 		                                 (<span lang="zh-CN"><!--"-->家常花卷好吃无技巧，松软白亮方法简单，适合新手制作【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-04-15, cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un),
-		           REPLICATION(2023-04-23, cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy):</p>
+		replicated REPLICATION(2023-04-15, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un),
+		           REPLICATION(2023-04-23, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1383268-who-need-they-brussy):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour,
 		    NUM(4g) of yeast,

@@ -201,7 +201,7 @@ Print-ready CMYK PDFs, raw Illustrator models, &c. can be had <a href="//lfs.nab
 But, if printing, and scaling text that's supposed to be normally-readable on a roll with a, like, 400 physical dimension or whatever,  <!--'-->
 just how small is it gonna be?
 Thankfully, all is possible through the power of НАТУРАЛИСТ микроскоп детский 60<sup>×</sup>,
-which passed its factory QC in <a href="//cohost.org/nabijaczleweli/post/460108-nevermind-im-a-lyin#post-439952">January 1987</a>.
+which passed its factory QC in <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/460108-nevermind-im-a-lyin#post-439952">January 1987</a>.
 </p>
 
 <center class="grid-by-each continued" style="line-height: 0;">

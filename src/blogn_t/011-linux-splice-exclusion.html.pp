@@ -5,7 +5,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-<!-- https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
+<!-- https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
 
 
 #include "../writing/writing.h"
@@ -151,7 +151,7 @@ HEADING_S(2, bisexion, , Bisexion)
 
 <p class="indented continued">
 By rough-bisecting off snapshot.d.o kernel packages – since
-<a href="//cohost.org/nabijaczleweli/post/1787015-two-hours-babysittin">4.0, and even 5.0, don'<!--'-->t build on bookworm</a> –
+<a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1787015-two-hours-babysittin">4.0, and even 5.0, don'<!--'-->t build on bookworm</a> –
 to between
 <code>4.8.15-2</code> and <code>4.9.1-1~exp1</code>,
 <!--

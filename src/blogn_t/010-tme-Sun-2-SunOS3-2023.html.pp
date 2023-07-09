@@ -5,7 +5,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-<!-- https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
+<!-- https://lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1730377-please-talk-to-my-su -->
 
 
 #include "../writing/writing.h"
@@ -110,7 +110,7 @@ The only SunOS 3 that worked for me was 3.5; earlier installation tapes were bro
 </p>
 <p class="indented continuing">
 Additionally, during SunOS 3 installation,
-<a href="//cohost.org/nabijaczleweli/post/1709365-real-innovation-has#post-1706872">the emulator will <code>SIGABRT</code> in the tape driver</a>,
+<a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1709365-real-innovation-has#post-1706872">the emulator will <code>SIGABRT</code> in the tape driver</a>,
 since WRITE MARKS is unimplemented.
 This is trivially fixed by turning it into a no-op instead.
 </p>
@@ -835,7 +835,7 @@ with <a href="//vetusware.com/download/Solaris%201.1.2%201.1.2/?id=8931"><code>s
 and install by following the script (you want <kbd>suninstall</kbd> after rebooting to the miniroot).
 </p>
 <p class="indented continuing">
-I got to the <a href="//cohost.org/nabijaczleweli/post/1728522-the-9-genders-briti">funniest time-zone selection menu in history</a>:
+I got to the <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1728522-the-9-genders-briti">funniest time-zone selection menu in history</a>:
 </p>
 <a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
 <p class="continuing">
