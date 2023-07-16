@@ -115,7 +115,7 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp><code>005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</code></samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Mon, 14 Sep 2020 00:20:20 +0200</span>, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, Mon, 15 Mar 2021 23:49:31 +0100, with thanks to <a href="//github.com/ik5pvx">Pierfrancesco</a> for many pre-bullseye bugs! and Sat, 11 Jun 2022 00:19:37 +0200</h4>
 <p class="indented continued">
-In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//twitter.com/Guriwesu">an american</a> and acquiring a ThinkPad P15,
+In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//github.com/griwes">an american</a> and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'<!--'-->d like to have a single continuous volume spanning both of them to do whatever your heart desires.
 </p>
 <p class="indented continuing">
@@ -168,7 +168,7 @@ most-all gotchas are hopefully explained,
 there'<!--'-->s a <a href="//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html">prior art</a> that was of little help, and
 <code>zfs-{initramfs,dracut}</code> are full of <a href="//github.com/openzfs/zfs/issues/10908">problems</a> that I try to work around here:
 </p>
-<center><a href="//twitter.com/nabijaczleweli/status/1303858705788801024">
+<center><a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1303858705788801024">
  <img class="main-screenshot continuation" alt="Excerpt from zfs-initramfs, function load_module_initrd that starts with 'if [ $variable > 0 ]'"
       src="/content/assets/blogn_t/005.01-zfs-initramfs-gt-0.png" style="min-width: 75%;" /></a></center>
 <h2 id="installation" class="continued"><a class="hash-link" href="#installation">#</a> Installation</h2>
@@ -386,7 +386,7 @@ If not, and <code>sd-boot</code> shows errors or doesn'<!--'-->t start at all; b
 <kbd>fs0:</kbd>, and <kbd>\&lt;MID&gt;\&lt;VER&gt;\linux initrd=\&lt;MID&gt;\&lt;VER&gt;\initrd.img-&lt;VER&gt; root=/dev/sda2</kbd>
 (the shell should support tab-completion, you might need to add a space before completing the initrd)
 (the <code>root=</code> option assumes you installed to the second partition of the first SCSI drive, as I did; adjust to taste),
-then write me an <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">e-mail</a> or a <a href="//twitter.com/nabijaczleweli">DM</a>
+then write me an <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">e-mail</a> or a <a href="//101010.pl/@nabijaczleweli">DM</a>
 or whatever else is listed <a href="/">here</a> so I can issue a correxion; thanks in advance, &c.:
 </p>
 <center><a href="/content/assets/blogn_t/005.04-EFI-shell.png">
@@ -698,7 +698,7 @@ Or, as was succinctly put by the instigator of all this mess:
 On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been done, with a recommendation of the highest order:
 </p>
 <!-- https://discordapp.com/channels/145079846832308224/150317232239542272/760731829304688640 -->
-<center><a href="//twitter.com/nabijaczleweli/status/1311318328510644225">
+<center><a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1311318328510644225">
  <img class="main-screenshot continuation" alt="[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic"
       src="/content/assets/blogn_t/005.08-success.png" style="min-width: 75%;" /></a></center>
 <p> 
@@ -722,9 +722,9 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 09.07.2023 15:22:10 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 16.07.2023 13:04:51 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/005-low-curse-zfs-on-root.html.pp">src/blogn_t/005-low-curse-zfs-on-root.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1021336">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1024814">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

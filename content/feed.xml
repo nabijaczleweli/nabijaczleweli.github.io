@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-07-09T15:24:56</updated>
+  <updated>2023-07-16T13:07:47</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)
   </generator>
@@ -81,7 +81,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;p class=&quot;indented continued&quot;&gt;
 Some time ago I bought an &lt;a href=&quot;//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455&quot;&gt;HP rp5700&lt;/a&gt; &lt;del&gt;Piece of Shit&lt;/del&gt; Point of Sale system
   with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
- follow &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1204465652628672512&quot;&gt;this Twitter thread&lt;/a&gt; to experience this machine as its story'&lt;!--'--&gt;d unravelled.
+ follow &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1204465652628672512&quot;&gt;this Twitter thread&lt;/a&gt; to experience this machine as its story'&lt;!--'--&gt;d unravelled.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 Some time later, I decided to make a router out of it, and, having heard of &lt;code&gt;x32&lt;/code&gt; – 32-bit ABI/userland, with a long-mode kernel/CPU –
@@ -97,11 +97,12 @@ The second [system] is the QEMU/Chroot guest, and it &lt;em&gt;must&lt;/em&gt; r
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 Which, while amusing, isn'&lt;!--'--&gt;t very conducive to getting an &lt;code&gt;x32&lt;/code&gt; system up, nor are the outdated-at-best instructions.
-So this is the combination of the things I'&lt;!--'--&gt;ve read and tried in order to install Debian &quot;bullseye/sid&quot; &lt;code&gt;x32&lt;/code&gt; &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;on &lt;samp style=&quot;white-space: nowrap;&quot;&gt;Wed Apr &amp;nbsp;1 22:02:50 UTC 2020&lt;samp&gt;&lt;/a&gt; (it was already &lt;samp&gt;0:02:50&lt;/samp&gt; the next day in my timezone but I forgot to set it; oh well):
+So this is the combination of the things I'&lt;!--'--&gt;ve read and tried in order to install Debian &quot;bullseye/sid&quot; &lt;code&gt;x32&lt;/code&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1245500423370309632&quot;&gt;on &lt;samp style=&quot;white-space: nowrap;&quot;&gt;Wed Apr &amp;nbsp;1 22:02:50 UTC 2020&lt;samp&gt;&lt;/a&gt; (it was already &lt;samp&gt;0:02:50&lt;/samp&gt; the next day in my timezone but I forgot to set it; oh well):
 &lt;/p&gt;
-&lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1245500423370309632&quot;&gt;
+&lt;center&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1245500423370309632&quot;&gt;
  &lt;!-- DSCN0443.JPG --&gt;
  &lt;!-- This used to be &quot;//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large&quot;, but that link only worked if you were logged into twitter, somehow --&gt;
+ &lt;!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1245500423370309632-EUjn9pPWsAAsTVT.jpg --&gt;
  &lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Login screen showing the aforementioned date and dpkg --print-architecture returning x32&quot;
       src=&quot;/content/assets/blogn_t/001.01-success.jpg&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p class=&quot;continuation&quot;&gt;&lt;/p&gt;
@@ -141,7 +142,7 @@ Also a kernel that can run &lt;code&gt;x32&lt;/code&gt; binaries; Debian &lt;cod
   &lt;a href=&quot;//gitweb.gentoo.org/repo/gentoo.git/tree/sys-kernel/vanilla-kernel/vanilla-kernel-5.5.14.ebuild?id=d193a0f3de9e106971405c3acb27d5ca90f8bc21#n55&quot;&gt;does&lt;/a&gt;,
   Fedora and RHEL &lt;a href=&quot;//src.fedoraproject.org/rpms/kernel/blob/2703d9b16cc4a0cf8b5c25c8af390663092f455b/f/kernel-x86_64-fedora.config#_6885&quot;&gt;don'&lt;!--'--&gt;t&lt;/a&gt;;
   FreeBSD'&lt;!--'--&gt;s &lt;a href=&quot;//www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/linuxemu.html&quot;&gt;&quot;Linux® Binary Compatibility&quot;&lt;/a&gt;
-               does &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1246919228877426688&quot;&gt;not&lt;/a&gt; (as of 12.1)).
+               does &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1246919228877426688&quot;&gt;not&lt;/a&gt; (as of 12.1)).
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
 I used &lt;code&gt;d-i&lt;/code&gt;'&lt;!--'--&gt;s rescue mode (&lt;code&gt;rescue/enable=true&lt;/code&gt; parameter) and added &lt;code&gt;syscall.x32=y&lt;/code&gt; in the bootloader manually,
@@ -309,7 +310,7 @@ If that didn't get your system to boot, please do &lt;a href=&quot;mailto:nabija
 except, maybe, one last thing?
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-Ever wondered what'd happen if you had inits but the kernel couldn't execute them? &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1246438561735413760&quot;&gt;So did I&lt;/a&gt;:
+Ever wondered what'd happen if you had inits but the kernel couldn't execute them? &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1246438561735413760&quot;&gt;So did I&lt;/a&gt;:
 &lt;/p&gt;
 &lt;center&gt;&lt;img class=&quot;main-screenshot continuing&quot; alt=&quot;Linux console during init in QEMU windows, first complaining about 'modprobe bindfmt-464c' not being processable, then 'Starting init: /sbin/init exists but couldn't execute it (error: -8)', then 'Run /etc/init as init process', then /bin/init, then /bin/sh, yielding the same error as /sbin/init, finishing with a kernel panic 'not syncing: No working init found.  Try passing init= option to kernel.'&quot;
             src=&quot;/content/assets/blogn_t/001.05-kernel-death.png&quot; /&gt;&lt;/center&gt;
@@ -370,7 +371,7 @@ You can read it on &lt;a href=&quot;https://bugs.debian.org/961097#35&quot;&gt;d
  (plus there'&lt;!--'--&gt;s context there).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
-You may also be interested in the corresponding &lt;a href=&quot;https://twitter.com/nabijaczleweli/status/1263652757803724800&quot;&gt;twitter thread&lt;/a&gt;.
+You may also be interested in the corresponding &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800&quot;&gt;twitter thread&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
@@ -446,7 +447,7 @@ video, img {
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;003. A proof-of-concept IRC/mail bridge&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 11 Jul 2020 00:34:50 +0200&lt;/span&gt;&lt;/h4&gt;
-As seen on &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1281342937226510342&quot;&gt;Twitter&lt;/a&gt;.
+As seen on &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1281342937226510342&quot;&gt;Twitter&lt;/a&gt;.
 &lt;h2 id=&quot;what&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#what&quot;&gt;#&lt;/a&gt; What?&lt;/h2&gt;
 &lt;p class=&quot;indented&quot;&gt;
 A video'&lt;!--'--&gt;s worth a few interrobangs, so:
@@ -664,7 +665,7 @@ img {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;004. New album: cinque&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 18 Jul 2020 22:14:33 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented&quot;&gt;
-At &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1284582399838478339&quot;&gt;10:14 pm · 18 Jul 2020&lt;/a&gt; I released my third album: &lt;samp&gt;cinque&lt;/samp&gt;!
+At &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1284582399838478339&quot;&gt;10:14 pm · 18 Jul 2020&lt;/a&gt; I released my third album: &lt;samp&gt;cinque&lt;/samp&gt;!
 &lt;/p&gt;
 &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/cinque&quot;&gt;&lt;img src=&quot;//lfs.nabijaczleweli.xyz/0004-cinque/hill-all+2160x.png&quot; alt=&quot;cinque album art&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented&quot;&gt;
@@ -750,7 +751,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs! and Sat, 11 Jun 2022 00:19:37 +0200&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//twitter.com/Guriwesu&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
+In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//github.com/griwes&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'&lt;!--'--&gt;d like to have a single continuous volume spanning both of them to do whatever your heart desires.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -803,7 +804,7 @@ most-all gotchas are hopefully explained,
 there'&lt;!--'--&gt;s a &lt;a href=&quot;//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html&quot;&gt;prior art&lt;/a&gt; that was of little help, and
 &lt;code&gt;zfs-{initramfs,dracut}&lt;/code&gt; are full of &lt;a href=&quot;//github.com/openzfs/zfs/issues/10908&quot;&gt;problems&lt;/a&gt; that I try to work around here:
 &lt;/p&gt;
-&lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1303858705788801024&quot;&gt;
+&lt;center&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1303858705788801024&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;Excerpt from zfs-initramfs, function load_module_initrd that starts with 'if [ $variable &gt; 0 ]'&quot;
       src=&quot;/content/assets/blogn_t/005.01-zfs-initramfs-gt-0.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;h2 id=&quot;installation&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installation&quot;&gt;#&lt;/a&gt; Installation&lt;/h2&gt;
@@ -1021,7 +1022,7 @@ If not, and &lt;code&gt;sd-boot&lt;/code&gt; shows errors or doesn'&lt;!--'--&gt
 &lt;kbd&gt;fs0:&lt;/kbd&gt;, and &lt;kbd&gt;\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\linux initrd=\&amp;lt;MID&amp;gt;\&amp;lt;VER&amp;gt;\initrd.img-&amp;lt;VER&amp;gt; root=/dev/sda2&lt;/kbd&gt;
 (the shell should support tab-completion, you might need to add a space before completing the initrd)
 (the &lt;code&gt;root=&lt;/code&gt; option assumes you installed to the second partition of the first SCSI drive, as I did; adjust to taste),
-then write me an &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;e-mail&lt;/a&gt; or a &lt;a href=&quot;//twitter.com/nabijaczleweli&quot;&gt;DM&lt;/a&gt;
+then write me an &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;e-mail&lt;/a&gt; or a &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;DM&lt;/a&gt;
 or whatever else is listed &lt;a href=&quot;/&quot;&gt;here&lt;/a&gt; so I can issue a correxion; thanks in advance, &amp;c.:
 &lt;/p&gt;
 &lt;center&gt;&lt;a href=&quot;/content/assets/blogn_t/005.04-EFI-shell.png&quot;&gt;
@@ -1333,7 +1334,7 @@ Or, as was succinctly put by the instigator of all this mess:
 On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been done, with a recommendation of the highest order:
 &lt;/p&gt;
 &lt;!-- https://discordapp.com/channels/145079846832308224/150317232239542272/760731829304688640 --&gt;
-&lt;center&gt;&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1311318328510644225&quot;&gt;
+&lt;center&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1311318328510644225&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic&quot;
       src=&quot;/content/assets/blogn_t/005.08-success.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
 &lt;p&gt; 
@@ -1412,7 +1413,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 05 Nov 2020 22:06:30 +0100&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-Fujitsu's employed me, which means I'm empowered to make &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1321625051771375616&quot;&gt;bad financial decisions&lt;/a&gt;
+Fujitsu's employed me, which means I'm empowered to make &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1321625051771375616&quot;&gt;bad financial decisions&lt;/a&gt;
 at a larger scale than previous — in this case, a &lt;a href=&quot;//droix.net/products/one-netbook-mix-3-pro-ultrabook&quot;&gt;OneMix 3 Pro&lt;/a&gt;,
 which has only one disk in it, but I'&lt;!--'--&gt;d still prefer to zoot it in less than twenty hours over USB or whatever.
 &lt;/p&gt;
@@ -1728,7 +1729,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
 but it wouldn'&lt;!--'--&gt;t be unheard of to have a note like this on the first page of a document in the bad old days,
 and the concept of unironically encountering this in the wild in year of the hog 2020 was too hilarious to pass up
-as a terrible urge &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1408975129707794434&quot;&gt;came over&lt;/a&gt; me.
+as a terrible urge &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1408975129707794434&quot;&gt;came over&lt;/a&gt; me.
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Indeed, what better font to celebrate with than with something from the &lt;span class=&quot;smallcaps&quot;&gt;amix&lt;/span&gt; distribution
@@ -1965,7 +1966,7 @@ Wed, 22 Jun 2022 18:33:54 +0200
 didn't specify  &lt;!--'--&gt;
 &lt;kbd&gt;-k&lt;/kbd&gt;
 to remove kerning on fixed-width fonts,
-which &lt;a href=&quot;//twitter.com/nabijaczleweli/status/1539638664548044800&quot;&gt;broke&lt;/a&gt; alignment in space-delimited tables.
+which &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1539638664548044800&quot;&gt;broke&lt;/a&gt; alignment in space-delimited tables.
 We apologise for the error.
 &lt;/p&gt;
 &lt;h2 id=&quot;prior-art&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#prior-art&quot;&gt;#&lt;/a&gt; Prior art&lt;/h2&gt;
@@ -2351,8 +2352,8 @@ both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
 &lt;a href=&quot;/content/assets/blogn_t/007.10-liberation2.pdf&quot;&gt;And just like that&lt;/a&gt;:
 &lt;/p&gt;
 &lt;a href=&quot;/content/assets/blogn_t/007.10-liberation2.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing&quot; src=&quot;/content/assets/blogn_t/007.10-liberation2.png&quot; /&gt;&lt;/a&gt;
-&lt;!-- https://twitter.com/nabijaczleweli/status/1429503115947020297 --&gt;
-&lt;h2 id=&quot;jajco&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jajco&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit;&quot; href=&quot;//twitter.com/kgbcatboy/status/1429605955994533889&quot;&gt;\nЯЙЦО&lt;/a&gt;&lt;/h2&gt; &lt;!-- https://web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889 --&gt;
+&lt;!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export#1429503115947020297 --&gt;
+&lt;h2 id=&quot;jajco&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jajco&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit;&quot; href=&quot;//web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889&quot;&gt;\nЯЙЦО&lt;/a&gt;&lt;/h2&gt;
 &lt;!-- &lt;h2 id=&quot;jajco&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jajco&quot;&gt;#&lt;/a&gt; \nЯЙЦО&lt;/h2&gt; --&gt;
 &lt;p class=&quot;continuing indented&quot;&gt;
 A &lt;del&gt;powerful&lt;/del&gt; sufficient diagnostic tool can also be plainly piping groff into Ghostscript:
@@ -2590,8 +2591,8 @@ img {
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Have been
-&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1297339377786511360&quot;&gt;featured&lt;/a&gt;
-&lt;a href=&quot;//twitter.com/nabijaczleweli/status/1590177344467390465&quot;&gt;before&lt;/a&gt;,
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1297339377786511360&quot;&gt;featured&lt;/a&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1590177344467390465&quot;&gt;before&lt;/a&gt;,
 even
 &lt;a href=&quot;006-UNIX-r-ATT.html&quot;&gt;on this blog&lt;/a&gt;,
 but never in such style:
@@ -5497,8 +5498,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
  &lt;/p&gt;
 &lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
- &lt;a href=&quot;https://twitter.com/nabijaczleweli/status/1533929176725594118&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://pbs.twimg.com/media/FUmcYBvXwAA78H5?format=jpg&amp;name=4096x4096&quot; /&gt;&lt;/a&gt;&lt;!-- 
- --&gt;&lt;a href=&quot;https://twitter.com/nabijaczleweli/status/1584894789878587392&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://pbs.twimg.com/media/Ff6s7wOX0AQGK5f?format=jpg&amp;name=4096x4096&quot; /&gt;&lt;/a&gt; 
+ &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1533929176725594118&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1533929176725594118-FUmcYBvXwAA78H5.jpg&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1584894789878587392&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1584894789878587392-Ff6s7wOX0AQGK5f.jpg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
  &lt;summary id=&quot;bubliki&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bubliki&quot;&gt;#&lt;/a&gt;Бублики&lt;/summary&gt;
@@ -5507,9 +5508,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;a href=&quot;//youtu.be/PPHy_1R7Xu4&quot;&gt;Making the slavic bagel&lt;/a&gt;,
   by Life of Boris.
   First replicated
-  &lt;a href=&quot;https://twitter.com/nabijaczleweli/status/1533929176725594118&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2022-06-06&lt;/span&gt;&lt;/a&gt;,
+  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1533929176725594118&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2022-06-06&lt;/span&gt;&lt;/a&gt;,
   but this was my sole bread in-take for the
-  &lt;a href=&quot;https://twitter.com/nabijaczleweli/status/1584894789878587392&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2022-07-06–2022-10-28&lt;/span&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1584894789878587392&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2022-07-06–2022-10-28&lt;/span&gt;&lt;/a&gt;
   period (at which point I sustained multiple hand wounds, which don'&lt;!--'--&gt;t really cooperate well with this):&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~400g&lt;/span&gt; of flour,
