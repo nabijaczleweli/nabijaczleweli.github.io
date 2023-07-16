@@ -172,7 +172,7 @@ Wed, 22 Jun 2022 18:33:54 +0200
 didn't specify  <!--'-->
 <kbd>-k</kbd>
 to remove kerning on fixed-width fonts,
-which <a href="//twitter.com/nabijaczleweli/status/1539638664548044800">broke</a> alignment in space-delimited tables.
+which <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1539638664548044800">broke</a> alignment in space-delimited tables.
 We apologise for the error.
 </p>
 
@@ -417,8 +417,8 @@ GhostScript can directly load TrueType and OpenType fonts, so for a properly-pac
 <a href="/content/assets/blogn_t/007.10-liberation2.png"><img class="continuation main-font" alt="Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing" src="/content/assets/blogn_t/007.10-liberation2.png" /></a>
 
 
-<!-- https://twitter.com/nabijaczleweli/status/1429503115947020297 -->
-HEADING_S(2, jajco, class="continued", <a style="color: inherit;" href="//twitter.com/kgbcatboy/status/1429605955994533889">\nЯЙЦО</a>) <!-- https://web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889 -->
+<!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export#1429503115947020297 -->
+HEADING_S(2, jajco, class="continued", <a style="color: inherit;" href="//web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889">\nЯЙЦО</a>)
 <!-- HEADING_S(2, jajco, class="continued", \nЯЙЦО) -->
 <p class="continuing indented">
 A <del>powerful</del> sufficient diagnostic tool can also be plainly piping groff into Ghostscript:

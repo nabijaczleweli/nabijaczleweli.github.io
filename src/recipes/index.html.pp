@@ -711,8 +711,8 @@ IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.c
 </details>
 
 
-IMAGUS(pbs.twimg.com/media/FUmcYBvXwAA78H5?format=jpg&name=4096x4096, twitter.com/nabijaczleweli/status/1533929176725594118,
-       pbs.twimg.com/media/Ff6s7wOX0AQGK5f?format=jpg&name=4096x4096, twitter.com/nabijaczleweli/status/1584894789878587392)
+IMAGUS(lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1533929176725594118-FUmcYBvXwAA78H5.jpg, lfs.nabijaczleweli.xyz/0017-twitter-export#1533929176725594118,
+       lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1584894789878587392-Ff6s7wOX0AQGK5f.jpg, lfs.nabijaczleweli.xyz/0017-twitter-export#1584894789878587392)
 <details open>
 	SUMMARY(bubliki, Бублики)
 
@@ -721,9 +721,9 @@ IMAGUS(pbs.twimg.com/media/FUmcYBvXwAA78H5?format=jpg&name=4096x4096, twitter.co
 		<a href="//youtu.be/PPHy_1R7Xu4">Making the slavic bagel</a>,
 		by Life of Boris.
 		First replicated
-		REPLICATION(2022-06-06, twitter.com/nabijaczleweli/status/1533929176725594118),
+		REPLICATION(2022-06-06, lfs.nabijaczleweli.xyz/0017-twitter-export#1533929176725594118),
 		but this was my sole bread in-take for the
-		REPLICATION(2022-07-06–2022-10-28, twitter.com/nabijaczleweli/status/1584894789878587392)
+		REPLICATION(2022-07-06–2022-10-28, lfs.nabijaczleweli.xyz/0017-twitter-export#1584894789878587392)
 		period (at which point I sustained multiple hand wounds, which don'<!--'-->t really cooperate well with this):</p>
 	<ol class="continuation">
 		<li>NUM(~400g) of flour,

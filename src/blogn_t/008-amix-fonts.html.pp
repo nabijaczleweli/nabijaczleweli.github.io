@@ -52,8 +52,8 @@ BLOGN_T_HEADING(<code>008. <span class="topaz">AMIX</span> <span class="sunfont"
 
 <p class="indented continued">
 Have been
-<a href="//twitter.com/nabijaczleweli/status/1297339377786511360">featured</a>
-<a href="//twitter.com/nabijaczleweli/status/1590177344467390465">before</a>,
+<a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1297339377786511360">featured</a>
+<a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1590177344467390465">before</a>,
 even
 <a href="006-UNIX-r-ATT.html">on this blog</a>,
 but never in such style:

@@ -50,7 +50,7 @@ BLOGN_T_HEADING(<code>001. Installing Debian'<!--'-->s x32 port in 2020</code>)
 <p class="indented continued">
 Some time ago I bought an <a href="//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455">HP rp5700</a> <del>Piece of Shit</del> Point of Sale system
   with a 2.13GHz Core 2 Duo E6400, fascinating OEM assembly, and FreeDOS, fourth-hand –
-	follow <a href="//twitter.com/nabijaczleweli/status/1204465652628672512">this Twitter thread</a> to experience this machine as its story'<!--'-->d unravelled.
+	follow <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1204465652628672512">this Twitter thread</a> to experience this machine as its story'<!--'-->d unravelled.
 </p>
 <p class="indented continuation">
 Some time later, I decided to make a router out of it, and, having heard of <code>x32</code> – 32-bit ABI/userland, with a long-mode kernel/CPU –
@@ -67,11 +67,12 @@ The second [system] is the QEMU/Chroot guest, and it <em>must</em> run Debian 8/
 </blockquote>
 <p class="continuing">
 Which, while amusing, isn'<!--'-->t very conducive to getting an <code>x32</code> system up, nor are the outdated-at-best instructions.
-So this is the combination of the things I'<!--'-->ve read and tried in order to install Debian "bullseye/sid" <code>x32</code> <a href="//twitter.com/nabijaczleweli/status/1245500423370309632">on <samp style="white-space: nowrap;">Wed Apr &nbsp;1 22:02:50 UTC 2020<samp></a> (it was already <samp>0:02:50</samp> the next day in my timezone but I forgot to set it; oh well):
+So this is the combination of the things I'<!--'-->ve read and tried in order to install Debian "bullseye/sid" <code>x32</code> <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1245500423370309632">on <samp style="white-space: nowrap;">Wed Apr &nbsp;1 22:02:50 UTC 2020<samp></a> (it was already <samp>0:02:50</samp> the next day in my timezone but I forgot to set it; oh well):
 </p>
-<center><a href="//twitter.com/nabijaczleweli/status/1245500423370309632">
+<center><a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1245500423370309632">
 	<!-- DSCN0443.JPG -->
 	<!-- This used to be "//pbs.twimg.com/media/EUjn9pPWsAAsTVT.jpg:large", but that link only worked if you were logged into twitter, somehow -->
+	<!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1245500423370309632-EUjn9pPWsAAsTVT.jpg -->
 	<img class="main-screenshot continuing" alt="Login screen showing the aforementioned date and dpkg --print-architecture returning x32"
 	     src="/content/assets/blogn_t/001.01-success.jpg" /></a></center>
 <p class="continuation"></p>
@@ -113,7 +114,7 @@ Also a kernel that can run <code>x32</code> binaries; Debian <code>amd64</code> 
 		<a href="//gitweb.gentoo.org/repo/gentoo.git/tree/sys-kernel/vanilla-kernel/vanilla-kernel-5.5.14.ebuild?id=d193a0f3de9e106971405c3acb27d5ca90f8bc21#n55">does</a>,
 		Fedora and RHEL <a href="//src.fedoraproject.org/rpms/kernel/blob/2703d9b16cc4a0cf8b5c25c8af390663092f455b/f/kernel-x86_64-fedora.config#_6885">don'<!--'-->t</a>;
 		FreeBSD'<!--'-->s <a href="//www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/linuxemu.html">"Linux® Binary Compatibility"</a>
-		             does <a href="//twitter.com/nabijaczleweli/status/1246919228877426688">not</a> (as of 12.1)).
+		             does <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1246919228877426688">not</a> (as of 12.1)).
 </p>
 
 <p class="indented">
@@ -269,7 +270,7 @@ except, maybe, one last thing?
 </p>
 
 <p class="indented continued">
-Ever wondered what'd happen if you had inits but the kernel couldn't execute them? <a href="//twitter.com/nabijaczleweli/status/1246438561735413760">So did I</a>:
+Ever wondered what'd happen if you had inits but the kernel couldn't execute them? <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1246438561735413760">So did I</a>:
 </p>
 <center><img class="main-screenshot continuing" alt="Linux console during init in QEMU windows, first complaining about 'modprobe bindfmt-464c' not being processable, then 'Starting init: /sbin/init exists but couldn't execute it (error: -8)', then 'Run /etc/init as init process', then /bin/init, then /bin/sh, yielding the same error as /sbin/init, finishing with a kernel panic 'not syncing: No working init found.  Try passing init= option to kernel.'"
 	           src="/content/assets/blogn_t/001.05-kernel-death.png" /></center>

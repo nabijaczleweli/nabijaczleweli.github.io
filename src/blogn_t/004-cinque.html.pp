@@ -34,7 +34,7 @@ img {
 BLOGN_T_HEADING(<code>004. New album: cinque</code>)
 
 <p class="indented">
-At <a href="//twitter.com/nabijaczleweli/status/1284582399838478339">10:14 pm · 18 Jul 2020</a> I released my third album: <samp>cinque</samp>!
+At <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1284582399838478339">10:14 pm · 18 Jul 2020</a> I released my third album: <samp>cinque</samp>!
 </p>
 
 <a href="//nabijaczleweli.bandcamp.com/album/cinque"><img src="//lfs.nabijaczleweli.xyz/0004-cinque/hill-all+2160x.png" alt="cinque album art" /></a>

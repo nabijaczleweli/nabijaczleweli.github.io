@@ -47,7 +47,7 @@ BOILERPLATE(005. Low-curse ZFS-on-root for new Debian installations on multi-dis
 BLOGN_T_HEADING(<code>005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</code>)
 
 <p class="indented continued">
-In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//twitter.com/Guriwesu">an american</a> and acquiring a ThinkPad P15,
+In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//github.com/griwes">an american</a> and acquiring a ThinkPad P15,
 sporting two two-terabyte drives and, naturally, you'<!--'-->d like to have a single continuous volume spanning both of them to do whatever your heart desires.
 </p>
 <p class="indented continuing">
@@ -102,7 +102,7 @@ most-all gotchas are hopefully explained,
 there'<!--'-->s a <a href="//openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Buster%20Root%20on%20ZFS.html">prior art</a> that was of little help, and
 <code>zfs-{initramfs,dracut}</code> are full of <a href="//github.com/openzfs/zfs/issues/10908">problems</a> that I try to work around here:
 </p>
-<center><a href="//twitter.com/nabijaczleweli/status/1303858705788801024">
+<center><a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1303858705788801024">
 	<img class="main-screenshot continuation" alt="Excerpt from zfs-initramfs, function load_module_initrd that starts with 'if [ $variable > 0 ]'"
 	     src="/content/assets/blogn_t/005.01-zfs-initramfs-gt-0.png" style="min-width: 75%;" /></a></center>
 
@@ -318,7 +318,7 @@ If not, and <code>sd-boot</code> shows errors or doesn'<!--'-->t start at all; b
 <kbd>fs0:</kbd>, and <kbd>\&lt;MID&gt;\&lt;VER&gt;\linux initrd=\&lt;MID&gt;\&lt;VER&gt;\initrd.img-&lt;VER&gt; root=/dev/sda2</kbd>
 (the shell should support tab-completion, you might need to add a space before completing the initrd)
 (the <code>root=</code> option assumes you installed to the second partition of the first SCSI drive, as I did; adjust to taste),
-then write me an <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">e-mail</a> or a <a href="//twitter.com/nabijaczleweli">DM</a>
+then write me an <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">e-mail</a> or a <a href="//101010.pl/@nabijaczleweli">DM</a>
 or whatever else is listed <a href="/">here</a> so I can issue a correxion; thanks in advance, &c.:
 </p>
 <center><a href="/content/assets/blogn_t/005.04-EFI-shell.png">
@@ -601,7 +601,7 @@ Or, as was succinctly put by the instigator of all this mess:
 On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been done, with a recommendation of the highest order:
 </p>
 <!-- https://discordapp.com/channels/145079846832308224/150317232239542272/760731829304688640 -->
-<center><a href="//twitter.com/nabijaczleweli/status/1311318328510644225">
+<center><a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1311318328510644225">
 	<img class="main-screenshot continuation" alt="[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic"
 	     src="/content/assets/blogn_t/005.08-success.png" style="min-width: 75%;" /></a></center>
 

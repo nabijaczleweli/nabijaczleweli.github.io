@@ -49,7 +49,7 @@ video, img {
 <p></p>
 BLOGN_T_HEADING(<code>003. A proof-of-concept IRC/mail bridge</code>)
 
-As seen on <a href="//twitter.com/nabijaczleweli/status/1281342937226510342">Twitter</a>.
+As seen on <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1281342937226510342">Twitter</a>.
 
 HEADING(2, what, What?)
 <p class="indented">

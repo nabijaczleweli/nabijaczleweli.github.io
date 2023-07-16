@@ -51,7 +51,7 @@ You can read it on <a href="https://bugs.debian.org/961097#35">debbugs</a>, sinc
 	(plus there'<!--'-->s context there).
 </p>
 <p class="indented continuation">
-You may also be interested in the corresponding <a href="https://twitter.com/nabijaczleweli/status/1263652757803724800">twitter thread</a>.
+You may also be interested in the corresponding <a href="https://lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800">twitter thread</a>.
 </p>
 
 BLOGN_T_FOOTER()

@@ -51,7 +51,7 @@ BOILERPLATE(005a. A single-disk but slightly more cursed ZFS-on-root corollary â
 BLOGN_T_HEADING(<code>005a. A single-disk but slightly more cursed ZFS-on-root corollary</code>)
 
 <p class="indented continued">
-Fujitsu's employed me, which means I'm empowered to make <a href="//twitter.com/nabijaczleweli/status/1321625051771375616">bad financial decisions</a>
+Fujitsu's employed me, which means I'm empowered to make <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1321625051771375616">bad financial decisions</a>
 at a larger scale than previous â€” in this case, a <a href="//droix.net/products/one-netbook-mix-3-pro-ultrabook">OneMix 3 Pro</a>,
 which has only one disk in it, but I'<!--'-->d still prefer to zoot it in less than twenty hours over USB or whatever.
 </p>
