@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Sun, 9 Jul 2023 17:14:00 +0200" -->
+<!-- RSS_UPDATE_DATE: "Fri, 21 Jul 2023 20:43:17 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -23,7 +23,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/MathJax-font.css" rel="stylesheet">        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
-BOILERPLATE(Recipes, My answer to the replicaiton crisis, en-GB, STYLESHEETS)
+BOILERPLATE(Recipes, My answer to the replication crisis, en-GB, STYLESHEETS)
 
 #define NUM(...) <span class="roboto-unscale math-font-normal">__VA_ARGS__</span>
 #define REPLICATION(date, url) <a href=STR(httpsCOLON_SLASH_SLASH##url)>NUM(date)</a>
@@ -96,14 +96,68 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-07-08, $101010.pl/@nabijaczleweli/110684630031038414)</a>.
+	Latest replication: REPLICATION(2023-07-21, $101010.pl/@nabijaczleweli/110752998578446480)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
 
 
-IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/669/573/055/938/291/original/c6b5c98e5242ace8.jpeg, $101010.pl/@nabijaczleweli/110669748656310055,
-       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/670/199/586/607/127/original/2a6248ace16432df.jpeg, $101010.pl/@nabijaczleweli/110669748656310055)
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/920/201/065/064/original/e5104e9dae21ffc3.jpeg, $101010.pl/@nabijaczleweli/110752930128901173,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/949/667/426/193/original/6937c34646c929fd.jpeg, $101010.pl/@nabijaczleweli/110752998578446480)
+
+<details open>
+	SUMMARY(beef-brussy-CA, Beef Stuffed Flatbread)
+	<p class="continuing">
+		<a href="//youtu.be/kko5x0P0Cbg">Beef Stuffed Flatbread
+		                                 (<span lang="zh-CN"><!--"-->薄皮馅饼 Stuffed Flatbread<!--"--></span>)</a>,
+		by <span>小高姐的 Magic Ingredients</span>,
+		replicated REPLICATION(2023-07-21, $101010.pl/@nabijaczleweli/110752998578446480):</p>
+	<ol class="continuation">
+		<li>NUM(350g) of flour, NUM(210g) of water, NUM(¼) of a small spoon of yeast, NUM(1) spoon of oil, mix to accrue, he sleeps for NUM(15min)</li>
+		<li>knead for NUM(1min), divide NUM(6)-wise</li>
+		<li>for each guy: knead radially, press directly knead-side down, he sleeps for at least NUM(20min)</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>flatten directly in the hand</li>
+				<li>deploy gloop ball</li>
+				<li>encompass, close with a flat weld</li>
+				<li>deploy weld-side down on oiled sheet</li>
+				<li>cover with oil</li>
+			</ol>
+		</li>
+		<li>cover the sheet with plastic, fridge for the night</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>extract</li>
+				<li>flatten directly on oiled board</li>
+				<li>roll out – I opted for flattening directly entirely</li>
+				<li>fry on oil expectedly</li>
+			</ol>
+		</li>
+	</ol>
+	<p class="continuing">with a spec gloop of</p>
+	<ol class="continuation">
+		<li>NUM(60g) of starch noodles boiled for NUM(3min), run through with cold water, and shredded</li>
+		<li>NUM(100g) of chives finely chopped</li>
+		<li>NUM(200g) of beef extrusion,
+			  NUM(1) spoon of soy sus,
+			  NUM(1) spoon of dark soy sus,
+			  NUM(¼) of a small spoon of ground pepper from sichuan,
+			  NUM(¼) of a small spoon of ground white pepper,
+			  NUM(¼) of a small spoon of salt,
+			  NUM(⅛) of a small spoon of five spices, mix</li>
+		<li>pour on NUM(1) spoon of sesame oil and NUM(1) spoon of oil on the the chives and noodles, mix</li>
+		<li>mix the chive and noodle gloop with the meat</li>
+		<li>divide NUM(6)-wise, ballify</li>
+	</ol>
+
+	<p>
+		I had not realised this was a yankified recipe until after having fridged it –
+		this explains why my meat was pale and the result was lacking flavour –
+		she uses spoon-based measurements, but she actually means "customary ladle #7".
+		Actual measures yet unknown.
+	</p>
+</details>
 
 <details open>
 	SUMMARY(blooming-bread, 开花馒头)
@@ -134,7 +188,7 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 	</ol>
 
 	<p>
-		I haven't gotten these to work morphologically.
+		I haven'<!--'-->t gotten these to work morphologically.
 	</p>
 </details>
 
@@ -152,7 +206,8 @@ IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.c
 		           REPLICATION(2023-06-15, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1688384-scale-comparison),
 		           REPLICATION(2023-06-17, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1705325-i-don-t-know-what-i),
 		           REPLICATION(2023-06-28, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1776589-they-made),
-		           REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty):</p>
+		           REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty),
+		           REPLICATION(2023-07-18, $101010.pl/@nabijaczleweli/110736025902684639):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
 		<li>flock in NUM(80g) of yogurt – I'<!--'-->ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
@@ -469,7 +524,8 @@ IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.c
 		<a href="//youtu.be/tghGkiw8feU">From snacks to big sauced meat buns, the skin is thin and the stuffing is big and soft
 		                                 (<span lang="zh-CN"><!--"-->从小吃到大的酱肉包子，皮薄馅大又暄软，不塌陷不回缩【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		replicated REPLICATION(2023-05-07, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well):</p>
+		      replicated REPLICATION(2023-05-07, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well);
+		gloop replicated REPLICATION(2023-07-10, $101010.pl/@nabijaczleweli/110691639550245407):</p>
 	<ol class="continuing">
 		<li>NUM(300g) of like NUM(40°) water, NUM(4g) of yeast, NUM(5g) of sugar, stir to suspend</li>
 		<li>flock in NUM(500g) of flour</li>
