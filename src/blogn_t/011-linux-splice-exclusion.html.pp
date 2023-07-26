@@ -24,6 +24,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define HEADING_S(level, hid, style, ...) <h##level id=STR(hid) style>HEADING_LINK(hid) __VA_ARGS__</h##level>
 
 
+#ifdef linux
+#undef linux
+#endif
+
 #define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
 
 
