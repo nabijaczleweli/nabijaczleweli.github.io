@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 21 Jul 2023 20:43:17 +0200" -->
+<!-- RSS_UPDATE_DATE: "Fri, 28 Jul 2023 00:27:13 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,10 +96,55 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-07-21, $101010.pl/@nabijaczleweli/110752998578446480)</a>.
+	Latest replication: REPLICATION(2023-07-27, $101010.pl/@nabijaczleweli/110787166550728100)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg, $101010.pl/@nabijaczleweli/110787166550728100)
+
+<details open>
+	SUMMARY(shroomy-paper, )
+	<p class="continuing">
+		<a href="//youtu.be/94sq209lddU">The chef teaches you the recipe for Bean curd skin , it'<!--'-->s too fragrant
+		                                 (<span lang="zh-CN"><!--"-->豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe<!--"--></span>)</a>,
+		by <span lang="zh-CN">家常菜日记</span>,
+		replicated REPLICATION(2023-07-27, $101010.pl/@nabijaczleweli/110787166550728100):</p>
+	<ol class="continuation">
+		<li>soak fungus in water with a little salt and some flour for NUM(5min), wash in clean water –
+		    he specs auricularia cornea, which only has a wiki article in śląski and no common names; I used dried shredded mun because thats what I had</li>
+		<li>cut up NUM(2) bean curd skins into strips, then parallelograms –
+		    his appeared smaller and thicker than mine, the stack I got looked like twice what he did, so I doubled the rest and it made two big bowls</li>
+		<li>cut a flat half of a long red and long green pepper lengthwise then parallelogramwise</li>
+		<li>shred two chives, keep the white bit separate</li>
+		<li>mince a garlic, save it with the white bit</li>
+		<li>for sus:
+			<ol class="continuing">
+				<li>a little salt</li>
+				<li>a little chicken essence (bullion cube)</li>
+				<li>ground pepper</li>
+				<li>two spoons of light soy sus</li>
+				<li>an spoon of oyster sus</li>
+				<li>a drip of dark soy sus (colour only)</li>
+				<li>half a spoon of corn starch – I don'<!--'-->t operate under a corn-based economy, so I just had potato</li>
+				<li>stir with some water</li>
+			</ol>
+		</li>
+		<li>boil the skin for NUM(30s)</li>
+		<li>boil the shrooms for NUM(2min)</li>
+		<li>heat oil, fry the white bit + garlic with an spoon of bean paste until the oil reddens</li>
+		<li>fry with shrooms</li>
+		<li>fry with skin</li>
+		<li>boil for NUM(2min) with the sus</li>
+		<li>fry with with peppers</li>
+		<li>finish with chives</li>
+	</ol>
+
+	<p>
+		The <em>light</em>ness of the soy sus is paramount here, it really did come Too Salty™.
+	</p>
+</details>
 
 
 IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/920/201/065/064/original/e5104e9dae21ffc3.jpeg, $101010.pl/@nabijaczleweli/110752930128901173,
@@ -110,7 +155,7 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 	<p class="continuing">
 		<a href="//youtu.be/kko5x0P0Cbg">Beef Stuffed Flatbread
 		                                 (<span lang="zh-CN"><!--"-->薄皮馅饼 Stuffed Flatbread<!--"--></span>)</a>,
-		by <span>小高姐的 Magic Ingredients</span>,
+		by <span lang="zh-CN">小高姐的</span> Magic Ingredients,
 		replicated REPLICATION(2023-07-21, $101010.pl/@nabijaczleweli/110752998578446480):</p>
 	<ol class="continuation">
 		<li>NUM(350g) of flour, NUM(210g) of water, NUM(¼) of a small spoon of yeast, NUM(1) spoon of oil, mix to accrue, he sleeps for NUM(15min)</li>
