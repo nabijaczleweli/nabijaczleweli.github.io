@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-07-26T21:02:21</updated>
+  <updated>2023-07-27T22:40:45</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)
   </generator>
@@ -4822,7 +4822,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-07-21T20:43:17+02:00</updated>
+    <updated>2023-07-28T00:27:13+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4910,10 +4910,51 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110752998578446480&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-21&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-27&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
+&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;shroomy-paper&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shroomy-paper&quot;&gt;#&lt;/a&gt;&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/94sq209lddU&quot;&gt;The chef teaches you the recipe for Bean curd skin , it'&lt;!--'--&gt;s too fragrant
+                                   (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
+  by &lt;span lang=&quot;zh-CN&quot;&gt;家常菜日记&lt;/span&gt;,
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-27&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;soak fungus in water with a little salt and some flour for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5min&lt;/span&gt;, wash in clean water –
+      he specs auricularia cornea, which only has a wiki article in śląski and no common names; I used dried shredded mun because thats what I had&lt;/li&gt;
+  &lt;li&gt;cut up &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2&lt;/span&gt; bean curd skins into strips, then parallelograms –
+      his appeared smaller and thicker than mine, the stack I got looked like twice what he did, so I doubled the rest and it made two big bowls&lt;/li&gt;
+  &lt;li&gt;cut a flat half of a long red and long green pepper lengthwise then parallelogramwise&lt;/li&gt;
+  &lt;li&gt;shred two chives, keep the white bit separate&lt;/li&gt;
+  &lt;li&gt;mince a garlic, save it with the white bit&lt;/li&gt;
+  &lt;li&gt;for sus:
+   &lt;ol class=&quot;continuing&quot;&gt;
+    &lt;li&gt;a little salt&lt;/li&gt;
+    &lt;li&gt;a little chicken essence (bullion cube)&lt;/li&gt;
+    &lt;li&gt;ground pepper&lt;/li&gt;
+    &lt;li&gt;two spoons of light soy sus&lt;/li&gt;
+    &lt;li&gt;an spoon of oyster sus&lt;/li&gt;
+    &lt;li&gt;a drip of dark soy sus (colour only)&lt;/li&gt;
+    &lt;li&gt;half a spoon of corn starch – I don'&lt;!--'--&gt;t operate under a corn-based economy, so I just had potato&lt;/li&gt;
+    &lt;li&gt;stir with some water&lt;/li&gt;
+   &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;boil the skin for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30s&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;boil the shrooms for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2min&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;heat oil, fry the white bit + garlic with an spoon of bean paste until the oil reddens&lt;/li&gt;
+  &lt;li&gt;fry with shrooms&lt;/li&gt;
+  &lt;li&gt;fry with skin&lt;/li&gt;
+  &lt;li&gt;boil for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2min&lt;/span&gt; with the sus&lt;/li&gt;
+  &lt;li&gt;fry with with peppers&lt;/li&gt;
+  &lt;li&gt;finish with chives&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;p&gt;
+  The &lt;em&gt;light&lt;/em&gt;ness of the soy sus is paramount here, it really did come Too Salty™.
+ &lt;/p&gt;
+&lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110752930128901173&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/920/201/065/064/original/e5104e9dae21ffc3.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/110752998578446480&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/949/667/426/193/original/6937c34646c929fd.jpeg&quot; /&gt;&lt;/a&gt; 
@@ -4923,7 +4964,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/kko5x0P0Cbg&quot;&gt;Beef Stuffed Flatbread
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;薄皮馅饼 Stuffed Flatbread&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
-  by &lt;span&gt;小高姐的 Magic Ingredients&lt;/span&gt;,
+  by &lt;span lang=&quot;zh-CN&quot;&gt;小高姐的&lt;/span&gt; Magic Ingredients,
   replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110752998578446480&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-21&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;350g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;210g&lt;/span&gt; of water, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;¼&lt;/span&gt; of a small spoon of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1&lt;/span&gt; spoon of oil, mix to accrue, he sleeps for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15min&lt;/span&gt;&lt;/li&gt;
