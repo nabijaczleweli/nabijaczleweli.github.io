@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-07-27T22:40:45</updated>
+  <updated>2023-07-31T18:14:12</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)
   </generator>
@@ -4822,7 +4822,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-07-28T00:27:13+02:00</updated>
+    <updated>2023-07-31T18:55:17+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4910,13 +4910,32 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-27&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110809682480516115&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-31&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
+&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110809682480516115&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/809/495/805/550/457/original/20bef8e45b221fe0.jpg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;soy-flour-red-bean-sticky-rice-worm-hunks&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#soy-flour-red-bean-sticky-rice-worm-hunks&quot;&gt;#&lt;/a&gt;The soy-eating sticky rice and red bean worm so delicious it was hunted to extinxion (real, sad, tragic, the method for preparation is explained)&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/94sq209lddU&quot; lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;糯米粉这样做，比驴打滚简单好吃，一口一个软糯香甜，夏天必吃&lt;!--&quot;--&gt;&lt;/a&gt;,
+  by Yi Ning'&lt;!--'--&gt;s Mother Loves Food,
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110809682480516115&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-31&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;180g&lt;/span&gt; of sticky rice flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of corn starch, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;220g&lt;/span&gt; of milk, whisk –
+      I don'&lt;!--'--&gt;t operate under a corn-based economy, so I just had potato&lt;/li&gt;
+  &lt;li&gt;steam for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20min&lt;/span&gt; – she has a flat bowl, mine was still raw inside; I did altogether &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40min&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;cut in, deploy &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of butter, hide&lt;/li&gt;
+  &lt;li&gt;knead in the butter once wet, ballify&lt;/li&gt;
+  &lt;li&gt;deploy on soy flour, roll out rectangularly until &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2-3mm&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;to exhaustion: deploy bean paste length-wise near edge, snakify, separate, fix weld&lt;/li&gt;
+  &lt;li&gt;for each snake: to exhaustion: cut off a piece&lt;/li&gt;
+  &lt;li&gt;toss the pieces in soy flour to cover&lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;shroomy-paper&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shroomy-paper&quot;&gt;#&lt;/a&gt;&lt;/summary&gt;
+ &lt;summary id=&quot;shroomy-paper&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shroomy-paper&quot;&gt;#&lt;/a&gt;Fungus bean curd skin&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/94sq209lddU&quot;&gt;The chef teaches you the recipe for Bean curd skin , it'&lt;!--'--&gt;s too fragrant
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -4952,7 +4971,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;finish with chives&lt;/li&gt;
  &lt;/ol&gt;
  &lt;p&gt;
-  The &lt;em&gt;light&lt;/em&gt;ness of the soy sus is paramount here, it really did come Too Salty™.
+  The &lt;em&gt;lightness&lt;/em&gt; of the soy sus is paramount here, it really did come Too Salty™.
  &lt;/p&gt;
 &lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
