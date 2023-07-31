@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 28 Jul 2023 00:27:13 +0200" -->
+<!-- RSS_UPDATE_DATE: "Mon, 31 Jul 2023 18:55:17 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -31,13 +31,13 @@ BOILERPLATE(Recipes, My answer to the replication crisis, en-GB, STYLESHEETS)
 
 #define HEADING_LINK(id)  <a class="hash-link" href=STR(HASH##id)>HASH</a>
 #define SUMMARY(hid, ...) <summary id=STR(hid) class="roboto-unscale" style="font-weight: bold;">HEADING_LINK(hid)__VA_ARGS__</summary>
-#define IMAGUS(i1, o1, i2, o2)                                                                                                       \
-  <center class="grid-by-each continued">                                                                             FORCED_NEWLINE \
+#define IMAGUS(i1, o1, i2, o2)                                                                                                                      \
+  <center class="grid-by-each continued">                                                                                            FORCED_NEWLINE \
      <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img loading="lazy" class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a><!-- FORCED_NEWLINE \
   --><a href=STR(httpsCOLON_SLASH_SLASH##o2)><img loading="lazy" class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i2) /></a>     FORCED_NEWLINE \
   </center>
-#define ONE_IMAGUS(i1, o1)                                                                                        \
-  <center class="grid-by-each continued">                                                                         \
+#define ONE_IMAGUS(i1, o1)                                                                                                       \
+  <center class="grid-by-each continued">                                                                                        \
      <a href=STR(httpsCOLON_SLASH_SLASH##o1)><img loading="lazy" class="grid-by-each" src=STR(httpsCOLON_SLASH_SLASH##i1) /></a> \
   </center>
 #define NO_IMAGUS() \
@@ -96,16 +96,38 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-07-27, $101010.pl/@nabijaczleweli/110787166550728100)</a>.
+	Latest replication: REPLICATION(2023-07-31, $101010.pl/@nabijaczleweli/110809682480516115)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
 
 
+ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/809/495/805/550/457/original/20bef8e45b221fe0.jpg, $101010.pl/@nabijaczleweli/110809682480516115)
+
+<details open>
+	SUMMARY(soy-flour-red-bean-sticky-rice-worm-hunks, The soy-eating sticky rice and red bean worm so delicious it was hunted to extinxion (real, sad, tragic, the method for preparation is explained))
+	<p class="continuing">
+		<a href="//youtu.be/94sq209lddU" lang="zh-CN"><!--"-->糯米粉这样做，比驴打滚简单好吃，一口一个软糯香甜，夏天必吃<!--"--></a>,
+		by Yi Ning'<!--'-->s Mother Loves Food,
+		replicated REPLICATION(2023-07-31, $101010.pl/@nabijaczleweli/110809682480516115):</p>
+	<ol class="continuation">
+		<li>NUM(180g) of sticky rice flour, NUM(20g) of corn starch, NUM(20g) of sugar, NUM(220g) of milk, whisk –
+		    I don'<!--'-->t operate under a corn-based economy, so I just had potato</li>
+		<li>steam for NUM(20min) – she has a flat bowl, mine was still raw inside; I did altogether NUM(40min)</li>
+		<li>cut in, deploy NUM(20g) of butter, hide</li>
+		<li>knead in the butter once wet, ballify</li>
+		<li>deploy on soy flour, roll out rectangularly until NUM(2-3mm)</li>
+		<li>to exhaustion: deploy bean paste length-wise near edge, snakify, separate, fix weld</li>
+		<li>for each snake: to exhaustion: cut off a piece</li>
+		<li>toss the pieces in soy flour to cover</li>
+	</ol>
+</details>
+
+
 ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg, $101010.pl/@nabijaczleweli/110787166550728100)
 
 <details open>
-	SUMMARY(shroomy-paper, )
+	SUMMARY(shroomy-paper, Fungus bean curd skin)
 	<p class="continuing">
 		<a href="//youtu.be/94sq209lddU">The chef teaches you the recipe for Bean curd skin , it'<!--'-->s too fragrant
 		                                 (<span lang="zh-CN"><!--"-->豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe<!--"--></span>)</a>,
@@ -142,7 +164,7 @@ ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/10
 	</ol>
 
 	<p>
-		The <em>light</em>ness of the soy sus is paramount here, it really did come Too Salty™.
+		The <em>lightness</em> of the soy sus is paramount here, it really did come Too Salty™.
 	</p>
 </details>
 
