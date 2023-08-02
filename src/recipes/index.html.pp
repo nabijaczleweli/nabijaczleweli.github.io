@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Mon, 31 Jul 2023 18:55:17 +0200" -->
+<!-- RSS_UPDATE_DATE: "Wed, 02 Aug 2023 17:26:21 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-07-31, $101010.pl/@nabijaczleweli/110809682480516115)</a>.
+	Latest replication: REPLICATION(2023-08-02, $101010.pl/@nabijaczleweli/110820714260955866)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -394,7 +394,8 @@ IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.c
 		                                 (<span lang="zh-CN"><!--"-->家常花卷简单实用，一分钟就能学会，营养丰富层多柔软【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
 		replicated REPLICATION(2023-05-17, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog),
-		           REPLICATION(2023-05-22, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1538182-yes-im-still-working):</p>
+		           REPLICATION(2023-05-22, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1538182-yes-im-still-working),
+		           REPLICATION(2023-08-02, $101010.pl/@nabijaczleweli/110820714260955866):</p>
 	<ol class="continuation">
 		<li>half a pumpkin in NUM(4mm) slices, steamed for NUM(20min), blended with water for a loose gloop –
 		    I used an NUM(850g) <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1512219-this-is-half-a-pumpk">dynia piżmowa</a>,
