@@ -11,9 +11,9 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-07-31T18:28:44</updated>
+  <updated>2023-08-02T15:39:42</updated>
   <generator>
-    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)
+    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.3.0)
   </generator>
 
   <entry>
@@ -4822,7 +4822,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-07-31T18:55:17+02:00</updated>
+    <updated>2023-08-02T17:26:21+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4910,7 +4910,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110809682480516115&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-31&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110820714260955866&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-02&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -5192,7 +5192,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;家常花卷简单实用，一分钟就能学会，营养丰富层多柔软【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
   by Haijuan Food,
   replicated &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-17&lt;/span&gt;&lt;/a&gt;,
-             &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1538182-yes-im-still-working&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-22&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+             &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1538182-yes-im-still-working&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-22&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110820714260955866&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-02&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;half a pumpkin in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4mm&lt;/span&gt; slices, steamed for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20min&lt;/span&gt;, blended with water for a loose gloop –
       I used an &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;850g&lt;/span&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1512219-this-is-half-a-pumpk&quot;&gt;dynia piżmowa&lt;/a&gt;,
