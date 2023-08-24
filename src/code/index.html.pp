@@ -75,12 +75,14 @@ Most of my output can be found under my <a href="//github.com/nabijaczleweli">Gi
 <ul>
 	USER_REPO(LoungeCPP, PicturaMediocritas, DEVICON(cplusplus),
 	          Like aurea mediocritas, but with frames in a video instead, or get an average frame from a video)
+	USER_REPO(systemd-cron, systemd-cron, DEVICON(cplusplus),
+	          systemd units to run cron scripts)
 	USER_REPO(systemd, zram-generator, MFIZZ(rust),
 	          Systemd unit generator for zram swap devices)
 	USER_REPO(coreos, liboverdrop-rs, MFIZZ(rust),
 	          A simple Rust library to handle configuration fragments)
 	USER_REPO(LoungeCPP, pir-8-emu, MFIZZ(rust),
-	          Assembler, dissassembler, emulator and full library representation for/of the <a href="https://github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
+	          Assembler, dissassembler, emulator and full library representation for/of the <a href="//github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
 	USER_REPO(LoungeCPP, Tatsoryk, MFIZZ(rust) DEVICON(html5),
 	          A Lounge&lt;Discord&gt; gaem project that gets completed – a 2D top-down pvp arena shooter)
 	USER_REPO(ThePhD, infoware, DEVICON(cplusplus),
