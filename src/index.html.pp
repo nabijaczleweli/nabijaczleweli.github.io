@@ -30,7 +30,7 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/011-linux-splice-exclusion">011. pipe exclusion with splice() under Linux</a>;
+		<a href="blogn_t/011-linux-splice-exclusion.html">011. pipe exclusion with splice() under Linux</a>;
 		<span style="white-space: nowrap;">Fri, 07 Jul 2023 01:42:34 +0200</span>
 	</samp>
 </p>
