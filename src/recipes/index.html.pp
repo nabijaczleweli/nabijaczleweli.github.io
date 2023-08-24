@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 18 Aug 2023 21:57:02 +0200" -->
+<!-- RSS_UPDATE_DATE: "Thu, 24 Aug 2023 14:10:30 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-08-18, $101010.pl/@nabijaczleweli/110912325874653835)</a>.
+	Latest replication: REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -116,7 +116,11 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		           REPLICATION(2023-08-13, $101010.pl/@nabijaczleweli/110885535194714458),
 		           REPLICATION(2023-08-16, $101010.pl/@nabijaczleweli/110899730662475961),
 		          PREPLICATION(2023-08-17),
-		           REPLICATION(2023-08-18, $101010.pl/@nabijaczleweli/110912325874653835):</p>
+		           REPLICATION(2023-08-18, $101010.pl/@nabijaczleweli/110912325874653835),
+		          PREPLICATION(2023-08-19),
+		          PREPLICATION(2023-08-20),
+		          PREPLICATION(2023-08-21),
+		           REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818):</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>
