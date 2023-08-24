@@ -41,7 +41,16 @@
  <meta name="msapplication-TileColor" content="#da532c"> 
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
- <meta name="theme-color" content="#ffffff"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
  <meta http-equiv="refresh" content="0;url=/content/writing/наган/" /> 
  </head> 
  <body> 

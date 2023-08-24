@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-08-18T20:10:25</updated>
+  <updated>2023-08-24T12:24:10</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.3.0)
   </generator>
@@ -67,7 +67,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -432,7 +432,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -734,7 +734,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -1396,7 +1396,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -1692,7 +1692,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -1724,7 +1724,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented&quot;&gt;
 It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
 but it wouldn'&lt;!--'--&gt;t be unheard of to have a note like this on the first page of a document in the bad old days,
@@ -1736,7 +1736,7 @@ Indeed, what better font to celebrate with than with something from the &lt;span
 (this will be a link when I finally publish those).
 My first thought was, of course, &lt;samp&gt;sunfont.s&lt;/samp&gt;:
 &lt;/p&gt;
-&lt;img class=&quot;continuing main-font&quot; alt=&quot;'UNIX is a registered trademark of AT&amp;T.' in a tall, proportional, narrow-stroke font with typewriter-like typography and a really goofy ampersand.&quot; src=&quot;/content/assets/blogn_t/006.01-isunfont-tp.png&quot; /&gt;
+&lt;img class=&quot;continuing main-font dark-invert&quot; alt=&quot;'UNIX is a registered trademark of AT&amp;T.' in a tall, proportional, narrow-stroke font with typewriter-like typography and a really goofy ampersand.&quot; src=&quot;/content/assets/blogn_t/006.01-isunfont-tp.png&quot; /&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 but it'&lt;!--'--&gt;s way too thin, and lacks both &lt;samp&gt;®&lt;/samp&gt; and &lt;samp&gt;¹&lt;/samp&gt;.
 The latter could be emulated, of course, but it'&lt;!--'--&gt;d render the already-hardly-legible digit unreadable and the width would just scream off
@@ -1745,11 +1745,11 @@ The latter could be emulated, of course, but it'&lt;!--'--&gt;d render the alrea
 &lt;p class=&quot;indented continued&quot;&gt;
 The next obvious direxion to go (rather, the last font before I fell back to trying something with cursed groff invocations) was &lt;samp&gt;topaz.s&lt;/samp&gt;:
 &lt;/p&gt;
-&lt;img class=&quot;continuing main-font&quot; alt=&quot;'UNIX is a registered trademark of AT&amp;T.' in a square, thick-stroke 8x8 font, the g is kinda goofy&quot; src=&quot;/content/assets/blogn_t/006.02-itopaz-tp.png&quot; /&gt;
+&lt;img class=&quot;continuing main-font dark-invert&quot; alt=&quot;'UNIX is a registered trademark of AT&amp;T.' in a square, thick-stroke 8x8 font, the g is kinda goofy&quot; src=&quot;/content/assets/blogn_t/006.02-itopaz-tp.png&quot; /&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 or, rather,
 &lt;/p&gt;
-&lt;img class=&quot;continuing main-font&quot; alt=&quot;'¹UNIX® is a registered trademark of AT&amp;T.' in that same font.&quot; src=&quot;/content/assets/blogn_t/006.03-itopaz-tp+r-sp.png&quot; /&gt;
+&lt;img class=&quot;continuing main-font dark-invert&quot; alt=&quot;'¹UNIX® is a registered trademark of AT&amp;T.' in that same font.&quot; src=&quot;/content/assets/blogn_t/006.03-itopaz-tp+r-sp.png&quot; /&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 Now, if that ain'&lt;!--'--&gt;t perfect.
 &lt;/p&gt;
@@ -1830,7 +1830,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -1959,7 +1959,7 @@ because unlike &lt;code&gt;Times&lt;/code&gt;, Nimbus is an actual font.
 &lt;a href=&quot;/content/assets/blogn_t/007.01-result.pdf&quot;&gt;Render&lt;/a&gt; with &lt;code&gt;groff -Kutf8 …&lt;/code&gt;:
 &lt;/p&gt;
 &lt;!-- gs -d{Text,Graphics}AlphaBits=4 -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pngmono -r600 -sOutputFile=976.png ~/PDF/job_976-stdin___jaczleweli_PDF.pdf --&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.01-result.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Example manual page with Cyrillic and Polish characters&quot; src=&quot;/content/assets/blogn_t/007.01-result.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.01-result.png&quot;&gt;&lt;img class=&quot;continuation main-font dark-invert&quot; alt=&quot;Example manual page with Cyrillic and Polish characters&quot; src=&quot;/content/assets/blogn_t/007.01-result.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented&quot;&gt;
 Versions of this document prior to
 Wed, 22 Jun 2022 18:33:54 +0200
@@ -2046,7 +2046,7 @@ request id is PDF-978 (0 file(s))
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;a href=&quot;/content/assets/blogn_t/007.02-original.pdf&quot;&gt;And&lt;/a&gt;:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.02-original.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Same page, but non-ASCII characters are replaced with garbage, usually variant on the 'Å'&quot; src=&quot;/content/assets/blogn_t/007.02-original.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.02-original.png&quot;&gt;&lt;img class=&quot;continuation main-font dark-invert&quot; alt=&quot;Same page, but non-ASCII characters are replaced with garbage, usually variant on the 'Å'&quot; src=&quot;/content/assets/blogn_t/007.02-original.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 A great time!
 The Arch Wiki says that to &lt;a href=&quot;//wiki.archlinux.org/title/Groff#Correctly_display_Polish_diacritics&quot;&gt;&quot;Correctly display Polish diacritics&quot;&lt;/a&gt;,
@@ -2078,7 +2078,7 @@ request id is PDF-979 (0 file(s))
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;a href=&quot;/content/assets/blogn_t/007.03-Kutf8.pdf&quot;&gt;And&lt;/a&gt;:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.03-Kutf8.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Same page, the ellipsis is rendered, but non-ASCII characters apart from ŁĆ are entirely missing&quot; src=&quot;/content/assets/blogn_t/007.03-Kutf8.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.03-Kutf8.png&quot;&gt;&lt;img class=&quot;continuation main-font dark-invert&quot; alt=&quot;Same page, the ellipsis is rendered, but non-ASCII characters apart from ŁĆ are entirely missing&quot; src=&quot;/content/assets/blogn_t/007.03-Kutf8.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented&quot;&gt;
 This is, arguably, not better – &lt;kbd&gt;ł&lt;/kbd&gt;, &lt;kbd&gt;ć&lt;/kbd&gt;, and the ellipsis have appeared, but everything else &lt;em&gt;dis&lt;/em&gt;appeared.
 It's unclear why exactly those three, considering the ellipsis can't be reached by a classic &lt;samp&gt;groff_char(7)&lt;/samp&gt; escape,
@@ -2135,7 +2135,7 @@ request id is PDF-980 (0 file(s))
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;a href=&quot;/content/assets/blogn_t/007.04-linuxtravels.pdf&quot;&gt;Rendering to&lt;/a&gt;:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.04-linuxtravels.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Same page, proportional non-ASCII characters rendered, monospace ones missing&quot; src=&quot;/content/assets/blogn_t/007.04-linuxtravels.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.04-linuxtravels.png&quot;&gt;&lt;img class=&quot;continuation main-font dark-invert&quot; alt=&quot;Same page, proportional non-ASCII characters rendered, monospace ones missing&quot; src=&quot;/content/assets/blogn_t/007.04-linuxtravels.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented&quot;&gt;
 A cursory inspection of the metric reveals that they're for &lt;code&gt;internalname NimbusRomNo9L-Regu&lt;/code&gt; and friends,  &lt;!--'--&gt;
 generated Thu Aug 2 13:14:49 2007, as was the Nimbus in Buster;
@@ -2180,14 +2180,14 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
  &lt;li&gt;These metrics must be converted to groff's internal format,  &lt;!--'--&gt;
      the flags gracefully provided by &lt;code&gt;/usr/share/groff/current/font/devps/generate/Makefile&lt;/code&gt;;
      &lt;code&gt;-n&lt;/code&gt;, disabling &lt;code&gt;ligature&lt;/code&gt; output, only applies to monospace fonts, because ligaturised tables are nightmarish:
-&lt;a href=&quot;/content/assets/blogn_t/007.07-ligaturised.png&quot;&gt;&lt;img class=&quot;fragment&quot; alt=&quot;Tab-aligned /etc/passwd, one of the usernames is 'fifl', both pairs ligaturised throwing the second through fourth columns two columns left out of alignment, and the fifth four&quot; src=&quot;/content/assets/blogn_t/007.07-ligaturised.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.07-ligaturised.png&quot;&gt;&lt;img class=&quot;fragment dark-invert&quot; alt=&quot;Tab-aligned /etc/passwd, one of the usernames is 'fifl', both pairs ligaturised throwing the second through fourth columns two columns left out of alignment, and the fifth four&quot; src=&quot;/content/assets/blogn_t/007.07-ligaturised.png&quot; /&gt;&lt;/a&gt;
      ).&lt;/li&gt;
  &lt;li&gt;groff searches for site-specific fonts in &lt;code&gt;/usr/share/groff/site-font/dev&lt;em&gt;DEV&lt;/em&gt;&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p class=&quot;continued&quot;&gt;
 This is not without its own delta from the original:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.08-diff.png&quot;&gt;&lt;img class=&quot;continuing main-font&quot; alt=&quot;Visual diff between the page with no non-ASCII characters and the one with them; the differences stack up most toward the end of the line on about half of the lines, and are within antialiasing noise on the other half&quot; src=&quot;/content/assets/blogn_t/007.08-diff.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.08-diff.png&quot;&gt;&lt;img class=&quot;continuing main-font dark-invert&quot; alt=&quot;Visual diff between the page with no non-ASCII characters and the one with them; the differences stack up most toward the end of the line on about half of the lines, and are within antialiasing noise on the other half&quot; src=&quot;/content/assets/blogn_t/007.08-diff.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 But these differences are not only minute even at their worst (1.92pt in the synopsis line, 0.96pt in the third description line),
 but a result of the tighter kerning matching the font better.
@@ -2286,7 +2286,7 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;a href=&quot;/content/assets/blogn_t/007.09-Курьер.pdf&quot;&gt;Yielding&lt;/a&gt;:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.09-Курьер.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Same page, monospace non-ASCII characters rendered in a different, rounder, heavier font, with a long f, and proportional ones missing&quot; src=&quot;/content/assets/blogn_t/007.09-Курьер.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.09-Курьер.png&quot;&gt;&lt;img class=&quot;continuation main-font dark-invert&quot; alt=&quot;Same page, monospace non-ASCII characters rendered in a different, rounder, heavier font, with a long f, and proportional ones missing&quot; src=&quot;/content/assets/blogn_t/007.09-Курьер.png&quot; /&gt;&lt;/a&gt;
 &lt;h3 id=&quot;alternative-art-distribution-font&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#alternative-art-distribution-font&quot;&gt;#&lt;/a&gt; A distribution font&lt;/h3&gt;
 &lt;p class=&quot;continuing indented&quot;&gt;
 GhostScript can directly load TrueType and OpenType fonts, so for a properly-packaged one all that's needed is:  &lt;!--'--&gt;
@@ -2351,7 +2351,7 @@ both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;a href=&quot;/content/assets/blogn_t/007.10-liberation2.pdf&quot;&gt;And just like that&lt;/a&gt;:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/007.10-liberation2.png&quot;&gt;&lt;img class=&quot;continuation main-font&quot; alt=&quot;Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing&quot; src=&quot;/content/assets/blogn_t/007.10-liberation2.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/007.10-liberation2.png&quot;&gt;&lt;img class=&quot;continuation main-font dark-invert&quot; alt=&quot;Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing&quot; src=&quot;/content/assets/blogn_t/007.10-liberation2.png&quot; /&gt;&lt;/a&gt;
 &lt;!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export#1429503115947020297 --&gt;
 &lt;h2 id=&quot;jajco&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jajco&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit;&quot; href=&quot;//web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889&quot;&gt;\nЯЙЦО&lt;/a&gt;&lt;/h2&gt;
 &lt;!-- &lt;h2 id=&quot;jajco&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jajco&quot;&gt;#&lt;/a&gt; \nЯЙЦО&lt;/h2&gt; --&gt;
@@ -2565,7 +2565,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -2588,7 +2588,7 @@ img {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Have been
 &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1297339377786511360&quot;&gt;featured&lt;/a&gt;
@@ -2603,7 +2603,7 @@ but never in such style:
 &lt;p class=&quot;continuation&quot;&gt;
 As rendered by libfreetype 2.10.4+dfsg-1+deb11u1/libfontconfig 2.13.1-4.2.
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/008.04-winword.png&quot;&gt;&lt;img class=&quot;continued&quot; alt=&quot;Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts&quot; src=&quot;/content/assets/blogn_t/008.04-winword.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/008.04-winword.png&quot;&gt;&lt;img class=&quot;continued dark-invert&quot; alt=&quot;Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts&quot; src=&quot;/content/assets/blogn_t/008.04-winword.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 As rendered by &lt;tt&gt;WINWORD.EXE&lt;/tt&gt; (yes, they're kinda goopy here; needs a skilled operator probably).  &lt;!--'--&gt;
 &lt;/p&gt;
@@ -2744,7 +2744,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -2819,7 +2819,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;009. XEROX SIGMA 9 balls&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented&quot;&gt;
 I was quite taken by the &lt;span class=&quot;smallcaps&quot;&gt;xerox sigma 9&lt;/span&gt; tape decks, in particular the right one from
 &lt;a href=&quot;//www.livingcomputers.org/Computer-Collection/Vintage-Computers/Mainframes/Xerox-Sigma-9.aspx&quot;&gt;&lt;span class=&quot;smallcaps&quot;&gt;lcm+l&lt;/span&gt;'s collection&lt;/a&gt;.  &lt;!--'--&gt;
@@ -2991,7 +2991,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -3300,7 +3300,7 @@ thus, running &lt;kbd&gt;command tape0 load part0 part1 …&lt;/kbd&gt; inserts 
 &lt;p class=&quot;indented continuation&quot;&gt;
 Conversely, &lt;kbd&gt;^D&lt;/kbd&gt;ing segfaults the emulator.
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/010.2-plain.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot&quot; src=&quot;/content/assets/blogn_t/010.2-plain.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.2-plain.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot dark-invert&quot; src=&quot;/content/assets/blogn_t/010.2-plain.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 The hard(-to-bear) part (other people'&lt;!--'--&gt;s C) is largely over, and can be followed by the hard(-to-bear) part of unpacking &lt;span class=&quot;smallcaps&quot;&gt;1&lt;/span&gt;.
 Western Electric and UCB licensees may obtain the SunOS 3.5/Sun-2 tape set from &lt;a href=&quot;//winworldpc.com/product/sunos/3x&quot;&gt;WinWorld&lt;/a&gt;,
@@ -3589,7 +3589,7 @@ doesn'&lt;!--'--&gt;t work under my preferred xterm, and I have neither the pati
 Unless you're an ed fiend, I'd recommend just using the graphical console.
 (If you won't, you'll need to also fight getty to produce a sane login prompt.)
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/010.4-fresh.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot&quot; src=&quot;/content/assets/blogn_t/010.4-fresh.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.4-fresh.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot dark-invert&quot; src=&quot;/content/assets/blogn_t/010.4-fresh.png&quot; /&gt;&lt;/a&gt;
 &lt;pre class=&quot;bigcode continued&quot;&gt;&lt;samp&gt;&lt;!--
 --&gt;$ &lt;kbd&gt;LTDL_LIBRARY_PATH=$PWD tmesh/tmesh MY-SUN2&lt;/kbd&gt;
 Self Test completed successfully.
@@ -3703,7 +3703,7 @@ sunos3# &lt;kbd&gt;suntools&lt;/kbd&gt;&lt;!--
 &lt;p class=&quot;indented continued&quot;&gt;
 starts &lt;del&gt;X&lt;/del&gt; (hover over the text that says &quot;Mouse is off&quot; in the bottom left and press something on the keyboard to capture the mouse):
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/010.5-suntools.png&quot;&gt;&lt;img alt=&quot;Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing&quot; class=&quot;main-screenshot continuation&quot; src=&quot;/content/assets/blogn_t/010.5-suntools.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.5-suntools.png&quot;&gt;&lt;img alt=&quot;Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing&quot; class=&quot;main-screenshot continuation dark-invert&quot; src=&quot;/content/assets/blogn_t/010.5-suntools.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 &lt;del&gt;X&lt;/del&gt; (and the console in general) achieve single-digit refresh rates on bookworm;
 this is likely related to the emulator being in a tight &lt;code&gt;poll()&lt;/code&gt; loop with a zero &lt;var&gt;timeout&lt;/var&gt;.
@@ -3777,7 +3777,7 @@ and install by following the script (you want &lt;kbd&gt;suninstall&lt;/kbd&gt; 
 &lt;p class=&quot;indented continuing&quot;&gt;
 I got to the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1728522-the-9-genders-briti&quot;&gt;funniest time-zone selection menu in history&lt;/a&gt;:
 &lt;/p&gt;
-&lt;a href=&quot;/content/assets/blogn_t/010.8-sunos4-timezone.png&quot;&gt;&lt;img alt=&quot;SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union&quot; class=&quot;main-screenshot continuing&quot; src=&quot;/content/assets/blogn_t/010.8-sunos4-timezone.png&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/010.8-sunos4-timezone.png&quot;&gt;&lt;img alt=&quot;SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union&quot; class=&quot;main-screenshot continuing dark-invert&quot; src=&quot;/content/assets/blogn_t/010.8-sunos4-timezone.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 in the third-stage setup (and the hardware clock does work! &lt;code&gt;Poland&lt;/code&gt;, at least, appears to be accurate still.
 Haven'&lt;!--'--&gt;t checked whether &quot;euro-bit-of-the-СССР&quot; matches any part of the РФ).
@@ -3851,7 +3851,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -4059,6 +4059,11 @@ Even in inocuous situations like QEMU with &lt;samp&gt;-chardev pipe,id=pipe,pat
  right: 0;
  bottom: 0;
 }
+@media (prefers-color-scheme: dark) {
+ .overlay-container .dark-invert {
+  filter: none !important;;
+ }
+}
 h1 {
  margin-top: 0;
  margin-bottom: 0.4em;
@@ -4109,7 +4114,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 th, td {
@@ -4210,7 +4215,7 @@ is fair game for discussion over at &lt;code class=&quot;nowrap&quot; style=&quo
  &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/issues&quot;&gt;&lt;i class=&quot;icon-rust&quot; &gt;&lt;/i&gt;&lt;/a&gt;
  &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;&lt;i class=&quot;devicon-html5-plain&quot; &gt;&lt;/i&gt;&lt;/a&gt;.
 I'&lt;!--'--&gt;ve also set up a &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book/issues/1&quot;&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
-If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;far fa-envelope-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
+If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;dark-invert far fa-envelope-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;discussion-hopes-paragraph&quot;&gt;
 I hope that these facilities will lead to good ideas for future improvements to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;.
@@ -4378,7 +4383,7 @@ SOFTWARE.
 Thank you for making it this far.
 I hope that this document is clear and/or informative, if not,
  why don'&lt;!--'--&gt;t you pop into the &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;issues &lt;i class=&quot;devicon-html5-plain&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
- or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
+ or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;dark-invert fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
 &lt;/p&gt;
 &lt;/span&gt;&lt;/div&gt;
 </content>
@@ -4822,7 +4827,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-08-18T21:57:02+02:00</updated>
+    <updated>2023-08-24T14:10:30+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4869,7 +4874,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 
@@ -4910,7 +4915,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110912325874653835&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-18&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110933500189109818&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-22&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -4929,7 +4934,11 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110885535194714458&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-13&lt;/span&gt;&lt;/a&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110899730662475961&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-16&lt;/span&gt;&lt;/a&gt;,
             &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-17&lt;/span&gt;,
-             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110912325874653835&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-18&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110912325874653835&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-18&lt;/span&gt;&lt;/a&gt;,
+            &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-19&lt;/span&gt;,
+            &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-20&lt;/span&gt;,
+            &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-21&lt;/span&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110933500189109818&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-22&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of rye flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;190g&lt;/span&gt; of boiling water, pastify, let cool to yeast temp&lt;/li&gt;
   &lt;li&gt;mix in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3g&lt;/span&gt; of yeast&lt;/li&gt;
@@ -6295,7 +6304,7 @@ A. Łopacińska
     <updated>2017-05-19T12:25:37+02:00</updated>
     <content type="html">
 &lt;!-- ePub title: &quot;Introduction&quot; --&gt;
-&lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#introduction&quot;&gt;&lt;h3 id=&quot;introduction&quot;&gt;Editorial comment&lt;/h3&gt;&lt;/a&gt;
+&lt;a style=&quot;color: initial; text-decoration: none;&quot; href=&quot;#introduction&quot;&gt;&lt;h3 id=&quot;introduction&quot;&gt;Editorial comment&lt;/h3&gt;&lt;/a&gt;
 &lt;p class=&quot;writing&quot;&gt;
 &amp;emsp;Some might argue that this garbage ain't poetry, and I agree it's not much &lt;em&gt;good&lt;/em&gt;, but,
 according to everyone's favourite unreliable source of knowledge, &lt;a href=&quot;https://en.wikipedia.org/wiki/Poetry&quot;&gt;Wikipedia&lt;/a&gt;:&lt;!--'--&gt;
@@ -6310,7 +6319,7 @@ or in place of, the prosaic ostensible meaning.
 &amp;emsp;Which makes this &lt;em&gt;technically&lt;/em&gt; actually poetry, despite not meaning it's any good at all, really.&lt;!--'--&gt;
 &lt;/p&gt;
 &lt;!-- ePub title: &quot;The East Wind&quot; --&gt;
-&lt;a style=&quot;color: black; text-decoration: none;&quot; href=&quot;#east_wind&quot;&gt;
+&lt;a style=&quot;color: initial; text-decoration: none;&quot; href=&quot;#east_wind&quot;&gt;
 &lt;h3 id=&quot;east_wind&quot;&gt;The East Wind,&lt;br /&gt;
 &lt;span style=&quot;font-size: 90%;&quot;&gt;A front-line letter&lt;/span&gt;&lt;/h3&gt;
 &lt;/a&gt;

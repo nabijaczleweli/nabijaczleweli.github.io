@@ -40,7 +40,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileColor" content="#da532c"> 
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
- <meta name="theme-color" content="#ffffff"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
  <link href="/content/assets/heading.css" rel="stylesheet" /> 
  <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
  <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
@@ -113,9 +122,9 @@ You may also be interested in the corresponding <a href="https://lfs.nabijaczlew
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 18.08.2023 20:07:19 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/002-ncurses-gpm-segfault.html.pp">src/blogn_t/002-ncurses-gpm-segfault.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1043439">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

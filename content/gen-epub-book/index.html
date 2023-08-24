@@ -40,7 +40,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileColor" content="#da532c"> 
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
- <meta name="theme-color" content="#ffffff"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
  <link href="/content/assets/heading.css" rel="stylesheet" /> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
  <link href="//rawcdn.githack.com/fizzed/font-mfizz/v2.4.1/dist/font-mfizz.css" rel="stylesheet" /> 
  <link href="//rawcdn.githack.com/konpa/devicon/v2.2/devicon.min.css" rel="stylesheet" /> 
@@ -64,6 +73,11 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  left: 0;
  right: 0;
  bottom: 0;
+}
+@media (prefers-color-scheme: dark) {
+ .overlay-container .dark-invert {
+  filter: none !important;;
+ }
 }
 h1 {
  margin-top: 0;
@@ -115,7 +129,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 th, td {
@@ -216,7 +230,7 @@ is fair game for discussion over at <code class="nowrap" style="font-variant: no
  <a href="https://github.com/nabijaczleweli/gen-epub-book.rs/issues"><i class="icon-rust" ></i></a>
  <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon"><i class="devicon-html5-plain" ></i></a>.
 I'<!--'-->ve also set up a <a href="https://github.com/nabijaczleweli/gen-epub-book/issues/1">GitHub issue for simple questions and clarifications</a>.
-If you don'<!--'-->t have a GitHub account, you can <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail <i class="far fa-envelope-open" aria-hidden="true"></i></a>.
+If you don'<!--'-->t have a GitHub account, you can <a href="mailto:nabijaczleweli@gmail.com">shoot me an e-mail <i class="dark-invert far fa-envelope-open" aria-hidden="true"></i></a>.
 </p>
 <p id="discussion-hopes-paragraph">
 I hope that these facilities will lead to good ideas for future improvements to <code class="nowrap" style="font-variant: normal;">gen-epub-book​</code>.
@@ -384,7 +398,7 @@ SOFTWARE.
 Thank you for making it this far.
 I hope that this document is clear and/or informative, if not,
  why don'<!--'-->t you pop into the <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues" class="icon">issues <i class="devicon-html5-plain" aria-hidden="true"></i></a>
- or slide <del>into the DMs</del> me an <a href="mailto:nabijaczleweli@gmail.com" class="icon">e-mail <i class="fa fa-envelope" aria-hidden="true"></i></a>?
+ or slide <del>into the DMs</del> me an <a href="mailto:nabijaczleweli@gmail.com" class="icon">e-mail <i class="dark-invert fa fa-envelope" aria-hidden="true"></i></a>?
 </p>
 </span></div>
 <!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
@@ -396,9 +410,9 @@ I hope that this document is clear and/or informative, if not,
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 18.08.2023 20:07:20 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:04 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/gen-epub-book/index.html.pp">src/gen-epub-book/index.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1043439">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

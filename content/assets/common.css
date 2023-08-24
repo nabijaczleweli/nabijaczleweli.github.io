@@ -23,3 +23,9 @@ a > i.far {
 .smallcaps {
 	font-variant: small-caps;
 }
+
+@media (prefers-color-scheme: dark) {
+	.dark-invert {
+		filter: invert(1);
+	}
+}

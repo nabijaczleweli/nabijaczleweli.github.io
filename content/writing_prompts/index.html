@@ -39,7 +39,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileColor" content="#da532c"> 
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
- <meta name="theme-color" content="#ffffff"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
  
  </head> 
@@ -49,57 +58,57 @@ List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> co
 <ul>
 <!-- <li> 
  <a href="/content/writing_prompts/the_pursuer.html">The Pursuer</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5i2h9m"><i class="fab fa-reddit-alien"></i></a> 
- <a href="https://artsed.deviantart.com/art/The-Pursuer-459072802"><i class="fa fa-image"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5i2h9m"><i class="dark-invert fab fa-reddit-alien"></i></a> 
+ <a href="https://artsed.deviantart.com/art/The-Pursuer-459072802"><i class="dark-invert fa fa-image"></i></a> 
  </li> --> 
  <li> 
  <a href="/content/writing_prompts/theless.html">The-less</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5ihrpc"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5ihrpc"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — Write a story without using the word "the" 
  </li> 
  <li> 
  <a href="/content/writing_prompts/start_eq_end.html">End = Start</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5jor6i"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5jor6i"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — You must start and end your story by using the same sentence 
  </li> 
  <li> 
  <a href="/content/writing_prompts/dead_santa.html">No gifts this year</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5j7m3m"><i class="fab fa-reddit-alien"></i></a> 
- <a href="https://imgur.com/gkevfag"><i class="fa fa-image"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5j7m3m"><i class="dark-invert fab fa-reddit-alien"></i></a> 
+ <a href="https://imgur.com/gkevfag"><i class="dark-invert fa fa-image"></i></a> 
  </li> 
  <li> 
  <a href="/content/writing_prompts/six_minutes.html">Six Minutes</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5kb0q6"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5kb0q6"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — Two people, talking. The scene only lasts a few minutes. No flashbacks 
  </li> 
  <li> 
  <a href="/content/writing_prompts/green_ass_dog.html">Cucumber Dog</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5kt8x0"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5kt8x0"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — You meet dog who stands with a green knapsack on its back and tells you "I am on a journey looking for Ass, Potatoes, &amp; Cucumbers. Can you assist me?" 
  </li> 
  <li> 
  <a href="/content/writing_prompts/not_dead_yet.html">Get Up，Soldier</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5ks29s"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5ks29s"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — "Get Up, Soldier, You're Not Dead Yet" 
  </li> 
  <li> 
  <a href="/content/writing_prompts/trucks_a_cash.html">Utopian Assassin</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5l4iqi"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5l4iqi"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — Government mails money for amount of happiness spread. You sometimes get some. One day you get a truckload 
  </li> 
  <li> 
  <a href="/content/writing_prompts/degenerate.html">Degenerate Watch</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5l09xc"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5l09xc"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — Plot is based on some song 
  </li> 
  <li> 
  <a href="/content/writing_prompts/laser_cats.html">Ghostly Lasers</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5qv165"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5qv165"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — Cats interpret laser pointers the same way people interpret ghosts 
  </li> 
  <li> 
  <a href="/content/writing_prompts/eye_see.html">The Last Eye</a> 
- <a href="https://www.reddit.com/r/WritingPrompts/comments/5qfb3c"><i class="fab fa-reddit-alien"></i></a> 
+ <a href="https://www.reddit.com/r/WritingPrompts/comments/5qfb3c"><i class="dark-invert fab fa-reddit-alien"></i></a> 
  — First-person narration without "I" 
  </li>
 </ul>
@@ -118,9 +127,9 @@ List of <a href="https://www.reddit.com/r/WritingPrompts">writing prompts</a> co
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 18.08.2023 20:07:21 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:06 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/writing_prompts/index.html.pp">src/writing_prompts/index.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1043439">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

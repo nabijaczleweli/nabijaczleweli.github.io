@@ -40,7 +40,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileColor" content="#da532c"> 
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
- <meta name="theme-color" content="#ffffff"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
  <link href="/content/assets/heading.css" rel="stylesheet" /> 
  <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
  <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
@@ -96,7 +105,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -119,7 +128,7 @@ img {
 <span class="roboto writing">
 <p></p>
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp><code>008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span></code></samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Nov 2022 22:36:33 +0100</span>; <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/">go wild</a> <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/"><i class="fa fa-external-link-alt"></i></a></h4>
+ <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Nov 2022 22:36:33 +0100</span>; <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/">go wild</a> <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/"><i class="dark-invert fa fa-external-link-alt"></i></a></h4>
 <p class="indented continued">
 Have been
 <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1297339377786511360">featured</a>
@@ -134,7 +143,7 @@ but never in such style:
 <p class="continuation">
 As rendered by libfreetype 2.10.4+dfsg-1+deb11u1/libfontconfig 2.13.1-4.2.
 </p>
-<a href="/content/assets/blogn_t/008.04-winword.png"><img class="continued" alt="Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts" src="/content/assets/blogn_t/008.04-winword.png" /></a>
+<a href="/content/assets/blogn_t/008.04-winword.png"><img class="continued dark-invert" alt="Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts" src="/content/assets/blogn_t/008.04-winword.png" /></a>
 <p class="continuation">
 As rendered by <tt>WINWORD.EXE</tt> (yes, they're kinda goopy here; needs a skilled operator probably).  <!--'-->
 </p>
@@ -237,9 +246,9 @@ see the <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/ty
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 18.08.2023 20:07:19 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/008-amix-fonts.html.pp">src/blogn_t/008-amix-fonts.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1043439">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

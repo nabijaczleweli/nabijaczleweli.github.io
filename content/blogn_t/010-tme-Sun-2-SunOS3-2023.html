@@ -40,7 +40,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="msapplication-TileColor" content="#da532c"> 
  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
- <meta name="theme-color" content="#ffffff"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
  <link href="/content/assets/heading.css" rel="stylesheet" /> 
  <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
  <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
@@ -96,7 +105,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
 a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
- color: black;
+ color: initial;
  text-decoration: none;
 }
 .indented {
@@ -405,7 +414,7 @@ thus, running <kbd>command tape0 load part0 part1 …</kbd> inserts a tape consi
 <p class="indented continuation">
 Conversely, <kbd>^D</kbd>ing segfaults the emulator.
 </p>
-<a href="/content/assets/blogn_t/010.2-plain.png"><img alt="" class="main-screenshot" src="/content/assets/blogn_t/010.2-plain.png" /></a>
+<a href="/content/assets/blogn_t/010.2-plain.png"><img alt="" class="main-screenshot dark-invert" src="/content/assets/blogn_t/010.2-plain.png" /></a>
 <p class="indented continued">
 The hard(-to-bear) part (other people'<!--'-->s C) is largely over, and can be followed by the hard(-to-bear) part of unpacking <span class="smallcaps">1</span>.
 Western Electric and UCB licensees may obtain the SunOS 3.5/Sun-2 tape set from <a href="//winworldpc.com/product/sunos/3x">WinWorld</a>,
@@ -694,7 +703,7 @@ doesn'<!--'-->t work under my preferred xterm, and I have neither the patience o
 Unless you're an ed fiend, I'd recommend just using the graphical console.
 (If you won't, you'll need to also fight getty to produce a sane login prompt.)
 </p>
-<a href="/content/assets/blogn_t/010.4-fresh.png"><img alt="" class="main-screenshot" src="/content/assets/blogn_t/010.4-fresh.png" /></a>
+<a href="/content/assets/blogn_t/010.4-fresh.png"><img alt="" class="main-screenshot dark-invert" src="/content/assets/blogn_t/010.4-fresh.png" /></a>
 <pre class="bigcode continued"><samp><!--
 -->$ <kbd>LTDL_LIBRARY_PATH=$PWD tmesh/tmesh MY-SUN2</kbd>
 Self Test completed successfully.
@@ -808,7 +817,7 @@ sunos3# <kbd>suntools</kbd><!--
 <p class="indented continued">
 starts <del>X</del> (hover over the text that says "Mouse is off" in the bottom left and press something on the keyboard to capture the mouse):
 </p>
-<a href="/content/assets/blogn_t/010.5-suntools.png"><img alt="Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing" class="main-screenshot continuation" src="/content/assets/blogn_t/010.5-suntools.png" /></a>
+<a href="/content/assets/blogn_t/010.5-suntools.png"><img alt="Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing" class="main-screenshot continuation dark-invert" src="/content/assets/blogn_t/010.5-suntools.png" /></a>
 <p class="indented continued">
 <del>X</del> (and the console in general) achieve single-digit refresh rates on bookworm;
 this is likely related to the emulator being in a tight <code>poll()</code> loop with a zero <var>timeout</var>.
@@ -882,7 +891,7 @@ and install by following the script (you want <kbd>suninstall</kbd> after reboot
 <p class="indented continuing">
 I got to the <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1728522-the-9-genders-briti">funniest time-zone selection menu in history</a>:
 </p>
-<a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
+<a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing dark-invert" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
 <p class="continuing">
 in the third-stage setup (and the hardware clock does work! <code>Poland</code>, at least, appears to be accurate still.
 Haven'<!--'-->t checked whether "euro-bit-of-the-СССР" matches any part of the РФ).
@@ -918,9 +927,9 @@ but at that point you might as well just chroot after installing from the miniro
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 18.08.2023 20:07:19 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp">src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1043439">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
