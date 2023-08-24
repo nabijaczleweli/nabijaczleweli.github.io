@@ -52,8 +52,6 @@ BOILERPLATE(006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt, 006.
 		min-width: 75%;
 	}
 }
-
-
 </style>
 
 <span class="roboto writing">
@@ -74,7 +72,7 @@ Indeed, what better font to celebrate with than with something from the <span cl
 (this will be a link when I finally publish those).
 My first thought was, of course, <samp>sunfont.s</samp>:
 </p>
-<img class="continuing main-font" alt="'UNIX is a registered trademark of AT&T.' in a tall, proportional, narrow-stroke font with typewriter-like typography and a really goofy ampersand." src="/content/assets/blogn_t/006.01-isunfont-tp.png" />
+<img class="continuing main-font dark-invert" alt="'UNIX is a registered trademark of AT&T.' in a tall, proportional, narrow-stroke font with typewriter-like typography and a really goofy ampersand." src="/content/assets/blogn_t/006.01-isunfont-tp.png" />
 <p class="continuation">
 but it'<!--'-->s way too thin, and lacks both <samp>®</samp> and <samp>¹</samp>.
 The latter could be emulated, of course, but it'<!--'-->d render the already-hardly-legible digit unreadable and the width would just scream off
@@ -84,11 +82,11 @@ The latter could be emulated, of course, but it'<!--'-->d render the already-har
 <p class="indented continued">
 The next obvious direxion to go (rather, the last font before I fell back to trying something with cursed groff invocations) was <samp>topaz.s</samp>:
 </p>
-<img class="continuing main-font" alt="'UNIX is a registered trademark of AT&T.' in a square, thick-stroke 8x8 font, the g is kinda goofy" src="/content/assets/blogn_t/006.02-itopaz-tp.png" />
+<img class="continuing main-font dark-invert" alt="'UNIX is a registered trademark of AT&T.' in a square, thick-stroke 8x8 font, the g is kinda goofy" src="/content/assets/blogn_t/006.02-itopaz-tp.png" />
 <p class="continuing">
 or, rather,
 </p>
-<img class="continuing main-font" alt="'¹UNIX® is a registered trademark of AT&T.' in that same font." src="/content/assets/blogn_t/006.03-itopaz-tp+r-sp.png" />
+<img class="continuing main-font dark-invert" alt="'¹UNIX® is a registered trademark of AT&T.' in that same font." src="/content/assets/blogn_t/006.03-itopaz-tp+r-sp.png" />
 <p class="continuation">
 Now, if that ain'<!--'-->t perfect.
 </p>

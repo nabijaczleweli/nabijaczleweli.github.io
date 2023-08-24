@@ -165,7 +165,7 @@ because unlike <code>Times</code>, Nimbus is an actual font.
 <a href="/content/assets/blogn_t/007.01-result.pdf">Render</a> with <code>groff -Kutf8 …</code>:
 </p>
 <!-- gs -d{Text,Graphics}AlphaBits=4 -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pngmono -r600  -sOutputFile=976.png  ~/PDF/job_976-stdin___jaczleweli_PDF.pdf -->
-<a href="/content/assets/blogn_t/007.01-result.png"><img class="continuation main-font" alt="Example manual page with Cyrillic and Polish characters" src="/content/assets/blogn_t/007.01-result.png" /></a>
+<a href="/content/assets/blogn_t/007.01-result.png"><img class="continuation main-font dark-invert" alt="Example manual page with Cyrillic and Polish characters" src="/content/assets/blogn_t/007.01-result.png" /></a>
 <p class="indented">
 Versions of this document prior to
 Wed, 22 Jun 2022 18:33:54 +0200
@@ -190,7 +190,7 @@ This yields:
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.02-original.pdf">And</a>:
 </p>
-<a href="/content/assets/blogn_t/007.02-original.png"><img class="continuation main-font" alt="Same page, but non-ASCII characters are replaced with garbage, usually variant on the 'Å'" src="/content/assets/blogn_t/007.02-original.png" /></a>
+<a href="/content/assets/blogn_t/007.02-original.png"><img class="continuation main-font dark-invert" alt="Same page, but non-ASCII characters are replaced with garbage, usually variant on the 'Å'" src="/content/assets/blogn_t/007.02-original.png" /></a>
 
 <p class="indented continued">
 A great time!
@@ -203,7 +203,7 @@ you can <code>groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi</code>, so:
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.03-Kutf8.pdf">And</a>:
 </p>
-<a href="/content/assets/blogn_t/007.03-Kutf8.png"><img class="continuation main-font" alt="Same page, the ellipsis is rendered, but non-ASCII characters apart from ŁĆ are entirely missing" src="/content/assets/blogn_t/007.03-Kutf8.png" /></a>
+<a href="/content/assets/blogn_t/007.03-Kutf8.png"><img class="continuation main-font dark-invert" alt="Same page, the ellipsis is rendered, but non-ASCII characters apart from ŁĆ are entirely missing" src="/content/assets/blogn_t/007.03-Kutf8.png" /></a>
 
 <p class="indented">
 This is, arguably, not better – <kbd>ł</kbd>, <kbd>ć</kbd>, and the ellipsis have appeared, but everything else <em>dis</em>appeared.
@@ -243,7 +243,7 @@ Indeed! <code>devps.tar</code> contains a perfectly serviceable set of <code>usr
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.04-linuxtravels.pdf">Rendering to</a>:
 </p>
-<a href="/content/assets/blogn_t/007.04-linuxtravels.png"><img class="continuation main-font" alt="Same page, proportional non-ASCII characters rendered, monospace ones missing" src="/content/assets/blogn_t/007.04-linuxtravels.png" /></a>
+<a href="/content/assets/blogn_t/007.04-linuxtravels.png"><img class="continuation main-font dark-invert" alt="Same page, proportional non-ASCII characters rendered, monospace ones missing" src="/content/assets/blogn_t/007.04-linuxtravels.png" /></a>
 
 <p class="indented">
 A cursory inspection of the metric reveals that they're for <code>internalname NimbusRomNo9L-Regu</code> and friends,  <!--'-->
@@ -278,7 +278,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
 	<li>These metrics must be converted to groff's internal format,  <!--'-->
 	    the flags gracefully provided by <code>/usr/share/groff/current/font/devps/generate/Makefile</code>;
 	    <code>-n</code>, disabling <code>ligature</code> output, only applies to monospace fonts, because ligaturised tables are nightmarish:
-<a href="/content/assets/blogn_t/007.07-ligaturised.png"><img class="fragment" alt="Tab-aligned /etc/passwd, one of the usernames is 'fifl', both pairs ligaturised throwing the second through fourth columns two columns left out of alignment, and the fifth four" src="/content/assets/blogn_t/007.07-ligaturised.png" /></a>
+<a href="/content/assets/blogn_t/007.07-ligaturised.png"><img class="fragment dark-invert" alt="Tab-aligned /etc/passwd, one of the usernames is 'fifl', both pairs ligaturised throwing the second through fourth columns two columns left out of alignment, and the fifth four" src="/content/assets/blogn_t/007.07-ligaturised.png" /></a>
 	    ).</li>
 	<li>groff searches for site-specific fonts in <code>/usr/share/groff/site-font/dev<em>DEV</em></code>.</li>
 </ol>
@@ -286,7 +286,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
 <p class="continued">
 This is not without its own delta from the original:
 </p>
-<a href="/content/assets/blogn_t/007.08-diff.png"><img class="continuing main-font" alt="Visual diff between the page with no non-ASCII characters and the one with them; the differences stack up most toward the end of the line on about half of the lines, and are within antialiasing noise on the other half" src="/content/assets/blogn_t/007.08-diff.png" /></a>
+<a href="/content/assets/blogn_t/007.08-diff.png"><img class="continuing main-font dark-invert" alt="Visual diff between the page with no non-ASCII characters and the one with them; the differences stack up most toward the end of the line on about half of the lines, and are within antialiasing noise on the other half" src="/content/assets/blogn_t/007.08-diff.png" /></a>
 <p class="continuing">
 But these differences are not only minute even at their worst (1.92pt in the synopsis line, 0.96pt in the third description line),
 but a result of the tighter kerning matching the font better.
@@ -401,7 +401,7 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.09-Курьер.pdf">Yielding</a>:
 </p>
-<a href="/content/assets/blogn_t/007.09-Курьер.png"><img class="continuation main-font" alt="Same page, monospace non-ASCII characters rendered in a different, rounder, heavier font, with a long f, and proportional ones missing" src="/content/assets/blogn_t/007.09-Курьер.png" /></a>
+<a href="/content/assets/blogn_t/007.09-Курьер.png"><img class="continuation main-font dark-invert" alt="Same page, monospace non-ASCII characters rendered in a different, rounder, heavier font, with a long f, and proportional ones missing" src="/content/assets/blogn_t/007.09-Курьер.png" /></a>
 
 
 HEADING_S(3, alternative-art-distribution-font, class="continued", A distribution font)
@@ -414,7 +414,7 @@ GhostScript can directly load TrueType and OpenType fonts, so for a properly-pac
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.10-liberation2.pdf">And just like that</a>:
 </p>
-<a href="/content/assets/blogn_t/007.10-liberation2.png"><img class="continuation main-font" alt="Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing" src="/content/assets/blogn_t/007.10-liberation2.png" /></a>
+<a href="/content/assets/blogn_t/007.10-liberation2.png"><img class="continuation main-font dark-invert" alt="Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing" src="/content/assets/blogn_t/007.10-liberation2.png" /></a>
 
 
 <!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export#1429503115947020297 -->

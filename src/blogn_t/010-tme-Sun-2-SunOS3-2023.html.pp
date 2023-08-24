@@ -351,7 +351,7 @@ thus, running <kbd>command tape0 load part0 part1 …</kbd> inserts a tape consi
 Conversely, <kbd>^D</kbd>ing segfaults the emulator.
 </p>
 
-<a href="/content/assets/blogn_t/010.2-plain.png"><img alt="" class="main-screenshot" src="/content/assets/blogn_t/010.2-plain.png" /></a>
+<a href="/content/assets/blogn_t/010.2-plain.png"><img alt="" class="main-screenshot dark-invert" src="/content/assets/blogn_t/010.2-plain.png" /></a>
 
 <p class="indented continued">
 The hard(-to-bear) part (other people'<!--'-->s C) is largely over, and can be followed by the hard(-to-bear) part of unpacking Tn(unix).
@@ -644,7 +644,7 @@ Unless you're an ed fiend, I'd recommend just using the graphical console.
 (If you won't, you'll need to also fight getty to produce a sane login prompt.)
 </p>
 
-<a href="/content/assets/blogn_t/010.4-fresh.png"><img alt="" class="main-screenshot" src="/content/assets/blogn_t/010.4-fresh.png" /></a>
+<a href="/content/assets/blogn_t/010.4-fresh.png"><img alt="" class="main-screenshot dark-invert" src="/content/assets/blogn_t/010.4-fresh.png" /></a>
 
 <pre class="bigcode continued"><samp><!--
 -->$ <kbd>LTDL_LIBRARY_PATH=$PWD tmesh/tmesh MY-SUN2</kbd>
@@ -759,7 +759,7 @@ sunos3# <kbd>suntools</kbd><!--
 <p class="indented continued">
 starts <del>X</del> (hover over the text that says "Mouse is off" in the bottom left and press something on the keyboard to capture the mouse):
 </p>
-<a href="/content/assets/blogn_t/010.5-suntools.png"><img alt="Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing" class="main-screenshot continuation" src="/content/assets/blogn_t/010.5-suntools.png" /></a>
+<a href="/content/assets/blogn_t/010.5-suntools.png"><img alt="Graphical console screenshot, showing the suntools interface with a text editor and an xterm with a process listing" class="main-screenshot continuation dark-invert" src="/content/assets/blogn_t/010.5-suntools.png" /></a>
 
 
 <p class="indented continued">
@@ -837,7 +837,7 @@ and install by following the script (you want <kbd>suninstall</kbd> after reboot
 <p class="indented continuing">
 I got to the <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1728522-the-9-genders-briti">funniest time-zone selection menu in history</a>:
 </p>
-<a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
+<a href="/content/assets/blogn_t/010.8-sunos4-timezone.png"><img alt="SYSTEM CONFIGURATION EUROPE  GB-Eire  Great Britain and Eire; WET  Western Europe time; Iceland  Iceland; MET  Middle European time also called Central European time; Poland  Poland; EET  Eastern European time; Turkey  Turkey; Israel  Israel; W-SU  Western Soviet Union" class="main-screenshot continuing dark-invert" src="/content/assets/blogn_t/010.8-sunos4-timezone.png" /></a>
 <p class="continuing">
 in the third-stage setup (and the hardware clock does work! <code>Poland</code>, at least, appears to be accurate still.
 Haven'<!--'-->t checked whether "euro-bit-of-the-СССР" matches any part of the РФ).

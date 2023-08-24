@@ -10,3 +10,9 @@
 	right: 0;
 	bottom: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+	.overlay-container .dark-invert {
+		filter: none !important;;
+	}
+}

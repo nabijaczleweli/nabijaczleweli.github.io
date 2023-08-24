@@ -65,7 +65,7 @@ but never in such style:
 As rendered by libfreetype 2.10.4+dfsg-1+deb11u1/libfontconfig 2.13.1-4.2.
 </p>
 
-<a href="/content/assets/blogn_t/008.04-winword.png"><img class="continued" alt="Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts" src="/content/assets/blogn_t/008.04-winword.png" /></a>
+<a href="/content/assets/blogn_t/008.04-winword.png"><img class="continued dark-invert" alt="Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts" src="/content/assets/blogn_t/008.04-winword.png" /></a>
 <p class="continuation">
 As rendered by <tt>WINWORD.EXE</tt> (yes, they're kinda goopy here; needs a skilled operator probably).  <!--'-->
 </p>
