@@ -184,9 +184,9 @@ Since currently there'<!--'-->s no partition for the pool to occupy:
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 
-Device       Start      End Sectors  Size Type
-/dev/sda1     2048   487423  485376  237M EFI System
-/dev/sda2  9940992 16775167 6834176  3.3G Linux filesystem
+Device<!--"-->       <!--"-->Start<!--"-->      <!--"-->End Sectors<!--"-->  <!--"-->Size Type
+/dev/sda1<!--"-->     <!--"-->2048<!--"-->   <!--"-->487423<!--"-->  <!--"-->485376<!--"-->  <!--"-->237M EFI System
+/dev/sda2<!--"-->  <!--"-->9940992 16775167 6834176<!--"-->  <!--"-->3.3G Linux filesystem
 </span></pre></code>
 </div>
 <p class="continued">
@@ -252,10 +252,10 @@ The table is as follows for now:
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 
-Device       Start      End Sectors Type                Name      Attrs
-/dev/sda1     2048   487423  485376 EFI System          zoot-EFI
-/dev/sda2   487424  9940991 9453568 Linux root (x86-64) zoot-zoot
-/dev/sda3  9940992 16775167 6834176 Linux filesystem    zoot-root
+Device<!--"-->       <!--"-->Start<!--"-->      <!--"-->End Sectors Type<!--"-->                <!--"-->Name<!--"-->      <!--"-->Attrs
+/dev/sda1<!--"-->     <!--"-->2048<!--"-->   <!--"-->487423<!--"-->  <!--"-->485376 EFI System<!--"-->          <!--"-->zoot-EFI
+/dev/sda2<!--"-->   <!--"-->487424<!--"-->  <!--"-->9940991 9453568 Linux root (x86-64) zoot-zoot
+/dev/sda3<!--"-->  <!--"-->9940992 16775167 6834176 Linux filesystem<!--"-->    <!--"-->zoot-root
 </span></pre></code>
 </div>
 <p class="continued">
@@ -320,13 +320,13 @@ Which yields a vdev partition the size of the rest of the disk, but ZFS will not
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 
-Device      Start      End  Sectors  Size Type
-/dev/sda1    2048   487423   485376  237M EFI System
-/dev/sda2  487424 16777182 16289759  7.8G Linux root (x86-64)
+Device<!--"-->      <!--"-->Start<!--"-->      <!--"-->End<!--"-->  <!--"-->Sectors<!--"-->  <!--"-->Size Type
+/dev/sda1<!--"-->    <!--"-->2048<!--"-->   <!--"-->487423<!--"-->   <!--"-->485376<!--"-->  <!--"-->237M EFI System
+/dev/sda2<!--"-->  <!--"-->487424 16777182 16289759<!--"-->  <!--"-->7.8G Linux root (x86-64)
 
 </span><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
-<span class="token output">NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot  4.50G  1.20G  3.30G        -         -     3%    26%  1.00x    ONLINE  -
+<span class="token output">NAME<!--"-->   <!--"-->SIZE<!--"-->  <!--"-->ALLOC<!--"-->   <!--"-->FREE<!--"-->  <!--"-->CKPOINT<!--"-->  <!--"-->EXPANDSZ<!--"-->   <!--"-->FRAG<!--"-->    <!--"-->CAP<!--"-->  <!--"-->DEDUP<!--"-->    <!--"-->HEALTH<!--"-->  <!--"-->ALTROOT
+zoot<!--"-->  <!--"-->4.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->3.30G<!--"-->        <!--"-->-<!--"-->         <!--"-->-<!--"-->     <!--"-->3%<!--"-->    <!--"-->26%<!--"-->  <!--"-->1.00x<!--"-->    <!--"-->ONLINE<!--"-->  <!--"-->-
 </span></pre></code>
 </div>
 <p class="indented continued">
@@ -334,12 +334,12 @@ But after one, the rest of the partition is recognised and can be claimed:
 </p>
 <div class="bigcode">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
-<span class="token output">NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot  4.50G  1.20G  3.30G        -        3G     3%    26%  1.00x    ONLINE  -
+<span class="token output">NAME<!--"-->   <!--"-->SIZE<!--"-->  <!--"-->ALLOC<!--"-->   <!--"-->FREE<!--"-->  <!--"-->CKPOINT<!--"-->  <!--"-->EXPANDSZ<!--"-->   <!--"-->FRAG<!--"-->    <!--"-->CAP<!--"-->  <!--"-->DEDUP<!--"-->    <!--"-->HEALTH<!--"-->  <!--"-->ALTROOT
+zoot<!--"-->  <!--"-->4.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->3.30G<!--"-->        <!--"-->-<!--"-->        <!--"-->3G<!--"-->     <!--"-->3%<!--"-->    <!--"-->26%<!--"-->  <!--"-->1.00x<!--"-->    <!--"-->ONLINE<!--"-->  <!--"-->-
 </span><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool online -e zoot zoot-zoot</span></span>
 <span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
-<span class="token output">NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00x    ONLINE  -
+<span class="token output">NAME<!--"-->   <!--"-->SIZE<!--"-->  <!--"-->ALLOC<!--"-->   <!--"-->FREE<!--"-->  <!--"-->CKPOINT<!--"-->  <!--"-->EXPANDSZ<!--"-->   <!--"-->FRAG<!--"-->    <!--"-->CAP<!--"-->  <!--"-->DEDUP<!--"-->    <!--"-->HEALTH<!--"-->  <!--"-->ALTROOT
+zoot<!--"-->  <!--"-->7.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->6.30G<!--"-->        <!--"-->-<!--"-->         <!--"-->-<!--"-->     <!--"-->2%<!--"-->    <!--"-->15%<!--"-->  <!--"-->1.00x<!--"-->    <!--"-->ONLINE<!--"-->  <!--"-->-
 </span></pre></code>
 </div>
 <p> 
@@ -363,9 +363,9 @@ zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 25.08.2023 10:54:01 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp">src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1047144">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

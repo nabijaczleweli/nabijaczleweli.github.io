@@ -113,6 +113,9 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
 .indented {
  text-indent: 1em;
 }
+samp {
+  white-space: pre-wrap;
+}
 </style>
 <span class="roboto writing">
 <p></p>
@@ -210,17 +213,17 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: gpt
 Disk identifier: 22C172F7-4E1F-D244-A6DC-260DEE716A5F
 
-Device         Start       End   Sectors  Size Type
-/dev/sda1       2048      4095      2048    1M BIOS boot
-/dev/sda2       4096 312377343 312373248  149G Linux root (x86-64)
-/dev/sda3  312377344 312581774    204431 99.8M Linux extended boot
+Device<!--"-->         <!--"-->Start<!--"-->       <!--"-->End<!--"-->   <!--"-->Sectors<!--"-->  <!--"-->Size Type
+/dev/sda1<!--"-->       <!--"-->2048<!--"-->      <!--"-->4095<!--"-->      <!--"-->2048<!--"-->    <!--"-->1M BIOS boot
+/dev/sda2<!--"-->       <!--"-->4096 312377343 312373248<!--"-->  <!--"-->149G Linux root (x86-64)
+/dev/sda3<!--"-->  <!--"-->312377344 312581774<!--"-->    <!--"-->204431 99.8M Linux extended boot
 
 </span><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> blkid</span></span>
 <span class="token output">/dev/sda1: PARTLABEL="szarotka-bios-boot" PARTUUID="a331980b-475a-1f43-b985-0849341df04b"
 /dev/sda2: LABEL="szarotka-root-ng" UUID="d9e8441a-1a97-47af-b002-d764ac46121b" TYPE="ext4"
-           PARTLABEL="szarotka-root" PARTUUID="52695edc-4993-654c-9e04-e30d9cc1e367"
+<!--"-->           <!--"-->PARTLABEL="szarotka-root" PARTUUID="52695edc-4993-654c-9e04-e30d9cc1e367"
 /dev/sda3: SEC_TYPE="msdos" LABEL_FATBOOT="SZAROTKA-BO" LABEL="SZAROTKA-BO" UUID="F4E6-9A90"
-           TYPE="vfat" PARTLABEL="szarotka-boot" PARTUUID="c817f3e5-e3e5-2449-b0f2-23dbb523a239"
+<!--"-->           <!--"-->TYPE="vfat" PARTLABEL="szarotka-boot" PARTUUID="c817f3e5-e3e5-2449-b0f2-23dbb523a239"
 </span></pre></code>
 </div>
 </p>
@@ -248,9 +251,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
          Note the ill-advised <samp>--no-check-gpg</samp>,
          but finding/downloading/extracting that <code>.deb</code> in a bare *X environment is too annoying to warrant itself.<br />
          Note also the <samp>sid</samp> suite — no <samp>stable</samp> for as long as <code>x32</code> is a port.</td>
-     <td><samp>~ #
-       <kbd>debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports</kbd>
-     </samp></td></tr>
+     <td><samp>~ # <kbd>debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports</kbd></samp></td></tr>
  <tr><td>Now you can (try to) chroot into the new system; if you see <samp style="white-space: nowrap;">chroot: can'<!--'-->t execute '/bin/sh': exec format error</samp>,
          your kernel doesn'<!--'-->t support <code>x32</code> executables.
          On Debian kernels, verify that you have <samp>syscall.x32=y</samp> in <code>/proc/cmdline</code>.<br />
@@ -276,8 +277,8 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
          (<a href="//deb.debian.org/debian/dists/sid/Release">compare</a>).</td>
      <td><samp>root@szarotka:/# <kbd>sed -i 's/deb/deb [arch=x32]/' /etc/apt/sources.list</kbd></samp><br />
          <samp>root@szarotka:/# <kbd>cat >> /etc/apt/sources.list</kbd></samp><br />
-         <samp><kbd>deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free</kbd></samp><br />
-         <samp><kbd>deb-src              https://deb.debian.org/debian sid main contrib non-free</kbd></samp><br />
+         <samp><kbd><!--"-->deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free<!--"--></kbd></samp><br />
+         <samp><kbd><!--"-->deb-src              https://deb.debian.org/debian sid main contrib non-free<!--"--></kbd></samp><br />
          <samp><kbd>^D</kbd></samp><br />
          <samp>root@szarotka:/# <kbd>dpkg --add-architecture amd64</kbd></samp><br />
          <samp>root@szarotka:/# <kbd>apt update</kbd></samp><br />
@@ -296,7 +297,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
          <samp>Configuring grub-pc</samp><br />
          <samp>-------------------</samp><br />
          <br />
-         <samp>  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)</samp><br />
+         <samp><!--"-->  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)<!--"--></samp><br />
          <br />
          <samp>GRUB install devices: <kbd><strong>/dev/sda</strong></kbd></samp><br />
          <br />
@@ -315,8 +316,8 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
          <samp style="white-space: nowrap;"><a href="//manpages.debian.org/buster/systemd/timedatectl.1.en.html">timedatectl(1)</a> set-timezone CET</samp>
          after rebooting.</del></td>
      <td><samp>root@szarotka:/# <kbd>cat > /etc/fstab</kbd></samp><br />
-         <samp>PARTLABEL=szarotka-root  /      ext4  noatime   0  1</samp><br />
-         <samp>PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2</samp><br />
+         <samp><!--"-->PARTLABEL=szarotka-root  /      ext4  noatime   0  1<!--"--></samp><br />
+         <samp><!--"-->PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2<!--"--></samp><br />
          <samp><kbd>^D</kbd></samp><br />
          <samp>root@szarotka:/# <kbd>cat > /etc/hosts</kbd></samp><br />
          <samp>127.0.0.1 localhost</samp><br />
@@ -326,15 +327,15 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
          <samp>Configuring tzdata</samp><br />
          <samp>------------------</samp><br />
          <br />
-         <samp>  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]</samp><br >
+         <samp><!--"-->  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]<!--"--></samp><br >
          <samp>Geographic area: <kbd><strong>8</strong></kbd></samp><br />
          <br />
-         <samp>  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw</samp><br >
+         <samp><!--"-->  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw<!--"--></samp><br >
          <samp>Time zone: <kbd><strong>60</strong></kbd></samp><br />
          <br />
          <samp>Current default time zone: 'Europe/Warsaw'</samp><br />
-         <samp>Local time is now:      Tue Apr 28 02:25:44 CEST 2020.</samp><br />
-         <samp>Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.</samp><br />
+         <samp><!--"-->Local time is now:      Tue Apr 28 02:25:44 CEST 2020.<!--"--></samp><br />
+         <samp><!--"-->Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.<!--"--></samp><br />
          <samp>root@szarotka:/# <kbd>apt install sudo</kbd></samp><br />
          <samp>root@szarotka:/# <kbd>adduser --ingroup users nabijaczleweli</kbd></samp><br />
          <samp>root@szarotka:/# <kbd>adduser nabijaczleweli sudo</kbd></samp><br />
@@ -378,9 +379,9 @@ Alright, bye!
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 25.08.2023 10:54:01 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/001-x32-in-2020.html.pp">src/blogn_t/001-x32-in-2020.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1047144">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

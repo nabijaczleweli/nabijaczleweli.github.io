@@ -179,33 +179,33 @@ done
 <div class="bigcode continued">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">mkdir</span> devps</span><span class="token punctuation">;</span> <span class="token bash language-bash"><span class="token keyword">cd</span> devps</span></span>
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token punctuation">{</span>C,T<span class="token punctuation">}</span><span class="token punctuation">{</span>R,B,I,BI<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-<span class="token info punctuation">    in="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk <span class="token string">'</span><span class="language-awk">$1 == <span class="token string">"internalname"</span> {<span class="token builtin">print</span> $2; <span class="token keyword">exit</span>}</span><span class="token string">'</span> <span class="token string">"/usr/share/groff/current/font/devps/<span class="token variable">$f</span>"</span><span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span>
-    <span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">f: <span class="token shell-symbol important">$</span>in<span class="token punctuation">;</span></span></span>
-<span class="token info punctuation">    src="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk -v <span class="token assign-left variable">cur</span><span class="token operator">=</span><span class="token string">"/<span class="token variable">$in</span>"</span> <span class="token string">'</span>  <!--"-->
-<span class="language-awk">      $1 ~ <span class="token regex">/^\//</span> &amp;&amp; $2 ~ <span class="token regex">/^[\/\(]/</span> {
-        <span class="token keyword">if</span>($2 ~ <span class="token regex">/^\//</span>)
-          aliases[$1] = $2;
-        <span class="token keyword">else</span>
-          paths[$1] = $2;
-      }
-      <span class="token keyword">END</span> {
-        <span class="token keyword">while</span>(cur <span class="token keyword">in</span> aliases)
-          cur = aliases[cur];
-        <span class="token keyword">if</span>(cur <span class="token keyword">in</span> paths) {
-          <span class="token builtin">sub</span>(<span class="token regex">/^\(/</span>, <span class="token string">""</span>, paths[cur]);
-          <span class="token builtin">sub</span>(<span class="token regex">/(pfb|t1)?\)$/</span>, <span class="token string">""</span>, paths[cur]);
-          <span class="token builtin">print</span> paths[cur]
-        } <span class="token keyword">else</span> {
-          <span class="token builtin">print</span> <span class="token string">"last: "</span> cur > <span class="token string">"/dev/stderr"</span>;
-          <span class="token keyword">exit</span> 1
-        }
-      }</span><span class="token string">'</span> /var/lib/ghostscript/fonts/Fontmap<span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span>  <!--'-->
-    <span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">{</span>src<span class="token punctuation">}</span>afm<span class="token punctuation">;</span></span></span>
-    afmtodit <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span><span class="token keyword">[</span> <span class="token string">"<span class="token variable">${f#C}</span>"</span> = <span class="token string">"<span class="token variable">$f</span>"</span> <span class="token keyword">]</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> -kn<span class="token punctuation">)</span> -cmi<span class="token number">0</span> \
-      -d /usr/share/groff/current/font/devps/DESC \
-      -e /usr/share/groff/current/font/devps/text.enc \
-      <span class="token string">"<span class="token variable">${src}</span>afm"</span> /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"<span class="token variable">$f</span>"</span><span class="token punctuation">;</span></span></span>
-  <span class="token keyword">done</span>
+<span class="token info punctuation"><!--"-->  	<!--"-->in="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk <span class="token string">'</span><span class="language-awk">$1 == <span class="token string">"internalname"</span> {<span class="token builtin">print</span> $2; <span class="token keyword">exit</span>}</span><span class="token string">'</span> <span class="token string">"/usr/share/groff/current/font/devps/<span class="token variable">$f</span>"</span><span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span>
+<!--"-->  	<!--"--><span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">f: <span class="token shell-symbol important">$</span>in<span class="token punctuation">;</span></span></span>
+<span class="token info punctuation"><!--"-->  	<!--"-->src="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk -v <span class="token assign-left variable">cur</span><span class="token operator">=</span><span class="token string">"/<span class="token variable">$in</span>"</span> <span class="token string">'</span><!--"--> <!--"--><!--"-->
+<span class="language-awk"><!--"-->  		<!--"-->$1 ~ <span class="token regex">/^\//</span> &amp;&amp; $2 ~ <span class="token regex">/^[\/\(]/</span> {
+<!--"-->  			<!--"--><span class="token keyword">if</span>($2 ~ <span class="token regex">/^\//</span>)
+<!--"-->  				<!--"-->aliases[$1] = $2;
+<!--"-->  			<!--"--><span class="token keyword">else</span>
+<!--"-->  				<!--"-->paths[$1] = $2;
+<!--"-->  		<!--"-->}
+<!--"-->  		<!--"--><span class="token keyword">END</span> {
+<!--"-->  			<!--"--><span class="token keyword">while</span>(cur <span class="token keyword">in</span> aliases)
+<!--"-->  				<!--"-->cur = aliases[cur];
+<!--"-->  			<!--"--><span class="token keyword">if</span>(cur <span class="token keyword">in</span> paths) {
+<!--"-->  				<!--"--><span class="token builtin">sub</span>(<span class="token regex">/^\(/</span>, <span class="token string">""</span>, paths[cur]);
+<!--"-->  				<!--"--><span class="token builtin">sub</span>(<span class="token regex">/(pfb|t1)?\)$/</span>, <span class="token string">""</span>, paths[cur]);
+<!--"-->  				<!--"--><span class="token builtin">print</span> paths[cur]
+<!--"-->  			<!--"-->} <span class="token keyword">else</span> {
+<!--"-->  				<!--"--><span class="token builtin">print</span> <span class="token string">"last: "</span> cur > <span class="token string">"/dev/stderr"</span>;
+<!--"-->  				<!--"--><span class="token keyword">exit</span> 1
+<!--"-->  			<!--"-->}
+<!--"-->  		<!--"-->}</span><span class="token string">'</span> /var/lib/ghostscript/fonts/Fontmap<span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span><!--"-->  <!--"--><!--'-->
+<!--"-->  	<!--"--><span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">{</span>src<span class="token punctuation">}</span>afm<span class="token punctuation">;</span></span></span>
+<!--"-->  	<!--"-->afmtodit <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span><span class="token keyword">[</span> <span class="token string">"<span class="token variable">${f#C}</span>"</span> = <span class="token string">"<span class="token variable">$f</span>"</span> <span class="token keyword">]</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> -kn<span class="token punctuation">)</span> -cmi<span class="token number">0</span> \
+<!--"-->  		<!--"-->-d /usr/share/groff/current/font/devps/DESC \
+<!--"-->  		<!--"-->-e /usr/share/groff/current/font/devps/text.enc \
+<!--"-->  		<!--"--><span class="token string">"<span class="token variable">${src}</span>afm"</span> /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"<span class="token variable">$f</span>"</span><span class="token punctuation">;</span></span></span>
+<!--"-->  <!--"--><span class="token keyword">done</span>
 CR: Courier
 /usr/share/fonts/type1/gsfonts/n022003l.afm
 CB: Courier-Bold
@@ -517,17 +517,17 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 -->
 <div class="bigcode continuing">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">unzip</span> <span class="token punctuation">..</span>/courierprime.zip</span></span>
-<span class="token output">Archive:  ../courierprime.zip
-  inflating: Courier-Prime-Italic.ttf
-  inflating: Courier-Prime-Bold.ttf
-  inflating: Courier-Prime.ttf
-  inflating: Courier-Prime-Bold-Italic.ttf
+<span class="token output">Archive:<!--"-->  <!--"-->../courierprime.zip
+<!--"-->  <!--"-->inflating: Courier-Prime-Italic.ttf
+<!--"-->  <!--"-->inflating: Courier-Prime-Bold.ttf
+<!--"-->  <!--"-->inflating: Courier-Prime.ttf
+<!--"-->  <!--"-->inflating: Courier-Prime-Bold-Italic.ttf
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-<span class="token output">    <span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> afm pfa<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-</span>      <span class="token bash language-bash">fontforge -c <span class="token string">'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'</span> </span></span><span class="token output">\
-</span>        <span class="token string">Courier-Prime$v.ttf</span> <span class="token string">Courier-Prime<span class="token variable">$v</span>.<span class="token variable">$f</span></span> <span class="token shell-symbol important">&amp;</span></span>
-<span class="token output">    <span class="token keyword">done</span>
-  <span class="token keyword">done</span>
+<span class="token output"><!--"-->  	<!--"--><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> afm pfa<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
+</span><!--"-->  		<!--"--><span class="token bash language-bash">fontforge -c <span class="token string">'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'</span> </span></span><span class="token output">\
+</span><!--"-->  			<!--"--><span class="token string">Courier-Prime$v.ttf</span> <span class="token string">Courier-Prime<span class="token variable">$v</span>.<span class="token variable">$f</span></span> <span class="token shell-symbol important">&amp;</span></span>
+<span class="token output"><!--"-->  	<!--"--><span class="token keyword">done</span>
+<!--"-->  <!--"--><span class="token keyword">done</span>
 </span><span class="token output"><span class="token comment"># ...</span>
 Warning: Mac and Windows entries in the 'name' table differ for the
  Fullname string in the language English (US)
@@ -535,26 +535,26 @@ Warning: Mac and Windows entries in the 'name' table differ for the
 Windows String: CourierPrime-BoldItalic
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">cp *.pfa /usr/local/share/groff/site-font/devps/</span></span></code>
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-    afmtodit -ncmi<span class="token number">0</span> \
-      -d /usr/share/groff/current/font/devps/DESC \
-      -e /usr/share/groff/current/font/devps/text.enc \
-      <span class="token string">Courier-Prime<span class="token variable">$v</span>.afm</span> /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"C$(expr "<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $v <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">'[:lower:]-'</span><span class="token variable">)</span></span>"</span> <span class="token punctuation">\</span><span class="token operator">|</span> R<span class="token punctuation">)</span><span class="token string">"</span><span class="token punctuation">;</span></span></span>
-  <span class="token keyword">done</span>
+<!--"-->  	<!--"-->afmtodit -ncmi<span class="token number">0</span> \
+<!--"-->  		<!--"-->-d /usr/share/groff/current/font/devps/DESC \
+<!--"-->  		<!--"-->-e /usr/share/groff/current/font/devps/text.enc \
+<!--"-->  		<!--"--><span class="token string">Courier-Prime<span class="token variable">$v</span>.afm</span> /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"C$(expr "<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $v <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">'[:lower:]-'</span><span class="token variable">)</span></span>"</span> <span class="token punctuation">\</span><span class="token operator">|</span> R<span class="token punctuation">)</span><span class="token string">"</span><span class="token punctuation">;</span></span></span>
+<!--"-->  <!--"--><span class="token keyword">done</span>
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">cp C{R,B,I,BI} /usr/local/share/groff/site-font/devps/</span></span></code>
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token punctuation">{</span>
-    cat /usr/share/groff/current/font/devps/download<span class="token punctuation">;</span> <span class="token builtin">echo</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span>
-      <span class="token builtin class-name">printf</span> <span class="token string">"%s<span class="token entity" title="\t">\t</span>%s<span class="token entity" title="\n">\n</span>"</span> CourierPrime<span class="token variable">${v<span class="token operator">/</span>d-I<span class="token operator">/</span>dI}</span> Courier-Prime<span class="token variable">$v</span>.pfa<span class="token punctuation">;</span>
-<span class="token output">    <span class="token keyword">done</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token operator">|</span> tee /usr/local/share/groff/site-font/devps/download
+<!--"-->  	<!--"-->cat /usr/share/groff/current/font/devps/download<span class="token punctuation">;</span> <span class="token builtin">echo</span><span class="token punctuation">;</span>
+<!--"-->  	<!--"--><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span>
+<!--"-->  		<!--"--><span class="token builtin class-name">printf</span> <span class="token string">"%s<span class="token entity" title="\t">\t</span>%s<span class="token entity" title="\n">\n</span>"</span> CourierPrime<span class="token variable">${v<span class="token operator">/</span>d-I<span class="token operator">/</span>dI}</span> Courier-Prime<span class="token variable">$v</span>.pfa<span class="token punctuation">;</span>
+<span class="token output"><!--"-->  	<!--"--><span class="token keyword">done</span><span class="token punctuation">;</span>
+<!--"-->  <!--"--><span class="token punctuation">}</span> <span class="token operator">|</span> tee /usr/local/share/groff/site-font/devps/download
 </span><span class="token output"># List of downloadable fonts
-‌# PostScript-name       Filename
-Symbol-Slanted          symbolsl.pfa
-ZapfDingbats-Reverse    zapfdr.pfa
-FreeEuro                freeeuro.pfa
-CourierPrime    Courier-Prime.pfa
-CourierPrime-Bold       Courier-Prime-Bold.pfa
-CourierPrime-Italic     Courier-Prime-Italic.pfa
+‌# PostScript-name<!--"-->       <!--"-->Filename
+Symbol-Slanted<!--"-->          <!--"-->symbolsl.pfa
+ZapfDingbats-Reverse<!--"-->    <!--"-->zapfdr.pfa
+FreeEuro<!--"-->                <!--"-->freeeuro.pfa
+CourierPrime<!--"-->    <!--"-->Courier-Prime.pfa
+CourierPrime-Bold<!--"-->       <!--"-->Courier-Prime-Bold.pfa
+CourierPrime-Italic<!--"-->     <!--"-->Courier-Prime-Italic.pfa
 CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 </span></pre></code>
 </div>
@@ -570,15 +570,15 @@ GhostScript can directly load TrueType and OpenType fonts, so for a properly-pac
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">apt</span> <span class="token function">install</span> fonts-liberation2</span></span>
 
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> Regular Bold Italic BoldItalic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-<span class="token info punctuation">    fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' /usr/share/fonts/truetype/liberation2/LiberatSans-</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">v.ttf LiberatSans-<span class="token variable">$v</span>.afm<span class="token punctuation">;</span></span></span>
-<span class="token output">  
-    afmtodit -cmi0 \
-      -d /usr/share/groff/current/font/devps/DESC \
-      -e /usr/share/groff/current/font/devps/text.enc \
-</span><span class="token info punctuation">      LiberationSans-</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">v.afm /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"T<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $v <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">'[:lower:]-'</span><span class="token variable">)</span></span>"</span><span class="token punctuation">;</span></span></span>
-<span class="token output">  done
+<span class="token info punctuation"><!--"-->  	<!--"-->fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' /usr/share/fonts/truetype/liberation2/LiberatSans-</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">v.ttf LiberatSans-<span class="token variable">$v</span>.afm<span class="token punctuation">;</span></span></span>
+<span class="token output"><!--"-->  <!--"-->
+<!--"-->  	<!--"-->afmtodit -cmi0 \
+<!--"-->  		<!--"-->-d /usr/share/groff/current/font/devps/DESC \
+<!--"-->  		<!--"-->-e /usr/share/groff/current/font/devps/text.enc \
+</span><span class="token info punctuation"><!--"-->  		<!--"-->LiberationSans-</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">v.afm /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"T<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $v <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">'[:lower:]-'</span><span class="token variable">)</span></span>"</span><span class="token punctuation">;</span></span></span>
+<span class="token output"><!--"-->  <!--"-->done
 This font contains both a 'kern' table and a 'GPOS' table.
-  The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
+<!--"-->  <!--"-->The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
 The glyph named macron is mapped to U+02C9.
 But its name indicates it should be mapped to U+00AF.
 The glyph named Delta is mapped to U+0394.
@@ -708,7 +708,7 @@ can be separated by commas or spaces, and each can be in the format:
 .Ar [ from , No \[if] )
 .It Ar from Ns Cm - Ns Ar to
 .Ar [ number , to ]
-.It Li "   " Cm - Ns Ar to
+.It Li "<!--"--> <!--"-->" Cm - Ns Ar to
 .Li [ 1 , Ar to ]
 .El
 Indices are
@@ -752,13 +752,13 @@ is constructed.
 .
 .Sh EXAMPLES
 .Bd -literal -compact
-.Li $ Nm printf Li '\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07' \&amp;| Nm  Fl zb Ar 1,3- Li \&amp;| Nm hexdump Fl C
-00000000  01 03 04 00 05 07 00                              |.......|
+.Li $ Nm printf Li '\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07' \&amp;| Nm<!--"-->  <!--"-->Fl zb Ar 1,3- Li \&amp;| Nm hexdump Fl C
+00000000<!--"-->  <!--"-->01 03 04 00 05 07 00<!--"-->                              <!--"-->|.......|
 00000007
 .Ed
 .Pp
 .Bd -literal -compact
-.Li $ Nm printf Li 'яйцо\enЯЙЦО'\f(CB'яйцо\enЯЙЦО'\fP\f(CI'яйцо\enЯЙЦО'\fP\f[CBI]'яйцо\enЯЙЦО'\fP \&amp;| Nm  Fl c Ar 1,3-
+.Li $ Nm printf Li 'яйцо\enЯЙЦО'\f(CB'яйцо\enЯЙЦО'\fP\f(CI'яйцо\enЯЙЦО'\fP\f[CBI]'яйцо\enЯЙЦО'\fP \&amp;| Nm<!--"-->  <!--"-->Fl c Ar 1,3-
 яцо\fRяцо\fP\fBяцо\fP\fIяцо\fP\f(BIяцо\fP
 ЯЦО\fRЯЦО\fP\fBЯЦО\fP\fIЯЦО\fP\f(BIЯЦО\fP
 .Ed
@@ -766,18 +766,18 @@ is constructed.
 .Bd -literal -compact
 # name, IDs, homedir, shell, ...
 .Li $ Nm Fl f Ar 1,3-4,6- Fl d Ns Ar \&amp;: Fl O Ns Li \&amp;"$( Ns Nm printf Li '\et')" Pa /etc/passwd
-root    0       0       /root   /bin/bash
-bin     2       2       /bin    /usr/sbin/nologin
-irc     39      39      /var/run/ircd   /usr/sbin/nologin
-cicada  1000    100     /home/cicada    /bin/bash
-nobody  65534   65534   /nonexistent    /usr/sbin/nologin
+root<!--"-->    <!--"-->0<!--"-->       <!--"-->0<!--"-->       <!--"-->/root<!--"-->   <!--"-->/bin/bash
+bin<!--"-->     <!--"-->2<!--"-->       <!--"-->2<!--"-->       <!--"-->/bin<!--"-->    <!--"-->/usr/sbin/nologin
+irc<!--"-->     <!--"-->39<!--"-->      <!--"-->39<!--"-->      <!--"-->/var/run/ircd<!--"-->   <!--"-->/usr/sbin/nologin
+cicada<!--"-->  <!--"-->1000<!--"-->    <!--"-->100<!--"-->     <!--"-->/home/cicada<!--"-->    <!--"-->/bin/bash
+nobody<!--"-->  <!--"-->65534<!--"-->   <!--"-->65534<!--"-->   <!--"-->/nonexistent<!--"-->    <!--"-->/usr/sbin/nologin
 # Everything else: password and GNATS
 .Li $ Nm Fl Cf Ar 1,3-4,6- Fl d Ns Ar \&amp;: Fl O Ns Li \&amp;"$( Ns Nm printf Li '\et')" Pa /etc/passwd
-x       root
-x       bin
-x       ircd
-x       ŁĄĘĆŻŹŃ łąęćżźń,,,
-x       nobody
+x<!--"-->       <!--"-->root
+x<!--"-->       <!--"-->bin
+x<!--"-->       <!--"-->ircd
+x<!--"-->       <!--"-->ŁĄĘĆŻŹŃ łąęćżźń,,,
+x<!--"-->       <!--"-->nobody
 .Ed
 <!--'--></pre></code>
 </div>
@@ -802,9 +802,9 @@ x       nobody
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 25.08.2023 10:54:02 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1047144">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

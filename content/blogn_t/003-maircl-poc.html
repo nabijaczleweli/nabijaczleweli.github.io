@@ -191,7 +191,7 @@ nabijaczleweli: 07/10/20 16:05 >&lt; MODE (nabijaczleweli): +i
 should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and:
 </p>
 <div class="bigcode continuing">
-  <pre class="language-plaintext"><code class="language-plaintext">hasix       : 07/10/20 16:07 &lt;nabijaczleweli&gt; owo</pre></code>
+  <pre class="language-plaintext"><code class="language-plaintext">hasix<!--"-->       <!--"-->: 07/10/20 16:07 &lt;nabijaczleweli&gt; owo</pre></code>
 </div>
 <p class="continuing">
 a message that comes back should show up as well:
@@ -207,15 +207,15 @@ Great. Suspend the input <code>cat</code> (killing it will slam <code>sic</code>
 <div class="bigcode continuing">
 <pre class="language-awk"><code class="language-awk"><span class="token comment"># /(?&lt;poster>[^:]+): (?&lt;month>[[:digit:]]{2})\/(?&lt;day>[[:digit:]]{2})\/(?&lt;year>[[:digit:]]{2}) (?&lt;hour>[[:digit:]]{2}):(?&lt;monute>[[:digit:]]{2}) &lt;(?&lt;channel>[^>]+)> (?&lt;message>.+)/ {</span>
 <span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span> {
-  poster = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\1"</span>, <span class="token string">"g"</span>)
-  channel = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\2"</span>, <span class="token string">"g"</span>)
-  message = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\3"</span>, <span class="token string">"g"</span>)
-  <span class="token builtin">print</span> <span class="token string">"From "</span> poster <span class="token string">" "</span> <span class="token builtin">strftime</span>(<span class="token string">"%a %b %e %H:%M:%S %Y"</span>)
-  <span class="token builtin">print</span> <span class="token string">"From: "</span> poster <span class="token string">"@irc."</span>
-  <span class="token builtin">print</span> <span class="token string">"Date: "</span> <span class="token builtin">strftime</span>(<span class="token string">"%a, %d %b %Y %T %z"</span>)
-  <span class="token builtin">print</span> <span class="token string">"Subject: &lt;"</span> channel <span class="token string">"> "</span> message
-  <span class="token builtin">print</span> <span class="token string">""</span>
-  <span class="token builtin">fflush</span>()
+<!--"-->	<!--"-->poster = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\1"</span>, <span class="token string">"g"</span>)
+<!--"-->	<!--"-->channel = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\2"</span>, <span class="token string">"g"</span>)
+<!--"-->	<!--"-->message = <span class="token builtin">gensub</span>(<span class="token regex">/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &lt;([^>]+)> (.+)/</span>, <span class="token string">"\\3"</span>, <span class="token string">"g"</span>)
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">"From "</span> poster <span class="token string">" "</span> <span class="token builtin">strftime</span>(<span class="token string">"%a %b %e %H:%M:%S %Y"</span>)
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">"From: "</span> poster <span class="token string">"@irc."</span>
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">"Date: "</span> <span class="token builtin">strftime</span>(<span class="token string">"%a, %d %b %Y %T %z"</span>)
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">"Subject: &lt;"</span> channel <span class="token string">"> "</span> message
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">""</span>
+<!--"-->	<!--"--><span class="token builtin">fflush</span>()
 }
 </pre></code>
 </div>
@@ -256,9 +256,9 @@ Now it'<!--'-->s time to convince postfix to do a big crime, by:
       <a href="//manpages.debian.org/buster/postfix/pipe.8postfix.en.html">pipe(8postfix)</a> or
       <a href="//manpages.debian.org/buster/postfix/master.5.en.html"> master(5)</a> will probably be very insightful):
       <div class="bigcode">
-<pre class="language-bash"><code class="language-bash"><span class="token comment"># service type  private unpriv  chroot  wakeup  maxproc command + args</span>
-irc       unix  -       n       n       -       -       pipe
-  <span class="token assign-left variable">user</span><span class="token operator">=</span>nabijaczleweli <span class="token assign-left variable">argv</span><span class="token operator">=</span>/home/nabijaczleweli/uwu/ircmail
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># service type<!--"-->  <!--"-->private unpriv<!--"-->  <!--"-->chroot<!--"-->  <!--"-->wakeup<!--"-->  <!--"-->maxproc command + args</span>
+irc<!--"-->       <!--"-->unix<!--"-->  <!--"-->-<!--"-->       <!--"-->n<!--"-->       <!--"-->n<!--"-->       <!--"-->-<!--"-->       <!--"-->-<!--"-->       <!--"-->pipe
+<!--"-->  <!--"--><span class="token assign-left variable">user</span><span class="token operator">=</span>nabijaczleweli <span class="token assign-left variable">argv</span><span class="token operator">=</span>/home/nabijaczleweli/uwu/ircmail
 </pre></code>
  </div>
       </li>
@@ -271,17 +271,17 @@ irc       unix  -       n       n       -       -       pipe
 <div class="bigcode continuation">
 <pre class="language-awk"><code class="language-awk"><span class="token comment">#!/bin/gawk -f</span>
 <span class="token regex">/^From: ([^ ]+)( .+)?/</span> {
-  <span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
-  from = <span class="token builtin">gensub</span>(<span class="token regex">/^From: ([^ ]+)( .+)?/</span>, <span class="token string">"\\1"</span>, 1)
+<!--"-->	<!--"--><span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
+<!--"-->	<!--"-->from = <span class="token builtin">gensub</span>(<span class="token regex">/^From: ([^ ]+)( .+)?/</span>, <span class="token string">"\\1"</span>, 1)
 }
 <span class="token regex">/^To: ([^@]+)(@.+)?/</span> {
-  <span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
-  to = <span class="token builtin">gensub</span>(<span class="token regex">/^To: ([^@]+)(@.+)?/</span>, <span class="token string">"\\1"</span>, 1)
+<!--"-->	<!--"--><span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
+<!--"-->	<!--"-->to = <span class="token builtin">gensub</span>(<span class="token regex">/^To: ([^@]+)(@.+)?/</span>, <span class="token string">"\\1"</span>, 1)
 }
 <span class="token regex">/^Subject: /</span> {
-  <span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
-  <span class="token builtin">print</span> <span class="token string">":m "</span> to <span class="token string">" "</span> <span class="token builtin">gensub</span>(<span class="token regex">/^Subject: /</span>, <span class="token string">""</span>, 1) >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
-  <span class="token builtin">print</span> <span class="token string">":m "</span> to <span class="token string">" "</span> <span class="token builtin">gensub</span>(<span class="token regex">/^Subject: /</span>, <span class="token string">""</span>, 1) >> <span class="token string">"/home/nabijaczleweli/uwu/input"</span>
+<!--"-->	<!--"--><span class="token builtin">print</span> >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">":m "</span> to <span class="token string">" "</span> <span class="token builtin">gensub</span>(<span class="token regex">/^Subject: /</span>, <span class="token string">""</span>, 1) >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
+<!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">":m "</span> to <span class="token string">" "</span> <span class="token builtin">gensub</span>(<span class="token regex">/^Subject: /</span>, <span class="token string">""</span>, 1) >> <span class="token string">"/home/nabijaczleweli/uwu/input"</span>
 }
 </pre></code>
 </div>
@@ -331,9 +331,9 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a href="//paypal.me/nabijaczleweli">buck</a> or <a href="//patreon.com/nabijaczleweli">two<span class="search-only"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 14'<!--'-->s C preprocessor on 24.08.2023 12:21:03 UTC from 
+ Automatically generated with Clang 14'<!--'-->s C preprocessor on 25.08.2023 10:54:01 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/003-maircl-poc.html.pp">src/blogn_t/003-maircl-poc.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1046671">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1047144">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

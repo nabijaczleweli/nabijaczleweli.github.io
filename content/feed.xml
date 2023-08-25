@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-08-24T12:24:10</updated>
+  <updated>2023-08-25T10:56:57</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.3.0)
   </generator>
@@ -72,6 +72,9 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 }
 .indented {
  text-indent: 1em;
+}
+samp {
+  white-space: pre-wrap;
 }
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
@@ -170,17 +173,17 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: gpt
 Disk identifier: 22C172F7-4E1F-D244-A6DC-260DEE716A5F
 
-Device         Start       End   Sectors  Size Type
-/dev/sda1       2048      4095      2048    1M BIOS boot
-/dev/sda2       4096 312377343 312373248  149G Linux root (x86-64)
-/dev/sda3  312377344 312581774    204431 99.8M Linux extended boot
+Device&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;Start&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;End&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;Sectors&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Size Type
+/dev/sda1&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;2048&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;4095&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;2048&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1M BIOS boot
+/dev/sda2&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;4096 312377343 312373248&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;149G Linux root (x86-64)
+/dev/sda3&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;312377344 312581774&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;204431 99.8M Linux extended boot
 
 &lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nabijaczleweli@szarotka&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; blkid&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token output&quot;&gt;/dev/sda1: PARTLABEL=&quot;szarotka-bios-boot&quot; PARTUUID=&quot;a331980b-475a-1f43-b985-0849341df04b&quot;
 /dev/sda2: LABEL=&quot;szarotka-root-ng&quot; UUID=&quot;d9e8441a-1a97-47af-b002-d764ac46121b&quot; TYPE=&quot;ext4&quot;
-           PARTLABEL=&quot;szarotka-root&quot; PARTUUID=&quot;52695edc-4993-654c-9e04-e30d9cc1e367&quot;
+&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;PARTLABEL=&quot;szarotka-root&quot; PARTUUID=&quot;52695edc-4993-654c-9e04-e30d9cc1e367&quot;
 /dev/sda3: SEC_TYPE=&quot;msdos&quot; LABEL_FATBOOT=&quot;SZAROTKA-BO&quot; LABEL=&quot;SZAROTKA-BO&quot; UUID=&quot;F4E6-9A90&quot;
-           TYPE=&quot;vfat&quot; PARTLABEL=&quot;szarotka-boot&quot; PARTUUID=&quot;c817f3e5-e3e5-2449-b0f2-23dbb523a239&quot;
+&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;TYPE=&quot;vfat&quot; PARTLABEL=&quot;szarotka-boot&quot; PARTUUID=&quot;c817f3e5-e3e5-2449-b0f2-23dbb523a239&quot;
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;/p&gt;
@@ -208,9 +211,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          Note the ill-advised &lt;samp&gt;--no-check-gpg&lt;/samp&gt;,
          but finding/downloading/extracting that &lt;code&gt;.deb&lt;/code&gt; in a bare *X environment is too annoying to warrant itself.&lt;br /&gt;
          Note also the &lt;samp&gt;sid&lt;/samp&gt; suite — no &lt;samp&gt;stable&lt;/samp&gt; for as long as &lt;code&gt;x32&lt;/code&gt; is a port.&lt;/td&gt;
-     &lt;td&gt;&lt;samp&gt;~ #
-       &lt;kbd&gt;debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports&lt;/kbd&gt;
-     &lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+     &lt;td&gt;&lt;samp&gt;~ # &lt;kbd&gt;debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Now you can (try to) chroot into the new system; if you see &lt;samp style=&quot;white-space: nowrap;&quot;&gt;chroot: can'&lt;!--'--&gt;t execute '/bin/sh': exec format error&lt;/samp&gt;,
          your kernel doesn'&lt;!--'--&gt;t support &lt;code&gt;x32&lt;/code&gt; executables.
          On Debian kernels, verify that you have &lt;samp&gt;syscall.x32=y&lt;/samp&gt; in &lt;code&gt;/proc/cmdline&lt;/code&gt;.&lt;br /&gt;
@@ -236,8 +237,8 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          (&lt;a href=&quot;//deb.debian.org/debian/dists/sid/Release&quot;&gt;compare&lt;/a&gt;).&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;sed -i 's/deb/deb [arch=x32]/' /etc/apt/sources.list&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt;&gt; /etc/apt/sources.list&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;&lt;kbd&gt;deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;&lt;kbd&gt;deb-src              https://deb.debian.org/debian sid main contrib non-free&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;&lt;!--&quot;--&gt;deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free&lt;!--&quot;--&gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;kbd&gt;&lt;!--&quot;--&gt;deb-src              https://deb.debian.org/debian sid main contrib non-free&lt;!--&quot;--&gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;dpkg --add-architecture amd64&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt update&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
@@ -256,7 +257,7 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          &lt;samp&gt;Configuring grub-pc&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;-------------------&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
-         &lt;samp&gt;  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
          &lt;samp&gt;GRUB install devices: &lt;kbd&gt;&lt;strong&gt;/dev/sda&lt;/strong&gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
@@ -275,8 +276,8 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          &lt;samp style=&quot;white-space: nowrap;&quot;&gt;&lt;a href=&quot;//manpages.debian.org/buster/systemd/timedatectl.1.en.html&quot;&gt;timedatectl(1)&lt;/a&gt; set-timezone CET&lt;/samp&gt;
          after rebooting.&lt;/del&gt;&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt; /etc/fstab&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;PARTLABEL=szarotka-root  /      ext4  noatime   0  1&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;PARTLABEL=szarotka-root  /      ext4  noatime   0  1&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;&lt;kbd&gt;^D&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;cat &gt; /etc/hosts&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;127.0.0.1 localhost&lt;/samp&gt;&lt;br /&gt;
@@ -286,15 +287,15 @@ You can press &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F2&lt;/kbd&gt;/&lt;kbd&gt;F3
          &lt;samp&gt;Configuring tzdata&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;------------------&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
-         &lt;samp&gt;  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]&lt;/samp&gt;&lt;br &gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br &gt;
          &lt;samp&gt;Geographic area: &lt;kbd&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
-         &lt;samp&gt;  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw&lt;/samp&gt;&lt;br &gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br &gt;
          &lt;samp&gt;Time zone: &lt;kbd&gt;&lt;strong&gt;60&lt;/strong&gt;&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
          &lt;samp&gt;Current default time zone: 'Europe/Warsaw'&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;Local time is now:      Tue Apr 28 02:25:44 CEST 2020.&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Local time is now:      Tue Apr 28 02:25:44 CEST 2020.&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;apt install sudo&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;adduser --ingroup users nabijaczleweli&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@szarotka:/# &lt;kbd&gt;adduser nabijaczleweli sudo&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
@@ -517,7 +518,7 @@ nabijaczleweli: 07/10/20 16:05 &gt;&amp;lt; MODE (nabijaczleweli): +i
 should appear, and typing &quot;&lt;kbd&gt;:m hasix owo&lt;/kbd&gt;&quot; should produce a message in the web client and:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
-  &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;hasix       : 07/10/20 16:07 &amp;lt;nabijaczleweli&amp;gt; owo&lt;/pre&gt;&lt;/code&gt;
+  &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;hasix&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;: 07/10/20 16:07 &amp;lt;nabijaczleweli&amp;gt; owo&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 a message that comes back should show up as well:
@@ -533,15 +534,15 @@ Great. Suspend the input &lt;code&gt;cat&lt;/code&gt; (killing it will slam &lt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
 &lt;pre class=&quot;language-awk&quot;&gt;&lt;code class=&quot;language-awk&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# /(?&amp;lt;poster&gt;[^:]+): (?&amp;lt;month&gt;[[:digit:]]{2})\/(?&amp;lt;day&gt;[[:digit:]]{2})\/(?&amp;lt;year&gt;[[:digit:]]{2}) (?&amp;lt;hour&gt;[[:digit:]]{2}):(?&amp;lt;monute&gt;[[:digit:]]{2}) &amp;lt;(?&amp;lt;channel&gt;[^&gt;]+)&gt; (?&amp;lt;message&gt;.+)/ {&lt;/span&gt;
 &lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt; {
-  poster = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
-  channel = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\2&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
-  message = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\3&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;From &quot;&lt;/span&gt; poster &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;strftime&lt;/span&gt;(&lt;span class=&quot;token string&quot;&gt;&quot;%a %b %e %H:%M:%S %Y&quot;&lt;/span&gt;)
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;From: &quot;&lt;/span&gt; poster &lt;span class=&quot;token string&quot;&gt;&quot;@irc.&quot;&lt;/span&gt;
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Date: &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;strftime&lt;/span&gt;(&lt;span class=&quot;token string&quot;&gt;&quot;%a, %d %b %Y %T %z&quot;&lt;/span&gt;)
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Subject: &amp;lt;&quot;&lt;/span&gt; channel &lt;span class=&quot;token string&quot;&gt;&quot;&gt; &quot;&lt;/span&gt; message
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
-  &lt;span class=&quot;token builtin&quot;&gt;fflush&lt;/span&gt;()
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;poster = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;channel = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\2&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;message = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/([^:]+): [[:digit:]]{2}\/[[:digit:]]{2}\/[[:digit:]]{2} [[:digit:]]{2}:[[:digit:]]{2} &amp;lt;([^&gt;]+)&gt; (.+)/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\3&quot;&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;g&quot;&lt;/span&gt;)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;From &quot;&lt;/span&gt; poster &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;strftime&lt;/span&gt;(&lt;span class=&quot;token string&quot;&gt;&quot;%a %b %e %H:%M:%S %Y&quot;&lt;/span&gt;)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;From: &quot;&lt;/span&gt; poster &lt;span class=&quot;token string&quot;&gt;&quot;@irc.&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Date: &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;strftime&lt;/span&gt;(&lt;span class=&quot;token string&quot;&gt;&quot;%a, %d %b %Y %T %z&quot;&lt;/span&gt;)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Subject: &amp;lt;&quot;&lt;/span&gt; channel &lt;span class=&quot;token string&quot;&gt;&quot;&gt; &quot;&lt;/span&gt; message
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;fflush&lt;/span&gt;()
 }
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -582,9 +583,9 @@ Now it'&lt;!--'--&gt;s time to convince postfix to do a big crime, by:
       &lt;a href=&quot;//manpages.debian.org/buster/postfix/pipe.8postfix.en.html&quot;&gt;pipe(8postfix)&lt;/a&gt; or
       &lt;a href=&quot;//manpages.debian.org/buster/postfix/master.5.en.html&quot;&gt; master(5)&lt;/a&gt; will probably be very insightful):
       &lt;div class=&quot;bigcode&quot;&gt;
-&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# service type  private unpriv  chroot  wakeup  maxproc command + args&lt;/span&gt;
-irc       unix  -       n       n       -       -       pipe
-  &lt;span class=&quot;token assign-left variable&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nabijaczleweli &lt;span class=&quot;token assign-left variable&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/home/nabijaczleweli/uwu/ircmail
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# service type&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;private unpriv&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;chroot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;wakeup&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;maxproc command + args&lt;/span&gt;
+irc&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;unix&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;n&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;n&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;pipe
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nabijaczleweli &lt;span class=&quot;token assign-left variable&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/home/nabijaczleweli/uwu/ircmail
 &lt;/pre&gt;&lt;/code&gt;
  &lt;/div&gt;
       &lt;/li&gt;
@@ -597,17 +598,17 @@ irc       unix  -       n       n       -       -       pipe
 &lt;div class=&quot;bigcode continuation&quot;&gt;
 &lt;pre class=&quot;language-awk&quot;&gt;&lt;code class=&quot;language-awk&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!/bin/gawk -f&lt;/span&gt;
 &lt;span class=&quot;token regex&quot;&gt;/^From: ([^ ]+)( .+)?/&lt;/span&gt; {
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
-  from = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^From: ([^ ]+)( .+)?/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, 1)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;from = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^From: ([^ ]+)( .+)?/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, 1)
 }
 &lt;span class=&quot;token regex&quot;&gt;/^To: ([^@]+)(@.+)?/&lt;/span&gt; {
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
-  to = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^To: ([^@]+)(@.+)?/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, 1)
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;to = &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^To: ([^@]+)(@.+)?/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;\\1&quot;&lt;/span&gt;, 1)
 }
 &lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt; {
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:m &quot;&lt;/span&gt; to &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, 1) &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
-  &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:m &quot;&lt;/span&gt; to &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, 1) &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/input&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:m &quot;&lt;/span&gt; to &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, 1) &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/ircmaillog&quot;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:m &quot;&lt;/span&gt; to &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;gensub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^Subject: /&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, 1) &gt;&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/nabijaczleweli/uwu/input&quot;&lt;/span&gt;
 }
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -745,6 +746,9 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
  margin-top: 0.2em;
  margin-bottom: 0.15em;
 }
+samp {
+  white-space: pre-wrap;
+}
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -840,12 +844,12 @@ non-R/O zpool features:
  */&lt;/span&gt;
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; MAX_SUPPORTED_FEATURE_STRLEN 50&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;spa_feature_names&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;org.illumos:lz4_compress&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:hole_birth&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:embedded_data&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:extensible_dataset&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token string&quot;&gt;&quot;org.open-zfs:large_blocks&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;&quot;org.illumos:lz4_compress&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:hole_birth&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:embedded_data&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;&quot;com.delphix:extensible_dataset&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;&quot;org.open-zfs:large_blocks&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -854,17 +858,17 @@ Which means that these, as of OpenZFS 0.8.4, are the ones that it doesn'&lt;!--'
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nabijaczleweli@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;man&lt;/span&gt; zpool-features &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; READ-ONLY.*no -B4 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'s/GUID//'&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
-                        awk '!/^&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/COMPATIBLE/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/--/ &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
-&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;                             {if(last == &quot;&quot;) last = &lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;print last &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\t&quot;&gt;\t&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; last &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;' |
-                        grep -v '&lt;/span&gt;lz4_compress&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;hole_birth&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;embedded_data&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;extensible_dataset&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;large_blocks&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;' | column -t
-bookmark_v2            com.datto:bookmark_v2
-device_removal         com.delphix:device_removal
-edonr                  org.illumos:edonr
-encryption             com.datto:encryption
-large_dnode            org.zfsonlinux:large_dnode
-multi_vdev_crash_dump  com.joyent:multi_vdev_crash_dump
-sha512                 org.illumos:sha512
-skein                  org.illumos:skein
+&lt;!--&quot;--&gt;                        &lt;!--&quot;--&gt;awk '!/^&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/COMPATIBLE/ &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;/--/ &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;                             &lt;!--&quot;--&gt;{if(last == &quot;&quot;) last = &lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;print last &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\t&quot;&gt;\t&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; last &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;' |
+&lt;!--&quot;--&gt;                        &lt;!--&quot;--&gt;grep -v '&lt;/span&gt;lz4_compress&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;hole_birth&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;embedded_data&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;extensible_dataset&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;large_blocks&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;' | column -t
+bookmark_v2&lt;!--&quot;--&gt;            &lt;!--&quot;--&gt;com.datto:bookmark_v2
+device_removal&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;com.delphix:device_removal
+edonr&lt;!--&quot;--&gt;                  &lt;!--&quot;--&gt;org.illumos:edonr
+encryption&lt;!--&quot;--&gt;             &lt;!--&quot;--&gt;com.datto:encryption
+large_dnode&lt;!--&quot;--&gt;            &lt;!--&quot;--&gt;org.zfsonlinux:large_dnode
+multi_vdev_crash_dump&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;com.joyent:multi_vdev_crash_dump
+sha512&lt;!--&quot;--&gt;                 &lt;!--&quot;--&gt;org.illumos:sha512
+skein&lt;!--&quot;--&gt;                  &lt;!--&quot;--&gt;org.illumos:skein
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continuation&quot;&gt;
@@ -895,31 +899,31 @@ Boot into your freshly installed system, become root, and:
           &lt;samp&gt;efibootmgr, mokutil set to manually installed.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt autopurge grub*&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following packages will be REMOVED:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  libfuse2* libpng16-16* shim-helpers-amd64-signed* shim-signed-common* shim-unsigned*&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  libfuse2* libpng16-16* shim-helpers-amd64-signed* shim-signed-common* shim-unsigned*&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;0 upgraded, 0 newly installed, 15 to remove and 0 not upgraded.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;After this operation, 44.9 MB disk space will be freed.&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Verify that you only have GRUB here before cleaning it out!&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;tree /boot/efi/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;/boot/efi/&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;├── EFI&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   └── debian&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── BOOTX64.CSV&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── fbx64.efi&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── grub.cfg&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── grubx64.efi&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── mmx64.efi&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       └── shimx64.efi&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;└── NvVars&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;/boot/efi/&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;├── EFI&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   └── debian&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       ├── BOOTX64.CSV&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       ├── fbx64.efi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       ├── grub.cfg&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       ├── grubx64.efi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       ├── mmx64.efi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       └── shimx64.efi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;└── NvVars&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;rm -rf /boot/efi/EFI/&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Depending on the firmware state there may be a lot of boot entries, but the GRUB one is very likely the &lt;samp&gt;BootCurrent&lt;/samp&gt; and called &quot;debian&quot;.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;efibootmgr -v&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;BootCurrent: 0001&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;BootOrder: 0001,0000,0002,…&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;Boot0001*: debian        HD(1,GPT,GUID)/File(\EFI\debian\shimx64.efi)&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;Boot0002*: UEFI QEMU DVD-ROM QM00003     PciRoot(0x0)/…&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;BootCurrent: 0001&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;BootOrder: 0001,0000,0002,…&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Boot0001*: debian        HD(1,GPT,GUID)/File(\EFI\debian\shimx64.efi)&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Boot0002*: UEFI QEMU DVD-ROM QM00003     PciRoot(0x0)/…&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;efibootmgr -Bb 1&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;BootCurrent: 0001&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)&lt;/samp&gt;&lt;br /&gt;
@@ -930,7 +934,7 @@ Boot into your freshly installed system, become root, and:
          Since systemd 251.2-3 (Wed, 08 Jun 2022 23:56:04 +0100), &lt;samp&gt;systemd-boot&lt;/samp&gt; resides in its own homonymous package.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install systemd-boot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  systemd-boot systemd-boot-efi&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  systemd-boot systemd-boot-efi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
           &lt;samp&gt;0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.&lt;/samp&gt;&lt;br /&gt;
           &lt;samp&gt;After this operation, 739 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;bootctl install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
@@ -944,15 +948,15 @@ Boot into your freshly installed system, become root, and:
         since sd-boot will disambugate entries by version as needed, but may be useful to distinguish monokernel VM installs or something.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;cp /{usr/lib,etc}/kernel/install.d/90-loaderentry.install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;diff -U2 /{usr/lib,etc}/kernel/install.d/90-loaderentry.install&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;+++ /etc/kernel/install.d/90-loaderentry.install        2020-09-13 05:06:49.541120128 +0200&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;@@ -44,4 +44,6 @@&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt; if ! [[ $PRETTY_NAME ]]; then&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;     PRETTY_NAME=&quot;Linux $KERNEL_VERSION&quot;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;+else&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;+    PRETTY_NAME+=&quot; with Linux $KERNEL_VERSION&quot;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt; fi&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;​&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;+++ /etc/kernel/install.d/90-loaderentry.install        2020-09-13 05:06:49.541120128 +0200&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;@@ -44,4 +44,6 @@&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt; if ! [[ $PRETTY_NAME ]]; then&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;     PRETTY_NAME=&quot;Linux $KERNEL_VERSION&quot;&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;+else&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;+    PRETTY_NAME+=&quot; with Linux $KERNEL_VERSION&quot;&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt; fi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;br /&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;del&gt;Disable a
          &lt;a href=&quot;https://salsa.debian.org/systemd-team/systemd/-/blob/3e2db72b37d72527eca2474a4e08f44fa3f342e8/debian/extra/kernel-install.d/85-initrd.install&quot;&gt;Debian&lt;/a&gt;
          &lt;code&gt;.install&lt;/code&gt; hook, which copies the initrd into &lt;code&gt;\MID\VER\initrd&lt;/code&gt;
@@ -991,23 +995,23 @@ Boot into your freshly installed system, become root, and:
          &lt;samp style=&quot;word-break: break-all;&quot;&gt;Installing /boot/efi/62dd03a4928c412180b3024ac6c03a90/5.8.0-1-amd64/vmlinuz-5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
          &lt;samp style=&quot;word-break: break-all;&quot;&gt;Creating /boot/efi/loader/entries/62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;tree /boot/efi/&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;/boot/efi/&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;├── 62dd03a4928c412180b3024ac6c03a90&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   └── 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       ├── initrd-5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       └── linux&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;├── EFI&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   ├── BOOT&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   │   └── BOOTX64.EFI&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   ├── Linux&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   └── systemd&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│       └── systemd-bootx64.efi&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;├── loader&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   ├── entries&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp style=&quot;word-break: break-all;&quot;&gt;│   │   └── 62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   ├── loader.conf&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;│   └── random-seed&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;└── NvVars&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;/boot/efi/&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;├── 62dd03a4928c412180b3024ac6c03a90&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   └── 5.8.0-1-amd64&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       ├── initrd-5.8.0-1-amd64&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       └── linux&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;├── EFI&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   ├── BOOT&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   │   └── BOOTX64.EFI&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   ├── Linux&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   └── systemd&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│       └── systemd-bootx64.efi&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;├── loader&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   ├── entries&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp style=&quot;word-break: break-all;&quot;&gt;&lt;!--&quot;--&gt;│   │   └── 62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   ├── loader.conf&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;│   └── random-seed&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;└── NvVars&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
          &lt;samp&gt;8 directories, 9 files&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
@@ -1036,33 +1040,33 @@ Now we can boot without dealing with GRUB. On to the ZFS bit:
  &lt;tr&gt;&lt;td&gt;Install the prerequisites, remember to match the headers to your kernel!&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install --no-install-recommends linux-headers-amd64 build-essential&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  g++ g++-10 gcc gcc-10 libasan6 libatomic1 libbinutils libc-dev-bin libc6-dev&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-10-dev&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  libgdbm-compat4 libgdbm6 libgomp1 libitm1 liblsan0 libperl5.30 libquadmath0&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  libstdc++-10-dev libtsan0 libubsan1 linux-compiler-gcc-10-x86&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  linux-headers-5.8.0-1-amd64 linux-headers-5.8.0-1-common linux-headers-amd64&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  linux-kbuild-5.8 linux-libc-dev make patch perl perl-modules-5.30&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  g++ g++-10 gcc gcc-10 libasan6 libatomic1 libbinutils libc-dev-bin libc6-dev&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-10-dev&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  libgdbm-compat4 libgdbm6 libgomp1 libitm1 liblsan0 libperl5.30 libquadmath0&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  libstdc++-10-dev libtsan0 libubsan1 linux-compiler-gcc-10-x86&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  linux-headers-5.8.0-1-amd64 linux-headers-5.8.0-1-common linux-headers-amd64&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  linux-kbuild-5.8 linux-libc-dev make patch perl perl-modules-5.30&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;0 upgraded, 40 newly installed, 0 to remove and 0 not upgraded.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;After this operation, 286 MB of additional disk space will be used.&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;And ZFS.&lt;br /&gt;
          Depending on dependency ordering, starting the services sometimes fails; simply re-running the command will fix it.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install zfs-dkms&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  distro-info-data dkms fakeroot libfakeroot libnvpair1linux libuutil1linux&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  libzfs2linux libzpool2linux lsb-release python3-distutils python3-lib2to3&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  zfs-dkms zfs-zed zfsutils-linux&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  distro-info-data dkms fakeroot libfakeroot libnvpair1linux libuutil1linux&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  libzfs2linux libzpool2linux lsb-release python3-distutils python3-lib2to3&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  zfs-dkms zfs-zed zfsutils-linux&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;After this operation, 22.3 MB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Building for 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Building initial module for 5.8.0-1-amd64&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Done.&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
          &lt;samp&gt;zfs.ko:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;Running module version sanity check.&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt; - Original module&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;   - No original module exists within this kernel&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt; - Installation&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;   - Installing to /lib/modules/5.8.0-1-amd64/updates/dkms/&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Running module version sanity check.&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt; - Original module&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;   - No original module exists within this kernel&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt; - Installation&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;   - Installing to /lib/modules/5.8.0-1-amd64/updates/dkms/&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;&amp;c.&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
          &lt;samp&gt;DKMS: install completed.&lt;/samp&gt;&lt;br /&gt;
@@ -1074,13 +1078,13 @@ Now we can boot without dealing with GRUB. On to the ZFS bit:
         and run a ZFS command in the initrd.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install zfs-initramfs&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  zfs-initramfs&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  zfs-initramfs&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;After this operation, 108 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install --no-install-recommends dracut zfs-dracut &amp;&amp; apt autopurge initramfs-tools&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following packages will be REMOVED:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  initramfs-tools* initramfs-tools-core* klibc-utils* libklibc*&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  initramfs-tools* initramfs-tools-core* klibc-utils* libklibc*&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  dracut dracut-core kpartx libglib2.0-0 pkg-config zfs-dracut&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  dracut dracut-core kpartx libglib2.0-0 pkg-config zfs-dracut&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;After this operation, 4,644 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;/etc/kernel/postinst.d/kernel-install $(uname -r)&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
@@ -1096,21 +1100,21 @@ Step 3: System Installation issues a lot of commands and doesn'&lt;!--'--&gt;t r
 The final mount tree is as such:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
-&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;               zoot/
-/              zoot/root
-├── boot       zoot/boot
-├── home       zoot/home
-│   └── nab    zoot/home/nab
-├── root       zoot/home/root
-├── opt        zoot/opt
-├── srv        zoot/srv
-│              zoot/usr
-├── usr/local  zoot/usr/local
-│              zoot/var
-├── var/cache  zoot/var/cache
-│              zoot/var/lib
-├── var/log    zoot/var/log
-└── var/tmp    zoot/var/tmp
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;&lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;zoot/
+/&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;zoot/root
+├── boot&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;zoot/boot
+├── home&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;zoot/home
+│&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;└── nab&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;zoot/home/nab
+├── root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;zoot/home/root
+├── opt&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;zoot/opt
+├── srv&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;zoot/srv
+│&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;zoot/usr
+├── usr/local&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;zoot/usr/local
+│&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;zoot/var
+├── var/cache&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;zoot/var/cache
+│&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;zoot/var/lib
+├── var/log&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;zoot/var/log
+└── var/tmp&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;zoot/var/tmp
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -1151,11 +1155,11 @@ And so:
          &lt;samp&gt;ata-QEMU_HARDDISK_QM00002 -&gt; ../../sdb&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool create -O mountpoint=/ -O canmount=off -R /mnt zoot ata-QEMU_HARDDISK_QM00002&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# zpool list&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot  7.50G   564K  7.50G        -         -     0%     0%  1.00x    ONLINE  /mnt&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot  7.50G   564K  7.50G        -         -     0%     0%  1.00x    ONLINE  /mnt&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# zfs list&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;NAME   USED  AVAIL     REFER  MOUNTPOINT&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot   492K  7.27G      192K  /mnt&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;NAME   USED  AVAIL     REFER  MOUNTPOINT&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot   492K  7.27G      192K  /mnt&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;Enable &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html&quot;&gt;&lt;code&gt;zfs-mount-generator(8)&lt;/code&gt;&lt;/a&gt;
          via &lt;a href=&quot;//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html&quot;&gt;&lt;code&gt;zed(8)&lt;/code&gt;&lt;/a&gt; for mount ordering; this makes systemd aware of,
          i.a., &lt;code&gt;/boot/efi&lt;/code&gt; depending on &lt;code&gt;/boot&lt;/code&gt; and mount &lt;code&gt;/var/log&lt;/code&gt; before starting journald there,
@@ -1177,22 +1181,22 @@ And so:
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs set acltype=posixacl xattr=sa zoot/var/log&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;chmod 1777 /mnt/var/tmp&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zfs list -o name,mountpoint,canmount&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;NAME            MOUNTPOINT      CANMOUNT&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot            /mnt                 off&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/boot       /mnt/boot             on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/home       /mnt/home             on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/home/nab   /mnt/home/nab         on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/home/root  /mnt/root             on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/opt        /mnt/opt              on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/root       /mnt                  on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/srv        /mnt/srv              on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/usr        /mnt/usr             off&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/usr/local  /mnt/usr/local        on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/var        /mnt/var             off&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/var/cache  /mnt/var/cache        on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/var/lib    /mnt/var/lib         off&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/var/log    /mnt/var/log          on&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;zoot/var/tmp    /mnt/var/tmp          on&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;NAME            MOUNTPOINT      CANMOUNT&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot            /mnt                 off&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/boot       /mnt/boot             on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/home       /mnt/home             on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/home/nab   /mnt/home/nab         on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/home/root  /mnt/root             on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/opt        /mnt/opt              on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/root       /mnt                  on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/srv        /mnt/srv              on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/usr        /mnt/usr             off&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/usr/local  /mnt/usr/local        on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/var        /mnt/var             off&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/var/cache  /mnt/var/cache        on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/var/lib    /mnt/var/lib         off&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/var/log    /mnt/var/log          on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;zoot/var/tmp    /mnt/var/tmp          on&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;systemctl stop zfs-zed&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;sed -Ei 's;/mnt/?;/;' /etc/zfs/zfs-list.cache/zoot&lt;/kbd&gt;&lt;/samp&gt;&lt;/td&gt;&lt;/tr&gt;
  &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/initramfs/scripts/zfs#L751&quot;&gt;These&lt;/a&gt; or
@@ -1212,18 +1216,18 @@ And so:
          Note the CWD and ignore the few &quot;file exists&quot; errors for the directories — those are by design.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;apt install dump&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;The following NEW packages will be installed:&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  dump liblzo2-2&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  dump liblzo2-2&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;After this operation, 539 kB of additional disk space will be used.&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;dump -f - / | restore rf -&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: Dumping /dev/sda2 (/) to standard output&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: Label: zoot-root&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;restore: ./boot, ./var, ./&amp;c.: File exists&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: 1357080 blocks (1325.27MB)&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: finished in 50 seconds, throughput 27141 kBytes/sec&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: Date this dump completed: Sat Sep 12 02:11:53 2020&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;  DUMP: DUMP IS DONE&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: Dumping /dev/sda2 (/) to standard output&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: Label: zoot-root&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;restore: ./boot, ./var, ./&amp;c.: File exists&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: 1357080 blocks (1325.27MB)&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: finished in 50 seconds, throughput 27141 kBytes/sec&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: Date this dump completed:  Sat Sep 12 02:11:53 2020&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;  DUMP: DUMP IS DONE&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;rm restoresymtable&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:/mnt# &lt;kbd&gt;reboot&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
        &lt;/td&gt;&lt;/tr&gt;
@@ -1266,17 +1270,17 @@ Or:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;nab@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;findmnt &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; zfs&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;/                              zoot/root      zfs        rw,relatime,xattr,noacl
-├─/home                        zoot/home      zfs        rw,relatime,xattr,noacl
-│ └─/home/nab                  zoot/home/nab  zfs        rw,relatime,xattr,noacl
-├─/opt                         zoot/opt       zfs        rw,relatime,xattr,noacl
-├─/boot                        zoot/boot      zfs        rw,relatime,xattr,noacl
-├─/srv                         zoot/srv       zfs        rw,relatime,xattr,noacl
-├─/var/cache                   zoot/var/cache zfs        rw,relatime,xattr,noacl
-├─/root                        zoot/home/root zfs        rw,relatime,xattr,noacl
-├─/var/log                     zoot/var/log   zfs        rw,relatime,xattr,posixacl
-├─/usr/local                   zoot/usr/local zfs        rw,relatime,xattr,noacl
-└─/var/tmp                     zoot/var/tmp   zfs        rw,relatime,xattr,noacl
+&lt;span class=&quot;token output&quot;&gt;/&lt;!--&quot;--&gt;                              &lt;!--&quot;--&gt;zoot/root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/home&lt;!--&quot;--&gt;                        &lt;!--&quot;--&gt;zoot/home&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+│ └─/home/nab&lt;!--&quot;--&gt;                  &lt;!--&quot;--&gt;zoot/home/nab&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/opt&lt;!--&quot;--&gt;                         &lt;!--&quot;--&gt;zoot/opt&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/boot&lt;!--&quot;--&gt;                        &lt;!--&quot;--&gt;zoot/boot&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/srv&lt;!--&quot;--&gt;                         &lt;!--&quot;--&gt;zoot/srv&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/var/cache&lt;!--&quot;--&gt;                   &lt;!--&quot;--&gt;zoot/var/cache zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/root&lt;!--&quot;--&gt;                        &lt;!--&quot;--&gt;zoot/home/root zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+├─/var/log&lt;!--&quot;--&gt;                     &lt;!--&quot;--&gt;zoot/var/log&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,posixacl
+├─/usr/local&lt;!--&quot;--&gt;                   &lt;!--&quot;--&gt;zoot/usr/local zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
+└─/var/tmp&lt;!--&quot;--&gt;                     &lt;!--&quot;--&gt;zoot/var/tmp&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;zfs&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;rw,relatime,xattr,noacl
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
@@ -1287,14 +1291,14 @@ One last part now, to actually use both disks:
 &lt;/p&gt;
 &lt;table class=&quot;bigtable&quot;&gt;
  &lt;tr&gt;&lt;td&gt;I'm specifying the primary disk's rootfs partition by &lt;a href=&quot;#installation&quot;&gt;its partlabel&lt;/a&gt;,
-         but &lt;code&gt;ata-QEMU_HARDDISK_QM00001-part2&lt;/code&gt; would also work in this case.&lt;/td&gt;
+         but &lt;code style=&quot;white-space: nowrap;&quot;&gt;ata-QEMU_HARDDISK_QM00001-part2&lt;/code&gt; would also work in this case.&lt;/td&gt;
      &lt;td&gt;&lt;samp&gt;root@zoot:~# &lt;kbd&gt;gdisk -l /dev/disk/by-id/ata-QEMU_HARDDISK_QM00001&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Disk /dev/disk/by-id/ata-QEMU_HARDDISK_QM00001: 16777216 sectors, 8.0 GiB&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;Disk identifier (GUID): 0D47FC01-7947-4DDE-9506-3BBBCFF572FF&lt;/samp&gt;&lt;br /&gt;
          &lt;br /&gt;
-         &lt;samp&gt;Number  Start (sector)    End (sector)  Size       Code  Name&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;   1            2048          487423   237.0 MiB   EF00  zoot-EFI&lt;/samp&gt;&lt;br /&gt;
-         &lt;samp&gt;   2          487424        16775167   7.8 GiB     8300  zoot-root&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;Number  Start (sector)    End (sector)  Size       Code  Name&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;   1            2048          487423   237.0 MiB   EF00  zoot-EFI&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
+         &lt;samp&gt;&lt;!--&quot;--&gt;   2          487424        16775167   7.8 GiB     8300  zoot-root&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;root@zoot:~# &lt;kbd&gt;zpool add zoot zoot-root&lt;/kbd&gt;&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;invalid vdev specification&lt;/samp&gt;&lt;br /&gt;
          &lt;samp&gt;use '-f' to override the following errors:&lt;/samp&gt;&lt;br /&gt;
@@ -1307,18 +1311,18 @@ And that's it. There ain't much fan-fare to it, since this took only the very be
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool list&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot    15G   777M  14.2G        -         -     0%     5%  1.00x    ONLINE  -
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;SIZE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALLOC&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FREE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;CKPOINT&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;EXPANDSZ&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FRAG&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;CAP&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;DEDUP&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;HEALTH&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALTROOT
+zoot&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;15G&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;777M&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;14.2G&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0%&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;5%&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.00x&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;-
 &lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool status&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;  pool: zoot
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;pool: zoot
  state: ONLINE
-  scan: none requested
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;scan: none requested
 config:
 
-        NAME                         STATE     READ WRITE CKSUM
-        zoot                         ONLINE       0     0     0
-          ata-QEMU_HARDDISK_QM00002  ONLINE       0     0     0
-          zoot-root                  ONLINE       0     0     0
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;NAME&lt;!--&quot;--&gt;                         &lt;!--&quot;--&gt;STATE&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;READ WRITE CKSUM
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;zoot&lt;!--&quot;--&gt;                         &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0
+&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;ata-QEMU_HARDDISK_QM00002&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0
+&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;zoot-root&lt;!--&quot;--&gt;                  &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0
 
 errors: No known data errors
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
@@ -1475,9 +1479,9 @@ Since currently there'&lt;!--'--&gt;s no partition for the pool to occupy:
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 
-Device       Start      End Sectors  Size Type
-/dev/sda1     2048   487423  485376  237M EFI System
-/dev/sda2  9940992 16775167 6834176  3.3G Linux filesystem
+Device&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Start&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;End Sectors&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Size Type
+/dev/sda1&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;2048&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;487423&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;485376&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;237M EFI System
+/dev/sda2&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;9940992 16775167 6834176&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;3.3G Linux filesystem
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continued&quot;&gt;
@@ -1543,10 +1547,10 @@ The table is as follows for now:
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 
-Device       Start      End Sectors Type                Name      Attrs
-/dev/sda1     2048   487423  485376 EFI System          zoot-EFI
-/dev/sda2   487424  9940991 9453568 Linux root (x86-64) zoot-zoot
-/dev/sda3  9940992 16775167 6834176 Linux filesystem    zoot-root
+Device&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Start&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;End Sectors Type&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;Name&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;Attrs
+/dev/sda1&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;2048&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;487423&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;485376 EFI System&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;zoot-EFI
+/dev/sda2&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;487424&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;9940991 9453568 Linux root (x86-64) zoot-zoot
+/dev/sda3&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;9940992 16775167 6834176 Linux filesystem&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;zoot-root
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continued&quot;&gt;
@@ -1611,13 +1615,13 @@ Which yields a vdev partition the size of the rest of the disk, but ZFS will not
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 
-Device      Start      End  Sectors  Size Type
-/dev/sda1    2048   487423   485376  237M EFI System
-/dev/sda2  487424 16777182 16289759  7.8G Linux root (x86-64)
+Device&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;Start&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;End&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Sectors&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Size Type
+/dev/sda1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;2048&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;487423&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;485376&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;237M EFI System
+/dev/sda2&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;487424 16777182 16289759&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.8G Linux root (x86-64)
 
 &lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool list&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot  4.50G  1.20G  3.30G        -         -     3%    26%  1.00x    ONLINE  -
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;SIZE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALLOC&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FREE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;CKPOINT&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;EXPANDSZ&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FRAG&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;CAP&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;DEDUP&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;HEALTH&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALTROOT
+zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;4.50G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.20G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;3.30G&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;3%&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;26%&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.00x&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;-
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -1625,12 +1629,12 @@ But after one, the rest of the partition is recognised and can be claimed:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool list&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot  4.50G  1.20G  3.30G        -        3G     3%    26%  1.00x    ONLINE  -
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;SIZE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALLOC&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FREE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;CKPOINT&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;EXPANDSZ&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FRAG&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;CAP&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;DEDUP&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;HEALTH&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALTROOT
+zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;4.50G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.20G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;3.30G&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;3G&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;3%&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;26%&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.00x&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;-
 &lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool online -e zoot zoot-zoot&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@zoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;zpool list&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
-zoot  7.50G  1.20G  6.30G        -         -     2%    15%  1.00x    ONLINE  -
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;SIZE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALLOC&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FREE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;CKPOINT&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;EXPANDSZ&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;FRAG&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;CAP&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;DEDUP&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;HEALTH&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ALTROOT
+zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.50G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.20G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;6.30G&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;2%&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;15%&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.00x&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;-
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
 &lt;p&gt; 
@@ -1904,33 +1908,33 @@ done
 &lt;div class=&quot;bigcode continued&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; devps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;cd&lt;/span&gt; devps&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;C,T&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;R,B,I,BI&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token info punctuation&quot;&gt;    in=&quot;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awk &lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;language-awk&quot;&gt;$1 == &lt;span class=&quot;token string&quot;&gt;&quot;internalname&quot;&lt;/span&gt; {&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; $2; &lt;span class=&quot;token keyword&quot;&gt;exit&lt;/span&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/usr/share/groff/current/font/devps/&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;f: &lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token info punctuation&quot;&gt;    src=&quot;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awk -v &lt;span class=&quot;token assign-left variable&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/&lt;span class=&quot;token variable&quot;&gt;$in&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt;  &lt;!--&quot;--&gt;
-&lt;span class=&quot;language-awk&quot;&gt;      $1 ~ &lt;span class=&quot;token regex&quot;&gt;/^\//&lt;/span&gt; &amp;amp;&amp;amp; $2 ~ &lt;span class=&quot;token regex&quot;&gt;/^[\/\(]/&lt;/span&gt; {
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;($2 ~ &lt;span class=&quot;token regex&quot;&gt;/^\//&lt;/span&gt;)
-          aliases[$1] = $2;
-        &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
-          paths[$1] = $2;
-      }
-      &lt;span class=&quot;token keyword&quot;&gt;END&lt;/span&gt; {
-        &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;(cur &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; aliases)
-          cur = aliases[cur];
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;(cur &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; paths) {
-          &lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^\(/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
-          &lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/(pfb|t1)?\)$/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
-          &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; paths[cur]
-        } &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; {
-          &lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;last: &quot;&lt;/span&gt; cur &gt; &lt;span class=&quot;token string&quot;&gt;&quot;/dev/stderr&quot;&lt;/span&gt;;
-          &lt;span class=&quot;token keyword&quot;&gt;exit&lt;/span&gt; 1
-        }
-      }&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt; /var/lib/ghostscript/fonts/Fontmap&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;  &lt;!--'--&gt;
-    &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;src&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;afm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-    afmtodit &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${f#C}&lt;/span&gt;&quot;&lt;/span&gt; = &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -kn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; -cmi&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; \
-      -d /usr/share/groff/current/font/devps/DESC \
-      -e /usr/share/groff/current/font/devps/text.enc \
-      &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${src}&lt;/span&gt;afm&quot;&lt;/span&gt; /usr/share/groff/current/font/devps/generate/textmap &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;in=&quot;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awk &lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;language-awk&quot;&gt;$1 == &lt;span class=&quot;token string&quot;&gt;&quot;internalname&quot;&lt;/span&gt; {&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; $2; &lt;span class=&quot;token keyword&quot;&gt;exit&lt;/span&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/usr/share/groff/current/font/devps/&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;f: &lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;src=&quot;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awk -v &lt;span class=&quot;token assign-left variable&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/&lt;span class=&quot;token variable&quot;&gt;$in&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt;&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;language-awk&quot;&gt;&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;$1 ~ &lt;span class=&quot;token regex&quot;&gt;/^\//&lt;/span&gt; &amp;amp;&amp;amp; $2 ~ &lt;span class=&quot;token regex&quot;&gt;/^[\/\(]/&lt;/span&gt; {
+&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;($2 ~ &lt;span class=&quot;token regex&quot;&gt;/^\//&lt;/span&gt;)
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;aliases[$1] = $2;
+&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;paths[$1] = $2;
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;}
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;END&lt;/span&gt; {
+&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;(cur &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; aliases)
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;cur = aliases[cur];
+&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;(cur &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; paths) {
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/^\(/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;sub&lt;/span&gt;(&lt;span class=&quot;token regex&quot;&gt;/(pfb|t1)?\)$/&lt;/span&gt;, &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;, paths[cur]);
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; paths[cur]
+&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;} &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; {
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;last: &quot;&lt;/span&gt; cur &gt; &lt;span class=&quot;token string&quot;&gt;&quot;/dev/stderr&quot;&lt;/span&gt;;
+&lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;exit&lt;/span&gt; 1
+&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;}
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt; /var/lib/ghostscript/fonts/Fontmap&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;!--'--&gt;
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;src&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;afm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;afmtodit &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${f#C}&lt;/span&gt;&quot;&lt;/span&gt; = &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -kn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; -cmi&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;-d /usr/share/groff/current/font/devps/DESC \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;-e /usr/share/groff/current/font/devps/text.enc \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${src}&lt;/span&gt;afm&quot;&lt;/span&gt; /usr/share/groff/current/font/devps/generate/textmap &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
 CR: Courier
 /usr/share/fonts/type1/gsfonts/n022003l.afm
 CB: Courier-Bold
@@ -2242,17 +2246,17 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 --&gt;
 &lt;div class=&quot;bigcode continuing&quot;&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;unzip&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;/courierprime.zip&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;Archive:  ../courierprime.zip
-  inflating: Courier-Prime-Italic.ttf
-  inflating: Courier-Prime-Bold.ttf
-  inflating: Courier-Prime.ttf
-  inflating: Courier-Prime-Bold-Italic.ttf
+&lt;span class=&quot;token output&quot;&gt;Archive:&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;../courierprime.zip
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;inflating: Courier-Prime-Italic.ttf
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;inflating: Courier-Prime-Bold.ttf
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;inflating: Courier-Prime.ttf
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;inflating: Courier-Prime-Bold-Italic.ttf
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; -Bold -Italic -Bold-Italic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; afm pfa&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/span&gt;      &lt;span class=&quot;token bash language-bash&quot;&gt;fontforge -c &lt;span class=&quot;token string&quot;&gt;'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
-&lt;/span&gt;        &lt;span class=&quot;token string&quot;&gt;Courier-Prime$v.ttf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token shell-symbol important&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; afm pfa&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;fontforge -c &lt;span class=&quot;token string&quot;&gt;'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
+&lt;/span&gt;&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;Courier-Prime$v.ttf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token shell-symbol important&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
 Warning: Mac and Windows entries in the 'name' table differ for the
  Fullname string in the language English (US)
@@ -2260,26 +2264,26 @@ Warning: Mac and Windows entries in the 'name' table differ for the
 Windows String: CourierPrime-BoldItalic
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;cp *.pfa /usr/local/share/groff/site-font/devps/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; -Bold -Italic -Bold-Italic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-    afmtodit -ncmi&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; \
-      -d /usr/share/groff/current/font/devps/DESC \
-      -e /usr/share/groff/current/font/devps/text.enc \
-      &lt;span class=&quot;token string&quot;&gt;Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.afm&lt;/span&gt; /usr/share/groff/current/font/devps/generate/textmap &lt;span class=&quot;token string&quot;&gt;&quot;C$(expr &quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; $v &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; -d &lt;span class=&quot;token string&quot;&gt;'[:lower:]-'&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; R&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;afmtodit -ncmi&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;-d /usr/share/groff/current/font/devps/DESC \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;-e /usr/share/groff/current/font/devps/text.enc \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.afm&lt;/span&gt; /usr/share/groff/current/font/devps/generate/textmap &lt;span class=&quot;token string&quot;&gt;&quot;C$(expr &quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; $v &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; -d &lt;span class=&quot;token string&quot;&gt;'[:lower:]-'&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; R&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;cp C{R,B,I,BI} /usr/local/share/groff/site-font/devps/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    cat /usr/share/groff/current/font/devps/download&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;echo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; -Bold -Italic -Bold-Italic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
-      &lt;span class=&quot;token builtin class-name&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;%s&lt;span class=&quot;token entity&quot; title=&quot;\t&quot;&gt;\t&lt;/span&gt;%s&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt; CourierPrime&lt;span class=&quot;token variable&quot;&gt;${v&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;d-I&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;dI}&lt;/span&gt; Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.pfa&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; tee /usr/local/share/groff/site-font/devps/download
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;cat /usr/share/groff/current/font/devps/download&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;echo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; -Bold -Italic -Bold-Italic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;%s&lt;span class=&quot;token entity&quot; title=&quot;\t&quot;&gt;\t&lt;/span&gt;%s&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt; CourierPrime&lt;span class=&quot;token variable&quot;&gt;${v&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;d-I&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;dI}&lt;/span&gt; Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.pfa&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; tee /usr/local/share/groff/site-font/devps/download
 &lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;# List of downloadable fonts
-‌# PostScript-name       Filename
-Symbol-Slanted          symbolsl.pfa
-ZapfDingbats-Reverse    zapfdr.pfa
-FreeEuro                freeeuro.pfa
-CourierPrime    Courier-Prime.pfa
-CourierPrime-Bold       Courier-Prime-Bold.pfa
-CourierPrime-Italic     Courier-Prime-Italic.pfa
+‌# PostScript-name&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Filename
+Symbol-Slanted&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;symbolsl.pfa
+ZapfDingbats-Reverse&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;zapfdr.pfa
+FreeEuro&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;freeeuro.pfa
+CourierPrime&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;Courier-Prime.pfa
+CourierPrime-Bold&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Courier-Prime-Bold.pfa
+CourierPrime-Italic&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;Courier-Prime-Italic.pfa
 CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 &lt;/span&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -2295,15 +2299,15 @@ GhostScript can directly load TrueType and OpenType fonts, so for a properly-pac
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; fonts-liberation2&lt;/span&gt;&lt;/span&gt;
 
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; Regular Bold Italic BoldItalic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token info punctuation&quot;&gt;    fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' /usr/share/fonts/truetype/liberation2/LiberatSans-&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;v.ttf LiberatSans-&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.afm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;  
-    afmtodit -cmi0 \
-      -d /usr/share/groff/current/font/devps/DESC \
-      -e /usr/share/groff/current/font/devps/text.enc \
-&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;      LiberationSans-&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;v.afm /usr/share/groff/current/font/devps/generate/textmap &lt;span class=&quot;token string&quot;&gt;&quot;T&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; $v &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; -d &lt;span class=&quot;token string&quot;&gt;'[:lower:]-'&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;  done
+&lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' /usr/share/fonts/truetype/liberation2/LiberatSans-&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;v.ttf LiberatSans-&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.afm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;afmtodit -cmi0 \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;-d /usr/share/groff/current/font/devps/DESC \
+&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;-e /usr/share/groff/current/font/devps/text.enc \
+&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;LiberationSans-&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;v.afm /usr/share/groff/current/font/devps/generate/textmap &lt;span class=&quot;token string&quot;&gt;&quot;T&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; $v &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; -d &lt;span class=&quot;token string&quot;&gt;'[:lower:]-'&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;done
 This font contains both a 'kern' table and a 'GPOS' table.
-  The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
 The glyph named macron is mapped to U+02C9.
 But its name indicates it should be mapped to U+00AF.
 The glyph named Delta is mapped to U+0394.
@@ -2433,7 +2437,7 @@ can be separated by commas or spaces, and each can be in the format:
 .Ar [ from , No \[if] )
 .It Ar from Ns Cm - Ns Ar to
 .Ar [ number , to ]
-.It Li &quot;   &quot; Cm - Ns Ar to
+.It Li &quot;&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;&quot; Cm - Ns Ar to
 .Li [ 1 , Ar to ]
 .El
 Indices are
@@ -2477,13 +2481,13 @@ is constructed.
 .
 .Sh EXAMPLES
 .Bd -literal -compact
-.Li $ Nm printf Li '\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07' \&amp;amp;| Nm  Fl zb Ar 1,3- Li \&amp;amp;| Nm hexdump Fl C
-00000000  01 03 04 00 05 07 00                              |.......|
+.Li $ Nm printf Li '\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07' \&amp;amp;| Nm&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Fl zb Ar 1,3- Li \&amp;amp;| Nm hexdump Fl C
+00000000&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;01 03 04 00 05 07 00&lt;!--&quot;--&gt;                              &lt;!--&quot;--&gt;|.......|
 00000007
 .Ed
 .Pp
 .Bd -literal -compact
-.Li $ Nm printf Li 'яйцо\enЯЙЦО'\f(CB'яйцо\enЯЙЦО'\fP\f(CI'яйцо\enЯЙЦО'\fP\f[CBI]'яйцо\enЯЙЦО'\fP \&amp;amp;| Nm  Fl c Ar 1,3-
+.Li $ Nm printf Li 'яйцо\enЯЙЦО'\f(CB'яйцо\enЯЙЦО'\fP\f(CI'яйцо\enЯЙЦО'\fP\f[CBI]'яйцо\enЯЙЦО'\fP \&amp;amp;| Nm&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Fl c Ar 1,3-
 яцо\fRяцо\fP\fBяцо\fP\fIяцо\fP\f(BIяцо\fP
 ЯЦО\fRЯЦО\fP\fBЯЦО\fP\fIЯЦО\fP\f(BIЯЦО\fP
 .Ed
@@ -2491,18 +2495,18 @@ is constructed.
 .Bd -literal -compact
 # name, IDs, homedir, shell, ...
 .Li $ Nm Fl f Ar 1,3-4,6- Fl d Ns Ar \&amp;amp;: Fl O Ns Li \&amp;amp;&quot;$( Ns Nm printf Li '\et')&quot; Pa /etc/passwd
-root    0       0       /root   /bin/bash
-bin     2       2       /bin    /usr/sbin/nologin
-irc     39      39      /var/run/ircd   /usr/sbin/nologin
-cicada  1000    100     /home/cicada    /bin/bash
-nobody  65534   65534   /nonexistent    /usr/sbin/nologin
+root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;/root&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/bin/bash
+bin&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;2&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;2&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;/bin&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;/usr/sbin/nologin
+irc&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;39&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;39&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;/var/run/ircd&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/usr/sbin/nologin
+cicada&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1000&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;100&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;/home/cicada&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;/bin/bash
+nobody&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;65534&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;65534&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/nonexistent&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;/usr/sbin/nologin
 # Everything else: password and GNATS
 .Li $ Nm Fl Cf Ar 1,3-4,6- Fl d Ns Ar \&amp;amp;: Fl O Ns Li \&amp;amp;&quot;$( Ns Nm printf Li '\et')&quot; Pa /etc/passwd
-x       root
-x       bin
-x       ircd
-x       ŁĄĘĆŻŹŃ łąęćżźń,,,
-x       nobody
+x&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;root
+x&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;bin
+x&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;ircd
+x&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;ŁĄĘĆŻŹŃ łąęćżźń,,,
+x&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;nobody
 .Ed
 &lt;!--'--&gt;&lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -3919,10 +3923,10 @@ If you don'&lt;!--'--&gt;t, then
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;fcntl.h&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdio.h&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  ssize_t rd&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; acc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    acc &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; rd&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token function&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sp=%zd: %m\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; acc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ssize_t rd&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; acc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;acc &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; rd&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sp=%zd: %m\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; acc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -3967,12 +3971,12 @@ But
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;fcntl.h&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdlib.h&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; pt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;posix_openpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;O_RDWR&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token function&quot;&gt;grantpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token function&quot;&gt;unlockpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; cl &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ptsname&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; O_RDONLY&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cl&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; pt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;posix_openpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;O_RDWR&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;grantpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;unlockpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; cl &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ptsname&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; O_RDONLY&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cl&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -4745,76 +4749,76 @@ A full list of conversions and their implementations can be found at the
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;vector&gt;&lt;/span&gt;&lt;/span&gt;
 
 
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; tau         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;acos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; increase    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; wiggle      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; tau&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;acos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; increase&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; wiggle&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; min_opacity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;.3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Color colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x75&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x07&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x87&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x4d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x26&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x8c&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xe4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x75&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x07&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x87&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x4d&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x26&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x8c&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0xe4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x03&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Pre-c\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Pre-c\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;RenderTexture img&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1600&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;900&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;RenderTexture img&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1600&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;900&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Created\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Created\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; img_s  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getSize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; center &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img_s &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2u&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//(((img_s.x + img_s.y) / 2.) / 2.) * .6;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; img_s&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getSize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; center &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; img_s &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2u&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//(((img_s.x + img_s.y) / 2.) / 2.) * .6;&lt;/span&gt;
 
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;srand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;mt19937 rng&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;uniform_real_distribution&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; wiggle_dist&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;wiggle&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;wiggle&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;uniform_real_distribution&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; opacity_dist&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;min_opacity&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;srand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;mt19937 rng&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;uniform_real_distribution&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; wiggle_dist&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;wiggle&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;wiggle&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;uniform_real_distribution&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; opacity_dist&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;min_opacity&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;uniform_int_distribution&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;size_t&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; colour_idx_dist&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;colour_set&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;colour_set&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;uniform_int_distribution&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;size_t&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; colour_idx_dist&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;colour_set&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;colour_set&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 
-  std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Vertex&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; points&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reserve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1'000&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Vertex&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; points&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reserve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1'000&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0u&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'/'&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;// for(auto alpha = 0.; alpha &amp;lt;= tau; alpha += tau / (1'000 * (i / 60.))) {&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; tau&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; tau &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1'000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wiggle_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; increase &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; tau&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0u&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;clog &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'/'&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// for(auto alpha = 0.; alpha &amp;lt;= tau; alpha += tau / (1'000 * (i / 60.))) {&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; tau&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; tau &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1'000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; radius &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wiggle_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; increase &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; tau&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-      &lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; colour &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;colour_idx_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;r    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;g    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; colour &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; colour_set&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;colour_idx_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;r&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;g&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;colour&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;opacity_dist&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rng&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-      sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Vertex v&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; colour&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;emplace_back&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;Vertex v&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;center&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;alpha&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; colour&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;emplace_back&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;std&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-      &lt;span class=&quot;token comment&quot;&gt;// std::cout &amp;lt;&amp;lt; v.position.x &amp;lt;&amp;lt; ' ' &amp;lt;&amp;lt; v.position.y &amp;lt;&amp;lt; &quot;: &quot; &amp;lt;&amp;lt; r &amp;lt;&amp;lt; &quot;, &quot; &amp;lt;&amp;lt; static_cast&amp;lt;unsigned int&gt;(colour.a) &amp;lt;&amp;lt; '\n';&lt;/span&gt;
-      &lt;span class=&quot;token comment&quot;&gt;// img.draw(&amp;amp;v, 1, sf::PrimitiveType::Points);&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// std::cout &amp;lt;&amp;lt; v.position.x &amp;lt;&amp;lt; ' ' &amp;lt;&amp;lt; v.position.y &amp;lt;&amp;lt; &quot;: &quot; &amp;lt;&amp;lt; r &amp;lt;&amp;lt; &quot;, &quot; &amp;lt;&amp;lt; static_cast&amp;lt;unsigned int&gt;(colour.a) &amp;lt;&amp;lt; '\n';&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// img.draw(&amp;amp;v, 1, sf::PrimitiveType::Points);&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  &lt;span class=&quot;token comment&quot;&gt;// for(auto skip = 2u; skip &amp;lt;= 3; ++skip)&lt;/span&gt;
-  &lt;span class=&quot;token comment&quot;&gt;//   for(auto i = 0ull; i &amp;lt; points.size() - skip; ++i) {&lt;/span&gt;
-  &lt;span class=&quot;token comment&quot;&gt;//     sf::Vertex pts[]{points[i], points[i + skip]};&lt;/span&gt;
-  &lt;span class=&quot;token comment&quot;&gt;//     img.draw(pts, sizeof(pts) / sizeof(*pts), sf::PrimitiveType::LinesStrip);&lt;/span&gt;
-  &lt;span class=&quot;token comment&quot;&gt;//   }&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0ull&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;PrimitiveType&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;LinesStrip&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token comment&quot;&gt;// img.draw(points.data(), points.size(), sf::PrimitiveType::LinesStrip);&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// for(auto skip = 2u; skip &amp;lt;= 3; ++skip)&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt; for(auto i = 0ull; i &amp;lt; points.size() - skip; ++i) {&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt; sf::Vertex pts[]{points[i], points[i + skip]};&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt; img.draw(pts, sizeof(pts) / sizeof(*pts), sf::PrimitiveType::LinesStrip);&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt; }&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;auto&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0ull&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;points&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sf&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;PrimitiveType&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;LinesStrip&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// img.draw(points.data(), points.size(), sf::PrimitiveType::LinesStrip);&lt;/span&gt;
 
-  img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getTexture&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;copyToImage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;saveToFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;output.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;img&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getTexture&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;copyToImage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;saveToFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;output.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;!--'--&gt;&lt;/pre&gt;&lt;/code&gt;
 
