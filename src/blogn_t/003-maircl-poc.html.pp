@@ -123,7 +123,7 @@ Now <kbd>cat &lt; output &</kbd> to see what'<!--'-->s up and <kbd>cat &gt;&gt; 
 should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and:
 </p>
 <div class="bigcode continuing">
-  <pre class="language-plaintext"><code class="language-plaintext">hasix       : 07/10/20 16:07 &lt;nabijaczleweli&gt; owo</pre></code>
+  <pre class="language-plaintext"><code class="language-plaintext">hasix<!--"-->       <!--"-->: 07/10/20 16:07 &lt;nabijaczleweli&gt; owo</pre></code>
 </div>
 <p class="continuing">
 a message that comes back should show up as well:

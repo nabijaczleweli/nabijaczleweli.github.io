@@ -94,7 +94,7 @@ const highlit = Prism.highlight(content, Prism.languages[language], language);
 
 const out = fs.createWriteStream(out_file);
 out.write(`<pre class="language-${language}"><code class="language-${language}">`);
-out.write(highlit.replace(/\n/g, "FORCED_NEWLINE").replace(/\t/g, "TAB_INDENT").replace(/  /g, "  "));
+out.write(highlit.replace(/\n/g, "FORCED_NEWLINE").replace(/((  +)|\t)+/g, "<!--\"-->$&<!--\"-->"));
 if((highlit.match(/'/g) || []).length % 2 == 1)
 	out.write("<!--'-->");
 out.write("</pre></code>");

@@ -38,6 +38,10 @@ BOILERPLATE(005. Low-curse ZFS-on-root for new Debian installations on multi-dis
 	margin-top: 0.2em;
 	margin-bottom: 0.15em;
 }
+
+samp {
+  white-space: pre-wrap;
+}
 </style>
 
 <span class="roboto writing">
@@ -189,31 +193,31 @@ Boot into your freshly installed system, become root, and:
           <samp>efibootmgr, mokutil set to manually installed.</samp><br />
 	        <samp>root@zoot:~# <kbd>apt autopurge grub*</kbd></samp><br />
 	        <samp>The following packages will be REMOVED:</samp><br />
-	        <samp>  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*</samp><br />
-	        <samp>  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*</samp><br />
-	        <samp>  libfuse2* libpng16-16* shim-helpers-amd64-signed* shim-signed-common* shim-unsigned*</samp><br />
+	        <samp><!--"-->  grub-common* grub-efi-amd64* grub-efi-amd64-bin* grub-efi-amd64-signed*<!--"--></samp><br />
+	        <samp><!--"-->  grub2-common* os-prober* shim-signed* gettext-base* libbrotli1* libfreetype6*<!--"--></samp><br />
+	        <samp><!--"-->  libfuse2* libpng16-16* shim-helpers-amd64-signed* shim-signed-common* shim-unsigned*<!--"--></samp><br />
 	        <samp>0 upgraded, 0 newly installed, 15 to remove and 0 not upgraded.</samp><br />
 	        <samp>After this operation, 44.9 MB disk space will be freed.</samp></td></tr>
 	<tr><td>Verify that you only have GRUB here before cleaning it out!</td>
 	    <td><samp>root@zoot:~# <kbd>tree /boot/efi/</kbd></samp><br />
-	        <samp>/boot/efi/</samp><br />
-	        <samp>├── EFI</samp><br />
-	        <samp>│   └── debian</samp><br />
-	        <samp>│       ├── BOOTX64.CSV</samp><br />
-	        <samp>│       ├── fbx64.efi</samp><br />
-	        <samp>│       ├── grub.cfg</samp><br />
-	        <samp>│       ├── grubx64.efi</samp><br />
-	        <samp>│       ├── mmx64.efi</samp><br />
-	        <samp>│       └── shimx64.efi</samp><br />
-	        <samp>└── NvVars</samp><br />
+	        <samp><!--"-->/boot/efi/<!--"--></samp><br />
+	        <samp><!--"-->├── EFI<!--"--></samp><br />
+	        <samp><!--"-->│   └── debian<!--"--></samp><br />
+	        <samp><!--"-->│       ├── BOOTX64.CSV<!--"--></samp><br />
+	        <samp><!--"-->│       ├── fbx64.efi<!--"--></samp><br />
+	        <samp><!--"-->│       ├── grub.cfg<!--"--></samp><br />
+	        <samp><!--"-->│       ├── grubx64.efi<!--"--></samp><br />
+	        <samp><!--"-->│       ├── mmx64.efi<!--"--></samp><br />
+	        <samp><!--"-->│       └── shimx64.efi<!--"--></samp><br />
+	        <samp><!--"-->└── NvVars<!--"--></samp><br />
 	        <samp>root@zoot:~# <kbd>rm -rf /boot/efi/EFI/</kbd></samp></td></tr>
 	<tr><td>Depending on the firmware state there may be a lot of boot entries, but the GRUB one is very likely the <samp>BootCurrent</samp> and called "debian".</td>
 	    <td><samp>root@zoot:~# <kbd>efibootmgr -v</kbd></samp><br />
-	        <samp>BootCurrent: 0001</samp><br />
-	        <samp>BootOrder: 0001,0000,0002,…</samp><br />
-	        <samp>Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)</samp><br />
-	        <samp>Boot0001*: debian        HD(1,GPT,GUID)/File(\EFI\debian\shimx64.efi)</samp><br />
-	        <samp>Boot0002*: UEFI QEMU DVD-ROM QM00003     PciRoot(0x0)/…</samp><br />
+	        <samp><!--"-->BootCurrent: 0001<!--"--></samp><br />
+	        <samp><!--"-->BootOrder: 0001,0000,0002,…<!--"--></samp><br />
+	        <samp><!--"-->Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)<!--"--></samp><br />
+	        <samp><!--"-->Boot0001*: debian        HD(1,GPT,GUID)/File(\EFI\debian\shimx64.efi)<!--"--></samp><br />
+	        <samp><!--"-->Boot0002*: UEFI QEMU DVD-ROM QM00003     PciRoot(0x0)/…<!--"--></samp><br />
 	        <samp>root@zoot:~# <kbd>efibootmgr -Bb 1</kbd></samp><br />
 	        <samp>BootCurrent: 0001</samp><br />
 	        <samp>Boot0000*: UiApp FvVol(GUID)/FvFile(GUID)</samp><br />
@@ -224,7 +228,7 @@ Boot into your freshly installed system, become root, and:
 	        Since systemd 251.2-3 (Wed, 08 Jun 2022 23:56:04 +0100), <samp>systemd-boot</samp> resides in its own homonymous package.</td>
 	    <td><samp>root@zoot:~# <kbd>apt install systemd-boot</kbd></samp><br />
 	        <samp>The following NEW packages will be installed:</samp><br />
-	        <samp>  systemd-boot systemd-boot-efi</samp><br />
+	        <samp><!--"-->  systemd-boot systemd-boot-efi<!--"--></samp><br />
           <samp>0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.</samp><br />
           <samp>After this operation, 739 kB of additional disk space will be used.</samp><br />
 	        <samp>root@zoot:~# <kbd>bootctl install</kbd></samp><br />
@@ -238,15 +242,15 @@ Boot into your freshly installed system, become root, and:
 		      since sd-boot will disambugate entries by version as needed, but may be useful to distinguish monokernel VM installs or something.</td>
 	    <td><samp>root@zoot:~# <kbd>cp /{usr/lib,etc}/kernel/install.d/90-loaderentry.install</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>diff -U2 /{usr/lib,etc}/kernel/install.d/90-loaderentry.install</kbd></samp><br />
-	        <samp>--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200</samp><br />
-	        <samp>+++ /etc/kernel/install.d/90-loaderentry.install        2020-09-13 05:06:49.541120128 +0200</samp><br />
-	        <samp>@@ -44,4 +44,6 @@</samp><br />
-	        <samp> if ! [[ $PRETTY_NAME ]]; then</samp><br />
-	        <samp>     PRETTY_NAME="Linux $KERNEL_VERSION"</samp><br />
-	        <samp>+else</samp><br />
-	        <samp>+    PRETTY_NAME+=" with Linux $KERNEL_VERSION"</samp><br />
-	        <samp> fi</samp><br />
-	        <samp>​</samp></td></tr>
+	        <samp><!--"-->--- /usr/lib/kernel/install.d/90-loaderentry.install    2020-09-02 11:49:08.000000000 +0200<!--"--></samp><br />
+	        <samp><!--"-->+++ /etc/kernel/install.d/90-loaderentry.install        2020-09-13 05:06:49.541120128 +0200<!--"--></samp><br />
+	        <samp><!--"-->@@ -44,4 +44,6 @@<!--"--></samp><br />
+	        <samp><!--"--> if ! [[ $PRETTY_NAME ]]; then<!--"--></samp><br />
+	        <samp><!--"-->     PRETTY_NAME="Linux $KERNEL_VERSION"<!--"--></samp><br />
+	        <samp><!--"-->+else<!--"--></samp><br />
+	        <samp><!--"-->+    PRETTY_NAME+=" with Linux $KERNEL_VERSION"<!--"--></samp><br />
+	        <samp><!--"--> fi<!--"--></samp><br />
+	        <br /></td></tr>
 	<tr><td><del>Disable a
 	        <a href="https://salsa.debian.org/systemd-team/systemd/-/blob/3e2db72b37d72527eca2474a4e08f44fa3f342e8/debian/extra/kernel-install.d/85-initrd.install">Debian</a>
 	        <code>.install</code> hook, which copies the initrd into <code>\MID\VER\initrd</code>
@@ -286,23 +290,23 @@ Boot into your freshly installed system, become root, and:
 	        BSAMP(Installing /boot/efi/62dd03a4928c412180b3024ac6c03a90/5.8.0-1-amd64/vmlinuz-5.8.0-1-amd64)<br />
 	        BSAMP(Creating /boot/efi/loader/entries/62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf)<br />
 	        <samp>root@zoot:~# <kbd>tree /boot/efi/</kbd></samp><br />
-	        <samp>/boot/efi/</samp><br />
-	        <samp>├── 62dd03a4928c412180b3024ac6c03a90</samp><br />
-	        <samp>│   └── 5.8.0-1-amd64</samp><br />
-	        <samp>│       ├── initrd-5.8.0-1-amd64</samp><br />
-	        <samp>│       └── linux</samp><br />
-	        <samp>├── EFI</samp><br />
-	        <samp>│   ├── BOOT</samp><br />
-	        <samp>│   │   └── BOOTX64.EFI</samp><br />
-	        <samp>│   ├── Linux</samp><br />
-	        <samp>│   └── systemd</samp><br />
-	        <samp>│       └── systemd-bootx64.efi</samp><br />
-	        <samp>├── loader</samp><br />
-	        <samp>│   ├── entries</samp><br />
-	        BSAMP(│   │   └── 62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf)<br />
-	        <samp>│   ├── loader.conf</samp><br />
-	        <samp>│   └── random-seed</samp><br />
-	        <samp>└── NvVars</samp><br />
+	        <samp><!--"-->/boot/efi/<!--"--></samp><br />
+	        <samp><!--"-->├── 62dd03a4928c412180b3024ac6c03a90<!--"--></samp><br />
+	        <samp><!--"-->│   └── 5.8.0-1-amd64<!--"--></samp><br />
+	        <samp><!--"-->│       ├── initrd-5.8.0-1-amd64<!--"--></samp><br />
+	        <samp><!--"-->│       └── linux<!--"--></samp><br />
+	        <samp><!--"-->├── EFI<!--"--></samp><br />
+	        <samp><!--"-->│   ├── BOOT<!--"--></samp><br />
+	        <samp><!--"-->│   │   └── BOOTX64.EFI<!--"--></samp><br />
+	        <samp><!--"-->│   ├── Linux<!--"--></samp><br />
+	        <samp><!--"-->│   └── systemd<!--"--></samp><br />
+	        <samp><!--"-->│       └── systemd-bootx64.efi<!--"--></samp><br />
+	        <samp><!--"-->├── loader<!--"--></samp><br />
+	        <samp><!--"-->│   ├── entries<!--"--></samp><br />
+	        BSAMP(<!--"-->│   │   └── 62dd03a4928c412180b3024ac6c03a90-5.8.0-1-amd64.conf<!--"-->)<br />
+	        <samp><!--"-->│   ├── loader.conf<!--"--></samp><br />
+	        <samp><!--"-->│   └── random-seed<!--"--></samp><br />
+	        <samp><!--"-->└── NvVars<!--"--></samp><br />
 	        <br />
 	        <samp>8 directories, 9 files</samp></td></tr>
 </table>
@@ -333,33 +337,33 @@ HEADING_S(2, zfs, class="continuing", The ZFS bit)
 	<tr><td>Install the prerequisites, remember to match the headers to your kernel!</td>
 	    <td><samp>root@zoot:~# <kbd>apt install --no-install-recommends linux-headers-amd64 build-essential</kbd></samp><br />
 	        <samp>The following NEW packages will be installed:</samp><br />
-	        <samp>  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev</samp><br />
-	        <samp>  g++ g++-10 gcc gcc-10 libasan6 libatomic1 libbinutils libc-dev-bin libc6-dev</samp><br />
-	        <samp>  libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-10-dev</samp><br />
-	        <samp>  libgdbm-compat4 libgdbm6 libgomp1 libitm1 liblsan0 libperl5.30 libquadmath0</samp><br />
-	        <samp>  libstdc++-10-dev libtsan0 libubsan1 linux-compiler-gcc-10-x86</samp><br />
-	        <samp>  linux-headers-5.8.0-1-amd64 linux-headers-5.8.0-1-common linux-headers-amd64</samp><br />
-	        <samp>  linux-kbuild-5.8 linux-libc-dev make patch perl perl-modules-5.30</samp><br />
+	        <samp><!--"-->  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev<!--"--></samp><br />
+	        <samp><!--"-->  g++ g++-10 gcc gcc-10 libasan6 libatomic1 libbinutils libc-dev-bin libc6-dev<!--"--></samp><br />
+	        <samp><!--"-->  libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-10-dev<!--"--></samp><br />
+	        <samp><!--"-->  libgdbm-compat4 libgdbm6 libgomp1 libitm1 liblsan0 libperl5.30 libquadmath0<!--"--></samp><br />
+	        <samp><!--"-->  libstdc++-10-dev libtsan0 libubsan1 linux-compiler-gcc-10-x86<!--"--></samp><br />
+	        <samp><!--"-->  linux-headers-5.8.0-1-amd64 linux-headers-5.8.0-1-common linux-headers-amd64<!--"--></samp><br />
+	        <samp><!--"-->  linux-kbuild-5.8 linux-libc-dev make patch perl perl-modules-5.30<!--"--></samp><br />
 	        <samp>0 upgraded, 40 newly installed, 0 to remove and 0 not upgraded.</samp><br />
 	        <samp>After this operation, 286 MB of additional disk space will be used.</samp></td></tr>
 	<tr><td>And ZFS.<br />
 	        Depending on dependency ordering, starting the services sometimes fails; simply re-running the command will fix it.</td>
 	    <td><samp>root@zoot:~# <kbd>apt install zfs-dkms</kbd></samp><br />
 	        <samp>The following NEW packages will be installed:</samp><br />
-	        <samp>  distro-info-data dkms fakeroot libfakeroot libnvpair1linux libuutil1linux</samp><br />
-	        <samp>  libzfs2linux libzpool2linux lsb-release python3-distutils python3-lib2to3</samp><br />
-	        <samp>  zfs-dkms zfs-zed zfsutils-linux</samp><br />
+	        <samp><!--"-->  distro-info-data dkms fakeroot libfakeroot libnvpair1linux libuutil1linux<!--"--></samp><br />
+	        <samp><!--"-->  libzfs2linux libzpool2linux lsb-release python3-distutils python3-lib2to3<!--"--></samp><br />
+	        <samp><!--"-->  zfs-dkms zfs-zed zfsutils-linux<!--"--></samp><br />
 	        <samp>After this operation, 22.3 MB of additional disk space will be used.</samp><br />
 	        <samp>Building for 5.8.0-1-amd64</samp><br />
 	        <samp>Building initial module for 5.8.0-1-amd64</samp><br />
 	        <samp>Done.</samp><br />
 	        <br />
 	        <samp>zfs.ko:</samp><br />
-	        <samp>Running module version sanity check.</samp><br />
-	        <samp> - Original module</samp><br />
-	        <samp>   - No original module exists within this kernel</samp><br />
-	        <samp> - Installation</samp><br />
-	        <samp>   - Installing to /lib/modules/5.8.0-1-amd64/updates/dkms/</samp><br />
+	        <samp><!--"-->Running module version sanity check.<!--"--></samp><br />
+	        <samp><!--"--> - Original module<!--"--></samp><br />
+	        <samp><!--"-->   - No original module exists within this kernel<!--"--></samp><br />
+	        <samp><!--"--> - Installation<!--"--></samp><br />
+	        <samp><!--"-->   - Installing to /lib/modules/5.8.0-1-amd64/updates/dkms/<!--"--></samp><br />
 	        <samp>&c.</samp><br />
 	        <br />
 	        <samp>DKMS: install completed.</samp><br />
@@ -371,13 +375,13 @@ HEADING_S(2, zfs, class="continuing", The ZFS bit)
 		      and run a ZFS command in the initrd.</td>
 	    <td><samp>root@zoot:~# <kbd>apt install zfs-initramfs</kbd></samp><br />
 	        <samp>The following NEW packages will be installed:</samp><br />
-	        <samp>  zfs-initramfs</samp><br />
+	        <samp><!--"-->  zfs-initramfs<!--"--></samp><br />
 	        <samp>After this operation, 108 kB of additional disk space will be used.</samp><br />
 	        <samp>root@zoot:~# <kbd>apt install --no-install-recommends dracut zfs-dracut && apt autopurge initramfs-tools</kbd></samp><br />
 	        <samp>The following packages will be REMOVED:</samp><br />
-	        <samp>  initramfs-tools* initramfs-tools-core* klibc-utils* libklibc*</samp><br />
+	        <samp><!--"-->  initramfs-tools* initramfs-tools-core* klibc-utils* libklibc*<!--"--></samp><br />
 	        <samp>The following NEW packages will be installed:</samp><br />
-	        <samp>  dracut dracut-core kpartx libglib2.0-0 pkg-config zfs-dracut</samp><br />
+	        <samp><!--"-->  dracut dracut-core kpartx libglib2.0-0 pkg-config zfs-dracut<!--"--></samp><br />
 	        <samp>After this operation, 4,644 kB of additional disk space will be used.</samp><br />
 	        <samp>root@zoot:~# <kbd>/etc/kernel/postinst.d/kernel-install $(uname -r)</kbd></samp></td></tr>
 </table>
@@ -438,11 +442,11 @@ And so:
 	        <samp>ata-QEMU_HARDDISK_QM00002 -> ../../sdb</samp><br />
 	        <samp>root@zoot:~# <kbd>zpool create -O mountpoint=/ -O canmount=off -R /mnt zoot ata-QEMU_HARDDISK_QM00002</kbd></samp><br />
 	        <samp>root@zoot:~# zpool list</samp><br />
-	        <samp>NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT</samp><br />
-	        <samp>zoot  7.50G   564K  7.50G        -         -     0%     0%  1.00x    ONLINE  /mnt</samp><br />
+	        <samp><!--"-->NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT<!--"--></samp><br />
+	        <samp><!--"-->zoot  7.50G   564K  7.50G        -         -     0%     0%  1.00x    ONLINE  /mnt<!--"--></samp><br />
 	        <samp>root@zoot:~# zfs list</samp><br />
-	        <samp>NAME   USED  AVAIL     REFER  MOUNTPOINT</samp><br />
-	        <samp>zoot   492K  7.27G      192K  /mnt</samp></td></tr>
+	        <samp><!--"-->NAME   USED  AVAIL     REFER  MOUNTPOINT<!--"--></samp><br />
+	        <samp><!--"-->zoot   492K  7.27G      192K  /mnt<!--"--></samp></td></tr>
 	<tr><td>Enable <a href="//manpages.debian.org/bullseye/zfsutils-linux/zfs-mount-generator.8.en.html"><code>zfs-mount-generator(8)</code></a>
 	        via <a href="//manpages.debian.org/bullseye/zfsutils-linux/zed.8.en.html"><code>zed(8)</code></a> for mount ordering; this makes systemd aware of,
 	        i.a., <code>/boot/efi</code> depending on <code>/boot</code> and mount <code>/var/log</code> before starting journald there,
@@ -464,22 +468,22 @@ And so:
 	        <samp>root@zoot:~# <kbd>zfs set acltype=posixacl xattr=sa zoot/var/log</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>chmod 1777 /mnt/var/tmp</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>zfs list -o name,mountpoint,canmount</kbd></samp><br />
-	        <samp>NAME            MOUNTPOINT      CANMOUNT</samp><br />
-	        <samp>zoot            /mnt                 off</samp><br />
-	        <samp>zoot/boot       /mnt/boot             on</samp><br />
-	        <samp>zoot/home       /mnt/home             on</samp><br />
-	        <samp>zoot/home/nab   /mnt/home/nab         on</samp><br />
-	        <samp>zoot/home/root  /mnt/root             on</samp><br />
-	        <samp>zoot/opt        /mnt/opt              on</samp><br />
-	        <samp>zoot/root       /mnt                  on</samp><br />
-	        <samp>zoot/srv        /mnt/srv              on</samp><br />
-	        <samp>zoot/usr        /mnt/usr             off</samp><br />
-	        <samp>zoot/usr/local  /mnt/usr/local        on</samp><br />
-	        <samp>zoot/var        /mnt/var             off</samp><br />
-	        <samp>zoot/var/cache  /mnt/var/cache        on</samp><br />
-	        <samp>zoot/var/lib    /mnt/var/lib         off</samp><br />
-	        <samp>zoot/var/log    /mnt/var/log          on</samp><br />
-	        <samp>zoot/var/tmp    /mnt/var/tmp          on</samp><br />
+	        <samp><!--"-->NAME            MOUNTPOINT      CANMOUNT<!--"--></samp><br />
+	        <samp><!--"-->zoot            /mnt                 off<!--"--></samp><br />
+	        <samp><!--"-->zoot/boot       /mnt/boot             on<!--"--></samp><br />
+	        <samp><!--"-->zoot/home       /mnt/home             on<!--"--></samp><br />
+	        <samp><!--"-->zoot/home/nab   /mnt/home/nab         on<!--"--></samp><br />
+	        <samp><!--"-->zoot/home/root  /mnt/root             on<!--"--></samp><br />
+	        <samp><!--"-->zoot/opt        /mnt/opt              on<!--"--></samp><br />
+	        <samp><!--"-->zoot/root       /mnt                  on<!--"--></samp><br />
+	        <samp><!--"-->zoot/srv        /mnt/srv              on<!--"--></samp><br />
+	        <samp><!--"-->zoot/usr        /mnt/usr             off<!--"--></samp><br />
+	        <samp><!--"-->zoot/usr/local  /mnt/usr/local        on<!--"--></samp><br />
+	        <samp><!--"-->zoot/var        /mnt/var             off<!--"--></samp><br />
+	        <samp><!--"-->zoot/var/cache  /mnt/var/cache        on<!--"--></samp><br />
+	        <samp><!--"-->zoot/var/lib    /mnt/var/lib         off<!--"--></samp><br />
+	        <samp><!--"-->zoot/var/log    /mnt/var/log          on<!--"--></samp><br />
+	        <samp><!--"-->zoot/var/tmp    /mnt/var/tmp          on<!--"--></samp><br />
 	        <samp>root@zoot:~# <kbd>systemctl stop zfs-zed</kbd></samp><br />
 	        <samp>root@zoot:~# <kbd>sed -Ei 's;/mnt/?;/;' /etc/zfs/zfs-list.cache/zoot</kbd></samp></td></tr>
 	<tr><td><a href="//github.com/openzfs/zfs/blob/8e7fe49b25d63e855a8d230d2775f99d722818ff/contrib/initramfs/scripts/zfs#L751">These</a> or
@@ -499,18 +503,18 @@ And so:
 	        Note the CWD and ignore the few "file exists" errors for the directories — those are by design.</td>
 	    <td><samp>root@zoot:~# <kbd>apt install dump</kbd></samp><br />
 	        <samp>The following NEW packages will be installed:</samp><br />
-	        <samp>  dump liblzo2-2</samp><br />
+	        <samp><!--"-->  dump liblzo2-2<!--"--></samp><br />
 	        <samp>After this operation, 539 kB of additional disk space will be used.</samp><br />
 	        <samp>root@zoot:/mnt# <kbd>dump -f - / | restore rf -</kbd></samp><br />
-	        <samp>  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020</samp><br />
-	        <samp>  DUMP: Dumping /dev/sda2 (/) to standard output</samp><br />
-	        <samp>  DUMP: Label: zoot-root</samp><br />
-	        <samp>restore: ./boot, ./var, ./&c.: File exists</samp><br />
-	        <samp>  DUMP: 1357080 blocks (1325.27MB)</samp><br />
-	        <samp>  DUMP: finished in 50 seconds, throughput 27141 kBytes/sec</samp><br />
-	        <samp>  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020</samp><br />
-	        <samp>  DUMP: Date this dump completed:  Sat Sep 12 02:11:53 2020</samp><br />
-	        <samp>  DUMP: DUMP IS DONE</samp><br />
+	        <samp><!--"-->  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: Dumping /dev/sda2 (/) to standard output<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: Label: zoot-root<!--"--></samp><br />
+	        <samp><!--"-->restore: ./boot, ./var, ./&c.: File exists<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: 1357080 blocks (1325.27MB)<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: finished in 50 seconds, throughput 27141 kBytes/sec<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: Date of this level 0 dump: Sat Sep 12 02:11:03 2020<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: Date this dump completed:  Sat Sep 12 02:11:53 2020<!--"--></samp><br />
+	        <samp><!--"-->  DUMP: DUMP IS DONE<!--"--></samp><br />
 	        <samp>root@zoot:/mnt# <kbd>rm restoresymtable</kbd></samp><br />
 	        <samp>root@zoot:/mnt# <kbd>reboot</kbd></samp><br />
 	      </td></tr>
@@ -566,14 +570,14 @@ One last part now, to actually use both disks:
 </p>
 <table class="bigtable">
 	<tr><td>I'm specifying the primary disk's rootfs partition by <a href="#installation">its partlabel</a>,
-	        but <code>ata-QEMU_HARDDISK_QM00001-part2</code> would also work in this case.</td>
+	        but <code style="white-space: nowrap;">ata-QEMU_HARDDISK_QM00001-part2</code> would also work in this case.</td>
 	    <td><samp>root@zoot:~# <kbd>gdisk -l /dev/disk/by-id/ata-QEMU_HARDDISK_QM00001</kbd></samp><br />
 	        <samp>Disk /dev/disk/by-id/ata-QEMU_HARDDISK_QM00001: 16777216 sectors, 8.0 GiB</samp><br />
 	        <samp>Disk identifier (GUID): 0D47FC01-7947-4DDE-9506-3BBBCFF572FF</samp><br />
 	        <br />
-	        <samp>Number  Start (sector)    End (sector)  Size       Code  Name</samp><br />
-	        <samp>   1            2048          487423   237.0 MiB   EF00  zoot-EFI</samp><br />
-	        <samp>   2          487424        16775167   7.8 GiB     8300  zoot-root</samp><br />
+	        <samp><!--"-->Number  Start (sector)    End (sector)  Size       Code  Name<!--"--></samp><br />
+	        <samp><!--"-->   1            2048          487423   237.0 MiB   EF00  zoot-EFI<!--"--></samp><br />
+	        <samp><!--"-->   2          487424        16775167   7.8 GiB     8300  zoot-root<!--"--></samp><br />
 	        <samp>root@zoot:~# <kbd>zpool add zoot zoot-root</kbd></samp><br />
 	        <samp>invalid vdev specification</samp><br />
 	        <samp>use '-f' to override the following errors:</samp><br />

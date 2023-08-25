@@ -39,6 +39,9 @@ BOILERPLATE(001. Installing Debianꞌs x32 port in 2020 — blognꞌt, 001. Inst
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
 #include "../indent.css"
+samp {
+  white-space: pre-wrap;
+}
 </style>
 
 <span class="roboto writing">
@@ -166,9 +169,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        Note the ill-advised <samp>--no-check-gpg</samp>,
 	        but finding/downloading/extracting that <code>.deb</code> in a bare *X environment is too annoying to warrant itself.<br />
 	        Note also the <samp>sid</samp> suite — no <samp>stable</samp> for as long as <code>x32</code> is a port.</td>
-	    <td><samp>~ #
-	      <kbd>debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports</kbd>
-	    </samp></td></tr>
+	    <td><samp>~ # <kbd>debootstrap --arch=x32 --variant=minbase --include=debian-ports-archive-keyring --no-check-gpg sid target https://deb.debian.org/debian-ports</kbd></samp></td></tr>
 	<tr><td>Now you can (try to) chroot into the new system; if you see <samp style="white-space: nowrap;">chroot: can'<!--'-->t execute '/bin/sh': exec format error</samp>,
 	        your kernel doesn'<!--'-->t support <code>x32</code> executables.
 	        On Debian kernels, verify that you have <samp>syscall.x32=y</samp> in <code>/proc/cmdline</code>.<br />
@@ -194,8 +195,8 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        (<a href="//deb.debian.org/debian/dists/sid/Release">compare</a>).</td>
 	    <td><samp>root@szarotka:/# <kbd>sed -i 's/deb/deb [arch=x32]/' /etc/apt/sources.list</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>cat >> /etc/apt/sources.list</kbd></samp><br />
-	        <samp><kbd>deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free</kbd></samp><br />
-	        <samp><kbd>deb-src              https://deb.debian.org/debian sid main contrib non-free</kbd></samp><br />
+	        <samp><kbd><!--"-->deb     [arch=amd64] https://deb.debian.org/debian sid main contrib non-free<!--"--></kbd></samp><br />
+	        <samp><kbd><!--"-->deb-src              https://deb.debian.org/debian sid main contrib non-free<!--"--></kbd></samp><br />
 	        <samp><kbd>^D</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>dpkg --add-architecture amd64</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>apt update</kbd></samp><br />
@@ -214,7 +215,7 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp>Configuring grub-pc</samp><br />
 	        <samp>-------------------</samp><br />
 	        <br />
-	        <samp>  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)</samp><br />
+	        <samp><!--"-->  1. /dev/sda (??? MB; ???)  2. - /dev/sda2 (??? MB; /)  3. - /dev/sda3 (??? MB; /boot)<!--"--></samp><br />
 	        <br />
 	        <samp>GRUB install devices: <kbd><strong>/dev/sda</strong></kbd></samp><br />
 	        <br />
@@ -233,8 +234,8 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp style="white-space: nowrap;"><a href="//manpages.debian.org/buster/systemd/timedatectl.1.en.html">timedatectl(1)</a> set-timezone CET</samp>
 	        after rebooting.</del></td>
 	    <td><samp>root@szarotka:/# <kbd>cat > /etc/fstab</kbd></samp><br />
-	        <samp>PARTLABEL=szarotka-root  /      ext4  noatime   0  1</samp><br />
-	        <samp>PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2</samp><br />
+	        <samp><!--"-->PARTLABEL=szarotka-root  /      ext4  noatime   0  1<!--"--></samp><br />
+	        <samp><!--"-->PARTLABEL=szarotka-boot  /boot  vfat  defaults  0  2<!--"--></samp><br />
 	        <samp><kbd>^D</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>cat > /etc/hosts</kbd></samp><br />
 	        <samp>127.0.0.1  localhost</samp><br />
@@ -244,15 +245,15 @@ You can press <kbd>Alt</kbd>+<kbd>F2</kbd>/<kbd>F3</kbd> to switch to a virtual 
 	        <samp>Configuring tzdata</samp><br />
 	        <samp>------------------</samp><br />
 	        <br />
-	        <samp>  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]</samp><br >
+	        <samp><!--"-->  1. Africa  […]  7. Atlantic  8. Europe  9. Indian  10. Pacific  11. SystemV  […]<!--"--></samp><br >
 	        <samp>Geographic area: <kbd><strong>8</strong></kbd></samp><br />
 	        <br />
-	        <samp>  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw</samp><br >
+	        <samp><!--"-->  4. Athens  […]  32. Minsk  39. Prague  46. Simferopol  53. Ulyanovsk  60. Warsaw<!--"--></samp><br >
 	        <samp>Time zone: <kbd><strong>60</strong></kbd></samp><br />
 	        <br />
 	        <samp>Current default time zone: 'Europe/Warsaw'</samp><br />
-	        <samp>Local time is now:      Tue Apr 28 02:25:44 CEST 2020.</samp><br />
-	        <samp>Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.</samp><br />
+	        <samp><!--"-->Local time is now:      Tue Apr 28 02:25:44 CEST 2020.<!--"--></samp><br />
+	        <samp><!--"-->Universal Time is now:  Tue Apr 28 00:25:44 UTC 2020.<!--"--></samp><br />
 	        <samp>root@szarotka:/# <kbd>apt install sudo</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>adduser --ingroup users nabijaczleweli</kbd></samp><br />
 	        <samp>root@szarotka:/# <kbd>adduser nabijaczleweli sudo</kbd></samp><br />

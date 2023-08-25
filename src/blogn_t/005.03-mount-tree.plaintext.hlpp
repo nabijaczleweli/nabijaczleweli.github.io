@@ -2,7 +2,7 @@
 /              zoot/root
 ├── boot       zoot/boot
 ├── home       zoot/home
-│   └── nab    zoot/home/nab
+│   └── nab    zoot/home/nab
 ├── root       zoot/home/root
 ├── opt        zoot/opt
 ├── srv        zoot/srv
