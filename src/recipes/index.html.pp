@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Thu, 24 Aug 2023 14:10:30 +0200" -->
+<!-- RSS_UPDATE_DATE: "Sat, 26 Aug 2023 19:31:02 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,10 +96,46 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818)</a>.
+	Latest replication: REPLICATION(2023-08-26, $101010.pl/@nabijaczleweli/110956423046357306)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/945/854/392/660/756/original/26ad039c41131d76.jpeg, $101010.pl/@nabijaczleweli/110945861145403755,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/956/422/198/154/529/original/46ad82460086d290.jpeg, $101010.pl/@nabijaczleweli/110956423046357306)
+
+<details open>
+	SUMMARY(liver-soup, Hog'<!--'-->s liver soup)
+	<p class="continuing">
+		<a href="//youtu.be/y_hT7nzXzGE">Chef Wang teaches you: "Pork Liver Soup", a traditional Sichuan soup dish
+		                                 (<span lang="zh-CN">厨师长教你：“生汆猪肝汤”的家常做法，清爽滑嫩，鲜而不腥</span>)</a>,
+		by Chef Wang 美食作家王刚,
+		replicated REPLICATION(2023-08-24, $101010.pl/@nabijaczleweli/110945861145403755),
+		           REPLICATION(2023-08-26, $101010.pl/@nabijaczleweli/110956423046357306):</p>
+	<ol class="continuation">
+		<li>soak some fungus and dried lilies for NUM(30min) –
+		    the lilies appear to be a very regional product, I just put in some dried apricots in a similar aspect ratio</li>
+		<li>detendonise a small hog'<!--'-->s liver, cut into small strips –
+		    NUM(~4) poultry livers also work but it's a hell of a job to de-tendonise them and you don't get nice pieces</li>
+		<li>spoon of salt, launder, fill with water, launder, drain, squeeze</li>
+		<li>NUM(1.5) spoons (nom. NUM(~1.5g)) of salt, and NUM(some) (nom. NUM(~1g)) white pepper, launder</li>
+		<li>NUM(1) egg's<!--'-->s white, launder</li>
+		<li>add a few hands (nom. NUM(50g)) of starch, laundering in betweem; let "marinate" –
+		    he specs sweet potato, I don't think this is sold here. normal starch works; appx. four to five hands went into poultry livers and hog's liver, resp.</li>
+		<li>quarter NUM(1) tomato, de-seed, de-skin, cut into strips</li>
+		<li>de-root a couple small pokchois</li>
+		<li>shred a couple onion whites</li>
+		<li>shred a "small bit" of ginger</li>
+		<li>blanch the soakers</li>
+		<li>boil the blanched soakers with the ginger and NUM(some) lard, NUM(1) spoon (nom. NUM(3g)) of salt,
+		    and NUM(1) pinch (nom. NUM(0.5g)) each of white pepper and MSG</li>
+		<li>deploy each bit of liver piece-wise into the boiling water</li>
+		<li>let it "half-cook"</li>
+		<li>deploy the rest of the vegetables</li>
+		<li>boil midly and de-froth until "the vegetables are half-cooked"</li>
+	</ol>
+</details>
 
 
 IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/912/322/766/078/278/original/871fbbb3fdab47bb.jpeg, $101010.pl/@nabijaczleweli/110912325874653835,
@@ -120,7 +156,8 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		          PREPLICATION(2023-08-19),
 		          PREPLICATION(2023-08-20),
 		          PREPLICATION(2023-08-21),
-		           REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818):</p>
+		           REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818),
+		          PREPLICATION(2023-08-25):</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>
