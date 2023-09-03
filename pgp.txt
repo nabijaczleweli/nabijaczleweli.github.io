@@ -1,3 +1,6 @@
+# This key is available via the standard WKD mechanism as well:
+# gpg --locate-key nabijaczleweli@nabijaczleweli.xyz
+
 # You should be able to import this key by running
 # curl -SL https://nabijaczleweli.xyz/pgp.txt | gpg --import
 
