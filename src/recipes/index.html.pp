@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Sat, 26 Aug 2023 19:31:02 +0200" -->
+<!-- RSS_UPDATE_DATE: "Mon, 11 Sep 2023 03:12:03 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,10 +96,44 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-08-26, $101010.pl/@nabijaczleweli/110956423046357306)</a>.
+	Latest replication: REPLICATION(2023-09-07, $101010.pl/@nabijaczleweli/110956423046357306)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/992/073/464/014/965/original/d128c25363a316d5.jpeg, $101010.pl/@nabijaczleweli/110992083451588635,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/041/044/915/290/778/original/a43748bfceb81e52.jpeg, $101010.pl/@nabijaczleweli/111041049425379229)
+
+<details open>
+	SUMMARY(shaobing, Shaobing)
+	<p class="continuing">
+		<a href="//youtu.be/OoSJTqpcHps" lang="zh-CN"><!--"-->从小吃到大的油盐烧饼，不用烤烙着吃更香，咸香酥软太好吃了<!--"--></a>,
+		by Yi Ning'<!--'-->s Mother Loves Food,
+		replicated REPLICATION(2023-09-01, $101010.pl/@nabijaczleweli/110991939199680335),
+		           REPLICATION(2023-09-07, $101010.pl/@nabijaczleweli/110956423046357306):</p>
+	<ol class="continuation">
+		<li>NUM(250g) of like NUM(40°) water, NUM(5g) of salt, NUM(3g) of yeast, mix</li>
+		<li>flock into NUM(400g) of flour – she gets something quite stiff, but I tend to get more of a light bread dough, even when putting in additional flour</li>
+		<li>knead, he sleeps</li>
+		<li>pour NUM(50g) of boiling oil over NUM(40g) of flour, NUM(5g) of salt, and NUM(5g) of pepper</li>
+		<li>wake him up, clean up on floured board, roll out thinly on floured board – you want to get like NUM(5-6) folds while preserving the major dimension</li>
+		<li>deploy and spread the oily goop</li>
+		<li>roll up fold-wise while preserving the major dimension</li>
+		<li>cut into NUM(6) guys</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>crimp cut ends</li>
+				<li>roll out the resulting skirts</li>
+				<li>fold the edges in, then the flap up</li>
+				<li>invert, roll, invert, roll, invert</li>
+				<li>brush with oil, deploy black sesame</li>
+				<li>he sleeps for NUM(10min)</li>
+				<li>fry covered on dark oil, flip after NUM(1min), flip after NUM(1min), flip after NUM(1min), flip after NUM(1min)</li>
+			</ol>
+		</li>
+	</ol>
+</details>
 
 
 IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/945/854/392/660/756/original/26ad039c41131d76.jpeg, $101010.pl/@nabijaczleweli/110945861145403755,
@@ -157,7 +191,9 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		          PREPLICATION(2023-08-20),
 		          PREPLICATION(2023-08-21),
 		           REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818),
-		          PREPLICATION(2023-08-25):</p>
+		           …,
+		          PREPLICATION(2023-09-06),
+		           …:</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>

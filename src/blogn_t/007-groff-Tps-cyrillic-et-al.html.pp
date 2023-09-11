@@ -262,7 +262,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
 	    and that the default family is <code>T</code>; there's no point in getting cute and parsing this.</li>  <!--'-->
 	<li>groff font metrics have an <code>internalname</code> directive, corresponding to the PostScript font requested
 	    (for <code>TI</code> it's <code>Times-Italic</code>, for <code>CI</code> it's <code>Courier-Oblique</code>, &amp;c.).</li>
-	<li>The Ghostscript font map (<code>/var/lib/ghostscript/fonts/Fontmap</code> from <code>/etc/ghostscript/fontmap.d/‌*</code> by <code>update-gsfontmap</code>)
+	<li>The Ghostscript font map (<code>/var/lib/ghostscript/fonts/Fontmap</code> from <code>/etc/ghostscript/fontmap.d/<!---->*</code> by <code>update-gsfontmap</code>)
 	    is used to override font paths and alias fonts to others (well, it's arbitrary Ghostscript code that happens to match font names,  <!--'-->
 	    but doing anything besides name/alias/path mapping has thankfully <a href="//wiki.debian.org/gs-undefoma#line-254">died down</a> as a practice),
 	    with the interesting mappings being in the format:
