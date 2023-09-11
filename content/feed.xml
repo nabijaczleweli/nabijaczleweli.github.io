@@ -11,9 +11,9 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-08-26T17:46:00</updated>
+  <updated>2023-09-11T01:34:58</updated>
   <generator>
-    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.3.0)
+    GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
 
   <entry>
@@ -2156,7 +2156,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
      and that the default family is &lt;code&gt;T&lt;/code&gt;; there's no point in getting cute and parsing this.&lt;/li&gt;  &lt;!--'--&gt;
  &lt;li&gt;groff font metrics have an &lt;code&gt;internalname&lt;/code&gt; directive, corresponding to the PostScript font requested
      (for &lt;code&gt;TI&lt;/code&gt; it's &lt;code&gt;Times-Italic&lt;/code&gt;, for &lt;code&gt;CI&lt;/code&gt; it's &lt;code&gt;Courier-Oblique&lt;/code&gt;, &amp;amp;c.).&lt;/li&gt;
- &lt;li&gt;The Ghostscript font map (&lt;code&gt;/var/lib/ghostscript/fonts/Fontmap&lt;/code&gt; from &lt;code&gt;/etc/ghostscript/fontmap.d/‌*&lt;/code&gt; by &lt;code&gt;update-gsfontmap&lt;/code&gt;)
+ &lt;li&gt;The Ghostscript font map (&lt;code&gt;/var/lib/ghostscript/fonts/Fontmap&lt;/code&gt; from &lt;code&gt;/etc/ghostscript/fontmap.d/*&lt;/code&gt; by &lt;code&gt;update-gsfontmap&lt;/code&gt;)
      is used to override font paths and alias fonts to others (well, it's arbitrary Ghostscript code that happens to match font names,  &lt;!--'--&gt;
      but doing anything besides name/alias/path mapping has thankfully &lt;a href=&quot;//wiki.debian.org/gs-undefoma#line-254&quot;&gt;died down&lt;/a&gt; as a practice),
      with the interesting mappings being in the format:
@@ -4831,7 +4831,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-08-26T19:31:02+02:00</updated>
+    <updated>2023-09-11T03:12:03+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4919,10 +4919,43 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110956423046357306&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-26&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110956423046357306&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-07&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
+&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+ &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110992083451588635&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/992/073/464/014/965/original/d128c25363a316d5.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111041049425379229&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/041/044/915/290/778/original/a43748bfceb81e52.jpeg&quot; /&gt;&lt;/a&gt; 
+ &lt;/center&gt;
+&lt;details open&gt;
+ &lt;summary id=&quot;shaobing&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shaobing&quot;&gt;#&lt;/a&gt;Shaobing&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/OoSJTqpcHps&quot; lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;从小吃到大的油盐烧饼，不用烤烙着吃更香，咸香酥软太好吃了&lt;!--&quot;--&gt;&lt;/a&gt;,
+  by Yi Ning'&lt;!--'--&gt;s Mother Loves Food,
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110991939199680335&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-01&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110956423046357306&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-07&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;250g&lt;/span&gt; of like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40°&lt;/span&gt; water, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of salt, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3g&lt;/span&gt; of yeast, mix&lt;/li&gt;
+  &lt;li&gt;flock into &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;400g&lt;/span&gt; of flour – she gets something quite stiff, but I tend to get more of a light bread dough, even when putting in additional flour&lt;/li&gt;
+  &lt;li&gt;knead, he sleeps&lt;/li&gt;
+  &lt;li&gt;pour &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50g&lt;/span&gt; of boiling oil over &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of salt, and &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of pepper&lt;/li&gt;
+  &lt;li&gt;wake him up, clean up on floured board, roll out thinly on floured board – you want to get like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5-6&lt;/span&gt; folds while preserving the major dimension&lt;/li&gt;
+  &lt;li&gt;deploy and spread the oily goop&lt;/li&gt;
+  &lt;li&gt;roll up fold-wise while preserving the major dimension&lt;/li&gt;
+  &lt;li&gt;cut into &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;6&lt;/span&gt; guys&lt;/li&gt;
+  &lt;li&gt;for each guy:
+   &lt;ol class=&quot;continuing&quot;&gt;
+    &lt;li&gt;crimp cut ends&lt;/li&gt;
+    &lt;li&gt;roll out the resulting skirts&lt;/li&gt;
+    &lt;li&gt;fold the edges in, then the flap up&lt;/li&gt;
+    &lt;li&gt;invert, roll, invert, roll, invert&lt;/li&gt;
+    &lt;li&gt;brush with oil, deploy black sesame&lt;/li&gt;
+    &lt;li&gt;he sleeps for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;10min&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;fry covered on dark oil, flip after &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1min&lt;/span&gt;, flip after &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1min&lt;/span&gt;, flip after &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1min&lt;/span&gt;, flip after &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1min&lt;/span&gt;&lt;/li&gt;
+   &lt;/ol&gt;
+  &lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110945861145403755&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/945/854/392/660/756/original/26ad039c41131d76.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/110956423046357306&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/956/422/198/154/529/original/46ad82460086d290.jpeg&quot; /&gt;&lt;/a&gt; 
@@ -4978,7 +5011,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
             &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-20&lt;/span&gt;,
             &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-21&lt;/span&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110933500189109818&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-22&lt;/span&gt;&lt;/a&gt;,
-            &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-25&lt;/span&gt;:&lt;/p&gt;
+             …,
+            &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-06&lt;/span&gt;,
+             …:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of rye flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;190g&lt;/span&gt; of boiling water, pastify, let cool to yeast temp&lt;/li&gt;
   &lt;li&gt;mix in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3g&lt;/span&gt; of yeast&lt;/li&gt;
