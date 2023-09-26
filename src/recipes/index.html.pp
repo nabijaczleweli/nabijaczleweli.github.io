@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Mon, 11 Sep 2023 03:12:03 +0200" -->
+<!-- RSS_UPDATE_DATE: "Tue, 26 Sep 2023 23:00:32 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-09-07, $101010.pl/@nabijaczleweli/110956423046357306)</a>.
+	Latest replication: REPLICATION(2023-07-26, $101010.pl/@nabijaczleweli/111133451540276725)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -193,7 +193,8 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		           REPLICATION(2023-08-22, $101010.pl/@nabijaczleweli/110933500189109818),
 		           …,
 		          PREPLICATION(2023-09-06),
-		           …:</p>
+		           …,
+		           REPLICATION(2023-09-25, $101010.pl/@nabijaczleweli/111126263457267793):</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>
@@ -228,7 +229,8 @@ ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/10
 </details>
 
 
-ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg, $101010.pl/@nabijaczleweli/110787166550728100)
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg, $101010.pl/@nabijaczleweli/110787166550728100,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/133/449/399/259/470/original/dea0e20ea8afc644.jpeg, $101010.pl/@nabijaczleweli/111133451540276725)
 
 <details open>
 	SUMMARY(shroomy-paper, Fungus bean curd skin)
@@ -236,7 +238,8 @@ ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/10
 		<a href="//youtu.be/94sq209lddU">The chef teaches you the recipe for Bean curd skin , it'<!--'-->s too fragrant
 		                                 (<span lang="zh-CN"><!--"-->豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe<!--"--></span>)</a>,
 		by <span lang="zh-CN">家常菜日记</span>,
-		replicated REPLICATION(2023-07-27, $101010.pl/@nabijaczleweli/110787166550728100):</p>
+		replicated REPLICATION(2023-07-27, $101010.pl/@nabijaczleweli/110787166550728100)
+		           REPLICATION(2023-07-26, $101010.pl/@nabijaczleweli/111133451540276725):</p>
 	<ol class="continuation">
 		<li>soak fungus in water with a little salt and some flour for NUM(5min), wash in clean water –
 		    he specs auricularia cornea, which only has a wiki article in śląski and no common names; I used dried shredded mun because thats what I had</li>
@@ -268,7 +271,8 @@ ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/10
 	</ol>
 
 	<p>
-		The <em>lightness</em> of the soy sus is paramount here, it really did come Too Salty™.
+		The <em>lightness</em> of the soy sus is paramount here, it really did come Too Salty™ the first time.
+		Probably moderate the salt when using a salty bullion cube.
 	</p>
 </details>
 
@@ -700,7 +704,8 @@ IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.c
 		<a href="//youtu.be/tghGkiw8feU">From snacks to big sauced meat buns, the skin is thin and the stuffing is big and soft
 		                                 (<span lang="zh-CN"><!--"-->从小吃到大的酱肉包子，皮薄馅大又暄软，不塌陷不回缩【海娟美食】<!--"--></span>)</a>,
 		by Haijuan Food,
-		      replicated REPLICATION(2023-05-07, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well);
+		      replicated REPLICATION(2023-05-07, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well),
+		                 REPLICATION(2023-09-12, $101010.pl/@nabijaczleweli/111064931118614188)
 		gloop replicated REPLICATION(2023-07-10, $101010.pl/@nabijaczleweli/110691639550245407):</p>
 	<ol class="continuing">
 		<li>NUM(300g) of like NUM(40°) water, NUM(4g) of yeast, NUM(5g) of sugar, stir to suspend</li>
