@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-09-11T01:34:58</updated>
+  <updated>2023-09-26T21:17:36</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -67,7 +67,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -433,7 +433,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -735,7 +735,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -1400,7 +1400,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -1696,7 +1696,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -1834,7 +1834,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -2569,7 +2569,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -2748,7 +2748,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -2995,7 +2995,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -3855,7 +3855,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 .indented {
@@ -4118,7 +4118,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 th, td {
@@ -4831,7 +4831,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-09-11T03:12:03+02:00</updated>
+    <updated>2023-09-26T23:00:32+02:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4878,7 +4878,7 @@ summary a.hash-link {
 h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
 a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
 a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: initial;
+ color: inherit;
  text-decoration: none;
 }
 
@@ -4919,7 +4919,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110956423046357306&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-07&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111133451540276725&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-26&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -5013,7 +5013,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110933500189109818&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-22&lt;/span&gt;&lt;/a&gt;,
              …,
             &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-06&lt;/span&gt;,
-             …:&lt;/p&gt;
+             …,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111126263457267793&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-25&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of rye flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;190g&lt;/span&gt; of boiling water, pastify, let cool to yeast temp&lt;/li&gt;
   &lt;li&gt;mix in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3g&lt;/span&gt; of yeast&lt;/li&gt;
@@ -5043,14 +5044,18 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;toss the pieces in soy flour to cover&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+ &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111133451540276725&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/133/449/399/259/470/original/dea0e20ea8afc644.jpeg&quot; /&gt;&lt;/a&gt; 
+ &lt;/center&gt;
 &lt;details open&gt;
  &lt;summary id=&quot;shroomy-paper&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shroomy-paper&quot;&gt;#&lt;/a&gt;Fungus bean curd skin&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/94sq209lddU&quot;&gt;The chef teaches you the recipe for Bean curd skin , it'&lt;!--'--&gt;s too fragrant
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
   by &lt;span lang=&quot;zh-CN&quot;&gt;家常菜日记&lt;/span&gt;,
-  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-27&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-27&lt;/span&gt;&lt;/a&gt;
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111133451540276725&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-26&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;soak fungus in water with a little salt and some flour for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5min&lt;/span&gt;, wash in clean water –
       he specs auricularia cornea, which only has a wiki article in śląski and no common names; I used dried shredded mun because thats what I had&lt;/li&gt;
@@ -5081,7 +5086,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;finish with chives&lt;/li&gt;
  &lt;/ol&gt;
  &lt;p&gt;
-  The &lt;em&gt;lightness&lt;/em&gt; of the soy sus is paramount here, it really did come Too Salty™.
+  The &lt;em&gt;lightness&lt;/em&gt; of the soy sus is paramount here, it really did come Too Salty™ the first time.
+  Probably moderate the salt when using a salty bullion cube.
  &lt;/p&gt;
 &lt;/details&gt;
 &lt;center class=&quot;grid-by-each continued&quot;&gt; 
@@ -5496,7 +5502,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;a href=&quot;//youtu.be/tghGkiw8feU&quot;&gt;From snacks to big sauced meat buns, the skin is thin and the stuffing is big and soft
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;从小吃到大的酱肉包子，皮薄馅大又暄软，不塌陷不回缩【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
   by Haijuan Food,
-        replicated &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-07&lt;/span&gt;&lt;/a&gt;;
+        replicated &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-05-07&lt;/span&gt;&lt;/a&gt;,
+                   &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111064931118614188&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-09-12&lt;/span&gt;&lt;/a&gt;
   gloop replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110691639550245407&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-10&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuing&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;300g&lt;/span&gt; of like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40°&lt;/span&gt; water, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of sugar, stir to suspend&lt;/li&gt;
