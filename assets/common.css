@@ -13,13 +13,6 @@ a > i.far {
 	display: none;
 }
 
-.search-only {
-	width: 0;
-	height: 0;
-	opacity: 0;
-	display: inline-block;
-}
-
 .smallcaps {
 	font-variant: small-caps;
 }
