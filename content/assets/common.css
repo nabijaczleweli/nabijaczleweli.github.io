@@ -29,3 +29,8 @@ a > i.far {
 		filter: invert(1);
 	}
 }
+
+
+#liberapay-btn:hover {
+	background-color: #fbce1a;
+}
