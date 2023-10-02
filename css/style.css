@@ -126,3 +126,8 @@ body .container {
   margin-left: 1.5%;
   margin-top: 0;  /* Override bootstrap braindeath */
 }
+
+
+#liberapay:hover, #liberapay:focus {
+  background-color: #3F3407;
+}
