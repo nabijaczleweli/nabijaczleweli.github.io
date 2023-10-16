@@ -48,6 +48,22 @@ kbd {
 pre {
   white-space: pre-wrap;
 }
+
+dl {
+  display: table;
+}
+dl > div {
+  display: table-row;
+}
+dl > div > dt, dl > div > dd {
+  display: table-cell;
+}
+dl > div > dt {
+  font-family: "Droid Sans Mono", monospace;  /* <code> */
+}
+dl > div > dd {
+  padding-left: 1em;
+}
 </style>
 
 <span class="roboto writing">
@@ -209,10 +225,31 @@ Good luck finding that, since this affects any ptracing process as well.
 Or any other message or log collection system where – especially unprivileged – users write stuff to a pipe,
 since they'<!--'-->ve now been granted a total exclusion thereon.
 </p>
-<p class="indented continuing">
+<p class="indented continuation">
 Even in inocuous situations like QEMU with <samp>-chardev pipe,id=pipe,path=$HOME/uwu/q -serial chardev:pipe</samp>, <code>cat</code>ting to <code>~/uwu/q.in</code>
 (besides only waking up every second line, which is just business as usual), excludes emulation.
 </p>
+
+
+<p class="indented continued">
+I'<!--'-->ve always wanted to have a
+</p>
+HEADING_S(2, timeline, class="continuing", timeline)
+<p class="indented continuation">
+sexion.
+</p>
+
+<dl>
+  <div><dt>2023-06-26T00:17:33</dt><dd>I <a href="//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1756793-hm-linux-bug-moment">confusion-post</a> that <code>splice()</code> breaks <code>O_NONBLOCK</code> (in <code>tail -f</code>).</dd></div>
+  <div><dt>2023-06-26T03:12:10</dt><dd>This is <a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#u">re-posted to <samp>linux-fsdevel@</samp></a> with a "rudimentary analysis".</dd></div>
+  <div><dt>2023-06-26T13:59:09</dt><dd>In reply to Christian I discover that this does actually fully exclude <code>read()</code>s/<code>write()</code>s/<code>open()</code>s.</dd></div>
+  <div><dt>2023-07-05T23:19:22</dt><dd>I mail <samp>security@</samp> with, effectively, the contents of this post (sans the sendfile tidbit).</dd></div>
+  <div><dt>2023-07-06T19:18:13</dt><dd>In reply to Christian I discover the sendfile thing; variously-broken and -untested patches are circulating.</dd></div>
+  <div><dt>2023-07-06T23:56:45</dt><dd>Linus posts the "slightly tested version".</dd></div>
+  <div><dt>2023-07-08T22:06:56</dt><dd>After a few more rounds of patches, Linus <a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#me67de5a9ec18886c434113637d7eff6cd7acac4b">concedes</a> that potentially "we need to just bite the bullet and say »copy_splice_read() needs to use a non-blocking kiocb for the IO«.".</dd></div>
+  <div><dt>2023-07-09T03:03:22</dt><dd>I <a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#maf55a5e6d086565e4e2c5014c3fc3914434c9761">post</a> a summary diff that does that.</dd></div>
+  <div><dt>2023-10-16T22:35:28</dt><dd>I <a href="//lore.kernel.org/lkml/813e1805aa942862d300bec4d0563c5a466dce78.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/">post</a> a re-based and itemised patchset that does the same thing, and also find similar conditions in the pipe → file direxion.</dd></div>
+</dl>
 
 
 
