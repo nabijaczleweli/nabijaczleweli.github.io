@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-10-01T21:09:43</updated>
+  <updated>2023-10-16T21:17:36</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -3871,6 +3871,21 @@ kbd {
 pre {
   white-space: pre-wrap;
 }
+dl {
+  display: table;
+}
+dl &gt; div {
+  display: table-row;
+}
+dl &gt; div &gt; dt, dl &gt; div &gt; dd {
+  display: table-cell;
+}
+dl &gt; div &gt; dt {
+  font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
+}
+dl &gt; div &gt; dd {
+  padding-left: 1em;
+}
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -4032,10 +4047,28 @@ Good luck finding that, since this affects any ptracing process as well.
 Or any other message or log collection system where – especially unprivileged – users write stuff to a pipe,
 since they'&lt;!--'--&gt;ve now been granted a total exclusion thereon.
 &lt;/p&gt;
-&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
 Even in inocuous situations like QEMU with &lt;samp&gt;-chardev pipe,id=pipe,path=$HOME/uwu/q -serial chardev:pipe&lt;/samp&gt;, &lt;code&gt;cat&lt;/code&gt;ting to &lt;code&gt;~/uwu/q.in&lt;/code&gt;
 (besides only waking up every second line, which is just business as usual), excludes emulation.
 &lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+I'&lt;!--'--&gt;ve always wanted to have a
+&lt;/p&gt;
+&lt;h2 id=&quot;timeline&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#timeline&quot;&gt;#&lt;/a&gt; timeline&lt;/h2&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+sexion.
+&lt;/p&gt;
+&lt;dl&gt;
+  &lt;div&gt;&lt;dt&gt;2023-06-26T00:17:33&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1756793-hm-linux-bug-moment&quot;&gt;confusion-post&lt;/a&gt; that &lt;code&gt;splice()&lt;/code&gt; breaks &lt;code&gt;O_NONBLOCK&lt;/code&gt; (in &lt;code&gt;tail -f&lt;/code&gt;).&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-06-26T03:12:10&lt;/dt&gt;&lt;dd&gt;This is &lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#u&quot;&gt;re-posted to &lt;samp&gt;linux-fsdevel@&lt;/samp&gt;&lt;/a&gt; with a &quot;rudimentary analysis&quot;.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-06-26T13:59:09&lt;/dt&gt;&lt;dd&gt;In reply to Christian I discover that this does actually fully exclude &lt;code&gt;read()&lt;/code&gt;s/&lt;code&gt;write()&lt;/code&gt;s/&lt;code&gt;open()&lt;/code&gt;s.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-07-05T23:19:22&lt;/dt&gt;&lt;dd&gt;I mail &lt;samp&gt;security@&lt;/samp&gt; with, effectively, the contents of this post (sans the sendfile tidbit).&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-07-06T19:18:13&lt;/dt&gt;&lt;dd&gt;In reply to Christian I discover the sendfile thing; variously-broken and -untested patches are circulating.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-07-06T23:56:45&lt;/dt&gt;&lt;dd&gt;Linus posts the &quot;slightly tested version&quot;.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-07-08T22:06:56&lt;/dt&gt;&lt;dd&gt;After a few more rounds of patches, Linus &lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#me67de5a9ec18886c434113637d7eff6cd7acac4b&quot;&gt;concedes&lt;/a&gt; that potentially &quot;we need to just bite the bullet and say »copy_splice_read() needs to use a non-blocking kiocb for the IO«.&quot;.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-07-09T03:03:22&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#maf55a5e6d086565e4e2c5014c3fc3914434c9761&quot;&gt;post&lt;/a&gt; a summary diff that does that.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-10-16T22:35:28&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/813e1805aa942862d300bec4d0563c5a466dce78.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/&quot;&gt;post&lt;/a&gt; a re-based and itemised patchset that does the same thing, and also find similar conditions in the pipe → file direxion.&lt;/dd&gt;&lt;/div&gt;
+&lt;/dl&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
