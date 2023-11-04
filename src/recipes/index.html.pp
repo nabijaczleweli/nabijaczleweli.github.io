@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Tue, 26 Sep 2023 23:00:32 +0200" -->
+<!-- RSS_UPDATE_DATE: "Sat, 04 Nov 2023 22:07:28 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,10 +96,39 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-07-26, $101010.pl/@nabijaczleweli/111133451540276725)</a>.
+	Latest replication: REPLICATION(2023-11-04, $101010.pl/@nabijaczleweli/111353464306173291)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/353/463/863/592/505/original/561588b6e25a107f.png, $101010.pl/@nabijaczleweli/111353464306173291)
+
+<details open>
+	SUMMARY(ciasto-kotletowe, Ciasto kotletowe)
+	<p class="continuing">
+		Courtesy of my aunt,
+		replicated REPLICATION(2023-11-04, $101010.pl/@nabijaczleweli/111353464306173291):</p>
+		<div style="padding-left: 40px;">
+			<p class="continuation">
+				2 szkl. kaszy mannej<br />
+				2 szkl. mąki<br />
+				2 łyżeczki proszku do pieczenia<br />
+				1 1/2 szklanki cukru<br />
+				200g zimnego masła<br />
+				2kg jabłek<br />
+			</p>
+
+			<strong>Wykonanie</strong>
+			<p class="continuation">Jabłka obieramy i ścieramy na tarce o grubych oczkach i mieszamy z 3-ma łyżkami cukru. Jabłka powinny być wilgotne.</p>
+
+			<p class="continued">Mannę, mąkę, cukier, proszek mieszamy i dzliemy na trzy części. Formę wykładamy papierem.</p>
+			<p class="continuing">Na dno wsypujemy część sypkich składników i wykładamy połową jabłek, przykrywamy drugą częścią sypkich składników. Wykładamy resztę jabłek. Ponownie dajemy sypkie składniki.</p>
+			<p class="continuing">Wierzch szarlotki pokrywamy plastrami masła lub wiórkami.</p>
+			<p class="continuation">Pokrywamy całą powierzchnię ciasta. Pieczemy 60 min, 180°C.</p>
+		</div>
+	</p>
+</details>
 
 
 IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/992/073/464/014/965/original/d128c25363a316d5.jpeg, $101010.pl/@nabijaczleweli/110992083451588635,
@@ -194,7 +223,9 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		           …,
 		          PREPLICATION(2023-09-06),
 		           …,
-		           REPLICATION(2023-09-25, $101010.pl/@nabijaczleweli/111126263457267793):</p>
+		           REPLICATION(2023-09-25, $101010.pl/@nabijaczleweli/111126263457267793),
+		           REPLICATION(2023-10-19, $101010.pl/@nabijaczleweli/111263625416932870),
+		           REPLICATION(2023-10-31, $101010.pl/@nabijaczleweli/111341104967972340):</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>
