@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Sat, 04 Nov 2023 22:07:28 +0100" -->
+<!-- RSS_UPDATE_DATE: "Mon, 06 Nov 2023 20:17:34 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,10 +96,33 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-11-04, $101010.pl/@nabijaczleweli/111353464306173291)</a>.
+	Latest replication: REPLICATION(2023-11-05, $101010.pl/@nabijaczleweli/111364903392394230)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/364/900/728/820/687/original/da3d6af55f5060c0.jpeg, $101010.pl/@nabijaczleweli/111364903392394230)
+
+<details open>
+	SUMMARY(england-biscuit, Ingerland biscuit)
+	<p class="continuing">
+		<a href="//sallysbakingaddiction.com/flaky-buttermilk-biscuits/">Homemade Buttermilk Biscuits (6 Ingredients)</a>,
+		by Sally'<!--'-->s Baking Addiction,
+		replicated REPLICATION(2023-11-05, $101010.pl/@nabijaczleweli/111364903392394230):</p>
+	<ol class="continuation">
+		<li>NUM(313g) of flour, NUM(2) spoons of baking powder, small spoon of salt, mix</li>
+		<li>cut in NUM(113g) of butter</li>
+		<li>NUM(240ml) of buttermilk, NUM(14g) of honey, combine</li>
+		<li>flatten to NUM(19mm), fold in third</li>
+		<li>flatten to NUM(19mm), fold in third</li>
+		<li>flatten to NUM(19mm), fold in third</li>
+		<li>flatten to NUM(19mm)</li>
+		<li>cut into NUM(Φ63.5-76.2) cylinders — or into whatever shape so long as it's sharp and not super small. unclear how it'd get an appropriate circular cutter</li>
+		<li>lay out so the tips touch, bake for NUM(18-20min) at NUM(220°)</li>
+		<li>brush with a 2:1 butter:honey combo</li>
+	</ol>
+</details>
 
 
 ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/353/463/863/592/505/original/561588b6e25a107f.png, $101010.pl/@nabijaczleweli/111353464306173291)
@@ -140,7 +163,8 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		<a href="//youtu.be/OoSJTqpcHps" lang="zh-CN"><!--"-->从小吃到大的油盐烧饼，不用烤烙着吃更香，咸香酥软太好吃了<!--"--></a>,
 		by Yi Ning'<!--'-->s Mother Loves Food,
 		replicated REPLICATION(2023-09-01, $101010.pl/@nabijaczleweli/110991939199680335),
-		           REPLICATION(2023-09-07, $101010.pl/@nabijaczleweli/110956423046357306):</p>
+		           REPLICATION(2023-09-07, $101010.pl/@nabijaczleweli/110956423046357306),
+		           REPLICATION(2023-11-02, $101010.pl/@nabijaczleweli/111358771030497231):</p>
 	<ol class="continuation">
 		<li>NUM(250g) of like NUM(40°) water, NUM(5g) of salt, NUM(3g) of yeast, mix</li>
 		<li>flock into NUM(400g) of flour – she gets something quite stiff, but I tend to get more of a light bread dough, even when putting in additional flour</li>
