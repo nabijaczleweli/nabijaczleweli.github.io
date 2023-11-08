@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-11-07T13:22:35</updated>
+  <updated>2023-11-08T12:20:14</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -4864,7 +4864,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-11-07T14:07:06+01:00</updated>
+    <updated>2023-11-08T13:02:16+01:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4961,7 +4961,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111369410357766527&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/369/228/912/666/114/original/64f4aa62b8f81a44.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;england-biscuit&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#england-biscuit&quot;&gt;#&lt;/a&gt;Ingerland biscuit&lt;/summary&gt;
+ &lt;summary id=&quot;america-biscuit&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#america-biscuit&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;england-biscuit&quot;&gt;Yankscuit&lt;/span&gt; &lt;!-- I fucked it and misrembered. kingdom biscuits are actual biscuits!!--&gt;&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//sallysbakingaddiction.com/flaky-buttermilk-biscuits/&quot;&gt;Homemade Buttermilk Biscuits (6 Ingredients)&lt;/a&gt;,
   by Sally'&lt;!--'--&gt;s Baking Addiction,
@@ -4970,7 +4970,10 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;313g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2&lt;/span&gt; spoons of baking powder, small spoon of salt, mix&lt;/li&gt;
   &lt;li&gt;cut in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;113g&lt;/span&gt; of butter&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;240ml&lt;/span&gt; of buttermilk, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;14g&lt;/span&gt; of honey, combine&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;240ml&lt;/span&gt; of buttermilk, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;14g&lt;/span&gt; of honey, combine –
+      unclear how you'&lt;!--'--&gt;re supposed to measure the former, but &lt;a href=&quot;//pl.wikipedia.org/wiki/Maślanka#Skład_chemiczny&quot;&gt;published buttermilk breakdowns&lt;/a&gt;
+      and taking just whatever'&lt;!--'--&gt;s &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt; &gt;1%&lt;/span&gt; concentration yields &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;91% + 3.1%⋅1.35 + 4%⋅1.525&lt;/span&gt; which ends up being around &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1.01285g/ml&lt;/span&gt;
+      and agrees with my experimental data, which is close enough to unity to not matter; or like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;245g&lt;/span&gt; if you want to split hairs&lt;/li&gt;
   &lt;li&gt;flatten to &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;19mm&lt;/span&gt;, fold in third&lt;/li&gt;
   &lt;li&gt;flatten to &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;19mm&lt;/span&gt;, fold in third&lt;/li&gt;
   &lt;li&gt;flatten to &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;19mm&lt;/span&gt;, fold in third&lt;/li&gt;
