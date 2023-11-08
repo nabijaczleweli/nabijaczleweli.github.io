@@ -56,7 +56,9 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
-	Consider contributing to the <a href="extensive_list_of_rust_puns/">Extensive List of Rust Puns</a>…
+	Consult the <a href="//starsussy.nabijaczleweli.xyz">Starsector mod browser</a>
+	(like <code>starmodder2.pages.dev</code> but <a href="//101010.pl/@psykose@donotsta.re/111360671421709025">in HTML</a>).
+	<!-- Consider contributing to the <a href="extensive_list_of_rust_puns/">Extensive List of Rust Puns</a>… -->
 </p>
 
 
