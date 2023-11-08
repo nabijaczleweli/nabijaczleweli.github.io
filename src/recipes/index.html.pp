@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Tue, 7 Nov 2023 14:07:06 +0100" -->
+<!-- RSS_UPDATE_DATE: "Wed, 08 Nov 2023 13:02:16 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -106,7 +106,7 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
        storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/369/228/912/666/114/original/64f4aa62b8f81a44.jpeg, $101010.pl/@nabijaczleweli/111369410357766527)
 
 <details open>
-	SUMMARY(england-biscuit, Ingerland biscuit)
+	SUMMARY(america-biscuit, <span id="england-biscuit">Yankscuit</span> <!-- I fucked it and misrembered. kingdom biscuits are actual biscuits!!-->)
 	<p class="continuing">
 		<a href="//sallysbakingaddiction.com/flaky-buttermilk-biscuits/">Homemade Buttermilk Biscuits (6 Ingredients)</a>,
 		by Sally'<!--'-->s Baking Addiction,
@@ -115,7 +115,10 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 	<ol class="continuation">
 		<li>NUM(313g) of flour, NUM(2) spoons of baking powder, small spoon of salt, mix</li>
 		<li>cut in NUM(113g) of butter</li>
-		<li>NUM(240ml) of buttermilk, NUM(14g) of honey, combine</li>
+		<li>NUM(240ml) of buttermilk, NUM(14g) of honey, combine –
+		    unclear how you'<!--'-->re supposed to measure the former, but <a href="//pl.wikipedia.org/wiki/Maślanka#Skład_chemiczny">published buttermilk breakdowns</a>
+		    and taking just whatever'<!--'-->s NUM(>1%) concentration yields NUM(91% + 3.1%⋅1.35 + 4%⋅1.525) which ends up being around NUM(1.01285g/ml)
+		    and agrees with my experimental data, which is close enough to unity to not matter; or like NUM(245g) if you want to split hairs</li>
 		<li>flatten to NUM(19mm), fold in third</li>
 		<li>flatten to NUM(19mm), fold in third</li>
 		<li>flatten to NUM(19mm), fold in third</li>
