@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Wed, 8 Nov 2023 13:02:16 +0100" -->
+<!-- RSS_UPDATE_DATE: "Thu, 9 Nov 2023 16:58:53 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,14 +96,14 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111369410357766527)</a>.
+	Latest replication: REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111381412838337393)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
 
 
 IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/364/900/728/820/687/original/da3d6af55f5060c0.jpeg, $101010.pl/@nabijaczleweli/111364903392394230,
-       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/369/228/912/666/114/original/64f4aa62b8f81a44.jpeg, $101010.pl/@nabijaczleweli/111369410357766527)
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/381/393/067/493/754/original/a089b2b6936c06b8.jpeg, $101010.pl/@nabijaczleweli/111381412838337393)
 
 <details open>
 	SUMMARY(america-biscuit, <span id="england-biscuit">Yankscuit</span> <!-- I fucked it and misrembered. kingdom biscuits are actual biscuits!!-->)
@@ -111,7 +111,8 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		<a href="//sallysbakingaddiction.com/flaky-buttermilk-biscuits/">Homemade Buttermilk Biscuits (6 Ingredients)</a>,
 		by Sally'<!--'-->s Baking Addiction,
 		replicated REPLICATION(2023-11-05, $101010.pl/@nabijaczleweli/111364903392394230),
-		           REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111369410357766527):</p>
+		           REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111369410357766527),
+		           REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111381412838337393):</p>
 	<ol class="continuation">
 		<li>NUM(313g) of flour, NUM(2) spoons of baking powder, small spoon of salt, mix</li>
 		<li>cut in NUM(113g) of butter</li>
@@ -124,7 +125,7 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		<li>flatten to NUM(19mm), fold in third</li>
 		<li>flatten to NUM(19mm)</li>
 		<li>cut into NUM(Φ63.5-76.2) cylinders — or into whatever shape so long as it's not super small and with something sharp. unclear how it'd get an appropriate circular cutter</li>
-		<li>lay out so the tips touch, bake for NUM(18-20min) at NUM(220°)</li>
+		<li>lay out so the tips touch, brush with buttermilk, bake for NUM(18-20min) at NUM(220°)</li>
 		<li>brush with a 2:1 butter:honey combo</li>
 	</ol>
 </details>
