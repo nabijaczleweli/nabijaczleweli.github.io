@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Thu, 9 Nov 2023 16:58:53 +0100" -->
+<!-- RSS_UPDATE_DATE: "Fri, 10 Nov 2023 17:38:15 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111381412838337393)</a>.
+	Latest replication: REPLICATION(2023-11-10, $101010.pl/@nabijaczleweli/111387230909933378)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -112,7 +112,8 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		by Sally'<!--'-->s Baking Addiction,
 		replicated REPLICATION(2023-11-05, $101010.pl/@nabijaczleweli/111364903392394230),
 		           REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111369410357766527),
-		           REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111381412838337393):</p>
+		           REPLICATION(2023-11-09, $101010.pl/@nabijaczleweli/111381412838337393),
+		           REPLICATION(2023-11-10, $101010.pl/@nabijaczleweli/111387230909933378):</p>
 	<ol class="continuation">
 		<li>NUM(313g) of flour, NUM(2) spoons of baking powder, small spoon of salt, mix</li>
 		<li>cut in NUM(113g) of butter</li>
