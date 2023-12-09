@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 10 Nov 2023 17:38:15 +0100" -->
+<!-- RSS_UPDATE_DATE: "Sun, 10 Dec 2023 00:17:24 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,14 +96,53 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-11-10, $101010.pl/@nabijaczleweli/111387230909933378)</a>.
+	Latest replication: REPLICATION(2023-11-27, $101010.pl/@nabijaczleweli/111495453441617318)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
 
 
-IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/364/900/728/820/687/original/da3d6af55f5060c0.jpeg, $101010.pl/@nabijaczleweli/111364903392394230,
-       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/381/393/067/493/754/original/a089b2b6936c06b8.jpeg, $101010.pl/@nabijaczleweli/111381412838337393)
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/450/825/877/321/125/original/20fb7deb1879af31.jpeg, $101010.pl/@nabijaczleweli/111450828098726010,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/495/451/686/471/782/original/7275030b7d7eadd0.jpeg, $101010.pl/@nabijaczleweli/111495453441617318)
+
+<details open>
+	SUMMARY(ass-yorkshire-pudding, Yorkshire pudding (bad))
+	<p class="continuing">
+		<!-- https://discord.com/channels/616404343146414243/659425870204764160/1171880679416537180 -->
+		From Donkey Kong,
+		replicated REPLICATION(2023-11-16, $101010.pl/@nabijaczleweli/111450828098726010),
+		           REPLICATION(2023-11-27, $101010.pl/@nabijaczleweli/111495453441617318):</p>
+	<ol class="continuation">
+		<li>minimally combine mixed powder Ш (
+		    	<ul class="continuing">
+		    		<li>NUM(3) cups of flour</li>
+		    		<li>NUM(¼) of a cup of sugar</li>
+		    		<li>NUM(1) small spoon of salt</li>
+		    		<li>NUM(1) spoon of baking powder</li>
+		    		<li>NUM(1½) spoons of baking soda</li>
+		    	</ul>
+		    ) with mixed gloop Ё (
+		    	<ul class="continuing">
+		    		<li>NUM(1) cup of milk</li>
+		    		<li>NUM(¼) of a cup of vinegar</li>
+		    		<li>vanilla</li>
+		    		<li>NUM(3) eggs</li>
+		    		<li>some cider</li>
+		    	</ul>
+		    )</li>
+		<li>fridge for NUM(1h)</li>
+		<li>generously grease a muffin-type tin, heat to NUM(230°), deploy gloop, bake for NUM(20min) – supposed to sizzle on deployment</li>
+	</ol>
+
+	<p>
+		Doesn'<!--'-->t really work, clearly.
+		This is in contrast to what the original photos demonstrated, so maybe this only works in Leicester.
+	</p>
+</details>
+
+
+IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/387/225/452/857/096/original/7d8005acf75fd3a9.jpeg, $101010.pl/@nabijaczleweli/111387230909933378,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/426/200/399/488/287/original/494470d2f12e46a3.jpeg, $101010.pl/@nabijaczleweli/111426205697493973)
 
 <details open>
 	SUMMARY(america-biscuit, <span id="england-biscuit">Yankscuit</span> <!-- I fucked it and misrembered. kingdom biscuits are actual biscuits!!-->)
@@ -113,7 +152,9 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		replicated REPLICATION(2023-11-05, $101010.pl/@nabijaczleweli/111364903392394230),
 		           REPLICATION(2023-11-06, $101010.pl/@nabijaczleweli/111369410357766527),
 		           REPLICATION(2023-11-09, $101010.pl/@nabijaczleweli/111381412838337393),
-		           REPLICATION(2023-11-10, $101010.pl/@nabijaczleweli/111387230909933378):</p>
+		           REPLICATION(2023-11-10, $101010.pl/@nabijaczleweli/111387230909933378),
+		           REPLICATION(2023-11-14, $101010.pl/@nabijaczleweli/111423249410917412),
+		           REPLICATION(2023-11-15, $101010.pl/@nabijaczleweli/111426205697493973):</p>
 	<ol class="continuation">
 		<li>NUM(313g) of flour, NUM(2) spoons of baking powder, small spoon of salt, mix</li>
 		<li>cut in NUM(113g) of butter</li>
