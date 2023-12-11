@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Sun, 10 Dec 2023 00:17:24 +0100" -->
+<!-- RSS_UPDATE_DATE: "Mon, 11 Dec 2023 18:21:59 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-11-27, $101010.pl/@nabijaczleweli/111495453441617318)</a>.
+	Latest replication: REPLICATION(2023-12-11, $101010.pl/@nabijaczleweli/111562935147889796)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -124,7 +124,7 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		    ) with mixed gloop Ё (
 		    	<ul class="continuing">
 		    		<li>NUM(1) cup of milk</li>
-		    		<li>NUM(¼) of a cup of vinegar</li>
+		    		<li>NUM(¼) of a cup of NUM(5%) vinegar</li>
 		    		<li>vanilla</li>
 		    		<li>NUM(3) eggs</li>
 		    		<li>some cider</li>
@@ -154,7 +154,8 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		           REPLICATION(2023-11-09, $101010.pl/@nabijaczleweli/111381412838337393),
 		           REPLICATION(2023-11-10, $101010.pl/@nabijaczleweli/111387230909933378),
 		           REPLICATION(2023-11-14, $101010.pl/@nabijaczleweli/111423249410917412),
-		           REPLICATION(2023-11-15, $101010.pl/@nabijaczleweli/111426205697493973):</p>
+		           REPLICATION(2023-11-15, $101010.pl/@nabijaczleweli/111426205697493973),
+		           REPLICATION(2023-12-11, $101010.pl/@nabijaczleweli/111562935147889796):</p>
 	<ol class="continuation">
 		<li>NUM(313g) of flour, NUM(2) spoons of baking powder, small spoon of salt, mix</li>
 		<li>cut in NUM(113g) of butter</li>
@@ -168,7 +169,7 @@ IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010
 		<li>flatten to NUM(19mm)</li>
 		<li>cut into NUM(Φ63.5-76.2) cylinders — or into whatever shape so long as it's not super small and with something sharp. unclear how it'd get an appropriate circular cutter</li>
 		<li>lay out so the tips touch, brush with buttermilk, bake for NUM(18-20min) at NUM(220°)</li>
-		<li>brush with a 2:1 butter:honey combo</li>
+		<li>brush with a NUM(2:1) butter:honey combo heated to combine</li>
 	</ol>
 </details>
 
