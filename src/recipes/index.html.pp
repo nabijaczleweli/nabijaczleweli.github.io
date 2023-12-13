@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Mon, 11 Dec 2023 18:21:59 +0100" -->
+<!-- RSS_UPDATE_DATE: "Wed, 13 Dec 2023 21:51:24 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,7 +96,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-12-11, $101010.pl/@nabijaczleweli/111562935147889796)</a>.
+	Latest replication: REPLICATION(2023-12-13, $101010.pl/@nabijaczleweli/111575020146177424)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -800,7 +800,7 @@ ONE_IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstagi
 
 
 IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC_5798.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461465-okay-thats-some-pret,
-       lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.cohostcdn.org/attachment/257ba15e-667f-44d0-badd-72b305e2f51d/DSC_5806.JPG, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461581-dry-heat-cels-seethi)
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/574/872/987/262/651/original/559a4b23d29075e3.jpeg, $101010.pl/@nabijaczleweli/111575020146177424)
 <details open>
 	SUMMARY(buns, Buns)
 
@@ -810,6 +810,7 @@ IMAGUS(lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHstaging.c
 		by Haijuan Food,
 		      replicated REPLICATION(2023-05-07, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1461715-goated-gloop-as-well),
 		                 REPLICATION(2023-09-12, $101010.pl/@nabijaczleweli/111064931118614188)
+		                 REPLICATION(2023-12-13, $101010.pl/@nabijaczleweli/111575020146177424);
 		gloop replicated REPLICATION(2023-07-10, $101010.pl/@nabijaczleweli/110691639550245407):</p>
 	<ol class="continuing">
 		<li>NUM(300g) of like NUM(40°) water, NUM(4g) of yeast, NUM(5g) of sugar, stir to suspend</li>
