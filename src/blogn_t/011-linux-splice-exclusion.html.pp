@@ -5,7 +5,6 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
-<!-- https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1730377-please-talk-to-my-su -->
 
 
 #include "../writing/writing.h"
@@ -248,7 +247,9 @@ sexion.
   <div><dt>2023-07-06T23:56:45</dt><dd>Linus posts the "slightly tested version".</dd></div>
   <div><dt>2023-07-08T22:06:56</dt><dd>After a few more rounds of patches, Linus <a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#me67de5a9ec18886c434113637d7eff6cd7acac4b">concedes</a> that potentially "we need to just bite the bullet and say »copy_splice_read() needs to use a non-blocking kiocb for the IO«.".</dd></div>
   <div><dt>2023-07-09T03:03:22</dt><dd>I <a href="//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#maf55a5e6d086565e4e2c5014c3fc3914434c9761">post</a> a summary diff that does that.</dd></div>
-  <div><dt>2023-10-16T22:35:28</dt><dd>I <a href="//lore.kernel.org/lkml/813e1805aa942862d300bec4d0563c5a466dce78.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/">post</a> a re-based and itemised patchset that does the same thing, and also find similar conditions in the pipe → file direxion.</dd></div>
+  <div><dt>2023-10-16T22:35:28</dt><dd>I <a href="//lore.kernel.org/lkml/cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">post</a> a re-based and itemised patchset that does the same thing, and also find similar conditions in the pipe → file direxion.</dd></div>
+  <div><dt>2023-12-12T11:12:28</dt><dd>I <a href="//lore.kernel.org/lkml/1cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">RESEND</a>.</dd></div>
+  <div><dt>2023-12-14T19:44:42</dt><dd>After <a href="//lore.kernel.org/lkml/20231213162854.4acfbd9f@kernel.org/t/#u">consternation</a> w.r.t. "who's gonna take this?" (how would I know) and "I do wish the CC list had been setup a bit more deliberately" (<samp>D<span style="font-size: 0.7em;">ocumentation</span>/p<span style="font-size: 0.7em;">rocess</span>/<span style="white-space: nowrap;">submitting-patches.rst</span></samp> says "paste <code>get_maintainer.pl</code> into Cc:", in as many words, which is probably better-suited for "here's 5 patches for the memfrob driver" instead of "here's an identical diff against 11 modules"; too bad I keep finding issues that are the latter), I <a href="//lore.kernel.org/lkml/2cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">RERESEND</a>.</dd></div>
 </dl>
 
 
