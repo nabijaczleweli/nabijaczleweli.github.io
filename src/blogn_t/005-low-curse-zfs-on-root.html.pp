@@ -48,7 +48,7 @@ samp {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems</code>)
+BLOGN_T_HEADING(005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
 
 <p class="indented continued">
 In a brief departure from microcomputing saprophagia, imagine you'<!--'-->re <a href="//github.com/griwes">an american</a> and acquiring a ThinkPad P15,

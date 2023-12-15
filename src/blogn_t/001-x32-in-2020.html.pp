@@ -48,7 +48,7 @@ samp {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>001. Installing Debian'<!--'-->s x32 port in 2020</code>)
+BLOGN_T_HEADING(001. Installing Debian'<!--'-->s x32 port in 2020)
 
 <p class="indented continued">
 Some time ago I bought an <a href="//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455">HP rp5700</a> <del>Piece of Shit</del> Point of Sale system

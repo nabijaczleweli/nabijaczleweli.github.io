@@ -31,7 +31,7 @@ img {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>004. New album: cinque</code>)
+BLOGN_T_HEADING(004. New album: cinque)
 
 <p class="indented">
 At <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1284582399838478339">10:14 pm · 18 Jul 2020</a> I released my third album: <samp>cinque</samp>!

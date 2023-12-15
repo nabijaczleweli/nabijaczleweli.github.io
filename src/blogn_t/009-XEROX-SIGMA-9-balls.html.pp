@@ -114,7 +114,7 @@ BOILERPLATE(009. XEROX SIGMA 9 balls — blognꞌt, 009. XEROX SIGMA 9 balls, en
 
 
 <p></p>
-BLOGN_T_HEADING(<code>009. XEROX SIGMA 9 balls</code>)
+BLOGN_T_HEADING(009. XEROX SIGMA 9 balls)
 
 <p class="indented">
 I was quite taken by the Tn(xerox sigma 9) tape decks, in particular the right one from

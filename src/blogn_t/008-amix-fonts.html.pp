@@ -48,7 +48,7 @@ img {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span></code>)
+BLOGN_T_HEADING(008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span>)
 
 <p class="indented continued">
 Have been

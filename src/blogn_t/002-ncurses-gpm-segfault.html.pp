@@ -28,10 +28,10 @@ BOILERPLATE(002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm
 
 
 <p></p>
-BLOGN_T_HEADING(<code>002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users</code>)
+BLOGN_T_HEADING(002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
 
 <p class="indented continued">
-The post I made for <a href="https://bugs.debian.org/961097#35">#961097</a>,
+The post I made for <a href="//bugs.debian.org/961097#35">#961097</a>,
 	which went through three packages (
 </p>
 <ol class="continuing">
@@ -47,11 +47,11 @@ Plus, it took me an entire day to write and the better part of a week to hunt do
 </p>
 
 <p class="indented continued">
-You can read it on <a href="https://bugs.debian.org/961097#35">debbugs</a>, since reproducing plaintext with boxes in HTML is a massive pain
+You can read it on <a href="//bugs.debian.org/961097#35">debbugs</a>, since reproducing plaintext with boxes in HTML is a massive pain
 	(plus there'<!--'-->s context there).
 </p>
 <p class="indented continuation">
-You may also be interested in the corresponding <a href="https://lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800">twitter thread</a>.
+You may also be interested in the corresponding <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800">twitter thread</a>.
 </p>
 
 BLOGN_T_FOOTER()

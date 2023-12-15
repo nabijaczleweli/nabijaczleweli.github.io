@@ -58,7 +58,7 @@ BOILERPLATE(006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt, 006.
 
 
 <p></p>
-BLOGN_T_HEADING(<code>006. ¹UNIX® is a registered trademark of AT&T.</code>)
+BLOGN_T_HEADING(006. ¹UNIX® is a registered trademark of AT&T.)
 
 <p class="indented">
 It isn'<!--'-->t, of course – <span class="smallcaps">unix</span> belongs to the Open Group nowadays,

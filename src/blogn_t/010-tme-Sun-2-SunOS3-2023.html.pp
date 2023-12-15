@@ -56,7 +56,7 @@ pre.bigcode {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>010. tme booting SunOS 3 on Sun-2 in 2023</code>)
+BLOGN_T_HEADING(010. tme booting SunOS 3 on Sun-2 in 2023)
 
 
 <p class="indented continued">

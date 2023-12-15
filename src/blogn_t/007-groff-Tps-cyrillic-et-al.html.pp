@@ -66,7 +66,7 @@ ol.wide-explanation > li {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</code>)
+BLOGN_T_HEADING(007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
 
 <p>
 	(This produced favourable results pre-bookworm, with <a href="//packages.debian.org/bullseye/gsfonts"><tt>gsfonts</tt></a> fonts.

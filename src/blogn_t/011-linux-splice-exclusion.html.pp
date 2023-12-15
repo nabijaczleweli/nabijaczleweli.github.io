@@ -70,7 +70,7 @@ dl > div > dd {
 
 
 <p></p>
-BLOGN_T_HEADING(<code>011. pipe exclusion with splice() under Linux</code>)
+BLOGN_T_HEADING(011. pipe exclusion with splice() under Linux)
 
 
 <p class="indented continued">
