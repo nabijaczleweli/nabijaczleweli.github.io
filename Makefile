@@ -88,7 +88,7 @@ $(OUTDIR)assets/prism-twilight.min.css : ext/prism/themes/prism-twilight.css
 
 $(OUTDIR)feed.xml : gen-feed.awk $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
 	@mkdir -p $(dir $@)
-	echo $(filter-out $<,$^) | $(SED) "s/ /\n/g" | $(AWK) -f $< -v awk="$(AWK)" > $@
+	printf '%s\n' $(filter-out $<,$^) | $(AWK) -f $< -v awk="$(AWK)" > $@
 
 
 $(OUTDIR)assets/octicons/% : $(BLDDIR)octicons/build/octicons.min.css
