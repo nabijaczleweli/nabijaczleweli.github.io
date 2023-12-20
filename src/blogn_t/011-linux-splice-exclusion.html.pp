@@ -161,8 +161,14 @@ And, thus, QED.
 But
 </p>
 HEADING_S(2, notty, class="continuing", I'<!--'-->m not at a teletype‽)
-<div class="bigcode continuation">
+<div class="bigcode continuing">
 #include "blogn_t/011.02-v.c.html"
+</div>
+<p class="indented continuing">
+or even
+</p>
+<div class="bigcode continuation">
+#include "blogn_t/011.03-skt2.c.html"
 </div>
 
 
@@ -178,7 +184,7 @@ to between
 Linux (none) 4.5.0-2-amd64 #1 SMP Debian 4.5.5-1 (2016-05-29) x86_64 GNU/Linux   is ok
 Linux (none) 4.8.0-2-amd64 #1 SMP Debian 4.8.15-2 (2017-01-04) x86_64 GNU/Linux  is ok
 
-Linux (none) 4.9.0-trunk-rt-amd64 #1 SMP PREEMPT RT Debian 4.9.1-1~exp1 (2017-01-07) x86_64 GNU/Linux us borken
+Linux (none) 4.9.0-trunk-rt-amd64 #1 SMP PREEMPT RT Debian 4.9.1-1~exp1 (2017-01-07) x86_64 GNU/Linux is borken
 vmlinuz-4.19.0-9-amd64 is borken
 -->
 then manually bisecting between <code>v4.8</code> and <code>v4.9</code> – in a stretch chroot, naturally,
