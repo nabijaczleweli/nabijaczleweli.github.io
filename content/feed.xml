@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-12-13T21:06:18</updated>
+  <updated>2023-12-20T01:50:25</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -79,7 +79,7 @@ samp {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 9 Apr 2020 01:44:47 +0200&lt;/span&gt;, last updated &lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 28 Apr 2020 02:54:07 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Some time ago I bought an &lt;a href=&quot;//support.hp.com/us-en/product/hp-rp5700-desktop-pc/4257406/model/4257455&quot;&gt;HP rp5700&lt;/a&gt; &lt;del&gt;Piece of Shit&lt;/del&gt; Point of Sale system
@@ -350,10 +350,10 @@ Alright, bye!
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 25 May 2020 00:12:30 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-The post I made for &lt;a href=&quot;https://bugs.debian.org/961097#35&quot;&gt;#961097&lt;/a&gt;,
+The post I made for &lt;a href=&quot;//bugs.debian.org/961097#35&quot;&gt;#961097&lt;/a&gt;,
  which went through three packages (
 &lt;/p&gt;
 &lt;ol class=&quot;continuing&quot;&gt;
@@ -368,11 +368,11 @@ Plus, it took me an entire day to write and the better part of a week to hunt do
  so it definitely qualifies.
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-You can read it on &lt;a href=&quot;https://bugs.debian.org/961097#35&quot;&gt;debbugs&lt;/a&gt;, since reproducing plaintext with boxes in HTML is a massive pain
+You can read it on &lt;a href=&quot;//bugs.debian.org/961097#35&quot;&gt;debbugs&lt;/a&gt;, since reproducing plaintext with boxes in HTML is a massive pain
  (plus there'&lt;!--'--&gt;s context there).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
-You may also be interested in the corresponding &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800&quot;&gt;twitter thread&lt;/a&gt;.
+You may also be interested in the corresponding &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800&quot;&gt;twitter thread&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
@@ -446,7 +446,7 @@ video, img {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;003. A proof-of-concept IRC/mail bridge&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;003. A proof-of-concept IRC/mail bridge&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 11 Jul 2020 00:34:50 +0200&lt;/span&gt;&lt;/h4&gt;
 As seen on &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1281342937226510342&quot;&gt;Twitter&lt;/a&gt;.
 &lt;h2 id=&quot;what&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#what&quot;&gt;#&lt;/a&gt; What?&lt;/h2&gt;
@@ -663,7 +663,7 @@ img {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;004. New album: cinque&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;004. New album: cinque&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 18 Jul 2020 22:14:33 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented&quot;&gt;
 At &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1284582399838478339&quot;&gt;10:14 pm · 18 Jul 2020&lt;/a&gt; I released my third album: &lt;samp&gt;cinque&lt;/samp&gt;!
@@ -752,7 +752,7 @@ samp {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs! and Sat, 11 Jun 2022 00:19:37 +0200&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 In a brief departure from microcomputing saprophagia, imagine you'&lt;!--'--&gt;re &lt;a href=&quot;//github.com/griwes&quot;&gt;an american&lt;/a&gt; and acquiring a ThinkPad P15,
@@ -1727,7 +1727,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented&quot;&gt;
 It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
@@ -1869,7 +1869,7 @@ ol.wide-explanation &gt; li {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, and Wed, 14 Jun 2023 14:46:03 +0200&lt;/h4&gt;
 &lt;p&gt;
  (This produced favourable results pre-bookworm, with &lt;a href=&quot;//packages.debian.org/bullseye/gsfonts&quot;&gt;&lt;tt&gt;gsfonts&lt;/tt&gt;&lt;/a&gt; fonts.
@@ -2591,7 +2591,7 @@ img {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Have been
@@ -2822,7 +2822,7 @@ a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;009. XEROX SIGMA 9 balls&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;009. XEROX SIGMA 9 balls&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented&quot;&gt;
 I was quite taken by the &lt;span class=&quot;smallcaps&quot;&gt;xerox sigma 9&lt;/span&gt; tape decks, in particular the right one from
@@ -3016,7 +3016,7 @@ pre.bigcode {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;010. tme booting SunOS 3 on Sun-2 in 2023&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;010. tme booting SunOS 3 on Sun-2 in 2023&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 19 Jun 2023 23:53:58 +0200&lt;/span&gt;, &lt;a href=&quot;#sun4c&quot;&gt;Solaris on Sun-4c&lt;/a&gt; on &lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 21 Jun 2023 23:56:00 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 As usual, some program has seen disproportionate development on SunOS.
@@ -3889,7 +3889,7 @@ dl &gt; div &gt; dd {
 &lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;011. pipe exclusion with splice() under Linux&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;011. pipe exclusion with splice() under Linux&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Fri, 07 Jul 2023 01:42:34 +0200&lt;/span&gt;&lt;/h4&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Since apparently I'&lt;!--'--&gt;m
@@ -3981,7 +3981,7 @@ And, thus, QED.
 But
 &lt;/p&gt;
 &lt;h2 id=&quot;notty&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#notty&quot;&gt;#&lt;/a&gt; I'&lt;!--'--&gt;m not at a teletype‽&lt;/h2&gt;
-&lt;div class=&quot;bigcode continuation&quot;&gt;
+&lt;div class=&quot;bigcode continuing&quot;&gt;
 &lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; _GNU_SOURCE&lt;/span&gt;
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;fcntl.h&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdlib.h&gt;&lt;/span&gt;&lt;/span&gt;
@@ -3995,6 +3995,21 @@ But
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+or even
+&lt;/p&gt;
+&lt;div class=&quot;bigcode continuation&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; _GNU_SOURCE&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;fcntl.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;sys/socket.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; sp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;socketpair&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;AF_UNIX&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; SOCK_STREAM&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;128&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
 &lt;h2 id=&quot;bisexion&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bisexion&quot;&gt;#&lt;/a&gt; Bisexion&lt;/h2&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 By rough-bisecting off snapshot.d.o kernel packages – since
@@ -4005,7 +4020,7 @@ to between
 3.16.36-1+deb8u1 is ok
 Linux (none) 4.5.0-2-amd64 #1 SMP Debian 4.5.5-1 (2016-05-29) x86_64 GNU/Linux is ok
 Linux (none) 4.8.0-2-amd64 #1 SMP Debian 4.8.15-2 (2017-01-04) x86_64 GNU/Linux is ok
-Linux (none) 4.9.0-trunk-rt-amd64 #1 SMP PREEMPT RT Debian 4.9.1-1~exp1 (2017-01-07) x86_64 GNU/Linux us borken
+Linux (none) 4.9.0-trunk-rt-amd64 #1 SMP PREEMPT RT Debian 4.9.1-1~exp1 (2017-01-07) x86_64 GNU/Linux is borken
 vmlinuz-4.19.0-9-amd64 is borken
 --&gt;
 then manually bisecting between &lt;code&gt;v4.8&lt;/code&gt; and &lt;code&gt;v4.9&lt;/code&gt; – in a stretch chroot, naturally,
@@ -4067,7 +4082,9 @@ sexion.
   &lt;div&gt;&lt;dt&gt;2023-07-06T23:56:45&lt;/dt&gt;&lt;dd&gt;Linus posts the &quot;slightly tested version&quot;.&lt;/dd&gt;&lt;/div&gt;
   &lt;div&gt;&lt;dt&gt;2023-07-08T22:06:56&lt;/dt&gt;&lt;dd&gt;After a few more rounds of patches, Linus &lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#me67de5a9ec18886c434113637d7eff6cd7acac4b&quot;&gt;concedes&lt;/a&gt; that potentially &quot;we need to just bite the bullet and say »copy_splice_read() needs to use a non-blocking kiocb for the IO«.&quot;.&lt;/dd&gt;&lt;/div&gt;
   &lt;div&gt;&lt;dt&gt;2023-07-09T03:03:22&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/linux-fsdevel/qk6hjuam54khlaikf2ssom6custxf5is2ekkaequf4hvode3ls@zgf7j5j4ubvw/t/#maf55a5e6d086565e4e2c5014c3fc3914434c9761&quot;&gt;post&lt;/a&gt; a summary diff that does that.&lt;/dd&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;dt&gt;2023-10-16T22:35:28&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/813e1805aa942862d300bec4d0563c5a466dce78.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/&quot;&gt;post&lt;/a&gt; a re-based and itemised patchset that does the same thing, and also find similar conditions in the pipe → file direxion.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-10-16T22:35:28&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;post&lt;/a&gt; a re-based and itemised patchset that does the same thing, and also find similar conditions in the pipe → file direxion.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-12-12T11:12:28&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/1cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;RESEND&lt;/a&gt;.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-12-14T19:44:42&lt;/dt&gt;&lt;dd&gt;After &lt;a href=&quot;//lore.kernel.org/lkml/20231213162854.4acfbd9f@kernel.org/t/#u&quot;&gt;consternation&lt;/a&gt; w.r.t. &quot;who's gonna take this?&quot; (how would I know) and &quot;I do wish the CC list had been setup a bit more deliberately&quot; (&lt;samp&gt;D&lt;span style=&quot;font-size: 0.7em;&quot;&gt;ocumentation&lt;/span&gt;/p&lt;span style=&quot;font-size: 0.7em;&quot;&gt;rocess&lt;/span&gt;/&lt;span style=&quot;white-space: nowrap;&quot;&gt;submitting-patches.rst&lt;/span&gt;&lt;/samp&gt; says &quot;paste &lt;code&gt;get_maintainer.pl&lt;/code&gt; into Cc:&quot;, in as many words, which is probably better-suited for &quot;here's 5 patches for the memfrob driver&quot; instead of &quot;here's an identical diff against 11 modules&quot;; too bad I keep finding issues that are the latter), I &lt;a href=&quot;//lore.kernel.org/lkml/2cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;RERESEND&lt;/a&gt;.&lt;/dd&gt;&lt;/div&gt;
 &lt;/dl&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
