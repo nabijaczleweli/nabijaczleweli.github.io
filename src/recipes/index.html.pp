@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Wed, 13 Dec 2023 21:51:24 +0100" -->
+<!-- RSS_UPDATE_DATE: "Sat, 23 Dec 2023 23:15:07 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -96,10 +96,40 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-12-13, $101010.pl/@nabijaczleweli/111575020146177424)</a>.
+	Latest replication: REPLICATION(2023-12-23, $101010.pl/@nabijaczleweli/111631778152035657)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+
+ONE_IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/631/775/273/497/339/original/cc67a40e25cad667.jpeg, $101010.pl/@nabijaczleweli/111631778152035657)
+
+<details open>
+	SUMMARY(challah, Chałka (strucla (chałka)))
+	<p class="continuing">
+		<a href="//stronakuchni.pl/klasyczna-chalka-drozdzowa-na-podwieczorek-tradycyjny-przepis-na-rumiany-wypiek-posyp-ja-makiem-jak-za-dawnych-lat/ar/c17-17861293">Klasyczna chałka drożdżowa na podwieczorek. Tradycyjny przepis na rumiany wypiek. Posyp ją makiem jak za dawnych lat</a>
+		by Strona Kuchni,
+		replicated REPLICATION(2023-12-23, $101010.pl/@nabijaczleweli/111631778152035657):</p>
+	<ol class="continuation">
+		<li>prepare a urine sample yesterday by having applied three saffron threads to a spoon of white rum – I don't think the spirit matters, I had gin to hand</li>
+		<li>NUM(15g) of fresh yeast, NUM(90g) of like NUM(40°) water, NUM(20g) of sugar, NUM(1) egg, stir, leave alone for NUM(15min)</li>
+		<li>add NUM(25g) of warm butter and mix it in – to… water? I know this is a click-farm and this was probably poorly copied but this is baffling</li>
+		<li>NUM(½) of a small spoon of salt, NUM(250g) of flour, knead mostly, add the urine sample, knead fully, he sleeps for NUM(30min)</li>
+		<li>knead short, he sleeps for NUM(1h)</li>
+		<li>knead to accrue, divide into NUM(5) guys, they sleep for NUM(5-7min) under a rag</li>
+		<li>cylindrise each guy NUM(18-20cm) long, plait them together, they sleep for NUM(1h) under a rag – that would have been exceedingly short for me</li>
+		<li>brush with yolk, sprinkle poppy, bake at NUM(180°) for NUM(25min)</li>
+		<li>cool on rack</li>
+	</ol>
+
+	<p>
+		This is something I'd call a chałka and mother calls a chałka,
+		but polish chałka is sweet with streusel topping,
+		and this isn't because it's a chrismas variant,
+		so father calls it a strucla which it isn't,
+		or this must be deeply regional counternomenclature.
+	</p>
+</details>
 
 
 IMAGUS(storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/450/825/877/321/125/original/20fb7deb1879af31.jpeg, $101010.pl/@nabijaczleweli/111450828098726010,
