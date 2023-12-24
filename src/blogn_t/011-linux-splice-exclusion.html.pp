@@ -155,6 +155,11 @@ but teletype I/O, by design, never does
 <a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES">until a newline/<code>eof</code>/<code>eol</code>/<code>eol2</code></a>.
 And, thus, QED.
 </p>
+<p class="indented">
+Additionally, for splicing from a pipe to a socket,
+if the <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n871">write to the socket</a> would block,
+that sleep is taken <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n801">with the pipe lock held</a>.
+</p>
 
 
 <p class="indented continued">
