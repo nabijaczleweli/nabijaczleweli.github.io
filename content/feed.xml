@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-12-23T22:28:03</updated>
+  <updated>2023-12-24T05:19:34</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -3977,6 +3977,14 @@ but teletype I/O, by design, never does
 &lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES&quot;&gt;until a newline/&lt;code&gt;eof&lt;/code&gt;/&lt;code&gt;eol&lt;/code&gt;/&lt;code&gt;eol2&lt;/code&gt;&lt;/a&gt;.
 And, thus, QED.
 &lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Additionally, for splicing from a pipe to a socket,
+if the &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n871&quot;&gt;write to the socket&lt;/a&gt; would block,
+that sleep is taken &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n801&quot;&gt;with the pipe lock held&lt;/a&gt;.
+The &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n683&quot;&gt;same&lt;/a&gt; applies
+to the &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n735&quot;&gt;generic implementation&lt;/a&gt;,
+which is only an issue for teletypes and FUSE.
+&lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 But
 &lt;/p&gt;
@@ -4087,6 +4095,7 @@ sexion.
   &lt;div&gt;&lt;dt&gt;2023-12-14T19:44:42&lt;/dt&gt;&lt;dd&gt;After &lt;a href=&quot;//lore.kernel.org/lkml/20231213162854.4acfbd9f@kernel.org/t/#u&quot;&gt;consternation&lt;/a&gt; w.r.t. &quot;who's gonna take this?&quot; (how would I know) and &quot;I do wish the CC list had been setup a bit more deliberately&quot; (&lt;samp&gt;D&lt;span style=&quot;font-size: 0.7em;&quot;&gt;ocumentation&lt;/span&gt;/p&lt;span style=&quot;font-size: 0.7em;&quot;&gt;rocess&lt;/span&gt;/&lt;span style=&quot;white-space: nowrap;&quot;&gt;submitting-patches.rst&lt;/span&gt;&lt;/samp&gt; says &quot;paste &lt;code&gt;get_maintainer.pl&lt;/code&gt; into Cc:&quot;, in as many words, which is probably better-suited for &quot;here's 5 patches for the memfrob driver&quot; instead of &quot;here's an identical diff against 11 modules&quot;; too bad I keep finding issues that are the latter), I &lt;a href=&quot;//lore.kernel.org/lkml/2cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;RERESEND&lt;/a&gt;.&lt;/dd&gt;&lt;/div&gt;
   &lt;div&gt;&lt;dt&gt;2023-12-19T23:24:14&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/dtexwpw6zcdx7dkx3xj5gyjp5syxmyretdcbcdtvrnukd4vvuh@tarta.nabijaczleweli.xyz/t/#u&quot;&gt;post&lt;/a&gt; an extracted removal of fully-dead-and-no-one-noticed-since-2016 &lt;code&gt;relay_file_splice_read()&lt;/code&gt; (-162!).&lt;/dd&gt;&lt;/div&gt;
   &lt;div&gt;&lt;dt&gt;2023-12-21T04:08:41&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/cover.1703126594.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;post&lt;/a&gt; a fully-tested v2 with reproducers and a fixed (via disabling) teletype handling, new FUSE code, and most importantly a re-imagined framing in terms of a security model derived from only the real root being allowed to mount filesystems and an attack being possible if any other files sleep.&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;2023-12-24T06:01:49&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/fvxufyqixohx65lcusrkkfoxs5cnlsuv7kajv6bnngcoewsodx@tarta.nabijaczleweli.xyz/t/#u&quot;&gt;append&lt;/a&gt; a fix for splice(pipe→tty) and splice(pipe→FUSE).&lt;/dd&gt;&lt;/div&gt;
 &lt;/dl&gt;
 &lt;p&gt; 
  &lt;br /&gt; 

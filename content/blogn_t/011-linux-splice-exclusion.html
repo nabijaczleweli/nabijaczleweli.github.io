@@ -225,6 +225,14 @@ but teletype I/O, by design, never does
 <a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES">until a newline/<code>eof</code>/<code>eol</code>/<code>eol2</code></a>.
 And, thus, QED.
 </p>
+<p class="indented">
+Additionally, for splicing from a pipe to a socket,
+if the <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n871">write to the socket</a> would block,
+that sleep is taken <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n801">with the pipe lock held</a>.
+The <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n683">same</a> applies
+to the <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n735">generic implementation</a>,
+which is only an issue for teletypes and FUSE.
+</p>
 <p class="indented continued">
 But
 </p>
@@ -335,6 +343,7 @@ sexion.
   <div><dt>2023-12-14T19:44:42</dt><dd>After <a href="//lore.kernel.org/lkml/20231213162854.4acfbd9f@kernel.org/t/#u">consternation</a> w.r.t. "who's gonna take this?" (how would I know) and "I do wish the CC list had been setup a bit more deliberately" (<samp>D<span style="font-size: 0.7em;">ocumentation</span>/p<span style="font-size: 0.7em;">rocess</span>/<span style="white-space: nowrap;">submitting-patches.rst</span></samp> says "paste <code>get_maintainer.pl</code> into Cc:", in as many words, which is probably better-suited for "here's 5 patches for the memfrob driver" instead of "here's an identical diff against 11 modules"; too bad I keep finding issues that are the latter), I <a href="//lore.kernel.org/lkml/2cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">RERESEND</a>.</dd></div>
   <div><dt>2023-12-19T23:24:14</dt><dd>I <a href="//lore.kernel.org/lkml/dtexwpw6zcdx7dkx3xj5gyjp5syxmyretdcbcdtvrnukd4vvuh@tarta.nabijaczleweli.xyz/t/#u">post</a> an extracted removal of fully-dead-and-no-one-noticed-since-2016 <code>relay_file_splice_read()</code> (-162!).</dd></div>
   <div><dt>2023-12-21T04:08:41</dt><dd>I <a href="//lore.kernel.org/lkml/cover.1703126594.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">post</a> a fully-tested v2 with reproducers and a fixed (via disabling) teletype handling, new FUSE code, and most importantly a re-imagined framing in terms of a security model derived from only the real root being allowed to mount filesystems and an attack being possible if any other files sleep.</dd></div>
+  <div><dt>2023-12-24T06:01:49</dt><dd>I <a href="//lore.kernel.org/lkml/fvxufyqixohx65lcusrkkfoxs5cnlsuv7kajv6bnngcoewsodx@tarta.nabijaczleweli.xyz/t/#u">append</a> a fix for splice(pipe→tty) and splice(pipe→FUSE).</dd></div>
 </dl>
 <p> 
  <br /> 
@@ -357,9 +366,9 @@ sexion.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 16'<!--'-->s C preprocessor on 23.12.2023 22:25:06 UTC from 
+ Automatically generated with Clang 16'<!--'-->s C preprocessor on 24.12.2023 05:16:45 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/011-linux-splice-exclusion.html.pp">src/blogn_t/011-linux-splice-exclusion.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1120251">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1120375">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
