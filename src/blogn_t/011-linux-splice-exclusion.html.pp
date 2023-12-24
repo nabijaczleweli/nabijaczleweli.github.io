@@ -159,6 +159,9 @@ And, thus, QED.
 Additionally, for splicing from a pipe to a socket,
 if the <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n871">write to the socket</a> would block,
 that sleep is taken <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n801">with the pipe lock held</a>.
+The <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n683">same</a> applies
+to the <a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/splice.c?id=v6.6#n735">generic implementation</a>,
+which is only an issue for teletypes and FUSE.
 </p>
 
 
@@ -263,6 +266,7 @@ sexion.
   <div><dt>2023-12-14T19:44:42</dt><dd>After <a href="//lore.kernel.org/lkml/20231213162854.4acfbd9f@kernel.org/t/#u">consternation</a> w.r.t. "who's gonna take this?" (how would I know) and "I do wish the CC list had been setup a bit more deliberately" (<samp>D<span style="font-size: 0.7em;">ocumentation</span>/p<span style="font-size: 0.7em;">rocess</span>/<span style="white-space: nowrap;">submitting-patches.rst</span></samp> says "paste <code>get_maintainer.pl</code> into Cc:", in as many words, which is probably better-suited for "here's 5 patches for the memfrob driver" instead of "here's an identical diff against 11 modules"; too bad I keep finding issues that are the latter), I <a href="//lore.kernel.org/lkml/2cover.1697486714.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">RERESEND</a>.</dd></div>
   <div><dt>2023-12-19T23:24:14</dt><dd>I <a href="//lore.kernel.org/lkml/dtexwpw6zcdx7dkx3xj5gyjp5syxmyretdcbcdtvrnukd4vvuh@tarta.nabijaczleweli.xyz/t/#u">post</a> an extracted removal of fully-dead-and-no-one-noticed-since-2016 <code>relay_file_splice_read()</code> (-162!).</dd></div>
   <div><dt>2023-12-21T04:08:41</dt><dd>I <a href="//lore.kernel.org/lkml/cover.1703126594.git.nabijaczleweli@nabijaczleweli.xyz/t/#u">post</a> a fully-tested v2 with reproducers and a fixed (via disabling) teletype handling, new FUSE code, and most importantly a re-imagined framing in terms of a security model derived from only the real root being allowed to mount filesystems and an attack being possible if any other files sleep.</dd></div>
+  <div><dt>2023-12-24T06:01:49</dt><dd>I <a href="//lore.kernel.org/lkml/fvxufyqixohx65lcusrkkfoxs5cnlsuv7kajv6bnngcoewsodx@tarta.nabijaczleweli.xyz/t/#u">append</a> a fix for splice(pipe→tty) and splice(pipe→FUSE).</dd></div>
 </dl>
 
 
