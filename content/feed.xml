@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-12-24T05:19:34</updated>
+  <updated>2023-12-27T15:01:03</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -4892,7 +4892,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-12-23T23:15:07+01:00</updated>
+    <updated>2023-12-27T15:46:32+01:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4980,19 +4980,47 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111631778152035657&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-23&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111647542784996947&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-26&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111631778152035657&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/631/775/273/497/339/original/cc67a40e25cad667.jpeg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;article&gt;
+&lt;/article&gt; &lt;article id=&quot;andy-vánočka&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111647881958561845&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/647/880/463/356/238/original/7938eaee2ded220a.png&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;challah&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#challah&quot;&gt;#&lt;/a&gt;Chałka (strucla (chałka))&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#andy-vánočka&quot;&gt;#&lt;/a&gt;Andy'&lt;!--'--&gt;s vánočka&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;!-- https://discord.com/channels/145079846832308224/166565886998609920/1188939034597281842 --&gt;
+  Guest recipe from Andy's wife's grandma,
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111647542784996947&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-26&lt;/span&gt;&lt;/a&gt;:
+ &lt;/p&gt;
+ &lt;ul class=&quot;continuing&quot;&gt;
+  &lt;li&gt;500g flour (ideally low protein content, like 8-9g)&lt;/li&gt;
+  &lt;li&gt;120g butter&lt;/li&gt;
+  &lt;li&gt;120g crystal or caster sugar&lt;/li&gt;
+  &lt;li&gt;3 average egg yolks or 4 small egg yolks&lt;/li&gt;
+  &lt;li&gt;30g fresh yeast&lt;/li&gt;
+  &lt;li&gt;5g salt&lt;/li&gt;
+  &lt;li&gt;250g milk&lt;/li&gt;
+  &lt;li&gt;1 lemon zest (or actually as much as you like)&lt;/li&gt;
+  &lt;li&gt;30g almonds (or actually as much as you like)&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;p class=&quot;continuation&quot;&gt;
+  Make the dough by mixing all the ingredients, then let it rise in a bowl for like 60-90 mins. Then roll 9 equally long pieces and form the vianočka. Paint with egg whites, let it rise for another 30 mins or so, then bake at 180C for about 45 mins
+ &lt;/p&gt;
+ &lt;p&gt;
+  I don'&lt;!--'--&gt;t stock fresh yeast, and used dry instead; forgot to brush with egg.
+ &lt;/p&gt;
+&lt;/details&gt;
+&lt;article&gt;
+&lt;/article&gt; &lt;article id=&quot;challah&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111631778152035657&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/631/775/273/497/339/original/cc67a40e25cad667.jpeg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;details open&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#challah&quot;&gt;#&lt;/a&gt;Chałka (strucla (chałka))&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//stronakuchni.pl/klasyczna-chalka-drozdzowa-na-podwieczorek-tradycyjny-przepis-na-rumiany-wypiek-posyp-ja-makiem-jak-za-dawnych-lat/ar/c17-17861293&quot;&gt;Klasyczna chałka drożdżowa na podwieczorek. Tradycyjny przepis na rumiany wypiek. Posyp ją makiem jak za dawnych lat&lt;/a&gt;
   by Strona Kuchni,
   replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111631778152035657&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-23&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
-  &lt;li&gt;prepare a urine sample yesterday by having applied three saffron threads to a spoon of white rum – I don't think the spirit matters, I had gin to hand&lt;/li&gt;
+  &lt;li&gt;prepare a urine sample yesterday by having applied three saffron threads to a spoon of white rum – I don'&lt;!--'--&gt;t think the spirit matters, I had gin to hand&lt;/li&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15g&lt;/span&gt; of fresh yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;90g&lt;/span&gt; of like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40°&lt;/span&gt; water, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1&lt;/span&gt; egg, stir, leave alone for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;15min&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;add &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;25g&lt;/span&gt; of warm butter and mix it in – to… water? I know this is a click-farm and this was probably poorly copied but this is baffling&lt;/li&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;½&lt;/span&gt; of a small spoon of salt, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;250g&lt;/span&gt; of flour, knead mostly, add the urine sample, knead fully, he sleeps for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30min&lt;/span&gt;&lt;/li&gt;
@@ -5003,19 +5031,21 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;cool on rack&lt;/li&gt;
  &lt;/ol&gt;
  &lt;p&gt;
-  This is something I'd call a chałka and mother calls a chałka,
+  This is something I'&lt;!--'--&gt;d call a chałka and mother calls a chałka,
   but polish chałka is sweet with streusel topping,
   and this isn't because it's a chrismas variant,
-  so father calls it a strucla which it isn't,
+  so father calls it a strucla which it isn'&lt;!--'--&gt;t,
   or this must be deeply regional counternomenclature.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;ass-yorkshire-pudding&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111450828098726010&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/450/825/877/321/125/original/20fb7deb1879af31.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111495453441617318&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/495/451/686/471/782/original/7275030b7d7eadd0.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;ass-yorkshire-pudding&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#ass-yorkshire-pudding&quot;&gt;#&lt;/a&gt;Yorkshire pudding (bad)&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#ass-yorkshire-pudding&quot;&gt;#&lt;/a&gt;Yorkshire pudding (bad)&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;!-- https://discord.com/channels/616404343146414243/659425870204764160/1171880679416537180 --&gt;
   From Donkey Kong,
@@ -5047,12 +5077,15 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   This is in contrast to what the original photos demonstrated, so maybe this only works in Leicester.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;america-biscuit&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111387230909933378&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/387/225/452/857/096/original/7d8005acf75fd3a9.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111426205697493973&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/426/200/399/488/287/original/494470d2f12e46a3.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
+&lt;span id=&quot;england-biscuit&quot;&gt; &lt;!-- I fucked it and misrembered. kingdom biscuits are actual biscuits!!--&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;america-biscuit&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#america-biscuit&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;england-biscuit&quot;&gt;Yankscuit&lt;/span&gt; &lt;!-- I fucked it and misrembered. kingdom biscuits are actual biscuits!!--&gt;&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#america-biscuit&quot;&gt;#&lt;/a&gt;Yankscuit&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//sallysbakingaddiction.com/flaky-buttermilk-biscuits/&quot;&gt;Homemade Buttermilk Biscuits (6 Ingredients)&lt;/a&gt;,
   by Sally'&lt;!--'--&gt;s Baking Addiction,
@@ -5079,9 +5112,10 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;brush with a &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2:1&lt;/span&gt; butter:honey combo heated to combine&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111353464306173291&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/353/463/863/592/505/original/561588b6e25a107f.png&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;/span&gt;
+&lt;/article&gt; &lt;article id=&quot;ciasto-kotletowe&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111353464306173291&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/353/463/863/592/505/original/561588b6e25a107f.png&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;ciasto-kotletowe&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#ciasto-kotletowe&quot;&gt;#&lt;/a&gt;Ciasto kotletowe&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#ciasto-kotletowe&quot;&gt;#&lt;/a&gt;Ciasto kotletowe&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   Courtesy of my aunt,
   replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111353464306173291&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-11-04&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
@@ -5103,12 +5137,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;/div&gt;
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;shaobing&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110992083451588635&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/992/073/464/014/965/original/d128c25363a316d5.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111041049425379229&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/041/044/915/290/778/original/a43748bfceb81e52.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;shaobing&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shaobing&quot;&gt;#&lt;/a&gt;Shaobing&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shaobing&quot;&gt;#&lt;/a&gt;Shaobing&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/OoSJTqpcHps&quot; lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;从小吃到大的油盐烧饼，不用烤烙着吃更香，咸香酥软太好吃了&lt;!--&quot;--&gt;&lt;/a&gt;,
   by Yi Ning'&lt;!--'--&gt;s Mother Loves Food,
@@ -5137,12 +5173,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;liver-soup&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110945861145403755&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/945/854/392/660/756/original/26ad039c41131d76.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/110956423046357306&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/956/422/198/154/529/original/46ad82460086d290.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;liver-soup&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#liver-soup&quot;&gt;#&lt;/a&gt;Hog'&lt;!--'--&gt;s liver soup&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#liver-soup&quot;&gt;#&lt;/a&gt;Hog'&lt;!--'--&gt;s liver soup&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/y_hT7nzXzGE&quot;&gt;Chef Wang teaches you: &quot;Pork Liver Soup&quot;, a traditional Sichuan soup dish
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;厨师长教你：“生汆猪肝汤”的家常做法，清爽滑嫩，鲜而不腥&lt;/span&gt;)&lt;/a&gt;,
@@ -5172,12 +5210,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;boil midly and de-froth until &quot;the vegetables are half-cooked&quot;&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;supposed-laobing&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110912325874653835&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/912/322/766/078/278/original/871fbbb3fdab47bb.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/110885535194714458&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/885/534/928/580/898/original/1711d463c0ae032f.jpg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;supposed-laobing&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#supposed-laobing&quot;&gt;#&lt;/a&gt;Half-rye inflating bread&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#supposed-laobing&quot;&gt;#&lt;/a&gt;Half-rye inflating bread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/y_hT7nzXzGE&quot; lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;这样烙饼好神奇！不抹油不包油酥，个个空心像气球，简单好吃&lt;!--&quot;--&gt;&lt;/a&gt;,
   by Yi Ning'&lt;!--'--&gt;s Mother Loves Food,
@@ -5208,9 +5248,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;for each guy: flatten directly, flour bilaterally, roll out to &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2-3mm&lt;/span&gt;, bake on casting&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110809682480516115&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/809/495/805/550/457/original/20bef8e45b221fe0.jpg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;/article&gt; &lt;article id=&quot;soy-flour-red-bean-sticky-rice-worm-hunks&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110809682480516115&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/809/495/805/550/457/original/20bef8e45b221fe0.jpg&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;soy-flour-red-bean-sticky-rice-worm-hunks&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#soy-flour-red-bean-sticky-rice-worm-hunks&quot;&gt;#&lt;/a&gt;The soy-eating sticky rice and red bean worm so delicious it was hunted to extinxion (real, sad, tragic, the method for preparation is explained)&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#soy-flour-red-bean-sticky-rice-worm-hunks&quot;&gt;#&lt;/a&gt;The soy-eating sticky rice and red bean worm so delicious it was hunted to extinxion (real, sad, tragic, the method for preparation is explained)&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/94sq209lddU&quot; lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;糯米粉这样做，比驴打滚简单好吃，一口一个软糯香甜，夏天必吃&lt;!--&quot;--&gt;&lt;/a&gt;,
   by Yi Ning'&lt;!--'--&gt;s Mother Loves Food,
@@ -5227,12 +5267,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;toss the pieces in soy flour to cover&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;shroomy-paper&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110787166550728100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/787/165/007/587/820/original/f9aa27cddb09c71e.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111133451540276725&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/133/449/399/259/470/original/dea0e20ea8afc644.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;shroomy-paper&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shroomy-paper&quot;&gt;#&lt;/a&gt;Fungus bean curd skin&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#shroomy-paper&quot;&gt;#&lt;/a&gt;Fungus bean curd skin&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/94sq209lddU&quot;&gt;The chef teaches you the recipe for Bean curd skin , it'&lt;!--'--&gt;s too fragrant
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;豆腐皮这个做法太好吃了，我家一周吃6次，上桌就光盘，太香了！Bean curd skin recipe&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5273,12 +5315,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   Probably moderate the salt when using a salty bullion cube.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;beef-brussy-CA&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110752930128901173&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/920/201/065/064/original/e5104e9dae21ffc3.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/110752998578446480&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/752/949/667/426/193/original/6937c34646c929fd.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;beef-brussy-CA&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#beef-brussy-CA&quot;&gt;#&lt;/a&gt;Beef Stuffed Flatbread&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#beef-brussy-CA&quot;&gt;#&lt;/a&gt;Beef Stuffed Flatbread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/kko5x0P0Cbg&quot;&gt;Beef Stuffed Flatbread
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;薄皮馅饼 Stuffed Flatbread&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5329,12 +5373,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   Actual measures yet unknown.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;blooming-bread&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110669748656310055&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/669/573/055/938/291/original/c6b5c98e5242ace8.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/110669748656310055&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/670/199/586/607/127/original/2a6248ace16432df.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;blooming-bread&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#blooming-bread&quot;&gt;#&lt;/a&gt;开花馒头&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#blooming-bread&quot;&gt;#&lt;/a&gt;开花馒头&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/NOZxFzMKnz4&quot; lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;开花馒头，开不开花揉馒头方法很关键，做对了一出锅个个笑开花【三丰美食】&lt;!--&quot;--&gt;&lt;/a&gt;,
   by &lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;三丰美食&lt;!--&quot;--&gt;&lt;/span&gt;,
@@ -5363,12 +5409,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   I haven'&lt;!--'--&gt;t gotten these to work morphologically.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;puckered-bread&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1688343-idk-what-i-did-diffe&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/7e10cb46-e68f-454c-8a1f-920b6f7ef7a3/DSC_2700.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1676107-didn-t-explode-along&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/b3806ff1-048d-472c-b03c-b6a5bdec1189/DSC_2694.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;puckered-bread&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#puckered-bread&quot;&gt;#&lt;/a&gt;Puckered bread&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#puckered-bread&quot;&gt;#&lt;/a&gt;Puckered bread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/z44JqGKyLBg&quot;&gt;Blossom steamed bread delicious method is very simple
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;开花馒头好吃方法很简单，学会这个做法，蓬松柔软个个开花【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5402,12 +5450,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   I haven't gotten an intentation technique that wasn't just a knife to work, idk how she does it.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;dumpy&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/833db54b-f39d-4278-998d-167856b153cb/DSC_2655a.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1619105-one-day-they-ll-inve&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/81fc99fc-d95a-4cd4-b69d-5eed4470c701/DSC_2656.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;dumpy&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#dumpy&quot;&gt;#&lt;/a&gt;Steamed dumpling&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#dumpy&quot;&gt;#&lt;/a&gt;Steamed dumpling&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/kwx-qZd9Epw&quot;&gt;Home version of big steamed dumplings learn to do this, soft and chewy
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;家庭版大蒸饺学会这样做，柔软筋道不破皮不漏馅，适合新手【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5434,12 +5484,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;pour hot oil overtop, stir&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;brown-sugar-shortbread&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/2e864867-f252-4c51-9ea4-126fd8e1a5e9/DSC_2637a.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1534159-idk-whose-home-town&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/bb5f12d8-8cd5-47a2-980e-55501950da44/DSC_2635a.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;brown-sugar-shortbread&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#brown-sugar-shortbread&quot;&gt;#&lt;/a&gt;Old-fashioned brown sugar short-bread&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#brown-sugar-shortbread&quot;&gt;#&lt;/a&gt;Old-fashioned brown sugar short-bread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/wzMPdyUy99g&quot;&gt;Hometown gourmet brown sugar shortbread, step-by-step explanation
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;家乡美食红糖酥饼，步骤详细讲解，酥脆香甜不用出去买【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5481,12 +5533,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;pumpkin-hanamaki&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1538182-yes-im-still-working&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/7339792a-7d19-4344-acc1-4f0b2f928cef/DSC_2647.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1525544-okay-thats-kinda-pog&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/64a8b45c-13e5-4a1f-8bcc-1564da55fcd5/DSC_2630a.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;pumpkin-hanamaki&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#pumpkin-hanamaki&quot;&gt;#&lt;/a&gt;Pumpkin hanamaki&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#pumpkin-hanamaki&quot;&gt;#&lt;/a&gt;Pumpkin hanamaki&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/7_VBad4AzWI&quot;&gt;Homemade Hanamaki is simple and practical, you can learn it in a minute
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;家常花卷简单实用，一分钟就能学会，营养丰富层多柔软【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5526,12 +5580,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;butter-bread&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/85fc5b38-c64e-4c56-8323-4b6aae087473/1683924925110.JPEG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1488951-quite-pog-for-a-brus&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/6401196b-c17e-478d-9249-9593555e5531/DSC_2615a.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;butter-bread&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#butter-bread&quot;&gt;#&lt;/a&gt;Butter bread&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#butter-bread&quot;&gt;#&lt;/a&gt;Butter bread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/i8fGjFvwNN0?t=441&quot;&gt;How to make Haijuan Gourmet'&lt;!--'--&gt;s big white steamed buns with bright surface?
                                          (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5574,12 +5630,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;hushi-confexion&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1494733-still-very-acceptabl&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/284c385d-ab51-470c-9663-5f001f09b2ab/DSC_2617.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1486924-pog-moment&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/d8658927-a3d4-4f84-bc06-4d1bb418db20/DSC_2610a.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;hushi-confexion&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#hushi-confexion&quot;&gt;#&lt;/a&gt;Hushi confexion&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#hushi-confexion&quot;&gt;#&lt;/a&gt;Hushi confexion&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/yW85JqGvy7M&quot;&gt;Chinese rural specialty delicacy Hushi sugar baker
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;中国农村特色美食呼市方糖焙子，从和面到制作油酥很详细，香甜可口还柔软【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5637,9 +5695,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   conversely, her sugar is absolutely sodden.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d/DSC_2596a.JPG&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
+&lt;/article&gt; &lt;article id=&quot;onion-pancake&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1465853-this-is-the-only-one&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/f5fef574-0ada-4e5c-919a-526285cfee9d/DSC_2596a.JPG&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;onion-pancake&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#onion-pancake&quot;&gt;#&lt;/a&gt;Green onion pancake&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#onion-pancake&quot;&gt;#&lt;/a&gt;Green onion pancake&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/i8fGjFvwNN0?t=886&quot;&gt;How to make Haijuan Gourmet'&lt;!--'--&gt;s big white steamed buns with bright surface?
                                          (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;【面食合集】表面光亮的大白馒头怎么做？蓬松柔软又好吃，看一遍就会做！【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5675,12 +5733,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   (a) never because it burned on the ass pan, or (b) it was already quite fried, and hers were still white at this time.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;buns&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1461465-okay-thats-some-pret&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/fdb67946-b1d1-4696-8450-585f0aceda59/DSC_5798.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111575020146177424&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/574/872/987/262/651/original/559a4b23d29075e3.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;buns&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#buns&quot;&gt;#&lt;/a&gt;Buns&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#buns&quot;&gt;#&lt;/a&gt;Buns&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/tghGkiw8feU&quot;&gt;From snacks to big sauced meat buns, the skin is thin and the stuffing is big and soft
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;从小吃到大的酱肉包子，皮薄馅大又暄软，不塌陷不回缩【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5735,12 +5795,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   the lard in the dough is magic.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;leek-cake&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1440206-leek-multi-laye&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/e7e450f2-e151-42ab-977c-d8395e05154a/DSC_5775.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1440206-leek-multi-laye&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/660e5669-4349-4236-907a-dcec6f5c8003/DSC_5778.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;leek-cake&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#leek-cake&quot;&gt;#&lt;/a&gt;Leek multi-layer cake&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#leek-cake&quot;&gt;#&lt;/a&gt;Leek multi-layer cake&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/2rNbXgnnyQg&quot;&gt;Leek multi-layer cake is delicious and no skill
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;韭菜多层饼好吃无技巧，层层有饼层层有馅，咸香味美满嘴香！【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5774,9 +5836,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;soy sus, fish sus, salt&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt;&lt;/center&gt;
+&lt;/article&gt; &lt;article id=&quot;topinambur-cream-soup&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt;&lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;topinambur-cream-soup&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#topinambur-cream-soup&quot;&gt;#&lt;/a&gt;Topinambur cream soup&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#topinambur-cream-soup&quot;&gt;#&lt;/a&gt;Topinambur cream soup&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   Top-most recipe from
   &lt;a href=&quot;//www.ugotowanepozamiatane.pl/top-5-potraw-topinambur/&quot;&gt;Top 6 najlepszych przepisów na topinambur&lt;/a&gt;,
@@ -5790,12 +5852,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;blend&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;corn-freamed-buns&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1434488-okay-these-ones-rose&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/ca893d84-f5a0-4e68-8d59-25caa7553def/DSC_2584.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1413956-okay-these-are-pog-c&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/4cac1ee0-9abc-447d-ad26-bf841e4f6a2a/DSC_2571.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;corn-freamed-buns&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#corn-freamed-buns&quot;&gt;#&lt;/a&gt;Corn freamed (fried steamed) rolls (buns), rose-shaped&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#corn-freamed-buns&quot;&gt;#&lt;/a&gt;Corn freamed (fried steamed) rolls (buns), rose-shaped&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/7tZEh6uzcOo&quot;&gt;Cornmeal for rolls? Easy to make fluffy and soft
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;玉米面不蒸馒头做花卷？蓬松柔软做法简单，全程无难度【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5849,12 +5913,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   Operator error.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;wężymorda&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/685d38a2-808b-4136-85f5-be6813691c20/1682517987967.JPEG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1397956-she-call-me-her-grat&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/3bb8cd24-0ff4-40e8-8b0f-a554a2cf6714/1682517987996.JPEG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;wężymorda&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#wężymorda&quot;&gt;#&lt;/a&gt;Gratin de salsifis&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#wężymorda&quot;&gt;#&lt;/a&gt;Gratin de salsifis&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//www.swissmilk.ch/fr/recettes-idees/recettes/LM200711_21/gratin-de-salsifis/&quot;&gt;Gratin de salsifis&lt;/a&gt;,
   by swissmilk,
@@ -5872,12 +5938,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   &lt;li&gt;bake at &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;220°&lt;/span&gt; for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20-25min&lt;/span&gt; – ideally you wanna get colour on the ham, but not burn the cheese&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;flower-rolls&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1341136-he-is-risen-to-an-un&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/c1132df0-720c-4f9b-9859-aa533b959935/DSC_2539.JPG&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1383268-who-need-they-brussy&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://staging.cohostcdn.org/attachment/87a35886-38b0-4092-b95d-b5940b45780d/DSC_2554.JPG&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;flower-rolls&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#flower-rolls&quot;&gt;#&lt;/a&gt;Flower rolls (round steamed bread with an oil)&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#flower-rolls&quot;&gt;#&lt;/a&gt;Flower rolls (round steamed bread with an oil)&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/hpYrnQiGd6w&quot;&gt;Homemade flower rolls are delicious and no skills, suitable for novice making
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;家常花卷好吃无技巧，松软白亮方法简单，适合新手制作【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -5918,12 +5986,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   The title'&lt;!--'--&gt;s right: suitable for completely inept imbeciles like me. 0 failure 0 technique.
  &lt;/p&gt;
 &lt;/details&gt;
-&lt;center class=&quot;grid-by-each continued&quot;&gt; 
+&lt;/article&gt; 
+ &lt;article id=&quot;bubliki&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
  &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1533929176725594118&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1533929176725594118-FUmcYBvXwAA78H5.jpg&quot; /&gt;&lt;/a&gt;&lt;!-- 
  --&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export#1584894789878587392&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0017-twitter-export/parser-output/media/1584894789878587392-Ff6s7wOX0AQGK5f.jpg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary id=&quot;bubliki&quot; class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bubliki&quot;&gt;#&lt;/a&gt;Бублики&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#bubliki&quot;&gt;#&lt;/a&gt;Бублики&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   Originally derived from
   &lt;a href=&quot;//youtu.be/PPHy_1R7Xu4&quot;&gt;Making the slavic bagel&lt;/a&gt;,
@@ -5949,6 +6019,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
       harder flours rise less and need longer, full-pump white is the lower bound here&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/details&gt;
+&lt;/article&gt;
 &lt;/span&gt;
 </content>
   </entry>
