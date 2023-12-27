@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Sat, 23 Dec 2023 23:15:07 +0100" -->
+<!-- RSS_UPDATE_DATE: "Wed, 27 Dec 2023 15:46:32 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,10 +102,41 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-12-23, $101010.pl/@nabijaczleweli/111631778152035657)</a>.
+	Latest replication: REPLICATION(2023-12-26, $101010.pl/@nabijaczleweli/111647542784996947)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+<article>
+ONE_IMAGUS(andy-vánočka,
+           storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/647/880/463/356/238/original/7938eaee2ded220a.png, $101010.pl/@nabijaczleweli/111647881958561845)
+
+<details open>
+	SUMMARY(andy-vánočka, Andy'<!--'-->s vánočka)
+	<p class="continuing">
+		<!-- https://discord.com/channels/145079846832308224/166565886998609920/1188939034597281842 -->
+		Guest recipe from Andy's wife's grandma,
+		replicated REPLICATION(2023-12-26, $101010.pl/@nabijaczleweli/111647542784996947):
+	</p>
+	<ul class="continuing">
+		<li>500g flour (ideally low protein content, like 8-9g)</li>
+		<li>120g butter</li>
+		<li>120g crystal or caster sugar</li>
+		<li>3 average egg yolks or 4 small egg yolks</li>
+		<li>30g fresh yeast</li>
+		<li>5g salt</li>
+		<li>250g milk</li>
+		<li>1 lemon zest (or actually as much as you like)</li>
+		<li>30g almonds (or actually as much as you like)</li>
+	</ol>
+	<p class="continuation">
+		Make the dough by mixing all the ingredients, then let it rise in a bowl for like 60-90 mins. Then roll 9 equally long pieces and form the vianočka. Paint with egg whites, let it rise for another 30 mins or so, then bake at 180C for about 45 mins
+	</p>
+
+	<p>
+		I don'<!--'-->t stock fresh yeast, and used dry instead; forgot to brush with egg.
+	</p>
+</details>
 
 <article>
 ONE_IMAGUS(challah,
