@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-12-27T15:01:03</updated>
+  <updated>2023-12-31T17:59:12</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -4892,7 +4892,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2023-12-27T15:46:32+01:00</updated>
+    <updated>2023-12-31T18:43:21+01:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -4980,10 +4980,52 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111647542784996947&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-26&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111665100080724986&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-29&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
+&lt;article&gt;
+&lt;/article&gt; 
+ &lt;article id=&quot;emil-vánočka&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
+ &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111665995564384100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/665/984/649/011/860/original/54a12b070a2f3e3a.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111665995564384100&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/665/985/294/509/492/original/0cb5cd15f13295ad.jpeg&quot; /&gt;&lt;/a&gt; 
+ &lt;/center&gt;
+&lt;details open&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#emil-vánočka&quot;&gt;#&lt;/a&gt;&lt;a href=&quot;//101010.pl/@the_art_of_giving_up@mastodon.social/111637997219976292&quot;&gt;Emil'&lt;!--'--&gt;s vánočka&lt;/a&gt;&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//www.pottenpannen.cz/recepty-a-rady/adventni-vyzva-prava-ceska-vanocka-podle-josefa-marsalka/&quot;&gt;Adventní výzva – Pravá česká vánočka podle Josefa Maršálka&lt;/a&gt;,
+  by Potten &amp; Pannen - Staněk,
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111665100080724986&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-12-29&lt;/span&gt;&lt;/a&gt;:
+ &lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;dissolve &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of live yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;10g&lt;/span&gt; of vanilla sugar, and &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of flour in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;250g&lt;/span&gt; of milk and leave for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1h&lt;/span&gt; covered with a rag,
+      this will be gloop Ш –
+      I don'&lt;!--'--&gt;t stock live yeast so dry yeast for me, I warmed the milk to like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;40°&lt;/span&gt;, and it definitely started to leave the bowl,
+      so I'&lt;!--'--&gt;d say prep the rest of the from step 2 and put the bowl on top to explode; definitely no rag&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;400g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30g&lt;/span&gt; (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3-4&lt;/span&gt;) of egg yolks, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5g&lt;/span&gt; of salt, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2g&lt;/span&gt; of nutmeg, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1g&lt;/span&gt; of milled anise,
+      the skin of &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1&lt;/span&gt; lemon, mix – I was fresh out of lemons, so the skin of &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2&lt;/span&gt; mandarins for me&lt;/li&gt;
+  &lt;li&gt;mix in gloop Ш, knead dough to be smooth and not sticky&lt;/li&gt;
+  &lt;li&gt;add in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;150g&lt;/span&gt; of butter and continue kneading –
+      they recommend machine kneading, and it'&lt;!--'--&gt;s difficult to disagree; this definitely needs a tremendous amount of kneading before and after the butter,
+      much more than I was able to give it at the time&lt;/li&gt;
+  &lt;li&gt;when it stops sticking and is resilient but elastic, lightly knead in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of golden raisins – cranberries for me&lt;/li&gt;
+  &lt;li&gt;he sleeps for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;~1h&lt;/span&gt; under a rag until tripled in size – this may be because it was underkneaded but this rise didn'&lt;!--'--&gt;t do much for me&lt;/li&gt;
+  &lt;li&gt;roll out into strips and weave a vánočka onto a baking tray like you usually do, Josef recommends knitting from six strands – 🙄&lt;/li&gt;
+  &lt;li&gt;leave him to sleep once more to rise well – again, no rise for me&lt;/li&gt;
+  &lt;li&gt;Form the nut icing by mixing:
+     &lt;ol&gt;
+       &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3-4&lt;/span&gt; eggs) of whites&lt;/li&gt;
+       &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;60g&lt;/span&gt; of powder sugar&lt;/li&gt;
+       &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;60g&lt;/span&gt; of milled hazelnuts –
+           apparently these are available commercially, but I just pounded some full ones;
+           this meant it never really formed a &quot;paste with consistency&quot; but close enough&lt;/li&gt;
+       &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1g&lt;/span&gt; of milled cinnamon&lt;/li&gt;
+     &lt;/ol&gt;&lt;/li&gt;
+  &lt;li&gt;brush it with egg and the nut icing, then sprinkle cut almonds&lt;/li&gt;
+  &lt;li&gt;start baking at &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;200°&lt;/span&gt;, but bake at &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;160°&lt;/span&gt; for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30min&lt;/span&gt;, validate by prodding with a stick – mine needed &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5min&lt;/span&gt; more&lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/details&gt;
 &lt;article&gt;
 &lt;/article&gt; &lt;article id=&quot;andy-vánočka&quot;&gt; &lt;center class=&quot;grid-by-each continued&quot;&gt; &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111647881958561845&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/647/880/463/356/238/original/7938eaee2ded220a.png&quot; /&gt;&lt;/a&gt; &lt;/center&gt;
 &lt;details open&gt;
