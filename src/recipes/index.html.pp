@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Wed, 27 Dec 2023 15:46:32 +0100" -->
+<!-- RSS_UPDATE_DATE: "Sun, 31 Dec 2023 18:43:21 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,10 +102,51 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2023-12-26, $101010.pl/@nabijaczleweli/111647542784996947)</a>.
+	Latest replication: REPLICATION(2023-12-29, $101010.pl/@nabijaczleweli/111665100080724986)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+<article>
+IMAGUS(emil-vánočka,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/665/984/649/011/860/original/54a12b070a2f3e3a.jpeg, $101010.pl/@nabijaczleweli/111665995564384100,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/665/985/294/509/492/original/0cb5cd15f13295ad.jpeg, $101010.pl/@nabijaczleweli/111665995564384100)
+
+<details open>
+	SUMMARY(emil-vánočka, <a href="//101010.pl/@the_art_of_giving_up@mastodon.social/111637997219976292">Emil'<!--'-->s vánočka</a>)
+	<p class="continuing">
+		<a href="//www.pottenpannen.cz/recepty-a-rady/adventni-vyzva-prava-ceska-vanocka-podle-josefa-marsalka/">Adventní výzva – Pravá česká vánočka podle Josefa Maršálka</a>,
+		by Potten & Pannen - Staněk,
+		replicated REPLICATION(2023-12-29, $101010.pl/@nabijaczleweli/111665100080724986):
+	</p>
+	<ol class="continuation">
+		<li>dissolve NUM(20g) of live yeast, NUM(10g) of vanilla sugar, and NUM(100g) of flour in NUM(250g) of milk and leave for NUM(1h) covered with a rag,
+		    this will be gloop Ш –
+		    I don'<!--'-->t stock live yeast so dry yeast for me, I warmed the milk to like NUM(40°), and it definitely started to leave the bowl,
+		    so I'<!--'-->d say prep the rest of the from step 2 and put the bowl on top to explode; definitely no rag</li>
+		<li>NUM(400g) of flour, NUM(100g) of sugar, NUM(30g) (NUM(3-4)) of egg yolks, NUM(5g) of salt, NUM(2g) of nutmeg, NUM(1g) of milled anise,
+		    the skin of NUM(1) lemon, mix – I was fresh out of lemons, so the skin of NUM(2) mandarins for me</li>
+		<li>mix in gloop Ш, knead dough to be smooth and not sticky</li>
+		<li>add in NUM(150g) of butter and continue kneading –
+		    they recommend machine kneading, and it'<!--'-->s difficult to disagree; this definitely needs a tremendous amount of kneading before and after the butter,
+		    much more than I was able to give it at the time</li>
+		<li>when it stops sticking and is resilient but elastic, lightly knead in NUM(100g) of golden raisins – cranberries for me</li>
+		<li>he sleeps for NUM(~1h) under a rag until tripled in size – this may be because it was underkneaded but this rise didn'<!--'-->t do much for me</li>
+		<li>roll out into strips and weave a vánočka onto a baking tray like you usually do, Josef recommends knitting from six strands – 🙄</li>
+		<li>leave him to sleep once more to rise well – again, no rise for me</li>
+		<li>Form the nut icing by mixing:
+			  <ol>
+			    <li>NUM(100g) (NUM(3-4) eggs) of whites</li>
+			    <li>NUM(60g) of powder sugar</li>
+			    <li>NUM(60g) of milled hazelnuts –
+			        apparently these are available commercially, but I just pounded some full ones;
+			        this meant it never really formed a "paste with consistency" but close enough</li>
+			    <li>NUM(1g) of milled cinnamon</li>
+			  </ol></li>
+		<li>brush it with egg and the nut icing, then sprinkle cut almonds</li>
+		<li>start baking at NUM(200°), but bake at NUM(160°) for NUM(30min), validate by prodding with a stick – mine needed NUM(5min) more</li>
+	</ol>
+</details>
 
 <article>
 ONE_IMAGUS(andy-vánočka,
