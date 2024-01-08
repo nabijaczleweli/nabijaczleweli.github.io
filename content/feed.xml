@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2023-12-31T17:59:12</updated>
+  <updated>2024-01-08T15:28:57</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -4097,6 +4097,309 @@ sexion.
   &lt;div&gt;&lt;dt&gt;2023-12-21T04:08:41&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/cover.1703126594.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;post&lt;/a&gt; a fully-tested v2 with reproducers and a fixed (via disabling) teletype handling, new FUSE code, and most importantly a re-imagined framing in terms of a security model derived from only the real root being allowed to mount filesystems and an attack being possible if any other files sleep.&lt;/dd&gt;&lt;/div&gt;
   &lt;div&gt;&lt;dt&gt;2023-12-24T06:01:49&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/fvxufyqixohx65lcusrkkfoxs5cnlsuv7kajv6bnngcoewsodx@tarta.nabijaczleweli.xyz/t/#u&quot;&gt;append&lt;/a&gt; a fix for splice(pipe→tty) and splice(pipe→FUSE).&lt;/dd&gt;&lt;/div&gt;
 &lt;/dl&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
+ or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt; an issue! 
+ &lt;/p&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html" />
+    <title> 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt — nabijaczleweli </title>
+    <updated>2024-01-08T16:06:34+01:00</updated>
+    <content type="html">
+&lt;style&gt;
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: &quot;Droid Sans Mono&quot;, monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: &quot;Merriweather&quot;, serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
+a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
+ color: inherit;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+img {
+  max-width: 100%;
+  border-radius: .2em;
+  vertical-align: bottom;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+dl &gt; div {
+  display: inline-grid;
+  margin-right: 0.5em;
+}
+tt {
+  font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
+}
+&lt;/style&gt;
+&lt;span class=&quot;roboto writing&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen arm64 Chromebook&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 08 Jan 2024 16:06:34 +0100&lt;/span&gt;&lt;/h4&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+On 2024-01-04 I bought the titular laptop for 120+11.6zł (100+10zł sometimes available, 70+8.5zł for one with a busted-ass screen; resp. 30.26€, 25.29€, 18.05€; all well under 20kg of kefir)
+because it &lt;a href=&quot;//www.lenovo.com/us/en/p/laptops/lenovo/lenovo-edu-chromebooks/lenovo-300e-chromebook-2nd-gen-mtk/88elc1s9988#tech_specs&quot;&gt;has&lt;/a&gt; a &lt;a href=&quot;//www.mediatek.com/products/tablets/mt8173&quot;&gt;MediaTek MT8173&lt;/a&gt; (which Lenovo calls &quot;8713&lt;strong&gt;C&lt;/strong&gt;&quot;), which &lt;a href=&quot;//allegrolokalnie.pl/oferta/lenovo-chromebook-300e-ap7&quot;&gt;is arm64&lt;/a&gt; (image 5),
+as a &quot;real&quot; — frankly, only realistic — platform to test &lt;a href=&quot;//sr.ht/~nabijaczleweli/snappy-tools&quot;&gt;snappy-tools&lt;/a&gt; hardware-accelerated CRC32C for ARM.
+&lt;/p&gt;
+&lt;!-- Image 5: https://a.allegroimg.com/original/1e84c6/57cc67824cf38e53a2c30638d52a; archived locally if the link dies --&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Now that I re-analyse the image,
+it clearly says &quot;&lt;span lang=&quot;pl&quot;&gt;Instrukcje: crc32&lt;/span&gt;&quot;, which is great because I thought I was taking a gamble on an
+&lt;a href=&quot;//developer.arm.com/documentation/100076/0100/A32-T32-Instruction-Set-Reference/A32-and-T32-Instructions/CRC32?lang=en&quot;&gt;optional-in-ARMv8-A&lt;/a&gt; feature.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+According to a page under the authority of &quot;sites.google.com/a/chromium.org&quot; (what does this mean?) page titled
+&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices&quot;&gt;&lt;em&gt;Chromium OS &gt; &lt;b&gt;Developer Information for Chrome OS Devices&lt;/b&gt;&lt;/em&gt;&lt;/a&gt;
+(what the fuck does &lt;em&gt;that&lt;/em&gt; mean?)
+this machine is:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+  &lt;dl class=&quot;continuing&quot;&gt;
+    &lt;div&gt;&lt;dt&gt;Release&lt;/dt&gt;&lt;dd&gt;27 February 2019&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;OEM&lt;/dt&gt;&lt;dd&gt;Lenovo&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd&gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988&quot;&gt;Lenovo 300e Chromebook 2nd Gen (MTK)&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Code name&lt;/dt&gt;&lt;dd&gt;Sycamore360&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Board name(s)&lt;/dt&gt;&lt;dd&gt;hana&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Base board&lt;/dt&gt;&lt;dd&gt;oak&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;User ABI&lt;/dt&gt;&lt;dd&gt;arm&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Kernel&lt;/dt&gt;&lt;dd&gt;3.18&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Kernel ABI&lt;/dt&gt;&lt;dd&gt;aarch64&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Platform&lt;/dt&gt;&lt;dd&gt;MT8173&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Form Factor&lt;/dt&gt;&lt;dd&gt;Chromebook&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;First Release&lt;/dt&gt;&lt;dd&gt;R72&lt;/dd&gt;&lt;/div&gt;
+  &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+which appears to also be exactly identical to a &quot;&lt;strong&gt;1&lt;/strong&gt;00e&quot; but &quot;Sycamore&quot;.
+Presumably the &lt;em&gt;only&lt;/em&gt; difference is that this one goes &lt;del&gt;sicko&lt;/del&gt;tablet mode and has a touch-screen.
+Well, mine goes but doesn'&lt;!--'--&gt;t.
+&lt;/p&gt;
+&lt;p class=&quot;continuing indented&quot;&gt;
+Note also that it disagrees with Lenovo about the &lt;strong&gt;C&lt;/strong&gt;.
+And that &lt;a href=&quot;//www.lenovo.com/us/en/p/laptops/lenovo/lenovo-edu-chromebooks/lenovo-300e-chromebook-2nd-gen-mtk/88elc1s9988#tech_specs&quot;&gt;the product page&lt;/a&gt;'&lt;!--'--&gt;s URL
+has an &lt;tt&gt;mtk&lt;/tt&gt; in it, but the title itself doesn'&lt;!--'--&gt;t, and neither does the label on the bottom:
+&lt;/p&gt;
+&lt;!--&quot;--&gt;&lt;a href=&quot;/content/assets/blogn_t/012.01-label.jpg&quot;&gt;&lt;img class=&quot;continuation&quot; alt=&quot;Lenovo 300e Chromebook 2nd Gen
+Model Name (型號):81MB
+INPUT (電壓/電流):15V DC 3A
+Mfg Date:19/06/02
+S/N:P205WM6Z MTM:81MB0008MX
+Manufactured for Lenovo
+Made in China 中國製造
+MO:P2N0B960200M Factory ID: HFBITLAND&quot; src=&quot;/content/assets/blogn_t/012.01-label.jpg&quot;&gt;&lt;/a&gt;&lt;!--&quot;--&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+This is largely precipitated by &lt;a href=&quot;//media.ccc.de/v/37c3-11929-turning_chromebooks_into_regular_laptops&quot;&gt;the chrultrabook talk&lt;/a&gt;,
+but naturally, this being ARM, it'&lt;!--'--&gt;s yet impossible to install Debian.
+This is more &lt;a href=&quot;//wiki.debian.org/InstallingDebianOn/Samsung/ARMChromebook&quot;&gt;InstallingDebianOn/Samsung/ARMChromebook&lt;/a&gt;
+— &quot;running debian on the chromebook from the μ&lt;span class=&quot;smallcaps&quot;&gt;sd&lt;/span&gt; card&quot; —
+than an installation.
+This is why I dastardlily omitted &quot;installing&quot; from the title,
+&lt;a href=&quot;//archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook-2&quot;&gt;neither&lt;/a&gt; article for my first prospective pick giving me the same courtesy.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Also, neither appear to actually demonstrate any of the interesting platform-specific layout,
+and instead opt for baffling and unprecedented-in-the-text shell programs using software suites and methodologies
+that definitely make sense to the authors to get to the precise point they'&lt;!--'--&gt;re trying to get to in the minimum article space, but.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Also, for some reason, every, as in &lt;em&gt;every&lt;/em&gt;, Chromebook on the market has both a scandinavian keyboard and an asset tag (mine is bar-coded &lt;tt&gt;005441279&lt;/tt&gt;).
+Sometimes the latter also means the swedish coat of arms printed on the lid (indeed, my specimen booted at &quot;8:00 SE&quot;).
+Where are these coming from?
+Do swedish libraries cycle through these yearly (the claimed 2019-06-02 manufactury makes it rather recent) and dump them for less-than-free?
+Are literal wagon-loads of these being imported into Poland of all places?
+&lt;/p&gt;
+&lt;h2 id=&quot;jpeg&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jpeg&quot;&gt;#&lt;/a&gt; peep da nose cam&lt;/h2&gt;
+&lt;a href=&quot;//101010.pl/@nabijaczleweli/111710881591330749&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Chromebook open, I'm sitting pretty in the reflexion; there's a camera above the screen and above the keyboard; the keyboard itself is swedish and decroted: there are two extrmely wide keys to the left of the space bar (ctrl and alt), the ISO enter is half a key thin, the caps lock has a 🔍 on it, and the top row has an esc key, then a series of 11 icons&quot; src=&quot;//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/710/877/371/207/609/original/52442a5465b2f7ce.jpeg&quot;&gt;&lt;/a&gt; &lt;!-- DSC_3008.JPG --&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+(This is after a thorough washing with water due to normal sugar stickiness,
+isopropanol because of tacky resin stains somehow,
+and it'&lt;!--'--&gt;s still kinda goopy on the sides because despite being only 4.5 years old the rubbery edging is starting to approach rotting somehow?)
+&lt;/p&gt;
+&lt;h2 id=&quot;jailbreak&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#jailbreak&quot;&gt;#&lt;/a&gt; Save me from chromium (chrome os (chromium os(?)))&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+because naturally the only control available on the above &quot;Welcome&quot; screen it boots to in OOBE is &quot;&lt;b&gt;Connect to network&lt;/b&gt;&quot;,
+which opens what amounts to the Android &quot;Connect to Wi-Fi&quot; screen,
+except you can'&lt;!--'--&gt;t skip it (unlike the Android OOBE),
+and the subtitle is &quot;To restore your data, connect to the internet&quot;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Restore from where? what data? mf on the pack fr fr?
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Of course, the &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook&quot;&gt;guide&lt;/a&gt;s say
+&quot;enter recovery and then developer mode&quot;.
+So to enter recovery you hold &lt;kbd&gt;esc&lt;/kbd&gt; and &lt;kbd&gt;⟳&lt;/kbd&gt; (natch) and click the power button and
+&lt;/p&gt;
+&lt;a href=&quot;//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Title line: chrome, English; Main body: Please insert a recovery USB stick or SD card.; Footer: For help visit https://google.com/chromeos/recovery  Model PHASER360 D4J-B3K-B4Q-H6B-52A-Y2B-A47&quot; src=&quot;//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg&quot;&gt;&lt;/a&gt; &lt;!-- DSCN0541cc.JPG --&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+That'&lt;!--'--&gt;s not Sycamore360 now, is it? What does that mean.
+Also, what's that card? It sure as hell ain't SD. It looks like an MMC-but-I-forgor-💀-how-many-pins-it-has, but.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Note also how it's white and hasn't respected my colour inversion setting, which it itself groups as accessibility.
+After you get over getting flash-banged, press &lt;kbd&gt;ctrl&lt;/kbd&gt; and &lt;kbd&gt;d&lt;/kbd&gt;:
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.02-DSCN0542ccr.JPG&quot; &gt;&lt;img class=&quot;continuing&quot; alt=&quot;Main body: To turn OS verification OFF, press ENTER. Your system will reboot and local data will be cleared.  To go back, press ESC.&quot; src=&quot;/content/assets/blogn_t/012.02-DSCN0542ccr.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+No prompt, why would there be.
+Just like there'&lt;!--'--&gt;s no prompt for (or, really, nothing to even remotely imply! those are &lt;em&gt;·&lt;/em&gt;s, not arrows!) &lt;kbd&gt;˃&lt;/kbd&gt; and &lt;kbd&gt;˂&lt;/kbd&gt;
+(the arrow keys, which aren'&lt;!--'--&gt;t labelled with arrows now) change the language.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Confirm with &lt;kbd&gt;↵&lt;/kbd&gt; and it reboots and
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.03-DSCN0543ccr.JPG&quot; &gt;&lt;img class=&quot;continuing&quot; alt=&quot;Main body: laptop icon with an orange exclamation mark. OS verification is OFF  Press SPACE to re-enable.&quot; src=&quot;/content/assets/blogn_t/012.03-DSCN0543ccr.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and it'&lt;!--'--&gt;s not booting.
+Why? Doesn'&lt;!--'--&gt;t say.
+The only control appears to be re-enabling, but no!
+You can press &lt;kbd&gt;ctrl&lt;/kbd&gt; and &lt;kbd&gt;d&lt;/kbd&gt; again to boot.
+Why?
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Also the punctuation is inconsistent with every other string here. Why?
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+After booting manually 🙄 I got
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.04-DSCN0545vccr.JPG&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Top-left corner: Starting in 30 second(s)...; Title line: chrome; Main body: Yout system is transitioning to Developer Mode. Local data has been cleared.  Modifications you make to the system are not supported by Google, may cause hardware issues and may void warranty.  To cancel, turn you computer off now.&quot; src=&quot;/content/assets/blogn_t/012.04-DSCN0545vccr.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+which after 30s falls through to
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.05-DSCN0546vccr.JPG&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Top-left corner: 4:41; Main body: spinner, Preparing system for Developer Mode. This may take a while. Do not turn your computer off until it has restarted.&quot; src=&quot;/content/assets/blogn_t/012.05-DSCN0546vccr.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+which is a hard five-fucking-minute secondised countdown.
+Which I guarantee is a &lt;code&gt;mkfs&lt;/code&gt; call that completed in 2s at most.
+Why?
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+And after another reboot, and another manually-confirmed boot 🙄 there'&lt;!--'--&gt;s magically a new control in the OOBE!
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.06-DSCN0547vccr.JPG&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Welcome to your Chomebook screen, an 'Enable debugging features' link was added&quot; src=&quot;/content/assets/blogn_t/012.06-DSCN0547vccr.JPG&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.07-DSCN0548r.JPG&quot; &gt;&lt;img class=&quot;continuing&quot; alt=&quot;(exclamation mark in a circle); Title: Enable debugging features, Subtitle: A removal of rootfs protection and restart is required before enabling other debugging features. Learn more.; Buttons: Cancel and Proceed&quot; src=&quot;/content/assets/blogn_t/012.07-DSCN0548r.JPG&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.08-DSCN0549vccr.JPG&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;'Learn more.' clicked. It's a big popup titled Debugging Features with a load of irrelevant text.&quot; src=&quot;/content/assets/blogn_t/012.08-DSCN0549vccr.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+And this is somehow times new roman. Everything else is in Roboto and this is deadass &lt;code&gt;font-family: initial;&lt;/code&gt;.
+Also the URLs are not clickable? I didn't try selecting them, but I wouldn't put them being uncopiable past this.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+You can tell no-one has ever read this
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.09-DSCN0550r.JPG&quot; &gt;&lt;img class=&quot;continuing&quot; alt=&quot;Still 'Enable debugging features', but Subtitle: You are enabling ChromeOS debugging features which will set up sshd daemon and enable booting from USB drives.  On the right half of the screen there's a form with fields called 'root password' and 'confirm password', and a grey comment 'leave empty if you want to set the root password to the default test image value'. The buttons are Cancel and Enable now. Enable is in a big bright coloured circle.&quot; src=&quot;/content/assets/blogn_t/012.09-DSCN0550r.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+but you can also tell that in the most accessible system in the world you
+&lt;em&gt;can'&lt;!--'--&gt;t confirm entry and operate the huge fuckoff brightly-high-lit button by pressing &lt;kbd&gt;↵&lt;/kbd&gt;&lt;/em&gt;,
+you need to unironically go to it with the cursor and click it.
+Truly insane shit.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+But the screen you get after is even better somehow, because it'&lt;!--'--&gt;s a complete de novo re-imagining of the branding:
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.10-DSCN0551r.JPG&quot; &gt;&lt;img class=&quot;continuing&quot; alt=&quot;The subtitle changed to 'You have successfully enabled debugging features on this Chrome device.' and the form on the right is replaced with a big green check-mark.&quot; src=&quot;/content/assets/blogn_t/012.10-DSCN0551r.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+&quot;&lt;em&gt;Chrome device&lt;/em&gt;&quot;‽
+Somehow mixing both &quot;ChromeOS&quot; and &quot;ChromiumOS&quot; in consecutive paragraphs in the same pop-up is bad enough,
+&quot;ChromeOS Device&quot; as a derivative of those is reasonable,
+somehow turning it into &quot;Chrome OS&quot; or &quot;Chromium OS&quot; is baffling,
+and the &quot;Chromebook&quot; branding is too cutesy as it is,
+but &quot;Chrome device&quot; is unprecedented, as in &quot;never figures in user-facing branding&quot;-level internal nomenclature AFAICT.
+Except in this subtitle.
+&lt;/p&gt;
+&lt;h2 id=&quot;HFBITLAND&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#HFBITLAND&quot;&gt;#&lt;/a&gt; Take me to &lt;span class=&quot;smallcaps&quot;&gt;hfbitland&lt;/span&gt;&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Now one can switch to VT2 with the usual combination of &lt;kbd&gt;ctrl&lt;/kbd&gt;, &lt;kbd&gt;alt&lt;/kbd&gt;, and &lt;kbd&gt;→&lt;/kbd&gt; (not the arrow key),
+and get an a-little-fucked-up &lt;samp style=&quot;font-style: italic;&quot;&gt;/etc/issue&lt;/samp&gt; and a getty prompt where the root creds set above work.
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/012.11.DSCN0554cc.JPG&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Developer Console, then some bollocks, then a successful login prompt for root at localhost; then uname -a which says Linux localhost 4.14.290-19334-gd1f3f46afcb0 #1 SMP PREEMPT Wed Oct 5 13:43:48 PDT 2022 x86_64 Intel(R) Celeron(R) N4000 CPU @ 1.10GHz GenuineIntel GNU/Linux&quot; src=&quot;/content/assets/blogn_t/012.11.DSCN0554cc.JPG&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+The guides recommend &lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;alt&lt;/kbd&gt;+&lt;kbd&gt;t&lt;/kbd&gt; to start the &quot;de&lt;span class=&quot;smallcaps&quot;&gt;cro&lt;/span&gt;ded &lt;span class=&quot;smallcaps&quot;&gt;sh&lt;/span&gt;ell&quot;, but this hasn'&lt;!--'--&gt;t worked for me.
+The &lt;a href=&quot;//docs.chrultrabook.com/docs/firmware/flashing-firmware.html&quot;&gt;chrultrabook manual&lt;/a&gt; agrees with me on this, however.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+A nicety: pressing &lt;kbd&gt;alt&lt;/kbd&gt;+&lt;kbd&gt;shift&lt;/kbd&gt;+&lt;kbd&gt;˄&lt;/kbd&gt; or &lt;kbd&gt;˅&lt;/kbd&gt; (the arrow keys) scrolls up and down. But by one line only.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+But the fucking keymap is wrong.
+Admittedly it's ergonomic to me personally to be able to mostly use the scandi keyboard, but the keymap doesn't match what the keyboard is, like, at all.
+Also not having Home/End is agony.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Maybe the recovery says &quot;PHASER360&quot; instead of &quot;Sycamore360&quot; because
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+  &lt;dl class=&quot;continuing&quot;&gt;
+    &lt;div&gt;&lt;dt&gt;Release&lt;/dt&gt;&lt;dd&gt;27 February 2019&lt;/dd&gt;&lt;dd&gt;1 March 2019&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;OEM&lt;/dt&gt;&lt;dd&gt;Lenovo&lt;/dd&gt;&lt;dd&gt;Lenovo&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd&gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988&quot;&gt;Lenovo 300e Chromebook 2nd Gen (MTK)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Code name&lt;/dt&gt;&lt;dd&gt;Sycamore360&lt;/dd&gt;&lt;dd&gt;Phaser360&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Board name(s)&lt;/dt&gt;&lt;dd&gt;hana&lt;/dd&gt;&lt;dd&gt;Octopus&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Base board&lt;/dt&gt;&lt;dd&gt;oak&lt;/dd&gt;&lt;dd&gt;octopus&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;User ABI&lt;/dt&gt;&lt;dd&gt;arm&lt;/dd&gt;&lt;dd&gt;x86_64&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Kernel&lt;/dt&gt;&lt;dd&gt;3.18&lt;/dd&gt;&lt;dd&gt;4.14&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Kernel ABI&lt;/dt&gt;&lt;dd&gt;aarch64&lt;/dd&gt;&lt;dd&gt;x86_64&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Platform&lt;/dt&gt;&lt;dd&gt;MT8173&lt;/dd&gt;&lt;dd&gt;Gemini Lake&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Form Factor&lt;/dt&gt;&lt;dd&gt;Chromebook&lt;/dd&gt;&lt;dd&gt;Convertible&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;First Release&lt;/dt&gt;&lt;dd&gt;R72&lt;/dd&gt;&lt;dd&gt;R72&lt;/dd&gt;&lt;/div&gt;
+  &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+which is, yes, a second &lt;em&gt;identical&lt;/em&gt; laptop, released days apart, differing only by &quot;(MTK)&quot; at the end of the branding
+which &lt;em&gt;isn'&lt;!--'--&gt;t actually branded onto the product&lt;/em&gt;,
+but one has a Celeron N4000 and the other an MT8173.
+(Also the form factor for the ARM variant being &quot;Chromebook&quot;?)
+&lt;/p&gt;
+&lt;h2 id=&quot;kms&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#kms&quot;&gt;#&lt;/a&gt; fuckin kms i s'&lt;!--'--&gt;pose&lt;/h2&gt;
+&lt;a href=&quot;//101010.pl/@nabijaczleweli/111715350612107659&quot;&gt;&lt;img class=&quot;continuation&quot; alt=&quot;the chromebook on its side. both halves have holes out (two USB 3s, two USB-Cs, one of which charge-capable, one micro-SD card, one kensington lock, and volume up/down and power buttons), implying both halves are the keyboard half&quot; src=&quot;//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/715/765/596/303/398/original/947dc76b7942ba6b.jpeg&quot;&gt;&lt;/a&gt; &lt;!-- DSCN0539+40.JPG --&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'&lt;!--'--&gt;t hesitate to &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz&quot;&gt;post&lt;/a&gt; 
