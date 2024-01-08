@@ -61,6 +61,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	<!-- Consider contributing to the <a href="extensive_list_of_rust_puns/">Extensive List of Rust Puns</a>… -->
 </p>
 
+<a href="//lists.sr.ht/~nabijaczleweli/klapki/%3Ciw2edbooqpsrct4hzqec6srjo4eqnvuotlu6ajbdar3adygaxo%40tarta.nabijaczleweli.xyz%3E"><img style="width: 100%" alt="" src="/content/assets/klapki-v0.3.1.png"></a>
+
 
 </span>
 BOILERPLATE_END()
