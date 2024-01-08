@@ -17,11 +17,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_DATE      Fri, 07 Jul 2023 01:42:34 +0200
 #define POST_POST_DATE
 
-#define CMT Also used in heading.h, make sure to update both with fixes
-#undef CMT
-#define HEADING_LINK(id)                  <a class="hash-link" href=STR(HASH##id)>HASH</a>
-#define HEADING_S(level, hid, style, ...) <h##level id=STR(hid) style>HEADING_LINK(hid) __VA_ARGS__</h##level>
-
 
 #ifdef linux
 #undef linux
