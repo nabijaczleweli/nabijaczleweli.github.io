@@ -68,6 +68,7 @@ Not banged out in an hour.
 	POST(009-XEROX-SIGMA-9-balls,                Thu, 01 Dec 2022 17:16:50 +0100, 009. XEROX SIGMA 9 balls)
 	POST(010-tme-Sun-2-SunOS3-2023,              Mon, 19 Jun 2023 23:53:58 +0200, 010. tme booting SunOS 3 on Sun-2 in 2023)
 	POST(011-linux-splice-exclusion,             Fri, 07 Jul 2023 01:42:34 +0200, 011. pipe exclusion with splice() under Linux)
+	POST(012-debian-chromebook-lenovo-300e-gen2, Mon, 08 Jan 2024 16:06:34 +0100, 012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

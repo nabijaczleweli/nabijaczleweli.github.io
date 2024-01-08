@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/011-linux-splice-exclusion.html">011. pipe exclusion with splice() under Linux</a>;
-		<span style="white-space: nowrap;">Fri, 07 Jul 2023 01:42:34 +0200</span>
+		<a href="blogn_t/012-debian-chromebook-lenovo-300e-gen2.html">012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</a>;
+		<span style="white-space: nowrap;">Mon, 08 Jan 2024 16:06:34 +0100</span>
 	</samp>
 </p>
 
