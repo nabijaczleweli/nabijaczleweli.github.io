@@ -1,0 +1,90 @@
+nabijaczleweli@chrust:~$ git clone http://github.com/rvaiya/keyd
+Cloning into 'keyd'...
+warning: redirecting to https://github.com/rvaiya/keyd/
+Resolving deltas: 100% (2214/2214), done.
+nabijaczleweli@chrust:~$ sudo mv keyd/ /usr/local/src/
+[sudo] password for nabijaczleweli:
+nabijaczleweli@chrust:~$ cd /usr/local/src/keyd/
+nabijaczleweli@chrust:/usr/local/src/keyd$ git log -1
+commit dcbb68b12f71245121035b730b50872802a259b4
+Author: Takahashi, Naoki <102382754+tkna91@users.noreply.github.com>
+Date:   Wed Dec 20 02:38:10 2023 +0900
+
+    Add description of KEYD_DEBUG
+nabijaczleweli@chrust:/usr/local/src/keyd$ CFLAGS=-march=native LDFLAGS=-flto make
+mkdir bin
+cp scripts/keyd-application-mapper bin/
+sed -e 's#@PREFIX@#/usr/local#' keyd.service.in > keyd.service
+cc -DVERSION=\"v2.4.3\ \(dcbb68b\)\" -I/usr/local/include -L/usr/local/lib -Wall -Wextra -Wno-unused -std=c11 -DSOCKET_PATH=\"/var/run/keyd.socket\" -DCONFIG_DIR=\"/etc/keyd\" -DDATA_DIR=\"/usr/local/share/keyd\" -D_FORTIFY_SOURCE=2 -D_DEFAULT_SOURCE -Werror=format-security -march=native -O3  src/*.c src/vkbd/uinput.c -lpthread -o bin/keyd -flto
+src/daemon.c: In function ‘add_listener’:
+src/daemon.c:84:33: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   84 |                                 write(con, layer->type == LT_LAYOUT ? "/" : "+", 1);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/daemon.c:85:33: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   85 |                                 write(con, layer->name, strlen(layer->name));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/daemon.c:86:33: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   86 |                                 write(con, "\n", 1);
+      |                                 ^~~~~~~~~~~~~~~~~~~
+nabijaczleweli@chrust:/usr/local/src/keyd$ sudo make install
+mkdir -p /etc/keyd
+mkdir -p /usr/local/bin/
+mkdir -p /usr/local/share/keyd/
+mkdir -p /usr/local/share/keyd/layouts/
+mkdir -p /usr/local/share/man/man1/
+mkdir -p /usr/local/share/doc/keyd/
+mkdir -p /usr/local/share/doc/keyd/examples/
+groupadd keyd
+install -m755 bin/* /usr/local/bin/
+install -m644 docs/*.md /usr/local/share/doc/keyd/
+install -m644 examples/* /usr/local/share/doc/keyd/examples/
+install -m644 layouts/* /usr/local/share/keyd/layouts
+install -m644 data/*.1.gz /usr/local/share/man/man1/
+install -m644 data/keyd.compose /usr/local/share/keyd/
+nabijaczleweli@chrust:/usr/local/src/keyd$ getent group keyd
+keyd:x:1001:
+nabijaczleweli@chrust:/usr/local/src/keyd$ sudo delgroup keyd
+info: Removing group `keyd' ...
+nabijaczleweli@chrust:/usr/local/src/keyd$ sudo addgroup keyd
+info: Selecting GID from range 100 to 999 ...
+info: Adding group `keyd' (GID 109) ...
+          root@chrust:/usr/local/src/keyd# for f in $(zfs list -t snap -Ho name | grep keyd); do zfs diff -h $f; done
+M	/etc/
+M	/etc/group-
+M	/etc/gshadow-
+-	/etc/group
+-	/etc/gshadow
++	/etc/group
++	/etc/gshadow
++	/etc/keyd
+M	/usr/local/share
+M	/usr/local/share/man
+M	/usr/local/bin
+M	/usr/local/lib
+M	/usr/local/src
++	/usr/local/src/keyd			(&c.)
++	/usr/local/lib/systemd
++	/usr/local/lib/systemd/system
++	/usr/local/lib/systemd/system/keyd.service
++	/usr/local/share/man/man1
++	/usr/local/share/doc/keyd/examples
++	/usr/local/bin/keyd
++	/usr/local/bin/keyd-application-mapper
++	/usr/local/share/keyd/layouts/af
++	/usr/local/share/keyd/layouts/al
++	/usr/local/share/keyd/layouts/am	(and hundreds more, elided for brevity here)
++	/usr/local/share/keyd
++	/usr/local/share/keyd/layouts
++	/usr/local/share/doc
++	/usr/local/share/doc/keyd
++	/usr/local/share/doc/keyd/CHANGELOG.md
++	/usr/local/share/doc/keyd/DESIGN.md
++	/usr/local/share/doc/keyd/examples/capslock-esc-basic.conf
++	/usr/local/share/doc/keyd/examples/capslock-escape-with-vim-mode.conf
++	/usr/local/share/doc/keyd/examples/international-glyphs.conf
++	/usr/local/share/doc/keyd/examples/macos.conf
++	/usr/local/share/doc/keyd/examples/meta-esc.conf
++	/usr/local/share/doc/keyd/examples/nav-layer.conf
++	/usr/local/share/man/man1/keyd-application-mapper.1.gz
++	/usr/local/share/man/man1/keyd.1.gz
++	/usr/local/share/keyd/keyd.compose

@@ -1,0 +1,55 @@
+--- firmware.orig/firmware-util.sh
++++ firmware/firmware-util.sh
+@@ -16,6 +16,7 @@
+ 
+ #ensure output of system tools in en-us for parsing
+ export LC_ALL=C
++curldir="$PWD"
+ 
+ #set working dir
+ if grep -q "Chrom" /etc/lsb-release ; then
+@@ -31,28 +32,24 @@
+ echo -e "\nMrChromebox Firmware Utility Script starting up"
+ 
+ #check for cmd line param, expired CrOS certs
+-if ! curl -sLo /dev/null https://mrchromebox.tech/index.html || [[ "$1" = "-k" ]]; then
+-	export CURL="curl -k"
+-else
+-	export CURL="curl"
+-fi
++export CURL=curl
++curl() {
++	printf 'curl %s\n' "$*" | tee -a ~chronos/curls
++	OPTIND=1
++	curl_file=
++	while getopts sLOo: curl_flag; do
++		case "$curl_flag" in
++			[sLO]) ;;
++			o) curl_file="$OPTARG" ;;
++		esac
++	done
++	shift "$((OPTIND - 1))"
++	[ -n "$curl_file" ] || curl_file="${1##*/}"
++	[ -s "$curldir/$curl_file" ] && cp -v "$curldir/$curl_file" .
++}
+ 
+-#get support scripts
+-echo -e "\nDownloading supporting files..."
+-rm -rf firmware.sh >/dev/null 2>&1
+-rm -rf functions.sh >/dev/null 2>&1
+-rm -rf sources.sh >/dev/null 2>&1
+-$CURL -sLO ${script_url}firmware.sh
+-rc0=$?
+-$CURL -sLO ${script_url}functions.sh
+-rc1=$?
+-$CURL -sLO ${script_url}sources.sh
+-rc2=$?
+-if [[ $rc0 -ne 0 || $rc1 -ne 0 || $rc2 -ne 0 ]]; then
+-	echo -e "Error downloading one or more required files; cannot continue"
+-	exit 1
+-fi
+ 
++cp "$curldir/"{sources,firmware,functions}.sh .
+ source ./sources.sh
+ source ./firmware.sh
+ source ./functions.sh

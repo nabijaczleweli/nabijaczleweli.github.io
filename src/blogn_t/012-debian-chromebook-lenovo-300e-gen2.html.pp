@@ -18,10 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE
 
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
-
-
-BOILERPLATE(012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt, 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook with MediaTek MT8173/MT8173C, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt, 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook with MediaTek MT8173/MT8173C, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
@@ -76,17 +73,17 @@ this machine is:
 </p>
 <blockquote class="continuing">
   <dl class="continuing">
-    <div><dt>Release</dt><dd>27 February 2019</dd></div>
-    <div><dt>OEM</dt><dd>Lenovo</dd></div>
-    <div><dt>Model</dt><dd><a href="//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988">Lenovo 300e Chromebook 2nd Gen (MTK)</a></dd></div>
-    <div><dt>Code name</dt><dd>Sycamore360</dd></div>
+    <div><dt>Release</dt><dd      >27 February 2019</dd></div>
+    <div><dt>OEM</dt><dd          >Lenovo</dd></div>
+    <div><dt>Model</dt><dd        ><a href="//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988">Lenovo 300e Chromebook 2nd Gen (MTK)</a></dd></div>
+    <div><dt>Code name</dt><dd    >Sycamore360</dd></div>
     <div><dt>Board name(s)</dt><dd>hana</dd></div>
-    <div><dt>Base board</dt><dd>oak</dd></div>
-    <div><dt>User ABI</dt><dd>arm</dd></div>
-    <div><dt>Kernel</dt><dd>3.18</dd></div>
-    <div><dt>Kernel ABI</dt><dd>aarch64</dd></div>
-    <div><dt>Platform</dt><dd>MT8173</dd></div>
-    <div><dt>Form Factor</dt><dd>Chromebook</dd></div>
+    <div><dt>Base board</dt><dd   >oak</dd></div>
+    <div><dt>User ABI</dt><dd     >arm</dd></div>
+    <div><dt>Kernel</dt><dd       >3.18</dd></div>
+    <div><dt>Kernel ABI</dt><dd   >aarch64</dd></div>
+    <div><dt>Platform</dt><dd     >MT8173</dd></div>
+    <div><dt>Form Factor</dt><dd  >Chromebook</dd></div>
     <div><dt>First Release</dt><dd>R72</dd></div>
   </dl>
 </blockquote>
@@ -267,18 +264,18 @@ Maybe the recovery says "PHASER360" instead of "Sycamore360" because
 </p>
 <blockquote class="continuing">
   <dl class="continuing">
-    <div><dt>Release</dt><dd>27 February 2019</dd><dd>1 March 2019</dd></div>
-    <div><dt>OEM</dt><dd>Lenovo</dd><dd>Lenovo</dd></div>
-    <div><dt>Model</dt><dd><a href="//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988">Lenovo 300e Chromebook 2nd Gen (MTK)</a></dd><dd><a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
-    <div><dt>Code name</dt><dd>Sycamore360</dd><dd>Phaser360</dd></div>
-    <div><dt>Board name(s)</dt><dd>hana</dd><dd>Octopus</dd></div>
-    <div><dt>Base board</dt><dd>oak</dd><dd>octopus</dd></div>
-    <div><dt>User ABI</dt><dd>arm</dd><dd>x86_64</dd></div>
-    <div><dt>Kernel</dt><dd>3.18</dd><dd>4.14</dd></div>
-    <div><dt>Kernel ABI</dt><dd>aarch64</dd><dd>x86_64</dd></div>
-    <div><dt>Platform</dt><dd>MT8173</dd><dd>Gemini Lake</dd></div>
-    <div><dt>Form Factor</dt><dd>Chromebook</dd><dd>Convertible</dd></div>
-    <div><dt>First Release</dt><dd>R72</dd><dd>R72</dd></div>
+    <div><dt>Release</dt><dd      >27 February 2019</dd><dd>1 March 2019</dd></div>
+    <div><dt>OEM</dt><dd          >Lenovo</dd><dd          >Lenovo</dd></div>
+    <div><dt>Model</dt><dd        ><a href="//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988">Lenovo 300e Chromebook 2nd Gen (MTK)</a></dd><dd><a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
+    <div><dt>Code name</dt><dd    >Sycamore360</dd><dd     >Phaser360</dd></div>
+    <div><dt>Board name(s)</dt><dd>hana</dd><dd            >Octopus</dd></div>
+    <div><dt>Base board</dt><dd   >oak</dd><dd             >octopus</dd></div>
+    <div><dt>User ABI</dt><dd     >arm</dd><dd             >x86_64</dd></div>
+    <div><dt>Kernel</dt><dd       >3.18</dd><dd            >4.14</dd></div>
+    <div><dt>Kernel ABI</dt><dd   >aarch64</dd><dd         >x86_64</dd></div>
+    <div><dt>Platform</dt><dd     >MT8173</dd><dd          >Gemini Lake</dd></div>
+    <div><dt>Form Factor</dt><dd  >Chromebook</dd><dd      >Convertible</dd></div>
+    <div><dt>First Release</dt><dd>R72</dd><dd             >R72</dd></div>
   </dl>
 </blockquote>
 <p class="continuation">

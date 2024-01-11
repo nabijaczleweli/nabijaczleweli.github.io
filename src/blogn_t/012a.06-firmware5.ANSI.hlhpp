@@ -1,0 +1,112 @@
+Script started on 2022-10-06 00:00:07+02:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="170" LINES="48"]
+<span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> bash firmware-util.sh</span>
+MrChromebox Firmware Utility Script starting up
+Downloading supporting files...
+<span class="red">You need to run this script as root; use 'sudo bash &lt;script name>'</span>
+<span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> sudo bash firmware-util.sh</span>
+Password:
+MrChromebox Firmware Utility Script starting up
+
+Downloading required tools...
+curl -sLO https://www.mrchromebox.tech/files/util/cbfstool.tar.gz
+'/home/chronos/user/cbfstool.tar.gz' -> './cbfstool.tar.gz'
+
+Getting device/system info...
+
+Checking WP state...
+ ChromeOS Device Firmware Utility Script [2024-01-07]
+ (c) Mr Chromebox &lt;mrchromebox@gmail.com>
+<span class="cyan">*********************************************************</span>
+<span class="cyan">**</span><span class="yellow">   Device: </span>Lenovo 300e/500e Chromebook 2nd Gen (PHASER360)
+<span class="cyan">**</span><span class="yellow"> Platform: </span>Intel GeminiLake
+<span class="cyan">**</span><span class="yellow">  Fw Type: </span>Stock ChromeOS w/RW_LEGACY
+<span class="cyan">**</span><span class="yellow">   Fw Ver: </span>Google_Phaser.11297.342.0 (12/24/2021)
+<span class="cyan">**</span><span class="yellow">    Fw WP: </span>Disabled
+<span class="cyan">*********************************************************</span>
+<span class="cyan">**</span><span class="green">     </span><span class="yellow"> 1)</span><span class="cyan"> Install/Update RW_LEGACY Firmware</span>
+<span class="cyan">**</span><span class="green"> [WP]</span><span class="yellow"> 2)</span><span class="cyan"> Install/Update UEFI (Full ROM) Firmware</span>
+<span class="cyan">**</span><span class="green"> [WP]</span><span class="yellow"> 3)</span><span class="cyan"> Set Boot Options (GBB flags)</span>
+<span class="cyan">**</span><span class="green"> [WP]</span><span class="yellow"> 4)</span><span class="cyan"> Set Hardware ID (HWID)</span>
+<span class="cyan">*********************************************************</span>
+<span class="cyan">Select a numeric menu option or</span>
+<span class="red">R</span> to reboot </span> <span class="red">P</span> to poweroff </span> <span class="red">Q</span> to quit
+2
+<span class="green">
+Install/Update UEFI Full ROM Firmware</span>
+
+<span class="bold yellow">IMPORTANT: flashing the firmware has the potential to brick your device,
+requiring relatively inexpensive hardware and some technical knowledge to
+recover.Not all boards can be tested prior to release, and even then slight
+differences in hardware can lead to unforseen failures.
+If you don't have the ability to recover from a bad flash, you're taking a risk.
+
+You have been warned.
+
+Also, flashing Full ROM firmware will remove your ability to run ChromeOS.
+</span>
+Do you wish to continue? [y/N] y
+
+<span class="bold yellow">NOTICE: flashing your Chromebook is serious business.
+To ensure recovery in case something goes wrong when flashing,
+be sure to set the ccd capability 'FlashAP Always' using your
+USB-C debug cable, otherwise recovery will involve disassembling
+your device (which is very difficult in some cases).
+
+If you wish to continue, type: 'I ACCEPT' and press enter.
+</span>
+I ACCEPT
+
+<span class="bold yellow">NOTE: After flashing UEFI firmware, you will need to install a UEFI-compatible
+OS; ChromeOS will no longer be bootable. See https://mrchromebox.tech/#faq
+</span>
+Press Y to continue or any other key to abort. Y
+
+Connect the USB/SD device to store the firmware backup and press [Enter]
+to continue.  This is non-destructive, but it is best to ensure no other
+USB/SD devices are connected.
+
+Devices available:
+
+1) Generic STORAGE_DEVICE (7.4 GB)
+
+Enter the number for the device to be used for firmware backup: 1
+
+<span class="bold yellow">
+Saving firmware backup as stock-firmware-PHASER360-20221006.rom
+</span>
+<span class="green">Firmware backup complete. Remove the USB stick and press [Enter] to continue.
+</span>
+
+<span class="bold yellow">
+Downloading Full ROM firmware
+(coreboot_edk2-phaser360-mrchromebox_20231222.rom)
+</span>
+curl -sLO https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom
+'/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom' -> './coreboot_edk2-phaser360-mrchromebox_20231222.rom'
+curl -sLO https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1
+'/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1' -> './coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1'
+<span class="bold yellow">Persisting device HWID
+
+VPD extracted from current firmware
+
+Disabling software write-protect and clearing the WP range
+
+Installing Full ROM firmware (may take up to 90s)</span>
+
+<span class="green">Full ROM firmware successfully installed/updated.</span>
+
+<span class="bold yellow">IMPORTANT:
+The first boot after flashing may take substantially
+longer than subsequent boots -- up to 30s or more.
+Be patient and eventually your device will boot :)
+</span>
+Press [Enter] to return to the main menu.
+
+<a href="/content/assets/blogn_t/012a.01-DSCN0556c2.JPG"><img alt="" src="/content/assets/blogn_t/012a.01-DSCN0556c2.JPG"></a>
+Q
+
+<span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> ^D</span>
+
+exit
+
+Script done on 2022-10-06 00:04:21+02:00 [COMMAND_EXIT_CODE="32"]

@@ -1,0 +1,209 @@
+Script started on 2022-10-10 19:32:11+02:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="170" LINES="48"]
+# uname -a
+Linux localhost 4.14.290-19334-gd1f3f46afcb0 #1 SMP PREEMPT Wed Oct 5 13:43:48 PDT 2022 x86_64 Intel(R) Celeron(R) N4000 CPU @ 1.10GHz GenuineIntel GNU/Linux
+# lscpu
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   39 bits physical, 48 bits virtual
+CPU(s):                          2
+On-line CPU(s) list:             0,1
+Thread(s) per core:              1
+Core(s) per socket:              2
+Socket(s):                       1
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           122
+Model name:                      Intel(R) Celeron(R) N4000 CPU @ 1.10GHz
+Stepping:                        1
+CPU MHz:                         2517.724
+CPU max MHz:                     2600.0000
+CPU min MHz:                     800.0000
+BogoMIPS:                        2188.80
+Virtualization:                  VT-x
+L1d cache:                       48 KiB
+L1i cache:                       64 KiB
+L2 cache:                        4 MiB
+Vulnerability Itlb multihit:     Not affected
+Vulnerability L1tf:              Not affected
+Vulnerability Mds:               Not affected
+Vulnerability Meltdown:          Mitigation; PTI
+Vulnerability Mmio stale data:   Not affected
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Enhanced IBRS, IBPB conditional, RSB filling
+Vulnerability Srbds:             Not affected
+Vulnerability Tsx async abort:   Not affected
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg cx16 xtpr pdcm sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave rdrand lahf_lm 3dnowprefetch cpuid_fault cat_l2 pti cdp_l2 ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust smep erms mpx rdt_a rdseed smap clflushopt intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts umip rdpid md_clear arch_capabilities
+# cat /proc/cmdline
+cros_secure console= loglevel=7 init=/sbin/init cros_secure drm.trace=0x106 root=PARTUUID=4b867d4a-3be5-4e4f-b215-69cb5aa8e633/PARTNROFF=1 rootwait rw dm_verity.error_behavior=3 dm_verity.max_bios=-1 dm_verity.dev_wait=0 dm="1 vroot none ro 1,0 5767168 verity payload=ROOT_DEV hashtree=HASH_DEV hashstart=5767168 alg=sha256 root_hexdigest=cc2fa57f4ecbb729a7eaf4dfb09b08fbdf81ceeb6405676935640336895953f6 salt=46019327766872fc31e9094de56e080cdd6bd6c3a33f950470861cd7f1faf1e8" noinitrd vt.global_cursor_default=0 kern_guid=4b867d4a-3be5-4e4f-b215-69cb5aa8e633 add_efi_memmap boot=local noresume noswap i915.modeset=1 gsmi.s0ix_logging_enable=1 intel_idle.slp_s0_check=1 intel_idle.slp_s0_seed=15
+# findmnt
+TARGET                                SOURCE                             FSTYPE    OPTIONS
+/                                     /dev/mmcblk0p5                     ext2
+|-/dev                                devtmpfs                           devtmpfs  seclabel,size=1946524k,nr_inodes=486631,mode=755
+| |-/dev/shm                          tmpfs                              tmpfs     seclabel,size=1948668k
+| `-/dev/pts                          devpts                             devpts    seclabel,gid=5,mode=620,ptmxmode=666
+|-/proc                               proc                               proc      relatime
+|-/sys                                sysfs                              sysfs     seclabel
+| |-/sys/fs/selinux                   selinuxfs                          selinuxfs relatime
+| |-/sys/fs/pstore                    pstore                             pstore    seclabel
+| |-/sys/kernel/tracing               tracefs                            tracefs   seclabel
+| |-/sys/kernel/debug                 debugfs                            debugfs   seclabel,gid=605,mode=750
+| | `-/sys/kernel/debug/tracing       tracefs                            tracefs   seclabel
+| |-/sys/kernel/config                configfs                           configfs  relatime
+| `-/sys/fs/cgroup                    none                               tmpfs     seclabel,mode=755
+|   |-/sys/fs/cgroup/cpu              cgroup                             cgroup    cpu
+|   |-/sys/fs/cgroup/freezer          cgroup                             cgroup    freezer
+|   |-/sys/fs/cgroup/devices          cgroup                             cgroup    devices
+|   |-/sys/fs/cgroup/cpuacct          cgroup                             cgroup    cpuacct
+|   |-/sys/fs/cgroup/cpuset           cgroup                             cgroup    cpuset,noprefix,cpuset_v2_mode
+|   `-/sys/fs/cgroup/net_cls          cgroup                             cgroup    net_cls
+|-/tmp                                tmpfs                              tmpfs     nosymfollow,seclabel
+|-/run                                tmpfs                              tmpfs     seclabel,mode=755
+| |-/run/chromeos-config/private      /dev/loop0                         squashfs  seclabel
+| |-/run/chromeos-config/v1           /dev/loop0[/v1/chromeos/configs/5] squashfs  seclabel
+| |-/run/namespaces                   tmpfs[/namespaces]                 tmpfs     seclabel,mode=755
+| | `-/run/namespaces/mnt_chrome      nsfs[mnt:[4026532626]]             nsfs
+| |-/run/daemon-store/appsync-consent tmpfs[/daemon-store/appsync-consent]
+| |                                                                      tmpfs     seclabel,mode=755
+| |-/run/daemon-store/authpolicyd     tmpfs[/daemon-store/authpolicyd]   tmpfs     seclabel,mode=755
+| |-/run/daemon-store/cdm-oemcrypto   tmpfs[/daemon-store/cdm-oemcrypto] tmpfs     seclabel,mode=755
+| |-/run/daemon-store/chaps           tmpfs[/daemon-store/chaps]         tmpfs     seclabel,mode=755
+| |-/run/daemon-store/crash           tmpfs[/daemon-store/crash]         tmpfs     seclabel,mode=755
+| |-/run/daemon-store/crosvm          tmpfs[/daemon-store/crosvm]        tmpfs     seclabel,mode=755
+| |-/run/daemon-store/debugd          tmpfs[/daemon-store/debugd]        tmpfs     seclabel,mode=755
+| |-/run/daemon-store/dlp             tmpfs[/daemon-store/dlp]           tmpfs     seclabel,mode=755
+| |-/run/daemon-store/kerberosd       tmpfs[/daemon-store/kerberosd]     tmpfs     seclabel,mode=755
+| |-/run/daemon-store/pvm             tmpfs[/daemon-store/pvm]           tmpfs     seclabel,mode=755
+| |-/run/daemon-store/session_manager tmpfs[/daemon-store/session_manager]
+| |                                                                      tmpfs     seclabel,mode=755
+| |-/run/daemon-store/shill           tmpfs[/daemon-store/shill]         tmpfs     seclabel,mode=755
+| |-/run/daemon-store/smbfs           tmpfs[/daemon-store/smbfs]         tmpfs     seclabel,mode=755
+| |-/run/daemon-store/smbproviderd    tmpfs[/daemon-store/smbproviderd]  tmpfs     seclabel,mode=755
+| |-/run/daemon-store/u2f             tmpfs[/daemon-store/u2f]           tmpfs     seclabel,mode=755
+| |-/run/daemon-store/uma-consent     tmpfs[/daemon-store/uma-consent]   tmpfs     seclabel,mode=755
+| |-/run/daemon-store/usb_bouncer     tmpfs[/daemon-store/usb_bouncer]   tmpfs     seclabel,mode=755
+| |-/run/debugfs_gpu                  debugfs[/dri/0]                    debugfs   seclabel,gid=605,mode=750
+| |-/run/imageloader                  imageloader                        tmpfs     seclabel,mode=755
+| `-/run/netns                        tmpfs[/netns]                      tmpfs     seclabel,mode=755
+|   |-/run/netns/connected_netns_0    nsfs[net:[4026532871]]             nsfs      rw
+|   `-/run/netns/connected_netns_1    nsfs[net:[4026532944]]             nsfs      rw
+|-/mnt/stateful_partition             /dev/mmcblk0p1                     ext4      seclabel,discard,resgid=20119,commit=600,data=ordered
+| `-/mnt/stateful_partition/encrypted /dev/mapper/encstateful            ext4      seclabel,discard,commit=600,data=ordered
+|-/usr/share/oem                      /dev/mmcblk0p8                     ext4      seclabel,data=ordered
+|-/home                               /dev/mmcblk0p1[/home]              ext4      nosymfollow,seclabel,discard,resgid=20119,commit=600,dat
+| `-/home/chronos                     /dev/mapper/encstateful[/chronos]  ext4      seclabel,discard,commit=600,data=ordered
+|-/var                                /dev/mapper/encstateful[/var]      ext4      seclabel,discard,commit=600,data=ordered
+| |-/var/run                          tmpfs                              tmpfs     seclabel,mode=755
+| |-/var/lock                         tmpfs[/lock]                       tmpfs     seclabel,mode=755
+| `-/var/cache/dlc-images             /dev/mmcblk0p1[/var_overlay/cache/dlc-images]
+|                                                                        ext4      seclabel,discard,resgid=20119,commit=600,data=ordered
+|-/media                              media                              tmpfs     seclabel
+|-/usr/local                          /dev/mmcblk0p1[/dev_image]         ext4      rw,nodev,seclabel,discard,resgid=20119,commit=600,data=ordered
+|-/usr/share/chromeos-assets/speech_synthesis/patts
+|                                     /dev/loop2                         squashfs  seclabel
+|-/usr/share/chromeos-assets/quickoffice/_platform_specific
+|                                     /dev/loop3                         squashfs  seclabel
+`-/usr/share/cros-camera/libfs        /dev/loop4                         squashfs  seclabel
+# df -hT
+Filesystem              Type      Size  Used Avail Use% Mounted on
+/dev/root               ext2      2.8G  2.4G  358M  88% /
+devtmpfs                devtmpfs  1.9G     0  1.9G   0% /dev
+tmpfs                   tmpfs     1.9G   60M  1.8G   4% /dev/shm
+tmpfs                   tmpfs     1.9G   72K  1.9G   1% /tmp
+tmpfs                   tmpfs     1.9G  704K  1.9G   1% /run
+/dev/loop0              squashfs  384K  384K     0 100% /run/chromeos-config/private
+/dev/mmcblk0p1          ext4       21G  173M   20G   1% /mnt/stateful_partition
+/dev/mmcblk0p8          ext4       12M   24K   12M   1% /usr/share/oem
+/dev/mapper/encstateful ext4      6.0G   14M  6.0G   1% /mnt/stateful_partition/encrypted
+media                   tmpfs     1.9G     0  1.9G   0% /media
+none                    tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop2              squashfs   98M   98M     0 100% /usr/share/chromeos-assets/speech_synthesis/patts
+imageloader             tmpfs     1.9G     0  1.9G   0% /run/imageloader
+/dev/loop3              squashfs   10M   10M     0 100% /usr/share/chromeos-assets/quickoffice/_platform_specific
+/dev/loop4              squashfs  6.0M  6.0M     0 100% /usr/share/cros-camera/libfs
+# lsblk
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+loop0           7:0    0  268K  1 loop /run/chromeos-config/private
+loop1           7:1    0  6.1G  0 loop
+`-encstateful 254:1    0  6.1G  0 dm   /mnt/stateful_partition/encrypted
+loop2           7:2    0 97.3M  0 loop /usr/share/chromeos-assets/speech_synthesis/patts
+loop3           7:3    0  9.2M  0 loop /usr/share/chromeos-assets/quickoffice/_platform_specific
+loop4           7:4    0    6M  1 loop /usr/share/cros-camera/libfs
+mmcblk0       179:0    0 29.1G  0 disk
+|-mmcblk0p1   179:1    0 20.9G  0 part /mnt/stateful_partition
+|-mmcblk0p2   179:2    0   32M  0 part
+|-mmcblk0p3   179:3    0    4G  0 part
+|-mmcblk0p4   179:4    0   32M  0 part
+|-mmcblk0p5   179:5    0    4G  0 part /
+|-mmcblk0p6   179:6    0  512B  0 part
+|-mmcblk0p7   179:7    0  512B  0 part
+|-mmcblk0p8   179:8    0   16M  0 part /usr/share/oem
+|-mmcblk0p9   179:9    0  512B  0 part
+|-mmcblk0p10  179:10   0  512B  0 part
+|-mmcblk0p11  179:11   0    8M  0 part
+`-mmcblk0p12  179:12   0   32M  0 part
+mmcblk0boot0  179:16   0    4M  1 disk
+mmcblk0boot1  179:32   0    4M  1 disk
+zram0         253:0    0  5.4G  0 disk [SWAP]
+# lsblk -f
+NAME          FSTYPE   LABEL  FSAVAIL FSUSE% MOUNTPOINT
+loop0         squashfs              0   100% /run/chromeos-config/private
+loop1
+`-encstateful ext4               5.9G     0% /mnt/stateful_partition/encrypted
+loop2         squashfs              0   100% /usr/share/chromeos-assets/speech_synthesis/patts
+loop3         squashfs              0   100% /usr/share/chromeos-assets/quickoffice/_platform_specific
+loop4         squashfs              0   100% /usr/share/cros-camera/libfs
+mmcblk0
+|-mmcblk0p1   ext4              19.2G     1% /mnt/stateful_partition
+|-mmcblk0p2
+|-mmcblk0p3   ext4     ROOT-A
+|-mmcblk0p4
+|-mmcblk0p5   ext2     ROOT-A  357.3M    87% /
+|-mmcblk0p6
+|-mmcblk0p7
+|-mmcblk0p8   ext4     OEM      11.1M     0% /usr/share/oem
+|-mmcblk0p9
+|-mmcblk0p10
+|-mmcblk0p11
+`-mmcblk0p12  vfat     EFI-SYSTEM
+mmcblk0boot0
+mmcblk0boot1
+zram0                                        [SWAP]
+# losetup
+NAME       AUTOCLEAR RO BACK-FILE                                                 DIO LOG-SEC
+/dev/loop1         0  0 /mnt/stateful_partition/encrypted.block                     1     512
+/dev/loop4         1  1 /usr/share/cros-camera/g3_libs.squash                       0     512
+/dev/loop2         1  0 /usr/share/chromeos-assets/speech_synthesis/patts.squash    0     512
+/dev/loop0         1  1 /usr/share/chromeos-config/configfs.img                     0     512
+/dev/loop3         1  0 /usr/share/chromeos-assets/quickoffice/quickoffice.squash   0     512
+# blkid
+/dev/loop0: TYPE="squashfs"
+/dev/loop2: TYPE="squashfs"
+/dev/loop3: TYPE="squashfs"
+/dev/loop4: TYPE="squashfs"
+/dev/mmcblk0p1: UUID="b3770f19-2ac7-402d-9e3c-5c04e3e157fa" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="STATE" PARTUUID="65aa1ffe-16f2-b94d-a870-7292e5e5ec6f"
+/dev/mmcblk0p2: PARTLABEL="KERN-A" PARTUUID="9b216b4b-ac57-c640-8eb7-d356af8426b7"
+/dev/mmcblk0p3: LABEL="ROOT-A" SEC_TYPE="ext2" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="ROOT-A" PARTUUID="3675549b-e624-9143-b3af-c414e1e02117"
+/dev/mmcblk0p4: PARTLABEL="KERN-B" PARTUUID="4b867d4a-3be5-4e4f-b215-69cb5aa8e633"
+/dev/mmcblk0p5: LABEL="ROOT-A" BLOCK_SIZE="4096" TYPE="ext2" PARTLABEL="ROOT-B" PARTUUID="6c2204d6-92d1-2d4b-9ce4-1eced2227559"
+/dev/mmcblk0p8: LABEL="OEM" UUID="9db5d778-0ac8-43be-b4dd-b8cd77248ba3" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="OEM" PARTUUID="c89b9d8a-130a-1c42-903e-4a00373cbe78"
+/dev/mmcblk0p11: PARTLABEL="RWFW" PARTUUID="49257a5e-f084-5d40-8655-7b44ce3aa92a"
+/dev/mmcblk0p12: SEC_TYPE="msdos" LABEL_FATBOOT="EFI-SYSTEM" LABEL="EFI-SYSTEM" UUID="563B-40A9" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI-SYSTEM" PARTUUID="e87e055b-5f6a-4647-8176-4f0f50bdadd6"
+/dev/mapper/encstateful: UUID="91e91d32-94d2-457f-a4a7-05db62492040" BLOCK_SIZE="4096" TYPE="ext4"
+# cat /etc/os-release
+ID_LIKE=chromiumos
+GOOGLE_CRASH_ID=ChromeOS
+NAME=Chrome OS
+ID=chromeos
+HOME_URL=https://www.chromium.org/chromium-os
+BUG_REPORT_URL=https://crbug.com/new
+VERSION=106
+VERSION_ID=106
+BUILD_ID=15054.98.0
+# cat /etc/fstab
+# ^D
+
+exit
+
+Script done on 2022-10-10 19:37:30+02:00 [COMMAND_EXIT_CODE="0"]

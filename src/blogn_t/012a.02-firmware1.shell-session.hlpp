@@ -1,0 +1,31 @@
+localhost login: root
+Password: root
+localhost ~ # mount -r /dev/sda /media/removable
+localhost ~ # cp /media/removable/firmware-util.sh ~chronos
+'/media/removable/firmware-util.sh' -> '/home/chronos/user/firmware-util.sh'
+localhost ~ # umount /media/removable
+localhost ~ # ^D
+logout
+
+localhost login: chronos
+Password:
+Login incorrect
+
+localhost login: chronos
+Password: chronos
+
+Login incorrect
+localhost login: root
+Password: root
+localhost ~ # chromeos-setdevpassswd
+Password: chronos
+Verifying - Password: chronos
+localhost ~ # ^D
+logout
+
+localhost login: chronos
+Password: chronos
+chronos@localhost ~ $ bash firmware-util.sh
+MrChromebox Firmware Utility Script starting up
+Downloading supporting files...
+Error downloading one or more required files; cannot continue

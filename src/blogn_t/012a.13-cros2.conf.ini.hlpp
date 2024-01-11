@@ -1,0 +1,46 @@
+[ids]
+0001:0001
+
+[main]
+# ←
+back		= f1
+# →
+forward		= f2
+# ⟳
+refresh		= f3
+# tableau
+zoom		= f4
+# fast rectangle
+scale		= f5
+# small ☀️
+brightnessdown	= f6
+# ☀️
+brightnessup	= f7
+# 🔇
+mute		= f8
+# 🔉
+volumedown	= f9
+# 🔊
+volumeup	= f10
+
+# 🔒
+sleep		= delete
+
+# 🔍 remains as leftmeta
+
+[meta]
+# tableau
+zoom		= print
+
+back		= back
+forward		= forward
+refresh		= refresh
+scale		= scale
+
+brightnessdown	= brightnessdown
+brightnessup	= brightnessup
+mute		= mute
+volumedown	= volumedown
+volumeup	= volumeup
+
+sleep		= sleep

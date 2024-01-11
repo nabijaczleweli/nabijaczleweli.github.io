@@ -1,0 +1,10 @@
+<span class="token info punctuation">chrust</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/modprobe.d/avs.conf</span>
+# https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1
+# DANGER: Using AVS on a device with max98357a will blow your speakers. You have been warned.
+blacklist snd-soc-avs
+<span class="token info punctuation">chrust</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/X11/xorg.conf.d/touchpad.conf</span>
+Section "InputClass"
+	Identifier "Touchpads normal"
+	MatchIsTouchpad "on"
+	Option "Tapping" "on"
+EndSection

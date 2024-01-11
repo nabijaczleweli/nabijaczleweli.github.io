@@ -54,9 +54,10 @@ const LANGUAGES       = {
 };
 
 
-const in_file  = process.argv[2];
-const out_file = process.argv[3];
-let   language = process.argv[4];
+const in_file   = process.argv[2];
+const out_file  = process.argv[3];
+let   language  = process.argv[4];
+const highlight = !process.argv[5];
 
 if(!in_file) {
 	console.error("Input file unspecified.")
@@ -75,14 +76,16 @@ if(!language) {
 
 
 language = LANGUAGE_REMAPS[language] || language;
-if(LANGUAGES[language])
-	Prism.languages[language] = LANGUAGES[language];
-else
-	Prism.loadLanguages([language]);
+if(highlight) {
+	if(LANGUAGES[language])
+		Prism.languages[language] = LANGUAGES[language];
+	else
+		Prism.loadLanguages([language]);
 
-if(!Prism.languages[language]) {
-	console.error("Unknown language", language)
-	process.exit(4);
+	if(!Prism.languages[language]) {
+		console.error("Unknown language", language)
+		process.exit(4);
+	}
 }
 
 
@@ -90,7 +93,7 @@ console.log("Highlighting", in_file, "as", language, "into", out_file);
 
 
 const content = fs.readFileSync(in_file, {encoding: "utf8"});
-const highlit = Prism.highlight(content, Prism.languages[language], language);
+const highlit = highlight ? Prism.highlight(content, Prism.languages[language], language) : content;
 
 const out = fs.createWriteStream(out_file);
 out.write(`<pre class="language-${language}"><code class="language-${language}">`);

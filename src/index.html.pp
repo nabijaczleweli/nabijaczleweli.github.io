@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/012-debian-chromebook-lenovo-300e-gen2.html">012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</a>;
-		<span style="white-space: nowrap;">Mon, 08 Jan 2024 16:06:34 +0100</span>
+		<a href="blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html">012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel)</a>;
+		<span style="white-space: nowrap;">Thu, 11 Jan 2024 04:04:28 +0100</span>
 	</samp>
 </p>
 

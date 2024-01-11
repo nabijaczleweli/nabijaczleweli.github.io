@@ -1,0 +1,36 @@
+nabijaczleweli@chrust:~$ git clone http://github.com/WeirdTreeThing/cros-keyboard-map
+Cloning into 'cros-keyboard-map'...
+warning: redirecting to https://github.com/WeirdTreeThing/cros-keyboard-map/
+Resolving deltas: 100% (26/26), done.
+nabijaczleweli@chrust:~$ cd cros-keyboard-map/
+nabijaczleweli@chrust:~/cros-keyboard-map$ git log -1
+commit 25b0e9c2a10fc834d414b427c40d572fb38cda14
+Author: WeirdTreeThing <bradyn127@protonmail.com>
+Date:   Tue Dec 12 17:40:08 2023 -0500
+
+    Add support for Chimera Linux
+
+nabijaczleweli@chrust:~/cros-keyboard-map$ grep -n usr/bin/keyd install.sh
+26:if ! [ -f /usr/bin/keyd ]; then
+nabijaczleweli@chrust:~/cros-keyboard-map$ sed -i 's:.*usr/bin/keyd.*:if false; then:' install.sh
+nabijaczleweli@chrust:~/cros-keyboard-map$ sed -n 26p install.sh
+if false; then
+nabijaczleweli@chrust:~/cros-keyboard-map$ ./install.sh
+Generating config
+Installing config
+[sudo] password for nabijaczleweli:
+Enabling keyd
+Created symlink /etc/systemd/system/sysinit.target.wants/keyd.service → /usr/local/lib/systemd/system/keyd.service.
+Installing libinput configuration
+Done
+nabijaczleweli@chrust:~/cros-keyboard-map$ sudo mv $PWD /usr/local/src/
+          root@chrust:~/cros-keyboard-map# for f in $(zfs list -t snap -Ho name | grep keymap); do zfs diff -h $f; done
+M	/etc/
++	/etc/libinput
++	/etc/libinput/local-overrides.quirks
+M	/etc/keyd
++	/etc/keyd/cros.conf
+M	/etc/systemd/system/sysinit.target.wants
++	/etc/systemd/system/sysinit.target.wants/keyd.service
+M	/usr/local/src
++	/usr/local/src/cros-keyboard-map		(&c.)

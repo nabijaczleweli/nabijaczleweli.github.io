@@ -1,0 +1,4 @@
+<span class="yellow bold">WARNING: your device currently has software write-protect enabled.
+If you plan to flash the UEFI firmware, you must first disable it and reboot before flashing.
+Would you like to disable sofware WP and reboot your device?</span>
+Press Y (then enter) to disable software WP and reboot, or just press enter to skip and continue. <kbd>Y</kbd>

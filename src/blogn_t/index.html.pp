@@ -33,6 +33,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-GB, STYLESHEETS)
 <style>
+/* For 008 */
 /* Measured against merriweather in the heading. */
 .sunfont {
 	font-family: sunfont;
@@ -56,19 +57,20 @@ Not banged out in an hour.
 </p>
 
 <span class="roboto-unscale">
-	POST(001-x32-in-2020,                        Thu, 9 Apr 2020 01:44:47 +0200,  001. Installing Debian'<!--'-->s x32 port in 2020)
-	POST(002-ncurses-gpm-segfault,               Mon, 25 May 2020 00:12:30 +0200, 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
-	POST(003-maircl-poc,                         Sat, 11 Jul 2020 00:34:50 +0200, 003. A proof-of-concept IRC/mail bridge)
-	POST(004-cinque,                             Sat, 18 Jul 2020 22:14:33 +0200, 004. New album: cinque)
-	POST(005-low-curse-zfs-on-root,              Mon, 14 Sep 2020 00:20:20 +0200, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
-	POST(005a-zfs-on-root-single-disk-corollary, Thu, 05 Nov 2020 22:06:30 +0100, 005a. A single-disk but slightly more cursed ZFS-on-root corollary)
-	POST(006-UNIX-r-ATT,                         Thu, 08 Jul 2021 20:26:38 +0200, 006. ¹UNIX® is a registered trademark of AT&T.)
-	POST(007-groff-Tps-cyrillic-et-al,           Sat, 28 Aug 2021 18:36:44 +0200, 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
-	POST(008-amix-fonts,                         Thu, 17 Nov 2022 22:36:33 +0100, 008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span>)
-	POST(009-XEROX-SIGMA-9-balls,                Thu, 01 Dec 2022 17:16:50 +0100, 009. XEROX SIGMA 9 balls)
-	POST(010-tme-Sun-2-SunOS3-2023,              Mon, 19 Jun 2023 23:53:58 +0200, 010. tme booting SunOS 3 on Sun-2 in 2023)
-	POST(011-linux-splice-exclusion,             Fri, 07 Jul 2023 01:42:34 +0200, 011. pipe exclusion with splice() under Linux)
-	POST(012-debian-chromebook-lenovo-300e-gen2, Mon, 08 Jan 2024 16:06:34 +0100, 012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook)
+	POST(001-x32-in-2020,                         Thu, 9 Apr 2020 01:44:47 +0200,  001. Installing Debian'<!--'-->s x32 port in 2020)
+	POST(002-ncurses-gpm-segfault,                Mon, 25 May 2020 00:12:30 +0200, 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
+	POST(003-maircl-poc,                          Sat, 11 Jul 2020 00:34:50 +0200, 003. A proof-of-concept IRC/mail bridge)
+	POST(004-cinque,                              Sat, 18 Jul 2020 22:14:33 +0200, 004. New album: cinque)
+	POST(005-low-curse-zfs-on-root,               Mon, 14 Sep 2020 00:20:20 +0200, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
+	POST(005a-zfs-on-root-single-disk-corollary,  Thu, 05 Nov 2020 22:06:30 +0100, 005a. A single-disk but slightly more cursed ZFS-on-root corollary)
+	POST(006-UNIX-r-ATT,                          Thu, 08 Jul 2021 20:26:38 +0200, 006. ¹UNIX® is a registered trademark of AT&T.)
+	POST(007-groff-Tps-cyrillic-et-al,            Sat, 28 Aug 2021 18:36:44 +0200, 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
+	POST(008-amix-fonts,                          Thu, 17 Nov 2022 22:36:33 +0100, 008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span>)
+	POST(009-XEROX-SIGMA-9-balls,                 Thu, 01 Dec 2022 17:16:50 +0100, 009. XEROX SIGMA 9 balls)
+	POST(010-tme-Sun-2-SunOS3-2023,               Mon, 19 Jun 2023 23:53:58 +0200, 010. tme booting SunOS 3 on Sun-2 in 2023)
+	POST(011-linux-splice-exclusion,              Fri, 07 Jul 2023 01:42:34 +0200, 011. pipe exclusion with splice() under Linux)
+	POST(012-debian-chromebook-lenovo-300e-gen2,  Mon, 08 Jan 2024 16:06:34 +0100, 012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook)
+	POST(012a-installing-debian-chromebook-lenovo-300e-gen2-intel, Thu, 11 Jan 2024 04:04:28 +0100, 012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel))
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

@@ -48,6 +48,7 @@ EBOOK_PREPROCESS_SOURCES := $(sort $(wildcard src/*.eppe src/**/*.eppe src/**/**
 COMBINED_PREPROCESS_SOURCES := $(sort $(wildcard src/*.epp src/**/*.epp src/**/**/*.epp src/**/**/**/*.epp src/**/**/**/**/*.epp src/**/**/**/**/**/*.epp))
 BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp src/**/**/**/*.epupp src/**/**/**/**/*.epupp src/**/**/**/**/*.epupp))
 HIGHLIGHT_SOURCES := $(sort $(wildcard src/*.hlpp src/**/*.hlpp src/**/**/*.hlpp src/**/**/**/*.hlpp src/**/**/**/**/*.hlpp src/**/**/**/**/*.hlpp))
+HAND_HIGHLIT_SOURCES := $(sort $(wildcard src/*.hlhpp src/**/*.hlhpp src/**/**/*.hlhpp src/**/**/**/*.hlhpp src/**/**/**/**/*.hlhpp src/**/**/**/**/*.hlhpp))
 ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.* assets/**/**/**/**/*.* assets/**/**/**/**/**/*.*))
 
 .PHONY : all clean assets octicons highlight preprocess books rss
@@ -60,7 +61,7 @@ clean :
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
-highlight : highlight.js ext/prism/prism.js $(OUTDIR)assets/prism-twilight.min.css $(OUTDIR)assets/LICENSE-prism $(patsubst src/%.hlpp,$(BLDDIR)highlit/%.html,$(HIGHLIGHT_SOURCES))
+highlight : highlight.js ext/prism/prism.js $(OUTDIR)assets/prism-twilight.min.css $(OUTDIR)assets/LICENSE-prism $(patsubst src/%.hlpp,$(BLDDIR)highlit/%.html,$(HIGHLIGHT_SOURCES)) $(patsubst src/%.hlhpp,$(BLDDIR)highlit/%.html,$(HAND_HIGHLIT_SOURCES))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(BLDDIR)out/%,$(EBOOK_PREPROCESS_SOURCES)) $(foreach l,$(patsubst src/%.epp,%,$(COMBINED_PREPROCESS_SOURCES)),$(OUTDIR)$(l) $(BLDDIR)out/$(l))
 books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
@@ -106,6 +107,10 @@ $(OUTDIR)% : src/%.epp
 $(BLDDIR)highlit/%.html : highlight.js src/%.hlpp
 	@mkdir -p $(dir $@)
 	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(subst $(suffix $@),,$@)))
+
+$(BLDDIR)highlit/%.html : highlight.js src/%.hlhpp
+	@mkdir -p $(dir $@)
+	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(subst $(suffix $@),,$@))) !
 
 $(BLDDIR)out/% : src/%.epp
 	@mkdir -p $(dir $@)
