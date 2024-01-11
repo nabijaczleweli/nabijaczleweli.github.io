@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Thu, 11 Jan 2024 04:04:28 +0100" -->
 #define POST_DATE      Thu, 11 Jan 2024 04:04:28 +0100
-#define POST_POST_DATE
+#define POST_POST_DATE , updated Thu, 11 Jan 2024 21:38:02 +0100
 <!-- docs.chrultrabook.com saved as /web/20240109135642 -->
 
 #ifdef linux
@@ -904,7 +904,7 @@ I feel like I could do better with
 </div>
 <p class="continuing">
 <kbd>TABLEAU</kbd> looks the most like a screen, hence it'<!--'-->s mapped to PrtSc.
-Specifically <kbd>FASTRECTANGLE</kbd>, but also <kbd>←</kbd>, <kbd>→</kbd>, and <kbd>⟳</kbd> are prime real estate to mapping something useful.
+Specifically <kbd>FASTRECTANGLE</kbd>, but also <kbd>←</kbd>, <kbd>→</kbd>, and <kbd>⟳</kbd> are prime real estate for mapping something useful to.
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>FASTRECTANGLE</kbd> even works to switch to VT4, and <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>🔒</kbd> to salute!
 </p>
 <p class="indented continuing">
@@ -921,8 +921,17 @@ so appending this to the updated <samp class="path">/etc/keyd/cros.conf</samp> w
 (but <code>[meta]</code> is better for i3 usage;
  also note that you can'<!--'-->t make another file and have it patch the big one, because at most one file can match each device):
 </p>
-<div class="bigcode continuing">
+<div class="bigcode continuation">
 #include "blogn_t/012a.14-cros-arrows.conf.ini.html"
+</div>
+
+<p class="indented continued">
+I had to find out <a href="//101010.pl/@nabijaczleweli/111739210958704043">the hard way</a> that keyd, <em>by default</em>,
+mangles Shift_R and Control_R into Shift_L and Control_L.
+Appending this is necessary to make them work correctly:
+</p>
+<div class="bigcode continuation">
+#include "blogn_t/012a.15-rctrl_rshift.conf.ini.html"
 </div>
 
 <p class="indented">
