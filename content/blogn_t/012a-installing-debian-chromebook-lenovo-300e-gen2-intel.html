@@ -1,0 +1,2284 @@
+<!--
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+ <!-- RSS_PUB_DATE: "Thu, 11 Jan 2024 04:04:28 +0100" -->
+<!-- docs.chrultrabook.com saved as /web/20240109135642 -->
+<!DOCTYPE html> 
+ <html lang="en-GB"> 
+ <head> 
+ <meta charset="utf-8"> 
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+ <meta name="viewport" content="width=device-width,initial-scale=1"> 
+ <meta name="author" content="nabijaczleweli"> 
+ <meta name="description" content="012. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) with Intel Celeron N4000"> 
+ <title>012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt — nabijaczleweli</title> 
+ 
+ <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
+ <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
+ <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
+ <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png"> 
+ <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png"> 
+ <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png"> 
+ <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png"> 
+ <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png"> 
+ <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16"> 
+ <link rel="manifest" href="/assets/favicons/manifest.json"> 
+ <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5"> 
+ <link rel="shortcut icon" href="/assets/favicons/favicon.ico"> 
+ <meta name="apple-mobile-web-app-title" content="nabijaczleweli"> 
+ <meta name="application-name" content="nabijaczleweli"> 
+ <meta name="msapplication-TileColor" content="#da532c"> 
+ <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
+ <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ }); 
+ })(); 
+ </script> 
+ <link href="/content/assets/heading.css" rel="stylesheet" /> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
+ 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> 
+ <link href="/content/assets/bigtable.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
+ <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
+ <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ </head> 
+ <body>
+<style>
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: "Droid Sans Mono", monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: "Merriweather", serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
+a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
+ color: inherit;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+img {
+  max-width: 100%;
+  border-radius: .2em;
+  vertical-align: bottom;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+dl > div {
+  display: inline-grid;
+  margin-right: 0.5em;
+}
+dl.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+dl.keyboard dt {
+  justify-self: right;
+  padding-right: 0.3em;
+}
+dl.keyboard dt, dl.keyboard dd {
+  display: inline;
+}
+@media all and (min-device-width: 700px) {
+  dl.keyboard {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media all and (min-device-width: 800px) {
+  dl.keyboard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media all and (min-device-width: 1200px) {
+  dl.keyboard {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media all and (min-device-width: 1500px) {
+  dl.keyboard {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+tt {
+  font-family: "Droid Sans Mono", monospace; /* <code> */
+}
+pre > code {
+  white-space: pre-wrap !important;
+}
+pre details {
+  display: inherit;
+}
+pre details summary {
+  display: inline list-item;
+  font-family: inherit;
+}
+dl.linear, dl.linear dt, dl.linear dd {
+  display: inline;
+}
+dl.linear dt::after {
+  content: ":";
+}
+dl.linear dd::after {
+  content: ",";
+}
+dl.linear dd:last-child::after {
+  content: ".";
+}
+div#contents a {
+  display: block;
+}
+div#contents div {
+  padding-left: 1em;
+}
+.heading-ref, div#contents a {
+  font-family: "Merriweather", serif; /* same as h1 &c. */
+  font-size: 0.95em; /* unscale a bit*/
+}
+.heading-ref {
+  font-weight: bold;
+}
+.chrultra-heading {
+  font-weight: bold;
+  font-style: italic;
+}
+div.tipwarning {
+  padding-left: 0.25em; /* same as blockquote  */
+  border-left: 0.25em solid;
+}
+.tipwarning.tip {
+  border-left-color: #30d56f;
+}
+.tipwarning.warning {
+  border-left-color: #e0ad15;
+}
+.tipwarning.warning dt {
+  color: #fdca31;
+}
+.tipwarning.danger {
+  border-left-color: #fc1e38;
+}
+.tipwarning.danger dt, a.tipwarning.danger {
+  color: #fc2d3b;
+}
+.language-ANSI .bold {
+  font-weight: bold;
+}
+.language-ANSI .cyan {
+  color: #00CDCD; /* cyan3  */
+}
+.language-ANSI .green {
+  color: #00CD00; /* green3  */
+}
+.language-ANSI .red {
+  color: #CD0000; /* red3  */
+}
+.language-ANSI .yellow {
+  color: #CDCD00; /* yellow3  */
+}
+.language-ANSI .bright.yellow {
+  color: #FFFF00; /* yellow */
+}
+.language-ANSI .bright.blue {
+  color: #6c5cff; /* #6c5cff */
+}
+.language-ANSI .bright.magenta {
+  color: #FF00FF; /* magenta */
+}
+#spacespace::before {
+  content: "  ";
+}
+img.iconic {
+  height: 1em;
+  vertical-align: initial;
+}
+samp.path {
+ font-style: italic;
+}
+code[class="language-ini"], pre[class="language-ini"] {
+ tab-size: 8 !important;
+ -moz-tab-size: 8 !important;
+}
+</style>
+<span class="roboto writing">
+<p></p>
+<h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel)</samp> <a class="go-back-link right" href=".">↩</a></h2> 
+ <h4 id="post-date"><span style="white-space: nowrap">Thu, 11 Jan 2024 04:04:28 +0100</span></h4>
+<p class="continued">
+This <a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices">concerns</a>
+</p>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div><dt>Release</dt><dd >1 March 2019</dd></div>
+    <div><dt>OEM</dt><dd >Lenovo</dd></div>
+    <div><dt>Model</dt><dd ><a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
+    <div><dt>Code name</dt><dd >Phaser360</dd></div>
+    <div><dt>Board name(s)</dt><dd>Octopus</dd></div>
+    <div><dt>Base board</dt><dd >octopus</dd></div>
+    <div><dt>User ABI</dt><dd >x86_64</dd></div>
+    <div><dt>Kernel</dt><dd >4.14</dd></div>
+    <div><dt>Kernel ABI</dt><dd >x86_64</dd></div>
+    <div><dt>Platform</dt><dd >Gemini Lake</dd></div>
+    <div><dt>Form Factor</dt><dd >Convertible</dd></div>
+    <div><dt>First Release</dt><dd>R72</dd></div>
+  </dl>
+</blockquote>
+<p class="continuing">
+which Lenovo tricked me into getting in
+<a href="012-debian-chromebook-lenovo-300e-gen2.html"><samp>012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</samp></a>.
+</p>
+<p class="indented continuing">
+But because it'<!--'-->s an Intel platform with a Celeron N4000 and 4G of LPDDR4-2400 you can install Debian on it, at least hypothetically.
+</p>
+<div class="bigcode">
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token output">Script started on 2022-10-10 19:32:11+02:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="170" LINES="48"]
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">uname</span> -a</span></span>
+<span class="token info punctuation">Linux localhost 4.14.290-19334-gd1f3f46afcb0 </span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash"><span class="token number">1</span> SMP PREEMPT Wed Oct <span class="token number">5</span> <span class="token number">13</span>:43:48 PDT <span class="token number">2022</span> x86_64 Intel<span class="token punctuation">(</span>R<span class="token punctuation">)</span> Celeron<span class="token punctuation">(</span>R<span class="token punctuation">)</span> N4000 CPU @ <span class="token number">1</span>.10GHz GenuineIntel GNU/Linux</span></span>
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lscpu</span></span>
+<span class="token output">Architecture:<!--"-->                    <!--"-->x86_64
+CPU op-mode(s):<!--"-->                  <!--"-->32-bit, 64-bit
+Byte Order:<!--"-->                      <!--"-->Little Endian
+Address sizes:<!--"-->                   <!--"-->39 bits physical, 48 bits virtual
+CPU(s):<!--"-->                          <!--"-->2
+On-line CPU(s) list:<!--"-->             <!--"-->0,1
+Thread(s) per core:<!--"-->              <!--"-->1
+Core(s) per socket:<!--"-->              <!--"-->2
+Socket(s):<!--"-->                       <!--"-->1
+Vendor ID:<!--"-->                       <!--"-->GenuineIntel
+CPU family:<!--"-->                      <!--"-->6
+Model:<!--"-->                           <!--"-->122
+Model name:<!--"-->                      <!--"-->Intel(R) Celeron(R) N4000 CPU @ 1.10GHz
+Stepping:<!--"-->                        <!--"-->1
+CPU MHz:<!--"-->                         <!--"-->2517.724
+CPU max MHz:<!--"-->                     <!--"-->2600.0000
+CPU min MHz:<!--"-->                     <!--"-->800.0000
+BogoMIPS:<!--"-->                        <!--"-->2188.80
+Virtualization:<!--"-->                  <!--"-->VT-x
+L1d cache:<!--"-->                       <!--"-->48 KiB
+L1i cache:<!--"-->                       <!--"-->64 KiB
+L2 cache:<!--"-->                        <!--"-->4 MiB
+Vulnerability Itlb multihit:<!--"-->     <!--"-->Not affected
+Vulnerability L1tf:<!--"-->              <!--"-->Not affected
+Vulnerability Mds:<!--"-->               <!--"-->Not affected
+Vulnerability Meltdown:<!--"-->          <!--"-->Mitigation; PTI
+Vulnerability Mmio stale data:<!--"-->   <!--"-->Not affected
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:<!--"-->        <!--"-->Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:<!--"-->        <!--"-->Mitigation; Enhanced IBRS, IBPB conditional, RSB filling
+Vulnerability Srbds:<!--"-->             <!--"-->Not affected
+Vulnerability Tsx async abort:<!--"-->   <!--"-->Not affected
+Flags:<!--"-->                           <!--"-->fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg cx16 xtpr pdcm sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave rdrand lahf_lm 3dnowprefetch cpuid_fault cat_l2 pti cdp_l2 ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust smep erms mpx rdt_a rdseed smap clflushopt intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts umip rdpid md_clear arch_capabilities
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cat</span> /proc/cmdline</span></span>
+<span class="token output">cros_secure console= loglevel=7 init=/sbin/init cros_secure drm.trace=0x106 root=PARTUUID=4b867d4a-3be5-4e4f-b215-69cb5aa8e633/PARTNROFF=1 rootwait rw dm_verity.error_behavior=3 dm_verity.max_bios=-1 dm_verity.dev_wait=0 dm="1 vroot none ro 1,0 5767168 verity payload=ROOT_DEV hashtree=#_DEV hashstart=5767168 alg=sha256 root_hexdigest=cc2fa57f4ecbb729a7eaf4dfb09b08fbdf81ceeb6405676935640336895953f6 salt=46019327766872fc31e9094de56e080cdd6bd6c3a33f950470861cd7f1faf1e8" noinitrd vt.global_cursor_default=0 kern_guid=4b867d4a-3be5-4e4f-b215-69cb5aa8e633 add_efi_memmap boot=local noresume noswap i915.modeset=1 gsmi.s0ix_logging_enable=1 intel_idle.slp_s0_check=1 intel_idle.slp_s0_seed=15
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">findmnt</span></span>
+<span class="token output">TARGET<!--"-->                                <!--"-->SOURCE<!--"-->                             <!--"-->FSTYPE<!--"-->    <!--"-->OPTIONS
+/<!--"-->                                     <!--"-->/dev/mmcblk0p5<!--"-->                     <!--"-->ext2
+|-/dev<!--"-->                                <!--"-->devtmpfs<!--"-->                           <!--"-->devtmpfs<!--"-->  <!--"-->seclabel,size=1946524k,nr_inodes=486631,mode=755
+| |-/dev/shm<!--"-->                          <!--"-->tmpfs<!--"-->                              <!--"-->tmpfs<!--"-->     <!--"-->seclabel,size=1948668k
+| `-/dev/pts<!--"-->                          <!--"-->devpts<!--"-->                             <!--"-->devpts<!--"-->    <!--"-->seclabel,gid=5,mode=620,ptmxmode=666
+|-/proc<!--"-->                               <!--"-->proc<!--"-->                               <!--"-->proc<!--"-->      <!--"-->relatime
+|-/sys<!--"-->                                <!--"-->sysfs<!--"-->                              <!--"-->sysfs<!--"-->     <!--"-->seclabel
+| |-/sys/fs/selinux<!--"-->                   <!--"-->selinuxfs<!--"-->                          <!--"-->selinuxfs relatime
+| |-/sys/fs/pstore<!--"-->                    <!--"-->pstore<!--"-->                             <!--"-->pstore<!--"-->    <!--"-->seclabel
+| |-/sys/kernel/tracing<!--"-->               <!--"-->tracefs<!--"-->                            <!--"-->tracefs<!--"-->   <!--"-->seclabel
+| |-/sys/kernel/debug<!--"-->                 <!--"-->debugfs<!--"-->                            <!--"-->debugfs<!--"-->   <!--"-->seclabel,gid=605,mode=750
+| | `-/sys/kernel/debug/tracing<!--"-->       <!--"-->tracefs<!--"-->                            <!--"-->tracefs<!--"-->   <!--"-->seclabel
+| |-/sys/kernel/config<!--"-->                <!--"-->configfs<!--"-->                           <!--"-->configfs<!--"-->  <!--"-->relatime
+| `-/sys/fs/cgroup<!--"-->                    <!--"-->none<!--"-->                               <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+|<!--"-->   <!--"-->|-/sys/fs/cgroup/cpu<!--"-->              <!--"-->cgroup<!--"-->                             <!--"-->cgroup<!--"-->    <!--"-->cpu
+|<!--"-->   <!--"-->|-/sys/fs/cgroup/freezer<!--"-->          <!--"-->cgroup<!--"-->                             <!--"-->cgroup<!--"-->    <!--"-->freezer
+|<!--"-->   <!--"-->|-/sys/fs/cgroup/devices<!--"-->          <!--"-->cgroup<!--"-->                             <!--"-->cgroup<!--"-->    <!--"-->devices
+|<!--"-->   <!--"-->|-/sys/fs/cgroup/cpuacct<!--"-->          <!--"-->cgroup<!--"-->                             <!--"-->cgroup<!--"-->    <!--"-->cpuacct
+|<!--"-->   <!--"-->|-/sys/fs/cgroup/cpuset<!--"-->           <!--"-->cgroup<!--"-->                             <!--"-->cgroup<!--"-->    <!--"-->cpuset,noprefix,cpuset_v2_mode
+|<!--"-->   <!--"-->`-/sys/fs/cgroup/net_cls<!--"-->          <!--"-->cgroup<!--"-->                             <!--"-->cgroup<!--"-->    <!--"-->net_cls
+|-/tmp<!--"-->                                <!--"-->tmpfs<!--"-->                              <!--"-->tmpfs<!--"-->     <!--"-->nosymfollow,seclabel
+|-/run<!--"-->                                <!--"-->tmpfs<!--"-->                              <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/chromeos-config/private<!--"-->      <!--"-->/dev/loop0<!--"-->                         <!--"-->squashfs<!--"-->  <!--"-->seclabel
+| |-/run/chromeos-config/v1<!--"-->           <!--"-->/dev/loop0[/v1/chromeos/configs/5] squashfs<!--"-->  <!--"-->seclabel
+| |-/run/namespaces<!--"-->                   <!--"-->tmpfs[/namespaces]<!--"-->                 <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| | `-/run/namespaces/mnt_chrome<!--"-->      <!--"-->nsfs[mnt:[4026532626]]<!--"-->             <!--"-->nsfs
+| |-/run/daemon-store/appsync-consent tmpfs[/daemon-store/appsync-consent]
+| |<!--"-->                                                                      <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/authpolicyd<!--"-->     <!--"-->tmpfs[/daemon-store/authpolicyd]<!--"-->   <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/cdm-oemcrypto<!--"-->   <!--"-->tmpfs[/daemon-store/cdm-oemcrypto] tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/chaps<!--"-->           <!--"-->tmpfs[/daemon-store/chaps]<!--"-->         <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/crash<!--"-->           <!--"-->tmpfs[/daemon-store/crash]<!--"-->         <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/crosvm<!--"-->          <!--"-->tmpfs[/daemon-store/crosvm]<!--"-->        <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/debugd<!--"-->          <!--"-->tmpfs[/daemon-store/debugd]<!--"-->        <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/dlp<!--"-->             <!--"-->tmpfs[/daemon-store/dlp]<!--"-->           <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/kerberosd<!--"-->       <!--"-->tmpfs[/daemon-store/kerberosd]<!--"-->     <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/pvm<!--"-->             <!--"-->tmpfs[/daemon-store/pvm]<!--"-->           <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/session_manager tmpfs[/daemon-store/session_manager]
+| |<!--"-->                                                                      <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/shill<!--"-->           <!--"-->tmpfs[/daemon-store/shill]<!--"-->         <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/smbfs<!--"-->           <!--"-->tmpfs[/daemon-store/smbfs]<!--"-->         <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/smbproviderd<!--"-->    <!--"-->tmpfs[/daemon-store/smbproviderd]<!--"-->  <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/u2f<!--"-->             <!--"-->tmpfs[/daemon-store/u2f]<!--"-->           <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/uma-consent<!--"-->     <!--"-->tmpfs[/daemon-store/uma-consent]<!--"-->   <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/daemon-store/usb_bouncer<!--"-->     <!--"-->tmpfs[/daemon-store/usb_bouncer]<!--"-->   <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/run/debugfs_gpu<!--"-->                  <!--"-->debugfs[/dri/0]<!--"-->                    <!--"-->debugfs<!--"-->   <!--"-->seclabel,gid=605,mode=750
+| |-/run/imageloader<!--"-->                  <!--"-->imageloader<!--"-->                        <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| `-/run/netns<!--"-->                        <!--"-->tmpfs[/netns]<!--"-->                      <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+|<!--"-->   <!--"-->|-/run/netns/connected_netns_0<!--"-->    <!--"-->nsfs[net:[4026532871]]<!--"-->             <!--"-->nsfs<!--"-->      <!--"-->rw
+|<!--"-->   <!--"-->`-/run/netns/connected_netns_1<!--"-->    <!--"-->nsfs[net:[4026532944]]<!--"-->             <!--"-->nsfs<!--"-->      <!--"-->rw
+|-/mnt/stateful_partition<!--"-->             <!--"-->/dev/mmcblk0p1<!--"-->                     <!--"-->ext4<!--"-->      <!--"-->seclabel,discard,resgid=20119,commit=600,data=ordered
+| `-/mnt/stateful_partition/encrypted /dev/mapper/encstateful<!--"-->            <!--"-->ext4<!--"-->      <!--"-->seclabel,discard,commit=600,data=ordered
+|-/usr/share/oem<!--"-->                      <!--"-->/dev/mmcblk0p8<!--"-->                     <!--"-->ext4<!--"-->      <!--"-->seclabel,data=ordered
+|-/home<!--"-->                               <!--"-->/dev/mmcblk0p1[/home]<!--"-->              <!--"-->ext4<!--"-->      <!--"-->nosymfollow,seclabel,discard,resgid=20119,commit=600,dat
+| `-/home/chronos<!--"-->                     <!--"-->/dev/mapper/encstateful[/chronos]<!--"-->  <!--"-->ext4<!--"-->      <!--"-->seclabel,discard,commit=600,data=ordered
+|-/var<!--"-->                                <!--"-->/dev/mapper/encstateful[/var]<!--"-->      <!--"-->ext4<!--"-->      <!--"-->seclabel,discard,commit=600,data=ordered
+| |-/var/run<!--"-->                          <!--"-->tmpfs<!--"-->                              <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| |-/var/lock<!--"-->                         <!--"-->tmpfs[/lock]<!--"-->                       <!--"-->tmpfs<!--"-->     <!--"-->seclabel,mode=755
+| `-/var/cache/dlc-images<!--"-->             <!--"-->/dev/mmcblk0p1[/var_overlay/cache/dlc-images]
+|<!--"-->                                                                        <!--"-->ext4<!--"-->      <!--"-->seclabel,discard,resgid=20119,commit=600,data=ordered
+|-/media<!--"-->                              <!--"-->media<!--"-->                              <!--"-->tmpfs<!--"-->     <!--"-->seclabel
+|-/usr/local<!--"-->                          <!--"-->/dev/mmcblk0p1[/dev_image]<!--"-->         <!--"-->ext4<!--"-->      <!--"-->rw,nodev,seclabel,discard,resgid=20119,commit=600,data=ordered
+|-/usr/share/chromeos-assets/speech_synthesis/patts
+|<!--"-->                                     <!--"-->/dev/loop2<!--"-->                         <!--"-->squashfs<!--"-->  <!--"-->seclabel
+|-/usr/share/chromeos-assets/quickoffice/_platform_specific
+|<!--"-->                                     <!--"-->/dev/loop3<!--"-->                         <!--"-->squashfs<!--"-->  <!--"-->seclabel
+`-/usr/share/cros-camera/libfs<!--"-->        <!--"-->/dev/loop4<!--"-->                         <!--"-->squashfs<!--"-->  <!--"-->seclabel
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">df</span> -hT</span></span>
+<span class="token output">Filesystem<!--"-->              <!--"-->Type<!--"-->      <!--"-->Size<!--"-->  <!--"-->Used Avail Use% Mounted on
+/dev/root<!--"-->               <!--"-->ext2<!--"-->      <!--"-->2.8G<!--"-->  <!--"-->2.4G<!--"-->  <!--"-->358M<!--"-->  <!--"-->88% /
+devtmpfs<!--"-->                <!--"-->devtmpfs<!--"-->  <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /dev
+tmpfs<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->   <!--"-->60M<!--"-->  <!--"-->1.8G<!--"-->   <!--"-->4% /dev/shm
+tmpfs<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->   <!--"-->72K<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->1% /tmp
+tmpfs<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->  <!--"-->704K<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->1% /run
+/dev/loop0<!--"-->              <!--"-->squashfs<!--"-->  <!--"-->384K<!--"-->  <!--"-->384K<!--"-->     <!--"-->0 100% /run/chromeos-config/private
+/dev/mmcblk0p1<!--"-->          <!--"-->ext4<!--"-->       <!--"-->21G<!--"-->  <!--"-->173M<!--"-->   <!--"-->20G<!--"-->   <!--"-->1% /mnt/stateful_partition
+/dev/mmcblk0p8<!--"-->          <!--"-->ext4<!--"-->       <!--"-->12M<!--"-->   <!--"-->24K<!--"-->   <!--"-->12M<!--"-->   <!--"-->1% /usr/share/oem
+/dev/mapper/encstateful ext4<!--"-->      <!--"-->6.0G<!--"-->   <!--"-->14M<!--"-->  <!--"-->6.0G<!--"-->   <!--"-->1% /mnt/stateful_partition/encrypted
+media<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /media
+none<!--"-->                    <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /sys/fs/cgroup
+/dev/loop2<!--"-->              <!--"-->squashfs<!--"-->   <!--"-->98M<!--"-->   <!--"-->98M<!--"-->     <!--"-->0 100% /usr/share/chromeos-assets/speech_synthesis/patts
+imageloader<!--"-->             <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /run/imageloader
+/dev/loop3<!--"-->              <!--"-->squashfs<!--"-->   <!--"-->10M<!--"-->   <!--"-->10M<!--"-->     <!--"-->0 100% /usr/share/chromeos-assets/quickoffice/_platform_specific
+/dev/loop4<!--"-->              <!--"-->squashfs<!--"-->  <!--"-->6.0M<!--"-->  <!--"-->6.0M<!--"-->     <!--"-->0 100% /usr/share/cros-camera/libfs
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lsblk</span></span>
+<span class="token output">NAME<!--"-->          <!--"-->MAJ:MIN RM<!--"-->  <!--"-->SIZE RO TYPE MOUNTPOINT
+loop0<!--"-->           <!--"-->7:0<!--"-->    <!--"-->0<!--"-->  <!--"-->268K<!--"-->  <!--"-->1 loop /run/chromeos-config/private
+loop1<!--"-->           <!--"-->7:1<!--"-->    <!--"-->0<!--"-->  <!--"-->6.1G<!--"-->  <!--"-->0 loop
+`-encstateful 254:1<!--"-->    <!--"-->0<!--"-->  <!--"-->6.1G<!--"-->  <!--"-->0 dm<!--"-->   <!--"-->/mnt/stateful_partition/encrypted
+loop2<!--"-->           <!--"-->7:2<!--"-->    <!--"-->0 97.3M<!--"-->  <!--"-->0 loop /usr/share/chromeos-assets/speech_synthesis/patts
+loop3<!--"-->           <!--"-->7:3<!--"-->    <!--"-->0<!--"-->  <!--"-->9.2M<!--"-->  <!--"-->0 loop /usr/share/chromeos-assets/quickoffice/_platform_specific
+loop4<!--"-->           <!--"-->7:4<!--"-->    <!--"-->0<!--"-->    <!--"-->6M<!--"-->  <!--"-->1 loop /usr/share/cros-camera/libfs
+mmcblk0<!--"-->       <!--"-->179:0<!--"-->    <!--"-->0 29.1G<!--"-->  <!--"-->0 disk
+|-mmcblk0p1<!--"-->   <!--"-->179:1<!--"-->    <!--"-->0 20.9G<!--"-->  <!--"-->0 part /mnt/stateful_partition
+|-mmcblk0p2<!--"-->   <!--"-->179:2<!--"-->    <!--"-->0<!--"-->   <!--"-->32M<!--"-->  <!--"-->0 part
+|-mmcblk0p3<!--"-->   <!--"-->179:3<!--"-->    <!--"-->0<!--"-->    <!--"-->4G<!--"-->  <!--"-->0 part
+|-mmcblk0p4<!--"-->   <!--"-->179:4<!--"-->    <!--"-->0<!--"-->   <!--"-->32M<!--"-->  <!--"-->0 part
+|-mmcblk0p5<!--"-->   <!--"-->179:5<!--"-->    <!--"-->0<!--"-->    <!--"-->4G<!--"-->  <!--"-->0 part /
+|-mmcblk0p6<!--"-->   <!--"-->179:6<!--"-->    <!--"-->0<!--"-->  <!--"-->512B<!--"-->  <!--"-->0 part
+|-mmcblk0p7<!--"-->   <!--"-->179:7<!--"-->    <!--"-->0<!--"-->  <!--"-->512B<!--"-->  <!--"-->0 part
+|-mmcblk0p8<!--"-->   <!--"-->179:8<!--"-->    <!--"-->0<!--"-->   <!--"-->16M<!--"-->  <!--"-->0 part /usr/share/oem
+|-mmcblk0p9<!--"-->   <!--"-->179:9<!--"-->    <!--"-->0<!--"-->  <!--"-->512B<!--"-->  <!--"-->0 part
+|-mmcblk0p10<!--"-->  <!--"-->179:10<!--"-->   <!--"-->0<!--"-->  <!--"-->512B<!--"-->  <!--"-->0 part
+|-mmcblk0p11<!--"-->  <!--"-->179:11<!--"-->   <!--"-->0<!--"-->    <!--"-->8M<!--"-->  <!--"-->0 part
+`-mmcblk0p12<!--"-->  <!--"-->179:12<!--"-->   <!--"-->0<!--"-->   <!--"-->32M<!--"-->  <!--"-->0 part
+mmcblk0boot0<!--"-->  <!--"-->179:16<!--"-->   <!--"-->0<!--"-->    <!--"-->4M<!--"-->  <!--"-->1 disk
+mmcblk0boot1<!--"-->  <!--"-->179:32<!--"-->   <!--"-->0<!--"-->    <!--"-->4M<!--"-->  <!--"-->1 disk
+zram0<!--"-->         <!--"-->253:0<!--"-->    <!--"-->0<!--"-->  <!--"-->5.4G<!--"-->  <!--"-->0 disk [SWAP]
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lsblk -f</span></span>
+<span class="token output">NAME<!--"-->          <!--"-->FSTYPE<!--"-->   <!--"-->LABEL<!--"-->  <!--"-->FSAVAIL FSUSE% MOUNTPOINT
+loop0<!--"-->         <!--"-->squashfs<!--"-->              <!--"-->0<!--"-->   <!--"-->100% /run/chromeos-config/private
+loop1
+`-encstateful ext4<!--"-->               <!--"-->5.9G<!--"-->     <!--"-->0% /mnt/stateful_partition/encrypted
+loop2<!--"-->         <!--"-->squashfs<!--"-->              <!--"-->0<!--"-->   <!--"-->100% /usr/share/chromeos-assets/speech_synthesis/patts
+loop3<!--"-->         <!--"-->squashfs<!--"-->              <!--"-->0<!--"-->   <!--"-->100% /usr/share/chromeos-assets/quickoffice/_platform_specific
+loop4<!--"-->         <!--"-->squashfs<!--"-->              <!--"-->0<!--"-->   <!--"-->100% /usr/share/cros-camera/libfs
+mmcblk0
+|-mmcblk0p1<!--"-->   <!--"-->ext4<!--"-->              <!--"-->19.2G<!--"-->     <!--"-->1% /mnt/stateful_partition
+|-mmcblk0p2
+|-mmcblk0p3<!--"-->   <!--"-->ext4<!--"-->     <!--"-->ROOT-A
+|-mmcblk0p4
+|-mmcblk0p5<!--"-->   <!--"-->ext2<!--"-->     <!--"-->ROOT-A<!--"-->  <!--"-->357.3M<!--"-->    <!--"-->87% /
+|-mmcblk0p6
+|-mmcblk0p7
+|-mmcblk0p8<!--"-->   <!--"-->ext4<!--"-->     <!--"-->OEM<!--"-->      <!--"-->11.1M<!--"-->     <!--"-->0% /usr/share/oem
+|-mmcblk0p9
+|-mmcblk0p10
+|-mmcblk0p11
+`-mmcblk0p12<!--"-->  <!--"-->vfat<!--"-->     <!--"-->EFI-SYSTEM
+mmcblk0boot0
+mmcblk0boot1
+zram0<!--"-->                                        <!--"-->[SWAP]
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">losetup</span></span>
+<span class="token output">NAME<!--"-->       <!--"-->AUTOCLEAR RO BACK-FILE<!--"-->                                                 <!--"-->DIO LOG-SEC
+/dev/loop1<!--"-->         <!--"-->0<!--"-->  <!--"-->0 /mnt/stateful_partition/encrypted.block<!--"-->                     <!--"-->1<!--"-->     <!--"-->512
+/dev/loop4<!--"-->         <!--"-->1<!--"-->  <!--"-->1 /usr/share/cros-camera/g3_libs.squash<!--"-->                       <!--"-->0<!--"-->     <!--"-->512
+/dev/loop2<!--"-->         <!--"-->1<!--"-->  <!--"-->0 /usr/share/chromeos-assets/speech_synthesis/patts.squash<!--"-->    <!--"-->0<!--"-->     <!--"-->512
+/dev/loop0<!--"-->         <!--"-->1<!--"-->  <!--"-->1 /usr/share/chromeos-config/configfs.img<!--"-->                     <!--"-->0<!--"-->     <!--"-->512
+/dev/loop3<!--"-->         <!--"-->1<!--"-->  <!--"-->0 /usr/share/chromeos-assets/quickoffice/quickoffice.squash<!--"-->   <!--"-->0<!--"-->     <!--"-->512
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">blkid</span></span>
+<span class="token output">/dev/loop0: TYPE="squashfs"
+/dev/loop2: TYPE="squashfs"
+/dev/loop3: TYPE="squashfs"
+/dev/loop4: TYPE="squashfs"
+/dev/mmcblk0p1: UUID="b3770f19-2ac7-402d-9e3c-5c04e3e157fa" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="STATE" PARTUUID="65aa1ffe-16f2-b94d-a870-7292e5e5ec6f"
+/dev/mmcblk0p2: PARTLABEL="KERN-A" PARTUUID="9b216b4b-ac57-c640-8eb7-d356af8426b7"
+/dev/mmcblk0p3: LABEL="ROOT-A" SEC_TYPE="ext2" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="ROOT-A" PARTUUID="3675549b-e624-9143-b3af-c414e1e02117"
+/dev/mmcblk0p4: PARTLABEL="KERN-B" PARTUUID="4b867d4a-3be5-4e4f-b215-69cb5aa8e633"
+/dev/mmcblk0p5: LABEL="ROOT-A" BLOCK_SIZE="4096" TYPE="ext2" PARTLABEL="ROOT-B" PARTUUID="6c2204d6-92d1-2d4b-9ce4-1eced2227559"
+/dev/mmcblk0p8: LABEL="OEM" UUID="9db5d778-0ac8-43be-b4dd-b8cd77248ba3" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="OEM" PARTUUID="c89b9d8a-130a-1c42-903e-4a00373cbe78"
+/dev/mmcblk0p11: PARTLABEL="RWFW" PARTUUID="49257a5e-f084-5d40-8655-7b44ce3aa92a"
+/dev/mmcblk0p12: SEC_TYPE="msdos" LABEL_FATBOOT="EFI-SYSTEM" LABEL="EFI-SYSTEM" UUID="563B-40A9" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI-SYSTEM" PARTUUID="e87e055b-5f6a-4647-8176-4f0f50bdadd6"
+/dev/mapper/encstateful: UUID="91e91d32-94d2-457f-a4a7-05db62492040" BLOCK_SIZE="4096" TYPE="ext4"
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cat</span> /etc/os-release</span></span>
+<span class="token output">ID_LIKE=chromiumos
+GOOGLE_CRASH_ID=ChromeOS
+NAME=Chrome OS
+ID=chromeos
+HOME_URL=https://www.chromium.org/chromium-os
+BUG_REPORT_URL=https://crbug.com/new
+VERSION=106
+VERSION_ID=106
+BUILD_ID=15054.98.0
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cat</span> /etc/fstab</span></span>
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">^D</span></span>
+
+<span class="token output">exit
+
+Script done on 2022-10-10 19:37:30+02:00 [COMMAND_EXIT_CODE="0"]
+</span></pre></code>
+</div>
+<p class="continuing" style="display: inline;">
+(all the boring common mountopts stripped; note also how the console login is somehow <tt>TERM=xterm</tt>); the UUIDs amount to
+</p>
+<dl class="continuation linear">
+  <dt><code>encstateful</code></dt> <dd><tt>91e91d32-94d2-457f-a4a7-05db62492040</tt></dd>
+  <dt><code>mmcblk0p1</code></dt> <dd><tt>b3770f19-2ac7-402d-9e3c-5c04e3e157fa</tt></dd>
+  <dt><code>mmcblk0p8</code></dt> <dd><tt>9db5d778-0ac8-43be-b4dd-b8cd77248ba3</tt></dd>
+  <dt><code>mmcblk0p12</code></dt> <dd><tt>563B-40A9</tt></dd>
+</dl>
+<p class="indented continued">
+<a href="//docs.chrultrabook.com/docs/firmware/supported-devices.html#:~:text=Lenovo%20300e%20Chromebook%20Gen%202">Chrultrabook</a>
+lists this device as explicitly supported as
+</p>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div><dt>Device Name</dt><dd >Lenovo 300e Chromebook Gen 2/IdeaPad Flex 3<br />
+                                                   NEC Chromebook Y1</dd></div>
+    <div><dt>Board Name</dt><dd >PHASER360</dd></div>
+    <div><dt>RW_LEGACY<br />Firmware</dt><dd >✅</dd></div>
+    <div><dt>UEFI Firmware<br />(Full ROM)</dt><dd>✅</dd></div>
+    <div><dt>WP Method</dt><dd ><a href="//wiki.mrchromebox.tech/Firmware_Write_Protect#Hardware_Write_Protection">CR50 (battery)</a></dd></div>
+    <div><dt>Windows Notes</dt><dd >Audio driver is paid.</dd></div>
+    <div><dt>Linux Notes</dt><dd >Supported</dd></div>
+    <div><dt>MacOS Notes</dt><dd >No MacOS support.</dd></div>
+  </dl>
+</blockquote>
+<p class="continuing">
+so this has been done before and this is thus largely a <a href="/content/recipes/">replication post</a>, mirroring the chrultrabook documentation structure:
+</p>
+<div id="contents" class="continuation" style="padding-left: 1em;">
+  <a href="#firmware">Firmware</a>
+  <div>
+    <a href="#firmware-finding-system-info">Finding System Info</a>
+    <a href="#firmware-known-issues">Known Issues</a>
+    <div>
+      <a href="#firmware-known-issues-firmware">Firmware</a>
+    </div>
+    <a href="#firmware-enabling-developer-mode">Enabling developer mode</a>
+    <a href="#firmware-disabling-write-protect">Disabling write protect</a>
+    <div>
+      <a href="#firmware-types-of-firmware">Types of Firmware</a>
+      <div>
+        <a href="#firmware-types-of-firmware-RW_LEGACY">RW_LEGACY</a>
+        <a href="#firmware-types-of-firmware-UEFI">(UEFI) Full ROM</a>
+      </div>
+    </div>
+    <a href="#firmware-disabling-write-protect2">(Back to) Disabling write protect</a>
+    <div>
+      <a href="#firmware-disabling-write-protect-unplugging-the-battery">Disabling write protect via Battery</a>
+      <div>
+        <a href="#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery">Step 1: Open the device and disconnect the battery</a>
+        <a href="#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash">Step 2: Boot using AC power, and flash.</a>
+      </div>
+    </div>
+    <a href="#firmware-flashing-custom-firmware">Flashing Custom Firmware</a>
+  </div>
+  <a href="#installing">Installing an OS</a>
+  <div>
+    <a href="#installing-known-issues">Known Issues</a>
+    <div>
+      <a href="#installing-known-issues-linux">Linux</a>
+    </div>
+    <a href="#installing-making-a-bootable-usb">Making a Bootable USB</a>
+    <div>
+      <a href="#installing-making-a-bootable-usb-flashing-with-dd-linux-macos">Flashing with dd (Linux/macOS)</a>
+    </div>
+    <a href="#installing-installing-linux">Installing Linux</a>
+    <div>
+      <a href="#installing-installing-linux-recommended-distributions">Recommended Distributions</a>
+      <a href="#installing-installing-linux-installation">Installation</a>
+      <a href="#installing-installing-linux-fixing-audio">Fixing Audio</a>
+      <div>
+        <a href="#installing-installing-linux-fixing-audio2">Fixing Audio</a>
+      </div>
+    </div>
+    <a href="#installing-post-install">Post Install</a>
+    <div>
+      <a href="#installing-post-install-linux">Linux</a>
+      <div>
+        <a href="#installing-post-install-linux-general-qol-fixes">General QOL Fixes</a>
+        <a href="#installing-post-install-linux-celes-post-install-workaround">CELES Post Install Workaround</a>
+      </div>
+    </div>
+    <a href="#installing-using-ectool">Using Ectool</a>
+  </div>
+  <a href="#conclusions">Conclusions</a>
+  <div>
+    <a href="#conclusions-pog-moments">pog moments</a>
+    <a href="#conclusions-cringe-moments">cringe-ass nae-nae baby moments</a>
+    <a href="#conclusions-funny-moments">family guy funny moments</a>
+  </div>
+</div>
+<h2 id="firmware" class="continued"><a class="hash-link" href="#firmware">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/">Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></h2>
+<h3 id="firmware-finding-system-info" class="continuing"><a class="hash-link" href="#firmware-finding-system-info">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/system-info.html">Finding System Info <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+All of these I found in <a href="012-debian-chromebook-lenovo-300e-gen2.html"><samp>012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</samp></a>,
+sections <a class="heading-ref" href="012-debian-chromebook-lenovo-300e-gen2.html#jailbreak">Save me from chromium (chrome os (chromium os(?)))</a>
+     and <a class="heading-ref" href="012-debian-chromebook-lenovo-300e-gen2.html#HFBITLAND">Take me to <span class="smallcaps">hfbitland</span></a>,
+<dl class="continuation">
+  <div><dt>System Architecture</dt><dd>x86_64</dd></div>
+  <div><dt>Board Name</dt><dd>PHASER360</dd></div>
+  <div><dt>CPU Model and generation</dt><dd><tt>Intel(R) Celeron(R) N4000 CPU @ 1.10GHz</tt> and <span class="chrultra-heading">Geminilake</span></dd></div>
+</dl>
+<p class="indented">
+Why the model is in the uname I cannot tell you, but it is there.
+As seen above, it matches <samp class="path">/proc/cpuinfo</samp>.
+</p>
+<p class="indented continued">
+<a class="chrultra-heading" href="//docs.chrultrabook.com/docs/firmware/system-info.html#system-architecture">How to find your architecture</a>
+and
+<a class="chrultra-heading" href="//docs.chrultrabook.com/docs/firmware/system-info.html#how-to-find-your-cpu-model">How to find your CPU model</a>
+similarly recommend <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>t</kbd> to open the "de<span class="smallcaps">cro</span>ded <span class="smallcaps">sh</span>ell".
+This still doesn'<!--'-->t do anything, and <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>→</kbd> (not the arrow key) is required.
+</p>
+<p class="indented continuation">
+<a class="chrultra-heading" href="//docs.chrultrabook.com/docs/firmware/system-info.html#how-to-find-your-cpu-model">How to find your CPU model</a>
+recommends <samp>cat /proc/cpuinfo | grep "model name"</samp>.
+Why it'<!--'-->s not <samp>grep "model name" /proc/cpuinfo</samp> is beyond me.
+</p>
+<h3 id="firmware-known-issues" class="continued"><a class="hash-link" href="#firmware-known-issues">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/known-issues.html">Known Issues <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<h4 id="firmware-known-issues-firmware" class="continuing"><a class="hash-link" href="#firmware-known-issues-firmware">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/known-issues.html#firmware">Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<blockquote class="continuing">
+GeminiLake: Legacy boot mode/alternative firmware menu works but does not show payload list
+</blockquote>
+<p class="continuation">
+which is irrelevant.
+</p>
+<h3 id="firmware-enabling-developer-mode" class="continued"><a class="hash-link" href="#firmware-enabling-developer-mode">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/developer-mode.html">Enabling developer mode <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<p class="continuation">
+has already been done in <a href="012-debian-chromebook-lenovo-300e-gen2.html"><samp>012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</samp></a>.
+</p>
+<h3 id="firmware-disabling-write-protect" class="continued"><a class="hash-link" href="#firmware-disabling-write-protect">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/write-protect.html">Disabling write protect <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<blockquote class="continuation">
+  <dl class="continuation">
+    <div class="tipwarning tip"><dt class="smallcaps">Tip</dt><dd>You do not have to disable write protect if flashing <a href="//docs.chrultrabook.com/docs/firmware/about.html#rw_legacy">RW_Legacy</a>.</dd></div>
+  </dl>
+</blockquote>
+<h4 id="firmware-types-of-firmware" class="continued"><a class="hash-link" href="#firmware-types-of-firmware">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/about.html">Types of Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<h5 id="firmware-types-of-firmware-RW_LEGACY" class="continuing"><a class="hash-link" href="#firmware-types-of-firmware-RW_LEGACY">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/about.html#rw-legacy">RW_LEGACY <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div class="tipwarning warning"><dt class="smallcaps">Warning</dt><dd>The RW_LEGACY firmware is for users who want to dual-boot ChromeOS + Linux, or users who want to run Linux without having to open the device/disable the firmware write-protect (and are OK with the accompanying limitations).</dd></div>
+  </dl>
+</blockquote>
+<h5 id="firmware-types-of-firmware-UEFI" class="continuing"><a class="hash-link" href="#firmware-types-of-firmware-UEFI">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/about.html#uefi-full-rom">(UEFI) Full ROM <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<blockquote class="continuing">
+  <ul style="padding-left: 1em;">
+    <li>Removes the developer mode boot ("OS verification is OFF") screen</li>
+    <li>UEFI firmware contains updated EC firmware as well, which brings additional fixes on most Chromebooks (mainly keyboard related)</li>
+  </ul>
+  <dl class="continuing">
+    <div class="tipwarning tip"><dt class="smallcaps">Tip</dt><dd>The (UEFI) Full ROM firmware is the best option for all users who no longer need/want to run ChromeOS (ie, want to run Linux/Windows/macOS exclusively), and who don'<!--'-->t mind disabling write-protection on their device.</dd></div>
+  </dl>
+</blockquote>
+<p class="continuation">
+Unclear to me what "ie" means, but sign me up, brother.
+Here'<!--'-->s hoping it also fixes the scandi keyboard.
+</p>
+<h3 id="firmware-disabling-write-protect2" class="continued"><a class="hash-link" href="#firmware-disabling-write-protect2">#</a> (Back to) Disabling write protect</h3>
+<h4 id="firmware-disabling-write-protect-unplugging-the-battery" class="continuing"><a class="hash-link" href="#firmware-disabling-write-protect-unplugging-the-battery">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/battery.html">Disabling write protect via Battery <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<h5 id="firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery" class="continuation"><a class="hash-link" href="#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery">Step 1: Open the device and disconnect the battery <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<p class="indented">
+The <a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">internal link from within google documentation</a>
+is a 404.
+Obviously.
+Neither the fake nor the
+<a href="//www.lenovo.com/us/en/p/laptops/lenovo/lenovo-edu-chromebooks/300e-chromebook-2nd-gen-(11.6-inch)-laptop/len101l0001">real Lenovo product page</a>
+carry a manual of any sort, but a
+<a href="//support.lenovo.com/us/en/solutions/ht509430-removal-and-replacement-videos-lenovo-300e-chromebook-gen-2-81mb">completely unrelated</a>
+Lenovo page <a href="https://download.lenovo.com/consumer/mobiles_pub/300e500e_chromebook_2nd_gen_series_hmm_201901.pdf">does</a>,
+and it also has videos-as-in-37-second-MP4s that show where the latches are,
+because sexion "1020 Base cover assembly" of the manual says "Pry up latches and remove the base cover assembly."
+but doesn'<!--'-->t show where the latches are. But the video does.
+</p>
+<a href="/content/assets/blogn_t/012a.04-DSC_0957cv.JPG"><img alt="the laptop in question, filleted " src="/content/assets/blogn_t/012a.04-DSC_0957cv.JPG"></a>
+One of my screws was missing, but another was in a loose insert, and I only broke one tab! And another pile fell out from previous service.
+<a href="/content/assets/blogn_t/012a.05-DSC_3011c.JPG"><img alt="it's a staggering pile of plastic" src="/content/assets/blogn_t/012a.05-DSC_3011c.JPG"></a>
+<h5 id="firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash" class="continued"><a class="hash-link" href="#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/battery.html#step-2-boot-using-ac-power-and-flash">Step 2: Boot using AC power, and flash. <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<h3 id="firmware-flashing-custom-firmware" class="continuing"><a class="hash-link" href="#firmware-flashing-custom-firmware">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/flashing-firmware.html">Flashing Custom Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<blockquote class="continuing">
+  <ol style="padding-left: 1em;" start=3>
+    <li>Run <a href="//mrchromebox.tech/#fwscript">MrChromebox'<!--'-->s firmware utility script</a> within VT-2 (<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>f2</kbd> (right arrow)).
+        <ul>
+          <li>Type <code>cd; curl -LO mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh</code> and press Enter.</li>
+        </ul></li>
+  </ol>
+</blockquote>
+<p class="continuing">
+This is weird and borders on dangerous. Maybe?
+The website says
+</p>
+<blockquote class="continuing">
+  <h4 class="continuation">IMPORTANT</h4>
+  <p>
+    Due to recent changes in ChromeOS'<!--'--> security settings, you may need to use a new set of commands to run the Firmware Utility Script under ChromeOS. Running it under Linux can use the same old one-line command.<br />
+    Also, you must execute these commands **as a normal/non-root user**. Running them as root will break things. DO NOT RUN 'SUDO SU' BEFORE RUNNING THE SCRIPT CMD BELOW.
+  </p>
+  …<br/>
+  To download and run this script under ChromeOS or Linux, from a terminal/shell type:<br/>
+  <code>cd; curl -LO mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh</code><br/>
+  and press enter.<br/>
+  …<br/>
+  REALLY READ THIS: Under ChromeOS, starting with R117, this script must be run from a VT2 terminal (from login screen: CTRL+ALT+F2, login 'chronos'); it cannot be run from a crosh shell (CTRL+ALT+T when logged in) due to the removal of sudo, or from a crostini (penguin) terminal; […].
+</blockquote>
+<p class="continuing">
+So: Are you supposed to run it as root under sudo? Run it as root straight from login? Or are you to <em>not</em> do that because it'<!--'-->ll break your system?
+How is it gonna flash anything as non-root? If you log in as "chronos" are you supposed to drop the sudo it specs?
+Why does downstream Chrultrabook not comment on this at all and why does it not say which user you'<!--'-->re supposed to log in as if it matters?
+</p>
+<p class="indented continuation">
+<a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521/13">According to upstream</a> this is all intentionally misleading,
+and the purpose of the huge bizarre paragraph with a random user is to find a R/W mountpoint.
+Just download it and run it as root (copy it off the USB, since it wants to exclusively mount it) instead of this rigamarole.
+</p>
+<p class="indented continued">
+I downloaded the thingy (which redirected me twice, last step at <a href="//raw.githubusercontent.com/MrChromebox/scripts/master/firmware-util.sh">pisshub</a>)
+onto removable media (unclear to me how you'<!--'-->d download it from the target system in a privacy-preserving way):
+</p>
+<div class="bigcode continuation">
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token output">localhost login: root
+Password: root
+</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">mount</span> -r /dev/sda /media/removable</span></span>
+<span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cp</span> /media/removable/firmware-util.sh ~chronos</span></span>
+<span class="token output">'/media/removable/firmware-util.sh' -> '/home/chronos/user/firmware-util.sh'
+</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">umount</span> /media/removable</span></span>
+<span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">^D</span></span>
+<span class="token output">logout
+
+localhost login: chronos
+Password:
+Login incorrect
+
+localhost login: chronos
+Password: chronos
+
+Login incorrect
+localhost login: root
+Password: root
+</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">chromeos-setdevpassswd</span></span>
+<span class="token output">Password: chronos
+Verifying - Password: chronos
+</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">^D</span></span>
+<span class="token output">logout
+
+localhost login: chronos
+Password: chronos
+</span><span class="token info punctuation">chronos@localhost ~ </span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">bash</span> firmware-util.sh</span></span>
+<span class="token output">MrChromebox Firmware Utility Script starting up
+Downloading supporting files...
+Error downloading one or more required files; cannot continue
+</span></pre></code>
+</div>
+<p class="indented continued">
+The most natural question is "how does <samp>chromeos-setdevpasswd</samp> differ from <samp>passwd chronos</samp>"?
+Significantly:
+</p>
+<a href="/content/assets/blogn_t/012a.02-DSCN0555cvcc.JPG"><!--'--><img alt='# command -v chromeos-setdevpasswd
+/usr/sbin/chromeos-setdevpasswd
+# cat /usr/sbin/chromeos-setdevpasswd
+PASSWD_FILE=/mnt/stateful_partition/etc/devmode.passwd
+pass=$(openssl passwd -1)
+mkdir -p "${PASSWD_FILE%/*}"
+: > "${PASSWD_FILE}"
+chmod 600 "${PASSWD_FILE}"
+echo "chronos:${pass}" > "${PASSWD_FILE}"' src="/content/assets/blogn_t/012a.02-DSCN0555cvcc.JPG"></a><!--'-->
+<p class="indented continued">
+The next-most natural question is "great.".
+Which isn'<!--'-->t a question but "why the aren't there any errors?" is.
+Well, "MrChromebox's firmware utility script" is
+</p>
+<div class="bigcode continuing">
+<pre class="language-shell"><code class="language-shell"><span class="token comment">#where the stuff is</span>
+<span class="token assign-left variable">script_url</span><span class="token operator">=</span><span class="token string">"https://raw.githubusercontent.com/MrChromebox/scripts/master/"</span>
+
+<span class="token comment"># …</span>
+
+<span class="token comment">#get support scripts</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">"<span class="token entity" title="\n">\n</span>Downloading supporting files..."</span>
+<span class="token function">rm</span> -rf firmware.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token function">rm</span> -rf functions.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token function">rm</span> -rf sources.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token variable">$CURL</span> -sLO <span class="token variable">${script_url}</span>firmware.sh
+<span class="token assign-left variable">rc0</span><span class="token operator">=</span><span class="token variable">$?</span>
+<span class="token variable">$CURL</span> -sLO <span class="token variable">${script_url}</span>functions.sh
+<span class="token assign-left variable">rc1</span><span class="token operator">=</span><span class="token variable">$?</span>
+<span class="token variable">$CURL</span> -sLO <span class="token variable">${script_url}</span>sources.sh
+<span class="token assign-left variable">rc2</span><span class="token operator">=</span><span class="token variable">$?</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$rc0</span> -ne <span class="token number">0</span> <span class="token operator">||</span> <span class="token variable">$rc1</span> -ne <span class="token number">0</span> <span class="token operator">||</span> <span class="token variable">$rc2</span> -ne <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<!--"-->	<!--"--><span class="token builtin class-name">echo</span> -e <span class="token string">"Error downloading one or more required files; cannot continue"</span>
+<!--"-->	<!--"--><span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">source</span> ./sources.sh
+<span class="token builtin class-name">source</span> ./firmware.sh
+<span class="token builtin class-name">source</span> ./functions.sh
+
+<span class="token comment"># …</span>
+</pre></code>
+</div>
+<p class="continuing">
+which raises so many more questions (why are the curls <em>supposed</em> to fail silently? why are the three <code>rm</code>s not one? &c. &c. in the trimmed parts),
+but that'<!--'-->s neither here nor there,
+and just meant I had to download <tt>https://raw.githubusercontent.com/MrChromebox/scripts/master/{sources,firmware,functions}.sh</tt>,
+and, since all the other modules also run <code>$CURL -s…</code>, apply
+</p>
+<div class="bigcode continuing" id="firmware.diff">
+<pre class="language-diff"><code class="language-diff"><span class="token coord">--- firmware.orig/firmware-util.sh</span>
+<span class="token coord">+++ firmware/firmware-util.sh</span>
+<span class="token coord">@@ -16,6 +16,7 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">#ensure output of system tools in en-us for parsing
+</span><span class="token prefix unchanged"> </span><span class="token line">export LC_ALL=C
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">curldir="$PWD"
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">#set working dir
+</span><span class="token prefix unchanged"> </span><span class="token line">if grep -q "Chrom" /etc/lsb-release ; then
+</span></span><span class="token coord">@@ -31,28 +32,24 @@</span>
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">echo -e "\nMrChromebox Firmware Utility Script starting up"
+</span><span class="token prefix unchanged"> </span><span class="token line">
+</span><span class="token prefix unchanged"> </span><span class="token line">#check for cmd line param, expired CrOS certs
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">if ! curl -sLo /dev/null https://mrchromebox.tech/index.html || [[ "$1" = "-k" ]]; then
+</span><span class="token prefix deleted">-</span><span class="token line"><!--"-->	<!--"-->export CURL="curl -k"
+</span><span class="token prefix deleted">-</span><span class="token line">else
+</span><span class="token prefix deleted">-</span><span class="token line"><!--"-->	<!--"-->export CURL="curl"
+</span><span class="token prefix deleted">-</span><span class="token line">fi
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">export CURL=curl
+</span><span class="token prefix inserted">+</span><span class="token line">curl() {
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->printf 'curl %s\n' "$*" | tee -a ~chronos/curls
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->OPTIND=1
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->curl_file=
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->while getopts sLOo: curl_flag; do
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->		<!--"-->case "$curl_flag" in
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->			<!--"-->[sLO]) ;;
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->			<!--"-->o) curl_file="$OPTARG" ;;
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->		<!--"-->esac
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->done
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->shift "$((OPTIND - 1))"
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->[ -n "$curl_file" ] || curl_file="${1##*/}"
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->[ -s "$curldir/$curl_file" ] &amp;&amp; cp -v "$curldir/$curl_file" .
+</span><span class="token prefix inserted">+</span><span class="token line">}
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">#get support scripts
+</span><span class="token prefix deleted">-</span><span class="token line">echo -e "\nDownloading supporting files..."
+</span><span class="token prefix deleted">-</span><span class="token line">rm -rf firmware.sh >/dev/null 2>&amp;1
+</span><span class="token prefix deleted">-</span><span class="token line">rm -rf functions.sh >/dev/null 2>&amp;1
+</span><span class="token prefix deleted">-</span><span class="token line">rm -rf sources.sh >/dev/null 2>&amp;1
+</span><span class="token prefix deleted">-</span><span class="token line">$CURL -sLO ${script_url}firmware.sh
+</span><span class="token prefix deleted">-</span><span class="token line">rc0=$?
+</span><span class="token prefix deleted">-</span><span class="token line">$CURL -sLO ${script_url}functions.sh
+</span><span class="token prefix deleted">-</span><span class="token line">rc1=$?
+</span><span class="token prefix deleted">-</span><span class="token line">$CURL -sLO ${script_url}sources.sh
+</span><span class="token prefix deleted">-</span><span class="token line">rc2=$?
+</span><span class="token prefix deleted">-</span><span class="token line">if [[ $rc0 -ne 0 || $rc1 -ne 0 || $rc2 -ne 0 ]]; then
+</span><span class="token prefix deleted">-</span><span class="token line"><!--"-->	<!--"-->echo -e "Error downloading one or more required files; cannot continue"
+</span><span class="token prefix deleted">-</span><span class="token line"><!--"-->	<!--"-->exit 1
+</span><span class="token prefix deleted">-</span><span class="token line">fi
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">cp "$curldir/"{sources,firmware,functions}.sh .
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">source ./sources.sh
+</span><span class="token prefix unchanged"> </span><span class="token line">source ./firmware.sh
+</span><span class="token prefix unchanged"> </span><span class="token line">source ./functions.sh
+</span></span></pre></code>
+</div>
+<p class="continuation">
+Which is possible due to the narrow flag vocabulary.
+</p>
+<p class="indented">
+Some parts of <code>flash_rwlegacy()</code>, like the boot order, degrade gracefully, which is not what we want.
+Similarly, <code>downgrade_touchpad_fw()</code>, which is meant to "offer to downgrade touchpad firmware on EVE" does the same.
+But my laptop doesn'<!--'-->t have "EVE" anywhere in the board name so no issue there.
+All other curl uses hard-fail, and I turned around twice, for
+<tt>https://www.mrchromebox.tech/files/{util/cbfstool.tar.gz,firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom{,.sha1}}</tt>.
+</p>
+<p class="indented continued">
+The first time I tried this, it told me
+</p>
+<div class="bigcode continuing">
+<pre class="language-ANSI"><code class="language-ANSI"><span class="yellow bold">WARNING: your device currently has software write-protect enabled.
+If you plan to flash the UEFI firmware, you must first disable it and reboot before flashing.
+Would you like to disable sofware WP and reboot your device?</span>
+Press Y (then enter) to disable software WP and reboot, or just press enter to skip and continue. <kbd>Y</kbd>
+</pre></code>
+</div>
+<p class="continuation">
+and, naturally, rebooted instantly, so I lost the transcript.
+</p>
+<p class="indented continued">
+But after the two expected errors, I got
+</p>
+<div class="bigcode continuing">
+<pre class="language-ANSI"><code class="language-ANSI">Script started on 2022-10-06 00:00:07+02:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="170" LINES="48"]
+<span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> bash firmware-util.sh</span>
+MrChromebox Firmware Utility Script starting up
+Downloading supporting files...
+<span class="red">You need to run this script as root; use 'sudo bash &lt;script name>'</span>
+<span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> sudo bash firmware-util.sh</span>
+Password:
+MrChromebox Firmware Utility Script starting up
+
+Downloading required tools...
+curl -sLO https://www.mrchromebox.tech/files/util/cbfstool.tar.gz
+'/home/chronos/user/cbfstool.tar.gz' -> './cbfstool.tar.gz'
+
+Getting device/system info...
+
+Checking WP state...
+ ChromeOS Device Firmware Utility Script [2024-01-07]
+ (c) Mr Chromebox &lt;mrchromebox@gmail.com>
+<span class="cyan">*********************************************************</span>
+<span class="cyan">**</span><span class="yellow"><!--"-->   <!--"-->Device: </span>Lenovo 300e/500e Chromebook 2nd Gen (PHASER360)
+<span class="cyan">**</span><span class="yellow"> Platform: </span>Intel GeminiLake
+<span class="cyan">**</span><span class="yellow"><!--"-->  <!--"-->Fw Type: </span>Stock ChromeOS w/RW_LEGACY
+<span class="cyan">**</span><span class="yellow"><!--"-->   <!--"-->Fw Ver: </span>Google_Phaser.11297.342.0 (12/24/2021)
+<span class="cyan">**</span><span class="yellow"><!--"-->    <!--"-->Fw WP: </span>Disabled
+<span class="cyan">*********************************************************</span>
+<span class="cyan">**</span><span class="green"><!--"-->     <!--"--></span><span class="yellow"> 1)</span><span class="cyan"> Install/Update RW_LEGACY Firmware</span>
+<span class="cyan">**</span><span class="green"> [WP]</span><span class="yellow"> 2)</span><span class="cyan"> Install/Update UEFI (Full ROM) Firmware</span>
+<span class="cyan">**</span><span class="green"> [WP]</span><span class="yellow"> 3)</span><span class="cyan"> Set Boot Options (GBB flags)</span>
+<span class="cyan">**</span><span class="green"> [WP]</span><span class="yellow"> 4)</span><span class="cyan"> Set Hardware ID (HWID)</span>
+<span class="cyan">*********************************************************</span>
+<span class="cyan">Select a numeric menu option or</span>
+<span class="red">R</span> to reboot </span> <span class="red">P</span> to poweroff </span> <span class="red">Q</span> to quit
+2
+<span class="green">
+Install/Update UEFI Full ROM Firmware</span>
+
+<span class="bold yellow">IMPORTANT: flashing the firmware has the potential to brick your device,
+requiring relatively inexpensive hardware and some technical knowledge to
+recover.Not all boards can be tested prior to release, and even then slight
+differences in hardware can lead to unforseen failures.
+If you don't have the ability to recover from a bad flash, you're taking a risk.
+
+You have been warned.
+
+Also, flashing Full ROM firmware will remove your ability to run ChromeOS.
+</span>
+Do you wish to continue? [y/N] y
+
+<span class="bold yellow">NOTICE: flashing your Chromebook is serious business.
+To ensure recovery in case something goes wrong when flashing,
+be sure to set the ccd capability 'FlashAP Always' using your
+USB-C debug cable, otherwise recovery will involve disassembling
+your device (which is very difficult in some cases).
+
+If you wish to continue, type: 'I ACCEPT' and press enter.
+</span>
+I ACCEPT
+
+<span class="bold yellow">NOTE: After flashing UEFI firmware, you will need to install a UEFI-compatible
+OS; ChromeOS will no longer be bootable. See https://mrchromebox.tech/#faq
+</span>
+Press Y to continue or any other key to abort. Y
+
+Connect the USB/SD device to store the firmware backup and press [Enter]
+to continue.<!--"-->  <!--"-->This is non-destructive, but it is best to ensure no other
+USB/SD devices are connected.
+
+Devices available:
+
+1) Generic STORAGE_DEVICE (7.4 GB)
+
+Enter the number for the device to be used for firmware backup: 1
+
+<span class="bold yellow">
+Saving firmware backup as stock-firmware-PHASER360-20221006.rom
+</span>
+<span class="green">Firmware backup complete. Remove the USB stick and press [Enter] to continue.
+</span>
+
+<span class="bold yellow">
+Downloading Full ROM firmware
+(coreboot_edk2-phaser360-mrchromebox_20231222.rom)
+</span>
+curl -sLO https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom
+'/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom' -> './coreboot_edk2-phaser360-mrchromebox_20231222.rom'
+curl -sLO https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1
+'/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1' -> './coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1'
+<span class="bold yellow">Persisting device HWID
+
+VPD extracted from current firmware
+
+Disabling software write-protect and clearing the WP range
+
+Installing Full ROM firmware (may take up to 90s)</span>
+
+<span class="green">Full ROM firmware successfully installed/updated.</span>
+
+<span class="bold yellow">IMPORTANT:
+The first boot after flashing may take substantially
+longer than subsequent boots -- up to 30s or more.
+Be patient and eventually your device will boot :)
+</span>
+Press [Enter] to return to the main menu.
+
+<a href="/content/assets/blogn_t/012a.01-DSCN0556c2.JPG"><img alt="" src="/content/assets/blogn_t/012a.01-DSCN0556c2.JPG"></a>
+Q
+
+<span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> ^D</span>
+
+exit
+
+Script done on 2022-10-06 00:04:21+02:00 [COMMAND_EXIT_CODE="32"]
+</pre></code>
+</div>
+<blockquote class="continued">
+  <dl class="continued">
+    <div class="tipwarning tip"><dt class="smallcaps">Tip</dt><dd>If you unplugged the battery to <a href="//docs.chrultrabook.com/docs/firmware/battery.html">disable write protect</a>, you can plug it back in now. All subsequent flashing won'<!--'-->t require it from now on.</dd></div>
+    <div><dt>UEFI</dt><dd>It can take up to a minute for display to come up on first POST. Do not interrupt the first boot.</dd>
+  </dl>
+</blockquote>
+<p class="continuing">
+I'<!--'-->m not trying to be flipping the shit running with a cable plugged in, I plugged the battery back after rebooting and proof-booting d-i.
+</p>
+<p class="continuation">
+Yeah, it took about that long. But the updater explicitly says it won'<!--'-->t boot ChromeOS anymore. So I held off until I had a d-i image.
+</p>
+<h2 id="installing" class="continued"><a class="hash-link" href="#installing">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/">Installing an OS <i class="dark-invert fa fa-external-link-alt"></i></a></h2>
+<h3 id="installing-known-issues" class="continuing"><a class="hash-link" href="#installing-known-issues">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/known-issues.html">Known Issues <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<h4 id="installing-known-issues-linux" class="continuing"><a class="hash-link" href="#installing-known-issues-linux">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/known-issues.html#linux">Linux <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<blockquote class="continuing">
+  <ul style="padding-left: 1em;">
+    <li>Debian 12 (Bookworm) needs a custom kernel.</li>
+  </ul>
+</blockquote>
+<p class="continuing">
+No it doesn'<!--'-->t. Pretty sure. No one wants to document what they mean by this. And I got spam-blocked on the forum for no reason.
+</p>
+<p class="indented continuing">
+And by that I mean this is not mentioned in the documentation, and not in
+<a href="//101010.pl/@elly@donotsta.re/111722941614342831">one</a> (<a href="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/734/605/473/374/473/original/20cf469a852de065.png">screenshot</a>),
+<a href="//101010.pl/@weirdtreething@donotsta.re/111723029109242853">two</a>,
+<a href="//101010.pl/@weirdtreething@donotsta.re/111723748295321731">three</a>,
+<a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521/8">four</a>,
+<a href="//101010.pl/@weirdtreething@donotsta.re/111723900288585374">five</a>
+posts about this from Chrultrabook authors, in a few cases <em>while questioned directly</em>.
+Do <em>they</em> even know why?
+</p>
+<p class="indented continuation">
+It turns out they do on the
+<a href="//101010.pl/@weirdtreething@donotsta.re/111724074322859319">sixth</a>
+attempt: the catchily-designated <a href="//salsa.debian.org/kernel-team/linux/-/merge_requests/768/">MR!768 – [x86] Various drivers for ChromeOS devices</a>.
+A <a href="//101010.pl/@nabijaczleweli/111724158873684896">trivial analysis</a> shows this actually wants a kernel at least <samp>6.6.3-1</samp>,
+so at time of writing "current sid", but hopefully it'<!--'-->ll be in backports later.
+</p>
+<h3 id="installing-making-a-bootable-usb" class="continued"><a class="hash-link" href="#installing-making-a-bootable-usb">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/bootableusb.html">Making a Bootable USB <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<h4 id="installing-making-a-bootable-usb-flashing-with-dd-linux-macos" class="continuing"><a class="hash-link" href="#installing-making-a-bootable-usb-flashing-with-dd-linux-macos">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/bootableusb.html#flashing-with-dd-linux-macos">Flashing with dd (Linux/macOS) <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<p class="continuing">
+I'<!--'-->m snidely avoiding comment on the bit where it specs <samp>dd</samp> but uses no flags that would make it do anything different than <samp>cp</samp>.
+</p>
+<p class="indented continuation">
+No syncing of any kind is criminal, though.
+</p>
+<h3 id="installing-installing-linux" class="continued"><a class="hash-link" href="#installing-installing-linux">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html">Installing Linux <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div class="tipwarning tip"><dt class="smallcaps">Tip</dt><dd>Only Linux kernel 6.4 or newer is supported.</dd></div>
+  </dl>
+</blockquote>
+<p class="continuation">
+It doesn'<!--'-->t say why. Well – why? (See above.)
+</p>
+<h4 id="installing-installing-linux-recommended-distributions" class="continued"><a class="hash-link" href="#installing-installing-linux-recommended-distributions">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#recommended-distributions">Recommended Distributions <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div class="tipwarning warning"><dt class="smallcaps">Warning</dt><dd>Debian versions older than Debian 12 (Bookworm) are <strong>not supported</strong>. Debian 12 (Bookworm) requires a custom kernel, the <a href="//docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio">audio script</a> will automatically install it for you.</dd></div>
+  </dl>
+</blockquote>
+<ol style="list-style: symbols(fixed '(a)' '(b)'); display: inline; padding-left: 0;">
+  <li style="display: inline list-item;">No the fuck it won'<!--'-->t.</li>
+  <li style="display: inline list-item;">Bookworm ships (at time of writing, from <tt>stable-security</tt>) 6.1.69-1, and the <a href="//deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/mini.iso">current d-i image</a>'<!--'-->s kernel is branded "6.1.66-1 (2023-12-09)". So it must work. (See above, again.)</li>
+</ol>
+<p class="indented continuing">
+<a href="//paste.sr.ht/~nabijaczleweli/9cce0cbdf7a7874520cd8e3c08dde598a6c5e6be">If it were up to me</a>,
+since this is just about some modules, this box would be
+</p>
+<dl class="continuing">
+  <div class="tipwarning warning"><dt class="smallcaps">Warning</dt><dd>Debian versions older than Debian 12 (Bookworm) are <strong>not supported</strong>. Debian 12 (Bookworm) itself requires the <a href="//backports.debian.org/Instructions/">backports kernel</a> for <a href="//salsa.debian.org/kernel-team/linux/-/merge_requests/768">full functionality</a>.</dd></div>
+  <div class="tipwarning danger"><dt class="smallcaps">Danger</dt><dd>On Debian 12 (Bookworm), the <a href="//docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio">audio script</a> will try to download an install a third-party kernel image. Answer <kbd style="font-weight: bold;">N</kbd> at the "Would you like the script to automatically install this kernel?" prompt!</dd></div>
+</dl>
+<p class="continuation">
+But for now just install
+<a href="//snapshot.debian.org/archive/debian/20240103T032204Z/pool/main/l/linux-signed-amd64/linux-image-6.6.9-amd64_6.6.9-1_amd64.deb">the sid kernel</a>.
+</p>
+<h4 id="installing-installing-linux-installation" class="continued"><a class="hash-link" href="#installing-installing-linux-installation">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#installation">Installation <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<blockquote class="continuing">
+  <ol style="padding-left: 1em;" start=4>
+    <li>Install as you would on any other computer.</li>
+  </ol>
+</blockquote>
+<p class="continuing">
+I'm assuming this means you can safely dump the whole <samp class="path">/dev/mmcblk0</samp>? Which I had pause about, but clearly I oughtn't've'd.
+</p>
+<h4 id="installing-installing-linux-fixing-audio" class="continued"><a class="hash-link" href="#installing-installing-linux-fixing-audio">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio">Fixing Audio <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<h5 id="installing-installing-linux-fixing-audio2" class="continuing"><a class="hash-link" href="#installing-installing-linux-fixing-audio2">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1">Fixing Audio <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<p class="continuing">(yeah there'<!--'-->s two nested identical sexions)</p>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div class="tipwarning danger"><dt class="smallcaps">Danger</dt><dd>Using AVS on a device with max98357a will blow your speakers. You have been warned.</dd></div>
+  </dl>
+</blockquote>
+<p class="continuing">
+this machine does have this device
+(apparently <a href="//github.com/WeirdTreeThing/chromebook-linux-audio/blob/03e64fe3986039502183c953a5d12d14f2ef1c69/setup-audio#L135">this</a> is the check,
+ and apparently this only affects output to the built-in speakers, and the "audio script" will disable it automatically, maybe),
+and:
+</p>
+<pre class="continuing" style="margin-left: 1em;"><code>$ grep -w CONFIG_SND_SOC_INTEL_AVS /boot/config-6.1.0-9-amd64 /boot/config-6.6.9-amd64
+/boot/config-6.1.0-9-amd64:# CONFIG_SND_SOC_INTEL_AVS is not set
+/boot/config-6.6.9-amd64<span id="spacespace"></span>:CONFIG_SND_SOC_INTEL_AVS=m</code></pre>
+<p class="continuing">
+and, uncharacteristically,
+<a href="//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/intel/Kconfig?id=v6.6#n212">Linux doesn'<!--'-->t spec what the modules are called</a>,
+but it <a href="//web.archive.org/web/20240109135353/https://packages.debian.org/sid/amd64/linux-image-6.6.9-amd64/filelist">looks like</a> <samp>snd-soc-avs</samp>,
+so booting the bookworm kernel is safe, but booting a later kernel wants <code>modprobe.blacklist=snd-soc-avs</code> in the cmdline.
+</p>
+<p class="indented continued">
+So, with no contraindications, and a very peculiar sense of drip
+</p>
+<a href="/content/assets/blogn_t/012a.06-DSCN0560cv.JPG"><img alt="coreboot logo, below it Press ESC for Boot Options/Settings" src="/content/assets/blogn_t/012a.06-DSCN0560cv.JPG"></a>
+<a href="/content/assets/blogn_t/012a.07-DSCN0559cvcc.JPG"><img alt="70s-style text-mode BIOS" src="/content/assets/blogn_t/012a.07-DSCN0559cvcc.JPG"></a>
+<p class="continuing">
+(yes, that is a 4:3 EDK2 on an almost-16:9 monitor):
+</p>
+<a href="/content/assets/blogn_t/012a.03-DSCN0557c.JPG"><img alt="It's GNU GRUB version 2.06-13+deb12u1 booting debian 12" src="/content/assets/blogn_t/012a.03-DSCN0557c.JPG"></a>
+<p class="continuation">
+and I installed sid <a href="//101010.pl/@nabijaczleweli/111726416245752000">normally</a>.
+ChromeOS used <samp>discard</samp>, so I added this to the mount options as well.
+Installing GRUB into the removable media path was not necessary.
+This yields <a href="//bugs.debian.org/1060325">#1060325</a>.
+</p>
+<p class="indented continued">
+Apparently, pressing <kbd>alt</kbd> and <kbd>˂</kbd> or <kbd>˃</kbd> (the arrow keys) cycles between the available VTs.
+This is useful because there are no function keys, and <kbd>alt</kbd> and <kbd>←</kbd> or <kbd>→</kbd> (not the arrow keys) doesn'<!--'-->t do anything.
+</p>
+<p class="indented continuing">
+I also persisted the blacklist after first boot
+and fixed the <a href="//bugs.debian.org/1060331">touch</a><a href="//bugs.debian.org/1060332">pad</a>
+because the default decroded-ass no-tap-to-click behaviour is more infuriating than you'<!--'-->d think in a.d. 2023.
+</p>
+<div class="bigcode">
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation">chrust</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/modprobe.d/avs.conf</span>
+# https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1
+# DANGER: Using AVS on a device with max98357a will blow your speakers. You have been warned.
+blacklist snd-soc-avs
+<span class="token info punctuation">chrust</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/X11/xorg.conf.d/touchpad.conf</span>
+Section "InputClass"
+<!--"-->	<!--"-->Identifier "Touchpads normal"
+<!--"-->	<!--"-->MatchIsTouchpad "on"
+<!--"-->	<!--"-->Option "Tapping" "on"
+EndSection
+</pre></code>
+</div>
+<h3 id="installing-post-install" class="continued"><a class="hash-link" href="#installing-post-install">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html">Post Install <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<blockquote class="continuing">
+  <dl class="continuing">
+    <div class="tipwarning tip"><dt class="smallcaps">Tip</dt><dd>Install <a href="//github.com/death7654/Chrultrabook-Controller/releases">Chrultrabook Controller<i class="dark-invert fa fa-external-link-alt"></i></a> for fan controls, keyboard backlight controls, system information and more.</dd></div>
+  </dl>
+</blockquote>
+<p class="continuation">
+This machine has neither, and the "system information" in the screenshots appears to be the first three lines of dmesg.
+</p>
+<h4 id="installing-post-install-linux" class="continued"><a class="hash-link" href="#installing-post-install-linux">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html#linux">Linux <i class="dark-invert fa fa-external-link-alt"></i></a></h4>
+<h5 id="installing-post-install-linux-general-qol-fixes" class="continuing"><a class="hash-link" href="#installing-post-install-linux-general-qol-fixes">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html#general-qol-fixes">General QOL Fixes <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<blockquote class="continuing">
+  <ul style="padding-left: 1em;">
+    <li>Run the <a href="//github.com/WeirdTreeThing/chromebook-linux-audio">audio script<i class="dark-invert fa fa-external-link-alt"></i></a> if you haven'<!--'-->t already.</li>
+  </ul>
+</blockquote>
+<p class="continuing">
+Heed the <a href="#installing-installing-linux-recommended-distributions" class="smallcaps tipwarning danger">Danger</a>, of course, if you installed Bookworm.
+The script checks if you have an audio daemon installed (in my case wireplumber), so make sure you do install it first.
+But, yes, this does work:
+<button onclick='Array.from(document.querySelectorAll("#expandall-target details")).forEach(function(d) { d.open = !document.expandall_open; }); document.expandall_open = !document.expandall_open;'>Expand/collapse all</button>
+</p>
+<div class="bigcode continuing" id="expandall-target">
+<pre class="language-ANSI"><code class="language-ANSI"><span class="token info punctuation">chrust:/tmp</span><span class="token command"><span class="token shell-symbol important">$</span> git clone https://github.com/WeirdTreeThing/chromebook-linux-audio</span>
+Cloning into 'chromebook-linux-audio'...
+Resolving deltas: 100% (256/256), done.
+<span class="token info punctuation">chrust:/tmp</span><span class="token command"><span class="token shell-symbol important">$</span> cd chromebook-linux-audio/</span>
+<span class="token info punctuation">chrust:/tmp/chromebook-linux-audio</span><span class="token command"><span class="token shell-symbol important">$</span> ./setup-audio</span>
+[sudo] password for nabijaczleweli:
+<span class="bright yellow">WARNING: You may run into audio issues, even after running this script. Please report any issues on github.</span>
+<span class="bright blue">Installing SOF
+Installing SOF firmware
+Installing modprobe config
+Installing UCM configuration</span>
+Cloning into '/tmp/chromebook-ucm-conf'...
+Resolving deltas: 100% (614/614), done.
+<span class="bright blue">Increasing alsa headroom (fixes instability)</span>
+<span class="bright magenta">Audio installed successfully! Reboot to finish setup.</span>
+<span class="token info punctuation">chrust:/tmp/chromebook-linux-audio</span><span class="token command"><span class="token shell-symbol important">#</span> for f in $(zfs list -t snap -Ho name); do zfs diff -h $f; done</span>
+M<!--"-->	<!--"-->/etc/modprobe.d
++<!--"-->	<!--"-->/etc/modprobe.d/snd-sof.conf
++<!--"-->	<!--"-->/etc/wireplumber
++<!--"-->	<!--"-->/etc/wireplumber/main.lua.d
++<!--"-->	<!--"-->/etc/wireplumber/main.lua.d/51-increase-headroom.lua
+M<!--"-->	<!--"-->/usr/lib/firmware/intel
+M<!--"-->	<!--"-->/usr/share/lintian/overrides
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/hda
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/common/pcm
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acp3xalc5682m98
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-glkda7219ma
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/platforms
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/AMD/acp3xalc5682m98/acp3xalc5682m98.conf
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/Intel/sof-glkda7219max/sof-glkda7219max.conf
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/hda/hdmi.conf
+M<!--"-->	<!--"-->/usr/share/alsa/ucm2/common/pcm/split.conf
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-apl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-cnl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-icl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-jsl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-tgl-h.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-tgl.ri</details>
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-adl-n.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-adl-s.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-adl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-apl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-cnl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-ehl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-icl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-jsl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-tgl-h.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-tgl.ri</details>
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-apl.ldc</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-bdw.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-bdw.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-byt.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-byt.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cht.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cht.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cnl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-icl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-jsl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-tgl-h.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-tgl.ldc</details>
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-hda-generic-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-hda-generic-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-hda-generic-idisp.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-hda-generic.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-cs42l43-l0-cs35l56-l12.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-max98357a-rt5682-ssp2-ssp0-2ch-pdm1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-max98357a-rt5682-ssp2-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-max98357a-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt1019-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt1318-l12-rt714-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt711-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt711-l0-rt1316-l23-rt714-l1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt712-l0-rt1712-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt713-l0-rt1316-l12-rt1713-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt713-l0-rt1316-l12.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-rt722-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ace-tplg/sof-mtl-sdw-cs42l42-l0-max98363-l2.tplg</details>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4/mtl
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4/mtl/community
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4/mtl/community/sof-mtl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4/mtl/intel-signed
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4/mtl/intel-signed/sof-mtl.ri
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-acp.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-cs35l41.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-ssp1-hdmi-ssp02.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-es8336.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98357a-rt5682-2way.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98357a-rt5682-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98357a-rt5682-rtnr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98357a-rt5682-waves-2way.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98357a-rt5682-waves.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98357a-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-da7219.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-nau8825.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-rt5682-2way.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-rt5682-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-rt5682-rtnr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-rt5682-waves.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98360a-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98373-nau8825-dts.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98373-nau8825.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98390-rt5682-google-aec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98390-rt5682-rtnr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98390-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-max98390-ssp2-rt5682-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-nau8318-nau8825.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-nau8825.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-nocodec-ci.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-nocodec-hdmi-ssp02.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1015-nau8825.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1019-nau8825.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1019-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1316-l1-mono-rt714-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1316-l12-rt714-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1316-l2-mono-rt714-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt1316-l2-mono-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt5650.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l0-rt1308-l12-rt715-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l0-rt1316-l12-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l0-rt1316-l13-rt714-l2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l0-rt1316-l2-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l0-rt1316-l2-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l0-rt1316-l3-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l2-rt1316-l01-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711-l2-rt1316-l01.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-rt711.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-adl-sdw-max98373-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-da7219.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-demux-pcm512x.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic2ch-ssp5.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-dmic4ch-ssp5.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336-ssp5.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-es8336.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-keyword-detect.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-nocodec-ci.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-pcm512x-master-44100.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-pcm512x-master.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-pcm512x.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-rt298.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-tdf8532.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-apl-wm8804.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-bdw-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-bdw-rt286.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-bdw-rt5640.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-bdw-rt5677.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-cx2072x-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-cx2072x.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-da7213-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-da7213.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-es8316-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-es8316.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-max98090.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5640-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5640.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5645-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5645.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5651-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5651.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5670-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5670.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5682-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-byt-wm5102-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-cx2072x.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-da7213.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-es8316.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-max98090.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-nau8824.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-rt5640.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-rt5645.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-rt5651.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-rt5670.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cht-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-da7219-max98357a.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-da7219-max98390.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-demux-rt5682-max98357a.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-demux-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt1011-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt5682-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt5682-max98357a.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt700-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt700-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt700.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt711-rt1308-mono-rt715.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cml-rt711-rt1308-rt715.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cnl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-cnl-rt274.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-ehl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-ehl-rt5660-nohdmi.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-ehl-rt5660.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-cs42l42.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-da7219-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-da7219.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic2ch-ssp5.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-dmic4ch-ssp5.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336-ssp5.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-es8336.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-glk-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-1ch-pdm1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-1ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-2ch-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-2ch-pdm1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-3ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-4ch-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-idisp-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-idisp-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic-idisp.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-hda-generic.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-dmic-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-rt5682-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-rt700-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-rt700-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-rt700.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-icl-rt711-rt1308-rt715.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-compr-wm8960-mixer.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-cs42888-mixer.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-cs42888.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-drc-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-eq-fir-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-eq-iir-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-nocodec-sai.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-wm8960-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-wm8960-mixer.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-compr-wm8960-mixer.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-drc-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-eq-fir-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-eq-iir-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-wm8904.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-wm8960-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-wm8960-mixer.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8mp-wm8960.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8ulp-9x9-btsco.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-imx8ulp-btsco.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-cs42l42-mx98360a.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-da7219-mx98360a.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-da7219.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-es8336-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-rt5682-mx98360a.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-rt5682-rt1015-xperi.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-rt5682-rt1015.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-jsl-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8186-mt6366-da7219-max98357.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8186-mt6366-rt1019-rt5682s.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8195-mt6359-max98390-rt5682-google-aec-rtnr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8195-mt6359-max98390-rt5682-rtnr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8195-mt6359-max98390-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8195-mt6359-rt1019-rt5682-dts.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-mt8195-mt6359-rt1019-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rn-rt5682-max98360.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rn-rt5682-rt1019.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt1316-l12-rt714-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l0-rt1316-l12-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l0-rt1316-l12.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l0-rt1318-l12-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l0-rt1318-l12.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l2-rt1316-l01-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l2-rt1316-l01.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711-l2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-rpl-rt711.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-smart-amplifier-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-dmic2ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-dmic2ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-dmic2ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-dmic4ch-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-dmic4ch-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-dmic4ch-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-ssp0.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336-ssp1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-es8336.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-h-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98357a-rt5682-pdm1-drceq.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98357a-rt5682-pdm1-google-aec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98357a-rt5682-pdm1.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98357a-rt5682-rtnr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98357a-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98373-rt5682-igonr.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98373-rt5682-xperi.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-max98373-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-nocodec-ci.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-nocodec-hdmi-ssp15.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-nocodec.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt1011-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt1308-ssp2-hdmi-ssp15.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt5682-ssp0-max98373-ssp2-xperi.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt5682-ssp0-max98373-ssp2.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-l0-rt1316-l1-mono-rt714-l3.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-rt1308-2ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-rt1308-4ch.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-rt1308-mono-rt715.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-rt1308-rt715.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt711-rt1316-rt714.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-rt715-rt711-rt1308-mono.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-tgl-sdw-max98373-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-whl-demux-rt5682.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-whl-rt5682-kwd.tplg
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-tplg/sof-whl-rt5682.tplg</details>
++<!--"-->	<!--"-->/usr/share/doc/firmware-sof-signed
++<!--"-->	<!--"-->/usr/share/doc/firmware-sof-signed/changelog.Debian.gz
++<!--"-->	<!--"-->/usr/share/doc/firmware-sof-signed/copyright
++<!--"-->	<!--"-->/usr/share/lintian/overrides/firmware-sof-signed
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-adl-n.ri</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-adl-s.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-adl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-cfl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-cml.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-ehl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-glk.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-rpl-s.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/community/sof-rpl.ri</details>
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-cfl.ri</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-cml.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-glk.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-rpl-s.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/intel-signed/sof-rpl.ri</details>
+<details><summary>+<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-adl-n.ldc</summary>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-adl-n.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-adl-s.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-adl-s.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-adl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-adl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-apl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cfl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cfl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cml.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cml.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-cnl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-ehl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-ehl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-glk.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-glk.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-icl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-jsl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-rpl-s.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-rpl-s.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-rpl.ldc
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-rpl.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-tgl-h.ri
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof/sof-tgl.ri</details>
++<!--"-->	<!--"-->/usr/lib/firmware/intel/sof-ipc4/mtl/sof-mtl.ri
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-nau8825</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-nau8825/HiFi.kano.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-nau8825/HiFi.osiris.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-nau8825/sof-nau8825.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-ssp_amp</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-ssp_amp/HiFi.vell.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-ssp_amp/sof-ssp_amp.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-bxtda7219ma</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-bxtda7219ma/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-bxtda7219ma/sof-bxtda7219ma.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_da7219</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_da7219/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_da7219/avs_da7219.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_dmic</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_dmic/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_dmic/avs_dmic.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98357a</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98357a/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98357a/avs_max98357a.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98373</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98373/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98373/avs_max98373.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98927</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98927/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_max98927/avs_max98927.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_nau8825</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_nau8825/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_nau8825/avs_nau8825.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_rt5663</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_rt5663/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_rt5663/avs_rt5663.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_ssm4567-adi</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_ssm4567-adi/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/avs_ssm4567-adi/avs_ssm4567-adi.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/hdaudioB0D2</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/hdaudioB0D2/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/hdaudioB0D2/hdaudioB0D2.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682s-rt1</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682s-rt1/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682s-rt1/sof-rt5682s-rt1.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cml_max9839</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cml_max9839/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cml_max9839/sof-cml_max9839.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cml_rt1011_</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cml_rt1011_/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cml_rt1011_/sof-cml_rt1011_.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cmlda7219ma</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cmlda7219ma/HiFi.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cmlda7219ma/sof-cmlda7219ma.conf</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-glkda7219ma/HiFi.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-glkrt5682ma</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-glkrt5682ma/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-glkrt5682ma/sof-glkrt5682ma.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-da7219max98</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-da7219max98/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-da7219max98/sof-da7219max98.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682s-hs-</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682s-hs-/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682s-hs-/sof-rt5682s-hs-.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/mt8183_da7219_r</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/mt8183_da7219_r/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/mt8183_da7219_r/mt8183_da7219_rt1015p.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/mt8183_mt6358_t</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/mt8183_mt6358_t/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/mt8183_mt6358_t/mt8183_mt6358_ts3a227_max98357.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/HD-Audio Generic</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/HD-Audio Generic/HD-Audio Generic.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/HD-Audio Generic/HiFi.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acp3xalc5682101</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acp3xalc5682101/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acp3xalc5682101/acp3xalc5682101.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acp3xalc5682m98/HiFi.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/HDA ATI HDMI</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/HDA ATI HDMI/HDA ATI HDMI.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/HDA ATI HDMI/HiFi.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acpd7219m98357</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acpd7219m98357/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/acpd7219m98357/acpd7219m98357.conf</details>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/cs42l42
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/cs42l42/init.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/hda/hdmi234.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/hda/hdmi2345.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/hda/hdmi345.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/hda/hdmi567.conf
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98357a</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98357a/speaker.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98373</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98373/init.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98373/speaker.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98390</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/max98390/init.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1011</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1011/init.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1011/speaker.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1015</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1015/init.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1015/speaker.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1015p</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1015p/speaker.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1019</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1019/init.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1019p</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt1019p/speaker.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt5682s</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt5682s/headset.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/codecs/rt5682s/init.conf</details>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/platforms/intel-sof
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/platforms/intel-sof/platform.conf
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682/codecs.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682/rt5682-headset.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682/rt5682-init.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-rt5682/sof-rt5682.conf</details>
+<details><summary>+<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cs42l42</summary>
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cs42l42/HiFi.conf
++<!--"-->	<!--"-->/usr/share/alsa/ucm2/conf.d/sof-cs42l42/sof-cs42l42.conf</details>
+M<!--"-->	<!--"-->/var/cache/apt
+M<!--"-->	<!--"-->/var/cache/apt/archives
+M<!--"-->	<!--"-->/var/cache/apt/archives/partial
++<!--"-->	<!--"-->/var/cache/apt/archives/firmware-sof-signed_2023.12-1_all.deb
++<!--"-->	<!--"-->/var/lib/dpkg/info/firmware-sof-signed.md5sums
++<!--"-->	<!--"-->/var/lib/dpkg/info/firmware-sof-signed.postinst
++<!--"-->	<!--"-->/var/lib/dpkg/info/firmware-sof-signed.postrm
++<!--"-->	<!--"-->/var/lib/dpkg/info/firmware-sof-signed.preinst
++<!--"-->	<!--"-->/var/lib/dpkg/info/firmware-sof-signed.list
+M<!--"-->	<!--"-->/var/log/apt
+M<!--"-->	<!--"-->/var/log/apt/term.log
+M<!--"-->	<!--"-->/var/log/apt/history.log
+M<!--"-->	<!--"-->/var/log/dpkg.log
+<span class="token info punctuation">chrust:/tmp/chromebook-linux-audio</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/modprobe.d/snd-sof.conf</span>
+options snd-intel-dspcfg dsp_driver=3
+<span class="token info punctuation">chrust:/tmp/chromebook-linux-audio</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/wireplumber/main.lua.d/51-increase-headroom.lua</span>
+rule = {
+<!--"-->    <!--"-->matches = {
+<!--"-->      <!--"-->{
+<!--"-->        <!--"-->{ "node.name", "matches", "alsa_output.*" },
+<!--"-->      <!--"-->},
+<!--"-->    <!--"-->},
+<!--"-->    <!--"-->apply_properties = {
+<!--"-->      <!--"-->["api.alsa.headroom"] = 4096,
+<!--"-->    <!--"-->},
+}
+
+table.insert(alsa_monitor.rules,rule)
+</pre></code>
+</div>
+<p class="continuation">
+And after a reboot I could play aloud
+<a href="//nabijaczleweli.itch.io/002-fluorescent-heart">my</a> <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">album</a>,
+all without the <a href="#installing-installing-linux-fixing-audio2" class="smallcaps tipwarning danger">Danger</a>ous driver.
+</p>
+<p></p>
+<blockquote class="continuing">
+  <ul style="padding-left: 1em;">
+    <li>Run the <a href="//github.com/WeirdTreeThing/cros-keyboard-map">cros-keyboard-map<i class="dark-invert fa fa-external-link-alt"></i></a> script to remap top row FX keys.</li>
+  </ul>
+</blockquote>
+<p class="continuing">
+This is actually much les annoying than the Home/End/PgUp/PgDn situation,
+which on normal small keyboards is Fn+←/→/↑/↓,
+but this is not mapped to <kbd>alt</kbd>+<kbd>˂</kbd>/<kbd>˃</kbd>/<kbd>˄</kbd>/<kbd>˅</kbd> here,
+which sucks shit.
+No Delete is pretty bad as well.
+The top row is, accd'<!--'-->g to <code>xev</code>,
+</p>
+<dl class="keyboard continuing">
+  <dt><kbd>esc</kbd></dt><dd>Escape</dd>
+  <dt><kbd>←</kbd></dt><dd><code>XF86Back</code></dd>
+  <dt><kbd>→</kbd></dt><dd><code>XF86Forward</code></dd>
+  <dt><kbd>⟳</kbd></dt><dd><code>XF86Reload</code></dd>
+  <dt><kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd></dt><dd>nothing?</dd>
+  <dt><kbd><img class="iconic dark-invert" alt="hollow rectangle, to its right are two vertical stripes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAABy0lEQVR42u2ZX0rDQBDGA9L2RU+gGAURr6NNC1JvoK/NHdpXvYFFMIleQEofPISIDxb0BOpDW4Q4K/NQprvZJcn+gc3ARynMfskvZDezs0Ge54GPChrwBtxTcEG0QX3QHegdtATlJfUNekGvPnrXHnWAn4LeKoDKxLzPXALfAo00AlON8Jo0DkFTfFOm+F+aUwXcJPQ6PI0ZyXlWySkLHhXcHJvf96Bz0IFkjm6DTjA3UVwbIuJBx/xyrrORUwacgXwIbuoRdFRh6rGxDxLwT/IweTkbU5qqDPiAY8Seclzj2hOjpwj+wgZ4yjGKNXxx4gLwzAb4nJikgb5IBWBzG+ALspDtaQTfFSx4Sxvg6waTQH/cSuCsgEcGwLsugocGwEMXwTsGwNsugu/4Cn7s66vu7eLm1efsy3ABs3ClgHklJolG8MSlkpVXPw81QA9d26SItqVXNUJfurgtLWpEZDU0IlKFRkTHBjiLnqT1NMHPEGs9tQpAW5jTxTEqraeeDEonOIuxhWbjWAVKNzhr9V4bhL4RtJeNNRt5lZXuA4WiCvGJ5M9Ucuo8Qhrg4saOkFYVQFfokaGn7AhpH8F+8DdUyWkODRvwBvxffz5Mo4mV7gMcAAAAAElFTkSuQmCC"></kbd></dt><dd><code>XF86LaunchA</code></dd>
+  <dt><kbd><small>☀️</small></kbd></dt><dd><code>XF86MonBrightnessDown</code></dd>
+  <dt><kbd>☀️</kbd></dt><dd><code>XF86MonBrightnessUp</code></dd>
+  <dt><kbd>🔇</kbd></dt><dd><code>XF86AudioMute</code></dd>
+  <dt><kbd>🔉</kbd></dt><dd><code>XF86AudioLowerVolume</code></dd>
+  <dt><kbd>🔊</kbd></dt><dd><code>XF86AudioRaiseVolume</code></dd>
+  <dt><kbd>🔒</kbd></dt><dd><code>XF86Sleep</code></dd>
+</dl>
+<p class="continuing">
+(🔒 is the Suspend Key and handled by logind by default;
+ to see it you need to unmap it in <samp class="path">/etc/systemd/logind.conf</samp>;
+ I <a href="//bugs.debian.org/1060389">settled on</a>
+</p>
+<pre class="continuing" style="padding-left: 1em;"><!--
+ -->[Login]
+HandlePowerKey=hibernate
+HandleSuspendKey=ignore
+HandleSuspendKeyLongPress=ignore<!--
+ --></pre>
+<p class="continuing">
+.)
+Caps Lock is replaced with
+</p>
+<dl class="keyboard continuing">
+  <dt><kbd>🔍</kbd></dt><dd><code>Super_L</code></dd>
+</dl>
+<p class="indented continuation">
+Why <kbd>🔉</kbd>/<kbd>🔊</kbd> are on the keyboard when there are physical buttons for them (or vice versa) is beyond me, too.
+</p>
+<p class="indented continued">
+The upstream instructions say to run <samp class="path">install.sh</samp>,
+but on Debian
+that installs <a href="//github.com/rvaiya/keyd">keyd</a> off unchecked HEAD
+(which until <a href="//github.com/rvaiya/keyd/commit/03d4a27b83ac69bc6854f7759de6124cc5e74d6d">three weeks ago</a> dumped shit into <samp class="path">/usr</samp>,
+ and the installer checks for
+ <a href="//github.com/WeirdTreeThing/cros-keyboard-map/blob/25b0e9c2a10fc834d414b427c40d572fb38cda14/install.sh#L26"><samp class="path">/usr/bin/keyd</samp></a>
+ and will do it again;
+ it continues to run unadorned <a href="//github.com/rvaiya/keyd/blob/dcbb68b12f71245121035b730b50872802a259b4/Makefile#L71"><code>groupadd keyd</code></a>
+ to add a system group!),
+first cloning it to no-where,
+and <a href="//github.com/WeirdTreeThing/cros-keyboard-map/blob/25b0e9c2a10fc834d414b427c40d572fb38cda14/cros-keyboard-map.py#L77">generates a config</a>
+with
+</p>
+<div class="bigcode continuation">
+<pre class="language-python"><code class="language-python"><!--"-->    <!--"--><span class="token comment"># make vivaldi keys act like vivaldi keys when super isn't held</span>
+<!--"-->    <!--"--><span class="token keyword">for</span> scancode <span class="token keyword">in</span> physmap<span class="token punctuation">:</span>
+<!--"-->        <!--"--><span class="token comment"># Map zoom to f11 since most applications wont listen to zoom</span>
+<!--"-->        <!--"--><span class="token keyword">if</span> vivaldi_scancode_to_keyd<span class="token punctuation">(</span>scancode<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"zoom"</span><span class="token punctuation">:</span>
+<!--"-->            <!--"-->mapping <span class="token operator">=</span> <span class="token string">"f11"</span>
+<!--"-->        <!--"--><span class="token keyword">else</span><span class="token punctuation">:</span>
+<!--"-->            <!--"-->mapping <span class="token operator">=</span> vivaldi_scancode_to_keyd<span class="token punctuation">(</span>scancode<span class="token punctuation">)</span>
+<!--"-->        <!--"-->config <span class="token operator">+=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>vivaldi_scancode_to_keyd<span class="token punctuation">(</span>scancode<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> = </span><span class="token interpolation"><span class="token punctuation">{</span>mapping<span class="token punctuation">}</span></span><span class="token string">\n"</span></span>
+
+<!--"-->    <!--"--><span class="token comment"># map lock button to coffee</span>
+<!--"-->    <!--"-->config <span class="token operator">+=</span> <span class="token string">"\nf13=coffee\nsleep=coffee\n"</span>
+<!--'--></pre></code>
+</div>
+<p class="indented">
+deadass
+<img class="iconic" alt="vivaldi" src="data:image/png;base64,R0lGODlhQABAAOYAAAMBAbQvDW8KBdSsejcGBcGTXItbMa2BUHpEJNOxk6t7S4IyFVIjExMFBcKZdq5uQPbjtJ8fCOrOoFMIBsqaYuurd6NmO7KGXKNGInAnFK9WK3E5HZhGIBsFBcOUZNuMU+LBnD8UDZ07G9GHUJQZCAsEBNaibNKkeJFiPc+NXe68i9Kui7J9T+nNrnMcDN+bZF1ENZI8GUsHBZMuFaR2TeGWXSYFBY1ULIw5G9yTXLBIIruTbMp0RIsrE8uifIBMJO2zf1gWC9+tety/oGArFcNvQJxrPEMGBRQJCLqMX9B8TOCWZJI2Fe/CloIqEst6RqpcMqN0Q4wRB7qLVNyWYY0fDEoYD7xuPpVgM922jOOldSkLCe7YsvLNnpVLL92yhIJPLfC8guWiaYU4G4IQB797THsoEsqba7OLZcqcc9WSWTcNCsyni7g3E5xsRF0kEty4k6AqEGQ0GmQUChsKCbWEUbdiM6x9VF0JBdOsg3UjDnMUCerYwqNTJ8aVagAAACH5BAkAAH8ALAAAAABAAEAAAAf+gACCg4SFhoQlhyWLiYyOJQ2QdA2UkJSXlYmHm4iLhZqPoaIlSEiUSHR0ppgNnJyNngCwi0izo6GlqKm7pZSuio4NHQ2TkIuUdDY2w5G3jA25p9FIrpqdDTYhVlYhIQRrIVvKIW9vDNwhNpmhso6oubqb1rLtJR1rRBsbCGAICPrn3iC4ccOAPwREQjS7JQhSL2imfg06tuUIEYJYULihcYeGGzBgUHC8Y8HIDQQGwITowLChtEi+qgnqsCUEgw0ojNBAc+fChSQ+HFy4o0DBnSR1FHhEcWODFZYLQTUMdkqirC1WcNKwcIdNgqBpBuTxscNnEj8+/KTwgyaKGxT+G8JlojcxWAlVVhuEIAJmJxo0DtI48JElwZAVDhwcXvE1qIMkLIz8s7Il6rxH7SQ2yPoDBdckKRywyZMFzhDTQ3z4SJDghGo/fh4rhbuS3S1q1UKETOLgqI8TJxJkAcGFDxzGZ/wMaTEkD3APsXfQQIECgULLj5pFdNVBDgo0CRzsWOEDDogWcCRwGTKktZ8TK+CY/iIk6IoCdepEwbJhi6ipmLmyBgIoKLCDA6atxt4QTYBwAhsppHDCCy+ccUYaJ3wBx1dnUOCBAh9Z0UwnjNQSyyab/UADCxc4kEceA6xwGgggfOFHGSl8kQV9WQBBgYQgbJhAGmfUcYcbRPj+5wiAAR6CBD5YHJAEBT7koeMQfAQJh1pZcMFFF2CGqYIQZ5jW2glnJEGDSusc4w4pnNDBwA1RJIEYaSAs1wIIWWihRQt8tNBCmGE2AYSEpQ0QmAdrrkHMQiY2ecgWcujkA3nlsZcnHFoIoR4XLTRBaBdNhPFFDkWkcJxqadwBRpJtMtJOKSgyYEAULfI2XJ5ZCPGCFk0I2sSwohYKhBYj2PFAFis0S8GRcUViiKwnFrIFAkZd4EEdVZpWowkvECuuCkAAMSwQFSzxhAYYlOGgDxSoCQYDdNBV15KHhGCAAkkkcWF8WQz3BQVCDKvCweRWoPDBx6KKgQZ9mABCAh7+XECDAW/4dy87hxBhhAIeeHBhHnAEHOQZYRxscLkLq3BuDk8UUQQHZWzoh8VuRFtXPbJOywAWUdRBgWsD7JhnAn6EkXITEpCLbgUuN6FCBS9QkQMPIjyQRgJJ+LSmFXSc+OY8g3TwhgF3hJxHc0WbtkIdQKjQhQSlsgw1w0CIkUMKPGDQxwlD7JAUDVhYYQO1/xmyha00/HRGr0J88cUKaVwBRBik0lcBuloknMMDGhShRBEYMFEG10ncEcUNQVQ2SmaG2MAAgQrUUYAJQuQRORweXKE0EC9c8fAILwihwgt2BDEBBkVccYUGTHiRwrZKGRDO69US0gERP2Bh4Bn+HgwglnkPFBEGEEKMIIIAAmjwQrlX4HFEBhmMgYEOGnDAAnRG3mG965iRiuI2gAUaHEhtA9DQAG4wAiE4LwMy6MEMqHCwMEBhAhmwQAi8IIIe6MALDvhCeNrCujWwxBSiaIUhQjCQoPXLD3D4QgILwAExODAFJymCHURVqifsQQcRSoEddIiDJBQmDZG5QQZMiAkUZo8QIdjArWo3hcc5Rwh1qOGOPOcpqakgB0wgnhgopAUeVMELWjiBmpqSgRCErR5MyhcRbpWfJKQBRifgHQfCRSNyRc1lX+RACtCHrhfwoAcTKMMX1FQdIlCmFpmR1CC2wJcCJcEDJxBffJL+0IccYG5ccZPaBzDwBJaJ4QNFcEIQWMCGO2ABC686AkuccYgOMOAHtyqALhNopSn0YQQpQ9j5FlaBGuBPDGP8wLrMIAMa+CEJD8DCDzZgQmeQTRANuKX3zqAaISTwCzS0QwV+Vy4tLIFlxmTCB16QgxEIzwwEcEMa6vAANhIAO5KcyUWC5oevAIc+FLCABsaJLmRSIQU65EERXLAH932ABzpgQhDWgIWhvAUBb7jnIyL1RAA0gHsF3EHIzuCsAjwACi9Q2BitVoERPMAFApjAHjAwgiJoQAQzOEIINqIAC/RjidKiBUevCQAbcI+OSSgAlQYwBfxYYAQVGGMOciD+Bi2M8wpm6AETMGAHdokgBgQgABiMgAUjgOEGRFDHMfA5rTXIYaxS8oAPOkQBCtRhCjcoAtXUQLwXIJOdI7ipCESgAwyIAAc2IAAByQoSET3DiaXo6E0MgIYdHCgxdf0QC3Bgh7+OILAYwIELJDiHPezBCYMVQQbuMRCQbOANh7PLM+C0QgKh4QK2440DTjCFBzzACTSlAl9r+gAvQEEEEdiDAKrAhBkwQQRBaMAaNvDTNSjJmpuwAYHuUIAkoMEPSq2YUDjggiuMgK9UpZoSNBAHEjDhvT0QgRMIsIU1ZGUDEw2gLWhrLSkewAN/ScIUBsytM1hABjj4wFRfkIL+D7gztBgwbA8mLMt7WIEICGjjkjaML2u94QcKuAAaXlgAFtQhTRawwhF08ITPjiAF7GTnupjgAhfIgCUd6MYb8BtbxO13Urc0QhIs6wEKTEEBLMDPA4LQgSM4QQNPKMMIppqs/GVgDjJYBjbeEIIgpKMD9PDEfjtagiCERAF/ucAU6mDiOtCAddiQwRwWwAENQAF6GTCDC7CsDmzUlwDdcBTPQjGXfKHECFHg1wUO8IAoPMACGyBACWwggwlUusZzmMAEghCEIxBgGcOwgXXXUM2eDbrDhfjoDxBdh64RZT83mAMBOkCATTPU0pW2dFjDugxRW3cLGmNSiYKBIgL+ICA/dajYAdBAOP5M4AhHkIELzKAHPVx5DkHI9RGUQRNwkDpst4BGJWLyib1gQTxIOcABPGKSlGRbzmZwwgKYsABqK09+vOZGB5bhY3eAexWK+JkCfBCywdGArIdGQQY2rYcFxAAHC1iAHpQXhE8foRygNsaP3bTWTRDhlZbtrgKiAGs5/OAGU0gC/RYwhhhwQN56wDYewnoEkJR6FnWJ7CmIsQk5lHXZA1bdfvBLhAW4YQAWcAEOII4DDjBBzy6QH7Q3kAQ3xHbQg26iCj/xMzcsWik0ILkBfoAABszRBANgwQIgPgYOQBzT0JbBG5IABwQAaGOzhQmt446Hvo/+oay4vUNPLvAWNxghLmA4wwAk4AMO5HneEt+zDI4QhAwCZwudAFAzmigAMkjB8yQgARlc4Ntkd3cwaDAAdcAQBDlcoGgS8MMCVs4EJ+j52RMwww088IUdMGAqwjaGNEIf+giQIAJV2AMWBPybMxQgKHf4AUjeIAcafEECEvhCvfP83vfuAQ9B0AMCppBHHzAgqM4QdwTWz/71V6EHvDlBfXQZMmkagAiVWjwXsrAAJ+DA5UzQBxqwAHumB2NgAQNgJgygcbcRCVJwfBEQAOsXBxRIAw5gAhSAgfTnBilRdBbgAeqRBbbXdHVWBmUABS8XcVhwfcQBBqSATxvVd+z+UwXrFwABQAJe8HoUoFQFMAVGYARMEQQ/kHJ5AAESQF5N1wdlkANqUAZ2wAEcsAA3kAXYBwEwIAupEAyloAqqgAQEoG2VJgDK1QMPkIEDdmSI5gYIEG1e8HzqkXRO0Ad2MALgkgJl8GhN9wVcIAFWmAkm0kS5UAJkQIHN5QRSNwECwAF3tWYK8DEHEAVE4GmKdQYgIAEs4AJMwAFXUAZ+5QFN+AB9wARCAAFGiHnDIHyUMEslEgBt0Io6oANtEAcwhQcCgANAQ3JGcAAFYAQ0V2scsHhZ8ACZ+ABX4AEmYALtVAQoaAJcAAFoEFQdMEt0wAybhwQ2yIo26IptQAJpe+ACHGAEG3EAO5AEkRZtMsA+N6AeEOAHHAAFV5ACJiAGw/UAHACCVggJsoAKW5AKarUOrdiKrPiPsBgHPSCFuOIAZ4AFnZZrtCgAHtCMEGABffAAdChVVFAGfeABc+MfrUARMIEJLxgIADs=">
+☕
+</p>
+<p class="indented continued">
+This would be excessive, but we can'<!--'-->t actually even <em>see</em> <kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd> and the
+<a href="//lfs.nabijaczleweli.xyz/0017-twitter-export/#1326260988811898883">standard</a>
+remapping facilities are insufficiently expressive anyway.
+</p>
+<p class="indented continuing">
+There'<!--'-->s a <a href="//bugs.debian.org/1060023">2024-01-04 ITP</a> for keyd with no linked dsc,
+but it features on <a href="//mentors.debian.net/package/keyd/">mentors.d.n</a>,
+which, well, if I posted I could never show my face in public again
+(and it takes over a minute for one python program at 100% CPU on my <a href="//man.sr.ht/~nabijaczleweli/snappy-tools/measurements/2024-01-03-mt.md#bookworme5645ddr3-1600-quottartaquot">big host</a>,
+ so there's no way it'd ever finish building on a shitty Celeron),
+but this is what mentors is for, so let'<!--'-->s accept keyd is not in Debian:
+</p>
+<div class="bigcode continuing">
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> clone http://github.com/rvaiya/keyd</span></span>
+<span class="token output">Cloning into 'keyd'...
+warning: redirecting to https://github.com/rvaiya/keyd/
+Resolving deltas: 100% (2214/2214), done.
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> keyd/ /usr/local/src/</span></span>
+<span class="token output">[sudo] password for nabijaczleweli:
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">cd</span> /usr/local/src/keyd/</span></span>
+<span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> log -1</span></span>
+<span class="token output">commit dcbb68b12f71245121035b730b50872802a259b4
+Author: Takahashi, Naoki &lt;102382754+tkna91@users.noreply.github.com>
+Date:<!--"-->   <!--"-->Wed Dec 20 02:38:10 2023 +0900
+
+<!--"-->    <!--"-->Add description of KEYD_DEBUG
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token assign-left variable">CFLAGS</span><span class="token operator">=</span>-march<span class="token operator">=</span>native <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span>-flto <span class="token function">make</span></span></span>
+<span class="token output">mkdir bin
+cp scripts/keyd-application-mapper bin/
+</span><span class="token info punctuation">sed -e 's</span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash">@PREFIX@<span class="token comment">#/usr/local#' keyd.service.in > keyd.service</span>
+cc -DVERSION<span class="token operator">=</span><span class="token punctuation">\</span>"v2.4.3<span class="token punctuation">\</span> <span class="token punctuation">\</span><span class="token punctuation">(</span>dcbb68b<span class="token punctuation">\</span><span class="token punctuation">)</span><span class="token punctuation">\</span>" -I/usr/local/include -L/usr/local/lib -Wall -Wextra -Wno-unused -std<span class="token operator">=</span>c11 -DSOCKET_PATH<span class="token operator">=</span><span class="token punctuation">\</span>"/var/run/keyd.socket<span class="token punctuation">\</span>" -DCONFIG_DIR<span class="token operator">=</span><span class="token punctuation">\</span>"/etc/keyd<span class="token punctuation">\</span>" -DDATA_DIR<span class="token operator">=</span><span class="token punctuation">\</span>"/usr/local/share/keyd<span class="token punctuation">\</span>" -D_FORTIFY_SOURCE<span class="token operator">=</span><span class="token number">2</span> -D_DEFAULT_SOURCE -Werror<span class="token operator">=</span>format-security -march<span class="token operator">=</span>native -O3<!--"-->  <!--"-->src/*.c src/vkbd/uinput.c -lpthread -o bin/keyd -flto
+src/daemon.c: In <span class="token keyword">function</span> ‘add_listener’:
+src/daemon.c:84:33: warning: ignoring <span class="token builtin class-name">return</span> value of ‘write’ declared with attribute ‘warn_unused_result’ <span class="token punctuation">[</span>-Wunused-result<span class="token punctuation">]</span>
+<!--"-->   <!--"--><span class="token number">84</span> <span class="token operator">|</span><!--"-->                                 <!--"-->write<span class="token punctuation">(</span>con, layer-<span class="token operator">></span>type <span class="token operator">==</span> LT_LAYOUT ? <span class="token string">"/"</span> <span class="token builtin class-name">:</span> <span class="token string">"+"</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<!--"-->      <!--"--><span class="token operator">|</span><!--"-->                                 <!--"-->^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/daemon.c:85:33: warning: ignoring <span class="token builtin class-name">return</span> value of ‘write’ declared with attribute ‘warn_unused_result’ <span class="token punctuation">[</span>-Wunused-result<span class="token punctuation">]</span>
+<!--"-->   <!--"--><span class="token number">85</span> <span class="token operator">|</span><!--"-->                                 <!--"-->write<span class="token punctuation">(</span>con, layer-<span class="token operator">></span>name, strlen<span class="token punctuation">(</span>layer-<span class="token operator">></span>name<span class="token punctuation">))</span><span class="token punctuation">;</span>
+<!--"-->      <!--"--><span class="token operator">|</span><!--"-->                                 <!--"-->^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/daemon.c:86:33: warning: ignoring <span class="token builtin class-name">return</span> value of ‘write’ declared with attribute ‘warn_unused_result’ <span class="token punctuation">[</span>-Wunused-result<span class="token punctuation">]</span>
+<!--"-->   <!--"--><span class="token number">86</span> <span class="token operator">|</span><!--"-->                                 <!--"-->write<span class="token punctuation">(</span>con, <span class="token string">"<span class="token entity" title="\n">\n</span>"</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<!--"-->      <!--"--><span class="token operator">|</span><!--"-->                                 <!--"-->^~~~~~~~~~~~~~~~~~~
+nabijaczleweli@chrust:/usr/local/src/keyd$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token function">mkdir</span> -p /etc/keyd
+<span class="token function">mkdir</span> -p /usr/local/bin/
+<span class="token function">mkdir</span> -p /usr/local/share/keyd/
+<span class="token function">mkdir</span> -p /usr/local/share/keyd/layouts/
+<span class="token function">mkdir</span> -p /usr/local/share/man/man1/
+<span class="token function">mkdir</span> -p /usr/local/share/doc/keyd/
+<span class="token function">mkdir</span> -p /usr/local/share/doc/keyd/examples/
+<span class="token function">groupadd</span> keyd
+<span class="token function">install</span> -m755 bin/* /usr/local/bin/
+<span class="token function">install</span> -m644 docs/*.md /usr/local/share/doc/keyd/
+<span class="token function">install</span> -m644 examples/* /usr/local/share/doc/keyd/examples/
+<span class="token function">install</span> -m644 layouts/* /usr/local/share/keyd/layouts
+<span class="token function">install</span> -m644 data/*.1.gz /usr/local/share/man/man1/
+<span class="token function">install</span> -m644 data/keyd.compose /usr/local/share/keyd/
+nabijaczleweli@chrust:/usr/local/src/keyd$ getent group keyd
+keyd:x:1001:
+nabijaczleweli@chrust:/usr/local/src/keyd$ <span class="token function">sudo</span> delgroup keyd
+info: Removing group <span class="token variable"><span class="token variable">`</span>keyd' <span class="token punctuation">..</span>.
+nabijaczleweli@chrust:/usr/local/src/keyd$ <span class="token function">sudo</span> addgroup keyd
+info: Selecting GID from range <span class="token number">100</span> to <span class="token number">999</span> <span class="token punctuation">..</span>.
+info: Adding group <span class="token variable">`</span></span>keyd' <span class="token punctuation">(</span>GID <span class="token number">109</span><span class="token punctuation">)</span> <span class="token punctuation">..</span>.</span></span>
+<span class="token info punctuation"><!--"-->          <!--"-->root@chrust<span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span>zfs list -t snap -Ho name <span class="token operator">|</span> <span class="token function">grep</span> keyd<span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span> zfs <span class="token function">diff</span> -h <span class="token variable">$f</span><span class="token punctuation">;</span> <span class="token keyword">done</span></span></span>
+<span class="token output">M<!--"-->	<!--"-->/etc/
+M<!--"-->	<!--"-->/etc/group-
+M<!--"-->	<!--"-->/etc/gshadow-
+-<!--"-->	<!--"-->/etc/group
+-<!--"-->	<!--"-->/etc/gshadow
++<!--"-->	<!--"-->/etc/group
++<!--"-->	<!--"-->/etc/gshadow
++<!--"-->	<!--"-->/etc/keyd
+M<!--"-->	<!--"-->/usr/local/share
+M<!--"-->	<!--"-->/usr/local/share/man
+M<!--"-->	<!--"-->/usr/local/bin
+M<!--"-->	<!--"-->/usr/local/lib
+M<!--"-->	<!--"-->/usr/local/src
++<!--"-->	<!--"-->/usr/local/src/keyd<!--"-->			<!--"-->(&amp;c.)
++<!--"-->	<!--"-->/usr/local/lib/systemd
++<!--"-->	<!--"-->/usr/local/lib/systemd/system
++<!--"-->	<!--"-->/usr/local/lib/systemd/system/keyd.service
++<!--"-->	<!--"-->/usr/local/share/man/man1
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples
++<!--"-->	<!--"-->/usr/local/bin/keyd
++<!--"-->	<!--"-->/usr/local/bin/keyd-application-mapper
++<!--"-->	<!--"-->/usr/local/share/keyd/layouts/af
++<!--"-->	<!--"-->/usr/local/share/keyd/layouts/al
++<!--"-->	<!--"-->/usr/local/share/keyd/layouts/am<!--"-->	<!--"-->(and hundreds more, elided for brevity here)
++<!--"-->	<!--"-->/usr/local/share/keyd
++<!--"-->	<!--"-->/usr/local/share/keyd/layouts
++<!--"-->	<!--"-->/usr/local/share/doc
++<!--"-->	<!--"-->/usr/local/share/doc/keyd
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/CHANGELOG.md
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/DESIGN.md
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/capslock-esc-basic.conf
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/capslock-escape-with-vim-mode.conf
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/international-glyphs.conf
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/macos.conf
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/meta-esc.conf
++<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/nav-layer.conf
++<!--"-->	<!--"-->/usr/local/share/man/man1/keyd-application-mapper.1.gz
++<!--"-->	<!--"-->/usr/local/share/man/man1/keyd.1.gz
++<!--"-->	<!--"-->/usr/local/share/keyd/keyd.compose
+</span></pre></code>
+</div>
+<p class="continuing">
+and
+</p>
+<div class="bigcode continuation">
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> clone http://github.com/WeirdTreeThing/cros-keyboard-map</span></span>
+<span class="token output">Cloning into 'cros-keyboard-map'...
+warning: redirecting to https://github.com/WeirdTreeThing/cros-keyboard-map/
+Resolving deltas: 100% (26/26), done.
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">cd</span> cros-keyboard-map/</span></span>
+<span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> log -1</span></span>
+<span class="token output">commit 25b0e9c2a10fc834d414b427c40d572fb38cda14
+Author: WeirdTreeThing &lt;bradyn127@protonmail.com>
+Date:<!--"-->   <!--"-->Tue Dec 12 17:40:08 2023 -0500
+
+<!--"-->    <!--"-->Add support for Chimera Linux
+
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">grep</span> -n usr/bin/keyd install.sh</span></span>
+<span class="token output">26:if ! [ -f /usr/bin/keyd ]; then
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sed</span> -i <span class="token string">'s:.*usr/bin/keyd.*:if false; then:'</span> install.sh</span></span>
+<span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sed</span> -n 26p install.sh</span></span>
+<span class="token output">if false; then
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./install.sh</span></span>
+<span class="token output">Generating config
+Installing config
+[sudo] password for nabijaczleweli:
+Enabling keyd
+Created symlink /etc/systemd/system/sysinit.target.wants/keyd.service → /usr/local/lib/systemd/system/keyd.service.
+Installing libinput configuration
+Done
+</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> <span class="token environment constant">$PWD</span> /usr/local/src/</span></span>
+<span class="token info punctuation"><!--"-->          <!--"-->root@chrust<span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span>zfs list -t snap -Ho name <span class="token operator">|</span> <span class="token function">grep</span> keymap<span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span> zfs <span class="token function">diff</span> -h <span class="token variable">$f</span><span class="token punctuation">;</span> <span class="token keyword">done</span></span></span>
+<span class="token output">M<!--"-->	<!--"-->/etc/
++<!--"-->	<!--"-->/etc/libinput
++<!--"-->	<!--"-->/etc/libinput/local-overrides.quirks
+M<!--"-->	<!--"-->/etc/keyd
++<!--"-->	<!--"-->/etc/keyd/cros.conf
+M<!--"-->	<!--"-->/etc/systemd/system/sysinit.target.wants
++<!--"-->	<!--"-->/etc/systemd/system/sysinit.target.wants/keyd.service
+M<!--"-->	<!--"-->/usr/local/src
++<!--"-->	<!--"-->/usr/local/src/cros-keyboard-map<!--"-->		<!--"-->(&amp;c.)
+</span></pre></code>
+</div>
+<p class="indented continued">
+Now that we've installed a key- and mouse-logger, it doesn't actually work,
+Thankfully, there'<!--'-->s a monitoring interface in the form of <code>keyd monitor</code>;
+so, pressing all of the top row, then <kbd>🔍</kbd>, then the side buttons (filtered for down events):
+</p>
+<pre class="continuing"><!--
+-->device added: 0001:0001 AT Translated Set 2 keyboard (/dev/input/event0)
+device added: 04f3:00be Elan Touchpad (/dev/input/event7)
+device added: 06cb:1a10 SYTS7817:00 06CB:1A10 (/dev/input/event9)
+<a href="//github.com/rvaiya/keyd/issues/645">+1041019475 ms</a> AT Translated Set 2 keyboard 0001:0001 enter up
+<!--"-->+672 ms	AT Translated Set 2 keyboard  0001:0001  esc down<!--"-->
+<!--"-->+201 ms	AT Translated Set 2 keyboard  0001:0001  back down<!--"-->
+<!--"-->+192 ms	AT Translated Set 2 keyboard  0001:0001  forward down<!--"-->
+<!--"-->+149 ms	AT Translated Set 2 keyboard  0001:0001  refresh down<!--"-->
+<!--"-->+135 ms	AT Translated Set 2 keyboard  0001:0001  zoom down<!--"-->
+<!--"-->+155 ms	AT Translated Set 2 keyboard  0001:0001  scale down<!--"-->
+<!--"-->+128 ms	AT Translated Set 2 keyboard  0001:0001  brightnessdown down<!--"-->
+<!--"-->+107 ms	AT Translated Set 2 keyboard  0001:0001  brightnessup down<!--"-->
+<!--"-->+113 ms	AT Translated Set 2 keyboard  0001:0001  mute down<!--"-->
+<!--"-->+175 ms	AT Translated Set 2 keyboard  0001:0001  volumedown down<!--"-->
+<!--"-->+139 ms	AT Translated Set 2 keyboard  0001:0001  volumeup down<!--"-->
+<!--"-->+519 ms	AT Translated Set 2 keyboard  0001:0001  sleep down<!--"-->
+<!--"-->+191 ms	AT Translated Set 2 keyboard  0001:0001  leftmeta down<!--"-->
+<!--"-->+173 ms	AT Translated Set 2 keyboard  0001:0001  volumedown down<!--"-->
+<!--"-->+480 ms	AT Translated Set 2 keyboard  0001:0001  volumeup down<!--"--><!--
+--></pre>
+<p class="indented continuing">
+<code># <kbd>systemctl start keyd</kbd></code>
+</p>
+<pre class="continuing"><!--
+-->device added: 0fac:0ade keyd virtual keyboard (/dev/input/event14)
+device added: 0fac:1ade keyd virtual pointer (/dev/input/event15)
+<!--"-->+324 ms	keyd virtual keyboard  0fac:0ade  esc down<!--"-->
+<!--"-->+157 ms	keyd virtual keyboard  0fac:0ade  back down<!--"-->
+<!--"-->+141 ms	keyd virtual keyboard  0fac:0ade  forward down<!--"-->
+<!--"-->+124 ms	keyd virtual keyboard  0fac:0ade  refresh down<!--"-->
+<!--"-->+87 ms	keyd virtual keyboard  0fac:0ade  f11 down<!--"-->
+<!--"-->+104 ms	keyd virtual keyboard  0fac:0ade  scale down<!--"-->
+<!--"-->+139 ms	keyd virtual keyboard  0fac:0ade  brightnessdown down<!--"-->
+<!--"-->+129 ms	keyd virtual keyboard  0fac:0ade  brightnessup down<!--"-->
+<!--"-->+147 ms	keyd virtual keyboard  0fac:0ade  mute down<!--"-->
+<!--"-->+147 ms	keyd virtual keyboard  0fac:0ade  volumedown down<!--"-->
+<!--"-->+316 ms	keyd virtual keyboard  0fac:0ade  volumeup down<!--"-->
+<!--"-->+263 ms	keyd virtual keyboard  0fac:0ade  coffee down<!--"-->
+<!--"-->+221 ms	keyd virtual keyboard  0fac:0ade  leftmeta down<!--"-->
+<!--"-->+773 ms	keyd virtual keyboard  0fac:0ade  volumedown down<!--"-->
+<!--"-->+339 ms	keyd virtual keyboard  0fac:0ade  volumeup down<!--"--><!--
+--></pre>
+<p class="indented continuation">
+So the only thing that changed was <kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd> into F11,
+And the volume buttons on the side are seemingly indistinguishable from <kbd>🔉</kbd>/<kbd>🔊</kbd>.
+</p>
+<p class="indented continued">
+After a debugging session where I thought my keyd was broken (it <a href="//github.com/rvaiya/keyd/pull/646">had been</a>, but unrelatedly),
+it turns out the generated mapping is just bonkers.
+I wasn'<!--'-->t gonna include it here because it differs per-model, but the generated <samp class="path">/etc/keyd/cros.conf</samp> is:
+</p>
+<div class="bigcode continuing">
+<pre class="language-ini"><code class="language-ini"><span class="token selector">[ids]</span>
+0001:0001
+
+<span class="token selector">[main]</span>
+<span class="token constant">f1</span> <span class="token attr-value"><span class="token punctuation">=</span> back</span>
+<span class="token constant">f2</span> <span class="token attr-value"><span class="token punctuation">=</span> forward</span>
+<span class="token constant">f3</span> <span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
+<span class="token constant">f4</span> <span class="token attr-value"><span class="token punctuation">=</span> f11</span>
+<span class="token constant">f5</span> <span class="token attr-value"><span class="token punctuation">=</span> scale</span>
+<span class="token constant">f6</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
+<span class="token constant">f7</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
+<span class="token constant">f8</span> <span class="token attr-value"><span class="token punctuation">=</span> mute</span>
+<span class="token constant">f9</span> <span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
+<span class="token constant">f10</span> <span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+
+<span class="token constant">back</span> <span class="token attr-value"><span class="token punctuation">=</span> back</span>
+<span class="token constant">forward</span> <span class="token attr-value"><span class="token punctuation">=</span> forward</span>
+<span class="token constant">refresh</span> <span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
+<span class="token constant">zoom</span> <span class="token attr-value"><span class="token punctuation">=</span> f11</span>
+<span class="token constant">scale</span> <span class="token attr-value"><span class="token punctuation">=</span> scale</span>
+<span class="token constant">brightnessdown</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
+<span class="token constant">brightnessup</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
+<span class="token constant">mute</span> <span class="token attr-value"><span class="token punctuation">=</span> mute</span>
+<span class="token constant">volumedown</span> <span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
+<span class="token constant">volumeup</span> <span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+
+<span class="token constant">f13</span><span class="token attr-value"><span class="token punctuation">=</span>coffee</span>
+<span class="token constant">sleep</span><span class="token attr-value"><span class="token punctuation">=</span>coffee</span>
+
+<span class="token selector">[meta]</span>
+<span class="token constant">f1</span> <span class="token attr-value"><span class="token punctuation">=</span> f1</span>
+<span class="token constant">f2</span> <span class="token attr-value"><span class="token punctuation">=</span> f2</span>
+<span class="token constant">f3</span> <span class="token attr-value"><span class="token punctuation">=</span> f3</span>
+<span class="token constant">f4</span> <span class="token attr-value"><span class="token punctuation">=</span> f4</span>
+<span class="token constant">f5</span> <span class="token attr-value"><span class="token punctuation">=</span> f5</span>
+<span class="token constant">f6</span> <span class="token attr-value"><span class="token punctuation">=</span> f6</span>
+<span class="token constant">f7</span> <span class="token attr-value"><span class="token punctuation">=</span> f7</span>
+<span class="token constant">f8</span> <span class="token attr-value"><span class="token punctuation">=</span> f8</span>
+<span class="token constant">f9</span> <span class="token attr-value"><span class="token punctuation">=</span> f9</span>
+<span class="token constant">f10</span> <span class="token attr-value"><span class="token punctuation">=</span> f10</span>
+
+<span class="token constant">back</span> <span class="token attr-value"><span class="token punctuation">=</span> f1</span>
+<span class="token constant">forward</span> <span class="token attr-value"><span class="token punctuation">=</span> f2</span>
+<span class="token constant">refresh</span> <span class="token attr-value"><span class="token punctuation">=</span> f3</span>
+<span class="token constant">zoom</span> <span class="token attr-value"><span class="token punctuation">=</span> f4</span>
+<span class="token constant">scale</span> <span class="token attr-value"><span class="token punctuation">=</span> f5</span>
+<span class="token constant">brightnessdown</span> <span class="token attr-value"><span class="token punctuation">=</span> f6</span>
+<span class="token constant">brightnessup</span> <span class="token attr-value"><span class="token punctuation">=</span> f7</span>
+<span class="token constant">mute</span> <span class="token attr-value"><span class="token punctuation">=</span> f8</span>
+<span class="token constant">volumedown</span> <span class="token attr-value"><span class="token punctuation">=</span> f9</span>
+<span class="token constant">volumeup</span> <span class="token attr-value"><span class="token punctuation">=</span> f10</span>
+
+<span class="token selector">[alt]</span>
+<span class="token constant">backspace</span> <span class="token attr-value"><span class="token punctuation">=</span> delete</span>
+<span class="token constant">brightnessdown</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumdown</span>
+<span class="token constant">brightnessup</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumup</span>
+<span class="token constant">f6</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumdown</span>
+<span class="token constant">f7</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumup</span>
+
+<span class="token selector">[control]</span>
+<span class="token constant">f5</span> <span class="token attr-value"><span class="token punctuation">=</span> print</span>
+<span class="token constant">scale</span> <span class="token attr-value"><span class="token punctuation">=</span> print</span>
+
+<span class="token selector">[control+alt]</span>
+<span class="token constant">backspace</span> <span class="token attr-value"><span class="token punctuation">=</span> C-A-delete</span>
+</pre></code>
+</div>
+<p class="continuation">
+(Rember that lines that start with "<code>f<var>123</var> =</code>" are no-ops, since the keyboard by default generates the special keys.)
+</p>
+<p class="indented continued">
+Yes: this has the ☕, but also identity-maps everything, and you unfuck it by holding <kbd>🔍</kbd> (the objectively-incorrect mode).
+Except <kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd>, which is in the would-be-F4 position, but it'<!--'-->s mapped to F11.
+<kbd>🔒</kbd> is mapped to ☕ despite being where Delete usually is, and Delete is achieved with <kbd>alt</kbd>+<kbd>⟵</kbd>.
+</p>
+<p class="indented continued">
+I feel like I could do better with
+</p>
+<div class="bigcode continuing">
+<pre class="language-ini"><code class="language-ini"><span class="token selector">[ids]</span>
+0001:0001
+
+<span class="token selector">[main]</span>
+<span class="token comment"># ←</span>
+<span class="token constant">back</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f1</span>
+<span class="token comment"># →</span>
+<span class="token constant">forward</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f2</span>
+<span class="token comment"># ⟳</span>
+<span class="token constant">refresh</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f3</span>
+<span class="token comment"># tableau</span>
+<span class="token constant">zoom</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f4</span>
+<span class="token comment"># fast rectangle</span>
+<span class="token constant">scale</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f5</span>
+<span class="token comment"># small ☀️</span>
+<span class="token constant">brightnessdown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f6</span>
+<span class="token comment"># ☀️</span>
+<span class="token constant">brightnessup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f7</span>
+<span class="token comment"># 🔇</span>
+<span class="token constant">mute</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f8</span>
+<span class="token comment"># 🔉</span>
+<span class="token constant">volumedown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f9</span>
+<span class="token comment"># 🔊</span>
+<span class="token constant">volumeup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f10</span>
+
+<span class="token comment"># 🔒</span>
+<span class="token constant">sleep</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> delete</span>
+
+<span class="token comment"># 🔍 remains as leftmeta</span>
+
+<span class="token selector">[meta]</span>
+<span class="token comment"># tableau</span>
+<span class="token constant">zoom</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> print</span>
+
+<span class="token constant">back</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> back</span>
+<span class="token constant">forward</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> forward</span>
+<span class="token constant">refresh</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
+<span class="token constant">scale</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> scale</span>
+
+<span class="token constant">brightnessdown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
+<span class="token constant">brightnessup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
+<span class="token constant">mute</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> mute</span>
+<span class="token constant">volumedown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
+<span class="token constant">volumeup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+
+<span class="token constant">sleep</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> sleep</span>
+</pre></code>
+</div>
+<p class="continuing">
+<kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd> looks the most like a screen, hence it'<!--'-->s mapped to PrtSc.
+Specifically <kbd><img class="iconic dark-invert" alt="hollow rectangle, to its right are two vertical stripes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAABy0lEQVR42u2ZX0rDQBDGA9L2RU+gGAURr6NNC1JvoK/NHdpXvYFFMIleQEofPISIDxb0BOpDW4Q4K/NQprvZJcn+gc3ARynMfskvZDezs0Ge54GPChrwBtxTcEG0QX3QHegdtATlJfUNekGvPnrXHnWAn4LeKoDKxLzPXALfAo00AlON8Jo0DkFTfFOm+F+aUwXcJPQ6PI0ZyXlWySkLHhXcHJvf96Bz0IFkjm6DTjA3UVwbIuJBx/xyrrORUwacgXwIbuoRdFRh6rGxDxLwT/IweTkbU5qqDPiAY8Seclzj2hOjpwj+wgZ4yjGKNXxx4gLwzAb4nJikgb5IBWBzG+ALspDtaQTfFSx4Sxvg6waTQH/cSuCsgEcGwLsugocGwEMXwTsGwNsugu/4Cn7s66vu7eLm1efsy3ABs3ClgHklJolG8MSlkpVXPw81QA9d26SItqVXNUJfurgtLWpEZDU0IlKFRkTHBjiLnqT1NMHPEGs9tQpAW5jTxTEqraeeDEonOIuxhWbjWAVKNzhr9V4bhL4RtJeNNRt5lZXuA4WiCvGJ5M9Ucuo8Qhrg4saOkFYVQFfokaGn7AhpH8F+8DdUyWkODRvwBvxffz5Mo4mV7gMcAAAAAElFTkSuQmCC"></kbd>, but also <kbd>←</kbd>, <kbd>→</kbd>, and <kbd>⟳</kbd> are prime real estate to mapping something useful.
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd><img class="iconic dark-invert" alt="hollow rectangle, to its right are two vertical stripes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAABy0lEQVR42u2ZX0rDQBDGA9L2RU+gGAURr6NNC1JvoK/NHdpXvYFFMIleQEofPISIDxb0BOpDW4Q4K/NQprvZJcn+gc3ARynMfskvZDezs0Ge54GPChrwBtxTcEG0QX3QHegdtATlJfUNekGvPnrXHnWAn4LeKoDKxLzPXALfAo00AlON8Jo0DkFTfFOm+F+aUwXcJPQ6PI0ZyXlWySkLHhXcHJvf96Bz0IFkjm6DTjA3UVwbIuJBx/xyrrORUwacgXwIbuoRdFRh6rGxDxLwT/IweTkbU5qqDPiAY8Seclzj2hOjpwj+wgZ4yjGKNXxx4gLwzAb4nJikgb5IBWBzG+ALspDtaQTfFSx4Sxvg6waTQH/cSuCsgEcGwLsugocGwEMXwTsGwNsugu/4Cn7s66vu7eLm1efsy3ABs3ClgHklJolG8MSlkpVXPw81QA9d26SItqVXNUJfurgtLWpEZDU0IlKFRkTHBjiLnqT1NMHPEGs9tQpAW5jTxTEqraeeDEonOIuxhWbjWAVKNzhr9V4bhL4RtJeNNRt5lZXuA4WiCvGJ5M9Ucuo8Qhrg4saOkFYVQFfokaGn7AhpH8F+8DdUyWkODRvwBvxffz5Mo4mV7gMcAAAAAElFTkSuQmCC"></kbd> even works to switch to VT4, and <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>🔒</kbd> to salute!
+</p>
+<p class="indented continuing">
+With this, the optimal <samp class="path">/etc/systemd/logind.conf</samp> becomes just the usual
+</p>
+<pre class="continuation"><!--
+ -->[Login]
+HandlePowerKey=hibernate<!--
+ --></pre>
+<p class="indented continued">
+It'<!--'-->s also tempting to solve the Home/End/PgUp/PgDn situation here instead of with xmodmap,
+so appending this to the updated <samp class="path">/etc/keyd/cros.conf</samp> works like one'<!--'-->d expect
+(but <code>[meta]</code> is better for i3 usage;
+ also note that you can'<!--'-->t make another file and have it patch the big one, because at most one file can match each device):
+</p>
+<div class="bigcode continuing">
+<pre class="language-ini"><code class="language-ini"><span class="token selector">[alt]</span>
+<span class="token constant">left</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> home</span>
+<span class="token constant">right</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> end</span>
+<span class="token constant">up</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> pageup</span>
+<span class="token constant">down</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> pagedown</span>
+</pre></code>
+</div>
+<p class="indented">
+Overall, low value-add factor here.
+The quirks file is nice though.
+Let's hope it's upstreamed before it breaks,
+like upstream <a href="//wayland.freedesktop.org/libinput/doc/latest/device-quirks.html#device-quirks-local">guarantees it will</a>.
+</p>
+<h5 id="installing-post-install-linux-celes-post-install-workaround" class="continued"><a class="hash-link" href="#installing-post-install-linux-celes-post-install-workaround">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html#celes-post-install-workaround-1">CELES Post Install Workaround <i class="dark-invert fa fa-external-link-alt"></i></a></h5>
+<blockquote class="continuing">
+If you experience issues in applications such as Parsec, or […]
+</blockquote>
+<p class="continuation">
+Okay but that'<!--'-->s <em>so</em> true though?
+</p>
+<h3 id="installing-using-ectool" class="continued"><a class="hash-link" href="#installing-using-ectool">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/ectool.html">Using Ectool <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
+<blockquote class="continuing">
+<tt>ectool</tt> is a utility that is used to interface with the ChromeOS Embedded Controller.
+It is used to communicate with the embedded controller from userspace and vice versa.
+</blockquote>
+<p class="continuation">
+Boy I sure hope to use this program to communicate with the embedded controller!
+I would love to communicate with the ChromeOS Embedded Controller through this program.
+</p>
+<p class="indented">
+Also: no link and it'<!--'-->s not in by that name in Debian.
+Is it the same one as <samp class="path">/sbin/ectool</samp> from <a href="//packages.debian.org/bookworm/amd64/coreboot-utils/filelist">coreboot-utils</a>?
+Unknowable.
+</p>
+<h2 id="conclusions" class="continued"><a class="hash-link" href="#conclusions">#</a> Conclusions</h2>
+<h3 id="conclusions-pog-moments" class="continuing"><a class="hash-link" href="#conclusions-pog-moments">#</a> pog moments</h3>
+<ul style="padding-left: 0;">
+  <li>normal computer</li>
+  <li>normal debian just works</li>
+  <li>overall a sensible walk-through</li>
+  <li>privacy preserved (ChromeOS didn'<!--'-->t ever see the network)</li>
+  <li>fun bunny on POST</li>
+</ul>
+<h3 id="conclusions-cringe-moments" class="continued"><a class="hash-link" href="#conclusions-cringe-moments">#</a> cringe-ass nae-nae baby moments</h3>
+<ul style="padding-left: 0;">
+  <li>PXE-booting from a USB-C dongle doesn'<!--'-->t work</li>
+  <li>small patch and a few round-trips required to actually ensure privacy is preserved</li>
+  <li>the recommended keyboard mapping is so bizarre I straight-up thought keyd was broken</li>
+  <li>Chrultrabook stance is that users <em>should</em> give up their privacy to make following the guide more convenient (this is used as a justification for a <a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521/6">mild editorial oddity</a> and the impetus to retain it is stronger than to simplify the page)</li>
+  <li>Chrultrabook and its upstreams appear allergic to documentation in the text and actively avoid providing it when questioned</li>
+  <li>this extends to Chrultrabook authors posting <a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521/14">misinformation</a> at least <a href="//101010.pl/@elly@donotsta.re/111722941614342831">twice</a> (<a href="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/734/605/473/374/473/original/20cf469a852de065.png">screenshot</a>), presumably for this reason</li>
+  <li>were I to guess, this is also probably why they consider users <a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521/4">"not technical enough"</a> 🤢 to follow a longer thing they may understand than a magical one-liner</li>
+  <li>forum'<!--'-->s <a href="//101010.pl/@nabijaczleweli/111722108722210068">fucking</a> <a href="//101010.pl/@nabijaczleweli/111723601116129102">Discourse</a></li>
+  <li>I ran out of <a href="//101010.pl/@nabijaczleweli/111733977710166096">words</a> to put <a href="//101010.pl/@nabijaczleweli/111734016113409806">links</a> on for the last one</li>
+  <li>I liked her <a href="//media.ccc.de/v/37c3-11929-turning_chromebooks_into_regular_laptops">talk</a> but elly <a href="//101010.pl/@elly@donotsta.re/111734258473806402">threatened to ban me</a> for
+      <blockquote class="continuing">
+        Shitting all over the non-profit project, documentation written by community and mentality "I know better than you" is exactly the kind of toxicity we don'<!--'-->t want in our community.
+      </blockquote>
+      ; one will do well to note we've interacted once on the forum and at most twice off the forum (of her accord) and both of those went fine. Odd behaviour, given that she's the one with the misinformation above, and, well, you've seen this post and you can click through to my <a href="//101010.pl/@nabijaczleweli/111721710968221669">mastussy thread</a> and the <a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521">forum post</a>, none of these are particularly "shitting on", much less toxic. I don't even think I exhibit that mentality, really. Maybe this is a language barrier (we're both polish), seeing as I haven't gotten an actual warning or anything before (except for automatic Discourse bullshit), and another user with admin powers <a href="//101010.pl/@BluRaf@donotsta.re/111734014889040333">gladly unblocked me</a> (also unprompted and of his own volition) more than once, well.</li>
+</ul>
+<h3 id="conclusions-funny-moments" class="continued"><a class="hash-link" href="#conclusions-funny-moments">#</a> family guy funny moments</h3>
+<ul style="padding-left: 0;">
+  <li>guide sections are randomly-cased</li>
+  <li><a href="//forum.chrultrabook.com/t/help-me-please-i-buyed-incorrect-drivers/218">paid drivers</a> meme real</li>
+</ul>
+<p class="indented">
+Most of the issues out-lined above have been <a href="//forum.chrultrabook.com/t/general-mild-documentation-oddities-rollup/521">forwarded</a>.
+That is also the reason for most of them having been discovered.
+</p>
+<p class="indented">
+A good bug report never goes unpunished.
+</p>
+<p> 
+ <br /> 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
+ or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
+ </p>
+</span>
+<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
+ <hr /> 
+ <span id="word_count">0</span> words, 
+ <span id="syllable_count">0</span> syllables, 
+ <span id="character_count">0</span> characters. 
+ </span>
+<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
+ Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
+ code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
+ <hr /> 
+ This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, 
+ and contribute and/or yell at me there. 
+ <hr /> 
+ Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
+ <hr /> 
+ Automatically generated with Clang 16'<!--'-->s C preprocessor on 11.01.2024 03:23:29 UTC from 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp">src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1130855">See job on builds.sr.ht</a>. 
+ <hr /> 
+ <a href="/content/feed.xml">RSS feed</a> 
+ </body> 
+ </html>
