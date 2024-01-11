@@ -9,7 +9,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../writing/writing.h"
-#include "../fontawesome.h"
 #include "../common.h"
 #include "blogn_t.h"
 
@@ -23,7 +22,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define COMMENT <!--"-->  <!--"-->#
 
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/bigtable.css" rel="stylesheet" />
+#define STYLESHEETS BLOGN_T_STYLESHEETS <link href="/content/assets/bigtable.css" rel="stylesheet" />
 
 
 BOILERPLATE(010. tme booting SunOS 3 on Sun-2 in 2023 — blognꞌt, 010. tme booting SunOS 3 on Sun-2 in 2023, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)

@@ -8,7 +8,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../writing/writing.h"
-#include "../fontawesome.h"
 #include "../common.h"
 #include "blogn_t.h"
 
@@ -22,7 +21,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #undef linux
 #endif
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
+#define STYLESHEETS BLOGN_T_STYLESHEETS <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
 
 
 BOILERPLATE(011. pipe exclusion with splice() under Linux — blognꞌt, 011. pipe exclusion with splice() under Linux, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
