@@ -103,7 +103,7 @@
     Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a                               \
     sending a                                                                                                                                       \
     <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate">                    \
-      <svg class="dark-invert" style="position: absolute; top: 3px;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg>                  \
+      <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> \
       <span style="margin-left: 19px;">buck</span>                                                                                                  \
       <span style="font-size: 0;">liberapay donate</span>                                                                                           \
     </a> or                                                                                                                                         \
