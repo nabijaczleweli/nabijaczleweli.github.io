@@ -17,11 +17,12 @@
 
 #define BLOGN_T_HEADING(...)  MAIN_HEADING_ALT(2, ., <samp>__VA_ARGS__</samp>)  FORCED_NEWLINE \
                               <h4 id="post-date"><span style="white-space: nowrap">POST_DATE</span>POST_POST_DATE</h4>
-#define BLOGN_T_FOOTER()                                                                                                                                             \
-<p>                                                                                                                                                   FORCED_NEWLINE \
-	<br />                                                                                                                                              FORCED_NEWLINE \
-	Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a>  FORCED_NEWLINE \
-		or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue!                                                   FORCED_NEWLINE \
+#define BLOGN_T_FOOTER()                                                                                                                                 \
+<p>                                                                                                                                       FORCED_NEWLINE \
+	<br />                                                                                                                                  FORCED_NEWLINE \
+	Nit-pick? Correction? Improvement? Annoying? Cute? Anything?                                                                            FORCED_NEWLINE \
+  <a href=STR(mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on FILE_NAME)>Mail</a>,                                              FORCED_NEWLINE \
+	<a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>!  FORCED_NEWLINE \
 </p>
 
 
