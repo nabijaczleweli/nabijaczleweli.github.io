@@ -32,7 +32,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define HEADING_CHRULTRA(level, hid, sect, ...) HEADING_CHRULTRA_S(level, hid, , sect, __VA_ARGS__)
 
 
-BOILERPLATE(012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt, 012. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) with Intel Celeron N4000, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt, 012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) with Intel Celeron N4000, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
@@ -117,13 +117,16 @@ dl.linear dd:last-child::after {
   content: ".";
 }
 
-div#contents a {
+ol#contents a {
   display: block;
 }
-div#contents div {
+ol#contents, ol#contents ol {
+  list-style-type: none;
+}
+ol#contents ol {
   padding-left: 1em;
 }
-.heading-ref, div#contents a {
+.heading-ref, ol#contents a {
   font-family: "Merriweather", serif; /* same as h1 &c. */
   font-size: 0.95em; /* unscale a bit*/
 }
@@ -266,69 +269,69 @@ lists this device as explicitly supported as
 <p class="continuing">
 so this has been done before and this is thus largely a <a href="/content/recipes/">replication post</a>, mirroring the chrultrabook documentation structure:
 </p>
-<div id="contents" class="continuation" style="padding-left: 1em;">
+<ol id="contents" class="continuation" style="padding-left: 1em;">
   <a href="#firmware">Firmware</a>
-  <div>
-    <a href="#firmware-finding-system-info">Finding System Info</a>
-    <a href="#firmware-known-issues">Known Issues</a>
-    <div>
-      <a href="#firmware-known-issues-firmware">Firmware</a>
-    </div>
-    <a href="#firmware-enabling-developer-mode">Enabling developer mode</a>
-    <a href="#firmware-disabling-write-protect">Disabling write protect</a>
-    <div>
-      <a href="#firmware-types-of-firmware">Types of Firmware</a>
-      <div>
-        <a href="#firmware-types-of-firmware-RW_LEGACY">RW_LEGACY</a>
-        <a href="#firmware-types-of-firmware-UEFI">(UEFI) Full ROM</a>
-      </div>
-    </div>
-    <a href="#firmware-disabling-write-protect2">(Back to) Disabling write protect</a>
-    <div>
-      <a href="#firmware-disabling-write-protect-unplugging-the-battery">Disabling write protect via Battery</a>
-      <div>
-        <a href="#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery">Step 1: Open the device and disconnect the battery</a>
-        <a href="#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash">Step 2: Boot using AC power, and flash.</a>
-      </div>
-    </div>
-    <a href="#firmware-flashing-custom-firmware">Flashing Custom Firmware</a>
-  </div>
-  <a href="#installing">Installing an OS</a>
-  <div>
-    <a href="#installing-known-issues">Known Issues</a>
-    <div>
-      <a href="#installing-known-issues-linux">Linux</a>
-    </div>
-    <a href="#installing-making-a-bootable-usb">Making a Bootable USB</a>
-    <div>
-      <a href="#installing-making-a-bootable-usb-flashing-with-dd-linux-macos">Flashing with dd (Linux/macOS)</a>
-    </div>
-    <a href="#installing-installing-linux">Installing Linux</a>
-    <div>
-      <a href="#installing-installing-linux-recommended-distributions">Recommended Distributions</a>
-      <a href="#installing-installing-linux-installation">Installation</a>
-      <a href="#installing-installing-linux-fixing-audio">Fixing Audio</a>
-      <div>
-        <a href="#installing-installing-linux-fixing-audio2">Fixing Audio</a>
-      </div>
-    </div>
-    <a href="#installing-post-install">Post Install</a>
-    <div>
-      <a href="#installing-post-install-linux">Linux</a>
-      <div>
-        <a href="#installing-post-install-linux-general-qol-fixes">General QOL Fixes</a>
-        <a href="#installing-post-install-linux-celes-post-install-workaround">CELES Post Install Workaround</a>
-      </div>
-    </div>
-    <a href="#installing-using-ectool">Using Ectool</a>
-  </div>
-  <a href="#conclusions">Conclusions</a>
-  <div>
-    <a href="#conclusions-pog-moments">pog moments</a>
-    <a href="#conclusions-cringe-moments">cringe-ass nae-nae baby moments</a>
-    <a href="#conclusions-funny-moments">family guy funny moments</a>
-  </div>
-</div>
+  <ol>
+    <li><a href="#firmware-finding-system-info">Finding System Info</a></li>
+    <li><a href="#firmware-known-issues">Known Issues</a></li>
+    <ol>
+      <li><a href="#firmware-known-issues-firmware">Firmware</a></li>
+    </ol>
+    <li><a href="#firmware-enabling-developer-mode">Enabling developer mode</a></li>
+    <li><a href="#firmware-disabling-write-protect">Disabling write protect</a></li>
+    <ol>
+      <li><a href="#firmware-types-of-firmware">Types of Firmware</a></li>
+      <ol>
+        <li><a href="#firmware-types-of-firmware-RW_LEGACY">RW_LEGACY</a></li>
+        <li><a href="#firmware-types-of-firmware-UEFI">(UEFI) Full ROM</a></li>
+      </ol>
+    </ol>
+    <li><a href="#firmware-disabling-write-protect2">(Back to) Disabling write protect</a></li>
+    <ol>
+      <li><a href="#firmware-disabling-write-protect-unplugging-the-battery">Disabling write protect via Battery</a></li>
+      <ol>
+        <li><a href="#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery">Step 1: Open the device and disconnect the battery</a></li>
+        <li><a href="#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash">Step 2: Boot using AC power, and flash.</a></li>
+      </ol>
+    </ol>
+    <li><a href="#firmware-flashing-custom-firmware">Flashing Custom Firmware</a></li>
+  </ol>
+  <li><a href="#installing">Installing an OS</a></li>
+  <ol>
+    <li><a href="#installing-known-issues">Known Issues</a></li>
+    <ol>
+      <li><a href="#installing-known-issues-linux">Linux</a></li>
+    </ol>
+    <li><a href="#installing-making-a-bootable-usb">Making a Bootable USB</a></li>
+    <ol>
+      <li><a href="#installing-making-a-bootable-usb-flashing-with-dd-linux-macos">Flashing with dd (Linux/macOS)</a></li>
+    </ol>
+    <li><a href="#installing-installing-linux">Installing Linux</a></li>
+    <ol>
+      <li><a href="#installing-installing-linux-recommended-distributions">Recommended Distributions</a></li>
+      <li><a href="#installing-installing-linux-installation">Installation</a></li>
+      <li><a href="#installing-installing-linux-fixing-audio">Fixing Audio</a></li>
+      <ol>
+        <li><a href="#installing-installing-linux-fixing-audio2">Fixing Audio</a></li>
+      </ol>
+    </ol>
+    <li><a href="#installing-post-install">Post Install</a></li>
+    <ol>
+      <li><a href="#installing-post-install-linux">Linux</a></li>
+      <ol>
+        <li><a href="#installing-post-install-linux-general-qol-fixes">General QOL Fixes</a></li>
+        <li><a href="#installing-post-install-linux-celes-post-install-workaround">CELES Post Install Workaround</a></li>
+      </ol>
+    </ol>
+    <li><a href="#installing-using-ectool">Using Ectool</a></li>
+  </ol>
+  <li><a href="#conclusions">Conclusions</a></li>
+  <ol>
+    <li><a href="#conclusions-pog-moments">pog moments</a></li>
+    <li><a href="#conclusions-cringe-moments">cringe-ass nae-nae baby moments</a></li>
+    <li><a href="#conclusions-funny-moments">family guy funny moments</a></li>
+  </ol>
+</ol>
 
 
 HEADING_CHRULTRA_S(2, firmware, class="continued", firmware/, Firmware)
