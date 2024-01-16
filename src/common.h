@@ -110,7 +110,7 @@
     <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way                                                \
     if my software helped you in some significant way?                                                                               FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
-    Automatically generated with COMPILER_NAME COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from                           FORCED_NEWLINE \
+    Compiled with COMPILER_NAME COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from                                          FORCED_NEWLINE \
     <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a>.          FORCED_NEWLINE \
     CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
