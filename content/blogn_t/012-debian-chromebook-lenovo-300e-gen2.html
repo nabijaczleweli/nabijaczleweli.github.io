@@ -51,10 +51,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <link href="/content/assets/heading.css" rel="stylesheet" /> 
  <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
  <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
+ <link href="/content/assets/contents.css" rel="stylesheet" /> 
  <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
  <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
- <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
  <script type="text/javascript" src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
@@ -131,7 +131,16 @@ tt {
 <span class="roboto writing">
 <p></p>
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Mon, 08 Jan 2024 16:06:34 +0100</span></h4>
+ <h4 id="post-date"><span style="white-space: nowrap">Mon, 08 Jan 2024 16:06:34 +0100</span></h4> 
+ <!--BLOGN_T_TOC_PLACEHOLDER-->
+<div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
+<ol>
+<li><a href='#jpeg'>peep da nose cam</a></li>
+<li><a href='#jailbreak'>Save me from chromium (chrome os (chromium os(?)))</a></li>
+<li><a href='#HFBITLAND'>Take me to <span class="smallcaps">hfbitland</span></a></li>
+<li><a href='#kms'>fuckin kms i s'<!--'-->pose</a></li>
+</ol>
+</details></div>
 <p class="indented continued">
 On 2024-01-04 I bought the titular laptop for 120+11.6zł (100+10zł sometimes available, 70+8.5zł for one with a busted-ass screen; resp. 30.26€, 25.29€, 18.05€; all well under 20kg of kefir)
 because it <a href="//www.lenovo.com/us/en/p/laptops/lenovo/lenovo-edu-chromebooks/lenovo-300e-chromebook-2nd-gen-mtk/88elc1s9988#tech_specs">has</a> a <a href="//www.mediatek.com/products/tablets/mt8173">MediaTek MT8173</a> (which Lenovo calls "8713<strong>C</strong>"), which <a href="//allegrolokalnie.pl/oferta/lenovo-chromebook-300e-ap7">is arm64</a> (image 5),
@@ -145,7 +154,7 @@ it clearly says "<span lang="pl">Instrukcje: crc32</span>", which is great becau
 </p>
 <p class="indented continued">
 According to a page under the authority of "sites.google.com/a/chromium.org" (what does this mean?) page titled
-<a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices"><em>Chromium OS > <b>Developer Information for Chrome OS Devices</b></em></a>
+<a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices"><cite>Chromium OS > <b>Developer Information for Chrome OS Devices</b></cite></a>
 (what the fuck does <em>that</em> mean?)
 this machine is:
 </p>
@@ -187,7 +196,7 @@ MO:P2N0B960200M Factory ID: HFBITLAND" src="/content/assets/blogn_t/012.01-label
 This is largely precipitated by <a href="//media.ccc.de/v/37c3-11929-turning_chromebooks_into_regular_laptops">the chrultrabook talk</a>,
 but naturally, this being ARM, it'<!--'-->s yet impossible to install Debian.
 This is more <a href="//wiki.debian.org/InstallingDebianOn/Samsung/ARMChromebook">InstallingDebianOn/Samsung/ARMChromebook</a>
-— "running debian on the chromebook from the μ<span class="smallcaps">sd</span> card" —
+— "running debian on the chromebook from the μ<small>SD</small> card" —
 than an installation.
 This is why I dastardlily omitted "installing" from the title,
 <a href="//archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook-2">neither</a> article for my first prospective pick giving me the same courtesy.
@@ -226,7 +235,7 @@ Of course, the <a href="//sites.google.com/a/chromium.org/dev/chromium-os/develo
 "enter recovery and then developer mode".
 So to enter recovery you hold <kbd>esc</kbd> and <kbd>⟳</kbd> (natch) and click the power button and
 </p>
-<a href="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"><img class="continuing" alt="Title line: chrome, English; Main body: Please insert a recovery USB stick or SD card.; Footer: For help visit https://google.com/chromeos/recovery  Model PHASER360 D4J-B3K-B4Q-H6B-52A-Y2B-A47" src="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"></a> <!-- DSCN0541cc.JPG -->
+<a href="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"><img class="continuing" alt="Title line: chrome, English; Main body: Please insert a recovery USB stick or SD card.; Footer: For help visit https://google.com/chromeos/recovery  Model PHASER360 D4J-B3K-B4Q-H6V-52A-Y2B-A47" src="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"></a> <!-- DSCN0541cc.JPG -->
 <p class="continuation">
 That'<!--'-->s not Sycamore360 now, is it? What does that mean.
 Also, what's that card? It sure as hell ain't SD. It looks like an MMC-but-I-forgor-💀-how-many-pins-it-has, but.
@@ -348,14 +357,15 @@ but one has a Celeron N4000 and the other an MT8173.
 <a href="//101010.pl/@nabijaczleweli/111715350612107659"><img class="continuation" alt="the chromebook on its side. both halves have holes out (two USB 3s, two USB-Cs, one of which charge-capable, one micro-SD card, one kensington lock, and volume up/down and power buttons), implying both halves are the keyboard half" src="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/715/765/596/303/398/original/947dc76b7942ba6b.jpeg"></a> <!-- DSCN0539+40.JPG -->
 <p> 
  <br /> 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? Don'<!--'-->t hesitate to <a href="mailto:nabijaczleweli@nabijaczleweli.xyz">post</a> 
- or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a> an issue! 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html.pp">Mail</a>, 
+ <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p>
 </span>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
- <span id="syllable_count">0</span> syllables, 
+ 
  <span id="character_count">0</span> characters. 
  </span>
 <!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
@@ -367,9 +377,9 @@ but one has a Celeron N4000 and the other an MT8173.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Automatically generated with Clang 16'<!--'-->s C preprocessor on 11.01.2024 03:23:29 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 02.02.2024 02:23:34 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html.pp">src/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1130855">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1142093">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
