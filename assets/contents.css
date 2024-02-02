@@ -1,0 +1,36 @@
+details#contents > summary > h2 {
+	display: inline;
+}
+
+details#contents > ol a {
+  display: block;
+}
+details#contents ol {
+  list-style-type: none;
+}
+details#contents > ol {
+  padding-left: 0;
+}
+details#contents > ol ol {
+  padding-left: 1em;
+}
+details#contents > ol a {
+  font-family: "Merriweather", serif; /* same as h1 &c. */
+  font-size: 0.95em; /* unscale a bit */
+}
+
+@media all and (max-device-width: 799px) {
+	#post-date {
+		margin-bottom: 0;
+	}
+}
+
+@media all and (min-device-width: 800px) {
+	details#contents {
+		position: absolute;
+    left: 100%;
+    top: -.2em;
+    width: calc(48.75% - 1.5em);
+		margin-left: 0.5em;
+	}
+}

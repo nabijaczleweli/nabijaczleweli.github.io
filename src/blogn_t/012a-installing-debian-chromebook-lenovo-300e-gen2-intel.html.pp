@@ -32,11 +32,19 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define HEADING_CHRULTRA(level, hid, sect, ...) HEADING_CHRULTRA_S(level, hid, , sect, __VA_ARGS__)
 
 
-BOILERPLATE(012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt, 012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) with Intel Celeron N4000, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt, 012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) with Intel Celeron N4000, en-GB, STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
 #include "../indent.css"
+
+/* This page has a bigcode at the very top, so on big screens in light mode you get blue/purple links on black background  */
+@media (min-device-width: 800px) and (prefers-color-scheme: light) {
+  details#contents > ol {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: .2em;
+  }
+}
 
 img {
   max-width: 100%;
@@ -117,18 +125,18 @@ dl.linear dd:last-child::after {
   content: ".";
 }
 
-ol#contents a {
+ol#explicit-contents a {
   display: block;
 }
-ol#contents, ol#contents ol {
+ol#explicit-contents, ol#explicit-contents ol {
   list-style-type: none;
 }
-ol#contents ol {
+ol#explicit-contents ol {
   padding-left: 1em;
 }
-.heading-ref, ol#contents a {
+.heading-ref, ol#explicit-contents a {
   font-family: "Merriweather", serif; /* same as h1 &c. */
-  font-size: 0.95em; /* unscale a bit*/
+  font-size: 0.95em; /* unscale a bit */
 }
 .heading-ref {
   font-weight: bold;
@@ -269,7 +277,7 @@ lists this device as explicitly supported as
 <p class="continuing">
 so this has been done before and this is thus largely a <a href="/content/recipes/">replication post</a>, mirroring the chrultrabook documentation structure:
 </p>
-<ol id="contents" class="continuation" style="padding-left: 1em;">
+<ol id="explicit-contents" class="continuation" style="padding-left: 1em;">
   <a href="#firmware">Firmware</a>
   <ol>
     <li><a href="#firmware-finding-system-info">Finding System Info</a></li>

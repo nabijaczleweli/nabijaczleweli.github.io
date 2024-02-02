@@ -99,6 +99,7 @@ $(OUTDIR)assets/octicons/% : $(BLDDIR)octicons/build/octicons.min.css
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,)
+	if grep -q '<!--BLOGN_T_TOC_PLACEHOLDER-->' $@ && grep -q '^HEADING[_A-Z]*(' $<; then $(AWK) -f toc.awk $< | sed -i '/<!--BLOGN_T_TOC_PLACEHOLDER-->/r /dev/stdin' $@; fi
 
 $(OUTDIR)% : src/%.epp
 	@mkdir -p $(dir $@)
