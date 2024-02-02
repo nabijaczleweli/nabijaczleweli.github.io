@@ -17,10 +17,12 @@
 
 #define COLUMN_CSS_LINK <link href="/content/assets/column.css" rel="stylesheet" />
 
-#define WORD_COUNT_SCRIPT                                                                    \
-  <script type="text/javascript" src="/content/assets/syllable.js"></script>  FORCED_NEWLINE \
+#define WORD_COUNT_SCRIPT_NON_ENGLISH                                                        \
   <script type="text/javascript" src="/content/assets/pluralize.js"></script> FORCED_NEWLINE \
   <script type="text/javascript" src="/content/assets/word_count.js"></script>
+#define WORD_COUNT_SCRIPT                                                                    \
+  <script type="text/javascript" src="/content/assets/syllable.js"></script>  FORCED_NEWLINE \
+  WORD_COUNT_SCRIPT_NON_ENGLISH
 
 
 #define _WORD_COUNTER_END(...)                                                    \

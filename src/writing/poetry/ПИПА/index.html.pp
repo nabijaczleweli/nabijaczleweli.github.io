@@ -26,7 +26,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     	font-variant: small-caps;                                                   FORCED_NEWLINE \
                     }                                                                             FORCED_NEWLINE \
                     </style>
-BOILERPLATE(ПИПА – Dzieła zebrane, Zbiór dzieł Felicji, pl, WORD_COUNT_SCRIPT STYLESHEETS)
+BOILERPLATE(ПИПА – Dzieła zebrane, Zbiór dzieł Felicji, pl, WORD_COUNT_SCRIPT_NON_ENGLISH STYLESHEETS)
 
 
 <style>

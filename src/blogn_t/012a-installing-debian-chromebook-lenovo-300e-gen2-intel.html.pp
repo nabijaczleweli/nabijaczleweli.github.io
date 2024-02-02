@@ -1030,5 +1030,5 @@ A good bug report never goes unpunished.
 BLOGN_T_FOOTER()
 
 </span>
-WORD_COUNTER_END()
+WORD_COUNTER_END_NON_ENGLISH()
 BOILERPLATE_END()

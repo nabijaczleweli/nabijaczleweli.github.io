@@ -21,7 +21,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
                     <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
-BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], pl, WORD_COUNT_SCRIPT STYLESHEETS)
+BOILERPLATE(Każdy koniec to nowy początek, Każdy koniec to nowy początek [PL], pl, WORD_COUNT_SCRIPT_NON_ENGLISH STYLESHEETS)
 
 
 <style>

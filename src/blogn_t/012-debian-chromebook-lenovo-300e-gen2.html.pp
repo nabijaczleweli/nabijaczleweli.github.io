@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE
 
 
-BOILERPLATE(012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt, 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook with MediaTek MT8173/MT8173C, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt, 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook with MediaTek MT8173/MT8173C, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
@@ -292,5 +292,5 @@ HEADING_S(2, kms, class="continued", fuckin kms i s'<!--'-->pose)
 BLOGN_T_FOOTER()
 
 </span>
-WORD_COUNTER_END()
+WORD_COUNTER_END_NON_ENGLISH()
 BOILERPLATE_END()

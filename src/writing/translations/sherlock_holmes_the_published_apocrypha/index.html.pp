@@ -27,7 +27,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     	font-variant: small-caps;                                                   FORCED_NEWLINE \
                     }                                                                             FORCED_NEWLINE \
                     </style>
-BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opublikowane Apokryfy), Polish translation of Sherlock Holmes，the Published Apocrypha, pl, WORD_COUNT_SCRIPT STYLESHEETS)
+BOILERPLATE(Sherlock Holmes，the Published Apocrypha (ew. Sherlock Holmes，Opublikowane Apokryfy), Polish translation of Sherlock Holmes，the Published Apocrypha, pl, WORD_COUNT_SCRIPT_NON_ENGLISH STYLESHEETS)
 
 
 <style>
