@@ -742,7 +742,7 @@ all without the <a href="#installing-installing-linux-fixing-audio2" class="smal
   </ul>
 </blockquote>
 <p class="continuing">
-This is actually much les annoying than the Home/End/PgUp/PgDn situation,
+This is actually much less annoying than the Home/End/PgUp/PgDn situation,
 which on normal small keyboards is Fn+←/→/↑/↓,
 but this is not mapped to <kbd>alt</kbd>+<kbd>˂</kbd>/<kbd>˃</kbd>/<kbd>˄</kbd>/<kbd>˅</kbd> here,
 which sucks shit.

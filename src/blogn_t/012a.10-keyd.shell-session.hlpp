@@ -57,6 +57,8 @@ M	/etc/gshadow-
 +	/etc/group
 +	/etc/gshadow
 +	/etc/keyd
+M	/etc/systemd/system/sysinit.target.wants
++	/etc/systemd/system/sysinit.target.wants/keyd.service
 M	/usr/local/share
 M	/usr/local/share/man
 M	/usr/local/bin
