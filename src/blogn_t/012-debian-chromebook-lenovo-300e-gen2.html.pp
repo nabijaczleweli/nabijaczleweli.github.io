@@ -8,7 +8,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../writing/writing.h"
-#include "../fontawesome.h"
 #include "../common.h"
 #include "blogn_t.h"
 
@@ -67,7 +66,7 @@ it clearly says "<span lang="pl">Instrukcje: crc32</span>", which is great becau
 
 <p class="indented continued">
 According to a page under the authority of "sites.google.com/a/chromium.org" (what does this mean?) page titled
-<a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices"><em>Chromium OS > <b>Developer Information for Chrome OS Devices</b></em></a>
+<a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices"><cite>Chromium OS > <b>Developer Information for Chrome OS Devices</b></cite></a>
 (what the fuck does <em>that</em> mean?)
 this machine is:
 </p>
@@ -110,7 +109,7 @@ MO:P2N0B960200M    Factory ID: HFBITLAND" src="/content/assets/blogn_t/012.01-la
 This is largely precipitated by <a href="//media.ccc.de/v/37c3-11929-turning_chromebooks_into_regular_laptops">the chrultrabook talk</a>,
 but naturally, this being ARM, it'<!--'-->s yet impossible to install Debian.
 This is more <a href="//wiki.debian.org/InstallingDebianOn/Samsung/ARMChromebook">InstallingDebianOn/Samsung/ARMChromebook</a>
-— "running debian on the chromebook from the μ<span class="smallcaps">sd</span> card" —
+— "running debian on the chromebook from the μ<small>SD</small> card" —
 than an installation.
 This is why I dastardlily omitted "installing" from the title,
 <a href="//archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook-2">neither</a> article for my first prospective pick giving me the same courtesy.
@@ -155,7 +154,7 @@ Of course, the <a href="//sites.google.com/a/chromium.org/dev/chromium-os/develo
 "enter recovery and then developer mode".
 So to enter recovery you hold <kbd>esc</kbd> and <kbd>⟳</kbd> (natch) and click the power button and
 </p>
-<a href="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"><img class="continuing" alt="Title line: chrome, English; Main body: Please insert a recovery USB stick or SD card.; Footer: For help visit https://google.com/chromeos/recovery  Model PHASER360 D4J-B3K-B4Q-H6B-52A-Y2B-A47" src="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"></a> <!-- DSCN0541cc.JPG -->
+<a href="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"><img class="continuing" alt="Title line: chrome, English; Main body: Please insert a recovery USB stick or SD card.; Footer: For help visit https://google.com/chromeos/recovery  Model PHASER360 D4J-B3K-B4Q-H6V-52A-Y2B-A47" src="//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/716/834/732/367/499/original/2eed806f02a084e9.jpeg"></a> <!-- DSCN0541cc.JPG -->
 <p class="continuation">
 That'<!--'-->s not Sycamore360 now, is it? What does that mean.
 Also, what's that card? It sure as hell ain't SD. It looks like an MMC-but-I-forgor-💀-how-many-pins-it-has, but.
