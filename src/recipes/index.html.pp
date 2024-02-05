@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 02 Feb 2024 03:17:24 +0100" -->
+<!-- RSS_UPDATE_DATE: "Mon, 5 Feb 2024 21:29:43 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,7 +102,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2024-01-17, $101010.pl/@nabijaczleweli/111772190896591033)</a>.
+	Latest replication: REPLICATION(2024-02-04, $101010.pl/@nabijaczleweli/111880068943735140)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -615,7 +615,8 @@ IMAGUS(puckered-bread,
 		           REPLICATION(2023-06-28, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1776589-they-made),
 		           REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty),
 		           REPLICATION(2023-07-18, $101010.pl/@nabijaczleweli/110736025902684639),
-		           PREPLICATION(2023-08-14):</p>
+		           PREPLICATION(2023-08-14),
+		           REPLICATION(2024-02-04, $101010.pl/@nabijaczleweli/111880068943735140):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
 		<li>flock in NUM(80g) of yogurt – I'<!--'-->ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
@@ -636,7 +637,7 @@ IMAGUS(puckered-bread,
 	</ol>
 
 	<p>
-		I haven't gotten an intentation technique that wasn't just a knife to work, idk how she does it.
+		I haven't gotten an indentation technique that wasn't just a knife to work, idk how she does it.
 	</p>
 </details>
 
