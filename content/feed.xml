@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2024-02-07T14:10:22</updated>
+  <updated>2024-02-07T22:09:53</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -10652,7 +10652,7 @@ make ARCH=arm64 olddefconfig &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
  &lt;li&gt;&lt;code&gt;lz4 -9 &lt; arch/arm64/boot/Image &gt; /mnt/boot/Image-&lt;var&gt;6.6.11&lt;/var&gt;.lz4&lt;/code&gt; (or whatever the version)&lt;/li&gt;
  &lt;li&gt;&lt;code&gt;cp arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb /mnt/boot/mt8173-elm-hana-&lt;var&gt;6.6.11&lt;/var&gt;.dtb&lt;/code&gt;&lt;/li&gt;
  &lt;li&gt;In &lt;samp class=&quot;path&quot;&gt;/mnt/boot&lt;/samp&gt;: &lt;code&gt;echo console=pstore-1 console=tty1 rootwait root=&lt;var&gt;as appropriate for the rootfs&lt;/var&gt; &gt; cmdline&lt;/code&gt; &amp;c.&lt;/li&gt;
- &lt;li&gt;With u-boot-tools vboot-kernel-utils (very much &lt;samp&gt;--no-install-recommends&lt;/samp&gt;ed): &lt;code&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/bundle&quot;&gt;./bundle&lt;/a&gt; &lt;var&gt;6.6.11&lt;/var&gt; &gt; /dev/&lt;var&gt;the-kernel-partition&lt;/var&gt;&lt;/code&gt;&lt;/li&gt;
+ &lt;li&gt;With u-boot-tools and vboot-kernel-utils (very much &lt;samp&gt;--no-install-recommends&lt;/samp&gt;ed): &lt;code&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/bundle&quot;&gt;./bundle&lt;/a&gt; &lt;var&gt;6.6.11&lt;/var&gt; &gt; /dev/&lt;var&gt;the-kernel-partition&lt;/var&gt;&lt;/code&gt;&lt;/li&gt;
  &lt;li&gt;&lt;a href=&quot;012-debian-chromebook-lenovo-300e-gen2.html#jailbreak&quot;&gt;Developer-mode-ify the Chromebook&lt;/a&gt;&lt;/li&gt;
  &lt;li&gt;Insert the SD card and press &lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;u&lt;/kbd&gt; to boot&lt;/li&gt;
  &lt;li&gt;See the &lt;a href=&quot;#install&quot;&gt;&lt;cite class=&quot;local-ref&quot;&gt;installing Debian&lt;/cite&gt;&lt;/a&gt; sexion for booting the same from the eMMC&lt;/li&gt;
@@ -10699,6 +10699,7 @@ make ARCH=arm64 olddefconfig &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
  &lt;li&gt;Audio: internal mic (it'&lt;!--'--&gt;s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)&lt;/li&gt;
  &lt;li&gt;&lt;a href=&quot;#hdmi&quot;&gt;&lt;cite class=&quot;local-ref&quot;&gt;&lt;abbr title=&quot;Horny Demon Mangling Interface&quot;&gt;HDMI&lt;/abbr&gt;&lt;/cite&gt;&lt;/a&gt; (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal)&lt;/li&gt;
  &lt;li&gt;Tablet mode switch (which would disable the keyboard) doesn'&lt;!--'--&gt;t seem to exist&lt;/li&gt;
+ &lt;li&gt;Hibernation (loads image for a bit then blackscreens, no pstore)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;summary&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#summary&quot;&gt;#&lt;/a&gt; Summary&lt;/h2&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -10711,7 +10712,7 @@ A top-down and bottom-up analysis of the Chromebook bootloader stack with effect
 and attempts at replication of various documentation showing mostly negative results.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-1.94W idle (at a reasonable inside backlight brightess) is the lowest power consumption I'&lt;!--'--&gt;ve seen on a computer.
+1.94W idle (at a reasonable indoor backlight brightess) is the lowest power consumption I'&lt;!--'--&gt;ve seen on a computer.
 This is maintained at around 2.3W during static web browsing,
 and extends to &gt;12h projected times-to-empty at around 70% battery capacity.
 There are no hardware accelerators that Firefox understands; there'&lt;!--'--&gt;s no OpenGL; fullscreen glxgears (llvmpipe) gets 57FPS, half-screen gets 140FPS, both at around 7W.

@@ -3896,7 +3896,7 @@ make ARCH=arm64 olddefconfig </code></pre></li>
  <li><code>lz4 -9 < arch/arm64/boot/Image > /mnt/boot/Image-<var>6.6.11</var>.lz4</code> (or whatever the version)</li>
  <li><code>cp arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb /mnt/boot/mt8173-elm-hana-<var>6.6.11</var>.dtb</code></li>
  <li>In <samp class="path">/mnt/boot</samp>: <code>echo console=pstore-1 console=tty1 rootwait root=<var>as appropriate for the rootfs</var> > cmdline</code> &c.</li>
- <li>With u-boot-tools vboot-kernel-utils (very much <samp>--no-install-recommends</samp>ed): <code><a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/bundle">./bundle</a> <var>6.6.11</var> > /dev/<var>the-kernel-partition</var></code></li>
+ <li>With u-boot-tools and vboot-kernel-utils (very much <samp>--no-install-recommends</samp>ed): <code><a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/bundle">./bundle</a> <var>6.6.11</var> > /dev/<var>the-kernel-partition</var></code></li>
  <li><a href="012-debian-chromebook-lenovo-300e-gen2.html#jailbreak">Developer-mode-ify the Chromebook</a></li>
  <li>Insert the SD card and press <kbd>ctrl</kbd>+<kbd>u</kbd> to boot</li>
  <li>See the <a href="#install"><cite class="local-ref">installing Debian</cite></a> sexion for booting the same from the eMMC</li>
@@ -3943,6 +3943,7 @@ make ARCH=arm64 olddefconfig </code></pre></li>
  <li>Audio: internal mic (it'<!--'-->s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)</li>
  <li><a href="#hdmi"><cite class="local-ref"><abbr title="Horny Demon Mangling Interface">HDMI</abbr></cite></a> (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal)</li>
  <li>Tablet mode switch (which would disable the keyboard) doesn'<!--'-->t seem to exist</li>
+ <li>Hibernation (loads image for a bit then blackscreens, no pstore)</li>
 </ul>
 <h2 id="summary" class="continued"><a class="hash-link" href="#summary">#</a> Summary</h2>
 <p class="indented continuing">
@@ -3955,7 +3956,7 @@ A top-down and bottom-up analysis of the Chromebook bootloader stack with effect
 and attempts at replication of various documentation showing mostly negative results.
 </p>
 <p class="indented continuing">
-1.94W idle (at a reasonable inside backlight brightess) is the lowest power consumption I'<!--'-->ve seen on a computer.
+1.94W idle (at a reasonable indoor backlight brightess) is the lowest power consumption I'<!--'-->ve seen on a computer.
 This is maintained at around 2.3W during static web browsing,
 and extends to >12h projected times-to-empty at around 70% battery capacity.
 There are no hardware accelerators that Firefox understands; there'<!--'-->s no OpenGL; fullscreen glxgears (llvmpipe) gets 57FPS, half-screen gets 140FPS, both at around 7W.
@@ -4008,9 +4009,9 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 16'<!--'-->s C preprocessor on 07.02.2024 14:07:11 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 07.02.2024 22:06:42 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp">src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1145103">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1145548">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
