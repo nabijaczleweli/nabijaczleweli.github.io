@@ -3616,7 +3616,7 @@ make ARCH=arm64 olddefconfig\
 	<li><code>lz4 -9 < arch/arm64/boot/Image > /mnt/boot/Image-<var>6.6.11</var>.lz4</code> (or whatever the version)</li>
 	<li><code>cp arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb /mnt/boot/mt8173-elm-hana-<var>6.6.11</var>.dtb</code></li>
 	<li>In PATH(/mnt/boot): <code>echo console=pstore-1 console=tty1 rootwait root=<var>as appropriate for the rootfs</var> > cmdline</code> &c.</li>
-	<li>With u-boot-tools vboot-kernel-utils (very much <samp>--no-install-recommends</samp>ed): <code><a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/bundle">./bundle</a> <var>6.6.11</var> > /dev/<var>the-kernel-partition</var></code></li>
+	<li>With u-boot-tools and vboot-kernel-utils (very much <samp>--no-install-recommends</samp>ed): <code><a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/bundle">./bundle</a> <var>6.6.11</var> > /dev/<var>the-kernel-partition</var></code></li>
 	<li><a href="012-debian-chromebook-lenovo-300e-gen2.html#jailbreak">Developer-mode-ify the Chromebook</a></li>
 	<li>Insert the SD card and press <kbd>ctrl</kbd>+<kbd>u</kbd> to boot</li>
 	<li>See the <a href="#install"><cite class="local-ref">installing Debian</cite></a> sexion for booting the same from the eMMC</li>
@@ -3668,6 +3668,7 @@ HEADING_S(3, functional-summary-dysfunctional, class="continued", Dysfunxional)
 	<li>Audio: internal mic (it'<!--'-->s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)</li>
 	<li><a href="#hdmi"><cite class="local-ref"><abbr title="Horny Demon Mangling Interface">HDMI</abbr></cite></a> (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal)</li>
 	<li>Tablet mode switch (which would disable the keyboard) doesn'<!--'-->t seem to exist</li>
+	<li>Hibernation (loads image for a bit then blackscreens, no pstore)</li>
 </ul>
 
 
@@ -3682,7 +3683,7 @@ A top-down and bottom-up analysis of the Chromebook bootloader stack with effect
 and attempts at replication of various documentation showing mostly negative results.
 </p>
 <p class="indented continuing">
-1.94W idle (at a reasonable inside backlight brightess) is the lowest power consumption I'<!--'-->ve seen on a computer.
+1.94W idle (at a reasonable indoor backlight brightess) is the lowest power consumption I'<!--'-->ve seen on a computer.
 This is maintained at around 2.3W during static web browsing,
 and extends to >12h projected times-to-empty at around 70% battery capacity.
 There are no hardware accelerators that Firefox understands; there'<!--'-->s no OpenGL; fullscreen glxgears (llvmpipe) gets 57FPS, half-screen gets 140FPS, both at around 7W.
