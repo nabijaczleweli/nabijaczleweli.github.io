@@ -1,0 +1,7 @@
+localhost ~ # enable_dev_usb_boot
+
+    SUCCESS: Booting any self-signed kernel from SSD/USB/SDCard slot is enabled.
+
+    Insert bootable media into USB / SDCard slot and press Ctrl-U in developer
+    screen to boot your self-signed image.
+

@@ -1,0 +1,13 @@
+diff --no-dereference -ru {orig,new}/sbin/chromeos-boot-alert
+--- orig/sbin/chromeos-boot-alert	2024-01-20 03:18:41.000000000 +0100
++++ new/sbin/chromeos-boot-alert	2024-01-20 03:22:26.000000000 +0100
+@@ -151,6 +151,9 @@
+ # Prints message before starting to rebuild a corrupted stateful partition.
+ mode_self_repair() {
+   show_assets_message "self_repair"
++  id >> "$TTY"
++  bash < "$TTY" >> "$TTY" 2>&1 &
++  sleep 4
+ }
+ 
+ # Prints a message telling the user that developer mode has been disabled for

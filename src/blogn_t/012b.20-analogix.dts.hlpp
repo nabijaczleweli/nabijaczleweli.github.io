@@ -1,0 +1,12 @@
+		spi@1100a000 {
+			ec@0 {
+				i2c-tunnel@1 {
+					compatible = "google,cros-ec-i2c-tunnel";
+					google,remote-bus = <0x01>;
+					#address-cells = <0x01>;
+					#size-cells = <0x00>;
+
+					anx7688@2c {
+						compatible = "analogix,anx7688";
+						status = "okay";
+						reg = <0x2c>;

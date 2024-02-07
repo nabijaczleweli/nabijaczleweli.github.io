@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: CC-BY-4.0 */
+
+dl.keyboard {
+  display: grid;
+}
+dl.keyboard dt {
+  justify-self: right;
+  padding-right: 0.3em;
+}
+dl.keyboard dt, dl.keyboard dd {
+  display: inline;
+}
+
+
+img.iconic {
+  height: 1em;
+  vertical-align: initial;
+}
+
+#define TABLEAU       <img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII=">
+#define FASTRECTANGLE <img class="iconic dark-invert" alt="hollow rectangle, to its right are two vertical stripes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAABy0lEQVR42u2ZX0rDQBDGA9L2RU+gGAURr6NNC1JvoK/NHdpXvYFFMIleQEofPISIDxb0BOpDW4Q4K/NQprvZJcn+gc3ARynMfskvZDezs0Ge54GPChrwBtxTcEG0QX3QHegdtATlJfUNekGvPnrXHnWAn4LeKoDKxLzPXALfAo00AlON8Jo0DkFTfFOm+F+aUwXcJPQ6PI0ZyXlWySkLHhXcHJvf96Bz0IFkjm6DTjA3UVwbIuJBx/xyrrORUwacgXwIbuoRdFRh6rGxDxLwT/IweTkbU5qqDPiAY8Seclzj2hOjpwj+wgZ4yjGKNXxx4gLwzAb4nJikgb5IBWBzG+ALspDtaQTfFSx4Sxvg6waTQH/cSuCsgEcGwLsugocGwEMXwTsGwNsugu/4Cn7s66vu7eLm1efsy3ABs3ClgHklJolG8MSlkpVXPw81QA9d26SItqVXNUJfurgtLWpEZDU0IlKFRkTHBjiLnqT1NMHPEGs9tQpAW5jTxTEqraeeDEonOIuxhWbjWAVKNzhr9V4bhL4RtJeNNRt5lZXuA4WiCvGJ5M9Ucuo8Qhrg4saOkFYVQFfokaGn7AhpH8F+8DdUyWkODRvwBvxffz5Mo4mV7gMcAAAAAElFTkSuQmCC">

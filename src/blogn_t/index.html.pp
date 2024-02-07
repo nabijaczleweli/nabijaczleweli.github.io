@@ -75,6 +75,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 <p></p>
 	PPOST(012-debian-chromebook-lenovo-300e-gen2,  Mon, 08 Jan 2024 16:06:34 +0100, 012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook)
 	PPOST(012a-installing-debian-chromebook-lenovo-300e-gen2-intel, Thu, 11 Jan 2024 04:04:28 +0100, 012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel))
+	PPOST(012b-debian-chromebook-lenovo-300e-gen2-mtk-real, Wed, 07 Feb 2024 01:09:33 +0100, 012b. Debian on the Lenovo 300e 2<sup>nd</sup>-gen MTK arm64 Chromebook (hana) (real))
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

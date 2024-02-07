@@ -36,6 +36,10 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
 		<a href="blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html">012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel)</a>;
 		<span style="white-space: nowrap;">Thu, 11 Jan 2024 04:04:28 +0100</span>
+	</samp><br />
+	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
+		<a href="blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html">012b. Debian on the Lenovo 300e 2<sup>nd</sup>-gen MTK arm64 Chromebook (hana) (real)</a>;
+		<span style="white-space: nowrap;">Wed, 07 Feb 2024 01:09:33 +0100</span>
 	</samp>
 </p>
 

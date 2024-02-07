@@ -1,0 +1,25 @@
+$ csplit -fbb mmcblk0p2.dts '/data =/' '/type =/' '/mt8173-elm-hana.dtb/' '/data =/'
+161
+26119768
+334465
+40
+7623425
+$ # bb00 bb02 start the same as xx00 xx02
+$ tail -n2 bb02
+		fdt@9 {
+			description = "mt8173-elm-hana.dtb";
+$ head -n8 bb04
+			type = "flat_dt";
+			arch = "arm64";
+			compression = "none";
+
+			hash@1 {
+				value = <0xd0eb38a9 0xad297279 0x5b014030 0x1027dbfe 0x3361c4a4>;
+				algo = "sha1";
+			};
+$ { cat bb00;
+    printf 'data = ['; lz4 < .../Image | od -An -tx1 -v | tr -d '\n'; printf '];\n';
+    cat bb02;
+    printf 'data = ['; < .../arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb od -An -tx1 -v | tr -d '\n'; printf '];\n';
+    cat bb04; } |
+  dtc -I dts -O dtb > stb+dtb.dtb

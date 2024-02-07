@@ -1,0 +1,24 @@
+Only in orig/etc/init: boot-splash.conf
+diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/startup.conf
+--- orig/etc/init/startup.conf	2023-04-17 06:31:09.000000000 +0200
++++ new/etc/init/startup.conf	2024-01-20 03:31:08.000000000 +0100
+@@ -10,4 +10,5 @@
+ 
+ start on stopped pre-startup
+ 
+-exec chromeos_startup
++#exec chromeos_startup
++exec frecon --enable-gfx --enable-vt1 --enable-vts
+diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/ui.conf
+--- orig/etc/init/ui.conf	2023-04-17 06:26:19.000000000 +0200
++++ new/etc/init/ui.conf	2024-01-20 03:06:54.000000000 +0100
+@@ -35,7 +35,7 @@
+ kill timeout 20  # In seconds.
+ 
+ # Uncomment line below to output to VT02
+-#console output
++console output
+ 
+ # Directory where session manager logs are written and prefix of files there.
+ env UI_LOG_DIR=/var/log/ui
+Only in new/sbin: init.new

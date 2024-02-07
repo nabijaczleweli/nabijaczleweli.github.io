@@ -1,0 +1,18 @@
+stdbuf -oL amixer events |
+	while read -r event value id; do
+		[ "$event $value" = "event value:" ] || continue
+		case "$id" in
+			*"'Headphone Jack'"  )	ctl='Ext Spk';     inv=on  ;;
+			*"'Headset Mic Jack'")	ctl='Headset Mic'; inv=off ;;
+			*                    )	continue                   ;;
+		esac
+		amixer cget "$id" |
+			while IFS="$IFS=" read -r tp k v; do
+				[ "$tp $k" = ": values" ] || continue
+				case "$v$inv" in
+					onon|offoff)	v=off ;;
+					onoff|offon)	v=on  ;;
+				esac
+				exec amixer sset "'$ctl'" "$v"
+			done
+	done

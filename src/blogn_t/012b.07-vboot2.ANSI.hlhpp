@@ -1,0 +1,12 @@
+root@localhost:~# apt search vboot2
+Sorting... Done
+Full Text Search... Done
+root@localhost:~# apt search vboot
+Sorting... Done
+Full Text Search... Done
+
+[32mvboot-kernel-utils[0m/unstable,now 0~R106-15054.B-1 arm64
+  Chrome OS verified boot utils required to sign kernels
+
+[32mvboot-utils[0m/unstable,now 0~R106-15054.B-1 arm64
+  Chrome OS verified u-boot utilities

@@ -1,0 +1,45 @@
+…
+(==) ModulePath set to "/usr/lib/xorg/modules"
+(II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+(II) Loader magic: 0x5c61bffef0
+(II) Module ABI versions:
+	X.Org ANSI C Emulation: 0.4
+	X.Org Video Driver: 25.2
+	X.Org XInput driver : 24.4
+	X.Org Server Extension : 10.0
+(EE) dbus-core: error connecting to system bus: org.freedesktop.DBus.Error.FileNotFound (Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory)
+(II) xfree86: Adding drm device (/dev/dri/card1)
+(II) Platform probe for /sys/devices/platform/soc/13000000.mfgsys-gpu/drm/card1
+(II) xfree86: Adding drm device (/dev/dri/card2)
+(II) Platform probe for /sys/devices/platform/soc/14000000.clock-controller/drm/card2
+(II) xfree86: Adding drm device (/dev/dri/card0)
+(II) Platform probe for /sys/devices/platform/vgem/drm/card0
+(II) no primary bus or device found
+	falling back to /sys/devices/platform/soc/13000000.mfgsys-gpu/drm/card1
+(II) LoadModule: "glx"
+(II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+(II) Module glx: vendor="X.Org Foundation"
+	compiled for 1.21.1.11, module version = 1.0.0
+	ABI class: X.Org Server Extension, version 10.0
+(II) LoadModule: "modesetting"
+(II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+(II) Module modesetting: vendor="X.Org Foundation"
+	compiled for 1.21.1.11, module version = 1.21.1
+	Module class: X.Org Video Driver
+	ABI class: X.Org Video Driver, version 25.2
+(II) modesetting: Driver for Modesetting Kernel Drivers: kms
+(WW) Falling back to old probe method for modesetting
+(WW) Falling back to old probe method for modesetting
+(II) modeset(G0): using drv /dev/dri/card2
+(EE) No devices detected.
+(EE)
+Fatal server error:
+(EE) no screens found(EE)
+(EE)
+Please consult the The X.Org Foundation support
+	 at http://wiki.x.org
+ for help.
+(EE) Please also check the log file at "/var/log/Xorg.0.log" for additional information.
+(EE)
+(EE) Server terminated with error (1). Closing log file.

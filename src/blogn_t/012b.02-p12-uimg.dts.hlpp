@@ -1,0 +1,17 @@
+/dts-v1/;
+
+/ {
+	timestamp = <0x5cc03b66>;
+	description = "Chrome OS kernel image with one or more FDT blobs";
+	#address-cells = <0x01>;
+
+	images {
+		kernel@1 {
+			data = <0x4224d18 0x6470b909 0x841600c1 0x4d5a0091 …
+			type = "kernel_noload";
+			arch = "arm64";
+			os = "linux";
+			compression = "lz4";
+			load = <0x00>;
+			entry = <0x00>;
+		};

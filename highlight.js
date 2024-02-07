@@ -25,7 +25,7 @@ const Prism = require("./ext/prism/prism.js");
 Prism.loadLanguages = require('./ext/prism/components/');
 
 
-const LANGUAGE_REMAPS = {js: "javascript"};
+const LANGUAGE_REMAPS = {js: "javascript", sh: "bash", Makefile: "makefile"};
 const LANGUAGES       = {
 	plaintext: {},
 	// Based on https://github.com/JohnNilsson/awk-sublime/blob/1ce5f90d444d80b12af41bc051507e914730d4ef/AWK.sublime-syntax
@@ -48,6 +48,20 @@ const LANGUAGES       = {
 		regex: {
 			pattern: /\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*[\s\S]*?\*\/)*)/,
 			lookbehind: true,
+			greedy: true
+		}
+	},
+	dts: {
+		keyword: /\/dts-v1\//,
+
+		// Stolen from prism-clike.js
+		string: {
+			pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+			greedy: true
+		},
+
+		number: {
+			pattern: /(0x[a-f0-9]+)/,
 			greedy: true
 		}
 	}
@@ -97,7 +111,10 @@ const highlit = highlight ? Prism.highlight(content, Prism.languages[language], 
 
 const out = fs.createWriteStream(out_file);
 out.write(`<pre class="language-${language}"><code class="language-${language}">`);
-out.write(highlit.replace(/\n/g, "FORCED_NEWLINE").replace(/((  +)|\t)+/g, "<!--\"-->$&<!--\"-->"));
+out.write(highlit.replace(/\n/g,          "FORCED_NEWLINE")
+	               .replace(/((  +)|\t)+/g, "<!--\"-->$&<!--\"-->")
+	               .replace(/\/\*/g,        "/<!---->*")
+	               .replace(/\/\//g,        "/<!---->/"));
 if((highlit.match(/'/g) || []).length % 2 == 1)
 	out.write("<!--'-->");
 out.write("</pre></code>");

@@ -1,0 +1,4 @@
+	hdmi_mux {
+		compatible = "gpio-display-mux";
+		status = "okay";
+		detect-gpios = <0x15 0x24 0x00>;

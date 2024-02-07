@@ -1,0 +1,33 @@
+# alsaucm
+# alsaucm listcards
+  0: hw:0
+    mtk-rt5650
+# alsaucm open 0
+ALSA lib main.c:1554:(snd_use_case_mgr_open) error: failed to import 0 use case configuration -2
+alsaucm: error failed to open sound card 0: No such file or directory
+# alsaucm open hw:0
+# alsaucm list _verbs
+  0: HiFi
+    Default
+# alsaucm list _devices
+alsaucm: error failed to get list _devices: No such file or directory
+# alsaucm list _devices/HiFi
+  0: Speaker
+    Speaker
+  1: Headphones
+    Headphones
+  2: Mic
+    Internal Microphone
+  3: Headset
+    Headset Microphone
+  4: HDMI
+    HDMI Audio
+# alsaucm list _modifiers
+alsaucm: error failed to get list _modifiers: No such file or directory
+# alsaucm list _modifiers/HiFi
+  list is empty
+# alsaucm get _verb
+alsaucm: error failed to get _verb: No such file or directory
+# alsaucm set _verb HiFi
+# alsaucm get _verb
+alsaucm: error failed to get _verb: No such file or directory

@@ -1,0 +1,28 @@
+#!/bin/sh -x
+mount -t devtmpfs devtmpfs /dev
+exec > /dev/console < /dev/console 2>&1
+#exec > /dev/kmsg 2>&1
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t debugfs debugfs /sys/kernel/debug
+printf '%s\n' /sys/kernel/debug/*
+cat() (
+	set +x
+	while IFS= read -r l; do
+		printf '%s\n' "$l"
+	done < "$1"
+)
+cat /proc/uptime > /dev/kmsg
+set +x
+u=0
+one() {
+	while :; do
+		IFS=. read -r u2 rest < /proc/uptime
+		[ $u2 -eq $u ] && continue
+		u=$u2
+		echo $u.$rest > /dev/kmsg
+		cat /sys/kernel/debug/devices_deferred > /dev/kmsg
+		break
+	done
+}
+one; one; one; one; one; one; one; one; one; one

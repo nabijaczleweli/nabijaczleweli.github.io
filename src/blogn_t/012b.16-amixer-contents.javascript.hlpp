@@ -1,0 +1,6 @@
+numid=24,iface=CARD,name='Headphone Jack'
+  ; type=BOOLEAN,access=r-------,values=1
+  : values=on
+numid=25,iface=CARD,name='Headset Mic Jack'
+  ; type=BOOLEAN,access=r-------,values=1
+  : values=on

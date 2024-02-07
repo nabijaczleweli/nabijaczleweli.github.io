@@ -1,0 +1,45 @@
+$ lz4 -9 < .../arch/arm64/boot/Image > Image.lz4
+$ mkimage -f auto -A arm64 \
+    -T kernel -C lz4 -d Image.lz4 \
+    -b .../arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb \
+    Image.dtb
+FIT description: Kernel Image image with one or more FDT blobs
+Created:         Mon Feb  5 01:17:41 2024
+ Image 0 (kernel-1)
+  Description:
+  Created:      Mon Feb  5 01:17:41 2024
+  Type:         Kernel Image
+  Compression:  lz4 compressed
+  Data Size:    12611929 Bytes = 12316.34 KiB = 12.03 MiB
+  Architecture: AArch64
+  OS:           Linux
+  Load Address: 0x00000000
+  Entry Point:  0x00000000
+  Hash algo:    crc32
+  Hash value:   03808745
+ Image 1 (fdt-1)
+  Description:  mt8173-elm-hana
+  Created:      Mon Feb  5 01:17:41 2024
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    43853 Bytes = 42.83 KiB = 0.04 MiB
+  Architecture: AArch64
+  Hash algo:    crc32
+  Hash value:   ae9f8591
+ Default Configuration: 'conf-1'
+ Configuration 0 (conf-1)
+  Description:  mt8173-elm-hana
+  Kernel:       kernel-1
+  FDT:          fdt-1
+  Loadables:    kernel-1
+
+$ printf '\0' > bootloader
+$ echo root=PARTLABEL=chwast-root rootwait console=pstore-1 console=tty1 > cmdline
+# vbutil_kernel --pack /dev/disk/by-partlabel/chwast-root \
+    --keyblock    /usr/share/vboot/devkeys/kernel.keyblock \
+    --signprivate /usr/share/vboot/devkeys/kernel_data_key.vbprivk \
+    --version     1 \
+    --vmlinuz     Image.dtb \
+    --bootloader  bootloader \
+    --config      cmdline \
+    --arch        arm64

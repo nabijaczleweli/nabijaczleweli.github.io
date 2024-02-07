@@ -1,0 +1,34 @@
+$ tail -c +$(( 0x10000 + 1)) mmcblk0p2 | dtc -I dtb -O dts > mmcblk0p2.dts
+$ csplit mmcblk0p2.dts '/data =/' '/type =/'
+161
+26119768
+7957930
+$ head xx00 xx02
+==> xx00 <==
+/dts-v1/;
+
+/ {
+	timestamp = <0x643cb38f>;
+	description = "Chrome OS kernel image with one or more FDT blobs";
+	#address-cells = <0x01>;
+
+	images {
+
+		kernel@1 {
+
+==> xx02 <==
+			type = "kernel_noload";
+			arch = "arm64";
+			os = "linux";
+			compression = "lz4";
+			load = <0x00>;
+			entry = <0x00>;
+		};
+
+		fdt@1 {
+			description = "mt2712-evb.dtb";
+
+$ { cat xx00;
+    printf 'data = ['; lz4 < .../Image | od -An -tx1 -v | tr -d '\n'; printf '];\n';
+    cat xx02; } > new
+$ dtc -I dts -O dtb < new > new.dtb

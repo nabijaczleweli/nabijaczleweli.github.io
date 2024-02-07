@@ -1,0 +1,22 @@
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">grep</span> <span class="token string">'^# C'</span> dt_to_config.config <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">=</span>y <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/# /<!---->/'</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token operator">=</span> -f1 <span class="token operator">|</span>
+  <span class="token function">sort</span> -u <span class="token operator">|</span> <span class="token function">grep</span> -v ^CONFIG_MACH <span class="token operator">|</span>
+  <span class="token keyword">while</span> <span class="token builtin class-name">read</span> -r c<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token function">grep</span> ^<span class="token variable">$c</span><span class="token operator">=</span> .config <span class="token operator">||</span> <span class="token builtin class-name">echo</span> NO <span class="token variable">$c</span><span class="token punctuation">;</span> <span class="token keyword">done</span> <span class="token operator">|</span>
+  <span class="token function">grep</span> m$</span></span>
+<span class="token output">CONFIG_ARM_MEDIATEK_CPUFREQ=m
+CONFIG_ARM_SMC_WATCHDOG=m
+CONFIG_BACKLIGHT_PWM=m
+CONFIG_BATTERY_SBS=m
+CONFIG_BT_MRVL_SDIO=m
+CONFIG_CPUFREQ_DT=m
+CONFIG_DRM_DISPLAY_CONNECTOR=m
+CONFIG_I2C_HID_OF=m
+CONFIG_I2C_MT65XX=m
+CONFIG_KEYBOARD_GPIO=m
+CONFIG_MFD_ROHM_BD718XX=m
+CONFIG_PHY_MTK_TPHY=m
+CONFIG_SCSI_UFSHCD_PLATFORM=m
+CONFIG_SND_SOC_MT8173=m
+CONFIG_SND_SOC_MT8173_RT5650=m
+CONFIG_SND_SOC_RT5645=m
+CONFIG_TCG_TIS_I2C_INFINEON=m
+CONFIG_TOUCHSCREEN_ELAN=m</span>

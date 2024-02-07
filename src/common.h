@@ -41,37 +41,38 @@
 
 #define CMT // Copypasted from /assets/icons.htm
 #undef CMT
-#define ICONS_HEADER_PART                                                                                                                           \
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">                                   FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">                                   FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">                                   FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">                                   FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">                               FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">                               FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">                               FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">                               FORCED_NEWLINE \
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">                               FORCED_NEWLINE \
-    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">                                       FORCED_NEWLINE \
-    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">                            FORCED_NEWLINE \
-    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">                                       FORCED_NEWLINE \
-    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">                                       FORCED_NEWLINE \
-    <link rel="manifest" href="/assets/favicons/manifest.json">                                                                      FORCED_NEWLINE \
-    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">                                             FORCED_NEWLINE \
-    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">                                                                   FORCED_NEWLINE \
-    <meta name="apple-mobile-web-app-title" content="nabijaczleweli">                                                                FORCED_NEWLINE \
-    <meta name="application-name" content="nabijaczleweli">                                                                          FORCED_NEWLINE \
-    <meta name="msapplication-TileColor" content="#da532c">                                                                          FORCED_NEWLINE \
-    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">                                              FORCED_NEWLINE \
-    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">                                                  FORCED_NEWLINE \
-    <meta name="color-scheme" content="dark light">                                                                                  FORCED_NEWLINE \
-    <script>                                                                                                                         FORCED_NEWLINE \
-      (function() {                                                                                                                  FORCED_NEWLINE \
-        let m = navigator.userAgent.match(/Firefox\/([0-9]+)/);                                                                      FORCED_NEWLINE \
-        if(m && parseInt(m[1]) < 96)                                                                                                 FORCED_NEWLINE \
-          document.addEventListener("DOMContentLoaded", function() {                                                                 FORCED_NEWLINE \
-            Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); });  FORCED_NEWLINE \
-          });                                                                                                                        FORCED_NEWLINE \
-      })();                                                                                                                          FORCED_NEWLINE \
+#define ICONS_HEADER_PART                                                                                                                               \
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">                                       FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">                                       FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">                                       FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">                                       FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">                                   FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">                                   FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">                                   FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">                                   FORCED_NEWLINE \
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">                                   FORCED_NEWLINE \
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">                                           FORCED_NEWLINE \
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">                                FORCED_NEWLINE \
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">                                           FORCED_NEWLINE \
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">                                           FORCED_NEWLINE \
+    <link rel="manifest" href="/assets/favicons/manifest.json">                                                                          FORCED_NEWLINE \
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">                                                 FORCED_NEWLINE \
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">                                                                       FORCED_NEWLINE \
+    <meta name="apple-mobile-web-app-title" content="nabijaczleweli">                                                                    FORCED_NEWLINE \
+    <meta name="application-name" content="nabijaczleweli">                                                                              FORCED_NEWLINE \
+    <meta name="msapplication-TileColor" content="#da532c">                                                                              FORCED_NEWLINE \
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">                                                  FORCED_NEWLINE \
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">                                                      FORCED_NEWLINE \
+    <meta name="color-scheme" content="dark light">                                                                                      FORCED_NEWLINE \
+    <script>                                                                                                                             FORCED_NEWLINE \
+      (function() {                                                                                                                      FORCED_NEWLINE \
+        let m = navigator.userAgent.match(/Firefox\/([0-9]+)/);                                                                          FORCED_NEWLINE \
+        if(m && parseInt(m[1]) < 96)                                                                                                     FORCED_NEWLINE \
+          document.addEventListener("DOMContentLoaded", function() {                                                                     FORCED_NEWLINE \
+            Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); });      FORCED_NEWLINE \
+            Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); });  FORCED_NEWLINE \
+          });                                                                                                                            FORCED_NEWLINE \
+      })();                                                                                                                              FORCED_NEWLINE \
     </script>
 
 

@@ -1,0 +1,10 @@
+.ONESHELL:
+_:
+	mkdir -p root/dev root/proc root/sys root/dev
+	for f in *.deb; do
+		dpkg-deb -R $$f root/
+		rm -r root/DEBIAN
+	done
+	rm -r root/usr/share root/usr/lib/aarch64-linux-gnu/gconv
+	chmod u-s root/usr/bin/*
+	ln -f init root/

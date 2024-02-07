@@ -1,0 +1,42 @@
+[ids]
+0000:0000
+
+[alt]
+left	= home
+right	= end
+up	= pageup
+down	= pagedown
+
+[main]
+# Don't mangle these (https://github.com/rvaiya/keyd/issues/618)
+rightcontrol	= rightcontrol
+rightshift	= rightshift
+
+# 🔒
+sleep		= delete
+
+# 🔍 remains as leftmeta
+
+[meta]
+# ←
+f1	= back
+# →
+f2	= forward
+# ⟳
+f3	= refresh
+# tableau
+f4	= print
+# fast rectangle
+f5	= scale
+# small ☀️
+f6	= brightnessdown
+# ☀️
+f7	= brightnessup
+# 🔇
+f8	= mute
+# 🔉
+f9	= volumedown
+# 🔊
+f10	= volumeup
+
+sleep	= sleep
