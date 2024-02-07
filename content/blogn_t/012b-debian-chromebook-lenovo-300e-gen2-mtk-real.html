@@ -1611,6 +1611,41 @@ Alas, as demonstrated in the <a href="#kernal"><cite class="local-ref">how is <d
 </p>
 <div class="bigcode continuing-inside" style="position: relative;">
 <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.dts"><aside>full device tree</aside></a>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">tail</span> -c +<span class="token variable"><span class="token variable">$((</span> <span class="token number">0x10000</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token variable">))</span></span> mmcblk0p2 <span class="token operator">|</span> dtc -I dtb -O dts <span class="token operator">></span> mmcblk0p2.dts</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">csplit</span> mmcblk0p2.dts <span class="token string">'/data =/'</span> <span class="token string">'/type =/'</span></span></span>
+<span class="token output">161
+26119768
+7957930
+</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">head</span> xx00 xx02</span></span>
+<span class="token output">==> xx00 &lt;==
+/dts-v1/;
+
+/ {
+<!--"-->	<!--"-->timestamp = &lt;0x643cb38f>;
+<!--"-->	<!--"-->description = "Chrome OS kernel image with one or more FDT blobs";
+</span><span class="token info punctuation"><!--"-->	<!--"--></span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash">address-cells <span class="token operator">=</span> </span></span><span class="token output">&lt;0x01>;
+
+<!--"-->	<!--"-->images {
+
+<!--"-->		<!--"-->kernel@1 {
+
+==> xx02 &lt;==
+<!--"-->			<!--"-->type = "kernel_noload";
+<!--"-->			<!--"-->arch = "arm64";
+<!--"-->			<!--"-->os = "linux";
+<!--"-->			<!--"-->compression = "lz4";
+<!--"-->			<!--"-->load = &lt;0x00>;
+<!--"-->			<!--"-->entry = &lt;0x00>;
+<!--"-->		<!--"-->};
+
+<!--"-->		<!--"-->fdt@1 {
+<!--"-->			<!--"-->description = "mt2712-evb.dtb";
+
+</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token punctuation">{</span> <span class="token function">cat</span> xx00<span class="token punctuation">;</span></span></span>
+<span class="token output"><!--"-->    <!--"-->printf 'data = ['; lz4 &lt; .../Image | od -An -tx1 -v | tr -d '\n'; printf '];\n';
+<!--"-->    <!--"-->cat xx02; } > new
+</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">dtc -I dts -O dtb </span></span><span class="token output">&lt; new > new.dtb
+</span></pre></code>
 </div>
 <p class="continuation">
 (This is hopefully rather clear:
@@ -1699,7 +1734,7 @@ dash, mount, libc6, libblkid1, libmount1, libpcre2, libselinux1 debs, a Makefile
 <!--"-->		<!--"-->dpkg-deb -R <span class="token variable">$$f</span> root/
 <!--"-->		<!--"-->rm -r root/DEBIAN
 <!--"-->	<!--"-->done
-<!--"-->	<!--"-->rm -r root/usr/share root/usr/lib/aarch64-1 -gnu/gconv
+<!--"-->	<!--"-->rm -r root/usr/share root/usr/lib/aarch64-linux-gnu/gconv
 <!--"-->	<!--"-->chmod u-s root/usr/bin/*
 <!--"-->	<!--"-->ln -f init root/
 </pre></code>
@@ -1936,19 +1971,19 @@ but at one point it became obvious that this is some proxy-interactive behaviour
 If only someone had a validated-funxional config to test or diff against!
 </p>
 <p class="indented continued">
-<a href="//www.google.com/search?client=firefox-b-d&q=google+hana+chromebook+linux"><cite>google hana chromebook 1 - Google Search</cite></a>
+<a href="//www.google.com/search?client=firefox-b-d&q=google+hana+chromebook+linux"><cite>google hana chromebook linux - Google Search</cite></a>
 </p>
 <blockquote class="continuing">
- <h5 class="continuing"><a href="//github.com/hexdump0815/linux-mainline-on-arm-chromebooks">running 1 mainline on arm chromebooks - for example</a></h5>
+ <h5 class="continuing"><a href="//github.com/hexdump0815/linux-mainline-on-arm-chromebooks">running linux mainline on arm chromebooks - for example</a></h5>
  lenovo <strong>chromebook</strong> n23 - <strong>hana</strong>; acer <strong>chromebook</strong> r13 - elm; lenovo <strong>chromebook</strong> ... https://support.<strong>google</strong>.com/chrome/a/answer/9139543?hl=en · https://chromium ...
 </blockquote>
 <p class="continuing">→</p>
 <p class="indented continuing">
-<a href="//github.com/hexdump0815/linux-mainline-on-arm-chromebooks"><cite>hexdump0815/1 -mainline-on-arm-chromebooks: running 1 mainline on arm chromebooks - for example: <del>[…]</del> acer r13 (oak elm and hana)<del>[…]</del> and most probably many many more over time ...</cite></a>
+<a href="//github.com/hexdump0815/linux-mainline-on-arm-chromebooks"><cite>hexdump0815/linux-mainline-on-arm-chromebooks: running linux mainline on arm chromebooks - for example: <del>[…]</del> acer r13 (oak elm and hana)<del>[…]</del> and most probably many many more over time ...</cite></a>
 </p>
 <blockquote class="continuing">
- <h3 class="continuing">running 1 mainline on arm chromebooks</h3>
- <h4 class="continuing">supported devices and 1 distributions</h4>
+ <h3 class="continuing">running linux mainline on arm chromebooks</h3>
+ <h4 class="continuing">supported devices and linux distributions</h4>
  <ul>
   <li>chromebook oak:
       <ul>
@@ -1971,7 +2006,7 @@ If only someone had a validated-funxional config to test or diff against!
 </blockquote>
 <p class="continuing">in many ways it'<!--'-->s a program that builds it, making it the best type of notes, so →</p>
 <p class="indented continuing">
-<a href="//github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/master/readme.mt7"><cite>1 -mainline-mediatek-mt81xx-kernel/readme.mt7 at master · hexdump0815/1 -mainline-mediatek-mt81xx-kernel</cite></a>
+<a href="//github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/master/readme.mt7"><cite>linux-mainline-mediatek-mt81xx-kernel/readme.mt7 at master · hexdump0815/linux-mainline-mediatek-mt81xx-kernel</cite></a>
 </p>
 <blockquote class="continuation">
  <pre class="continuing" style="white-space: pre-wrap;"><!--
@@ -1988,7 +2023,7 @@ If only someone had a validated-funxional config to test or diff against!
 The patches are superficially worrying, but they all just touch the device tree –
 </p>
 <dl class="continuing patch-list">
- <dt><a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc-order.patch"><samp class="path">mt8173-fix-mmc-order.patch</samp></a></dt>
+ <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc-order.patch"><samp class="path">mt8173-fix-mmc-order.patch</samp></a></dt>
  <dd>MMCs in the fixed ChromiumOS
  <dl class="linear">
   <dt>0</dt> <dd>internal</dd>
@@ -1997,9 +2032,9 @@ The patches are superficially worrying, but they all just touch the device tree 
  </dl>
  order in the alias list
  </dd>
- <dt><a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a></dt>
+ <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a></dt>
  <dd><q>remove even more high speed mmc stuff to get it working stable</q></dd>
- <dt><a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a></dt>
+ <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a></dt>
  <dd><samp class="path">/thermal-zones/cpu_thermal/trips/trip-point0</samp> 60000⇒70000m°C and
      <samp class="path">…/trip-point1</samp> 65000⇒75000m°C</dd>
 </dl>
@@ -2008,13 +2043,13 @@ The patches are superficially worrying, but they all just touch the device tree 
 It of interest to evaluate these against the <samp class="path">mt8173-elm-hana.dtb</samp> [<a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts">decompiled</a>] device tree distributed by ChromiumOS
 </p>
 <dl class="continuation patch-list">
- <dt><a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc-order.patch"><samp class="path">mt8173-fix-mmc-order.patch</samp></a></dt>
+ <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc-order.patch"><samp class="path">mt8173-fix-mmc-order.patch</samp></a></dt>
  <dd>the ordering <em>is</em> somehow stable but <em>not</em> via the alias list</dd>
- <dt><a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a></dt>
+ <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a></dt>
  <dd>the patch quarters the maximum clock frequency of <samp>mmc1</samp> – the pluggable one – to 50MHz
      and removes <code>sd-uhs-sdr{50,104}</code> tags therefrom,
      upstream doesn'<!--'-->t do this.</dd>
- <dt><a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a></dt>
+ <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a></dt>
  <dd>matches Linux'<!--'-->s 60°C and 65°C;
     unclear to me why the patch raises it – this originates in
      <a href="//github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/commit/7c0cea812b7cabcf1b35527030c47999c259bcdd">commit <tt style="font-family: monospace;">7c0cea8</tt> (<q><cite>raise temps for elm a bit</cite></q>)</a>
@@ -2361,14 +2396,14 @@ input: mtk-rt5650 HDMI Jack as /devices/platform/sound/sound/card0/input9</pre>
 <p class="indented continued">
 3. is the most pressing for both usability reasons (it'<!--'-->s bound to be slow, but not <em>that</em> slow)
 and because sometimes I/O will just, like, effectively hang, with kilobyte-sized mmaps taking seconds, and the dmesg complaining that the card is "stuck busy",
-all with a blatant culprit – <a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a>.
+all with a blatant culprit – <a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a>.
 The SD card was solid under <tt>KERN-A</tt> which has all the full-speed stuff this patch disables.
 </p>
 <p class="indented continuing">
 By performing a speed-running trick called "forwarding to the list while modules were building four days ago",
 I already have a <a href="//lore.kernel.org/linux-wireless/59378600-8d36-4958-8882-fa693fcad4d6@yandex.ru/t/#u">prospective patch</a> for 2.,
 so I can be oh-so-brave (with only a <em>quick</em> glance at if it'<!--'-->d be catastrophic!) and update the module while at it –
-re-building <samp>dtbs modules</samp> with <em>just</em> <a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a> and the diff from the mail yields
+re-building <samp>dtbs modules</samp> with <em>just</em> <a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a> and the diff from the mail yields
 </p>
 <div class="bigcode"><pre class="continuing language-plaintext"><code class="language-plaintext">18M 01-31 00:00 <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/mandeb+initrd+1+tabs2+reg+drm+adc+d_t_c-initrd&mwifiex+mmc1.journalctl-b" style="color: inherit;">mandeb+initrd+1+tabs2+reg+drm+adc+d_t_c-initrd&mwifiex+mmc1.dtb</a></code></pre></div>
 <p class="continuing">
@@ -2393,7 +2428,7 @@ Applying the patch fixes it (and runs the card at "high speed").
 The MMC ordering appears to already be stable, so while it was random with the original device tree,
 that one'<!--'-->s for 4.19, so it may just be and old-device-tree issue?
 The patch itself blames back to
-<a href="//github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/commit/01101e3501aef9191109e464af458f2382232ac5">commit <tt style="font-family: monospace;">01101e3</tt> (<q><cite>promising experiments based on apline 1 -elm apk</cite></q>)</a>
+<a href="//github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/commit/01101e3501aef9191109e464af458f2382232ac5">commit <tt style="font-family: monospace;">01101e3</tt> (<q><cite>promising experiments based on apline linux-elm apk</cite></q>)</a>
 as <samp class="path">misc.cbm/patches/alpine/fix-mmc-order.patch</samp>.
 Not that "identical device enumeration order" is a sensible goal unto itself in a.d. 2020 regardless.
 </p>
@@ -2752,7 +2787,7 @@ Partition 1: STATE, 25G" src="/content/assets/blogn_t/012b.23-0init-crop.png"></
 <figure class="bigcode" id="1killpurp">
  <figcaption>
   <pre class="continuing language-ANSI"><code class="language-ANSI"><span class="token shell-symbol important">#</span> fdisk /dev/mmcblk0
-Welcome to fdisk (util-1 2.39.3).
+Welcome to fdisk (util-linux 2.39.3).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
 
@@ -3848,14 +3883,14 @@ jumping to kernel</span></code></pre></div>
     and some space for the rootfs
      (<a href="#7install">similarly to how the installed state looks</a>)</li>
  <li>Strap or install an arm64 to that rootfs (ext[234], or set <code>CONFIG_XFS=y</code> or whatever in the config below); mount on <samp class="path">/mnt</samp></li>
- <li><code>apt source 1</code></li>
+ <li><code>apt source linux</code></li>
  <li>Generate the Debian config (à la <code>cp /boot/config-6.6.11-arm64 .config</code>; paths per <samp class="path">debian/rules.gen</samp>):
      <pre class="continuing" style="padding-left: 1em; overflow: auto;"><code>debian/bin/kconfig.py .config debian/config/config debian/config/arm64/config
 make ARCH=arm64 olddefconfig </code></pre></li>
  <li><code>scripts/kconfig/merge_config.sh -m .config <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/config-6.6.11.diff-m">config-6.6.11.diff-m</a></code></li>
  <li><code style="white-space: pre-wrap;">patch -p1 < <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/patches/mwifiex.patch">mwifiex.patch</a><!--"-->                <!--"--># <a href="#speedrun">warning backtrace</a>; from <a href="//lore.kernel.org/lkml/59378600-8d36-4958-8882-fa693fcad4d6@yandex.ru/t/#u">Dmitry Antipov</a>, though the patch in the mail is damaged</code></li>
- <li><code style="white-space: pre-wrap;">patch -p1 < <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/patches/mt8173-fix-mmc1-speed.patch">mt8173-fix-mmc1-speed.patch</a><!--"-->  <!--"--># <a href="#speedrun">oops when using SDR104 cards</a>; from <a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a></code></li>
- <li><code style="white-space: pre-wrap;">patch -p1 < <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/patches/mt8173-higher-temps.patch">mt8173-higher-temps.patch</a><!--"-->    <!--"--># <a href="#foreign-config"><q>raise temps for elm a bit</q></a>;<!--"-->  <!--"-->from <a href="https://github.com/hexdump0815/1-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a></code></li>
+ <li><code style="white-space: pre-wrap;">patch -p1 < <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/patches/mt8173-fix-mmc1-speed.patch">mt8173-fix-mmc1-speed.patch</a><!--"-->  <!--"--># <a href="#speedrun">oops when using SDR104 cards</a>; from <a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc1-speed.patch"><samp class="path">mt8173-fix-mmc1-speed.patch</samp></a></code></li>
+ <li><code style="white-space: pre-wrap;">patch -p1 < <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/patches/mt8173-higher-temps.patch">mt8173-higher-temps.patch</a><!--"-->    <!--"--># <a href="#foreign-config"><q>raise temps for elm a bit</q></a>;<!--"-->  <!--"-->from <a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-higher-temps.patch"><samp class="path">mt8173-higher-temps.patch</samp></a></code></li>
  <li><code>make ARCH=arm64 Image modules dtbs</code></li>
  <li><code>make ARCH=arm64 modules_install INSTALL_MOD_PATH=/mnt INSTALL_MOD_STRIP=1</code></li>
  <li><code>lz4 -9 < arch/arm64/boot/Image > /mnt/boot/Image-<var>6.6.11</var>.lz4</code> (or whatever the version)</li>
@@ -3973,9 +4008,9 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 16'<!--'-->s C preprocessor on 07.02.2024 01:24:20 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 07.02.2024 14:49:42 CEST from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp">src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1144592">See job on builds.sr.ht</a>. 
+ 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
