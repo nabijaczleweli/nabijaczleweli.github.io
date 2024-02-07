@@ -3,20 +3,20 @@ details#contents > summary > h2 {
 }
 
 details#contents > ol a {
-  display: block;
+	display: block;
 }
 details#contents ol {
-  list-style-type: none;
+	list-style-type: circle;
 }
 details#contents > ol {
-  padding-left: 0;
+	padding-left: 0;
 }
 details#contents > ol ol {
-  padding-left: 1em;
+	padding-left: 1em;
 }
 details#contents > ol a {
-  font-family: "Merriweather", serif; /* same as h1 &c. */
-  font-size: 0.95em; /* unscale a bit */
+	font-family: "Merriweather", serif; /* same as h1 &c. */
+	font-size: 0.95em; /* unscale a bit */
 }
 
 @media all and (max-device-width: 799px) {
@@ -28,9 +28,9 @@ details#contents > ol a {
 @media all and (min-device-width: 800px) {
 	details#contents {
 		position: absolute;
-    left: 100%;
-    top: -.2em;
-    width: calc(48.75% - 1.5em);
+		left: 100%;
+		top: -.2em;
+		width: calc(48.75% - 1.5em);
 		margin-left: 0.5em;
 	}
 }

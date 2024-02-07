@@ -46,6 +46,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
@@ -135,9 +136,9 @@ dl > div {
   display: inline-grid;
   margin-right: 0.5em;
 }
+/* SPDX-License-Identifier: CC-BY-4.0 */
 dl.keyboard {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
 }
 dl.keyboard dt {
   justify-self: right;
@@ -145,6 +146,13 @@ dl.keyboard dt {
 }
 dl.keyboard dt, dl.keyboard dd {
   display: inline;
+}
+img.iconic {
+  height: 1em;
+  vertical-align: initial;
+}
+dl.keyboard {
+  grid-template-columns: repeat(4, 1fr);
 }
 @media all and (min-device-width: 700px) {
   dl.keyboard {
@@ -256,10 +264,6 @@ div.tipwarning {
 }
 #spacespace::before {
   content: "  ";
-}
-img.iconic {
-  height: 1em;
-  vertical-align: initial;
 }
 samp.path {
  font-style: italic;
@@ -1217,7 +1221,7 @@ I also persisted the blacklist after first boot
 and fixed the <a href="//bugs.debian.org/1060331">touch</a><a href="//bugs.debian.org/1060332">pad</a>
 because the default decroded-ass no-tap-to-click behaviour is more infuriating than you'<!--'-->d think in a.d. 2023.
 </p>
-<div class="bigcode">
+<div class="bigcode" id="xorg.conf.d">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation">chrust</span><span class="token command"><span class="token shell-symbol important">$</span> cat /etc/modprobe.d/avs.conf</span>
 # https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1
 # DANGER: Using AVS on a device with max98357a will blow your speakers. You have been warned.
@@ -1826,7 +1830,7 @@ And after a reboot I could play aloud
 <a href="//nabijaczleweli.itch.io/002-fluorescent-heart">my</a> <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">album</a>,
 all without the <a href="#installing-installing-linux-fixing-audio2" class="smallcaps tipwarning danger">Danger</a>ous driver.
 </p>
-<p></p>
+<p id="installing-post-install-linux-general-qol-fixes-cros-keyboard-map"></p>
 <blockquote class="continuing">
   <ul style="padding-left: 1em;">
     <li>Run the <a href="//github.com/WeirdTreeThing/cros-keyboard-map">cros-keyboard-map<i class="dark-invert fa fa-external-link-alt"></i></a> script to remap top row FX keys.</li>
@@ -1841,7 +1845,7 @@ No Delete is pretty bad as well.
 The top row is, accd'<!--'-->g to <code>xev</code>,
 </p>
 <dl class="keyboard continuing">
-  <dt><kbd>esc</kbd></dt><dd>Escape</dd>
+  <dt><kbd>esc</kbd></dt><dd><code>Escape</code></dd>
   <dt><kbd>←</kbd></dt><dd><code>XF86Back</code></dd>
   <dt><kbd>→</kbd></dt><dd><code>XF86Forward</code></dd>
   <dt><kbd>⟳</kbd></dt><dd><code>XF86Reload</code></dd>
@@ -2191,7 +2195,7 @@ Yes: this has the ☕, but also identity-maps everything, and you unfuck it by h
 Except <kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd>, which is in the would-be-F4 position, but it'<!--'-->s mapped to F11.
 <kbd>🔒</kbd> is mapped to ☕ despite being where Delete usually is, and Delete is achieved with <kbd>alt</kbd>+<kbd>⟵</kbd>.
 </p>
-<p class="indented continued">
+<p class="indented continued" id="cros2.conf">
 I feel like I could do better with
 </p>
 <div class="bigcode continuing">
@@ -2275,6 +2279,11 @@ mangles Shift_R and Control_R into Shift_L and Control_L.
 Appending this is necessary to make them work correctly:
 </p>
 <div class="bigcode continuation">
+<pre class="language-ini"><code class="language-ini"><span class="token comment"># https://github.com/rvaiya/keyd/issues/618</span>
+<span class="token selector">[main]</span>
+<span class="token constant">rightcontrol</span> <span class="token attr-value"><span class="token punctuation">=</span> rightcontrol</span>
+<span class="token constant">rightshift</span><!--"-->   <!--"--><span class="token attr-value"><span class="token punctuation">=</span> rightshift</span>
+</pre></code>
 </div>
 <p class="indented">
 Overall, low value-add factor here.
@@ -2366,9 +2375,9 @@ A good bug report never goes unpunished.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 16'<!--'-->s C preprocessor on 02.02.2024 02:23:34 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 07.02.2024 01:24:20 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp">src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1142093">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1144592">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 

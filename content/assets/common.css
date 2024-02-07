@@ -9,6 +9,10 @@ a > i.far {
 	color: black;
 }
 
+img {
+	white-space: pre-wrap;
+}
+
 .hidden {
 	display: none;
 }
