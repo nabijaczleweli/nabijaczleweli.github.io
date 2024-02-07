@@ -33,7 +33,8 @@ tasks:
       echo 'export LANG' >> .buildenv
   - build: |
       cd nabijaczleweli.github.io
-      make CC="clang -Wno-unicode-zero-width -Wno-unicode-homoglyph" OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book -v"
+      make CC="clang -Wno-unicode-zero-width -Wno-unicode-homoglyph" OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book -v" ||
+        { sleep 60; make CC="clang -Wno-unicode-zero-width -Wno-unicode-homoglyph" OUTDIR=../content/ GEN_EPUB_BOOK="sleep 10; gen-epub-book -v"; }
   - push: |
       ssh-keyscan github.com > ~/.ssh/known_hosts
       git clone -b master git@github.com:nabijaczleweli/nabijaczleweli.github.io.git nabijaczleweli.xyz
