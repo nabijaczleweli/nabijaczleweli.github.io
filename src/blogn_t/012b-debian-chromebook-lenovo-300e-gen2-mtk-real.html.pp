@@ -1047,7 +1047,7 @@ The real break-through was
 <p class="continuing">
 (The PATH(ui.conf) diff doesn'<!--'-->t do anything.
  The PATH(boot-splash.conf) deletion may be exchanged for a PATH(startup.conf) deletion instead, since it also runs frecon.
- Naturally, the way to show the "ChromeOS" fade-in is by passing a tty emulator 70 PNGs, and telling it to persist in developer mode.)
+ Naturally, the way to show the "ChromeOS" fade-in is by passing a tty emulator 70 PNGs, in developer mode, and keeping it running afterward.)
 PATH(chromeos_startup) is what triggers the self-repair message
 (rendered is by <code>pango-view</code>ing the background, the localised text, and the throbber to a PNG and giving those to frecon).
 This yields
@@ -1443,7 +1443,7 @@ The Debian kernel is unsuitable as-shipped because it's fully modular and we don
 <p class="indented continuing">
 Naturally, fixing this means <tt>apt source</tt>ing the latest kernel (6.6.11-1),
 copying PATH(/boot/config-6.6.11-arm64) to PATH(.config),
-and either dealing with all the Kconfig UIs actively fighting you when you try to build in a component with modularised depdencies
+and either dealing with all the Kconfig UIs actively fighting you when you try to build in a component with modularised dependencies
 (why can't the computer <em>also</em> build them in instead of just complaining that they're modular and doing nothing? unsolvable problem)
 or just (<code>sed -i s/=m$/=y/ .config</code>) building every module into the kernel image.
 </p>
@@ -1873,7 +1873,7 @@ The patches are superficially worrying, but they all just touch the device tree 
 </dl>
 <p class="continuing">
 – whereas the same cannot be said for the MT8183 patches, but thankfully none of them are relevant here.
-It of interest to evaluate these against the PATH(mt8173-elm-hana.dtb) [<a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts">decompiled</a>] device tree distributed by ChromiumOS
+It is of interest to evaluate these against the PATH(mt8173-elm-hana.dtb) [<a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts">decompiled</a>] device tree distributed by ChromiumOS
 </p>
 <dl class="continuation patch-list">
 	<dt>HEXPATCH(mt8173-fix-mmc-order.patch)</dt>
@@ -1918,7 +1918,7 @@ HEADING(2, 🐧, 🐧🐧🐧🐧)
 <p class="indented continued">
 That'<!--'-->s an okay start, but as exemplified by the penguins this is a vajazzled defconfig instead of the reasonable Debian config,
 so Wi-Fi still doesn'<!--'-->t work (though that may just be the way iwd drives it and it may work with another userland),
-and mounting EXT4s <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/stb+dtb.dmesg-fkern">throws warnings (last lines)</a>,
+and mounting EXT4s <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/stb+dtb.dmesg-fkern">throws warnings (final lines)</a>,
 so beside the screen working it'<!--'-->s not a great kernel.
 </p>
 <p class="indented continuing">
@@ -2084,7 +2084,7 @@ and approximately twenty "simple framebuffer"s.
 Not to mention the spoopy axion at a distance with the actual driver – <tt>framebuffer-coreboot</tt> – not logging as itself.
 </p>
 <p class="indented continuing">
-Naturally, wants to enable all the <samp>GOOGLE</samp>/<samp>CROS</samp> configs, and you should; just not this one.
+Naturally, one wants to enable all the <samp>GOOGLE</samp>/<samp>CROS</samp> configs, and you should; just not this one.
 </p>
 
 <div class="bigcode"><pre class="continuing language-plaintext"><code class="language-plaintext">\
@@ -2238,7 +2238,7 @@ the SD card rootfs experience is as shit as ever.
 But this may well be because my SD card is not fast enough to qualify for any of the speed boosts – the two internal ones are
 <tt><q>new HS400 MMC card</q></tt> and <tt><q>new ultra high speed SDR104 SDIO card</q></tt> but this one is just <tt><q>new high speed SDHC card</q></tt>;
 maybe we need to actually install Debian because this is horrendous.
-This may be fixable with an SD card worth as much as the laptop instead of this drawer special,
+This may be fixable with an SD card worth as much as the laptop instead of my drawer special,
 but that still kinda defeats the purpose of a laptop with an internal <del>disk</del>rectangle.
 </p>
 <p class="indented continuing">
@@ -2340,7 +2340,7 @@ but <code>aplay</code> doesn'<!--'-->t and <code>arecord</code> records all zero
 <p class="indented continuing">
 <code>alsaucm</code> is one of those programs that definitely make sense to the authors.
 But by clicking around –
-writing everything, in order, from <a href="//manpages.debian.org/unstable/alsa-utils/alsaucm.1.en.html"><cite>alsaucm(1)</cite></a>
+running everything, in order, from <a href="//manpages.debian.org/unstable/alsa-utils/alsaucm.1.en.html"><cite>alsaucm(1)</cite></a>
 (only real science on da blog):
 </p>
 <div class="continuing-inside">
@@ -2377,7 +2377,7 @@ But at this time I noticed the tab expansion list for <tt>a</tt> has an <code>al
 </p>
 <a href="/content/assets/blogn_t/012b.22-DSCN0608cvcc.JPG"><img alt="Curses menu titled AlsaMixer v1.2.10, noting Card: mtk-rt5650; there's a plethora of bars labelled Headphon, Speaker, Speaker, I2S2 Fun, Mono ADC, and Mono DAC" src="/content/assets/blogn_t/012b.22-DSCN0608cvcc.JPG"></a>
 <p class="continuing">
-– but more importantly has a <tt>Headphon</tt> output with green <tt>OO</tt> and a <tt>Speaker</tt> one in <tt>MM</tt>,
+– but more importantly has a <tt>Headphon</tt> output with green <tt>OO</tt> and a <tt>Speaker</tt> one is <tt>MM</tt>,
 which is, respectively, not muted and muted, apparently.
 Plugging in headphones actually plays to the headphones.
 Amazing!
@@ -2525,7 +2525,7 @@ This means two possibilities remain:
 	<li>having the rootfs on the eMMC and the kernel on a boot <del>floppy</del>SD card – inherently funny and least invasive, but possibly the worst UX of all time</li>
 	<li>doing the ideal setup but keeping a kernel and minimal rootfs on an SD card to flip the priority bit manually for recovery 🙄</li>
 </ul>
-<p class="continued">
+<p class="continuing">
 and the choice is obvious, since we already have that recovery image, and the path presents itself rather overtly:
 </p>
 <figure class="bigcode" id="0init">
