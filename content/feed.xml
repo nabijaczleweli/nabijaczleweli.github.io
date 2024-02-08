@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2024-02-07T22:09:53</updated>
+  <updated>2024-02-08T13:56:35</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -7875,7 +7875,7 @@ diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/startup.conf
 &lt;p class=&quot;continuing&quot;&gt;
 (The &lt;samp class=&quot;path&quot;&gt;ui.conf&lt;/samp&gt; diff doesn'&lt;!--'--&gt;t do anything.
  The &lt;samp class=&quot;path&quot;&gt;boot-splash.conf&lt;/samp&gt; deletion may be exchanged for a &lt;samp class=&quot;path&quot;&gt;startup.conf&lt;/samp&gt; deletion instead, since it also runs frecon.
- Naturally, the way to show the &quot;ChromeOS&quot; fade-in is by passing a tty emulator 70 PNGs, and telling it to persist in developer mode.)
+ Naturally, the way to show the &quot;ChromeOS&quot; fade-in is by passing a tty emulator 70 PNGs, in developer mode, and keeping it running afterward.)
 &lt;samp class=&quot;path&quot;&gt;chromeos_startup&lt;/samp&gt; is what triggers the self-repair message
 (rendered is by &lt;code&gt;pango-view&lt;/code&gt;ing the background, the localised text, and the throbber to a PNG and giving those to frecon).
 This yields
@@ -8318,7 +8318,7 @@ The Debian kernel is unsuitable as-shipped because it's fully modular and we don
 &lt;p class=&quot;indented continuing&quot;&gt;
 Naturally, fixing this means &lt;tt&gt;apt source&lt;/tt&gt;ing the latest kernel (6.6.11-1),
 copying &lt;samp class=&quot;path&quot;&gt;/boot/config-6.6.11-arm64&lt;/samp&gt; to &lt;samp class=&quot;path&quot;&gt;.config&lt;/samp&gt;,
-and either dealing with all the Kconfig UIs actively fighting you when you try to build in a component with modularised depdencies
+and either dealing with all the Kconfig UIs actively fighting you when you try to build in a component with modularised dependencies
 (why can't the computer &lt;em&gt;also&lt;/em&gt; build them in instead of just complaining that they're modular and doing nothing? unsolvable problem)
 or just (&lt;code&gt;sed -i s/=m$/=y/ .config&lt;/code&gt;) building every module into the kernel image.
 &lt;/p&gt;
@@ -8796,7 +8796,7 @@ The patches are superficially worrying, but they all just touch the device tree 
 &lt;/dl&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 – whereas the same cannot be said for the MT8183 patches, but thankfully none of them are relevant here.
-It of interest to evaluate these against the &lt;samp class=&quot;path&quot;&gt;mt8173-elm-hana.dtb&lt;/samp&gt; [&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts&quot;&gt;decompiled&lt;/a&gt;] device tree distributed by ChromiumOS
+It is of interest to evaluate these against the &lt;samp class=&quot;path&quot;&gt;mt8173-elm-hana.dtb&lt;/samp&gt; [&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts&quot;&gt;decompiled&lt;/a&gt;] device tree distributed by ChromiumOS
 &lt;/p&gt;
 &lt;dl class=&quot;continuation patch-list&quot;&gt;
  &lt;dt&gt;&lt;a href=&quot;https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc-order.patch&quot;&gt;&lt;samp class=&quot;path&quot;&gt;mt8173-fix-mmc-order.patch&lt;/samp&gt;&lt;/a&gt;&lt;/dt&gt;
@@ -8860,7 +8860,7 @@ shows
 &lt;p class=&quot;indented continued&quot;&gt;
 That'&lt;!--'--&gt;s an okay start, but as exemplified by the penguins this is a vajazzled defconfig instead of the reasonable Debian config,
 so Wi-Fi still doesn'&lt;!--'--&gt;t work (though that may just be the way iwd drives it and it may work with another userland),
-and mounting EXT4s &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/stb+dtb.dmesg-fkern&quot;&gt;throws warnings (last lines)&lt;/a&gt;,
+and mounting EXT4s &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/stb+dtb.dmesg-fkern&quot;&gt;throws warnings (final lines)&lt;/a&gt;,
 so beside the screen working it'&lt;!--'--&gt;s not a great kernel.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -9013,7 +9013,7 @@ and approximately twenty &quot;simple framebuffer&quot;s.
 Not to mention the spoopy axion at a distance with the actual driver – &lt;tt&gt;framebuffer-coreboot&lt;/tt&gt; – not logging as itself.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-Naturally, wants to enable all the &lt;samp&gt;GOOGLE&lt;/samp&gt;/&lt;samp&gt;CROS&lt;/samp&gt; configs, and you should; just not this one.
+Naturally, one wants to enable all the &lt;samp&gt;GOOGLE&lt;/samp&gt;/&lt;samp&gt;CROS&lt;/samp&gt; configs, and you should; just not this one.
 &lt;/p&gt;
 &lt;div class=&quot;bigcode&quot;&gt;&lt;pre class=&quot;continuing language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;22M 01-27 23:17 new+pstored+sysrq+clock-uvesa+clk+mmc+devices_deferred2+rtc+6397+fixed+i2c+usbsh2+legacy-legacy+dtb+dma+simple+merged-svs+fb+df+drm+more+nogoog+somegoog.dtb
 22M 01-28 01:38 new+pstored+sysrq+clock-uvesa+clk+mmc+devices_deferred2+rtc+6397+fixed+i2c+usbsh2+legacy-legacy+dtb+dma+simple+nogoog.dtb
@@ -9170,7 +9170,7 @@ the SD card rootfs experience is as shit as ever.
 But this may well be because my SD card is not fast enough to qualify for any of the speed boosts – the two internal ones are
 &lt;tt&gt;&lt;q&gt;new HS400 MMC card&lt;/q&gt;&lt;/tt&gt; and &lt;tt&gt;&lt;q&gt;new ultra high speed SDR104 SDIO card&lt;/q&gt;&lt;/tt&gt; but this one is just &lt;tt&gt;&lt;q&gt;new high speed SDHC card&lt;/q&gt;&lt;/tt&gt;;
 maybe we need to actually install Debian because this is horrendous.
-This may be fixable with an SD card worth as much as the laptop instead of this drawer special,
+This may be fixable with an SD card worth as much as the laptop instead of my drawer special,
 but that still kinda defeats the purpose of a laptop with an internal &lt;del&gt;disk&lt;/del&gt;rectangle.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -9258,7 +9258,7 @@ but &lt;code&gt;aplay&lt;/code&gt; doesn'&lt;!--'--&gt;t and &lt;code&gt;arecord
 &lt;p class=&quot;indented continuing&quot;&gt;
 &lt;code&gt;alsaucm&lt;/code&gt; is one of those programs that definitely make sense to the authors.
 But by clicking around –
-writing everything, in order, from &lt;a href=&quot;//manpages.debian.org/unstable/alsa-utils/alsaucm.1.en.html&quot;&gt;&lt;cite&gt;alsaucm(1)&lt;/cite&gt;&lt;/a&gt;
+running everything, in order, from &lt;a href=&quot;//manpages.debian.org/unstable/alsa-utils/alsaucm.1.en.html&quot;&gt;&lt;cite&gt;alsaucm(1)&lt;/cite&gt;&lt;/a&gt;
 (only real science on da blog):
 &lt;/p&gt;
 &lt;div class=&quot;continuing-inside&quot;&gt;
@@ -9326,7 +9326,7 @@ But at this time I noticed the tab expansion list for &lt;tt&gt;a&lt;/tt&gt; has
 &lt;/p&gt;
 &lt;a href=&quot;/content/assets/blogn_t/012b.22-DSCN0608cvcc.JPG&quot;&gt;&lt;img alt=&quot;Curses menu titled AlsaMixer v1.2.10, noting Card: mtk-rt5650; there's a plethora of bars labelled Headphon, Speaker, Speaker, I2S2 Fun, Mono ADC, and Mono DAC&quot; src=&quot;/content/assets/blogn_t/012b.22-DSCN0608cvcc.JPG&quot;&gt;&lt;/a&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-– but more importantly has a &lt;tt&gt;Headphon&lt;/tt&gt; output with green &lt;tt&gt;OO&lt;/tt&gt; and a &lt;tt&gt;Speaker&lt;/tt&gt; one in &lt;tt&gt;MM&lt;/tt&gt;,
+– but more importantly has a &lt;tt&gt;Headphon&lt;/tt&gt; output with green &lt;tt&gt;OO&lt;/tt&gt; and a &lt;tt&gt;Speaker&lt;/tt&gt; one is &lt;tt&gt;MM&lt;/tt&gt;,
 which is, respectively, not muted and muted, apparently.
 Plugging in headphones actually plays to the headphones.
 Amazing!
@@ -9520,7 +9520,7 @@ This means two possibilities remain:
  &lt;li&gt;having the rootfs on the eMMC and the kernel on a boot &lt;del&gt;floppy&lt;/del&gt;SD card – inherently funny and least invasive, but possibly the worst UX of all time&lt;/li&gt;
  &lt;li&gt;doing the ideal setup but keeping a kernel and minimal rootfs on an SD card to flip the priority bit manually for recovery 🙄&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p class=&quot;continued&quot;&gt;
+&lt;p class=&quot;continuing&quot;&gt;
 and the choice is obvious, since we already have that recovery image, and the path presents itself rather overtly:
 &lt;/p&gt;
 &lt;figure class=&quot;bigcode&quot; id=&quot;0init&quot;&gt;

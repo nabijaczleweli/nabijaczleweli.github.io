@@ -1119,7 +1119,7 @@ diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/startup.conf
 <p class="continuing">
 (The <samp class="path">ui.conf</samp> diff doesn'<!--'-->t do anything.
  The <samp class="path">boot-splash.conf</samp> deletion may be exchanged for a <samp class="path">startup.conf</samp> deletion instead, since it also runs frecon.
- Naturally, the way to show the "ChromeOS" fade-in is by passing a tty emulator 70 PNGs, and telling it to persist in developer mode.)
+ Naturally, the way to show the "ChromeOS" fade-in is by passing a tty emulator 70 PNGs, in developer mode, and keeping it running afterward.)
 <samp class="path">chromeos_startup</samp> is what triggers the self-repair message
 (rendered is by <code>pango-view</code>ing the background, the localised text, and the throbber to a PNG and giving those to frecon).
 This yields
@@ -1562,7 +1562,7 @@ The Debian kernel is unsuitable as-shipped because it's fully modular and we don
 <p class="indented continuing">
 Naturally, fixing this means <tt>apt source</tt>ing the latest kernel (6.6.11-1),
 copying <samp class="path">/boot/config-6.6.11-arm64</samp> to <samp class="path">.config</samp>,
-and either dealing with all the Kconfig UIs actively fighting you when you try to build in a component with modularised depdencies
+and either dealing with all the Kconfig UIs actively fighting you when you try to build in a component with modularised dependencies
 (why can't the computer <em>also</em> build them in instead of just complaining that they're modular and doing nothing? unsolvable problem)
 or just (<code>sed -i s/=m$/=y/ .config</code>) building every module into the kernel image.
 </p>
@@ -2040,7 +2040,7 @@ The patches are superficially worrying, but they all just touch the device tree 
 </dl>
 <p class="continuing">
 – whereas the same cannot be said for the MT8183 patches, but thankfully none of them are relevant here.
-It of interest to evaluate these against the <samp class="path">mt8173-elm-hana.dtb</samp> [<a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts">decompiled</a>] device tree distributed by ChromiumOS
+It is of interest to evaluate these against the <samp class="path">mt8173-elm-hana.dtb</samp> [<a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.mt8173-elm-hana.dts">decompiled</a>] device tree distributed by ChromiumOS
 </p>
 <dl class="continuation patch-list">
  <dt><a href="https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/blob/ef833e9d47339e2841afc4638b87180fade207e0/misc.cbm/patches/v6.6/mt8173-fix-mmc-order.patch"><samp class="path">mt8173-fix-mmc-order.patch</samp></a></dt>
@@ -2104,7 +2104,7 @@ shows
 <p class="indented continued">
 That'<!--'-->s an okay start, but as exemplified by the penguins this is a vajazzled defconfig instead of the reasonable Debian config,
 so Wi-Fi still doesn'<!--'-->t work (though that may just be the way iwd drives it and it may work with another userland),
-and mounting EXT4s <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/stb+dtb.dmesg-fkern">throws warnings (last lines)</a>,
+and mounting EXT4s <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/stb+dtb.dmesg-fkern">throws warnings (final lines)</a>,
 so beside the screen working it'<!--'-->s not a great kernel.
 </p>
 <p class="indented continuing">
@@ -2257,7 +2257,7 @@ and approximately twenty "simple framebuffer"s.
 Not to mention the spoopy axion at a distance with the actual driver – <tt>framebuffer-coreboot</tt> – not logging as itself.
 </p>
 <p class="indented continuing">
-Naturally, wants to enable all the <samp>GOOGLE</samp>/<samp>CROS</samp> configs, and you should; just not this one.
+Naturally, one wants to enable all the <samp>GOOGLE</samp>/<samp>CROS</samp> configs, and you should; just not this one.
 </p>
 <div class="bigcode"><pre class="continuing language-plaintext"><code class="language-plaintext">22M 01-27 23:17 new+pstored+sysrq+clock-uvesa+clk+mmc+devices_deferred2+rtc+6397+fixed+i2c+usbsh2+legacy-legacy+dtb+dma+simple+merged-svs+fb+df+drm+more+nogoog+somegoog.dtb
 22M 01-28 01:38 new+pstored+sysrq+clock-uvesa+clk+mmc+devices_deferred2+rtc+6397+fixed+i2c+usbsh2+legacy-legacy+dtb+dma+simple+nogoog.dtb
@@ -2414,7 +2414,7 @@ the SD card rootfs experience is as shit as ever.
 But this may well be because my SD card is not fast enough to qualify for any of the speed boosts – the two internal ones are
 <tt><q>new HS400 MMC card</q></tt> and <tt><q>new ultra high speed SDR104 SDIO card</q></tt> but this one is just <tt><q>new high speed SDHC card</q></tt>;
 maybe we need to actually install Debian because this is horrendous.
-This may be fixable with an SD card worth as much as the laptop instead of this drawer special,
+This may be fixable with an SD card worth as much as the laptop instead of my drawer special,
 but that still kinda defeats the purpose of a laptop with an internal <del>disk</del>rectangle.
 </p>
 <p class="indented continuing">
@@ -2502,7 +2502,7 @@ but <code>aplay</code> doesn'<!--'-->t and <code>arecord</code> records all zero
 <p class="indented continuing">
 <code>alsaucm</code> is one of those programs that definitely make sense to the authors.
 But by clicking around –
-writing everything, in order, from <a href="//manpages.debian.org/unstable/alsa-utils/alsaucm.1.en.html"><cite>alsaucm(1)</cite></a>
+running everything, in order, from <a href="//manpages.debian.org/unstable/alsa-utils/alsaucm.1.en.html"><cite>alsaucm(1)</cite></a>
 (only real science on da blog):
 </p>
 <div class="continuing-inside">
@@ -2570,7 +2570,7 @@ But at this time I noticed the tab expansion list for <tt>a</tt> has an <code>al
 </p>
 <a href="/content/assets/blogn_t/012b.22-DSCN0608cvcc.JPG"><img alt="Curses menu titled AlsaMixer v1.2.10, noting Card: mtk-rt5650; there's a plethora of bars labelled Headphon, Speaker, Speaker, I2S2 Fun, Mono ADC, and Mono DAC" src="/content/assets/blogn_t/012b.22-DSCN0608cvcc.JPG"></a>
 <p class="continuing">
-– but more importantly has a <tt>Headphon</tt> output with green <tt>OO</tt> and a <tt>Speaker</tt> one in <tt>MM</tt>,
+– but more importantly has a <tt>Headphon</tt> output with green <tt>OO</tt> and a <tt>Speaker</tt> one is <tt>MM</tt>,
 which is, respectively, not muted and muted, apparently.
 Plugging in headphones actually plays to the headphones.
 Amazing!
@@ -2764,7 +2764,7 @@ This means two possibilities remain:
  <li>having the rootfs on the eMMC and the kernel on a boot <del>floppy</del>SD card – inherently funny and least invasive, but possibly the worst UX of all time</li>
  <li>doing the ideal setup but keeping a kernel and minimal rootfs on an SD card to flip the priority bit manually for recovery 🙄</li>
 </ul>
-<p class="continued">
+<p class="continuing">
 and the choice is obvious, since we already have that recovery image, and the path presents itself rather overtly:
 </p>
 <figure class="bigcode" id="0init">
@@ -4009,9 +4009,9 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 16'<!--'-->s C preprocessor on 07.02.2024 22:06:42 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 08.02.2024 13:53:23 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp">src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1145548">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1145925">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml">RSS feed</a> 
  </body> 
