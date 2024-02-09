@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Mon, 5 Feb 2024 21:29:43 +0100" -->
+<!-- RSS_UPDATE_DATE: "Fri, 9 Feb 2024 22:12:52 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,10 +102,43 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2024-02-04, $101010.pl/@nabijaczleweli/111880068943735140)</a>.
+	Latest replication: REPLICATION(2024-02-09, $101010.pl/@nabijaczleweli/111903329023457077)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+<article>
+IMAGUS(onion-long-guy,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/903/281/696/588/261/original/45af730372481292.jpeg, $101010.pl/@nabijaczleweli/111903329023457077,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/903/281/884/095/112/original/26f03bb2a061d5b0.jpeg, $101010.pl/@nabijaczleweli/111903329023457077)
+
+<details open>
+	SUMMARY(onion-long-guy, <a href="//101010.pl/@the_art_of_giving_up@mastodon.social/111637997219976292">Emil'<!--'-->s vánočka</a>)
+	<p class="continuing">
+		<a href="//youtu.be/btFJfs-ZBiU">3-minute breakfast cake, 1 bowl of flour and 1 bowl of water, soft and fluffy
+		                                 (<span lang="zh-CN"><!--"-->3分钟早餐饼，1碗面粉1碗水，宣软蓬松不油不腻，孩子一口一个真好吃【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2024-02-09, $101010.pl/@nabijaczleweli/111903329023457077):
+	</p>
+	<ol class="continuation">
+		<li>NUM(3) eggs, NUM(3g) of salt, NUM(3g) of yeast – she sizes the eggs as "wholesale" but my wholesale-sized eggs were kinda small, use normal ones</li>
+		<li>a handful of chives, mix – not in season rn, but a bigger half of a large red onion instead was very good</li>
+		<li>flock in NUM(300g) of flour, knead</li>
+		<li>he sleeps</li>
+		<li>knead to de-gas, roll out rectangularly to NUM(5mm)</li>
+		<li>cut into thirds</li>
+		<li>for each third, cut into NUM(1cm)-wide strips</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>he sleeps covered for 15min</li>
+				<li>deploy on dry hot leccy pan, close the pan</li>
+				<li>flop when the bottom is golden-brown</li>
+				<li>bake for another NUM(2min) for even colour on either side</li>
+			</ol>
+		</li>
+	</ol>
+</details>
+
 
 <article>
 IMAGUS(emil-vánočka,
