@@ -113,7 +113,7 @@ IMAGUS(onion-long-guy,
        storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/903/281/884/095/112/original/26f03bb2a061d5b0.jpeg, $101010.pl/@nabijaczleweli/111903329023457077)
 
 <details open>
-	SUMMARY(onion-long-guy, <a href="//101010.pl/@the_art_of_giving_up@mastodon.social/111637997219976292">Emil'<!--'-->s vánočka</a>)
+	SUMMARY(onion-long-guy, Long onion bread)
 	<p class="continuing">
 		<a href="//youtu.be/btFJfs-ZBiU">3-minute breakfast cake, 1 bowl of flour and 1 bowl of water, soft and fluffy
 		                                 (<span lang="zh-CN"><!--"-->3分钟早餐饼，1碗面粉1碗水，宣软蓬松不油不腻，孩子一口一个真好吃【海娟美食】<!--"--></span>)</a>,
