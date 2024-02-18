@@ -3685,7 +3685,7 @@ and attempts at replication of various documentation showing mostly negative res
 <p class="indented continuing">
 1.94W idle (at a reasonable indoor backlight brightess) is the lowest power consumption I'<!--'-->ve seen on a computer.
 This is maintained at around 2.3W during static web browsing,
-and extends to >12h projected times-to-empty at around 70% battery capacity.
+and extends to >12h projected times-to-empty at around 70% battery capacity (~23h at ~100%)..
 There are no hardware accelerators that Firefox understands; there'<!--'-->s no OpenGL; fullscreen glxgears (llvmpipe) gets 57FPS, half-screen gets 140FPS, both at around 7W.
 </p>
 <p class="indented continuing">

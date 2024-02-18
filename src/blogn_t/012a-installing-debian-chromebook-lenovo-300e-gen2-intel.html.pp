@@ -841,9 +841,9 @@ device added: 06cb:1a10 SYTS7817:00 06CB:1A10 (/dev/input/event9)
 <!--"-->+175 ms	AT Translated Set 2 keyboard  0001:0001  volumedown down<!--"-->
 <!--"-->+139 ms	AT Translated Set 2 keyboard  0001:0001  volumeup down<!--"-->
 <!--"-->+519 ms	AT Translated Set 2 keyboard  0001:0001  sleep down<!--"-->
-
+<!---->
 <!--"-->+191 ms	AT Translated Set 2 keyboard  0001:0001  leftmeta down<!--"-->
-
+<!---->
 <!--"-->+173 ms	AT Translated Set 2 keyboard  0001:0001  volumedown down<!--"-->
 <!--"-->+480 ms	AT Translated Set 2 keyboard  0001:0001  volumeup down<!--"--><!--
 --></pre>
@@ -865,9 +865,9 @@ device added: 0fac:1ade keyd virtual pointer (/dev/input/event15)
 <!--"-->+147 ms	keyd virtual keyboard  0fac:0ade  volumedown down<!--"-->
 <!--"-->+316 ms	keyd virtual keyboard  0fac:0ade  volumeup down<!--"-->
 <!--"-->+263 ms	keyd virtual keyboard  0fac:0ade  coffee down<!--"-->
-
+<!---->
 <!--"-->+221 ms	keyd virtual keyboard  0fac:0ade  leftmeta down<!--"-->
-
+<!---->
 <!--"-->+773 ms	keyd virtual keyboard  0fac:0ade  volumedown down<!--"-->
 <!--"-->+339 ms	keyd virtual keyboard  0fac:0ade  volumeup down<!--"--><!--
 --></pre>

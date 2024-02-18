@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Fri, 9 Feb 2024 22:12:52 +0100" -->
+<!-- RSS_UPDATE_DATE: "Sun, 18 Feb 2024 20:28:01 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,10 +102,52 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2024-02-09, $101010.pl/@nabijaczleweli/111903329023457077)</a>.
+	Latest replication: REPLICATION(2024-02-17, $101010.pl/@nabijaczleweli/111953094782822407)</a>.
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
+
+<article>
+IMAGUS(round-bean-bun-set,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/953/094/410/776/572/original/ab63fb8e79a17fef.jpeg, $101010.pl/@nabijaczleweli/111953094782822407,
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/953/094/431/861/949/original/d4e24052d3f88f80.jpeg, $101010.pl/@nabijaczleweli/111953094782822407)
+
+<details open>
+	SUMMARY(round-bean-bun-set, Round co-steamed bean buns)
+	<p class="continuing">
+		<a href="//youtu.be/1dRqVUL4hhs">Cook the bread without an oven? Soft and fluffy!
+		                                 (<span lang="zh-CN"><!--"-->不用烤箱，教你在家做面包，简单一蒸，蓬松宣软还拉丝【海娟美食】<!--"--></span>)</a>,
+		by Haijuan Food,
+		replicated REPLICATION(2024-02-17, $101010.pl/@nabijaczleweli/111953094782822407):
+	</p>
+	<ol class="continuation">
+		<li>NUM(60g) egg, NUM(210g) of milk, NUM(2g) of yeast, NUM(10g) of sugar, stir to dissolve</li>
+		<li>NUM(350g) of flour, NUM(2g) of salt, flock</li>
+		<li>NUM(20g) of butter (or corn oil), knead</li>
+		<li>knead radially roll-wise, cylindrise, divide NUM(8)-wise</li>
+		<li>for each guy:
+			<ol class="continuing">
+				<li>knead radially, ballify</li>
+				<li>flatten, thinner on the edges</li>
+				<li>deploy bean paste</li>
+				<li>close like a bun</li>
+				<li>flatten</li>
+				<li>roll out long</li>
+				<li>cut through the top layer through most of the minor dimension, repeat across the major dimension</li>
+				<li>invert</li>
+				<li>fold, preserving the minor dimension, up to like NUM(⅔)rds</li>
+				<li>fold the other flap, preserving the minor dimension, up to the edge</li>
+				<li>roll out the sides that haven'<!--'-->t moved</li>
+				<li>fold both centrally</li>
+				<li>invert</li>
+				<li>deploy into papered cylindrical mould (NUM(7) radially, NUM(1) central) – mine was a tad small at NUM(⌀210)</li>
+			</ol>
+		</li>
+		<li>they sleep over warm water in the steamer (appx. NUM(30-40min))</li>
+		<li>boil the water, keep steaming for NUM(25min), keep shut warm for NUM(5min) thereafter</li>
+	</ol>
+</details>
+
 
 <article>
 IMAGUS(onion-long-guy,
@@ -451,7 +493,8 @@ IMAGUS(supposed-laobing,
 		           REPLICATION(2023-10-31, $101010.pl/@nabijaczleweli/111341104967972340),
 		           REPLICATION(2024-01-10, $101010.pl/@nabijaczleweli/111732581354542796),
 		           REPLICATION(2024-01-12, $101010.pl/@nabijaczleweli/111744470267322996),
-		           REPLICATION(2024-01-17, $101010.pl/@nabijaczleweli/111772190896591033):</p>
+		           REPLICATION(2024-01-17, $101010.pl/@nabijaczleweli/111772190896591033),
+		           REPLICATION(2024-02-11, $101010.pl/@nabijaczleweli/111913995778831904):</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>
@@ -649,7 +692,9 @@ IMAGUS(puckered-bread,
 		           REPLICATION(2023-06-30, lfs.nabijaczleweli.xyz/0016-cohost-export/httpsCOLON_SLASH_SLASHcohost.org/nabijaczleweli/post/1791054-empty),
 		           REPLICATION(2023-07-18, $101010.pl/@nabijaczleweli/110736025902684639),
 		           PREPLICATION(2023-08-14),
-		           REPLICATION(2024-02-04, $101010.pl/@nabijaczleweli/111880068943735140):</p>
+		           REPLICATION(2024-02-04, $101010.pl/@nabijaczleweli/111880068943735140),
+		           REPLICATION(2024-02-12, $101010.pl/@nabijaczleweli/111920590118411048),
+		           REPLICATION(2024-02-14, $101010.pl/@nabijaczleweli/111932121051092383):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
 		<li>flock in NUM(80g) of yogurt – I'<!--'-->ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
