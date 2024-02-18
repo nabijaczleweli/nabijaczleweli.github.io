@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2024-02-09T21:23:50</updated>
+  <updated>2024-02-18T19:38:53</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -6533,7 +6533,9 @@ device added: 06cb:1a10 SYTS7817:00 06CB:1A10 (/dev/input/event9)
 &lt;!--&quot;--&gt;+175 ms	AT Translated Set 2 keyboard  0001:0001  volumedown down&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;+139 ms	AT Translated Set 2 keyboard  0001:0001  volumeup down&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;+519 ms	AT Translated Set 2 keyboard  0001:0001  sleep down&lt;!--&quot;--&gt;
+
 &lt;!--&quot;--&gt;+191 ms	AT Translated Set 2 keyboard  0001:0001  leftmeta down&lt;!--&quot;--&gt;
+
 &lt;!--&quot;--&gt;+173 ms	AT Translated Set 2 keyboard  0001:0001  volumedown down&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;+480 ms	AT Translated Set 2 keyboard  0001:0001  volumeup down&lt;!--&quot;--&gt;&lt;!--
 --&gt;&lt;/pre&gt;
@@ -6555,7 +6557,9 @@ device added: 0fac:1ade keyd virtual pointer (/dev/input/event15)
 &lt;!--&quot;--&gt;+147 ms	keyd virtual keyboard  0fac:0ade  volumedown down&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;+316 ms	keyd virtual keyboard  0fac:0ade  volumeup down&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;+263 ms	keyd virtual keyboard  0fac:0ade  coffee down&lt;!--&quot;--&gt;
+
 &lt;!--&quot;--&gt;+221 ms	keyd virtual keyboard  0fac:0ade  leftmeta down&lt;!--&quot;--&gt;
+
 &lt;!--&quot;--&gt;+773 ms	keyd virtual keyboard  0fac:0ade  volumedown down&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;+339 ms	keyd virtual keyboard  0fac:0ade  volumeup down&lt;!--&quot;--&gt;&lt;!--
 --&gt;&lt;/pre&gt;
@@ -10714,7 +10718,7 @@ and attempts at replication of various documentation showing mostly negative res
 &lt;p class=&quot;indented continuing&quot;&gt;
 1.94W idle (at a reasonable indoor backlight brightess) is the lowest power consumption I'&lt;!--'--&gt;ve seen on a computer.
 This is maintained at around 2.3W during static web browsing,
-and extends to &gt;12h projected times-to-empty at around 70% battery capacity.
+and extends to &gt;12h projected times-to-empty at around 70% battery capacity (~23h at ~100%)..
 There are no hardware accelerators that Firefox understands; there'&lt;!--'--&gt;s no OpenGL; fullscreen glxgears (llvmpipe) gets 57FPS, half-screen gets 140FPS, both at around 7W.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -11539,7 +11543,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2024-02-09T22:12:52+01:00</updated>
+    <updated>2024-02-18T20:28:01+01:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -11627,10 +11631,52 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111903329023457077&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-09&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111953094782822407&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-17&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
+&lt;article&gt;
+&lt;/article&gt; 
+ &lt;article id=&quot;round-bean-bun-set&quot;&gt; 
+ &lt;center class=&quot;grid-by-each continued&quot;&gt; 
+ &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111953094782822407&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/953/094/410/776/572/original/ab63fb8e79a17fef.jpeg&quot; /&gt;&lt;/a&gt;&lt;!-- 
+ --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111953094782822407&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/953/094/431/861/949/original/d4e24052d3f88f80.jpeg&quot; /&gt;&lt;/a&gt; 
+ &lt;/center&gt;
+&lt;details open&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#round-bean-bun-set&quot;&gt;#&lt;/a&gt;Round co-steamed bean buns&lt;/summary&gt;
+ &lt;p class=&quot;continuing&quot;&gt;
+  &lt;a href=&quot;//youtu.be/1dRqVUL4hhs&quot;&gt;Cook the bread without an oven? Soft and fluffy!
+                                   (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;不用烤箱，教你在家做面包，简单一蒸，蓬松宣软还拉丝【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
+  by Haijuan Food,
+  replicated &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111953094782822407&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-17&lt;/span&gt;&lt;/a&gt;:
+ &lt;/p&gt;
+ &lt;ol class=&quot;continuation&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;60g&lt;/span&gt; egg, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;210g&lt;/span&gt; of milk, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;10g&lt;/span&gt; of sugar, stir to dissolve&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;350g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2g&lt;/span&gt; of salt, flock&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;20g&lt;/span&gt; of butter (or corn oil), knead&lt;/li&gt;
+  &lt;li&gt;knead radially roll-wise, cylindrise, divide &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;8&lt;/span&gt;-wise&lt;/li&gt;
+  &lt;li&gt;for each guy:
+   &lt;ol class=&quot;continuing&quot;&gt;
+    &lt;li&gt;knead radially, ballify&lt;/li&gt;
+    &lt;li&gt;flatten, thinner on the edges&lt;/li&gt;
+    &lt;li&gt;deploy bean paste&lt;/li&gt;
+    &lt;li&gt;close like a bun&lt;/li&gt;
+    &lt;li&gt;flatten&lt;/li&gt;
+    &lt;li&gt;roll out long&lt;/li&gt;
+    &lt;li&gt;cut through the top layer through most of the minor dimension, repeat across the major dimension&lt;/li&gt;
+    &lt;li&gt;invert&lt;/li&gt;
+    &lt;li&gt;fold, preserving the minor dimension, up to like &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;⅔&lt;/span&gt;rds&lt;/li&gt;
+    &lt;li&gt;fold the other flap, preserving the minor dimension, up to the edge&lt;/li&gt;
+    &lt;li&gt;roll out the sides that haven'&lt;!--'--&gt;t moved&lt;/li&gt;
+    &lt;li&gt;fold both centrally&lt;/li&gt;
+    &lt;li&gt;invert&lt;/li&gt;
+    &lt;li&gt;deploy into papered cylindrical mould (&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;7&lt;/span&gt; radially, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;1&lt;/span&gt; central) – mine was a tad small at &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;⌀210&lt;/span&gt;&lt;/li&gt;
+   &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;they sleep over warm water in the steamer (appx. &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;30-40min&lt;/span&gt;)&lt;/li&gt;
+  &lt;li&gt;boil the water, keep steaming for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;25min&lt;/span&gt;, keep shut warm for &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;5min&lt;/span&gt; thereafter&lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/details&gt;
 &lt;article&gt;
 &lt;/article&gt; 
  &lt;article id=&quot;onion-long-guy&quot;&gt; 
@@ -11639,7 +11685,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
  --&gt;&lt;a href=&quot;https://101010.pl/@nabijaczleweli/111903329023457077&quot;&gt;&lt;img loading=&quot;lazy&quot; class=&quot;grid-by-each&quot; src=&quot;https://storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/903/281/884/095/112/original/26f03bb2a061d5b0.jpeg&quot; /&gt;&lt;/a&gt; 
  &lt;/center&gt;
 &lt;details open&gt;
- &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#onion-long-guy&quot;&gt;#&lt;/a&gt;&lt;a href=&quot;//101010.pl/@the_art_of_giving_up@mastodon.social/111637997219976292&quot;&gt;Emil'&lt;!--'--&gt;s vánočka&lt;/a&gt;&lt;/summary&gt;
+ &lt;summary class=&quot;roboto-unscale&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#onion-long-guy&quot;&gt;#&lt;/a&gt;Long onion bread&lt;/summary&gt;
  &lt;p class=&quot;continuing&quot;&gt;
   &lt;a href=&quot;//youtu.be/btFJfs-ZBiU&quot;&gt;3-minute breakfast cake, 1 bowl of flour and 1 bowl of water, soft and fluffy
                                    (&lt;span lang=&quot;zh-CN&quot;&gt;&lt;!--&quot;--&gt;3分钟早餐饼，1碗面粉1碗水，宣软蓬松不油不腻，孩子一口一个真好吃【海娟美食】&lt;!--&quot;--&gt;&lt;/span&gt;)&lt;/a&gt;,
@@ -11962,7 +12008,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111341104967972340&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-10-31&lt;/span&gt;&lt;/a&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111732581354542796&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-01-10&lt;/span&gt;&lt;/a&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111744470267322996&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-01-12&lt;/span&gt;&lt;/a&gt;,
-             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111772190896591033&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-01-17&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111772190896591033&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-01-17&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111913995778831904&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-11&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;100g&lt;/span&gt; of rye flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;190g&lt;/span&gt; of boiling water, pastify, let cool to yeast temp&lt;/li&gt;
   &lt;li&gt;mix in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;3g&lt;/span&gt; of yeast&lt;/li&gt;
@@ -12153,7 +12200,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
              &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0016-cohost-export/https://cohost.org/nabijaczleweli/post/1791054-empty&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-06-30&lt;/span&gt;&lt;/a&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/110736025902684639&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-07-18&lt;/span&gt;&lt;/a&gt;,
              &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-14&lt;/span&gt;,
-             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111880068943735140&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-04&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111880068943735140&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-04&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111920590118411048&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-12&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111932121051092383&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-14&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;35g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50-60g&lt;/span&gt; egg, mix&lt;/li&gt;
   &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;80g&lt;/span&gt; of yogurt – I'&lt;!--'--&gt;ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine&lt;/li&gt;
