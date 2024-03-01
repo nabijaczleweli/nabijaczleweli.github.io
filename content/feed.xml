@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2024-02-18T19:38:53</updated>
+  <updated>2024-03-01T20:31:35</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -11543,7 +11543,7 @@ A full list of conversions and their implementations can be found at the
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
     <link href="https://nabijaczleweli.xyz/content/../content/recipes/" />
     <title> Recipes — nabijaczleweli </title>
-    <updated>2024-02-18T20:28:01+01:00</updated>
+    <updated>2024-03-01T21:21:07+01:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
 &lt;style&gt;
@@ -11631,7 +11631,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; My answer to the replication crisis &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;p&gt;
- Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111953094782822407&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-17&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;.
+ Latest replication: &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111987958901410421&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-20&lt;/span&gt;&lt;/a&gt;.
  &lt;button toggle-tag=&quot;details&quot;&gt;Toggle all&lt;/button&gt;
  &lt;button toggle-tag=&quot;center&quot; &gt;Toggle images&lt;/button&gt;
 &lt;/p&gt;
@@ -12202,7 +12202,8 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
              &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2023-08-14&lt;/span&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111880068943735140&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-04&lt;/span&gt;&lt;/a&gt;,
              &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111920590118411048&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-12&lt;/span&gt;&lt;/a&gt;,
-             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111932121051092383&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-14&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111932121051092383&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-14&lt;/span&gt;&lt;/a&gt;,
+             &lt;a href=&quot;https://101010.pl/@nabijaczleweli/111987958901410421&quot;&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;2024-02-20&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
  &lt;ol class=&quot;continuation&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;500g&lt;/span&gt; of flour, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;4-5g&lt;/span&gt; of yeast, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;35g&lt;/span&gt; of sugar, &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;50-60g&lt;/span&gt; egg, mix&lt;/li&gt;
   &lt;li&gt;flock in &lt;span class=&quot;roboto-unscale math-font-normal&quot;&gt;80g&lt;/span&gt; of yogurt – I'&lt;!--'--&gt;ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine&lt;/li&gt;
