@@ -58,6 +58,7 @@
     <link rel="manifest" href="/assets/favicons/manifest.json">                                                                          FORCED_NEWLINE \
     <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">                                                 FORCED_NEWLINE \
     <link rel="shortcut icon" href="/assets/favicons/favicon.ico">                                                                       FORCED_NEWLINE \
+    <link rel="alternate" href="/content/feed.xml" type="application/rss+xml">                                                           FORCED_NEWLINE \
     <meta name="apple-mobile-web-app-title" content="nabijaczleweli">                                                                    FORCED_NEWLINE \
     <meta name="application-name" content="nabijaczleweli">                                                                              FORCED_NEWLINE \
     <meta name="msapplication-TileColor" content="#da532c">                                                                              FORCED_NEWLINE \
@@ -115,6 +116,6 @@
     <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a>.          FORCED_NEWLINE \
     CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
-    <a href="/content/feed.xml">RSS feed</a>                                                                                         FORCED_NEWLINE \
+    <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a>                                              FORCED_NEWLINE \
   </body>                                                                                                                            FORCED_NEWLINE \
 </html>

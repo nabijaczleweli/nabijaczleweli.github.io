@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Sun, 18 Feb 2024 20:28:01 +0100" -->
+<!-- RSS_UPDATE_DATE: "Fri, 1 Mar 2024 21:21:07 +0100" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,7 +102,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2024-02-17, $101010.pl/@nabijaczleweli/111953094782822407)</a>.
+	Latest replication: REPLICATION(2024-02-20, $101010.pl/@nabijaczleweli/111987958901410421).
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -694,7 +694,8 @@ IMAGUS(puckered-bread,
 		           PREPLICATION(2023-08-14),
 		           REPLICATION(2024-02-04, $101010.pl/@nabijaczleweli/111880068943735140),
 		           REPLICATION(2024-02-12, $101010.pl/@nabijaczleweli/111920590118411048),
-		           REPLICATION(2024-02-14, $101010.pl/@nabijaczleweli/111932121051092383):</p>
+		           REPLICATION(2024-02-14, $101010.pl/@nabijaczleweli/111932121051092383),
+		           REPLICATION(2024-02-20, $101010.pl/@nabijaczleweli/111987958901410421):</p>
 	<ol class="continuation">
 		<li>NUM(500g) of flour, NUM(4-5g) of yeast, NUM(35g) of sugar, NUM(50-60g) egg, mix</li>
 		<li>flock in NUM(80g) of yogurt – I'<!--'-->ve been informed chinese yogurt is closer to zsiadłe mleko (or, indeed, lait ribot). that worked fine</li>
