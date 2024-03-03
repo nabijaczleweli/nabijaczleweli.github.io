@@ -11,7 +11,7 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-  <updated>2024-03-01T20:31:35</updated>
+  <updated>2024-03-03T01:03:41</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
@@ -23,60 +23,6 @@
     <updated>2020-04-28T02:54:07+02:00</updated>
     <published>2020-04-09T01:44:47+02:00</published>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-samp {
-  white-space: pre-wrap;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -342,21 +288,6 @@ Alright, bye!
     <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli </title>
     <updated>2020-05-25T00:12:30+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -400,61 +331,6 @@ You may also be interested in the corresponding &lt;a href=&quot;//lfs.nabijaczl
     <title> 003. A proof-of-concept IRC/mail bridge — blognꞌt — nabijaczleweli </title>
     <updated>2020-07-11T00:34:50+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-video, img {
- max-width: 100%;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;003. A proof-of-concept IRC/mail bridge&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -678,15 +554,6 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
     <title> 004. New album: cinque — blognꞌt — nabijaczleweli </title>
     <updated>2020-07-18T22:14:33+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-
-img {
- max-width: 100%;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;004. New album: cinque&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -719,65 +586,6 @@ You can find assorted extras (full-sized track and album art, programs to make t
     <updated>2022-06-11T00:19:37+02:00</updated>
     <published>2020-09-14T00:20:20+02:00</published>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.main-screenshot {
- margin-top: 0.2em;
- margin-bottom: 0.15em;
-}
-samp {
-  white-space: pre-wrap;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -1396,62 +1204,6 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
     <title> 005a. A single-disk but slightly more cursed ZFS-on-root corollary — blognꞌt — nabijaczleweli </title>
     <updated>2020-11-05T22:06:30+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.main-screenshot {
- margin-top: 0.2em;
- margin-bottom: 0.15em;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -1701,79 +1453,6 @@ zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.50G&lt;!--&quot;--&gt;  &lt;!--&qu
     <title> 006. ¹UNIX® is a registered trademark of AT&amp;T. — blognꞌt — nabijaczleweli </title>
     <updated>2021-07-08T20:26:38+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.main-screenshot {
- margin-top: 0.2em;
- margin-bottom: 0.15em;
- width: 100%;
-}
-.main-font {
- margin-top: 0.15em;
- margin-bottom: 0.15em;
- max-width: 100%;
-}
-@media all and (min-device-width: 400px) {
- .main-font {
-  width: 100%;
- }
-}
-@media all and (min-device-width: 800px) {
- .main-font {
-  margin-left: 1em;
-  min-width: 75%;
- }
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -1841,83 +1520,6 @@ Anyway, glam shots.
     <title> 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps — blognꞌt — nabijaczleweli </title>
     <updated>2021-08-28T18:36:44+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.fragment {
- max-width: 100%;
-}
-.main-font {
- margin-top: 0.15em;
- margin-bottom: 0.15em;
- max-width: 100%;
-}
-ol.wide-explanation {
- padding-left: 1em; /* matches .indented  */
-}
-ol.wide-explanation &gt; li {
- margin-bottom: 0.9em;
-}
-@media all and (min-device-width: 400px) {
- .main-font {
-  width: 100%;
- }
-}
-@media all and (min-device-width: 800px) {
- .main-font {
-  margin-left: 1em;
-  min-width: 75%;
- }
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -2590,70 +2192,6 @@ x&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;nobody
     <title> 008. AMIX fonts — blognꞌt — nabijaczleweli </title>
     <updated>2022-11-17T22:36:33+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-/* Measured against merriweather in the heading. */
-.sunfont {
- font-family: sunfont;
- font-size: 1.25em; /* 60/48 */
-}
-.topaz {
- font-family: topaz;
- font-size: 0.80em; /* 55/69 */
-}
-img {
- max-width: 100%;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -2771,122 +2309,6 @@ see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.ful
     <title> 009. XEROX SIGMA 9 balls — blognꞌt — nabijaczleweli </title>
     <updated>2022-12-01T17:16:50+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.main-screenshot {
- margin-top: 0.2em;
- margin-bottom: 0.15em;
- width: 100%;
-}
-.overlay {
- position: relative;
-}
-.overlay &gt; * {
- width: 100%;
-}
-.overlay :first-child {
- position: absolute;
-}
-.overlaid {
- position: relative;
- top: -100%;
- opacity: 0;
-  animation-duration: 10s;
-  animation-name: overlaid;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-@keyframes overlaid {
-  0% {
-    opacity: 0;
-  }
-  2% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.side-by-each {
- width: 100%;
-}
-.side-by-each &gt; * {
- display: inline-block;
- width: 48%;
- vertical-align: top;
-}
-.side-by-each &gt; *:nth-child(2) {
- margin-left: 1.5%;
-}
-.grid-by-each {
- width: 100%;
-}
-.grid-by-each &gt; * {
- display: inline-block;
- width: 50%;
-}
-/* Measured against merriweather in the heading. */
-.sunfont {
- font-family: sunfont;
- font-size: 1.25em; /* 60/48 */
-}
-.topaz {
- font-family: topaz;
- font-size: 0.80em; /* 55/69 */
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;009. XEROX SIGMA 9 balls&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -3020,69 +2442,6 @@ Anyway, glam shots.
     <updated>2023-06-21T23:56:00+02:00</updated>
     <published>2023-06-19T23:53:58+02:00</published>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.main-screenshot {
- margin-top: 0.2em;
- margin-bottom: 0.15em;
- width: 100%;
-}
-kbd {
- font-weight: bold;
-}
-pre.bigcode {
- white-space: pre-wrap;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;010. tme booting SunOS 3 on Sun-2 in 2023&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -3371,7 +2730,7 @@ tape0 at st0: tme/host/posix/tape&lt;!--
 &lt;p class=&quot;continuing&quot;&gt;
 should hold.
 If you get any &lt;code&gt;ENOENT&lt;/code&gt;s that aren't due to keysyms, you're missing some plugins that need to be linked to &lt;code&gt;tme/&lt;/code&gt;.
-Since &lt;span class=&quot;smallcaps&quot;&gt;1&lt;/span&gt; is an exercise in writing programs for your programs in your programs, the &lt;code&gt;tmesh&lt;/code&gt; process is, per nom, a shell;
+Since &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; is an exercise in writing programs for your programs in your programs, the &lt;code&gt;tmesh&lt;/code&gt; process is, per nom, a shell;
 unlike &lt;span class=&quot;smallcaps&quot;&gt;dec&lt;/span&gt;tapes everyone'&lt;!--'--&gt;s familiar with, tapes here consist of indexed partitions;
 thus, running &lt;kbd&gt;command tape0 load part0 part1 …&lt;/kbd&gt; inserts a tape consisting of &lt;var&gt;part&lt;/var&gt;s into &lt;code&gt;st0&lt;/code&gt;,
 &lt;kbd&gt;command tape0 unload&lt;/kbd&gt; does the obverse, and &lt;code&gt;load&lt;/code&gt;ing twice in a row yields a sensible error.
@@ -3381,7 +2740,7 @@ Conversely, &lt;kbd&gt;^D&lt;/kbd&gt;ing segfaults the emulator.
 &lt;/p&gt;
 &lt;a href=&quot;/content/assets/blogn_t/010.2-plain.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;main-screenshot dark-invert&quot; src=&quot;/content/assets/blogn_t/010.2-plain.png&quot; /&gt;&lt;/a&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-The hard(-to-bear) part (other people'&lt;!--'--&gt;s C) is largely over, and can be followed by the hard(-to-bear) part of unpacking &lt;span class=&quot;smallcaps&quot;&gt;1&lt;/span&gt;.
+The hard(-to-bear) part (other people'&lt;!--'--&gt;s C) is largely over, and can be followed by the hard(-to-bear) part of unpacking &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;.
 Western Electric and UCB licensees may obtain the SunOS 3.5/Sun-2 tape set from &lt;a href=&quot;//winworldpc.com/product/sunos/3x&quot;&gt;WinWorld&lt;/a&gt;,
 extract it somewhere, and ease their lives by running &lt;kbd&gt;ln -s &lt;var&gt;$somewhere&lt;/var&gt;/'Sun UNIX 4.2 Release 3.5 (Tape) [Sun-2]'/tape? .&lt;/kbd&gt;.
 All SunOS 3 tapes, contrary to their predecessors, have a TOC as the second partition:
@@ -3887,82 +3246,6 @@ but at that point you might as well just chroot after installing from the miniro
     <title> 011. pipe exclusion with splice() under Linux — blognꞌt — nabijaczleweli </title>
     <updated>2023-07-07T01:42:34+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-kbd {
-  font-weight: bold;
-}
-.inline {
-  padding-left: 3em;
-}
-pre {
-  white-space: pre-wrap;
-}
-dl {
-  display: table;
-}
-dl &gt; div {
-  display: table-row;
-}
-dl &gt; div &gt; dt, dl &gt; div &gt; dd {
-  display: table-cell;
-}
-dl &gt; div &gt; dt {
-  font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
-}
-dl &gt; div &gt; dd {
-  padding-left: 1em;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;011. pipe exclusion with splice() under Linux&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -4199,76 +3482,6 @@ sexion.
     <title> 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt — nabijaczleweli </title>
     <updated>2024-01-08T16:06:34+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-img {
-  max-width: 100%;
-  border-radius: .2em;
-  vertical-align: bottom;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 0;
-}
-dl &gt; div {
-  display: inline-grid;
-  margin-right: 0.5em;
-}
-tt {
-  font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen arm64 Chromebook&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -4512,216 +3725,6 @@ but one has a Celeron N4000 and the other an MT8173.
     <title> 012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt — nabijaczleweli </title>
     <updated>2024-01-11T04:04:28+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-/* This page has a bigcode at the very top, so on big screens in light mode you get blue/purple links on black background  */
-@media (min-device-width: 800px) and (prefers-color-scheme: light) {
-  details#contents &gt; ol {
-    background-color: rgba(255, 255, 255, .5);
-    border-radius: .2em;
-  }
-}
-img {
-  max-width: 100%;
-  border-radius: .2em;
-  vertical-align: bottom;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 0;
-}
-dl &gt; div {
-  display: inline-grid;
-  margin-right: 0.5em;
-}
-/* SPDX-License-Identifier: CC-BY-4.0 */
-dl.keyboard {
-  display: grid;
-}
-dl.keyboard dt {
-  justify-self: right;
-  padding-right: 0.3em;
-}
-dl.keyboard dt, dl.keyboard dd {
-  display: inline;
-}
-img.iconic {
-  height: 1em;
-  vertical-align: initial;
-}
-dl.keyboard {
-  grid-template-columns: repeat(4, 1fr);
-}
-@media all and (min-device-width: 700px) {
-  dl.keyboard {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-@media all and (min-device-width: 800px) {
-  dl.keyboard {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media all and (min-device-width: 1200px) {
-  dl.keyboard {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-@media all and (min-device-width: 1500px) {
-  dl.keyboard {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-tt {
-  font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
-}
-pre &gt; code {
-  white-space: pre-wrap !important;
-}
-pre details {
-  display: inherit;
-}
-pre details summary {
-  display: inline list-item;
-  font-family: inherit;
-}
-dl.linear, dl.linear dt, dl.linear dd {
-  display: inline;
-}
-dl.linear dt::after {
-  content: &quot;:&quot;;
-}
-dl.linear dd::after {
-  content: &quot;,&quot;;
-}
-dl.linear dd:last-child::after {
-  content: &quot;.&quot;;
-}
-ol#explicit-contents a {
-  display: block;
-}
-ol#explicit-contents, ol#explicit-contents ol {
-  list-style-type: none;
-}
-ol#explicit-contents ol {
-  padding-left: 1em;
-}
-.heading-ref, ol#explicit-contents a {
-  font-family: &quot;Merriweather&quot;, serif; /* same as h1 &amp;c. */
-  font-size: 0.95em; /* unscale a bit */
-}
-.heading-ref {
-  font-weight: bold;
-}
-.chrultra-heading {
-  font-weight: bold;
-  font-style: italic;
-}
-div.tipwarning {
-  padding-left: 0.25em; /* same as blockquote  */
-  border-left: 0.25em solid;
-}
-.tipwarning.tip {
-  border-left-color: #30d56f;
-}
-.tipwarning.warning {
-  border-left-color: #e0ad15;
-}
-.tipwarning.warning dt {
-  color: #fdca31;
-}
-.tipwarning.danger {
-  border-left-color: #fc1e38;
-}
-.tipwarning.danger dt, a.tipwarning.danger {
-  color: #fc2d3b;
-}
-.language-ANSI .bold {
-  font-weight: bold;
-}
-.language-ANSI .cyan {
-  color: #00CDCD; /* cyan3  */
-}
-.language-ANSI .green {
-  color: #00CD00; /* green3  */
-}
-.language-ANSI .red {
-  color: #CD0000; /* red3  */
-}
-.language-ANSI .yellow {
-  color: #CDCD00; /* yellow3  */
-}
-.language-ANSI .bright.yellow {
-  color: #FFFF00; /* yellow */
-}
-.language-ANSI .bright.blue {
-  color: #6c5cff; /* #6c5cff */
-}
-.language-ANSI .bright.magenta {
-  color: #FF00FF; /* magenta */
-}
-#spacespace::before {
-  content: &quot;  &quot;;
-}
-samp.path {
- font-style: italic;
-}
-code[class=&quot;language-ini&quot;], pre[class=&quot;language-ini&quot;] {
- tab-size: 8 !important;
- -moz-tab-size: 8 !important;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012a. Installing Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen Chromebook (Intel)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -6822,243 +5825,6 @@ A good bug report never goes unpunished.
     <title> 012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) (real) — blognꞌt — nabijaczleweli </title>
     <updated>2024-02-07T01:09:33+01:00</updated>
     <content type="html">
-&lt;style&gt;
-/*#include &quot;../writing/the_taste_of_mi/spacing.css&quot; + !important for &lt;pre&gt; */
-.continued {
- margin-bottom: 0 !important;
-}
-.continuing {
- margin-top: 0 !important;
- margin-bottom: 0 !important;
-}
-.continuation {
- margin-top: 0 !important;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-/* From https://hinfo.network/  */
-.sunfont {
-  font-family: sunfont;
-  font-size: 1.25em;
-  font-kerning: none;
-}
-.topaz {
-  font-family: topaz;
-  font-size: 0.60em;
-  position: relative;
-  top: -0.05em;
-}
-img, video {
-  max-width: 100%;
-  border-radius: .5em;
-  vertical-align: bottom;
-}
-video {
- width: 100%;
-}
-dt {
-  font-weight: bold;
-}
-dl:not(.patch-list) dd {
-  margin-left: 0;
-}
-dl &gt; div {
-  display: inline-grid;
-  margin-right: 0.5em;
-}
-.spacing-only {
-  color: transparent;
-}
-tt {
-  font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
-}
-@media all and (min-device-width: 600px) {
- .side-by-each-inside &gt; a {
-  width: 50%;
-  vertical-align: middle;
-  display: inline-block;
- }
-}
-samp.path {
- font-style: italic;
-}
-dl.linear, dl.linear dt, dl.linear dd {
-  display: inline;
-}
-dl.linear dt::after {
-  content: &quot;:&quot;;
-}
-dl.linear dd::after {
-  content: &quot;,&quot;;
-}
-dl.linear dd:last-child::after {
-  content: &quot;&quot;;
-}
-summary {
- font-family: inherit;
-}
-details a {
- display: inline-block;
-}
-details a::after {
-  content: &quot;,&quot;;
-}
-details a:last-child::after {
-  content: &quot;&quot;;
-}
-details#contents a::after {
- content: &quot;&quot;;
-}
-pre[class*=&quot;language-&quot;] &gt; code[class*=&quot;language-&quot;] small {
- vertical-align: text-bottom;
-}
-dl.guid-demo dt, dl.guid-demo dd {
- display: inline;
-}
-dl.guid-demo dt:after {
- content: &quot;:&quot;;
-}
-pre .off {
- display: none;
-}
-ol.alphalist {
-  counter-reset: alphalist;
-}
-ol.alphalist &gt; li {
-  list-style: none;
-  counter-increment: alphalist;
-}
-ol.alphalist &gt; li::marker {
-  content: counter(alphalist, lower-latin) &quot;)\a0&quot;;
-}
-.continuing-inside &gt; * {
- margin-top: 0 !important;
- margin-bottom: 0 !important;
-}
-cite.local-ref, cite .local-ref {
- font-style: inherit;
-  font-family: &quot;Merriweather&quot;, serif; /* same as h1 &amp;c. */
-  font-size: 0.95em; /* unscale a bit */
-}
-blockquote del, q del, .ell del, cite:not(.local-ref) del {
- opacity: 50%;
- text-decoration: inherit;
-}
-#debug_button_shortcuts_table {
- border-collapse: collapse;
-}
-#debug_button_shortcuts_table th {
- background-color: rgba(128, 128, 128, 0.0784313725490196);
-}
-#debug_button_shortcuts_table th,
-#debug_button_shortcuts_table td {
- border: 1px solid rgba(128, 128, 128, 0.133333333333333);
- padding: 4px 12px;
-}
-#debug_button_shortcuts_table kbd, kbd.chromiumos {
- padding: 2px 4px;
- background-color: rgba(128, 128, 128, 0.0784313725490196);
- border-radius: .5em;
-}
-.language-ANSI .green, .language-ANSI .green &gt; a {
-  color: #00CD00; /* green3  */
-}
-.language-ANSI .red {
-  color: #CD0000; /* red3  */
-}
-aside {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: rgba(0, 0, 0, .7);
-  padding: 5px;
-  border-radius: .5em;
-  color: white;
-  text-decoration: underline;
- font-family: &quot;Droid Sans Mono&quot;, monospace; /* &lt;code&gt; */
- font-weight: bold;
-}
-iframe {
- display: block;
- max-width: 100%;
-}
-figure {
- margin-left: 0;
- margin-right: 0;
-}
-figure small, small.very {
- font-size: 0.5em;
-}
-/* SPDX-License-Identifier: CC-BY-4.0 */
-dl.keyboard {
-  display: grid;
-}
-dl.keyboard dt {
-  justify-self: right;
-  padding-right: 0.3em;
-}
-dl.keyboard dt, dl.keyboard dd {
-  display: inline;
-}
-img.iconic {
-  height: 1em;
-  vertical-align: initial;
-}
-dl.keyboard {
-  grid-template-columns: repeat(6, 1fr);
-}
-@media all and (min-device-width: 700px) {
-  dl.keyboard {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-@media all and (min-device-width: 1200px) {
-  dl.keyboard {
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-.tab8-inside * {
- tab-size: 8 !important;
- -moz-tab-size: 8 !important;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto writing&quot;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012b. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen MTK arm64 Chromebook (hana) (real)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
@@ -10763,142 +9529,6 @@ Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;
     <title> gen-epub-book general — nabijaczleweli </title>
     <updated>2017-08-30T03:38:21+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.overlay-container {
- display: inline-block;
- position: relative;
-}
-.overlay-target {
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
-}
-@media (prefers-color-scheme: dark) {
- .overlay-container .dark-invert {
-  filter: none !important;;
- }
-}
-h1 {
- margin-top: 0;
- margin-bottom: 0.4em;
-}
-h2, h3, p {
- margin-top: 0.4em;
- margin-bottom: 0.4em;
-}
-h2 {
- margin-top: 2em;
-}
-h3 {
- margin-top: 1.5em;
-}
-.nowrap {
- white-space: nowrap;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-th, td {
- padding-left: 0.25em;
- padding-right: 0.25em;
- text-align: left;
-}
-td {
- font-size: calc(9em / 10);
-}
-tr:nth-child(1) {
-  background-color: #aaaaaaa0;
-}
-tr:nth-child(even) {
-  background-color: #eeeeeea0;
-}
-tr:hover {
-  background-color: #cccccca0;
-  transition: all 0.25s;
-}
-.highlit-code {
- border-radius: calc(1em / 3);
- padding-left: calc(1em / 5);
- padding-right: calc(1em / 5);
- padding-top: calc(1em / 4);
- padding-bottom: calc(1em / 4);
- margin-top: 0;
- margin-bottom: 0;
- color: #e6e1dc;
- background-color: #232323;
-}
-.highlit-code .code-line {
- width: 100%;
- display: inline-block;
-  transition: all 0.25s;
-}
-.highlit-code .code-line:hover {
- background-color: #333435;
-}
-.highlit-code .punctuation, .highlit-code .punctuation * {
- color: #cc7833;
-}
-.highlit-code .comment, .highlit-code .comment * {
- color: #bc9458;
-}
-.highlit-code .keyword, .highlit-code .keyword * {
- color: #da4939;
-}
-.highlit-code .verb, .highlit-code .verb * {
- color: #e8bf6a;
-}
-.highlit-code .string, .highlit-code .string * {
- color: #a5c261;
-}
-.highlit-code .variable, .highlit-code .variable * {
- color: #d0d0ff;
-}
-.tag {
- border-radius: calc(1em / 3);
- padding-left: calc(1em / 10);
- padding-right: calc(1em / 10);
- padding-top: calc(1em / 20);
- padding-bottom: calc(1em / 20);
-}
-.tag-white {
- background-color: #eee;
-}
-&lt;/style&gt;
 &lt;div class=&quot;roboto&quot;&gt;&lt;span class=&quot;roboto-unscale&quot;&gt;
 &lt;!-- Style based on https://daringfireball.net/projects/markdown/ --&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -11111,21 +9741,6 @@ I hope that this document is clear and/or informative, if not,
     <title> Mandalas — nabijaczleweli </title>
     <updated>2017-06-13T22:42:51+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; Tonči Juričev-Grgin mandalas &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
 &lt;p class=&quot;indented continued&quot; id=&quot;intro&quot;&gt;
@@ -11546,76 +10161,6 @@ A full list of conversions and their implementations can be found at the
     <updated>2024-03-01T21:21:07+01:00</updated>
     <published>2023-05-03T23:16:48+02:00</published>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-code, samp {
- font-family: &quot;Droid Sans Mono&quot;, monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: &quot;Merriweather&quot;, serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*=&quot;icon&quot;], a [class*=&quot;devicon&quot;],
-a.fa, a.far, a.fab, a[class*=&quot;icon&quot;], a[class*=&quot;devicon&quot;] {
- color: inherit;
- text-decoration: none;
-}
-
-details {
- margin-top: 1em;
-}
-center {
- margin-top: 2em;
-}
-ol li ol {
-  list-style-type: lower-greek; /* can't seem to get a functional 6.1., so this will have to do */
-}
-ol li ol li ol {
-  list-style-type: gujarati;
-}
-.grid-by-each { /* derived from 009-XEROX-SIGMA-9-balls */
- width: 100%;
- line-height: 0;
-}
-.grid-by-each &gt; * {
- display: inline-block;
- width: 50%;
- vertical-align: middle;
-}
-&lt;/style&gt;
 &lt;script&gt;
 window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
  Array.from(document.getElementsByTagName(&quot;button&quot;)).forEach(function(butt) {
@@ -12806,11 +11351,6 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
     <title> Każdy koniec to nowy początek — nabijaczleweli </title>
     <updated>2016-09-22T01:20:31+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
 
 
@@ -12987,28 +11527,8 @@ A. Łopacińska
     <title> A Widowꞌs Trace — nabijaczleweli </title>
     <updated>2017-04-23T03:37:41+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;A Widow's Trace&quot; --&gt;
 
-&lt;style&gt;
-.inv-r {
- font-size: calc(22em / 19);
-}
-&lt;/style&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;A Widow's Trace&lt;/h2&gt;&lt;/center&gt;&lt;!--'--&gt;
 &lt;p class=&quot;writing indented roboto continued&quot;&gt;
@@ -13474,35 +11994,6 @@ it can't be stopped.&lt;br /&gt;&lt;!--'--&gt;
     <title> ПИПА – Dzieła zebrane — nabijaczleweli </title>
     <updated>2018-11-03T21:03:25+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-h1.main-heading &gt; a,
-h2.main-heading &gt; a,
-h3.main-heading &gt; a,
-h4.main-heading &gt; a,
-h5.main-heading &gt; a,
-h6.main-heading &gt; a,
-h7.main-heading &gt; a {
- text-decoration: initial;
- color: initial;
-}
-.roboto-em {
- /* Normalise to &quot;default&quot; size from inside of a &quot;roboto&quot; block ((22px-&gt;18px)-&gt;19px) */
- font-size: calc(20em / 18);
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Strona Tytułowa&quot; --&gt;
 
  &lt;div style=&quot;display: table; width: 100%;&quot;&gt;
@@ -13520,11 +12011,6 @@ h7.main-heading &gt; a {
 
 &lt;!-- ePub title: &quot;Spis Treści&quot; --&gt;
 
-&lt;style&gt;
-.content-link {
- color: initial;
-}
-&lt;/style&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;center&gt;&lt;h2 class=&quot;merriweather&quot;&gt;Spis Treści&lt;/h2&gt;&lt;/center&gt;
 &lt;p class=&quot;writing roboto indented&quot;&gt;
@@ -13724,28 +12210,6 @@ Wyrok wyrokiem – &lt;strong style=&quot;text-decoration: underline;&quot;&gt;�
     <title> The Taste of MI — nabijaczleweli </title>
     <updated>2017-08-16T19:15:09+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.ruby {
- /* That's Ruby according to https://en.wikipedia.org/wiki/Ruby_(color). */
- color: #E0115F;
-}
-.smol {
- font-size-adjust: 0.333333333333333;
-}
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 
 &lt;!-- ePub title: &quot;The Taste of MI&quot; --&gt;
 
@@ -14262,11 +12726,6 @@ inny.
 &lt;/p&gt;
 
 
-&lt;style&gt;
-.nowrap {
- white-space: nowrap;
-}
-&lt;/style&gt;
 &lt;p class=&quot;roboto&quot;&gt;
 30.06.2017-12.08.2017&lt;br /&gt;
 Kraków–&lt;span class=&quot;nowrap&quot;&gt;Wysowa-Zdrój&lt;/span&gt;–&lt;span class=&quot;nowrap&quot;&gt;Παλαιό Τρίκερι&lt;/span&gt;–Βόλος–&lt;span class=&quot;nowrap&quot;&gt;Grecka przestrzeń powietrzna&lt;/span&gt;&lt;br /&gt;
@@ -14298,11 +12757,6 @@ Jakiekolwiek podobieństwo do osób rzeczywistych, żywych lub martwych,
     <title> Funeral Blues (ew. Pogrzebowy Blues) — nabijaczleweli </title>
     <updated>2018-04-29T04:28:25+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;span class=&quot;roboto&quot;&gt;
 &lt;h2 class=&quot;merriweather&quot;&gt;Funeral Blues (ew. Pogrzebowy Blues)&lt;/h2&gt;
 &lt;p&gt;
@@ -14352,21 +12806,6 @@ A. Łopacińska, Kraków, &lt;span class=&quot;math-font-normal roboto-unscale&q
     <title> Świat to kilka takich pokoi — nabijaczleweli </title>
     <updated>2016-06-06T23:40:31+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
 
 
@@ -14621,21 +13060,6 @@ I tak, drogie dzieci, zaczęła sie WWI.
     <title> Наган — nabijaczleweli </title>
     <updated>2018-10-24T20:12:57+02:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-&lt;/style&gt;
 &lt;!-- xx.5.16
      or xx.4.16 --&gt;
 &lt;!-- ePub title: &quot;Preface&quot; --&gt;
@@ -15021,11 +13445,6 @@ zrozumieją dopiero w czasach innych, lepszych.
     <title> No gifts this year — nabijaczleweli </title>
     <updated>2016-12-26T02:01:20+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;No gifts this year&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5j7m3m/ip_no_gifts_this_year&quot;&gt;&quot;No gifts this year&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15081,11 +13500,6 @@ zrozumieją dopiero w czasach innych, lepszych.
     <title> Degenerate Watch — nabijaczleweli </title>
     <updated>2017-01-08T04:00:46+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Degenerate Watch&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5l09xc/wp_write_a_story_where_the_plot_is_based_on_some&quot;&gt;&quot;Degenerate Watch&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15128,11 +13542,6 @@ Dance and fly, high as a kite. The highest praise – the sighs of amazement fro
     <title> The Last Eye — nabijaczleweli </title>
     <updated>2017-02-02T13:45:35+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;The Last Eye&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5qfb3c/cw_write_a_story_in_the_firstperson_in_which_the&quot;&gt;&quot;The Last Eye&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15199,11 +13608,6 @@ She felt a rush of blood through her temples. Ten seconds before doctor man and 
     <title> Cucumber Dog — nabijaczleweli </title>
     <updated>2016-12-29T15:37:19+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Cucumber Dog&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5kt8x0/wp_you_meet_a_dog_who_stands_upright_with_his&quot;&gt;&quot;Cucumber Dog&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15249,11 +13653,6 @@ This is based upon &lt;a href=&quot;https://pl.wikipedia.org/wiki/Andrzej_Pilipi
     <title> Ghostly Lasers — nabijaczleweli </title>
     <updated>2017-01-30T00:07:59+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Ghostly Lasers&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5qv165/wp_cats_interpret_laser_pointers_the_same_way&quot;&gt;&quot;Ghostly Lasers&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15289,11 +13688,6 @@ My father'&lt;!--'--&gt;s image seems to have steadied slightly as his voice was
     <title> Get up，soldier — nabijaczleweli </title>
     <updated>2016-12-29T21:51:50+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Get up，soldier&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5ks29s/wp_get_up_soldier_youre_not_dead_yet&quot;&gt;&quot;Get up，soldier&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15368,11 +13762,6 @@ He smiled and muttered to himself. &quot;Old soldiers never die.&quot; That was 
     <title> Six Minutes — nabijaczleweli </title>
     <updated>2016-12-28T01:54:52+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Six Minutes&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5kb0q6/cw_two_people_talking_the_scene_only_lasts_a_few&quot;&gt;&quot;Six Minutes&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15441,11 +13830,6 @@ I took the liberty of considering nonverbal parts of a conversation &quot;dialog
     <title> End = Start — nabijaczleweli </title>
     <updated>2016-12-24T15:00:32+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;End = Start&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5jor6i/cw_you_must_start_and_end_your_story_by_using_the&quot;&gt;&quot;End = Start&quot;&lt;/a&gt;&lt;br /&gt;
@@ -15469,21 +13853,6 @@ Not ever would she expect this.
     <title> The-less — nabijaczleweli </title>
     <updated>2016-12-24T02:04:36+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-.continued {
- margin-bottom: 0;
-}
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
- margin-top: 0;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;The-less&quot; --&gt;
 
 
@@ -15542,11 +13911,6 @@ Much lower, were you normally wouldn'&lt;!--'--&gt;t look, a Maltan flag is engr
     <title> Utopian Assassin — nabijaczleweli </title>
     <updated>2016-12-31T18:30:49+01:00</updated>
     <content type="html">
-&lt;style&gt;
-.indented {
- text-indent: 1em;
-}
-&lt;/style&gt;
 &lt;!-- ePub title: &quot;Utopian Assassin&quot; --&gt;
 
 &lt;a href=&quot;https://www.reddit.com/r/WritingPrompts/comments/5l4iqi/wp_in_a_futuristic_utopia_the_government_mails&quot;&gt;&quot;Utopian Assassin&quot;&lt;/a&gt;&lt;br /&gt;
