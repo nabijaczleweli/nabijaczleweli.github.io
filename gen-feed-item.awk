@@ -61,6 +61,8 @@ BEGIN {
 	# Avoid links ending in "//"
 	if(filename == "/")
 		filename = ""
+
+	instyle = 0
 }
 
 # / \(c\) by / {
@@ -84,7 +86,12 @@ BEGIN {
 }
 
 /^[[:space:]]*<body>/,/<!-- CTNT_END -->/ {
-	everything = everything $0 "\n"
+	if(/<style>/)
+		instyle = 1
+	if(!instyle)
+		everything = everything $0 "\n"
+	if(/<\/style>/)
+		instyle = 0
 }
 
 END {

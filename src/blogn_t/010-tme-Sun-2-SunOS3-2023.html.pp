@@ -18,6 +18,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE , <a href="#sun4c">Solaris on Sun-4c</a> on <span style="white-space: nowrap">Wed, 21 Jun 2023 23:56:00 +0200</span>
                                                                               <!-- RSS_UPDATE_DATE: "Wed, 21 Jun 2023 23:56:00 +0200" -->
 
+#undef unix
+
 #define Tn(...) <span class="smallcaps">__VA_ARGS__</span>
 #define COMMENT <!--"-->  <!--"-->#
 
