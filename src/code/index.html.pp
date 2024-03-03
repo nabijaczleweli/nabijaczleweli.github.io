@@ -49,13 +49,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
   icons                                                                                                               FORCED_NEWLINE \
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
-#define SRHT_SET(name, icons, ...)                                                                                                   \
+#define SRHT_PARA_SET(url, name, icons, ...)                                                                                         \
 <li>                                                                                                                  FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~nabijaczleweli/name)><samp>name</samp></a>                                 FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~nabijaczleweli/name)>FAR(circle)</a>                                       FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASH##url/~nabijaczleweli/name)><samp>name</samp></a>                                 FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASH##url/~nabijaczleweli/name)>FAR(circle)</a>                                       FORCED_NEWLINE \
   icons                                                                                                               FORCED_NEWLINE \
   — __VA_ARGS__                                                                                                       FORCED_NEWLINE \
 </li>
+#define SRHT_SET(   name, icons, ...) SRHT_PARA_SET(sr.ht, name, icons, __VA_ARGS__)
+#define GITSRHT_SET(name, icons, ...) SRHT_PARA_SET(git.sr.ht, name, icons, __VA_ARGS__)
 
 
 
@@ -83,7 +85,7 @@ Most of my output can be found under my <a href="//github.com/nabijaczleweli">Gi
 	          A simple Rust library to handle configuration fragments)
 	USER_REPO(LoungeCPP, pir-8-emu, MFIZZ(rust),
 	          Assembler, dissassembler, emulator and full library representation for/of the <a href="//github.com/thecoshman/pir-8"><samp>pir-8</samp> ISA</a>)
-	USER_REPO(LoungeCPP, Tatsoryk, MFIZZ(rust) DEVICON(html5),
+	USER_REPO(LoungeCPP, Tatsoryk, MFIZZ(rust)DEVICON(html5),
 	          A Lounge&lt;Discord&gt; gaem project that gets completed – a 2D top-down pvp arena shooter)
 	USER_REPO(ThePhD, infoware, DEVICON(cplusplus),
 	          C++ Library for pulling system and hardware information, without hitting the command line)
@@ -98,10 +100,14 @@ Most of my output can be found under my <a href="//github.com/nabijaczleweli">Gi
 
 A brief subsection of non-Rust non-mistakes:
 <ul>
-	SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a> MFIZZ(c),
+	SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a>MFIZZ(c),
 	         Extract V/A data from Supla (ZAMEL) MEW-01 for consumption with Prometheus)
-	SRHT_SET(urlview-ng, MFIZZ(c) DEVICON(cplusplus),
+	SRHT_SET(snappy-tools, DEVICON(cplusplus),
+	         snappy(1): Snappy compression and decompression with and without framing)
+	SRHT_SET(urlview-ng, MFIZZ(c)DEVICON(cplusplus),
 	         A new urlview upstream)
+	GITSRHT_SET(fzifdso, DEVICON(cplusplus),
+	         FIDO2/WebAuthn-based (YubiKey, Somu, &c.) encryption keys for ZFS datasets)
 	SRHT_SET(klapki, DEVICON(cplusplus),
 	         EFI boot manager; or, well, an EFI bootorder compiler)
 	SRHT_SET(tzpfms, DEVICON(cplusplus),
