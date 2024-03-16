@@ -110,10 +110,7 @@ BOILERPLATE(009. XEROX SIGMA 9 balls — blognꞌt, 009. XEROX SIGMA 9 balls, en
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(009. XEROX SIGMA 9 balls)
 
 <p class="indented">
@@ -241,7 +238,5 @@ Anyway, glam shots.
 <a href="//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0780cc.JPG"><img class="continuation main-screenshot" alt='Two SRA4 sheets with the XDS XEROX SIGMA 9 stickers, side-by-each so as to produce a single SRA3 one; the only difference between them is that the left half has "XEROX SIGMA 9 BALLS" written on it' src="//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0780cc.JPG" /></a>
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

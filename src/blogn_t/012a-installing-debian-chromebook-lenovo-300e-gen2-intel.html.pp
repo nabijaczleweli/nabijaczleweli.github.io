@@ -199,10 +199,7 @@ code[class="language-ini"], pre[class="language-ini"] {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel))
 
 <p class="continued">
@@ -1014,7 +1011,5 @@ A good bug report never goes unpunished.
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END_NON_ENGLISH()
 BOILERPLATE_END()

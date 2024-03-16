@@ -27,10 +27,7 @@ img {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(004. New album: cinque)
 
 <p class="indented">
@@ -49,7 +46,5 @@ You can find assorted extras (full-sized track and album art, programs to make t
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

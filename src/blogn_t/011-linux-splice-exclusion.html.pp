@@ -59,10 +59,7 @@ dl > div > dd {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(011. pipe exclusion with splice() under Linux)
 
 
@@ -266,7 +263,5 @@ sexion.
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

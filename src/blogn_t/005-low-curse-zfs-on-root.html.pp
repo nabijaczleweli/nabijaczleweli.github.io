@@ -44,10 +44,7 @@ samp {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems)
 
 <p class="indented continued">
@@ -610,7 +607,5 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 	     src="/content/assets/blogn_t/005.08-success.png" style="min-width: 75%;" /></a></center>
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

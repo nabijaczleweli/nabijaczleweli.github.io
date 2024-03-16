@@ -24,10 +24,7 @@ BOILERPLATE(002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm
 #include "../indent.css"
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users)
 
 <p class="indented continued">
@@ -55,7 +52,5 @@ You may also be interested in the corresponding <a href="//lfs.nabijaczleweli.xy
 </p>
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

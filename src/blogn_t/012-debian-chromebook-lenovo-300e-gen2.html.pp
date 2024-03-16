@@ -45,10 +45,7 @@ tt {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook)
 
 
@@ -289,7 +286,5 @@ HEADING_S(2, kms, class="continued", fuckin kms i s'<!--'-->pose)
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END_NON_ENGLISH()
 BOILERPLATE_END()

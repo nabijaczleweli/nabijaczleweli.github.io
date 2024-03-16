@@ -246,14 +246,11 @@ dl.keyboard {
 }
 </style>
 
-<span class="roboto writing">
-
 
 #define POST012   <a href="012-debian-chromebook-lenovo-300e-gen2.html"><samp>012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</samp></a>
 #define POST012aC <samp>012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel)</samp>
 #define POST012a  <a href="012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html">POST012aC</a>
 
-<p></p>
 BLOGN_T_HEADING(012b. Debian on the Lenovo 300e 2<sup>nd</sup>-gen MTK arm64 Chromebook (hana) (real))
 
 
@@ -3721,7 +3718,5 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END_NON_ENGLISH()
 BOILERPLATE_END()

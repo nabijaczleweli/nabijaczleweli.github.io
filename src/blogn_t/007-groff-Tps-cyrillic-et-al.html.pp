@@ -62,10 +62,7 @@ ol.wide-explanation > li {
 
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps)
 
 <p>
@@ -437,7 +434,5 @@ A <del>powerful</del> sufficient diagnostic tool can also be plainly piping grof
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

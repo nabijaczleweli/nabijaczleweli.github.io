@@ -36,10 +36,7 @@ video, img {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(003. A proof-of-concept IRC/mail bridge)
 
 As seen on <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1281342937226510342">Twitter</a>.
@@ -205,7 +202,5 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

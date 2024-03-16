@@ -54,10 +54,7 @@ BOILERPLATE(006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt, 006.
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(006. ¹UNIX® is a registered trademark of AT&T.)
 
 <p class="indented">
@@ -113,7 +110,5 @@ Anyway, glam shots.
 <img class="continuation main-screenshot" alt="Two matt SRA3 sheets in the same spot, one on top of the other, at a slight angle, with ¹UNIX® is a registered trademark of AT&T. stickers tiled on them. The left is entirely opaque, but shows a tiny bit through the right." src="https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7497ccc.png" />
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

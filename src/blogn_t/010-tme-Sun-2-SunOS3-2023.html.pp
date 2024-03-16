@@ -48,10 +48,7 @@ pre.bigcode {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(010. tme booting SunOS 3 on Sun-2 in 2023)
 
 
@@ -851,7 +848,5 @@ but at that point you might as well just chroot after installing from the miniro
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

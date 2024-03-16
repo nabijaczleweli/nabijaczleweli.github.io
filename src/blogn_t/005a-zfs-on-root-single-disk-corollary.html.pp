@@ -38,10 +38,7 @@ BOILERPLATE(005a. A single-disk but slightly more cursed ZFS-on-root corollary â
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(<code>005a. A single-disk but slightly more cursed ZFS-on-root corollary</code>)
 
 <p class="indented continued">
@@ -166,7 +163,5 @@ But after one, the rest of the partition is recognised and can be claimed:
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

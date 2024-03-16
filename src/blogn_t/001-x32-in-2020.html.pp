@@ -38,10 +38,7 @@ samp {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(001. Installing Debian'<!--'-->s x32 port in 2020)
 
 <p class="indented continued">
@@ -274,7 +271,5 @@ Alright, bye!
 </p>
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()

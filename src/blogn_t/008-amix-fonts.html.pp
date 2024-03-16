@@ -44,10 +44,7 @@ img {
 }
 </style>
 
-<span class="roboto writing">
 
-
-<p></p>
 BLOGN_T_HEADING(008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span>)
 
 <p class="indented continued">
@@ -158,7 +155,5 @@ see the <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/ty
 
 
 BLOGN_T_FOOTER()
-
-</span>
 WORD_COUNTER_END()
 BOILERPLATE_END()
