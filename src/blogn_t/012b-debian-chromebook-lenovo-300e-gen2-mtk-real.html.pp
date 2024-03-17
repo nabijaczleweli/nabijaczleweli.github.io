@@ -241,7 +241,7 @@ dl.keyboard {
 }
 
 .tab8-inside * {
-	tab-size: 8 !important;
+	     tab-size: 8 !important;
 	-moz-tab-size: 8 !important;
 }
 </style>
