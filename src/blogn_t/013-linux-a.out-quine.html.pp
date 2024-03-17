@@ -21,6 +21,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #ifdef linux
 #undef linux
 #endif
+#ifdef unix
+#undef unix
+#endif
 
 
 BOILERPLATE(013. Linux a.out quine in 44 bytes — blognꞌt, 013. Linux a.out quine in 44 bytes, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)
