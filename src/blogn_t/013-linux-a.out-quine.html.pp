@@ -136,7 +136,7 @@ are fixed parameters while
 and
 <var>a_drsize</var>
 must be <strong>0</strong>;
-<var>a_bss</var> can be anything, since it describes the initial allocation to map afte the program data,
+<var>a_bss</var> can be anything, since it describes the initial allocation to map after the program data,
 while
 <var>a_syms</var> can, empirically, <em>sometimes</em> have a non-zero low byte.
 </p>
