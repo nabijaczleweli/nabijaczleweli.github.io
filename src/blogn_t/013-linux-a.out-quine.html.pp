@@ -50,6 +50,11 @@ figure {
 	margin-left: 0;
 	margin-right: 0;
 }
+
+pre kbd {
+	font-weight: bold;
+	font-family: inherit;
+}
 </style>
 
 
@@ -172,7 +177,7 @@ and, if you don'<!--'-->t disable coredumps, fills your disk.
 		<pre class="continuing">\
 <!--"-->Debian GNU/Linux 0.93R6<!--"-->
 <!--"-->Copyright (C) 1993, 1994, 1995 Debian Association, Inc. and others<!--"-->
-<!--"-->0.93R6 login: nab<!--"-->
+<!--"-->0.93R6 login: <kbd>nab</kbd><!--"-->
 <!--"-->Password:<!--"-->
 <!--"-->Last login: Sat Mar 16 21:15:48 on tty1<!--"-->
 <!--"-->Linux 0.93R6 1.2.13 #2 Wed Oct 4 17:35:14 EST 1995 i686<!--"-->
@@ -184,18 +189,18 @@ and, if you don'<!--'-->t disable coredumps, fills your disk.
 <!---->
 <!--"-->Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<!--"-->
 <!--"-->permitted by applicable law.<!--"-->
-<!--"-->$ ulimit -c 0<!--"-->
-<!--"-->$ ./newd3<!--"-->
+<!--"-->$ <kbd>ulimit -c 0</kbd><!--"-->
+<!--"-->$ <kbd>./newd3</kbd><!--"-->
 <!--"-->�d<!--"-->
 <!--"-->  ��<!--"-->
 <!--"-->    1�1ɵ1Ҳ,̀Segmentation fault<!--"-->
-<!--"-->$ ./newd3 0>&1 | od -tx1 -Ad<!--"-->
+<!--"-->$ <kbd>./newd3 0>&1 | od -tx1 -Ad</kbd><!--"-->
 <!--"-->0000000 cc 00 64 00 0c 00 00 00 00 00 00 00 b0 04 eb 10<!--"-->
 <!--"-->0000016 00 00 00 00 0c 10 00 00 00 00 00 00 00 00 00 00<!--"-->
 <!--"-->0000032 31 db 31 c9 b5 10 31 d2 b2 2c cd 80<!--"-->
 <!--"-->0000044<!--"-->
 <!--"-->Segmentation fault<!--"-->
-<!--"-->$ &lt; newd3 od -tx1 -Ad<!--"-->
+<!--"-->$ <kbd>&lt; newd3 od -tx1 -Ad</kbd><!--"-->
 <!--"-->0000000 cc 00 64 00 0c 00 00 00 00 00 00 00 b0 04 eb 10<!--"-->
 <!--"-->0000016 00 00 00 00 0c 10 00 00 00 00 00 00 00 00 00 00<!--"-->
 <!--"-->0000032 31 db 31 c9 b5 10 31 d2 b2 2c cd 80<!--"-->
