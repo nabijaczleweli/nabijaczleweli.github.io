@@ -87,9 +87,13 @@ $(OUTDIR)assets/prism-twilight.min.css : ext/prism/themes/prism-twilight.css
 	@mkdir -p $(dir $@)
 	$(SED) -r ":a; s%(.*)/\*.*\*/%\1%; ta; /\/\*/ !b; N; ba" $^ | $(TR) -d "\\n" | $(SED) -r "s/[[:space:]]*([}{;:=+-]|,)[[:space:]]*/\\1/g" > $@
 
-$(OUTDIR)feed.xml : gen-feed.awk $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES))
+$(BLDDIR)feed/% : gen-feed-item.awk $(OUTDIR)%
 	@mkdir -p $(dir $@)
-	printf '%s\n' $(filter-out $<,$^) | $(AWK) -f $< -v awk="$(AWK)" > $@
+	$(AWK) -f $< $(filter-out $<,$^) > $@
+
+$(OUTDIR)feed.xml : gen-feed.awk $(patsubst src/%.pp,$(BLDDIR)feed/%,$(PREPROCESS_SOURCES))
+	@mkdir -p $(dir $@)
+	grep -m1 '<updated>' $(filter-out $<,$^) | $(AWK) '{sub(/:$$/, "", $$1); print $$2 "\t" $$1}' | /usr/bin/sort -r | $(AWK) -f $< -v awk="$(AWK)" > $@
 
 
 $(OUTDIR)assets/octicons/% : $(BLDDIR)octicons/build/octicons.min.css

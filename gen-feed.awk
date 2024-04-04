@@ -20,9 +20,10 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-BEGIN {
+NR == 1 {
 	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-	print "<feed xmlns=\"http://www.w3.org/2005/Atom\" xml:base=\"https://nabijaczleweli.xyz\">"
+	print "<?xml-stylesheet href=\"/content/assets/feed.xsl\" type=\"text/xsl\"?>"
+	print "<feed xmlns:atom=\"http://www.w3.org/2005/Atom\" xml:base=\"https://nabijaczleweli.xyz\">"
 	print "  <title>nabijaczleweli's page</title>"
 	print "  <id>https://nabijaczleweli.xyz/content</id>"
 	print "  <icon>https://nabijaczleweli.xyz/assets/nabijaczleweli.png</icon>"
@@ -35,7 +36,7 @@ BEGIN {
 	print "  </author>"
 	print "  <rights>Copyright (c) 2016 nabijaczleweli</rights>"
 
-	print "  <updated>" gensub(/[+-]00:00/, "", 1, gensub(/(.+)(..)$/, "\\1:\\2", 1, strftime("%FT%T%z"))) "</updated>"
+	print $1
 
 	print "  <generator>"
 	printf "    "
@@ -44,9 +45,9 @@ BEGIN {
 }
 
 {
-	name = gensub(/out\/(.*)/, "\\1", "g")
-	name = gensub(/\/?index.html$/, "/", "g", name)
-	system(awk " -f gen-feed-item.awk -v filename=\"" name "\" " $0)
+	fn = $2
+	while(getline <fn)
+		print $0
 }
 
 END {

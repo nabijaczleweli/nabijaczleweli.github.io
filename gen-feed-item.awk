@@ -58,11 +58,14 @@ BEGIN {
 	updated = ""
 	everything = ""
 
+	instyle = 0
+}
+FNR == 1 {
+	filename = gensub(/out\/(.*)/, "\\1", "g", FILENAME)
+	filename = gensub(/\/?index.html$/, "/", "g", filename)
 	# Avoid links ending in "//"
 	if(filename == "/")
 		filename = ""
-
-	instyle = 0
 }
 
 # / \(c\) by / {
