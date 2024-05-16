@@ -34,12 +34,13 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 </li>
 
 #define SRHT_DOC(name, gitname, cratename, cratename_code, ...) USER_SRHT_DOC(nabijaczleweli, name, gitname, cratename, cratename_code, __VA_ARGS__)
-#define USER_SRHT_DOC(user, name, gitname, cratename, cratename_code, ...)                                                                        \
-<li>                                                                                                                               FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHsrhtcdn.githack.com/~user/gitname/blob/doc/cratename_code/index.html)><samp>gitname</samp></a> FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~user/name)>FAR(circle)</a>                                                              FORCED_NEWLINE \
-  <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>                                                    FORCED_NEWLINE \
-  — __VA_ARGS__                                                                                                                    FORCED_NEWLINE \
+#define USER_SRHT_DOC(user, name, gitname, cratename, cratename_code, ...) USER_SRHT_GENDOC(user, name, gitname, cratename, cratename_code, STR(httpsCOLON_SLASH_SLASHsrhtcdn.githack.com/~user/gitname/blob/doc/cratename_code/index.html), __VA_ARGS__)
+#define USER_SRHT_GENDOC(user, name, gitname, cratename, cratename_code, doclink, ...)                  \
+<li>                                                                                     FORCED_NEWLINE \
+  <a href=doclink><samp>gitname</samp></a>                                               FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHsr.ht/~user/name)>FAR(circle)</a>                    FORCED_NEWLINE \
+  <a href=STR(httpsCOLON_SLASH_SLASHcrates.io/crates/cratename)>FA(archive)</a>          FORCED_NEWLINE \
+  — __VA_ARGS__                                                                          FORCED_NEWLINE \
 </li>
 
 #define USER_REPO(user, name, icons, ...)                                                                                            \
@@ -124,6 +125,8 @@ LWN wrote about me once in the December 5, 2022 issue in <em><a href="//lwn.net/
 
 Documentation for my Rust crates:
 <ul>
+	USER_SRHT_GENDOC(nabijaczlewli, tcplistener-accept-timeout, tcplistener-accept-timeout, tcplistener-accept-timeout, tcplistener_accept_timeout, "//docs.rs/tcplistener-accept-timeout",
+	         <code>TcpListener::accept()</code> with a timeout (<code>TcpListener::accept_timeout()</code>) and <code>TcpListener::connection_pending()</code>.)
 	DOC(rust-embed-resource, embed-resource, embed_resource,
 	    A <a href="//doc.crates.io/build-script.html"><samp>Cargo</samp> build script</a> library to handle compilation and inclusion of Windows resources
 	    in the most resilient fashion imaginable)
