@@ -1430,13 +1430,13 @@ Now I have a celeron laptop for some reason.
 &lt;p class=&quot;indented continuing&quot;&gt;
 Well, the reason is that Lenovo makes three identical laptops,
 as listed by
-&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices&quot;&gt;&lt;cite&gt;Chromium OS &gt; &lt;b&gt;Developer Information for Chrome OS Devices&lt;/b&gt;&lt;/cite&gt;&lt;/a&gt;:
+&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/&quot;&gt;&lt;cite&gt;Chromium OS &gt; &lt;b&gt;Developer Information for Chrome OS Devices&lt;/b&gt;&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;:
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
     &lt;div style=&quot;text-align: right;&quot;&gt;&lt;dt style=&quot;text-align: initial;&quot;&gt;Release&lt;/dt&gt;&lt;dd&gt;27 February 2019&lt;/dd&gt;&lt;dd&gt;1 March 2019&lt;/dd&gt;&lt;dd&gt;28 February 2020&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;OEM&lt;/dt &gt;&lt;dd&gt;Lenovo&lt;/dd &gt;&lt;dd&gt;Lenovo&lt;/dd &gt;&lt;dd&gt;Lenovo&lt;/dd&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd &gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988&quot;&gt;Lenovo 300e Chromebook 2nd Gen (MTK)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-AST/p/88ELC1S8036&quot;&gt;Lenovo 300e &lt;span title='&quot;Chromebook&quot; ominously missing from the page, a clear mistake' class=&quot;spacing-only&quot;&gt;Chromebook&lt;/span&gt; 2nd Gen AMD&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd &gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988&quot;&gt;Lenovo 300e Chromebook 2nd Gen (MTK)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-AST/p/88ELC1S8036&quot;&gt;Lenovo 300e &lt;span title='&quot;Chromebook&quot; ominously missing from the page, a clear mistake' class=&quot;spacing-only&quot;&gt;Chromebook&lt;/span&gt; 2nd Gen AMD&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Code name&lt;/dt &gt;&lt;dd&gt;Sycamore360&lt;/dd &gt;&lt;dd&gt;Phaser360&lt;/dd &gt;&lt;dd&gt;Treeya360&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Board name(s)&lt;/dt&gt;&lt;dd&gt;hana&lt;/dd &gt;&lt;dd&gt;Octopus&lt;/dd &gt;&lt;dd&gt;Grunt&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Base board&lt;/dt &gt;&lt;dd&gt;oak&lt;/dd &gt;&lt;dd&gt;octopus&lt;/dd &gt;&lt;dd&gt;&lt;/dd&gt;&lt;/div&gt;
@@ -1639,7 +1639,7 @@ Note the lack of Lenovo's &lt;strong&gt;C&lt;/strong&gt; after the model. I have
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 The only product-level branding I found in &lt;samp class=&quot;path&quot;&gt;/sys/firmware/vpd/ro/&lt;/samp&gt;
-(&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook#TOC-Read-Only-section-first-2-MiB-&quot;&gt;&lt;q&gt;Vital/Vendor Product Data&lt;/q&gt;&lt;/a&gt; – yes, the documentation can'&lt;!--'--&gt;t decide)
+(&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/&quot;&gt;&lt;q&gt;Vital/Vendor Product Data&lt;/q&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt; – yes, the documentation can'&lt;!--'--&gt;t decide)
 as &lt;samp class=&quot;path&quot;&gt;model_name&lt;/samp&gt;:
 &quot;&lt;tt&gt;Lenovo 300e Chromebook 2nd Gen MTK&lt;/tt&gt;&quot; (which miraculously agrees with Lenovo'&lt;!--'--&gt;s marketing and the outside!),
 and &lt;samp class=&quot;path&quot;&gt;customization_id&lt;/samp&gt; matching the ChromiumOS &quot;Code name&quot; with &quot;&lt;tt&gt;OEM1-SYCAMORE360&lt;/tt&gt;&quot;.
@@ -1734,13 +1734,13 @@ and presumably the screen being &lt;var&gt;0&lt;/var&gt; is why it flashes black
 I can'&lt;!--'--&gt;t seem to find, like, first-party documentation about what a &quot;valid&quot; header would be.
 Well, about what this bootloader looks for, in any way whatever.
 It's either upstream's
-&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook#TOC-USB-Boot&quot;&gt;&lt;q&gt;Note: Only CrOS formatted images will boot via USB. Other Linux distros will not work.&lt;/q&gt;&lt;/a&gt;
+&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/#usb-boot&quot;&gt;&lt;q&gt;Note: Only CrOS formatted images will boot via USB. Other Linux distros will not work.&lt;/q&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 (abject lie as proven by the guides)
 or the guides which are &quot;do this&quot;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 Though, actually, it does seem like, for that laptop exclusively,
-&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook#TOC-Boot-Sequence&quot;&gt;&lt;cite&gt;Chromium OS &gt; Developer Information for Chrome OS Devices &gt; &lt;b&gt;Samsung ARM Chromebook&lt;/b&gt;, &lt;b&gt;Firmware&lt;/b&gt;, &lt;b&gt;Boot Sequence&lt;/b&gt;&lt;/cite&gt;&lt;/a&gt;
+&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/#boot-sequence&quot;&gt;&lt;cite&gt;Chromium OS &gt; Developer Information for Chrome OS Devices &gt; &lt;b&gt;Samsung ARM Chromebook&lt;/b&gt;, &lt;b&gt;Firmware&lt;/b&gt;, &lt;b&gt;Boot Sequence&lt;/b&gt;&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 reads:
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuation&quot;&gt;
@@ -1756,61 +1756,62 @@ reads:
  &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-Out of the 30 internal links from the &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices&quot;&gt;device table&lt;/a&gt;
+Out of the 30 internal links from the
+&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/&quot;&gt;device table&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 (discounting those that don'&lt;!--'--&gt;t work or redirect),
 &lt;/p&gt;
 &lt;details&gt;
  &lt;summary&gt;11 note anything about USB-booting&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-ac700-chromebook&quot;&gt;&lt;cite&gt;Acer AC700 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook&quot;&gt;&lt;cite&gt;Acer C720 &amp; C720P &amp; C740 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/asus-chromebox&quot;&gt;&lt;cite&gt;Asus Chromebox&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel-2015&quot;&gt;&lt;cite&gt;Chromebook Pixel (2015)&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/cr-48-chrome-notebook-developer-information&quot;&gt;&lt;cite&gt;Cr-48 Chrome Notebook Developer Information&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/lenovo-thinkpad-x131e-chromebook&quot;&gt;&lt;cite&gt;Lenovo Thinkpad X131e Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-series-5-chromebook&quot;&gt;&lt;cite&gt;Samsung Series 5 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-cb5-311-chromebook-13&quot;&gt;&lt;cite&gt;Acer CB5-311 Chromebook 13&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-chromebook-2&quot;&gt;&lt;cite&gt;Samsung Chromebook 2&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/hp-chromebox&quot;&gt;&lt;cite&gt;HP Chromebox&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook&quot;&gt;&lt;cite&gt;Samsung ARM Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-sandy-bridge&quot;&gt;&lt;cite&gt;Samsung Series 5 550 Chromebook and Series 3 Chromebox&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel&quot;&gt;&lt;cite&gt;Chromebook Pixel (2013)&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-ac700-chromebook&quot;&gt;&lt;cite&gt;Acer AC700 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-c720-chromebook&quot;&gt;&lt;cite&gt;Acer C720 &amp; C720P &amp; C740 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/asus-chromebox&quot;&gt;&lt;cite&gt;Asus Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/chromebook-pixel-2015&quot;&gt;&lt;cite&gt;Chromebook Pixel (2015)&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/cr-48-chrome-notebook-developer-information&quot;&gt;&lt;cite&gt;Cr-48 Chrome Notebook Developer Information&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/lenovo-thinkpad-x131e-chromebook&quot;&gt;&lt;cite&gt;Lenovo Thinkpad X131e Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-series-5-chromebook&quot;&gt;&lt;cite&gt;Samsung Series 5 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-cb5-311-chromebook-13&quot;&gt;&lt;cite&gt;Acer CB5-311 Chromebook 13&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-chromebook-2&quot;&gt;&lt;cite&gt;Samsung Chromebook 2&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/hp-chromebox&quot;&gt;&lt;cite&gt;HP Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/&quot;&gt;&lt;cite&gt;Samsung ARM Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-sandy-bridge&quot;&gt;&lt;cite&gt;Samsung Series 5 550 Chromebook and Series 3 Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/chromebook-pixel&quot;&gt;&lt;cite&gt;Chromebook Pixel (2013)&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;details&gt;
  &lt;summary&gt;3 have a &lt;b&gt;How to boot your own image from USB&lt;/b&gt; sexion (mentions ChromiumOS images exclusively)&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-ac700-chromebook&quot;&gt;&lt;cite&gt;Acer AC700 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-series-5-chromebook&quot;&gt;&lt;cite&gt;Samsung Series 5 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-sandy-bridge&quot;&gt;&lt;cite&gt;Samsung Series 5 550 Chromebook and Series 3 Chromebox&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-ac700-chromebook&quot;&gt;&lt;cite&gt;Acer AC700 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-series-5-chromebook&quot;&gt;&lt;cite&gt;Samsung Series 5 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-sandy-bridge&quot;&gt;&lt;cite&gt;Samsung Series 5 550 Chromebook and Series 3 Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;details&gt;
  &lt;summary&gt;3 have a similar &lt;b&gt;Running Chromium OS&lt;/b&gt; sexion identified with &lt;q&gt;Before you start fiddling with your own builds it is strongly recommend to&lt;/q&gt;(sic!) (mentions ChromiumOS images exclusively)&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook&quot;&gt;&lt;cite&gt;Acer C720 &amp; C720P &amp; C740 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/asus-chromebox&quot;&gt;&lt;cite&gt;Asus Chromebox&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/hp-chromebox&quot;&gt;&lt;cite&gt;HP Chromebox&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-c720-chromebook&quot;&gt;&lt;cite&gt;Acer C720 &amp; C720P &amp; C740 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/asus-chromebox&quot;&gt;&lt;cite&gt;Asus Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/hp-chromebox&quot;&gt;&lt;cite&gt;HP Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;details&gt;
  &lt;summary&gt;3 (two other) ARM chromebooks have the &lt;em&gt;entire&lt;/em&gt; &lt;b&gt;Developer Mode&lt;/b&gt; sexion &lt;em&gt;identical&lt;/em&gt; (with the abject lie)&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook&quot;&gt;&lt;cite&gt;Samsung ARM Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-chromebook-2&quot;&gt;&lt;cite&gt;Samsung Chromebook 2&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-cb5-311-chromebook-13&quot;&gt;&lt;cite&gt;Acer CB5-311 Chromebook 13&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/&quot;&gt;&lt;cite&gt;Samsung ARM Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-chromebook-2&quot;&gt;&lt;cite&gt;Samsung Chromebook 2&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-cb5-311-chromebook-13&quot;&gt;&lt;cite&gt;Acer CB5-311 Chromebook 13&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;details&gt;
  &lt;summary&gt;3 laptops have another set of identical &lt;b&gt;Developer Mode&lt;/b&gt;s (no mention of how or what you can boot)&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook&quot;&gt;&lt;cite&gt;Acer C720 &amp; C720P &amp; C740 Chromebook&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel&quot;&gt;&lt;cite&gt;Chromebook Pixel (2013)&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel-2015&quot;&gt;&lt;cite&gt;Chromebook Pixel (2015)&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-c720-chromebook&quot;&gt;&lt;cite&gt;Acer C720 &amp; C720P &amp; C740 Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/chromebook-pixel&quot;&gt;&lt;cite&gt;Chromebook Pixel (2013)&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/chromebook-pixel-2015&quot;&gt;&lt;cite&gt;Chromebook Pixel (2015)&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;details&gt;
  &lt;summary&gt;2 &quot;chromeboxes&quot; have another set of identical &lt;b&gt;Developer Mode&lt;/b&gt;s (no mention of how or what you can boot)&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/asus-chromebox&quot;&gt;&lt;cite&gt;Asus Chromebox&lt;/cite&gt;&lt;/a&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/hp-chromebox&quot;&gt;&lt;cite&gt;HP Chromebox&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/asus-chromebox&quot;&gt;&lt;cite&gt;Asus Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/hp-chromebox&quot;&gt;&lt;cite&gt;HP Chromebox&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;details&gt;
  &lt;summary&gt;all &lt;b&gt;Developer Mode&lt;/b&gt; sexions are habsburgian, but this device has &lt;q&gt;unique requirements for entering recovery mode!&lt;/q&gt;, so it'&lt;!--'--&gt;s the most different one&lt;/summary&gt;
- &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/lenovo-thinkpad-x131e-chromebook&quot;&gt;&lt;cite&gt;Lenovo Thinkpad X131e Chromebook&lt;/cite&gt;&lt;/a&gt;
+ &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/lenovo-thinkpad-x131e-chromebook&quot;&gt;&lt;cite&gt;Lenovo Thinkpad X131e Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/details&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 and
-&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/cr-48-chrome-notebook-developer-information&quot;&gt;&lt;cite&gt;Cr-48 Chrome Notebook Developer Information&lt;/cite&gt;&lt;/a&gt;
+&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/cr-48-chrome-notebook-developer-information&quot;&gt;&lt;cite&gt;Cr-48 Chrome Notebook Developer Information&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 is the oldest, so it actually has an itemised guide called &lt;b&gt;How to boot your own (non-Chromium OS) image from USB&lt;/b&gt; which nonetheless starts with
 &lt;q&gt;(Note: This part is outdated: &lt;samp&gt;make_developer_script_runner.sh&lt;/samp&gt; does not exist anymore)&lt;/q&gt;.
 Even then, a sub-&lt;b&gt;Create a USB disk that will boot another operating system&lt;/b&gt;-sexion consists exclusively of
@@ -1829,7 +1830,7 @@ Naturally &lt;em&gt;two&lt;/em&gt; different ways to make an actual ChromiumOS i
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Even out of our lucky trio, the
-&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook&quot;&gt;&lt;cite&gt;Samsung ARM Chromebook&lt;/cite&gt;&lt;/a&gt;
+&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/&quot;&gt;&lt;cite&gt;Samsung ARM Chromebook&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 is the only one with the bullet list.
 Even then, how are you supposed to interpret it?
 How can a partition be marked &quot;active&quot;?
@@ -5152,13 +5153,13 @@ Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;
 &lt;/ol&gt;
 &lt;/details&gt;&lt;/div&gt;
 &lt;p class=&quot;continued&quot;&gt;
-This &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices&quot;&gt;concerns&lt;/a&gt;
+This &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/&quot;&gt;concerns&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
     &lt;div&gt;&lt;dt&gt;Release&lt;/dt&gt;&lt;dd &gt;1 March 2019&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;OEM&lt;/dt&gt;&lt;dd &gt;Lenovo&lt;/dd&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd &gt;&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd &gt;&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Code name&lt;/dt&gt;&lt;dd &gt;Phaser360&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Board name(s)&lt;/dt&gt;&lt;dd&gt;Octopus&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Base board&lt;/dt&gt;&lt;dd &gt;octopus&lt;/dd&gt;&lt;/div&gt;
@@ -5550,7 +5551,7 @@ Here'&lt;!--'--&gt;s hoping it also fixes the scandi keyboard.
 &lt;h4 id=&quot;firmware-disabling-write-protect-unplugging-the-battery&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html&quot;&gt;Disabling write protect via Battery &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;h5 id=&quot;firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery&quot; class=&quot;continuation&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery&quot;&gt;Step 1: Open the device and disconnect the battery &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p class=&quot;indented&quot;&gt;
-The &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;internal link from within google documentation&lt;/a&gt;
+The &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;internal link from within google documentation&lt;/a&gt;
 is a 404.
 Obviously.
 Neither the fake nor the
@@ -7207,7 +7208,7 @@ it clearly says &quot;&lt;span lang=&quot;pl&quot;&gt;Instrukcje: crc32&lt;/span
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 According to a page under the authority of &quot;sites.google.com/a/chromium.org&quot; (what does this mean?) page titled
-&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices&quot;&gt;&lt;cite&gt;Chromium OS &gt; &lt;b&gt;Developer Information for Chrome OS Devices&lt;/b&gt;&lt;/cite&gt;&lt;/a&gt;
+This &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/&quot;&gt;&lt;cite&gt;Chromium OS &gt; &lt;b&gt;Developer Information for Chrome OS Devices&lt;/b&gt;&lt;/cite&gt;&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;
 (what the fuck does &lt;em&gt;that&lt;/em&gt; mean?)
 this machine is:
 &lt;/p&gt;
@@ -7284,7 +7285,7 @@ and the subtitle is &quot;To restore your data, connect to the internet&quot;.
 Restore from where? what data? mf on the pack fr fr?
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-Of course, the &lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook&quot;&gt;guide&lt;/a&gt;s say
+Of course, the &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/&quot;&gt;guide&lt;/a&gt;&lt;sup&gt;[&lt;abbr title=&quot;original version, archived&quot;&gt;orig. arch.&lt;/abbr&gt;]&lt;/sup&gt;s say
 &quot;enter recovery and then developer mode&quot;.
 So to enter recovery you hold &lt;kbd&gt;esc&lt;/kbd&gt; and &lt;kbd&gt;⟳&lt;/kbd&gt; (natch) and click the power button and
 &lt;/p&gt;
@@ -7388,7 +7389,7 @@ Maybe the recovery says &quot;PHASER360&quot; instead of &quot;Sycamore360&quot;
   &lt;dl class=&quot;continuing&quot;&gt;
     &lt;div&gt;&lt;dt&gt;Release&lt;/dt&gt;&lt;dd &gt;27 February 2019&lt;/dd&gt;&lt;dd&gt;1 March 2019&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;OEM&lt;/dt&gt;&lt;dd &gt;Lenovo&lt;/dd&gt;&lt;dd &gt;Lenovo&lt;/dd&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd &gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988&quot;&gt;Lenovo 300e Chromebook 2nd Gen (MTK)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Model&lt;/dt&gt;&lt;dd &gt;&lt;a href=&quot;//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988&quot;&gt;Lenovo 300e Chromebook 2nd Gen (MTK)&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;Lenovo 300e Chromebook 2nd Gen (Intel)&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Code name&lt;/dt&gt;&lt;dd &gt;Sycamore360&lt;/dd&gt;&lt;dd &gt;Phaser360&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Board name(s)&lt;/dt&gt;&lt;dd&gt;hana&lt;/dd&gt;&lt;dd &gt;Octopus&lt;/dd&gt;&lt;/div&gt;
     &lt;div&gt;&lt;dt&gt;Base board&lt;/dt&gt;&lt;dd &gt;oak&lt;/dd&gt;&lt;dd &gt;octopus&lt;/dd&gt;&lt;/div&gt;
