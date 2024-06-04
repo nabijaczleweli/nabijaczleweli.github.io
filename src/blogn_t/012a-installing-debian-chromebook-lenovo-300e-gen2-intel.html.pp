@@ -203,13 +203,14 @@ code[class="language-ini"], pre[class="language-ini"] {
 BLOGN_T_HEADING(012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel))
 
 <p class="continued">
-This <a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices">concerns</a>
+#define ARCHIVE_LINK(new_href, original_href, ...) <a href=new_href>__VA_ARGS__</a><sup>[<abbr title="original version, archived">orig. arch.</abbr>]</sup>
+This ARCHIVE_LINK("//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/", "//web.archive.org/web/20231113233836/sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices", concerns)
 </p>
 <blockquote class="continuing">
   <dl class="continuing">
     <div><dt>Release</dt><dd      >1 March 2019</dd></div>
     <div><dt>OEM</dt><dd          >Lenovo</dd></div>
-    <div><dt>Model</dt><dd        ><a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
+    <div><dt>Model</dt><dd        ><a href="//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
     <div><dt>Code name</dt><dd    >Phaser360</dd></div>
     <div><dt>Board name(s)</dt><dd>Octopus</dd></div>
     <div><dt>Base board</dt><dd   >octopus</dd></div>
@@ -404,7 +405,7 @@ HEADING_CHRULTRA_S(4, firmware-disabling-write-protect-unplugging-the-battery, c
 HEADING_CHRULTRA_S(5, firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery, class="continuation", firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery, Step 1: Open the device and disconnect the battery)
 
 <p class="indented">
-The <a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">internal link from within google documentation</a>
+The <a href="//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">internal link from within google documentation</a>
 is a 404.
 Obviously.
 Neither the fake nor the

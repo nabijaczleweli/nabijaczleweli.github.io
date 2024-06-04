@@ -63,7 +63,8 @@ it clearly says "<span lang="pl">Instrukcje: crc32</span>", which is great becau
 
 <p class="indented continued">
 According to a page under the authority of "sites.google.com/a/chromium.org" (what does this mean?) page titled
-<a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices"><cite>Chromium OS > <b>Developer Information for Chrome OS Devices</b></cite></a>
+#define ARCHIVE_LINK(new_href, original_href, ...) <a href=new_href>__VA_ARGS__</a><sup>[<abbr title="original version, archived">orig. arch.</abbr>]</sup>
+This ARCHIVE_LINK("//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/", "//web.archive.org/web/20231113233836/sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices", <cite>Chromium OS > <b>Developer Information for Chrome OS Devices</b></cite>)
 (what the fuck does <em>that</em> mean?)
 this machine is:
 </p>
@@ -147,7 +148,7 @@ Restore from where? what data? mf on the pack fr fr?
 </p>
 
 <p class="indented continued">
-Of course, the <a href="//sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook">guide</a>s say
+Of course, the ARCHIVE_LINK("//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-arm-chromebook/", "//web.archive.org/web/20240207142155/https://sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook", guide)s say
 "enter recovery and then developer mode".
 So to enter recovery you hold <kbd>esc</kbd> and <kbd>⟳</kbd> (natch) and click the power button and
 </p>
@@ -262,7 +263,7 @@ Maybe the recovery says "PHASER360" instead of "Sycamore360" because
   <dl class="continuing">
     <div><dt>Release</dt><dd      >27 February 2019</dd><dd>1 March 2019</dd></div>
     <div><dt>OEM</dt><dd          >Lenovo</dd><dd          >Lenovo</dd></div>
-    <div><dt>Model</dt><dd        ><a href="//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988">Lenovo 300e Chromebook 2nd Gen (MTK)</a></dd><dd><a href="//sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
+    <div><dt>Model</dt><dd        ><a href="//www.lenovo.com/us/en/laptops/lenovo/student-chromebooks/Lenovo-300e-Chromebook-2nd-Gen-MTK/p/88ELC1S9988">Lenovo 300e Chromebook 2nd Gen (MTK)</a></dd><dd><a href="//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
     <div><dt>Code name</dt><dd    >Sycamore360</dd><dd     >Phaser360</dd></div>
     <div><dt>Board name(s)</dt><dd>hana</dd><dd            >Octopus</dd></div>
     <div><dt>Base board</dt><dd   >oak</dd><dd             >octopus</dd></div>
