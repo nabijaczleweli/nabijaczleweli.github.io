@@ -1,0 +1,14 @@
+extern uint8_t sysflg;
+
+--sysflg;      // mormally sysflag=0, indicates executing in system
+exec(_2, _1);  // generates trap interrupt; trap vector = sysent; 0
+goto panic;    // execute file/etc/init
+
+static char*_1[] = {_2, 0};
+static char _2[] = "/etc/init";  // UNIX looks for strings term, noted by nul\0
+
+panic:
+ps = 0;
+while(--*(uint16_t *)0 || --*(uint16_t *)5)  // I think??
+  ;
+goto *(void *)0173700;  // rom loader address

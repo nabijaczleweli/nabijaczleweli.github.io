@@ -1,0 +1,3 @@
+extern uint8_t sysflg;
+if(++sysflg)
+  goto panic;

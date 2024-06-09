@@ -1,0 +1,21 @@
+#define NPROC 16
+extern uint16_t rootdir;
+extern uint16_t u.cdir;
+extern uint8_t  u.uno;
+extern uint16_t mpid;
+extern uint16_t p.pid[NPROC];
+extern uint8_t  p.stat[NPROC];
+
+// make current program a user
+
+               // rootdir set to 41 and never changed
+rootdir = 41   // rootdir is i-number of root directory
+u.cdir  = 41   // u.cdir is i-number of process current directory
+
+u.uno     = 1  // set process table index for this process to 1
+mpid      = 1  // initialize mpid to 1
+p.pid[0]  = 1  // p.pid identifies process
+p.stat[0] = 1  // process status = 1 i.e., active
+               //                = 0 free
+if(COLD) {     //                = 2 waiting for a child to die
+               //                = 3 terminated but not yet waited for

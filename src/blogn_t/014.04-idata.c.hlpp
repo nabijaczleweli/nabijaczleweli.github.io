@@ -1,0 +1,26 @@
+break(0);           // cf. modern brk(2); this allocates the entire 8kB:
+extern char buf[];  // we can pretend this variable exists just after program text
+
+tape = open("/dev/tap0", O_RDONLY);
+seek(tape, 65, SEEK_SET);
+
+for(;;) {
+	read(tape, buf, 512);
+	size = ((uint16_t *)buf)[0];
+	if(!size)
+		break;
+
+	file = creat(buf + 4, 0);
+	chmod(buf + 4, buf[2]);
+	chown(buf + 4, buf[3]);
+
+	while(size) {
+		read(tape, buf, 512);
+		size -= write(file, buf, min(size, 512));
+	}
+	close(file);
+}
+
+close(tape);
+exec("/etc/init");
+exit();

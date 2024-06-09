@@ -1,0 +1,9 @@
+static char initf[8] = "init";  // idk if 4 spaces or 4 NULs at the end
+
+diskread(06000, sysdata, sizeof(sysdata)); // superblock(?)
+
+init = open(initf);
+if(init == -1)
+	halt();
+read(init, (void *)4096, 4096)
+goto *(void *)4096;

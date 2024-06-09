@@ -30,16 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/012-debian-chromebook-lenovo-300e-gen2">012. Debian on the Lenovo 300e 2<sup>nd</sup>-gen arm64 Chromebook</a>;
-		<span style="white-space: nowrap;">Mon, 08 Jan 2024 16:06:34 +0100</span>
-	</samp><br />
-	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html">012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel)</a>;
-		<span style="white-space: nowrap;">Thu, 11 Jan 2024 04:04:28 +0100</span>
-	</samp><br />
-	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html">012b. Debian on the Lenovo 300e 2<sup>nd</sup>-gen MTK arm64 Chromebook (hana) (real)</a>;
-		<span style="white-space: nowrap;">Wed, 07 Feb 2024 01:09:33 +0100</span>
+		<a href="blogn_t/014-unix-pre-v4-pid0-corollary.html">014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX);
+		<span style="white-space: nowrap;">Mon, 10 Jun 2024 01:04:14 +0200</span>
 	</samp>
 </p>
 
