@@ -12,10 +12,1218 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2024-05-07T21:20:00+01:00</updated>
+<updated>2024-06-10T01:04:14+02:00</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/014-unix-pre-v4-pid0-corollary.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/014-unix-pre-v4-pid0-corollary.html" />
+    <title> 014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX) — blognꞌt — nabijaczleweli </title>
+    <updated>2024-06-10T01:04:14+02:00</updated>
+    <content type="html">
+&lt;span class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 10 Jun 2024 01:04:14 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#v1'&gt;The UNIX Programmer'&lt;!--'--&gt;s Manual (&amp;c.)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#nsys'&gt;nsys &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (the V4 what isn'&lt;!--'--&gt;t)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#pdp7'&gt;that funny PDP-7 proto-unix&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/details&gt;&lt;/div&gt;
+&lt;h2 id=&quot;v1&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v1&quot;&gt;#&lt;/a&gt; The UNIX Programmer'&lt;!--'--&gt;s Manual (&amp;c.)&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;a href=&quot;//blog.dave.tf/post/linux-pid0/&quot;&gt;David Anderson'&lt;!--'--&gt;s &lt;cite&gt;What is PID 0?&lt;/cite&gt;&lt;/a&gt;
+(on &lt;a href=&quot;//hachyderm.io/@danderson/112577183087638679&quot;&gt;mastussy&lt;/a&gt;)
+analyses the popular misconceptions (or, indeed, one guy'&lt;!--'--&gt;s wikipedia edit) of if, and what, PID 0 is,
+but stops its retrospective at Version 4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; because it'&lt;!--'--&gt;s the first one written in C.
+This, in many ways, is like stopping a retrospective on the Great War when the British joined because they talk weird in Sarajevo.
+Thankfully, I talk exactly as weird, and am similarly ready to shoot a prince.
+Has this protracted {slavic/english} {unix/war} {franz-ferdinand/englishman} analogy overstayed its welcome yet.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+To rectify this, and analyse it forward rather than in reverse, we can take advantage of unix72
+(or &lt;a href=&quot;//code.google.com/archive/p/unix-jun72/&quot;&gt;unix-jun72&lt;/a&gt;
+ (but the one and only SVN dump tarball calls it &lt;samp&gt;unix72/&lt;/samp&gt;,
+  as does &lt;a href=&quot;//github.com/bambams/unix72&quot;&gt;a mirror&lt;/a&gt;
+  (note that it says it's a fork but it actually appears to have SVN-imported commits exclusively, unlike the &quot;original&quot; which has been damaged; it's all bad));
+ the more real mirror is &lt;a href=&quot;//www.tuhs.org/&quot;&gt;&lt;abbr title=&quot;TUHS&quot;&gt;The Unix Heritage Society&lt;/abbr&gt;&lt;/a&gt;'&lt;!--'--&gt;s
+ (one of them; the &lt;a href=&quot;//wiki.tuhs.org/doku.php?id=source:unix_archive&quot;&gt;TUHS mirror structure&lt;/a&gt; is sociopathic)
+ which reproduces said dump as &lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/&quot;&gt;&lt;samp&gt;svntree-20081216.tar.gz&lt;/samp&gt;&lt;/a&gt;)
+which transcribes
+&lt;cite&gt;&lt;a href=&quot;//www.bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;Jim DeFelice'&lt;!--'--&gt;s 1972-06-20 &lt;samp&gt;Preliminary Release of UNIX Implementation Document&lt;/samp&gt;&lt;/a&gt;&lt;/cite&gt;,
+which itself includes
+&lt;/p&gt;
+&lt;ol id=&quot;PreliminaryUnixImplementationDocument_Jun72-toc&quot;&gt;
+ &lt;li&gt;a driver (in the form of a patch) for the &lt;a href=&quot;//w140.com/tekwiki/wiki/4002&quot;&gt;T4002A graphics terminal&lt;/a&gt; (2 pgs)&lt;/li&gt;
+ &lt;li&gt;&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (11 segments (&lt;code&gt;u0&lt;/code&gt;, …, &lt;code&gt;u&lt;var&gt;n&lt;/var&gt;&lt;/code&gt;, …, &lt;code&gt;u9&lt;/code&gt;, &lt;code&gt;ux&lt;/code&gt;), described in &lt;code&gt;F&lt;/code&gt;; 80 pgs)&lt;/li&gt;
+ &lt;li&gt;&lt;samp&gt;/bin/sh&lt;/samp&gt; (7 pgs)&lt;/li&gt;
+ &lt;li&gt;&lt;samp&gt;/etc/init&lt;/samp&gt; (4 pgs)&lt;/li&gt;
+ &lt;li&gt;&lt;q&gt;System Overview&lt;/q&gt;, which is all the shit they couldn'&lt;!--'--&gt;t stuff elsewhere (17 pgs)&lt;/li&gt;
+ &lt;li&gt;&lt;q&gt;Data Base Item Descriptions&lt;/q&gt;, or, in modern parlance, all the kernel variables (12 pgs)&lt;/li&gt;
+ &lt;li&gt;effectively manual sexion 9 (kernel subroutines) (10 subsexions, internally counted as &lt;samp&gt;U&lt;var&gt;nn&lt;/var&gt;&lt;/samp&gt;, matching the &lt;code&gt;H.&lt;var&gt;nn&lt;/var&gt;&lt;/code&gt; segments; 156 pgs)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+&lt;code&gt;H.0–H.9&lt;/code&gt; is a re-print of
+&lt;cite&gt;&lt;a href=&quot;//www.bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf&quot;&gt;our current UNIX documentation&lt;/a&gt; as of 1972-04-03, also by Jim DeFelice&lt;/cite&gt;.
+Both are &lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/&quot;&gt;redistributed by the TUHS&lt;/a&gt;.
+This is a different Jim DeFelice than the famous author
+(but I'm basing that entirely off the fact that the author would've been 11 when he started at Bell. maybe americans allow this).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Aptly, &lt;code&gt;F&lt;/code&gt;, 1. Overview says that
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+There are three major portions of UNIX: the file system, the process control system, and the rest.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;and&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+It has been mentioned parenthetically that UNIX is not very modular.
+Its lack of modularity is reflected in this document.
+Therefore (to paraphrase Fenichel and McIlroy referring to their description of TMGL) no single order of reading can be recommended;
+instead a chimneying technique is suggested, climbing not one wall at a time, but all simultaneously.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+but, besides a truly astounding slew of typos (at best it's the &quot;process wail facility&quot;, at worst it's gibberish)
+the sexion nevertheless contains relevant information on process lifetime and syscall and scheduler design,
+both as a general overview of fundamental &lt;span class=&quot;smallcaps&quot;&gt;UNIX&lt;/span&gt; semantics &lt;em&gt;and&lt;/em&gt; as implementation minutiae.
+&lt;/p&gt;
+&lt;p class=&quot;continuing indented&quot;&gt;
+For our case, the most interesting part of scheduler design is that the document implies there is none:
+&lt;q&gt;The system can legitimately be entered only by some sort of trap &lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt; that is, sys&lt;/q&gt;,
+further backed up by
+&lt;q&gt;At sysret, &lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt; a check is made to determine if the user'&lt;!--'--&gt;s time quantum ran out during his execution in the system.
+If so, tswap is called to give another user a chance to run.&lt;/q&gt;
+which implies a per-user quantum-overflow-only (this is a period-accurate way of spelling &quot;time slice&quot;) re-scheduling (to another user) only at syscalls,
+but there &lt;em&gt;is&lt;/em&gt; very much a timer interrupt:
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;#interrupt vectors&quot;&gt;
+ &lt;a href=&quot;#interrupt vectors&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;interrupt vectors&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;. = orig+60&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       ttyi;240 &lt;span class=&quot;comment&quot;&gt;/ interrupt vector tty in       ; processor level 5&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       ttyo;240 &lt;span class=&quot;comment&quot;&gt;/ interrupt vector tty out&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       ppti;240 &lt;span class=&quot;comment&quot;&gt;/                  punch papertape in&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       ppto;240 &lt;span class=&quot;comment&quot;&gt;/                  punch papertape out&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       clock;340 &lt;span class=&quot;comment&quot;&gt;/ clock interrupt vector       ; processor level 7&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; . = orig+200&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/     lpto; 240  line printer interrupt     ; processor level 5 (future)&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; . = orig+204&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       drum;300 &lt;span class=&quot;comment&quot;&gt;/ drum interrupt         ; processor level 6&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;#clock&quot;&gt;
+ &lt;a href=&quot;clock&quot;&gt;
+  &lt;span&gt;u4&lt;/span&gt;
+  &lt;div&gt;clock:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;clock: &lt;span class=&quot;comment&quot;&gt;/ interrupt from 60 cycle clock&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       mov     r0,-(sp) &lt;span class=&quot;comment&quot;&gt;/ save r0&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       tst     *$lks &lt;span class=&quot;comment&quot;&gt;/ restart clock?&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       mov     $s.time+2,r0 &lt;span class=&quot;comment&quot;&gt;/ increment the time of day&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       inc     (r0)&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;       mov     $uquant,r0 &lt;span class=&quot;comment&quot;&gt;/ decrement user time quantum&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       decb    (r0)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       bge     1f &lt;span class=&quot;comment&quot;&gt;/ if less than 0&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       clrb    (r0) &lt;span class=&quot;comment&quot;&gt;/ make it 0&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;1: &lt;span class=&quot;comment&quot;&gt;/ decrement time out counts return now if priority was not 0&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       cmp     4(sp),$200 &lt;span class=&quot;comment&quot;&gt;/ ps greater than or equal to 200&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       bge     2f &lt;span class=&quot;comment&quot;&gt;/ yes, check time outs&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       tstb    (r0) &lt;span class=&quot;comment&quot;&gt;/ no, user timed out?&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       bne     1f &lt;span class=&quot;comment&quot;&gt;/ no&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       cmpb    sysflg,$-1 &lt;span class=&quot;comment&quot;&gt;/ yes, are we outside the system?&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       bne     1f &lt;span class=&quot;comment&quot;&gt;/ no, 1f&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       mov     (sp)+,r0 &lt;span class=&quot;comment&quot;&gt;/ yes, put users r0 in r0&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       sys     0 / sysrele&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       rti&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Syntactic informer: addresses in the form &lt;samp&gt;1f&lt;/samp&gt;, &lt;samp&gt;2b&lt;/samp&gt;, &amp;c.
+Indicate the address of &quot;next label 1, forward&quot; and &quot;next label 2, backward&quot;.
+Also, notice how there'&lt;!--'--&gt;s a &lt;samp&gt;$&lt;/samp&gt; sometimes in front of numbers or addresses?
+This means &quot;this is a number/pointer, not a variable to dereference&quot;.
+Usually. This is vibes-based.
+Also also, I gave up trying to highlight this shit (sorry).
+&lt;/p&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Which corresponds to &lt;code&gt;sys rele (II)&lt;/code&gt; (p. 128) in the &lt;cite&gt;&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf&quot;&gt;UNIX Programmer'&lt;!--'--&gt;s Manual&lt;/a&gt;&lt;/cite&gt;:
+&lt;/p&gt;
+&lt;blockquote class=&quot;manual continuing&quot; id=&quot;sys rele (ii)&quot;&gt;
+ &lt;a href=&quot;#sys rele (ii)&quot;&gt;
+  &lt;span&gt;11/3/71&lt;/span&gt;
+  &lt;div&gt;sys rele (ii)&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;dl&gt;
+  &lt;div&gt;&lt;dt&gt;name&lt;/dt&gt; &lt;dd&gt;rele -- release processor&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;synopsis&lt;/dt&gt; &lt;dd&gt;sys rele / rele = 0; not in assembler&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;description&lt;/dt&gt;&lt;dd&gt;This call causes the process to be swapped out immediately if another process wants to run.&lt;!--&quot;--&gt; &lt;!--&quot;--&gt; Its main reason for being is internal to the system, namely to implement timer-runout swaps.&lt;!--&quot;--&gt; &lt;!--&quot;--&gt; However, it can be used beneficially by programs which wish to loop for some reason without consuming more processor time than necesary.&lt;/dd&gt;&lt;/div&gt;
+ &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and indeed &lt;code&gt;sysrele&lt;/code&gt; just calls &lt;code&gt;tswap&lt;/code&gt;, which has little to do with the user (indeed &lt;code&gt;u.uid&lt;/code&gt; isn'&lt;!--'--&gt;t mentioned),
+and resets the timer thusly:
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;tswap&quot;&gt;
+ &lt;a href=&quot;#tswap&quot;&gt;
+  &lt;span&gt;u3&lt;/span&gt;
+  &lt;div&gt;tswap:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;       movb    $30.,uquant &lt;span class=&quot;comment&quot;&gt;/ initialize process time quantum&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       rts     r0 &lt;span class=&quot;comment&quot;&gt;/ return&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+so, a &quot;process time&quot;, not a &quot;user time&quot;.
+Indeed, we can attribute this confusion to the author'&lt;!--'--&gt;s misconstruance of &quot;user&quot; (and the various &lt;code&gt;u.&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;&lt;/code&gt; variables) in the comments
+as referring to the user (as in a system user) where it'&lt;!--'--&gt;s usually used as &lt;!--&quot;--&gt;&quot;current user-space process &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; is interrupting&quot;&lt;!--&quot;--&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+So, if I'&lt;!--'--&gt;m reading this right, then a normal-priority process (I cut off a lot of other bollocks from &lt;code&gt;clock&lt;/code&gt;) will get to run for around
+will get to run for (30 = 48&lt;sub &gt;(10)&lt;/sub&gt;)/60 = 800ms without making any syscalls before being considered for swapping out,
+while a high-priority process will only be considered for swapping out after it makes a syscall.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Now that we've established a bidirexionally-adversarial rapport with the text, it's time to really analyse it.
+Note that to assemble the unix72 scans back into files, you can run &lt;code&gt;tools/rebuild&lt;/code&gt;, and this will also apply patches from &lt;code&gt;patches/core/&lt;/code&gt;;
+these wouldn'&lt;!--'--&gt;t materially affect this analysis, but it is nevertheless performed on the unpatched source.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+There is one interesting patch, not applied by default: &lt;code&gt;cold.patch&lt;/code&gt;.
+This, shockingly, sets the &lt;code&gt;cold&lt;/code&gt; flag in &lt;code&gt;u0&lt;/code&gt;,
+which &lt;em&gt;creates the root filesystem on boot&lt;/em&gt;.
+This is inextricably linked with the
+&lt;/p&gt;
+&lt;blockquote class=&quot;manual continuing&quot; id=&quot;boot procedures (vii)&quot;&gt;
+ &lt;a href=&quot;#boot procedures (vii)&quot;&gt;
+  &lt;span&gt;11/3/71&lt;/span&gt;
+  &lt;div&gt;boot procedures (vii)&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;dl&gt;
+  &lt;div&gt;&lt;dt&gt;name&lt;/dt&gt; &lt;dd&gt;bos, maki, rom, vcboot, msys, et al&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;synopsis&lt;/dt&gt; &lt;dd&gt;--&lt;/dd&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;dt&gt;description&lt;/dt&gt;&lt;dd&gt;On the RF disk &lt;span class=&quot;cmt&quot;&gt;&lt;span class=&quot;roboto-unscale roboto&quot;&gt;(this is the fixed disk with the root filesystem on it)&lt;/span&gt;&lt;/span&gt;, the highest 16K words are reserved for stand-alone programs.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;These 16K words are allocated as follows:
+
+&lt;!--&quot;--&gt;bos		(1K)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;Warm UNIX	(6K)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;Cold UNIX	(6K)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;unassigned	(6K)&lt;!--&quot;--&gt;
+
+The UNIX read only memory (ROM) is home cut&lt;span class=&quot;cmt&quot;&gt;[?]&lt;/span&gt; with 2 programs of 16 words each.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;The first &lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt; reads &lt;u&gt;bos&lt;/u&gt; from the RF disk into core &lt;span class=&quot;cmt&quot;&gt;[and transfers to it]&lt;/span&gt;.
+
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+
+The program &lt;u&gt;bos&lt;/u&gt; (Bootstrap Operating System) examines the console switchs and executes one of several internal programs &lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;The following settings are currently recognized:
+
+&lt;!--&quot;--&gt;173700&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;73700	Will read Warm UNIX from the RF into core location 0 and transfer to 400,&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;1	Will read Cold UNIX from the RF into core location 0 and transfer to 400,&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;2	Will read the unassigned 3K program into core location 0 and transfer to 400,&lt;!--&quot;--&gt;
+
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+
+Thus we come to the UNIX warm boot procedure: put 173700 into the switches, push &lt;u&gt;load&lt;/u&gt; &lt;u&gt;address&lt;/u&gt; and then push &lt;u&gt;start&lt;/u&gt;.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;The alternate switch setting of 73700 that will load warm UNIX is used as a signal to bring up a single user system for special purposes.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;See /&lt;u&gt;etc&lt;/u&gt;/&lt;u&gt;init&lt;/u&gt;.
+
+Cold boots can be accomplished with the Cold UNIX program, but they'&lt;!--'--&gt;re not.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Thus the Cold UNIX slot on the RF may have any program desired.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;This slot is, however, used during a cold boot.&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;span class=&quot;roboto-unscale roboto&quot;&gt;How to install the &quot;UNIX INIT DECtape&quot;, what to press to run it, and what programs are on it, is explained in grueling detail here.&lt;/span&gt;&lt;/span&gt;&lt;/dd&gt;&lt;/div&gt;
+ &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+There is so much more, and it is all genuinely interesting and on page 195.
+Also, all programmers being illiterate is clearly not a novel phenomenon.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+It &lt;em&gt;was&lt;/em&gt; relatively obvious that the entry point was &lt;del&gt;&lt;code&gt;400&lt;/code&gt;&lt;/del&gt; just the first bit of code in &lt;code&gt;u0&lt;/code&gt;,
+but it'&lt;!--'--&gt;s good to know this for sure.
+That said: let'&lt;!--'--&gt;s initialise.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;constants&quot;&gt;
+ &lt;a href=&quot;#constants&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;constants&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;nproc = 16. &lt;span class=&quot;comment&quot;&gt;/ number of processes&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;nfiles = 50.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;ntty = 8+1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;nbuf = 6&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; .if cold &lt;span class=&quot;comment&quot;&gt;/ ignored if cold = 0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;nbuf = 2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;.endif&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;core = orig+40000  &lt;span class=&quot;comment&quot;&gt;/ specifies beginning of user's core&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;ecore = core+20000 &lt;span class=&quot;comment&quot;&gt;/ specifies end of user's core (4096 words)&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&quot;u69 continuation&quot; id=&quot;entry point&quot;&gt;
+ &lt;a href=&quot;#entry point&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;entry point&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;. = orig+400&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ copy in transfer vectors&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	mov    $ecore,sp &lt;span class=&quot;comment&quot;&gt;/ put pointer to ecore in the stack pointer&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,copyz; 0; 14 &lt;span class=&quot;comment&quot;&gt;/ clear locations 0 to 14 in core&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    $4,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	clr    r1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,(r1)+ &lt;span class=&quot;comment&quot;&gt;/ put value of 4 into location 0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,(r1)+ &lt;span class=&quot;comment&quot;&gt;/ put value of 4 into location 2&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Historical and syntactic reminder: nothing is hexadecimal yet.
+Numbers that end with a full stop are decimal (there are &lt;code&gt;16&lt;/code&gt; processes that can have &lt;code&gt;50&lt;/code&gt; file descriptions open),
+everything else is octal
+(the &lt;q&gt;beginning of user'&lt;!--'--&gt;s core&lt;/q&gt; (smallest userspace address) is &lt;code&gt;&lt;var&gt;orig&lt;/var&gt;+40000&lt;sub class=&quot;roboto&quot;&gt;(8)&lt;/sub&gt;&lt;/code&gt; = &lt;code&gt;&lt;var&gt;0&lt;/var&gt;+16384&lt;sub class=&quot;roboto&quot;&gt;(10)&lt;/sub&gt;&lt;/code&gt;,
+ and the maximal userspace address is thus &lt;code&gt;&lt;var&gt;core&lt;/var&gt;+20000&lt;sub class=&quot;roboto&quot;&gt;(8)&lt;/sub&gt;&lt;/code&gt; = &lt;code&gt;&lt;var&gt;16384(10)&lt;/var&gt;+8192&lt;sub class=&quot;roboto&quot;&gt;(10)&lt;/sub&gt;&lt;/code&gt;,
+ thus the userspace has &lt;var&gt;ecore&lt;/var&gt;−&lt;var&gt;core&lt;/var&gt; = 8192&lt;sub &gt;(8)&lt;/sub&gt; bytes = 4096 words,
+ which is congruent with the comment).
+But there are &lt;code&gt;8+1&lt;/code&gt;=9 ttys, even though 8 is not in octal. Wondrous.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+This bit doesn'&lt;!--'--&gt;t really do much, except initialise three interrupt vectors (one shown) which are overridden by the a.out header (and thus commented out).
+This corresponds to pages in section E.0 in &lt;a href=&quot;//www.bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;the PDF&lt;/a&gt;,
+which is physical page 6 (and companion section H.0 which is physical page 126).
+It'&lt;!--'--&gt;s convenient to follow along (indeed, these tend to be annotated by hand (with a pen) with relevant metatext).
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;memory initialisation&quot;&gt;
+ &lt;a href=&quot;#memory initialisation&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;memory initialisation&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ clear core&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.if cold &lt;span class=&quot;comment&quot;&gt;/ ignored if cold = 0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	halt &lt;span class=&quot;comment&quot;&gt;/ halt before initializing rf file system; user has&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;             &lt;span class=&quot;comment&quot;&gt;/ last chance to reconsider&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.endif&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	jsr    r0,copyz; systm; ecore &lt;span class=&quot;comment&quot;&gt;/ clear locations systm to ecore&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    $s.chrgt+2,clockp &lt;span class=&quot;comment&quot;&gt;/ intialize clockp&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ allocate tty buffers; see H.0 for description&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ allocate disk buffers; see H.0 for description&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ set devices to interrupt&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ set up time out subroutines&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ free all character blocks; see H.0 for description&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ set up drum swap addresses; see H.0 for description&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ free rest of drum&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.if cold&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ zero i list&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;	.endif&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+&lt;code&gt;systm&lt;/code&gt; is the start of the kernel variable block (all of which reside in &lt;code&gt;ux&lt;/code&gt;, and &lt;code&gt;systm&lt;/code&gt; is actually the root filesystem superblock), and is the last thing before &lt;code&gt;core&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Note that &lt;code&gt;s.chrgt&lt;/code&gt; is just a variable (symbol) called &lt;var&gt;s.chrgt&lt;/var&gt;.
+Note also that &lt;code&gt;&lt;q&gt;$&lt;/q&gt;&lt;/code&gt; indicates &quot;turn this into a pointer&quot; or &quot;turn this into a number&quot;;
+the &lt;code&gt;mov&lt;/code&gt; can be expressed as (in C parlance) &quot;&lt;samp&gt;clockp = (char *)(&amp;s.chrgt) + 2&lt;/samp&gt;&quot;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Do not be confused by the convenient naming: &lt;code&gt;r0&lt;/code&gt; is just a variable. The PDP-11 has no registers.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;q&gt;The drum&lt;/q&gt; refers &lt;em&gt;not&lt;/em&gt; to an actual drum but the RF fixed disk where the root filesystem is
+(the one from boot procedures (VII) with the kernels and BPP on it).
+But they'&lt;!--'--&gt;re &lt;em&gt;really&lt;/em&gt; adamant about calling it a &quot;drum&quot; and contrasting it to disks (as in the 2.5MB &quot;RK&quot; removable disk with /usr),
+and &lt;em&gt;only&lt;/em&gt; doing so in the kernel source and this &lt;cite&gt;Implementation Document&lt;/cite&gt; that I deadass thought there was another device,
+and not shown to the userspace. The nomenclature is so ancient it's like it's from another dimension.
+But yes, the root disk has 1024 512-byte blocks.
+The top 64 (32kB) are &lt;q&gt;set aside for storing UNIX itself&lt;/q&gt; and this is the bit with the kernels and BPP in it,
+then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the &lt;var&gt;user&lt;/var&gt; label (which includes all &lt;var&gt;u.&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;&lt;/var&gt; variables), the stack (&lt;var&gt;sstack&lt;/var&gt;)).
+Thus we can eke out the formatting of the fixed disk as &lt;samp&gt;[/: 344kB; swap: 16*8.5kB=136kB; bootloader area: 32kB]&lt;/samp&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+The next two bits effectively do &lt;samp&gt;mkfs /dev/rf0 /&lt;/samp&gt; (on the cold kernel) by zeroing most of it out and configuring the superblock accordingly,
+with user data reaching up to block 687 (which matches 1024-64-17*(&lt;var&gt;nproc&lt;/var&gt;=16) so the entire disk is accounted for).
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;magick&quot;&gt;
+ &lt;a href=&quot;#magick&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;magick&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ make current program a user&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	mov    $41.,r0 &lt;span class=&quot;comment&quot;&gt;/ rootdir set to 41 and never changed&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,rootdir &lt;span class=&quot;comment&quot;&gt;/ rootdir is i-number of root directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,u.cdir &lt;span class=&quot;comment&quot;&gt;/ u.cdir is i-number of process current directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    $1,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   r0,u.uno &lt;span class=&quot;comment&quot;&gt;/ set process table index for this process to 1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,mpid &lt;span class=&quot;comment&quot;&gt;/ initialize mpid to 1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,p.pid &lt;span class=&quot;comment&quot;&gt;/ p.pid identifies process&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   r0,p.stat &lt;span class=&quot;comment&quot;&gt;/ process status = 1 i.e., active&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                         &lt;span class=&quot;comment&quot;&gt;/                = 0 free&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.if cold         &lt;span class=&quot;comment&quot;&gt;/                = 2 waiting for a child to die&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                         &lt;span class=&quot;comment&quot;&gt;/                = 3 terminated but not yet waited&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                         &lt;span class=&quot;comment&quot;&gt;/                  for&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+This is where the magic happens. This is what you came here for. Let'&lt;!--'--&gt;s prototype this in C for the gamers:
+&lt;/p&gt;
+&lt;div class=&quot;codecontinued&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; NPROC 16&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint16_t rootdir&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint16_t u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cdir&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint8_t&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;uno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint16_t mpid&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint16_t p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pid&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;NPROC&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint8_t&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;stat&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;NPROC&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// make current program a user&lt;/span&gt;
+
+&lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// rootdir set to 41 and never changed&lt;/span&gt;
+rootdir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;41&lt;/span&gt;&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// rootdir is i-number of root directory&lt;/span&gt;
+u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cdir&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;41&lt;/span&gt;&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// u.cdir is i-number of process current directory&lt;/span&gt;
+
+u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;uno&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// set process table index for this process to 1&lt;/span&gt;
+mpid&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// initialize mpid to 1&lt;/span&gt;
+p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pid&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// p.pid identifies process&lt;/span&gt;
+p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;stat&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// process status = 1 i.e., active&lt;/span&gt;
+&lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 0 free&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;COLD&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 2 waiting for a child to die&lt;/span&gt;
+&lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 3 terminated but not yet waited for&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+This means, in order:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;rootdir&lt;/var&gt; is just a constant, but defined as a symbol.
+/ is defined as being i-node 41, and this sets that.
+(We have zeroed the whole variable block in the last step.)
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;u.cdir&lt;/var&gt; is the i-node of the process'&lt;!--'--&gt;s working directory,
+on device &lt;var&gt;u.cdev&lt;/var&gt; (previously zeroed, and 0 = RF),
+so the process we are becoming is now in /.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;u.uno&lt;/var&gt; is the 1-based index into the process table (&lt;var&gt;p.&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;&lt;/var&gt;) of the current process, and 0 is used as a sentinel to mean &quot;no process, you &lt;em&gt;must&lt;/em&gt; swap me out&quot;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;mpid&lt;/var&gt; is the global PID counter. On &lt;samp&gt;sys fork&lt;/samp&gt; (II), a new process is assigned &lt;samp&gt;p.pid[…] = ++mpid;&lt;/samp&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;var&gt;proc&lt;/var&gt; (under which all &lt;var&gt;p.&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;&lt;/var&gt; variables are found),
+is the process table (though notice how it'&lt;!--'--&gt;s intrusively structured as arrays per-field rather than an array of objects; remember: no objects).
+Thus, &lt;var&gt;p.pid[n]&lt;/var&gt; and &lt;var&gt;p.status[n]&lt;/var&gt; are the PID and status of process &lt;var&gt;n&lt;/var&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Thus, we can model the state before as:
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;next PID = 1&lt;/li&gt;
+ &lt;li&gt;process table = {1..=16 = {free}}&lt;/li&gt;
+ &lt;li&gt;not executing a process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and the state after as
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;next PID = 2&lt;/li&gt;
+ &lt;li&gt;process table = {1 = {pid = 1, parent-pid = 0, not on the run queue, status = R}, 2..=16 = {free}}&lt;/li&gt;
+ &lt;li&gt;executing process 1 in kernel mode&lt;/li&gt;
+ &lt;li&gt;working directory: /&lt;/li&gt;
+ &lt;li&gt;UID (and all other parameters you can think of): 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+and this is written in the correct order,
+so you can't ever really say you're running PID 0
+(like would be the case if the &lt;var&gt;p.pid&lt;/var&gt; and &lt;var&gt;p.stat&lt;/var&gt; assignments were swapped).
+Between assigning &lt;var&gt;u.uno&lt;/var&gt; and &lt;var&gt;p.stat&lt;/var&gt; a &lt;em&gt;destroyed&lt;/em&gt; process is running, which is SOP for sys exit (II) &amp;c.
+Admittedly, I don'&lt;!--'--&gt;t think the process would survive getting swapped out (or returned to at all), but it doesn't have to because we're in kernel mode.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;superblock&quot;&gt;
+ &lt;a href=&quot;#superblock&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;superblock&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;	.if cold&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialize inodes for special files (inodes 1 to 40.)&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;(we will revisit this)&lt;/span&gt;
+&lt;!--&quot;--&gt;	.endif&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ next 2 instructions not executed during cold boot.&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bis    $2000,sb0 &lt;span class=&quot;comment&quot;&gt;/ sb0 I/O queue entry for superblock on drum;&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                         &lt;span class=&quot;comment&quot;&gt;/ set bit 10 to 1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,ppoke &lt;span class=&quot;comment&quot;&gt;/ read drum superblock&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	tstb   sb0+1 &lt;span class=&quot;comment&quot;&gt;/ has I/O request been honored (for drum)?&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne    1b &lt;span class=&quot;comment&quot;&gt;/ no, continue to idle.&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+By this time we still haven'&lt;!--'--&gt;t read in the superblock for the rootfs.
+It'&lt;!--'--&gt;s always loaded as an invariant, and definitely before we do any filesystem operations.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;init&quot;&gt;
+ &lt;a href=&quot;#init&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;init&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	decb   sysflg &lt;span class=&quot;comment&quot;&gt;/ mormally sysflag=0, indicates executing in system&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    exec; 2f; 1f &lt;span class=&quot;comment&quot;&gt;/ generates trap interrupt; trap vector =&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                            &lt;span class=&quot;comment&quot;&gt;/ sysent; 0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	br     panic &lt;span class=&quot;comment&quot;&gt;/ execute file/etc/init&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	2f;0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;2:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;/etc/init\0&gt; &lt;span class=&quot;comment&quot;&gt;/ UNIX looks for strings term, noted by nul\0&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;panic:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	clr    ps&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	dec    $0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne    1b&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	dec    $5&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne    1b&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jmp    *$173700 &lt;span class=&quot;comment&quot;&gt;/ rom loader address&lt;/span&gt;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and once again for the gamers:
+&lt;/p&gt;
+&lt;div class=&quot;codecontinued&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint8_t sysflg&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;sysflg&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// mormally sysflag=0, indicates executing in system&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;_2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; _1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// generates trap interrupt; trap vector = sysent; 0&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; panic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// execute file/etc/init&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;_1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;_2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; _2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/etc/init&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// UNIX looks for strings term, noted by nul\0&lt;/span&gt;
+
+panic&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+ps &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;uint16_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;uint16_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// I think??&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0173700&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// rom loader address&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Once more, in order:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;sysflg&lt;/var&gt; is used as a flag that prevents running syscalls while in the kernel (see below).
+This is what realistically delineates running in user and kernel modes
+(indeed, some may say it'&lt;!--'--&gt;s a &lt;code&gt;flg&lt;/code&gt; what indicates being in &lt;code&gt;sys&lt;/code&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;code&gt;exec()&lt;/code&gt; is exactly how you'&lt;!--'--&gt;d run it from userspace (since, well, we are now).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+If that fails, then we panic by clearing processor flags (idk) and jumping to the loader that loads the BOS (cf. boot procedures (VII)).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0, and is &lt;code&gt;4&lt;/code&gt;)
+and the word at 5 (this is an odd address, so this is the high byte of the address for interrupt 1 (&lt;code&gt;unkni&lt;/code&gt;/&lt;code&gt;sysent&lt;/code&gt;) and the low byte of its processor flags word (0)).
+Why?
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;sysent&quot;&gt;
+ &lt;a href=&quot;#sysent&quot;&gt;
+  &lt;span&gt;u1&lt;/span&gt;
+  &lt;div&gt;sysent:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;unkni: &lt;span class=&quot;comment&quot;&gt;/ used for all system calls&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;sysent:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	incb	sysflg &lt;span class=&quot;comment&quot;&gt;/ indicate a system routine is&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	beq	1f &lt;span class=&quot;comment&quot;&gt;/ in progress&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jmp	panic &lt;span class=&quot;comment&quot;&gt;/ called if trap inside system&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;	(rest of syscall handling)&lt;!--&quot;--&gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;codecontinued&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; uint8_t sysflg&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;sysflg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; panic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+(−1 if in userspace, 0 if in kernel, 1 if currently panicking).
+&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+This clearly demonstrates that in V1 there is &lt;em&gt;no&lt;/em&gt; PID 0.
+The system runs with no process, then it runs as a syscall of PID 1, then it runs &lt;code&gt;execl(&quot;/etc/init&quot;, &quot;/etc/init&quot;, 0)&lt;/code&gt; in PID 1, then it'&lt;!--'--&gt;s normal,
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;superblock installation&quot;&gt;
+ &lt;a href=&quot;#superblock installation&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;superblock installation&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;	.if cold&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialize inodes for special files (inodes 1 to 40.)&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	mov    $40.,r1 &lt;span class=&quot;comment&quot;&gt;/ set r1=i-node-number 40.&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,iget &lt;span class=&quot;comment&quot;&gt;/ read i-node 'r1' from disk into inode area of&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                       &lt;span class=&quot;comment&quot;&gt;/ core and write modified inode out (if any)&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    $100017,i.flgs &lt;span class=&quot;comment&quot;&gt;/ set flags in core image of inode to indi-&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                              &lt;span class=&quot;comment&quot;&gt;/ cate allocated, read (owner, non-owner),&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                              &lt;span class=&quot;comment&quot;&gt;/ write (owner, non-owner)&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   $1,i.nlks &lt;span class=&quot;comment&quot;&gt;/ set no. of links = 1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   $1,i.uid &lt;span class=&quot;comment&quot;&gt;/ set user id of owner = 1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,setimod &lt;span class=&quot;comment&quot;&gt;/ set imod=1 to indicate i-node modified, also&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                          &lt;span class=&quot;comment&quot;&gt;/ stuff time of modification into i-node&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	dec    r1 &lt;span class=&quot;comment&quot;&gt;/ next i-node no. = present i-node no.-1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bgt    1b &lt;span class=&quot;comment&quot;&gt;/ has i-node 1 been initialized; no, branch&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialize i-nodes r1.,...,47. and write the root device, binary, etc.,&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ directories onto fixed head disk. user temporary, initialization prog.&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	mov    $idata,r0 &lt;span class=&quot;comment&quot;&gt;/ r0=base addr. of assembled directories.&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    $u.off,u.fofp &lt;span class=&quot;comment&quot;&gt;/ pointer to u.off in u.fofp (holds file&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                             &lt;span class=&quot;comment&quot;&gt;/ offset)&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    (r0)+,r1&lt;span class=&quot;comment&quot;&gt;/r1=41.,...,47; &quot;0&quot; in the assembled directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                       &lt;span class=&quot;comment&quot;&gt;/ header signals last&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	beq    1f      &lt;span class=&quot;comment&quot;&gt;/ assembled directory has been written onto drum&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,imap &lt;span class=&quot;comment&quot;&gt;/ locate the inode map bit for i-node 'r1'&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bisb   mq,(r2) &lt;span class=&quot;comment&quot;&gt;/ set the bit to indicate the i-node is not&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                       &lt;span class=&quot;comment&quot;&gt;/ available&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,iget &lt;span class=&quot;comment&quot;&gt;/ read inode 'r1' from disk into inode area of&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                       &lt;span class=&quot;comment&quot;&gt;/ core and write modified i-node on drum (if any)&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    (r0)+,i.flgs &lt;span class=&quot;comment&quot;&gt;/ set flags in core image of inode from&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                            &lt;span class=&quot;comment&quot;&gt;/ assembled directories header&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   (r0)+,i.nlks &lt;span class=&quot;comment&quot;&gt;/ set no. of links from header&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   (r0)+,i.uid &lt;span class=&quot;comment&quot;&gt;/ set user id of owner from header&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,setimod &lt;span class=&quot;comment&quot;&gt;/ set imod=1 to indicate inode modified; also,&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                          &lt;span class=&quot;comment&quot;&gt;/ stuff time of modification into i-node&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    (r0)+,u.count &lt;span class=&quot;comment&quot;&gt;/ set byte count for write call equal to&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;                             &lt;span class=&quot;comment&quot;&gt;/ size of directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,u.base &lt;span class=&quot;comment&quot;&gt;/ set buffer address for write to top of directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	clr    u.off &lt;span class=&quot;comment&quot;&gt;/ clear file offset used in 'seek' and 'tell'&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	add    u.count,r0 &lt;span class=&quot;comment&quot;&gt;/ r0 points to the header of the next directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr    r0,writei &lt;span class=&quot;comment&quot;&gt;/ write the directory and i-node onto drum&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	br     1b &lt;span class=&quot;comment&quot;&gt;/ do next directory&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.endif&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Here-in:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The first loop creates files 1–40 owned by UID 1 (&quot;sys&quot;), mode &lt;samp&gt;u=rw,o=rw&lt;/samp&gt;
+(normal creation semantics apply; there isn'&lt;!--'--&gt;t a &quot;close&quot; or &quot;write&quot;,
+ because only one i-node can be open at a time and &lt;code&gt;iget&lt;/code&gt; will flush the current one before opening a new one).
+The first real file is 41 (that'&lt;!--'--&gt;s the root directory), and i-nodes smaller than this are devices,
+with the equivalent of the modern &lt;var&gt;maj:min&lt;/var&gt; being just the i-node number:
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuation&quot; id=&quot;iopen&quot;&gt;
+ &lt;a href=&quot;#iopen&quot;&gt;
+  &lt;span&gt;u5&lt;/span&gt;
+  &lt;div&gt;iopen:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;iopen: &lt;span class=&quot;comment&quot;&gt;/ open file whose i-number is in r1&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        tst    r1 &lt;span class=&quot;comment&quot;&gt;/ write or read access?&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        blt    2f &lt;span class=&quot;comment&quot;&gt;/ write, go to 2f&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        jsr    r0,access; 2 &lt;span class=&quot;comment&quot;&gt;/ get inode into core with read access&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        cmp    r1,$40. &lt;span class=&quot;comment&quot;&gt;/ is it a special file&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        bgt    3f &lt;span class=&quot;comment&quot;&gt;/ no. 3f&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        mov    r1,-(sp) &lt;span class=&quot;comment&quot;&gt;/ yes, figure out&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        asl    r1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        jmp    *1f-2(r1) &lt;span class=&quot;comment&quot;&gt;/ which one and transfer to it&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        otty   &lt;span class=&quot;comment&quot;&gt;/ tty&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        oppt   &lt;span class=&quot;comment&quot;&gt;/ ppt&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        sret   &lt;span class=&quot;comment&quot;&gt;/ mem&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        sret    &lt;span class=&quot;comment&quot;&gt;/ rf0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        sret   &lt;span class=&quot;comment&quot;&gt;/ rk0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        sret   &lt;span class=&quot;comment&quot;&gt;/ tap0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;        sret   &lt;span class=&quot;comment&quot;&gt;/ tap7&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        ocvt   &lt;span class=&quot;comment&quot;&gt;/ tty0&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;        ocvt   &lt;span class=&quot;comment&quot;&gt;/ tty7&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;        error &lt;span class=&quot;comment&quot;&gt;/ crd&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;(this repeats for writes identically, but directories error)&lt;/span&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The second loop walks &lt;code&gt;idata&lt;/code&gt; to exhaustion, creating each given inode, copying the mode, link count, owner, and data.
+What could the format &lt;em&gt;possibly&lt;/em&gt; be? The uzhe, lest we forget that directories are just files with filenames inside:
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;idata&quot;&gt;
+ &lt;a href=&quot;#idata&quot;&gt;
+  &lt;span&gt;u0&lt;/span&gt;
+  &lt;div&gt;idata:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;idata:&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ root&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	41.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	140016&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.byte 7,1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	9f-.-2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	41.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;..\0\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	41.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;.\0\0\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	42.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;dev\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	43.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;bin\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	44.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;etc\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	45.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;usr\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	46.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;tmp\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;9:&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ device directory&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	42.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	140016&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.byte 2,1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	9f-.-2&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;	01.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;tty\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	02.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;ppt\0\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	03.&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;	01.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;tty8\0\0\0\0&gt; &lt;span class=&quot;comment&quot;&gt;/ really tty&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;9:&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ etcetra directory&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	44.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	140016&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.byte 2,3&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	9f-.-2&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;	47.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;init\0\0\0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;9:&lt;!--&quot;--&gt;
+
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialization program&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	47.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	100036&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.byte 1,3&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	9f-.-2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;8:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    break; 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    open; 6f-8b+core; 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,r1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    seek; 65.; 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r1,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    read; 9f-8b+core; 512.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    9f,r5            &lt;span class=&quot;comment&quot;&gt;/ size&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	beq    1f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    creat; 9f-8b+core+4; 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r0,r2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   9f+2,0f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    chmod; 9f-8b+core+4; 0:..&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	movb   9f+3,0f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    chown; 9f-8b+core+4; 0:..&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;2:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	tst    r5&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	beq    2f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r1,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    read; 9f-8b+core; 512.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    $512.,0f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	cmp    r5,$512.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bhi    3f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r5,0f&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;3:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r2,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    write; 9f-8b+core; 0:..&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sub    r0,r5&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	br     2b&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;2:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r2,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    close&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	br     1b&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov    r1,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    close&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    exec; 5f-8b+core; 4f-8b+core&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sys    exit&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;4:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	5f-8b+core; 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;5:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;/etc/init\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;6:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	&amp;lt;/dev/tap0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	.even&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;9:&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ end of initialization data&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	0&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	.endif&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+And the problem of including an &lt;samp&gt;/etc/init&lt;/samp&gt; which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image. (Admittedly, with a bit of a fucky &lt;code&gt;-8b+core&lt;/code&gt; addressing mode.) Dudes rock moment.
+&lt;/p&gt;
+&lt;div class=&quot;codecontinued&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// cf. modern brk(2); this allocates the entire 8kB:&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; buf&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// we can pretend this variable exists just after program text&lt;/span&gt;
+
+tape &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/dev/tap0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; O_RDONLY&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;seek&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tape&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;65&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;SEEK_SET&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tape&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; buf&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;size &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;uint16_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;buf&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;file &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;creat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;buf &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;chmod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;buf &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; buf&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;chown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;buf &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; buf&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tape&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; buf&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;size &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;file&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; buf&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;file&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tape&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/etc/init&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Thus, knowing that DECtapes are block-addressed, we can deduce the tape has a 65-block header, then alternatingly blocks containing
+&lt;samp&gt;[size: 2B; mode: 1B; owner: 1B]&lt;/samp&gt;, and data to completion, ending in a file with &lt;samp&gt;size=0&lt;/samp&gt;.
+Boot procedures (VII) say this init &lt;q&gt;reads the DECtape for initialization files starting from block 33&lt;/q&gt;.
+It's unclear how one's supposed to reconcile this with the &lt;code&gt;65&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+So the filesystem, before loading from tape, consists of (omitting &lt;samp&gt;.&lt;/samp&gt; and &lt;samp&gt;..&lt;/samp&gt;):
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot;&gt;
+&lt;!--&quot;--&gt;41 /          &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;1 (sys)      [7 links] d-rwr-&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;   42 dev     &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;1 (sys)      [2 links] d-rwr-&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       1 tty      2 ppt      3 mem   &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;Every file: 1 (sys) [1 link] --rwrw&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;       4 rf0      5 rk0      6 tap0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;       7 tap1     8 tap2     9 tap3&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      10 tap4    11 tap5    12 tap6&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      13 tap7    14 tty0    15 tty1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      16 tty2    17 tty3    18 tty4&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      19 tty5    20 tty6    21 tty7&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      22 lpr      1 tty8             (really tty)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   43 bin      &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;3 (bin, adm) [2 links] d-rwr-&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;   44 etc      &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;3 (bin, adm) [2 links] d-rwr-&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;      47 init  &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;3 (bin, adm) [1 link ] -xrwr-&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;   45 usr      &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;1 (sys)      [2 links] d-rwr-&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;!--&quot;--&gt;   46 tmp      &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;&lt;!--&quot;--&gt;1 (sys)      [2 links] d-rwrw&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h2 id=&quot;nsys&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#nsys&quot;&gt;#&lt;/a&gt; nsys &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (the V4 what isn'&lt;!--'--&gt;t)&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+One would be remiss to not properly analyse the next available &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; as well.
+&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v2/&quot;&gt;V2&lt;/a&gt;? no.
+&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v3/&quot;&gt;V3&lt;/a&gt;? sure, but this is actually a &lt;em&gt;WIP&lt;/em&gt; of V4
+(compare &lt;samp&gt;Readme.nsys&lt;/samp&gt; and &lt;samp&gt;Changes.txt&lt;/samp&gt; and the &lt;a href=&quot;//www.tuhs.org/cgi-bin/utree.pl?file=V4&quot;&gt;The Unix Tree&lt;/a&gt;-for-V4 comments):
+it'&lt;!--'--&gt;s in C, sure, and time (II) already returns seconds since 1970,
+but &lt;code&gt;&lt;q&gt;0, &amp;nosys, /* 42 = pipe */&lt;/q&gt;&lt;/code&gt; (V3 &lt;a href=&quot;//www.tuhs.org/cgi-bin/utree.pl?file=V3/man/man2/pipe.2&quot;&gt;already had pipes&lt;/a&gt;).
+This is the same dump as &lt;a href=&quot;//github.com/dspinellis/unix-history-repo/blob/Research-V4/sys/ken/slp.c#L89&quot;&gt;what Anderson calls &quot;V4&quot;&lt;/a&gt;.
+This is obviously wrong (no fault of his, of course, how were he to know), but V4 is one of the two things we know this is definitely not.
+That said: probably close enough, given that the bits we care about are identical in V5.
+And what would those be?
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;nsys-entry&quot;&gt;
+ &lt;a href=&quot;#nsys-entry&quot;&gt;
+  &lt;span&gt;ken/low.s&lt;/span&gt;
+  &lt;div&gt;entry&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ low core&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+
+&lt;!--&quot;--&gt;. = 0^.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	4&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	br	1f&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ trap vectors&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+0		&lt;span class=&quot;comment&quot;&gt;/ bus error&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+1		&lt;span class=&quot;comment&quot;&gt;/ illegal instruction&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+2		&lt;span class=&quot;comment&quot;&gt;/ bpt-trace trap&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+3		&lt;span class=&quot;comment&quot;&gt;/ iot trap&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+4		&lt;span class=&quot;comment&quot;&gt;/ power fail&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+5		&lt;span class=&quot;comment&quot;&gt;/ emulator trap&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	trap; br7+6		&lt;span class=&quot;comment&quot;&gt;/ system entry&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;. = 040^.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;1:	jmp	start&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Loaded at 0, jump to jump to &lt;code&gt;start&lt;/code&gt;.
+It'&lt;!--'--&gt;s most convenient to follow along with &lt;a href=&quot;//www.tuhs.org/cgi-bin/utree.pl?file=V4/nsys&quot;&gt;The Unix Tree&lt;/a&gt;.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;nsys-start&quot;&gt;
+ &lt;a href=&quot;#nsys-start&quot;&gt;
+  &lt;span&gt;ken/45.s&lt;/span&gt;
+  &lt;div&gt;start:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ machine language assist&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ PDP-11/45&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+
+&lt;!--&quot;--&gt;start:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bit	$1,SSR0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	start			&lt;span class=&quot;comment&quot;&gt;/ loop if re-entry&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	reset&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialize systems segments&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialize user segmant&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ initialize io segment&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ set up counts on super segments&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ get a sp and start segmentation&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ clear bss&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ clear user block&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;/ set up previous mode and call main&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	mov	$30000,PS&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr	pc,_main&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov	$170000,-(sp)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	clr	-(sp)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	rti&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;nsys-main&quot;&gt;
+ &lt;a href=&quot;#nsys-main&quot;&gt;
+  &lt;span&gt;ken/main.c&lt;/span&gt;
+  &lt;div&gt;main()&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;main()&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;{&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;	/*&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 * zero and free all of core&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 */&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	UISA-&gt;r[0] = KISA-&gt;r[6] + USIZE;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	UISD-&gt;r[0] = 6;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	for(; fubyte(0) &gt;= 0; UISA-&gt;r[0]++) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		clearseg(UISA-&gt;r[0]);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		mfree(coremap, 1, UISA-&gt;r[0]);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mfree(swapmap, NSWAP, SWPLO);&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+This mirrors almost-verbatim what we saw in V1 setup, except we now have segmented memory
+(and thus &lt;code&gt;malloc()&lt;/code&gt;/&lt;code&gt;mfree()&lt;/code&gt;; also &lt;code&gt;printf()&lt;/code&gt; lol).
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;nsys-main-prep&quot;&gt;
+ &lt;a href=&quot;#nsys-main-prep&quot;&gt;
+  &lt;span&gt;ken/main.c&lt;/span&gt;
+  &lt;div&gt;process prep&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;	/*&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 * set up system process&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 */&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	proc[0].p_addr = KISA-&gt;r[6];&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	proc[0].p_size = USIZE;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	proc[0].p_stat = SRUN;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	proc[0].p_flag =| SLOAD|SSYS;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	u.u_procp = &amp;proc[0];&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;	/*&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 * set up 'known' i-nodes&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 */&lt;/span&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;	rootdir = iget(ROOTDEV, ROOTINO);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	rootdir-&gt;i_flag =&amp; ~ILOCK;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	u.u_cdir = iget(ROOTDEV, ROOTINO);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	u.u_cdir-&gt;i_flag =&amp; ~ILOCK;&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+One last time:
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;proc[0].p_addr&lt;/var&gt; is the base of the process'&lt;!--'--&gt; address space and &lt;var&gt;proc[0].p_size&lt;/var&gt; is its size. but idk what the unit is lol
+(it's gotta be chunks of &lt;em&gt;some&lt;/em&gt; size because the allocator's arena size a &lt;samp&gt;char&lt;/samp&gt;, but fuck knows what;
+ &lt;code&gt;USIZE&lt;/code&gt; is helpfully &lt;q&gt;8&lt;/q&gt;, and I'&lt;!--'--&gt;ve calculated the size of &lt;code&gt;u&lt;/code&gt; at 217 (or 228) bytes;
+ maybe it's 32 bytes? that's awfully narrow but it fits).
+In V1 this was &lt;samp&gt;[core; &lt;var&gt;u.break&lt;/var&gt;)&lt;/samp&gt; (and also the stack was separate. but close enough),
+now it'&lt;!--'--&gt;s &lt;samp&gt;[&lt;var&gt;proc[…].p_addr&lt;/var&gt;, &lt;var&gt;proc[…].p_addr&lt;/var&gt; + &lt;var&gt;proc[…].p_size&lt;/var&gt;)&lt;/samp&gt;.
+AFAICT, &lt;code&gt;KISA-&gt;r[6]&lt;/code&gt; is gonna be the Kernel I&lt;span class=&quot;cmt&quot;&gt;nstruciton&lt;/span&gt;-Space Page Address Register #0, register 6
+(there's a total of 8, matching the machine's &lt;a href=&quot;//gunkies.org/wiki/PDP-11_Memory_Management&quot;&gt;8 segments&lt;/a&gt;, so this probably means we'&lt;!--'--&gt;ll be executing from kernel instruction bank 6?).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;proc[0].p_stat&lt;/var&gt; is the same as before (except R is now 4).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;proc[0].p_flag&lt;/var&gt; is, AFAICT, &quot;loaded&quot; (as in: don'&lt;!--'--&gt;t need to swap in),
+and &lt;code&gt;SSYS&lt;/code&gt; poisons the scheduler to never consider the process for being swapped out.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;var&gt;rootdir&lt;/var&gt; and &lt;var&gt;u.u_cdir&lt;/var&gt; mean the same thing as in V1,
+but they are now entries into the open-inode table (and &lt;code&gt;iget()&lt;/code&gt; opens the given inode, returning a &lt;samp&gt;struct inode *&lt;/samp&gt;).
+This system has a &quot;filesystem cache&quot;! Revolutionary.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;var&gt;u.u_procp&lt;/var&gt; is the equivalent of &lt;var&gt;u.uno&lt;/var&gt;, and is the process'&lt;!--'--&gt; index in the scheduler table.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Before we were strictly in kernel mode, now we'&lt;!--'--&gt;re running &lt;em&gt;as PID 0&lt;/em&gt;, as an unswappable system process executing kernel code, in /.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;nsys-main-fork&quot;&gt;
+ &lt;a href=&quot;#nsys-main-fork&quot;&gt;
+  &lt;span&gt;ken/main.c&lt;/span&gt;
+  &lt;div&gt;the scheduler and also init&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;&lt;span class=&quot;comment&quot;&gt;	/*&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 * make init process&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 * enter scheduling loop&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 * with system process&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 */&lt;/span&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	if(newproc()) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		expand(USIZE+1);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		u.u_uisa[0] = USIZE;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		u.u_uisd[0] = 6;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		sureg();&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		for(i=0; icode[i] != -1; i++)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;			suword(i*2, icode[i]);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		return;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	sched();&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;}&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;code&gt;newproc()&lt;/code&gt; is what does the forking in &lt;code&gt;fork()&lt;/code&gt;, and returns nonzero in the child.
+This is the first known instance of the kernel forking.
+Naturally, since &lt;code&gt;mpid&lt;/code&gt; was never changed, the new process is PID 1.
+The special PID 0 process goes to &lt;code&gt;sched()&lt;/code&gt; and now does scheduling.
+It will probably schedule our PID 1 instantly.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+And PID 1 will first allocate another 1 block (32 bytes?), then…
+&lt;var&gt;u.u_uisa[0]&lt;/var&gt;/&lt;var&gt;u.u_uisd[0]&lt;/var&gt; look awfully like the user instruction and data segments? This matches segment 6 for data?
+But there are 8 segments (0–7 and &lt;code&gt;USIZE&lt;/code&gt; is 8 so fuck knows. maybe not). &lt;code&gt;sureg()&lt;/code&gt; sets user segment registers.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;code&gt;suword()&lt;/code&gt;, expectedly, sets words in user memory.
+The loop effectively does a memcpy of &lt;code&gt;icode&lt;/code&gt; until &lt;samp&gt;-1&lt;/samp&gt; to user memory starting at user address 0,
+and then we return there.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;code&gt;icode&lt;/code&gt; is, unfortunately,
+&lt;code&gt;&lt;q&gt;int icode[]
+{
+ 0104413,
+ 0000014,
+ 0000010,
+ 0000777,
+ 0000014,
+ 0000000,
+ 0062457,
+ 0061564,
+ 0064457,
+ 0064556,
+ 0000164,
+ -1
+};&lt;/q&gt;&lt;/code&gt;
+so a beautiful methodology has definitely been lost. But a quick &lt;samp&gt;objcopy --dump-section .data=/dev/stdout a.o | od -t o2z -w014&lt;/samp&gt; later, this is
+&lt;/p&gt;
+&lt;pre class=&quot;continuing&quot; style=&quot;margin-left: 1em;&quot;&gt;&lt;samp&gt;&lt;!--&quot;--&gt;0000000 104413 000014 000010 000777 000014 000000  &gt;............&amp;lt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;0000014 062457 061564 064457 064556 000164 177777  &gt;/etc/init...&amp;lt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;0000030&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;/pre&gt;
+from which the &lt;samp&gt;0000014&lt;/samp&gt; pointer stands out the most, so this can be trivially disassembled to
+&lt;pre class=&quot;continuation&quot; style=&quot;margin-left: 1em;&quot;&gt;&lt;samp&gt;&lt;!--&quot;--&gt;0000000: sys exec; $0000014; $0000010&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;0000010: 0000014; 0000000&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;0000014: &amp;lt;/etc/init\0&gt;&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented&quot;&gt;
+The &lt;code&gt;return&lt;/code&gt; returns to &lt;a href=&quot;#nsys-start&quot;&gt;&lt;code&gt;start:&lt;/code&gt;&lt;/a&gt;,
+which explicitly (&lt;code&gt;clr&lt;/code&gt;) returns to address 0 in user mode (&lt;code&gt;rti&lt;/code&gt; returns &lt;em&gt;from an interrupr&lt;/em&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Anderson'&lt;!--'--&gt;s analysis is correct, even if by accident: based on nsys source, V4 will have most likely been the first &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; with a PID 0 scheduler process.
+TTBOMK, this corresponds with this being the first system targeting the PDP-11/45 (or at least its memory segmentation features) rather than the PDP-11/20,
+and thus a purely-interrupt-driven architecture was no longer possible.
+(This hurts less when it'&lt;!--'--&gt;s one process out of a fifty than if it were one process out of sixteen, too.)
+&lt;/p&gt;
+&lt;h2 id=&quot;pdp7&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#pdp7&quot;&gt;#&lt;/a&gt; that funny PDP-7 proto-unix&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Since we're all here already, it'd be a shame to stop at Version 1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;.
+The scans for this system can be found
+&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/McIlroy_v0/&quot;&gt;at the TUHS as the number-named PDFs&lt;/a&gt;.
+The accompanying document —
+&lt;cite&gt;D. M. Ritchie'&lt;!--'--&gt;s &lt;samp&gt;&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/McIlroy_v0/UnixEditionZero-Threshold_OCR.pdf&quot;&gt;DRAFT of The UNIX Time-Sharing System&lt;/a&gt;&lt;/samp&gt;&lt;/cite&gt;
+— is a delightful 53 short pages (27 if you exclude the manuals (though they are not that yet)) and you should read or at least skim,
+is found in the &lt;samp&gt;UnixEditionZero&lt;var&gt;*&lt;/var&gt;&lt;/samp&gt; files. For the PDFs I recommend &lt;samp&gt;Threshold_OCR&lt;/samp&gt;, which has text, bookmarks, and not-being-100MB.
+An OCR-only text file is also available.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Well, the document says this documents &lt;samp&gt;&lt;q&gt;UNIX-11&lt;/q&gt;&lt;/samp&gt;, which is a mildly-redesigned port of &lt;samp&gt;&lt;q&gt;UNIX-7&lt;/q&gt;&lt;/samp&gt;. idk. it's the best I've got.
+It's also the first and only mention I've ever seen of R. H. Canaday'&lt;!--'--&gt;s involvement.
+But this document also contains my favourite lie (it'&lt;!--'--&gt;s honestly all gold, but):
+&lt;cite&gt;&lt;samp&gt;&lt;u&gt;5&lt;/u&gt;. &lt;u&gt;The&lt;/u&gt; &lt;u&gt;Shell&lt;/u&gt;, &lt;u&gt;5&lt;/u&gt;.&lt;u&gt;5&lt;/u&gt;. &lt;u&gt;Processes&lt;/u&gt; &lt;u&gt;and&lt;/u&gt; &lt;u&gt;forking&lt;/u&gt;&lt;/samp&gt;&lt;/cite&gt; (p. 18):
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;p class=&quot;continuation&quot;&gt;
+  Except while UNIX is bootstrapping itself into operation, a new process can come into existence in only one way: by use of the &lt;u&gt;fork&lt;/u&gt; system call.
+ &lt;/p&gt;
+ &lt;pre class=&quot;continuing&quot; style=&quot;margin-left: 2em;&quot;&gt;&lt;code&gt;processid = fork(label) &lt;/code&gt;&lt;/pre&gt;
+ &lt;p class=&quot;continued&quot;&gt;
+  When fork is executed by a process, it splits into two idependently executing processes.
+  The two processes have core images which are copies of each other, but they are not precisely equivalent:
+  one of them is considered the parent process.
+  In the parent, control does not return directly from the &lt;u&gt;fork&lt;/u&gt;, but instead passes to location &lt;u&gt;label&lt;/u&gt;;
+  in the child process, there is a normal return.
+  The &lt;u&gt;processid&lt;/u&gt; returned by the &lt;u&gt;fork&lt;/u&gt; call is the identification of the other, offspring process.
+ &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+This
+  (a) shows dmr'&lt;!--'--&gt;s hand, since he almost-outright says the first process is produced magically, but also
+  (b) is a delightful lie because this is, logically, what fork does.
+&lt;cite&gt;&lt;samp&gt;&lt;u&gt;APPENDIX&lt;/u&gt; &lt;u&gt;1&lt;/u&gt;, &lt;u&gt;A1&lt;/u&gt;.&lt;u&gt;2&lt;/u&gt; &lt;u&gt;fork&lt;/u&gt;&lt;/samp&gt;&lt;/cite&gt; (p. A1-2; p. 37):
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;p class=&quot;continuation&quot;&gt;
+  This is the primitive used to generate new processes.
+ &lt;/p&gt;
+ &lt;pre class=&quot;continuing&quot; style=&quot;margin-left: 2em;&quot;&gt;&lt;code&gt;sys fork
+(old process return)
+(new process return) &lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  There are no input arguments.
+  &lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+  R0 contains the process identification of the new proces.
+  See also section 5.
+ &lt;/p&gt;
+ &lt;p class=&quot;continued&quot;&gt;
+  The parent process returns immediately after the &quot;sys&quot; call; the new process skips one word.
+  (The label argument mentioned in the discussion of &lt;u&gt;fork&lt;/u&gt; in section 5.5 was a white lie.)
+ &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+This also looks like the first syscall-type word.
+Everything else calls them &quot;system calls&quot;, but this is a call to &quot;sys&quot;. Give it another year.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+The TUHS also distributes a
+&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/PDP7/pdp7-unix-master.zip&quot;&gt;zipped git export with no history&lt;/a&gt;,
+which claims to be a transcription of the PDFs.
+It may well be, and you may even be able to run it!
+But the only reliable source is &lt;samp&gt;01-s1.pdf&lt;/samp&gt;.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continued&quot; id=&quot;pdp7-s8-coldentry&quot;&gt;
+ &lt;a href=&quot;#pdp7-s8-coldentry&quot;&gt;
+  &lt;span&gt;s8, pp. 49–50&lt;/span&gt;
+  &lt;div&gt;&quot;coldentry&quot;&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;coldentry:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   dzm 0100 &lt;span class=&quot;comment&quot;&gt;&quot; not re-entrant&lt;/span&gt;
+&lt;!--&quot;--&gt;   caf&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;
+&lt;!--&quot;--&gt;   jms dskio; 06000&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   jms copy; dskbuf; sysdata; ulist-sysdata&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   lac d3&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   jms namei; initf&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;      jms halt&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   jms iget&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   cls&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   jms iread; 4096; 4096&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   jmp 4096&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;pdp7-s8-strings&quot;&gt;
+ &lt;a href=&quot;#pdp7-s8-strings&quot;&gt;
+  &lt;span&gt;s8, p. 48&lt;/span&gt;
+  &lt;div&gt;&quot;init&quot;&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;span class=&quot;comment&quot;&gt;&quot; Strings&lt;/span&gt;&lt;!--&quot;--&gt;
+initf:
+&lt;!--&quot;--&gt;   &amp;lt;i&gt;n;&amp;lt;i&gt;t;&amp;lt; &gt; ;&amp;lt; &gt; &lt;span class=&quot;comment&quot;&gt;&quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Also note the slew of &quot;constants&quot; on p. 48 which are variables in the form
+&lt;code&gt;o212: 0212&lt;/code&gt;,
+&lt;code&gt;d7999: 8999&lt;/code&gt;,
+&lt;code&gt;dm3: -3&lt;/code&gt;.
+It'&lt;!--'--&gt;s unclear if this saves space, or.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;var&gt;ulist&lt;/var&gt; is the process table (funnily enough, object-addressed):
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;pdp7-s8-ulist&quot;&gt;
+ &lt;a href=&quot;#pdp7-s8-ulist&quot;&gt;
+  &lt;span&gt;s8, p. 50&lt;/span&gt;
+  &lt;div&gt;ulist:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;ulist:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   0131000;1;0;0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   0031040;0;0;0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   0031100;0;0;0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   0031140;0;0;0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;(and so on, there'&lt;!--'--&gt;s 10 total)&lt;/span&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and fuck knows what the fields are, but the first one is very clearly initialised differently.
+If I had to guess (and I do), the second field would be &lt;var&gt;pid&lt;/var&gt; because that'&lt;!--'--&gt;s congruent with the &lt;code&gt;userdata&lt;/code&gt;.
+No clue what that high bit being set is.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuation&quot; id=&quot;pdp7-s8-userdata&quot;&gt;
+ &lt;a href=&quot;#pdp7-s8-userdata&quot;&gt;
+  &lt;span&gt;s8, p. 50&lt;/span&gt;
+  &lt;div&gt;userdata:&lt;/div&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;userdata:&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   u.ac: 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   u.mq: 0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   u.rg: .=.+9&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   u.uid: -1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   u.pid: 1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;cmt&quot;&gt;(there'&lt;!--'--&gt;s more)&lt;/span&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+If I &lt;em&gt;were&lt;/em&gt; to translate this all to C and adapt it to a modern audience, then I'&lt;!--'--&gt;d say
+&lt;/p&gt;
+&lt;div class=&quot;codecontinued&quot;&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; initf&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;init&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// idk if 4 spaces or 4 NULs at the end&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;diskread&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;06000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sysdata&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdata&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// superblock(?)&lt;/span&gt;
+
+init &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;initf&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;init &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;halt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;init&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indented&quot;&gt;
+So I'&lt;!--'--&gt;d say this system &lt;em&gt;boots&lt;/em&gt; into PID 1 but executing the kernel and with no program data, then reads &lt;samp&gt;init&lt;/samp&gt; into the program data
+(from the root directory; but there'&lt;!--'--&gt;s barely a hierarchical filesystem here),
+and jumps there.
+This is as an open-coded sys exec (II).
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/span&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
