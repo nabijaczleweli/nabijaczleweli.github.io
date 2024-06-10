@@ -327,8 +327,8 @@ as referring to the user (as in a system user) where it'<!--'-->s usually used a
 </p>
 #define BASE(n, ...) <sub __VA_ARGS__>(n)</sub>
 <p class="indented continuation">
-So, if I'<!--'-->m reading this right, then a normal-priority process (I cut off a lot of other bollocks from <code>clock</code>) will get to run for around
-will get to run for (30 = 48<!---->BASE(10))/60 = 800ms without making any syscalls before being considered for swapping out,
+So, if I'<!--'-->m reading this right, then a normal-priority process (I cut off a lot of other bollocks from <code>clock</code>)
+will get to run for around 30 ticks / 60Hz = 500ms without making any syscalls before being considered for swapping out,
 while a high-priority process will only be considered for swapping out after it makes a syscall.
 </p>
 
@@ -491,7 +491,7 @@ CMT(…)
 </p>
 <p class="indented continuing">
 Note that <code>s.chrgt</code> is just a variable (symbol) called <var>s.chrgt</var>.
-Note also that <code><q>$</q></code> indicates "turn this into a pointer" or "turn this into a number";
+Given the <code><q>$</q></code>,
 the <code>mov</code> can be expressed as (in C parlance) "<samp>clockp = (char *)(&s.chrgt) + 2</samp>".
 </p>
 <p class="indented continuing">
@@ -505,12 +505,12 @@ and <em>only</em> doing so in the kernel source and this <cite>Implementation Do
 and not shown to the userspace. The nomenclature is so ancient it's like it's from another dimension.
 But yes, the root disk has 1024 512-byte blocks.
 The top 64 (32kB) are <q>set aside for storing UNIX itself</q> and this is the bit with the kernels and BPP in it,
-then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the <var>user</var> label (which includes all <var>u.CMT(…)</var> variables), the stack (<var>sstack</var>)).
-Thus we can eke out the formatting of the fixed disk as <samp>[/: 344kB; swap: 16*8.5kB=136kB; bootloader area: 32kB]</samp>.
+then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the <var>user</var> label (which includes all <var>u.CMT(…)</var> variables)).
+Thus we can eke out the formatting of the fixed disk as <samp>[/: 344kB; swap: 16·8.5kB=136kB; bootloader area: 32kB]</samp>.
 </p>
 <p class="indented continuation">
 The next two bits effectively do <samp>mkfs /dev/rf0 /</samp> (on the cold kernel) by zeroing most of it out and configuring the superblock accordingly,
-with user data reaching up to block 687 (which matches 1024-64-17*(<var>nproc</var>=16) so the entire disk is accounted for).
+with user data reaching up to block 687 (which matches <span style="white-space: nowrap;">1024−64−17·(<var>nproc</var>=16)</span> so the entire disk is accounted for).
 </p>
 
 <blockquote class="u69 continued" id="magick">
@@ -668,7 +668,7 @@ This is what realistically delineates running in user and kernel modes
 If that fails, then we panic by clearing processor flags (idk) and jumping to the loader that loads the BOS (cf. boot procedures (VII)).
 </p>
 <p class="indented continuing">
-But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0, and is <code>4</code>)
+But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0(?), and is <code>4</code>)
 and the word at 5 (this is an odd address, so this is the high byte of the address for interrupt 1 (<code>unkni</code>/<code>sysent</code>) and the low byte of its processor flags word (0)).
 Why?
 </p>
@@ -1097,12 +1097,12 @@ One last time:
 </p>
 <p class="indented continuing">
 <var>proc[0].p_addr</var> is the base of the process'<!--'--> address space and <var>proc[0].p_size</var> is its size. but idk what the unit is lol
-(it's gotta be chunks of <em>some</em> size because the allocator's arena size a <samp>char</samp>, but fuck knows what;
+(it's gotta be chunks of <em>some</em> size because the allocator's arena size is a <samp>char</samp>, but fuck knows what;
  <code>USIZE</code> is helpfully <q>8</q>, and I'<!--'-->ve calculated the size of <code>u</code> at 217 (or 228) bytes;
  maybe it's 32 bytes? that's awfully narrow but it fits).
 In V1 this was <samp>[core; <var>u.break</var>)</samp> (and also the stack was separate. but close enough),
 now it'<!--'-->s <samp>[<var>proc[…].p_addr</var>, <var>proc[…].p_addr</var> + <var>proc[…].p_size</var>)</samp>.
-AFAICT, <code>KISA->r[6]</code> is gonna be the Kernel I<!---->CMT(nstruciton)-Space Page Address Register #0, register 6
+AFAICT, <code>KISA->r[6]</code> is gonna be the Kernel I<!---->CMT(nstruction)-Space Page Address Register #0, register 6
 (there's a total of 8, matching the machine's <a href="//gunkies.org/wiki/PDP-11_Memory_Management">8 segments</a>, so this probably means we'<!--'-->ll be executing from kernel instruction bank 6?).
 </p>
 <p class="indented continuing">
@@ -1160,7 +1160,7 @@ It will probably schedule our PID 1 instantly.
 </p>
 <p class="indented continuing">
 And PID 1 will first allocate another 1 block (32 bytes?), then…
-<var>u.u_uisa[0]</var>/<var>u.u_uisd[0]</var> look awfully like the user instruction and data segments? This matches segment 6 for data?
+<var>u.u_uisa[0]</var>&<var>u.u_uisd[0]</var> look awfully like the user instruction and data segments? This matches segment 6 for data?
 But there are 8 segments (0–7 and <code>USIZE</code> is 8 so fuck knows. maybe not). <code>sureg()</code> sets user segment registers.
 </p>
 <p class="indented continuing">
@@ -1196,7 +1196,7 @@ so a beautiful methodology has definitely been lost. But a quick <samp>objcopy -
 </samp></pre>
 from which the <samp>0000014</samp> pointer stands out the most, so this can be trivially disassembled to
 <pre class="continuation" style="margin-left: 1em;"><samp>\
-<!--"-->0000000: sys exec; $0000014; $0000010<!--"-->
+<!--"-->0000000: sys exec; 0000014; 0000010<!--"-->
 <!--"-->0000010: 0000014; 0000000<!--"-->
 <!--"-->0000014: &lt;/etc/init\0><!--"-->\
 </samp></pre>
@@ -1251,7 +1251,7 @@ processid = fork(label)\
 <p class="continuing">
 This
   (a) shows dmr'<!--'-->s hand, since he almost-outright says the first process is produced magically, but also
-  (b) is a delightful lie because this is, logically, what fork does.
+  (b) is a delightful lie because this is, logically, what fork does, but:
 <cite><samp><u>APPENDIX</u> <u>1</u>, <u>A1</u>.<u>2</u> <u>fork</u></samp></cite> (p. A1-2; p. 37):
 </p>
 <blockquote class="continuing">
@@ -1290,7 +1290,7 @@ But the only reliable source is <samp>01-s1.pdf</samp>.
 <blockquote class="u69 continued" id="pdp7-s8-coldentry">
 	<a href="#pdp7-s8-coldentry">
 		<span>s8, pp. 49–50</span>
-		<div>"coldentry"</div>
+		<div>coldentry:</div>
 	</a>
 	<pre>\
 <!--"-->coldentry:<!--"-->
