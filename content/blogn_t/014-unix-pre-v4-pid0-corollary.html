@@ -383,8 +383,8 @@ Indeed, we can attribute this confusion to the author'<!--'-->s misconstruance o
 as referring to the user (as in a system user) where it'<!--'-->s usually used as <!--"-->"current user-space process <span class="smallcaps">unix</span> is interrupting"<!--"-->.
 </p>
 <p class="indented continuation">
-So, if I'<!--'-->m reading this right, then a normal-priority process (I cut off a lot of other bollocks from <code>clock</code>) will get to run for around
-will get to run for (30 = 48<sub >(10)</sub>)/60 = 800ms without making any syscalls before being considered for swapping out,
+So, if I'<!--'-->m reading this right, then a normal-priority process (I cut off a lot of other bollocks from <code>clock</code>)
+will get to run for around 30 ticks / 60Hz = 500ms without making any syscalls before being considered for swapping out,
 while a high-priority process will only be considered for swapping out after it makes a syscall.
 </p>
 <p class="indented continued">
@@ -526,7 +526,7 @@ It'<!--'-->s convenient to follow along (indeed, these tend to be annotated by h
 </p>
 <p class="indented continuing">
 Note that <code>s.chrgt</code> is just a variable (symbol) called <var>s.chrgt</var>.
-Note also that <code><q>$</q></code> indicates "turn this into a pointer" or "turn this into a number";
+Given the <code><q>$</q></code>,
 the <code>mov</code> can be expressed as (in C parlance) "<samp>clockp = (char *)(&s.chrgt) + 2</samp>".
 </p>
 <p class="indented continuing">
@@ -540,12 +540,12 @@ and <em>only</em> doing so in the kernel source and this <cite>Implementation Do
 and not shown to the userspace. The nomenclature is so ancient it's like it's from another dimension.
 But yes, the root disk has 1024 512-byte blocks.
 The top 64 (32kB) are <q>set aside for storing UNIX itself</q> and this is the bit with the kernels and BPP in it,
-then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the <var>user</var> label (which includes all <var>u.<span class="cmt">…</span></var> variables), the stack (<var>sstack</var>)).
-Thus we can eke out the formatting of the fixed disk as <samp>[/: 344kB; swap: 16*8.5kB=136kB; bootloader area: 32kB]</samp>.
+then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the <var>user</var> label (which includes all <var>u.<span class="cmt">…</span></var> variables)).
+Thus we can eke out the formatting of the fixed disk as <samp>[/: 344kB; swap: 16·8.5kB=136kB; bootloader area: 32kB]</samp>.
 </p>
 <p class="indented continuation">
 The next two bits effectively do <samp>mkfs /dev/rf0 /</samp> (on the cold kernel) by zeroing most of it out and configuring the superblock accordingly,
-with user data reaching up to block 687 (which matches 1024-64-17*(<var>nproc</var>=16) so the entire disk is accounted for).
+with user data reaching up to block 687 (which matches <span style="white-space: nowrap;">1024−64−17·(<var>nproc</var>=16)</span> so the entire disk is accounted for).
 </p>
 <blockquote class="u69 continued" id="magick">
  <a href="#magick">
@@ -582,15 +582,15 @@ This is where the magic happens. This is what you came here for. Let'<!--'-->s p
 <span class="token comment">// make current program a user</span>
 
 <!--"-->               <!--"--><span class="token comment">// rootdir set to 41 and never changed</span>
-rootdir <span class="token operator">=</span> <span class="token number">41</span><!--"-->   <!--"--><span class="token comment">// rootdir is i-number of root directory</span>
-u<span class="token punctuation">.</span>cdir<!--"-->  <!--"--><span class="token operator">=</span> <span class="token number">41</span><!--"-->   <!--"--><span class="token comment">// u.cdir is i-number of process current directory</span>
+rootdir <span class="token operator">=</span> <span class="token number">41</span><span class="token punctuation">;</span><!--"-->  <!--"--><span class="token comment">// rootdir is i-number of root directory</span>
+u<span class="token punctuation">.</span>cdir<!--"-->  <!--"--><span class="token operator">=</span> <span class="token number">41</span><span class="token punctuation">;</span><!--"-->  <!--"--><span class="token comment">// u.cdir is i-number of process current directory</span>
 
-u<span class="token punctuation">.</span>uno<!--"-->     <!--"--><span class="token operator">=</span> <span class="token number">1</span><!--"-->  <!--"--><span class="token comment">// set process table index for this process to 1</span>
-mpid<!--"-->      <!--"--><span class="token operator">=</span> <span class="token number">1</span><!--"-->  <!--"--><span class="token comment">// initialize mpid to 1</span>
-p<span class="token punctuation">.</span>pid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><!--"-->  <!--"--><span class="token operator">=</span> <span class="token number">1</span><!--"-->  <!--"--><span class="token comment">// p.pid identifies process</span>
-p<span class="token punctuation">.</span>stat<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><!--"-->  <!--"--><span class="token comment">// process status = 1 i.e., active</span>
+u<span class="token punctuation">.</span>uno<!--"-->     <!--"--><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// set process table index for this process to 1</span>
+mpid<!--"-->      <!--"--><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// initialize mpid to 1</span>
+p<span class="token punctuation">.</span>pid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><!--"-->  <!--"--><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// p.pid identifies process</span>
+p<span class="token punctuation">.</span>stat<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// process status = 1 i.e., active</span>
 <!--"-->               <!--"--><span class="token comment">//<!--"-->                <!--"-->= 0 free</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>COLD<span class="token punctuation">)</span> <span class="token punctuation">{</span><!--"-->     <!--"--><span class="token comment">//<!--"-->                <!--"-->= 2 waiting for a child to die</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> COLD<!--"-->       <!--"--></span><span class="token comment">//<!--"-->                <!--"-->= 2 waiting for a child to die</span>
 <!--"-->               <!--"--><span class="token comment">//<!--"-->                <!--"-->= 3 terminated but not yet waited for</span>
 </pre></code>
 </div>
@@ -725,7 +725,7 @@ This is what realistically delineates running in user and kernel modes
 If that fails, then we panic by clearing processor flags (idk) and jumping to the loader that loads the BOS (cf. boot procedures (VII)).
 </p>
 <p class="indented continuing">
-But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0, and is <code>4</code>)
+But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0(?), and is <code>4</code>)
 and the word at 5 (this is an odd address, so this is the high byte of the address for interrupt 1 (<code>unkni</code>/<code>sysent</code>) and the low byte of its processor flags word (0)).
 Why?
 </p>
@@ -1158,12 +1158,12 @@ One last time:
 </p>
 <p class="indented continuing">
 <var>proc[0].p_addr</var> is the base of the process'<!--'--> address space and <var>proc[0].p_size</var> is its size. but idk what the unit is lol
-(it's gotta be chunks of <em>some</em> size because the allocator's arena size a <samp>char</samp>, but fuck knows what;
+(it's gotta be chunks of <em>some</em> size because the allocator's arena size is a <samp>char</samp>, but fuck knows what;
  <code>USIZE</code> is helpfully <q>8</q>, and I'<!--'-->ve calculated the size of <code>u</code> at 217 (or 228) bytes;
  maybe it's 32 bytes? that's awfully narrow but it fits).
 In V1 this was <samp>[core; <var>u.break</var>)</samp> (and also the stack was separate. but close enough),
 now it'<!--'-->s <samp>[<var>proc[…].p_addr</var>, <var>proc[…].p_addr</var> + <var>proc[…].p_size</var>)</samp>.
-AFAICT, <code>KISA->r[6]</code> is gonna be the Kernel I<span class="cmt">nstruciton</span>-Space Page Address Register #0, register 6
+AFAICT, <code>KISA->r[6]</code> is gonna be the Kernel I<span class="cmt">nstruction</span>-Space Page Address Register #0, register 6
 (there's a total of 8, matching the machine's <a href="//gunkies.org/wiki/PDP-11_Memory_Management">8 segments</a>, so this probably means we'<!--'-->ll be executing from kernel instruction bank 6?).
 </p>
 <p class="indented continuing">
@@ -1216,7 +1216,7 @@ It will probably schedule our PID 1 instantly.
 </p>
 <p class="indented continuing">
 And PID 1 will first allocate another 1 block (32 bytes?), then…
-<var>u.u_uisa[0]</var>/<var>u.u_uisd[0]</var> look awfully like the user instruction and data segments? This matches segment 6 for data?
+<var>u.u_uisa[0]</var>&<var>u.u_uisd[0]</var> look awfully like the user instruction and data segments? This matches segment 6 for data?
 But there are 8 segments (0–7 and <code>USIZE</code> is 8 so fuck knows. maybe not). <code>sureg()</code> sets user segment registers.
 </p>
 <p class="indented continuing">
@@ -1247,7 +1247,7 @@ so a beautiful methodology has definitely been lost. But a quick <samp>objcopy -
 <!--"-->0000014 062457 061564 064457 064556 000164 177777  >/etc/init...&lt;<!--"-->
 <!--"-->0000030<!--"--></samp></pre>
 from which the <samp>0000014</samp> pointer stands out the most, so this can be trivially disassembled to
-<pre class="continuation" style="margin-left: 1em;"><samp><!--"-->0000000: sys exec; $0000014; $0000010<!--"-->
+<pre class="continuation" style="margin-left: 1em;"><samp><!--"-->0000000: sys exec; 0000014; 0000010<!--"-->
 <!--"-->0000010: 0000014; 0000000<!--"-->
 <!--"-->0000014: &lt;/etc/init\0><!--"--></samp></pre>
 <p class="indented">
@@ -1294,7 +1294,7 @@ But this document also contains my favourite lie (it'<!--'-->s honestly all gold
 <p class="continuing">
 This
   (a) shows dmr'<!--'-->s hand, since he almost-outright says the first process is produced magically, but also
-  (b) is a delightful lie because this is, logically, what fork does.
+  (b) is a delightful lie because this is, logically, what fork does, but:
 <cite><samp><u>APPENDIX</u> <u>1</u>, <u>A1</u>.<u>2</u> <u>fork</u></samp></cite> (p. A1-2; p. 37):
 </p>
 <blockquote class="continuing">
@@ -1329,7 +1329,7 @@ But the only reliable source is <samp>01-s1.pdf</samp>.
 <blockquote class="u69 continued" id="pdp7-s8-coldentry">
  <a href="#pdp7-s8-coldentry">
   <span>s8, pp. 49–50</span>
-  <div>"coldentry"</div>
+  <div>coldentry:</div>
  </a>
  <pre><!--"-->coldentry:<!--"-->
 <!--"-->   dzm 0100 <span class="comment">" not re-entrant</span>
@@ -1437,9 +1437,9 @@ This is as an open-coded sys exec (II).
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 16'<!--'-->s C preprocessor on 09.06.2024 23:10:13 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 10.06.2024 13:52:31 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1246871">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1247290">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

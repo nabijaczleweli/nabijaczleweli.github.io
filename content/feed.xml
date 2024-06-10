@@ -183,8 +183,8 @@ Indeed, we can attribute this confusion to the author'&lt;!--'--&gt;s misconstru
 as referring to the user (as in a system user) where it'&lt;!--'--&gt;s usually used as &lt;!--&quot;--&gt;&quot;current user-space process &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; is interrupting&quot;&lt;!--&quot;--&gt;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
-So, if I'&lt;!--'--&gt;m reading this right, then a normal-priority process (I cut off a lot of other bollocks from &lt;code&gt;clock&lt;/code&gt;) will get to run for around
-will get to run for (30 = 48&lt;sub &gt;(10)&lt;/sub&gt;)/60 = 800ms without making any syscalls before being considered for swapping out,
+So, if I'&lt;!--'--&gt;m reading this right, then a normal-priority process (I cut off a lot of other bollocks from &lt;code&gt;clock&lt;/code&gt;)
+will get to run for around 30 ticks / 60Hz = 500ms without making any syscalls before being considered for swapping out,
 while a high-priority process will only be considered for swapping out after it makes a syscall.
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -326,7 +326,7 @@ It'&lt;!--'--&gt;s convenient to follow along (indeed, these tend to be annotate
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 Note that &lt;code&gt;s.chrgt&lt;/code&gt; is just a variable (symbol) called &lt;var&gt;s.chrgt&lt;/var&gt;.
-Note also that &lt;code&gt;&lt;q&gt;$&lt;/q&gt;&lt;/code&gt; indicates &quot;turn this into a pointer&quot; or &quot;turn this into a number&quot;;
+Given the &lt;code&gt;&lt;q&gt;$&lt;/q&gt;&lt;/code&gt;,
 the &lt;code&gt;mov&lt;/code&gt; can be expressed as (in C parlance) &quot;&lt;samp&gt;clockp = (char *)(&amp;s.chrgt) + 2&lt;/samp&gt;&quot;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -340,12 +340,12 @@ and &lt;em&gt;only&lt;/em&gt; doing so in the kernel source and this &lt;cite&gt
 and not shown to the userspace. The nomenclature is so ancient it's like it's from another dimension.
 But yes, the root disk has 1024 512-byte blocks.
 The top 64 (32kB) are &lt;q&gt;set aside for storing UNIX itself&lt;/q&gt; and this is the bit with the kernels and BPP in it,
-then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the &lt;var&gt;user&lt;/var&gt; label (which includes all &lt;var&gt;u.&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;&lt;/var&gt; variables), the stack (&lt;var&gt;sstack&lt;/var&gt;)).
-Thus we can eke out the formatting of the fixed disk as &lt;samp&gt;[/: 344kB; swap: 16*8.5kB=136kB; bootloader area: 32kB]&lt;/samp&gt;.
+then the processes get 17 blocks each (8.5kB; this is congruent with having 8kB of userspace RAM + 1 accounting block consisting of the &lt;var&gt;user&lt;/var&gt; label (which includes all &lt;var&gt;u.&lt;span class=&quot;cmt&quot;&gt;…&lt;/span&gt;&lt;/var&gt; variables)).
+Thus we can eke out the formatting of the fixed disk as &lt;samp&gt;[/: 344kB; swap: 16·8.5kB=136kB; bootloader area: 32kB]&lt;/samp&gt;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 The next two bits effectively do &lt;samp&gt;mkfs /dev/rf0 /&lt;/samp&gt; (on the cold kernel) by zeroing most of it out and configuring the superblock accordingly,
-with user data reaching up to block 687 (which matches 1024-64-17*(&lt;var&gt;nproc&lt;/var&gt;=16) so the entire disk is accounted for).
+with user data reaching up to block 687 (which matches &lt;span style=&quot;white-space: nowrap;&quot;&gt;1024−64−17·(&lt;var&gt;nproc&lt;/var&gt;=16)&lt;/span&gt; so the entire disk is accounted for).
 &lt;/p&gt;
 &lt;blockquote class=&quot;u69 continued&quot; id=&quot;magick&quot;&gt;
  &lt;a href=&quot;#magick&quot;&gt;
@@ -382,15 +382,15 @@ This is where the magic happens. This is what you came here for. Let'&lt;!--'--&
 &lt;span class=&quot;token comment&quot;&gt;// make current program a user&lt;/span&gt;
 
 &lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// rootdir set to 41 and never changed&lt;/span&gt;
-rootdir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;41&lt;/span&gt;&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// rootdir is i-number of root directory&lt;/span&gt;
-u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cdir&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;41&lt;/span&gt;&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// u.cdir is i-number of process current directory&lt;/span&gt;
+rootdir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;41&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// rootdir is i-number of root directory&lt;/span&gt;
+u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cdir&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;41&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// u.cdir is i-number of process current directory&lt;/span&gt;
 
-u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;uno&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// set process table index for this process to 1&lt;/span&gt;
-mpid&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// initialize mpid to 1&lt;/span&gt;
-p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pid&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// p.pid identifies process&lt;/span&gt;
-p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;stat&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// process status = 1 i.e., active&lt;/span&gt;
+u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;uno&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// set process table index for this process to 1&lt;/span&gt;
+mpid&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// initialize mpid to 1&lt;/span&gt;
+p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pid&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// p.pid identifies process&lt;/span&gt;
+p&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;stat&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// process status = 1 i.e., active&lt;/span&gt;
 &lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 0 free&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;COLD&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 2 waiting for a child to die&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;#&lt;span class=&quot;token directive keyword&quot;&gt;if&lt;/span&gt; COLD&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 2 waiting for a child to die&lt;/span&gt;
 &lt;!--&quot;--&gt;               &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;//&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;= 3 terminated but not yet waited for&lt;/span&gt;
 &lt;/pre&gt;&lt;/code&gt;
 &lt;/div&gt;
@@ -525,7 +525,7 @@ This is what realistically delineates running in user and kernel modes
 If that fails, then we panic by clearing processor flags (idk) and jumping to the loader that loads the BOS (cf. boot procedures (VII)).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0, and is &lt;code&gt;4&lt;/code&gt;)
+But not before doing something sociopathic with the word at 0 (this would be the address to jump to for interrupt 0(?), and is &lt;code&gt;4&lt;/code&gt;)
 and the word at 5 (this is an odd address, so this is the high byte of the address for interrupt 1 (&lt;code&gt;unkni&lt;/code&gt;/&lt;code&gt;sysent&lt;/code&gt;) and the low byte of its processor flags word (0)).
 Why?
 &lt;/p&gt;
@@ -958,12 +958,12 @@ One last time:
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 &lt;var&gt;proc[0].p_addr&lt;/var&gt; is the base of the process'&lt;!--'--&gt; address space and &lt;var&gt;proc[0].p_size&lt;/var&gt; is its size. but idk what the unit is lol
-(it's gotta be chunks of &lt;em&gt;some&lt;/em&gt; size because the allocator's arena size a &lt;samp&gt;char&lt;/samp&gt;, but fuck knows what;
+(it's gotta be chunks of &lt;em&gt;some&lt;/em&gt; size because the allocator's arena size is a &lt;samp&gt;char&lt;/samp&gt;, but fuck knows what;
  &lt;code&gt;USIZE&lt;/code&gt; is helpfully &lt;q&gt;8&lt;/q&gt;, and I'&lt;!--'--&gt;ve calculated the size of &lt;code&gt;u&lt;/code&gt; at 217 (or 228) bytes;
  maybe it's 32 bytes? that's awfully narrow but it fits).
 In V1 this was &lt;samp&gt;[core; &lt;var&gt;u.break&lt;/var&gt;)&lt;/samp&gt; (and also the stack was separate. but close enough),
 now it'&lt;!--'--&gt;s &lt;samp&gt;[&lt;var&gt;proc[…].p_addr&lt;/var&gt;, &lt;var&gt;proc[…].p_addr&lt;/var&gt; + &lt;var&gt;proc[…].p_size&lt;/var&gt;)&lt;/samp&gt;.
-AFAICT, &lt;code&gt;KISA-&gt;r[6]&lt;/code&gt; is gonna be the Kernel I&lt;span class=&quot;cmt&quot;&gt;nstruciton&lt;/span&gt;-Space Page Address Register #0, register 6
+AFAICT, &lt;code&gt;KISA-&gt;r[6]&lt;/code&gt; is gonna be the Kernel I&lt;span class=&quot;cmt&quot;&gt;nstruction&lt;/span&gt;-Space Page Address Register #0, register 6
 (there's a total of 8, matching the machine's &lt;a href=&quot;//gunkies.org/wiki/PDP-11_Memory_Management&quot;&gt;8 segments&lt;/a&gt;, so this probably means we'&lt;!--'--&gt;ll be executing from kernel instruction bank 6?).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -1016,7 +1016,7 @@ It will probably schedule our PID 1 instantly.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 And PID 1 will first allocate another 1 block (32 bytes?), then…
-&lt;var&gt;u.u_uisa[0]&lt;/var&gt;/&lt;var&gt;u.u_uisd[0]&lt;/var&gt; look awfully like the user instruction and data segments? This matches segment 6 for data?
+&lt;var&gt;u.u_uisa[0]&lt;/var&gt;&amp;&lt;var&gt;u.u_uisd[0]&lt;/var&gt; look awfully like the user instruction and data segments? This matches segment 6 for data?
 But there are 8 segments (0–7 and &lt;code&gt;USIZE&lt;/code&gt; is 8 so fuck knows. maybe not). &lt;code&gt;sureg()&lt;/code&gt; sets user segment registers.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -1047,7 +1047,7 @@ so a beautiful methodology has definitely been lost. But a quick &lt;samp&gt;obj
 &lt;!--&quot;--&gt;0000014 062457 061564 064457 064556 000164 177777  &gt;/etc/init...&amp;lt;&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;0000030&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;/pre&gt;
 from which the &lt;samp&gt;0000014&lt;/samp&gt; pointer stands out the most, so this can be trivially disassembled to
-&lt;pre class=&quot;continuation&quot; style=&quot;margin-left: 1em;&quot;&gt;&lt;samp&gt;&lt;!--&quot;--&gt;0000000: sys exec; $0000014; $0000010&lt;!--&quot;--&gt;
+&lt;pre class=&quot;continuation&quot; style=&quot;margin-left: 1em;&quot;&gt;&lt;samp&gt;&lt;!--&quot;--&gt;0000000: sys exec; 0000014; 0000010&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;0000010: 0000014; 0000000&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;0000014: &amp;lt;/etc/init\0&gt;&lt;!--&quot;--&gt;&lt;/samp&gt;&lt;/pre&gt;
 &lt;p class=&quot;indented&quot;&gt;
@@ -1094,7 +1094,7 @@ But this document also contains my favourite lie (it'&lt;!--'--&gt;s honestly al
 &lt;p class=&quot;continuing&quot;&gt;
 This
   (a) shows dmr'&lt;!--'--&gt;s hand, since he almost-outright says the first process is produced magically, but also
-  (b) is a delightful lie because this is, logically, what fork does.
+  (b) is a delightful lie because this is, logically, what fork does, but:
 &lt;cite&gt;&lt;samp&gt;&lt;u&gt;APPENDIX&lt;/u&gt; &lt;u&gt;1&lt;/u&gt;, &lt;u&gt;A1&lt;/u&gt;.&lt;u&gt;2&lt;/u&gt; &lt;u&gt;fork&lt;/u&gt;&lt;/samp&gt;&lt;/cite&gt; (p. A1-2; p. 37):
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
@@ -1129,7 +1129,7 @@ But the only reliable source is &lt;samp&gt;01-s1.pdf&lt;/samp&gt;.
 &lt;blockquote class=&quot;u69 continued&quot; id=&quot;pdp7-s8-coldentry&quot;&gt;
  &lt;a href=&quot;#pdp7-s8-coldentry&quot;&gt;
   &lt;span&gt;s8, pp. 49–50&lt;/span&gt;
-  &lt;div&gt;&quot;coldentry&quot;&lt;/div&gt;
+  &lt;div&gt;coldentry:&lt;/div&gt;
  &lt;/a&gt;
  &lt;pre&gt;&lt;!--&quot;--&gt;coldentry:&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;   dzm 0100 &lt;span class=&quot;comment&quot;&gt;&quot; not re-entrant&lt;/span&gt;
