@@ -185,7 +185,7 @@ To rectify this, and analyse it forward rather than in reverse, we can take adva
  (one of them; the <a href="//wiki.tuhs.org/doku.php?id=source:unix_archive">TUHS mirror structure</a> is sociopathic)
  which reproduces said dump as <a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/"><samp>svntree-20081216.tar.gz</samp></a>)
 which transcribes
-<cite><a href="//www.bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf">Jim DeFelice'<!--'-->s 1972-06-20 <samp>Preliminary Release of UNIX Implementation Document</samp></a></cite>,
+<cite><a href="//bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf">Jim DeFelice'<!--'-->s 1972-06-20 <samp>Preliminary Release of UNIX Implementation Document</samp></a></cite>,
 which itself includes
 </p>
 <ol id="PreliminaryUnixImplementationDocument_Jun72-toc">
@@ -199,7 +199,7 @@ which itself includes
 </ol>
 <p class="continuing">
 <code>H.0–H.9</code> is a re-print of
-<cite><a href="//www.bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf">our current UNIX documentation</a> as of 1972-04-03, also by Jim DeFelice</cite>.
+<cite><a href="//bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf">our current UNIX documentation</a> as of 1972-04-03, also by Jim DeFelice</cite>.
 Both are <a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/">redistributed by the TUHS</a>.
 This is a different Jim DeFelice than the famous author
 (but I'm basing that entirely off the fact that the author would've been 11 when he started at Bell. maybe americans allow this).
@@ -447,7 +447,7 @@ But there are <code>8+1</code>=9 ttys, even though 8 is not in octal. Wondrous.
 </p>
 <p class="indented continuation">
 This bit doesn'<!--'-->t really do much, except initialise three interrupt vectors (one shown) which are overridden by the a.out header (and thus commented out).
-This corresponds to pages in section E.0 in <a href="//www.bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf">the PDF</a>,
+This corresponds to pages in section E.0 in <a href="//bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf">the PDF</a>,
 which is physical page 6 (and companion section H.0 which is physical page 126).
 It'<!--'-->s convenient to follow along (indeed, these tend to be annotated by hand (with a pen) with relevant metatext).
 </p>
