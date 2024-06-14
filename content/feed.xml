@@ -55,7 +55,7 @@ To rectify this, and analyse it forward rather than in reverse, we can take adva
  (one of them; the &lt;a href=&quot;//wiki.tuhs.org/doku.php?id=source:unix_archive&quot;&gt;TUHS mirror structure&lt;/a&gt; is sociopathic)
  which reproduces said dump as &lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/&quot;&gt;&lt;samp&gt;svntree-20081216.tar.gz&lt;/samp&gt;&lt;/a&gt;)
 which transcribes
-&lt;cite&gt;&lt;a href=&quot;//www.bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;Jim DeFelice'&lt;!--'--&gt;s 1972-06-20 &lt;samp&gt;Preliminary Release of UNIX Implementation Document&lt;/samp&gt;&lt;/a&gt;&lt;/cite&gt;,
+&lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;Jim DeFelice'&lt;!--'--&gt;s 1972-06-20 &lt;samp&gt;Preliminary Release of UNIX Implementation Document&lt;/samp&gt;&lt;/a&gt;&lt;/cite&gt;,
 which itself includes
 &lt;/p&gt;
 &lt;ol id=&quot;PreliminaryUnixImplementationDocument_Jun72-toc&quot;&gt;
@@ -69,7 +69,7 @@ which itself includes
 &lt;/ol&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;code&gt;H.0–H.9&lt;/code&gt; is a re-print of
-&lt;cite&gt;&lt;a href=&quot;//www.bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf&quot;&gt;our current UNIX documentation&lt;/a&gt; as of 1972-04-03, also by Jim DeFelice&lt;/cite&gt;.
+&lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf&quot;&gt;our current UNIX documentation&lt;/a&gt; as of 1972-04-03, also by Jim DeFelice&lt;/cite&gt;.
 Both are &lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/&quot;&gt;redistributed by the TUHS&lt;/a&gt;.
 This is a different Jim DeFelice than the famous author
 (but I'm basing that entirely off the fact that the author would've been 11 when he started at Bell. maybe americans allow this).
@@ -285,7 +285,7 @@ But there are &lt;code&gt;8+1&lt;/code&gt;=9 ttys, even though 8 is not in octal
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 This bit doesn'&lt;!--'--&gt;t really do much, except initialise three interrupt vectors (one shown) which are overridden by the a.out header (and thus commented out).
-This corresponds to pages in section E.0 in &lt;a href=&quot;//www.bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;the PDF&lt;/a&gt;,
+This corresponds to pages in section E.0 in &lt;a href=&quot;//bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;the PDF&lt;/a&gt;,
 which is physical page 6 (and companion section H.0 which is physical page 126).
 It'&lt;!--'--&gt;s convenient to follow along (indeed, these tend to be annotated by hand (with a pen) with relevant metatext).
 &lt;/p&gt;
