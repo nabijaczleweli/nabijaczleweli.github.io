@@ -101,8 +101,10 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
 
 A brief subsection of non-Rust non-mistakes:
 <ul>
-	   SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a>MFIZZ(c),
+	   SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a> MFIZZ(c),
 	            Extract V/A data from Supla (ZAMEL) MEW-01 for consumption with Prometheus)
+	   SRHT_SET(archivemount-ng, MFIZZ(c)DEVICON(cplusplus),
+	            A new archivemount upstream)
 	   SRHT_SET(snappy-tools, DEVICON(cplusplus),
 	            snappy(1): Snappy compression and decompression with and without framing)
 	   SRHT_SET(urlview-ng, MFIZZ(c)DEVICON(cplusplus),
