@@ -10545,7 +10545,7 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 &lt;span class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, and Wed, 14 Jun 2023 14:46:03 +0200&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, Wed, 14 Jun 2023 14:46:03 +0200, and &lt;a href=&quot;//101010.pl/@nabijaczleweli/112717795133736568&quot;&gt;Tue, 02 Jul 2024 18:58:00 +0200&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -10598,8 +10598,7 @@ done
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;C,T&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;R,B,I,BI&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;in=&quot;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awk &lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;language-awk&quot;&gt;$1 == &lt;span class=&quot;token string&quot;&gt;&quot;internalname&quot;&lt;/span&gt; {&lt;span class=&quot;token builtin&quot;&gt;print&lt;/span&gt; $2; &lt;span class=&quot;token keyword&quot;&gt;exit&lt;/span&gt;}&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/usr/share/groff/current/font/devps/&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;f: &lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token info punctuation&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;src=&quot;&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awk -v &lt;span class=&quot;token assign-left variable&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/&lt;span class=&quot;token variable&quot;&gt;$in&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'&lt;/span&gt;&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;&lt;!--&quot;--&gt;
-&lt;span class=&quot;language-awk&quot;&gt;&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;$1 ~ &lt;span class=&quot;token regex&quot;&gt;/^\//&lt;/span&gt; &amp;amp;&amp;amp; $2 ~ &lt;span class=&quot;token regex&quot;&gt;/^[\/\(]/&lt;/span&gt; {
+&lt;!--&lt;!--&quot;- class=&quot;languag&gt;/^[\/\(]/&lt;/span&gt; {
 &lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;($2 ~ &lt;span class=&quot;token regex&quot;&gt;/^\//&lt;/span&gt;)
 &lt;!--&quot;--&gt;  				&lt;!--&quot;--&gt;aliases[$1] = $2;
 &lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
@@ -10892,7 +10891,12 @@ but is clasically unhelpful in achieving, so:
 &lt;h3 id=&quot;alternative-art-foreign-font&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#alternative-art-foreign-font&quot;&gt;#&lt;/a&gt; A foreign font&lt;/h3&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 In this case: &lt;a href=&quot;//dimkanovikov.pro/courierprime/&quot;&gt;Курьер Прайм&lt;/a&gt;, a Courier Prime with Cyrillic characters, that, unlike the latter,
-isn't in Debian (merging them is an &lt;a href=&quot;//bugs.debian.org/992739&quot;&gt;ongoing adventure&lt;/a&gt;):  &lt;!--'--&gt;
+isn't in Debian (merging them is an &lt;a href=&quot;//bugs.debian.org/992739&quot;&gt;ongoing adventure&lt;/a&gt;).  &lt;!--'--&gt;
+Note the glyph name correction: groff calls big characters PostScript doesn'&lt;!--'--&gt;t have a name for &lt;samp&gt;u&lt;var&gt;240A&lt;/var&gt;&lt;/samp&gt;,
+but depending on what'&lt;!--'--&gt;s embedded in the font, fontforge calls them &lt;samp&gt;uni&lt;var&gt;240A&lt;/var&gt;&lt;/samp&gt; or &lt;samp&gt;glyph&lt;var&gt;123&lt;/var&gt;&lt;/samp&gt;,
+which makes them unreachable as &lt;q&gt;warning: can'&lt;!--'--&gt;t find special character 'u240A'&lt;/q&gt;.
+Sometimes the &lt;samp&gt;uni&lt;/samp&gt; prefix is correct though, so idk.
+Also, outputting a &quot;&lt;samp&gt;t4a&lt;/samp&gt;&quot; instead of a &quot;&lt;samp&gt;pfa&lt;/samp&gt;&quot; may work better.
 &lt;/p&gt;
 &lt;!-- This, but manually fixed:
 $ unzip ../courierprime.zip
@@ -10902,9 +10906,15 @@ Archive: ../courierprime.zip
   inflating: Courier-Prime.ttf
   inflating: Courier-Prime-Bold-Italic.ttf
 $ for v in &quot;&quot; -Bold -Italic -Bold-Italic; do
-   for f in afm pfa; do
-    fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' Courier-Prime$v.ttf Courier-Prime$v.$f &amp;
-   done
+  fontforge -c '    // '
+import sys
+f = fontforge.open(sys.argv[1] + &quot;.ttf&quot;)
+for g in f.glyphs():
+ if (g.glyphname.startswith(&quot;glyph&quot;) or (False and g.glyphname.startswith(&quot;uni&quot;))) and g.unicode &gt; 0:
+  g.glyphname = hex(g.unicode).upper().replace(&quot;0X&quot;, &quot;u&quot;)
+for ext in [&quot;afm&quot;, &quot;pfa&quot;]:
+ f.generate(sys.argv[1] + &quot;.&quot; + ext)' \  // '
+   Courier-Prime$v &amp;
   done
 ‌# ...
 Warning: Mac and Windows entries in the 'name' table differ for the
@@ -10940,10 +10950,15 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 &lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;inflating: Courier-Prime.ttf
 &lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;inflating: Courier-Prime-Bold-Italic.ttf
 &lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; -Bold -Italic -Bold-Italic&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token for-or-select variable&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; afm pfa&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;fontforge -c &lt;span class=&quot;token string&quot;&gt;'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
-&lt;/span&gt;&lt;!--&quot;--&gt;  			&lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;Courier-Prime$v.ttf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;Courier-Prime&lt;span class=&quot;token variable&quot;&gt;$v&lt;/span&gt;.&lt;span class=&quot;token variable&quot;&gt;$f&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token shell-symbol important&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;fontforge -c &lt;span class=&quot;token string&quot;&gt;'&lt;!--'--&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; sys
+f &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; fontforge&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sys&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;argv&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;.ttf&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; g &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; f&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;glyphs&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;g&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;glyphname&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;startswith&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;glyph&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;glyphname&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;startswith&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;uni&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;unicode&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;g&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;glyphname &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;g&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;unicode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;upper&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;replace&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;0X&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;u&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; ext &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;afm&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;pfa&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;f&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;generate&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sys&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;argv&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;.&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; ext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;!--'--&gt;&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;\
+&lt;/span&gt;&lt;!--&quot;--&gt;  		&lt;!--&quot;--&gt;&lt;span class=&quot;token string&quot;&gt;Courier-Prime$v&lt;/span&gt; &lt;span class=&quot;token shell-symbol important&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;
 &lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
 Warning: Mac and Windows entries in the 'name' table differ for the
@@ -10965,7 +10980,7 @@ Windows String: CourierPrime-BoldItalic
 &lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; tee /usr/local/share/groff/site-font/devps/download
 &lt;/span&gt;&lt;span class=&quot;token output&quot;&gt;# List of downloadable fonts
-‌# PostScript-name&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Filename
+# PostScript-name&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Filename
 Symbol-Slanted&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;symbolsl.pfa
 ZapfDingbats-Reverse&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;zapfdr.pfa
 FreeEuro&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;freeeuro.pfa
@@ -11283,7 +11298,7 @@ Anyway, glam shots.
     <content type="html">
 &lt;span class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
- &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;&lt;code&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/code&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
  &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 05 Nov 2020 22:06:30 +0100&lt;/span&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
