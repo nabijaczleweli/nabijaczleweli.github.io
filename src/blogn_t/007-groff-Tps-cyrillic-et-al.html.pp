@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Sat, 28 Aug 2021 18:36:44 +0200" -->
 #define POST_DATE      Sat, 28 Aug 2021 18:36:44 +0200
-#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, and Wed, 14 Jun 2023 14:46:03 +0200
+#define POST_POST_DATE , updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, Wed, 14 Jun 2023 14:46:03 +0200, and <a href="//101010.pl/@nabijaczleweli/112717795133736568">Tue, 02 Jul 2024 18:58:00 +0200</a>
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
@@ -108,8 +108,7 @@ done
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token punctuation">{</span>C,T<span class="token punctuation">}</span><span class="token punctuation">{</span>R,B,I,BI<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
 <span class="token info punctuation"><!--"-->  	<!--"-->in="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk <span class="token string">'</span><span class="language-awk">$1 == <span class="token string">"internalname"</span> {<span class="token builtin">print</span> $2; <span class="token keyword">exit</span>}</span><span class="token string">'</span> <span class="token string">"/usr/share/groff/current/font/devps/<span class="token variable">$f</span>"</span><span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span>
 <!--"-->  	<!--"--><span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">f: <span class="token shell-symbol important">$</span>in<span class="token punctuation">;</span></span></span>
-<span class="token info punctuation"><!--"-->  	<!--"-->src="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk -v <span class="token assign-left variable">cur</span><span class="token operator">=</span><span class="token string">"/<span class="token variable">$in</span>"</span> <span class="token string">'</span><!--"-->  <!--"--><!--"-->
-<span class="language-awk"><!--"-->  		<!--"-->$1 ~ <span class="token regex">/^\//</span> &amp;&amp; $2 ~ <span class="token regex">/^[\/\(]/</span> {
+<!--<!--"- class="languag>/^[\/\(]/</span> {
 <!--"-->  			<!--"--><span class="token keyword">if</span>($2 ~ <span class="token regex">/^\//</span>)
 <!--"-->  				<!--"-->aliases[$1] = $2;
 <!--"-->  			<!--"--><span class="token keyword">else</span>
@@ -300,7 +299,12 @@ but is clasically unhelpful in achieving, so:
 HEADING_S(3, alternative-art-foreign-font, class="continued", A foreign font)
 <p class="indented continuing">
 In this case: <a href="//dimkanovikov.pro/courierprime/">Курьер Прайм</a>, a Courier Prime with Cyrillic characters, that, unlike the latter,
-isn't in Debian (merging them is an <a href="//bugs.debian.org/992739">ongoing adventure</a>):  <!--'-->
+isn't in Debian (merging them is an <a href="//bugs.debian.org/992739">ongoing adventure</a>).  <!--'-->
+Note the glyph name correction: groff calls big characters PostScript doesn'<!--'-->t have a name for <samp>u<var>240A</var></samp>,
+but depending on what'<!--'-->s embedded in the font, fontforge calls them <samp>uni<var>240A</var></samp> or <samp>glyph<var>123</var></samp>,
+which makes them unreachable as <q>warning: can'<!--'-->t find special character 'u240A'</q>.
+Sometimes the <samp>uni</samp> prefix is correct though, so idk.
+Also, outputting a "<samp>t4a</samp>" instead of a "<samp>pfa</samp>" may work better.
 </p>
 
 <!-- This, but manually fixed:
@@ -311,9 +315,15 @@ Archive:  ../courierprime.zip
   inflating: Courier-Prime.ttf
   inflating: Courier-Prime-Bold-Italic.ttf
 $ for v in "" -Bold -Italic -Bold-Italic; do
-  	for f in afm pfa; do
-  		fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' Courier-Prime$v.ttf Courier-Prime$v.$f &
-  	done
+		fontforge -c '    // '
+import sys
+f = fontforge.open(sys.argv[1] + ".ttf")
+for g in f.glyphs():
+	if (g.glyphname.startswith("glyph") or (False and g.glyphname.startswith("uni"))) and g.unicode > 0:
+		g.glyphname = hex(g.unicode).upper().replace("0X", "u")
+for ext in ["afm", "pfa"]:
+	f.generate(sys.argv[1] + "." + ext)' \  // '
+			Courier-Prime$v &
   done
 ‌# ...
 Warning: Mac and Windows entries in the 'name' table differ for the
@@ -356,10 +366,15 @@ CourierPrime-BoldItalic Courier-Prime-Bold-Italic.pfa
 <!--"-->  <!--"-->inflating: Courier-Prime.ttf
 <!--"-->  <!--"-->inflating: Courier-Prime-Bold-Italic.ttf
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> <span class="token string">""</span> -Bold -Italic -Bold-Italic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-<span class="token output"><!--"-->  	<!--"--><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> afm pfa<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-</span><!--"-->  		<!--"--><span class="token bash language-bash">fontforge -c <span class="token string">'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'</span> </span></span><span class="token output">\FORCED_NEWLINE
-</span><!--"-->  			<!--"--><span class="token string">Courier-Prime$v.ttf</span> <span class="token string">Courier-Prime<span class="token variable">$v</span>.<span class="token variable">$f</span></span> <span class="token shell-symbol important">&amp;</span></span>
-<span class="token output"><!--"-->  	<!--"--><span class="token keyword">done</span>
+</span><!--"-->  	<!--"--><span class="token bash language-bash">fontforge -c <span class="token string">'<!--'--></span>
+<span class="token keyword">import</span> sys
+f <span class="token operator">=</span> fontforge<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">".ttf"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> g <span class="token keyword">in</span> f<span class="token punctuation">.</span>glyphs<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<!--"-->	<!--"--><span class="token keyword">if</span> <span class="token punctuation">(</span>g<span class="token punctuation">.</span>glyphname<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">"glyph"</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span><span class="token boolean">False</span> <span class="token keyword">and</span> g<span class="token punctuation">.</span>glyphname<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">"uni"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">and</span> g<span class="token punctuation">.</span><span class="token builtin">unicode</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+<!--"-->		<!--"-->g<span class="token punctuation">.</span>glyphname <span class="token operator">=</span> <span class="token builtin">hex</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token builtin">unicode</span><span class="token punctuation">)</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"0X"</span><span class="token punctuation">,</span> <span class="token string">"u"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> ext <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"afm"</span><span class="token punctuation">,</span> <span class="token string">"pfa"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<!--"-->	<!--"-->f<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"."</span> <span class="token operator">+</span> ext<span class="token punctuation">)</span><span class="token string">'<!--'--></span> </span></span><span class="token output">\FORCED_NEWLINE
+</span><!--"-->  		<!--"--><span class="token string">Courier-Prime$v</span> <span class="token shell-symbol important">&amp;</span></span>
 <!--"-->  <!--"--><span class="token keyword">done</span>
 </span><span class="token output"><span class="token comment"># ...</span>
 Warning: Mac and Windows entries in the 'name' table differ for the
@@ -383,7 +398,7 @@ Windows String: CourierPrime-BoldItalic
 <span class="token output"><!--"-->  	<!--"--><span class="token keyword">done</span><span class="token punctuation">;</span>
 <!--"-->  <!--"--><span class="token punctuation">}</span> <span class="token operator">|</span> tee /usr/local/share/groff/site-font/devps/download
 </span><span class="token output"># List of downloadable fonts
-‌# PostScript-name<!--"-->       <!--"-->Filename
+<!----># PostScript-name<!--"-->       <!--"-->Filename
 
 Symbol-Slanted<!--"-->          <!--"-->symbolsl.pfa
 ZapfDingbats-Reverse<!--"-->    <!--"-->zapfdr.pfa

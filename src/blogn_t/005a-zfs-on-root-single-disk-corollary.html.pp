@@ -39,7 +39,7 @@ BOILERPLATE(005a. A single-disk but slightly more cursed ZFS-on-root corollary â
 </style>
 
 
-BLOGN_T_HEADING(<code>005a. A single-disk but slightly more cursed ZFS-on-root corollary</code>)
+BLOGN_T_HEADING(005a. A single-disk but slightly more cursed ZFS-on-root corollary)
 
 <p class="indented continued">
 Fujitsu's employed me, which means I'm empowered to make <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1321625051771375616">bad financial decisions</a>
