@@ -40,15 +40,19 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
+	Aggregate, compare, find, filter, and <a href="//debfonts.nabijaczleweli.xyz">search through all Debian fonts</a>…
+</p>
+
+<p>
+	Visit my Debian <a href="//debian.nabijaczleweli.xyz/README">repository</a>…
+</p>
+
+<p>
 	Read some things I'<!--'-->ve <a href="writing/">written</a>…
 </p>
 
 <p>
 	See some pretty things I made with <a href="maths/">maths</a>…
-</p>
-
-<p>
-	Visit my Debian <a href="//debian.nabijaczleweli.xyz/README">repository</a>…
 </p>
 
 <p>
