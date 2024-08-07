@@ -15,7 +15,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Wed, 3 May 2023 23:16:48 +0200" -->
-<!-- RSS_UPDATE_DATE: "Tue, 7 May 2024 21:20:00 +0100" -->
+<!-- RSS_UPDATE_DATE: "Wed, 7 Aug 2024 19:28:41 +0200" -->
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
@@ -102,7 +102,7 @@ MAIN_HEADING(My answer to the replication crisis)
 <span class="roboto">
 
 <p>
-	Latest replication: REPLICATION(2024-05-07, $101010.pl/@nabijaczleweli/112401424959172004).
+	Latest replication: REPLICATION(2024-07-20, $101010.pl/@nabijaczleweli/112819434215946460).
 	<button toggle-tag="details">Toggle all</button>
 	<button toggle-tag="center" >Toggle images</button>
 </p>
@@ -467,7 +467,7 @@ IMAGUS(liver-soup,
 
 IMAGUS(supposed-laobing,
        storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/912/322/766/078/278/original/871fbbb3fdab47bb.jpeg, $101010.pl/@nabijaczleweli/110912325874653835,
-       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/110/885/534/928/580/898/original/1711d463c0ae032f.jpg, $101010.pl/@nabijaczleweli/110885535194714458)
+       storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/112/819/433/399/538/415/original/35d81c59df1b21fe.jpg, $101010.pl/@nabijaczleweli/112819434215946460)
 
 <details open>
 	SUMMARY(supposed-laobing, Half-rye inflating bread)
@@ -497,7 +497,12 @@ IMAGUS(supposed-laobing,
 		           REPLICATION(2024-02-11, $101010.pl/@nabijaczleweli/111913995778831904),
 		           REPLICATION(2024-05-05, $101010.pl/@nabijaczleweli/112389011536964221),
 		           REPLICATION(2024-05-06, $101010.pl/@nabijaczleweli/112394417116581266),
-		           REPLICATION(2024-05-07, $101010.pl/@nabijaczleweli/112401424959172004):</p>
+		           REPLICATION(2024-05-07, $101010.pl/@nabijaczleweli/112401424959172004),
+		           REPLICATION(2024-07-16, $101010.pl/@nabijaczleweli/112797183837502699),
+		           REPLICATION(2024-07-17, $101010.pl/@nabijaczleweli/112803711752632824),
+		           REPLICATION(2024-07-19, $101010.pl/@nabijaczleweli/112813780139103185),
+		           REPLICATION(2024-07-20, $101010.pl/@nabijaczleweli/112819434215946460),
+		          PREPLICATION(2024-07-21):</p>
 	<ol class="continuation">
 		<li>NUM(100g) of rye flour, NUM(190g) of boiling water, pastify, let cool to yeast temp</li>
 		<li>mix in NUM(3g) of yeast</li>
