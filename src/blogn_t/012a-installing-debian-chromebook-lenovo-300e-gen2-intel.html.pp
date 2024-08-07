@@ -204,13 +204,13 @@ BLOGN_T_HEADING(012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Ch
 
 <p class="continued">
 #define ARCHIVE_LINK(new_href, original_href, ...) <a href=new_href>__VA_ARGS__</a><sup>[<abbr title="original version, archived">orig. arch.</abbr>]</sup>
-This ARCHIVE_LINK("//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/", "//web.archive.org/web/20231113233836/sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices", concerns)
+This ARCHIVE_LINK("//web.archive.org/web/20231113233836/sites.google.com/a/chromium.org/dev/chromium-os/developer-information-for-chrome-os-devices", "//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/", concerns)
 </p>
 <blockquote class="continuing">
   <dl class="continuing">
     <div><dt>Release</dt><dd      >1 March 2019</dd></div>
     <div><dt>OEM</dt><dd          >Lenovo</dd></div>
-    <div><dt>Model</dt><dd        ><a href="//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)">Lenovo 300e Chromebook 2nd Gen (Intel)</a></dd></div>
+    <div><dt>Model</dt><dd        >ARCHIVE_LINK("//web.archive.org/web/20231113233836/sites.google.com/a/chromium.org/dev/chromium-os/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)", "//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)", Lenovo 300e Chromebook 2nd Gen (Intel))</dd></div>
     <div><dt>Code name</dt><dd    >Phaser360</dd></div>
     <div><dt>Board name(s)</dt><dd>Octopus</dd></div>
     <div><dt>Base board</dt><dd   >octopus</dd></div>
