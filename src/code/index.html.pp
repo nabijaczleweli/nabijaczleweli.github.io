@@ -65,7 +65,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                        FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+                    <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
+                    <style>@counter-style wg14   { system: extends decimal; prefix: "n"; suffix: ": "; } \
+                           @counter-style wg14p1 { system: extends decimal; prefix: "n"; suffix: " (p1): "; }</style>
 BOILERPLATE(Documentation and mistakes, Documentation and code, en-GB, STYLESHEETS)
 
 
@@ -99,16 +101,33 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
 </ul>
 <br />
 
+<a href="//sr.ht/~nabijaczleweli/ossp">I'm the new upstream for all OSSP software</a>, and I've thawed out the following:
+<ul>
+	GITSRHT_SET(ossp-uuid, MFIZZ(c)MFIZZ(perl),
+	            OSSP uuid - Universally Unique Identifier (DCE 1.1, ISO/IEC 11578, RFC 4122 — C/Perl5/PHP[45]/C++ APIs & program))
+	GITSRHT_SET(ossp-iselect, MFIZZ(c)DEVICON(cplusplus),
+	            OSSP iSelect -- Interactive Selection Tool)
+	GITSRHT_SET(ossp-eperl, MFIZZ(c)MFIZZ(perl),
+	            OSSP ePerl -- Embedded Perl 5 Language)
+</ul>
+<br />
+
 A brief subsection of non-Rust non-mistakes:
 <ul>
+	   SRHT_SET(fonts.debian.net, DEVICON(cplusplus)DEVICON(javascript),
+	            <a href="//debfonts.nabijaczleweli.xyz">httpsCOLON_SLASH_SLASHdebfonts.nabijaczleweli.xyz</a> ‒ interactively-filtered search through all debian fonts)
 	   SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a> MFIZZ(c),
 	            Extract V/A data from Supla (ZAMEL) MEW-01 for consumption with Prometheus)
 	   SRHT_SET(archivemount-ng, MFIZZ(c)DEVICON(cplusplus),
 	            A new archivemount upstream)
+	   SRHT_SET(netstat-nat-ng, MFIZZ(c),
+	            New netstat-nat upstream. List/filter ongoing connections under Linux with NAT-specific decoding)
 	   SRHT_SET(snappy-tools, DEVICON(cplusplus),
 	            snappy(1): Snappy compression and decompression with and without framing)
 	   SRHT_SET(urlview-ng, MFIZZ(c)DEVICON(cplusplus),
 	            A new urlview upstream)
+	   SRHT_SET(libcurlfs, DEVICON(cplusplus)MFIZZ(c),
+	            view remote HTTP/HTTPS URLs as local files with FUSE (httpfs2 replacement))
 	GITSRHT_SET(fzifdso, DEVICON(cplusplus),
 	            FIDO2/WebAuthn-based (YubiKey, Somu, &c.) encryption keys for ZFS datasets)
 	   SRHT_SET(klapki, DEVICON(cplusplus),
@@ -123,6 +142,19 @@ A brief subsection of non-Rust non-mistakes:
 <br />
 
 LWN wrote about me once in the December 5, 2022 issue in <em><a href="//lwn.net/Articles/915163/">Losing the magic</a></em>.<br />
+<br />
+
+#define PAPER(num, patchlevel, ...) <a href=STR(httpsCOLON_SLASH_SLASHsrhtcdn.githack.com/~nabijaczleweli/wg14/blob/output/n##num.pdf)>\
+                                      <li value=num style=STR(list-style: wg14##patchlevel;)>__VA_ARGS__</li>\
+                                    </a>
+I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:
+<ol style="padding-left: 6em;">
+	PAPER(2878,   , <code>nsec_t</code> && <code>timespec::tv_nsec</code>)
+	PAPER(3066, p1,	<code>timespec::tv_nsec</code>)
+	PAPER(3285,   , <code>stdarg.h</code> wording<code>...</code>)
+</ol>
+
+n3066 is part of C23.<br />
 <br />
 
 Documentation for my Rust crates:
@@ -146,8 +178,8 @@ Documentation for my Rust crates:
 	DOC(registry.pol-rs, registry-pol, registry_pol,
 	    Parser for the <a href="//msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a>)
 	<li>
-		<a href="httpsCOLON_SLASH_SLASHrawcdn.githack.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
-		<a href="httpsCOLON_SLASH_SLASHgithub.com/Galactim/Sudoku">FAB(github)</a>
+		<a href="//rawcdn.githack.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
+		<a href="//github.com/Galactim/Sudoku">FAB(github)</a>
 		<span style="opacity: .5;">FA(archive)</span>
 		— Back-end for modern, API-based Sudoku app
 	</li>
