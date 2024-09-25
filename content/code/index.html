@@ -58,6 +58,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
  <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
  <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <style>@counter-style wg14 { system: extends decimal; prefix: "n"; suffix: ": "; } @counter-style wg14p1 { system: extends decimal; prefix: "n"; suffix: " (p1): "; }</style> 
  </head> 
  <body>
 <h2 id="go-back" class="merriweather"><a class="go-back-link left" href="..">↩</a> Documentation and mistakes <a class="go-back-link right" href="..">↩</a></h2>
@@ -127,8 +128,36 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
  </li>
 </ul>
 <br />
+<a href="//sr.ht/~nabijaczleweli/ossp">I'm the new upstream for all OSSP software</a>, and I've thawed out the following:
+<ul>
+ <li> 
+ <a href="https://git.sr.ht/~nabijaczleweli/ossp-uuid"><samp>ossp-uuid</samp></a> 
+ <a href="https://git.sr.ht/~nabijaczleweli/ossp-uuid"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="icon-c" ></i><i class="icon-perl" ></i> 
+ — OSSP uuid - Universally Unique Identifier (DCE 1.1, ISO/IEC 11578, RFC 4122 — C/Perl5/PHP[45]/C++ APIs & program) 
+ </li>
+ <li> 
+ <a href="https://git.sr.ht/~nabijaczleweli/ossp-iselect"><samp>ossp-iselect</samp></a> 
+ <a href="https://git.sr.ht/~nabijaczleweli/ossp-iselect"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="icon-c" ></i><i class="devicon-cplusplus-plain" ></i> 
+ — OSSP iSelect -- Interactive Selection Tool 
+ </li>
+ <li> 
+ <a href="https://git.sr.ht/~nabijaczleweli/ossp-eperl"><samp>ossp-eperl</samp></a> 
+ <a href="https://git.sr.ht/~nabijaczleweli/ossp-eperl"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="icon-c" ></i><i class="icon-perl" ></i> 
+ — OSSP ePerl -- Embedded Perl 5 Language 
+ </li>
+</ul>
+<br />
 A brief subsection of non-Rust non-mistakes:
 <ul>
+    <li> 
+ <a href="https://sr.ht/~nabijaczleweli/fonts.debian.net"><samp>fonts.debian.net</samp></a> 
+ <a href="https://sr.ht/~nabijaczleweli/fonts.debian.net"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="devicon-cplusplus-plain" ></i><i class="devicon-javascript-plain" ></i> 
+ — <a href="//debfonts.nabijaczleweli.xyz">https://debfonts.nabijaczleweli.xyz</a> ‒ interactively-filtered search through all debian fonts 
+ </li>
     <li> 
  <a href="https://sr.ht/~nabijaczleweli/supla-MEW-01-VA"><samp>supla-MEW-01-VA</samp></a> 
  <a href="https://sr.ht/~nabijaczleweli/supla-MEW-01-VA"><i class="dark-invert far fa-circle"></i></a> 
@@ -142,6 +171,12 @@ A brief subsection of non-Rust non-mistakes:
  — A new archivemount upstream 
  </li>
     <li> 
+ <a href="https://sr.ht/~nabijaczleweli/netstat-nat-ng"><samp>netstat-nat-ng</samp></a> 
+ <a href="https://sr.ht/~nabijaczleweli/netstat-nat-ng"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="icon-c" ></i> 
+ — New netstat-nat upstream. List/filter ongoing connections under Linux with NAT-specific decoding 
+ </li>
+    <li> 
  <a href="https://sr.ht/~nabijaczleweli/snappy-tools"><samp>snappy-tools</samp></a> 
  <a href="https://sr.ht/~nabijaczleweli/snappy-tools"><i class="dark-invert far fa-circle"></i></a> 
  <i class="devicon-cplusplus-plain" ></i> 
@@ -152,6 +187,12 @@ A brief subsection of non-Rust non-mistakes:
  <a href="https://sr.ht/~nabijaczleweli/urlview-ng"><i class="dark-invert far fa-circle"></i></a> 
  <i class="icon-c" ></i><i class="devicon-cplusplus-plain" ></i> 
  — A new urlview upstream 
+ </li>
+    <li> 
+ <a href="https://sr.ht/~nabijaczleweli/libcurlfs"><samp>libcurlfs</samp></a> 
+ <a href="https://sr.ht/~nabijaczleweli/libcurlfs"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="devicon-cplusplus-plain" ></i><i class="icon-c" ></i> 
+ — view remote HTTP/HTTPS URLs as local files with FUSE (httpfs2 replacement) 
  </li>
  <li> 
  <a href="https://git.sr.ht/~nabijaczleweli/fzifdso"><samp>fzifdso</samp></a> 
@@ -186,6 +227,14 @@ A brief subsection of non-Rust non-mistakes:
 </ul>
 <br />
 LWN wrote about me once in the December 5, 2022 issue in <em><a href="//lwn.net/Articles/915163/">Losing the magic</a></em>.<br />
+<br />
+I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:
+<ol style="padding-left: 6em;">
+ <a href="https://srhtcdn.githack.com/~nabijaczleweli/wg14/blob/output/n2878.pdf"> <li value=2878 style="list-style: wg14;"><code>nsec_t</code> && <code>timespec::tv_nsec</code></li> </a>
+ <a href="https://srhtcdn.githack.com/~nabijaczleweli/wg14/blob/output/n3066.pdf"> <li value=3066 style="list-style: wg14p1;"><code>timespec::tv_nsec</code></li> </a>
+ <a href="https://srhtcdn.githack.com/~nabijaczleweli/wg14/blob/output/n3285.pdf"> <li value=3285 style="list-style: wg14;"><code>stdarg.h</code> wording<code>...</code></li> </a>
+</ol>
+n3066 is part of C23.<br />
 <br />
 Documentation for my Rust crates:
 <ul>
@@ -238,8 +287,8 @@ Documentation for my Rust crates:
  — Parser for the <a href="//msdn.microsoft.com/en-us/library/aa374407(v=vs.85).aspx">Windows Registry Policy File format</a> 
  </li>
  <li>
-  <a href="https://rawcdn.githack.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
-  <a href="https://github.com/Galactim/Sudoku"><i class="dark-invert fab fa-github"></i></a>
+  <a href="//rawcdn.githack.com/Galactim/Sudoku/backend-doc/sudoku_backend/index.html"><samp>sudoku-backend</samp></a>
+  <a href="//github.com/Galactim/Sudoku"><i class="dark-invert fab fa-github"></i></a>
   <span style="opacity: .5;"><i class="dark-invert fa fa-archive"></i></span>
   — Back-end for modern, API-based Sudoku app
  </li>
@@ -398,9 +447,9 @@ Documentation for my Rust crates:
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 16'<!--'-->s C preprocessor on 07.08.2024 17:32:39 UTC from 
+ Compiled with Clang 16'<!--'-->s C preprocessor on 25.09.2024 17:34:03 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/code/index.html.pp">src/code/index.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1296920">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1336917">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
