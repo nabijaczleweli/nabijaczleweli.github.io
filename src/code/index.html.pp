@@ -152,6 +152,7 @@ I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:
 	PAPER(2878,   , <code>nsec_t</code> && <code>timespec::tv_nsec</code>)
 	PAPER(3066, p1,	<code>timespec::tv_nsec</code>)
 	PAPER(3285,   , <code>stdarg.h</code> wording<code>...</code>)
+	PAPER(3359, p1,	<code>stdarg.h</code> wording<code>...</code>)
 </ol>
 
 n3066 is part of C23.<br />
