@@ -30,9 +30,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />     FORCED_NEWLINE \
                     <style>samp { font-family: "Droid Sans Mono", monospace; }</style>
 
-#ifdef linux
 #undef linux
-#endif
+#undef unix
 
 BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-GB, STYLESHEETS)
 <style>
