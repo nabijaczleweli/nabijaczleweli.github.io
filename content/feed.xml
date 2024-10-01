@@ -12,10 +12,233 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2024-08-07T19:28:41+02:00</updated>
+<updated>2024-10-01T11:09:48+02:00</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/015-ranlib.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/015-ranlib.html" />
+    <title> 015. where da lib runnin — blognꞌt — nabijaczleweli </title>
+    <updated>2024-10-01T11:09:48+02:00</updated>
+    <content type="html">
+&lt;span class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;015. where da lib runnin&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 01 Oct 2024 11:09:48 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+If you're anything like me (and let us hope this is not the case) you've come across &lt;code&gt;ar crs&lt;/code&gt;, or, for that matter, ar(1) saying
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;dl class=&quot;bltag&quot;&gt;
+  &lt;dt&gt;&lt;samp&gt;s&lt;/samp&gt;&lt;/dt&gt;
+  &lt;dd&gt;Write an object-file index into the archive &lt;del&gt;[…]&lt;/del&gt;. Running &lt;samp&gt;ar s&lt;/samp&gt; on an archive is equivalent to running &lt;samp&gt;ranlib&lt;/samp&gt; on it.&lt;/dd&gt;
+ &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;while ranlib(1) (&lt;q&gt;generate an index to an archive&lt;/q&gt;) says&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;samp&gt;ranlib&lt;/samp&gt; generates an index to the contents of an archive &lt;del&gt;[…]&lt;/del&gt;.
+ The index lists each symbol defined by a member of an archive that is a relocatable object file.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;comparing llvm-ar(1)&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;dl class=&quot;bltag&quot;&gt;
+  &lt;dt&gt;&lt;samp&gt;s&lt;/samp&gt;&lt;/dt&gt;
+  &lt;dd&gt;This modifier requests that an archive index (or symbol table) be added to the &lt;var&gt;archive&lt;/var&gt;, as if using ranlib. &lt;del&gt;Content description follows.&lt;/del&gt;&lt;/dd&gt;
+ &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and llvm-ranlib(1) (&lt;q&gt;manual page for llvm-ranlib 19&lt;/q&gt;, the manual looks like untouched help2man-equivalent output)
+OVERVIEWs it exclusively as &lt;q&gt;Generate an index for archives&lt;/q&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Beside the obvious question (the linker can already read archives and read the symbols out of objects, so why would the archive itself duplicate this),
+these are all circular, &lt;q&gt;running &lt;samp&gt;ranlib&lt;/samp&gt; is completely equivalent to executing &lt;samp&gt;ar -s&lt;/samp&gt;&lt;/q&gt;, and &lt;samp&gt;s&lt;/samp&gt; is the default.
+Well, &lt;samp&gt;s&lt;/samp&gt; is an XSI extension that &lt;em&gt;just&lt;/em&gt; rebuilds the symbol table,
+because POSIX.1-2024 (in text that dates back to the X/Open Portability Guide Issue 3 (&quot;&lt;!--&quot;--&gt;&lt;span class=&quot;smallcaps&quot;&gt;xpg3&lt;/span&gt;&lt;!--&quot;--&gt;&quot;) (1988), inherited directly from the System V Interface Definition (&quot;&lt;!--&quot;--&gt;&lt;span class=&quot;smallcaps&quot;&gt;svid&lt;/span&gt;&lt;!--&quot;--&gt;&quot; (1985))) says
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuation&quot;&gt;
+When there is at least one object file &lt;del&gt;[…]&lt;/del&gt; in the archive, an archive symbol table shall be created &lt;del&gt;[…]&lt;/del&gt;.
+Whenever the &lt;samp&gt;ar&lt;/samp&gt; utility is used to create or update &lt;del&gt;[…]&lt;/del&gt; an archive, the symbol table shall be rebuilt.
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+This is all really clear-cut and agrees with our shared personal experience of having constructed many archives, and not having &lt;code&gt;ranlib&lt;/code&gt;bed them, ever.
+Why, then, does the &lt;cite&gt;&lt;a href=&quot;//www.gnu.org/software/automake/manual/html_node/Optional.html#index-AC_005fPROG_005fRANLIB&quot;&gt;GNU Automake manual&lt;/a&gt;&lt;/cite&gt; say
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;dl class=&quot;bltag&quot;&gt;
+  &lt;dt&gt;&lt;samp&gt;AC_PROG_RANLIB&lt;/samp&gt;&lt;/dt&gt;
+  &lt;dd&gt;This is required if any libraries are built in the package.&lt;/dd&gt;
+ &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+And when was this last true, if ever?
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+As expected from the &lt;span class=&quot;smallcaps&quot;&gt;svid&lt;/span&gt; wording provenance, versions 1-&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz&quot;&gt;6&lt;/a&gt; &lt;span class=&quot;smallcaps&quot;&gt;at&amp;t unix&lt;/span&gt;, &lt;span class=&quot;smallcaps&quot;&gt;at&amp;t&lt;/span&gt; System III &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;, and all releases of &lt;span class=&quot;smallcaps&quot;&gt;at&amp;t&lt;/span&gt; System V &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;
+ship without &lt;samp&gt;ranlib&lt;/samp&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Indeed, the &lt;span class=&quot;smallcaps&quot;&gt;svid&lt;/span&gt; wording is replicated from
+&lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_1/301-905_UNIX_System_V_Release_1_Users_Manual_Jan83.pdf&quot;&gt;&lt;cite&gt;&lt;span class=&quot;smallcaps&quot;&gt;Unix&lt;/span&gt; System User'&lt;!--'--&gt;s Manual, System V, January 1983&lt;/cite&gt;&lt;/a&gt; (SysVr1), in &lt;em&gt;both&lt;/em&gt; ar(1)s,
+but is not in
+&lt;a href=&quot;//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798&quot;&gt;&lt;cite&gt;&lt;span class=&quot;smallcaps&quot;&gt;Unix&lt;/span&gt; User'&lt;!--'--&gt;s Manual, Release 3.0, June 1980&lt;/cite&gt;&lt;/a&gt; (SysIII).
+This also corresponds to the ld(1) wording change from
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+If any argument is a library, it is searched exactly once at the point it is
+encountered in the argument list. Only those routines defining an unresolved
+external reference are loaded. If a routine from a library references
+another routine in the library, the referenced routine must appear after the
+referencing routine in the library. Thus the order of programs within
+libraries is important.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;(&lt;cite&gt;ibid.&lt;/cite&gt;), and hence lorder(1) and tsort(1), to
+&lt;blockquote class=&quot;continuing&quot;&gt;
+&lt;del&gt;[…]&lt;/del&gt; are loaded. The library (archive) symbol table (see &lt;i&gt;ar&lt;/i&gt;(4) is
+searched sequentially with as many passes as are necessary to resolve external
+references which can be satisfied by library members. Thus, the ordering of
+library members is unimportant.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+(&lt;cite&gt;SysVr1&lt;/cite&gt;), but only in ld(1) for non-&lt;span class=&quot;smallcaps&quot;&gt;pdp-11&lt;/span&gt;
+(lorder(1) is further declared unneeded, except on the &lt;span class=&quot;smallcaps&quot;&gt;pdp-11&lt;/span&gt;).
+Later releases
+(&lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_2/UNIX_Programmers_Manual_Vol_1_Commands_and_Utilities_1986.pdf&quot;&gt;&lt;cite&gt;UNIX programmer'&lt;!--'--&gt;s manual, 1986&lt;/cite&gt;&lt;/a&gt; (SysVr2))
+drop the &lt;span class=&quot;smallcaps&quot;&gt;pdp-11&lt;/span&gt; and its specific ld(1)/ar(1); the lorder(1) mention is downgraded to &lt;!--&quot;--&gt;&quot;except onsome&lt;del&gt;(sic)&lt;/del&gt; computers&quot;&lt;!--&quot;--&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Conversely, Version 7 &lt;span class=&quot;smallcaps&quot;&gt;at&amp;t unix&lt;/span&gt; contains ranlib(1) (&lt;q&gt;convert archives to random libraries&lt;/q&gt;, which explains the bizarre name), which
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+converts each &lt;var&gt;archive&lt;/var&gt; to a form which can be loaded more rapidly by the loader, by adding a table of contents named &lt;strong&gt;__.SYMDEF&lt;/strong&gt; to the beginning of the archive.
+It uses &lt;i&gt;ar&lt;/i&gt;(1) to reconstruct the archive, &lt;del&gt;[…]&lt;/del&gt;.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+(&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz&quot;&gt;&lt;cite&gt;UNIX&lt;sup&gt;TM&lt;/sup&gt; TIME-SHARING SYSTEM: UNIX PROGRAMMER'&lt;!--'--&gt;S MANUAL, Seventh Edition, January, 1979&lt;/cite&gt;&lt;/a&gt;),
+and the loader instead growing a midpoint of both of the aforementioned:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+&lt;del&gt;[…]&lt;/del&gt; If a routine from a library references
+another routine in the library, and the library has not been processed by &lt;i&gt;ranlib&lt;/i&gt;(1),
+the referenced routine must appear after the referencing routine in the library.
+Thus the order of programs within libraries may be important.
+If the first member of a library is named `__.SYMDEF'&lt;!--'--&gt;,
+then it is understood to be a dictionary for the library such as produced by ranlib;
+the dictionary is searched iteratively to satisfy as many references as possible.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+(&lt;cite&gt;ibid.&lt;/cite&gt;).
+ranlib(1) &lt;strong&gt;BUGS&lt;/strong&gt; indict further:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+Because generation &lt;del&gt;[…]&lt;/del&gt; and randomization &lt;del&gt;[…]&lt;/del&gt; are separate, phase errors are possible.
+The loader &lt;i&gt;ld&lt;/i&gt; warns when the modification date of a library is more recent than the creation of its dictionary;
+ but this means you get the warning even if you only copy the library.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+any system so utterly limp as to warrant more &lt;strong&gt;BUGS&lt;/strong&gt; than &lt;strong&gt;DESCRIPTION&lt;/strong&gt;
+is truly worthy of its stench still lingering 45 years on.
+One has to wonder why &lt;samp&gt;ar&lt;/samp&gt; didn'&lt;!--'--&gt;t, at worst, finish with &lt;code class=&quot;nowrap&quot;&gt;exec(&quot;ranlib&quot;, &lt;var&gt;arc&lt;/var&gt;, 0)&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;cite&gt;
+ &lt;a href=&quot;//www.mckusick.com/csrg/&quot;&gt;The &lt;span class=&quot;smallcaps&quot;&gt;csrg&lt;/span&gt; Archives&lt;/a&gt;,
+ &lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 1&lt;/span&gt;: Berkeley Systems 1978-1986&lt;/a&gt;,
+ &lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 2&lt;/span&gt;: Berkeley Systems 1987-1993&lt;/a&gt;,
+ &lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 3&lt;/span&gt;: Final Berkeley Releases&lt;/a&gt;,
+ and&amp;nbsp;&lt;a
+    href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_4_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 4&lt;/span&gt;: Final /usr/src including SCCS files&lt;/a&gt;
+&lt;/cite&gt;
+tell us that
+&lt;span class=&quot;smallcaps&quot;&gt;3bsd&lt;/span&gt; (December, 1979) is not afflicted by this because it doesn'&lt;!--'--&gt;t ship ranlib(1) at all
+(owing no doubt to shipping a novel &lt;span class=&quot;smallcaps&quot;&gt;vax&lt;/span&gt;-specific ld(1) with no support for a symbol table).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;4bsd&lt;/span&gt; (November, 1980) includes Version 7 &lt;span class=&quot;smallcaps&quot;&gt;at&amp;t unix&lt;/span&gt; ranlib(1) (and a very related implementation),
+and the ld(1) blurb is similarly related, except the first member &lt;q&gt;should&lt;/q&gt;.
+lorder(1) is briefly expanded to note that
+&lt;q&gt;The need for lorder may be vitiated by use of &lt;i&gt;ranlib&lt;/i&gt;(1), which converts an ordered archive into a randomly accessed library.&lt;/q&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;4.3bsd&lt;/span&gt; (April, 1986) calls ranlib(1) &lt;q&gt;preprocess archives for efficient linking&lt;/q&gt; instead
+and adds &lt;samp&gt;-t&lt;/samp&gt; (matching &lt;samp&gt;make -t&lt;/samp&gt;) to update the timestamp of the symbol table only.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Archive targets in &lt;span class=&quot;smallcaps&quot;&gt;4.3bsd&lt;/span&gt;-Reno (June, 1990) &lt;samp&gt;make&lt;/samp&gt; are rebuilt based on the timestamp in the symbol table, not that of the archive itself
+(archives without symbol tables are always rebuilt).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;4.4bsd&lt;/span&gt;-Lite (June, 1993)'&lt;!--'--&gt;s ranlib(1) is &lt;q&gt;table-of-contents for archive libraries&lt;/q&gt;,
+and in spite of no implementation changes, ar(1) &lt;q&gt;is expected to offer a superset of the &lt;span class=&quot;smallcaps&quot;&gt;posix&lt;/span&gt; 1003.2 functionality&lt;/q&gt;.
+This is because
+&lt;cite&gt;&lt;a href=&quot;//rawcdn.githack.com/oldlinux-web/oldlinux-files/HEAD/Ref-docs/POSIX/all.pdf?page=717&quot;&gt;IEEE P1003.2 Draft 11.2&lt;/a&gt; − September 1991,
+      &lt;a href=&quot;//ftp.funet.fi/index/doc/posix/p1003.2/d11.2/6.1&quot;&gt;Section 6: Software Development Utilities Option&lt;/a&gt;&lt;/cite&gt;
+doesn'&lt;!--'--&gt;t specify &lt;samp&gt;as -s&lt;/samp&gt;, just requiring that
+&lt;q&gt;When an archive consists entirely of valid object files,
+   the implementation shall format the archive so that it is usable as a library for link editing &lt;del&gt;[…]&lt;/del&gt;.&lt;/q&gt;,
+rationalised because
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+historical implementations maintain a symbol table to speed searches,
+particularly when the archive contains object files. However, future implementors
+may or may not use a symbol table, and the &lt;samp&gt;-s&lt;/samp&gt; option was removed from this
+clause to permit implementors freedom of choice. &lt;del&gt;[…]&lt;/del&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+System V maintain&lt;del&gt;s&lt;/del&gt; the symbol table without
+&lt;del&gt;[…]&lt;/del&gt; &lt;samp&gt;-s&lt;/samp&gt;, so adding &lt;samp&gt;-s&lt;/samp&gt; (even if it were worded as allowing a no-op)
+would essentially require all portable applications to use it in all invocations
+involving libraries.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+And being fully &lt;q&gt;usable as a library for link editing&lt;/q&gt; is ensured for libraries without symbol tables by this system just shipping GNU ld,
+which understands symbol tables, but can read symbols out of objects just as well.
+Naturally, the matter of make(1) remains, and it still always considers untabled archives outdated, but it doesn'&lt;!--'--&gt;t even try to claim &lt;span class=&quot;smallcaps&quot;&gt;posix&lt;/span&gt; compatibility,
+and it'&lt;!--'--&gt;s basically a cosmetic issue.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Net&lt;span class=&quot;smallcaps&quot;&gt;bsd&lt;/span&gt; 1.1 (&lt;cite&gt;&lt;a href=&quot;//cvsweb.netbsd.org/bsdweb.cgi/src/usr.bin/make/arch.c#rev1.8&quot;&gt;&lt;tt&gt;make/arch.c&lt;/tt&gt; revision 1.8 (1995-01-11)&lt;/a&gt;&lt;/cite&gt;)
+echoes this, saying that
+&lt;q&gt;we should not bother with the TOC at all since this is used by 'ar' rules that affect the data contents of the archive, not by ranlib rules, which affect the TOC.&lt;/q&gt;,
+except that no-thing has ever used separate &lt;samp&gt;ar&lt;/samp&gt;/&lt;samp&gt;ranlib&lt;/samp&gt; rules,
+and every make-file in every distribution heretofore (and hence),
+if it runs &lt;samp&gt;ranlib&lt;/samp&gt; at all, does so just after &lt;samp&gt;ar&lt;/samp&gt; anyway.
+Indeed, the application of the
+&lt;a href=&quot;//ro.ws.co.ls/tsort.pdf?page=2&quot;&gt;lorder(1)-recommended&lt;/a&gt; &lt;code&gt;ar cr library `lorder *.o | tsort`&lt;/code&gt;
+stanza is nigh-universal for library archives &lt;em&gt;anyway&lt;/em&gt;, even post-&lt;samp&gt;ranlib&lt;/samp&gt;.
+This version of the file is included in &lt;span class=&quot;smallcaps&quot;&gt;4.4bsd&lt;/span&gt;-Lite2 (April, 1994 (actually 1995-06))
+as &lt;tt&gt;make/arch.c&lt;/tt&gt; revision 8.3 (95/04/28, christos &lt;q&gt;Updated to the latest version from the Net&lt;span class=&quot;smallcaps&quot;&gt;bsd&lt;/span&gt; source&lt;/q&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;continued indented&quot;&gt;
+Thus, you &lt;em&gt;realistically&lt;/em&gt; never really needed to run &lt;samp&gt;ranlib&lt;/samp&gt;, since you were building archives with lorder(1) anyway.
+But if you weren'&lt;!--'--&gt;t, then the efficacious range is [1979-01, 1995-06).
+&lt;/p&gt;
+&lt;p class=&quot;continuing indented&quot;&gt;
+The unfortunate virulence of this is reflected even contemporaneously
+— &lt;a href=&quot;//fosstodon.org/@alanc/113182473295182189&quot;&gt;upstream reports&lt;/a&gt;,
+  and I &lt;a href=&quot;//winworldpc.com/product/sun-solaris/2x&quot;&gt;can&lt;/a&gt; &lt;a href=&quot;//vetusware.com/download/Solaris%202.5%20Source%20Code/?id=11544&quot;&gt;validate&lt;/a&gt; —
+that in the SunOS 4→5 1992 transition (&lt;span class=&quot;smallcaps&quot;&gt;4.3bsd&lt;/span&gt;→SysV rebase) &lt;samp&gt;ranlib&lt;/samp&gt; was naturally lost,
+then re-invented as a no-op in 2.5 for compat.
+This &lt;a href=&quot;//github.com/illumos/illumos-gate/blame/master/usr/src/cmd/sgs/ranlib/ranlib.sh&quot;&gt;remains&lt;/a&gt; in the illumos gate.
+&lt;/p&gt;
+&lt;p class=&quot;continuation indented&quot;&gt;
+So, last even remotely desirable 30 years ago, defined as extraneous by all standards,
+and also &lt;span class=&quot;smallcaps&quot;&gt;4.4bsd&lt;/span&gt;-Lite2 very clearly includes Net&lt;span class=&quot;smallcaps&quot;&gt;bsd&lt;/span&gt; code but no &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; genealogical chart shows this?
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/015-ranlib.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/span&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/recipes/</id>
