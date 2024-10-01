@@ -66,8 +66,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
-                    <style>@counter-style wg14   { system: extends decimal; prefix: "n"; suffix: ": "; } \
-                           @counter-style wg14p1 { system: extends decimal; prefix: "n"; suffix: " (p1): "; }</style>
+                    <style>@counter-style wg14   { system: extends decimal; prefix: "n"; suffix: ": "; }      FORCED_NEWLINE \
+                           @counter-style wg14p1 { system: extends decimal; prefix: "n"; suffix: " (p1): "; } FORCED_NEWLINE \
+                           @counter-style wg14p2 { system: extends decimal; prefix: "n"; suffix: " (p2): "; }</style>
 BOILERPLATE(Documentation and mistakes, Documentation and code, en-GB, STYLESHEETS)
 
 
@@ -153,6 +154,7 @@ I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:
 	PAPER(3066, p1,	<code>timespec::tv_nsec</code>)
 	PAPER(3285,   , <code>stdarg.h</code> wording<code>...</code>)
 	PAPER(3359, p1,	<code>stdarg.h</code> wording<code>...</code>)
+	PAPER(3363, p2,	<code>stdarg.h</code> wording<code>...</code>)
 </ol>
 
 n3066 is part of C23.<br />
