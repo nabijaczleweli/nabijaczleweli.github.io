@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/014-unix-pre-v4-pid0-corollary.html">014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX);
-		<span style="white-space: nowrap;">Mon, 10 Jun 2024 01:04:14 +0200</span>
+		<a href="blogn_t/015-ranlib.html">015. where da lib runnin;
+		<span style="white-space: nowrap;">Tue, 01 Oct 2024 11:09:48 +0200</span>
 	</samp>
 </p>
 

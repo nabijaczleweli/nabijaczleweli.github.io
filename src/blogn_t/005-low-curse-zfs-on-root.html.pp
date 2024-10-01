@@ -20,9 +20,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                                                                         <!-- RSS_UPDATE_DATE: "Sat, 11 Jun 2022 00:19:37 +0200" -->
 
 
-#ifdef linux
 #undef linux
-#endif
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />  FORCED_NEWLINE \

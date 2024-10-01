@@ -20,9 +20,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="/content/assets/bigtable.css"           rel="stylesheet" />        FORCED_NEWLINE \
                     <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />
 
-#ifdef linux
 #undef linux
-#endif
 
 
 BOILERPLATE(012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) (real) — blognꞌt, 012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) with MediaTek MT8173/MT8173C (real), en-GB, STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)

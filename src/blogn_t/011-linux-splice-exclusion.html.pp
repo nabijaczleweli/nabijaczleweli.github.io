@@ -17,9 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE
 
 
-#ifdef linux
 #undef linux
-#endif
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
 

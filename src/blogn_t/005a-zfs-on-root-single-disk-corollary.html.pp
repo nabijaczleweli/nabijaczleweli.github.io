@@ -18,9 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_DATE      Thu, 05 Nov 2020 22:06:30 +0100
 #define POST_POST_DATE
 
-#ifdef linux
 #undef linux
-#endif
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
