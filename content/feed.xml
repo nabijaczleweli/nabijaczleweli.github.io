@@ -12,10 +12,109 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2024-10-01T11:09:48+02:00</updated>
+<updated>2024-10-05T21:56:06+02:00</updated>
   <generator>
     GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/016-BSDi-qfont.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/016-BSDi-qfont.html" />
+    <title> 016. BSDi qfont — blognꞌt — nabijaczleweli </title>
+    <updated>2024-10-05T21:56:06+02:00</updated>
+    <content type="html">
+&lt;span class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;016. &lt;span class=&quot;qfont&quot;&gt;BSDi qfont&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 05 Oct 2024 21:56:06 +0200&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;p class=&quot;indented&quot;&gt;
+This in many ways mirrors &lt;a href=&quot;008-amix-fonts&quot;&gt;&lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt;&lt;/a&gt;,
+sans la fonte du jour est qfont, which has been waiting for a similar length of time (since 2021-07) to get processed thusly.
+&lt;/p&gt;
+&lt;center&gt;
+&lt;a href=&quot;/content/assets/blogn_t/016.02-best.png&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Terminal screenshot with qfont's all 177 glyphs displayed alongside the Unicode characters they represent in 2 columns&quot; src=&quot;/content/assets/blogn_t/016.02-best.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+The greatest hits:
+an overgrown &lt;samp&gt;@&lt;/samp&gt;,
+asymmetric &lt;samp&gt;/\&lt;/samp&gt;,
+an offensive &lt;samp&gt;&amp;&lt;/samp&gt; that'&lt;!--'--&gt;s clearly just an 8 with a moustache,
+but an &lt;samp&gt;8&lt;/samp&gt; that'&lt;!--'--&gt;s nearing double-width,
+and a heavy set of punctuation (the first one is a &lt;samp&gt;`&lt;/samp&gt;, the second an &lt;samp&gt;'&lt;!--'--&gt;&lt;/samp&gt;).
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/016.03-allchars-freetype.png&quot;&gt;&lt;img class=&quot;continuing&quot; alt=&quot;Terminal screenshot with qfont's all 177 glyphs displayed alongside the Unicode characters they represent in 2 columns&quot; src=&quot;/content/assets/blogn_t/016.03-allchars-freetype.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Full demo, as rendered by libfreetype 2.12.1+dfsg-5+deb12u3/libfontconfig 2.14.1-4.
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/016.04-winword.png&quot;&gt;&lt;img class=&quot;continued dark-invert&quot; alt=&quot;Microsoft Word screenshot with lowercase vowels and uppercase consonants&quot; src=&quot;/content/assets/blogn_t/016.04-winword.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by &lt;tt&gt;WINWORD.EXE&lt;/tt&gt;.
+&lt;/p&gt;
+&lt;a href=&quot;/content/assets/blogn_t/016.05-photoshop.png&quot;&gt;&lt;img class=&quot;continued&quot; alt='Block of all characters in qfont, surrounded in an ellipse by /*	BSDI $Id: qfont.c,v 1.2 1994/02/06 20:14:06 karels Exp $	*/    derived from:  &quot;@(#)qfont.c	6.2	ULTRIX	2/4/88&quot;' src=&quot;/content/assets/blogn_t/016.05-photoshop.png&quot; /&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by Photoshop CS6 (AA disabled).
+&lt;/p&gt;
+&lt;p class=&quot;qfont continued&quot; style=&quot;font-size: 3em; overflow-wrap: anywhere;&quot;&gt;
+&amp;nbsp;!&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?&lt;br /&gt; &lt;!--&quot;--&gt;
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_&lt;br /&gt;
+`abcdefghijklmnopqrstuvwxyz{|}~&amp;nbsp;&lt;br /&gt;
+¡¢£⸮¥§¤©ª«°±²³µ¶·¹º»¼½¿&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖŒØÙÚÛÜÝß&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+àáâãäåæçèéêëìíîïñòóôõöœøùúûüý&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+As rendered by your browser, hopefully.
+&lt;/p&gt;
+&lt;/center&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The procedure can be found &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fonts&quot;&gt;here&lt;/a&gt;,
+and is adapted trivially from the &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.fonts&quot;&gt;&lt;span class=&quot;sunfont&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;topaz&quot;&gt;one&lt;/span&gt;&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Indeed, much more trivially because &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO&quot;&gt;the font is in C&lt;/a&gt;, so you can just link to it.
+This C file bears &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO&quot;&gt;four kilobytes of licence headers&lt;/a&gt; that makes the resulting font... BSD-4-Clause-UC?,
+and it turns out to be retained in NetBSD as
+&lt;a href=&quot;http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/dev/qbus/qfont.c?rev=1.8&amp;content-type=text/x-cvsweb-markup&quot;&gt;&lt;tt&gt;src/sys/dev/qbus/qfont.c&lt;/tt&gt;&lt;/a&gt;
+(but stamped BSD-3-Clause).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+qfont covers 7-bit &lt;span class=&quot;smallcaps&quot;&gt;ascii&lt;/span&gt; and most of ISO-8859-1 (with some substitutions).
+Like previously, it'&lt;!--'--&gt;s an art font unsuitable for general use.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The distribution contains:
+&lt;/p&gt;
+&lt;center&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont-montage.png&quot;&gt;&lt;img class=&quot;continuing&quot; src=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont-montage.png&quot;&gt;&lt;/a&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+qfont, a 177-character monospace 8x15px font, with baseline at 12px.
+(&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont-montage.svg&quot;&gt;SVG&lt;/a&gt;)
+&lt;/p&gt;
+&lt;/center&gt;
+&lt;p class=&quot;continued&quot;&gt;
+The font includes:
+&lt;/p&gt;
+&lt;ul class=&quot;continuation&quot;&gt;
+&lt;li&gt;Bitmap strikes at integer increments of [1, 16]x their original size, embedded in their respective OTFs.&lt;/li&gt;
+&lt;li&gt;BDFs of all of the above are also exported, if of dubious usefulness.&lt;/li&gt;
+&lt;li&gt;The original FontForge &lt;tt&gt;.sfd&lt;/tt&gt; files are also included, for export to other formats.&lt;/li&gt;
+&lt;li&gt;Images of the bitmap strikes at all sizes (in PBM P1 format, understood globally by all tooling).&lt;/li&gt;
+&lt;li&gt;A montage of all the characters in the fonts (from 4x scale), and an SVG tracing thereof.&lt;/li&gt;
+&lt;li&gt;FontForge demo PDFs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+Go wild: &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;https://lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&lt;/a&gt;.
+Built on bookworm.
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/016-BSDi-qfont.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/span&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/015-ranlib.html</id>
@@ -10108,7 +10207,7 @@ sunfont, a 96-character monospace 25x12px font, with baseline at 20px.
 &lt;/p&gt;
 &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png&quot;&gt;&lt;img class=&quot;continued&quot; src=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png&quot;&gt;&lt;/a&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-sunfont, a 224-character monospace 8x8px font, with baseline at 7px.
+topaz, a 224-character monospace 8x8px font, with baseline at 7px.
 (&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.svg&quot;&gt;SVG&lt;/a&gt;)
 &lt;/p&gt;
 &lt;/center&gt;

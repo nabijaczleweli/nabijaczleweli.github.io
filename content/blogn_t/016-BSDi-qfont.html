@@ -7,7 +7,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
- <!-- RSS_PUB_DATE: "Thu, 17 Nov 2022 22:36:33 +0100" -->
+ <!-- RSS_PUB_DATE: "Sat, 05 Oct 2024 21:56:06 +0200" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -15,8 +15,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
  <meta name="viewport" content="width=device-width,initial-scale=1"> 
  <meta name="author" content="nabijaczleweli"> 
- <meta name="description" content="008. AMIX fonts"> 
- <title>008. AMIX fonts — blognꞌt — nabijaczleweli</title> 
+ <meta name="description" content="016. BSDi qfont"> 
+ <title>016. BSDi qfont — blognꞌt — nabijaczleweli</title> 
  
  <link href="/content/assets/common.css" rel="stylesheet" /> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
@@ -59,7 +59,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
  <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
+ 
+ <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" /> 
+ <link href="/content/assets/blogn_t/016.01-BSDi-fonts.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
  <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
  <script type="text/javascript" src="/content/assets/word_count.js"></script> 
  </head> 
@@ -116,6 +118,12 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
 }
 
 /* Measured against merriweather in the heading. */
+.qfont {
+ font-family: qfont;
+ font-size: 1.06349206349206em; /* 67/63 */
+}
+/* For 008 */
+/* Measured against merriweather in the heading. */
 .sunfont {
  font-family: sunfont;
  font-size: 1.25em; /* 60/48 */
@@ -130,84 +138,74 @@ img {
 </style>
 <span class="roboto writing"> 
  <p></p> 
- <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span></samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Nov 2022 22:36:33 +0100</span>; <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/">go wild</a> <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/"><i class="dark-invert fa fa-external-link-alt"></i></a></h4> 
+ <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>016. <span class="qfont">BSDi qfont</span></samp> <a class="go-back-link right" href=".">↩</a></h2> 
+ <h4 id="post-date"><span style="white-space: nowrap">Sat, 05 Oct 2024 21:56:06 +0200</span>; <a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/">go wild</a> <a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/"><i class="dark-invert fa fa-external-link-alt"></i></a></h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
-<p class="indented continued">
-Have been
-<a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1297339377786511360">featured</a>
-<a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1590177344467390465">before</a>,
-even
-<a href="006-UNIX-r-ATT.html">on this blog</a>,
-but never in such style:
+<p class="indented">
+This in many ways mirrors <a href="008-amix-fonts"><samp>008. <span class="topaz">AMIX</span> <span class="sunfont">fonts</span></samp></a>,
+sans la fonte du jour est qfont, which has been waiting for a similar length of time (since 2021-07) to get processed thusly.
 </p>
 <center>
-<a href="/content/assets/blogn_t/008.02-sunfont-allchars-freetype.png"><img class="continuing" alt="Terminal screenshot with sunfont's all 96 glyphs displayed alongside the Unicode characters they represent in 2 columns" src="/content/assets/blogn_t/008.02-sunfont-allchars-freetype.png" /></a>
-<a href="/content/assets/blogn_t/008.03-topaz-allchars-freetype.png"><img class="continuing" alt="Terminal screenshot with topaz's all 224 glyphs displayed alongside the Unicode characters they represent in 2 columns" src="/content/assets/blogn_t/008.03-topaz-allchars-freetype.png" /></a>
+<a href="/content/assets/blogn_t/016.02-best.png"><img class="continuing" alt="Terminal screenshot with qfont's all 177 glyphs displayed alongside the Unicode characters they represent in 2 columns" src="/content/assets/blogn_t/016.02-best.png" /></a>
 <p class="continuation">
-As rendered by libfreetype 2.10.4+dfsg-1+deb11u1/libfontconfig 2.13.1-4.2.
+The greatest hits:
+an overgrown <samp>@</samp>,
+asymmetric <samp>/\</samp>,
+an offensive <samp>&</samp> that'<!--'-->s clearly just an 8 with a moustache,
+but an <samp>8</samp> that'<!--'-->s nearing double-width,
+and a heavy set of punctuation (the first one is a <samp>`</samp>, the second an <samp>'<!--'--></samp>).
 </p>
-<a href="/content/assets/blogn_t/008.04-winword.png"><img class="continued dark-invert" alt="Microsoft Word screenshot with lowercase vowels and uppercase consonants in both fonts" src="/content/assets/blogn_t/008.04-winword.png" /></a>
+<a href="/content/assets/blogn_t/016.03-allchars-freetype.png"><img class="continuing" alt="Terminal screenshot with qfont's all 177 glyphs displayed alongside the Unicode characters they represent in 2 columns" src="/content/assets/blogn_t/016.03-allchars-freetype.png" /></a>
 <p class="continuation">
-As rendered by <tt>WINWORD.EXE</tt> (yes, they're kinda goopy here; needs a skilled operator probably).  <!--'-->
+Full demo, as rendered by libfreetype 2.12.1+dfsg-5+deb12u3/libfontconfig 2.14.1-4.
 </p>
-<a href="/content/assets/blogn_t/008.05-photoshop.png"><img class="continued" alt="Blocks of all characters in topaz and sunfont, surrounded in an ellipse by /* THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF */ in topaz /* UNIX System Laboratories, Inc. */ in sunfont" src="/content/assets/blogn_t/008.05-photoshop.png" /></a>
+<a href="/content/assets/blogn_t/016.04-winword.png"><img class="continued dark-invert" alt="Microsoft Word screenshot with lowercase vowels and uppercase consonants" src="/content/assets/blogn_t/016.04-winword.png" /></a>
 <p class="continuation">
-As rendered by Photoshop CS6
-(AA disabled; the lines/checker-board from SYMBOLS FOR LEGACY COMPUTING got turned into flat squares, presumably because they post-date this product).
+As rendered by <tt>WINWORD.EXE</tt>.
 </p>
-<p class="sunfont continued" style="font-size: 3em; overflow-wrap: anywhere;">
+<a href="/content/assets/blogn_t/016.05-photoshop.png"><img class="continued" alt='Block of all characters in qfont, surrounded in an ellipse by /*	BSDI $Id: qfont.c,v 1.2 1994/02/06 20:14:06 karels Exp $	*/    derived from:  "@(#)qfont.c	6.2	ULTRIX	2/4/88"' src="/content/assets/blogn_t/016.05-photoshop.png" /></a>
+<p class="continuation">
+As rendered by Photoshop CS6 (AA disabled).
+</p>
+<p class="qfont continued" style="font-size: 3em; overflow-wrap: anywhere;">
 &nbsp;!"#$%&'()*+,-./0123456789:;<=>?<br /> <!--"-->
 @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_<br />
-`abcdefghijklmnopqrstuvwxyz{|}~▁<br />
-</p>
-<p class="topaz continued" style="font-size: 1.5em; overflow-wrap: anywhere;">
-&nbsp;!"#$%&'()*+,-./0123456789:;<=>?<br /> <!--"-->
-@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_<br />
-`abcdefghijklmnopqrstuvwxyz{|}~🮕<br />
-▯¡¢£¤¥¦§¨©ª«¬―®¯˚±²³´µ¶·¸¹º»¼½¾¿<br />
-ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß<br />
-àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ<br />
-◆■␉␌␍␊°∓␤␋┘┐┌└┼▔🭷🭸🭺▁├┤┴┬│≤≥ ≠₤⋅▒
+`abcdefghijklmnopqrstuvwxyz{|}~&nbsp;<br />
+¡¢£⸮¥§¤©ª«°±²³µ¶·¹º»¼½¿&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖŒØÙÚÛÜÝß&nbsp;&nbsp;<br />
+àáâãäåæçèéêëìíîïñòóôõöœøùúûüý&nbsp;&nbsp;&nbsp;
 </p>
 <p class="continuation">
 As rendered by your browser, hopefully.
 </p>
 </center>
 <p class="indented continued">
-The procedure can be found <a href="//git.sr.ht/~nabijaczleweli/amix.fonts">here</a>,
-and is pretty much the same as I used in <a href="//git.sr.ht/~nabijaczleweli/amix.x">2020</a>,
-and generally uninteresting, except that it uses a <a href="//git.sr.ht/~nabijaczleweli/amix.fonts/tree/trunk/item/02imagise.blk">novel</a> (instead of awful) approach to integer-scaling the images, so if you disagree with my design/assignment decisions, you can trivially re-generate them.
-</p>
-<p class="indented continuation">
-Not that I expect those to matter much, given that these fonts suck shit for normal use.
-sunfont only covers 7-bit <span class="smallcaps">ascii</span>; topaz mostly covers the Latin-1 Supplement
-+ box-drawing and <a href="//git.sr.ht/~nabijaczleweli/amix.fonts/tree/trunk/item/07strike.map-topaz">some dupes</a>,
-which sounds great except that means no slavic languages, no greek, no…
-It's fun, the ducky <span class="topaz">g</span> is cute, it's an art font, it's unsuitable for general use.  <!--'-->
-</p>
-<p class="indented continued">
-This distribution is made possible by potrace being configurable to not attempt to fix the paths,
-and generate 1:1 traces, including hard corners.
-It is additionally made easier by the image formats involved being entirely text, which makes hard-integer-scaling them trivial.
+The procedure can be found <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts">here</a>,
+and is adapted trivially from the <a href="//git.sr.ht/~nabijaczleweli/amix.fonts"><span class="sunfont">AMIX</span> <span class="topaz">one</span></a>.
 </p>
 <p class="indented continuing">
+Indeed, much more trivially because <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO">the font is in C</a>, so you can just link to it.
+This C file bears <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO">four kilobytes of licence headers</a> that makes the resulting font... BSD-4-Clause-UC?,
+and it turns out to be retained in NetBSD as
+<a href="http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/dev/qbus/qfont.c?rev=1.8&content-type=text/x-cvsweb-markup"><tt>src/sys/dev/qbus/qfont.c</tt></a>
+(but stamped BSD-3-Clause).
+</p>
+<p class="indented continuation">
+qfont covers 7-bit <span class="smallcaps">ascii</span> and most of ISO-8859-1 (with some substitutions).
+Like previously, it'<!--'-->s an art font unsuitable for general use.
+</p>
+<p class="indented continued">
 The distribution contains:
 </p>
 <center>
-<a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/sunfont-montage.png"><img class="continuing" src="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/sunfont-montage.png"></a>
+<a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont-montage.png"><img class="continuing" src="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont-montage.png"></a>
 <p class="continuation">
-sunfont, a 96-character monospace 25x12px font, with baseline at 20px.
-(<a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/sunfont-montage.svg">SVG</a>)
-</p>
-<a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png"><img class="continued" src="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png"></a>
-<p class="continuation">
-topaz, a 224-character monospace 8x8px font, with baseline at 7px.
-(<a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.svg">SVG</a>)
+qfont, a 177-character monospace 8x15px font, with baseline at 12px.
+(<a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont-montage.svg">SVG</a>)
 </p>
 </center>
 <p class="continued">
-Both fonts include:
+The font includes:
 </p>
 <ul class="continuation">
 <li>Bitmap strikes at integer increments of [1, 16]x their original size, embedded in their respective OTFs.</li>
@@ -217,22 +215,14 @@ Both fonts include:
 <li>A montage of all the characters in the fonts (from 4x scale), and an SVG tracing thereof.</li>
 <li>FontForge demo PDFs.</li>
 </ul>
-<p class="indented">
-It is worth-while to note that the <a class="topaz" style="color: white; background: black; text-decoration: none; padding: 1.5mm;" href="006-UNIX-r-ATT.html">¹UNIX® is a registered trademark of AT&T.</a>
-stickers consist of pasted-together PNGs from <a href="//git.sr.ht/~nabijaczleweli/amix.x">the first iteration</a> of this extraction,
-and this technique is both sufficient and superiour, if you don't need to drag these along a path in Photoshop.  <!--'-->
-</p>
-<p class="indented continued">
-Go wild: <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/">https://lfs.nabijaczleweli.xyz/0013-AMIX-fonts/</a>.
-</p>
-<p class="continuation">
-For the purposes of traceability, these were generated with bullseye programs, with the exception of patched FontForge,
-see the <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/typescript">generation transcript</a>.
+<p>
+Go wild: <a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/">https://lfs.nabijaczleweli.xyz/0023-BSDi-fonts/</a>.
+Built on bookworm.
 </p>
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/008-amix-fonts.html.pp">Mail</a>, 
+ <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/016-BSDi-qfont.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
  </span>
@@ -252,7 +242,7 @@ see the <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/ty
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
  Compiled with Clang 19'<!--'-->s C preprocessor on 05.10.2024 20:01:02 UTC from 
- <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/008-amix-fonts.html.pp">src/blogn_t/008-amix-fonts.html.pp</a>. 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/016-BSDi-qfont.html.pp">src/blogn_t/016-BSDi-qfont.html.pp</a>. 
  <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1344967">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
