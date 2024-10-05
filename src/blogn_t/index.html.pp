@@ -46,6 +46,13 @@ BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-GB, S
 	font-family: topaz;
 	font-size: 0.80em; /* 55/69 */
 }
+
+/* For 016 */
+/* Measured against merriweather in the heading. */
+.qfont {
+	font-family: qfont;
+	font-size: 1.06349206349206em; /* 67/63 */
+}
 </style>
 
 <span class="roboto">
@@ -79,6 +86,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 	 POST(013-linux-a.out-quine,                   Sun, 17 Mar 2024 04:57:16 +0100, 013. Linux a.out quine in 44 bytes)
 	 POST(014-unix-pre-v4-pid0-corollary,          Mon, 10 Jun 2024 01:04:14 +0200, 014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX))
 	 POST(015-ranlib,                              Tue, 01 Oct 2024 11:09:48 +0200, 015. where da lib runnin)
+	 POST(016-BSDi-qfont,                          Sat, 05 Oct 2024 21:56:06 +0200, 016. <span class="qfont">BSDi qfont</span>)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

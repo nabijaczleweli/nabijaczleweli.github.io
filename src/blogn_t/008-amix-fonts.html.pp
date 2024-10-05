@@ -122,7 +122,7 @@ sunfont, a 96-character monospace 25x12px font, with baseline at 20px.
 
 <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png"><img class="continued" src="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.png"></a>
 <p class="continuation">
-sunfont, a 224-character monospace 8x8px font, with baseline at 7px.
+topaz, a 224-character monospace 8x8px font, with baseline at 7px.
 (<a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/topaz-montage.svg">SVG</a>)
 </p>
 </center>

@@ -1,0 +1,17 @@
+/*
+nabijaczleweli.xyz (c) by nabijaczleweli@nabijaczleweli.xyz
+
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+*/
+
+
+@font-face {
+	font-family: "qfont";
+	font-style: regular;
+	font-weight: regular;
+	src: local("qfont"), url("https://lfs.nabijaczleweli.xyz/0023-BSDi-fonts/qfont.otf") format("opentype");
+}
