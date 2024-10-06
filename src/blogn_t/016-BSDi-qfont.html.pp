@@ -105,8 +105,8 @@ The procedure can be found <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts">here
 and is adapted trivially from the <a href="//git.sr.ht/~nabijaczleweli/amix.fonts"><span class="sunfont">AMIX</span> <span class="topaz">one</span></a>.
 </p>
 <p class="indented continuing">
-Indeed, much more trivially because <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO">the font is in C</a>, so you can just link to it.
-This C file bears <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO">four kilobytes of licence headers</a> that makes the resulting font... BSD-4-Clause-UC?,
+Indeed, much more trivially because <a href="//git.sr.ht/~nabijaczleweli/bsdi.fonts/tree/trunk/item/BSDI-1.1-qfont.c">the font is in C</a>, so you can just link to it.
+This C file bears four kilobytes of licence headers (even though bitmap fonts are not subject to copyright protection),
 and it turns out to be retained in NetBSD as
 <a href="http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/dev/qbus/qfont.c?rev=1.8&content-type=text/x-cvsweb-markup"><tt>src/sys/dev/qbus/qfont.c</tt></a>
 (but stamped BSD-3-Clause).
