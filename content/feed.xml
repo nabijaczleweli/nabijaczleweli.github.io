@@ -71,8 +71,8 @@ The procedure can be found &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fon
 and is adapted trivially from the &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/amix.fonts&quot;&gt;&lt;span class=&quot;sunfont&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;topaz&quot;&gt;one&lt;/span&gt;&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-Indeed, much more trivially because &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO&quot;&gt;the font is in C&lt;/a&gt;, so you can just link to it.
-This C file bears &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fonts/TODO&quot;&gt;four kilobytes of licence headers&lt;/a&gt; that makes the resulting font... BSD-4-Clause-UC?,
+Indeed, much more trivially because &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/bsdi.fonts/tree/trunk/item/BSDI-1.1-qfont.c&quot;&gt;the font is in C&lt;/a&gt;, so you can just link to it.
+This C file bears four kilobytes of licence headers (even though bitmap fonts are not subject to copyright protection),
 and it turns out to be retained in NetBSD as
 &lt;a href=&quot;http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/dev/qbus/qfont.c?rev=1.8&amp;content-type=text/x-cvsweb-markup&quot;&gt;&lt;tt&gt;src/sys/dev/qbus/qfont.c&lt;/tt&gt;&lt;/a&gt;
 (but stamped BSD-3-Clause).
