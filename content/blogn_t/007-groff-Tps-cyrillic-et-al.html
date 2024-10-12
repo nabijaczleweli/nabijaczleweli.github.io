@@ -197,7 +197,8 @@ done
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token punctuation">{</span>C,T<span class="token punctuation">}</span><span class="token punctuation">{</span>R,B,I,BI<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
 <span class="token info punctuation"><!--"-->  	<!--"-->in="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk <span class="token string">'</span><span class="language-awk">$1 == <span class="token string">"internalname"</span> {<span class="token builtin">print</span> $2; <span class="token keyword">exit</span>}</span><span class="token string">'</span> <span class="token string">"/usr/share/groff/current/font/devps/<span class="token variable">$f</span>"</span><span class="token punctuation">)</span><span class="token info punctuation">"</span><span class="token punctuation">;</span></span></span>
 <!--"-->  	<!--"--><span class="token builtin class-name">echo</span> <span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">f: <span class="token shell-symbol important">$</span>in<span class="token punctuation">;</span></span></span>
-<!--<!--"- class="languag>/^[\/\(]/</span> {
+<span class="token info punctuation"><!--"-->  	<!--"--></span>src="</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash"><span class="token punctuation">(</span>awk -v <span class="token assign-left variable">cur</span><span class="token operator">=</span><span class="token string">"/<span class="token variable">$in</span>"</span> <span class="token string">'</span><!--"--> <!--"--><!--"-->
+<span class="language-awk"><!--"-->            <!--"-->$1 ~ <span class="token regex">/^\//</span> &amp;&amp; $2 ~ <span class="token regex">/^[\/\(]/</span> {
 <!--"-->  			<!--"--><span class="token keyword">if</span>($2 ~ <span class="token regex">/^\//</span>)
 <!--"-->  				<!--"-->aliases[$1] = $2;
 <!--"-->  			<!--"--><span class="token keyword">else</span>
@@ -834,9 +835,9 @@ x<!--"-->       <!--"-->nobody
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 06.10.2024 16:58:12 UTC from 
+ Compiled with Clang 19'<!--'-->s C preprocessor on 12.10.2024 00:46:19 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1345287">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1349197">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
