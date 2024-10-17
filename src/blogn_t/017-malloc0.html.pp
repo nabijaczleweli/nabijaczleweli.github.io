@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Thu, 17 Oct 2024 03:42:06 +0200" -->
 #define POST_DATE      Thu, 17 Oct 2024 03:42:06 +0200
-#define POST_POST_DATE
+#define POST_POST_DATE ; updated Thu, 17 Oct 2024 12:15:42 +0200
 
 #define Tn(...)  <span class="smallcaps">__VA_ARGS__</span>
 #define CMT(...) <del>__VA_ARGS__</del>
@@ -72,9 +72,21 @@ one <a href="//github.com/shadow-maint/shadow/pull/1095">has to wonder</a> if th
 </p>
 
 
-HEADING_S(2, v6, class="continued", UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite>)
+HEADING_S(2, v5, class="continued", UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf">Fifth Edition</a></cite>)
 <p class="continuation">
 doesn'<!--'-->t have <code>malloc</code>.
+</p>
+
+
+HEADING_S(2, v6, class="continued", UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite>)
+<p class="continuation">
+doesn'<!--'-->t have <code>malloc</code> either,
+but has a generic alloc(3) with <code>alloc()</code>/<code>free()</code>
+(<em>generic</em> in contrast to most programs shipping an <code>alloc()</code> that boils down to <code>sbrk(1024)</code>, or just <code>sbrk</code>ing directly;
+ this implementation is not widely used).
+The code and text of this implementation get expanded into the malloc(3) suite in Tn(v7), and, for the purposes of this document, they behave equivalently
+(except that <code>alloc</code> <q>Returns −1 if there is no available core.</q>).
+<cite class="path"><samp>./man/man3/alloc.3</samp>, <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz"><samp>./s4/alloc.s</samp></a></cite>
 </p>
 
 
@@ -270,7 +282,7 @@ HEADING_S(3, SVID2, class="continued", System V Interface Definition, <a href="/
 <p class="continuing">
 includes SysVr2 malloc(3X) mostly-verbatim as malloc(BA_OS) in Volume 1.
 (The API is adapted minimally to match SysVr3'<!--'-->s.)
-The <cite>RETURN VALUE</cite> is extended to say for the first time
+The <cite>RETURN VALUE</cite> is extended to say for the first time that
 </p>
 <blockquote class="continuing">
 The functions <tt>malloc</tt>, <tt>realloc</tt>, and <tt>calloc</tt> return a <tt>NULL</tt> pointer if <tt>nbytes</tt> is <tt>0</tt>
