@@ -295,7 +295,7 @@ but correctly recognises that &lt;q&gt;it is the responsibility of the applicati
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
 This is naught but a mild editorialisation of &lt;a href=&quot;//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155&quot;&gt;C89 wording&lt;/a&gt;,
-and later &lt;ss&gt;&lt;span class=&quot;smallcaps&quot;&gt;xpg&lt;/span&gt;s&lt;/ss&gt;&lt;ss&gt;&lt;span class=&quot;smallcaps&quot;&gt;sus&lt;/span&gt;es&lt;/ss&gt;&lt;span class=&quot;smallcaps&quot;&gt;posix&lt;/span&gt;es use later Cs.
+and later &lt;s&gt;&lt;span class=&quot;smallcaps&quot;&gt;xpg&lt;/span&gt;s&lt;/s&gt;&lt;s&gt;&lt;span class=&quot;smallcaps&quot;&gt;sus&lt;/span&gt;es&lt;/s&gt;&lt;span class=&quot;smallcaps&quot;&gt;posix&lt;/span&gt;es use later Cs.
 &lt;/p&gt;
 &lt;h2 id=&quot;conclusions&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusions&quot;&gt;#&lt;/a&gt; Conclusions&lt;/h2&gt;
 &lt;p class=&quot;continuing&quot;&gt;
