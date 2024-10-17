@@ -28,6 +28,12 @@ function heading(tok) {
 		for(; tok[1] < last; --last)
 			print "</ol>"
 	}
+
+	# print "tok3=" tok[3]
+	while(match(tok[3], /Tn\([^\)]*\)/)) {
+		sub(/Tn\([^\)]*\)/, toupper(substr(tok[3], RSTART + 3, RLENGTH - 4)), tok[3])
+	}
+
 	print "<li><a href='#" tok[2] "'>" tok[3] "</a></li>"
 }
 
