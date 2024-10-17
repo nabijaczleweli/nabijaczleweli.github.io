@@ -138,10 +138,11 @@ details#contents > ol a {
 <span class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>017. malloc(0) & realloc(…, 0) ≠ 0</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span></h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span>; updated Thu, 17 Oct 2024 12:15:42 +0200</h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
+<li><a href='#v5'>UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf">Fifth Edition</a></cite></a></li>
 <li><a href='#v6'>UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite></a></li>
 <li><a href='#v7'>UNIX™ Time-Sharing System: UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">Seventh Edition</a></cite></a></li>
 <li><a href='#BSD'><cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">The BSD</a></cite></a></li>
@@ -172,7 +173,7 @@ details#contents > ol a {
 </ol>
 </details></div>
 <p class="indented continued">
-<a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#page=384">C</a> and <a href="//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html">POSIX</a>
+<a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsection.7.24.4">C</a> and <a href="//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html">POSIX</a>
 say that
 </p>
 <blockquote class="continuing">
@@ -182,9 +183,19 @@ either a null pointer shall be returned, or the behavior shall be as if the size
 <p class="continuation">
 one <a href="//github.com/shadow-maint/shadow/pull/1095">has to wonder</a> if this is real.
 </p>
-<h2 id="v6" class="continued"><a class="hash-link" href="#v6">#</a> UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite></h2>
+<h2 id="v5" class="continued"><a class="hash-link" href="#v5">#</a> UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf">Fifth Edition</a></cite></h2>
 <p class="continuation">
 doesn'<!--'-->t have <code>malloc</code>.
+</p>
+<h2 id="v6" class="continued"><a class="hash-link" href="#v6">#</a> UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite></h2>
+<p class="continuation">
+doesn'<!--'-->t have <code>malloc</code> either,
+but has a generic alloc(3) with <code>alloc()</code>/<code>free()</code>
+(<em>generic</em> in contrast to most programs shipping an <code>alloc()</code> that boils down to <code>sbrk(1024)</code>, or just <code>sbrk</code>ing directly;
+ this implementation is not widely used).
+The code and text of this implementation get expanded into the malloc(3) suite in <span class="smallcaps">v7</span>, and, for the purposes of this document, they behave equivalently
+(except that <code>alloc</code> <q>Returns −1 if there is no available core.</q>).
+<cite class="path"><samp>./man/man3/alloc.3</samp>, <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz"><samp>./s4/alloc.s</samp></a></cite>
 </p>
 <h2 id="v7" class="continued"><a class="hash-link" href="#v7">#</a> UNIX™ Time-Sharing System: UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">Seventh Edition</a></cite></h2>
 <p class="continuing">
@@ -354,7 +365,7 @@ has no extant copy.
 <p class="continuing">
 includes SysVr2 malloc(3X) mostly-verbatim as malloc(BA_OS) in Volume 1.
 (The API is adapted minimally to match SysVr3'<!--'-->s.)
-The <cite>RETURN VALUE</cite> is extended to say for the first time
+The <cite>RETURN VALUE</cite> is extended to say for the first time that
 </p>
 <blockquote class="continuing">
 The functions <tt>malloc</tt>, <tt>realloc</tt>, and <tt>calloc</tt> return a <tt>NULL</tt> pointer if <tt>nbytes</tt> is <tt>0</tt>
@@ -447,9 +458,9 @@ not real.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 17.10.2024 01:46:46 UTC from 
+ Compiled with Clang 19'<!--'-->s C preprocessor on 17.10.2024 10:21:48 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/017-malloc0.html.pp">src/blogn_t/017-malloc0.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1352244">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1352399">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

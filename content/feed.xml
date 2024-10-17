@@ -26,10 +26,11 @@
 &lt;span class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;017. malloc(0) &amp; realloc(…, 0) ≠ 0&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
+&lt;li&gt;&lt;a href='#v5'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf&quot;&gt;Fifth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#v6'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz&quot;&gt;Sixth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#v7'&gt;UNIX™ Time-Sharing System: UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz&quot;&gt;Seventh Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#BSD'&gt;&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz&quot;&gt;The BSD&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
@@ -60,7 +61,7 @@
 &lt;/ol&gt;
 &lt;/details&gt;&lt;/div&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-&lt;a href=&quot;//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#page=384&quot;&gt;C&lt;/a&gt; and &lt;a href=&quot;//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html&quot;&gt;POSIX&lt;/a&gt;
+&lt;a href=&quot;//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsection.7.24.4&quot;&gt;C&lt;/a&gt; and &lt;a href=&quot;//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html&quot;&gt;POSIX&lt;/a&gt;
 say that
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
@@ -70,9 +71,19 @@ either a null pointer shall be returned, or the behavior shall be as if the size
 &lt;p class=&quot;continuation&quot;&gt;
 one &lt;a href=&quot;//github.com/shadow-maint/shadow/pull/1095&quot;&gt;has to wonder&lt;/a&gt; if this is real.
 &lt;/p&gt;
-&lt;h2 id=&quot;v6&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v6&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz&quot;&gt;Sixth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;v5&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v5&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf&quot;&gt;Fifth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 doesn'&lt;!--'--&gt;t have &lt;code&gt;malloc&lt;/code&gt;.
+&lt;/p&gt;
+&lt;h2 id=&quot;v6&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v6&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz&quot;&gt;Sixth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+doesn'&lt;!--'--&gt;t have &lt;code&gt;malloc&lt;/code&gt; either,
+but has a generic alloc(3) with &lt;code&gt;alloc()&lt;/code&gt;/&lt;code&gt;free()&lt;/code&gt;
+(&lt;em&gt;generic&lt;/em&gt; in contrast to most programs shipping an &lt;code&gt;alloc()&lt;/code&gt; that boils down to &lt;code&gt;sbrk(1024)&lt;/code&gt;, or just &lt;code&gt;sbrk&lt;/code&gt;ing directly;
+ this implementation is not widely used).
+The code and text of this implementation get expanded into the malloc(3) suite in &lt;span class=&quot;smallcaps&quot;&gt;v7&lt;/span&gt;, and, for the purposes of this document, they behave equivalently
+(except that &lt;code&gt;alloc&lt;/code&gt; &lt;q&gt;Returns −1 if there is no available core.&lt;/q&gt;).
+&lt;cite class=&quot;path&quot;&gt;&lt;samp&gt;./man/man3/alloc.3&lt;/samp&gt;, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz&quot;&gt;&lt;samp&gt;./s4/alloc.s&lt;/samp&gt;&lt;/a&gt;&lt;/cite&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;v7&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v7&quot;&gt;#&lt;/a&gt; UNIX™ Time-Sharing System: UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz&quot;&gt;Seventh Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
 &lt;p class=&quot;continuing&quot;&gt;
@@ -242,7 +253,7 @@ has no extant copy.
 &lt;p class=&quot;continuing&quot;&gt;
 includes SysVr2 malloc(3X) mostly-verbatim as malloc(BA_OS) in Volume 1.
 (The API is adapted minimally to match SysVr3'&lt;!--'--&gt;s.)
-The &lt;cite&gt;RETURN VALUE&lt;/cite&gt; is extended to say for the first time
+The &lt;cite&gt;RETURN VALUE&lt;/cite&gt; is extended to say for the first time that
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
 The functions &lt;tt&gt;malloc&lt;/tt&gt;, &lt;tt&gt;realloc&lt;/tt&gt;, and &lt;tt&gt;calloc&lt;/tt&gt; return a &lt;tt&gt;NULL&lt;/tt&gt; pointer if &lt;tt&gt;nbytes&lt;/tt&gt; is &lt;tt&gt;0&lt;/tt&gt;
