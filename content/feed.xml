@@ -291,7 +291,7 @@ but correctly recognises that &lt;q&gt;it is the responsibility of the applicati
 &lt;h3 id=&quot;XPG4&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#XPG4&quot;&gt;#&lt;/a&gt; &lt;span class=&quot;smallcaps&quot;&gt;xpg4&lt;/span&gt;&lt;/h3&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 &lt;q&gt;is updated to indicate what will be returned if &lt;i&gt;size&lt;/i&gt; is 0&lt;/q&gt;: &lt;code&gt;NULL&lt;/code&gt; or a unique &lt;code&gt;free&lt;/code&gt;able.
-&lt;cite class=&quot;path&quot;&gt;&lt;a href=&quot;//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406&quot;&gt;&lt;/a&gt; p. 378 (406) &amp; 468 (495) &lt;/cite&gt;
+&lt;cite class=&quot;path&quot;&gt;&lt;a href=&quot;//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406&quot;&gt;p. 378 (406) &amp; 468 (495)&lt;/a&gt;&lt;/cite&gt;
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
 This is naught but a mild editorialisation of &lt;a href=&quot;//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155&quot;&gt;C89 wording&lt;/a&gt;,
