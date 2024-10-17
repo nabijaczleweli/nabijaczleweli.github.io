@@ -325,7 +325,7 @@ but correctly recognises that <q>it is the responsibility of the application dev
 HEADING_S(3, XPG4, class="continued", Tn(xpg4))
 <p class="continuation">
 <q>is updated to indicate what will be returned if <i>size</i> is 0</q>: <code>NULL</code> or a unique <code>free</code>able.
-<cite class="path"><a href="//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406"></a> p. 378 (406) & 468 (495)	</cite>
+<cite class="path"><a href="//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406">p. 378 (406) & 468 (495)</a></cite>
 </p>
 
 <p class="indented">
