@@ -1,0 +1,456 @@
+<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@nabijaczleweli.xyz
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+ <!-- RSS_PUB_DATE: "Thu, 17 Oct 2024 03:42:06 +0200" -->
+<!DOCTYPE html> 
+ <html lang="en-GB"> 
+ <head> 
+ <meta charset="utf-8"> 
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+ <meta name="viewport" content="width=device-width,initial-scale=1"> 
+ <meta name="author" content="nabijaczleweli"> 
+ <meta name="description" content="017. malloc(0) & realloc(…，0) ≠ 0"> 
+ <title>017. malloc(0) & realloc(…，0) ≠ 0 — blognꞌt — nabijaczleweli</title> 
+ 
+ <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
+ <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
+ <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
+ <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png"> 
+ <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png"> 
+ <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png"> 
+ <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png"> 
+ <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png"> 
+ <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96"> 
+ <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16"> 
+ <link rel="manifest" href="/assets/favicons/manifest.json"> 
+ <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5"> 
+ <link rel="shortcut icon" href="/assets/favicons/favicon.ico"> 
+ <link rel="alternate" href="/content/feed.xml" type="application/rss+xml"> 
+ <meta name="apple-mobile-web-app-title" content="nabijaczleweli"> 
+ <meta name="application-name" content="nabijaczleweli"> 
+ <meta name="msapplication-TileColor" content="#da532c"> 
+ <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png"> 
+ <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml"> 
+ <meta name="color-scheme" content="dark light"> 
+ <script> 
+ (function() { 
+ let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
+ if(m && parseInt(m[1]) < 96) 
+ document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
+ Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
+ }); 
+ })(); 
+ </script> 
+ <link href="/content/assets/heading.css" rel="stylesheet" /> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
+ <link href="/content/assets/contents.css" rel="stylesheet" /> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
+ 
+ <script type="text/javascript" src="/content/assets/syllable.js"></script> 
+ <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
+ <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ </head> 
+ <body>
+<style>
+.continued {
+ margin-bottom: 0;
+}
+.continuing {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+.continuation {
+ margin-top: 0;
+}
+code, samp {
+ font-family: "Droid Sans Mono", monospace;
+}
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: "Merriweather", serif;
+}
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
+a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
+ color: inherit;
+ text-decoration: none;
+}
+.indented {
+ text-indent: 1em;
+}
+
+del {
+ text-decoration: none;
+ opacity: 50%;
+}
+.nowrap {
+ white-space: nowrap;
+}
+cite {
+ font-style: inherit;
+}
+cite.path {
+ font-size: 0.6em;
+ line-height: 0.6em;
+ font-style: italic;
+}
+details#contents > ol a {
+ display: initial !important;
+}
+</style>
+<span class="roboto writing"> 
+ <p></p> 
+ <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>017. malloc(0) & realloc(…, 0) ≠ 0</samp> <a class="go-back-link right" href=".">↩</a></h2> 
+ <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span></h4> 
+ <!--BLOGN_T_TOC_PLACEHOLDER-->
+<div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
+<ol>
+<li><a href='#v6'>UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite></a></li>
+<li><a href='#v7'>UNIX™ Time-Sharing System: UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">Seventh Edition</a></cite></a></li>
+<li><a href='#BSD'><cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">The BSD</a></cite></a></li>
+<ol>
+<li><a href='#42BSD'>4.2<!---->BSD</a></li>
+<li><a href='#43BSD'>4.3<!---->BSD</a></li>
+<li><a href='#44BSD'>4.4<!---->BSD</a></li>
+</ol>
+<li><a href='#SysIII'>UNIX User'<!--'-->s Manual, <cite><a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798">Release 3.0</a></cite></a></li>
+<li><a href='#SysVr123'>UNIX∗ System User'<!--'-->s Manual, <cite><a href="//bitsavers.org/pdf/att/unix/System_V_Release_1/301-905_UNIX_System_V_Release_1_Users_Manual_Jan83.pdf">System V</a></cite><br /> UNIX™ <b>System V</b>—<a href="http://bitsavers.org/pdf/att/unix/System_V_Release_2/307-113_UNIX_System_V_Release_2.0_Programmer_Reference_Manual_DEC_Processors_Apr1984.pdf">Release 2.0</a> <b>Programmer Reference Manual</b><br /> <b>UNIX® System V</b> Programmer'<!--'-->s Reference Manual <del>[<a href="http://bitsavers.org/pdf/att/unix/System_V_Release_3/308-139_UNIX_System_V_Release_3_Programmers_Guide_1987.pdf">SysVr3</a>]</del></a></li>
+<li><a href='#SysVr4'>UNIX® System V <a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf">Release 4</a> Programmer'<!--'-->s Reference Manual</a></li>
+<li><a href='#sunos3'>SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">4.1.3</a></a></li>
+<li><a href='#sunos4'>SunOS <a href="//vetusware.com/download/SunOS%20Source%20Code%204.1.3/?id=13475">4.1.3</a></a></li>
+<li><a href='#solaris'>Solaris <a href="//vetusware.com/download/Solaris%20Source%20Code%205.8/?id=11547">8</a></a></li>
+<li><a href='#SVID'>SVID</a></li>
+<ol>
+<li><a href='#SVID2'>System V Interface Definition, <a href="//bitsavers.org/pdf/att/unix/SVID/System_V_Interface_Definition_Issue_2_Volume_1_1986.pdf">Issue 2</a></a></li>
+<li><a href='#SVID3'>System V Interface Definition, <a href="//archive.org/details/systemvinterface0001unse">Third Edition</a></a></li>
+</ol>
+<li><a href='#XPG'><a href="//bitsavers.computerhistory.org/pdf/xOpen/X_Open_Portability_Guide_1985/xpg_2_xopen_system_v_specification_2.pdf">X/Open Portability Guide, Part II: The X/Open System V Specification</a></a></li>
+<ol>
+<li><a href='#XPG4'>XPG4</a></li>
+</ol>
+<li><a href='#conclusions'>Conclusions</a></li>
+<ol>
+<li><a href='#conclusions'>Verdict <del style="font-weight: normal;"><small><i>(this section is not normative)</i></small></del></a></li>
+</ol>
+</ol>
+</details></div>
+<p class="indented continued">
+<a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#page=384">C</a> and <a href="//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html">POSIX</a>
+say that
+</p>
+<blockquote class="continuing">
+If the size of the space requested is 0, the behavior is implementation-defined:
+either a null pointer shall be returned, or the behavior shall be as if the size were some non-zero value <del>[…]</del>.
+</blockquote>
+<p class="continuation">
+one <a href="//github.com/shadow-maint/shadow/pull/1095">has to wonder</a> if this is real.
+</p>
+<h2 id="v6" class="continued"><a class="hash-link" href="#v6">#</a> UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">Sixth Edition</a></cite></h2>
+<p class="continuation">
+doesn'<!--'-->t have <code>malloc</code>.
+</p>
+<h2 id="v7" class="continued"><a class="hash-link" href="#v7">#</a> UNIX™ Time-Sharing System: UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">Seventh Edition</a></cite></h2>
+<p class="continuing">
+has a malloc(3) with <code>malloc</code> and <code>realloc</code>:
+</p>
+<blockquote class="continuing">
+<i>Malloc</i>, <i>realloc</i> and <i>calloc</i> return a null pointer (0) if there is no available memory or if the arena has been detectably corrupted <del>[…]</del>.
+</blockquote>
+<p class="continuing">
+where <code>malloc</code> allocates <code>(nbytes+WORD+WORD-1)/WORD</code> (≥1) words, where one is eaten for the allocation size,
+and <code>realloc(b, nbytes)</code> is <code>free(b); malloc(nbytes); memcpy()</code> (in so many words),
+with <code>memcpy()</code> skipped if the just-freed block was <code>malloc</code>ed.
+<cite class="path"><samp>usr/man/man3/malloc.3</samp>, <samp>usr/src/libc/gen/malloc.c</samp></cite>
+</p>
+<h2 id="BSD" class="continued"><a class="hash-link" href="#BSD">#</a> <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">The <span class="smallcaps">bsd</span></a></cite></h2>
+<p class="indented continuation">
+<cite>
+ <a href="//www.mckusick.com/csrg/">The <span class="smallcaps">csrg</span> Archives</a>,
+ <a href="//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 1</span>: Berkeley Systems 1978-1986</a>,
+ <a href="//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 2</span>: Berkeley Systems 1987-1993</a>,
+ and&nbsp;<a href="//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 3</span>: Final Berkeley Releases</a>
+</cite>
+say that everything up to 4.1<span class="smallcaps">bsd</span> uses the <span class="smallcaps">v7</span> allocator.
+<cite class="path"><samp>3bsd/usr/src/libc/gen/malloc.c</samp>, <samp>4.0/usr/src/libc/gen/malloc.c.c</samp>, <samp>4.1/usr/src/libc/gen/malloc.c</samp></cite>
+<cite class="path"><samp>3bsd/usr/man/man3/malloc.3</samp>, <samp>4.0/usr/man/man3/malloc.3</samp>, <samp>4.1/usr/man/man3/malloc.3</samp></cite>
+</p>
+<h3 id="42BSD" class="continued"><a class="hash-link" href="#42BSD">#</a> 4.2<span class="smallcaps">bsd</span></h3>
+<p class="continuing">
+has a new allocator:
+<cite class="path"><samp>4.2/usr/src/lib/libc/gen/malloc.c</samp>, <samp>4.2/usr/man/man3/malloc.3</samp></cite>
+</p>
+<blockquote class="continuing"><pre class="continuing"><!--
+    "-->/*<!--"-->
+<!--"--> * nextf[i] is the pointer to the next free block of size 2^(i+3).  The<!--"-->
+<!--"--> * smallest allocatable block is 8 bytes.  The overhead information<!--"-->
+<!--"--> * precedes the data area returned to the user.<!--"-->
+<!--"--> */<!--"-->
+static union overhead *nextf[30];<!--
+--></pre></blockquote>
+<p class="continuation">
+but otherwise implements the same methodology by adding <code>sizeof (union overhead)</code> to the allocation size before rounding up and bucketing.
+<code>realloc(cp, nbytes)</code> similarly returns <code>cp</code> if <code>nbytes</code> ≤ the old allocation size, else <code>malloc(nbytes); memcpy()</code>.
+</p>
+<h3 id="43BSD" class="continued"><a class="hash-link" href="#43BSD">#</a> 4.3<span class="smallcaps">bsd</span></h3>
+<p class="continuing">
+goes about calculating it differently, but small allocations remain equivalent to allocating 8 bytes.
+<cite class="path"><samp>4.3/usr/src/lib/libc/gen/malloc.c</samp>, <samp>4.3/usr/man/man3/malloc.3</samp></cite>
+</p>
+<h3 id="44BSD" class="continued"><a class="hash-link" href="#44BSD">#</a> 4.4<span class="smallcaps">bsd</span></h3>
+<p class="continuing">
+updates the malloc(3) <cite>RETURN VALUES</cite> wording to
+</p>
+<blockquote class="continuing">
+The <code><b>malloc</b></code>() function returns a pointer to the allocated space if successful; otherwise a null pointer is returned.
+</blockquote>
+<p class="continuing">
+and cites conformance with C89.
+<cite class="path"><samp>4.3tahoe/usr/src/lib/libc/gen/malloc.c</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.c</samp></cite>
+<cite class="path"><samp>4.3tahoe/usr/src/man/man3/malloc.3</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3</samp></cite>
+</p>
+<h2 id="SysIII" class="continued"><a class="hash-link" href="#SysIII">#</a> <span class="smallcaps">Unix</span> User'<!--'-->s Manual, <cite><a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798">Release 3.0</a></cite></h2>
+<p class="continuing">
+uses the <span class="smallcaps">v7</span> allocator and malloc(3C).
+<cite class="path">p. 524, <a href="//vetusware.com/download/UNIX%20System%20III%20Source%20Code%20SYSIII/?id=11576"><samp>src/lib/libc/vax/gen/malloc.c</samp></a></cite>
+</p>
+<h2 id="SysVr123" ><a class="hash-link" href="#SysVr123">#</a> <span class="smallcaps">Unix</span>∗ System User'<!--'-->s Manual, <cite><a href="//bitsavers.org/pdf/att/unix/System_V_Release_1/301-905_UNIX_System_V_Release_1_Users_Manual_Jan83.pdf">System V</a></cite><br /> UNIX™ <b>System V</b>—<a href="http://bitsavers.org/pdf/att/unix/System_V_Release_2/307-113_UNIX_System_V_Release_2.0_Programmer_Reference_Manual_DEC_Processors_Apr1984.pdf">Release 2.0</a> <b>Programmer Reference Manual</b><br /> <b>UNIX® System V</b> Programmer'<!--'-->s Reference Manual <del>[<a href="http://bitsavers.org/pdf/att/unix/System_V_Release_3/308-139_UNIX_System_V_Release_3_Programmers_Guide_1987.pdf">SysVr3</a>]</del></h2>
+<p class="indented">
+None of these make any meaningful changes to the allocator (in the domain of small allocations) or to malloc(3C).
+<cite class="path">p. 585, <a href="//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570"><samp>sysv-pdp11_usr-src/lib/libc/port/gen/malloc.c</samp></a></cite>
+<cite class="path">p. <code>MALLOC(3C) 1</code>, <a href="//vetusware.com/download/UNIX%20SYSVr2%20Source%20Code%20r2/?id=11571"><samp>sysv-pdp11_usr-src/lib/libc/port/gen/malloc.c</samp></a></cite>
+<cite class="path">p. 310 (331), <a href="//vetusware.com/download/UNIX%20SYSVr3%20Source%20Code%20r3/?id=11572"><samp>301/usr/src/lib/libc/port/gen/malloc.c</samp>, <samp>31/usr/src/lib/libc/port/gen/malloc.c</samp></a></cite>
+</p>
+<p class="indented continued">
+SysVr2 and SysVr3 both additionally ship malloc(3X) (the "<em>fast</em> main memory allocator"), however, as <code>-lmalloc</code>.
+Within the area this document surveys, the manual is functionally equivalent, sans the <cite>WARNINGS</cite> including
+</p>
+<blockquote class="continuing">
+Undocumented features of <i>malloc</i>(3C) have not been duplicated.
+</blockquote>
+<p class="continuation">
+and, indeed, this implementation'<!--'-->s <code>malloc(nbytes)</code> says <code>if (nbytes == 0) return NULL;</code>
+and <code>realloc(ptr, size)</code> says <code>if(size == 0) return NULL;</code>.
+</p>
+<p class="indented continued">
+If one recalls that the <cite>DIAGNOSTICS</cite> still say that
+</p>
+<blockquote class="continuing">
+<i>malloc</i>, <i>realloc</i> and <i>calloc</i> return a NULL pointer if there is not enough available memory.
+</blockquote>
+<p class="continuing">
+and mention no other case,
+and the <cite>DESCRIPTION</cite>
+<blockquote class="continuing">
+The argument to <i>free</i> is a pointer to a block previously allocated by malloc
+</blockquote>
+<p class="continuing">
+when <code>free(0)</code> doesn'<!--'-->t work (dereferences negative pointer, so segfaults, probably?),
+then it's difficult to conclude that this isn't an "undocumented feature", but "just a bug in malloc(3X) actually".
+<cite class="path">p. <code>MALLOC(3X) 1</code>, <samp>src/lib/libmalloc/malloc.c</samp></cite>
+<cite class="path">p. 469 (490), <samp>301/usr/src/lib/libmalloc/malloc.c</samp></cite>
+</p>
+<p class="indented continuing">
+This is also the birth of the <cite>DIAGNOSTICS</cite>'<!--'-->
+</p>
+<blockquote class="continuation">
+When <i>realloc</i> returns NULL, the block pointed to by <i>ptr</i> is left intact.
+</blockquote>
+<h2 id="SysVr4" class="continued"><a class="hash-link" href="#SysVr4">#</a> UNIX® System V <a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf">Release 4</a> Programmer'<!--'-->s Reference Manual</h2>
+<p class="indented continuing">
+has a new implementation, in which <code>malloc</code> first tries to re-use the last-freed block,
+then allocations smaller than 5 <code>int</code>s use a special small-block queue, wherein
+</p>
+<blockquote class="continuing"><pre class="continuing"><!--
+    "-->	/* want to return a unique pointer on malloc(0) */<!--"-->
+<!--"-->	if(size == 0)<!--"-->
+<!--"-->		size = WORDSIZE;<!--"
+--></pre></blockquote>
+<p class="indented continuing">
+(i.e. <code>sizeof(int)</code>).
+This spills to <code>realloc</code> where
+</p>
+<blockquote class="continuing"><pre class="continuing"><!--
+    "-->	/* special cases involving small blocks */<!--"-->
+<!--"-->	if(size &lt; MINSIZE || SIZE(tp) &lt; MINSIZE)<!--"-->
+<!--"-->		goto call_malloc;<!--"
+--></pre></blockquote>
+<p class="indented continuing">
+where the old algorithm is reimplemented as <code>malloc(); memcpy(); free()</code>.
+<cite class="path">p. 507, <a href="//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573"><samp>ATT-SYSVr4/lib/libc/port/gen/malloc.c</samp>, <samp>ATT-SYSVr4/lib/libc/port/gen/mallint.h</samp></a></cite>
+</p>
+<p class="indented">
+malloc(3X) is unchanged but <code>-lmalloc</code> <code>free</code> accepts <code>NULL</code>s now.
+And <code>realloc(ptr, 0)</code> frees <code>ptr</code>.
+As it should do, since <code>NULL</code> is this implementation'<!--'-->s spelling for a zero-sized allocation.
+Except that it now no longer leaves <code>ptr</code> unchanged when returning <code>NULL</code>.
+<cite class="path">p. 682, <samp>ATT-SYSVr4/lib/libmalloc/malloc.c</samp></cite>
+</p>
+<h2 id="sunos3" class="continued"><a class="hash-link" href="#sunos3">#</a> SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">4.1.3</a></h2>
+<p class="continuation">
+uses the SunOS allocator which <code>malloc</code>s and <code>realloc</code>s at least <code>sizeof(uint)</code> (+ once again for the accounting block).
+This allocator is dated 1986, so there's no reason to suspect (and no way to verify) there was another one that interceded 'twixt the <span class="smallcaps">v7</span> one.
+<cite class="path"><samp>sunos_3.4_src/lib/libc/gen/malloc.h</samp>, <samp>sunos_3.4_src/lib/libc/gen/mallint.h</samp></cite>
+</p>
+<h2 id="sunos4" class="continued"><a class="hash-link" href="#sunos4">#</a> SunOS <a href="//vetusware.com/download/SunOS%20Source%20Code%204.1.3/?id=13475">4.1.3</a></h2>
+<p class="continuing">
+adjusts the minima to <code>sizeof(double)</code> on <span class="smallcaps">sparc</span> or <code>sizeof(uint)</code> on m68k.
+<cite class="path"><samp>SunOS 4.1.3 sunsrc.tar</samp>, <samp>SunOS 4.1.3 sunsrc/413/lib/libc/gen/common/malloc.c</samp>, <samp>SunOS 4.1.3 sunsrc/413/lib/libc/gen/common/mallint.h</samp></cite>
+</p>
+<p class="indented continuation">
+It also ships libxpg which includes SysVr2-style <code>-lmalloc</code>
+<cite class="path"><samp>SunOS 4.1.3 sunsrc.tar</samp>, <samp>SunOS 4.1.3 sunsrc/413/xpglib/malloc.c</samp></cite>
+</p>
+<h2 id="solaris" class="continued"><a class="hash-link" href="#solaris">#</a> Solaris <a href="//vetusware.com/download/Solaris%20Source%20Code%205.8/?id=11547">8</a></h2>
+<p class="continuation">
+ships both implementations functionally unchanged since SysVr4.
+There'<!--'-->s no
+<a href="//vetusware.com/download/Solaris%202.5%20Source%20Code%202.5/?id=11544">reason</a>
+<a href="//vetusware.com/download/Solaris%20Source%20Code%202.6/?id=11545">to</a>
+<a href="//vetusware.com/download/Solaris%20Source%20Code%202.7/?id=11546">suspect</a>
+this has ever wavered in SysV SunOSes prior (or for some time after 2000).
+</p>
+<h2 id="SVID" class="continued"><a class="hash-link" href="#SVID">#</a> <span class="smallcaps">svid</span></h2>
+<p class="continuation">
+has no extant copy.
+</p>
+<h3 id="SVID2" class="continued"><a class="hash-link" href="#SVID2">#</a> System V Interface Definition, <a href="//bitsavers.org/pdf/att/unix/SVID/System_V_Interface_Definition_Issue_2_Volume_1_1986.pdf">Issue 2</a></h3>
+<p class="continuing">
+includes SysVr2 malloc(3X) mostly-verbatim as malloc(BA_OS) in Volume 1.
+(The API is adapted minimally to match SysVr3'<!--'-->s.)
+The <cite>RETURN VALUE</cite> is extended to say for the first time
+</p>
+<blockquote class="continuing">
+The functions <tt>malloc</tt>, <tt>realloc</tt>, and <tt>calloc</tt> return a <tt>NULL</tt> pointer if <tt>nbytes</tt> is <tt>0</tt>
+or if there is not enough available memory.
+</blockquote>
+<p class="continuing">
+Illuminatingly, <cite>RETURN VALUE</cite> proclaims that
+</p>
+<blockquote class="continuing">
+In System V Release 2.0, the developer can control whether the contents of the freed space are destroyed or left undisturbed <del>[…]</del>.
+In System V Release 1.0, the contents are left undisturbed.
+</blockquote>
+<p class="continuing">
+manufacturing a reality in which the <em>undocumented behaviour of the <code>-lmalloc</code> opt-in extension</em> is actually the universal baseline.
+<cite class="path">p. 103 (114)</cite>
+</p>
+<h3 id="SVID3" class="continued"><a class="hash-link" href="#SVID3">#</a> System V Interface Definition, <a href="//archive.org/details/systemvinterface0001unse">Third Edition</a></h3>
+<blockquote class="continuing">
+The functions <tt>malloc</tt>(), <tt>realloc</tt>(), and <tt>calloc</tt>() return a null pointer if there is not enough available memory.
+If the size of the space requested is zero, the behavior is implementation defined; the value returned will be either a null pointer or unique pointer.
+When <tt>realloc</tt>() returns <tt>NULL</tt>, the block pointed to by <i>ptr</i> is left intact.
+</blockquote>
+<p class="continuing">
+This is supposed to match SysVr4, and neither of SysVr4'<!--'-->s mallocs document which behaviour they pick.
+It also mandates SysVr2 (SysVr3)'s <code>-lmalloc</code>'s leaking behaviour, which SysVr4 has fixed, making it non-compliant.
+<cite class="path">p. 6-76</cite>
+</p>
+<h2 id="XPG" class="continued"><a class="hash-link" href="#XPG">#</a> <a href="//bitsavers.computerhistory.org/pdf/xOpen/X_Open_Portability_Guide_1985/xpg_2_xopen_system_v_specification_2.pdf">X/Open Portability Guide, Part II: The X/Open System V Specification</a></h2>
+<p class="continuation">
+includes SysVr2'<!--'-->s malloc(3X) as malloc(3X) (it says it's via SVID malloc(OS) but it <em>doesn't</em> define <code>malloc(0) = NULL</code>).
+It notes that an <q>older (smaller) form may also exist</q>,
+but correctly recognises that <q>it is the responsibility of the application developers to ensure that the appropriate version is linked into their applications</q>.
+<cite class="path">p. 103</cite>
+</p>
+<h3 id="XPG4" class="continued"><a class="hash-link" href="#XPG4">#</a> <span class="smallcaps">xpg4</span></h3>
+<p class="continuation">
+<q>is updated to indicate what will be returned if <i>size</i> is 0</q>: <code>NULL</code> or a unique <code>free</code>able.
+<cite class="path"><a href="//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406"></a> p. 378 (406) & 468 (495) </cite>
+</p>
+<p class="indented">
+This is naught but a mild editorialisation of <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155">C89 wording</a>,
+and later <ss><span class="smallcaps">xpg</span>s</ss><ss><span class="smallcaps">sus</span>es</ss><span class="smallcaps">posix</span>es use later Cs.
+</p>
+<h2 id="conclusions" class="continued"><a class="hash-link" href="#conclusions">#</a> Conclusions</h2>
+<p class="continuing">
+Within the area this document surveys (<span class="smallcaps">at&t unix</span>, the <span class="smallcaps">bsd</span>, SunOS and '<!--'-->til-Y2K Solaris, pre-<span class="smallcaps">xpg</span> <span class="smallcaps">svid</span>, <span class="smallcaps">xpg</span> and its descendants):
+</p>
+<ol>
+ <li>every <code>realloc(…, 0)</code> ever behaved congruently with its <code>malloc</code></li>
+ <li>every <em>default</em> <code>malloc(0)</code> ever behaved as-if <code>malloc(n); n > 0</code></li>
+ <li>this is documented. just not, like, as explicitly as you'<!--'-->d write it today,
+     but there hadn't been a confounding implementation that did the opposite, so it never crossed anyone's mind probably</li>
+ <li>this was clearly understood as relied-on behaviour, as it'<!--'-->s retained across multiple re-implementations</li>
+ <li>the implementation that breaks this — SysVr2 <code>-lmalloc</code> — also understands this since
+     (a) it has to implement the opposite behaviour explicitly,
+     (b) includes a nod to its removal in malloc(3X)
+         (the other behaviour this could be referring to is retained — <code>realloc</code> can <q>deal with twits who reallocate free blocks</q>)</li>
+ <li>this difference is not documented</li>
+ <li>the author needs to opt into this implementation explicitly (and is — ever so tacitly — warned about this) so this is basically fine, if sub-optimal</li>
+ <li>AT&T issues the <span class="smallcaps">svid</span> with the malloc(3X) extension presented as the universal baseline interface,
+     with its undocumented features, incl. <code>malloc(0) = NULL</code>, expressly defined as standard</li>
+ <li>this contrapuncts the implied documentation in every other implementation, which is now awfully weak</li>
+ <li>the <span class="smallcaps">xpg</span> manages to miss this,
+     but it'<!--'-->s now impossible to reconcile the behaviour mandated by the <span class="smallcaps">svid</span> that <em>no-one was actually getting</em>
+     with the unstated behaviour experienced universally, except by saying "yeah fuckin do whatever" a decade later</li>
+</ol>
+<h3 id="conclusions" class="continued"><a class="hash-link" href="#conclusions">#</a> Verdict <del style="font-weight: normal;"><small><i>(this section is not normative)</i></small></del></h3>
+<p class="continuing">
+not real.
+</p>
+<p> 
+ <br /> 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/017-malloc0.html.pp">Mail</a>, 
+ <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
+ </p> 
+ </span>
+<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
+ <hr /> 
+ <span id="word_count">0</span> words, 
+ <span id="syllable_count">0</span> syllables, 
+ <span id="character_count">0</span> characters. 
+ </span>
+<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
+ Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
+ code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
+ <hr /> 
+ This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, 
+ and contribute and/or yell at me there. 
+ <hr /> 
+ Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
+ <hr /> 
+ Compiled with Clang 19'<!--'-->s C preprocessor on 17.10.2024 01:46:46 UTC from 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/017-malloc0.html.pp">src/blogn_t/017-malloc0.html.pp</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1352244">See job on builds.sr.ht</a>. 
+ <hr /> 
+ <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
+ </body> 
+ </html>
