@@ -60,7 +60,7 @@ details#contents > ol a {
 BLOGN_T_HEADING(017. malloc(0) & realloc(…, 0) ≠ 0)
 
 <p class="indented continued">
-<a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#page=384">C</a> and <a href="//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html">POSIX</a>
+<a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsection.7.24.4">C</a> and <a href="//pubs.opengroup.org/onlinepubs/9799919799/functions/malloc.html">POSIX</a>
 say that
 </p>
 <blockquote class="continuing">
