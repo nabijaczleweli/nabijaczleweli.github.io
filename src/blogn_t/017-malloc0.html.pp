@@ -330,7 +330,7 @@ HEADING_S(3, XPG4, class="continued", Tn(xpg4))
 
 <p class="indented">
 This is naught but a mild editorialisation of <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155">C89 wording</a>,
-and later <ss>Tn(xpg)s</ss><ss>Tn(sus)es</ss>Tn(posix)es use later Cs.
+and later <s>Tn(xpg)s</s><s>Tn(sus)es</s>Tn(posix)es use later Cs.
 </p>
 
 
