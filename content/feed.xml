@@ -26,7 +26,7 @@
 &lt;span class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;017. malloc(0) &amp; realloc(…, 0) ≠ 0&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -58,6 +58,7 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href='#conclusions'&gt;Verdict &lt;del style=&quot;font-weight: normal;&quot;&gt;&lt;small&gt;&lt;i&gt;(this section is not normative)&lt;/i&gt;&lt;/small&gt;&lt;/del&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;li&gt;&lt;a href='#appendixA'&gt;Appendix — &lt;a href=&quot;//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170&quot;&gt;C89&lt;/a&gt; &lt;code&gt;realloc(…, 0)&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/details&gt;&lt;/div&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
@@ -294,7 +295,7 @@ but correctly recognises that &lt;q&gt;it is the responsibility of the applicati
 &lt;cite class=&quot;path&quot;&gt;&lt;a href=&quot;//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406&quot;&gt;p. 378 (406) &amp; 468 (495)&lt;/a&gt;&lt;/cite&gt;
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
-This is naught but a mild editorialisation of &lt;a href=&quot;//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155&quot;&gt;C89 wording&lt;/a&gt;,
+This is naught but a mild editorialisation of &lt;a href=&quot;//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170&quot;&gt;C89 wording&lt;/a&gt;,
 and later &lt;s&gt;&lt;span class=&quot;smallcaps&quot;&gt;xpg&lt;/span&gt;s&lt;/s&gt;&lt;s&gt;&lt;span class=&quot;smallcaps&quot;&gt;sus&lt;/span&gt;es&lt;/s&gt;&lt;span class=&quot;smallcaps&quot;&gt;posix&lt;/span&gt;es use later Cs.
 &lt;/p&gt;
 &lt;h2 id=&quot;conclusions&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusions&quot;&gt;#&lt;/a&gt; Conclusions&lt;/h2&gt;
@@ -324,6 +325,24 @@ Within the area this document surveys (&lt;span class=&quot;smallcaps&quot;&gt;a
 &lt;p class=&quot;continuing&quot;&gt;
 not real.
 &lt;/p&gt;
+&lt;h2 id=&quot;appendixA&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#appendixA&quot;&gt;#&lt;/a&gt; Appendix — &lt;a href=&quot;//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170&quot;&gt;C89&lt;/a&gt; &lt;code&gt;realloc(…, 0)&lt;/code&gt;&lt;/h2&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+If &lt;del&gt;[…]&lt;/del&gt; the second argument is 0, then the call frees the memory pointed to by the first argument&lt;del&gt;[…]&lt;/del&gt;;
+this specification is consistent with the policy of not allowing zero-size objects.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+but is &lt;em&gt;not&lt;/em&gt; consistent with any extant implementation, obviously.
+&lt;cite class=&quot;path&quot;&gt;p. 156 (169)&lt;/cite&gt;
+&lt;cite class=&quot;path&quot;&gt;p. 102 (342)&lt;/cite&gt;
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+This made &lt;code&gt;realloc(…, 0)&lt;/code&gt; unusable
+(since this returns &lt;code&gt;NULL&lt;/code&gt; — an error —
+ you'&lt;!--'--&gt;re gonna free the pointer (double-free) or use it with its original size (use-after-free),
+ like with normal &lt;code&gt;realloc&lt;/code&gt;),
+and is potentially-inconsistent with &lt;code&gt;malloc(0) ≠ 0&lt;/code&gt;,
+so C23 &lt;a href=&quot;//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsection.7.24.4.8&quot;&gt;made it UB&lt;/a&gt;.
+&lt;/a&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 

@@ -138,7 +138,7 @@ details#contents > ol a {
 <span class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>017. malloc(0) & realloc(…, 0) ≠ 0</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span>; updated Thu, 17 Oct 2024 12:15:42 +0200</h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span>; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200</h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
@@ -170,6 +170,7 @@ details#contents > ol a {
 <ol>
 <li><a href='#conclusions'>Verdict <del style="font-weight: normal;"><small><i>(this section is not normative)</i></small></del></a></li>
 </ol>
+<li><a href='#appendixA'>Appendix — <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170">C89</a> <code>realloc(…, 0)</code></a></li>
 </ol>
 </details></div>
 <p class="indented continued">
@@ -406,7 +407,7 @@ but correctly recognises that <q>it is the responsibility of the application dev
 <cite class="path"><a href="//pubs.opengroup.org/onlinepubs/009656499/toc.pdf#page=406">p. 378 (406) & 468 (495)</a></cite>
 </p>
 <p class="indented">
-This is naught but a mild editorialisation of <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155">C89 wording</a>,
+This is naught but a mild editorialisation of <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170">C89 wording</a>,
 and later <s><span class="smallcaps">xpg</span>s</s><s><span class="smallcaps">sus</span>es</s><span class="smallcaps">posix</span>es use later Cs.
 </p>
 <h2 id="conclusions" class="continued"><a class="hash-link" href="#conclusions">#</a> Conclusions</h2>
@@ -436,6 +437,24 @@ Within the area this document surveys (<span class="smallcaps">at&t unix</span>,
 <p class="continuing">
 not real.
 </p>
+<h2 id="appendixA" class="continued"><a class="hash-link" href="#appendixA">#</a> Appendix — <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170">C89</a> <code>realloc(…, 0)</code></h2>
+<blockquote class="continuing">
+If <del>[…]</del> the second argument is 0, then the call frees the memory pointed to by the first argument<del>[…]</del>;
+this specification is consistent with the policy of not allowing zero-size objects.
+</blockquote>
+<p class="continuing">
+but is <em>not</em> consistent with any extant implementation, obviously.
+<cite class="path">p. 156 (169)</cite>
+<cite class="path">p. 102 (342)</cite>
+</p>
+<p class="indented continuation">
+This made <code>realloc(…, 0)</code> unusable
+(since this returns <code>NULL</code> — an error —
+ you'<!--'-->re gonna free the pointer (double-free) or use it with its original size (use-after-free),
+ like with normal <code>realloc</code>),
+and is potentially-inconsistent with <code>malloc(0) ≠ 0</code>,
+so C23 <a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsection.7.24.4.8">made it UB</a>.
+</a>
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
@@ -458,9 +477,9 @@ not real.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 17.10.2024 12:53:35 UTC from 
+ Compiled with Clang 19'<!--'-->s C preprocessor on 18.10.2024 16:55:50 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/017-malloc0.html.pp">src/blogn_t/017-malloc0.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1352500">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1353211">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
