@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Thu, 17 Oct 2024 03:42:06 +0200" -->
 #define POST_DATE      Thu, 17 Oct 2024 03:42:06 +0200
-#define POST_POST_DATE ; updated Thu, 17 Oct 2024 12:15:42 +0200
+#define POST_POST_DATE ; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200
 
 #define Tn(...)  <span class="smallcaps">__VA_ARGS__</span>
 #define CMT(...) <del>__VA_ARGS__</del>
@@ -329,7 +329,7 @@ HEADING_S(3, XPG4, class="continued", Tn(xpg4))
 </p>
 
 <p class="indented">
-This is naught but a mild editorialisation of <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=155">C89 wording</a>,
+This is naught but a mild editorialisation of <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170">C89 wording</a>,
 and later <s>Tn(xpg)s</s><s>Tn(sus)es</s>Tn(posix)es use later Cs.
 </p>
 
@@ -362,6 +362,26 @@ HEADING_S(3, conclusions, class="continued", Verdict <del style="font-weight: no
 <p class="continuing">
 not real.
 </p>
+
+
+HEADING_S(2, appendixA, class="continued", Appendix — <a href="//nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf#page=170">C89</a> <code>realloc(…, 0)</code>)
+<blockquote class="continuing">
+If ELISION the second argument is 0, then the call frees the memory pointed to by the first argument<!---->ELISION;
+this specification is consistent with the policy of not allowing zero-size objects.
+</blockquote>
+<p class="continuing">
+but is <em>not</em> consistent with any extant implementation, obviously.
+<cite class="path">p. 156 (169)</cite>
+<cite class="path">p. 102 (342)</cite>
+</p>
+<p class="indented continuation">
+This made <code>realloc(…, 0)</code> unusable
+(since this returns <code>NULL</code> — an error —
+ you'<!--'-->re gonna free the pointer (double-free) or use it with its original size (use-after-free),
+ like with normal <code>realloc</code>),
+and is potentially-inconsistent with <code>malloc(0) ≠ 0</code>,
+so C23 <a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsection.7.24.4.8">made it UB</a>.
+</a>
 
 
 BLOGN_T_FOOTER()
