@@ -213,7 +213,7 @@ When <i>realloc</i> returns NULL, the block pointed to by <i>ptr</i> is left int
 
 
 HEADING_S(2, SysVr4, class="continued", UNIX® System V <a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf">Release 4</a> Programmer'<!--'-->s Reference Manual)
-<p class="indented continuing">
+<p class="continuing">
 has a new implementation, in which <code>malloc</code> first tries to re-use the last-freed block,
 then allocations smaller than 5 <code>int</code>s use a special small-block queue, wherein
 </p>
