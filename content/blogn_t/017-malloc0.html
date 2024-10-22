@@ -154,7 +154,7 @@ details#contents > ol a {
 <li><a href='#SysIII'>UNIX User'<!--'-->s Manual, <cite><a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798">Release 3.0</a></cite></a></li>
 <li><a href='#SysVr123'>UNIX∗ System User'<!--'-->s Manual, <cite><a href="//bitsavers.org/pdf/att/unix/System_V_Release_1/301-905_UNIX_System_V_Release_1_Users_Manual_Jan83.pdf">System V</a></cite><br /> UNIX™ <b>System V</b>—<a href="http://bitsavers.org/pdf/att/unix/System_V_Release_2/307-113_UNIX_System_V_Release_2.0_Programmer_Reference_Manual_DEC_Processors_Apr1984.pdf">Release 2.0</a> <b>Programmer Reference Manual</b><br /> <b>UNIX® System V</b> Programmer'<!--'-->s Reference Manual <del>[<a href="http://bitsavers.org/pdf/att/unix/System_V_Release_3/308-139_UNIX_System_V_Release_3_Programmers_Guide_1987.pdf">SysVr3</a>]</del></a></li>
 <li><a href='#SysVr4'>UNIX® System V <a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf">Release 4</a> Programmer'<!--'-->s Reference Manual</a></li>
-<li><a href='#sunos3'>SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">4.1.3</a></a></li>
+<li><a href='#sunos3'>SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">3.4</a></a></li>
 <li><a href='#sunos4'>SunOS <a href="//vetusware.com/download/SunOS%20Source%20Code%204.1.3/?id=13475">4.1.3</a></a></li>
 <li><a href='#solaris'>Solaris <a href="//vetusware.com/download/Solaris%20Source%20Code%205.8/?id=11547">8</a></a></li>
 <li><a href='#SVID'>SVID</a></li>
@@ -305,7 +305,7 @@ This is also the birth of the <cite>DIAGNOSTICS</cite>'<!--'-->
 When <i>realloc</i> returns NULL, the block pointed to by <i>ptr</i> is left intact.
 </blockquote>
 <h2 id="SysVr4" class="continued"><a class="hash-link" href="#SysVr4">#</a> UNIX® System V <a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf">Release 4</a> Programmer'<!--'-->s Reference Manual</h2>
-<p class="indented continuing">
+<p class="continuing">
 has a new implementation, in which <code>malloc</code> first tries to re-use the last-freed block,
 then allocations smaller than 5 <code>int</code>s use a special small-block queue, wherein
 </p>
@@ -334,7 +334,7 @@ As it should do, since <code>NULL</code> is this implementation'<!--'-->s spelli
 Except that it now no longer leaves <code>ptr</code> unchanged when returning <code>NULL</code>.
 <cite class="path">p. 682, <samp>ATT-SYSVr4/lib/libmalloc/malloc.c</samp></cite>
 </p>
-<h2 id="sunos3" class="continued"><a class="hash-link" href="#sunos3">#</a> SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">4.1.3</a></h2>
+<h2 id="sunos3" class="continued"><a class="hash-link" href="#sunos3">#</a> SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">3.4</a></h2>
 <p class="continuation">
 uses the SunOS allocator which <code>malloc</code>s and <code>realloc</code>s at least <code>sizeof(uint)</code> (+ once again for the accounting block).
 This allocator is dated 1986, so there's no reason to suspect (and no way to verify) there was another one that interceded 'twixt the <span class="smallcaps">v7</span> one.
@@ -477,9 +477,9 @@ so C23 <a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsecti
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 18.10.2024 16:55:50 UTC from 
+ Compiled with Clang 19'<!--'-->s C preprocessor on 22.10.2024 00:06:42 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/017-malloc0.html.pp">src/blogn_t/017-malloc0.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1353211">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1354799">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

@@ -42,7 +42,7 @@
 &lt;li&gt;&lt;a href='#SysIII'&gt;UNIX User'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798&quot;&gt;Release 3.0&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#SysVr123'&gt;UNIX∗ System User'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_1/301-905_UNIX_System_V_Release_1_Users_Manual_Jan83.pdf&quot;&gt;System V&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt; UNIX™ &lt;b&gt;System V&lt;/b&gt;—&lt;a href=&quot;http://bitsavers.org/pdf/att/unix/System_V_Release_2/307-113_UNIX_System_V_Release_2.0_Programmer_Reference_Manual_DEC_Processors_Apr1984.pdf&quot;&gt;Release 2.0&lt;/a&gt; &lt;b&gt;Programmer Reference Manual&lt;/b&gt;&lt;br /&gt; &lt;b&gt;UNIX® System V&lt;/b&gt; Programmer'&lt;!--'--&gt;s Reference Manual &lt;del&gt;[&lt;a href=&quot;http://bitsavers.org/pdf/att/unix/System_V_Release_3/308-139_UNIX_System_V_Release_3_Programmers_Guide_1987.pdf&quot;&gt;SysVr3&lt;/a&gt;]&lt;/del&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#SysVr4'&gt;UNIX® System V &lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf&quot;&gt;Release 4&lt;/a&gt; Programmer'&lt;!--'--&gt;s Reference Manual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#sunos3'&gt;SunOS &lt;a href=&quot;//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z&quot;&gt;4.1.3&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#sunos3'&gt;SunOS &lt;a href=&quot;//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z&quot;&gt;3.4&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#sunos4'&gt;SunOS &lt;a href=&quot;//vetusware.com/download/SunOS%20Source%20Code%204.1.3/?id=13475&quot;&gt;4.1.3&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#solaris'&gt;Solaris &lt;a href=&quot;//vetusware.com/download/Solaris%20Source%20Code%205.8/?id=11547&quot;&gt;8&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#SVID'&gt;SVID&lt;/a&gt;&lt;/li&gt;
@@ -193,7 +193,7 @@ This is also the birth of the &lt;cite&gt;DIAGNOSTICS&lt;/cite&gt;'&lt;!--'--&gt
 When &lt;i&gt;realloc&lt;/i&gt; returns NULL, the block pointed to by &lt;i&gt;ptr&lt;/i&gt; is left intact.
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;SysVr4&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#SysVr4&quot;&gt;#&lt;/a&gt; UNIX® System V &lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf&quot;&gt;Release 4&lt;/a&gt; Programmer'&lt;!--'--&gt;s Reference Manual&lt;/h2&gt;
-&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;p class=&quot;continuing&quot;&gt;
 has a new implementation, in which &lt;code&gt;malloc&lt;/code&gt; first tries to re-use the last-freed block,
 then allocations smaller than 5 &lt;code&gt;int&lt;/code&gt;s use a special small-block queue, wherein
 &lt;/p&gt;
@@ -222,7 +222,7 @@ As it should do, since &lt;code&gt;NULL&lt;/code&gt; is this implementation'&lt;
 Except that it now no longer leaves &lt;code&gt;ptr&lt;/code&gt; unchanged when returning &lt;code&gt;NULL&lt;/code&gt;.
 &lt;cite class=&quot;path&quot;&gt;p. 682, &lt;samp&gt;ATT-SYSVr4/lib/libmalloc/malloc.c&lt;/samp&gt;&lt;/cite&gt;
 &lt;/p&gt;
-&lt;h2 id=&quot;sunos3&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#sunos3&quot;&gt;#&lt;/a&gt; SunOS &lt;a href=&quot;//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z&quot;&gt;4.1.3&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;sunos3&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#sunos3&quot;&gt;#&lt;/a&gt; SunOS &lt;a href=&quot;//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z&quot;&gt;3.4&lt;/a&gt;&lt;/h2&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 uses the SunOS allocator which &lt;code&gt;malloc&lt;/code&gt;s and &lt;code&gt;realloc&lt;/code&gt;s at least &lt;code&gt;sizeof(uint)&lt;/code&gt; (+ once again for the accounting block).
 This allocator is dated 1986, so there's no reason to suspect (and no way to verify) there was another one that interceded 'twixt the &lt;span class=&quot;smallcaps&quot;&gt;v7&lt;/span&gt; one.
