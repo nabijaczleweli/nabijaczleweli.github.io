@@ -245,7 +245,7 @@ Except that it now no longer leaves <code>ptr</code> unchanged when returning <c
 </p>
 
 
-HEADING_S(2, sunos3, class="continued", SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">4.1.3</a>)
+HEADING_S(2, sunos3, class="continued", SunOS <a href="//www.bitsavers.org/bits/Sun/sun3/sunos_3.4_src.7z">3.4</a>)
 <p class="continuation">
 uses the SunOS allocator which <code>malloc</code>s and <code>realloc</code>s at least <code>sizeof(uint)</code> (+ once again for the accounting block).
 This allocator is dated 1986, so there's no reason to suspect (and no way to verify) there was another one that interceded 'twixt the Tn(v7) one.
