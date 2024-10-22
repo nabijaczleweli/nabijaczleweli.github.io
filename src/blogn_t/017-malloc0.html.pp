@@ -193,7 +193,7 @@ If one recalls that the <cite>DIAGNOSTICS</cite> still say that
 </blockquote>
 <p class="continuing">
 and mention no other case,
-and the <cite>DESCRIPTION</cite>
+and the <cite>DESCRIPTION</cite> explicitly defining
 <blockquote class="continuing">
 The argument to <i>free</i> is a pointer to a block previously allocated by malloc
 </blockquote>
@@ -222,7 +222,7 @@ then allocations smaller than 5 <code>int</code>s use a special small-block queu
 <!--"-->	if(size == 0)<!--"-->
 <!--"-->		size = WORDSIZE;<!--"
 --></pre></blockquote>
-<p class="indented continuing">
+<p class="continuing">
 (i.e. <code>sizeof(int)</code>).
 This spills to <code>realloc</code> where
 </p>
@@ -231,7 +231,7 @@ This spills to <code>realloc</code> where
 <!--"-->	if(size &lt; MINSIZE || SIZE(tp) &lt; MINSIZE)<!--"-->
 <!--"-->		goto call_malloc;<!--"
 --></pre></blockquote>
-<p class="indented continuing">
+<p class="continuing">
 where the old algorithm is reimplemented as <code>malloc(); memcpy(); free()</code>.
 <cite class="path">p. 507, <a href="//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573"><samp>ATT-SYSVr4/lib/libc/port/gen/malloc.c</samp>, <samp>ATT-SYSVr4/lib/libc/port/gen/mallint.h</samp></a></cite>
 </p>
@@ -345,7 +345,7 @@ Within the area this document surveys (Tn(at&t unix), the Tn(bsd), SunOS and '<!
 	    but there hadn't been a confounding implementation that did the opposite, so it never crossed anyone's mind probably</li>
 	<li>this was clearly understood as relied-on behaviour, as it'<!--'-->s retained across multiple re-implementations</li>
 	<li>the implementation that breaks this — SysVr2 <code>-lmalloc</code> — also understands this since
-	    (a) it has to implement the opposite behaviour explicitly,
+	    (a) it has to implement the opposite behaviour explicitly, and
 	    (b) includes a nod to its removal in malloc(3X)
 	        (the other behaviour this could be referring to is retained — <code>realloc</code> can <q>deal<!----> with twits who reallocate free blocks</q>)</li>
 	<li>this difference is not documented</li>
