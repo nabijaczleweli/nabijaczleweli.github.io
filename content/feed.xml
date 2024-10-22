@@ -176,7 +176,7 @@ If one recalls that the &lt;cite&gt;DIAGNOSTICS&lt;/cite&gt; still say that
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 and mention no other case,
-and the &lt;cite&gt;DESCRIPTION&lt;/cite&gt;
+and the &lt;cite&gt;DESCRIPTION&lt;/cite&gt; explicitly defining
 &lt;blockquote class=&quot;continuing&quot;&gt;
 The argument to &lt;i&gt;free&lt;/i&gt; is a pointer to a block previously allocated by malloc
 &lt;/blockquote&gt;
@@ -202,7 +202,7 @@ then allocations smaller than 5 &lt;code&gt;int&lt;/code&gt;s use a special smal
 &lt;!--&quot;--&gt;	if(size == 0)&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;		size = WORDSIZE;&lt;!--&quot;
 --&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;p class=&quot;continuing&quot;&gt;
 (i.e. &lt;code&gt;sizeof(int)&lt;/code&gt;).
 This spills to &lt;code&gt;realloc&lt;/code&gt; where
 &lt;/p&gt;
@@ -211,7 +211,7 @@ This spills to &lt;code&gt;realloc&lt;/code&gt; where
 &lt;!--&quot;--&gt;	if(size &amp;lt; MINSIZE || SIZE(tp) &amp;lt; MINSIZE)&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;		goto call_malloc;&lt;!--&quot;
 --&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;p class=&quot;continuing&quot;&gt;
 where the old algorithm is reimplemented as &lt;code&gt;malloc(); memcpy(); free()&lt;/code&gt;.
 &lt;cite class=&quot;path&quot;&gt;p. 507, &lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573&quot;&gt;&lt;samp&gt;ATT-SYSVr4/lib/libc/port/gen/malloc.c&lt;/samp&gt;, &lt;samp&gt;ATT-SYSVr4/lib/libc/port/gen/mallint.h&lt;/samp&gt;&lt;/a&gt;&lt;/cite&gt;
 &lt;/p&gt;
@@ -309,7 +309,7 @@ Within the area this document surveys (&lt;span class=&quot;smallcaps&quot;&gt;a
      but there hadn't been a confounding implementation that did the opposite, so it never crossed anyone's mind probably&lt;/li&gt;
  &lt;li&gt;this was clearly understood as relied-on behaviour, as it'&lt;!--'--&gt;s retained across multiple re-implementations&lt;/li&gt;
  &lt;li&gt;the implementation that breaks this — SysVr2 &lt;code&gt;-lmalloc&lt;/code&gt; — also understands this since
-     (a) it has to implement the opposite behaviour explicitly,
+     (a) it has to implement the opposite behaviour explicitly, and
      (b) includes a nod to its removal in malloc(3X)
          (the other behaviour this could be referring to is retained — &lt;code&gt;realloc&lt;/code&gt; can &lt;q&gt;deal with twits who reallocate free blocks&lt;/q&gt;)&lt;/li&gt;
  &lt;li&gt;this difference is not documented&lt;/li&gt;
