@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Thu, 17 Oct 2024 03:42:06 +0200" -->
 #define POST_DATE      Thu, 17 Oct 2024 03:42:06 +0200
-#define POST_POST_DATE ; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200
+#define POST_POST_DATE ; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200, <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/2">Wed, 30 Oct 2024 18:53:30 +0100</a>
 
 #define Tn(...)  <span class="smallcaps">__VA_ARGS__</span>
 #define CMT(...) <del>__VA_ARGS__</del>
@@ -152,8 +152,18 @@ The <code><b>malloc</b></code>() function returns a pointer to the allocated spa
 </blockquote>
 <p class="continuing">
 and cites conformance with C89.
+</p>
+<p class="indented continued">
+realloc(3) is split off with text lifted directly from C89, including
+</p>
+<blockquote class="continuing">
+If <tt><i>size</i></tt> is zero and <tt><i>ptr</i></tt> is not a null pointer, the object it points to is freed.
+</blockquote>
+<p class="continuation">
+This is not true and the implementation doesn't change.
+Thus, the claimed conformance with C89 is also not true.
 <cite class="path"><samp>4.3tahoe/usr/src/lib/libc/gen/malloc.c</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.c</samp></cite>
-<cite class="path"><samp>4.3tahoe/usr/src/man/man3/malloc.3</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3</samp></cite>
+<cite class="path"><samp>4.3tahoe/usr/src/man/man3/malloc.3</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/realloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/realloc.3</samp></cite>
 </p>
 
 
@@ -374,13 +384,17 @@ but is <em>not</em> consistent with any extant implementation, obviously.
 <cite class="path">p. 156 (169)</cite>
 <cite class="path">p. 102 (342)</cite>
 </p>
-<p class="indented continuation">
+<p class="indented continuing">
 This made <code>realloc(…, 0)</code> unusable
 (since this returns <code>NULL</code> — an error —
  you'<!--'-->re gonna free the pointer (double-free) or use it with its original size (use-after-free),
  like with normal <code>realloc</code>),
 and is potentially-inconsistent with <code>malloc(0) ≠ 0</code>,
 so C23 <a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsection.7.24.4.8">made it UB</a>.
+</a>
+<p class="indented continuation">
+The rationale paper for C89 and the path <code>realloc()</code> takes through later standards is summarised
+<a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/3">here</a>.
 </a>
 
 
