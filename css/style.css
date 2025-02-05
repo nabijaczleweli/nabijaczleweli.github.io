@@ -128,6 +128,10 @@ body .container {
 }
 
 
-#liberapay:hover, #liberapay:focus {
-  background-color: #3F3407;
+.btn--black {
+  --highlight: #444;
+}
+.btn--black:hover, .btn--black:focus {
+  background-color: var(--highlight);
+  border-color: var(--highlight);
 }
