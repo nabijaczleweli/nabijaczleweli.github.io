@@ -138,7 +138,7 @@ details#contents > ol a {
 <span class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>017. malloc(0) & realloc(…, 0) ≠ 0</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span>; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200</h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Thu, 17 Oct 2024 03:42:06 +0200</span>; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200, <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/2">Wed, 30 Oct 2024 18:53:30 +0100</a></h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
@@ -254,8 +254,18 @@ The <code><b>malloc</b></code>() function returns a pointer to the allocated spa
 </blockquote>
 <p class="continuing">
 and cites conformance with C89.
+</p>
+<p class="indented continued">
+realloc(3) is split off with text lifted directly from C89, including
+</p>
+<blockquote class="continuing">
+If <tt><i>size</i></tt> is zero and <tt><i>ptr</i></tt> is not a null pointer, the object it points to is freed.
+</blockquote>
+<p class="continuation">
+This is not true and the implementation doesn't change.
+Thus, the claimed conformance with C89 is also not true.
 <cite class="path"><samp>4.3tahoe/usr/src/lib/libc/gen/malloc.c</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.c</samp></cite>
-<cite class="path"><samp>4.3tahoe/usr/src/man/man3/malloc.3</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3</samp></cite>
+<cite class="path"><samp>4.3tahoe/usr/src/man/man3/malloc.3</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/realloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/realloc.3</samp></cite>
 </p>
 <h2 id="SysIII" class="continued"><a class="hash-link" href="#SysIII">#</a> <span class="smallcaps">Unix</span> User'<!--'-->s Manual, <cite><a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798">Release 3.0</a></cite></h2>
 <p class="continuing">
@@ -447,13 +457,17 @@ but is <em>not</em> consistent with any extant implementation, obviously.
 <cite class="path">p. 156 (169)</cite>
 <cite class="path">p. 102 (342)</cite>
 </p>
-<p class="indented continuation">
+<p class="indented continuing">
 This made <code>realloc(…, 0)</code> unusable
 (since this returns <code>NULL</code> — an error —
  you'<!--'-->re gonna free the pointer (double-free) or use it with its original size (use-after-free),
  like with normal <code>realloc</code>),
 and is potentially-inconsistent with <code>malloc(0) ≠ 0</code>,
 so C23 <a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsection.7.24.4.8">made it UB</a>.
+</a>
+<p class="indented continuation">
+The rationale paper for C89 and the path <code>realloc()</code> takes through later standards is summarised
+<a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/3">here</a>.
 </a>
 <p> 
  <br /> 
@@ -477,9 +491,9 @@ so C23 <a href="//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsecti
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 22.10.2024 13:59:33 UTC from 
+ Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/017-malloc0.html.pp">src/blogn_t/017-malloc0.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1355004">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

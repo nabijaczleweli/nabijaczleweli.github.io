@@ -26,7 +26,7 @@
 &lt;span class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;017. malloc(0) &amp; realloc(…, 0) ≠ 0&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200, &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/2&quot;&gt;Wed, 30 Oct 2024 18:53:30 +0100&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -142,8 +142,18 @@ The &lt;code&gt;&lt;b&gt;malloc&lt;/b&gt;&lt;/code&gt;() function returns a poin
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 and cites conformance with C89.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+realloc(3) is split off with text lifted directly from C89, including
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+If &lt;tt&gt;&lt;i&gt;size&lt;/i&gt;&lt;/tt&gt; is zero and &lt;tt&gt;&lt;i&gt;ptr&lt;/i&gt;&lt;/tt&gt; is not a null pointer, the object it points to is freed.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+This is not true and the implementation doesn't change.
+Thus, the claimed conformance with C89 is also not true.
 &lt;cite class=&quot;path&quot;&gt;&lt;samp&gt;4.3tahoe/usr/src/lib/libc/gen/malloc.c&lt;/samp&gt;, &lt;samp&gt;4.3reno/usr/src/lib/libc/stdlib/malloc.c&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.c&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.c&lt;/samp&gt;&lt;/cite&gt;
-&lt;cite class=&quot;path&quot;&gt;&lt;samp&gt;4.3tahoe/usr/src/man/man3/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.3reno/usr/src/lib/libc/stdlib/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3&lt;/samp&gt;&lt;/cite&gt;
+&lt;cite class=&quot;path&quot;&gt;&lt;samp&gt;4.3tahoe/usr/src/man/man3/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.3reno/usr/src/lib/libc/stdlib/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite1/usr/src/lib/libc/stdlib/realloc.3&lt;/samp&gt;, &lt;samp&gt;4.4BSD-Lite2/usr/src/lib/libc/stdlib/realloc.3&lt;/samp&gt;&lt;/cite&gt;
 &lt;/p&gt;
 &lt;h2 id=&quot;SysIII&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#SysIII&quot;&gt;#&lt;/a&gt; &lt;span class=&quot;smallcaps&quot;&gt;Unix&lt;/span&gt; User'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798&quot;&gt;Release 3.0&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
 &lt;p class=&quot;continuing&quot;&gt;
@@ -335,13 +345,17 @@ but is &lt;em&gt;not&lt;/em&gt; consistent with any extant implementation, obvio
 &lt;cite class=&quot;path&quot;&gt;p. 156 (169)&lt;/cite&gt;
 &lt;cite class=&quot;path&quot;&gt;p. 102 (342)&lt;/cite&gt;
 &lt;/p&gt;
-&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
 This made &lt;code&gt;realloc(…, 0)&lt;/code&gt; unusable
 (since this returns &lt;code&gt;NULL&lt;/code&gt; — an error —
  you'&lt;!--'--&gt;re gonna free the pointer (double-free) or use it with its original size (use-after-free),
  like with normal &lt;code&gt;realloc&lt;/code&gt;),
 and is potentially-inconsistent with &lt;code&gt;malloc(0) ≠ 0&lt;/code&gt;,
 so C23 &lt;a href=&quot;//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#subsubsection.7.24.4.8&quot;&gt;made it UB&lt;/a&gt;.
+&lt;/a&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+The rationale paper for C89 and the path &lt;code&gt;realloc()&lt;/code&gt; takes through later standards is summarised
+&lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/3&quot;&gt;here&lt;/a&gt;.
 &lt;/a&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
@@ -9393,7 +9407,7 @@ and
 &lt;p class=&quot;indented continuation&quot;&gt;
 Usually you wouldn'&lt;!--'--&gt;t think this to be a huge issue, since most I/O completes within some reasonably-bounded time,
 but teletype I/O, by design, never does
-&lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES&quot;&gt;until a newline/&lt;code&gt;eof&lt;/code&gt;/&lt;code&gt;eol&lt;/code&gt;/&lt;code&gt;eol2&lt;/code&gt;&lt;/a&gt;.
+&lt;a href=&quot;//ra.ws.co.ls/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES&quot;&gt;until a newline/&lt;code&gt;eof&lt;/code&gt;/&lt;code&gt;eol&lt;/code&gt;/&lt;code&gt;eol2&lt;/code&gt;&lt;/a&gt;.
 And, thus, QED.
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
@@ -9545,7 +9559,7 @@ sexion.
 &lt;/details&gt;&lt;/div&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 As usual, some program has seen disproportionate development on SunOS.
-This was (relatively-)easily-handled for &lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html&quot;&gt;&lt;code&gt;hostid&lt;/code&gt;&lt;/a&gt;.
+This was (relatively-)easily-handled for &lt;a href=&quot;//ra.ws.co.ls/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html&quot;&gt;&lt;code&gt;hostid&lt;/code&gt;&lt;/a&gt;.
 Text processing is impossible to guess from foreign-arch binaries, however, especially since all manuals consist primarily of lies;
 &lt;code&gt;fmt&lt;/code&gt; being part of the Mail package doesn'&lt;!--'--&gt;t help.
 &lt;/p&gt;
@@ -11770,7 +11784,7 @@ GS&gt;GS&gt;GS&gt;GS&gt;
 &lt;/div&gt;
 &lt;p class=&quot;continued indented&quot;&gt;
 &lt;code&gt;frag.1&lt;/code&gt; in question, as minimised from &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/voreutils&quot;&gt;voreutils&lt;/a&gt;'  &lt;!--'--&gt;
-&lt;a href=&quot;//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/cut.1.html&quot;&gt;&lt;code&gt;cut.1&lt;/code&gt;&lt;/a&gt;:
+&lt;a href=&quot;//ra.ws.co.ls/~nabijaczleweli/voreutils/blob/man/man1/cut.1.html&quot;&gt;&lt;code&gt;cut.1&lt;/code&gt;&lt;/a&gt;:
 &lt;/p&gt;
 &lt;div class=&quot;bigcode continuation&quot;&gt;
 &lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;.Dd
