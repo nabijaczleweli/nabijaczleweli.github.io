@@ -34,7 +34,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 </li>
 
 #define SRHT_DOC(name, gitname, cratename, cratename_code, ...) USER_SRHT_DOC(nabijaczleweli, name, gitname, cratename, cratename_code, __VA_ARGS__)
-#define USER_SRHT_DOC(user, name, gitname, cratename, cratename_code, ...) USER_SRHT_GENDOC(user, name, gitname, cratename, cratename_code, STR(httpsCOLON_SLASH_SLASHsrhtcdn.githack.com/~user/gitname/blob/doc/cratename_code/index.html), __VA_ARGS__)
+#define USER_SRHT_DOC(user, name, gitname, cratename, cratename_code, ...) USER_SRHT_GENDOC(user, name, gitname, cratename, cratename_code, STR(httpsCOLON_SLASH_SLASHra.ws.co.ls/~user/gitname/blob/doc/cratename_code/index.html), __VA_ARGS__)
 #define USER_SRHT_GENDOC(user, name, gitname, cratename, cratename_code, doclink, ...)                  \
 <li>                                                                                     FORCED_NEWLINE \
   <a href=doclink><samp>gitname</samp></a>                                               FORCED_NEWLINE \
@@ -145,7 +145,7 @@ A brief subsection of non-Rust non-mistakes:
 LWN wrote about me once in the December 5, 2022 issue in <em><a href="//lwn.net/Articles/915163/">Losing the magic</a></em>.<br />
 <br />
 
-#define PAPER(num, patchlevel, ...) <a href=STR(httpsCOLON_SLASH_SLASHsrhtcdn.githack.com/~nabijaczleweli/wg14/blob/output/n##num.pdf)>\
+#define PAPER(num, patchlevel, ...) <a href=STR(httpsCOLON_SLASH_SLASHra.ws.co.ls/~nabijaczleweli/wg14/blob/output/n##num.pdf)>\
                                       <li value=num style=STR(list-style: wg14##patchlevel;)>__VA_ARGS__</li>\
                                     </a>
 I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:

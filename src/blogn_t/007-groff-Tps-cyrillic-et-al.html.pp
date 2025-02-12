@@ -442,7 +442,7 @@ A <del>powerful</del> sufficient diagnostic tool can also be plainly piping grof
 
 <p class="continued indented">
 <code>frag.1</code> in question, as minimised from <a href="//git.sr.ht/~nabijaczleweli/voreutils">voreutils</a>'  <!--'-->
-<a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/cut.1.html"><code>cut.1</code></a>:
+<a href="//ra.ws.co.ls/~nabijaczleweli/voreutils/blob/man/man1/cut.1.html"><code>cut.1</code></a>:
 </p>
 <div class="bigcode continuation">
 #include "blogn_t/007.12-frag.1.plaintext.html"

@@ -141,7 +141,7 @@ and
 <p class="indented continuation">
 Usually you wouldn'<!--'-->t think this to be a huge issue, since most I/O completes within some reasonably-bounded time,
 but teletype I/O, by design, never does
-<a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES">until a newline/<code>eof</code>/<code>eol</code>/<code>eol2</code></a>.
+<a href="//ra.ws.co.ls/~nabijaczleweli/voreutils/blob/man/man1/stty.1.html#ATTRIBUTES">until a newline/<code>eof</code>/<code>eol</code>/<code>eol2</code></a>.
 And, thus, QED.
 </p>
 <p class="indented">

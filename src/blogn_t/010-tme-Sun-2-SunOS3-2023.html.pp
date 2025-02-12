@@ -54,7 +54,7 @@ BLOGN_T_HEADING(010. tme booting SunOS 3 on Sun-2 in 2023)
 
 <p class="indented continued">
 As usual, some program has seen disproportionate development on SunOS.
-This was (relatively-)easily-handled for <a href="//srhtcdn.githack.com/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html"><code>hostid</code></a>.
+This was (relatively-)easily-handled for <a href="//ra.ws.co.ls/~nabijaczleweli/voreutils/blob/man/man1/hostid.1.html"><code>hostid</code></a>.
 Text processing is impossible to guess from foreign-arch binaries, however, especially since all manuals consist primarily of lies;
 <code>fmt</code> being part of the Mail package doesn'<!--'-->t help.
 </p>
