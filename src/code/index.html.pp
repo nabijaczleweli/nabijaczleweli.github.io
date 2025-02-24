@@ -157,7 +157,8 @@ I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:
 	PAPER(3363, p2,	<code>stdarg.h</code> wording<code>...</code>)
 </ol>
 
-n3066 is part of C23.<br />
+n3066 is included in C23.<br />
+n3363 is included in C2y.<br />
 <br />
 
 Documentation for my Rust crates:
