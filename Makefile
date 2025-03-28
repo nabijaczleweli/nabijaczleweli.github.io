@@ -77,11 +77,11 @@ $(BLDDIR)octicons/build/octicons.min.css : $(BLDDIR)octicons/package.json
 
 $(OUTDIR)assets/LICENSE-octicons : ext/octicons/LICENSE
 	@mkdir -p $(dir $@)
-	cp $^ $@
+	ln -f $^ $@ || cp $^ $@
 
 $(OUTDIR)assets/LICENSE-prism : ext/prism/LICENSE
 	@mkdir -p $(dir $@)
-	cp $^ $@
+	ln -f $^ $@ || cp $^ $@
 
 $(OUTDIR)assets/prism-twilight.min.css : ext/prism/themes/prism-twilight.css
 	@mkdir -p $(dir $@)
@@ -98,7 +98,7 @@ $(OUTDIR)feed.xml : gen-feed.awk $(patsubst src/%.pp,$(BLDDIR)feed/%,$(PREPROCES
 
 $(OUTDIR)assets/octicons/% : $(BLDDIR)octicons/build/octicons.min.css
 	@mkdir -p $(dir $@)
-	cp $(subst $(OUTDIR)assets/octicons,$(BLDDIR)octicons/build,$@) $@
+	ln -f $(subst $(OUTDIR)assets/octicons,$(BLDDIR)octicons/build,$@) $@ || cp $(subst $(OUTDIR)assets/octicons,$(BLDDIR)octicons/build,$@) $@
 
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
@@ -143,8 +143,8 @@ $(OUTDIR)%.pdf : $(OUTDIR)%.epub
 
 $(OUTDIR)assets/% : assets/%
 	@mkdir -p $(dir $@)
-	cp $^ $@
+	ln -f $(subst ',\',$^ $@) || cp $(subst ',\',$^ $@)
 
 $(OUTDIR)LICENSE-% : LICENSE-%
 	@mkdir -p $(dir $@)
-	cp $^ $@
+	ln -f $^ $@ || cp $^ $@
