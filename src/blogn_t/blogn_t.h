@@ -16,7 +16,7 @@
 
 
 #define BLOGN_T_HEADING(...)                                                                            \
-<span class="roboto writing">                                                            FORCED_NEWLINE \
+<div class="roboto writing">                                                             FORCED_NEWLINE \
 <p></p>                                                                                  FORCED_NEWLINE \
 MAIN_HEADING_ALT(2, ., <samp>__VA_ARGS__</samp>)                                         FORCED_NEWLINE \
 <h4 id="post-date"><span style="white-space: nowrap">POST_DATE</span>POST_POST_DATE</h4> FORCED_NEWLINE \
@@ -29,7 +29,7 @@ MAIN_HEADING_ALT(2, ., <samp>__VA_ARGS__</samp>)                                
   <a href=STR(mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on FILE_NAME)>Mail</a>,                                              FORCED_NEWLINE \
 	<a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>!  FORCED_NEWLINE \
 </p>                                                                                                                                      FORCED_NEWLINE \
-</span>
+</div>
 
 
 #define CMT Also used in heading.h, make sure to update both with fixes
