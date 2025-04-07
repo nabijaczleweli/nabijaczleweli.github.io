@@ -15,7 +15,7 @@
 #include "util.h"
 
 
-#define FONTAWESOME_LINK <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> FORCED_NEWLINE
+#define FONTAWESOME_LINK <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"> FORCED_NEWLINE
 
 
 #define FA(iconname)            <i class=STR(dark-invert fa fa-iconname)></i>

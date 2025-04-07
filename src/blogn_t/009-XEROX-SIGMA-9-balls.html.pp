@@ -20,7 +20,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define Tn(...) <span class="smallcaps">__VA_ARGS__</span>
 
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />
+#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet">
 
 
 BOILERPLATE(009. XEROX SIGMA 9 balls — blognꞌt, 009. XEROX SIGMA 9 balls, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)

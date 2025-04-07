@@ -16,9 +16,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                            FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />        FORCED_NEWLINE \
-                    <link href="/content/assets/bigtable.css"           rel="stylesheet" />        FORCED_NEWLINE \
-                    <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">        FORCED_NEWLINE \
+                    <link href="/content/assets/bigtable.css"           rel="stylesheet">        FORCED_NEWLINE \
+                    <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet">
 
 #undef linux
 

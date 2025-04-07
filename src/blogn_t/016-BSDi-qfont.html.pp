@@ -21,8 +21,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK FORCED_NEWLINE \
-                    <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" /> FORCED_NEWLINE \
-                    <link href="/content/assets/blogn_t/016.01-BSDi-fonts.css" rel="stylesheet" />
+                    <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet"> FORCED_NEWLINE \
+                    <link href="/content/assets/blogn_t/016.01-BSDi-fonts.css" rel="stylesheet">
 
 BOILERPLATE(016. BSDi qfont — blognꞌt, 016. BSDi qfont, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>

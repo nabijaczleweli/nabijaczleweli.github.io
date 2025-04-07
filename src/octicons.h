@@ -15,8 +15,8 @@
 #include "util.h"
 
 
-#define OCTICONS_SCRIPT      <script type="text/javascript" src="/content/assets/octicons.js"></script> FORCED_NEWLINE
-#define OCTICONS_LINK        <link href="/content/assets/octicons.min.css" rel="stylesheet" />          FORCED_NEWLINE
+#define OCTICONS_SCRIPT      <script src="/content/assets/octicons.js"></script> FORCED_NEWLINE
+#define OCTICONS_LINK        <link href="/content/assets/octicons.min.css" rel="stylesheet">          FORCED_NEWLINE
 #define OCTICONS_PLACEHOLDER <span class="hidden" id="octicons-placeholder"></span>
 #define OCTICONS_DATA OCTICONS_SCRIPT OCTICONS_LINK
 

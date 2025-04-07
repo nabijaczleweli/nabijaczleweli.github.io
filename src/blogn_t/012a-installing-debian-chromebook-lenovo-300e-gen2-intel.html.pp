@@ -22,8 +22,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK                                    FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> FORCED_NEWLINE \
-                    <link href="/content/assets/bigtable.css"           rel="stylesheet" />
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> FORCED_NEWLINE \
+                    <link href="/content/assets/bigtable.css"           rel="stylesheet">
 
 
 #define HEADING_CHRULTRA_S(level, hid, style_arg, sect, ...) HEADING_S(level, hid, style_arg, <a style="color: inherit; text-decoration: none;" href=STR(httpsCOLON_SLASH_SLASHdocs.chrultrabook.com/docs/sect)>__VA_ARGS__ FA(external-link-alt)</a>)

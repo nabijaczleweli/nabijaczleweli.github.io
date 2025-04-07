@@ -40,9 +40,9 @@ MAIN_HEADING_ALT(2, ., <samp>__VA_ARGS__</samp>)                                
 
 
 #define BLOGN_T_STYLESHEETS MAIN_HEADING_STYLE                                                                 FORCED_NEWLINE \
-                            <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
-                            <link href="/content/assets/blogn_t.css" rel="stylesheet" />                       FORCED_NEWLINE \
-                            <link href="/content/assets/contents.css" rel="stylesheet" />                      FORCED_NEWLINE \
-                            <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                            <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
+                            <link href="/kaschism/assets/column.css" rel="stylesheet">                       FORCED_NEWLINE \
+                            <link href="/content/assets/blogn_t.css" rel="stylesheet">                       FORCED_NEWLINE \
+                            <link href="/content/assets/contents.css" rel="stylesheet">                      FORCED_NEWLINE \
+                            <link href="../writing/Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                            <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">  FORCED_NEWLINE \
                             <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">

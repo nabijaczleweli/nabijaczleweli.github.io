@@ -17,16 +17,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define MATHJAX(...) [​[(U+200B)__VA_ARGS__(U+200B)]​]
 
-#define SCANS_CSS_LINK    <link href="/content/assets/scan.css" rel="stylesheet" />
-#define COLUMN_LINKS      <link href="/kaschism/assets/column.css" rel="stylesheet" />                       \
-                          <link href="../writing/Roboto-font.css" rel="stylesheet" />                        \
-                          <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
-#define SCANS_SHOW_SCRIPT <script type="text/javascript" src="/content/assets/scans_show.js"></script>
-#define MATHJAX_SCRIPT    <script type="text/javascript" \
+#define SCANS_CSS_LINK    <link href="/content/assets/scan.css" rel="stylesheet">
+#define COLUMN_LINKS      <link href="/kaschism/assets/column.css" rel="stylesheet">                       \
+                          <link href="../writing/Roboto-font.css" rel="stylesheet">                        \
+                          <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
+#define SCANS_SHOW_SCRIPT <script src="/content/assets/scans_show.js"></script>
+#define MATHJAX_SCRIPT    <script \
                                   src="//rawcdn.githack.com/mathjax/MathJax/2.7.6/MathJax.js?config=/content/assets/MathJax-config.js"></script>
-#define ZIPPING_SCRIPTS   <script type="text/javascript" src="//rawcdn.githack.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script>          \
-                          <script type="text/javascript" src="//rawcdn.githack.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script>  \
-                          <script type="text/javascript" src="/content/assets/pack_specified.js"></script>
+#define ZIPPING_SCRIPTS   <script src="//rawcdn.githack.com/Stuk/jszip/v3.1.3/dist/jszip.min.js"></script>          \
+                          <script src="//rawcdn.githack.com/eligrey/FileSaver.js/1.3.3/FileSaver.min.js"></script>  \
+                          <script src="/content/assets/pack_specified.js"></script>
 BOILERPLATE(Mandalas, Tonči Juričev-Grginꞌs Mandalas, en-GB, SCANS_CSS_LINK COLUMN_LINKS SCANS_SHOW_SCRIPT MATHJAX_SCRIPT ZIPPING_SCRIPTS MAIN_HEADING_STYLE)
 
 <style>

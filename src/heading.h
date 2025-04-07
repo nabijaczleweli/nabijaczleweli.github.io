@@ -22,5 +22,5 @@
 #define MAIN_HEADING(...)                      MAIN_HEADING_ALT(2, .., __VA_ARGS__)
 
 
-#define MAIN_HEADING_STYLE          <link href="/content/assets/heading.css" rel="stylesheet" />
+#define MAIN_HEADING_STYLE          <link href="/content/assets/heading.css" rel="stylesheet">
 #define MAIN_HEADING_STYLE_ALT(...) MAIN_HEADING_STYLE <style> HASHgo-back > aHASHgo-back-link { __VA_ARGS__ } </style>

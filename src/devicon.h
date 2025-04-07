@@ -15,7 +15,7 @@
 #include "util.h"
 
 
-#define DEVICON_LINK <link href="//rawcdn.githack.com/konpa/devicon/v2.2/devicon.min.css" rel="stylesheet" /> FORCED_NEWLINE
+#define DEVICON_LINK <link href="//rawcdn.githack.com/konpa/devicon/v2.2/devicon.min.css" rel="stylesheet"> FORCED_NEWLINE
 
 
 #define DEVICON(iconname, ...)               <i class=STR(devicon-iconname-plain) __VA_ARGS__></i>

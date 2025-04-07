@@ -88,7 +88,7 @@
     <meta name="description" content=#description>                       FORCED_NEWLINE \
     <title>pagename — nabijaczleweli</title>                             FORCED_NEWLINE \
                                                                          FORCED_NEWLINE \
-    <link href="/content/assets/common.css" rel="stylesheet" />          FORCED_NEWLINE \
+    <link href="/content/assets/common.css" rel="stylesheet">          FORCED_NEWLINE \
     ICONS_HEADER_PART                                                    FORCED_NEWLINE \
     __VA_ARGS__                                                          FORCED_NEWLINE \
   </head>                                                                FORCED_NEWLINE \

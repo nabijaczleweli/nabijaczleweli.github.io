@@ -20,10 +20,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                     FORCED_NEWLINE \
-                    <link href="/kaschism/assets/column.css" rel="stylesheet" />            FORCED_NEWLINE \
-                    <link href="the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
-                    <link href="Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+                    <link href="/kaschism/assets/column.css" rel="stylesheet">            FORCED_NEWLINE \
+                    <link href="the_taste_of_mi/MathJax-font.css" rel="stylesheet">       FORCED_NEWLINE \
+                    <link href="Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(Written creative(?) things, Non-code things набꞌs written, en-GB, STYLESHEETS)
 
 

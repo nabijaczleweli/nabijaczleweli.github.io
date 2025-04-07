@@ -20,7 +20,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE ; <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/">go wild</a> <a href="//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/">FA(external-link-alt)</a>
 
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" />
+#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet">
 
 BOILERPLATE(008. AMIX fonts — blognꞌt, 008. AMIX fonts, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>

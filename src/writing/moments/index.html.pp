@@ -18,9 +18,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <!-- RSS_PUB_DATE: "Sun, 23 Apr 2017 03:37:41 +0200" -->
 
 
-#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
-                    <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet">               FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(A Widowꞌs Trace, A Widowꞌs Trace, en-GB, WORD_COUNT_SCRIPT STYLESHEETS)
 
 

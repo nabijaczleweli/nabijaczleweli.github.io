@@ -18,10 +18,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <!-- RSS_PUB_DATE: "Sun, 29 Apr 2018 04:28:25 +0200" -->
 
 
-#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
-                    <link href="../the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
-                    <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet">               FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/MathJax-font.css" rel="stylesheet">       FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(Funeral Blues (ew. Pogrzebowy Blues), Polish translation of W. H. Audenꞌs Funeral Blues (ew. Pogrzebowy Blues), pl, STYLESHEETS)
 
 

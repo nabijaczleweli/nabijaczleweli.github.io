@@ -26,9 +26,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 	</div>
 
 #define LINKS MAIN_HEADING_STYLE_ALT(color: #acacac;)                                            FORCED_NEWLINE \
-              <link href="/content/assets/unobtrusive-art.css" rel="stylesheet" />               FORCED_NEWLINE \
-              <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />            FORCED_NEWLINE \
-              <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+              <link href="/content/assets/unobtrusive-art.css" rel="stylesheet">               FORCED_NEWLINE \
+              <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">            FORCED_NEWLINE \
+              <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(wiggly-circle, A selexion of circles‚ most of them wiggly‚ some of them colourful, en-GB, LINKS)
 
 

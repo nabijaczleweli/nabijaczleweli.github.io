@@ -23,8 +23,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #undef linux
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />  FORCED_NEWLINE \
-                    <link href="/content/assets/bigtable.css"           rel="stylesheet" />
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">  FORCED_NEWLINE \
+                    <link href="/content/assets/bigtable.css"           rel="stylesheet">
 
 BOILERPLATE(005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt, 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>

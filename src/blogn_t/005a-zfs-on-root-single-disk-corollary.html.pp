@@ -22,7 +22,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" />
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">
 
 BOILERPLATE(005a. A single-disk but slightly more cursed ZFS-on-root corollary — blognꞌt, 005a. A single-disk but slightly more cursed ZFS-on-root corollary, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>

@@ -15,10 +15,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define MATH(...) <span class="math-font-normal roboto-unscale">__VA_ARGS__</span>
 
 
-#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
-                    <link href="../the_taste_of_mi/MathJax-font.css" rel="stylesheet" />       FORCED_NEWLINE \
-                    <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet">               FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/MathJax-font.css" rel="stylesheet">       FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE((Technically) poetry, Things that make you think‚ from наб and friends, en-GB, STYLESHEETS)
 
 

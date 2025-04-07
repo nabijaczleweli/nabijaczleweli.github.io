@@ -19,10 +19,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK                                               FORCED_NEWLINE \
-                    <link href="/kaschism/assets/column.css" rel="stylesheet" />                      FORCED_NEWLINE \
-                    <link href="../writing/Roboto-font.css" rel="stylesheet" />                       FORCED_NEWLINE \
+                    <link href="/kaschism/assets/column.css" rel="stylesheet">                      FORCED_NEWLINE \
+                    <link href="../writing/Roboto-font.css" rel="stylesheet">                       FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/MathJax-font.css" rel="stylesheet">        FORCED_NEWLINE \
-                    <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+                    <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(Recipes, My answer to the replication crisis, en-GB, STYLESHEETS)
 
 #define NUM(...) <span class="roboto-unscale math-font-normal">__VA_ARGS__</span>

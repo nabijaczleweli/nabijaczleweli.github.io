@@ -17,9 +17,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <!-- RSS_PUB_DATE: "Wed, 24 Oct 2018 20:12:57 +0200" -->
 
 
-#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />               FORCED_NEWLINE \
-                    <link href="../Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet">               FORCED_NEWLINE \
+                    <link href="../Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="../the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(Наган, Наган, pl, WORD_COUNT_SCRIPT_NON_ENGLISH STYLESHEETS)
 
 

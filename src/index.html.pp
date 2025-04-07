@@ -12,9 +12,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "common.h"
 
 
-#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet" />                    FORCED_NEWLINE \
-                    <link href="writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />
+#define STYLESHEETS <link href="/kaschism/assets/column.css" rel="stylesheet">                    FORCED_NEWLINE \
+                    <link href="writing/Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
 BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 
 
