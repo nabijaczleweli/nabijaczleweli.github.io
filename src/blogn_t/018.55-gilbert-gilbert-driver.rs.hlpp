@@ -1,0 +1,12 @@
+static GRID_GILBERT: &[(u8, u8, u8)] = include_typed!((u8, u8, u8), concat!(env!("OUT_DIR"), "/grid_gilbert.xyz"));
+
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ...
+	assert!(mem::size_of::<(u8, u8, u8)>() == 3);
+	assert!(GRID_GILBERT.len() == GRID_SIZE * GRID_SIZE * GRID_SIZE);
+	for (x, y, z) in GRID_GILBERT {
+		dump(&mut self.buffer_params_map.group_ranges[x][y][z],
+		     &    self.groups_accumulator            [x][y][z])
+	}
+	// ...
+}

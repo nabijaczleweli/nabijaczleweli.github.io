@@ -1,0 +1,21 @@
+#SMALL_START#
+	uint newcenter_count = 0;
+	float3 newcenter = float3(0, 0, 0);
+#SMALL_END#
+	uint seen = 0;
+	uint3 gxyz = gridpos_from - uint3(0, 0, 1);
+	for(;;) {
+		bool iter = false;
+		for(;;) {
+			bool3 wrap = gxyz >= gridpos_to;
+			if(all(wrap))
+				break;
+			bool wrapz = wrap.z;
+			bool wrapy = wrap.z && wrap.y;
+			bool3 nil = bool3(false, wrapy, wrapz);
+			gxyz = nil ? gridpos_from : (gxyz + uint3(wrapy, wrapz, 1));
+
+#SMALL_START#
+			const bool3 gxyz_same = gxyz == gridpos;
+			// ...
+#SMALL_END#

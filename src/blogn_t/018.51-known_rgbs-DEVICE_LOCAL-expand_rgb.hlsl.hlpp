@@ -1,0 +1,4 @@
+known_rgbs_pack bundle;
+bundle.rgb = outputs[id];
+bundle.lab = linear_srgb_to_oklab(unpack_rgb_to_r_g_b(bundle.rgb));
+known_rgbs_bundle[id] = bundle;

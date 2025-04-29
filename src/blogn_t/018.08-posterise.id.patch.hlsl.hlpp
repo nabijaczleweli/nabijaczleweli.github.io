@@ -1,0 +1,3 @@
+	const uint id = DTid.x;
+	if(id >= current_rgbs_len)
+		return;

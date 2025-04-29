@@ -1,0 +1,19 @@
+include!("ext/gilbert/ports/gilbert.rs");
+fn main() {
+	let grid_size = fs::read_to_string("src/shader.h").lines()
+		.find(|l| l.contains("#define GRID_SIZE")).split_whitespace().last();
+	// ... glslc
+	let out_dir = Path::new(&env::var_os("OUT_DIR"));
+	let grid_size_rs = out_dir.join("grid_size.rs");
+	if grid_size != fs::read_to_string(grid_size_rs).unwrap_or("".to_string()) {
+		fs::write(grid_size_rs, grid_size);
+
+		let grid_size = grid_size.parse();
+		let mut grid_gilbert = File::create(out_dir.join("grid_gilbert.xyz"));
+		for i in 0..grid_size * grid_size * grid_size {
+			let (x, y, z) = gilbert::d2xyz(i, (grid_size, grid_size, grid_size));
+			grid_gilbert.write_all(&[x, y, z]);
+		}
+	}
+	// ... glslc collexion
+}

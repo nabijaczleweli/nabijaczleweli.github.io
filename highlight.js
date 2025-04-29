@@ -24,11 +24,11 @@ const fs = require("fs");
 const Prism = require("./ext/prism/prism.js");
 Prism.loadLanguages = require('./ext/prism/components/');
 
-
-const LANGUAGE_REMAPS = {js: "javascript", sh: "bash", Makefile: "makefile"};
+const LANGUAGE_REMAPS = {js: "javascript", sh: "bash", Makefile: "makefile", rs: "rust"};
 const LANGUAGES       = {
 	plaintext: {},
 	// Based on https://github.com/JohnNilsson/awk-sublime/blob/1ce5f90d444d80b12af41bc051507e914730d4ef/AWK.sublime-syntax
+	// Better than Prism.js's implementation of AWK!
 	awk: {
 		comment: {
 			pattern: /#.*/,
@@ -66,31 +66,47 @@ const LANGUAGES       = {
 		}
 	}
 };
+const LANGUAGES_ADD   = {
+	rust: {
+		string: /\b_\b/
+	},
+	hlsl: {
+		// "class-name": /\b(?:RW)?StructuredBuffer\b/,
+		keyword: [
+			/\bSV_(?:(?:DispatchThread|Group|GroupThread|GSInstance|OutputControlPoint)ID)|(?:GroupIndex|DomainLocation|TessFactor|InsideTessFactor)\b/,
+			/\b(dot|length|trunc|min|max|any|all|printf|asuint|asfloat)\b/
+		]
+	}
+};
 
 
-const in_file   = process.argv[2];
-const out_file  = process.argv[3];
-let   language  = process.argv[4];
-const highlight = !process.argv[5];
+// https://stackoverflow.com/a/71695114
+let [metadata, inputs, outputs] =
+	process.argv.reduce((r, s, i, a) => {
+		if(!i || a[i - 1] === ':')
+			r.push([]);
+		r[r.length - 1].push(s);
+		return r;
+	}, []);
+[metadata, inputs, outputs] = [metadata, inputs, outputs].map(a => a.filter(e => e !== ':'));
 
-if(!in_file) {
-	console.error("Input file unspecified.")
-	process.exit(1);
+let stampfile = metadata[metadata.length - 1];
+
+let files = [];
+let languages = new Set();
+for(let i = 0; i != inputs.length; ++i) {
+	let [in_file, out_file] = [inputs[i], outputs[i]];
+	let [_, language, nohighlight] = in_file.match(/.*\.([^.]+)\.([^.]+)$/);
+	nohighlight = nohighlight == "hlhpp";
+
+	language = LANGUAGE_REMAPS[language] || language;
+	if(!nohighlight)
+		languages.add(language);
+
+	files.push(fs.promises.readFile(in_file, {encoding: "utf8"}).then(p => [p, out_file, language, nohighlight]));
 }
 
-if(!out_file) {
-	console.error("Output file unspecified.")
-	process.exit(2);
-}
-
-if(!language) {
-	console.error("Language unspecified.")
-	process.exit(3);
-}
-
-
-language = LANGUAGE_REMAPS[language] || language;
-if(highlight) {
+for(let language of languages) {
 	if(LANGUAGES[language])
 		Prism.languages[language] = LANGUAGES[language];
 	else
@@ -100,21 +116,49 @@ if(highlight) {
 		console.error("Unknown language", language)
 		process.exit(4);
 	}
+	for(let k in LANGUAGES_ADD[language]) {
+		if(!Array.isArray(Prism.languages[language][k]))
+			Prism.languages[language][k] = [Prism.languages[language][k]];
+
+		if(!Array.isArray(LANGUAGES_ADD[language][k]))
+			Prism.languages[language][k].push(LANGUAGES_ADD[language][k]);
+		else
+			Prism.languages[language][k] = Prism.languages[language][k].concat(LANGUAGES_ADD[language][k]);
+	}
 }
 
+async function main() { // need to be able to await
+	let madedirs = {};
+	let la = await Promise.all(files.map(f => f.then(async bundle => {
+		let [content, out_file, language, nohighlight] = bundle;
+		// console.log(out_file, ":", language);
 
-console.log("Highlighting", in_file, "as", language, "into", out_file);
+		const highlit = nohighlight ? content : Prism.highlight(content, Prism.languages[language], language);
+		{
+			let dir = out_file.substring(0, out_file.lastIndexOf("/"));
+			if(!madedirs[dir]) {
+				await fs.promises.mkdir(dir, {recursive: true});
+				madedirs[dir] = true;
+			}
+		}
+		const out = fs.createWriteStream(out_file);
+		out.write(`<pre class="language-${language}"><code class="language-${language}">`);
+		// https://github.com/PrismJS/prism/pull/3881
+		function patch(s) {
+			if(language == "hlsl")
+				s = s.replace(/<span class="token directive-hash">#<\/span><span class="token directive keyword">/g, '<span class="token directive keyword">#');
+			return s;
+		}
+		out.write(patch(highlit)
+			               .replace(/'/g,           "'<!--'-->")
+			               .replace(/^.*#.*SMALL_START.*#.*\n/gm, "<small style='display: block; line-height: initial;'>").replace(/^.*#.*SMALL_END.*#.*\n/gm, "</small>")
+			               .replace(/\n/g,          "FORCED_NEWLINE")
+			               .replace(/((  +)|\t)+/g, "<!--\"-->$&<!--\"-->")
+			               .replace(/\/\*/g,        "/<!---->*")
+			               .replace(/\/\//g,        "/<!---->/"));
+		out.write("</code></pre>");
+	})));
 
-
-const content = fs.readFileSync(in_file, {encoding: "utf8"});
-const highlit = highlight ? Prism.highlight(content, Prism.languages[language], language) : content;
-
-const out = fs.createWriteStream(out_file);
-out.write(`<pre class="language-${language}"><code class="language-${language}">`);
-out.write(highlit.replace(/\n/g,          "FORCED_NEWLINE")
-	               .replace(/((  +)|\t)+/g, "<!--\"-->$&<!--\"-->")
-	               .replace(/\/\*/g,        "/<!---->*")
-	               .replace(/\/\//g,        "/<!---->/"));
-if((highlit.match(/'/g) || []).length % 2 == 1)
-	out.write("<!--'-->");
-out.write("</pre></code>");
+	fs.writeFileSync(stampfile, `${la.length}`);
+}
+main();

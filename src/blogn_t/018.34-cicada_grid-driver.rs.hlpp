@@ -1,0 +1,14 @@
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, Lab, u32)], radiussy: f32, freq_weighting: bool, outputs: &mut [Lab; 0xFFFFFF + 1]) {
+	self.buffer_groups_data.ensure_buffer((known_rgbs.len() + 1) * mem::size_of::<u32>());
+
+	// ... through assign_cell.hlsl &c.
+
+	// self.buffer_groups_data[0] = 1;
+	self.device.cmd_fill_buffer(self.cmd_buffer, self.buffer_params.buffer, 0, mem::size_of::<u32>(), 1);
+	// cicada_grid.hlsl
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline[CICADA_GRID]);
+	self.device.cmd_dispatch(self.cmd_buffer, 1, GRID_SIZE, GRID_SIZE);
+	self.submit_buffer(self.cmd_buffer);
+
+	// ... posterise.hlsl/posterise_mul.hlsl &c.
+}

@@ -1,0 +1,5 @@
+#define KNOWN_RGBS_FREQS
+#define BRANCHLESS_ADD   1
+#define FREQ_LOAD
+#define FREQ             matched
+#include "posterise_kernel.hlsl.inc"

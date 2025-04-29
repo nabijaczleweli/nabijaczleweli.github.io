@@ -1,0 +1,8 @@
+for (to_rgb, from_rgb) in image_processed.pixel_data.chunks_exact_mut(pixel_stride)
+                     .zip(image          .pixel_data.chunks_exact    (pixel_stride)) {
+	let (r, g, b) = (from_rgb[0], from_rgb[1], from_rgb[2]);
+	let rgb = oklab_to_linear_srgb(outputs[(r << 16) | (g << 8) | (b << 0)]);
+	to_rgb[0] = (rgb.r * 255).round();
+	to_rgb[1] = (rgb.g * 255).round();
+	to_rgb[2] = (rgb.b * 255).round();
+}

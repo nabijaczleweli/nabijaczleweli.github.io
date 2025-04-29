@@ -1,0 +1,9 @@
+const uint i = groups_data[group.start_idx];
+const float3 lab = known_rgbs_bundle[i].lab;
+#SMALL_START#
+
+float3 tmp = lab - center;
+const bool matched = dot(tmp, tmp) <= radiussy_squared;
+newcenter_count += matched;
+newcenter       += matched * lab;
+#SMALL_END#

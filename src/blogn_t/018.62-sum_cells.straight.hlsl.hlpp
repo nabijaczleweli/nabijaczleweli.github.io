@@ -1,0 +1,2 @@
+#define FREQ_I i
+#include "sum_cells.kernel.hlsl.inc"

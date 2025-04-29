@@ -1,0 +1,6 @@
+#SMALL_START#
+float3 tmp = lab - center;
+const bool matched = dot(tmp, tmp) <= radiussy_squared;
+#SMALL_END#
+newcenter_count += matched;
+newcenter       += matched * lab;

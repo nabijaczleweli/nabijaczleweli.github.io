@@ -1,0 +1,91 @@
+static SHADER_DATA: &[u32] = include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise.spv"));
+
+#[repr(C)]
+struct ParamsT {
+	known_rgbs_len: u32,
+	radiussy: f32,
+	iter_limit: u32,
+}
+#[repr(C)]
+struct KnownRgbsPack {
+	lab: Lab,
+	rgb: u32,
+}
+
+pub struct PosteriseGpu {
+	// ...
+	device: vulkanalia::Device,
+	compute_pipeline: vulkanalia::Pipeline,
+
+	memory_type_index: u32,                 // HOST_VISIBLE & HOST_COHERENT
+	buffer_outputs: BufferBundle,           // [[vk::binding(0)]] SB<float3>          outputs;
+	buffer_params: BufferBundle,            // [[vk::binding(1)]] SB<params_t>        params;
+	buffer_known_rgbs_bundle: BufferBundle, // [[vk::binding(2)]] SB<known_rgbs_pack> known_rgbs_bundle;
+
+	buffer_outputs_map: &'static mut [[f32; 4]; 0xFFFFFF + 1],
+	buffer_params_map: &'static mut ParamsT,
+}
+
+fn PosteriseGpu::init() -> PosteriseGpu {
+	// ...
+
+	let vk_shader_module = vk_device.create_shader_module(&vk::ShaderModuleCreateInfo::builder()
+		.code_size(SHADER_DATA.len() * 4).code(SHADER_DATA), None);
+	dev.compute_pipeline = {
+		let pipeline_shader_create_info = vk::PipelineShaderStageCreateInfo::builder()
+			.stage(vk::ShaderStageFlags::COMPUTE)
+			.module(vk_shader_module)
+			.name(b"main\0");
+		let compute_pipeline_create_info = vk::ComputePipelineCreateInfo::builder()
+			.stage(pipeline_shader_create_info) /*...*/;
+		vk_device.create_compute_pipelines(vk_pipeline_cache, &[compute_pipeline_create_info], None).0.swap_remove(0)
+	};
+
+	ret.buffer_outputs = ret.ensure_buffer(BufferBundle{}, mem::size_of::<[[f32; 4]; 0xFFFFFF + 1]>());
+	ret.buffer_outputs_map = &mut *ret.device.map_memory(ret.buffer_outputs);
+
+	ret.buffer_params = ret.ensure_buffer(BufferBundle{}, mem::size_of::<ParamsT>());
+	ret.buffer_params_map = &mut *ret.device.map_memory(ret.buffer_params);
+	ret
+}
+
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, Lab, u32)], radiussy: f32, outputs: &mut [Lab; 0xFFFFFF + 1]) {
+	self.buffer_known_rgbs_bundle = self.ensure_buffer(self.buffer_known_rgbs_bundle, known_rgbs.len() * mem::size_of::<KnownRgbsPack>());
+	assert!(mem::size_of::<KnownRgbsPack>() == 4 * 4);
+
+	*self.buffer_params_map = ParamsT {
+		known_rgbs_len: known_rgbs.len(),
+		radiussy: radiussy,
+		iter_limit: 0xFFFFFFFF,
+	};
+
+	let buffer_known_rgbs_bundle_map = self.device.map_memory(self.buffer_known_rgbs_bundle);
+	let known_rgbs_bundle: &mut [KnownRgbsPack] = slice::from_raw_parts_mut(buffer_known_rgbs_bundle_map, known_rgbs.len());
+	for ((rgb, lab, _), dest_lab) in known_rgbs.iter().zip(known_rgbs_bundle.iter_mut()) {
+		dest_lab = KnownRgbsPack {
+			rgb: rgb,
+			lab: lab,
+		};
+	}
+	self.device.unmap_memory(self.buffer_known_rgbs_bundle.buffer_memory);
+
+	self.descriptor_set = self.device.update_descriptor_sets(vk::WriteDescriptorSet{[self.buffer_outputs, self.buffer_params, self.buffer_known_rgbs_bundle]});
+
+	self.device.begin_command_buffer(self.cmd_buffer);
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline);
+	self.device.cmd_bind_descriptor_sets(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.pipeline_layout, 0, &[self.descriptor_set], &[]);
+	// cmd_pipeline_barrier(HOST -> COMPUTE_SHADER: (self.buffer_params, self.buffer_known_rgbs_bundle): HOST_WRITE -> SHADER_READ)
+	self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.len() /* x */, 1 /* y */, 1 /* z */);
+	// cmd_pipeline_barrier(COMPUTE_SHADER -> HOST: self.buffer_outputs: SHADER_WRITE -> HOST_READ)
+	self.device.end_command_buffer(self.cmd_buffer);
+
+	self.device.reset_fences(&[self.fence]).unwrap();
+	self.device.queue_submit(self.compute_queue, &[vk::SubmitInfo::builder().command_buffers(&[self.cmd_buffer])], self.fence);
+	self.device.wait_for_fences(&[self.fence], true, u64::MAX).unwrap();
+
+	for (rgb, _, _) in known_rgbs {
+		outputs[rgb].l = self.buffer_outputs_map[rgb][0];
+		outputs[rgb].a = self.buffer_outputs_map[rgb][1];
+		outputs[rgb].b = self.buffer_outputs_map[rgb][2];
+	}
+}

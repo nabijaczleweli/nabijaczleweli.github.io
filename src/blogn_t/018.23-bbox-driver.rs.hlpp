@@ -1,0 +1,57 @@
+const FIND_BBOX: usize = 2;
+const SHADER_COUNT: usize = FIND_BBOX + 1;
+static SHADER_DATA: [&[u32]; SHADER_COUNT] = [include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise_mul.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/find_bbox.spv"))];
+pub struct PosteriseGpu {
+	// ...
+	compute_pipeline: Vec<vk::Pipeline>, // [SHADER_COUNT]
+}
+
+#SMALL_START#
+#[repr(C)]
+#SMALL_END#
+struct ParamsT {
+	known_rgbs_len: u32,
+	radiussy_squared: f32,
+	iter_limit: i32,
+	_padding1: u32,
+
+	bbox_min: [f32; 3],
+	_padding2: u32,
+
+	bbox_range: [f32; 3],
+	_padding3: u32,
+}
+
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, Lab, u32)], radiussy: f32, freq_weighting: bool, outputs: &mut [Lab; 0xFFFFFF + 1]) {
+	self.buffer_params_map = ParamsT {
+		known_rgbs_len: known_rgbs.len(),
+		radiussy: radiussy,
+		iter_limit: -1,
+		bbox_min:                     [f32::from_bits(0xFFFFFFFF); 3];
+		bbox_range /* as bbox_max */: [f32::from_bits(0x00000000); 3];
+		_padding1: 0, _padding2: 0, _padding3: 0,
+	};
+	// ...
+
+	// find_bbox.hlsl
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline[FIND_BBOX]);
+	self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.len().div_ceil(64), 1, 1);
+	self.submit_buffer(self.cmd_buffer);
+
+	fn become_float3(bbox: &[f32; 3]) -> [f32; 3] {
+		bbox.map(f32::to_bits).map(|bu| f32::from_bits(bu ^ ((bu >> 31).wrapping_sub(1) | 0x80000000)))
+	}
+	{
+		let bbox_min = become_float3(&self.buffer_params_map.bbox_min);
+		let bbox_range = {
+			let bbox_max = become_float3(&self.buffer_params_map.bbox_range);
+			[bbox_max[0] - bbox_min[0], bbox_max[1] - bbox_min[1], bbox_max[2] - bbox_min[2]]
+		};
+		self.buffer_params_map.bbox_min   = bbox_min;
+		self.buffer_params_map.bbox_range = bbox_range;
+	}
+
+	// ... posterise.hlsl/posterise_mul.hlsl &c.
+}

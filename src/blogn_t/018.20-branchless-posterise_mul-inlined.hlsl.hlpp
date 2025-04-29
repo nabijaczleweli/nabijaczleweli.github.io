@@ -1,0 +1,9 @@
+#SMALL_START#
+float3 tmp = lab - center;
+const bool matched = dot(tmp, tmp) <= radiussy_squared;
+#SMALL_END#
+if(matched) {
+	uint freq = known_rgbs_freqs[i / 4][i % 4];
+	newcenter_count += freq;
+	newcenter       += freq * lab;
+}

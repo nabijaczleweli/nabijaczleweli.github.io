@@ -1,0 +1,32 @@
+#SMALL_START#
+typedef float3 point_t;
+#include "shader.h"
+
+[[vk::binding(1)]] RWStructuredBuffer<params_t>        params;             // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(3)]]   StructuredBuffer<uint>            known_rgbs_freqs;   // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(4)]] RWStructuredBuffer<uint>            groups_data;        // DEVICE_LOCAL
+
+#SMALL_END#
+#define next_start groups_data[0]
+[numthreads(GRID_SIZE, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+	const uint3 gridpos        = DTid;
+	const uint  known_rgbs_len = params[0].known_rgbs_len;
+	const uint  my_rgbs        = params[0].group_ranges[gridpos.x][gridpos.y][gridpos.z].group_len;
+
+	if(my_rgbs == 0)
+		return;
+
+	uint start_idx;
+	InterlockedAdd(next_start, my_rgbs, start_idx);
+	params[0].group_ranges[gridpos.x][gridpos.y][gridpos.z].start_idx = start_idx;
+
+	const uint gridpos_saved = (gridpos.x << (8 * 2)) |
+	                           (gridpos.y << (8 * 1)) |
+	                           (gridpos.z << (8 * 0));
+	for(uint rgb = 0; rgb < known_rgbs_len; ++rgb)
+		if(known_rgbs_freqs[rgb] == gridpos_saved) {
+			groups_data[start_idx] = rgb;
+			++start_idx;
+		}
+}

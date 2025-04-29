@@ -1,0 +1,37 @@
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ...find_bbox.hlsl
+#SMALL_START#
+	let mut bbox_min = become_float3(&self.buffer_params_map.bbox_min);
+	let mut bbox_range = {
+		let bbox_max = become_float3(&self.buffer_params_map.bbox_range);
+		[bbox_max[0] - bbox_min[0], bbox_max[1] - bbox_min[1], bbox_max[2] - bbox_min[2]]
+	};
+
+#SMALL_END#
+	// Sort coordinates so the bounding box ranges are x>y>z
+	// such that the grid radiussy bounding prism is x<y<z such that the innermost loop is the hottest
+	let mut   swaps = [0, 1, 2];
+	let mut unswaps = [0, 1, 2];
+	if bbox_range[0] < bbox_range[2] {
+		bbox_min  .swap(0, 2);
+		bbox_range.swap(0, 2);
+		swaps     .swap(0, 2);
+	}
+	if bbox_range[1] < bbox_range[2] {
+		bbox_min  .swap(1, 2);
+		bbox_range.swap(1, 2);
+		swaps     .swap(1, 2);
+		unswaps   .swap(1, 2);
+	}
+	if swaps[0] != 0 {
+		unswaps.swap(0, 2);
+	}
+#SMALL_START#
+
+	self.buffer_params_map.bbox_min   = bbox_min;
+	self.buffer_params_map.bbox_range = bbox_range;
+#SMALL_END#
+	self.buffer_params_map.axis_swaps = (((  swaps[0] << 4) | (  swaps[1] << 2) | (  swaps[2] << 0)) << 8)
+	                                  | (((unswaps[0] << 4) | (unswaps[1] << 2) | (unswaps[2] << 0)));
+	// assign_cell.hlsl...
+}

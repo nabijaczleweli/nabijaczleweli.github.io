@@ -63,16 +63,16 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #define STYLESHEETS MAIN_HEADING_STYLE FONTAWESOME_LINK MFIZZ_LINK DEVICON_LINK                        FORCED_NEWLINE \
-                    <link href="/kaschism/assets/column.css" rel="stylesheet" />                       FORCED_NEWLINE \
-                    <link href="../writing/Roboto-font.css" rel="stylesheet" />                        FORCED_NEWLINE \
-                    <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" />  FORCED_NEWLINE \
+                    <link href="/kaschism/assets/column.css" rel="stylesheet">                       FORCED_NEWLINE \
+                    <link href="../writing/Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
+                    <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">  FORCED_NEWLINE \
                     <style>@counter-style wg14   { system: extends decimal; prefix: "n"; suffix: ": "; }      FORCED_NEWLINE \
                            @counter-style wg14p1 { system: extends decimal; prefix: "n"; suffix: " (p1): "; } FORCED_NEWLINE \
                            @counter-style wg14p2 { system: extends decimal; prefix: "n"; suffix: " (p2): "; }</style>
-BOILERPLATE(Documentation and mistakes, Documentation and code, en-GB, STYLESHEETS)
+BOILERPLATE(Documentation &c., Documentation and code, en-GB, STYLESHEETS)
 
 
-MAIN_HEADING(Documentation and mistakes)
+MAIN_HEADING(Documentation &c.)
 <span class="roboto">
 
 
@@ -113,8 +113,10 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
 </ul>
 <br />
 
-A brief subsection of non-Rust non-mistakes:
+Select programs:
 <ul>
+	   SRHT_SET(mean-shift-clusterer, MFIZZ(rust),
+	            Oklab 3D radius-based pallette reduction (posterisation?) per <a href="//youtu.be/HuW9qJbL0xM">Gneiss Name, <cite>Mean Shift Clustering</cite>, 2025 ▶</a>; also <a href="../blogn_t/018-mean-shift-clusterer.html">on the blogue</a>)
 	   SRHT_SET(fonts.debian.net, DEVICON(cplusplus)DEVICON(javascript),
 	            <a href="//debfonts.nabijaczleweli.xyz">httpsCOLON_SLASH_SLASHdebfonts.nabijaczleweli.xyz</a> ‒ interactively-filtered search through all debian fonts)
 	   SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a> MFIZZ(c),

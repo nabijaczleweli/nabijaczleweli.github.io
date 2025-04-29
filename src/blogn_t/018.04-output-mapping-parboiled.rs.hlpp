@@ -1,0 +1,16 @@
+type RgbStuffedInLab = [u8; mem::size_of::<Lab>()];
+for (rgb, _, _) in known_rgbs {
+	let result = oklab_to_linear_srgb(outputs[rgb]);
+
+	let to_rgb: &mut RgbStuffedInLab = unsafe { mem::transmute(&mut outputs[rgb]) };
+	to_rgb[0] = (result.r * 255).round();
+	to_rgb[1] = (result.g * 255).round();
+	to_rgb[2] = (result.b * 255).round();
+}
+let outputs_rgb: &[RgbStuffedInLab; 0xFFFFFF + 1] = unsafe { mem::transmute(&outputs) };
+
+for (to_rgb, from_rgb) in image_processed.pixel_data.chunks_exact_mut(pixel_stride)
+                     .zip(image          .pixel_data.chunks_exact(pixel_stride)) {
+	let (r, g, b) = (from_rgb[0], from_rgb[1], from_rgb[2]);
+	to_rgb.copy_from_slice(outputs_rgb[(r << 16) | (g << 8) | (b << 0)]);
+});

@@ -1,0 +1,15 @@
+struct groupsum_t {
+	float3 labsum;
+	uint   freqsum;
+};
+#SMALL_START#
+
+#SMALL_END#
+struct params_t {
+	// ...
+#SMALL_START#
+	groupdesc_t	group_ranges   [GRID_SIZE]  [GRID_SIZE]  [GRID_SIZE];
+#SMALL_END#
+	groupsum_t	group_sums   [GRID_SIZE][GRID_SIZE][GRID_SIZE];
+	groupsum_t	group_mulsums[GRID_SIZE][GRID_SIZE][GRID_SIZE];
+};

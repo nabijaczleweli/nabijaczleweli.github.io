@@ -1,0 +1,78 @@
+pub struct PosteriseGpu {
+	// ...
+	groups_accumulator: Box<[[[sync::Mutex<Vec<u32>>; GRID_SIZE]; GRID_SIZE]; GRID_SIZE]>,
+#SMALL_START#
+	use_oneshot_driver: bool,
+#SMALL_END#
+}
+
+fn PosteriseGpu::init() -> PosteriseGpu {
+	// ...
+#SMALL_START#
+	ret.groups_accumulator = Box::<mem::MaybeUninit<_>>::assume_init(Box::new_uninit()),
+	for ga in ret.groups_accumulator.iter_mut().flatten().flatten() {
+#SMALL_END#
+		ptr::write(ga as *mut _, sync::Mutex::new(Vec::new()));
+#SMALL_START#
+	}
+#SMALL_END#
+	// ...
+}
+
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ...assign_cell.hlsl
+	// grouping
+	let known_rgbs_groupcoords: &mut [u32] = &self.buffer_outputs_map[0..known_rgbs];
+	let threads = num_cpus::get();
+	let setlen_default = known_rgbs_groupcoords.len() / threads;
+	let setlen_last    = known_rgbs_groupcoords.len() - setlen_default * (threads - 1);
+
+	for group in self.groups_accumulator.iter_mut().flatten().flatten() {
+		group.get_mut().unwrap().clear();
+	}
+	let mut joins = Vec::with_capacity(threads);
+	for subset in 0..threads {
+		let setlen = if subset == threads - 1 { setlen_last    }
+		             else                     { setlen_default };
+
+		let known_rgbs_groupcoords: &'static [_] =
+			slice::from_raw_parts    (known_rgbs_groupcoords [..].as_ptr(),     known_rgbs_groupcoords.len());
+		let groups_accumulator: &'static mut [_] =
+			slice::from_raw_parts_mut(self.groups_accumulator[..].as_mut_ptr(), self.groups_accumulator.len());
+		joins.push(thread::spawn(move || {
+			for (id, groupcoord) in known_rgbs_groupcoords[subset * setlen_default..subset * setlen_default + setlen].iter().enumerate() {
+				let id = id + subset * setlen_default;
+
+#SMALL_START#
+				let (x, y, z) = ((groupcoord >> (8 * 2)),
+				                 (groupcoord >> (8 * 1)) & 0xFF,
+				                 (groupcoord >> (8 * 0)) & 0xFF);
+#SMALL_END#
+				groups_accumulator[x][y][z].lock().unwrap().push(id);
+			}
+		}));
+	}
+	joins.into_iter().for_each(|jh| jh.join().unwrap());
+
+	// copying
+#SMALL_START#
+	let mut dump = /* ... */;
+	let mut cur = 0;
+	if known_rgbs > 75_000 {
+		for (x, y, z) in GRID_GILBERT {
+#SMALL_END#
+			dump(&mut self.buffer_params_map.group_ranges[x][y][z],
+			     &    self.groups_accumulator            [x][y][z].get_mut().unwrap())
+#SMALL_START#
+		}
+	} else {
+		for (gr_z, ga_z) in self.buffer_params_map.group_ranges.iter_mut().flatten().flatten()
+		               .zip(self.groups_accumulator            .iter()    .flatten().flatten()) {
+#SMALL_END#
+			dump(gr_z, ga_z.get_mut().unwrap());
+#SMALL_START#
+		}
+	}
+#SMALL_END#
+	// sum_cells.straight.hlsl or sum_cells.oneshot.hlsl...
+}

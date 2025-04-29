@@ -1,0 +1,20 @@
+struct params_t {
+#SMALL_START#
+	uint    known_rgbs_len;
+	float   radiussy_squared;
+	int     iter_limit;
+	uint    _padding1;
+
+#SMALL_END#
+	point_t bbox_min;
+	uint    _padding2;
+
+	point_t bbox_range;
+	uint    _padding3;
+#define bbox_max bbox_range  // find_bbox.hlsl only
+};
+
+struct known_rgbs_pack {
+	point_t lab;
+	uint    rgb;
+};

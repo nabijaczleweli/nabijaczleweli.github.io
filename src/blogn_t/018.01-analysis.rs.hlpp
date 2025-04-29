@@ -1,0 +1,18 @@
+let frequencies = [0u32; 0xFFFFFF + 1];
+for rgb in image.pixel_data.chunks_exact(pixel_stride) {
+	let (r, g, b) = (rgb[0], rgb[1], rgb[2]);
+	frequencies[(r << 16) | (g << 8) | (b << 0)] += 1;
+}
+
+#[repr(C)]
+struct Lab { l: f32, a: f32, b: f32 }
+let known_rgbs: Vec<(u32, Lab, u32)> = frequencies.iter()
+	.enumerate()
+	.filter(|(_, freq)| freq != 0)
+	.map(|(rgb, freq)| {
+		let (r, g, b): (f32, f32, f32) =
+			((rgb >> 16) & 0xFF, ((rgb >> 8) & 0xFF), ((rgb >> 0) & 0xFF));
+		let lab = linear_srgb_to_oklab((r / 255, g / 255, b / 255));
+		(rgb, lab, freq)
+	})
+	.collect();

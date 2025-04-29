@@ -1,0 +1,48 @@
+const DISTRIBUTE_ONESHOT_FREQS: usize = EXPAND_RGB + 1;
+
+pub struct PosteriseGpu {
+	// ...
+	buffer_known_rgbs_bundle: BufferBundle,   // [[vk::binding(2)]] SB<known_rgbs_pack> known_rgbs_bundle;   [DEVICE_LOCAL]
+	buffer_known_rgbs_freqs: BufferBundle,    // [[vk::binding(3)]] SB<uint>            known_rgbs_freqs;    [DEVICE_LOCAL]
+	// ...
+}
+
+fn PosteriseGpu::init() -> PosteriseGpu {
+	// ...
+	// vk::BufferUsageFlags::STORAGE_BUFFER              | ::TRANSFER_SRC ⬎       ⬐ ::TRANSFER_DST
+	ret.buffer_known_rgbs_bundle = BufferBundle(private_memory_type_index, true,  false);
+	ret.buffer_known_rgbs_freqs  = BufferBundle(private_memory_type_index, false, true);  // false, false
+	// ...
+}
+
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ... ensure_buffer() ...
+
+	// expand_rgb.hlsl
+	// memcpy(buffer_outputs_map, known_rgbs_freqs, known_rgbs * sizeof(u32))
+	ptr::copy_nonoverlapping(known_rgbs_rgbs.as_ptr(), self.buffer_outputs_map.as_ptr(), known_rgbs);
+#SMALL_START#
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline[EXPAND_RGB]);
+	self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.div_ceil(64), 1, 1);
+	self.submit_buffer(self.cmd_buffer);
+#SMALL_END#
+
+	// memcpy or distribute_oneshot_freqs.hlsl
+	// memcpy(buffer_outputs_map, known_rgbs_freqs, known_rgbs * sizeof(u32))
+	ptr::copy_nonoverlapping(known_rgbs_freqs.as_ptr(), self.buffer_outputs_map.as_ptr(), known_rgbs);
+	if self.use_oneshot_driver {
+		self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline[DISTRIBUTE_ONESHOT_FREQS]);
+		self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.div_ceil(64), 1, 1);
+	} else {
+		// memcpy(buffer_known_rgbs_freqs, buffer_outputs, buffer_known_rgbs_freqs_len)
+		self.device.cmd_copy_buffer(self.cmd_buffer, self.buffer_outputs.buffer, self.buffer_known_rgbs_freqs.buffer,
+		                            &[vk::BufferCopy {
+		                              	src_offset: 0,
+		                              	dst_offset: 0,
+		                              	size: buffer_known_rgbs_freqs_len,
+		                              }]);
+	}
+	self.submit_buffer(self.cmd_buffer);
+
+	// find_bbox.hlsl ...
+}

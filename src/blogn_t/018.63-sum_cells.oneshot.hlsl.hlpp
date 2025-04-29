@@ -1,0 +1,2 @@
+#define FREQ_I known_rgbs_bundle[i].rgb
+#include "sum_cells.kernel.hlsl.inc"

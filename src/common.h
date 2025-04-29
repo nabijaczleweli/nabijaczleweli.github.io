@@ -70,6 +70,7 @@
         let m = navigator.userAgent.match(/Firefox\/([0-9]+)/);                                                                          FORCED_NEWLINE \
         if(m && parseInt(m[1]) < 96)                                                                                                     FORCED_NEWLINE \
           document.addEventListener("DOMContentLoaded", function() {                                                                     FORCED_NEWLINE \
+            Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); });                             FORCED_NEWLINE \
             Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); });      FORCED_NEWLINE \
             Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); });  FORCED_NEWLINE \
           });                                                                                                                            FORCED_NEWLINE \
@@ -88,7 +89,7 @@
     <meta name="description" content=#description>                       FORCED_NEWLINE \
     <title>pagename — nabijaczleweli</title>                             FORCED_NEWLINE \
                                                                          FORCED_NEWLINE \
-    <link href="/content/assets/common.css" rel="stylesheet">          FORCED_NEWLINE \
+    <link href="/content/assets/common.css" rel="stylesheet">            FORCED_NEWLINE \
     ICONS_HEADER_PART                                                    FORCED_NEWLINE \
     __VA_ARGS__                                                          FORCED_NEWLINE \
   </head>                                                                FORCED_NEWLINE \
@@ -112,7 +113,7 @@
     <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way                                                \
     if my software helped you in some significant way?                                                                               FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \
-    Compiled with COMPILER_NAME COMPILER_VERSION'<!--'-->s C preprocessor on DATE_TIME from                                          FORCED_NEWLINE \
+    Compiled with COMPILER_NAME COMPILER_VERSION's<!--'--> C preprocessor on DATE_TIME from                                          FORCED_NEWLINE \
     <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a>.          FORCED_NEWLINE \
     CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
     <hr />                                                                                                                           FORCED_NEWLINE \

@@ -1,0 +1,14 @@
+#define GRID_SIZE 100
+struct groupdesc_t {
+	uint start_idx, end_idx;
+};
+
+struct params_t {
+	// ...
+	groupdesc_t group_ranges[GRID_SIZE][GRID_SIZE][GRID_SIZE];
+};
+// ...
+float3 lab_to_gridpos(float3 pos, float3 bbox_min, float3 bbox_range) {
+	pos = (pos - bbox_min) / bbox_range;
+	return min(pos * GRID_SIZE, GRID_SIZE - 0.001);
+}

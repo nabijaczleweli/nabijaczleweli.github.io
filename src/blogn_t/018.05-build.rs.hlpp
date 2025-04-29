@@ -1,0 +1,14 @@
+fn main() {
+	let processes = vec![];
+	for f in fs::read_dir("src").map(|r| r.path()).filter(|p| p.extension() == "hlsl") {
+		println!("cargo::rerun-if-changed={}", f.display());
+		proceses.push(std::process::Command::new("glslc")
+			.args(&["-fshader-stage=compute", "-g", "-O"])
+			.args(&["-o", Path::new(&env::var_os("OUT_DIR")).join(f.file_name()).with_extension("spv")])
+			.args(&[f])
+			.spawn());
+	}
+	for proc in processes
+		proc.wait().exit_ok().unwrap();
+	}
+}

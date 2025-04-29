@@ -1,0 +1,16 @@
+#SMALL_START#
+// ...
+[[vk::binding(1)]]   StructuredBuffer<params_t>        params;             // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;  // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(3)]] RWStructuredBuffer<uint>            known_rgbs_freqs;   // DEVICE_LOCAL & HOST_VISIBLE
+
+#SMALL_END#
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+  // ...
+	outputs[id] = (gridpos.x << (8 * 2)) |
+	              (gridpos.y << (8 * 1)) |
+	              (gridpos.z << (8 * 0));
+
+	InterlockedAdd(params[0].group_ranges[gridpos.x][gridpos.y][gridpos.z].group_len, 1);
+}

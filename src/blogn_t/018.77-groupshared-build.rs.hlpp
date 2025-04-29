@@ -1,0 +1,2 @@
+glslcs.push(std::process::Command::new("glslc")
+	.arg("--target-env=vulkan1.2")

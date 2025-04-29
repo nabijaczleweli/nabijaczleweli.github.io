@@ -1,0 +1,18 @@
+#SMALL_START#
+for(uint i = 0; i < known_rgbs_len; ++i) {
+	float3 lab = known_rgbs_bundle[i].lab;
+
+#SMALL_END#
+	float3 tmp = lab - center;
+	const bool matched = dot(tmp, tmp) <= radiussy_squared;
+#if !BRANCHLESS_ADD
+	if(matched)
+#endif
+	{
+		FREQ_LOAD
+		newcenter_count += FREQ;
+		newcenter       += FREQ * lab;
+	}
+#SMALL_START#
+}
+#SMALL_END#

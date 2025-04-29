@@ -1,0 +1,44 @@
+struct params_t {
+	uint  known_rgbs_len;
+	float radiussy;
+	uint  iter_limit;
+};
+
+struct known_rgbs_pack {
+	float3 lab;
+	uint   rgb;
+};
+
+[[vk::binding(0)]] RWStructuredBuffer<float3>          outputs;
+[[vk::binding(1)]]   StructuredBuffer<params_t>        params;
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;
+
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+	const uint  known_rgbs_len = params[0].known_rgbs_len;
+	const float radiussy       = params[0].radiussy;
+	const uint  iter_limit     = params[0].iter_limit;
+
+	const uint id = DTid.x;
+
+	known_rgbs_pack this = known_rgbs_bundle[id];
+	float3 center = this.lab;
+	for(uint iter = 0; iter < iter_limit; ++iter) {
+		uint newcenter_count = 0;
+		float3 newcenter     = float3(0, 0, 0);
+		for(uint i = 0; i < known_rgbs_len; ++i) {
+			float3 lab = known_rgbs_bundle[i].lab;
+			if(length(lab - center) <= radiussy) {
+				newcenter_count += 1;
+				newcenter       += lab;
+			}
+		}
+
+		newcenter /= newcenter_count;
+		bool same = newcenter == center;
+		if(same)
+			break;
+		center = newcenter;
+	}
+	outputs[this.rgb] = center;
+}

@@ -1,0 +1,42 @@
+#SMALL_START#
+for(uint iter = 0; iter != iter_limit; ++iter) {
+#SMALL_END#
+	const float3 gridpos_f   = lab_to_gridpos(center, bbox_min, bbox_range);
+	const uint3 gridpos      = trunc(gridpos_f);
+#SMALL_START#
+	const uint3 gridpos_from = gridpos - min(grid_bothdirs, gridpos);
+	const uint3 gridpos_to   = min(gridpos + grid_bothdirs, GRID_SIZE - 1);
+
+	uint newcenter_count = 0;
+	float3 newcenter = float3(0, 0, 0);
+	for(uint gx = gridpos_from.x; gx <= gridpos_to.x; ++gx)
+	for(uint gy = gridpos_from.y; gy <= gridpos_to.y; ++gy)
+	for(uint gz = gridpos_from.z; gz <= gridpos_to.z; ++gz) {
+#SMALL_END#
+		const uint3 gxyz      = uint3(gx, gy, gz);
+		const bool3 gxyz_same = gxyz == gridpos;
+
+		bool3 gxyz_close = gxyz < gridpos;
+		float3 closest_corner  = gridpos_to_lab(
+			gxyz_same ? gridpos_f : (gxyz + gxyz_close), bbox_min, bbox_range);
+
+		gxyz_close = gxyz_close || (gxyz_same && (gridpos_to_lab(float3(gxyz) + 0.5, bbox_min, bbox_range) < center));
+		float3 furthest_corner = gridpos_to_lab(gxyz + !gxyz_close, bbox_min, bbox_range);
+#SMALL_START#
+
+		closest_corner  -= center;
+		furthest_corner -= center;
+		float2 corners_squared = float2(dot(closest_corner,  closest_corner),
+		                                dot(furthest_corner, furthest_corner));
+		bool2  corners_inrange = corners_squared <= radiussy_squared;
+		if(!any(corners_inrange))
+			continue;
+
+		groupdesc_t group = params[0].group_ranges[gx][gy][gz];
+		// ...
+	}
+
+	newcenter /= newcenter_count;
+	// ...
+}
+#SMALL_END#

@@ -29,8 +29,7 @@ else
 endif
 
 # Args: $<, $@, additional defines
-# `cpp` doesn't like Unicode paths so we do some fuckery for it to not choke thereon
-preprocess_file = cd $(dir $(1)) && $(CPP) $(notdir $(1)) -pipe -nostdinc -Wno-trigraphs -Wno-unicode-homoglyph -I$(abspath $(BLDDIR)/highlit) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re 's/\(U\+200B\)/​/g' -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/HASH/\#/g" -e "s/\(FORCED_SPACER\)//g" -e "s/[[:space:]]+$$//g" -e 's;"JOB_URL";"$(JOB_URL)";' -e 's/\$$101010\.pl/101010.pl/g' > $(CURDIR)/$(2)
+preprocess_file = $(CPP) $(1) -pipe -nostdinc -Wno-trigraphs -Wno-unicode-homoglyph -I$(abspath $(BLDDIR)/highlit) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re 's/\(U\+200B\)/​/g' -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/HASH/\#/g" -e "s/\(FORCED_SPACER\)//g" -e "s/[[:space:]]+$$//g" -e 's;"JOB_URL";"$(JOB_URL)";' -e 's/\$$101010\.pl/101010.pl/g' > $(2)
 
 TR := tr
 AWK := awk
@@ -61,7 +60,7 @@ clean :
 
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
-highlight : highlight.js ext/prism/prism.js $(OUTDIR)assets/prism-twilight.min.css $(OUTDIR)assets/LICENSE-prism $(patsubst src/%.hlpp,$(BLDDIR)highlit/%.html,$(HIGHLIGHT_SOURCES)) $(patsubst src/%.hlhpp,$(BLDDIR)highlit/%.html,$(HAND_HIGHLIT_SOURCES))
+highlight : $(BLDDIR)highlit/.stamp ext/prism/prism.js $(OUTDIR)assets/prism-twilight.min.css $(OUTDIR)assets/LICENSE-prism
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(BLDDIR)out/%,$(EBOOK_PREPROCESS_SOURCES)) $(foreach l,$(patsubst src/%.epp,%,$(COMBINED_PREPROCESS_SOURCES)),$(OUTDIR)$(l) $(BLDDIR)out/$(l))
 books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
@@ -85,7 +84,7 @@ $(OUTDIR)assets/LICENSE-prism : ext/prism/LICENSE
 
 $(OUTDIR)assets/prism-twilight.min.css : ext/prism/themes/prism-twilight.css
 	@mkdir -p $(dir $@)
-	$(SED) -r ":a; s%(.*)/\*.*\*/%\1%; ta; /\/\*/ !b; N; ba" $^ | $(TR) -d "\\n" | $(SED) -r "s/[[:space:]]*([}{;:=+-]|,)[[:space:]]*/\\1/g" > $@
+	{ $(SED) -r ":a; s%(.*)/\*.*\*/%\1%; ta; /\/\*/ !b; N; ba" $^ | $(TR) -d "\\n" | $(SED) -r "s/[[:space:]]*([}{;:=+-]|,)[[:space:]]*/\\1/g"; echo '[class="language-hlsl"] .token.macro.property {color: inherit;}'; } > $@
 
 $(BLDDIR)feed/% : gen-feed-item.awk $(OUTDIR)%
 	@mkdir -p $(dir $@)
@@ -103,19 +102,15 @@ $(OUTDIR)assets/octicons/% : $(BLDDIR)octicons/build/octicons.min.css
 $(OUTDIR)% : src/%.pp
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,)
-	if grep -q '<!--BLOGN_T_TOC_PLACEHOLDER-->' $@ && grep -q '^HEADING[_A-Z]*(' $<; then $(AWK) -f toc.awk $< | sed -i '/<!--BLOGN_T_TOC_PLACEHOLDER-->/r /dev/stdin' $@; fi
+	if grep -q '<!--BLOGN_T_TOC_PLACEHOLDER-->' $@ && grep -q '^<!--!!HEADING' $@; then $(AWK) -f toc.awk $@ | sed -i '/^<!--!!HEADING/d;/<!--BLOGN_T_TOC_PLACEHOLDER-->/r /dev/stdin' $@; fi
 
 $(OUTDIR)% : src/%.epp
 	@mkdir -p $(dir $@)
 	$(call preprocess_file,$<,$@,)
 
-$(BLDDIR)highlit/%.html : highlight.js src/%.hlpp
+$(BLDDIR)highlit/.stamp : highlight.js $(HIGHLIGHT_SOURCES) $(HAND_HIGHLIT_SOURCES)
 	@mkdir -p $(dir $@)
-	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(subst $(suffix $@),,$@)))
-
-$(BLDDIR)highlit/%.html : highlight.js src/%.hlhpp
-	@mkdir -p $(dir $@)
-	$(NODE) "$<" "$(filter-out $<,$^)" "$@" $(subst .,,$(suffix $(subst $(suffix $@),,$@))) !
+	$(NODE) $< $@ : $(filter-out $<,$^) : $(patsubst src/%.hlpp,$(BLDDIR)highlit/%.html,$(HIGHLIGHT_SOURCES)) $(patsubst src/%.hlhpp,$(BLDDIR)highlit/%.html,$(HAND_HIGHLIT_SOURCES))
 
 $(BLDDIR)out/% : src/%.epp
 	@mkdir -p $(dir $@)

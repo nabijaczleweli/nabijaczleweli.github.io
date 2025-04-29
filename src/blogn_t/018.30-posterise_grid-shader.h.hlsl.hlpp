@@ -1,0 +1,13 @@
+struct params_t {
+	uint3   grid_bothdirs;
+	uint    known_rgbs_len;
+
+	point_t bbox_min;
+	float   radiussy_squared;
+
+	point_t bbox_range;
+	int     iter_limit;
+#define bbox_max bbox_range
+
+	groupdesc_t group_ranges[GRID_SIZE][GRID_SIZE][GRID_SIZE];
+};

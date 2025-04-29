@@ -1,12 +1,7 @@
-.continued {
+.continued, .continuing {
 	margin-bottom: 0;
 }
 
-.continuing {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.continuation {
+.continuation, .continuing {
 	margin-top: 0;
 }

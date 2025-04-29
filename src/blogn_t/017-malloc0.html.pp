@@ -160,7 +160,7 @@ realloc(3) is split off with text lifted directly from C89, including
 If <tt><i>size</i></tt> is zero and <tt><i>ptr</i></tt> is not a null pointer, the object it points to is freed.
 </blockquote>
 <p class="continuation">
-This is not true and the implementation doesn't change.
+This is not true and the implementation doesn'<!--'-->t change.
 Thus, the claimed conformance with C89 is also not true.
 <cite class="path"><samp>4.3tahoe/usr/src/lib/libc/gen/malloc.c</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.c</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.c</samp></cite>
 <cite class="path"><samp>4.3tahoe/usr/src/man/man3/malloc.3</samp>, <samp>4.3reno/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/malloc.3</samp>, <samp>4.4BSD-Lite1/usr/src/lib/libc/stdlib/realloc.3</samp>, <samp>4.4BSD-Lite2/usr/src/lib/libc/stdlib/realloc.3</samp></cite>

@@ -1,0 +1,11 @@
+#SMALL_START#
+#define KNOWN_RGBS_FREQS
+#define BRANCHLESS_ADD    1
+#SMALL_END#
+#define INTERROGATED_LOAD const float3 lab = known_rgbs_bundle[i].lab;
+#define interrogated_lab  lab
+#define FREQ_LOAD
+#SMALL_START#
+#define FREQ              matched
+#include "posterise_grid_oneshot.kernel.hlsl.inc"
+#SMALL_END#

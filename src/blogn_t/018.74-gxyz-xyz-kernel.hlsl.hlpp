@@ -1,0 +1,5 @@
+#define TWOBITS 3
+outputs[this.rgb] = pack_r_g_b_to_rgb(oklab_to_linear_srgb(
+	float3(center[(axis_unswaps >> 4)],
+		   center[(axis_unswaps >> 2) & TWOBITS],
+		   center[(axis_unswaps >> 0) & TWOBITS])));

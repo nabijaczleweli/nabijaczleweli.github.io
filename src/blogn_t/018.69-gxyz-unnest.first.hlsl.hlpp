@@ -1,0 +1,61 @@
+for(;;) {
+#SMALL_START#
+	const float3 gridpos_f   = lab_to_gridpos(center, bbox_min, bbox_range);
+	const uint3 gridpos      = trunc(gridpos_f);
+	const uint3 gridpos_from = gridpos - min(grid_bothdirs, gridpos);
+	const uint3 gridpos_to   = min(gridpos + grid_bothdirs, GRID_SIZE - 1);
+
+	uint newcenter_count = 0;
+	float3 newcenter = float3(0, 0, 0);
+#SMALL_END#
+	uint3 range = gridpos_to - gridpos_from + 1;
+	uint need_to_see = range.x * range.y * range.z;
+	uint seen = 0;
+	uint3 gxyz;
+	for(;;) {
+		bool iter = false;
+		while(seen < need_to_see) {
+			seen += 1;
+			uint acc = seen;
+			gxyz = gridpos_from;
+			gxyz.z += acc % range.z;
+			acc /= range.z;
+			gxyz.y += acc % range.y;
+			acc /= range.y;
+			gxyz.x += acc;
+
+#SMALL_START#
+			const bool3 gxyz_same = gxyz == gridpos;
+			// ...
+			bool2  corners_inrange = corners_squared <= radiussy_squared;
+#SMALL_END#
+			if(!any(corners_inrange))
+				;
+			else if(all(corners_inrange)) {
+				groupsum_t sums = params[0].SUMS_FIELD[gxyz.x][gxyz.y][gxyz.z];
+				newcenter_count += sums.freqsum;
+				newcenter       += sums.labsum;
+			} else {
+				iter = true;
+				break;
+			}
+		}
+		if(!iter)
+			break;
+
+		groupdesc_t group = params[0].group_ranges[gxyz.x][gxyz.y][gxyz.z];
+		for(; group.start_idx != group.end_idx; ++group.start_idx) {
+			// ...
+		}
+	}
+#SMALL_START#
+
+	newcenter /= newcenter_count;
+	if(all(newcenter == center))
+		break;
+	center = newcenter;
+#SMALL_END#
+}
+#SMALL_START#
+outputs[this.rgb] = pack_r_g_b_to_rgb(oklab_to_linear_srgb(center));
+#SMALL_END#

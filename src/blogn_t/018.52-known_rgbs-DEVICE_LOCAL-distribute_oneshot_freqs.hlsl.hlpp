@@ -1,0 +1,22 @@
+#SMALL_START#
+typedef float3 point_t;
+#include "shader.h"
+
+[[vk::binding(0)]]   StructuredBuffer<uint>            outputs;            // HOST_VISIBLE
+[[vk::binding(1)]]   StructuredBuffer<params_t>        params;             // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;  // DEVICE_LOCAL
+[[vk::binding(3)]] RWStructuredBuffer<uint>            known_rgbs_freqs;   // DEVICE_LOCAL
+
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+	const uint known_rgbs_len = params[0].known_rgbs_len;
+
+	const uint id = DTid.x;
+	if(id >= known_rgbs_len)
+		return;
+
+#SMALL_END#
+	known_rgbs_freqs[known_rgbs_bundle[id].rgb] = outputs[id];
+#SMALL_START#
+}
+#SMALL_END#

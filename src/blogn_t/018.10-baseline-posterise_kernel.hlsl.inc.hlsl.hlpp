@@ -1,0 +1,54 @@
+#SMALL_START#
+struct params_t {
+	uint  known_rgbs_len;
+	float radiussy_squared;
+	int   iter_limit;
+};
+
+struct known_rgbs_pack {
+	float3 lab;
+	uint   rgb;
+};
+
+[[vk::binding(0)]] RWStructuredBuffer<float3>          outputs;
+[[vk::binding(1)]]   StructuredBuffer<params_t>        params;
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;
+#SMALL_END#
+KNOWN_RGBS_FREQS
+
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+#SMALL_START#
+	const uint  known_rgbs_len   = params[0].known_rgbs_len;
+	const float radiussy_squared = params[0].radiussy_squared;
+	const uint  iter_limit       = params[0].iter_limit;
+
+	const uint id = DTid.x;
+	if(id >= known_rgbs_len)
+		return;
+
+#SMALL_END#
+	known_rgbs_pack this = known_rgbs_bundle[id];
+	float3 center = this.lab;
+	for(int iter = 0; iter != iter_limit; ++iter) {
+		uint newcenter_count = 0;
+		float3 newcenter     = float3(0, 0, 0);
+		for(uint i = 0; i < known_rgbs_len; ++i) {
+			float3 lab = known_rgbs_bundle[i].lab;
+
+			float3 tmp = lab - center;
+			if(dot(tmp, tmp) <= radiussy_squared) {
+				FREQ_LOAD
+				newcenter_count += FREQ;
+				newcenter       += lab TIMES_FREQ;
+			}
+		}
+
+		newcenter /= newcenter_count;
+		bool same = newcenter == center;
+		if(same)
+			break;
+		center = newcenter;
+	}
+	outputs[this.rgb] = center;
+}

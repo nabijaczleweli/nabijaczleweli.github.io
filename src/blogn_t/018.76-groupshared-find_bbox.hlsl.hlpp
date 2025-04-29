@@ -1,0 +1,27 @@
+#SMALL_START#
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+	const uint known_rgbs_len = params[0].known_rgbs_len;
+
+	const uint id = DTid.x;
+	if(id >= known_rgbs_len)
+		return;
+
+	uint3 tmp = known_rgbs_bundle[id].lab;
+	tmp ^= (~(tmp >> 31) + 1) | 0x80000000;
+
+#SMALL_END#
+	uint3 m = WaveActiveMin(tmp);
+	uint3 M = WaveActiveMax(tmp);
+	if(WaveIsFirstLane()) {
+		InterlockedMin(params[0].bbox_min.x, m.x);
+		InterlockedMin(params[0].bbox_min.y, m.y);
+		InterlockedMin(params[0].bbox_min.z, m.z);
+
+		InterlockedMax(params[0].bbox_max.x, M.x);
+		InterlockedMax(params[0].bbox_max.y, M.y);
+		InterlockedMax(params[0].bbox_max.z, M.z);
+	}
+#SMALL_START#
+}
+#SMALL_END#

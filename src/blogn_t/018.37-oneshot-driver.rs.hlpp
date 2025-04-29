@@ -1,0 +1,162 @@
+const USEONESHOT: usize = 2;
+const FIND_BBOX: usize = USEONESHOT + 2;
+const ASSIGN_CELL: usize = FIND_BBOX + 1;
+const SHADER_COUNT: usize = ASSIGN_CELL + 1;
+#SMALL_START#
+static SHADER_DATA: [&[u32]; SHADER_COUNT] = [include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise_grid.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise_grid.mul.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise_grid_oneshot.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/posterise_grid_oneshot.mul.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/find_bbox.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/assign_cell.spv"))];
+#SMALL_END#
+const SHADER_MAX_BINDING: u32 = 5;
+
+#SMALL_START#
+#[repr(C)]
+#SMALL_END#
+struct ParamsT {
+#SMALL_START#
+	grid_bothdirs: [u32; 3],
+	known_rgbs_len: u32,
+
+	bbox_min: [f32; 3],
+	radiussy_squared: f32,
+
+	bbox_range: [f32; 3],
+	_padding1: i32,
+
+#SMALL_END#
+	current_rgbs_start: u32, // MATHJAX(q_t \in \texttt{current_rgbs_bundle} \circ [\texttt{current_rgbs_start}, \texttt{current_rgbs_start}+\texttt{current_rgbs_len} RPAREN)
+	current_rgbs_len: u32,
+	current_rgbs_next: u32,  // MATHJAX(q_{t+\texttt{iter_limit}} \to \texttt{current_rgbs_bundle} \circ [\texttt{current_rgbs_next}, \ldots RPAREN)
+	iter_limit: i32,
+#SMALL_START#
+
+	group_ranges: [[[GroupDesc; GRID_SIZE]; GRID_SIZE]; GRID_SIZE],
+#SMALL_END#
+}
+
+pub struct PosteriseGpu {
+	// ...
+	buffer_outputs: BufferBundle,             // [[vk::binding(0)]] SB<float3>          outputs;             [HOST_VISIBLE]
+	buffer_params: BufferBundle,              // [[vk::binding(1)]] SB<params_t>        params;              [DEVICE_LOCAL & HOST_VISIBLE]
+	buffer_known_rgbs_bundle: BufferBundle,   // [[vk::binding(2)]] SB<known_rgbs_pack> known_rgbs_bundle;   [DEVICE_LOCAL & HOST_VISIBLE]
+	buffer_known_rgbs_freqs: BufferBundle,    // [[vk::binding(3)]] SB<uint>            known_rgbs_freqs;    [DEVICE_LOCAL & HOST_VISIBLE]
+	buffer_groups_data: BufferBundle,         // [[vk::binding(4)]] SB<uint>            groups_data;         [DEVICE_LOCAL]
+	buffer_current_rgbs_bundle: BufferBundle, // [[vk::binding(5)]] SB<float4>          current_rgbs_bundle; [DEVICE_LOCAL]
+	// ...
+}
+
+fn PosteriseGpu::init() -> PosteriseGpu {
+	// ...
+	// vk::BufferUsageFlags::STORAGE_BUFFER                | ::TRANSFER_SRC ⬎       ⬐ ::TRANSFER_DST
+	ret.buffer_known_rgbs_bundle   = BufferBundle(input_memory_type_index,   true,  false);  // was false, false
+	ret.buffer_current_rgbs_bundle = BufferBundle(private_memory_type_index, false, true);
+	// ...
+}
+
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, Lab, u32)], radiussy: f32, freq_weighting: bool, outputs: &mut [Lab; 0xFFFFFF + 1]) {
+	let use_oneshot_driver = known_rgbs.len() > 50_000;
+
+#SMALL_START#
+	self.buffer_known_rgbs_bundle.ensure_buffer(&self.device, known_rgbs.len() * mem::size_of::<KnownRgbsPack>());
+	assert!(mem::size_of::<KnownRgbsPack>() == 4 * 4);
+	self.buffer_groups_data.ensure_buffer(&self.device, known_rgbs.len() * mem::size_of::<u32>());
+#SMALL_END#
+	if use_oneshot_driver {
+		self.buffer_current_rgbs_bundle.ensure_buffer(&self.device, (known_rgbs.len() * 2) * mem::size_of::<KnownRgbsPack>());
+	}
+	let buffer_known_rgbs_freqs_len = if use_oneshot_driver { 0xFFFFFF + 1 } else { known_rgbs.len() } * mem::size_of::<u32>());
+	if freq_weighting {
+		self.buffer_known_rgbs_freqs.ensure_buffer(&self.device, buffer_known_rgbs_freqs_len);
+	}
+
+#SMALL_START#
+	let buffer_known_rgbs_bundle_map = self.device.map_memory(self.buffer_known_rgbs_bundle);
+	let known_rgbs_bundle: &mut [KnownRgbsPack] = slice::from_raw_parts_mut(buffer_known_rgbs_bundle_map, known_rgbs.len());
+	for ((rgb, lab, _), dest_lab) in known_rgbs.iter().zip(known_rgbs_bundle.iter_mut()) {
+		dest_lab = KnownRgbsPack {
+			rgb: rgb,
+			lab: lab,
+		};
+	}
+	self.buffer_known_rgbs_bundle.unmap(&self.device);
+#SMALL_END#
+
+#SMALL_START#
+	if freq_weighting {
+		let buffer_known_rgbs_freqs_map = self.device.map_memory(self.buffer_known_rgbs_freqs);
+		let known_rgbs_freqs: &mut [u32] = slice::from_raw_parts_mut(buffer_known_rgbs_freqs_map, buffer_known_rgbs_freqs_len / mem::size_of::<u32>());
+#SMALL_END#
+		if use_oneshot_driver {
+			for (rgb, _, freq) in known_rgbs {
+				known_rgbs_freqs[rgb] = freq;
+			}
+		} else {
+#SMALL_START#
+			for ((_, _, freq), dest_freq) in known_rgbs.iter().zip(known_rgbs_freqs.iter_mut()) {
+				dest_freq = freq;
+			}
+#SMALL_END#
+		}
+#SMALL_START#
+		self.buffer_known_rgbs_freqs.unmap(&self.device);
+	}
+#SMALL_END#
+
+	// ...
+
+	// posterise_grid_oneshot.kernel.hlsl.inc or posterise_grid.kernel.hlsl.inc
+	if use_oneshot_driver {
+		self.buffer_params_map.current_rgbs_len = known_rgbs.len();
+
+		let il = |len| if len <=  10_000 { -1 }
+		          else if len <= 100_000 { 20 }
+		          else                   { 10 };
+		let mut first = true;
+		for (orig_start, orig_next) in [(0,                known_rgbs.len()),
+		                                (known_rgbs.len(), 0               )].iter().cycle() {
+			self.buffer_params_map.current_rgbs_start = orig_start;
+			self.buffer_params_map.current_rgbs_next  = orig_next;
+			self.buffer_params_map.iter_limit = il(self.buffer_params_map.current_rgbs_len);
+
+			if first {
+				// memcpy(self.buffer_current_rgbs, self.buffer_known_rgbs, known_rgbs.len() * mem::size_of::<KnownRgbsPack>());
+				self.device.cmd_copy_buffer(self.cmd_buffer,
+					self.buffer_known_rgbs_bundle.buffer, self.buffer_current_rgbs_bundle.buffer,
+					&[vk::BufferCopy {
+					  	src_offset: 0,
+					  	dst_offset: 0,
+					  	size: known_rgbs.len() * mem::size_of::<KnownRgbsPack>(),
+					  }]);
+			}
+			self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE,
+				self.compute_pipeline[USEONESHOT + freq_weighting]);
+			self.device.cmd_dispatch(self.cmd_buffer, self.buffer_params_map.current_rgbs_len.div_ceil(64), 1, 1);
+			self.submit_buffer(self.cmd_buffer);
+
+			let still_to_do = self.buffer_params_map.current_rgbs_next - orig_next;
+			if still_to_do == 0 {
+				break;
+			}
+#SMALL_START#
+
+			println!("did {}/{} ({} steps); {} left",
+			         self.buffer_params_map.current_rgbs_len - still_to_do,
+			         self.buffer_params_map.current_rgbs_len,
+			         self.buffer_params_map.iter_limit,
+			         still_to_do);
+#SMALL_END#
+			self.buffer_params_map.current_rgbs_len = still_to_do;
+			first = false;
+		}
+	} else {
+		self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE,
+			self.compute_pipeline[freq_weighting]);
+		self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.len().div_ceil(64), 1, 1);
+		self.submit_buffer(self.cmd_buffer);
+	}
+
+	// ... output copying
+}

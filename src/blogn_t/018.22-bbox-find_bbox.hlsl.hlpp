@@ -1,0 +1,29 @@
+typedef uint3 point_t;
+#include "shader.h"
+#SMALL_START#
+
+[[vk::binding(1)]] RWStructuredBuffer<params_t>        params;             // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;  // DEVICE_LOCAL & HOST_VISIBLE
+
+#SMALL_END#
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+#SMALL_START#
+	const uint known_rgbs_len = params[0].known_rgbs_len;
+
+	const uint id = DTid.x;
+	if(id >= known_rgbs_len)
+		return;
+
+#SMALL_END#
+	uint3 tmp = known_rgbs_bundle[id].lab;
+	tmp ^= (~(tmp >> 31) + 1) | 0x80000000;
+
+	InterlockedMin(params[0].bbox_min.x, tmp.x);
+	InterlockedMin(params[0].bbox_min.y, tmp.y);
+	InterlockedMin(params[0].bbox_min.z, tmp.z);
+
+	InterlockedMax(params[0].bbox_max.x, tmp.x);
+	InterlockedMax(params[0].bbox_max.y, tmp.y);
+	InterlockedMax(params[0].bbox_max.z, tmp.z);
+}

@@ -1,0 +1,9 @@
+	if(all(newcenter == center))
+		break;
+#SMALL_START#
+// and
+#SMALL_END#
+	if(all(newcenter == center)) {
+		outputs[this.rgb] = pack_r_g_b_to_rgb(oklab_to_linear_srgb(center));
+		return;
+	}

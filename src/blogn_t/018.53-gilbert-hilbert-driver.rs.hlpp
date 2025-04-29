@@ -1,0 +1,37 @@
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ...assign_cell.hlsl, grouping
+#SMALL_START#
+
+#SMALL_END#
+	// copying
+#SMALL_START#
+	let mut known_rgbs_groups: *mut u32 = self.buffer_outputs_map.as_ptr() as _;
+	let mut cur = 0;
+#SMALL_END#
+	let mut dump = |gr_z: &mut GroupDesc, ga_z: &Vec<u32>|
+#SMALL_START#
+		if ga_z.len() != 0 {
+			let start = cur;
+
+			// memcpy(known_rgbs_groups,               ga_z.as_ptr(), ga_z.len())
+			known_rgbs_groups.copy_from_nonoverlapping(ga_z.as_ptr(), ga_z.len());
+			cur += ga_z.len();
+			known_rgbs_groups = known_rgbs_groups.add(ga_z.len());
+
+			*gr_z = GroupDesc {
+				start_idx: start,
+				end_idx: cur,
+			};
+		};
+#SMALL_END#
+	for i in 0..GRID_SIZE * GRID_SIZE * GRID_SIZE {
+		let (x, y, z) = decodeh(i);
+		dump(&mut self.buffer_params_map.group_ranges[x][y][z],
+		     &    self.groups_accumulator            [x][y][z])
+	}
+	assert!(cur == known_rgbs.len());
+#SMALL_START#
+
+#SMALL_END#
+	// memcpy(self.buffer_groups_data, self.buffer_outputs, known_rgbs * mem::size_of::<u32>())...
+}

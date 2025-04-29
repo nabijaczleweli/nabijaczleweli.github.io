@@ -1,0 +1,3 @@
+printf("{%v3f} {%v3x} => {%v3f} {%v3x} * %d [%v3d]",
+       center, asuint(center), newcenter, asuint(newcenter),
+       newcenter_count,        newcenter == center);

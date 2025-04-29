@@ -1,0 +1,14 @@
+#SMALL_START#
+for(uint i = 0; i < known_rgbs_len; ++i) {
+	float3 lab = known_rgbs_bundle[i].lab;
+
+#SMALL_END#
+	float3 tmp = lab - center;
+	if(dot(tmp, tmp) <= radiussy_squared) {
+		uint freq = known_rgbs_freqs[i / 4][i % 4];
+		newcenter_count += freq;
+		newcenter       += lab * freq;
+	}
+#SMALL_START#
+}
+#SMALL_END#

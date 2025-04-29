@@ -1,0 +1,10 @@
+const uint i = groups_data[group.start_idx];
+const known_rgbs_pack interrogated = known_rgbs_bundle[i];
+
+float3 tmp = interrogated.lab - center;
+const bool matched = dot(tmp, tmp) <= radiussy_squared;
+if(matched) {
+	const uint freq = known_rgbs_freqs[interrogated.rgb];
+	newcenter_count += freq;
+	newcenter       += freq * interrogated.lab;
+}

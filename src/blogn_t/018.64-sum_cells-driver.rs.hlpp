@@ -1,0 +1,33 @@
+// ...
+const SUM_CELLS: usize = ASSIGN_CELL + 1;
+const SHADER_COUNT: usize = SUM_CELLS + 2;
+#SMALL_START#
+static SHADER_DATA: [&[u32]; SHADER_COUNT] = [// ...
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/sum_cells.straight.spv")),
+                                              include_typed!(u32, concat!(env!("OUT_DIR"), "/sum_cells.oneshot.spv"))];
+
+#SMALL_END#
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ...up to assign_cell.hlsl + grouping + copying
+
+#SMALL_START#
+	// memcpy(self.buffer_groups_data, self.buffer_outputs, known_rgbs * mem::size_of::<u32>());
+#SMALL_END#
+	// + sum_cells.straight.hlsl or sum_cells.oneshot.hlsl
+#SMALL_START#
+	self.device.cmd_copy_buffer(self.cmd_buffer, self.buffer_outputs.buffer, self.buffer_groups_data.buffer,
+	                            &[vk::BufferCopy {
+	                              	src_offset: 0,
+	                              	dst_offset: 0,
+	                              	size: known_rgbs * mem::size_of::<u32>(),
+	                              }]);
+
+#SMALL_END#
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE,
+	                              self.compute_pipeline[SUM_CELLS + self.use_oneshot_driver]);
+	self.device.cmd_dispatch(self.cmd_buffer, GRID_SIZE, GRID_SIZE, 1);
+#SMALL_START#
+
+	self.submit_buffer(self.cmd_buffer);
+#SMALL_END#
+}

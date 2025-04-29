@@ -1,0 +1,31 @@
+#SMALL_START#
+typedef float3 point_t;
+#include "shader.h"
+
+[[vk::binding(1)]] RWStructuredBuffer<params_t>        params;             // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;  // DEVICE_LOCAL
+[[vk::binding(3)]]   StructuredBuffer<uint>            known_rgbs_freqs;   // DEVICE_LOCAL
+[[vk::binding(4)]]   StructuredBuffer<uint>            groups_data;        // DEVICE_LOCAL
+
+#SMALL_END#
+[numthreads(1, 1, GRID_SIZE)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+#define gridpos DTid
+
+	groupsum_t    sum = {};
+	groupsum_t mulsum = {};
+	groupdesc_t group = params[0].group_ranges[gridpos.x][gridpos.y][gridpos.z];
+	for(; group.start_idx != group.end_idx; ++group.start_idx) {
+		const uint i = groups_data[group.start_idx];
+		float3 lab  = known_rgbs_bundle[i].lab;
+		uint   freq = known_rgbs_freqs[FREQ_I];
+		sum.labsum     += lab;
+		sum.freqsum    +=       1;
+		mulsum.labsum  += lab * freq;
+		mulsum.freqsum +=       freq;
+	}
+	if(sum.freqsum) {
+		params[0].group_sums   [gridpos.x][gridpos.y][gridpos.z] = sum;
+		params[0].group_mulsums[gridpos.x][gridpos.y][gridpos.z] = mulsum;
+	}
+}

@@ -1,0 +1,7 @@
+float3 unpack_rgb_to_r_g_b(uint rgb) {
+	return uint3(rgb >> 16, (rgb >> 8) & 0xFF, (rgb >> 0) & 0xFF) / float(0xFF);
+}
+uint pack_r_g_b_to_rgb(float3 r_g_b) {
+	uint3 rgb = uint3(round(r_g_b * 0xFF));
+	return (rgb.r << 16) | (rgb.g << 8) | (rgb.b << 0);
+}

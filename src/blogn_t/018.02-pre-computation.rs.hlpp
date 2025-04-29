@@ -1,0 +1,41 @@
+let radiussy = 0.02;
+let mut outputs = [Lab { .. }; 0xFFFFFF + 1];
+
+let radiussy_squared = radiussy * radiussy;
+for (rgb, lab, _) in known_rgbs {
+	let mut center = lab;
+
+	loop {
+		let (newcenter_count, mut newcenter) = known_rgbs.iter()
+			.filter(|(_, lab, _)| {
+				let distance_squared = (lab.l - center.l).sqr() + (lab.a - center.a).sqr() + (lab.b - center.b).sqr();
+				distance_squared <= radiussy_squared
+			})
+			.fold((0, Lab { l: 0, a: 0, b: 0 }), |(cnt, acc), (_, lab, freq)| {
+				#[cfg(palette)]
+				(cnt + 1,
+				 Lab {
+				 	l: acc.l + lab.l,
+				 	a: acc.a + lab.a,
+				 	b: acc.b + lab.b,
+				 })
+				#[cfg(mul_freq)]
+				(cnt + freq,
+				 Lab {
+				 	l: acc.l + lab.l * freq,
+				 	a: acc.a + lab.a * freq,
+				 	b: acc.b + lab.b * freq,
+				 })
+			});
+
+		newcenter.l /= newcenter_count;
+		newcenter.a /= newcenter_count;
+		newcenter.b /= newcenter_count;
+		if newcenter == center {
+			break;
+		}
+		center = newcenter;
+	}
+
+	outputs[rgb] = center;
+}

@@ -1,0 +1,5 @@
+#define KNOWN_RGBS_FREQS [[vk::binding(3)]] StructuredBuffer<uint4> known_rgbs_freqs; // DEVICE_LOCAL & HOST_VISIBLE & HOST_COHERENT
+#define BRANCHLESS_ADD   0
+#define FREQ_LOAD        uint freq = known_rgbs_freqs[i / 4][i % 4];
+#define FREQ             freq
+#include "posterise_kernel.hlsl.inc"

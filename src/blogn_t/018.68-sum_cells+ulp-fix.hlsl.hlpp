@@ -1,0 +1,9 @@
+float3 prevcenter = -1;
+for(;;) {
+	// ...
+	newcenter /= newcenter_count;
+	if(all(newcenter == center) || all(newcenter == prevcenter))
+		break;
+	prevcenter = center;
+	center = newcenter;
+}

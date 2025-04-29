@@ -1,0 +1,16 @@
+[[vk::binding(0)]] RWStructuredBuffer<uint>            outputs;            // HOST_VISIBLE
+#SMALL_START#
+
+#SMALL_END#
+// FORCELINK(posterise_grid_oneshot.kernel.hlsl.inc, 62)
+		if(same) {
+			outputs[this.rgb] = pack_r_g_b_to_rgb(oklab_to_linear_srgb(center));
+			return;
+		}
+#SMALL_START#
+
+#SMALL_END#
+// FORCELINK(posterise_grid.kernel.hlsl.inc, 63)
+	}
+	outputs[this.rgb] = pack_r_g_b_to_rgb(oklab_to_linear_srgb(center));
+}

@@ -44,26 +44,14 @@ BEGIN {
 }
 
 END {
-	for(; 1 < last; --last)
+	for(; 1 <= last; --last)
 		print "</ol>"
 	print "</details></div>"
 }
 
 
-# HEADING(2, jpeg, no nooo my nose cam noooooo)
-/^HEADING\(([^,]*), ([^,]*), (.*)\)$/ {
-	match($0, /^HEADING\(([^,]*), ([^,]*), (.*)\)$/, tok)
-	heading(tok)
-}
-
-# HEADING_S(2, jailbroke, class="continuing", saved from chromium (chrome os (chromium os(?))))
-/^HEADING_S\(([^,]*), ([^,]*), [^,]*, (.*)\)$/ {
-	match($0, /^HEADING_S\(([^,]*), ([^,]*), [^,]*, (.*)\)$/, tok)
-	heading(tok)
-}
-
-# HEADING_CHRULTRA_S(4, installing-making-a-bootable-usb-flashing-with-dd-linux-macos, class="continuing", installing/bootableusb.html#flashing-with-dd-linux-macos, Flashing with dd (Linux/macOS))
-/^HEADING_CHRULTRA_S\(([^,]*), ([^,]*), [^,]*, [^,]*, (.*)\)$/ {
-	match($0, /^HEADING_CHRULTRA_S\(([^,]*), ([^,]*), [^,]*, [^,]*, (.*)\)$/, tok)
+# <!--!!HEADING2|problem-statement|Problem statement-->
+/^<!--!!HEADING/ {
+	match($0, /^<!--!!HEADING([^|]+)\|([^|]+)\|(.+)-->$/, tok)
 	heading(tok)
 }

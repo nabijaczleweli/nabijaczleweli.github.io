@@ -1,0 +1,32 @@
+pub struct PosteriseGpu {
+	// ...
+	buffer_outputs: BufferBundle,                         // [[vk::binding(0)]] SB<uint> outputs; [HOST_VISIBLE]
+	buffer_outputs_map: &'static mut [u32; 0xFFFFFF + 1],
+	// ...
+}
+
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, u32)], radiussy: f32, freq_weighting: bool, outputs: &mut [[u8; 3]; 0xFFFFFF + 1]) {
+	// ...
+#SMALL_START#
+	let buffer_known_rgbs_bundle_map = self.device.map_memory(self.buffer_known_rgbs_bundle);
+	let known_rgbs_bundle: &mut [KnownRgbsPack] = slice::from_raw_parts_mut(buffer_known_rgbs_bundle_map, known_rgbs.len());
+#SMALL_END#
+	for ((known, _), bundle) in known_rgbs.iter().zip(known_rgbs_bundle.iter_mut()) {
+		bundle.rgb = known;
+	}
+	// ... known_rgbs_freqs setup
+
+	// expand_rgb.hlsl
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline[EXPAND_RGB]);
+	self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.len().div_ceil(64), 1, 1);
+	self.submit_buffer(self.cmd_buffer);
+
+	// ... everything through posterise_grid.kernel.hlsl.inc/posterise_grid_oneshot.kernel.hlsl.inc
+
+	for (rgb, _) in known_rgbs {
+		let out = self.buffer_outputs_map[rgb];
+		outputs[rgb][0] = (out >> 16);         // MATHJAX(rC)
+		outputs[rgb][1] = (out >>  8) & 0xFF;  // MATHJAX(gC)
+		outputs[rgb][2] = (out >>  0) & 0xFF;  // MATHJAX(bC)
+	}
+}

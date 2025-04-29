@@ -1,0 +1,6 @@
+let mut outputs = [[u8; 3]; 0xFFFFFF + 1];            // was [[f32; 3]; ...]
+// ...
+let known_rgbs: Vec<(u32, u32)> = frequencies.iter()  // was Vec<(u32, Lab, u32)>
+	.enumerate()
+	.filter(|(rgb, freq)| freq != 0)
+	.collect();

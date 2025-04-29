@@ -1,0 +1,10 @@
+#SMALL_START#
+if(!any(corners_inrange))
+	continue;
+#SMALL_END#
+else if(all(corners_inrange)) {
+	groupsum_t sums = params[0].SUMS_FIELD[gx][gy][gz];
+	newcenter_count += sums.freqsum;
+	newcenter       += sums.labsum;
+	continue;
+}

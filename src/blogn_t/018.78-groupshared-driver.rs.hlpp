@@ -1,0 +1,13 @@
+fn PosteriseGpu::init() -> PosteriseGpu {
+	// ...
+	let mut physical_device_subgroup_properties = vk::PhysicalDeviceSubgroupProperties::builder();
+	let mut physical_device_properties2 = vk::PhysicalDeviceProperties2::builder().push_next(&mut physical_device_subgroup_properties);
+	vk_instance.get_physical_device_properties2(physical_device, &mut physical_device_properties2);
+	let physical_device_properties = physical_device_properties2.build().properties;
+	assert!(SHADER_MAX_BINDING < physical_device_properties.limits.max_bound_descriptor_sets);
+
+	let physical_device_subgroup_properties = physical_device_subgroup_properties.build();
+	let need = vk::SubgroupFeatureFlags::BASIC | vk::SubgroupFeatureFlags::ARITHMETIC;
+	assert!(physical_device_subgroup_properties.supported_operations & need == need);
+	// ...
+}

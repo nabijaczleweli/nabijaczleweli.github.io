@@ -1,0 +1,3 @@
+float3 gridpos_to_lab(float3 pos, float3 bbox_min, float3 bbox_range) {
+	return (pos / GRID_SIZE) * bbox_range + bbox_min;
+}

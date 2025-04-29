@@ -1,0 +1,3 @@
+struct groupdesc_t {
+	uint start_idx, group_len;
+};

@@ -1,0 +1,136 @@
+const ASSIGN_CELL: usize = FIND_BBOX + 1; // &c.
+
+const GRID_SIZE: usize = include!(concat!(env!("OUT_DIR"), "/grid_size.rs"));
+#SMALL_START#
+#[repr(C)]
+#SMALL_END#
+struct GroupDesc {
+	start_idx: u32,
+	end_idx: u32,
+}
+#SMALL_START#
+#[repr(C)]
+#SMALL_END#
+struct ParamsT {
+	// ...
+	group_ranges: [[[GroupDesc; GRID_SIZE]; GRID_SIZE]; GRID_SIZE],
+}
+
+const SHADER_MAX_BINDING: u32 = 4;
+pub struct PosteriseGpu {
+	// ...
+	buffer_outputs: BufferBundle,           // [[vk::binding(0)]] SB<float3>          outputs;           [HOST_VISIBLE]
+	buffer_params: BufferBundle,            // [[vk::binding(1)]] SB<params_t>        params;            [DEVICE_LOCAL & HOST_VISIBLE]
+	buffer_known_rgbs_bundle: BufferBundle, // [[vk::binding(2)]] SB<known_rgbs_pack> known_rgbs_bundle; [DEVICE_LOCAL & HOST_VISIBLE]
+	buffer_known_rgbs_freqs: BufferBundle,  // [[vk::binding(3)]] SB<uint>            known_rgbs_freqs;  [DEVICE_LOCAL & HOST_VISIBLE]
+	buffer_groups_data: BufferBundle,       // [[vk::binding(4)]] SB<uint>            groups_data;       [DEVICE_LOCAL]
+
+	groups_accumulator: Box<[[[Vec<u32>; GRID_SIZE]; GRID_SIZE]; GRID_SIZE]>,
+}
+
+fn PosteriseGpu::init() -> PosteriseGpu {
+	// ...
+	let physical_device_properties = vk_instance.get_physical_device_properties(physical_device);
+	assert!(SHADER_MAX_BINDING < physical_device_properties.limits.max_bound_descriptor_sets);
+
+	let output_memory_type_index = memory_types.iter()
+		.position(|memory_type| {
+			memory_type.property_flags.contains(vk::MemoryPropertyFlags::HOST_VISIBLE) &&
+			memory_type.property_flags.contains(vk::MemoryPropertyFlags::HOST_COHERENT)
+		})
+		.expect("No output memory type");
+	let input_memory_type_index = memory_types.iter()
+		.position(|memory_type| {
+			memory_type.property_flags.contains(vk::MemoryPropertyFlags::DEVICE_LOCAL) &&
+			memory_type.property_flags.contains(vk::MemoryPropertyFlags::HOST_VISIBLE) &&
+			memory_type.property_flags.contains(vk::MemoryPropertyFlags::HOST_COHERENT)
+		})
+		.unwrap_or(output_memory_type_index);
+	let input_memory_type_index = memory_types.iter()
+		.position(|memory_type| memory_type.property_flags.contains(vk::MemoryPropertyFlags::DEVICE_LOCAL))
+		.unwrap_or(output_memory_type_index);
+
+	// vk::BufferUsageFlags::STORAGE_BUFFER              | ::TRANSFER_SRC ⬎       ⬐ ::TRANSFER_DST
+	ret.buffer_outputs           = BufferBundle(output_memory_type_index,  true,  false);
+	ret.buffer_params            = BufferBundle(input_memory_type_index,   false, true);
+	ret.buffer_known_rgbs_bundle = BufferBundle(input_memory_type_index,   false, false);
+	ret.buffer_known_rgbs_freqs  = BufferBundle(input_memory_type_index,   false, false);
+	ret.buffer_groups_data       = BufferBundle(private_memory_type_index, false, true);
+
+	unsafe {
+		ret.groups_accumulator = Box::<mem::MaybeUninit<_>>::assume_init(Box::new_uninit()),
+		for ga in ret.groups_accumulator.iter_mut().flatten().flatten() {
+			ptr::write(ga as *mut _, Vec::new());
+		}
+	}
+}
+
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, Lab, u32)], radiussy: f32, freq_weighting: bool, outputs: &mut [Lab; 0xFFFFFF + 1]) {
+	self.buffer_groups_data.ensure_buffer(known_rgbs.len() * mem::size_of::<u32>());
+	if freq_weighting {
+		self.buffer_known_rgbs_freqs.ensure_buffer(known_rgbs.len() * mem::size_of::<u32>());
+	}
+	// ...
+
+	// memset(self.buffer_params.buffer, 0, *); ⇔ self.buffer_params_map = mem::zeroed();
+	self.device.cmd_fill_buffer(self.cmd_buffer, self.buffer_params.buffer, 0, vk::WHOLE_SIZE, 0);
+	self.submit_buffer(self.cmd_buffer);
+	{
+		self.buffer_params_map.known_rgbs_len   = known_rgbs.len();
+		self.buffer_params_map.bbox_min         = [f32::from_bits(0xFFFFFFFF); 3];
+		// bbox_range/bbox_max          already = 0x00000000 from memset()
+		self.buffer_params_map.radiussy_squared = radiussy * radiussy;
+		self.buffer_params_map.iter_limit       = -1;
+	}
+	// ... through find_bbox.hlsl &c.
+
+	// assign_cell.hlsl
+	self.device.cmd_bind_pipeline(self.cmd_buffer, vk::PipelineBindPoint::COMPUTE, self.compute_pipeline[ASSIGN_CELL]);
+	self.device.cmd_dispatch(self.cmd_buffer, known_rgbs.len().div_ceil(64), 1, 1);
+	self.submit_buffer(self.cmd_buffer);
+
+	// grouping
+	let known_rgbs_groupcoords: &mut [u32] = slice::from_raw_parts_mut(self.buffer_outputs_map.as_ptr(), known_rgbs.len());
+
+	for group in self.groups_accumulator.iter_mut().flatten().flatten() {
+		group.clear();
+	}
+	for (id, groupcoord) in known_rgbs_groupcoords.iter().enumerate() {
+		let (x, y, z) = ((groupcoord >> (8 * 2)),
+		                 (groupcoord >> (8 * 1)) & 0xFF,
+		                 (groupcoord >> (8 * 0)) & 0xFF);
+		self.groups_accumulator[x][y][z].push(id);
+	}
+
+	// copying
+	let mut known_rgbs_groups: *mut u32 = self.buffer_outputs_map.as_ptr() as _;
+	let mut cur = 0;
+	for (gr_z, ga_z) in self.buffer_params_map.group_ranges.iter_mut().flatten().flatten()
+	               .zip(self.groups_accumulator            .iter()    .flatten().flatten()) {
+		if ga_z.len() != 0 {
+			let start = cur;
+
+			// memcpy(known_rgbs_groups,               ga_z.as_ptr(), ga_z.len())
+			known_rgbs_groups.copy_from_nonoverlapping(ga_z.as_ptr(), ga_z.len());
+			cur += ga_z.len();
+			known_rgbs_groups = known_rgbs_groups.add(ga_z.len());
+
+			*gr_z = GroupDesc {
+				start_idx: start,
+				end_idx: cur,
+			};
+		}
+	}
+	assert!(cur == known_rgbs.len());
+
+	// memcpy(self.buffer_groups_data, self.buffer_outputs, known_rgbs * mem::size_of::<u32>());
+	self.device.cmd_copy_buffer(self.cmd_buffer, self.buffer_outputs.buffer, self.buffer_groups_data.buffer,
+	                            &[vk::BufferCopy {
+	                              	src_offset: 0,
+	                              	dst_offset: 0,
+	                              	size: known_rgbs * mem::size_of::<u32>(),
+	                              }]);
+	self.submit_buffer(self.cmd_buffer);
+
+	// ... posterise.hlsl/posterise_mul.hlsl &c.
+}

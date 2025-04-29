@@ -1,0 +1,11 @@
+#SMALL_START#
+#define KNOWN_RGBS_FREQS  [[vk::binding(3)]] StructuredBuffer<uint> known_rgbs_freqs; // DEVICE_LOCAL & HOST_VISIBLE
+#define BRANCHLESS_ADD    0
+#SMALL_END#
+#define INTERROGATED_LOAD const known_rgbs_pack interrogated = known_rgbs_bundle[i];
+#define interrogated_lab  interrogated.lab
+#define FREQ_LOAD         const uint freq = known_rgbs_freqs[interrogated.rgb];
+#SMALL_START#
+#define FREQ              freq
+#include "posterise_grid_oneshot.kernel.hlsl.inc"
+#SMALL_END#

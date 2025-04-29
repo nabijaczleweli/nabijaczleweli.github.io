@@ -1,0 +1,7 @@
+struct params_t {
+	// ...
+	point_t bbox_range;
+	uint    axis_swaps;
+#define bbox_max bbox_range
+	// ...
+};

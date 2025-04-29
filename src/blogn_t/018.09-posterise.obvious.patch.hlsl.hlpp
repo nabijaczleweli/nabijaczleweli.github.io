@@ -1,0 +1,8 @@
+struct params_t {
+	uint  known_rgbs_len;
+	float radiussy_squared;
+	uint  iter_limit;
+};
+// ...
+			float3 tmp = lab - center;
+			if(dot(tmp, tmp) <= radiussy_squared) {

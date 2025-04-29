@@ -1,0 +1,8 @@
+let mut known_rgbs_rgbs:  Vec<u32> = vec![];
+let mut known_rgbs_freqs: Vec<u32> = vec![];
+for (rgb, freq) in frequencies.iter().enumerate().filter(|(_, f)| f != 0) {
+	known_rgbs_rgbs.push(rgb);
+	known_rgbs_freqs.push(freq);
+}
+
+posterise_gpu.measure(&known_rgbs_rgbs, &known_rgbs_freqs);

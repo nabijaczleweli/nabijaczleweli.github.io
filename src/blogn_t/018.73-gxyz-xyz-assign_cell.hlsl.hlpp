@@ -1,0 +1,29 @@
+#SMALL_START#
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+	const uint   known_rgbs_len = params[0].known_rgbs_len;
+	const float3 bbox_min       = params[0].bbox_min;
+	const float3 bbox_range     = params[0].bbox_range;
+#SMALL_END#
+	const uint   axis_swaps     =(params[0].axis_swaps >> 8) & 0xFF;
+#SMALL_START#
+
+	const uint id = DTid.x;
+	if(id >= known_rgbs_len)
+		return;
+
+#SMALL_END#
+#define TWOBITS 3
+	float3 lab = known_rgbs_bundle[id].lab;
+	lab = float3(lab[(axis_swaps >> 4)],
+	             lab[(axis_swaps >> 2) & TWOBITS],
+	             lab[(axis_swaps >> 0) & TWOBITS]);
+	known_rgbs_bundle[id].lab = lab;
+#SMALL_START#
+
+	uint3 gridpos = trunc(lab_to_gridpos(lab, bbox_min, bbox_range));
+	outputs[id] = (gridpos.x << (8 * 2)) |
+	              (gridpos.y << (8 * 1)) |
+	              (gridpos.z << (8 * 0));
+}
+#SMALL_END#

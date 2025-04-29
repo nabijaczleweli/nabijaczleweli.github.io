@@ -1,0 +1,26 @@
+typedef float3 point_t;
+#include "shader.h"
+#SMALL_START#
+
+[[vk::binding(0)]] RWStructuredBuffer<uint>            outputs;            // HOST_VISIBLE
+[[vk::binding(1)]]   StructuredBuffer<params_t>        params;             // DEVICE_LOCAL & HOST_VISIBLE
+[[vk::binding(2)]]   StructuredBuffer<known_rgbs_pack> known_rgbs_bundle;  // DEVICE_LOCAL & HOST_VISIBLE
+
+#SMALL_END#
+[numthreads(64, 1, 1)]
+void main(uint3 DTid : SV_DispatchThreadID) {
+#SMALL_START#
+	const uint   known_rgbs_len = params[0].known_rgbs_len;
+	const float3 bbox_min       = params[0].bbox_min;
+	const float3 bbox_range     = params[0].bbox_range;
+
+	const uint id = DTid.x;
+	if(id >= known_rgbs_len)
+	    return;
+
+#SMALL_END#
+	uint3 gridpos = trunc(lab_to_gridpos(known_rgbs_bundle[id].lab, bbox_min, bbox_range));
+	outputs[id] = (gridpos.x << (8 * 2)) |
+	              (gridpos.y << (8 * 1)) |
+	              (gridpos.z << (8 * 0));
+}

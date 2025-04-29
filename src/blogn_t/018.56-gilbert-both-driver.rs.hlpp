@@ -1,0 +1,19 @@
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	// ...
+	if known_rgbs > 75_000 {
+#SMALL_START#
+		for (x, y, z) in GRID_GILBERT {
+			dump(&mut self.buffer_params_map.group_ranges[x][y][z],
+			     &    self.groups_accumulator            [x][y][z])
+		}
+#SMALL_END#
+	} else {
+#SMALL_START#
+		for (gr_z, ga_z) in self.buffer_params_map.group_ranges.iter_mut().flatten().flatten()
+		               .zip(self.groups_accumulator            .iter()    .flatten().flatten()) {
+			dump(gr_z, ga_z);
+		}
+#SMALL_END#
+	}
+	// ...
+}

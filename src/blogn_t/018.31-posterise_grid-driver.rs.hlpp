@@ -1,0 +1,26 @@
+#SMALL_START#
+fn PosteriseGpu::susmit(&mut self, known_rgbs: &[(u32, Lab, u32)], radiussy: f32, freq_weighting: bool, outputs: &mut [Lab; 0xFFFFFF + 1]) {
+	// ...
+
+#SMALL_END#
+	// find_bbox.hlsl ...
+	{
+#SMALL_START#
+		let bbox_min = become_float3(&self.buffer_params_map.bbox_min);
+		let bbox_range = {
+			let bbox_max = become_float3(&self.buffer_params_map.bbox_range);
+			[bbox_max[0] - bbox_min[0], bbox_max[1] - bbox_min[1], bbox_max[2] - bbox_min[2]]
+		};
+		self.buffer_params_map.bbox_min   = bbox_min;
+		self.buffer_params_map.bbox_range = bbox_range;
+
+#SMALL_END#
+		let scaled_radiussies = bbox_range.map(|scale| radiussy / scale);
+		let direction_cells   = scaled_radiussies.map(|sr| (sr * GRID_SIZE).ceil());
+		self.buffer_params_map.grid_bothdirs = direction_cells;
+	}
+#SMALL_START#
+
+	// ...
+}
+#SMALL_END#

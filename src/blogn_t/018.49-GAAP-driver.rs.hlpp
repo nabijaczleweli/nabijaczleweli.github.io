@@ -1,0 +1,53 @@
+pub struct PosteriseGpu {
+	// ...
+	use_oneshot_driver: bool,
+}
+
+fn PosteriseGpu::measure(&mut self, known_rgbs_rgbs: &[u32], known_rgbs_freqs: &[u32]) {
+	assert!(known_rgbs_rgbs.len() == known_rgbs_freqs.len())
+	let known_rgbs = known_rgbs_rgbs.len();
+	self.use_oneshot_driver = known_rgbs > 50_000;
+	// everything previously in susmit()...
+#SMALL_START#
+
+#SMALL_END#
+	// No longer predicated on freq_weighting (must accommodate either):
+	self.buffer_known_rgbs_freqs.ensure_buffer(&self.device, buffer_known_rgbs_freqs_len);
+#SMALL_START#
+
+	for (rgb, bundle) in known_rgbs_rgbs.iter().zip(known_rgbs_bundle.iter_mut()) {
+		bundle.rgb = rgb;
+	}
+#SMALL_END#
+	// No longer predicated on freq_weighting (must accommodate either):
+	let known_rgbs_freqs_out = std::slice::from_raw_parts_mut(known_rgbs_freqs_buffer_map as *mut u32, 0xFFFFFF + 1);
+#SMALL_START#
+	if self.use_oneshot_driver {
+		for (rgb, freq) in known_rgbs_rgbs.iter().zip(known_rgbs_freqs) {
+			known_rgbs_freqs_out[rgb] = freq;
+		}
+	} else {
+#SMALL_END#
+		// memcpy(known_rgbs_freqs_buffer_map, known_rgbs_freqs, known_rgbs * sizeof(u32))
+		ptr::copy_nonoverlapping(known_rgbs_freqs.as_ptr(), known_rgbs_freqs_buffer_map, known_rgbs);
+#SMALL_START#
+	}
+
+#SMALL_END#
+	// ...up to and including assign_cell.hlsl
+}
+
+fn PosteriseGpu::susmit(&mut self, known_rgbs_rgbs: &[u32], radiussy: f32, freq_weighting: bool, outputs: &mut [[u8; 3]; 0xFFFFFF + 1]) {
+	{
+		self.buffer_params_map.radiussy_squared = radiussy * radiussy;
+		self.buffer_params_map.grid_bothdirs = /* ... */;
+	}
+#SMALL_START#
+
+#SMALL_END#
+	// posterise_grid.kernel.hlsl.inc/posterise_grid_oneshot.kernel.hlsl.inc
+#SMALL_START#
+
+#SMALL_END#
+	// for rgb in known_rgbs_rgbs { outputs[rgb] = ...; }
+}
