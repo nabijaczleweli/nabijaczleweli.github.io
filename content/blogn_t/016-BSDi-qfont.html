@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="016. BSDi qfont"> 
  <title>016. BSDi qfont — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -47,34 +47,31 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"> 
  
- <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t/016.01-BSDi-fonts.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
- <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t/016.01-BSDi-fonts.css" rel="stylesheet"> <script src="/content/assets/syllable.js"></script> 
+ <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -136,7 +133,7 @@ img {
  max-width: 100%;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>016. <span class="qfont">BSDi qfont</span></samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Sat, 05 Oct 2024 21:56:06 +0200</span>; <a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/">go wild</a> <a href="//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/"><i class="dark-invert fa fa-external-link-alt"></i></a></h4> 
@@ -225,7 +222,7 @@ Built on bookworm.
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/016-BSDi-qfont.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -241,9 +238,9 @@ Built on bookworm.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/016-BSDi-qfont.html.pp">src/blogn_t/016-BSDi-qfont.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

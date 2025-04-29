@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="003. A proof-of-concept IRC/mail bridge"> 
  <title>003. A proof-of-concept IRC/mail bridge — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -47,33 +47,30 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> 
- <link href="/content/assets/bigtable.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
- <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> 
+ <link href="/content/assets/bigtable.css" rel="stylesheet"> <script src="/content/assets/syllable.js"></script> 
+ <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -120,7 +117,7 @@ video, img {
  max-width: 100%;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>003. A proof-of-concept IRC/mail bridge</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Sat, 11 Jul 2020 00:34:50 +0200</span></h4> 
@@ -136,6 +133,7 @@ video, img {
 <li><a href='#how-postfix'>The MX</a></li>
 </ol>
 <li><a href='#conclusion'>Conclusion?</a></li>
+</ol>
 </ol>
 </details></div>
 As seen on <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1281342937226510342">Twitter</a>.
@@ -192,7 +190,7 @@ Start with a simple connection:
 <div class="bigcode continuation">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token output">mkfifo input output
 sic -h irc.freenode.net &lt; input > output &amp;
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="indented">
 Now <kbd>cat &lt; output &</kbd> to see what'<!--'-->s up and <kbd>cat &gt;&gt; input</kbd> to open the connection, something like
@@ -202,7 +200,7 @@ Now <kbd>cat &lt; output &</kbd> to see what'<!--'-->s up and <kbd>cat &gt;&gt; 
 verne.freenode.net: 07/10/20 16:05 >&lt; 372 (nabijaczleweli): - Thank you for using freenode!
 verne.freenode.net: 07/10/20 16:05 >&lt; 376 (nabijaczleweli): End of /MOTD command.
 nabijaczleweli: 07/10/20 16:05 >&lt; MODE (nabijaczleweli): +i
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 should appear, and typing "<kbd>:m hasix owo</kbd>" should produce a message in the web client and:
@@ -234,7 +232,7 @@ Great. Suspend the input <code>cat</code> (killing it will slam <code>sic</code>
 <!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">""</span>
 <!--"-->	<!--"--><span class="token builtin">fflush</span>()
 }
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 i.e.
@@ -251,7 +249,7 @@ From: nabijaczleweli@irc.
 Date: Fri, 10 Jul 2020 16:17:13 +0200
 Subject: &lt;hasix> owo
 
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 both in the teletype and the mailbox. At this point pointing the MUA at it should work and the messages should show up:
@@ -276,7 +274,7 @@ Now it'<!--'-->s time to convince postfix to do a big crime, by:
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># service type<!--"-->  <!--"-->private unpriv<!--"-->  <!--"-->chroot<!--"-->  <!--"-->wakeup<!--"-->  <!--"-->maxproc command + args</span>
 irc<!--"-->       <!--"-->unix<!--"-->  <!--"-->-<!--"-->       <!--"-->n<!--"-->       <!--"-->n<!--"-->       <!--"-->-<!--"-->       <!--"-->-<!--"-->       <!--"-->pipe
 <!--"-->  <!--"--><span class="token assign-left variable">user</span><span class="token operator">=</span>nabijaczleweli <span class="token assign-left variable">argv</span><span class="token operator">=</span>/home/nabijaczleweli/uwu/ircmail
-</pre></code>
+</code></pre>
  </div>
       </li>
   <li>reloading postfix.</li>
@@ -300,7 +298,7 @@ irc<!--"-->       <!--"-->unix<!--"-->  <!--"-->-<!--"-->       <!--"-->n<!--"--
 <!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">":m "</span> to <span class="token string">" "</span> <span class="token builtin">gensub</span>(<span class="token regex">/^Subject: /</span>, <span class="token string">""</span>, 1) >> <span class="token string">"/home/nabijaczleweli/uwu/ircmaillog"</span>
 <!--"-->	<!--"--><span class="token builtin">print</span> <span class="token string">":m "</span> to <span class="token string">" "</span> <span class="token builtin">gensub</span>(<span class="token regex">/^Subject: /</span>, <span class="token string">""</span>, 1) >> <span class="token string">"/home/nabijaczleweli/uwu/input"</span>
 }
-</pre></code>
+</code></pre>
 </div>
 <p class="indented continued">
 Now, sending a mail to "hasix@irc", "##test@irc", &c. should yield something like
@@ -313,7 +311,7 @@ Jul 10 14:43:12 tarta postfix/qmgr[32125]: E291B360636: from=&lt;nabijaczleweli@
 Jul 10 14:43:12 tarta postfix/submission/smtpd[32260]: disconnect from unknown[192.168.1.250] ehlo=2 starttls=1 auth=1 mail=1 rcpt=1 data=1 quit=1 commands=8
 Jul 10 14:43:13 tarta postfix/pipe[32271]: E291B360636: to=&lt;nabijaczleweli@irc>, orig_to=&lt;nabijaczleweli@irc.>, relay=irc, delay=0.09, delays=0.07/0.01/0/0, dsn=2.0.0, status=sent (delivered via irc service)
 Jul 10 14:43:13 tarta postfix/qmgr[32125]: E291B360636: removed
-</pre></code>
+</code></pre>
 </div>
 <p class="continuation">
 in the journal, and the corresponding commands in sic'<!--'-->s input.
@@ -333,7 +331,7 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/003-maircl-poc.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -349,9 +347,9 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:09 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/003-maircl-poc.html.pp">src/blogn_t/003-maircl-poc.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX)"> 
  <title>014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX) — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -45,30 +45,27 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -223,7 +220,7 @@ pre {
  margin-bottom: 0;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX)</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Mon, 10 Jun 2024 01:04:14 +0200</span></h4> 
@@ -233,6 +230,7 @@ pre {
 <li><a href='#v1'>The UNIX Programmer'<!--'-->s Manual (&c.)</a></li>
 <li><a href='#nsys'>nsys <span class="smallcaps">unix</span> (the V4 what isn'<!--'-->t)</a></li>
 <li><a href='#pdp7'>that funny PDP-7 proto-unix</a></li>
+</ol>
 </ol>
 </details></div>
 <h2 id="v1" ><a class="hash-link" href="#v1">#</a> The UNIX Programmer'<!--'-->s Manual (&c.)</h2>
@@ -571,13 +569,13 @@ with user data reaching up to block 687 (which matches <span style="white-space:
 This is where the magic happens. This is what you came here for. Let'<!--'-->s prototype this in C for the gamers:
 </p>
 <div class="codecontinued">
-<pre class="language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> NPROC 16</span>
-<span class="token keyword">extern</span> uint16_t rootdir<span class="token punctuation">;</span>
-<span class="token keyword">extern</span> uint16_t u<span class="token punctuation">.</span>cdir<span class="token punctuation">;</span>
-<span class="token keyword">extern</span> uint8_t<!--"-->  <!--"-->u<span class="token punctuation">.</span>uno<span class="token punctuation">;</span>
-<span class="token keyword">extern</span> uint16_t mpid<span class="token punctuation">;</span>
-<span class="token keyword">extern</span> uint16_t p<span class="token punctuation">.</span>pid<span class="token punctuation">[</span>NPROC<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">extern</span> uint8_t<!--"-->  <!--"-->p<span class="token punctuation">.</span>stat<span class="token punctuation">[</span>NPROC<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">NPROC</span> <span class="token expression"><span class="token number">16</span></span></span>
+<span class="token keyword">extern</span> <span class="token class-name">uint16_t</span> rootdir<span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token class-name">uint16_t</span> u<span class="token punctuation">.</span>cdir<span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token class-name">uint8_t</span><!--"-->  <!--"-->u<span class="token punctuation">.</span>uno<span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token class-name">uint16_t</span> mpid<span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token class-name">uint16_t</span> p<span class="token punctuation">.</span>pid<span class="token punctuation">[</span>NPROC<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token class-name">uint8_t</span><!--"-->  <!--"-->p<span class="token punctuation">.</span>stat<span class="token punctuation">[</span>NPROC<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token comment">// make current program a user</span>
 
@@ -590,9 +588,9 @@ mpid<!--"-->      <!--"--><span class="token operator">=</span> <span class="tok
 p<span class="token punctuation">.</span>pid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><!--"-->  <!--"--><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// p.pid identifies process</span>
 p<span class="token punctuation">.</span>stat<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// process status = 1 i.e., active</span>
 <!--"-->               <!--"--><span class="token comment">//<!--"-->                <!--"-->= 0 free</span>
-<span class="token macro property">#<span class="token directive keyword">if</span> COLD<!--"-->       <!--"--></span><span class="token comment">//<!--"-->                <!--"-->= 2 waiting for a child to die</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression">COLD<!--"-->       <!--"--></span><span class="token comment">//<!--"-->                <!--"-->= 2 waiting for a child to die</span></span>
 <!--"-->               <!--"--><span class="token comment">//<!--"-->                <!--"-->= 3 terminated but not yet waited for</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 This means, in order:
@@ -694,7 +692,7 @@ It'<!--'-->s always loaded as an invariant, and definitely before we do any file
 and once again for the gamers:
 </p>
 <div class="codecontinued">
-<pre class="language-c"><code class="language-c"><span class="token keyword">extern</span> uint8_t sysflg<span class="token punctuation">;</span>
+<pre class="language-c"><code class="language-c"><span class="token keyword">extern</span> <span class="token class-name">uint8_t</span> sysflg<span class="token punctuation">;</span>
 
 <span class="token operator">--</span>sysflg<span class="token punctuation">;</span><!--"-->      <!--"--><span class="token comment">// mormally sysflag=0, indicates executing in system</span>
 <span class="token function">exec</span><span class="token punctuation">(</span>_2<span class="token punctuation">,</span> _1<span class="token punctuation">)</span><span class="token punctuation">;</span><!--"-->  <!--"--><span class="token comment">// generates trap interrupt; trap vector = sysent; 0</span>
@@ -705,10 +703,10 @@ and once again for the gamers:
 
 panic<span class="token operator">:</span>
 ps <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">--</span><span class="token operator">*</span><span class="token punctuation">(</span>uint16_t <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span> <span class="token operator">||</span> <span class="token operator">--</span><span class="token operator">*</span><span class="token punctuation">(</span>uint16_t <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">5</span><span class="token punctuation">)</span><!--"-->  <!--"--><span class="token comment">// I think??</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">--</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token class-name">uint16_t</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span> <span class="token operator">||</span> <span class="token operator">--</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token class-name">uint16_t</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">5</span><span class="token punctuation">)</span><!--"-->  <!--"--><span class="token comment">// I think??</span>
 <!--"-->  <!--"--><span class="token punctuation">;</span>
 <span class="token keyword">goto</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0173700</span><span class="token punctuation">;</span><!--"-->  <!--"--><span class="token comment">// rom loader address</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 Once more, in order:
@@ -743,10 +741,10 @@ Why?
 <span class="cmt"><!--"-->	(rest of syscall handling)<!--"--></span></pre>
 </blockquote>
 <div class="codecontinued">
-<pre class="language-c"><code class="language-c"><span class="token keyword">extern</span> uint8_t sysflg<span class="token punctuation">;</span>
+<pre class="language-c"><code class="language-c"><span class="token keyword">extern</span> <span class="token class-name">uint8_t</span> sysflg<span class="token punctuation">;</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">++</span>sysflg<span class="token punctuation">)</span>
 <!--"-->  <!--"--><span class="token keyword">goto</span> panic<span class="token punctuation">;</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuation">
 (−1 if in userspace, 0 if in kernel, 1 if currently panicking).
@@ -981,7 +979,7 @@ tape <span class="token operator">=</span> <span class="token function">open</sp
 
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <!--"-->	<!--"--><span class="token function">read</span><span class="token punctuation">(</span>tape<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<!--"-->	<!--"-->size <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>uint16_t <span class="token operator">*</span><span class="token punctuation">)</span>buf<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<!--"-->	<!--"-->size <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">uint16_t</span> <span class="token operator">*</span><span class="token punctuation">)</span>buf<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <!--"-->	<!--"--><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>size<span class="token punctuation">)</span>
 <!--"-->		<!--"--><span class="token keyword">break</span><span class="token punctuation">;</span>
 
@@ -999,7 +997,7 @@ tape <span class="token operator">=</span> <span class="token function">open</sp
 <span class="token function">close</span><span class="token punctuation">(</span>tape<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">"/etc/init"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 Thus, knowing that DECtapes are block-addressed, we can deduce the tape has a 65-block header, then alternatingly blocks containing
@@ -1407,7 +1405,7 @@ init <span class="token operator">=</span> <span class="token function">open</sp
 <!--"-->	<!--"--><span class="token function">halt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">read</span><span class="token punctuation">(</span>init<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">4096</span><span class="token punctuation">,</span> <span class="token number">4096</span><span class="token punctuation">)</span>
 <span class="token keyword">goto</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">4096</span><span class="token punctuation">;</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="indented">
 So I'<!--'-->d say this system <em>boots</em> into PID 1 but executing the kernel and with no program data, then reads <samp>init</samp> into the program data
@@ -1421,7 +1419,7 @@ This is as an open-coded sys exec (II).
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -1437,9 +1435,9 @@ This is as an open-coded sys exec (II).
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

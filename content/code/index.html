@@ -15,9 +15,9 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="viewport" content="width=device-width,initial-scale=1"> 
  <meta name="author" content="nabijaczleweli"> 
  <meta name="description" content="Documentation and code"> 
- <title>Documentation and mistakes — nabijaczleweli</title> 
+ <title>Documentation &c. — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -46,24 +46,25 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
- <link href="//rawcdn.githack.com/fizzed/font-mfizz/v2.4.1/dist/font-mfizz.css" rel="stylesheet" /> 
- <link href="//rawcdn.githack.com/konpa/devicon/v2.2/devicon.min.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"> 
+ <link href="//rawcdn.githack.com/fizzed/font-mfizz/v2.4.1/dist/font-mfizz.css" rel="stylesheet"> 
+ <link href="//rawcdn.githack.com/konpa/devicon/v2.2/devicon.min.css" rel="stylesheet"> 
  
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
  <style>@counter-style wg14 { system: extends decimal; prefix: "n"; suffix: ": "; } 
  @counter-style wg14p1 { system: extends decimal; prefix: "n"; suffix: " (p1): "; } 
  @counter-style wg14p2 { system: extends decimal; prefix: "n"; suffix: " (p2): "; }</style> 
  </head> 
  <body>
-<h2 id="go-back" class="merriweather"><a class="go-back-link left" href="..">↩</a> Documentation and mistakes <a class="go-back-link right" href="..">↩</a></h2>
+<h2 id="go-back" class="merriweather"><a class="go-back-link left" href="..">↩</a> Documentation &c. <a class="go-back-link right" href="..">↩</a></h2>
 <span class="roboto">
 Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">SourceHut</a> and <a href="//github.com/nabijaczleweli">GitHub</a> accounts,
  but I also wrote or maintain these to some nontrivial degree:
@@ -152,8 +153,14 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
  </li>
 </ul>
 <br />
-A brief subsection of non-Rust non-mistakes:
+Select programs:
 <ul>
+    <li> 
+ <a href="https://sr.ht/~nabijaczleweli/mean-shift-clusterer"><samp>mean-shift-clusterer</samp></a> 
+ <a href="https://sr.ht/~nabijaczleweli/mean-shift-clusterer"><i class="dark-invert far fa-circle"></i></a> 
+ <i class="icon-rust" ></i> 
+ — Oklab 3D radius-based pallette reduction (posterisation?) per <a href="//youtu.be/HuW9qJbL0xM">Gneiss Name, <cite>Mean Shift Clustering</cite>, 2025 ▶</a>; also <a href="../blogn_t/018-mean-shift-clusterer.html">on the blogue</a> 
+ </li>
     <li> 
  <a href="https://sr.ht/~nabijaczleweli/fonts.debian.net"><samp>fonts.debian.net</samp></a> 
  <a href="https://sr.ht/~nabijaczleweli/fonts.debian.net"><i class="dark-invert far fa-circle"></i></a> 
@@ -238,7 +245,8 @@ I produce C papers <a href="//sr.ht/~nabijaczleweli/wg14">as need arises</a>:
  <a href="https://ra.ws.co.ls/~nabijaczleweli/wg14/blob/output/n3359.pdf"> <li value=3359 style="list-style: wg14p1;"><code>stdarg.h</code> wording<code>...</code></li> </a>
  <a href="https://ra.ws.co.ls/~nabijaczleweli/wg14/blob/output/n3363.pdf"> <li value=3363 style="list-style: wg14p2;"><code>stdarg.h</code> wording<code>...</code></li> </a>
 </ol>
-n3066 is part of C23.<br />
+n3066 is included in C23.<br />
+n3363 is included in C2y.<br />
 <br />
 Documentation for my Rust crates:
 <ul>
@@ -451,9 +459,9 @@ Documentation for my Rust crates:
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/code/index.html.pp">src/code/index.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

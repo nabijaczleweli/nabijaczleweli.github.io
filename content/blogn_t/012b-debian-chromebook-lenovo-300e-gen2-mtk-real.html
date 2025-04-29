@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) with MediaTek MT8173/MT8173C (real)"> 
  <title>012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) (real) — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -45,22 +45,23 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> 
- <link href="/content/assets/bigtable.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> 
+ <link href="/content/assets/bigtable.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet"> <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
@@ -300,7 +301,7 @@ dl.keyboard {
  -moz-tab-size: 8 !important;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>012b. Debian on the Lenovo 300e 2<sup>nd</sup>-gen MTK arm64 Chromebook (hana) (real)</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Wed, 07 Feb 2024 01:09:33 +0100</span></h4> 
@@ -344,6 +345,7 @@ dl.keyboard {
 <li><a href='#functional-summary-dysfunctional'>Dysfunxional</a></li>
 </ol>
 <li><a href='#summary'>Summary</a></li>
+</ol>
 </ol>
 </details></div>
 <p class="indented continued">
@@ -589,14 +591,14 @@ enable USB booting.<!--"-->  <!--"-->To do so, un the following as root:
 enable_dev_usb_boot</tt></blockquote>
 <p class="continuing">yielded</p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">enable_dev_usb_boot</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token output">localhost ~ # enable_dev_usb_boot
 
-<span class="token output"><!--"-->    <!--"-->SUCCESS: Booting any self-signed kernel from SSD/USB/SDCard slot is enabled.
+<!--"-->    <!--"-->SUCCESS: Booting any self-signed kernel from SSD/USB/SDCard slot is enabled.
 
 <!--"-->    <!--"-->Insert bootable media into USB / SDCard slot and press Ctrl-U in developer
 <!--"-->    <!--"-->screen to boot your self-signed image.
 
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 and it do b honkin
@@ -905,7 +907,7 @@ Yeah. This device tree has a kernel inside. Not as a joke, but as
 <!--"-->			<!--"-->load = &lt;<span class="token number">0x00</span>>;
 <!--"-->			<!--"-->entry = &lt;<span class="token number">0x00</span>>;
 <!--"-->		<!--"-->};
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 with 1448960 integers, for a total of 5660KiB.
@@ -1082,7 +1084,7 @@ Some fiddling with that rootfs yielded
 </span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">}
 </span><span class="token prefix unchanged"> </span><span class="token line">
 </span><span class="token prefix unchanged"> </span><span class="token line"># Prints a message telling the user that developer mode has been disabled for
-</span></span></pre></code>
+</span></span></code></pre>
 </div>
 <a href="/content/assets/blogn_t/012b.09-DSCN0568ccc.JPG"><img alt="The same screen, but in the top there's an overlaid shell with id output, prompt, and successful ls execution" src="/content/assets/blogn_t/012b.09-DSCN0568ccc.JPG"></a>
 <p class="continuation">
@@ -1093,7 +1095,7 @@ The real break-through was
 </p>
 <div class="continuing-inside">
 <pre class="language-diff"><code class="language-diff">Only in orig/etc/init: boot-splash.conf
-diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/startup.conf
+diff '<!--'-->--color=auto'<!--'--> --no-dereference -ru {orig,new}/etc/init/startup.conf
 <span class="token coord">--- orig/etc/init/startup.conf<!--"-->	<!--"-->2023-04-17 06:31:09.000000000 +0200</span>
 <span class="token coord">+++ new/etc/init/startup.conf<!--"-->	<!--"-->2024-01-20 03:31:08.000000000 +0100</span>
 <span class="token coord">@@ -10,4 +10,5 @@</span>
@@ -1103,7 +1105,7 @@ diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/startup.conf
 </span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">exec chromeos_startup
 </span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">#exec chromeos_startup
 </span><span class="token prefix inserted">+</span><span class="token line">exec frecon --enable-gfx --enable-vt1 --enable-vts
-</span></span>diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/ui.conf
+</span></span>diff '<!--'-->--color=auto'<!--'--> --no-dereference -ru {orig,new}/etc/init/ui.conf
 <span class="token coord">--- orig/etc/init/ui.conf<!--"-->	<!--"-->2023-04-17 06:26:19.000000000 +0200</span>
 <span class="token coord">+++ new/etc/init/ui.conf<!--"-->	<!--"-->2024-01-20 03:06:54.000000000 +0100</span>
 <span class="token coord">@@ -35,7 +35,7 @@</span>
@@ -1116,7 +1118,7 @@ diff '--color=auto' --no-dereference -ru {orig,new}/etc/init/startup.conf
 </span><span class="token prefix unchanged"> </span><span class="token line"># Directory where session manager logs are written and prefix of files there.
 </span><span class="token prefix unchanged"> </span><span class="token line">env UI_LOG_DIR=/var/log/ui
 </span></span>Only in new/sbin: init.new
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 (The <samp class="path">ui.conf</samp> diff doesn'<!--'-->t do anything.
@@ -1224,7 +1226,7 @@ Please consult the The X.Org Foundation support
 (EE) Please also check the log file at "/var/log/Xorg.0.log" for additional information.
 (EE)
 (EE) Server terminated with error (1). Closing log file.
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 and no, plugging in an HDMI doesn't work, it just doesn't understand the GPU or whatever.
@@ -1374,32 +1376,32 @@ So after you
  <div class="continuing-inside bigcode">
 <pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
 <span class="token builtin class-name">echo</span> dupa dupa dupa dupa dupa dupa dupa <span class="token operator">></span> /dev/kmsg
-/bin/mount -t sysfs sysfs /sys <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t securityfs securityfs /sys/kernel/security <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t proc proc /proc <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t tmpfs tmpfs /tmp <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t tmpfs tmpfs /run <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> sysfs sysfs /sys <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> securityfs securityfs /sys/kernel/security <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> proc proc /proc <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> tmpfs tmpfs /tmp <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> tmpfs tmpfs /run <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token function">mkdir</span> /run/lock <span class="token operator">></span>/dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t tmpfs tmpfs /run/lock <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t devtmpfs -o <span class="token assign-left variable">mode</span><span class="token operator">=</span>0755 devtmpfs /dev <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> tmpfs tmpfs /run/lock <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> devtmpfs <span class="token parameter variable">-o</span> <span class="token assign-left variable">mode</span><span class="token operator">=</span>0755 devtmpfs /dev <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token function">mkdir</span> /dev/pts <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token function">mkdir</span> /dev/shm <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-/bin/mount -t tmpfs -o <span class="token assign-left variable">mode</span><span class="token operator">=</span>01777 tmpfs /dev/shm <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+/bin/mount <span class="token parameter variable">-t</span> tmpfs <span class="token parameter variable">-o</span> <span class="token assign-left variable">mode</span><span class="token operator">=</span>01777 tmpfs /dev/shm <span class="token operator">></span> /dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token function-name function">mnt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<!--"-->	<!--"-->/bin/mount -t <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">></span>/dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<!--"-->	<!--"-->/bin/mount <span class="token parameter variable">-t</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">></span>/dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <!--"-->	<!--"--><span class="token punctuation">}</span>
-mnt cgroup2 -o nsdelegate,memory_recursiveprot cgroup2 /sys/fs/cgroup <span class="token operator">||</span>
-mnt cgroup2 -o nsdelegate cgroup2 /sys/fs/cgroup <span class="token operator">||</span>
+mnt cgroup2 <span class="token parameter variable">-o</span> nsdelegate,memory_recursiveprot cgroup2 /sys/fs/cgroup <span class="token operator">||</span>
+mnt cgroup2 <span class="token parameter variable">-o</span> nsdelegate cgroup2 /sys/fs/cgroup <span class="token operator">||</span>
 mnt cgroup2 cgroup2 /sys/fs/cgroup <span class="token operator">||</span>
 mnt tmpfs tmpfs /sys/fs/cgroup
-mnt devpts -o <span class="token assign-left variable">mode</span><span class="token operator">=</span>0620,gid<span class="token operator">=</span><span class="token number">5</span> devpts /dev/pts
-mnt cgroup2 -o nsdelegate cgroup2 /sys/fs/cgroup/unified <span class="token operator">||</span>
+mnt devpts <span class="token parameter variable">-o</span> <span class="token assign-left variable">mode</span><span class="token operator">=</span>0620,gid<span class="token operator">=</span><span class="token number">5</span> devpts /dev/pts
+mnt cgroup2 <span class="token parameter variable">-o</span> nsdelegate cgroup2 /sys/fs/cgroup/unified <span class="token operator">||</span>
 mnt cgroup2 cgroup2 /sys/fs/cgroup/unified
-mnt cgroup -o none,name<span class="token operator">=</span>systemd,xattr cgroup /sys/fs/cgroup/systemd <span class="token operator">||</span> 
-mnt cgroup -o none,name<span class="token operator">=</span>systemd cgroup /sys/fs/cgroup/systemd 
+mnt cgroup <span class="token parameter variable">-o</span> none,name<span class="token operator">=</span>systemd,xattr cgroup /sys/fs/cgroup/systemd <span class="token operator">||</span> 
+mnt cgroup <span class="token parameter variable">-o</span> none,name<span class="token operator">=</span>systemd cgroup /sys/fs/cgroup/systemd 
 mnt pstore pstore /sys/fs/pstore
-mnt bpf -o <span class="token assign-left variable">mode</span><span class="token operator">=</span>0700 bpf /sys/fs/bpf
-<span class="token comment">#/bin/sed s/^/'verbose debug'/ /proc/cmdline > /etc/cmdline</span>
+mnt bpf <span class="token parameter variable">-o</span> <span class="token assign-left variable">mode</span><span class="token operator">=</span>0700 bpf /sys/fs/bpf
+<span class="token comment">#/bin/sed s/^/'<!--'-->verbose debug'<!--'-->/ /proc/cmdline > /etc/cmdline</span>
 <span class="token comment">#mount --bind /etc/cmdline /proc/cmdline</span>
 <span class="token comment">#echo zqpa zqpa zqpa zqpa zqpa zqpa zqpa > /dev/kmsg</span>
 <span class="token comment">#exec /usr/lib/systemd/systemd --log-level=debug</span>
@@ -1409,8 +1411,8 @@ mnt bpf -o <span class="token assign-left variable">mode</span><span class="toke
 <span class="token comment">#sleep 0.5</span>
 <span class="token builtin class-name">exec</span> /lib/systemd/systemd --log-level<span class="token operator">=</span>debug <span class="token string">"<span class="token variable">$@</span>"</span>
 <span class="token punctuation">(</span>sleep <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sync</span> /<span class="token punctuation">)</span> <span class="token operator">></span>/dev/kmsg <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
-<span class="token builtin class-name">exec</span> /bin/strace -DDD -o /strace /lib/systemd/systemd --log-level<span class="token operator">=</span>debug <span class="token string">"<span class="token variable">$@</span>"</span>
-</pre></code>
+<span class="token builtin class-name">exec</span> /bin/strace <span class="token parameter variable">-DDD</span> <span class="token parameter variable">-o</span> /strace /lib/systemd/systemd --log-level<span class="token operator">=</span>debug <span class="token string">"<span class="token variable">$@</span>"</span>
+</code></pre>
  </div>
 </details>
 <p class="continuing">
@@ -1613,8 +1615,8 @@ Alas, as demonstrated in the <a href="#kernal"><cite class="local-ref">how is <d
 </p>
 <div class="bigcode continuing-inside" style="position: relative;">
 <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/mmcblk0p2.dts"><aside>full device tree</aside></a>
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">tail</span> -c +<span class="token variable"><span class="token variable">$((</span> <span class="token number">0x10000</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token variable">))</span></span> mmcblk0p2 <span class="token operator">|</span> dtc -I dtb -O dts <span class="token operator">></span> mmcblk0p2.dts</span></span>
-<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">csplit</span> mmcblk0p2.dts <span class="token string">'/data =/'</span> <span class="token string">'/type =/'</span></span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">tail</span> <span class="token parameter variable">-c</span> +<span class="token variable"><span class="token variable">$((</span> <span class="token number">0x10000</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token variable">))</span></span> mmcblk0p2 <span class="token operator">|</span> dtc <span class="token parameter variable">-I</span> dtb <span class="token parameter variable">-O</span> dts <span class="token operator">></span> mmcblk0p2.dts</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">csplit</span> mmcblk0p2.dts <span class="token string">'<!--'-->/data =/'<!--'--></span> <span class="token string">'<!--'-->/type =/'<!--'--></span></span></span>
 <span class="token output">161
 26119768
 7957930
@@ -1625,7 +1627,7 @@ Alas, as demonstrated in the <a href="#kernal"><cite class="local-ref">how is <d
 / {
 <!--"-->	<!--"-->timestamp = &lt;0x643cb38f>;
 <!--"-->	<!--"-->description = "Chrome OS kernel image with one or more FDT blobs";
-</span><span class="token info punctuation"><!--"-->	<!--"--></span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash">address-cells <span class="token operator">=</span> </span></span><span class="token output">&lt;0x01>;
+<!--"-->	<!--"-->#address-cells = &lt;0x01>;
 
 <!--"-->	<!--"-->images {
 
@@ -1644,10 +1646,10 @@ Alas, as demonstrated in the <a href="#kernal"><cite class="local-ref">how is <d
 <!--"-->			<!--"-->description = "mt2712-evb.dtb";
 
 </span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token punctuation">{</span> <span class="token function">cat</span> xx00<span class="token punctuation">;</span></span></span>
-<span class="token output"><!--"-->    <!--"-->printf 'data = ['; lz4 &lt; .../Image | od -An -tx1 -v | tr -d '\n'; printf '];\n';
+<span class="token output"><!--"-->    <!--"-->printf '<!--'-->data = ['<!--'-->; lz4 &lt; .../Image | od -An -tx1 -v | tr -d '<!--'-->\n'<!--'-->; printf '<!--'-->];\n'<!--'-->;
 <!--"-->    <!--"-->cat xx02; } > new
-</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">dtc -I dts -O dtb </span></span><span class="token output">&lt; new > new.dtb
-</span></pre></code>
+</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">dtc <span class="token parameter variable">-I</span> dts <span class="token parameter variable">-O</span> dtb <span class="token operator">&lt;</span> new <span class="token operator">></span> new.dtb</span></span>
+</code></pre>
 </div>
 <p class="continuation">
 (This is hopefully rather clear:
@@ -1729,8 +1731,8 @@ which <code>6.6</code> includes, puts the reason into <samp class="path">/sys/ke
 dash, mount, libc6, libblkid1, libmount1, libpcre2, libselinux1 debs, a Makefile
 </p>
 <div class="continuing-inside">
-<pre class="language-makefile"><code class="language-makefile"><span class="token builtin">.ONESHELL</span><span class="token punctuation">:</span>
-<span class="token symbol">_</span><span class="token punctuation">:</span>
+<pre class="language-makefile"><code class="language-makefile"><span class="token builtin-target builtin">.ONESHELL</span><span class="token punctuation">:</span>
+<span class="token target symbol">_</span><span class="token punctuation">:</span>
 <!--"-->	<!--"-->mkdir -p root/dev root/proc root/sys root/dev
 <!--"-->	<!--"-->for f in *.deb<span class="token punctuation">;</span> do
 <!--"-->		<!--"-->dpkg-deb -R <span class="token variable">$$f</span> root/
@@ -1739,22 +1741,22 @@ dash, mount, libc6, libblkid1, libmount1, libpcre2, libselinux1 debs, a Makefile
 <!--"-->	<!--"-->rm -r root/usr/share root/usr/lib/aarch64-linux-gnu/gconv
 <!--"-->	<!--"-->chmod u-s root/usr/bin/*
 <!--"-->	<!--"-->ln -f init root/
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">a simple init script to log the file every second</p>
 <div class="continuing-inside">
 <pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh -x</span>
-<span class="token function">mount</span> -t devtmpfs devtmpfs /dev
+<span class="token function">mount</span> <span class="token parameter variable">-t</span> devtmpfs devtmpfs /dev
 <span class="token builtin class-name">exec</span> <span class="token operator">></span> /dev/console <span class="token operator">&lt;</span> /dev/console <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
 <span class="token comment">#exec > /dev/kmsg 2>&amp;1</span>
-<span class="token function">mount</span> -t proc proc /proc
-<span class="token function">mount</span> -t sysfs sysfs /sys
-<span class="token function">mount</span> -t debugfs debugfs /sys/kernel/debug
-<span class="token builtin class-name">printf</span> <span class="token string">'%s<span class="token entity" title="\n">\n</span>'</span> /sys/kernel/debug/*
+<span class="token function">mount</span> <span class="token parameter variable">-t</span> proc proc /proc
+<span class="token function">mount</span> <span class="token parameter variable">-t</span> sysfs sysfs /sys
+<span class="token function">mount</span> <span class="token parameter variable">-t</span> debugfs debugfs /sys/kernel/debug
+<span class="token builtin class-name">printf</span> <span class="token string">'<!--'-->%s\n'<!--'--></span> /sys/kernel/debug/*
 cat<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>
 <!--"-->	<!--"--><span class="token builtin class-name">set</span> +x
-<!--"-->	<!--"--><span class="token keyword">while</span> <span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span> <span class="token builtin class-name">read</span> -r l<span class="token punctuation">;</span> <span class="token keyword">do</span>
-<!--"-->		<!--"--><span class="token builtin class-name">printf</span> <span class="token string">'%s<span class="token entity" title="\n">\n</span>'</span> <span class="token string">"<span class="token variable">$l</span>"</span>
+<!--"-->	<!--"--><span class="token keyword">while</span> <span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> l<span class="token punctuation">;</span> <span class="token keyword">do</span>
+<!--"-->		<!--"--><span class="token builtin class-name">printf</span> <span class="token string">'<!--'-->%s\n'<!--'--></span> <span class="token string">"<span class="token variable">$l</span>"</span>
 <!--"-->	<!--"--><span class="token keyword">done</span> <span class="token operator">&lt;</span> <span class="token string">"<span class="token variable">$1</span>"</span>
 <span class="token punctuation">)</span>
 <span class="token function">cat</span> /proc/uptime <span class="token operator">></span> /dev/kmsg
@@ -1762,8 +1764,8 @@ cat<span class="token punctuation">(</span><span class="token punctuation">)</sp
 <span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token number">0</span>
 <span class="token function-name function">one</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <!--"-->	<!--"--><span class="token keyword">while</span> <span class="token builtin class-name">:</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-<!--"-->		<!--"--><span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span>. <span class="token builtin class-name">read</span> -r u2 rest <span class="token operator">&lt;</span> /proc/uptime
-<!--"-->		<!--"--><span class="token punctuation">[</span> <span class="token variable">$u2</span> -eq <span class="token variable">$u</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">continue</span>
+<!--"-->		<!--"--><span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span>. <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> u2 rest <span class="token operator">&lt;</span> /proc/uptime
+<!--"-->		<!--"--><span class="token punctuation">[</span> <span class="token variable">$u2</span> <span class="token parameter variable">-eq</span> <span class="token variable">$u</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">continue</span>
 <!--"-->		<!--"--><span class="token assign-left variable">u</span><span class="token operator">=</span><span class="token variable">$u2</span>
 <!--"-->		<!--"--><span class="token builtin class-name">echo</span> <span class="token variable">$u</span><span class="token builtin class-name">.</span><span class="token variable">$rest</span> <span class="token operator">></span> /dev/kmsg
 <!--"-->		<!--"--><span class="token function">cat</span> /sys/kernel/debug/devices_deferred <span class="token operator">></span> /dev/kmsg
@@ -1771,7 +1773,7 @@ cat<span class="token punctuation">(</span><span class="token punctuation">)</sp
 <!--"-->	<!--"--><span class="token keyword">done</span>
 <span class="token punctuation">}</span>
 one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one<span class="token punctuation">;</span> one
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 and
@@ -2070,17 +2072,17 @@ But given that the blob in <tt><q>EFI-SYSTEM</q></tt> also contains a different 
 a quick re-pack after the prescribed <samp>make dtbs</samp>
 </p>
 <div class="bigcode continuing-inside">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">csplit</span> -fbb mmcblk0p2.dts <span class="token string">'/data =/'</span> <span class="token string">'/type =/'</span> <span class="token string">'/mt8173-elm-hana.dtb/'</span> <span class="token string">'/data =/'</span></span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">csplit</span> <span class="token parameter variable">-fbb</span> mmcblk0p2.dts <span class="token string">'<!--'-->/data =/'<!--'--></span> <span class="token string">'<!--'-->/type =/'<!--'--></span> <span class="token string">'<!--'-->/mt8173-elm-hana.dtb/'<!--'--></span> <span class="token string">'<!--'-->/data =/'<!--'--></span></span></span>
 <span class="token output">161
 26119768
 334465
 40
 7623425
 </span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token comment"># bb00 bb02 start the same as xx00 xx02</span></span></span>
-<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">tail</span> -n2 bb02</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">tail</span> <span class="token parameter variable">-n2</span> bb02</span></span>
 <span class="token output"><!--"-->		<!--"-->fdt@9 {
 <!--"-->			<!--"-->description = "mt8173-elm-hana.dtb";
-</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">head</span> -n8 bb04</span></span>
+</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">head</span> <span class="token parameter variable">-n8</span> bb04</span></span>
 <span class="token output"><!--"-->			<!--"-->type = "flat_dt";
 <!--"-->			<!--"-->arch = "arm64";
 <!--"-->			<!--"-->compression = "none";
@@ -2090,12 +2092,12 @@ a quick re-pack after the prescribed <samp>make dtbs</samp>
 <!--"-->				<!--"-->algo = "sha1";
 <!--"-->			<!--"-->};
 </span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token punctuation">{</span> <span class="token function">cat</span> bb00<span class="token punctuation">;</span></span></span>
-<span class="token output"><!--"-->    <!--"-->printf 'data = ['; lz4 &lt; .../Image | od -An -tx1 -v | tr -d '\n'; printf '];\n';
+<span class="token output"><!--"-->    <!--"-->printf '<!--'-->data = ['<!--'-->; lz4 &lt; .../Image | od -An -tx1 -v | tr -d '<!--'-->\n'<!--'-->; printf '<!--'-->];\n'<!--'-->;
 <!--"-->    <!--"-->cat bb02;
-<!--"-->    <!--"-->printf 'data = ['; &lt; .../arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb od -An -tx1 -v | tr -d '\n'; printf '];\n';
+<!--"-->    <!--"-->printf '<!--'-->data = ['<!--'-->; &lt; .../arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb od -An -tx1 -v | tr -d '<!--'-->\n'<!--'-->; printf '<!--'-->];\n'<!--'-->;
 <!--"-->    <!--"-->cat bb04; } |
 <!--"-->  <!--"-->dtc -I dts -O dtb > stb+dtb.dtb
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 — you may notice or rember the DTB is SHA1ed. This doesn'<!--'-->t do jack shit, <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/newkernel/mandeb+initrd+1+tabs2+reg+drm+adc+d_t_c-initrd&mwifiex+mmc1.sys-firmware-log">not even as a logged diagnostic</a>. I even forgor 💀 at the time —
@@ -2324,7 +2326,7 @@ Thankfully this can be avoided with <code>--config-format</code> which is less a
 and can be quite trivially analysed against the current-best with something like
 </p>
 <div class="continuing-inside">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">grep</span> <span class="token string">'^# C'</span> dt_to_config.config <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">=</span>y <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/# //'</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token operator">=</span> -f1 <span class="token operator">|</span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">grep</span> <span class="token string">'<!--'-->^# C'<!--'--></span> dt_to_config.config <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">=</span>y <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'<!--'-->s/# //'<!--'--></span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token operator">=</span> -f1 <span class="token operator">|</span>
 <!--"-->  <!--"--><span class="token function">sort</span> -u <span class="token operator">|</span> <span class="token function">grep</span> -v ^CONFIG_MACH <span class="token operator">|</span>
 <!--"-->  <!--"--><span class="token keyword">while</span> <span class="token builtin class-name">read</span> -r c<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token function">grep</span> ^<span class="token variable">$c</span><span class="token operator">=</span> .config <span class="token operator">||</span> <span class="token builtin class-name">echo</span> NO <span class="token variable">$c</span><span class="token punctuation">;</span> <span class="token keyword">done</span> <span class="token operator">|</span>
 <!--"-->  <!--"--><span class="token function">grep</span> m$</span></span>
@@ -2346,7 +2348,7 @@ CONFIG_SND_SOC_MT8173_RT5650=m
 CONFIG_SND_SOC_RT5645=m
 CONFIG_TCG_TIS_I2C_INFINEON=m
 CONFIG_TOUCHSCREEN_ELAN=m</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 to then upgrade
@@ -2541,7 +2543,7 @@ alsaucm: error failed to open sound card 0: No such file or directory
 </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">alsaucm <span class="token builtin class-name">set</span> _verb HiFi</span></span>
 <span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">alsaucm get _verb</span></span>
 <span class="token output">alsaucm: error failed to get _verb: No such file or directory
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 (why the fuck does it all have underscores?
@@ -2602,40 +2604,40 @@ A quick purge of the ALSA state from <samp class="path">/var/lib/alsa/asound.sta
 <div class="continuing-inside">
 <pre class="language-javascript"><code class="language-javascript"><!--"-->	<!--"-->control<span class="token punctuation">.</span><span class="token number">31</span> <span class="token punctuation">{</span>
 <!--"-->		<!--"-->iface <span class="token constant">MIXER</span>
-<!--"-->		<!--"-->name <span class="token string">'Ext Spk Switch'</span>
+<!--"-->		<!--"-->name <span class="token string">'<!--'-->Ext Spk Switch'<!--'--></span>
 <!--"-->		<!--"-->value <span class="token boolean">false</span>
 <!--"-->		<!--"-->comment <span class="token punctuation">{</span>
-<!--"-->			<!--"-->access <span class="token string">'read write'</span>
+<!--"-->			<!--"-->access <span class="token string">'<!--'-->read write'<!--'--></span>
 <!--"-->			<!--"-->type <span class="token constant">BOOLEAN</span>
 <!--"-->			<!--"-->count <span class="token number">1</span>
 <!--"-->		<!--"--><span class="token punctuation">}</span>
 <!--"-->	<!--"--><span class="token punctuation">}</span>
 <!--"-->	<!--"-->control<span class="token punctuation">.</span><span class="token number">32</span> <span class="token punctuation">{</span>
 <!--"-->		<!--"-->iface <span class="token constant">MIXER</span>
-<!--"-->		<!--"-->name <span class="token string">'Int Mic Switch'</span>
+<!--"-->		<!--"-->name <span class="token string">'<!--'-->Int Mic Switch'<!--'--></span>
 <!--"-->		<!--"-->value <span class="token boolean">true</span>
 <!--"-->		<!--"-->comment <span class="token punctuation">{</span>
-<!--"-->			<!--"-->access <span class="token string">'read write'</span>
+<!--"-->			<!--"-->access <span class="token string">'<!--'-->read write'<!--'--></span>
 <!--"-->			<!--"-->type <span class="token constant">BOOLEAN</span>
 <!--"-->			<!--"-->count <span class="token number">1</span>
 <!--"-->		<!--"--><span class="token punctuation">}</span>
 <!--"-->	<!--"--><span class="token punctuation">}</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 which <code>amixer</code> lists as
 </p>
 <div class="continuing-inside" style="position: relative;">
 <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/amixer.scontents"><aside>full <code>amixer scontents</code></aside></a>
-<pre class="language-javascript"><code class="language-javascript">Simple mixer control <span class="token string">'Ext Spk'</span><span class="token punctuation">,</span><span class="token number">0</span>
-<!--"-->  <!--"-->Capabilities<span class="token operator">:</span> pswitch pswitch<span class="token operator">-</span>joined
+<pre class="language-javascript"><code class="language-javascript">Simple mixer control <span class="token string">'<!--'-->Ext Spk'<!--'--></span><span class="token punctuation">,</span><span class="token number">0</span>
+<!--"-->  <!--"--><span class="token literal-property property">Capabilities</span><span class="token operator">:</span> pswitch pswitch<span class="token operator">-</span>joined
 <!--"-->  <!--"-->Playback channels<span class="token operator">:</span> Mono
-<!--"-->  <!--"-->Mono<span class="token operator">:</span> Playback <span class="token punctuation">[</span>on<span class="token punctuation">]</span>
-Simple mixer control <span class="token string">'Int Mic'</span><span class="token punctuation">,</span><span class="token number">0</span>
-<!--"-->  <!--"-->Capabilities<span class="token operator">:</span> pswitch pswitch<span class="token operator">-</span>joined
+<!--"-->  <!--"--><span class="token literal-property property">Mono</span><span class="token operator">:</span> Playback <span class="token punctuation">[</span>on<span class="token punctuation">]</span>
+Simple mixer control <span class="token string">'<!--'-->Int Mic'<!--'--></span><span class="token punctuation">,</span><span class="token number">0</span>
+<!--"-->  <!--"--><span class="token literal-property property">Capabilities</span><span class="token operator">:</span> pswitch pswitch<span class="token operator">-</span>joined
 <!--"-->  <!--"-->Playback channels<span class="token operator">:</span> Mono
-<!--"-->  <!--"-->Mono<span class="token operator">:</span> Playback <span class="token punctuation">[</span>on<span class="token punctuation">]</span>
-</pre></code>
+<!--"-->  <!--"--><span class="token literal-property property">Mono</span><span class="token operator">:</span> Playback <span class="token punctuation">[</span>on<span class="token punctuation">]</span>
+</code></pre>
 </div>
 <p class="continuing">
 and either pressing <kbd>m</kbd> on it in <code>alsamixer</code> or running <code>amixer sset 'Ext Spk',0 on</code> (or <code>off</code>)
@@ -2655,13 +2657,13 @@ with the first two corresponding to plugging/unplugging a TRS jack, and the latt
 </p>
 <div class="continuing-inside" style="position: relative;">
 <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/amixer.contents"><aside>full <code>amixer contents</code></aside></a>
-<pre class="language-javascript"><code class="language-javascript">numid<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">,</span>iface<span class="token operator">=</span><span class="token constant">CARD</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'Headphone Jack'</span>
+<pre class="language-javascript"><code class="language-javascript">numid<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">,</span>iface<span class="token operator">=</span><span class="token constant">CARD</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'<!--'-->Headphone Jack'<!--'--></span>
 <!--"-->  <!--"--><span class="token punctuation">;</span> type<span class="token operator">=</span><span class="token constant">BOOLEAN</span><span class="token punctuation">,</span>access<span class="token operator">=</span>r<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token punctuation">,</span>values<span class="token operator">=</span><span class="token number">1</span>
 <!--"-->  <!--"--><span class="token operator">:</span> values<span class="token operator">=</span>on
-numid<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">,</span>iface<span class="token operator">=</span><span class="token constant">CARD</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'Headset Mic Jack'</span>
+numid<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">,</span>iface<span class="token operator">=</span><span class="token constant">CARD</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'<!--'-->Headset Mic Jack'<!--'--></span>
 <!--"-->  <!--"--><span class="token punctuation">;</span> type<span class="token operator">=</span><span class="token constant">BOOLEAN</span><span class="token punctuation">,</span>access<span class="token operator">=</span>r<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token punctuation">,</span>values<span class="token operator">=</span><span class="token number">1</span>
 <!--"-->  <!--"--><span class="token operator">:</span> values<span class="token operator">=</span>on
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 (note that it does also have <tt><q>Headphone Switch</q></tt> and <tt><q>Headphone Playback Switch</q></tt> (and the same for <tt>Speaker</tt>) as double-bools
@@ -2669,25 +2671,25 @@ numid<span class="token operator">=</span><span class="token number">25</span><s
 Unfortunately <code>amixer monitor</code> doesn't include the new data and the on/off is inverted hence the crusty-ass xor, but it's nevertheless a trivial program:
 </p>
 <div class="bigcode continuing-inside">
-<pre class="language-bash"><code class="language-bash">stdbuf -oL amixer events <span class="token operator">|</span>
-<!--"-->	<!--"--><span class="token keyword">while</span> <span class="token builtin class-name">read</span> -r event value <span class="token function">id</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<pre class="language-bash"><code class="language-bash">stdbuf <span class="token parameter variable">-oL</span> amixer events <span class="token operator">|</span>
+<!--"-->	<!--"--><span class="token keyword">while</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> event value <span class="token function">id</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
 <!--"-->		<!--"--><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$event</span> <span class="token variable">$value</span>"</span> <span class="token operator">=</span> <span class="token string">"event value:"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">continue</span>
 <!--"-->		<!--"--><span class="token keyword">case</span> <span class="token string">"<span class="token variable">$id</span>"</span> <span class="token keyword">in</span>
-<!--"-->			<!--"-->*<span class="token string">"'Headphone Jack'"</span><!--"-->  <!--"--><span class="token punctuation">)</span><!--"-->	<!--"--><span class="token assign-left variable">ctl</span><span class="token operator">=</span><span class="token string">'Ext Spk'</span><span class="token punctuation">;</span><!--"-->     <!--"--><span class="token assign-left variable">inv</span><span class="token operator">=</span>on<!--"-->  <!--"--><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<!--"-->			<!--"-->*<span class="token string">"'Headset Mic Jack'"</span><span class="token punctuation">)</span><!--"-->	<!--"--><span class="token assign-left variable">ctl</span><span class="token operator">=</span><span class="token string">'Headset Mic'</span><span class="token punctuation">;</span> <span class="token assign-left variable">inv</span><span class="token operator">=</span>off <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<!--"-->			<!--"-->*<span class="token string">"'<!--'-->Headphone Jack'<!--'-->"</span><!--"-->  <!--"--><span class="token punctuation">)</span><!--"-->	<!--"--><span class="token assign-left variable">ctl</span><span class="token operator">=</span><span class="token string">'<!--'-->Ext Spk'<!--'--></span><span class="token punctuation">;</span><!--"-->     <!--"--><span class="token assign-left variable">inv</span><span class="token operator">=</span>on<!--"-->  <!--"--><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<!--"-->			<!--"-->*<span class="token string">"'<!--'-->Headset Mic Jack'<!--'-->"</span><span class="token punctuation">)</span><!--"-->	<!--"--><span class="token assign-left variable">ctl</span><span class="token operator">=</span><span class="token string">'<!--'-->Headset Mic'<!--'--></span><span class="token punctuation">;</span> <span class="token assign-left variable">inv</span><span class="token operator">=</span>off <span class="token punctuation">;</span><span class="token punctuation">;</span>
 <!--"-->			<!--"-->*<!--"-->                    <!--"--><span class="token punctuation">)</span><!--"-->	<!--"--><span class="token builtin class-name">continue</span><!--"-->                   <!--"--><span class="token punctuation">;</span><span class="token punctuation">;</span>
 <!--"-->		<!--"--><span class="token keyword">esac</span>
 <!--"-->		<!--"-->amixer cget <span class="token string">"<span class="token variable">$id</span>"</span> <span class="token operator">|</span>
-<!--"-->			<!--"--><span class="token keyword">while</span> <span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$IFS</span>="</span> <span class="token builtin class-name">read</span> -r tp k <span class="token function">v</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<!--"-->			<!--"--><span class="token keyword">while</span> <span class="token assign-left variable"><span class="token environment constant">IFS</span></span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$IFS</span>="</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> tp k <span class="token function">v</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
 <!--"-->				<!--"--><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$tp</span> <span class="token variable">$k</span>"</span> <span class="token operator">=</span> <span class="token string">": values"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">continue</span>
 <!--"-->				<!--"--><span class="token keyword">case</span> <span class="token string">"<span class="token variable">$v</span><span class="token variable">$inv</span>"</span> <span class="token keyword">in</span>
 <!--"-->					<!--"-->onon<span class="token operator">|</span>offoff<span class="token punctuation">)</span><!--"-->	<!--"--><span class="token assign-left variable">v</span><span class="token operator">=</span>off <span class="token punctuation">;</span><span class="token punctuation">;</span>
 <!--"-->					<!--"-->onoff<span class="token operator">|</span>offon<span class="token punctuation">)</span><!--"-->	<!--"--><span class="token assign-left variable">v</span><span class="token operator">=</span>on<!--"-->  <!--"--><span class="token punctuation">;</span><span class="token punctuation">;</span>
 <!--"-->				<!--"--><span class="token keyword">esac</span>
-<!--"-->				<!--"--><span class="token builtin class-name">exec</span> amixer sset <span class="token string">"'<span class="token variable">$ctl</span>'"</span> <span class="token string">"<span class="token variable">$v</span>"</span>
+<!--"-->				<!--"--><span class="token builtin class-name">exec</span> amixer sset <span class="token string">"'<!--'--><span class="token variable">$ctl</span>'<!--'-->"</span> <span class="token string">"<span class="token variable">$v</span>"</span>
 <!--"-->			<!--"--><span class="token keyword">done</span>
 <!--"-->	<!--"--><span class="token keyword">done</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 Further testing shows that if the <tt><q>Headset Mic</q></tt> control is set to <var>off</var> it expectedly cuts out the TRRS microphone,
@@ -3477,49 +3479,49 @@ for the <a href="012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html#c
 a simple <samp class="path">/etc/keyd/cros_ec.conf</samp> of
 </p>
 <div class="bigcode continuing-inside tab8-inside">
-<pre class="language-ini"><code class="language-ini"><span class="token selector">[ids]</span>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">ids</span><span class="token punctuation">]</span></span>
 0000:0000
 
-<span class="token selector">[alt]</span>
-<span class="token constant">left</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> home</span>
-<span class="token constant">right</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> end</span>
-<span class="token constant">up</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> pageup</span>
-<span class="token constant">down</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> pagedown</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">alt</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">left</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">home</span>
+<span class="token key attr-name">right</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">end</span>
+<span class="token key attr-name">up</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">pageup</span>
+<span class="token key attr-name">down</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">pagedown</span>
 
-<span class="token selector">[main]</span>
-<span class="token comment"># Don't mangle these (https://github.com/rvaiya/keyd/issues/618)</span>
-<span class="token constant">rightcontrol</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> rightcontrol</span>
-<span class="token constant">rightshift</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> rightshift</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">main</span><span class="token punctuation">]</span></span>
+<span class="token comment"># Don'<!--'-->t mangle these (https://github.com/rvaiya/keyd/issues/618)</span>
+<span class="token key attr-name">rightcontrol</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">rightcontrol</span>
+<span class="token key attr-name">rightshift</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">rightshift</span>
 
 <span class="token comment"># 🔒</span>
-<span class="token constant">sleep</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> delete</span>
+<span class="token key attr-name">sleep</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">delete</span>
 
 <span class="token comment"># 🔍 remains as leftmeta</span>
 
-<span class="token selector">[meta]</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">meta</span><span class="token punctuation">]</span></span>
 <span class="token comment"># ←</span>
-<span class="token constant">f1</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> back</span>
+<span class="token key attr-name">f1</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">back</span>
 <span class="token comment"># →</span>
-<span class="token constant">f2</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> forward</span>
+<span class="token key attr-name">f2</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">forward</span>
 <span class="token comment"># ⟳</span>
-<span class="token constant">f3</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
+<span class="token key attr-name">f3</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">refresh</span>
 <span class="token comment"># tableau</span>
-<span class="token constant">f4</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> print</span>
+<span class="token key attr-name">f4</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">print</span>
 <span class="token comment"># fast rectangle</span>
-<span class="token constant">f5</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> scale</span>
+<span class="token key attr-name">f5</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">scale</span>
 <span class="token comment"># small ☀️</span>
-<span class="token constant">f6</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
+<span class="token key attr-name">f6</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">brightnessdown</span>
 <span class="token comment"># ☀️</span>
-<span class="token constant">f7</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
+<span class="token key attr-name">f7</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">brightnessup</span>
 <span class="token comment"># 🔇</span>
-<span class="token constant">f8</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> mute</span>
+<span class="token key attr-name">f8</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">mute</span>
 <span class="token comment"># 🔉</span>
-<span class="token constant">f9</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
+<span class="token key attr-name">f9</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">volumedown</span>
 <span class="token comment"># 🔊</span>
-<span class="token constant">f10</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+<span class="token key attr-name">f10</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">volumeup</span>
 
-<span class="token constant">sleep</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> sleep</span>
-<!--'--></pre></code>
+<span class="token key attr-name">sleep</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">sleep</span>
+</code></pre>
 </div>
 <p class="continuing">
 suffices.
@@ -3601,7 +3603,7 @@ Well then!
 <!--"-->		<!--"-->compatible = <span class="token string">"gpio-display-mux"</span>;
 <!--"-->		<!--"-->status = <span class="token string">"okay"</span>;
 <!--"-->		<!--"-->detect-gpios = &lt;<span class="token number">0x15</span> <span class="token number">0x24</span> <span class="token number">0x00</span>>;
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 and not at all in the 6.6.11 one;
@@ -3634,7 +3636,7 @@ this also references the <tt>analogix,anx7688</tt> device –
 <!--"-->						<!--"-->compatible = <span class="token string">"analogix,anx7688"</span>;
 <!--"-->						<!--"-->status = <span class="token string">"okay"</span>;
 <!--"-->						<!--"-->reg = &lt;<span class="token number">0x2c</span>>;
-</pre></code>
+</code></pre>
 </div>
 <p class="continuation">
 – also not present (incl. the tunnel) in the 6.6.11 device tree, also with no compatible module.
@@ -3759,7 +3761,7 @@ produces <samp class="path">Image.dtb</samp>, which, after decompilation, looks 
 <!--"-->		<!--"-->};
 <!--"-->	<!--"-->};
 };
-</pre></code>
+</code></pre>
 </div>
 <p class="continuation">
 (note the differences from <a href="#kernal">ChromeOS'<!--'-->s</a> –
@@ -3776,12 +3778,12 @@ and <samp>-T kernel</samp> just works.
 This makes the final kernel installation look like
 </p>
 <div class="bigcode continuing-inside">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">lz4 -9 </span></span><span class="token output">&lt; .../arch/arm64/boot/Image > Image.lz4
-</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">mkimage -f auto -A arm64 </span></span><span class="token output">\
-<!--"-->    <!--"-->-T kernel -C lz4 -d Image.lz4 \
-<!--"-->    <!--"-->-b .../arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb \
-<!--"-->    <!--"-->Image.dtb
-FIT description: Kernel Image image with one or more FDT blobs
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">lz4 <span class="token parameter variable">-9</span> <span class="token operator">&lt;</span> <span class="token punctuation">..</span>./arch/arm64/boot/Image <span class="token operator">></span> Image.lz4</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">mkimage <span class="token parameter variable">-f</span> auto <span class="token parameter variable">-A</span> arm64 <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">-T</span> kernel <span class="token parameter variable">-C</span> lz4 <span class="token parameter variable">-d</span> Image.lz4 <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">-b</span> <span class="token punctuation">..</span>./arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb <span class="token punctuation">\</span>
+<!--"-->    <!--"-->Image.dtb</span></span>
+<span class="token output">FIT description: Kernel Image image with one or more FDT blobs
 Created:<!--"-->         <!--"-->Mon Feb<!--"-->  <!--"-->5 01:17:41 2024
  Image 0 (kernel-1)
 <!--"-->  <!--"-->Description:
@@ -3804,24 +3806,24 @@ Created:<!--"-->         <!--"-->Mon Feb<!--"-->  <!--"-->5 01:17:41 2024
 <!--"-->  <!--"-->Architecture: AArch64
 <!--"-->  <!--"-->Hash algo:<!--"-->    <!--"-->crc32
 <!--"-->  <!--"-->Hash value:<!--"-->   <!--"-->ae9f8591
- Default Configuration: 'conf-1'
+ Default Configuration: '<!--'-->conf-1'<!--'-->
  Configuration 0 (conf-1)
 <!--"-->  <!--"-->Description:<!--"-->  <!--"-->mt8173-elm-hana
 <!--"-->  <!--"-->Kernel:<!--"-->       <!--"-->kernel-1
 <!--"-->  <!--"-->FDT:<!--"-->          <!--"-->fdt-1
 <!--"-->  <!--"-->Loadables:<!--"-->    <!--"-->kernel-1
 
-</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">printf</span> <span class="token string">'<span class="token entity" title="\0">\0</span>'</span> <span class="token operator">></span> bootloader</span></span>
+</span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">printf</span> <span class="token string">'<!--'-->\0'<!--'--></span> <span class="token operator">></span> bootloader</span></span>
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">echo</span> <span class="token assign-left variable">root</span><span class="token operator">=</span>PARTLABEL<span class="token operator">=</span>chwast-root rootwait <span class="token assign-left variable">console</span><span class="token operator">=</span>pstore-1 <span class="token assign-left variable">console</span><span class="token operator">=</span>tty1 <span class="token operator">></span> cmdline</span></span>
-<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">vbutil_kernel --pack /dev/disk/by-partlabel/chwast-root </span></span><span class="token output">\
-<!--"-->    <!--"-->--keyblock<!--"-->    <!--"-->/usr/share/vboot/devkeys/kernel.keyblock \
-<!--"-->    <!--"-->--signprivate /usr/share/vboot/devkeys/kernel_data_key.vbprivk \
-<!--"-->    <!--"-->--version<!--"-->     <!--"-->1 \
-<!--"-->    <!--"-->--vmlinuz<!--"-->     <!--"-->Image.dtb \
-<!--"-->    <!--"-->--bootloader<!--"-->  <!--"-->bootloader \
-<!--"-->    <!--"-->--config<!--"-->      <!--"-->cmdline \
-<!--"-->    <!--"-->--arch<!--"-->        <!--"-->arm64
-</span></pre></code>
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">vbutil_kernel <span class="token parameter variable">--pack</span> /dev/disk/by-partlabel/chwast-root <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--keyblock</span><!--"-->    <!--"-->/usr/share/vboot/devkeys/kernel.keyblock <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--signprivate</span> /usr/share/vboot/devkeys/kernel_data_key.vbprivk <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--version</span><!--"-->     <!--"--><span class="token number">1</span> <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--vmlinuz</span><!--"-->     <!--"-->Image.dtb <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--bootloader</span><!--"-->  <!--"-->bootloader <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--config</span><!--"-->      <!--"-->cmdline <span class="token punctuation">\</span>
+<!--"-->    <!--"--><span class="token parameter variable">--arch</span><!--"-->        <!--"-->arm64</span></span>
+</code></pre>
 </div>
 <p class="continuing">
 which provides for a <a href="//lfs.nabijaczleweli.xyz/0018-debian-chromebook-lenovo-300e-gen2-mtk-real/boot/">roughly-normal <samp class="path">/boot</samp></a>
@@ -3995,7 +3997,7 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -4011,9 +4013,9 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp">src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

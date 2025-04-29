@@ -17,7 +17,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) with Intel Celeron N4000"> 
  <title>012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -46,33 +46,30 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
+ <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"> 
  
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> 
- <link href="/content/assets/bigtable.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> 
+ <link href="/content/assets/bigtable.css" rel="stylesheet"> <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -274,73 +271,74 @@ code[class="language-ini"], pre[class="language-ini"] {
  -moz-tab-size: 8 !important;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>012a. Installing Debian on the Lenovo 300e 2<sup>nd</sup>-gen Chromebook (Intel)</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Thu, 11 Jan 2024 04:04:28 +0100</span>, updated Thu, 11 Jan 2024 21:38:02 +0100</h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
-<li><a href='#firmware'>Firmware</a></li>
+<li><a href='#firmware'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/">Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#firmware-finding-system-info'>Finding System Info</a></li>
-<li><a href='#firmware-known-issues'>Known Issues</a></li>
+<li><a href='#firmware-finding-system-info'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/system-info.html">Finding System Info <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#firmware-known-issues'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/known-issues.html">Known Issues <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#firmware-known-issues-firmware'>Firmware</a></li>
+<li><a href='#firmware-known-issues-firmware'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/known-issues.html#firmware">Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
-<li><a href='#firmware-enabling-developer-mode'>Enabling developer mode</a></li>
-<li><a href='#firmware-disabling-write-protect'>Disabling write protect</a></li>
+<li><a href='#firmware-enabling-developer-mode'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/developer-mode.html">Enabling developer mode <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#firmware-disabling-write-protect'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/write-protect.html">Disabling write protect <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#firmware-types-of-firmware'>Types of Firmware</a></li>
+<li><a href='#firmware-types-of-firmware'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/about.html">Types of Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#firmware-types-of-firmware-RW_LEGACY'>RW_LEGACY</a></li>
-<li><a href='#firmware-types-of-firmware-UEFI'>(UEFI) Full ROM</a></li>
+<li><a href='#firmware-types-of-firmware-RW_LEGACY'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/about.html#rw-legacy">RW_LEGACY <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#firmware-types-of-firmware-UEFI'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/about.html#uefi-full-rom">(UEFI) Full ROM <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
 </ol>
 <li><a href='#firmware-disabling-write-protect2'>(Back to) Disabling write protect</a></li>
 <ol>
-<li><a href='#firmware-disabling-write-protect-unplugging-the-battery'>Disabling write protect via Battery</a></li>
+<li><a href='#firmware-disabling-write-protect-unplugging-the-battery'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/battery.html">Disabling write protect via Battery <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery'>Step 1: Open the device and disconnect the battery</a></li>
-<li><a href='#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash'>Step 2: Boot using AC power, and flash.</a></li>
+<li><a href='#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery">Step 1: Open the device and disconnect the battery <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/battery.html#step-2-boot-using-ac-power-and-flash">Step 2: Boot using AC power, and flash. <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
 </ol>
-<li><a href='#firmware-flashing-custom-firmware'>Flashing Custom Firmware</a></li>
+<li><a href='#firmware-flashing-custom-firmware'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/firmware/flashing-firmware.html">Flashing Custom Firmware <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
-<li><a href='#installing'>Installing an OS</a></li>
+<li><a href='#installing'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/">Installing an OS <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#installing-known-issues'>Known Issues</a></li>
+<li><a href='#installing-known-issues'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/known-issues.html">Known Issues <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#installing-known-issues-linux'>Linux</a></li>
+<li><a href='#installing-known-issues-linux'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/known-issues.html#linux">Linux <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
-<li><a href='#installing-making-a-bootable-usb'>Making a Bootable USB</a></li>
+<li><a href='#installing-making-a-bootable-usb'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/bootableusb.html">Making a Bootable USB <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#installing-making-a-bootable-usb-flashing-with-dd-linux-macos'>Flashing with dd (Linux/macOS)</a></li>
+<li><a href='#installing-making-a-bootable-usb-flashing-with-dd-linux-macos'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/bootableusb.html#flashing-with-dd-linux-macos">Flashing with dd (Linux/macOS) <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
-<li><a href='#installing-installing-linux'>Installing Linux</a></li>
+<li><a href='#installing-installing-linux'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html">Installing Linux <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#installing-installing-linux-recommended-distributions'>Recommended Distributions</a></li>
-<li><a href='#installing-installing-linux-installation'>Installation</a></li>
-<li><a href='#installing-installing-linux-fixing-audio'>Fixing Audio</a></li>
+<li><a href='#installing-installing-linux-recommended-distributions'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#recommended-distributions">Recommended Distributions <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#installing-installing-linux-installation'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#installation">Installation <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#installing-installing-linux-fixing-audio'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio">Fixing Audio <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 <ol>
-<li><a href='#installing-installing-linux-fixing-audio2'>Fixing Audio</a></li>
-</ol>
-</ol>
-<li><a href='#installing-post-install'>Post Install</a></li>
-<ol>
-<li><a href='#installing-post-install-linux'>Linux</a></li>
-<ol>
-<li><a href='#installing-post-install-linux-general-qol-fixes'>General QOL Fixes</a></li>
-<li><a href='#installing-post-install-linux-celes-post-install-workaround'>CELES Post Install Workaround</a></li>
+<li><a href='#installing-installing-linux-fixing-audio2'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1">Fixing Audio <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
 </ol>
-<li><a href='#installing-using-ectool'>Using Ectool</a></li>
+<li><a href='#installing-post-install'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html">Post Install <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<ol>
+<li><a href='#installing-post-install-linux'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html#linux">Linux <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<ol>
+<li><a href='#installing-post-install-linux-general-qol-fixes'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html#general-qol-fixes">General QOL Fixes <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+<li><a href='#installing-post-install-linux-celes-post-install-workaround'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html#celes-post-install-workaround-1">CELES Post Install Workaround <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
+</ol>
+</ol>
+<li><a href='#installing-using-ectool'><a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/ectool.html">Using Ectool <i class="dark-invert fa fa-external-link-alt"></i></a></a></li>
 </ol>
 <li><a href='#conclusions'>Conclusions</a></li>
 <ol>
 <li><a href='#conclusions-pog-moments'>pog moments</a></li>
 <li><a href='#conclusions-cringe-moments'>cringe-ass nae-nae baby moments</a></li>
 <li><a href='#conclusions-funny-moments'>family guy funny moments</a></li>
+</ol>
 </ol>
 </ol>
 </details></div>
@@ -372,9 +370,9 @@ But because it'<!--'-->s an Intel platform with a Celeron N4000 and 4G of LPDDR4
 </p>
 <div class="bigcode">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token output">Script started on 2022-10-10 19:32:11+02:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="170" LINES="48"]
-</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">uname</span> -a</span></span>
-<span class="token info punctuation">Linux localhost 4.14.290-19334-gd1f3f46afcb0 </span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash"><span class="token number">1</span> SMP PREEMPT Wed Oct <span class="token number">5</span> <span class="token number">13</span>:43:48 PDT <span class="token number">2022</span> x86_64 Intel<span class="token punctuation">(</span>R<span class="token punctuation">)</span> Celeron<span class="token punctuation">(</span>R<span class="token punctuation">)</span> N4000 CPU @ <span class="token number">1</span>.10GHz GenuineIntel GNU/Linux</span></span>
-<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lscpu</span></span>
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">uname</span> <span class="token parameter variable">-a</span></span></span>
+<span class="token output">Linux localhost 4.14.290-19334-gd1f3f46afcb0 #1 SMP PREEMPT Wed Oct 5 13:43:48 PDT 2022 x86_64 Intel(R) Celeron(R) N4000 CPU @ 1.10GHz GenuineIntel GNU/Linux
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lscpu</span></span>
 <span class="token output">Architecture:<!--"-->                    <!--"-->x86_64
 CPU op-mode(s):<!--"-->                  <!--"-->32-bit, 64-bit
 Byte Order:<!--"-->                      <!--"-->Little Endian
@@ -478,24 +476,24 @@ Flags:<!--"-->                           <!--"-->fpu vme de pse tsc msr pae mce 
 |-/usr/share/chromeos-assets/quickoffice/_platform_specific
 |<!--"-->                                     <!--"-->/dev/loop3<!--"-->                         <!--"-->squashfs<!--"-->  <!--"-->seclabel
 `-/usr/share/cros-camera/libfs<!--"-->        <!--"-->/dev/loop4<!--"-->                         <!--"-->squashfs<!--"-->  <!--"-->seclabel
-</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">df</span> -hT</span></span>
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">df</span> <span class="token parameter variable">-hT</span></span></span>
 <span class="token output">Filesystem<!--"-->              <!--"-->Type<!--"-->      <!--"-->Size<!--"-->  <!--"-->Used Avail Use% Mounted on
-/dev/root<!--"-->               <!--"-->ext2<!--"-->      <!--"-->2.8G<!--"-->  <!--"-->2.4G<!--"-->  <!--"-->358M<!--"-->  <!--"-->88% /
-devtmpfs<!--"-->                <!--"-->devtmpfs<!--"-->  <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /dev
+</span><span class="token command"><span class="token info punctuation"><span class="token path">/dev/root<!--"-->               <!--"-->ext2<!--"-->      <!--"-->2.8G<!--"-->  <!--"-->2.4G<!--"-->  <!--"-->358M<!--"-->  <!--"-->88</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/</span></span>
+<span class="token output">devtmpfs<!--"-->                <!--"-->devtmpfs<!--"-->  <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /dev
 tmpfs<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->   <!--"-->60M<!--"-->  <!--"-->1.8G<!--"-->   <!--"-->4% /dev/shm
 tmpfs<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->   <!--"-->72K<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->1% /tmp
 tmpfs<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->  <!--"-->704K<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->1% /run
-/dev/loop0<!--"-->              <!--"-->squashfs<!--"-->  <!--"-->384K<!--"-->  <!--"-->384K<!--"-->     <!--"-->0 100% /run/chromeos-config/private
-/dev/mmcblk0p1<!--"-->          <!--"-->ext4<!--"-->       <!--"-->21G<!--"-->  <!--"-->173M<!--"-->   <!--"-->20G<!--"-->   <!--"-->1% /mnt/stateful_partition
-/dev/mmcblk0p8<!--"-->          <!--"-->ext4<!--"-->       <!--"-->12M<!--"-->   <!--"-->24K<!--"-->   <!--"-->12M<!--"-->   <!--"-->1% /usr/share/oem
-/dev/mapper/encstateful ext4<!--"-->      <!--"-->6.0G<!--"-->   <!--"-->14M<!--"-->  <!--"-->6.0G<!--"-->   <!--"-->1% /mnt/stateful_partition/encrypted
-media<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /media
+</span><span class="token command"><span class="token info punctuation"><span class="token path">/dev/loop0<!--"-->              <!--"-->squashfs<!--"-->  <!--"-->384K<!--"-->  <!--"-->384K<!--"-->     <!--"-->0 100</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/run/chromeos-config/private</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token path">/dev/mmcblk0p1<!--"-->          <!--"-->ext4<!--"-->       <!--"-->21G<!--"-->  <!--"-->173M<!--"-->   <!--"-->20G<!--"-->   <!--"-->1</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/mnt/stateful_partition</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token path">/dev/mmcblk0p8<!--"-->          <!--"-->ext4<!--"-->       <!--"-->12M<!--"-->   <!--"-->24K<!--"-->   <!--"-->12M<!--"-->   <!--"-->1</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/usr/share/oem</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token path">/dev/mapper/encstateful ext4<!--"-->      <!--"-->6.0G<!--"-->   <!--"-->14M<!--"-->  <!--"-->6.0G<!--"-->   <!--"-->1</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/mnt/stateful_partition/encrypted</span></span>
+<span class="token output">media<!--"-->                   <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /media
 none<!--"-->                    <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /sys/fs/cgroup
-/dev/loop2<!--"-->              <!--"-->squashfs<!--"-->   <!--"-->98M<!--"-->   <!--"-->98M<!--"-->     <!--"-->0 100% /usr/share/chromeos-assets/speech_synthesis/patts
-imageloader<!--"-->             <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /run/imageloader
-/dev/loop3<!--"-->              <!--"-->squashfs<!--"-->   <!--"-->10M<!--"-->   <!--"-->10M<!--"-->     <!--"-->0 100% /usr/share/chromeos-assets/quickoffice/_platform_specific
-/dev/loop4<!--"-->              <!--"-->squashfs<!--"-->  <!--"-->6.0M<!--"-->  <!--"-->6.0M<!--"-->     <!--"-->0 100% /usr/share/cros-camera/libfs
-</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lsblk</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token path">/dev/loop2<!--"-->              <!--"-->squashfs<!--"-->   <!--"-->98M<!--"-->   <!--"-->98M<!--"-->     <!--"-->0 100</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/usr/share/chromeos-assets/speech_synthesis/patts</span></span>
+<span class="token output">imageloader<!--"-->             <!--"-->tmpfs<!--"-->     <!--"-->1.9G<!--"-->     <!--"-->0<!--"-->  <!--"-->1.9G<!--"-->   <!--"-->0% /run/imageloader
+</span><span class="token command"><span class="token info punctuation"><span class="token path">/dev/loop3<!--"-->              <!--"-->squashfs<!--"-->   <!--"-->10M<!--"-->   <!--"-->10M<!--"-->     <!--"-->0 100</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/usr/share/chromeos-assets/quickoffice/_platform_specific</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token path">/dev/loop4<!--"-->              <!--"-->squashfs<!--"-->  <!--"-->6.0M<!--"-->  <!--"-->6.0M<!--"-->     <!--"-->0 100</span></span><span class="token shell-symbol important">%</span> <span class="token bash language-bash">/usr/share/cros-camera/libfs</span></span>
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lsblk</span></span>
 <span class="token output">NAME<!--"-->          <!--"-->MAJ:MIN RM<!--"-->  <!--"-->SIZE RO TYPE MOUNTPOINT
 loop0<!--"-->           <!--"-->7:0<!--"-->    <!--"-->0<!--"-->  <!--"-->268K<!--"-->  <!--"-->1 loop /run/chromeos-config/private
 loop1<!--"-->           <!--"-->7:1<!--"-->    <!--"-->0<!--"-->  <!--"-->6.1G<!--"-->  <!--"-->0 loop
@@ -519,7 +517,7 @@ mmcblk0<!--"-->       <!--"-->179:0<!--"-->    <!--"-->0 29.1G<!--"-->  <!--"-->
 mmcblk0boot0<!--"-->  <!--"-->179:16<!--"-->   <!--"-->0<!--"-->    <!--"-->4M<!--"-->  <!--"-->1 disk
 mmcblk0boot1<!--"-->  <!--"-->179:32<!--"-->   <!--"-->0<!--"-->    <!--"-->4M<!--"-->  <!--"-->1 disk
 zram0<!--"-->         <!--"-->253:0<!--"-->    <!--"-->0<!--"-->  <!--"-->5.4G<!--"-->  <!--"-->0 disk [SWAP]
-</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lsblk -f</span></span>
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">lsblk <span class="token parameter variable">-f</span></span></span>
 <span class="token output">NAME<!--"-->          <!--"-->FSTYPE<!--"-->   <!--"-->LABEL<!--"-->  <!--"-->FSAVAIL FSUSE% MOUNTPOINT
 loop0<!--"-->         <!--"-->squashfs<!--"-->              <!--"-->0<!--"-->   <!--"-->100% /run/chromeos-config/private
 loop1
@@ -580,7 +578,7 @@ BUILD_ID=15054.98.0
 <span class="token output">exit
 
 Script done on 2022-10-10 19:37:30+02:00 [COMMAND_EXIT_CODE="0"]
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing" style="display: inline;">
 (all the boring common mountopts stripped; note also how the console login is somehow <tt>TERM=xterm</tt>); the UUIDs amount to
@@ -804,12 +802,12 @@ onto removable media (unclear to me how you'<!--'-->d download it from the targe
 <div class="bigcode continuation">
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token output">localhost login: root
 Password: root
-</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">mount</span> -r /dev/sda /media/removable</span></span>
-<span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cp</span> /media/removable/firmware-util.sh ~chronos</span></span>
-<span class="token output">'/media/removable/firmware-util.sh' -> '/home/chronos/user/firmware-util.sh'
-</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">umount</span> /media/removable</span></span>
-<span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">^D</span></span>
-<span class="token output">logout
+localhost ~ # mount -r /dev/sda /media/removable
+localhost ~ # cp /media/removable/firmware-util.sh ~chronos
+'<!--'-->/media/removable/firmware-util.sh'<!--'--> -> '<!--'-->/home/chronos/user/firmware-util.sh'<!--'-->
+localhost ~ # umount /media/removable
+localhost ~ # ^D
+logout
 
 localhost login: chronos
 Password:
@@ -821,19 +819,19 @@ Password: chronos
 Login incorrect
 localhost login: root
 Password: root
-</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">chromeos-setdevpassswd</span></span>
-<span class="token output">Password: chronos
+localhost ~ # chromeos-setdevpassswd
+Password: chronos
 Verifying - Password: chronos
-</span><span class="token info punctuation">localhost ~ </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">^D</span></span>
-<span class="token output">logout
+localhost ~ # ^D
+logout
 
 localhost login: chronos
 Password: chronos
-</span><span class="token info punctuation">chronos@localhost ~ </span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">bash</span> firmware-util.sh</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">chronos@localhost ~ </span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">bash</span> firmware-util.sh</span></span>
 <span class="token output">MrChromebox Firmware Utility Script starting up
 Downloading supporting files...
 Error downloading one or more required files; cannot continue
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="indented continued">
 The most natural question is "how does <samp>chromeos-setdevpasswd</samp> differ from <samp>passwd chronos</samp>"?
@@ -860,18 +858,18 @@ Well, "MrChromebox's firmware utility script" is
 <span class="token comment"># …</span>
 
 <span class="token comment">#get support scripts</span>
-<span class="token builtin class-name">echo</span> -e <span class="token string">"<span class="token entity" title="\n">\n</span>Downloading supporting files..."</span>
-<span class="token function">rm</span> -rf firmware.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-<span class="token function">rm</span> -rf functions.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-<span class="token function">rm</span> -rf sources.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
-<span class="token variable">$CURL</span> -sLO <span class="token variable">${script_url}</span>firmware.sh
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token entity" title="\n">\n</span>Downloading supporting files..."</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> firmware.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> functions.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> sources.sh <span class="token operator">></span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span>
+<span class="token variable">$CURL</span> <span class="token parameter variable">-sLO</span> <span class="token variable">${script_url}</span>firmware.sh
 <span class="token assign-left variable">rc0</span><span class="token operator">=</span><span class="token variable">$?</span>
-<span class="token variable">$CURL</span> -sLO <span class="token variable">${script_url}</span>functions.sh
+<span class="token variable">$CURL</span> <span class="token parameter variable">-sLO</span> <span class="token variable">${script_url}</span>functions.sh
 <span class="token assign-left variable">rc1</span><span class="token operator">=</span><span class="token variable">$?</span>
-<span class="token variable">$CURL</span> -sLO <span class="token variable">${script_url}</span>sources.sh
+<span class="token variable">$CURL</span> <span class="token parameter variable">-sLO</span> <span class="token variable">${script_url}</span>sources.sh
 <span class="token assign-left variable">rc2</span><span class="token operator">=</span><span class="token variable">$?</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$rc0</span> -ne <span class="token number">0</span> <span class="token operator">||</span> <span class="token variable">$rc1</span> -ne <span class="token number">0</span> <span class="token operator">||</span> <span class="token variable">$rc2</span> -ne <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-<!--"-->	<!--"--><span class="token builtin class-name">echo</span> -e <span class="token string">"Error downloading one or more required files; cannot continue"</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$rc0</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token variable">$rc1</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token variable">$rc2</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<!--"-->	<!--"--><span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"Error downloading one or more required files; cannot continue"</span>
 <!--"-->	<!--"--><span class="token builtin class-name">exit</span> <span class="token number">1</span>
 <span class="token keyword">fi</span>
 
@@ -880,7 +878,7 @@ Well, "MrChromebox's firmware utility script" is
 <span class="token builtin class-name">source</span> ./functions.sh
 
 <span class="token comment"># …</span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 which raises so many more questions (why are the curls <em>supposed</em> to fail silently? why are the three <code>rm</code>s not one? &c. &c. in the trimmed parts),
@@ -910,7 +908,7 @@ and, since all the other modules also run <code>$CURL -s…</code>, apply
 </span><span class="token prefix deleted">-</span><span class="token line">fi
 </span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">export CURL=curl
 </span><span class="token prefix inserted">+</span><span class="token line">curl() {
-</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->printf 'curl %s\n' "$*" | tee -a ~chronos/curls
+</span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->printf '<!--'-->curl %s\n'<!--'--> "$*" | tee -a ~chronos/curls
 </span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->OPTIND=1
 </span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->curl_file=
 </span><span class="token prefix inserted">+</span><span class="token line"><!--"-->	<!--"-->while getopts sLOo: curl_flag; do
@@ -944,7 +942,7 @@ and, since all the other modules also run <code>$CURL -s…</code>, apply
 </span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">source ./sources.sh
 </span><span class="token prefix unchanged"> </span><span class="token line">source ./firmware.sh
 </span><span class="token prefix unchanged"> </span><span class="token line">source ./functions.sh
-</span></span></pre></code>
+</span></span></code></pre>
 </div>
 <p class="continuation">
 Which is possible due to the narrow flag vocabulary.
@@ -964,7 +962,7 @@ The first time I tried this, it told me
 If you plan to flash the UEFI firmware, you must first disable it and reboot before flashing.
 Would you like to disable sofware WP and reboot your device?</span>
 Press Y (then enter) to disable software WP and reboot, or just press enter to skip and continue. <kbd>Y</kbd>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuation">
 and, naturally, rebooted instantly, so I lost the transcript.
@@ -977,14 +975,14 @@ But after the two expected errors, I got
 <span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> bash firmware-util.sh</span>
 MrChromebox Firmware Utility Script starting up
 Downloading supporting files...
-<span class="red">You need to run this script as root; use 'sudo bash &lt;script name>'</span>
+<span class="red">You need to run this script as root; use '<!--'-->sudo bash &lt;script name>'<!--'--></span>
 <span class="token info punctuation">chronos@localhost ~ </span> <span class="token command"><span class="token shell-symbol important">$</span> sudo bash firmware-util.sh</span>
 Password:
 MrChromebox Firmware Utility Script starting up
 
 Downloading required tools...
 curl -sLO https://www.mrchromebox.tech/files/util/cbfstool.tar.gz
-'/home/chronos/user/cbfstool.tar.gz' -> './cbfstool.tar.gz'
+'<!--'-->/home/chronos/user/cbfstool.tar.gz'<!--'--> -> '<!--'-->./cbfstool.tar.gz'<!--'-->
 
 Getting device/system info...
 
@@ -1013,7 +1011,7 @@ Install/Update UEFI Full ROM Firmware</span>
 requiring relatively inexpensive hardware and some technical knowledge to
 recover.Not all boards can be tested prior to release, and even then slight
 differences in hardware can lead to unforseen failures.
-If you don't have the ability to recover from a bad flash, you're taking a risk.
+If you don'<!--'-->t have the ability to recover from a bad flash, you'<!--'-->re taking a risk.
 
 You have been warned.
 
@@ -1023,11 +1021,11 @@ Do you wish to continue? [y/N] y
 
 <span class="bold yellow">NOTICE: flashing your Chromebook is serious business.
 To ensure recovery in case something goes wrong when flashing,
-be sure to set the ccd capability 'FlashAP Always' using your
+be sure to set the ccd capability '<!--'-->FlashAP Always'<!--'--> using your
 USB-C debug cable, otherwise recovery will involve disassembling
 your device (which is very difficult in some cases).
 
-If you wish to continue, type: 'I ACCEPT' and press enter.
+If you wish to continue, type: '<!--'-->I ACCEPT'<!--'--> and press enter.
 </span>
 I ACCEPT
 
@@ -1057,9 +1055,9 @@ Downloading Full ROM firmware
 (coreboot_edk2-phaser360-mrchromebox_20231222.rom)
 </span>
 curl -sLO https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom
-'/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom' -> './coreboot_edk2-phaser360-mrchromebox_20231222.rom'
+'<!--'-->/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom'<!--'--> -> '<!--'-->./coreboot_edk2-phaser360-mrchromebox_20231222.rom'<!--'-->
 curl -sLO https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1
-'/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1' -> './coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1'
+'<!--'-->/home/chronos/user/coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1'<!--'--> -> '<!--'-->./coreboot_edk2-phaser360-mrchromebox_20231222.rom.sha1'<!--'-->
 <span class="bold yellow">Persisting device HWID
 
 VPD extracted from current firmware
@@ -1085,7 +1083,7 @@ Q
 exit
 
 Script done on 2022-10-06 00:04:21+02:00 [COMMAND_EXIT_CODE="32"]
-</pre></code>
+</code></pre>
 </div>
 <blockquote class="continued">
   <dl class="continued">
@@ -1233,7 +1231,7 @@ Section "InputClass"
 <!--"-->	<!--"-->MatchIsTouchpad "on"
 <!--"-->	<!--"-->Option "Tapping" "on"
 EndSection
-</pre></code>
+</code></pre>
 </div>
 <h3 id="installing-post-install" class="continued"><a class="hash-link" href="#installing-post-install">#</a> <a style="color: inherit; text-decoration: none;" href="https://docs.chrultrabook.com/docs/installing/post-install.html">Post Install <i class="dark-invert fa fa-external-link-alt"></i></a></h3>
 <blockquote class="continuing">
@@ -1259,7 +1257,7 @@ But, yes, this does work:
 </p>
 <div class="bigcode continuing" id="expandall-target">
 <pre class="language-ANSI"><code class="language-ANSI"><span class="token info punctuation">chrust:/tmp</span><span class="token command"><span class="token shell-symbol important">$</span> git clone https://github.com/WeirdTreeThing/chromebook-linux-audio</span>
-Cloning into 'chromebook-linux-audio'...
+Cloning into '<!--'-->chromebook-linux-audio'<!--'-->...
 Resolving deltas: 100% (256/256), done.
 <span class="token info punctuation">chrust:/tmp</span><span class="token command"><span class="token shell-symbol important">$</span> cd chromebook-linux-audio/</span>
 <span class="token info punctuation">chrust:/tmp/chromebook-linux-audio</span><span class="token command"><span class="token shell-symbol important">$</span> ./setup-audio</span>
@@ -1269,7 +1267,7 @@ Resolving deltas: 100% (256/256), done.
 Installing SOF firmware
 Installing modprobe config
 Installing UCM configuration</span>
-Cloning into '/tmp/chromebook-ucm-conf'...
+Cloning into '<!--'-->/tmp/chromebook-ucm-conf'<!--'-->...
 Resolving deltas: 100% (614/614), done.
 <span class="bright blue">Increasing alsa headroom (fixes instability)</span>
 <span class="bright magenta">Audio installed successfully! Reboot to finish setup.</span>
@@ -1824,7 +1822,7 @@ rule = {
 }
 
 table.insert(alsa_monitor.rules,rule)
-</pre></code>
+</code></pre>
 </div>
 <p class="continuation">
 And after a reboot I could play aloud
@@ -1895,7 +1893,7 @@ and <a href="//github.com/WeirdTreeThing/cros-keyboard-map/blob/25b0e9c2a10fc834
 with
 </p>
 <div class="bigcode continuation">
-<pre class="language-python"><code class="language-python"><!--"-->    <!--"--><span class="token comment"># make vivaldi keys act like vivaldi keys when super isn't held</span>
+<pre class="language-python"><code class="language-python"><!--"-->    <!--"--><span class="token comment"># make vivaldi keys act like vivaldi keys when super isn'<!--'-->t held</span>
 <!--"-->    <!--"--><span class="token keyword">for</span> scancode <span class="token keyword">in</span> physmap<span class="token punctuation">:</span>
 <!--"-->        <!--"--><span class="token comment"># Map zoom to f11 since most applications wont listen to zoom</span>
 <!--"-->        <!--"--><span class="token keyword">if</span> vivaldi_scancode_to_keyd<span class="token punctuation">(</span>scancode<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"zoom"</span><span class="token punctuation">:</span>
@@ -1906,7 +1904,7 @@ with
 
 <!--"-->    <!--"--><span class="token comment"># map lock button to coffee</span>
 <!--"-->    <!--"-->config <span class="token operator">+=</span> <span class="token string">"\nf13=coffee\nsleep=coffee\n"</span>
-<!--'--></pre></code>
+</code></pre>
 </div>
 <p class="indented">
 deadass
@@ -1927,122 +1925,122 @@ which, well, if I posted I could never show my face in public again
 but this is what mentors is for, so let'<!--'-->s accept keyd is not in Debian:
 </p>
 <div class="bigcode continuing">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> clone http://github.com/rvaiya/keyd</span></span>
-<span class="token output">Cloning into 'keyd'...
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> clone http://github.com/rvaiya/keyd</span></span>
+<span class="token output">Cloning into '<!--'-->keyd'<!--'-->...
 warning: redirecting to https://github.com/rvaiya/keyd/
 Resolving deltas: 100% (2214/2214), done.
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> keyd/ /usr/local/src/</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> keyd/ /usr/local/src/</span></span>
 <span class="token output">[sudo] password for nabijaczleweli:
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">cd</span> /usr/local/src/keyd/</span></span>
-<span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> log -1</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">cd</span> /usr/local/src/keyd/</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> log <span class="token parameter variable">-1</span></span></span>
 <span class="token output">commit dcbb68b12f71245121035b730b50872802a259b4
 Author: Takahashi, Naoki &lt;102382754+tkna91@users.noreply.github.com>
 Date:<!--"-->   <!--"-->Wed Dec 20 02:38:10 2023 +0900
 
 <!--"-->    <!--"-->Add description of KEYD_DEBUG
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token assign-left variable">CFLAGS</span><span class="token operator">=</span>-march<span class="token operator">=</span>native <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span>-flto <span class="token function">make</span></span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token assign-left variable">CFLAGS</span><span class="token operator">=</span>-march<span class="token operator">=</span>native <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span>-flto <span class="token function">make</span></span></span>
 <span class="token output">mkdir bin
 cp scripts/keyd-application-mapper bin/
-</span><span class="token info punctuation">sed -e 's</span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash">@PREFIX@<span class="token comment">#/usr/local#' keyd.service.in > keyd.service</span>
-cc -DVERSION<span class="token operator">=</span><span class="token punctuation">\</span>"v2.4.3<span class="token punctuation">\</span> <span class="token punctuation">\</span><span class="token punctuation">(</span>dcbb68b<span class="token punctuation">\</span><span class="token punctuation">)</span><span class="token punctuation">\</span>" -I/usr/local/include -L/usr/local/lib -Wall -Wextra -Wno-unused -std<span class="token operator">=</span>c11 -DSOCKET_PATH<span class="token operator">=</span><span class="token punctuation">\</span>"/var/run/keyd.socket<span class="token punctuation">\</span>" -DCONFIG_DIR<span class="token operator">=</span><span class="token punctuation">\</span>"/etc/keyd<span class="token punctuation">\</span>" -DDATA_DIR<span class="token operator">=</span><span class="token punctuation">\</span>"/usr/local/share/keyd<span class="token punctuation">\</span>" -D_FORTIFY_SOURCE<span class="token operator">=</span><span class="token number">2</span> -D_DEFAULT_SOURCE -Werror<span class="token operator">=</span>format-security -march<span class="token operator">=</span>native -O3<!--"-->  <!--"-->src/*.c src/vkbd/uinput.c -lpthread -o bin/keyd -flto
-src/daemon.c: In <span class="token keyword">function</span> ‘add_listener’:
-src/daemon.c:84:33: warning: ignoring <span class="token builtin class-name">return</span> value of ‘write’ declared with attribute ‘warn_unused_result’ <span class="token punctuation">[</span>-Wunused-result<span class="token punctuation">]</span>
-<!--"-->   <!--"--><span class="token number">84</span> <span class="token operator">|</span><!--"-->                                 <!--"-->write<span class="token punctuation">(</span>con, layer-<span class="token operator">></span>type <span class="token operator">==</span> LT_LAYOUT ? <span class="token string">"/"</span> <span class="token builtin class-name">:</span> <span class="token string">"+"</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<!--"-->      <!--"--><span class="token operator">|</span><!--"-->                                 <!--"-->^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-src/daemon.c:85:33: warning: ignoring <span class="token builtin class-name">return</span> value of ‘write’ declared with attribute ‘warn_unused_result’ <span class="token punctuation">[</span>-Wunused-result<span class="token punctuation">]</span>
-<!--"-->   <!--"--><span class="token number">85</span> <span class="token operator">|</span><!--"-->                                 <!--"-->write<span class="token punctuation">(</span>con, layer-<span class="token operator">></span>name, strlen<span class="token punctuation">(</span>layer-<span class="token operator">></span>name<span class="token punctuation">))</span><span class="token punctuation">;</span>
-<!--"-->      <!--"--><span class="token operator">|</span><!--"-->                                 <!--"-->^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-src/daemon.c:86:33: warning: ignoring <span class="token builtin class-name">return</span> value of ‘write’ declared with attribute ‘warn_unused_result’ <span class="token punctuation">[</span>-Wunused-result<span class="token punctuation">]</span>
-<!--"-->   <!--"--><span class="token number">86</span> <span class="token operator">|</span><!--"-->                                 <!--"-->write<span class="token punctuation">(</span>con, <span class="token string">"<span class="token entity" title="\n">\n</span>"</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<!--"-->      <!--"--><span class="token operator">|</span><!--"-->                                 <!--"-->^~~~~~~~~~~~~~~~~~~
-nabijaczleweli@chrust:/usr/local/src/keyd$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
-<span class="token function">mkdir</span> -p /etc/keyd
-<span class="token function">mkdir</span> -p /usr/local/bin/
-<span class="token function">mkdir</span> -p /usr/local/share/keyd/
-<span class="token function">mkdir</span> -p /usr/local/share/keyd/layouts/
-<span class="token function">mkdir</span> -p /usr/local/share/man/man1/
-<span class="token function">mkdir</span> -p /usr/local/share/doc/keyd/
-<span class="token function">mkdir</span> -p /usr/local/share/doc/keyd/examples/
-<span class="token function">groupadd</span> keyd
-<span class="token function">install</span> -m755 bin/* /usr/local/bin/
-<span class="token function">install</span> -m644 docs/*.md /usr/local/share/doc/keyd/
-<span class="token function">install</span> -m644 examples/* /usr/local/share/doc/keyd/examples/
-<span class="token function">install</span> -m644 layouts/* /usr/local/share/keyd/layouts
-<span class="token function">install</span> -m644 data/*.1.gz /usr/local/share/man/man1/
-<span class="token function">install</span> -m644 data/keyd.compose /usr/local/share/keyd/
-nabijaczleweli@chrust:/usr/local/src/keyd$ getent group keyd
-keyd:x:1001:
-nabijaczleweli@chrust:/usr/local/src/keyd$ <span class="token function">sudo</span> delgroup keyd
-info: Removing group <span class="token variable"><span class="token variable">`</span>keyd' <span class="token punctuation">..</span>.
-nabijaczleweli@chrust:/usr/local/src/keyd$ <span class="token function">sudo</span> addgroup keyd
-info: Selecting GID from range <span class="token number">100</span> to <span class="token number">999</span> <span class="token punctuation">..</span>.
-info: Adding group <span class="token variable">`</span></span>keyd' <span class="token punctuation">(</span>GID <span class="token number">109</span><span class="token punctuation">)</span> <span class="token punctuation">..</span>.</span></span>
-<span class="token info punctuation"><!--"-->          <!--"-->root@chrust<span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span>zfs list -t snap -Ho name <span class="token operator">|</span> <span class="token function">grep</span> keyd<span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span> zfs <span class="token function">diff</span> -h <span class="token variable">$f</span><span class="token punctuation">;</span> <span class="token keyword">done</span></span></span>
-<span class="token output">M<!--"-->	<!--"-->/etc/
-M<!--"-->	<!--"-->/etc/group-
-M<!--"-->	<!--"-->/etc/gshadow-
--<!--"-->	<!--"-->/etc/group
--<!--"-->	<!--"-->/etc/gshadow
-+<!--"-->	<!--"-->/etc/group
-+<!--"-->	<!--"-->/etc/gshadow
-+<!--"-->	<!--"-->/etc/keyd
-M<!--"-->	<!--"-->/etc/systemd/system/sysinit.target.wants
-+<!--"-->	<!--"-->/etc/systemd/system/sysinit.target.wants/keyd.service
-M<!--"-->	<!--"-->/usr/local/share
-M<!--"-->	<!--"-->/usr/local/share/man
-M<!--"-->	<!--"-->/usr/local/bin
-M<!--"-->	<!--"-->/usr/local/lib
-M<!--"-->	<!--"-->/usr/local/src
-+<!--"-->	<!--"-->/usr/local/src/keyd<!--"-->			<!--"-->(&amp;c.)
-+<!--"-->	<!--"-->/usr/local/lib/systemd
-+<!--"-->	<!--"-->/usr/local/lib/systemd/system
-+<!--"-->	<!--"-->/usr/local/lib/systemd/system/keyd.service
-+<!--"-->	<!--"-->/usr/local/share/man/man1
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples
-+<!--"-->	<!--"-->/usr/local/bin/keyd
-+<!--"-->	<!--"-->/usr/local/bin/keyd-application-mapper
-+<!--"-->	<!--"-->/usr/local/share/keyd/layouts/af
-+<!--"-->	<!--"-->/usr/local/share/keyd/layouts/al
-+<!--"-->	<!--"-->/usr/local/share/keyd/layouts/am<!--"-->	<!--"-->(and hundreds more, elided for brevity here)
-+<!--"-->	<!--"-->/usr/local/share/keyd
-+<!--"-->	<!--"-->/usr/local/share/keyd/layouts
-+<!--"-->	<!--"-->/usr/local/share/doc
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/CHANGELOG.md
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/DESIGN.md
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/capslock-esc-basic.conf
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/capslock-escape-with-vim-mode.conf
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/international-glyphs.conf
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/macos.conf
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/meta-esc.conf
-+<!--"-->	<!--"-->/usr/local/share/doc/keyd/examples/nav-layer.conf
-+<!--"-->	<!--"-->/usr/local/share/man/man1/keyd-application-mapper.1.gz
-+<!--"-->	<!--"-->/usr/local/share/man/man1/keyd.1.gz
-+<!--"-->	<!--"-->/usr/local/share/keyd/keyd.compose
-</span></pre></code>
+sed -e '<!--'-->s#@PREFIX@#/usr/local#'<!--'--> keyd.service.in > keyd.service
+cc -DVERSION=\"v2.4.3\ \(dcbb68b\)\" -I/usr/local/include -L/usr/local/lib -Wall -Wextra -Wno-unused -std=c11 -DSOCKET_PATH=\"/var/run/keyd.socket\" -DCONFIG_DIR=\"/etc/keyd\" -DDATA_DIR=\"/usr/local/share/keyd\" -D_FORTIFY_SOURCE=2 -D_DEFAULT_SOURCE -Werror=format-security -march=native -O3<!--"--> <!--"-->src/*.c src/vkbd/uinput.c -lpthread -o bin/keyd -flto
+src/daemon.c: In function ‘add_listener’:
+src/daemon.c:84:33: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+<!--"--> <!--"-->84 |<!--"--> <!--"-->write(con, layer->type == LT_LAYOUT ? "/" : "+", 1);
+<!--"--> <!--"-->|<!--"--> <!--"-->^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/daemon.c:85:33: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+<!--"--> <!--"-->85 |<!--"--> <!--"-->write(con, layer->name, strlen(layer->name));
+<!--"--> <!--"-->|<!--"--> <!--"-->^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/daemon.c:86:33: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+<!--"--> <!--"-->86 |<!--"--> <!--"-->write(con, "\n", 1);
+<!--"--> <!--"-->|<!--"--> <!--"-->^~~~~~~~~~~~~~~~~~~
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span></span></span>
+<span class="token output">mkdir -p /etc/keyd
+mkdir -p /usr/local/bin/
+mkdir -p /usr/local/share/keyd/
+mkdir -p /usr/local/share/keyd/layouts/
+mkdir -p /usr/local/share/man/man1/
+mkdir -p /usr/local/share/doc/keyd/
+mkdir -p /usr/local/share/doc/keyd/examples/
+groupadd keyd
+install -m755 bin/* /usr/local/bin/
+install -m644 docs/*.md /usr/local/share/doc/keyd/
+install -m644 examples/* /usr/local/share/doc/keyd/examples/
+install -m644 layouts/* /usr/local/share/keyd/layouts
+install -m644 data/*.1.gz /usr/local/share/man/man1/
+install -m644 data/keyd.compose /usr/local/share/keyd/
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash">getent group keyd</span></span>
+<span class="token output">keyd:x:1001:
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> delgroup keyd</span></span>
+<span class="token output">info: Removing group `keyd'<!--'--> ...
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">/usr/local/src/keyd</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> addgroup keyd</span></span>
+<span class="token output">info: Selecting GID from range 100 to 999 ...
+info: Adding group `keyd'<!--'--> (GID 109) ...
+<!--"--> <!--"-->root@chrust:/usr/local/src/keyd# for f in $(zfs list -t snap -Ho name | grep keyd); do zfs diff -h $f; done
+M<!--"--> <!--"-->/etc/
+M<!--"--> <!--"-->/etc/group-
+M<!--"--> <!--"-->/etc/gshadow-
+-<!--"--> <!--"-->/etc/group
+-<!--"--> <!--"-->/etc/gshadow
++<!--"--> <!--"-->/etc/group
++<!--"--> <!--"-->/etc/gshadow
++<!--"--> <!--"-->/etc/keyd
+M<!--"--> <!--"-->/etc/systemd/system/sysinit.target.wants
++<!--"--> <!--"-->/etc/systemd/system/sysinit.target.wants/keyd.service
+M<!--"--> <!--"-->/usr/local/share
+M<!--"--> <!--"-->/usr/local/share/man
+M<!--"--> <!--"-->/usr/local/bin
+M<!--"--> <!--"-->/usr/local/lib
+M<!--"--> <!--"-->/usr/local/src
++<!--"--> <!--"-->/usr/local/src/keyd<!--"--> <!--"-->(&amp;c.)
++<!--"--> <!--"-->/usr/local/lib/systemd
++<!--"--> <!--"-->/usr/local/lib/systemd/system
++<!--"--> <!--"-->/usr/local/lib/systemd/system/keyd.service
++<!--"--> <!--"-->/usr/local/share/man/man1
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples
++<!--"--> <!--"-->/usr/local/bin/keyd
++<!--"--> <!--"-->/usr/local/bin/keyd-application-mapper
++<!--"--> <!--"-->/usr/local/share/keyd/layouts/af
++<!--"--> <!--"-->/usr/local/share/keyd/layouts/al
++<!--"--> <!--"-->/usr/local/share/keyd/layouts/am<!--"--> <!--"-->(and hundreds more, elided for brevity here)
++<!--"--> <!--"-->/usr/local/share/keyd
++<!--"--> <!--"-->/usr/local/share/keyd/layouts
++<!--"--> <!--"-->/usr/local/share/doc
++<!--"--> <!--"-->/usr/local/share/doc/keyd
++<!--"--> <!--"-->/usr/local/share/doc/keyd/CHANGELOG.md
++<!--"--> <!--"-->/usr/local/share/doc/keyd/DESIGN.md
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples/capslock-esc-basic.conf
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples/capslock-escape-with-vim-mode.conf
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples/international-glyphs.conf
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples/macos.conf
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples/meta-esc.conf
++<!--"--> <!--"-->/usr/local/share/doc/keyd/examples/nav-layer.conf
++<!--"--> <!--"-->/usr/local/share/man/man1/keyd-application-mapper.1.gz
++<!--"--> <!--"-->/usr/local/share/man/man1/keyd.1.gz
++<!--"--> <!--"-->/usr/local/share/keyd/keyd.compose
+</span></code></pre>
 </div>
 <p class="continuing">
 and
 </p>
 <div class="bigcode continuation">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> clone http://github.com/WeirdTreeThing/cros-keyboard-map</span></span>
-<span class="token output">Cloning into 'cros-keyboard-map'...
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> clone http://github.com/WeirdTreeThing/cros-keyboard-map</span></span>
+<span class="token output">Cloning into '<!--'-->cros-keyboard-map'<!--'-->...
 warning: redirecting to https://github.com/WeirdTreeThing/cros-keyboard-map/
 Resolving deltas: 100% (26/26), done.
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">cd</span> cros-keyboard-map/</span></span>
-<span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> log -1</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token builtin class-name">cd</span> cros-keyboard-map/</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">git</span> log <span class="token parameter variable">-1</span></span></span>
 <span class="token output">commit 25b0e9c2a10fc834d414b427c40d572fb38cda14
 Author: WeirdTreeThing &lt;bradyn127@protonmail.com>
 Date:<!--"-->   <!--"-->Tue Dec 12 17:40:08 2023 -0500
 
 <!--"-->    <!--"-->Add support for Chimera Linux
 
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">grep</span> -n usr/bin/keyd install.sh</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">grep</span> <span class="token parameter variable">-n</span> usr/bin/keyd install.sh</span></span>
 <span class="token output">26:if ! [ -f /usr/bin/keyd ]; then
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sed</span> -i <span class="token string">'s:.*usr/bin/keyd.*:if false; then:'</span> install.sh</span></span>
-<span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sed</span> -n 26p install.sh</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'<!--'-->s:.*usr/bin/keyd.*:if false; then:'<!--'--></span> install.sh</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sed</span> <span class="token parameter variable">-n</span> 26p install.sh</span></span>
 <span class="token output">if false; then
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./install.sh</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./install.sh</span></span>
 <span class="token output">Generating config
 Installing config
 [sudo] password for nabijaczleweli:
@@ -2050,9 +2048,9 @@ Enabling keyd
 Created symlink /etc/systemd/system/sysinit.target.wants/keyd.service → /usr/local/lib/systemd/system/keyd.service.
 Installing libinput configuration
 Done
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> <span class="token environment constant">$PWD</span> /usr/local/src/</span></span>
-<span class="token info punctuation"><!--"-->          <!--"-->root@chrust<span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span>zfs list -t snap -Ho name <span class="token operator">|</span> <span class="token function">grep</span> keymap<span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span> zfs <span class="token function">diff</span> -h <span class="token variable">$f</span><span class="token punctuation">;</span> <span class="token keyword">done</span></span></span>
-<span class="token output">M<!--"-->	<!--"-->/etc/
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@chrust</span><span class="token punctuation">:</span><span class="token path">~/cros-keyboard-map</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">mv</span> <span class="token environment constant">$PWD</span> /usr/local/src/</span></span>
+<span class="token output"><!--"-->          <!--"-->root@chrust:~/cros-keyboard-map# for f in $(zfs list -t snap -Ho name | grep keymap); do zfs diff -h $f; done
+M<!--"-->	<!--"-->/etc/
 +<!--"-->	<!--"-->/etc/libinput
 +<!--"-->	<!--"-->/etc/libinput/local-overrides.quirks
 M<!--"-->	<!--"-->/etc/keyd
@@ -2061,7 +2059,7 @@ M<!--"-->	<!--"-->/etc/systemd/system/sysinit.target.wants
 +<!--"-->	<!--"-->/etc/systemd/system/sysinit.target.wants/keyd.service
 M<!--"-->	<!--"-->/usr/local/src
 +<!--"-->	<!--"-->/usr/local/src/cros-keyboard-map<!--"-->		<!--"-->(&amp;c.)
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="indented continued">
 Now that we've installed a key- and mouse-logger, it doesn't actually work,
@@ -2125,72 +2123,72 @@ it turns out the generated mapping is just bonkers.
 I wasn'<!--'-->t gonna include it here because it differs per-model, but the generated <samp class="path">/etc/keyd/cros.conf</samp> is:
 </p>
 <div class="bigcode continuing">
-<pre class="language-ini"><code class="language-ini"><span class="token selector">[ids]</span>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">ids</span><span class="token punctuation">]</span></span>
 0001:0001
 
-<span class="token selector">[main]</span>
-<span class="token constant">f1</span> <span class="token attr-value"><span class="token punctuation">=</span> back</span>
-<span class="token constant">f2</span> <span class="token attr-value"><span class="token punctuation">=</span> forward</span>
-<span class="token constant">f3</span> <span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
-<span class="token constant">f4</span> <span class="token attr-value"><span class="token punctuation">=</span> f11</span>
-<span class="token constant">f5</span> <span class="token attr-value"><span class="token punctuation">=</span> scale</span>
-<span class="token constant">f6</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
-<span class="token constant">f7</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
-<span class="token constant">f8</span> <span class="token attr-value"><span class="token punctuation">=</span> mute</span>
-<span class="token constant">f9</span> <span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
-<span class="token constant">f10</span> <span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">main</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">f1</span> <span class="token punctuation">=</span> <span class="token value attr-value">back</span>
+<span class="token key attr-name">f2</span> <span class="token punctuation">=</span> <span class="token value attr-value">forward</span>
+<span class="token key attr-name">f3</span> <span class="token punctuation">=</span> <span class="token value attr-value">refresh</span>
+<span class="token key attr-name">f4</span> <span class="token punctuation">=</span> <span class="token value attr-value">f11</span>
+<span class="token key attr-name">f5</span> <span class="token punctuation">=</span> <span class="token value attr-value">scale</span>
+<span class="token key attr-name">f6</span> <span class="token punctuation">=</span> <span class="token value attr-value">brightnessdown</span>
+<span class="token key attr-name">f7</span> <span class="token punctuation">=</span> <span class="token value attr-value">brightnessup</span>
+<span class="token key attr-name">f8</span> <span class="token punctuation">=</span> <span class="token value attr-value">mute</span>
+<span class="token key attr-name">f9</span> <span class="token punctuation">=</span> <span class="token value attr-value">volumedown</span>
+<span class="token key attr-name">f10</span> <span class="token punctuation">=</span> <span class="token value attr-value">volumeup</span>
 
-<span class="token constant">back</span> <span class="token attr-value"><span class="token punctuation">=</span> back</span>
-<span class="token constant">forward</span> <span class="token attr-value"><span class="token punctuation">=</span> forward</span>
-<span class="token constant">refresh</span> <span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
-<span class="token constant">zoom</span> <span class="token attr-value"><span class="token punctuation">=</span> f11</span>
-<span class="token constant">scale</span> <span class="token attr-value"><span class="token punctuation">=</span> scale</span>
-<span class="token constant">brightnessdown</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
-<span class="token constant">brightnessup</span> <span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
-<span class="token constant">mute</span> <span class="token attr-value"><span class="token punctuation">=</span> mute</span>
-<span class="token constant">volumedown</span> <span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
-<span class="token constant">volumeup</span> <span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+<span class="token key attr-name">back</span> <span class="token punctuation">=</span> <span class="token value attr-value">back</span>
+<span class="token key attr-name">forward</span> <span class="token punctuation">=</span> <span class="token value attr-value">forward</span>
+<span class="token key attr-name">refresh</span> <span class="token punctuation">=</span> <span class="token value attr-value">refresh</span>
+<span class="token key attr-name">zoom</span> <span class="token punctuation">=</span> <span class="token value attr-value">f11</span>
+<span class="token key attr-name">scale</span> <span class="token punctuation">=</span> <span class="token value attr-value">scale</span>
+<span class="token key attr-name">brightnessdown</span> <span class="token punctuation">=</span> <span class="token value attr-value">brightnessdown</span>
+<span class="token key attr-name">brightnessup</span> <span class="token punctuation">=</span> <span class="token value attr-value">brightnessup</span>
+<span class="token key attr-name">mute</span> <span class="token punctuation">=</span> <span class="token value attr-value">mute</span>
+<span class="token key attr-name">volumedown</span> <span class="token punctuation">=</span> <span class="token value attr-value">volumedown</span>
+<span class="token key attr-name">volumeup</span> <span class="token punctuation">=</span> <span class="token value attr-value">volumeup</span>
 
-<span class="token constant">f13</span><span class="token attr-value"><span class="token punctuation">=</span>coffee</span>
-<span class="token constant">sleep</span><span class="token attr-value"><span class="token punctuation">=</span>coffee</span>
+<span class="token key attr-name">f13</span><span class="token punctuation">=</span><span class="token value attr-value">coffee</span>
+<span class="token key attr-name">sleep</span><span class="token punctuation">=</span><span class="token value attr-value">coffee</span>
 
-<span class="token selector">[meta]</span>
-<span class="token constant">f1</span> <span class="token attr-value"><span class="token punctuation">=</span> f1</span>
-<span class="token constant">f2</span> <span class="token attr-value"><span class="token punctuation">=</span> f2</span>
-<span class="token constant">f3</span> <span class="token attr-value"><span class="token punctuation">=</span> f3</span>
-<span class="token constant">f4</span> <span class="token attr-value"><span class="token punctuation">=</span> f4</span>
-<span class="token constant">f5</span> <span class="token attr-value"><span class="token punctuation">=</span> f5</span>
-<span class="token constant">f6</span> <span class="token attr-value"><span class="token punctuation">=</span> f6</span>
-<span class="token constant">f7</span> <span class="token attr-value"><span class="token punctuation">=</span> f7</span>
-<span class="token constant">f8</span> <span class="token attr-value"><span class="token punctuation">=</span> f8</span>
-<span class="token constant">f9</span> <span class="token attr-value"><span class="token punctuation">=</span> f9</span>
-<span class="token constant">f10</span> <span class="token attr-value"><span class="token punctuation">=</span> f10</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">meta</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">f1</span> <span class="token punctuation">=</span> <span class="token value attr-value">f1</span>
+<span class="token key attr-name">f2</span> <span class="token punctuation">=</span> <span class="token value attr-value">f2</span>
+<span class="token key attr-name">f3</span> <span class="token punctuation">=</span> <span class="token value attr-value">f3</span>
+<span class="token key attr-name">f4</span> <span class="token punctuation">=</span> <span class="token value attr-value">f4</span>
+<span class="token key attr-name">f5</span> <span class="token punctuation">=</span> <span class="token value attr-value">f5</span>
+<span class="token key attr-name">f6</span> <span class="token punctuation">=</span> <span class="token value attr-value">f6</span>
+<span class="token key attr-name">f7</span> <span class="token punctuation">=</span> <span class="token value attr-value">f7</span>
+<span class="token key attr-name">f8</span> <span class="token punctuation">=</span> <span class="token value attr-value">f8</span>
+<span class="token key attr-name">f9</span> <span class="token punctuation">=</span> <span class="token value attr-value">f9</span>
+<span class="token key attr-name">f10</span> <span class="token punctuation">=</span> <span class="token value attr-value">f10</span>
 
-<span class="token constant">back</span> <span class="token attr-value"><span class="token punctuation">=</span> f1</span>
-<span class="token constant">forward</span> <span class="token attr-value"><span class="token punctuation">=</span> f2</span>
-<span class="token constant">refresh</span> <span class="token attr-value"><span class="token punctuation">=</span> f3</span>
-<span class="token constant">zoom</span> <span class="token attr-value"><span class="token punctuation">=</span> f4</span>
-<span class="token constant">scale</span> <span class="token attr-value"><span class="token punctuation">=</span> f5</span>
-<span class="token constant">brightnessdown</span> <span class="token attr-value"><span class="token punctuation">=</span> f6</span>
-<span class="token constant">brightnessup</span> <span class="token attr-value"><span class="token punctuation">=</span> f7</span>
-<span class="token constant">mute</span> <span class="token attr-value"><span class="token punctuation">=</span> f8</span>
-<span class="token constant">volumedown</span> <span class="token attr-value"><span class="token punctuation">=</span> f9</span>
-<span class="token constant">volumeup</span> <span class="token attr-value"><span class="token punctuation">=</span> f10</span>
+<span class="token key attr-name">back</span> <span class="token punctuation">=</span> <span class="token value attr-value">f1</span>
+<span class="token key attr-name">forward</span> <span class="token punctuation">=</span> <span class="token value attr-value">f2</span>
+<span class="token key attr-name">refresh</span> <span class="token punctuation">=</span> <span class="token value attr-value">f3</span>
+<span class="token key attr-name">zoom</span> <span class="token punctuation">=</span> <span class="token value attr-value">f4</span>
+<span class="token key attr-name">scale</span> <span class="token punctuation">=</span> <span class="token value attr-value">f5</span>
+<span class="token key attr-name">brightnessdown</span> <span class="token punctuation">=</span> <span class="token value attr-value">f6</span>
+<span class="token key attr-name">brightnessup</span> <span class="token punctuation">=</span> <span class="token value attr-value">f7</span>
+<span class="token key attr-name">mute</span> <span class="token punctuation">=</span> <span class="token value attr-value">f8</span>
+<span class="token key attr-name">volumedown</span> <span class="token punctuation">=</span> <span class="token value attr-value">f9</span>
+<span class="token key attr-name">volumeup</span> <span class="token punctuation">=</span> <span class="token value attr-value">f10</span>
 
-<span class="token selector">[alt]</span>
-<span class="token constant">backspace</span> <span class="token attr-value"><span class="token punctuation">=</span> delete</span>
-<span class="token constant">brightnessdown</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumdown</span>
-<span class="token constant">brightnessup</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumup</span>
-<span class="token constant">f6</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumdown</span>
-<span class="token constant">f7</span> <span class="token attr-value"><span class="token punctuation">=</span> kbdillumup</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">alt</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">backspace</span> <span class="token punctuation">=</span> <span class="token value attr-value">delete</span>
+<span class="token key attr-name">brightnessdown</span> <span class="token punctuation">=</span> <span class="token value attr-value">kbdillumdown</span>
+<span class="token key attr-name">brightnessup</span> <span class="token punctuation">=</span> <span class="token value attr-value">kbdillumup</span>
+<span class="token key attr-name">f6</span> <span class="token punctuation">=</span> <span class="token value attr-value">kbdillumdown</span>
+<span class="token key attr-name">f7</span> <span class="token punctuation">=</span> <span class="token value attr-value">kbdillumup</span>
 
-<span class="token selector">[control]</span>
-<span class="token constant">f5</span> <span class="token attr-value"><span class="token punctuation">=</span> print</span>
-<span class="token constant">scale</span> <span class="token attr-value"><span class="token punctuation">=</span> print</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">control</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">f5</span> <span class="token punctuation">=</span> <span class="token value attr-value">print</span>
+<span class="token key attr-name">scale</span> <span class="token punctuation">=</span> <span class="token value attr-value">print</span>
 
-<span class="token selector">[control+alt]</span>
-<span class="token constant">backspace</span> <span class="token attr-value"><span class="token punctuation">=</span> C-A-delete</span>
-</pre></code>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">control+alt</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">backspace</span> <span class="token punctuation">=</span> <span class="token value attr-value">C-A-delete</span>
+</code></pre>
 </div>
 <p class="continuation">
 (Rember that lines that start with "<code>f<var>123</var> =</code>" are no-ops, since the keyboard by default generates the special keys.)
@@ -2204,53 +2202,53 @@ Except <kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons 
 I feel like I could do better with
 </p>
 <div class="bigcode continuing">
-<pre class="language-ini"><code class="language-ini"><span class="token selector">[ids]</span>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">ids</span><span class="token punctuation">]</span></span>
 0001:0001
 
-<span class="token selector">[main]</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">main</span><span class="token punctuation">]</span></span>
 <span class="token comment"># ←</span>
-<span class="token constant">back</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f1</span>
+<span class="token key attr-name">back</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f1</span>
 <span class="token comment"># →</span>
-<span class="token constant">forward</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f2</span>
+<span class="token key attr-name">forward</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f2</span>
 <span class="token comment"># ⟳</span>
-<span class="token constant">refresh</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f3</span>
+<span class="token key attr-name">refresh</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f3</span>
 <span class="token comment"># tableau</span>
-<span class="token constant">zoom</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f4</span>
+<span class="token key attr-name">zoom</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f4</span>
 <span class="token comment"># fast rectangle</span>
-<span class="token constant">scale</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f5</span>
+<span class="token key attr-name">scale</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f5</span>
 <span class="token comment"># small ☀️</span>
-<span class="token constant">brightnessdown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f6</span>
+<span class="token key attr-name">brightnessdown</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f6</span>
 <span class="token comment"># ☀️</span>
-<span class="token constant">brightnessup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f7</span>
+<span class="token key attr-name">brightnessup</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f7</span>
 <span class="token comment"># 🔇</span>
-<span class="token constant">mute</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f8</span>
+<span class="token key attr-name">mute</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f8</span>
 <span class="token comment"># 🔉</span>
-<span class="token constant">volumedown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f9</span>
+<span class="token key attr-name">volumedown</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f9</span>
 <span class="token comment"># 🔊</span>
-<span class="token constant">volumeup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> f10</span>
+<span class="token key attr-name">volumeup</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">f10</span>
 
 <span class="token comment"># 🔒</span>
-<span class="token constant">sleep</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> delete</span>
+<span class="token key attr-name">sleep</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">delete</span>
 
 <span class="token comment"># 🔍 remains as leftmeta</span>
 
-<span class="token selector">[meta]</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">meta</span><span class="token punctuation">]</span></span>
 <span class="token comment"># tableau</span>
-<span class="token constant">zoom</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> print</span>
+<span class="token key attr-name">zoom</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">print</span>
 
-<span class="token constant">back</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> back</span>
-<span class="token constant">forward</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> forward</span>
-<span class="token constant">refresh</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> refresh</span>
-<span class="token constant">scale</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> scale</span>
+<span class="token key attr-name">back</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">back</span>
+<span class="token key attr-name">forward</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">forward</span>
+<span class="token key attr-name">refresh</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">refresh</span>
+<span class="token key attr-name">scale</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">scale</span>
 
-<span class="token constant">brightnessdown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> brightnessdown</span>
-<span class="token constant">brightnessup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> brightnessup</span>
-<span class="token constant">mute</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> mute</span>
-<span class="token constant">volumedown</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> volumedown</span>
-<span class="token constant">volumeup</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> volumeup</span>
+<span class="token key attr-name">brightnessdown</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">brightnessdown</span>
+<span class="token key attr-name">brightnessup</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">brightnessup</span>
+<span class="token key attr-name">mute</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">mute</span>
+<span class="token key attr-name">volumedown</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">volumedown</span>
+<span class="token key attr-name">volumeup</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">volumeup</span>
 
-<span class="token constant">sleep</span><!--"-->		<!--"--><span class="token attr-value"><span class="token punctuation">=</span> sleep</span>
-</pre></code>
+<span class="token key attr-name">sleep</span><!--"-->		<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">sleep</span>
+</code></pre>
 </div>
 <p class="continuing">
 <kbd><img class="iconic dark-invert" alt="hollow rectangle with chevrons in the top-left and bottom-right internal corners" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAjCAYAAADMibkBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6ElEQVR42u2azUoDMRDHF6TtRZ+gwnoQ8VXam3ZbkPoGem3foIf2qm/gIthWX0fEQwtKvasHWxbWCYwQYj5WTWYW24E/vXQz81uSyWSyUZ7n0Toq2oAX+bPeqqAO6Bo0Ay1BuSe9ge5x7A76+mYc4EegR4+gLglfx5zgW6AhIbCqIcZADs4JLcOTgieOgMQavwGdgPZM69Ji26BDfH7syBkJFbiAeLIEcgfaj/yaGO/W4O9ZxEQB3jUEkIH6UVjrox/V9ykF+MQAHhpahld9TynA5xrHEyW4gWZdLkANT/Dqy59TgH9oEtmuElhmmBULT+B15cUuKcBVmFRXSBn04nHKX8ljc4AnBcFF9m16BG9xg8cO8FAWc4PXmMCr3OA6y6TEF9JKBy62s3f8XStwKmMF3wkINsBGxKCMa/wgILgtV8Rl3Me9T+Uy7uMpEzh55fZaoFb/rTWwns8dSbSunBlIavUHTVBjT+ALS50v25jjdGY6j/cCgsvJrcd1Hrd1YM7/CN7EE5w87krazs44OzCunts0UM9tYjn11ai6rO0CXdYUtxzRZa38ELSCz7VwHFuXtU3dVx+VoK8+4rpJuWCEvuS6SZErKOq7s6QMl4ZfCa+LiW2GmdgX6ArHnKIPntvSzYcB/0CfmeytTddSfkMAAAAASUVORK5CYII="></kbd> looks the most like a screen, hence it'<!--'-->s mapped to PrtSc.
@@ -2271,12 +2269,12 @@ so appending this to the updated <samp class="path">/etc/keyd/cros.conf</samp> w
  also note that you can'<!--'-->t make another file and have it patch the big one, because at most one file can match each device):
 </p>
 <div class="bigcode continuation">
-<pre class="language-ini"><code class="language-ini"><span class="token selector">[alt]</span>
-<span class="token constant">left</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> home</span>
-<span class="token constant">right</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> end</span>
-<span class="token constant">up</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> pageup</span>
-<span class="token constant">down</span><!--"-->	<!--"--><span class="token attr-value"><span class="token punctuation">=</span> pagedown</span>
-</pre></code>
+<pre class="language-ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">alt</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">left</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">home</span>
+<span class="token key attr-name">right</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">end</span>
+<span class="token key attr-name">up</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">pageup</span>
+<span class="token key attr-name">down</span><!--"-->	<!--"--><span class="token punctuation">=</span> <span class="token value attr-value">pagedown</span>
+</code></pre>
 </div>
 <p class="indented continued">
 I had to find out <a href="//101010.pl/@nabijaczleweli/111739210958704043">the hard way</a> that keyd, <em>by default</em>,
@@ -2285,10 +2283,10 @@ Appending this is necessary to make them work correctly:
 </p>
 <div class="bigcode continuation">
 <pre class="language-ini"><code class="language-ini"><span class="token comment"># https://github.com/rvaiya/keyd/issues/618</span>
-<span class="token selector">[main]</span>
-<span class="token constant">rightcontrol</span> <span class="token attr-value"><span class="token punctuation">=</span> rightcontrol</span>
-<span class="token constant">rightshift</span><!--"-->   <!--"--><span class="token attr-value"><span class="token punctuation">=</span> rightshift</span>
-</pre></code>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">main</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">rightcontrol</span> <span class="token punctuation">=</span> <span class="token value attr-value">rightcontrol</span>
+<span class="token key attr-name">rightshift</span><!--"-->   <!--"--><span class="token punctuation">=</span> <span class="token value attr-value">rightshift</span>
+</code></pre>
 </div>
 <p class="indented">
 Overall, low value-add factor here.
@@ -2364,7 +2362,7 @@ A good bug report never goes unpunished.
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -2380,9 +2378,9 @@ A good bug report never goes unpunished.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp">src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

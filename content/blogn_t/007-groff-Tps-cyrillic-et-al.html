@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps"> 
  <title>007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -47,32 +47,29 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
- <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> <script src="/content/assets/syllable.js"></script> 
+ <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -141,7 +138,7 @@ ol.wide-explanation > li {
  }
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Sat, 28 Aug 2021 18:36:44 +0200</span>, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, Wed, 14 Jun 2023 14:46:03 +0200, and <a href="//101010.pl/@nabijaczleweli/112717795133736568">Tue, 02 Jul 2024 18:58:00 +0200</a></h4> 
@@ -156,6 +153,8 @@ ol.wide-explanation > li {
 <li><a href='#alternative-art-distribution-font'>A distribution font</a></li>
 </ol>
 <li><a href='#jajco'><a style="color: inherit;" href="//web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889">\nЯЙЦО</a></a></li>
+<li><a href='#jajco'>\nЯЙЦО--> </a></li>
+</ol>
 </ol>
 </details></div>
 <p>
@@ -268,8 +267,8 @@ It, of course, is rather tempting to, then, "just write something", as it is, af
 This yields:
 </p>
 <div class="bigcode continuing">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | lp -dPDF
-pic:&lt;standard input>:10: invalid input character code 128
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff <span class="token parameter variable">-Tps</span> <span class="token parameter variable">-mdoc</span> <span class="token parameter variable">-tp</span> <span class="token operator">&lt;</span> frag.1 <span class="token operator">|</span> lp <span class="token parameter variable">-dPDF</span></span></span>
+<span class="token output">pic:&lt;standard input>:10: invalid input character code 128
 pic:&lt;standard input>:14: invalid input character code 128
 pic:&lt;standard input>:52: invalid input character code 129
 pic:&lt;standard input>:52: invalid input character code 132
@@ -332,7 +331,7 @@ pic:&lt;standard input>:100: invalid input character code 153
 pic:&lt;standard input>:100: invalid input character code 135
 pic:&lt;standard input>:100: invalid input character code 132
 request id is PDF-978 (0 file(s))
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.02-original.pdf">And</a>:
@@ -344,27 +343,27 @@ The Arch Wiki says that to <a href="//wiki.archlinux.org/title/Groff#Correctly_d
 you can <code>groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi</code>, so:
 </p>
 <div class="bigcode continuing">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Kutf8 -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | lp -dPDF
-troff: &lt;standard input>:52: warning: can't find special character 'u0041_0328'
-troff: &lt;standard input>:52: warning: can't find special character 'u0045_0328'
-troff: &lt;standard input>:52: warning: can't find special character 'u005A_0307'
-troff: &lt;standard input>:52: warning: can't find special character 'u005A_0301'
-troff: &lt;standard input>:52: warning: can't find special character 'u004E_0301'
-troff: &lt;standard input>:52: warning: can't find special character 'u0061_0328'
-troff: &lt;standard input>:52: warning: can't find special character 'u0065_0328'
-troff: &lt;standard input>:52: warning: can't find special character 'u007A_0307'
-troff: &lt;standard input>:52: warning: can't find special character 'u007A_0301'
-troff: &lt;standard input>:52: warning: can't find special character 'u006E_0301'
-troff: &lt;standard input>:82: warning: can't find special character 'u044F'
-troff: &lt;standard input>:82: warning: can't find special character 'u0438_0306'
-troff: &lt;standard input>:82: warning: can't find special character 'u0446'
-troff: &lt;standard input>:82: warning: can't find special character 'u043E'
-troff: &lt;standard input>:82: warning: can't find special character 'u042F'
-troff: &lt;standard input>:82: warning: can't find special character 'u0418_0306'
-troff: &lt;standard input>:82: warning: can't find special character 'u0426'
-troff: &lt;standard input>:82: warning: can't find special character 'u041E'
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff <span class="token parameter variable">-Kutf8</span> <span class="token parameter variable">-Tps</span> <span class="token parameter variable">-mdoc</span> <span class="token parameter variable">-tp</span> <span class="token operator">&lt;</span> frag.1 <span class="token operator">|</span> lp <span class="token parameter variable">-dPDF</span></span></span>
+<span class="token output">troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u0041_0328'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u0045_0328'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u005A_0307'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u005A_0301'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u004E_0301'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u0061_0328'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u0065_0328'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u007A_0307'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u007A_0301'<!--'-->
+troff: &lt;standard input>:52: warning: can'<!--'-->t find special character '<!--'-->u006E_0301'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u044F'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0438_0306'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0446'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u043E'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u042F'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0418_0306'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0426'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u041E'<!--'-->
 request id is PDF-979 (0 file(s))
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.03-Kutf8.pdf">And</a>:
@@ -401,27 +400,27 @@ More formally, <b>groff</b> does not have metrics for russian fonts. But I do ha
 Indeed! <code>devps.tar</code> contains a perfectly serviceable set of <code>usr/share/groff/current/font/devps/T{R,B,I,BI}</code> metrics:
 </p>
 <div class="bigcode continuing">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Kutf8 -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | lp -dPDF
-troff: &lt;standard input>:82: warning: can't find special character 'u044F'
-troff: &lt;standard input>:82: warning: can't find special character 'u0438_0306'
-troff: &lt;standard input>:82: warning: can't find special character 'u0446'
-troff: &lt;standard input>:82: warning: can't find special character 'u043E'
-troff: &lt;standard input>:82: warning: can't find special character 'u042F'
-troff: &lt;standard input>:82: warning: can't find special character 'u0418_0306'
-troff: &lt;standard input>:82: warning: can't find special character 'u0426'
-troff: &lt;standard input>:82: warning: can't find special character 'u041E'
-troff: &lt;standard input>:100: warning: can't find special character 'u0041_0328'
-troff: &lt;standard input>:100: warning: can't find special character 'u0045_0328'
-troff: &lt;standard input>:100: warning: can't find special character 'u005A_0307'
-troff: &lt;standard input>:100: warning: can't find special character 'u005A_0301'
-troff: &lt;standard input>:100: warning: can't find special character 'u004E_0301'
-troff: &lt;standard input>:100: warning: can't find special character 'u0061_0328'
-troff: &lt;standard input>:100: warning: can't find special character 'u0065_0328'
-troff: &lt;standard input>:100: warning: can't find special character 'u007A_0307'
-troff: &lt;standard input>:100: warning: can't find special character 'u007A_0301'
-troff: &lt;standard input>:100: warning: can't find special character 'u006E_0301'
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff <span class="token parameter variable">-Kutf8</span> <span class="token parameter variable">-Tps</span> <span class="token parameter variable">-mdoc</span> <span class="token parameter variable">-tp</span> <span class="token operator">&lt;</span> frag.1 <span class="token operator">|</span> lp <span class="token parameter variable">-dPDF</span></span></span>
+<span class="token output">troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u044F'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0438_0306'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0446'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u043E'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u042F'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0418_0306'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u0426'<!--'-->
+troff: &lt;standard input>:82: warning: can'<!--'-->t find special character '<!--'-->u041E'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u0041_0328'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u0045_0328'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u005A_0307'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u005A_0301'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u004E_0301'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u0061_0328'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u0065_0328'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u007A_0307'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u007A_0301'<!--'-->
+troff: &lt;standard input>:100: warning: can'<!--'-->t find special character '<!--'-->u006E_0301'<!--'-->
 request id is PDF-980 (0 file(s))
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.04-linuxtravels.pdf">Rendering to</a>:
@@ -452,12 +451,12 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
 /Times-Italic /NimbusRomNo9L-ReguItal ;
 /NimbusMonL-ReguObli (/usr/share/fonts/type1/gsfonts/n022023l.pfb) ;
 /Courier-Oblique /NimbusMonL-ReguObli ;
-</pre></code>
+</code></pre>
  </div>
      This can be trivially walked by first exhausting all name/name mappings, then resolving the final name/path mapping.</li>
  <li>For each font in <code>/usr/share/fonts/type1/gsfonts/</code>, there are three files:
      <div class="bigcode continuing">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu/devps</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">file</span> /usr/share/fonts/type1/gsfonts/<span class="token punctuation">{</span>n022004l,n022023l<span class="token punctuation">}</span>.*</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu/devps</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">file</span> /usr/share/fonts/type1/gsfonts/<span class="token punctuation">{</span>n022004l,n022023l<span class="token punctuation">}</span>.*</span></span>
 <span class="token output">/usr/share/fonts/type1/gsfonts/n022004l.afm: ASCII font metrics
 /usr/share/fonts/type1/gsfonts/n022004l.pfb: PostScript Type 1 font program data
 /usr/share/fonts/type1/gsfonts/n022004l.pfm: Printer Font Metrics NimbusMonL-Bold, 2738 bytes, Nimbus Mono L bold
@@ -465,7 +464,7 @@ This is the bit where I vaguely explain how that big hunk at the top generates t
 /usr/share/fonts/type1/gsfonts/n022023l.afm: ASCII font metrics
 /usr/share/fonts/type1/gsfonts/n022023l.pfb: PostScript Type 1 font program data
 /usr/share/fonts/type1/gsfonts/n022023l.pfm: Printer Font Metrics NimbusMonL-ReguObli, 2742 bytes, Nimbus Mono L italic
-</span></pre></code>
+</span></code></pre>
  </div>
      The second is the actual font, the other two are metrics.</li>
  <li>These metrics must be converted to groff's internal format,  <!--'-->
@@ -602,15 +601,15 @@ GhostScript can directly load TrueType and OpenType fonts, so for a properly-pac
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">apt</span> <span class="token function">install</span> fonts-liberation2</span></span>
 
 <span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">v</span> <span class="token keyword">in</span> Regular Bold Italic BoldItalic<span class="token punctuation">;</span> <span class="token keyword">do</span></span></span>
-<span class="token info punctuation"><!--"-->  	<!--"-->fontforge -c 'import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])' /usr/share/fonts/truetype/liberation2/LiberatSans-</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">v.ttf LiberatSans-<span class="token variable">$v</span>.afm<span class="token punctuation">;</span></span></span>
-<span class="token output"><!--"-->  <!--"-->
+<span class="token output"><!--"-->  	<!--"-->fontforge -c '<!--'-->import sys; fontforge.open(sys.argv[1]).generate(sys.argv[2])'<!--'--> /usr/share/fonts/truetype/liberation2/LiberatSans-$v.ttf LiberatSans-$v.afm;
+<!--"-->  <!--"-->
 <!--"-->  	<!--"-->afmtodit -cmi0 \
 <!--"-->  		<!--"-->-d /usr/share/groff/current/font/devps/DESC \
 <!--"-->  		<!--"-->-e /usr/share/groff/current/font/devps/text.enc \
-</span><span class="token info punctuation"><!--"-->  		<!--"-->LiberationSans-</span><span class="token command"><span class="token shell-symbol important">$</span><span class="token bash language-bash">v.afm /usr/share/groff/current/font/devps/generate/textmap <span class="token string">"T<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $v <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">'[:lower:]-'</span><span class="token variable">)</span></span>"</span><span class="token punctuation">;</span></span></span>
-<span class="token output"><!--"-->  <!--"-->done
-This font contains both a 'kern' table and a 'GPOS' table.
-<!--"-->  <!--"-->The 'kern' table will only be read if there is no 'kern' feature in 'GPOS'.
+<!--"-->  		<!--"-->LiberationSans-$v.afm /usr/share/groff/current/font/devps/generate/textmap "T$(echo $v | tr -d '<!--'-->[:lower:]-'<!--'-->)";
+<!--"-->  <!--"-->done
+This font contains both a '<!--'-->kern'<!--'--> table and a '<!--'-->GPOS'<!--'--> table.
+<!--"-->  <!--"-->The '<!--'-->kern'<!--'--> table will only be read if there is no '<!--'-->kern'<!--'--> feature in '<!--'-->GPOS'<!--'-->.
 The glyph named macron is mapped to U+02C9.
 But its name indicates it should be mapped to U+00AF.
 The glyph named Delta is mapped to U+0394.
@@ -653,7 +652,7 @@ both uni1F7B and upsilontonos map to u03C5_0301 at /bin/afmtodit line 6519.
 both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
 
 </span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cp</span> T* /usr/local/share/groff/site-font/devps/</span></span>
-</pre></code>
+</code></pre>
 </div>
 <p class="continuing">
 <a href="/content/assets/blogn_t/007.10-liberation2.pdf">And just like that</a>:
@@ -661,48 +660,48 @@ both patah and yodyod_patah map to u05B7 at /bin/afmtodit line 6519.
 <a href="/content/assets/blogn_t/007.10-liberation2.png"><img class="continuation main-font dark-invert" alt="Same page, proportional non-ASCII characters rendered in a serifless font with busted kerning and regular and bold-italic cyrillic replaced by boxes, and monospace ones missing" src="/content/assets/blogn_t/007.10-liberation2.png" /></a>
 <!-- https://lfs.nabijaczleweli.xyz/0017-twitter-export#1429503115947020297 -->
 <h2 id="jajco" class="continued"><a class="hash-link" href="#jajco">#</a> <a style="color: inherit;" href="//web.archive.org/web/20210823140236/twitter.com/kgbcatboy/status/1429605955994533889">\nЯЙЦО</a></h2>
-<!-- <h2 id="jajco" class="continued"><a class="hash-link" href="#jajco">#</a> \nЯЙЦО</h2> -->
+<!-- <h2 id="jajco" class="continued"><a class="hash-link" href="#jajco">#</a> \nЯЙЦО</h2>
 <p class="continuing indented">
 A <del>powerful</del> sufficient diagnostic tool can also be plainly piping groff into Ghostscript:
 </p>
 <div class="bigcode continuation">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff -Kutf8 -Tps -mdoc -tp </span></span><span class="token output">&lt; frag.1 | gs
-GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS&lt;1>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;1>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS&lt;2>GS&lt;5>GS&lt;13>GS&lt;22>GS&lt;31>GS&lt;40>GS&lt;48>GS&lt;61>GS&lt;82>GS&lt;97>GS&lt;124>GS&lt;132>GS&lt;139>GS&lt;150>GS&lt;159>GS&lt;168>GS&lt;174>GS&lt;181>GS&lt;188>GS&lt;193>GS&lt;201>GS&lt;209>GS&lt;217>GS&lt;225>GS&lt;234>GS&lt;242>GS&lt;251>GS>Querying operating system for font files...
-Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-BoldItalic.
-Can't find (or can't open) font file CourierPrime-BoldItalic.
-Didn't find this font on the system!
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@tarta</span><span class="token punctuation">:</span><span class="token path">~/uwu</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash">groff <span class="token parameter variable">-Kutf8</span> <span class="token parameter variable">-Tps</span> <span class="token parameter variable">-mdoc</span> <span class="token parameter variable">-tp</span> <span class="token operator">&lt;</span> frag.1 <span class="token operator">|</span> gs</span></span>
+<span class="token output">GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS&lt;1>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;3>GS&lt;1>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS>GS&lt;2>GS&lt;5>GS&lt;13>GS&lt;22>GS&lt;31>GS&lt;40>GS&lt;48>GS&lt;61>GS&lt;82>GS&lt;97>GS&lt;124>GS&lt;132>GS&lt;139>GS&lt;150>GS&lt;159>GS&lt;168>GS&lt;174>GS&lt;181>GS&lt;188>GS&lt;193>GS&lt;201>GS&lt;209>GS&lt;217>GS&lt;225>GS&lt;234>GS&lt;242>GS&lt;251>GS>Querying operating system for font files...
+Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-BoldItalic.
+Can'<!--'-->t find (or can'<!--'-->t open) font file CourierPrime-BoldItalic.
+Didn'<!--'-->t find this font on the system!
 Substituting font Courier-BoldOblique for CourierPrime-BoldItalic.
 Loading NimbusMonoPS-BoldItalic font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-BoldItalic... 4371456 2971386 7864932 6531275 1 done.
-GS>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-Italic.
-Can't find (or can't open) font file LiberationSans-Italic.
+GS>Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-Italic.
+Can'<!--'-->t find (or can'<!--'-->t open) font file LiberationSans-Italic.
 Loading LiberationSans-Italic font from /usr/share/fonts/truetype/liberation2/LiberationSans-Italic.ttf... 4572808 3202292 8735964 7377991 1 done.
-GS&lt;1>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime.
-Can't find (or can't open) font file CourierPrime.
-Didn't find this font on the system!
+GS&lt;1>Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime.
+Can'<!--'-->t find (or can'<!--'-->t open) font file CourierPrime.
+Didn'<!--'-->t find this font on the system!
 Substituting font Courier for CourierPrime.
 Loading NimbusMonoPS-Regular font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-Regular... 4707152 3390954 8777444 7417724 1 done.
-Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-Italic.
-Can't find (or can't open) font file CourierPrime-Italic.
-Didn't find this font on the system!
+Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-Italic.
+Can'<!--'-->t find (or can'<!--'-->t open) font file CourierPrime-Italic.
+Didn'<!--'-->t find this font on the system!
 Substituting font Courier-Oblique for CourierPrime-Italic.
 Loading NimbusMonoPS-Italic font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-Italic... 4955064 3635291 8797644 7430341 1 done.
-GS>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-Bold.
-Can't find (or can't open) font file CourierPrime-Bold.
-Didn't find this font on the system!
+GS>Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/CourierPrime-Bold.
+Can'<!--'-->t find (or can'<!--'-->t open) font file CourierPrime-Bold.
+Didn'<!--'-->t find this font on the system!
 Substituting font Courier-Bold for CourierPrime-Bold.
 Loading NimbusMonoPS-Bold font from /usr/share/ghostscript/9.27/Resource/Font/NimbusMonoPS-Bold... 5223176 3896909 8797644 7439279 1 done.
-GS&lt;1>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-Bold.
-Can't find (or can't open) font file LiberationSans-Bold.
+GS&lt;1>Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-Bold.
+Can'<!--'-->t find (or can'<!--'-->t open) font file LiberationSans-Bold.
 Loading LiberationSans-Bold font from /usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf... 5255944 3939182 9686752 8286341 1 done.
-Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans.
-Can't find (or can't open) font file LiberationSans.
+Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans.
+Can'<!--'-->t find (or can'<!--'-->t open) font file LiberationSans.
 Loading LiberationSans font from /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf... 5313240 3985493 10080064 8668213 1 done.
-GS>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;81>GS&lt;90>GS&lt;99>GS&lt;108>GS&lt;117>GS&lt;126>GS&lt;135>GS&lt;144>GS&lt;153>GS&lt;162>GS&lt;171>GS&lt;180>GS&lt;189>GS&lt;198>GS&lt;207>GS&lt;216>GS&lt;225>GS&lt;234>GS&lt;243>GS&lt;252>GS>Can't find (or can't open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-BoldItalic.
-Can't find (or can't open) font file LiberationSans-BoldItalic.
+GS>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;81>GS&lt;90>GS&lt;99>GS&lt;108>GS&lt;117>GS&lt;126>GS&lt;135>GS&lt;144>GS&lt;153>GS&lt;162>GS&lt;171>GS&lt;180>GS&lt;189>GS&lt;198>GS&lt;207>GS&lt;216>GS&lt;225>GS&lt;234>GS&lt;243>GS&lt;252>GS>Can'<!--'-->t find (or can'<!--'-->t open) font file /usr/share/ghostscript/9.27/Resource/Font/LiberationSans-BoldItalic.
+Can'<!--'-->t find (or can'<!--'-->t open) font file LiberationSans-BoldItalic.
 Loading LiberationSans-BoldItalic font from /usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf... 5333440 4004198 10467904 9033893 1 done.
 GS>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;81>GS&lt;90>GS&lt;99>GS&lt;108>GS&lt;117>GS&lt;126>GS&lt;135>GS&lt;144>GS&lt;153>GS&lt;162>GS&lt;171>GS&lt;180>GS&lt;189>GS&lt;198>GS&lt;207>GS&lt;216>GS&lt;225>GS&lt;234>GS&lt;243>GS&lt;252>GS>GS&lt;2>GS&lt;11>GS&lt;20>GS&lt;29>GS&lt;38>GS&lt;47>GS&lt;56>GS&lt;65>GS&lt;74>GS&lt;83>GS&lt;92>GS&lt;101>GS&lt;110>GS&lt;119>GS&lt;128>GS&lt;137>GS&lt;146>GS&lt;155>GS&lt;164>GS&lt;173>GS&lt;182>GS&lt;191>GS&lt;200>GS&lt;209>GS&lt;218>GS&lt;227>GS&lt;236>GS&lt;245>GS&lt;254>GS&lt;2>GS&lt;7>GS&lt;16>GS&lt;25>GS&lt;34>GS&lt;43>GS&lt;52>GS&lt;61>GS&lt;70>GS&lt;79>GS&lt;88>GS&lt;97>GS&lt;106>GS&lt;115>GS&lt;124>GS&lt;133>GS&lt;142>GS&lt;151>GS&lt;160>GS&lt;169>GS&lt;178>GS&lt;187>GS&lt;196>GS&lt;205>GS&lt;214>GS&lt;223>GS&lt;232>GS&lt;241>GS&lt;250>GS>GS&lt;4>GS&lt;13>GS&lt;22>GS&lt;31>GS&lt;40>GS&lt;49>GS&lt;58>GS&lt;67>GS&lt;76>GS&lt;84>GS&lt;92>GS&lt;100>GS&lt;108>GS&lt;117>GS&lt;125>GS&lt;133>GS&lt;141>GS&lt;149>GS&lt;158>GS&lt;167>GS&lt;176>GS&lt;185>GS&lt;194>GS&lt;203>GS&lt;212>GS&lt;221>GS&lt;230>GS&lt;239>GS&lt;248>GS&lt;257>GS&lt;3>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;80>GS&lt;88>GS&lt;96>GS&lt;104>GS&lt;113>GS&lt;122>GS&lt;130>GS&lt;138>GS&lt;146>GS&lt;154>GS&lt;163>GS&lt;172>GS&lt;181>GS&lt;190>GS&lt;199>GS&lt;208>GS&lt;217>GS&lt;226>GS&lt;235>GS&lt;244>GS&lt;253>GS&lt;1>GS&lt;6>GS&lt;15>GS&lt;24>GS&lt;33>GS&lt;42>GS&lt;51>GS&lt;60>GS&lt;69>GS&lt;78>GS&lt;86>GS&lt;94>GS&lt;102>GS&lt;111>GS&lt;120>GS&lt;128>GS&lt;136>GS&lt;144>GS&lt;152>GS&lt;161>GS&lt;170>GS&lt;179>GS&lt;188>GS&lt;197>GS&lt;206>GS&lt;215>GS&lt;224>GS&lt;233>GS&lt;242>GS&lt;251>GS>GS&lt;3>GS&lt;12>GS&lt;21>GS&lt;30>GS&lt;39>GS&lt;48>GS&lt;57>GS&lt;66>GS&lt;74>GS&lt;82>GS&lt;90>GS&lt;98>GS&lt;106>GS&lt;115>GS&lt;124>GS&lt;132>GS&lt;140>GS&lt;148>GS&lt;157>GS&lt;166>GS&lt;175>GS&lt;184>GS&lt;193>GS&lt;202>GS&lt;211>GS&lt;220>GS&lt;229>GS&lt;238>GS&lt;247>GS&lt;255>GS>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;81>GS&lt;90>GS&lt;99>GS&lt;108>GS&lt;117>GS&lt;126>GS&lt;135>GS&lt;144>GS&lt;153>GS&lt;162>GS&lt;171>GS&lt;180>GS&lt;189>GS&lt;198>GS&lt;207>GS&lt;216>GS&lt;225>GS&lt;234>GS&lt;243>GS&lt;252>GS&lt;1>GS&lt;6>GS&lt;15>GS&lt;24>GS&lt;33>GS&lt;42>GS&lt;51>GS&lt;60>GS&lt;68>GS&lt;77>GS&lt;86>GS&lt;95>GS&lt;104>GS&lt;113>GS&lt;122>GS&lt;131>GS&lt;140>GS&lt;149>GS&lt;158>GS&lt;167>GS&lt;176>GS&lt;185>GS&lt;194>GS&lt;203>GS&lt;212>GS&lt;221>GS&lt;230>GS&lt;239>GS&lt;248>GS&lt;257>GS>GS&lt;9>GS&lt;18>GS&lt;27>GS&lt;36>GS&lt;45>GS&lt;54>GS&lt;63>GS&lt;72>GS&lt;81>GS&lt;90>GS&lt;99>GS&lt;108>GS&lt;117>GS&lt;126>GS&lt;135>GS&lt;144>GS&lt;153>GS&lt;162>GS&lt;171>GS&lt;180>GS&lt;189>GS&lt;198>GS&lt;207>GS&lt;216>GS&lt;225>GS&lt;234>GS&lt;243>GS&lt;252>GS>GS&lt;3>GS&lt;12>GS&lt;21>GS&lt;30>GS&lt;39>GS&lt;48>GS&lt;57>GS&lt;66>GS&lt;75>GS&lt;84>GS&lt;93>GS&lt;102>GS&lt;111>GS&lt;120>GS&lt;129>GS&lt;138>GS&lt;147>GS&lt;155>GS&lt;164>GS&lt;173>GS&lt;182>GS&lt;191>GS&lt;200>GS&lt;209>GS&lt;218>GS&lt;227>GS&lt;236>GS&lt;245>GS&lt;254>GS&lt;2>GS&lt;7>GS&lt;16>GS&lt;25>GS&lt;33>GS&lt;42>GS&lt;51>GS&lt;60>GS&lt;69>GS&lt;78>GS&lt;87>GS&lt;96>GS&lt;104>GS&lt;113>GS&lt;122>GS&lt;131>GS&lt;140>GS&lt;149>GS&lt;158>GS&lt;167>GS&lt;176>GS&lt;185>GS&lt;194>GS&lt;203>GS&lt;212>GS&lt;221>GS&lt;230>GS&lt;239>GS&lt;248>GS&lt;257>GS>GS>GS>GS>GS>GS>GS>GS&lt;2>GS&lt;1>GS&lt;1>GS&lt;2>GS&lt;2>GS&lt;2>GS&lt;1>GS&lt;1>GS&lt;1>GS>GS>GS>GS&lt;2>GS&lt;1>GS>GS&lt;1>GS>GS>GS&lt;1>GS>GS&lt;1>GS>GS&lt;1>GS&lt;2>GS&lt;1>GS>GS>GS>GS&lt;2>GS>GS&lt;1>GS&lt;1>GS>GS&lt;2>GS>GS>GS>GS&lt;1>GS>GS&lt;1>GS&lt;2>GS>GS>GS&lt;1>GS&lt;1>GS>GS&lt;2>GS&lt;1>GS>GS&lt;1>GS&lt;1>GS>GS>GS&lt;2>GS>GS&lt;2>GS&lt;2>GS>GS&lt;1>GS>GS&lt;2>GS&lt;1>GS>GS>GS&lt;2>GS>GS&lt;1>GS&lt;4>GS&lt;2>GS>GS>GS&lt;1>GS&lt;1>GS&lt;1>GS>>>showpage, press &lt;return> to continue&lt;&lt;
 GS>GS>GS>GS>
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continued indented">
 <code>frag.1</code> in question, as minimised from <a href="//git.sr.ht/~nabijaczleweli/voreutils">voreutils</a>'  <!--'-->
@@ -765,7 +764,7 @@ is never matched and always printed
 .It Fl b , -bytes Ns = Ns Ar range Ns Oo , Ns Ar range Oc Ns …
 Extract bytes.
 .It Fl n
-Don't interrupt multi-byte character sequences.
+Don'<!--'-->t interrupt multi-byte character sequences.
 .Pp
 .It Fl C , -complement
 Invert
@@ -784,34 +783,34 @@ is constructed.
 .
 .Sh EXAMPLES
 .Bd -literal -compact
-.Li $ Nm printf Li '\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07' \&amp;| Nm<!--"-->  <!--"-->Fl zb Ar 1,3- Li \&amp;| Nm hexdump Fl C
-00000000<!--"-->  <!--"-->01 03 04 00 05 07 00<!--"-->                              <!--"-->|.......|
+.Li $ Nm printf Li '<!--'-->\ex01\ex02\ex03\ex04\e0\ex05\ex06\ex07'<!--'--> \&amp;| Nm<!--"--> <!--"-->Fl zb Ar 1,3- Li \&amp;| Nm hexdump Fl C
+00000000<!--"--> <!--"-->01 03 04 00 05 07 00<!--"--> <!--"-->|.......|
 00000007
 .Ed
 .Pp
 .Bd -literal -compact
-.Li $ Nm printf Li 'яйцо\enЯЙЦО'\f(CB'яйцо\enЯЙЦО'\fP\f(CI'яйцо\enЯЙЦО'\fP\f[CBI]'яйцо\enЯЙЦО'\fP \&amp;| Nm<!--"-->  <!--"-->Fl c Ar 1,3-
+.Li $ Nm printf Li '<!--'-->яйцо\enЯЙЦО'<!--'-->\f(CB'<!--'-->яйцо\enЯЙЦО'<!--'-->\fP\f(CI'<!--'-->яйцо\enЯЙЦО'<!--'-->\fP\f[CBI]'<!--'-->яйцо\enЯЙЦО'<!--'-->\fP \&amp;| Nm<!--"--> <!--"-->Fl c Ar 1,3-
 яцо\fRяцо\fP\fBяцо\fP\fIяцо\fP\f(BIяцо\fP
 ЯЦО\fRЯЦО\fP\fBЯЦО\fP\fIЯЦО\fP\f(BIЯЦО\fP
 .Ed
 .Pp
 .Bd -literal -compact
 # name, IDs, homedir, shell, ...
-.Li $ Nm Fl f Ar 1,3-4,6- Fl d Ns Ar \&amp;: Fl O Ns Li \&amp;"$( Ns Nm printf Li '\et')" Pa /etc/passwd
-root<!--"-->    <!--"-->0<!--"-->       <!--"-->0<!--"-->       <!--"-->/root<!--"-->   <!--"-->/bin/bash
-bin<!--"-->     <!--"-->2<!--"-->       <!--"-->2<!--"-->       <!--"-->/bin<!--"-->    <!--"-->/usr/sbin/nologin
-irc<!--"-->     <!--"-->39<!--"-->      <!--"-->39<!--"-->      <!--"-->/var/run/ircd<!--"-->   <!--"-->/usr/sbin/nologin
-cicada<!--"-->  <!--"-->1000<!--"-->    <!--"-->100<!--"-->     <!--"-->/home/cicada<!--"-->    <!--"-->/bin/bash
-nobody<!--"-->  <!--"-->65534<!--"-->   <!--"-->65534<!--"-->   <!--"-->/nonexistent<!--"-->    <!--"-->/usr/sbin/nologin
+.Li $ Nm Fl f Ar 1,3-4,6- Fl d Ns Ar \&amp;: Fl O Ns Li \&amp;"$( Ns Nm printf Li '<!--'-->\et'<!--'-->)" Pa /etc/passwd
+root<!--"--> <!--"-->0<!--"--> <!--"-->0<!--"--> <!--"-->/root<!--"--> <!--"-->/bin/bash
+bin<!--"--> <!--"-->2<!--"--> <!--"-->2<!--"--> <!--"-->/bin<!--"--> <!--"-->/usr/sbin/nologin
+irc<!--"--> <!--"-->39<!--"--> <!--"-->39<!--"--> <!--"-->/var/run/ircd<!--"--> <!--"-->/usr/sbin/nologin
+cicada<!--"--> <!--"-->1000<!--"--> <!--"-->100<!--"--> <!--"-->/home/cicada<!--"--> <!--"-->/bin/bash
+nobody<!--"--> <!--"-->65534<!--"--> <!--"-->65534<!--"--> <!--"-->/nonexistent<!--"--> <!--"-->/usr/sbin/nologin
 # Everything else: password and GNATS
-.Li $ Nm Fl Cf Ar 1,3-4,6- Fl d Ns Ar \&amp;: Fl O Ns Li \&amp;"$( Ns Nm printf Li '\et')" Pa /etc/passwd
-x<!--"-->       <!--"-->root
-x<!--"-->       <!--"-->bin
-x<!--"-->       <!--"-->ircd
-x<!--"-->       <!--"-->ŁĄĘĆŻŹŃ łąęćżźń,,,
-x<!--"-->       <!--"-->nobody
+.Li $ Nm Fl Cf Ar 1,3-4,6- Fl d Ns Ar \&amp;: Fl O Ns Li \&amp;"$( Ns Nm printf Li '<!--'-->\et'<!--'-->)" Pa /etc/passwd
+x<!--"--> <!--"-->root
+x<!--"--> <!--"-->bin
+x<!--"--> <!--"-->ircd
+x<!--"--> <!--"-->ŁĄĘĆŻŹŃ łąęćżźń,,,
+x<!--"--> <!--"-->nobody
 .Ed
-<!--'--></pre></code>
+</code></pre>
 </div>
 <p> 
  <br /> 
@@ -819,7 +818,7 @@ x<!--"-->       <!--"-->nobody
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -835,9 +834,9 @@ x<!--"-->       <!--"-->nobody
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:10 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp">src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

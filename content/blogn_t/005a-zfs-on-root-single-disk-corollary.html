@@ -18,7 +18,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="005a. A single-disk but slightly more cursed ZFS-on-root corollary"> 
  <title>005a. A single-disk but slightly more cursed ZFS-on-root corollary — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -47,32 +47,29 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
- <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> <script src="/content/assets/syllable.js"></script> 
+ <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -120,7 +117,7 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
  margin-bottom: 0.15em;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>005a. A single-disk but slightly more cursed ZFS-on-root corollary</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Thu, 05 Nov 2020 22:06:30 +0100</span></h4> 
@@ -130,6 +127,7 @@ a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
 <li><a href='#installation'>Installation</a></li>
 <li><a href='#layout'>Physical layout</a></li>
 <li><a href='#cleanup'>Clean-up</a></li>
+</ol>
 </ol>
 </details></div>
 <p class="indented continued">
@@ -190,7 +188,7 @@ What does change significantly, though, is the
 Since currently there'<!--'-->s no partition for the pool to occupy:
 </p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> -l /dev/sda</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> <span class="token parameter variable">-l</span> /dev/sda</span></span>
 <span class="token output">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
@@ -198,7 +196,7 @@ Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
 Device<!--"-->       <!--"-->Start<!--"-->      <!--"-->End Sectors<!--"-->  <!--"-->Size Type
 /dev/sda1<!--"-->     <!--"-->2048<!--"-->   <!--"-->487423<!--"-->  <!--"-->485376<!--"-->  <!--"-->237M EFI System
 /dev/sda2<!--"-->  <!--"-->9940992 16775167 6834176<!--"-->  <!--"-->3.3G Linux filesystem
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continued">
 I'<!--'-->m using <code><a href="//manpages.debian.org/bullseye/fdisk/fdisk.8.en.html">fdisk(8)</a></code>
@@ -206,7 +204,7 @@ I'<!--'-->m using <code><a href="//manpages.debian.org/bullseye/fdisk/fdisk.8.en
 other home nations are available.
 </p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> /dev/sda</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> /dev/sda</span></span>
 <span class="token output">Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
@@ -215,14 +213,14 @@ Command (m for help): n
 Partition number (3-128, default 3):
 First sector (487424-16777182, default 487424):
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (487424-9940991, default 9940991):
-Created a new partition 3 of type 'Linux filesystem' and of size 4.5 GiB.
+Created a new partition 3 of type '<!--'-->Linux filesystem'<!--'--> and of size 4.5 GiB.
 
 Command (m for help): x
 
 Expert command (m for help): n
 Partition number (1-3, default 3):
 New name: zoot-zoot
-Partition name changed from '' to 'zoot-zoot'.
+Partition name changed from '<!--'-->'<!--'--> to '<!--'-->zoot-zoot'<!--'-->.
 
 Expert command (m for help): f
 Partitions order fixed.
@@ -232,7 +230,7 @@ Expert command (m for help): r
 Command (m for help): t
 Partition number (1-3, default 3):
 Partition type or alias (type L to list all): 24
-Changed type of partition 'Linux filesystem' to 'Linux root (x86-64)'.
+Changed type of partition '<!--'-->Linux filesystem'<!--'--> to '<!--'-->Linux root (x86-64)'<!--'-->.
 
 Command (m for help): w
 The partition table has been altered.
@@ -245,7 +243,7 @@ Syncing disks.
 Command (m for help): w
 The partition table has been altered.
 Syncing disks.
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continuing">
 Of note:
@@ -258,7 +256,7 @@ Of note:
 The table is as follows for now:
 </p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> -x /dev/sda</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> <span class="token parameter variable">-x</span> /dev/sda</span></span>
 <span class="token output">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
@@ -267,7 +265,7 @@ Device<!--"-->       <!--"-->Start<!--"-->      <!--"-->End Sectors Type<!--"-->
 /dev/sda1<!--"-->     <!--"-->2048<!--"-->   <!--"-->487423<!--"-->  <!--"-->485376 EFI System<!--"-->          <!--"-->zoot-EFI
 /dev/sda2<!--"-->   <!--"-->487424<!--"-->  <!--"-->9940991 9453568 Linux root (x86-64) zoot-zoot
 /dev/sda3<!--"-->  <!--"-->9940992 16775167 6834176 Linux filesystem<!--"-->    <!--"-->zoot-root
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="continued">
 This means, that the creation command turns into
@@ -281,7 +279,7 @@ Besides this, everything continues as previous until rebooted with ZFS as rootfs
 Which consists of removing the partition with the previous rootfs and expanding the one with the vdev, being sure to not wipe it:
 </p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> /dev/sda</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> /dev/sda</span></span>
 <span class="token output">Welcome to fdisk (util-linux 2.36).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
@@ -298,35 +296,35 @@ Command (m for help): n
 Partition number (2-128, default 2):
 First sector (487424-16777182, default 487424):
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (487424-16777182, default 16777182):
-Created a new partition 2 of type 'Linux filesystem' and of size 7.8 GiB.
+Created a new partition 2 of type '<!--'-->Linux filesystem'<!--'--> and of size 7.8 GiB.
 
-</span><span class="token info punctuation">Partition </span><span class="token command"><span class="token shell-symbol important">#</span><span class="token bash language-bash"><span class="token number">2</span> contains a zfs_member signature.</span></span>
-<span class="token output">Do you want to remove the signature? [Y]es/[N]o: n
+Partition #2 contains a zfs_member signature.
+Do you want to remove the signature? [Y]es/[N]o: n
 
 Command (m for help): x
 
 Expert command (m for help): n
 Partition number (1,2, default 2):
 New name: zoot-zoot
-Partition name changed from '' to 'zoot-zoot'.
+Partition name changed from '<!--'-->'<!--'--> to '<!--'-->zoot-zoot'<!--'-->.
 
 Expert command (m for help): r
 
 Command (m for help): t
 Partition number (1,2, default 2):
 Partition type or alias (type L to list all): 24
-Changed type of partition 'Linux filesystem' to 'Linux root (x86-64)'.
+Changed type of partition '<!--'-->Linux filesystem'<!--'--> to '<!--'-->Linux root (x86-64)'<!--'-->.
 
 Command (m for help): w
 The partition table has been altered.
 Syncing disks.
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="indented continued">
 Which yields a vdev partition the size of the rest of the disk, but ZFS will not recognise it until after a reboot:
 </p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> -l /dev/sda</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">fdisk</span> <span class="token parameter variable">-l</span> /dev/sda</span></span>
 <span class="token output">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Disk identifier: 7CA96D41-9F58-41BB-8867-BC2FF8A7CBCC
@@ -335,23 +333,23 @@ Device<!--"-->      <!--"-->Start<!--"-->      <!--"-->End<!--"-->  <!--"-->Sect
 /dev/sda1<!--"-->    <!--"-->2048<!--"-->   <!--"-->487423<!--"-->   <!--"-->485376<!--"-->  <!--"-->237M EFI System
 /dev/sda2<!--"-->  <!--"-->487424 16777182 16289759<!--"-->  <!--"-->7.8G Linux root (x86-64)
 
-</span><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
 <span class="token output">NAME<!--"-->   <!--"-->SIZE<!--"-->  <!--"-->ALLOC<!--"-->   <!--"-->FREE<!--"-->  <!--"-->CKPOINT<!--"-->  <!--"-->EXPANDSZ<!--"-->   <!--"-->FRAG<!--"-->    <!--"-->CAP<!--"-->  <!--"-->DEDUP<!--"-->    <!--"-->HEALTH<!--"-->  <!--"-->ALTROOT
 zoot<!--"-->  <!--"-->4.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->3.30G<!--"-->        <!--"-->-<!--"-->         <!--"-->-<!--"-->     <!--"-->3%<!--"-->    <!--"-->26%<!--"-->  <!--"-->1.00x<!--"-->    <!--"-->ONLINE<!--"-->  <!--"-->-
-</span></pre></code>
+</span></code></pre>
 </div>
 <p class="indented continued">
 But after one, the rest of the partition is recognised and can be claimed:
 </p>
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
 <span class="token output">NAME<!--"-->   <!--"-->SIZE<!--"-->  <!--"-->ALLOC<!--"-->   <!--"-->FREE<!--"-->  <!--"-->CKPOINT<!--"-->  <!--"-->EXPANDSZ<!--"-->   <!--"-->FRAG<!--"-->    <!--"-->CAP<!--"-->  <!--"-->DEDUP<!--"-->    <!--"-->HEALTH<!--"-->  <!--"-->ALTROOT
 zoot<!--"-->  <!--"-->4.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->3.30G<!--"-->        <!--"-->-<!--"-->        <!--"-->3G<!--"-->     <!--"-->3%<!--"-->    <!--"-->26%<!--"-->  <!--"-->1.00x<!--"-->    <!--"-->ONLINE<!--"-->  <!--"-->-
-</span><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool online -e zoot zoot-zoot</span></span>
-<span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool online <span class="token parameter variable">-e</span> zoot zoot-zoot</span></span>
+<span class="token command"><span class="token info punctuation"><span class="token user">root@zoot</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash">zpool list</span></span>
 <span class="token output">NAME<!--"-->   <!--"-->SIZE<!--"-->  <!--"-->ALLOC<!--"-->   <!--"-->FREE<!--"-->  <!--"-->CKPOINT<!--"-->  <!--"-->EXPANDSZ<!--"-->   <!--"-->FRAG<!--"-->    <!--"-->CAP<!--"-->  <!--"-->DEDUP<!--"-->    <!--"-->HEALTH<!--"-->  <!--"-->ALTROOT
 zoot<!--"-->  <!--"-->7.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->6.30G<!--"-->        <!--"-->-<!--"-->         <!--"-->-<!--"-->     <!--"-->2%<!--"-->    <!--"-->15%<!--"-->  <!--"-->1.00x<!--"-->    <!--"-->ONLINE<!--"-->  <!--"-->-
-</span></pre></code>
+</span></code></pre>
 </div>
 <p> 
  <br /> 
@@ -359,7 +357,7 @@ zoot<!--"-->  <!--"-->7.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->6.30G<!--"--
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -375,9 +373,9 @@ zoot<!--"-->  <!--"-->7.50G<!--"-->  <!--"-->1.20G<!--"-->  <!--"-->6.30G<!--"--
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:09 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp">src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

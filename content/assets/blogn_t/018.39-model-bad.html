@@ -1,0 +1,156 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+	body {
+		width: 100%;
+	}
+	html {
+		background: black;
+		display: flex; flex-direction: row; align-items: center; justify-content: center;
+	}
+	label, input {
+		color: #aaaaaa;
+	}
+	input {
+		background: black;
+		vertical-align: bottom;
+	}
+</style>
+<canvas id=canvas></canvas>
+<label>Highlight: <input id=highlight type=number value=0></input></label>
+<label>Radius:    <input id=slider type=range min=0.000001 max=0.4 step=0.0001></input></label>
+<script>
+	function evalresize() {
+		canvas.width = canvas.height = CSCALE = document.querySelector("body").clientWidth;
+	}
+	evalresize();
+
+	GRID_SIZE = 20;
+	RADIUSSY = parseFloat(slider.value);
+	c = canvas.getContext("2d");
+	highlight.min = 0;
+	function dot(pt) {
+		return pt.x * pt.x + pt.y * pt.y;
+	}
+	function s(pt) {
+		return `[${pt.x}, ${pt.y}]`;
+	}
+	function draw(x, y) {
+		if(x !== undefined)
+			center = {x: x, y: y};
+		radiussy_squared = RADIUSSY * RADIUSSY;
+		grid_bothdirs = {x: Math.ceil(RADIUSSY * GRID_SIZE), y: Math.ceil(RADIUSSY * GRID_SIZE)};
+		highlight.max = (grid_bothdirs.x*2+1) * (grid_bothdirs.y*2+1) - 1;
+
+		c.strokeStyle = "#000000"; c.fillStyle = "#000000";
+		c.fillRect(0,0, CSCALE, CSCALE);
+
+		c.strokeStyle = "#aaaaaa"; c.fillStyle = "#aaaaaa";
+		c.font = `${CSCALE / GRID_SIZE / 3}px serif`;
+
+		for(var gx = 0; gx < GRID_SIZE; ++gx)
+			for(var gy = 0; gy < GRID_SIZE; ++gy) {
+				c.strokeRect((gx / GRID_SIZE) * CSCALE, (gy / GRID_SIZE) * CSCALE, (1 / GRID_SIZE) * CSCALE, (1 / GRID_SIZE) * CSCALE);
+				c.fillText(`${gx},${gy}`, ((gx + 0.2) / GRID_SIZE) * CSCALE, ((gy + 0.5) / GRID_SIZE) * CSCALE);
+			}
+
+		c.strokeStyle = "#ff0000"; c.fillStyle = "#ff0000";
+		c.beginPath();
+		c.arc(center.x * CSCALE, center.y * CSCALE, RADIUSSY * CSCALE, 0, 2 * Math.PI);
+		c.stroke();
+
+		c.strokeStyle = "#ff0000"; c.fillStyle = "#ff0000";
+		c.beginPath();
+		c.arc(center.x * CSCALE, center.y * CSCALE, 3, 0, 2 * Math.PI);
+		c.fill();
+
+		c.strokeStyle = "#aa0000"; c.fillStyle = "#aa0000";
+		gridpos      = {x: Math.min(Math.trunc(center.x * GRID_SIZE), GRID_SIZE - 1),
+		                y: Math.min(Math.trunc(center.y * GRID_SIZE), GRID_SIZE - 1)};
+		gridpos_from = {x: gridpos.x - Math.min(grid_bothdirs.x, gridpos.x),
+		                y: gridpos.y - Math.min(grid_bothdirs.y, gridpos.y)};
+		gridpos_to   = {x: Math.min(gridpos.x + grid_bothdirs.x, GRID_SIZE - 1),
+		                y: Math.min(gridpos.y + grid_bothdirs.y, GRID_SIZE - 1)};
+		c.strokeRect((gridpos_from.x / GRID_SIZE) * CSCALE, (gridpos_from.y / GRID_SIZE) * CSCALE, ((gridpos_to.x - gridpos_from.x + 1) / GRID_SIZE) * CSCALE, ((gridpos_to.y - gridpos_from.y + 1) / GRID_SIZE) * CSCALE);
+		for(var gx = gridpos_from.x; gx <= gridpos_to.x; ++gx)
+			for(var gy = gridpos_from.y; gy <= gridpos_to.y; ++gy)
+				c.fillText(`${gridpos.x},${gridpos.y}`, ((gridpos.x + 0.2) / GRID_SIZE) * CSCALE, ((gridpos.y + 0.5) / GRID_SIZE) * CSCALE);
+
+
+
+		var i = 0;
+		for(var gx = gridpos_from.x; gx <= gridpos_to.x; ++gx)
+			for(var gy = gridpos_from.y; gy <= gridpos_to.y; ++gy) {
+				gxyz = {x: gx, y: gy};
+
+
+				gxyz_close = {x: gxyz.x < gridpos.x, y: gxyz.y < gridpos.y};
+
+				closest_corner  = {x: (gxyz.x + gxyz_close.x) / GRID_SIZE,
+				                   y: (gxyz.y + gxyz_close.y) / GRID_SIZE};
+
+
+
+				furthest_corner = {x: (gxyz.x + !gxyz_close.x) / GRID_SIZE, y: (gxyz.y + !gxyz_close.y) / GRID_SIZE};
+
+				closest_corner.x  -= center.x; closest_corner.y  -= center.y;
+				furthest_corner.x -= center.x; furthest_corner.y -= center.y;
+				corners_squared = {x: dot(closest_corner,  closest_corner), y: dot(furthest_corner, furthest_corner)};
+				corners_inrange = {x: corners_squared.x <= radiussy_squared, y: corners_squared.y <= radiussy_squared};
+
+				if(corners_inrange.x && corners_inrange.y) {
+					c.strokeStyle = "#00ff00"; c.fillStyle = "#00ff00";
+				} else if(!corners_inrange.x && !corners_inrange.y) {
+					c.strokeStyle = "#111111"; c.fillStyle = "#111111";
+				} else {
+					c.strokeStyle = "#aaaa00"; c.fillStyle = "#aaaa00";
+				}
+				c.fillText(`${gx},${gy}`, ((gx + 0.2) / GRID_SIZE) * CSCALE, ((gy + 0.5) / GRID_SIZE) * CSCALE);
+
+				if(i == highlight.value) {
+					c.strokeStyle = corners_inrange.x ? "#ffff00" : "#aaaa55"; c.fillStyle = corners_inrange.x ? "#ffff00" : "#aaaa55";
+					c.beginPath();
+					c.arc((closest_corner.x + center.x) * CSCALE, (closest_corner.y + center.y) * CSCALE, 3, 0, 2 * Math.PI);
+					c.fill();
+
+					c.strokeStyle = corners_inrange.y ? "#00ffff" : "#55aaaa"; c.fillStyle = corners_inrange.y ? "#00ffff" : "#55aaaa";
+					c.beginPath();
+					c.arc((furthest_corner.x + center.x) * CSCALE, (furthest_corner.y + center.y) * CSCALE, 3, 0, 2 * Math.PI);
+					c.fill();
+				}
+
+				++i;
+			}
+	}
+	draw(0, 0);
+	var isDown = false;
+	canvas.addEventListener("mousedown", e => {
+		isDown = true;
+		draw((e.clientX - canvas.offsetLeft) / CSCALE, (e.clientY - canvas.offsetTop) / CSCALE);
+	});
+	canvas.addEventListener("mouseup", e => {
+		isDown = false;
+	});
+	canvas.addEventListener("mousemove", e => {
+		if(isDown)
+			draw((e.clientX - canvas.offsetLeft) / CSCALE, (e.clientY - canvas.offsetTop) / CSCALE);
+	});
+	canvas.addEventListener("touchstart", e => {
+		draw((e.touches[0].clientX - canvas.offsetLeft) / CSCALE, (e.touches[0].clientY - canvas.offsetTop) / CSCALE);
+	});
+	canvas.addEventListener("touchmove", e => {
+		draw((e.touches[0].clientX - canvas.offsetLeft) / CSCALE, (e.touches[0].clientY - canvas.offsetTop) / CSCALE);
+	});
+	highlight.addEventListener("change", e => {
+		draw();
+	});
+	slider.addEventListener("input", e => {
+		RADIUSSY = parseFloat(slider.value);
+		draw();
+	});
+
+	window.addEventListener("resize", _ => {
+		evalresize();
+		draw();
+	})
+</script>

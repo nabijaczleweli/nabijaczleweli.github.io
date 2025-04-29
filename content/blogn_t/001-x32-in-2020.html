@@ -19,7 +19,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta name="description" content="001. Installing Debianꞌs x32 port in 2020"> 
  <title>001. Installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli</title> 
  
- <link href="/content/assets/common.css" rel="stylesheet" /> 
+ <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png"> 
  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png"> 
@@ -48,33 +48,30 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  let m = navigator.userAgent.match(/Firefox\/([0-9]+)/); 
  if(m && parseInt(m[1]) < 96) 
  document.addEventListener("DOMContentLoaded", function() { 
+ Array.from(document.querySelectorAll('style.dark-invert')).forEach(function(e) { e.remove(); }); 
  Array.from(document.getElementsByClassName("dark-invert")).forEach(function(e) { e.classList.remove("dark-invert"); }); 
  Array.from(document.querySelectorAll('source[media="(prefers-color-scheme: dark)"]')).forEach(function(e) { e.remove(); }); 
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet" /> 
- <link href="/kaschism/assets/column.css" rel="stylesheet" /> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet" /> 
- <link href="/content/assets/contents.css" rel="stylesheet" /> 
- <link href="../writing/Roboto-font.css" rel="stylesheet" /> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet" /> 
+ <link href="/content/assets/heading.css" rel="stylesheet"> 
+ <link href="/kaschism/assets/column.css" rel="stylesheet"> 
+ <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
+ <link href="/content/assets/contents.css" rel="stylesheet"> 
+ <link href="../writing/Roboto-font.css" rel="stylesheet"> 
+ <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
  <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet" /> 
- <link href="/content/assets/bigtable.css" rel="stylesheet" /> <script type="text/javascript" src="/content/assets/syllable.js"></script> 
- <script type="text/javascript" src="/content/assets/pluralize.js"></script> 
- <script type="text/javascript" src="/content/assets/word_count.js"></script> 
+ <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> 
+ <link href="/content/assets/bigtable.css" rel="stylesheet"> <script src="/content/assets/syllable.js"></script> 
+ <script src="/content/assets/pluralize.js"></script> 
+ <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued {
+.continued, .continuing {
  margin-bottom: 0;
 }
-.continuing {
- margin-top: 0;
- margin-bottom: 0;
-}
-.continuation {
+.continuation, .continuing {
  margin-top: 0;
 }
 code, samp {
@@ -120,7 +117,7 @@ samp {
   white-space: pre-wrap;
 }
 </style>
-<span class="roboto writing"> 
+<div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>001. Installing Debian'<!--'-->s x32 port in 2020</samp> <a class="go-back-link right" href=".">↩</a></h2> 
  <h4 id="post-date"><span style="white-space: nowrap">Thu, 9 Apr 2020 01:44:47 +0200</span>, last updated <span style="white-space: nowrap">Tue, 28 Apr 2020 02:54:07 +0200</span></h4> 
@@ -130,6 +127,7 @@ samp {
 <li><a href='#requirements'>What you'<!--'-->ll need</a></li>
 <li><a href='#target_requirements'>What you'<!--'-->ll want</a></li>
 <li><a href='#building'>Assembling the system</a></li>
+</ol>
 </ol>
 </details></div>
 <p class="indented continued">
@@ -215,7 +213,7 @@ In (reverse-)chronological order: a disklabel, a bootloader, an initramfs (gener
 My target disklabel is a standard GPT-on-BIOS setup with a separate <code>/boot</code>
 (this helps by allowing the use of partlabels throughout, since <kbd>SZAROTKA-BOOT</kbd> is longer than the <code>vfat</code> maximum of 11):
 <div class="bigcode">
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">fdisk</span> -l</span></span>
+<pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> <span class="token function">fdisk</span> <span class="token parameter variable">-l</span></span></span>
 <span class="token output">Disk /dev/sda: 149.5 GiB, 160041885696 bytes, 312581808 sectors
 Disk model: WDC WD1600AAJS-6
 Units: sectors of 1 * 512 = 512 bytes
@@ -229,13 +227,13 @@ Device<!--"-->         <!--"-->Start<!--"-->       <!--"-->End<!--"-->   <!--"--
 /dev/sda2<!--"-->       <!--"-->4096 312377343 312373248<!--"-->  <!--"-->149G Linux root (x86-64)
 /dev/sda3<!--"-->  <!--"-->312377344 312581774<!--"-->    <!--"-->204431 99.8M Linux extended boot
 
-</span><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> blkid</span></span>
+</span><span class="token command"><span class="token info punctuation"><span class="token user">nabijaczleweli@szarotka</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">$</span> <span class="token bash language-bash"><span class="token function">sudo</span> blkid</span></span>
 <span class="token output">/dev/sda1: PARTLABEL="szarotka-bios-boot" PARTUUID="a331980b-475a-1f43-b985-0849341df04b"
 /dev/sda2: LABEL="szarotka-root-ng" UUID="d9e8441a-1a97-47af-b002-d764ac46121b" TYPE="ext4"
 <!--"-->           <!--"-->PARTLABEL="szarotka-root" PARTUUID="52695edc-4993-654c-9e04-e30d9cc1e367"
 /dev/sda3: SEC_TYPE="msdos" LABEL_FATBOOT="SZAROTKA-BO" LABEL="SZAROTKA-BO" UUID="F4E6-9A90"
 <!--"-->           <!--"-->TYPE="vfat" PARTLABEL="szarotka-boot" PARTUUID="c817f3e5-e3e5-2449-b0f2-23dbb523a239"
-</span></pre></code>
+</span></code></pre>
 </div>
 </p>
 <h2 id="building" ><a class="hash-link" href="#building">#</a> Assembling the system</h2>
@@ -375,7 +373,7 @@ Alright, bye!
  <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/001-x32-in-2020.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
- </span>
+ </div>
 <!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
  <hr /> 
  <span id="word_count">0</span> words, 
@@ -391,9 +389,9 @@ Alright, bye!
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19'<!--'-->s C preprocessor on 12.02.2025 23:24:09 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 29.04.2025 14:38:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/001-x32-in-2020.html.pp">src/blogn_t/001-x32-in-2020.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1428710">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1480470">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
