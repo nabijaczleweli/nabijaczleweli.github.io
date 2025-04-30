@@ -88,7 +88,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 	 POST(014-unix-pre-v4-pid0-corollary,          Mon, 10 Jun 2024 01:04:14 +0200, 014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX))
 	 POST(015-ranlib,                              Tue, 01 Oct 2024 11:09:48 +0200, 015. where da lib runnin)
 	 POST(016-BSDi-qfont,                          Sat, 05 Oct 2024 21:56:06 +0200, 016. <span class="qfont">BSDi qfont</span>)
-	 POST(016-BSDi-qfont,                          Sat, 05 Oct 2024 21:56:06 +0200, 016. <span class="qfont">BSDi qfont</span>)
+	 POST(017-malloc0,                             Thu, 17 Oct 2024 03:42:06 +0200, 017. malloc(0) & realloc(…，0) ≠ 0)
 	 POST(018-mean-shift-clusterer,                Tue, 29 Apr 2025 16:32:56 +0200, 018. Mean-shift clustering)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
