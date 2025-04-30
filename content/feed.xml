@@ -33211,7 +33211,7 @@ Benchmark 6: AFTER_unchecked 1103347 copied
 &lt;/table&gt;
 &lt;p&gt;
 Not great, not terrible, for the cost of bumping &lt;samp&gt;groups_accumulator&lt;/samp&gt; from is a similar size to the [​[​8\text{MB}​]​] —
-[​[​G^3 \cdot \operatorname{sizeof}(\texttt{Mutex&amp;lt;Vec&amp;lt;_&gt;&gt;}) = G^3 \cdot (3 \operatorname{sizeof}(\texttt{usize}) + m) = 32\text{MB}_{\text{LP64}} \vee 20\text{MB}_{\text{ILP32}_\text{1}} \vee 16\text{MB}_{\text{ILP32}_\text{Win32}}​]​]
+[​[​G^3 \cdot \operatorname{sizeof}(\texttt{Mutex&amp;lt;Vec&amp;lt;_&gt;&gt;}) = G^3 \cdot (3 \operatorname{sizeof}(\texttt{usize}) + m) = 32\text{MB}_{\text{LP64}} \vee 20\text{MB}_{\text{ILP32}_\text{linux}} \vee 16\text{MB}_{\text{ILP32}_\text{Win32}}​]​]
 (&lt;a href=&quot;#grid-grid&quot;&gt;from&lt;!-- --&gt;[​[​\ 24\text{MB}_\text{LP64} \vee 12\text{MB}_\text{ILP32}​]​]&lt;/a&gt;).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
