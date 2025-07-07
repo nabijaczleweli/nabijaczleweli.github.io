@@ -36,6 +36,10 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
+	Miscellaneous <a href="notes/">analysis notes</a>…
+</p>
+
+<p>
 	Accrued <a href="recipes/">recipes</a>…
 </p>
 
