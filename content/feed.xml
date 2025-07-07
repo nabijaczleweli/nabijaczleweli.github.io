@@ -12,10 +12,21 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2024-10-17T03:42:06+02:00</updated>
+<updated>2025-07-07T19:08:39+02:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/notes/</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/notes/" />
+    <title> Analysis notes — nabijaczleweli </title>
+    <updated>2025-07-07T19:08:39+02:00</updated>
+    <content type="html">
+&lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt; Analysis notes &lt;a class=&quot;go-back-link right&quot; href=&quot;..&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;/content/assets/notes/elementary.txt&quot;&gt;queerness in elementary&lt;/a&gt;&lt;/h3&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/017-malloc0.html</id>

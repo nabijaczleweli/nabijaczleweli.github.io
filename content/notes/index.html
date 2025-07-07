@@ -7,7 +7,7 @@ Creative Commons Attribution 4.0 International License.
 You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
- <!-- RSS_PUB_DATE: "Mon, 25 May 2020 00:12:30 +0200" -->
+<!-- RSS_PUB_DATE: "Mon, 07 Jul 2025 19:08:39 +0200" -->
 <!DOCTYPE html> 
  <html lang="en-GB"> 
  <head> 
@@ -15,8 +15,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
  <meta name="viewport" content="width=device-width,initial-scale=1"> 
  <meta name="author" content="nabijaczleweli"> 
- <meta name="description" content="002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users"> 
- <title>002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli</title> 
+ <meta name="description" content="unsorted; unedited; unrestrained"> 
+ <title>Analysis notes — nabijaczleweli</title> 
  
  <link href="/content/assets/common.css" rel="stylesheet"> 
  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png"> 
@@ -55,66 +55,49 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  </script> 
  <link href="/content/assets/heading.css" rel="stylesheet"> 
  <link href="/kaschism/assets/column.css" rel="stylesheet"> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
- <link href="/content/assets/contents.css" rel="stylesheet"> 
- <link href="../writing/Roboto-font.css" rel="stylesheet"> 
  <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script src="/content/assets/syllable.js"></script> 
- <script src="/content/assets/pluralize.js"></script> 
- <script src="/content/assets/word_count.js"></script> 
  </head> 
  <body>
 <style>
-.continued, .continuing {
- margin-bottom: 0;
+code, samp {
+ font-family: "Droid Sans Mono", monospace;
 }
-.continuation, .continuing {
- margin-top: 0;
+h1, h2, h3, h4, h5, h6, summary {
+ font-family: "Merriweather", serif;
 }
-.indented {
- text-indent: 1em;
+h1:hover a.hash-link,
+h2:hover a.hash-link,
+h3:hover a.hash-link,
+h4:hover a.hash-link,
+h5:hover a.hash-link,
+h6:hover a.hash-link,
+summary:hover a.hash-link {
+ visibility: visible;
+ opacity: 1;
+}
+h1 a.hash-link,
+h2 a.hash-link,
+h3 a.hash-link,
+h4 a.hash-link,
+h5 a.hash-link,
+h6 a.hash-link,
+summary a.hash-link {
+ float: left;
+ visibility: hidden;
+ opacity: 0;
+ padding-right: calc(1em / 5.5);
+ margin-left: calc(-1em / 1.1);
+  transition: all 0.5s;
+}
+h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
+a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
+a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
+ color: inherit;
+ text-decoration: none;
 }
 </style>
-<div class="roboto writing"> 
- <p></p> 
- <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Mon, 25 May 2020 00:12:30 +0200</span></h4> 
- <!--BLOGN_T_TOC_PLACEHOLDER-->
-<p class="indented continued">
-The post I made for <a href="//bugs.debian.org/961097#35">#961097</a>,
- which went through three packages (
-</p>
-<ol class="continuing">
- <li>htop: segfaults after ^Z+fg on x32</li>
- <li>gpm: SIGTSTP handler segfaults programs</li>
- <li>libncurses6: unloads libgpm2 in SIGTSTP handler, process returns to unmapped address on resume</li>
-</ol>
-<p class="continuing">
- ) is roughly the length of a blog post and something I would read as a blog post, so it may be interesting to other viewers as well.
-<p class="indented continuation">
-Plus, it took me an entire day to write and the better part of a week to hunt down (by god it'<!--'-->s bigger than either of the screenshots),
- so it definitely qualifies.
-</p>
-<p class="indented continued">
-You can read it on <a href="//bugs.debian.org/961097#35">debbugs</a>, since reproducing plaintext with boxes in HTML is a massive pain
- (plus there'<!--'-->s context there).
-</p>
-<p class="indented continuation">
-You may also be interested in the corresponding <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800">twitter thread</a>.
-</p>
-<p> 
- <br /> 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/002-ncurses-gpm-segfault.html.pp">Mail</a>, 
- <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
- </p> 
- </div>
-<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
- <hr /> 
- <span id="word_count">0</span> words, 
- <span id="syllable_count">0</span> syllables, 
- <span id="character_count">0</span> characters. 
- </span>
+<h2 id="go-back" class="merriweather"><a class="go-back-link left" href="..">↩</a> Analysis notes <a class="go-back-link right" href="..">↩</a></h2>
+<h3><a href="/content/assets/notes/elementary.txt">queerness in elementary</a></h3>
 <!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
  Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
  code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
@@ -124,8 +107,8 @@ You may also be interested in the corresponding <a href="//lfs.nabijaczleweli.xy
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19's<!--'--> C preprocessor on 07.07.2025 17:14:35 UTC from 
- <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/002-ncurses-gpm-segfault.html.pp">src/blogn_t/002-ncurses-gpm-segfault.html.pp</a>. 
+ Compiled with Clang 19's<!--'--> C preprocessor on 07.07.2025 17:14:36 UTC from 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/notes/index.html.pp">src/notes/index.html.pp</a>. 
  <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1525808">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
