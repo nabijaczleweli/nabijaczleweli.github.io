@@ -388,7 +388,7 @@ The rationale paper for C89 and the path &lt;code&gt;realloc()&lt;/code&gt; take
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;016. &lt;span class=&quot;qfont&quot;&gt;BSDi qfont&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 05 Oct 2024 21:56:06 +0200&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 05 Oct 2024 21:56:06 +0200&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 This in many ways mirrors &lt;a href=&quot;008-amix-fonts&quot;&gt;&lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt;&lt;/a&gt;,
@@ -6988,60 +6988,60 @@ Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/&quot;&gt;Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/&quot;&gt;Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware-finding-system-info'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/system-info.html&quot;&gt;Finding System Info &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#firmware-known-issues'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-finding-system-info'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/system-info.html&quot;&gt;Finding System Info &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-known-issues'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware-known-issues-firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html#firmware&quot;&gt;Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-known-issues-firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html#firmware&quot;&gt;Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;li&gt;&lt;a href='#firmware-enabling-developer-mode'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/developer-mode.html&quot;&gt;Enabling developer mode &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#firmware-disabling-write-protect'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/write-protect.html&quot;&gt;Disabling write protect &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-enabling-developer-mode'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/developer-mode.html&quot;&gt;Enabling developer mode &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-disabling-write-protect'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/write-protect.html&quot;&gt;Disabling write protect &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware-types-of-firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html&quot;&gt;Types of Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-types-of-firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html&quot;&gt;Types of Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware-types-of-firmware-RW_LEGACY'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#rw-legacy&quot;&gt;RW_LEGACY &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#firmware-types-of-firmware-UEFI'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#uefi-full-rom&quot;&gt;(UEFI) Full ROM &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-types-of-firmware-RW_LEGACY'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#rw-legacy&quot;&gt;RW_LEGACY &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-types-of-firmware-UEFI'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#uefi-full-rom&quot;&gt;(UEFI) Full ROM &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/ol&gt;
 &lt;li&gt;&lt;a href='#firmware-disabling-write-protect2'&gt;(Back to) Disabling write protect&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware-disabling-write-protect-unplugging-the-battery'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html&quot;&gt;Disabling write protect via Battery &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-disabling-write-protect-unplugging-the-battery'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html&quot;&gt;Disabling write protect via Battery &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery&quot;&gt;Step 1: Open the device and disconnect the battery &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-2-boot-using-ac-power-and-flash&quot;&gt;Step 2: Boot using AC power, and flash. &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery&quot;&gt;Step 1: Open the device and disconnect the battery &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-2-boot-using-ac-power-and-flash&quot;&gt;Step 2: Boot using AC power, and flash. &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/ol&gt;
-&lt;li&gt;&lt;a href='#firmware-flashing-custom-firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/flashing-firmware.html&quot;&gt;Flashing Custom Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#firmware-flashing-custom-firmware'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/flashing-firmware.html&quot;&gt;Flashing Custom Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;li&gt;&lt;a href='#installing'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/&quot;&gt;Installing an OS &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/&quot;&gt;Installing an OS &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-known-issues'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-known-issues'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-known-issues-linux'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html#linux&quot;&gt;Linux &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-known-issues-linux'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html#linux&quot;&gt;Linux &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;li&gt;&lt;a href='#installing-making-a-bootable-usb'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html&quot;&gt;Making a Bootable USB &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-making-a-bootable-usb'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html&quot;&gt;Making a Bootable USB &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-making-a-bootable-usb-flashing-with-dd-linux-macos'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html#flashing-with-dd-linux-macos&quot;&gt;Flashing with dd (Linux/macOS) &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-making-a-bootable-usb-flashing-with-dd-linux-macos'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html#flashing-with-dd-linux-macos&quot;&gt;Flashing with dd (Linux/macOS) &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;li&gt;&lt;a href='#installing-installing-linux'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html&quot;&gt;Installing Linux &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-installing-linux'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html&quot;&gt;Installing Linux &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-installing-linux-recommended-distributions'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#recommended-distributions&quot;&gt;Recommended Distributions &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#installing-installing-linux-installation'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#installation&quot;&gt;Installation &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#installing-installing-linux-fixing-audio'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio&quot;&gt;Fixing Audio &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-installing-linux-recommended-distributions'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#recommended-distributions&quot;&gt;Recommended Distributions &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-installing-linux-installation'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#installation&quot;&gt;Installation &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-installing-linux-fixing-audio'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio&quot;&gt;Fixing Audio &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-installing-linux-fixing-audio2'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1&quot;&gt;Fixing Audio &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/ol&gt;
-&lt;li&gt;&lt;a href='#installing-post-install'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html&quot;&gt;Post Install &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-post-install-linux'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#linux&quot;&gt;Linux &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href='#installing-post-install-linux-general-qol-fixes'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#general-qol-fixes&quot;&gt;General QOL Fixes &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#installing-post-install-linux-celes-post-install-workaround'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#celes-post-install-workaround-1&quot;&gt;CELES Post Install Workaround &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-installing-linux-fixing-audio2'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1&quot;&gt;Fixing Audio &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/ol&gt;
-&lt;li&gt;&lt;a href='#installing-using-ectool'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/ectool.html&quot;&gt;Using Ectool &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-post-install'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html&quot;&gt;Post Install &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#installing-post-install-linux'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#linux&quot;&gt;Linux &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#installing-post-install-linux-general-qol-fixes'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#general-qol-fixes&quot;&gt;General QOL Fixes &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#installing-post-install-linux-celes-post-install-workaround'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#celes-post-install-workaround-1&quot;&gt;CELES Post Install Workaround &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;li&gt;&lt;a href='#installing-using-ectool'&gt;&lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/ectool.html&quot;&gt;Using Ectool &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;li&gt;&lt;a href='#conclusions'&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
 &lt;ol&gt;
@@ -7382,8 +7382,8 @@ so this has been done before and this is thus largely a &lt;a href=&quot;/conten
     &lt;li&gt;&lt;a href=&quot;#conclusions-funny-moments&quot;&gt;family guy funny moments&lt;/a&gt;&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/ol&gt;
-&lt;h2 id=&quot;firmware&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/&quot;&gt;Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;firmware-finding-system-info&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-finding-system-info&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/system-info.html&quot;&gt;Finding System Info &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;firmware&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/&quot;&gt;Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;firmware-finding-system-info&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-finding-system-info&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/system-info.html&quot;&gt;Finding System Info &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 All of these I found in &lt;a href=&quot;012-debian-chromebook-lenovo-300e-gen2.html&quot;&gt;&lt;samp&gt;012. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen arm64 Chromebook&lt;/samp&gt;&lt;/a&gt;,
 sections &lt;a class=&quot;heading-ref&quot; href=&quot;012-debian-chromebook-lenovo-300e-gen2.html#jailbreak&quot;&gt;Save me from chromium (chrome os (chromium os(?)))&lt;/a&gt;
      and &lt;a class=&quot;heading-ref&quot; href=&quot;012-debian-chromebook-lenovo-300e-gen2.html#HFBITLAND&quot;&gt;Take me to &lt;span class=&quot;smallcaps&quot;&gt;hfbitland&lt;/span&gt;&lt;/a&gt;,
@@ -7408,32 +7408,32 @@ This still doesn'&lt;!--'--&gt;t do anything, and &lt;kbd&gt;ctrl&lt;/kbd&gt;+&l
 recommends &lt;samp&gt;cat /proc/cpuinfo | grep &quot;model name&quot;&lt;/samp&gt;.
 Why it'&lt;!--'--&gt;s not &lt;samp&gt;grep &quot;model name&quot; /proc/cpuinfo&lt;/samp&gt; is beyond me.
 &lt;/p&gt;
-&lt;h3 id=&quot;firmware-known-issues&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-known-issues&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;firmware-known-issues-firmware&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-known-issues-firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html#firmware&quot;&gt;Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;firmware-known-issues&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-known-issues&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;firmware-known-issues-firmware&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-known-issues-firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/known-issues.html#firmware&quot;&gt;Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
 GeminiLake: Legacy boot mode/alternative firmware menu works but does not show payload list
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 which is irrelevant.
 &lt;/p&gt;
-&lt;h3 id=&quot;firmware-enabling-developer-mode&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-enabling-developer-mode&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/developer-mode.html&quot;&gt;Enabling developer mode &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;firmware-enabling-developer-mode&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-enabling-developer-mode&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/developer-mode.html&quot;&gt;Enabling developer mode &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 has already been done in &lt;a href=&quot;012-debian-chromebook-lenovo-300e-gen2.html&quot;&gt;&lt;samp&gt;012. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen arm64 Chromebook&lt;/samp&gt;&lt;/a&gt;.
 &lt;/p&gt;
-&lt;h3 id=&quot;firmware-disabling-write-protect&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/write-protect.html&quot;&gt;Disabling write protect &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;firmware-disabling-write-protect&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/write-protect.html&quot;&gt;Disabling write protect &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote class=&quot;continuation&quot;&gt;
   &lt;dl class=&quot;continuation&quot;&gt;
     &lt;div class=&quot;tipwarning tip&quot;&gt;&lt;dt class=&quot;smallcaps&quot;&gt;Tip&lt;/dt&gt;&lt;dd&gt;You do not have to disable write protect if flashing &lt;a href=&quot;//docs.chrultrabook.com/docs/firmware/about.html#rw_legacy&quot;&gt;RW_Legacy&lt;/a&gt;.&lt;/dd&gt;&lt;/div&gt;
   &lt;/dl&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&quot;firmware-types-of-firmware&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-types-of-firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html&quot;&gt;Types of Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;h5 id=&quot;firmware-types-of-firmware-RW_LEGACY&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-types-of-firmware-RW_LEGACY&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#rw-legacy&quot;&gt;RW_LEGACY &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4 id=&quot;firmware-types-of-firmware&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-types-of-firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html&quot;&gt;Types of Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h5 id=&quot;firmware-types-of-firmware-RW_LEGACY&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-types-of-firmware-RW_LEGACY&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#rw-legacy&quot;&gt;RW_LEGACY &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
     &lt;div class=&quot;tipwarning warning&quot;&gt;&lt;dt class=&quot;smallcaps&quot;&gt;Warning&lt;/dt&gt;&lt;dd&gt;The RW_LEGACY firmware is for users who want to dual-boot ChromeOS + Linux, or users who want to run Linux without having to open the device/disable the firmware write-protect (and are OK with the accompanying limitations).&lt;/dd&gt;&lt;/div&gt;
   &lt;/dl&gt;
 &lt;/blockquote&gt;
-&lt;h5 id=&quot;firmware-types-of-firmware-UEFI&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-types-of-firmware-UEFI&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#uefi-full-rom&quot;&gt;(UEFI) Full ROM &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;firmware-types-of-firmware-UEFI&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-types-of-firmware-UEFI&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/about.html#uefi-full-rom&quot;&gt;(UEFI) Full ROM &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;ul style=&quot;padding-left: 1em;&quot;&gt;
     &lt;li&gt;Removes the developer mode boot (&quot;OS verification is OFF&quot;) screen&lt;/li&gt;
@@ -7448,8 +7448,8 @@ Unclear to me what &quot;ie&quot; means, but sign me up, brother.
 Here'&lt;!--'--&gt;s hoping it also fixes the scandi keyboard.
 &lt;/p&gt;
 &lt;h3 id=&quot;firmware-disabling-write-protect2&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect2&quot;&gt;#&lt;/a&gt; (Back to) Disabling write protect&lt;/h3&gt;
-&lt;h4 id=&quot;firmware-disabling-write-protect-unplugging-the-battery&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html&quot;&gt;Disabling write protect via Battery &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;h5 id=&quot;firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery&quot; class=&quot;continuation&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery&quot;&gt;Step 1: Open the device and disconnect the battery &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4 id=&quot;firmware-disabling-write-protect-unplugging-the-battery&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html&quot;&gt;Disabling write protect via Battery &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h5 id=&quot;firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery&quot; class=&quot;continuation&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery-step-1-open-the-device-and-disconnect-the-battery&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-1-open-the-device-and-disconnect-the-battery&quot;&gt;Step 1: Open the device and disconnect the battery &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p class=&quot;indented&quot;&gt;
 The &lt;a href=&quot;//www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/Lenovo%20300e%20Chromebook%202nd%20Gen%20(Intel)&quot;&gt;internal link from within google documentation&lt;/a&gt;
 is a 404.
@@ -7466,8 +7466,8 @@ but doesn'&lt;!--'--&gt;t show where the latches are. But the video does.
 &lt;a href=&quot;/content/assets/blogn_t/012a.04-DSC_0957cv.JPG&quot;&gt;&lt;img alt=&quot;the laptop in question, filleted &quot; src=&quot;/content/assets/blogn_t/012a.04-DSC_0957cv.JPG&quot;&gt;&lt;/a&gt;
 One of my screws was missing, but another was in a loose insert, and I only broke one tab! And another pile fell out from previous service.
 &lt;a href=&quot;/content/assets/blogn_t/012a.05-DSC_3011c.JPG&quot;&gt;&lt;img alt=&quot;it's a staggering pile of plastic&quot; src=&quot;/content/assets/blogn_t/012a.05-DSC_3011c.JPG&quot;&gt;&lt;/a&gt;
-&lt;h5 id=&quot;firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-2-boot-using-ac-power-and-flash&quot;&gt;Step 2: Boot using AC power, and flash. &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
-&lt;h3 id=&quot;firmware-flashing-custom-firmware&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-flashing-custom-firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/flashing-firmware.html&quot;&gt;Flashing Custom Firmware &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h5 id=&quot;firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-disabling-write-protect-unplugging-the-battery-step-2-boot-using-ac-power-and-flash&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/battery.html#step-2-boot-using-ac-power-and-flash&quot;&gt;Step 2: Boot using AC power, and flash. &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h3 id=&quot;firmware-flashing-custom-firmware&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#firmware-flashing-custom-firmware&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/firmware/flashing-firmware.html&quot;&gt;Flashing Custom Firmware &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;ol style=&quot;padding-left: 1em;&quot; start=3&gt;
     &lt;li&gt;Run &lt;a href=&quot;//mrchromebox.tech/#fwscript&quot;&gt;MrChromebox'&lt;!--'--&gt;s firmware utility script&lt;/a&gt; within VT-2 (&lt;kbd&gt;ctrl&lt;/kbd&gt; + &lt;kbd&gt;alt&lt;/kbd&gt; + &lt;kbd&gt;f2&lt;/kbd&gt; (right arrow)).
@@ -7807,9 +7807,9 @@ I'&lt;!--'--&gt;m not trying to be flipping the shit running with a cable plugge
 &lt;p class=&quot;continuation&quot;&gt;
 Yeah, it took about that long. But the updater explicitly says it won'&lt;!--'--&gt;t boot ChromeOS anymore. So I held off until I had a d-i image.
 &lt;/p&gt;
-&lt;h2 id=&quot;installing&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/&quot;&gt;Installing an OS &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;installing-known-issues&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-known-issues&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;installing-known-issues-linux&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-known-issues-linux&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html#linux&quot;&gt;Linux &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h2 id=&quot;installing&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/&quot;&gt;Installing an OS &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;installing-known-issues&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-known-issues&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html&quot;&gt;Known Issues &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;installing-known-issues-linux&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-known-issues-linux&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/known-issues.html#linux&quot;&gt;Linux &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;ul style=&quot;padding-left: 1em;&quot;&gt;
     &lt;li&gt;Debian 12 (Bookworm) needs a custom kernel.&lt;/li&gt;
@@ -7835,15 +7835,15 @@ attempt: the catchily-designated &lt;a href=&quot;//salsa.debian.org/kernel-team
 A &lt;a href=&quot;//101010.pl/@nabijaczleweli/111724158873684896&quot;&gt;trivial analysis&lt;/a&gt; shows this actually wants a kernel at least &lt;samp&gt;6.6.3-1&lt;/samp&gt;,
 so at time of writing &quot;current sid&quot;, but hopefully it'&lt;!--'--&gt;ll be in backports later.
 &lt;/p&gt;
-&lt;h3 id=&quot;installing-making-a-bootable-usb&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-making-a-bootable-usb&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html&quot;&gt;Making a Bootable USB &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;installing-making-a-bootable-usb-flashing-with-dd-linux-macos&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-making-a-bootable-usb-flashing-with-dd-linux-macos&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html#flashing-with-dd-linux-macos&quot;&gt;Flashing with dd (Linux/macOS) &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;installing-making-a-bootable-usb&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-making-a-bootable-usb&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html&quot;&gt;Making a Bootable USB &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;installing-making-a-bootable-usb-flashing-with-dd-linux-macos&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-making-a-bootable-usb-flashing-with-dd-linux-macos&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/bootableusb.html#flashing-with-dd-linux-macos&quot;&gt;Flashing with dd (Linux/macOS) &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 I'&lt;!--'--&gt;m snidely avoiding comment on the bit where it specs &lt;samp&gt;dd&lt;/samp&gt; but uses no flags that would make it do anything different than &lt;samp&gt;cp&lt;/samp&gt;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
 No syncing of any kind is criminal, though.
 &lt;/p&gt;
-&lt;h3 id=&quot;installing-installing-linux&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html&quot;&gt;Installing Linux &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;installing-installing-linux&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html&quot;&gt;Installing Linux &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
     &lt;div class=&quot;tipwarning tip&quot;&gt;&lt;dt class=&quot;smallcaps&quot;&gt;Tip&lt;/dt&gt;&lt;dd&gt;Only Linux kernel 6.4 or newer is supported.&lt;/dd&gt;&lt;/div&gt;
@@ -7852,7 +7852,7 @@ No syncing of any kind is criminal, though.
 &lt;p class=&quot;continuation&quot;&gt;
 It doesn'&lt;!--'--&gt;t say why. Well – why? (See above.)
 &lt;/p&gt;
-&lt;h4 id=&quot;installing-installing-linux-recommended-distributions&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-recommended-distributions&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#recommended-distributions&quot;&gt;Recommended Distributions &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;installing-installing-linux-recommended-distributions&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-recommended-distributions&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#recommended-distributions&quot;&gt;Recommended Distributions &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
     &lt;div class=&quot;tipwarning warning&quot;&gt;&lt;dt class=&quot;smallcaps&quot;&gt;Warning&lt;/dt&gt;&lt;dd&gt;Debian versions older than Debian 12 (Bookworm) are &lt;strong&gt;not supported&lt;/strong&gt;. Debian 12 (Bookworm) requires a custom kernel, the &lt;a href=&quot;//docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio&quot;&gt;audio script&lt;/a&gt; will automatically install it for you.&lt;/dd&gt;&lt;/div&gt;
@@ -7874,7 +7874,7 @@ since this is just about some modules, this box would be
 But for now just install
 &lt;a href=&quot;//snapshot.debian.org/archive/debian/20240103T032204Z/pool/main/l/linux-signed-amd64/linux-image-6.6.9-amd64_6.6.9-1_amd64.deb&quot;&gt;the sid kernel&lt;/a&gt;.
 &lt;/p&gt;
-&lt;h4 id=&quot;installing-installing-linux-installation&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-installation&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#installation&quot;&gt;Installation &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;installing-installing-linux-installation&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-installation&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#installation&quot;&gt;Installation &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;ol style=&quot;padding-left: 1em;&quot; start=4&gt;
     &lt;li&gt;Install as you would on any other computer.&lt;/li&gt;
@@ -7883,8 +7883,8 @@ But for now just install
 &lt;p class=&quot;continuing&quot;&gt;
 I'm assuming this means you can safely dump the whole &lt;samp class=&quot;path&quot;&gt;/dev/mmcblk0&lt;/samp&gt;? Which I had pause about, but clearly I oughtn't've'd.
 &lt;/p&gt;
-&lt;h4 id=&quot;installing-installing-linux-fixing-audio&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-fixing-audio&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio&quot;&gt;Fixing Audio &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;h5 id=&quot;installing-installing-linux-fixing-audio2&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-fixing-audio2&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1&quot;&gt;Fixing Audio &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4 id=&quot;installing-installing-linux-fixing-audio&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-fixing-audio&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio&quot;&gt;Fixing Audio &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h5 id=&quot;installing-installing-linux-fixing-audio2&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-installing-linux-fixing-audio2&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/installing-linux.html#fixing-audio-1&quot;&gt;Fixing Audio &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p class=&quot;continuing&quot;&gt;(yeah there'&lt;!--'--&gt;s two nested identical sexions)&lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
@@ -7943,20 +7943,20 @@ Section &quot;InputClass&quot;
 EndSection
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;installing-post-install&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html&quot;&gt;Post Install &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;installing-post-install&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html&quot;&gt;Post Install &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;dl class=&quot;continuing&quot;&gt;
-    &lt;div class=&quot;tipwarning tip&quot;&gt;&lt;dt class=&quot;smallcaps&quot;&gt;Tip&lt;/dt&gt;&lt;dd&gt;Install &lt;a href=&quot;//github.com/death7654/Chrultrabook-Controller/releases&quot;&gt;Chrultrabook Controller&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; for fan controls, keyboard backlight controls, system information and more.&lt;/dd&gt;&lt;/div&gt;
+    &lt;div class=&quot;tipwarning tip&quot;&gt;&lt;dt class=&quot;smallcaps&quot;&gt;Tip&lt;/dt&gt;&lt;dd&gt;Install &lt;a href=&quot;//github.com/death7654/Chrultrabook-Controller/releases&quot;&gt;Chrultrabook Controller&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; for fan controls, keyboard backlight controls, system information and more.&lt;/dd&gt;&lt;/div&gt;
   &lt;/dl&gt;
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 This machine has neither, and the &quot;system information&quot; in the screenshots appears to be the first three lines of dmesg.
 &lt;/p&gt;
-&lt;h4 id=&quot;installing-post-install-linux&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install-linux&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#linux&quot;&gt;Linux &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;h5 id=&quot;installing-post-install-linux-general-qol-fixes&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install-linux-general-qol-fixes&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#general-qol-fixes&quot;&gt;General QOL Fixes &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4 id=&quot;installing-post-install-linux&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install-linux&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#linux&quot;&gt;Linux &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h5 id=&quot;installing-post-install-linux-general-qol-fixes&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install-linux-general-qol-fixes&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#general-qol-fixes&quot;&gt;General QOL Fixes &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;ul style=&quot;padding-left: 1em;&quot;&gt;
-    &lt;li&gt;Run the &lt;a href=&quot;//github.com/WeirdTreeThing/chromebook-linux-audio&quot;&gt;audio script&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; if you haven'&lt;!--'--&gt;t already.&lt;/li&gt;
+    &lt;li&gt;Run the &lt;a href=&quot;//github.com/WeirdTreeThing/chromebook-linux-audio&quot;&gt;audio script&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; if you haven'&lt;!--'--&gt;t already.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
@@ -8542,7 +8542,7 @@ all without the &lt;a href=&quot;#installing-installing-linux-fixing-audio2&quot
 &lt;p id=&quot;installing-post-install-linux-general-qol-fixes-cros-keyboard-map&quot;&gt;&lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
   &lt;ul style=&quot;padding-left: 1em;&quot;&gt;
-    &lt;li&gt;Run the &lt;a href=&quot;//github.com/WeirdTreeThing/cros-keyboard-map&quot;&gt;cros-keyboard-map&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; script to remap top row FX keys.&lt;/li&gt;
+    &lt;li&gt;Run the &lt;a href=&quot;//github.com/WeirdTreeThing/cros-keyboard-map&quot;&gt;cros-keyboard-map&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; script to remap top row FX keys.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
@@ -9004,14 +9004,14 @@ The quirks file is nice though.
 Let's hope it's upstreamed before it breaks,
 like upstream &lt;a href=&quot;//wayland.freedesktop.org/libinput/doc/latest/device-quirks.html#device-quirks-local&quot;&gt;guarantees it will&lt;/a&gt;.
 &lt;/p&gt;
-&lt;h5 id=&quot;installing-post-install-linux-celes-post-install-workaround&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install-linux-celes-post-install-workaround&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#celes-post-install-workaround-1&quot;&gt;CELES Post Install Workaround &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;installing-post-install-linux-celes-post-install-workaround&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-post-install-linux-celes-post-install-workaround&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/post-install.html#celes-post-install-workaround-1&quot;&gt;CELES Post Install Workaround &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
 If you experience issues in applications such as Parsec, or […]
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 Okay but that'&lt;!--'--&gt;s &lt;em&gt;so&lt;/em&gt; true though?
 &lt;/p&gt;
-&lt;h3 id=&quot;installing-using-ectool&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-using-ectool&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/ectool.html&quot;&gt;Using Ectool &lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;installing-using-ectool&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#installing-using-ectool&quot;&gt;#&lt;/a&gt; &lt;a style=&quot;color: inherit; text-decoration: none;&quot; href=&quot;https://docs.chrultrabook.com/docs/installing/ectool.html&quot;&gt;Using Ectool &lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
 &lt;tt&gt;ectool&lt;/tt&gt; is a utility that is used to interface with the ChromeOS Embedded Controller.
 It is used to communicate with the embedded controller from userspace and vice versa.
@@ -10372,7 +10372,7 @@ but at that point you might as well just chroot after installing from the miniro
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;009. XEROX SIGMA 9 balls&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 I was quite taken by the &lt;span class=&quot;smallcaps&quot;&gt;xerox sigma 9&lt;/span&gt; tape decks, in particular the right one from
@@ -10504,7 +10504,7 @@ Anyway, glam shots.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Have been
@@ -11931,7 +11931,7 @@ x&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;nobody
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;dark-invert fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
@@ -13733,7 +13733,7 @@ is fair game for discussion over at &lt;code class=&quot;nowrap&quot; style=&quo
  &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book.rs/issues&quot;&gt;&lt;i class=&quot;icon-rust&quot; &gt;&lt;/i&gt;&lt;/a&gt;
  &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;&lt;i class=&quot;devicon-html5-plain&quot; &gt;&lt;/i&gt;&lt;/a&gt;.
 I'&lt;!--'--&gt;ve also set up a &lt;a href=&quot;https://github.com/nabijaczleweli/gen-epub-book/issues/1&quot;&gt;GitHub issue for simple questions and clarifications&lt;/a&gt;.
-If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;dark-invert far fa-envelope-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
+If you don'&lt;!--'--&gt;t have a GitHub account, you can &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot;&gt;shoot me an e-mail &lt;i class=&quot;far fa-envelope-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
 &lt;/p&gt;
 &lt;p id=&quot;discussion-hopes-paragraph&quot;&gt;
 I hope that these facilities will lead to good ideas for future improvements to &lt;code class=&quot;nowrap&quot; style=&quot;font-variant: normal;&quot;&gt;gen-epub-book​&lt;/code&gt;.
@@ -13901,7 +13901,7 @@ SOFTWARE.
 Thank you for making it this far.
 I hope that this document is clear and/or informative, if not,
  why don'&lt;!--'--&gt;t you pop into the &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues&quot; class=&quot;icon&quot;&gt;issues &lt;i class=&quot;devicon-html5-plain&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
- or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;dark-invert fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
+ or slide &lt;del&gt;into the DMs&lt;/del&gt; me an &lt;a href=&quot;mailto:nabijaczleweli@gmail.com&quot; class=&quot;icon&quot;&gt;e-mail &lt;i class=&quot;fa fa-envelope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;?
 &lt;/p&gt;
 &lt;/span&gt;&lt;/div&gt;
 </content>
