@@ -31,7 +31,7 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
 		<a href="blogn_t/018-mean-shift-clusterer.html">018. Mean-shift clustering;
-		<span style="white-space: nowrap;">Tue, 29 Apr 2025 16:32:56 +0200</span>
+		<span style="white-space: nowrap;">Tue, 29 Apr 2025 16:32:56 +0200</span></a>
 	</samp>
 </p>
 
