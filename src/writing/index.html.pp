@@ -24,7 +24,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                     <link href="the_taste_of_mi/MathJax-font.css" rel="stylesheet">       FORCED_NEWLINE \
                     <link href="Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
                     <link href="the_taste_of_mi/Merriweather-font.css" rel="stylesheet">
-BOILERPLATE(Written creative(?) things, Non-code things набꞌs written, en-GB, STYLESHEETS)
+BOILERPLATE(Prose, Prose, en-GB, STYLESHEETS)
 
 
 <style>
@@ -33,12 +33,30 @@ BOILERPLATE(Written creative(?) things, Non-code things набꞌs written, en-G
 <span class="roboto">
 
 
-MAIN_HEADING((Creative?) writing<span style="font-size: calc(4em/7);">(s)</span>)
+MAIN_HEADING(Prose)
 
 
-<p class="indented">
-No Warranties Provided™
+<p class="indented" style="margin-bottom: 0;">
+If it's not on <a href="/content/blogn_t">the blogue</a> and it's not a post,
+it's<!--'--> probably under the umbrella of <a href="//sr.ht/~nabijaczleweli/voreutils">voreutils</a>,
+which is my love letter to the UNIX userland or whatever,
+with a context preface of the current implementation and academia (literature review, historiosophic analysis) in HISTORY;
+most notably:
 </p>
+<ul style="padding-left: 1em;">
+	<li><a href="//ro.ws.co.ls/man1/stty.1.pdf#page=9">stty(1) — inspect and alter teletype and window attributes</a> —
+	    monograph about the UNIX teletype;
+	    MATH(9+72pg; 08–10.2022),</li>
+	<li><a href="//ro.ws.co.ls/man1/hostid.1.pdf">hostid(1) — get host ID</a> —
+	    this is a destruction of the host ID concept as it's<!--'--> ever been implemented;
+	    MATH(0+6pg; 15.06.2022),</li>
+	<li>and <a href="//ro.ws.co.ls">like 80 others</a> written MATH(2022–2025).</li>
+</ul>
+
+<p></p>
+
+<details>
+<summary>Not Good zone. Bad zone. Horrendous zone actually. We were all 15 once.</summary>
 
 <div>
 	<p></p>
@@ -94,6 +112,7 @@ No Warranties Provided™
 	</ul>
 	<p></p>
 </div>
+</details>
 
 
 </span>
