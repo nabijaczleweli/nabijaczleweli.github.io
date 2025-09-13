@@ -304,7 +304,7 @@ dl.keyboard {
 <div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>012b. Debian on the Lenovo 300e 2<sup>nd</sup>-gen MTK arm64 Chromebook (hana) (real)</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Wed, 07 Feb 2024 01:09:33 +0100</span></h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Wed, 07 Feb 2024 01:09:33 +0100</span>; updated <a href="update-2025-09-13">Sat, 13 Sep 2025 16:05:39 +0200</a></h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
@@ -3945,7 +3945,7 @@ make ARCH=arm64 olddefconfig </code></pre></li>
 <h3 id="functional-summary-dysfunctional" class="continued"><a class="hash-link" href="#functional-summary-dysfunctional">#</a> Dysfunxional</h3>
 <ul style="padding-left: 0;">
  <li>Audio: internal mic (it'<!--'-->s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)</li>
- <li><a href="#hdmi"><cite class="local-ref"><abbr title="Horny Demon Mangling Interface">HDMI</abbr></cite></a> (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal)</li>
+ <li><a href="#hdmi"><cite class="local-ref"><abbr title="Horny Demon Mangling Interface">HDMI</abbr></cite></a> (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal); <em id="update-2025-09-13">actually</em>: the <code>HDMI-1</code> output corresponds to the USB Type-C DisplayPort alt-mode, which works (at least the video does, haven't tried audio)! this implies to me that a valid driver for <samp>gpio-display-mux</samp> would probably fix this</li>
  <li>Tablet mode switch (which would disable the keyboard) doesn'<!--'-->t seem to exist</li>
  <li>Hibernation (loads image for a bit then blackscreens, no pstore)</li>
 </ul>
@@ -4013,9 +4013,9 @@ Buy <a href="//nabijaczleweli.bandcamp.com/album/fluorescent-heart">my album</a>
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19's<!--'--> C preprocessor on 10.09.2025 21:18:14 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 13.09.2025 14:09:37 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp">src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1566974">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1568997">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

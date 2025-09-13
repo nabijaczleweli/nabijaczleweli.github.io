@@ -2434,10 +2434,10 @@ Why?
 &lt;/div&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 (−1 if in userspace, 0 if in kernel, 1 if currently panicking).
-&lt;/div&gt;
+&lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 This clearly demonstrates that in V1 there is &lt;em&gt;no&lt;/em&gt; PID 0.
-The system runs with no process, then it runs as a syscall of PID 1, then it runs &lt;code&gt;execl(&quot;/etc/init&quot;, &quot;/etc/init&quot;, 0)&lt;/code&gt; in PID 1, then it'&lt;!--'--&gt;s normal,
+The system runs with no process, then it runs as a syscall of PID 1, then it runs &lt;code&gt;execl(&quot;/etc/init&quot;, &quot;/etc/init&quot;, 0)&lt;/code&gt; in PID 1, then it'&lt;!--'--&gt;s normal.
 &lt;/p&gt;
 &lt;blockquote class=&quot;u69 continued&quot; id=&quot;superblock installation&quot;&gt;
  &lt;a href=&quot;#superblock installation&quot;&gt;
@@ -2532,7 +2532,7 @@ with the equivalent of the modern &lt;var&gt;maj:min&lt;/var&gt; being just the 
 &lt;/blockquote&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 The second loop walks &lt;code&gt;idata&lt;/code&gt; to exhaustion, creating each given inode, copying the mode, link count, owner, and data.
-What could the format &lt;em&gt;possibly&lt;/em&gt; be? The uzhe, lest we forget that directories are just files with filenames inside:
+What could the format &lt;em&gt;possibly&lt;/em&gt; be? The uzh, lest we forget that directories are just files with filenames inside:
 &lt;/p&gt;
 &lt;blockquote class=&quot;u69 continuing&quot; id=&quot;idata&quot;&gt;
  &lt;a href=&quot;#idata&quot;&gt;
@@ -2654,7 +2654,7 @@ What could the format &lt;em&gt;possibly&lt;/em&gt; be? The uzhe, lest we forget
 &lt;!--&quot;--&gt;	.endif&lt;!--&quot;--&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-And the problem of including an &lt;samp&gt;/etc/init&lt;/samp&gt; which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image. (Admittedly, with a bit of a fucky &lt;code&gt;-8b+core&lt;/code&gt; addressing mode.) Dudes rock moment.
+And the problem of including an &lt;samp&gt;/etc/init&lt;/samp&gt; which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image (admittedly, with a bit of a fucky &lt;code&gt;-8b+core&lt;/code&gt; addressing mode):
 &lt;/p&gt;
 &lt;div class=&quot;codecontinued&quot;&gt;
 &lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// cf. modern brk(2); this allocates the entire 8kB:&lt;/span&gt;
@@ -2687,7 +2687,7 @@ tape &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=
 &lt;/div&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 Thus, knowing that DECtapes are block-addressed, we can deduce the tape has a 65-block header, then alternatingly blocks containing
-&lt;samp&gt;[size: 2B; mode: 1B; owner: 1B]&lt;/samp&gt;, and data to completion, ending in a file with &lt;samp&gt;size=0&lt;/samp&gt;.
+&lt;samp&gt;[size: 2B; mode: 1B; owner: 1B; name: NUL-terminated]&lt;/samp&gt;, and data to completion, ending in a file with &lt;samp&gt;size=0&lt;/samp&gt;.
 Boot procedures (VII) say this init &lt;q&gt;reads the DECtape for initialization files starting from block 33&lt;/q&gt;.
 It's unclear how one's supposed to reconcile this with the &lt;code&gt;65&lt;/code&gt;.
 &lt;/p&gt;
@@ -2811,7 +2811,7 @@ It'&lt;!--'--&gt;s most convenient to follow along with &lt;a href=&quot;//www.t
 &lt;/blockquote&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 This mirrors almost-verbatim what we saw in V1 setup, except we now have segmented memory
-(and thus &lt;code&gt;malloc()&lt;/code&gt;/&lt;code&gt;mfree()&lt;/code&gt;; also &lt;code&gt;printf()&lt;/code&gt; lol).
+(and thus &lt;code&gt;malloc()&lt;/code&gt;/&lt;code&gt;mfree()&lt;/code&gt;; also &lt;code&gt;printf()&lt;/code&gt;(!)).
 &lt;/p&gt;
 &lt;blockquote class=&quot;u69 continued&quot; id=&quot;nsys-main-prep&quot;&gt;
  &lt;a href=&quot;#nsys-main-prep&quot;&gt;
@@ -2958,7 +2958,7 @@ An OCR-only text file is also available.
 &lt;p class=&quot;indented continuing&quot;&gt;
 Well, the document says this documents &lt;samp&gt;&lt;q&gt;UNIX-11&lt;/q&gt;&lt;/samp&gt;, which is a mildly-redesigned port of &lt;samp&gt;&lt;q&gt;UNIX-7&lt;/q&gt;&lt;/samp&gt;. idk. it's the best I've got.
 It's also the first and only mention I've ever seen of R. H. Canaday'&lt;!--'--&gt;s involvement.
-But this document also contains my favourite lie (it'&lt;!--'--&gt;s honestly all gold, but):
+But this document also contains my favourite lie (it'&lt;!--'--&gt;s honestly all gold, but.):
 &lt;cite&gt;&lt;samp&gt;&lt;u&gt;5&lt;/u&gt;. &lt;u&gt;The&lt;/u&gt; &lt;u&gt;Shell&lt;/u&gt;, &lt;u&gt;5&lt;/u&gt;.&lt;u&gt;5&lt;/u&gt;. &lt;u&gt;Processes&lt;/u&gt; &lt;u&gt;and&lt;/u&gt; &lt;u&gt;forking&lt;/u&gt;&lt;/samp&gt;&lt;/cite&gt; (p. 18):
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
@@ -2978,7 +2978,7 @@ But this document also contains my favourite lie (it'&lt;!--'--&gt;s honestly al
 &lt;p class=&quot;continuing&quot;&gt;
 This
   (a) shows dmr'&lt;!--'--&gt;s hand, since he almost-outright says the first process is produced magically, but also
-  (b) is a delightful lie because this is, logically, what fork does, but:
+  (b) is a delightful fib because this is, logically, what fork does, but:
 &lt;cite&gt;&lt;samp&gt;&lt;u&gt;APPENDIX&lt;/u&gt; &lt;u&gt;1&lt;/u&gt;, &lt;u&gt;A1&lt;/u&gt;.&lt;u&gt;2&lt;/u&gt; &lt;u&gt;fork&lt;/u&gt;&lt;/samp&gt;&lt;/cite&gt; (p. A1-2; p. 37):
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
@@ -3142,7 +3142,7 @@ There are, of course, some fundamental issues with running a 30-year-old system:
  &lt;li&gt;KVM breaks it completely (not that it needs acceleration)&lt;/li&gt;
  &lt;li&gt;no SCSI, and the installation is multi-floppy, so &lt;span id=&quot;google&quot;&gt;google&lt;/span&gt; &quot;qemu monitor change floppy&quot; is in full effect&lt;/li&gt;
  &lt;li&gt;it needs a little bit of RAM (&lt;q&gt;at least four megabytes&lt;/q&gt;), but not too much; the &lt;span class=&quot;smallcaps&quot;&gt;qemu&lt;/span&gt; default of 128M &lt;em&gt;is&lt;/em&gt; too much&lt;/li&gt;
- &lt;li&gt;similarly for the disk – suppress the instinct of defaulting to 4G, and given that &lt;q&gt;a new disk partition of at least 40 megabytes&lt;/q&gt;, 128M works&lt;/li&gt;
+ &lt;li&gt;similarly for the disk – suppress the instinct of defaulting to 4G, and given &lt;q&gt;a new disk partition of at least 40 megabytes&lt;/q&gt;, 128M works&lt;/li&gt;
  &lt;li&gt;ACPI doesn'&lt;!--'--&gt;t exist yet. the system halts by halting&lt;/li&gt;
  &lt;li&gt;it will probably Just hang at one point;
      lynx will cause a kernel oops;
@@ -3278,7 +3278,7 @@ and, if you don'&lt;!--'--&gt;t disable coredumps, fills your disk.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012b. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen MTK arm64 Chromebook (hana) (real)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 07 Feb 2024 01:09:33 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 07 Feb 2024 01:09:33 +0100&lt;/span&gt;; updated &lt;a href=&quot;update-2025-09-13&quot;&gt;Sat, 13 Sep 2025 16:05:39 +0200&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -6919,7 +6919,7 @@ make ARCH=arm64 olddefconfig &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;h3 id=&quot;functional-summary-dysfunctional&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#functional-summary-dysfunctional&quot;&gt;#&lt;/a&gt; Dysfunxional&lt;/h3&gt;
 &lt;ul style=&quot;padding-left: 0;&quot;&gt;
  &lt;li&gt;Audio: internal mic (it'&lt;!--'--&gt;s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)&lt;/li&gt;
- &lt;li&gt;&lt;a href=&quot;#hdmi&quot;&gt;&lt;cite class=&quot;local-ref&quot;&gt;&lt;abbr title=&quot;Horny Demon Mangling Interface&quot;&gt;HDMI&lt;/abbr&gt;&lt;/cite&gt;&lt;/a&gt; (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal)&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;#hdmi&quot;&gt;&lt;cite class=&quot;local-ref&quot;&gt;&lt;abbr title=&quot;Horny Demon Mangling Interface&quot;&gt;HDMI&lt;/abbr&gt;&lt;/cite&gt;&lt;/a&gt; (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal); &lt;em id=&quot;update-2025-09-13&quot;&gt;actually&lt;/em&gt;: the &lt;code&gt;HDMI-1&lt;/code&gt; output corresponds to the USB Type-C DisplayPort alt-mode, which works (at least the video does, haven't tried audio)! this implies to me that a valid driver for &lt;samp&gt;gpio-display-mux&lt;/samp&gt; would probably fix this&lt;/li&gt;
  &lt;li&gt;Tablet mode switch (which would disable the keyboard) doesn'&lt;!--'--&gt;t seem to exist&lt;/li&gt;
  &lt;li&gt;Hibernation (loads image for a bit then blackscreens, no pstore)&lt;/li&gt;
 &lt;/ul&gt;

@@ -748,10 +748,10 @@ Why?
 </div>
 <p class="continuation">
 (−1 if in userspace, 0 if in kernel, 1 if currently panicking).
-</div>
+</p>
 <p class="indented continued">
 This clearly demonstrates that in V1 there is <em>no</em> PID 0.
-The system runs with no process, then it runs as a syscall of PID 1, then it runs <code>execl("/etc/init", "/etc/init", 0)</code> in PID 1, then it'<!--'-->s normal,
+The system runs with no process, then it runs as a syscall of PID 1, then it runs <code>execl("/etc/init", "/etc/init", 0)</code> in PID 1, then it'<!--'-->s normal.
 </p>
 <blockquote class="u69 continued" id="superblock installation">
  <a href="#superblock installation">
@@ -846,7 +846,7 @@ with the equivalent of the modern <var>maj:min</var> being just the i-node numbe
 </blockquote>
 <p class="indented continued">
 The second loop walks <code>idata</code> to exhaustion, creating each given inode, copying the mode, link count, owner, and data.
-What could the format <em>possibly</em> be? The uzhe, lest we forget that directories are just files with filenames inside:
+What could the format <em>possibly</em> be? The uzh, lest we forget that directories are just files with filenames inside:
 </p>
 <blockquote class="u69 continuing" id="idata">
  <a href="#idata">
@@ -968,7 +968,7 @@ What could the format <em>possibly</em> be? The uzhe, lest we forget that direct
 <!--"-->	.endif<!--"--></pre>
 </blockquote>
 <p class="continuing">
-And the problem of including an <samp>/etc/init</samp> which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image. (Admittedly, with a bit of a fucky <code>-8b+core</code> addressing mode.) Dudes rock moment.
+And the problem of including an <samp>/etc/init</samp> which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image (admittedly, with a bit of a fucky <code>-8b+core</code> addressing mode):
 </p>
 <div class="codecontinued">
 <pre class="language-c"><code class="language-c"><span class="token keyword">break</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><!--"-->           <!--"--><span class="token comment">// cf. modern brk(2); this allocates the entire 8kB:</span>
@@ -1001,7 +1001,7 @@ tape <span class="token operator">=</span> <span class="token function">open</sp
 </div>
 <p class="continuing">
 Thus, knowing that DECtapes are block-addressed, we can deduce the tape has a 65-block header, then alternatingly blocks containing
-<samp>[size: 2B; mode: 1B; owner: 1B]</samp>, and data to completion, ending in a file with <samp>size=0</samp>.
+<samp>[size: 2B; mode: 1B; owner: 1B; name: NUL-terminated]</samp>, and data to completion, ending in a file with <samp>size=0</samp>.
 Boot procedures (VII) say this init <q>reads the DECtape for initialization files starting from block 33</q>.
 It's unclear how one's supposed to reconcile this with the <code>65</code>.
 </p>
@@ -1125,7 +1125,7 @@ It'<!--'-->s most convenient to follow along with <a href="//www.tuhs.org/cgi-bi
 </blockquote>
 <p class="continuation">
 This mirrors almost-verbatim what we saw in V1 setup, except we now have segmented memory
-(and thus <code>malloc()</code>/<code>mfree()</code>; also <code>printf()</code> lol).
+(and thus <code>malloc()</code>/<code>mfree()</code>; also <code>printf()</code>(!)).
 </p>
 <blockquote class="u69 continued" id="nsys-main-prep">
  <a href="#nsys-main-prep">
@@ -1272,7 +1272,7 @@ An OCR-only text file is also available.
 <p class="indented continuing">
 Well, the document says this documents <samp><q>UNIX-11</q></samp>, which is a mildly-redesigned port of <samp><q>UNIX-7</q></samp>. idk. it's the best I've got.
 It's also the first and only mention I've ever seen of R. H. Canaday'<!--'-->s involvement.
-But this document also contains my favourite lie (it'<!--'-->s honestly all gold, but):
+But this document also contains my favourite lie (it'<!--'-->s honestly all gold, but.):
 <cite><samp><u>5</u>. <u>The</u> <u>Shell</u>, <u>5</u>.<u>5</u>. <u>Processes</u> <u>and</u> <u>forking</u></samp></cite> (p. 18):
 </p>
 <blockquote class="continuing">
@@ -1292,7 +1292,7 @@ But this document also contains my favourite lie (it'<!--'-->s honestly all gold
 <p class="continuing">
 This
   (a) shows dmr'<!--'-->s hand, since he almost-outright says the first process is produced magically, but also
-  (b) is a delightful lie because this is, logically, what fork does, but:
+  (b) is a delightful fib because this is, logically, what fork does, but:
 <cite><samp><u>APPENDIX</u> <u>1</u>, <u>A1</u>.<u>2</u> <u>fork</u></samp></cite> (p. A1-2; p. 37):
 </p>
 <blockquote class="continuing">
@@ -1435,9 +1435,9 @@ This is as an open-coded sys exec (II).
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19's<!--'--> C preprocessor on 10.09.2025 21:18:14 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 13.09.2025 14:09:37 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1566974">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1568997">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
