@@ -79,7 +79,7 @@ There are, of course, some fundamental issues with running a 30-year-old system:
 	<li>KVM breaks it completely (not that it needs acceleration)</li>
 	<li>no SCSI, and the installation is multi-floppy, so <span id="google">google</span> "qemu monitor change floppy" is in full effect</li>
 	<li>it needs a little bit of RAM (<q>at least four megabytes</q>), but not too much; the Tn(qemu) default of 128M <em>is</em> too much</li>
-	<li>similarly for the disk – suppress the instinct of defaulting to 4G, and given that <q>a new disk partition of at least 40 megabytes</q>, 128M works</li>
+	<li>similarly for the disk – suppress the instinct of defaulting to 4G, and given <q>a new disk partition of at least 40 megabytes</q>, 128M works</li>
 	<li>ACPI doesn'<!--'-->t exist yet. the system halts by halting</li>
 	<li>it will probably Just hang at one point;
 	    lynx will cause a kernel oops;

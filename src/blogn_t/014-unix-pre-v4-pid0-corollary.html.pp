@@ -689,11 +689,11 @@ CMT(<!--"-->	(rest of syscall handling)<!--"-->)\
 </div>
 <p class="continuation">
 (−1 if in userspace, 0 if in kernel, 1 if currently panicking).
-</div>
+</p>
 
 <p class="indented continued">
 This clearly demonstrates that in V1 there is <em>no</em> PID 0.
-The system runs with no process, then it runs as a syscall of PID 1, then it runs <code>execl("/etc/init", "/etc/init", 0)</code> in PID 1, then it'<!--'-->s normal,
+The system runs with no process, then it runs as a syscall of PID 1, then it runs <code>execl("/etc/init", "/etc/init", 0)</code> in PID 1, then it'<!--'-->s normal.
 </p>
 
 <blockquote class="u69 continued" id="superblock installation">
@@ -795,7 +795,7 @@ CMT((this repeats for writes identically, but directories error))\
 
 <p class="indented continued">
 The second loop walks <code>idata</code> to exhaustion, creating each given inode, copying the mode, link count, owner, and data.
-What could the format <em>possibly</em> be? The uzhe, lest we forget that directories are just files with filenames inside:
+What could the format <em>possibly</em> be? The uzh, lest we forget that directories are just files with filenames inside:
 </p>
 <blockquote class="u69 continuing" id="idata">
 	<a href="#idata">
@@ -919,14 +919,14 @@ CMT(…)
 </pre>
 </blockquote>
 <p class="continuing">
-And the problem of including an <samp>/etc/init</samp> which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image. (Admittedly, with a bit of a fucky <code>-8b+core</code> addressing mode.) Dudes rock moment.
+And the problem of including an <samp>/etc/init</samp> which we inevitably execute is solved by using the kernel assembler to compile it directly into the faux filesystem image (admittedly, with a bit of a fucky <code>-8b+core</code> addressing mode):
 </p>
 <div class="codecontinued">
 #include "blogn_t/014.04-idata.c.html"
 </div>
 <p class="continuing">
 Thus, knowing that DECtapes are block-addressed, we can deduce the tape has a 65-block header, then alternatingly blocks containing
-<samp>[size: 2B; mode: 1B; owner: 1B]</samp>, and data to completion, ending in a file with <samp>size=0</samp>.
+<samp>[size: 2B; mode: 1B; owner: 1B; name: NUL-terminated]</samp>, and data to completion, ending in a file with <samp>size=0</samp>.
 Boot procedures (VII) say this init <q>reads the DECtape for initialization files starting from block 33</q>.
 It's unclear how one's supposed to reconcile this with the <code>65</code>.
 </p>
@@ -1059,7 +1059,7 @@ CMT(…)
 </blockquote>
 <p class="continuation">
 This mirrors almost-verbatim what we saw in V1 setup, except we now have segmented memory
-(and thus <code>malloc()</code>/<code>mfree()</code>; also <code>printf()</code> lol).
+(and thus <code>malloc()</code>/<code>mfree()</code>; also <code>printf()</code>(!)).
 </p>
 
 <blockquote class="u69 continued" id="nsys-main-prep">
@@ -1225,7 +1225,7 @@ An OCR-only text file is also available.
 <p class="indented continuing">
 Well, the document says this documents <samp><q>UNIX-11</q></samp>, which is a mildly-redesigned port of <samp><q>UNIX-7</q></samp>. idk. it's the best I've got.
 It's also the first and only mention I've ever seen of R. H. Canaday'<!--'-->s involvement.
-But this document also contains my favourite lie (it'<!--'-->s honestly all gold, but):
+But this document also contains my favourite lie (it'<!--'-->s honestly all gold, but.):
 <cite><samp><u>5</u>. <u>The</u> <u>Shell</u>, <u>5</u>.<u>5</u>. <u>Processes</u> <u>and</u> <u>forking</u></samp></cite> (p. 18):
 </p>
 <blockquote class="continuing">
@@ -1247,7 +1247,7 @@ processid = fork(label)\
 <p class="continuing">
 This
   (a) shows dmr'<!--'-->s hand, since he almost-outright says the first process is produced magically, but also
-  (b) is a delightful lie because this is, logically, what fork does, but:
+  (b) is a delightful fib because this is, logically, what fork does, but:
 <cite><samp><u>APPENDIX</u> <u>1</u>, <u>A1</u>.<u>2</u> <u>fork</u></samp></cite> (p. A1-2; p. 37):
 </p>
 <blockquote class="continuing">
