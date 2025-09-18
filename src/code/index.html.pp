@@ -102,7 +102,7 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
 </ul>
 <br />
 
-<a href="//sr.ht/~nabijaczleweli/ossp">I'm the new upstream for all OSSP software</a>, and I've thawed out the following:
+<a href="//sr.ht/~nabijaczleweli/ossp">I'm the new upstream for OSSP software</a>, and I've thawed out the following:
 <ul>
 	GITSRHT_SET(ossp-uuid, MFIZZ(c)MFIZZ(perl),
 	            OSSP uuid - Universally Unique Identifier (DCE 1.1, ISO/IEC 11578, RFC 4122 — C/Perl5/PHP[45]/C++ APIs & program))
@@ -145,7 +145,7 @@ Select programs:
 <br />
 
 LWN wrote about me once in the December 5, 2022 issue in <em><a href="//lwn.net/Articles/915163/">Losing the magic</a></em>.<br />
-<br />
+<br id="WG14" />
 
 #define PAPER(num, patchlevel, ...) <a href=STR(httpsCOLON_SLASH_SLASHra.ws.co.ls/~nabijaczleweli/wg14/blob/output/n##num.pdf)>\
                                       <li value=num style=STR(list-style: wg14##patchlevel;)>__VA_ARGS__</li>\

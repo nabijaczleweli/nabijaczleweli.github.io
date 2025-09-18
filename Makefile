@@ -29,7 +29,7 @@ else
 endif
 
 # Args: $<, $@, additional defines
-preprocess_file = $(CPP) $(1) -pipe -nostdinc -Wno-trigraphs -Wno-unicode-homoglyph -I$(abspath $(BLDDIR)/highlit) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re 's/\(U\+200B\)/​/g' -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/HASH/\#/g" -e "s/\(FORCED_SPACER\)//g" -e "s/[[:space:]]+$$//g" -e 's;"JOB_URL";"$(JOB_URL)";' -e 's/\$$101010\.pl/101010.pl/g' > $(2)
+preprocess_file = $(CPP) $(1) -pipe -nostdinc -Wno-trigraphs -Wno-unicode-homoglyph $(foreach l,highlit generated,-I$(abspath $(BLDDIR)/$(l))) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re 's/\(U\+200B\)/​/g' -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/HASH/\#/g" -e "s/\(FORCED_SPACER\)//g" -e "s/[[:space:]]+$$//g" -e 's;"JOB_URL";"$(JOB_URL)";' -e 's/\$$101010\.pl/101010.pl/g' > $(2)
 
 TR := tr
 AWK := awk
@@ -49,11 +49,12 @@ BOOK_SOURCES := $(sort $(wildcard src/*.epupp src/**/*.epupp src/**/**/*.epupp s
 HIGHLIGHT_SOURCES := $(sort $(wildcard src/*.hlpp src/**/*.hlpp src/**/**/*.hlpp src/**/**/**/*.hlpp src/**/**/**/**/*.hlpp src/**/**/**/**/*.hlpp))
 HAND_HIGHLIT_SOURCES := $(sort $(wildcard src/*.hlhpp src/**/*.hlhpp src/**/**/*.hlhpp src/**/**/**/*.hlhpp src/**/**/**/**/*.hlhpp src/**/**/**/**/*.hlhpp))
 ASSETS := $(sort $(wildcard LICENSE-*)) $(sort $(wildcard assets/*.* assets/**/*.* assets/**/**/*.* assets/**/**/**/*.* assets/**/**/**/**/*.* assets/**/**/**/**/**/*.*))
+GENERATORS := $(sort $(wildcard src/*!*.awk src/**/*!*.awk src/**/**/*!*.awk src/**/**/**/*!*.awk src/**/**/**/**/*!*.awk src/**/**/**/**/*!*.awk))
 
-.PHONY : all clean assets octicons highlight preprocess books rss
+.PHONY : all clean assets octicons highlight generate preprocess books rss
 
 
-all : assets octicons highlight preprocess books rss
+all : assets octicons highlight generate preprocess books rss
 
 clean :
 	rm -rf $(OUTDIR) $(BLDDIR)
@@ -61,6 +62,7 @@ clean :
 assets : $(patsubst %,$(OUTDIR)%,$(ASSETS))
 octicons : ext/octicons/package.json $(OUTDIR)assets/LICENSE-octicons $(OUTDIR)assets/octicons/sprite.octicons.svg $(OUTDIR)assets/octicons/octicons.min.css
 highlight : $(BLDDIR)highlit/.stamp ext/prism/prism.js $(OUTDIR)assets/prism-twilight.min.css $(OUTDIR)assets/LICENSE-prism
+generate : $(patsubst src/%.awk,$(BLDDIR)generated/%.html,$(GENERATORS))
 preprocess : $(patsubst src/%.pp,$(OUTDIR)%,$(PREPROCESS_SOURCES)) $(patsubst src/%.eppe,$(BLDDIR)out/%,$(EBOOK_PREPROCESS_SOURCES)) $(foreach l,$(patsubst src/%.epp,%,$(COMBINED_PREPROCESS_SOURCES)),$(OUTDIR)$(l) $(BLDDIR)out/$(l))
 books : $(foreach l,$(patsubst src/%.epupp,%,$(BOOK_SOURCES)),$(foreach m,epub mobi azw3 pdf,$(OUTDIR)$(l).$(m)))
 rss : $(OUTDIR)feed.xml
@@ -111,6 +113,10 @@ $(OUTDIR)% : src/%.epp
 $(BLDDIR)highlit/.stamp : highlight.js $(HIGHLIGHT_SOURCES) $(HAND_HIGHLIT_SOURCES)
 	@mkdir -p $(dir $@)
 	$(NODE) $< $@ : $(filter-out $<,$^) : $(patsubst src/%.hlpp,$(BLDDIR)highlit/%.html,$(HIGHLIGHT_SOURCES)) $(patsubst src/%.hlhpp,$(BLDDIR)highlit/%.html,$(HAND_HIGHLIT_SOURCES))
+
+$(BLDDIR)generated/%.html : src/%.awk src/%
+	@mkdir -p $(dir $@)
+	$(AWK) -f $^ > $@
 
 $(BLDDIR)out/% : src/%.epp
 	@mkdir -p $(dir $@)

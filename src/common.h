@@ -80,7 +80,7 @@
 
 #define BOILERPLATE(pagename, description, language, ...)                               \
 <!DOCTYPE html>                                                          FORCED_NEWLINE \
-<html lang=STR(language)>                                                FORCED_NEWLINE \
+<html lang=language>                                                     FORCED_NEWLINE \
   <head>                                                                 FORCED_NEWLINE \
     <meta charset="utf-8">                                               FORCED_NEWLINE \
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">                FORCED_NEWLINE \
