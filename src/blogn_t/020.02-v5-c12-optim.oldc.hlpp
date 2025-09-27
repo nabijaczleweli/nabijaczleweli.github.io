@@ -1,0 +1,64 @@
+optim(atree)
+struct tnode *atree;
+{
+#SMALL_START#
+	// ...
+#SMALL_END#
+	dope = opdope[op];
+	if ((dope&LEAF) != 0)
+		return(tree);
+	if ((dope&BINARY) == 0)
+		return(unoptim(tree));
+	/* is known to be binary */
+	if ((dope&COMMUTE)!=0) {
+	acomm:	d1 = tree->type;
+		tree = acommute(tree);
+		tree->type = d1;
+		return(tree);
+	}
+#SMALL_START#
+	// ...
+#SMALL_END#
+}
+
+acommute(atree)
+{
+#SMALL_START#
+	// ...
+#SMALL_END#
+	flt = isfloat(tree);
+#SMALL_START#
+	// ...
+#SMALL_END#
+	if (!flt) {
+		/* put constants together */
+		for (i=acl.nextl;i>0&&t2[0]->op==CON&&t2[-1]->op==CON;i--) {
+			acl.nextl--;
+			t2--;
+			const(op, &t2[0]->value, t2[1]->value);
+		}
+	}
+	if (op==PLUS) {
+		/* toss out "+0" */
+		if (acl.nextl>0 && ((*t2)->op==CON || (*t2)->op==SFCON)
+		 && (*t2)->value==0) {
+			acl.nextl--;
+			t2--;
+		}
+		if (acl.nextl <= 0)
+			return(*t2);
+		/* subsume constant in "&x+c" */
+		if (t2[0]->op==CON && t2[-1]->op==AMPER) {
+			t2--;
+			t2[0]->tr1->offset =+ t2[1]->value;
+			acl.nextl--;
+		}
+	} else if (op==TIMES) {
+#SMALL_START#
+		// ...
+#SMALL_END#
+	}
+#SMALL_START#
+	// ...
+#SMALL_END#
+}

@@ -1,0 +1,55 @@
+const(op, vp, av)
+int *vp;
+{
+#SMALL_START#
+	register int v;
+
+	v = av;
+#SMALL_END#
+	switch (op) {
+#SMALL_START#
+
+	case PLUS:
+		*vp =+ v;
+		return;
+
+	case TIMES:
+		*vp =* v;
+		return;
+
+	case AND:
+		*vp =& v;
+		return;
+
+	case OR:
+		*vp =| v;
+		return;
+
+	case EXOR:
+		*vp =^ v;
+		return;
+
+#SMALL_END#
+	case DIVIDE:
+	case MOD:
+		if (v==0)
+			error("Divide check");
+		else
+			if (op==DIVIDE)
+				*vp =/ v;
+			else
+				*vp =% v;
+		return;
+#SMALL_START#
+
+	case RSHIFT:
+		*vp =>> v;
+		return;
+
+	case LSHIFT:
+		*vp =<< v;
+		return;
+#SMALL_END#
+	}
+	error("C error: const");
+}

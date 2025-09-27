@@ -24,7 +24,16 @@ const fs = require("fs");
 const Prism = require("./ext/prism/prism.js");
 Prism.loadLanguages = require('./ext/prism/components/');
 
-const LANGUAGE_REMAPS = {js: "javascript", sh: "bash", Makefile: "makefile", rs: "rust"};
+const PATCHES         = {  // matched before remaps!
+	// https://github.com/PrismJS/prism/pull/3881
+	"hlsl": function(s) {
+		return s.replace(/<span class="token directive-hash">#<\/span><span class="token directive keyword">/g, '<span class="token directive keyword">#');
+	},
+	"oldc": function(s) {
+		return s.replace(/<span class="token keyword">const<\/span>/g, '<span class="token function">const</span>');
+	},
+};
+const LANGUAGE_REMAPS = {js: "javascript", sh: "bash", Makefile: "makefile", rs: "rust", mk: "makefile", oldc: "c"};
 const LANGUAGES       = {
 	plaintext: {},
 	// Based on https://github.com/JohnNilsson/awk-sublime/blob/1ce5f90d444d80b12af41bc051507e914730d4ef/AWK.sublime-syntax
@@ -99,11 +108,12 @@ for(let i = 0; i != inputs.length; ++i) {
 	let [_, language, nohighlight] = in_file.match(/.*\.([^.]+)\.([^.]+)$/);
 	nohighlight = nohighlight == "hlhpp";
 
+	let patch = PATCHES[language] || function(s) { return s; };
 	language = LANGUAGE_REMAPS[language] || language;
 	if(!nohighlight)
 		languages.add(language);
 
-	files.push(fs.promises.readFile(in_file, {encoding: "utf8"}).then(p => [p, out_file, language, nohighlight]));
+	files.push(fs.promises.readFile(in_file, {encoding: "utf8"}).then(p => [p, out_file, language, nohighlight, patch]));
 }
 
 for(let language of languages) {
@@ -130,7 +140,7 @@ for(let language of languages) {
 async function main() { // need to be able to await
 	let madedirs = {};
 	let la = await Promise.all(files.map(f => f.then(async bundle => {
-		let [content, out_file, language, nohighlight] = bundle;
+		let [content, out_file, language, nohighlight, patch] = bundle;
 		// console.log(out_file, ":", language);
 
 		const highlit = nohighlight ? content : Prism.highlight(content, Prism.languages[language], language);
@@ -143,12 +153,6 @@ async function main() { // need to be able to await
 		}
 		const out = fs.createWriteStream(out_file);
 		out.write(`<pre class="language-${language}"><code class="language-${language}">`);
-		// https://github.com/PrismJS/prism/pull/3881
-		function patch(s) {
-			if(language == "hlsl")
-				s = s.replace(/<span class="token directive-hash">#<\/span><span class="token directive keyword">/g, '<span class="token directive keyword">#');
-			return s;
-		}
 		out.write(patch(highlit)
 			               .replace(/'/g,           "'<!--'-->")
 			               .replace(/^.*#.*SMALL_START.*#.*\n/gm, "<small style='display: block; line-height: initial;'>").replace(/^.*#.*SMALL_END.*#.*\n/gm, "</small>")

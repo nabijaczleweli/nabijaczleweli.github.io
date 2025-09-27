@@ -91,6 +91,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 	 POST(017-malloc0,                             Thu, 17 Oct 2024 03:42:06 +0200, 017. malloc(0) & realloc(…，0) ≠ 0)
 	 POST(018-mean-shift-clusterer,                Tue, 29 Apr 2025 16:32:56 +0200, 018. Mean-shift clustering)
 	 POST(019-aphantasia,                          Thu, 18 Sep 2025 18:34:15 +0200, 019. aphantasia.)
+	 POST(020-sizeof-division,                     Sun, 28 Sep 2025 01:02:48 +0200, 020. Pre-modern-UNIX sizeof division)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

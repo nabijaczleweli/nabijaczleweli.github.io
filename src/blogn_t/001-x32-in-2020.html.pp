@@ -127,7 +127,7 @@ In (reverse-)chronological order: a disklabel, a bootloader, an initramfs (gener
 My target disklabel is a standard GPT-on-BIOS setup with a separate <code>/boot</code>
 (this helps by allowing the use of partlabels throughout, since <kbd>SZAROTKA-BOOT</kbd> is longer than the <code>vfat</code> maximum of 11):
 <div class="bigcode">
-#include "blogn_t/001-disklabel.shell-session.html"
+#include "blogn_t/001.01-disklabel.shell-session.html"
 </div>
 </p>
 

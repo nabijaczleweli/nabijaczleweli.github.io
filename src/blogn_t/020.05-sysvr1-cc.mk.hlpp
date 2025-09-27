@@ -1,0 +1,19 @@
+#       The directory structure (global multi-machine view) assumed is:
+#
+#                       /cpp --- cpp.mk
+#                       /
+#                      /     /c2 --- c2.mk      (only for vax)
+#                     /       /
+#                    /       /  /cc --- cc.mk   (Ritchie's pdp11 C compiler)
+#                   /       /   /
+#       /usr/src/cmd --- /cc ------- cc.mk      (this makefile)
+#                           \   \
+#                            \  cc.c
+#                             \      /mip
+#                              \      /
+#                               \    /   /vax --- pcc.mk
+#                                \  /    /
+#                               /pcc ------- pcc.mk
+#                                   \
+#                                    \
+#                                   /pdp11 --- pcc.mk

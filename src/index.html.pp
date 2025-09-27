@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/019-aphantasia.html">019. aphantasia.;
-		<span style="white-space: nowrap;">Thu, 18 Sep 2025 18:34:15 +0200</span></a>
+		<a href="blogn_t/020-sizeof-division.html">020. Pre-modern-UNIX sizeof division;
+		<span style="white-space: nowrap;">Sun, 28 Sep 2025 01:02:48 +0200</span></a>
 	</samp>
 </p>
 

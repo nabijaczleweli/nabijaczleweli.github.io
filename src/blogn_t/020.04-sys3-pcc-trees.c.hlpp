@@ -1,0 +1,66 @@
+NODE *
+buildtree( o, l, r ) register NODE *l, *r; {
+#SMALL_START#
+	// ...
+#SMALL_END#
+	opty = optype(o);
+
+	/* check for constants */
+
+	if( opty == UTYPE && l->in.op == ICON ){
+#SMALL_START#
+		// ...
+#SMALL_END#
+	else if( o==UNARY MINUS && l->in.op==FCON ){
+#SMALL_START#
+		// ...
+#SMALL_END#
+	else if( o==QUEST && l->in.op==ICON ) {
+#SMALL_START#
+		// ...
+#SMALL_END#
+	else if( (o==ANDAND || o==OROR) && (l->in.op==ICON||r->in.op==ICON) ) goto ccwarn;
+#SMALL_START#
+
+#SMALL_END#
+	else if( opty == BITYPE && l->in.op == ICON && r->in.op == ICON ){
+#SMALL_START#
+		// ...
+#SMALL_END#
+		}
+
+	else if( opty == BITYPE && (l->in.op==FCON||l->in.op==ICON) &&
+		(r->in.op==FCON||r->in.op==ICON) ){
+		switch(o){
+		case PLUS:
+		case MINUS:
+		case MUL:
+		case DIV:
+			// ...
+			switch(o){
+#SMALL_START#
+			case PLUS:
+				l->fpn.dval += r->fpn.dval;
+				return(l);
+			case MINUS:
+				l->fpn.dval -= r->fpn.dval;
+				return(l);
+			case MUL:
+				l->fpn.dval *= r->fpn.dval;
+				return(l);
+#SMALL_END#
+			case DIV:
+				if( r->fpn.dval == 0 ) uerror( "division by 0." );
+				else l->fpn.dval /= r->fpn.dval;
+				return(l);
+				}
+			}
+		}
+
+	/* its real; we must make a new node */
+
+	p = block( o, l, r, INT, 0, INT );
+
+	// ...
+
+	}
