@@ -12,10 +12,533 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2025-09-18T18:34:15+02:00</updated>
+<updated>2025-09-28T01:02:48+02:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/020-sizeof-division.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/020-sizeof-division.html" />
+    <title> 020. Pre-modern-UNIX sizeof division — blognꞌt — nabijaczleweli </title>
+    <updated>2025-09-28T01:02:48+02:00</updated>
+    <content type="html">
+&lt;div class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;020. Pre-modern-UNIX sizeof division&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#v1'&gt;&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf&quot;&gt;UNIX Programmer'&lt;!--'--&gt;s Manual&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v2'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/v2man.pdf#page=39&quot;&gt;Second Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#prestruct-c'&gt;&lt;a href=&quot;//web.archive.org/web/20080419002944/http://cm.bell-labs.com/cm/cs/who/dmr/primevalC.html&quot;&gt;prestruct-c&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v5'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=36&quot;&gt;Fifth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#rest'&gt;&amp;c.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#conclusion'&gt;conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/details&gt;&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Similarly to &lt;a href=&quot;017-malloc0.html&quot;&gt;previous&lt;/a&gt;, &lt;a href=&quot;https://www.alejandro-colomar.es:80&quot;&gt;acolomar&lt;/a&gt; writ:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuation&quot;&gt;
+I've&lt;!--'--&gt; been wondering why the _Countof() operator was not implemented back in the times of K&amp;R.
+That was information certainly available in the compiler, and division was quite expensive, so you wouldn't&lt;!--'--&gt; want to perform a run-time division of sizeof.
+[…] what does cc(1) produce for a sizeof division?
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;v1&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v1&quot;&gt;#&lt;/a&gt; &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf&quot;&gt;UNIX Programmer'&lt;!--'--&gt;s Manual&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+doesn't&lt;!--'--&gt; have C.
+&lt;/p&gt;
+&lt;h2 id=&quot;v2&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v2&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/v2man.pdf#page=39&quot;&gt;Second Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+does, and we can observe it directly:
+the distributors of
+&lt;a href=&quot;//code.google.com/archive/p/unix-jun72/&quot;&gt;unix&lt;/a&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/svntree-20081216.tar.gz&quot;&gt;72&lt;/a&gt;,
+which is for most effects and purposes a V1 system,
+include the &quot;last1120c&quot; cc, which, accd'g&lt;!--'--&gt; to
+&lt;cite&gt;dmr, &lt;a href=&quot;//web.archive.org/web/20080419002944/http://cm.bell-labs.com/cm/cs/who/dmr/primevalC.html&quot;&gt;Very early C compilers and language&lt;/a&gt;&lt;/cite&gt;
+(or, more tellingly, &lt;code&gt;primevalC.html&lt;/code&gt;)
+&lt;q&gt;is a saved copy of the compiler preserved just as we were abandoning the PDP-11/20&lt;/q&gt;
+which puts it in the V2 era. Thus:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ &lt;kbd&gt;pdp11 simh.cfg&lt;/kbd&gt;
+PDP-11 simulator V3.8-1
+Disabling CR
+Disabling XQ
+RF: buffering file in memory
+TC0: 16b format, buffering file in memory
+:login: &lt;kbd&gt;root&lt;/kbd&gt;
+root
+# &lt;kbd&gt;chdir /tmp&lt;/kbd&gt;
+# &lt;kbd&gt;cat &gt;a.c
+int gaming[20];
+size() { return sizeof(gaming) / &lt;del&gt;4#&lt;/del&gt;2; }&lt;/kbd&gt;
+# &lt;kbd&gt;cc -c a.c&lt;/kbd&gt;
+1: External definition syntax
+1: _gaming undefined
+2: Statement syntax
+2: _sizeof undefined
+2: _gaming undefined
+I
+II&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Primeval is right!
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# &lt;kbd&gt;cat &gt;a.c
+gaming[20];
+size() { return 012345; }&lt;/kbd&gt;
+# &lt;kbd&gt;cc -c a.c&lt;/kbd&gt;
+2: Statement syntax
+I
+II&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+So there &lt;em&gt;is&lt;/em&gt; a reason the &lt;code&gt;return ()&lt;/code&gt; style persists!
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# &lt;kbd&gt;ed a.c&lt;/kbd&gt;
+38
+&lt;kbd&gt;s/012345/(&amp;)/&lt;/kbd&gt;
+&lt;kbd&gt;w&lt;/kbd&gt;
+40
+# &lt;kbd&gt;cc -c a.c&lt;/kbd&gt;
+I
+II
+# &lt;kbd&gt;ls -l a.o&lt;/kbd&gt;
+&lt;!--&quot;--&gt;total    1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;134 s-rwrw  1 root     92 Jan  1 00:00:00 a.o&lt;!--&quot;--&gt;
+# &lt;kbd&gt;od a.o&lt;/kbd&gt;
+&lt;!--&quot;--&gt;00000  00407  00020  00004  00050  00044  00000  00000  00000&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;00020  10546  10605  12700  &lt;strong&gt;12345&lt;/strong&gt;  00167 -77764  00167 -77760&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;00040  40024  40000  00000  00000  00000  00000  00000  00051&lt;!--&quot;--&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+(I am sparing you from the rest of the object file
+ and &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=75&quot;&gt;the remaining 420 bytes of this output&lt;/a&gt;;
+ do note, however, how this signed output style is &lt;a href=&quot;//ro.ws.co.ls/man1/od.1.pdf&quot;&gt;not available&lt;/a&gt; in present-day od).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+With our epistemic method honed, we can attack the problem directly by spelling &lt;code&gt;return 1783;&lt;/code&gt; as
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# &lt;kbd&gt;cat &gt;b.c
+size() { return(012345 / 3); }&lt;/kbd&gt;
+# &lt;kbd&gt;cc -c b.c&lt;/kbd&gt;
+I
+II
+# &lt;kbd&gt;ls -l b.o&lt;/kbd&gt;
+&lt;!--&quot;--&gt;total    1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;133 s-rwrw  1 root     92 Jan  1 00:00:00 b.o&lt;!--&quot;--&gt;
+# &lt;kbd&gt;od b.o&lt;/kbd&gt;
+&lt;!--&quot;--&gt;00000  00407  00030  00002  00000  00030  00000  00000  00000&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;00020  10546  10605  12714  &lt;strong&gt;12345&lt;/strong&gt;  12767  &lt;strong&gt;00003&lt;/strong&gt; -37262  11400&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;00040  00167 -77754  00167 -77750  40000  00000  00000  00000&lt;!--&quot;--&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+shocking no-one, this is clearly a run-time division.
+The source doesn't&lt;!--'--&gt; even contain anything close to an optimiser that I could find.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;q&gt;A PDP-11 disassembler exists.&lt;/q&gt; — good news if we are to dead-confirm this —
+but I don't&lt;!--'--&gt; think ken would appreciate it if I were to &lt;q&gt;Contact the author for more information.&lt;/q&gt;.
+(I have, in fact, just quoted the &lt;em&gt;entire&lt;/em&gt; das (VI) manual from
+ &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=184&quot;&gt;V1&lt;/a&gt;,
+ &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/v2man.pdf#page=239&quot;&gt;V2&lt;/a&gt;,
+ and
+ &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/v3man.tar.gz&quot;&gt;V3&lt;/a&gt; (&lt;samp&gt;./manx/das.6&lt;/samp&gt;)
+ (it goes away in &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/v4man.tar.gz&quot;&gt;V4&lt;/a&gt;).)
+It's&lt;!--'--&gt; also not part of unix72 or any dump.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+But others must exist, and indeed &lt;a href=&quot;//rawcdn.githack.com/caldwell/pdp11dasm/refs/heads/master/pdp11dasm.html&quot;&gt;pdp11dasm&lt;/a&gt;
+(from a &lt;a href=&quot;//github.com/caldwell/pdp11dasm&quot;&gt;re-re-re-host&lt;/a&gt;, as is tradition) works, yielding
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;!--&quot;--&gt;000020: 010546                  mov     r5,-(r6)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000022: 010605                  mov     r6,r5&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000024: 012714 012345           mov     &lt;strong&gt;#12345&lt;/strong&gt;,(r4)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000030: 012767 000003 140516    mov     &lt;strong&gt;#3&lt;/strong&gt;,140554&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000036: 011400                  mov     (r4),r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000040: 000167 100024           jmp     100070&lt;!--&quot;--&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+after &lt;a href=&quot;/content/assets/blogn_t/020.01-deworm.c&quot;&gt;deworming&lt;/a&gt; + truncating the od output and &lt;code&gt;echo d 0+20 &gt; b.o.ctl&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+God knows &lt;em&gt;how&lt;/em&gt; the jump achieves division, but it obviously does.
+V2 verdict: no &lt;code&gt;sizeof&lt;/code&gt;, no &lt;samp&gt;int/int&lt;/samp&gt; folding.
+&lt;/p&gt;
+&lt;h2 id=&quot;prestruct-c&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#prestruct-c&quot;&gt;#&lt;/a&gt; &lt;a href=&quot;//web.archive.org/web/20080419002944/http://cm.bell-labs.com/cm/cs/who/dmr/primevalC.html&quot;&gt;prestruct-c&lt;/a&gt;&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+&lt;q&gt;is a copy of the compiler just before I started changing it to use structures itself&lt;/q&gt; (imagine!).
+&lt;q&gt;It's&lt;!--'--&gt; a bit hard to get really accurate dates for these compilers, except that they are certainly 1972-73&lt;/q&gt;,
+&lt;q&gt;by the time of the second, we had a PDP-11 that did provide mapping&lt;/q&gt;
+— this roughly lines up with the metatext of PDP-11/45 mentions in
+UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/v3man.tar.gz&quot;&gt;Third Edition&lt;/a&gt;&lt;/cite&gt;,
+and definitely lines up with the &lt;q&gt;February, 1973&lt;/q&gt; dating.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Still no &lt;code&gt;sizeof&lt;/code&gt; (proof by &lt;code&gt;grep -r&lt;/code&gt;),
+but there is an optimiser! as part of &lt;a href=&quot;//web.archive.org/web/20080419002944/http://cm.bell-labs.com/cm/cs/who/dmr/prestruct-c/c01.c&quot;&gt;the first pass&lt;/a&gt;,
+which I present to the dear reader in its entirety
+(though I must warn that the experience is not unlike reading Perl for the first time;
+ also, &lt;code&gt;int name[]&lt;/code&gt; is the spelling-du-jour of &lt;code&gt;int *name&lt;/code&gt;):
+&lt;/p&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token function&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; p&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; p1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; t&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;p &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* + */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;p1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; p&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;p2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; p&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;p1&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* const */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;t &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; p1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;p1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; p2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;p2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; t&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;p2 &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* const */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;t&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* const 0 */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;p1&lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;35&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;p1&lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* not &amp;amp; */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;p2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; p1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;p2&lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* name? */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;C error (optim)&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; t&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+This folds additions where either
+(one operand is a constant 0) or
+(one operand is a constant and the other is a &lt;code&gt;&amp;var&lt;/code&gt; expression).
+One has to assume &lt;code&gt;&amp;var + 3.5&lt;/code&gt; gets promoted before this, but idk if this works for &lt;code&gt;3.5 + 0&lt;/code&gt; or &lt;code&gt;3.5 + 0.0&lt;/code&gt;.
+Either way, V3 verdict: no &lt;code&gt;sizeof&lt;/code&gt;, no &lt;samp&gt;int/int&lt;/samp&gt; folding.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+V4 has a V3-style cc (I), and, likely, compiler. No way to know.
+&lt;/p&gt;
+&lt;h2 id=&quot;v5&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v5&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=36&quot;&gt;Fifth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+ &lt;dl class=&quot;continuing&quot;&gt;
+  &lt;dt style=&quot;font-weight: bold;&quot;&gt;−O&lt;/dt&gt;
+  &lt;dd&gt;Invoke the experimental object-code optimizer.&lt;/dd&gt;
+ &lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+but internally this is the &lt;q&gt;C object code &lt;em&gt;improver&lt;/em&gt;&lt;/q&gt;!
+(&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5root.tar.gz&quot;&gt;V5&lt;/a&gt;, &lt;samp&gt;./usr/source/s1/c2&lt;var&gt;?&lt;/var&gt;.c&lt;/samp&gt;&lt;/cite&gt;)
+as a new third pass
+(and actually parses and optimises the assembly output by the second pass, not the object, but same difference).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The &lt;em&gt;actual&lt;/em&gt; optimiser moves to the second pass to take up a whole &lt;q&gt;C compiler part 2 -- expression optimizer&lt;/q&gt; file
+(&lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c12.c&lt;/samp&gt;&lt;/cite&gt;),
+and is no longer just a peep-hole at the two addition cases,
+though the do still feature, but in 4K this time:
+&lt;/p&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token function&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;atree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;tnode&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;atree&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;dope &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; opdope&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;op&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dope&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;LEAF&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dope&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;BINARY&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;unoptim&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* is known to be binary */&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dope&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;COMMUTE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;acomm&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;d1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; tree&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;tree &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;acommute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;tree&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;acommute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;atree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;flt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;isfloat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;flt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* put constants together */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;acl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nextl&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;i&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;CON&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;CON&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;i&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;acl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nextl&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;t2&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;PLUS&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* toss out &quot;+0&quot; */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;acl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nextl&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;CON &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;SFCON&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;acl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nextl&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;t2&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;acl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nextl &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* subsume constant in &quot;&amp;amp;x+c&quot; */&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;CON &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;AMPER&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;t2&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tr1&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;offset &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; t2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;acl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nextl&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;TIMES&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+but also with a full constant folder:
+&lt;/p&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token function&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; av&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;register&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;v &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; av&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; PLUS&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; TIMES&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; AND&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; OR&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; EXOR&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;^&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; DIVIDE&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; MOD&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Divide check&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;DIVIDE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; RSHIFT&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; LSHIFT&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;vp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;C error: const&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), no &lt;samp&gt;int/int&lt;/samp&gt; folding.
+&lt;/p&gt;
+&lt;h2 id=&quot;rest&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#rest&quot;&gt;#&lt;/a&gt; &amp;c.&lt;/h2&gt;
+&lt;p class=&quot;indented&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz&quot;&gt;V6&lt;/a&gt; (&lt;samp&gt;./c/&lt;/samp&gt;)&lt;/cite&gt;'s cc doesn't change for the purposes of this analysis.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz&quot;&gt;V7&lt;/a&gt; (&lt;samp&gt;usr/src/cmd/c/&lt;/samp&gt;)&lt;/cite&gt;'s cc doesn't change for the purposes of this analysis.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;Unix&lt;/span&gt; User'&lt;!--'--&gt;s Manual, &lt;a href=&quot;//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798/page/n108/mode/1up&quot;&gt;Release 3.0&lt;/a&gt;
+ships both a classic V6 compiler and, on the PDP-11, a &quot;portable&quot; pcc.
+What it actually means by this is that it ships pcc on both the PDP-11 and VAX, but calls it &lt;samp&gt;/bin/pcc&lt;/samp&gt; on the PDP-11 and &lt;samp&gt;/bin/cc&lt;/samp&gt; on the VAX.
+The PDP-11 classic compiler grows &lt;samp&gt;unsigned&lt;/samp&gt; and, with it, 8 branches in &lt;code&gt;const()&lt;/code&gt;,
+but does not otherwise change for the purposes of this analysis
+(&lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20System%20III%20Source%20Code%20SYSIII/?id=11576&quot;&gt;SysIII&lt;/a&gt;, &lt;samp&gt;src/cmd/cc/pdp11/c12.c&lt;/samp&gt;&lt;/cite&gt;;
+ with thanks to my good friend Vetus).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+pcc
+(both pccs, since, despite having a machine-independent and machine-dependent half, both are twice in the source,
+ and the machine-independent bits &lt;em&gt;are&lt;/em&gt; different
+ (&lt;cite&gt;ibid., &lt;samp&gt;src/cmd/cc/pcc/*&lt;/samp&gt; &amp; &lt;samp&gt;src/cmd/cc/vax/{cc.*,pcc/,mip/}&lt;/samp&gt;&lt;/cite&gt;)),
+also supports &lt;code&gt;sizeof&lt;/code&gt; and also folds &lt;samp&gt;int/int&lt;/samp&gt; divisions
+(but don't&lt;!--'--&gt; be fooled: the latter happens during AST construction, not in the optimiser
+ (&lt;cite&gt;ibid., &lt;samp&gt;src/cmd/cc/pcc/mip/trees.c&lt;/samp&gt; &amp; &lt;samp&gt;src/cmd/cc/vax/mip/trees.c&lt;/samp&gt;&lt;/cite&gt; (these are actually the same))):
+&lt;/p&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;NODE &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;buildtree&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; o&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; l&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;register&lt;/span&gt; NODE &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;l&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;r&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;opty &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;optype&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;o&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* check for constants */&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; opty &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; UTYPE &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; ICON &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; o&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;UNARY MINUS &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;FCON &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; o&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;QUEST &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;ICON &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;o&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;ANDAND &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; o&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;OROR&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;ICON&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;ICON&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; ccwarn&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; opty &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; BITYPE &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; ICON &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; ICON &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; opty &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; BITYPE &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;FCON&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;ICON&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;FCON&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;in&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;op&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;ICON&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;o&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; PLUS&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; MINUS&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; MUL&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; DIV&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;o&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; PLUS&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;l&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; MINUS&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;l&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; MUL&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval &lt;span class=&quot;token operator&quot;&gt;*=&lt;/span&gt; r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;l&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; DIV&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;uerror&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;division by 0.&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; l&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval &lt;span class=&quot;token operator&quot;&gt;/=&lt;/span&gt; r&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;fpn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dval&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;l&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;				&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/* its real; we must make a new node */&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;p &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; o&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; l&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; INT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; INT &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Also, VAX SysIII separately includes the &lt;q&gt;improver&lt;/q&gt; (&lt;cite&gt;ibid., &lt;samp&gt;src/cmd/cc/vax/c2/&lt;/samp&gt;&lt;/cite&gt;) and the front-end &lt;em&gt;does&lt;/em&gt; run it there.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570&quot;&gt;SysVr1&lt;/a&gt;, &lt;samp&gt;sysv-pdp11_usr-src/cmd/cc/cc.mk&lt;/samp&gt;&lt;/cite&gt;
+elucidates this(?):
+&lt;/p&gt;
+&lt;pre class=&quot;language-makefile&quot;&gt;&lt;code class=&quot;language-makefile&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;The directory structure (global multi-machine view) assumed is:&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;/cpp --- cpp.mk&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                      &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;/c2 --- c2.mk&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;(only for vax)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                     &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                    &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/cc --- cc.mk&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;(Ritchie'&lt;!--'--&gt;s pdp11 C compiler)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                   &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;/usr/src/cmd --- /cc ------- cc.mk&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;(this makefile)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                           &lt;!--&quot;--&gt;\&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;\
+#&lt;!--&quot;--&gt;                            &lt;!--&quot;--&gt;\&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;cc.c&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                             &lt;!--&quot;--&gt;\&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;/mip&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                              &lt;!--&quot;--&gt;\&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                               &lt;!--&quot;--&gt;\&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/vax --- pcc.mk&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                                &lt;!--&quot;--&gt;\&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                               &lt;!--&quot;--&gt;/pcc ------- pcc.mk&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;                                   &lt;!--&quot;--&gt;\
+#&lt;!--&quot;--&gt;                                    &lt;!--&quot;--&gt;\
+#&lt;!--&quot;--&gt;                                   &lt;!--&quot;--&gt;/pdp11 --- pcc.mk&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+But doesn't&lt;!--'--&gt; otherwise change for the purposes of this analysis (&lt;cite&gt;ibid., &lt;samp&gt;sysv-pdp11_usr-src/cmd/cc/pcc/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr2%20Source%20Code%20r2/?id=11571&quot;&gt;SysVr2&lt;/a&gt; (&lt;samp&gt;usr/src/cmd/c/&lt;/samp&gt;)&lt;/cite&gt;'s ccs don't change for the purposes of this analysis.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr3%20Source%20Code%20r3/?id=11572&quot;&gt;SysVr3&lt;/a&gt; (&lt;samp&gt;ATT-SYSVr3/{301,31}/usr/src/scripts/cc/&lt;/samp&gt;)&lt;/cite&gt; comes with just pcc and I don't see source for it but there's no reason to suspect it'd've lost the optimisation.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573&quot;&gt;SysVr4&lt;/a&gt; (&lt;samp&gt;ATT-SYSVr3/{301,31}/usr/src/scripts/cc/&lt;/samp&gt;)&lt;/cite&gt; comes with &lt;em&gt;some&lt;/em&gt; compiler?
+But
+&lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf#page=79&quot;&gt;UNIX® System V Release 4 Programmer's Reference manual&lt;/a&gt;'s cc(1)&lt;/cite&gt;
+doesn't&lt;!--'--&gt; change from
+&lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_3/UNIX_System_V_Programmers_Reference_Manual_1987.pdf#page=33&quot;&gt;UNIX System V Programmer's Reference Manual&lt;/a&gt;'s cc(1)&lt;/cite&gt;,
+so it's&lt;!--'--&gt; probably still the same pcc.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+It also includes the &lt;a href=&quot;//101010.pl/@nabijaczleweli/115278564014771352&quot;&gt;all-time-funniest AT&amp;T program&lt;/a&gt; as &lt;samp&gt;/usr/ucb/cc&lt;/samp&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+1BSD doesn't&lt;!--'--&gt; include a different C compiler
+(&lt;cite&gt;&lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 1&lt;/span&gt;: Berkeley Systems 1978-1986&lt;/a&gt;, &lt;samp&gt;./1bsd/&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+2BSD includes some cc patches which do not affect related functionality we care about
+(&lt;cite&gt;ibid., &lt;samp&gt;./2bsd/upgrade/c/&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+3BSD ships cc as pcc + the extracted c2 improver
+(&lt;cite&gt;ibid., &lt;samp&gt;./3bsd/usr/src/cmd/{cc.c,pcc/,mip/,c2/}&lt;/samp&gt;&lt;/cite&gt;).
+The relevant segment of &lt;cite&gt;&lt;samp&gt;./3bsd/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt; is the same as above.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+4BSD's cc doesn't change for the purposes of this analysis
+(&lt;cite&gt;ibid., &lt;samp&gt;./4.0/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+4.1BSD's cc doesn't change for the purposes of this analysis
+(&lt;cite&gt;ibid., &lt;samp&gt;./4.1/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+4.2BSD's cc doesn't change for the purposes of this analysis
+(&lt;cite&gt;ibid., &lt;samp&gt;./4.1/usr/src/lib/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+4.3BSD's cc doesn't change for the purposes of this analysis
+(&lt;cite&gt;ibid., &lt;samp&gt;./4.1/usr/src/lib/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+4.3BSD-Tahoe's cc doesn't change for the purposes of this analysis
+(&lt;cite&gt;&lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 2&lt;/span&gt;: Berkeley Systems 1987-1993&lt;/a&gt;, &lt;samp&gt;./4.0/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+It actually ships a second one in &lt;cite&gt;&lt;samp&gt;./4.3tahoe/usr/src/lib/old_compiler/&lt;/samp&gt;&lt;/cite&gt;, but the purpose of this is unclear to me.
+The only reference (I think?) to this situation is in &lt;cite&gt;&lt;samp&gt;./4.3tahoe/usr/doc/smm/12.uchanges/1.t&lt;/samp&gt;&lt;/cite&gt;, quoth:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuation&quot;&gt;
+Some effort has been made to improve error reporting
+for program errors and to handle exceptional conditions in which
+the old compiler used to punt.
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented&quot;&gt;
+4.3BSD-Reno's cc doesn't change for the purposes of this analysis
+(&lt;cite&gt;ibid., &lt;samp&gt;./4.3reno/usr/src/libexec/pcc/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+The 4.4BSD-Lites ship with GCC 2.3.3
+(&lt;cite&gt;ibid., &lt;samp&gt;./4.4BSD-Lite1&lt;/samp&gt;&lt;/cite&gt;;
+ &lt;cite&gt;&lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 3&lt;/span&gt;: Final Berkeley Releases&lt;/a&gt;, &lt;samp&gt;./4.4BSD-Lite2&lt;/samp&gt;&lt;/cite&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+It's&lt;!--'--&gt; difficult to come to a
+&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusion&quot;&gt;#&lt;/a&gt; conclusion&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+other than &quot;there has never been a compiler with &lt;code&gt;sizeof&lt;/code&gt; but no &lt;samp&gt;int/int&lt;/samp&gt; folding&quot;.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+&lt;em&gt;Perhaps&lt;/em&gt; for a hair? in 1973 around our V4 epistemic hole, &lt;a href=&quot;/content/assets/blogn_t/020.02-kicker.webm&quot;&gt;but.&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/020-sizeof-division.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/div&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/019-aphantasia.html</id>
