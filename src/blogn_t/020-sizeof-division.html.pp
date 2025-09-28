@@ -272,7 +272,7 @@ V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[
 
 HEADING(2, rest, &c.)
 
-<p class="indented continued">
+<p class="indented continued" id="v6">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz">V6</a> (<samp>./c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
 Following <cite>Computer History Wiki's<!--'--> <a href="//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH">Installing UNIX v6 (PDP-11) on SIMH</a></cite>,
 we can observe this directly:
@@ -301,11 +301,11 @@ HASH <kbd>od a.o</kbd>
 <!--"-->000030: 000400                  br      32<!--"-->
 </code></pre>
 
-<p class="indented">
+<p class="indented" id="v7">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">V7</a> (<samp>usr/src/cmd/c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
 </p>
 
-<p class="indented continued">
+<p class="indented continued" id="sys3">
 <span class="smallcaps">Unix</span> User'<!--'-->s Manual, <a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798/page/n108/mode/1up">Release 3.0</a>
 ships both a classic V6 compiler and, on the PDP-11, a "portable" pcc.
 What it actually means by this is that it ships pcc on both the PDP-11 and VAX, but calls it <samp>/bin/pcc</samp> on the PDP-11 and <samp>/bin/cc</samp> on the VAX.
@@ -328,7 +328,7 @@ also supports <code>sizeof</code> and also folds <samp>int/int</samp> divisions
 Also, VAX SysIII separately includes the <q>improver</q> (<cite>ibid., <samp>src/cmd/cc/vax/c2/</samp></cite>) and the front-end <em>does</em> run it there.
 </p>
 
-<p class="indented continued">
+<p class="indented continued" id="sys5r1">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570">SysVr1</a>, <samp>sysv-pdp11_usr-src/cmd/cc/cc.mk</samp></cite>
 elucidates this(?):
 </p>
@@ -337,15 +337,15 @@ elucidates this(?):
 But doesn't<!--'--> otherwise change for the purposes of this analysis (<cite>ibid., <samp>sysv-pdp11_usr-src/cmd/cc/pcc/mip/trees.c</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="sys5r2">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr2%20Source%20Code%20r2/?id=11571">SysVr2</a> (<samp>usr/src/cmd/c/</samp>)</cite>'s ccs don't change for the purposes of this analysis.
 </p>
 
-<p class="indented">
+<p class="indented" id="sys5r3">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr3%20Source%20Code%20r3/?id=11572">SysVr3</a> (<samp>ATT-SYSVr3/{301,31}/usr/src/scripts/cc/</samp>)</cite> comes with just pcc and I don't see source for it but there's no reason to suspect it'd've lost the optimisation.
 </p>
 
-<p class="indented continued">
+<p class="indented continued" id="sys5r4">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573">SysVr4</a> (<samp>ATT-SYSVr3/{301,31}/usr/src/scripts/cc/</samp>)</cite> comes with <em>some</em> compiler?
 But
 <cite><a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf#page=79">UNIX® System V Release 4 Programmer's Reference manual</a>'s cc(1)</cite>
@@ -357,43 +357,43 @@ so it's<!--'--> probably still the same pcc.
 It also includes the <a href="//101010.pl/@nabijaczleweli/115278564014771352">all-time-funniest AT&T program</a> as <samp>/usr/ucb/cc</samp>.
 </p>
 
-<p class="indented">
+<p class="indented" id="1bsd">
 1BSD doesn't<!--'--> include a different C compiler
 (<cite><a href="//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 1</span>: Berkeley Systems 1978-1986</a>, <samp>./1bsd/</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="2bsd">
 2BSD includes some cc patches which do not affect related functionality we care about
 (<cite>ibid., <samp>./2bsd/upgrade/c/</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="3bsd">
 3BSD ships cc as pcc + the extracted c2 improver
 (<cite>ibid., <samp>./3bsd/usr/src/cmd/{cc.c,pcc/,mip/,c2/}</samp></cite>).
 The relevant segment of <cite><samp>./3bsd/usr/src/cmd/mip/trees.c</samp></cite> is the same as above.
 </p>
 
-<p class="indented">
+<p class="indented" id="4bsd">
 4BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.0/usr/src/cmd/mip/trees.c</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="4.1bsd">
 4.1BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.1/usr/src/cmd/mip/trees.c</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="4.2bsd">
 4.2BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.1/usr/src/lib/mip/trees.c</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="4.3bsd">
 4.3BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.1/usr/src/lib/mip/trees.c</samp></cite>).
 </p>
 
-<p class="indented continued">
+<p class="indented continued" id="4.3bsd-tahoe">
 4.3BSD-Tahoe's cc doesn't change for the purposes of this analysis
 (<cite><a href="//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 2</span>: Berkeley Systems 1987-1993</a>, <samp>./4.0/usr/src/cmd/mip/trees.c</samp></cite>).
 It actually ships a second one in <cite><samp>./4.3tahoe/usr/src/lib/old_compiler/</samp></cite>, but the purpose of this is unclear to me.
@@ -405,12 +405,12 @@ for program errors and to handle exceptional conditions in which
 the old compiler used to punt.
 </blockquote>
 
-<p class="indented">
+<p class="indented" id="4.3bsd-reno">
 4.3BSD-Reno's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.3reno/usr/src/libexec/pcc/mip/trees.c</samp></cite>).
 </p>
 
-<p class="indented">
+<p class="indented" id="4.4bsd">
 The 4.4BSD-Lites ship with GCC 2.3.3
 (<cite>ibid., <samp>./4.4BSD-Lite1</samp></cite>;
  <cite><a href="//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 3</span>: Final Berkeley Releases</a>, <samp>./4.4BSD-Lite2</samp></cite>).
