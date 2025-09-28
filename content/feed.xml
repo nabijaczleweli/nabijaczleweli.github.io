@@ -235,7 +235,7 @@ as a new third pass
 The &lt;em&gt;actual&lt;/em&gt; optimiser moves to the second pass to take up a whole &lt;q&gt;C compiler part 2 -- expression optimizer&lt;/q&gt; file
 (&lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c12.c&lt;/samp&gt;&lt;/cite&gt;),
 and is no longer just a peep-hole at the two addition cases,
-though the do still feature, but in 4K this time:
+though they do still feature, but in 4K this time:
 &lt;/p&gt;
 &lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token function&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;atree&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;tnode&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;atree&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -349,7 +349,7 @@ V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;sam
 &lt;h2 id=&quot;rest&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#rest&quot;&gt;#&lt;/a&gt; &amp;c.&lt;/h2&gt;
 &lt;p class=&quot;indented continued&quot; id=&quot;v6&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz&quot;&gt;V6&lt;/a&gt; (&lt;samp&gt;./c/&lt;/samp&gt;)&lt;/cite&gt;'s cc doesn't change for the purposes of this analysis.
-Following &lt;cite&gt;Computer History Wiki's&lt;!--'--&gt; &lt;a href=&quot;//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH&quot;&gt;Installing UNIX v6 (PDP-11) on SIMH&lt;/a&gt;&lt;/cite&gt;,
+By following &lt;cite&gt;Computer History Wiki's&lt;!--'--&gt; &lt;a href=&quot;//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH&quot;&gt;Installing UNIX v6 (PDP-11) on SIMH&lt;/a&gt;&lt;/cite&gt;
 we can observe this directly:
 &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ pdp11 boot.ini
