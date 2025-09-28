@@ -40,7 +40,7 @@
 &lt;/ol&gt;
 &lt;/details&gt;&lt;/div&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-Similarly to &lt;a href=&quot;017-malloc0.html&quot;&gt;previous&lt;/a&gt;, &lt;a href=&quot;https://www.alejandro-colomar.es:80&quot;&gt;acolomar&lt;/a&gt; writ:
+Similarly to &lt;a href=&quot;017-malloc0.html&quot;&gt;previous&lt;/a&gt;, &lt;a href=&quot;mailto:Alejandro Colomar &lt;alx@kernel.org&gt;&quot;&gt;acolomar&lt;/a&gt; writ:
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuation&quot;&gt;
 I've&lt;!--'--&gt; been wondering why the _Countof() operator was not implemented back in the times of K&amp;R.
@@ -344,7 +344,7 @@ but also with a full constant folder:
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), no &lt;samp&gt;int/int&lt;/samp&gt; folding.
+V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), yes &lt;samp&gt;int/int&lt;/samp&gt; folding.
 &lt;/p&gt;
 &lt;h2 id=&quot;rest&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#rest&quot;&gt;#&lt;/a&gt; &amp;c.&lt;/h2&gt;
 &lt;p class=&quot;indented&quot;&gt;
