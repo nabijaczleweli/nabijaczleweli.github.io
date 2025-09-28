@@ -67,7 +67,7 @@ dl > * {
 BLOGN_T_HEADING(020. Pre-modern-UNIX sizeof division)
 
 <p class="indented continued">
-Similarly to <a href="017-malloc0.html">previous</a>, <a href="https://www.alejandro-colomar.es:80">acolomar</a> writ:
+Similarly to <a href="017-malloc0.html">previous</a>, <a href="mailto:Alejandro Colomar <alx@kernel.org>">acolomar</a> writ:
 </p>
 <blockquote class="continuation">
 I've<!--'--> been wondering why the _Countof() operator was not implemented back in the times of K&R.
@@ -267,7 +267,7 @@ but also with a full constant folder:
 </p>
 #include "blogn_t/020.03-v5-c12-const.oldc.html"
 <p class="continuation">
-V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), no <samp>int/int</samp> folding.
+V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
 </p>
 
 HEADING(2, rest, &c.)
