@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Sun, 28 Sep 2025 01:02:48 +0200" -->
 #define POST_DATE      Sun, 28 Sep 2025 01:02:48 +0200
-#define POST_POST_DATE
+#define POST_POST_DATE Sun, 28 Sep 2025 19:54:03 +0200
 
 #undef unix
 
@@ -272,9 +272,34 @@ V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[
 
 HEADING(2, rest, &c.)
 
-<p class="indented">
+<p class="indented continued">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz">V6</a> (<samp>./c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
+Following <cite>Computer History Wiki's<!--'--> <a href="//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH">Installing UNIX v6 (PDP-11) on SIMH</a></cite>,
+we can observe this directly:
 </p>
+<pre><code>\
+$ pdp11 boot.ini
+PDP-11 simulator V3.8-1
+Disabling XQ
+@<kbd>unix</kbd>
+
+login: <kbd>root</kbd>
+HASH <kbd>chdir /tmp</kbd>
+HASH <kbd>cat >a.c
+gaming[012345];
+size() { return(sizeof(gaming) / sizeof(*gaming)); }</kbd>
+HASH <kbd>cc -c a.c</kbd>
+HASH <kbd>od a.o</kbd>
+0000000 000407 000016 000000 000000 000110 000000 000000 000000
+0000020 004567 177774 012700 <strong>012345</strong> 000400 000167 177762 000000
+0000040 000071 000000 000000 000000 000000 000131 063537 066541\
+</code></pre>
+<p class="indented continuing">and naturally</p>
+<pre><code>\
+<!--"-->000020: 004567 177774           jsr     r5,20<!--"-->
+<!--"-->000024: 012700 012345           mov     <strong>#12345</strong>,r0<!--"-->
+<!--"-->000030: 000400                  br      32<!--"-->
+</code></pre>
 
 <p class="indented">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">V7</a> (<samp>usr/src/cmd/c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
