@@ -259,7 +259,7 @@ as a new third pass
 The <em>actual</em> optimiser moves to the second pass to take up a whole <q>C compiler part 2 -- expression optimizer</q> file
 (<cite>ibid., <samp>./usr/source/s1/c12.c</samp></cite>),
 and is no longer just a peep-hole at the two addition cases,
-though the do still feature, but in 4K this time:
+though they do still feature, but in 4K this time:
 </p>
 #include "blogn_t/020.02-v5-c12-optim.oldc.html"
 <p class="continuing">
@@ -274,7 +274,7 @@ HEADING(2, rest, &c.)
 
 <p class="indented continued" id="v6">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz">V6</a> (<samp>./c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
-Following <cite>Computer History Wiki's<!--'--> <a href="//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH">Installing UNIX v6 (PDP-11) on SIMH</a></cite>,
+By following <cite>Computer History Wiki's<!--'--> <a href="//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH">Installing UNIX v6 (PDP-11) on SIMH</a></cite>
 we can observe this directly:
 </p>
 <pre><code>\
