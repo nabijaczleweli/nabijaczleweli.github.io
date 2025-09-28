@@ -142,7 +142,7 @@ dl > * {
 <div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>020. Pre-modern-UNIX sizeof division</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Sun, 28 Sep 2025 01:02:48 +0200</span></h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Sun, 28 Sep 2025 01:02:48 +0200</span>Sun, 28 Sep 2025 19:54:03 +0200</h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
@@ -463,13 +463,34 @@ but also with a full constant folder:
 V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
 </p>
 <h2 id="rest" ><a class="hash-link" href="#rest">#</a> &c.</h2>
-<p class="indented">
+<p class="indented continued" id="v6">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz">V6</a> (<samp>./c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
+Following <cite>Computer History Wiki's<!--'--> <a href="//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH">Installing UNIX v6 (PDP-11) on SIMH</a></cite>,
+we can observe this directly:
 </p>
-<p class="indented">
+<pre><code>$ pdp11 boot.ini
+PDP-11 simulator V3.8-1
+Disabling XQ
+@<kbd>unix</kbd>
+login: <kbd>root</kbd>
+# <kbd>chdir /tmp</kbd>
+# <kbd>cat >a.c
+gaming[012345];
+size() { return(sizeof(gaming) / sizeof(*gaming)); }</kbd>
+# <kbd>cc -c a.c</kbd>
+# <kbd>od a.o</kbd>
+0000000 000407 000016 000000 000000 000110 000000 000000 000000
+0000020 004567 177774 012700 <strong>012345</strong> 000400 000167 177762 000000
+0000040 000071 000000 000000 000000 000000 000131 063537 066541</code></pre>
+<p class="indented continuing">and naturally</p>
+<pre><code><!--"-->000020: 004567 177774           jsr     r5,20<!--"-->
+<!--"-->000024: 012700 012345           mov     <strong>#12345</strong>,r0<!--"-->
+<!--"-->000030: 000400                  br      32<!--"-->
+</code></pre>
+<p class="indented" id="v7">
 <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz">V7</a> (<samp>usr/src/cmd/c/</samp>)</cite>'s cc doesn't change for the purposes of this analysis.
 </p>
-<p class="indented continued">
+<p class="indented continued" id="sys3">
 <span class="smallcaps">Unix</span> User'<!--'-->s Manual, <a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798/page/n108/mode/1up">Release 3.0</a>
 ships both a classic V6 compiler and, on the PDP-11, a "portable" pcc.
 What it actually means by this is that it ships pcc on both the PDP-11 and VAX, but calls it <samp>/bin/pcc</samp> on the PDP-11 and <samp>/bin/cc</samp> on the VAX.
@@ -543,7 +564,7 @@ also supports <code>sizeof</code> and also folds <samp>int/int</samp> divisions
 <p class="indented continuation">
 Also, VAX SysIII separately includes the <q>improver</q> (<cite>ibid., <samp>src/cmd/cc/vax/c2/</samp></cite>) and the front-end <em>does</em> run it there.
 </p>
-<p class="indented continued">
+<p class="indented continued" id="sys5r1">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570">SysVr1</a>, <samp>sysv-pdp11_usr-src/cmd/cc/cc.mk</samp></cite>
 elucidates this(?):
 </p>
@@ -570,13 +591,13 @@ elucidates this(?):
 <p class="continuation">
 But doesn't<!--'--> otherwise change for the purposes of this analysis (<cite>ibid., <samp>sysv-pdp11_usr-src/cmd/cc/pcc/mip/trees.c</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="sys5r2">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr2%20Source%20Code%20r2/?id=11571">SysVr2</a> (<samp>usr/src/cmd/c/</samp>)</cite>'s ccs don't change for the purposes of this analysis.
 </p>
-<p class="indented">
+<p class="indented" id="sys5r3">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr3%20Source%20Code%20r3/?id=11572">SysVr3</a> (<samp>ATT-SYSVr3/{301,31}/usr/src/scripts/cc/</samp>)</cite> comes with just pcc and I don't see source for it but there's no reason to suspect it'd've lost the optimisation.
 </p>
-<p class="indented continued">
+<p class="indented continued" id="sys5r4">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573">SysVr4</a> (<samp>ATT-SYSVr3/{301,31}/usr/src/scripts/cc/</samp>)</cite> comes with <em>some</em> compiler?
 But
 <cite><a href="//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf#page=79">UNIX® System V Release 4 Programmer's Reference manual</a>'s cc(1)</cite>
@@ -587,36 +608,36 @@ so it's<!--'--> probably still the same pcc.
 <p class="indented continuation">
 It also includes the <a href="//101010.pl/@nabijaczleweli/115278564014771352">all-time-funniest AT&T program</a> as <samp>/usr/ucb/cc</samp>.
 </p>
-<p class="indented">
+<p class="indented" id="1bsd">
 1BSD doesn't<!--'--> include a different C compiler
 (<cite><a href="//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 1</span>: Berkeley Systems 1978-1986</a>, <samp>./1bsd/</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="2bsd">
 2BSD includes some cc patches which do not affect related functionality we care about
 (<cite>ibid., <samp>./2bsd/upgrade/c/</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="3bsd">
 3BSD ships cc as pcc + the extracted c2 improver
 (<cite>ibid., <samp>./3bsd/usr/src/cmd/{cc.c,pcc/,mip/,c2/}</samp></cite>).
 The relevant segment of <cite><samp>./3bsd/usr/src/cmd/mip/trees.c</samp></cite> is the same as above.
 </p>
-<p class="indented">
+<p class="indented" id="4bsd">
 4BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.0/usr/src/cmd/mip/trees.c</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="4.1bsd">
 4.1BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.1/usr/src/cmd/mip/trees.c</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="4.2bsd">
 4.2BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.1/usr/src/lib/mip/trees.c</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="4.3bsd">
 4.3BSD's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.1/usr/src/lib/mip/trees.c</samp></cite>).
 </p>
-<p class="indented continued">
+<p class="indented continued" id="4.3bsd-tahoe">
 4.3BSD-Tahoe's cc doesn't change for the purposes of this analysis
 (<cite><a href="//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 2</span>: Berkeley Systems 1987-1993</a>, <samp>./4.0/usr/src/cmd/mip/trees.c</samp></cite>).
 It actually ships a second one in <cite><samp>./4.3tahoe/usr/src/lib/old_compiler/</samp></cite>, but the purpose of this is unclear to me.
@@ -627,11 +648,11 @@ Some effort has been made to improve error reporting
 for program errors and to handle exceptional conditions in which
 the old compiler used to punt.
 </blockquote>
-<p class="indented">
+<p class="indented" id="4.3bsd-reno">
 4.3BSD-Reno's cc doesn't change for the purposes of this analysis
 (<cite>ibid., <samp>./4.3reno/usr/src/libexec/pcc/mip/trees.c</samp></cite>).
 </p>
-<p class="indented">
+<p class="indented" id="4.4bsd">
 The 4.4BSD-Lites ship with GCC 2.3.3
 (<cite>ibid., <samp>./4.4BSD-Lite1</samp></cite>;
  <cite><a href="//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 3</span>: Final Berkeley Releases</a>, <samp>./4.4BSD-Lite2</samp></cite>).
@@ -668,9 +689,9 @@ other than "there has never been a compiler with <code>sizeof</code> but no <sam
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 19's<!--'--> C preprocessor on 28.09.2025 16:42:48 UTC from 
+ Compiled with Clang 19's<!--'--> C preprocessor on 28.09.2025 18:02:22 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/020-sizeof-division.html.pp">src/blogn_t/020-sizeof-division.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1577928">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1577966">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

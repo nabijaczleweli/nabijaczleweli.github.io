@@ -26,7 +26,7 @@
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;020. Pre-modern-UNIX sizeof division&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;Sun, 28 Sep 2025 19:54:03 +0200&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -347,13 +347,34 @@ but also with a full constant folder:
 V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), yes &lt;samp&gt;int/int&lt;/samp&gt; folding.
 &lt;/p&gt;
 &lt;h2 id=&quot;rest&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#rest&quot;&gt;#&lt;/a&gt; &amp;c.&lt;/h2&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;v6&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz&quot;&gt;V6&lt;/a&gt; (&lt;samp&gt;./c/&lt;/samp&gt;)&lt;/cite&gt;'s cc doesn't change for the purposes of this analysis.
+Following &lt;cite&gt;Computer History Wiki's&lt;!--'--&gt; &lt;a href=&quot;//gunkies.org/wiki/Installing_UNIX_v6_(PDP-11)_on_SIMH&quot;&gt;Installing UNIX v6 (PDP-11) on SIMH&lt;/a&gt;&lt;/cite&gt;,
+we can observe this directly:
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;pre&gt;&lt;code&gt;$ pdp11 boot.ini
+PDP-11 simulator V3.8-1
+Disabling XQ
+@&lt;kbd&gt;unix&lt;/kbd&gt;
+login: &lt;kbd&gt;root&lt;/kbd&gt;
+# &lt;kbd&gt;chdir /tmp&lt;/kbd&gt;
+# &lt;kbd&gt;cat &gt;a.c
+gaming[012345];
+size() { return(sizeof(gaming) / sizeof(*gaming)); }&lt;/kbd&gt;
+# &lt;kbd&gt;cc -c a.c&lt;/kbd&gt;
+# &lt;kbd&gt;od a.o&lt;/kbd&gt;
+0000000 000407 000016 000000 000000 000110 000000 000000 000000
+0000020 004567 177774 012700 &lt;strong&gt;012345&lt;/strong&gt; 000400 000167 177762 000000
+0000040 000071 000000 000000 000000 000000 000131 063537 066541&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;and naturally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;!--&quot;--&gt;000020: 004567 177774           jsr     r5,20&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000024: 012700 012345           mov     &lt;strong&gt;#12345&lt;/strong&gt;,r0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;000030: 000400                  br      32&lt;!--&quot;--&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;indented&quot; id=&quot;v7&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz&quot;&gt;V7&lt;/a&gt; (&lt;samp&gt;usr/src/cmd/c/&lt;/samp&gt;)&lt;/cite&gt;'s cc doesn't change for the purposes of this analysis.
 &lt;/p&gt;
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;sys3&quot;&gt;
 &lt;span class=&quot;smallcaps&quot;&gt;Unix&lt;/span&gt; User'&lt;!--'--&gt;s Manual, &lt;a href=&quot;//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798/page/n108/mode/1up&quot;&gt;Release 3.0&lt;/a&gt;
 ships both a classic V6 compiler and, on the PDP-11, a &quot;portable&quot; pcc.
 What it actually means by this is that it ships pcc on both the PDP-11 and VAX, but calls it &lt;samp&gt;/bin/pcc&lt;/samp&gt; on the PDP-11 and &lt;samp&gt;/bin/cc&lt;/samp&gt; on the VAX.
@@ -427,7 +448,7 @@ also supports &lt;code&gt;sizeof&lt;/code&gt; and also folds &lt;samp&gt;int/int
 &lt;p class=&quot;indented continuation&quot;&gt;
 Also, VAX SysIII separately includes the &lt;q&gt;improver&lt;/q&gt; (&lt;cite&gt;ibid., &lt;samp&gt;src/cmd/cc/vax/c2/&lt;/samp&gt;&lt;/cite&gt;) and the front-end &lt;em&gt;does&lt;/em&gt; run it there.
 &lt;/p&gt;
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;sys5r1&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570&quot;&gt;SysVr1&lt;/a&gt;, &lt;samp&gt;sysv-pdp11_usr-src/cmd/cc/cc.mk&lt;/samp&gt;&lt;/cite&gt;
 elucidates this(?):
 &lt;/p&gt;
@@ -454,13 +475,13 @@ elucidates this(?):
 &lt;p class=&quot;continuation&quot;&gt;
 But doesn't&lt;!--'--&gt; otherwise change for the purposes of this analysis (&lt;cite&gt;ibid., &lt;samp&gt;sysv-pdp11_usr-src/cmd/cc/pcc/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;sys5r2&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr2%20Source%20Code%20r2/?id=11571&quot;&gt;SysVr2&lt;/a&gt; (&lt;samp&gt;usr/src/cmd/c/&lt;/samp&gt;)&lt;/cite&gt;'s ccs don't change for the purposes of this analysis.
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;sys5r3&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr3%20Source%20Code%20r3/?id=11572&quot;&gt;SysVr3&lt;/a&gt; (&lt;samp&gt;ATT-SYSVr3/{301,31}/usr/src/scripts/cc/&lt;/samp&gt;)&lt;/cite&gt; comes with just pcc and I don't see source for it but there's no reason to suspect it'd've lost the optimisation.
 &lt;/p&gt;
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;sys5r4&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr4%20Source%20Code%20r4/?id=11573&quot;&gt;SysVr4&lt;/a&gt; (&lt;samp&gt;ATT-SYSVr3/{301,31}/usr/src/scripts/cc/&lt;/samp&gt;)&lt;/cite&gt; comes with &lt;em&gt;some&lt;/em&gt; compiler?
 But
 &lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/System_V_Release_4/0-13-947029-8_Unix_System_V_Rel4_Programmers_Reference_Manual_1990.pdf#page=79&quot;&gt;UNIX® System V Release 4 Programmer's Reference manual&lt;/a&gt;'s cc(1)&lt;/cite&gt;
@@ -471,36 +492,36 @@ so it's&lt;!--'--&gt; probably still the same pcc.
 &lt;p class=&quot;indented continuation&quot;&gt;
 It also includes the &lt;a href=&quot;//101010.pl/@nabijaczleweli/115278564014771352&quot;&gt;all-time-funniest AT&amp;T program&lt;/a&gt; as &lt;samp&gt;/usr/ucb/cc&lt;/samp&gt;.
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;1bsd&quot;&gt;
 1BSD doesn't&lt;!--'--&gt; include a different C compiler
 (&lt;cite&gt;&lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 1&lt;/span&gt;: Berkeley Systems 1978-1986&lt;/a&gt;, &lt;samp&gt;./1bsd/&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;2bsd&quot;&gt;
 2BSD includes some cc patches which do not affect related functionality we care about
 (&lt;cite&gt;ibid., &lt;samp&gt;./2bsd/upgrade/c/&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;3bsd&quot;&gt;
 3BSD ships cc as pcc + the extracted c2 improver
 (&lt;cite&gt;ibid., &lt;samp&gt;./3bsd/usr/src/cmd/{cc.c,pcc/,mip/,c2/}&lt;/samp&gt;&lt;/cite&gt;).
 The relevant segment of &lt;cite&gt;&lt;samp&gt;./3bsd/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt; is the same as above.
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;4bsd&quot;&gt;
 4BSD's cc doesn't change for the purposes of this analysis
 (&lt;cite&gt;ibid., &lt;samp&gt;./4.0/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;4.1bsd&quot;&gt;
 4.1BSD's cc doesn't change for the purposes of this analysis
 (&lt;cite&gt;ibid., &lt;samp&gt;./4.1/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;4.2bsd&quot;&gt;
 4.2BSD's cc doesn't change for the purposes of this analysis
 (&lt;cite&gt;ibid., &lt;samp&gt;./4.1/usr/src/lib/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;4.3bsd&quot;&gt;
 4.3BSD's cc doesn't change for the purposes of this analysis
 (&lt;cite&gt;ibid., &lt;samp&gt;./4.1/usr/src/lib/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;4.3bsd-tahoe&quot;&gt;
 4.3BSD-Tahoe's cc doesn't change for the purposes of this analysis
 (&lt;cite&gt;&lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 2&lt;/span&gt;: Berkeley Systems 1987-1993&lt;/a&gt;, &lt;samp&gt;./4.0/usr/src/cmd/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 It actually ships a second one in &lt;cite&gt;&lt;samp&gt;./4.3tahoe/usr/src/lib/old_compiler/&lt;/samp&gt;&lt;/cite&gt;, but the purpose of this is unclear to me.
@@ -511,11 +532,11 @@ Some effort has been made to improve error reporting
 for program errors and to handle exceptional conditions in which
 the old compiler used to punt.
 &lt;/blockquote&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;4.3bsd-reno&quot;&gt;
 4.3BSD-Reno's cc doesn't change for the purposes of this analysis
 (&lt;cite&gt;ibid., &lt;samp&gt;./4.3reno/usr/src/libexec/pcc/mip/trees.c&lt;/samp&gt;&lt;/cite&gt;).
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
+&lt;p class=&quot;indented&quot; id=&quot;4.4bsd&quot;&gt;
 The 4.4BSD-Lites ship with GCC 2.3.3
 (&lt;cite&gt;ibid., &lt;samp&gt;./4.4BSD-Lite1&lt;/samp&gt;&lt;/cite&gt;;
  &lt;cite&gt;&lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick&quot;&gt;&lt;span class=&quot;nowrap&quot;&gt;CD-ROM 3&lt;/span&gt;: Final Berkeley Releases&lt;/a&gt;, &lt;samp&gt;./4.4BSD-Lite2&lt;/samp&gt;&lt;/cite&gt;).
