@@ -117,11 +117,30 @@ body .container {
 }
 
 .side-by-each-by-each {
-  width: 32.3%;
+  width: 42.1%;
 /*  min-width: 140px;*/
   min-width: 11em;
 }
 
+.side-by-each-by-each.chipped {
+  float: left;
+}
+
+.side-by-each-by-each.chipped > span {
+  display: flex;
+}
+
+.side-by-each-by-each.chipped > span > *:nth-child(2) {
+  height: 100%;
+  margin: 0;
+  width: initial;
+}
+
+.side-by-each-by-each + .side-by-each-by-each {
+  width: 26.70%;
+}
+
+.side-by-each-by-each.chipped > span > *:nth-child(2),
 .side-by-each-by-each + .side-by-each-by-each {
   margin-left: 1.5%;
   margin-top: 0;  /* Override bootstrap braindeath */
