@@ -330,7 +330,7 @@ Also, VAX SysIII separately includes the <q>improver</q> (<cite>ibid., <samp>src
 
 <p class="indented continued" id="sys5r1">
 <cite><a href="//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570">SysVr1</a>, <samp>sysv-pdp11_usr-src/cmd/cc/cc.mk</samp></cite>
-elucidates this(?):
+elucidates(?) this:
 </p>
 #include "blogn_t/020.05-sysvr1-cc.mk.html"
 <p class="continuation">
