@@ -450,7 +450,7 @@ Also, VAX SysIII separately includes the &lt;q&gt;improver&lt;/q&gt; (&lt;cite&g
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot; id=&quot;sys5r1&quot;&gt;
 &lt;cite&gt;&lt;a href=&quot;//vetusware.com/download/UNIX%20SYSVr1%20Source%20Code%20r1/?id=11570&quot;&gt;SysVr1&lt;/a&gt;, &lt;samp&gt;sysv-pdp11_usr-src/cmd/cc/cc.mk&lt;/samp&gt;&lt;/cite&gt;
-elucidates this(?):
+elucidates(?) this:
 &lt;/p&gt;
 &lt;pre class=&quot;language-makefile&quot;&gt;&lt;code class=&quot;language-makefile&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;The directory structure (global multi-machine view) assumed is:&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
