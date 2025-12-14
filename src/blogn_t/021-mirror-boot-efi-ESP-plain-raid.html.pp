@@ -98,6 +98,12 @@ dl > * {
 	display: inline-block;
 }
 
+@media (prefers-color-scheme: light) {
+	.light-invert {
+		filter: invert(1);
+	}
+}
+
 /* Replicated from 019-aphantasia */
 
 blockquote div {
@@ -428,7 +434,7 @@ in this order.
 	</p>
 #include "blogn_t/021.11-vfat-collocated-LVM-PV.shell-session.html"
 </details>
-<a href="/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png"><img style="width: 100%" src="/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png" alt=""></a> <!-- this is a visual representation of the code block above -->
+<a href="/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png"><img class="light-invert" style="width: 100%" src="/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png" alt=""></a> <!-- this is a visual representation of the code block above -->
 
 
 HEADING(2, conclusion, Conclusion)
