@@ -641,7 +641,7 @@ Warning: block count mismatch: found 1048576 but assuming 524288.
 40000000
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
-&lt;a href=&quot;/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png&quot;&gt;&lt;img style=&quot;width: 100%&quot; src=&quot;/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt; &lt;!-- this is a visual representation of the code block above --&gt;
+&lt;a href=&quot;/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png&quot;&gt;&lt;img class=&quot;light-invert&quot; style=&quot;width: 100%&quot; src=&quot;/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt; &lt;!-- this is a visual representation of the code block above --&gt;
 &lt;h2 id=&quot;conclusion&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusion&quot;&gt;#&lt;/a&gt; Conclusion&lt;/h2&gt;
 &lt;p&gt;
 There is only one way to do this: with &lt;tt&gt;mdadm&lt;/tt&gt;.
