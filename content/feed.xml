@@ -12,10 +12,665 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2025-09-28T01:02:48+02:00</updated>
+<updated>2025-12-15T00:02:14+01:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html" />
+    <title> 021. Natively mirrored but still functional &amp; correct /boot/efi — blognꞌt — nabijaczleweli </title>
+    <updated>2025-12-15T00:02:14+01:00</updated>
+    <content type="html">
+&lt;div class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;021. Natively mirrored but still functional &amp; correct /boot/efi&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 15 Dec 2025 00:02:14 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#technique'&gt;Immortal technique&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#dmsetup'&gt;&lt;tt&gt;dmsetup&lt;/tt&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#mdadm'&gt;&lt;tt&gt;mdadm&lt;/tt&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#LVM'&gt;LVM&lt;del&gt;2&lt;/del&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;li&gt;&lt;a href='#conclusion'&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/details&gt;&lt;/div&gt;
+&lt;!-- https://discord.com/channels/@me/576788179441680394/1446121407917592647 https://discord.com/channels/@me/576788179441680394/1446125899979296914 https://discord.com/channels/@me/576788179441680394/1446137172427145236 --&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Recently, a friend shared with me the following observation of a novel system (compacted for NutriScore KPIs):
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;[root@localhost ~]&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;lsblk&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;MAJ:MIN&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;SIZE TYPE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;MOUNTPOINT
+sda&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;8:0&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;447.1G disk
+└─sda3&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;8:3&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;414.1G part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─md125&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;9:125&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1024M raid1 /boot/efi
+sdb&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;8:16&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;447.1G disk
+└─sdb3&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;8:17&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;414.1G part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─md125&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;9:125&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1024M raid1 /boot/efi
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Yowza! but how?
+Must the ESP not be a &lt;tt&gt;vfat&lt;/tt&gt; with the ESP parttype?
+This is obviously better than SOP of &quot;rsync job copying between replicas of the ESP&quot;
+(or &lt;a href=&quot;005-low-curse-zfs-on-root.html&quot;&gt;&quot;don't replicate the ESP at all&quot;&lt;/a&gt;).
+Is there a special RAID1 mode that does a transparent replica? or does the firmware have drivers for this?
+The following epistemic elucidates:
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;[root@localhost ~]&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; /dev/sd?&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;WARNING: fdisk GPT support is currently new, and therefore in a
+
+Disk /dev/sda: 480.1 GiB, 480103981056 bytes, 937703088 sectors
+Disklabel type: gpt
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt;&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;Start&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;End&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Size&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Type&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;Name&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt; 3&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;935604224&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;937701375&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Linux RAID
+
+Disk /dev/sdb: 480.1 GiB, 480103981056 bytes, 937703088 sectors
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt;&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;&lt;span class=&quot;token bash language-bash&quot;&gt;Start&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;End&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Size&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Type&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;Name&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt; 3&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;935604224&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;937701375&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Linux RAID
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+No ESP tag… does this system boot via EFI at all?
+&lt;del&gt;And how the hell is GPT support &lt;cite&gt;new&lt;/cite&gt;?&lt;/del&gt;
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;[root@localhost ~]&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;efibootmgr &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;Boot0007* CentOS&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;HD(3,GPT)/File(\EFI\Centos\shimx64.efi)..BO
+Boot0008* CentOS&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;HD(3,GPT)/File(\EFI\Centos\shimx64.efi)..BO
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;[root@localhost ~]&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; /dev/sd?3&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/sda3: x86 boot sector, mkdosfs boot message display, code offset 0x58, OEM-ID &quot;mkfs.fat&quot;, sectors/cluster 8, Media descriptor 0xf8, sectors 2097024 (volumes &gt; 32 MB) , FAT (32 bit), sectors/FAT 2044, serial number 0x05e6429e, label: &quot;&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;&quot;
+/dev/sda3: x86 boot sector, mkdosfs boot message display, code offset 0x58, OEM-ID &quot;mkfs.fat&quot;, sectors/cluster 8, Media descriptor 0xf8, sectors 2097024 (volumes &gt; 32 MB) , FAT (32 bit), sectors/FAT 2044, serial number 0x05e6429e, label: &quot;&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;&quot;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Yes, and it is in fact Just a &lt;tt&gt;vfat&lt;/tt&gt;.
+And it is in fact the &lt;em&gt;very same&lt;/em&gt; &lt;tt&gt;vfat&lt;/tt&gt; so our eyes do not deceive us…
+&lt;/p&gt;
+&lt;blockquote style=&quot;white-space: pre-wrap;&quot;&gt;&lt;div&gt;&lt;span&gt;&lt;h4&gt;&lt;time datetime=&quot;2025-12-04 14:44+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;14:44&lt;span&gt;]&lt;/span&gt;&lt;/time&gt; &lt;strong&gt;Cicada&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;ooooh ok I got it&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;h4&gt;&lt;time datetime=&quot;2025-12-04 14:44+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;14:44&lt;span&gt;]&lt;/span&gt;&lt;/time&gt; &lt;strong&gt;Cicada&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;centos is using mdadm with metadata version 1.0 (at the end of the partition)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;h4&gt;&lt;time datetime=&quot;2025-12-04 14:52+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;14:52&lt;span&gt;]&lt;/span&gt;&lt;/time&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;i will be describing this technique and! making millions&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&quot;technique&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#technique&quot;&gt;#&lt;/a&gt; Immortal technique&lt;/h2&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+With a GPT partlabel, per
+  &lt;cite&gt;
+ UEFI Forum, Inc.,
+ Unified Extensible Firmware Interface (UEFI) Specification,
+ Release 2.11,
+ Nov 21, 2024,
+ 13. Protocols – Media Access,
+ 13.3. File System Format,
+ &lt;a href=&quot;//uefi.org/specs/UEFI/2.11/13_Protocols_Media_Access.html#partition-discovery&quot;&gt;13.3.2. Partition Discovery&lt;/a&gt;
+ (&lt;a href=&quot;//uefi.org/sites/default/files/resources/UEFI_Spec_Final_2.11.pdf#subsection.13.3.2&quot;&gt;p. 464&lt;/a&gt;)
+ &lt;/cite&gt;,
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+UEFI does not impose a restriction on the number or location of System Partitions&lt;del&gt;[, which]&lt;/del&gt;
+are discovered &lt;del&gt;[…]&lt;/del&gt; by examining the partition GUID and verifying that the contents of the partition conform to the FAT file system &lt;del&gt;[…]&lt;/del&gt;.
+Further, UEFI implementations may allow the use of conforming FAT partitions which do not use the ESP GUID.
+Partition creators may prevent UEFI firmware from examining and using a specific partition by setting bit 1 of the Partition Attributes &lt;del&gt;[…]&lt;/del&gt;.
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+so this is all rather above board, so long as we get a partition with a FAT in it.
+Which this clearly does, and any space at the end of the partition with the FAT is free game.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+We additionally observe that the size of the ESP is considered negligible,
+and that the contents of the ESP are a &lt;a href=&quot;//manpages.debian.org/update-initramfs.8&quot;&gt;simple&lt;/a&gt; &lt;a href=&quot;//manpages.debian.org/dracut.8&quot;&gt;function&lt;/a&gt; of the rootfs,
+so the replicas are &lt;em&gt;convenience copies&lt;/em&gt; for booting a system in soft-degraded conditions,
+and have no bearing on the redundancy of the rootfs.
+For the performance characteristics we can consider the ESP write-only and write-never.
+&lt;/p&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Modern Linux provides two and a half layers of abstraction related to doing this
+(much of (the basis for) this information is stored in the zeitgeist; this also serves to reify it):
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/&quot;&gt;device-mapper&lt;/a&gt;, which is the kernel API;
+    when ZFS is not available and I used the other abstraction layers for redundancy, I'd&lt;!--'--&gt; never had to use
+    &lt;cite&gt;&lt;a href=&quot;//manpages.debian.org/dmsetup.8&quot;&gt;dmsetup(8) – low level logical volume management&lt;/a&gt;&lt;/cite&gt;;
+     the ontology is likewise masked,&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;//gitlab.com/lvmteam/lvm2&quot;&gt;LVM2&lt;/a&gt;, which seems to be the only recommended public-facing RAID &amp;c. toolchain
+     and which defines a Volume Group/Physical Device/Logical Volume ontology;
+     being co-located with device-mapper implies to me that it is indeed &lt;em&gt;the&lt;/em&gt; printf(3) to device-mapper's&lt;!--'--&gt; write(2),&lt;/li&gt;
+ &lt;li&gt;an LVM1 had supposedly existed at some point (it's &lt;a href=&quot;//sources.debian.org/src/lvm2/2.03.16-2/man/lvm.8_main#L250-L253&quot;&gt;mentioned by name in bookworm lvm2 (2.03.16-2)'s lvm(8)&lt;/a&gt;),
+     but has since stopped previously existing (&lt;a href=&quot;//sources.debian.org/src/lvm2/2.03.31-2/man/lvm.8_main#L5&quot;&gt;trixie lvm2 (2.03.31-2)'s&lt;!--'--&gt; lvm(8) no longer mentions it, and rebrands from &lt;q&gt;LVM2 tools&lt;/q&gt; to &lt;q&gt;LVM tools&lt;/q&gt;&lt;/a&gt;);
+     LVM2 was first uploaded to Debian &lt;a href=&quot;https://sources.debian.org/src/lvm2/2.03.31-2/debian/changelog#L1458-L1462&quot;&gt;on 2002-02-20&lt;/a&gt;,
+     and LVM1 (&lt;a href=&quot;//tracker.debian.org/pkg/lvm10&quot;&gt;&lt;tt&gt;src:lvm10&lt;/tt&gt;&lt;/a&gt;) was removed on 2006-10-22 after already severely bitrotting
+     &lt;a href=&quot;//bugs.debian.org/394212#58&quot;&gt;because&lt;/a&gt;
+     &lt;blockquote class=&quot;continuing&quot; style=&quot;margin-left: 1em;&quot;&gt;
+      lvm10 doesn't&lt;!--'--&gt; work with 2.6 kernels and is unsupported upstream.&lt;br /&gt;
+      &lt;del&gt;[…]&lt;/del&gt;&lt;br /&gt;
+    lvm2 works with 2.4 kernels, and is compatible with lvm10 metadata formats.
+    and (importantly) is well supported upstream
+     &lt;/blockquote&gt;
+     but already in 2001 &lt;a href=&quot;//bugs.debian.org/121529&quot;&gt;people variably called it &lt;tt&gt;lvm&lt;/tt&gt; and &lt;tt&gt;lvm10&lt;/tt&gt; to a contemporaneously confusing extent&lt;/a&gt;, and&lt;/li&gt;
+ &lt;li&gt;&quot;MD&quot;, which the kernel documentation calls &lt;a href=&quot;//docs.kernel.org/driver-api/md/md-cluster.html&quot;&gt;&quot;MD&quot;&lt;/a&gt; or &lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-raid.html&quot;&gt;&quot;MD RAID&quot;&lt;/a&gt; everywhere except &lt;a href=&quot;//docs.kernel.org/admin-guide/md.html&quot;&gt;its dedicated page&lt;/a&gt; where it calls it &quot;RAID Arrays&quot;.
+     because of how ass the name is I've&lt;!--'--&gt; seen many users metonymise this to &lt;a href=&quot;//manpages.debian.org/mdadm.8&quot;&gt;mdadm(8)&lt;/a&gt;,
+     which already hedges when it self-describes as &lt;q&gt;manage MD devices &lt;i&gt;aka&lt;/i&gt; Linux Software RAID&lt;/q&gt;.
+     I'm&lt;!--'--&gt; not sure what the M or the D are actually supposed to be. this is something you advertise usually. but not here!
+     the first time &lt;tt&gt;Documentation/md.txt&lt;/tt&gt; appeared was in &lt;a href=&quot;//github.com/schwabe/davej-history/blob/2.1.85/Documentation/md.txt&quot;&gt;Linux 2.1.85&lt;/a&gt; (&lt;a href=&quot;//www.kernel.org/pub/linux/kernel/v2.1/#:~:text=2.1.85&quot;&gt;1998-02-04&lt;/a&gt;)
+     (to expound on &quot;lilo and loadlin options&quot;(!) for booting off MD):
+     &lt;blockquote class=&quot;continuing&quot; style=&quot;margin-left: 1em;&quot;&gt;
+      &lt;p class=&quot;continuation&quot;&gt;Tools that manage md devices can be found at sweet-smoke.ufr-info-p7.ibp.fr
+    in public/Linux/md035.tar.gz.&lt;/p&gt;
+    &lt;p style=&quot;text-indent: 4em;&quot;&gt; Marc ZYNGIER &amp;lt;zyngier@ufr-info-p7.ibp.fr&gt;&lt;/p&gt;
+    &lt;hr style=&quot;color: initial;&quot;&gt;
+    &lt;p class=&quot;continued&quot;&gt;You can boot (if you selected boot support in the configuration) with your md
+    device with the following kernel command line:&lt;/p&gt;
+     &lt;/blockquote&gt;
+     and looking at &lt;a href=&quot;//github.com/schwabe/davej-history/blob/2.1.85/include/linux/md.h&quot;&gt;&lt;tt&gt;include/1/md.h&lt;/tt&gt; from the time&lt;/a&gt; shows
+     &lt;blockquote class=&quot;continuing&quot; style=&quot;margin-left: 1em;&quot;&gt;
+       md.h : Multiple Devices driver for Linux
+     &lt;/blockquote&gt;
+     Multiple fucking Devices. no wonder! also &lt;a href=&quot;//docs.kernel.org/admin-guide/devices.html#:~:text=/dev/md0&quot;&gt;it's&lt;!--'--&gt; metadisk sometimes&lt;/a&gt;;&lt;br /&gt;
+     This is a kernel API that provides more device-mapper-style functionality.
+     You used to use mdadm(8) directly but this is passé and cringe now and you're&lt;!--'--&gt; supposed to be using LVM&lt;del&gt;2&lt;/del&gt;,
+     which still uses this same driver but differently (via &lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-raid.html&quot;&gt;dm-raid&lt;/a&gt;(?)) and that's&lt;!--'--&gt; okay.
+     I think it's&lt;!--'--&gt; because the original MD design was ass to autodetect and LVM2 solves this?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Out of a few greps through kernel &lt;tt&gt;Documentation/&lt;/tt&gt;, only searching through &lt;tt&gt;admin-guide/device-mapper/&lt;/tt&gt; for &quot;mirror&quot; yielded two useful results:
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-raid.html&quot;&gt;&lt;tt&gt;dm-raid&lt;/tt&gt;&lt;/a&gt; in &lt;tt&gt;raid1&lt;/tt&gt; (&lt;q&gt;RAID1 mirroring&lt;/q&gt;) mode and&lt;/li&gt;
+ &lt;li&gt;&lt;tt&gt;dm-mirror&lt;/tt&gt; which is only &lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-clone.html#:~:text=dm-mirror&quot;&gt;mentioned&lt;/a&gt; &lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-init.html#:~:text=mirror&quot;&gt;indirectly&lt;/a&gt; and doesn't&lt;!--'--&gt; have its own file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+The sampled system above uses un-devce-mapper-wrapped MD &lt;tt&gt;raid1&lt;/tt&gt; (thus, &lt;tt&gt;/dev/md&lt;var&gt;???&lt;/var&gt;&lt;/tt&gt; and &quot;Linux RAID&quot;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+For the purposes of this exercise, we will consider disks &lt;tt&gt;/dev/sd&lt;var&gt;[abc]&lt;/var&gt;&lt;/tt&gt; configured thusly:
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fdisk&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; /dev/sda&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;Disk /dev/sda: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Disklabel type: gpt
+
+Device&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;Start&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;End&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;Sectors Size Type
+/dev/sda1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;2048&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;2099199&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;2097152&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;1G EFI System
+/dev/sda2 2099200 209713151 207613952&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;99G Linux LVM
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+With contents of whatever was previously in &lt;tt&gt;/boot/efi&lt;/tt&gt; in &lt;tt&gt;~/oldbootefi&lt;/tt&gt;.
+This configuration can be easily obtained in the debian-installer partitioner.
+&lt;/p&gt;
+&lt;h3 id=&quot;dmsetup&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#dmsetup&quot;&gt;#&lt;/a&gt; &lt;tt&gt;dmsetup&lt;/tt&gt;&lt;/h3&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Making mirrors is undocumented.
+&lt;a href=&quot;//wiki.gentoo.org/wiki/Device-mapper#Mirror&quot;&gt;Notoriously&lt;/a&gt; undocumented, in fact.
+I don't even know how the Gentoo Wiki authors reverse-engineered the format because to me &lt;tt&gt;drivers/md/dm-{raid1,log}.c&lt;/tt&gt; don't look like they have a parser at all.
+(Yes, the &lt;tt&gt;mirror&lt;/tt&gt; provider is in &lt;tt&gt;dm-raid1.c&lt;/tt&gt;.)
+However, I replicate Gentoo Wiki's&lt;!--'--&gt; analysis of the table format.
+So, after substituting our config:
+&lt;/p&gt;
+&lt;dl class=&quot;continuing&quot; style=&quot;margin-left: 1em;&quot;&gt;&lt;!--&quot;--&gt;&lt;span&gt;&lt;dt&gt;start length         &lt;/dt&gt;&lt;!--&quot;--&gt;&lt;!--&quot;      --&gt;&lt;dd&gt;    0 2097152 mirror &lt;/dd&gt;&lt;!--&quot;--&gt;&lt;/span&gt;&lt;!--&quot;--&gt;&lt;span&gt;&lt;dt&gt;in-memory write log 1 argument 1k &lt;/dt&gt;&lt;!--&quot;--&gt;&lt;!--&quot;      --&gt;&lt;dd&gt;core                1          2  &lt;/dd&gt;&lt;!--&quot;--&gt;&lt;/span&gt;&lt;!--&quot;--&gt;&lt;span&gt;&lt;dt&gt;  3 devices &lt;/dt&gt;&lt;!--&quot;--&gt;&lt;!--&quot;      --&gt;&lt;dd&gt;  3         &lt;/dd&gt;&lt;!--&quot;--&gt;&lt;/span&gt;&lt;!--&quot;--&gt;&lt;span&gt;&lt;dt&gt;   device offset     d o          d o &lt;/dt&gt;&lt;!--&quot;--&gt;&lt;!--&quot;      --&gt;&lt;dd&gt;/dev/sda1 0  /dev/sdb1 0  /dev/sdc1 0 &lt;/dd&gt;&lt;!--&quot;--&gt;&lt;/span&gt;&lt;!--&quot;--&gt;&lt;span&gt;&lt;dt&gt;  1 feature&lt;/dt&gt;&lt;!--&quot;--&gt;&lt;!--&quot;      --&gt;&lt;dd&gt;  1 handle_errors&lt;/dd&gt;&lt;!--&quot;--&gt;&lt;/span&gt;
+&lt;/dl&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;dmsetup create &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;-ESP &lt;span class=&quot;token parameter variable&quot;&gt;--table&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'&lt;!--'--&gt;0 2097152 mirror&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;core 1 2&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;3&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/dev/sda1 0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/dev/sdb1 0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/dev/sdc1 0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 handle_errors'&lt;!--'--&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;dmsetup &lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--tree&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;tarta--LVM-tarta--root (253:0)
+tarta-ESP (253:1)
+ ├─ (8:33)
+ ├─ (8:17)
+ └─ (8:1)
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;dmsetup table&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;tarta--LVM-tarta--root: …
+tarta-ESP: 0 2097152 mirror core 1 2 3 8:1 0 8:17 0 8:33 0 1 handle_errors
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;lsblk&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;MAJ:MIN RM&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;SIZE RO TYPE MOUNTPOINTS
+sda&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;100G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 disk
+├─sda1&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+│ └─tarta-ESP&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;8:1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 dm
+└─sda2&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:2&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;99G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─tarta--LVM-tarta--root&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;8:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;248G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 lvm&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/
+sdb&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:16&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;100G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 disk
+├─sdb1&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:17&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+│ └─tarta-ESP&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;8:1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 dm
+└─sdb2&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:18&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;99G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─tarta--LVM-tarta--root&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;8:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;248G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 lvm&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/
+sdc&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:32&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;100G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 disk
+├─sdc1&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:33&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+│ └─tarta-ESP&lt;!--&quot;--&gt;                &lt;!--&quot;--&gt;8:1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 dm
+└─sdc2&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:34&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;99G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─tarta--LVM-tarta--root&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;8:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;248G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 lvm&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;/
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;wc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; /dev/sd?1 /dev/mapper/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;1073741824 /dev/sda1
+1073741824 /dev/sdb1
+1073741824 /dev/sdc1
+1073741824 /dev/mapper/tarta-ESP
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-sL&lt;/span&gt; /dev/sd?1 /dev/mapper/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/sda1:&lt;!--&quot;--&gt;             &lt;!--&quot;--&gt;DOS/MBR boot sector, code offset 0x58+2, OEM-ID &quot;mkfs.fat&quot;, sectors/cluster 8, Media descriptor 0xf8, sectors/track 63, heads 16, hidden sectors 2048, sectors 2097144 (volumes &gt; 32 MB), FAT (32 bit), sectors/FAT 2048, serial number 0xfe3a9157, unlabeled
+/dev/sdb1:&lt;!--&quot;--&gt;             &lt;!--&quot;--&gt;[the same]
+/dev/sdc1:&lt;!--&quot;--&gt;             &lt;!--&quot;--&gt;[the same]
+/dev/mapper/tarta-ESP: [the same]
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+Of note here:
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;device-mapper is accounted in 512-byte blocks, even if the device's&lt;!--'--&gt; block size were 4k.&lt;/li&gt;
+ &lt;li&gt;I do &lt;em&gt;not&lt;/em&gt; reproduce the Gentoo Wiki's&lt;!--'--&gt; minimum write log size
+     (it says the minimum is the page size
+      — &lt;tt&gt;$(( $(getconf PAGE_SIZE) / 512 ))&lt;/tt&gt; —
+       but the only restrixion is &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-log.c?id=98ac9cc4b4452ed7e714eddc8c90ac4ae5da1a09#n349&quot;&gt;power of two that isn't&lt;!--'--&gt; 1&lt;/a&gt;;
+      this was &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2045e88edb4e0c9ce62d317f77dc59d27d9c530e&quot;&gt;changed in 2009&lt;/a&gt;
+      from &quot;multiple of the page size&quot;)
+     we pick the minimum value since the ESP is write-never.&lt;/li&gt;
+ &lt;li&gt;If &lt;tt&gt;/dev/sda1&lt;/tt&gt; already had an ESP, it'll&lt;!--'--&gt; get synced to the others
+     (&lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/md/dm-raid1.c?id=98ac9cc4b4452ed7e714eddc8c90ac4ae5da1a09#n157&quot;&gt;the first device is canonical on sync&lt;/a&gt;).&lt;/li&gt;
+ &lt;li&gt;The mirror is the &lt;em&gt;same size&lt;/em&gt; as the mirrored partitions. There is no metadata anywhere so this is ephemeral.
+     This is interesting and informative for future (and the most annoying way to spell &lt;code&gt;tee &lt; /dev/sda1 &gt; /dev/sdb1 /dev/sdc1&lt;/code&gt; known to man),
+     but not persistent and thus not useful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;mdadm&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#mdadm&quot;&gt;#&lt;/a&gt; &lt;tt&gt;mdadm&lt;/tt&gt;&lt;/h3&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Per &lt;a href=&quot;//manpages.debian.org/mdadm.8&quot;&gt;mdadm(8)&lt;/a&gt;:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Currently, Linux supports &lt;del&gt;[…]&lt;/del&gt; &lt;b&gt;RAID0&lt;/b&gt; (striping), &lt;b&gt;RAID1&lt;/b&gt; (mirroring), &lt;b&gt;RAID4&lt;/b&gt;, &lt;del&gt;[…]&lt;/del&gt;.
+&lt;/p&gt;
+&lt;p style=&quot;text-indent: -2em; margin-left: 2em;&quot;&gt;
+&lt;b&gt;-e&lt;/b&gt;, &lt;b&gt;--metadata=&lt;/b&gt;&lt;br /&gt;
+ Declare the style of RAID metadata (superblock) to be used. The default is 1.2 &lt;del&gt;[…]&lt;/del&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot; style=&quot;text-indent: -2em; margin-left: 4em;&quot;&gt;
+Options are:
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot; style=&quot;text-indent: -2em; margin-left: 6em;&quot;&gt;
+0, 0.90&lt;br /&gt;
+ &lt;del&gt;[…]&lt;/del&gt; This format limits arrays to 28 component devices &lt;del&gt;[…]&lt;/del&gt;. It is also possible for there to be confusion about whether the superblock applies to a whole device or just the last partition, if that partition starts on a 64K boundary.
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot; style=&quot;text-indent: -2em; margin-left: 6em;&quot;&gt;
+1, 1.0, 1.1, 1.2 default&lt;br /&gt;
+ &lt;del&gt;[…]&lt;/del&gt; This has fewer restrictions. &lt;del&gt;[…]&lt;/del&gt; &lt;del&gt;[A]&lt;/del&gt; recovery operation can be checkpointed and restarted. The different sub-versions store the superblock at different locations on the device, either at the end (for 1.0), at the start (for 1.1) or 4K from the start (for 1.2). &quot;1&quot; is equivalent to &quot;1.2&quot; &lt;del&gt;[…]&lt;/del&gt;.
+&lt;/p&gt;
+&lt;p class=&quot;continuing&quot; style=&quot;text-indent: -2em; margin-left: 6em;&quot;&gt;
+&lt;del&gt;[…]&lt;/del&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+so..:
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;dmsetup remove tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; tarta-ESP &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; mirror &lt;span class=&quot;token parameter variable&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; /dev/sd?1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;To optimalize recovery speed, it is recommended to enable write-indent bitmap, do you want to enable it now? [y/N]? y
+mdadm: partition table exists on /dev/sda1
+mdadm: partition table exists on /dev/sdb1
+mdadm: partition table exists on /dev/sdc1
+Continue creating array [y/N]? y
+mdadm: array /dev/md/tarta-ESP started.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;dmsetup &lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;tarta--LVM-tarta--root&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;(253:0)
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; /proc/mdstat&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;Personalities : [raid1]
+md127 : active raid1 sdc1[2] sdb1[1] sda1[0]
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;1048512 blocks [3/3] [UUU]
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;bitmap: 1/1 pages [4KB], 65536KB chunk
+
+unused devices: &amp;lt;none&gt;
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--misc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-Q&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/md/tarta-ESP: 1023.94MiB raid1 3 devices, 0 spares. Use mdadm --detail for more detail.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--misc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-D&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/md/tarta-ESP:
+&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;Version : 0.90
+&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;Creation Time : Sun Dec 14 04:32:43 2025
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;Raid Level : raid1
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;Array Size : 1048512 (1023.94 MiB 1073.68 MB)
+&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;Used Dev Size : 1048512 (1023.94 MiB 1073.68 MB)
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;Raid Devices : 3
+&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;Total Devices : 3
+&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;Preferred Minor : 127
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Persistence : Superblock is persistent
+
+&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;Intent Bitmap : Internal
+
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Update Time : Sun Dec 14 04:36:46 2025
+&lt;!--&quot;--&gt;             &lt;!--&quot;--&gt;State : clean
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;Active Devices : 3
+&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;Working Devices : 3
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;Failed Devices : 0
+&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;Spare Devices : 0
+
+Consistency Policy : bitmap
+
+&lt;!--&quot;--&gt;              &lt;!--&quot;--&gt;UUID : 79536706:4f3379fa:da3b0b36:bb6ba96d (local to host tarta)
+&lt;!--&quot;--&gt;            &lt;!--&quot;--&gt;Events : 0.20
+
+&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;Number&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;Major&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;Minor&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;RaidDevice State
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;8&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;active sync&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/dev/sda1
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;8&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;17&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;active sync&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/dev/sdb1
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;2&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;8&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;33&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;2&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;active sync&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/dev/sdc1
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n1&lt;/span&gt; /dev/sd?1 /dev/md/tarta-ESP &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;paste&lt;/span&gt; - - -&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;==&gt; /dev/sda1 &amp;lt;==&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Sun Dec 14 04:36:46 CET 2025
+==&gt; /dev/sdb1 &amp;lt;==&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Sun Dec 14 04:36:46 CET 2025
+==&gt; /dev/sdc1 &amp;lt;==&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Sun Dec 14 04:36:46 CET 2025
+==&gt; /dev/md/tarta-ESP &amp;lt;==&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;Sun Dec 14 04:36:46 CET 2025
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;wc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; /dev/sd?1 /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;1073741824 /dev/sda1
+1073741824 /dev/sdb1
+1073741824 /dev/sdc1
+1073676288 /dev/md/tarta-ESP
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+The date ends up at the front of the partitions, the device is 64k shorter…
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;od &lt;span class=&quot;token parameter variable&quot;&gt;-Ax&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-tx1z&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-j&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1073676288&lt;/span&gt; /dev/sda1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;3fff0000 fc 4e 2b a9 00 00 00 00 5a 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.N+.....Z.......&amp;lt;
+3fff0010 00 00 00 00 73 3b bc 1c c9 31 3e 69 01 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;....s;...1&gt;i....&amp;lt;
+3fff0020 c0 ff 0f 00 03 00 00 00 03 00 00 00 7f 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+3fff0030 00 00 00 00 88 6a 56 bb 36 0b 3b da 6d a9 6b bb&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.....jV.6.;.m.k.&amp;lt;
+3fff0040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+[...]
+*
+3fff1000 62 69 74 6d 04 00 00 00 73 3b bc 1c 88 6a 56 bb&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;bitm....s;...jV.&amp;lt;
+3fff1010 36 0b 3b da 6d a9 6b bb 14 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;6.;.m.k.........&amp;lt;
+3fff1020 01 00 00 00 00 00 00 00 80 ff 1f 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+3fff1030 00 00 00 00 00 00 00 04 05 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+3fff1040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+3fff1100 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+40000000
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and it says &lt;tt&gt;bitm&lt;/tt&gt; and we enabled the bitmap. That's&lt;!--'--&gt; kino.
+(Though I'll admit it's unclear to me how you indent writes to an unstructured binary file;
+ but I can't&lt;!--'--&gt; even clown on them because I &lt;a href=&quot;//github.com/md-raid-utilities/mdadm/pull/177&quot;&gt;apparently fixed this half a year ago&lt;/a&gt; then forgot instantly.)
+We do want the bitmap because the counterfactual means
+&lt;a href=&quot;//docs.kernel.org/admin-guide/md.html#:~:text=consistency_policy&quot;&gt;re-replicating the whole device&lt;/a&gt;
+when importing a dirty array,
+and it has no cost that I've measured (maybe it'd eat another block if the device exceeded the bitmap capacity in the superblock?).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+The original assessment is correct, then:
+version 0 metadata does go at the end.
+But, version 0 stinky version 1 good: number bigger?
+Sure, but it doesn't&lt;!--'--&gt; really change anything I could measure;
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--stop&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;mdadm: stopped /dev/md/tarta-ESP
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; tarta-ESP &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; mirror &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; /dev/sd?1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;To optimalize recovery speed, it is recommended to enable write-indent bitmap, do you want to enable it now? [y/N]? y
+mdadm: size set to 1048512K
+mdadm: array /dev/md/tarta-ESP started.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; /dev/zero /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;cp: error writing '&lt;!--'--&gt;/dev/md/tarta-ESP'&lt;!--'--&gt;: No space left on device
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; /proc/mdstat&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;md127 : active raid1 sdc1[2] sdb1[1] sda1[0]
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;1048512 blocks super 1.0 [3/3] [UUU]
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;bitmap: 1/1 pages [4KB], 65536KB chunk
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--misc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-Q&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/md/tarta-ESP: 1023.94MiB raid1 3 devices, 0 spares. Use mdadm --detail for more detail.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--misc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-D&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;[the same except]
+&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;Version : 1.0
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;od &lt;span class=&quot;token parameter variable&quot;&gt;-Ax&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-tx1z&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-j&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1073676288&lt;/span&gt; /dev/sda1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;3fffc000 62 69 74 6d 04 00 00 00 33 8c 1d 3b 0a 44 dc db&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;bitm....3..;.D..&amp;lt;
+3fffc010 1b a6 81 e0 ea 93 6d 88 12 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;......m.........&amp;lt;
+3fffc020 00 00 00 00 00 00 00 00 80 ff 1f 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+3fffc030 00 00 00 00 00 00 00 04 05 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+3fffc040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+[...]
+*
+3fffe000 fc 4e 2b a9 01 00 00 00 01 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.N+.............&amp;lt;
+3fffe010 33 8c 1d 3b 0a 44 dc db 1b a6 81 e0 ea 93 6d 88&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;3..;.D........m.&amp;lt;
+3fffe020 74 61 72 74 61 3a 74 61 72 74 61 2d 45 53 50 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;tarta:tarta-ESP.&amp;lt;
+3fffe030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+3fffe040 62 32 3e 69 00 00 00 00 01 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;b2&gt;i............&amp;lt;
+3fffe050 80 ff 1f 00 00 00 00 00 00 00 00 00 03 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+[...]
+*
+40000000
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;wc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;1073676288 /dev/md/tarta-ESP
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+except the bitmap and the superblock are backwards.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+As advertised, metadata 1.1 and 1.2 put the superblock at 0 and 4k, respectively
+The seemingly-promising &lt;tt&gt;--data-offset&lt;/tt&gt; argument only moves where the data is allocated, not the superblock.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Thus,
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; tarta-ESP /dev/md/tarta-ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;mkfs.fat 4.2 (2021-01-31)
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'&lt;!--'--&gt;\;/boot/efi.*&lt;tt&gt;vfat&lt;/tt&gt;;s;^[^[:space:]]*;LABEL=tarta-ESP;'&lt;!--'--&gt;&lt;/span&gt; /etc/fstab&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# If you use a path instead then use /dev/md/tarta:tarta-ESP! It comes back as tarta:tarta-ESP and I haven'&lt;!--'--&gt;t the faintest why.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; /boot/efi&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; oldbootefi/* /boot/efi&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;lsblk&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;NAME&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;MAJ:MIN RM&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;SIZE RO TYPE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;MOUNTPOINTS
+sda&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;100G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 disk
+├─sda1&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:1&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+│ └─md127&lt;!--&quot;--&gt;                    &lt;!--&quot;--&gt;9:127&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 1023.9M&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 raid1 /boot/efi
+└─sda2&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:2&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;99G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─tarta--LVM-tarta--root 252:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;248G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 lvm&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/
+sdb&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:16&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;100G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 disk
+├─sdb1&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:17&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+│ └─md127&lt;!--&quot;--&gt;                    &lt;!--&quot;--&gt;9:127&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 1023.9M&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 raid1 /boot/efi
+└─sdb2&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:18&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;99G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─tarta--LVM-tarta--root 252:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;248G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 lvm&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/
+sdc&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:32&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;100G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 disk
+├─sdc1&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:33&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;1G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+│ └─md127&lt;!--&quot;--&gt;                    &lt;!--&quot;--&gt;9:127&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 1023.9M&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 raid1 /boot/efi
+└─sdc2&lt;!--&quot;--&gt;                       &lt;!--&quot;--&gt;8:34&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;99G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 part
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;└─tarta--LVM-tarta--root 252:0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;248G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 lvm&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;reboot&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and it comes up normally.
+But what does the EFI think, and is does this still pick up changes to one of the ESPs?
+Breaking into the shell yields:
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token output&quot;&gt;UEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EDK II, 0x00010000)
+Mapping table
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;FS0: Alias(s):HD1b:;BLK2:
+&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;PciRoot(0x0)/Pci(0x3,0x0)/HD(1,GPT,ECF7F5B7-951D-AF46-97B5-B26D2CDE9EE2,0x800,0x200000)
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;FS1: Alias(s):HD2b:;BLK5:
+&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;PciRoot(0x0)/Pci(0x4,0x0)/HD(1,GPT,ECF7F5B7-951D-AF46-97B5-B26D2CDE9EE2,0x800,0x200000)
+&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;FS2: Alias(s):HD3b:;BLK8:
+&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;PciRoot(0x0)/Pci(0x5,0x0)/HD(1,GPT,ECF7F5B7-951D-AF46-97B5-B26D2CDE9EE2,0x800,0x200000)
+
+Shell&gt; vol fs0:
+Volume tarta-ESP (rw)
+&lt;small style='display: block; line-height: initial;'&gt;1071562752 bytes total disk space
+1062363136 bytes available on disk
+4096 bytes in each allocation unit
+&lt;/small&gt;Shell&gt; vol fs1:
+Volume tarta-ESP (rw)
+&lt;small style='display: block; line-height: initial;'&gt;1071562752 bytes total disk space
+1062363136 bytes available on disk
+4096 bytes in each allocation unit
+&lt;/small&gt;Shell&gt; vol fs2:
+Volume tarta-ESP (rw)
+&lt;small style='display: block; line-height: initial;'&gt;1071562752 bytes total disk space
+1062363136 bytes available on disk
+4096 bytes in each allocation unit
+&lt;/small&gt;
+FS0:\&gt; cp FS0:\EFI\BOOT\bootx64.efi fs0:
+Copying FS0:\EFI\BOOT\BOOTX64.EFI -&gt; fs0:\BOOTX64.EFI
+- [ok]
+FS0:\&gt; FS0:\EFI\BOOT\BOOTX64.EFI
+
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Booting `Debian GNU/Linux'&lt;!--'--&gt;
+
+Loading Linux 6.12.57+deb13-amd64 ...
+Loading initial ramdisk ...
+Debian GNU/Linux 13 tarta ttyS0
+
+tarta login: root
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;journalctl &lt;span class=&quot;token parameter variable&quot;&gt;-b&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;Dec 14 20:00:59 tarta systemd-fsck[444]: fsck.fat 4.2 (2021-01-31)
+Dec 14 20:00:59 tarta systemd-fsck[444]: /dev/md127: 15 files, 2480/261612 clusters
+Dec 14 20:00:59 tarta systemd[1]: Finished systemd-fsck@dev-disk-by\x2dlabel-tarta\x2dESP.service - File System Check on /dev/disk/by-label/tarta-ESP.
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+It doesn't&lt;!--'--&gt; mind, and yes it does (in spite of the bitmap thing? unclear what this implies).
+Removing one of the disks also works.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+The conclusion to the &lt;tt&gt;mdadm&lt;/tt&gt; approach is that it works perfectly, except that it's passé and cringe because it's &lt;tt&gt;mdadm&lt;/tt&gt;.
+&lt;/p&gt;
+&lt;h3 id=&quot;LVM&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#LVM&quot;&gt;#&lt;/a&gt; LVM&lt;del&gt;2&lt;/del&gt;&lt;/h3&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+&lt;!--'--&gt;'s metadata &lt;em&gt;must&lt;/em&gt; have a label in blocks [0,4)
+(this alone would be surmountable, &lt;code&gt;mkfs.&lt;tt&gt;vfat&lt;/tt&gt; -R 4&lt;/code&gt; gives us space for 2! in fact, FAT can ignore any number of blocks at the start of the device,
+ so long as it gets the first two),
+then a header around a megabyte in,
+then user data,
+in this order.
+&lt;/p&gt;
+&lt;details&gt;
+ &lt;summary&gt;You can even easily make a partition that &lt;em&gt;co-locates&lt;/em&gt; a &lt;tt&gt;vfat&lt;/tt&gt; and an LVM PV (there's&lt;!--'--&gt; no reason to do this, but you can!)&lt;/summary&gt;
+ &lt;p class=&quot;indented continuing&quot;&gt;
+  I was trying to get a funny screenshot and mount them both but Linux refuses this
+  (this might be possible if you could import LVM VGs in read-only mode,
+   but no matter how much I needled it, combining them gave me &lt;tt&gt;EBUSY&lt;/tt&gt;):
+ &lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;pvcreate &lt;span class=&quot;token parameter variable&quot;&gt;--labelsector&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--dataalignment&lt;/span&gt; 512M /dev/vda1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Physical volume &quot;/dev/vda1&quot; successfully created.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgcreate T /dev/vda1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Volume group &quot;T&quot; successfully created
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgs&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;VG&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;#PV #LV #SN Attr&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;VSize&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;VFree
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;T&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0 wz--n-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;512.00m 512.00m
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;tarta-LVM&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;3&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0 wz--n- &amp;lt;296.99g&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;49.00g
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;lvcreate &lt;span class=&quot;token parameter variable&quot;&gt;-L512M&lt;/span&gt; T&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;Logical volume &quot;lvol0&quot; created.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; A &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; /dev/zero &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; /dev/mapper/T-lvol0&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;tr: write error: No space left on device
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgchange &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; n T&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 logical volume(s) in volume group &quot;T&quot; now active
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;od &lt;span class=&quot;token parameter variable&quot;&gt;-Ax&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-tx1z&lt;/span&gt; /dev/vda1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;000000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+000400 4c 41 42 45 4c 4f 4e 45 02 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;LABELONE........&amp;lt;
+000410 c6 6f e8 56 20 00 00 00 4c 56 4d 32 20 30 30 31&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.o.V ...LVM2 001&amp;lt;
+[...]
+000490 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+001000 9d 76 17 c1 20 4c 56 4d 32 20 78 5b 35 41 25 72&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.v.. LVM2 x[5A%r&amp;lt;
+[...]
+001a10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+20000000 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;AAAAAAAAAAAAAAAA&amp;lt;
+*
+40000000
+
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;truncate &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; 1G 1G&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--mbr&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;n &lt;span class=&quot;token parameter variable&quot;&gt;-R&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2048&lt;/span&gt; 1G &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$((&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;mkfs.fat 4.2 (2021-01-31)
+Warning: block count mismatch: found 1048576 but assuming 524288.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; 1G &lt;span class=&quot;token function&quot;&gt;dir&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; B &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; /dev/zero &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; dir/B&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;tr: write error: No space left on device
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;umount&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dir&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;od &lt;span class=&quot;token parameter variable&quot;&gt;-Ax&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-tx1z&lt;/span&gt; 1G&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;000000 eb 58 90 6d 6b 66 73 2e 66 61 74 00 02 08 00 08&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.X.mkfs.fat.....&amp;lt;
+[...]
+000400 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+000c00 eb 58 90 6d 6b 66 73 2e 66 61 74 00 02 08 00 08&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.X.mkfs.fat.....&amp;lt;
+[...]
+001000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+100000 f8 ff ff 0f ff ff ff 0f f8 ff ff 0f 04 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+100010 05 00 00 00 06 00 00 00 07 00 00 00 08 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+[...]
+1ff800 ff ff ff 0f 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+1ff810 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+200000 42 20 20 20 20 20 20 20 20 20 20 20 00 74 a6 ab&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;B&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;.t..&amp;lt;
+200010 8e 5b 8e 5b 00 00 a8 ab 8e 5b 03 00 00 e0 df 1f&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.[.[.....[......&amp;lt;
+200020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+201000 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;BBBBBBBBBBBBBBBB&amp;lt;
+*
+1ffff000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+40000000
+
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgchange &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; n T&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 logical volume(s) in volume group &quot;T&quot; now active
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;512&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; 1G &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; /dev/vda1 &lt;span class=&quot;token assign-left variable&quot;&gt;conv&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;sparse&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;2097152+0 records in
+2097152+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 35.7855 s, 30.0 MB/s
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgs&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;VG&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;#PV #LV #SN Attr&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;VSize&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;VFree
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;T&lt;!--&quot;--&gt;           &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0 wz--n-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;512.00m&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;0
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;tarta-LVM&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;3&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;1&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;0 wz--n- &amp;lt;296.99g 49.00g
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgchange &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; y T&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 logical volume(s) in volume group &quot;T&quot; now active
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-d&lt;/span&gt; A &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; /dev/mapper/T-lvol0 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;0
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; C &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; /dev/zero &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; /dev/mapper/T-lvol0&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;tr: write error: No space left on device
+
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; /dev/vda1 /mnt&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;mount: /mnt: unknown filesystem type '&lt;!--'--&gt;LVM2_member'&lt;!--'--&gt;.
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;dmesg(1) may have more information after failed mount system call.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-t&lt;/span&gt; &lt;tt&gt;vfat&lt;/tt&gt; /dev/vda1 /mnt&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;mount: /mnt: fsconfig() failed: /dev/vda1: Can'&lt;!--'--&gt;t open blockdev.
+&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;dmesg(1) may have more information after failed mount system call.
+
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;vgchange &lt;span class=&quot;token parameter variable&quot;&gt;-a&lt;/span&gt; n T&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;0 logical volume(s) in volume group &quot;T&quot; now active
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-t&lt;/span&gt; &lt;tt&gt;vfat&lt;/tt&gt; /dev/vda1 /mnt&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; /mnt/&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;-rwxr-xr-x 1 root root 534765568 Dec 14 22:29 /mnt/B
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-d&lt;/span&gt; B &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; /mnt/B &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wc&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;0
+
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;od &lt;span class=&quot;token parameter variable&quot;&gt;-Ax&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-tx1z&lt;/span&gt; /dev/vda1 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tail&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;200010 8e 5b 8e 5b 00 00 a8 ab 8e 5b 03 00 00 e0 df 1f&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;.[.[.....[......&amp;lt;
+200020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+201000 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;BBBBBBBBBBBBBBBB&amp;lt;
+*
+1ffff000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;................&amp;lt;
+*
+20000000 43 43 43 43 43 43 43 43 43 43 43 43 43 43 43 43&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&gt;CCCCCCCCCCCCCCCC&amp;lt;
+*
+40000000
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;a href=&quot;/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png&quot;&gt;&lt;img style=&quot;width: 100%&quot; src=&quot;/content/assets/blogn_t/021.01-vfat-collocated-LVM-PV.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt; &lt;!-- this is a visual representation of the code block above --&gt;
+&lt;h2 id=&quot;conclusion&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusion&quot;&gt;#&lt;/a&gt; Conclusion&lt;/h2&gt;
+&lt;p&gt;
+There is only one way to do this: with &lt;tt&gt;mdadm&lt;/tt&gt;.
+This way is kosher, but a little cringe.
+But to be cringe is to be free.
+&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; /boot/efi &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;umount&lt;/span&gt; /boot/efi
+
+&lt;span class=&quot;token function-name function&quot;&gt;mdadmC&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mdadm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;-ESP &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt; mirror &lt;span class=&quot;token parameter variable&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--bitmap&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;internal &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$#&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$@&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+mdadmC /dev/part1 /dev/part2 &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;. /dev/partN
+
+mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;-ESP /dev/md/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;-ESP
+&lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;'&lt;!--'--&gt;\;/boot/efi.*&lt;tt&gt;vfat&lt;/tt&gt;;s;^[^[:space:]]*;LABEL='&lt;!--'--&gt;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;uname&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;'&lt;!--'--&gt;-ESP;'&lt;!--'--&gt;&lt;/span&gt; /etc/fstab
+
+&lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; /boot/efi
+&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; efi/ /boot/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/div&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/020-sizeof-division.html</id>
