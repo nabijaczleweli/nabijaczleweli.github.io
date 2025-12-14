@@ -92,6 +92,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 	 POST(018-mean-shift-clusterer,                Tue, 29 Apr 2025 16:32:56 +0200, 018. Mean-shift clustering)
 	 POST(019-aphantasia,                          Thu, 18 Sep 2025 18:34:15 +0200, 019. aphantasia.)
 	 POST(020-sizeof-division,                     Sun, 28 Sep 2025 01:02:48 +0200, 020. Pre-modern-UNIX sizeof division)
+	 POST(021-mirror-boot-efi-ESP-plain-raid,      Mon, 15 Dec 2025 00:02:14 +0100, 021. Natively mirrored but still functional & correct /boot/efi)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

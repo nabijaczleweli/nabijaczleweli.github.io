@@ -1,0 +1,8 @@
+[root@localhost ~]# lsblk
+NAME      MAJ:MIN   SIZE TYPE  MOUNTPOINT
+sda         8:0   447.1G disk
+└─sda3      8:3   414.1G part
+  └─md125   9:125  1024M raid1 /boot/efi
+sdb         8:16  447.1G disk
+└─sdb3      8:17  414.1G part
+  └─md125   9:125  1024M raid1 /boot/efi

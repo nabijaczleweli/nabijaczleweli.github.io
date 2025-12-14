@@ -1,0 +1,37 @@
+root@tarta:~# dmsetup create -v $(uname -n)-ESP --table '0 2097152 mirror  core 1 2  3  /dev/sda1 0  /dev/sdb1 0  /dev/sdc1 0  1 handle_errors'
+root@tarta:~# dmsetup ls --tree
+tarta--LVM-tarta--root (253:0)
+tarta-ESP (253:1)
+ ├─ (8:33)
+ ├─ (8:17)
+ └─ (8:1)
+root@tarta:~# dmsetup table
+tarta--LVM-tarta--root: …
+tarta-ESP: 0 2097152 mirror core 1 2 3 8:1 0 8:17 0 8:33 0 1 handle_errors
+root@tarta:~# lsblk
+NAME                       MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda                          8:0    0  100G  0 disk
+├─sda1                       8:1    0    1G  0 part
+│ └─tarta-ESP                8:1    0    1G  0 dm
+└─sda2                       8:2    0   99G  0 part
+  └─tarta--LVM-tarta--root   8:0    0  248G  0 lvm  /
+sdb                          8:16   0  100G  0 disk
+├─sdb1                       8:17   0    1G  0 part
+│ └─tarta-ESP                8:1    0    1G  0 dm
+└─sdb2                       8:18   0   99G  0 part
+  └─tarta--LVM-tarta--root   8:0    0  248G  0 lvm  /
+sdc                          8:32   0  100G  0 disk
+├─sdc1                       8:33   0    1G  0 part
+│ └─tarta-ESP                8:1    0    1G  0 dm
+└─sdc2                       8:34   0   99G  0 part
+  └─tarta--LVM-tarta--root   8:0    0  248G  0 lvm  /
+root@tarta:~# wc -c /dev/sd?1 /dev/mapper/tarta-ESP
+1073741824 /dev/sda1
+1073741824 /dev/sdb1
+1073741824 /dev/sdc1
+1073741824 /dev/mapper/tarta-ESP
+root@tarta:~# file -sL /dev/sd?1 /dev/mapper/tarta-ESP
+/dev/sda1:             DOS/MBR boot sector, code offset 0x58+2, OEM-ID "mkfs.fat", sectors/cluster 8, Media descriptor 0xf8, sectors/track 63, heads 16, hidden sectors 2048, sectors 2097144 (volumes > 32 MB), FAT (32 bit), sectors/FAT 2048, serial number 0xfe3a9157, unlabeled
+/dev/sdb1:             [the same]
+/dev/sdc1:             [the same]
+/dev/mapper/tarta-ESP: [the same]

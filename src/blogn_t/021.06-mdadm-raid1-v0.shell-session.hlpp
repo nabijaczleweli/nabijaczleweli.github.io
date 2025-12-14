@@ -1,0 +1,60 @@
+root@tarta:~# dmsetup remove tarta-ESP
+root@tarta:~# mdadm -C tarta-ESP -l mirror -e 0 -n 3 /dev/sd?1
+To optimalize recovery speed, it is recommended to enable write-indent bitmap, do you want to enable it now? [y/N]? y
+mdadm: partition table exists on /dev/sda1
+mdadm: partition table exists on /dev/sdb1
+mdadm: partition table exists on /dev/sdc1
+Continue creating array [y/N]? y
+mdadm: array /dev/md/tarta-ESP started.
+root@tarta:~# dmsetup ls
+tarta--LVM-tarta--root  (253:0)
+root@tarta:~# date > /dev/md/tarta-ESP
+root@tarta:~# cat /proc/mdstat
+Personalities : [raid1]
+md127 : active raid1 sdc1[2] sdb1[1] sda1[0]
+      1048512 blocks [3/3] [UUU]
+      bitmap: 1/1 pages [4KB], 65536KB chunk
+
+unused devices: <none>
+root@tarta:~# mdadm --misc -Q /dev/md/tarta-ESP
+/dev/md/tarta-ESP: 1023.94MiB raid1 3 devices, 0 spares. Use mdadm --detail for more detail.
+root@tarta:~# mdadm --misc -D /dev/md/tarta-ESP
+/dev/md/tarta-ESP:
+           Version : 0.90
+     Creation Time : Sun Dec 14 04:32:43 2025
+        Raid Level : raid1
+        Array Size : 1048512 (1023.94 MiB 1073.68 MB)
+     Used Dev Size : 1048512 (1023.94 MiB 1073.68 MB)
+      Raid Devices : 3
+     Total Devices : 3
+   Preferred Minor : 127
+       Persistence : Superblock is persistent
+
+     Intent Bitmap : Internal
+
+       Update Time : Sun Dec 14 04:36:46 2025
+             State : clean
+    Active Devices : 3
+   Working Devices : 3
+    Failed Devices : 0
+     Spare Devices : 0
+
+Consistency Policy : bitmap
+
+              UUID : 79536706:4f3379fa:da3b0b36:bb6ba96d (local to host tarta)
+            Events : 0.20
+
+    Number   Major   Minor   RaidDevice State
+       0       8        1        0      active sync   /dev/sda1
+       1       8       17        1      active sync   /dev/sdb1
+       2       8       33        2      active sync   /dev/sdc1
+root@tarta:~# head -n1 /dev/sd?1 /dev/md/tarta-ESP | paste - - -
+==> /dev/sda1 <==       Sun Dec 14 04:36:46 CET 2025
+==> /dev/sdb1 <==       Sun Dec 14 04:36:46 CET 2025
+==> /dev/sdc1 <==       Sun Dec 14 04:36:46 CET 2025
+==> /dev/md/tarta-ESP <==       Sun Dec 14 04:36:46 CET 2025
+root@tarta:~# wc -c /dev/sd?1 /dev/md/tarta-ESP
+1073741824 /dev/sda1
+1073741824 /dev/sdb1
+1073741824 /dev/sdc1
+1073676288 /dev/md/tarta-ESP

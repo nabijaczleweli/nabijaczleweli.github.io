@@ -119,7 +119,7 @@ Select programs:
 	            Oklab 3D radius-based pallette reduction (posterisation?) per <a href="//youtu.be/HuW9qJbL0xM">Gneiss Name, <cite>Mean Shift Clustering</cite>, 2025 ▶</a>; also <a href="../blogn_t/018-mean-shift-clusterer.html">on the blogue</a>)
 	   SRHT_SET(fonts.debian.net, DEVICON(cplusplus)DEVICON(javascript),
 	            <a href="//debfonts.nabijaczleweli.xyz">httpsCOLON_SLASH_SLASHdebfonts.nabijaczleweli.xyz</a> ‒ interactively-filtered search through all debian fonts)
-	   SRHT_SET(msgpack_datetime, MFIZZ(elixir),
+	   SRHT_SET(msgpack_datetime, <a href="//hexdocs.pm/msgpack_datetime/MsgpackDateTime.html">MFIZZ(elixir)</a>,
 	            Unpack Elixir <code>DateTime</code>s from msgpack extension -1 timestamp fields)
 	   SRHT_SET(supla-MEW-01-VA, <a href="//git.sr.ht/~nabijaczleweli/supla-MEW-01-VA/commit/97a468e7b31aeaecfa8068d971d8ee54ee4e060d#main.rs">MFIZZ(rust)</a> MFIZZ(c),
 	            Extract V/A data from Supla (ZAMEL) MEW-01 for consumption with Prometheus)

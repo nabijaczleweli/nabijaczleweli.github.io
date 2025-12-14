@@ -1,0 +1,13 @@
+apt install mdadm
+
+cp -r /boot/efi .
+umount /boot/efi
+
+mdadmC() { mdadm -C $(uname -n)-ESP -l mirror -e 1.0 --bitmap=internal -n $# "$@"; }
+mdadmC /dev/part1 /dev/part2 ... /dev/partN
+
+mkfs.vfat -n $(uname -n)-ESP /dev/md/$(uname -n)-ESP
+sed -i '\;/boot/efi.*vfat;s;^[^[:space:]]*;LABEL='$(uname -n)'-ESP;' /etc/fstab
+
+mount /boot/efi
+cp -r efi/ /boot/

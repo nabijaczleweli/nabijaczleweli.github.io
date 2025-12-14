@@ -1,0 +1,11 @@
+[root@localhost ~]# fdisk -l /dev/sd?
+WARNING: fdisk GPT support is currently new, and therefore in a
+
+Disk /dev/sda: 480.1 GiB, 480103981056 bytes, 937703088 sectors
+Disklabel type: gpt
+#         Start          End  Size  Type              Name
+ 3    935604224    937701375    1G  Linux RAID
+
+Disk /dev/sdb: 480.1 GiB, 480103981056 bytes, 937703088 sectors
+#         Start          End  Size  Type              Name
+ 3    935604224    937701375    1G  Linux RAID

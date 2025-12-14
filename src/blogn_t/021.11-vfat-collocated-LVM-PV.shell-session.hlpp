@@ -1,0 +1,106 @@
+root@tarta:~# pvcreate --labelsector 2 --dataalignment 512M /dev/vda1
+  Physical volume "/dev/vda1" successfully created.
+root@tarta:~# vgcreate T /dev/vda1
+  Volume group "T" successfully created
+root@tarta:~# vgs
+  VG        #PV #LV #SN Attr   VSize    VFree
+  T           1   0   0 wz--n-  512.00m 512.00m
+  tarta-LVM   3   1   0 wz--n- <296.99g  49.00g
+root@tarta:~# lvcreate -L512M T
+  Logical volume "lvol0" created.
+root@tarta:~# tr \\0 A < /dev/zero > /dev/mapper/T-lvol0
+tr: write error: No space left on device
+root@tarta:~# vgchange -a n T
+  0 logical volume(s) in volume group "T" now active
+root@tarta:~# od -Ax -tx1z /dev/vda1
+000000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+000400 4c 41 42 45 4c 4f 4e 45 02 00 00 00 00 00 00 00  >LABELONE........<
+000410 c6 6f e8 56 20 00 00 00 4c 56 4d 32 20 30 30 31  >.o.V ...LVM2 001<
+[...]
+000490 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+001000 9d 76 17 c1 20 4c 56 4d 32 20 78 5b 35 41 25 72  >.v.. LVM2 x[5A%r<
+[...]
+001a10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+20000000 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41  >AAAAAAAAAAAAAAAA<
+*
+40000000
+
+root@tarta:~# truncate -s 1G 1G
+root@tarta:~# mkfs.vfat --mbr=n -R 2048 1G $((1024*512))
+mkfs.fat 4.2 (2021-01-31)
+Warning: block count mismatch: found 1048576 but assuming 524288.
+root@tarta:~# mount 1G dir
+root@tarta:~# tr \\0 B < /dev/zero > dir/B
+tr: write error: No space left on device
+root@tarta:~# umount dir
+root@tarta:~# od -Ax -tx1z 1G
+000000 eb 58 90 6d 6b 66 73 2e 66 61 74 00 02 08 00 08  >.X.mkfs.fat.....<
+[...]
+000400 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+000c00 eb 58 90 6d 6b 66 73 2e 66 61 74 00 02 08 00 08  >.X.mkfs.fat.....<
+[...]
+001000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+100000 f8 ff ff 0f ff ff ff 0f f8 ff ff 0f 04 00 00 00  >................<
+100010 05 00 00 00 06 00 00 00 07 00 00 00 08 00 00 00  >................<
+[...]
+1ff800 ff ff ff 0f 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+1ff810 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+200000 42 20 20 20 20 20 20 20 20 20 20 20 00 74 a6 ab  >B           .t..<
+200010 8e 5b 8e 5b 00 00 a8 ab 8e 5b 03 00 00 e0 df 1f  >.[.[.....[......<
+200020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+201000 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42  >BBBBBBBBBBBBBBBB<
+*
+1ffff000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+40000000
+
+root@tarta:~# vgchange -a n T
+  0 logical volume(s) in volume group "T" now active
+root@tarta:~# dd bs=512 < 1G > /dev/vda1 conv=sparse
+2097152+0 records in
+2097152+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 35.7855 s, 30.0 MB/s
+root@tarta:~# vgs
+  VG        #PV #LV #SN Attr   VSize    VFree
+  T           1   1   0 wz--n-  512.00m     0
+  tarta-LVM   3   1   0 wz--n- <296.99g 49.00g
+root@tarta:~# vgchange -a y T
+  1 logical volume(s) in volume group "T" now active
+root@tarta:~# tr -d A < /dev/mapper/T-lvol0 | wc -c
+0
+root@tarta:~# tr \\0 C < /dev/zero > /dev/mapper/T-lvol0
+tr: write error: No space left on device
+
+root@tarta:~# mount /dev/vda1 /mnt
+mount: /mnt: unknown filesystem type 'LVM2_member'.
+       dmesg(1) may have more information after failed mount system call.
+root@tarta:~# mount -r -t vfat /dev/vda1 /mnt
+mount: /mnt: fsconfig() failed: /dev/vda1: Can't open blockdev.
+       dmesg(1) may have more information after failed mount system call.
+
+root@tarta:~# vgchange -a n T
+  0 logical volume(s) in volume group "T" now active
+root@tarta:~# mount -r -t vfat /dev/vda1 /mnt
+root@tarta:~# ls -l /mnt/
+-rwxr-xr-x 1 root root 534765568 Dec 14 22:29 /mnt/B
+root@tarta:~# tr -d B < /mnt/B | wc -c
+0
+
+root@tarta:~# od -Ax -tx1z /dev/vda1 | tail
+200010 8e 5b 8e 5b 00 00 a8 ab 8e 5b 03 00 00 e0 df 1f  >.[.[.....[......<
+200020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+201000 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42  >BBBBBBBBBBBBBBBB<
+*
+1ffff000 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+*
+20000000 43 43 43 43 43 43 43 43 43 43 43 43 43 43 43 43  >CCCCCCCCCCCCCCCC<
+*
+40000000

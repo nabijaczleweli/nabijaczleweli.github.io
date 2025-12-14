@@ -1,0 +1,8 @@
+# fdisk -l /dev/sda
+Disk /dev/sda: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Disklabel type: gpt
+
+Device      Start       End   Sectors Size Type
+/dev/sda1    2048   2099199   2097152   1G EFI System
+/dev/sda2 2099200 209713151 207613952  99G Linux LVM

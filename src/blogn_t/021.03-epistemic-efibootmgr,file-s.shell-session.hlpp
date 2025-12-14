@@ -1,0 +1,6 @@
+[root@localhost ~]# efibootmgr -v
+Boot0007* CentOS        HD(3,GPT)/File(\EFI\Centos\shimx64.efi)..BO
+Boot0008* CentOS        HD(3,GPT)/File(\EFI\Centos\shimx64.efi)..BO
+[root@localhost ~]# file -s /dev/sd?3
+/dev/sda3: x86 boot sector, mkdosfs boot message display, code offset 0x58, OEM-ID "mkfs.fat", sectors/cluster 8, Media descriptor 0xf8, sectors 2097024 (volumes > 32 MB) , FAT (32 bit), sectors/FAT 2044, serial number 0x05e6429e, label: "           "
+/dev/sda3: x86 boot sector, mkdosfs boot message display, code offset 0x58, OEM-ID "mkfs.fat", sectors/cluster 8, Media descriptor 0xf8, sectors 2097024 (volumes > 32 MB) , FAT (32 bit), sectors/FAT 2044, serial number 0x05e6429e, label: "           "

@@ -1,0 +1,36 @@
+root@tarta:~# mdadm --stop /dev/md/tarta-ESP
+mdadm: stopped /dev/md/tarta-ESP
+root@tarta:~# mdadm -v -C tarta-ESP -l mirror -n 3 -e 1.0 /dev/sd?1
+To optimalize recovery speed, it is recommended to enable write-indent bitmap, do you want to enable it now? [y/N]? y
+mdadm: size set to 1048512K
+mdadm: array /dev/md/tarta-ESP started.
+root@tarta:~# cp /dev/zero /dev/md/tarta-ESP
+cp: error writing '/dev/md/tarta-ESP': No space left on device
+root@tarta:~# cat /proc/mdstat
+md127 : active raid1 sdc1[2] sdb1[1] sda1[0]
+      1048512 blocks super 1.0 [3/3] [UUU]
+      bitmap: 1/1 pages [4KB], 65536KB chunk
+root@tarta:~# mdadm --misc -Q /dev/md/tarta-ESP
+/dev/md/tarta-ESP: 1023.94MiB raid1 3 devices, 0 spares. Use mdadm --detail for more detail.
+root@tarta:~# mdadm --misc -D /dev/md/tarta-ESP
+[the same except]
+           Version : 1.0
+root@tarta:~# od -Ax -tx1z -j 1073676288 /dev/sda1
+3fffc000 62 69 74 6d 04 00 00 00 33 8c 1d 3b 0a 44 dc db  >bitm....3..;.D..<
+3fffc010 1b a6 81 e0 ea 93 6d 88 12 00 00 00 00 00 00 00  >......m.........<
+3fffc020 00 00 00 00 00 00 00 00 80 ff 1f 00 00 00 00 00  >................<
+3fffc030 00 00 00 00 00 00 00 04 05 00 00 00 00 00 00 00  >................<
+3fffc040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+[...]
+*
+3fffe000 fc 4e 2b a9 01 00 00 00 01 00 00 00 00 00 00 00  >.N+.............<
+3fffe010 33 8c 1d 3b 0a 44 dc db 1b a6 81 e0 ea 93 6d 88  >3..;.D........m.<
+3fffe020 74 61 72 74 61 3a 74 61 72 74 61 2d 45 53 50 00  >tarta:tarta-ESP.<
+3fffe030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  >................<
+3fffe040 62 32 3e 69 00 00 00 00 01 00 00 00 00 00 00 00  >b2>i............<
+3fffe050 80 ff 1f 00 00 00 00 00 00 00 00 00 03 00 00 00  >................<
+[...]
+*
+40000000
+root@tarta:~# wc -c /dev/md/tarta-ESP
+1073676288 /dev/md/tarta-ESP

@@ -1,0 +1,49 @@
+UEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EDK II, 0x00010000)
+Mapping table
+      FS0: Alias(s):HD1b:;BLK2:
+          PciRoot(0x0)/Pci(0x3,0x0)/HD(1,GPT,ECF7F5B7-951D-AF46-97B5-B26D2CDE9EE2,0x800,0x200000)
+      FS1: Alias(s):HD2b:;BLK5:
+          PciRoot(0x0)/Pci(0x4,0x0)/HD(1,GPT,ECF7F5B7-951D-AF46-97B5-B26D2CDE9EE2,0x800,0x200000)
+      FS2: Alias(s):HD3b:;BLK8:
+          PciRoot(0x0)/Pci(0x5,0x0)/HD(1,GPT,ECF7F5B7-951D-AF46-97B5-B26D2CDE9EE2,0x800,0x200000)
+
+Shell> vol fs0:
+Volume tarta-ESP (rw)
+#SMALL_START#
+1071562752 bytes total disk space
+1062363136 bytes available on disk
+4096 bytes in each allocation unit
+#SMALL_END#
+Shell> vol fs1:
+Volume tarta-ESP (rw)
+#SMALL_START#
+1071562752 bytes total disk space
+1062363136 bytes available on disk
+4096 bytes in each allocation unit
+#SMALL_END#
+Shell> vol fs2:
+Volume tarta-ESP (rw)
+#SMALL_START#
+1071562752 bytes total disk space
+1062363136 bytes available on disk
+4096 bytes in each allocation unit
+#SMALL_END#
+
+FS0:\> cp FS0:\EFI\BOOT\bootx64.efi fs0:
+Copying FS0:\EFI\BOOT\BOOTX64.EFI -> fs0:\BOOTX64.EFI
+- [ok]
+FS0:\> FS0:\EFI\BOOT\BOOTX64.EFI
+
+  Booting `Debian GNU/Linux'
+
+Loading Linux 6.12.57+deb13-amd64 ...
+Loading initial ramdisk ...
+Debian GNU/Linux 13 tarta ttyS0
+
+tarta login: root
+root@tarta:~# journalctl -b
+Dec 14 20:00:59 tarta systemd-fsck[444]: fsck.fat 4.2 (2021-01-31)
+Dec 14 20:00:59 tarta systemd-fsck[444]: /dev/md127: 15 files, 2480/261612 clusters
+Dec 14 20:00:59 tarta systemd[1]: Finished systemd-fsck@dev-disk-by\x2dlabel-tarta\x2dESP.service - File System Check on /dev/disk/by-label/tarta-ESP.
