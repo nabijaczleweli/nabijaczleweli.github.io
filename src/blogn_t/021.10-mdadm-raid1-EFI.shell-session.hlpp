@@ -47,3 +47,5 @@ root@tarta:~# journalctl -b
 Dec 14 20:00:59 tarta systemd-fsck[444]: fsck.fat 4.2 (2021-01-31)
 Dec 14 20:00:59 tarta systemd-fsck[444]: /dev/md127: 15 files, 2480/261612 clusters
 Dec 14 20:00:59 tarta systemd[1]: Finished systemd-fsck@dev-disk-by\x2dlabel-tarta\x2dESP.service - File System Check on /dev/disk/by-label/tarta-ESP.
+root@tarta:~# ls /boot/efi
+BOOTX64.EFI  EFI
