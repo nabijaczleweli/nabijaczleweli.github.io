@@ -277,7 +277,7 @@ Out of a few greps through kernel <tt>Documentation/</tt>, only searching throug
 	<li><tt>dm-mirror</tt> which is only <a href="//docs.kernel.org/admin-guide/device-mapper/dm-clone.html#:~:text=dm-mirror">mentioned</a> <a href="//docs.kernel.org/admin-guide/device-mapper/dm-init.html#:~:text=mirror">indirectly</a> and doesn't<!--'--> have its own file.</li>
 </ul>
 <p class="continuation">
-The sampled system above uses un-devce-mapper-wrapped MD <tt>raid1</tt> (thus, <tt>/dev/md<var>???</var></tt> and "Linux RAID").
+The sampled system above uses un-device-mapper-wrapped MD <tt>raid1</tt> (thus, <tt>/dev/md<var>???</var></tt> and "Linux RAID").
 </p>
 
 <p class="indented continued">
@@ -428,7 +428,7 @@ in this order.
 	<summary>You can even easily make a partition that <em>co-locates</em> a vfat and an LVM PV (there's<!--'--> no reason to do this, but you can!)</summary>
 	<p class="indented continuing">
 		I was trying to get a funny screenshot and mount them both but Linux refuses this
-		(this might be possible if you could import LVM VGs in read-only mode,
+		(it might be possible if you could import LVM VGs in read-only mode,
 		 but no matter how much I needled it, combining them gave me <tt>EBUSY</tt>):
 	</p>
 #include "blogn_t/021.11-vfat-collocated-LVM-PV.shell-session.html"
