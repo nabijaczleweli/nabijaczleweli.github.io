@@ -463,7 +463,7 @@ sdc&lt;!--&quot;--&gt;                          &lt;!--&quot;--&gt;8:32&lt;!--&q
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 and it comes up normally.
-But what does the EFI think, and is does this still pick up changes to one of the ESPs?
+But what does the EFI think, and does this still pick up changes to one of the ESPs?
 Breaking into the shell yields:
 &lt;/p&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token output&quot;&gt;UEFI Interactive Shell v2.2
