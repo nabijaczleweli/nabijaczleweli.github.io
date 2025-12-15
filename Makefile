@@ -29,7 +29,7 @@ else
 endif
 
 # Args: $<, $@, additional defines
-preprocess_file = $(CPP) $(1) -pipe -nostdinc -Wno-trigraphs -Wno-unicode-homoglyph $(foreach l,highlit generated,-I$(abspath $(BLDDIR)/$(l))) -CC -P -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re 's/\(U\+200B\)/​/g' -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/HASH/\#/g" -e "s/\(FORCED_SPACER\)//g" -e "s/[[:space:]]+$$//g" -e 's;"JOB_URL";"$(JOB_URL)";' -e 's/\$$101010\.pl/101010.pl/g' > $(2)
+preprocess_file = $(CPP) $(1) -pipe -nostdinc -Wno-trigraphs -Wno-unicode-homoglyph $(foreach l,highlit generated,-I$(abspath $(BLDDIR)/$(l))) -CC -P -Uunix -Ulinux -DDATE_TIME="$(shell date "+%d.%m.%Y %H:%M:%S %Z")" -DFILE_NAME="$(1)" -DFILE_NAME_STUB="$(patsubst src/%/,%,$(dir $(1)))" $(ADDITIONAL_TRAVIS_ARGS) $(3) | sed -re 's/\(U\+200B\)/​/g' -e "s;COLON_SLASH_SLASH;://;g" -e "s/<!--([[:space:]'\"]*<!--[[:space:]'\"]*)*-->//g" -e "s/FORCED_NEWLINE/\\n/g" -e "s;SLASH_ASTERIX;/*;g" -e "s;/\\*([[:space:]]*(/\\*)*[[:space:]]*)*\\*/;;g" -e "s/HASH/\#/g" -e "s/\(FORCED_SPACER\)//g" -e "s/[[:space:]]+$$//g" -e 's;"JOB_URL";"$(JOB_URL)";' -e 's/\$$101010\.pl/101010.pl/g' > $(2)
 
 TR := tr
 AWK := awk

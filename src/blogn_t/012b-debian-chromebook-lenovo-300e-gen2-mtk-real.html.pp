@@ -15,12 +15,10 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_DATE      Wed, 07 Feb 2024 01:09:33 +0100
 #define POST_POST_DATE ; updated <a href="update-2025-09-13">Sat, 13 Sep 2025 16:05:39 +0200</a>
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS                                                            FORCED_NEWLINE \
+#define STYLESHEETS BLOGN_T_STYLESHEETS                                                          FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">        FORCED_NEWLINE \
                     <link href="/content/assets/bigtable.css"           rel="stylesheet">        FORCED_NEWLINE \
                     <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet">
-
-#undef linux
 
 
 BOILERPLATE(012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) (real) — blognꞌt, 012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) with MediaTek MT8173/MT8173C (real), en-GB, STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)
@@ -3663,7 +3661,7 @@ HEADING_S(3, functional-summary-functional, class="continuing", Funxional)
 HEADING_S(3, functional-summary-dysfunctional, class="continued", Dysfunxional)
 <ul style="padding-left: 0;">
 	<li>Audio: internal mic (it'<!--'-->s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)</li>
-	<li><a href="#hdmi"><cite class="local-ref"><abbr title="Horny Demon Mangling Interface">HDMI</abbr></cite></a> (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal); <em id="update-2025-09-13">actually</em>: the <code>HDMI-1</code> output corresponds to the USB Type-C DisplayPort alt-mode, which works (at least the video does, haven't tried audio)! this implies to me that a valid driver for <samp>gpio-display-mux</samp> would probably fix this</li>
+	<li><a href="#hdmi"><cite class="local-ref"><abbr title="Horny Demon Mangling Interface">HDMI</abbr></cite></a> (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal); <em id="update-2025-09-13">actually</em>: the <code>HDMI-1</code> output corresponds to the USB Type-C DisplayPort alt-mode, which works (at least the video does, haven't<!--'--> tried audio)! this implies to me that a valid driver for <samp>gpio-display-mux</samp> would probably fix this</li>
 	<li>Tablet mode switch (which would disable the keyboard) doesn'<!--'-->t seem to exist</li>
 	<li>Hibernation (loads image for a bit then blackscreens, no pstore)</li>
 </ul>

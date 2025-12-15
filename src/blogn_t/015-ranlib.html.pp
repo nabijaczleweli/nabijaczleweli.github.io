@@ -20,9 +20,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define ELISION CMT([…])
 #define Nx Net(FORCED_SPACER)Tn(bsd)
 
-#undef linux
-#undef unix
-
 
 BOILERPLATE(015. where da lib runnin — blognꞌt, 015. where da lib runnin, en-GB, <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)
 <style>

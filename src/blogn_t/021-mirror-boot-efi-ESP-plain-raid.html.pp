@@ -18,7 +18,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_DATE      Mon, 15 Dec 2025 00:02:14 +0100
 #define POST_POST_DATE
 
-#undef unix
 #define vfat <tt>vfat</tt>
 #define DEL <del>[…]</del>
 

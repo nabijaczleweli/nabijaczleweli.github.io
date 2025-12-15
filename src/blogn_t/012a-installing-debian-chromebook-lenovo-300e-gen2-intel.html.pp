@@ -18,10 +18,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE , updated Thu, 11 Jan 2024 21:38:02 +0100
 <!-- docs.chrultrabook.com saved as /web/20240109135642 -->
 
-#undef linux
 
-
-#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK                                    FORCED_NEWLINE \
+#define STYLESHEETS BLOGN_T_STYLESHEETS FONTAWESOME_LINK                                  FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> FORCED_NEWLINE \
                     <link href="/content/assets/bigtable.css"           rel="stylesheet">
 

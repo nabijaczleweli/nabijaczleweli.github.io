@@ -23,9 +23,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define CMT(...) <del>__VA_ARGS__</del>
 #define ELISION CMT([…])
 
-#undef linux
-#undef unix
-
 
 BOILERPLATE(017. malloc(0) & realloc(…，0) ≠ 0 — blognꞌt, 017. malloc(0) & realloc(…，0) ≠ 0, en-GB, BLOGN_T_STYLESHEETS FONTAWESOME_LINK FORCED_NEWLINE WORD_COUNT_SCRIPT)
 <style>

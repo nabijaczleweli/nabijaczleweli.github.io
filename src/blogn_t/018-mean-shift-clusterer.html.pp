@@ -25,8 +25,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define MH(...)           \mathrm{__VA_ARGS__}_{16}
 #define BIG_MATHJAX_START [​![​
 #define BIG_MATHJAX_END   ​]!​]
-#undef linux
-#undef unix
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                           FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/MathJax-font.css" rel="stylesheet">    FORCED_NEWLINE \

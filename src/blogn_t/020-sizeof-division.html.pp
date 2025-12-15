@@ -18,8 +18,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_DATE      Sun, 28 Sep 2025 01:02:48 +0200
 #define POST_POST_DATE Sun, 28 Sep 2025 19:54:03 +0200
 
-#undef unix
-
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                    FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css?" rel="stylesheet">

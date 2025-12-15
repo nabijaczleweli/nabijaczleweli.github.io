@@ -18,9 +18,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define Tn(...)  <span class="smallcaps">__VA_ARGS__</span>
 #define CMT(...) <span class="cmt">__VA_ARGS__</span>
 
-#undef linux
-#undef unix
-
 
 BOILERPLATE(013. Linux a.out quine in 44 bytes — blognꞌt, 013. Linux a.out quine in 44 bytes, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT_NON_ENGLISH)
 <style>

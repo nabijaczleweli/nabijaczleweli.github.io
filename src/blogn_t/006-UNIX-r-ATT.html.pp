@@ -19,8 +19,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_DATE      Thu, 08 Jul 2021 20:26:38 +0200
 #define POST_POST_DATE ; <a href="//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html">get one</a> <a href="//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html">FA(external-link-alt)</a>
 
-#undef unix
-
 
 BOILERPLATE(006. ¹UNIX® is a registered trademark of AT&T. — blognꞌt, 006. ¹UNIX® is a registered trademark of AT&T., en-GB, BLOGN_T_STYLESHEETS FONTAWESOME_LINK WORD_COUNT_SCRIPT)
 <style>

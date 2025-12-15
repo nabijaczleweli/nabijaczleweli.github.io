@@ -20,9 +20,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
                                                  <!-- RSS_UPDATE_DATE: "Tue, 28 Apr 2020 02:54:07 +0200" -->
 
 
-#undef linux
-
-#define STYLESHEETS BLOGN_T_STYLESHEETS                                                      FORCED_NEWLINE \
+#define STYLESHEETS BLOGN_T_STYLESHEETS                                                    FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">  FORCED_NEWLINE \
                     <link href="/content/assets/bigtable.css"           rel="stylesheet">
 

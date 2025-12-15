@@ -22,17 +22,15 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define B(n) n##.<span style="white-space: pre-wrap;"><!--"-->  <!--"--></span>
 
-#define STYLESHEETS MAIN_HEADING_STYLE                                                                 FORCED_NEWLINE \
+#define STYLESHEETS MAIN_HEADING_STYLE                                                               FORCED_NEWLINE \
                     <link href="/kaschism/assets/column.css" rel="stylesheet">                       FORCED_NEWLINE \
                     <link href="../writing/Roboto-font.css" rel="stylesheet">                        FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet">  FORCED_NEWLINE \
-                    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">   FORCED_NEWLINE \
+                    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> FORCED_NEWLINE \
                     <link href="/content/assets/blogn_t/008.01-amix-fonts.css" rel="stylesheet">     FORCED_NEWLINE \
                     <link href="/content/assets/blogn_t/016.01-BSDi-fonts.css" rel="stylesheet">     FORCED_NEWLINE \
                     <style>samp { font-family: "Droid Sans Mono", monospace; }</style>
 
-#undef linux
-#undef unix
 
 BOILERPLATE(blognꞌt, itꞌs not a blog‚ but then again‚ what is?, en-GB, STYLESHEETS)
 <style>
