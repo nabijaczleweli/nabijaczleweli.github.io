@@ -509,6 +509,8 @@ tarta login: root
 &lt;span class=&quot;token output&quot;&gt;Dec 14 20:00:59 tarta systemd-fsck[444]: fsck.fat 4.2 (2021-01-31)
 Dec 14 20:00:59 tarta systemd-fsck[444]: /dev/md127: 15 files, 2480/261612 clusters
 Dec 14 20:00:59 tarta systemd[1]: Finished systemd-fsck@dev-disk-by\x2dlabel-tarta\x2dESP.service - File System Check on /dev/disk/by-label/tarta-ESP.
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; /boot/efi&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;BOOTX64.EFI&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;EFI
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 It doesn't&lt;!--'--&gt; mind, and yes it does (in spite of the bitmap thing? unclear what this implies).
