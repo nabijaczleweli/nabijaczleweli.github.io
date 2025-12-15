@@ -402,7 +402,7 @@ Thus,
 #include "blogn_t/021.09-mdadm-raid1-final.shell-session.html"
 <p class="continuing">
 and it comes up normally.
-But what does the EFI think, and is does this still pick up changes to one of the ESPs?
+But what does the EFI think, and does this still pick up changes to one of the ESPs?
 Breaking into the shell yields:
 </p>
 #include "blogn_t/021.10-mdadm-raid1-EFI.shell-session.html"
