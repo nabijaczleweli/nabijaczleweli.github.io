@@ -158,7 +158,7 @@ Modern Linux provides two and a half layers of abstraction related to doing this
     &lt;p class=&quot;continued&quot;&gt;You can boot (if you selected boot support in the configuration) with your md
     device with the following kernel command line:&lt;/p&gt;
      &lt;/blockquote&gt;
-     and looking at &lt;a href=&quot;//github.com/schwabe/davej-history/blob/2.1.85/include/linux/md.h&quot;&gt;&lt;tt&gt;include/1/md.h&lt;/tt&gt; from the time&lt;/a&gt; shows
+     and looking at &lt;a href=&quot;//github.com/schwabe/davej-history/blob/2.1.85/include/linux/md.h&quot;&gt;&lt;tt&gt;include/linux/md.h&lt;/tt&gt; from the time&lt;/a&gt; shows
      &lt;blockquote class=&quot;continuing&quot; style=&quot;margin-left: 1em;&quot;&gt;
        md.h : Multiple Devices driver for Linux
      &lt;/blockquote&gt;
@@ -176,7 +176,7 @@ Out of a few greps through kernel &lt;tt&gt;Documentation/&lt;/tt&gt;, only sear
  &lt;li&gt;&lt;tt&gt;dm-mirror&lt;/tt&gt; which is only &lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-clone.html#:~:text=dm-mirror&quot;&gt;mentioned&lt;/a&gt; &lt;a href=&quot;//docs.kernel.org/admin-guide/device-mapper/dm-init.html#:~:text=mirror&quot;&gt;indirectly&lt;/a&gt; and doesn't&lt;!--'--&gt; have its own file.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-The sampled system above uses un-devce-mapper-wrapped MD &lt;tt&gt;raid1&lt;/tt&gt; (thus, &lt;tt&gt;/dev/md&lt;var&gt;???&lt;/var&gt;&lt;/tt&gt; and &quot;Linux RAID&quot;).
+The sampled system above uses un-device-mapper-wrapped MD &lt;tt&gt;raid1&lt;/tt&gt; (thus, &lt;tt&gt;/dev/md&lt;var&gt;???&lt;/var&gt;&lt;/tt&gt; and &quot;Linux RAID&quot;).
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 For the purposes of this exercise, we will consider disks &lt;tt&gt;/dev/sd&lt;var&gt;[abc]&lt;/var&gt;&lt;/tt&gt; configured thusly:
@@ -530,7 +530,7 @@ in this order.
  &lt;summary&gt;You can even easily make a partition that &lt;em&gt;co-locates&lt;/em&gt; a &lt;tt&gt;vfat&lt;/tt&gt; and an LVM PV (there's&lt;!--'--&gt; no reason to do this, but you can!)&lt;/summary&gt;
  &lt;p class=&quot;indented continuing&quot;&gt;
   I was trying to get a funny screenshot and mount them both but Linux refuses this
-  (this might be possible if you could import LVM VGs in read-only mode,
+  (it might be possible if you could import LVM VGs in read-only mode,
    but no matter how much I needled it, combining them gave me &lt;tt&gt;EBUSY&lt;/tt&gt;):
  &lt;/p&gt;
 &lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token info punctuation&quot;&gt;&lt;span class=&quot;token user&quot;&gt;root@tarta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token path&quot;&gt;~&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;pvcreate &lt;span class=&quot;token parameter variable&quot;&gt;--labelsector&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--dataalignment&lt;/span&gt; 512M /dev/vda1&lt;/span&gt;&lt;/span&gt;
@@ -8156,7 +8156,7 @@ make ARCH=arm64 olddefconfig &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;h3 id=&quot;functional-summary-dysfunctional&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#functional-summary-dysfunctional&quot;&gt;#&lt;/a&gt; Dysfunxional&lt;/h3&gt;
 &lt;ul style=&quot;padding-left: 0;&quot;&gt;
  &lt;li&gt;Audio: internal mic (it'&lt;!--'--&gt;s possible mine is just broken), headset mic (when clicking the mic button on one headset I got clicks but nothing past that)&lt;/li&gt;
- &lt;li&gt;&lt;a href=&quot;#hdmi&quot;&gt;&lt;cite class=&quot;local-ref&quot;&gt;&lt;abbr title=&quot;Horny Demon Mangling Interface&quot;&gt;HDMI&lt;/abbr&gt;&lt;/cite&gt;&lt;/a&gt; (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal); &lt;em id=&quot;update-2025-09-13&quot;&gt;actually&lt;/em&gt;: the &lt;code&gt;HDMI-1&lt;/code&gt; output corresponds to the USB Type-C DisplayPort alt-mode, which works (at least the video does, haven't tried audio)! this implies to me that a valid driver for &lt;samp&gt;gpio-display-mux&lt;/samp&gt; would probably fix this&lt;/li&gt;
+ &lt;li&gt;&lt;a href=&quot;#hdmi&quot;&gt;&lt;cite class=&quot;local-ref&quot;&gt;&lt;abbr title=&quot;Horny Demon Mangling Interface&quot;&gt;HDMI&lt;/abbr&gt;&lt;/cite&gt;&lt;/a&gt; (shows up as a video and audio output, never pops up with any available resolutions, connected display never sees a signal); &lt;em id=&quot;update-2025-09-13&quot;&gt;actually&lt;/em&gt;: the &lt;code&gt;HDMI-1&lt;/code&gt; output corresponds to the USB Type-C DisplayPort alt-mode, which works (at least the video does, haven't&lt;!--'--&gt; tried audio)! this implies to me that a valid driver for &lt;samp&gt;gpio-display-mux&lt;/samp&gt; would probably fix this&lt;/li&gt;
  &lt;li&gt;Tablet mode switch (which would disable the keyboard) doesn'&lt;!--'--&gt;t seem to exist&lt;/li&gt;
  &lt;li&gt;Hibernation (loads image for a bit then blackscreens, no pstore)&lt;/li&gt;
 &lt;/ul&gt;

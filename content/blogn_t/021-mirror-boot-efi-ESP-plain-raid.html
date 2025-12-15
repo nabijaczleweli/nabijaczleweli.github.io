@@ -343,7 +343,7 @@ Modern Linux provides two and a half layers of abstraction related to doing this
     <p class="continued">You can boot (if you selected boot support in the configuration) with your md
     device with the following kernel command line:</p>
      </blockquote>
-     and looking at <a href="//github.com/schwabe/davej-history/blob/2.1.85/include/linux/md.h"><tt>include/1/md.h</tt> from the time</a> shows
+     and looking at <a href="//github.com/schwabe/davej-history/blob/2.1.85/include/linux/md.h"><tt>include/linux/md.h</tt> from the time</a> shows
      <blockquote class="continuing" style="margin-left: 1em;">
        md.h : Multiple Devices driver for Linux
      </blockquote>
@@ -361,7 +361,7 @@ Out of a few greps through kernel <tt>Documentation/</tt>, only searching throug
  <li><tt>dm-mirror</tt> which is only <a href="//docs.kernel.org/admin-guide/device-mapper/dm-clone.html#:~:text=dm-mirror">mentioned</a> <a href="//docs.kernel.org/admin-guide/device-mapper/dm-init.html#:~:text=mirror">indirectly</a> and doesn't<!--'--> have its own file.</li>
 </ul>
 <p class="continuation">
-The sampled system above uses un-devce-mapper-wrapped MD <tt>raid1</tt> (thus, <tt>/dev/md<var>???</var></tt> and "Linux RAID").
+The sampled system above uses un-device-mapper-wrapped MD <tt>raid1</tt> (thus, <tt>/dev/md<var>???</var></tt> and "Linux RAID").
 </p>
 <p class="indented continued">
 For the purposes of this exercise, we will consider disks <tt>/dev/sd<var>[abc]</var></tt> configured thusly:
@@ -715,7 +715,7 @@ in this order.
  <summary>You can even easily make a partition that <em>co-locates</em> a <tt>vfat</tt> and an LVM PV (there's<!--'--> no reason to do this, but you can!)</summary>
  <p class="indented continuing">
   I was trying to get a funny screenshot and mount them both but Linux refuses this
-  (this might be possible if you could import LVM VGs in read-only mode,
+  (it might be possible if you could import LVM VGs in read-only mode,
    but no matter how much I needled it, combining them gave me <tt>EBUSY</tt>):
  </p>
 <pre class="language-shell-session"><code class="language-shell-session"><span class="token command"><span class="token info punctuation"><span class="token user">root@tarta</span><span class="token punctuation">:</span><span class="token path">~</span></span><span class="token shell-symbol important">#</span> <span class="token bash language-bash">pvcreate <span class="token parameter variable">--labelsector</span> <span class="token number">2</span> <span class="token parameter variable">--dataalignment</span> 512M /dev/vda1</span></span>
@@ -869,9 +869,9 @@ mkfs.<tt>vfat</tt> <span class="token parameter variable">-n</span> <span class=
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 15.12.2025 00:06:35 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 15.12.2025 10:17:27 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html.pp">src/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1630512">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1630813">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
