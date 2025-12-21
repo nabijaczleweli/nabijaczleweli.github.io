@@ -119,7 +119,7 @@ It's unclear &lt;em&gt;why&lt;/em&gt; this isn't part of the dump (so one has to
 But never mind all that.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-Naturally, the readtape repository is humougous even at &lt;tt&gt;--depth 1&lt;/tt&gt; (340M &lt;tt&gt;examples/&lt;/tt&gt;, which leads to a 220M &lt;tt&gt;.git&lt;/tt&gt;),
+Naturally, the readtape repository is humongous even at &lt;tt&gt;--depth 1&lt;/tt&gt; (340M &lt;tt&gt;examples/&lt;/tt&gt;, which leads to a 220M &lt;tt&gt;.git&lt;/tt&gt;),
 the distribution is &quot;there's 3 programs in this 16-file directory&quot; (there is no build script of any sort),
 and it doesn't&lt;!--'--&gt; build at all.
 But that's&lt;!--'--&gt; standard for academic software
