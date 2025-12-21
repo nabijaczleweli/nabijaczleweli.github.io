@@ -600,7 +600,7 @@ So, what have we learned to-day?
    &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4tape.d&quot;&gt;&lt;tt&gt;v4tape.d&lt;/tt&gt;&lt;/a&gt; — the contents of the tape when viewed as tp (V)&lt;/li&gt;
    &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root&quot;&gt;&lt;tt&gt;v4root&lt;/tt&gt;&lt;/a&gt; — image of the V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; rootfs, equivalent to &lt;tt&gt;v5root&lt;/tt&gt; in the TUHS dumps&lt;/li&gt;
    &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar&quot;&gt;&lt;tt&gt;v4root.tar&lt;/tt&gt;&lt;/a&gt; — the contents of the rootfs when viewed as file system (V), equivalent to &lt;tt&gt;v5root.tar&lt;/tt&gt; in the TUHS dumps&lt;/li&gt;
-   &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar.log&quot;&gt;&lt;tt&gt;v4root.tar.log&lt;/tt&gt;&lt;/a&gt; — a summary of the filesystem, including metadata that doesn't&lt;!--'--&gt; made it to the &lt;tt&gt;tar&lt;/tt&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar.log&quot;&gt;&lt;tt&gt;v4root.tar.log&lt;/tt&gt;&lt;/a&gt; — a summary of the filesystem, including metadata that doesn't&lt;!--'--&gt; make it to the &lt;tt&gt;tar&lt;/tt&gt;&lt;/li&gt;
   &lt;/ul&gt;
  &lt;/li&gt;
  &lt;li&gt;you can also inspect and reproduce my methodology by consulting &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4&quot;&gt;the &lt;tt&gt;Utah_v4&lt;/tt&gt; repository&lt;/a&gt;&lt;/li&gt;
