@@ -25,7 +25,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                    FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css?" rel="stylesheet">
-BOILERPLATE(022. turning the V4 UNIX dump into Utah_v4/ — blognꞌt, 022. turning the V4 UNIX dump into Utah_v4/, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(022. Turning the V4 UNIX dump into Utah_v4/ — blognꞌt, 022. Turning the V4 UNIX dump into Utah_v4/, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
@@ -77,7 +77,7 @@ small {
 </style>
 
 #define unix <span class="smallcaps">unix</span>
-BLOGN_T_HEADING(022. turning the V4 unix dump into Utah_v4/)
+BLOGN_T_HEADING(022. Turning the V4 unix dump into Utah_v4/)
 
 <p class="continued">
 <a href="//discuss.systems/@ricci/115748594116050292">Recently</a> (late this week),

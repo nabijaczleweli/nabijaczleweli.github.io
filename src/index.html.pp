@@ -30,7 +30,7 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/022-Utah_v4.html">022. turning the V4 <span class="smallcaps">unix</span> dump into Utah_v4/;
+		<a href="blogn_t/022-Utah_v4.html">022. Turning the V4 <span class="smallcaps">unix</span> dump into Utah_v4/;
 		<span style="white-space: nowrap;">Sun, 21 Dec 2025 23:51:02 +0100</span></a>
 	</samp>
 </p>

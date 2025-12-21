@@ -91,7 +91,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 	 POST(019-aphantasia,                          Thu, 18 Sep 2025 18:34:15 +0200, 019. aphantasia.)
 	 POST(020-sizeof-division,                     Sun, 28 Sep 2025 01:02:48 +0200, 020. Pre-modern-UNIX sizeof division)
 	 POST(021-mirror-boot-efi-ESP-plain-raid,      Mon, 15 Dec 2025 00:02:14 +0100, 021. Natively mirrored but still functional & correct /boot/efi)
-	 POST(022-Utah_v4,                             Sun, 21 Dec 2025 23:51:02 +0100, 022. turning the V4 <span class="smallcaps">unix</span> dump into Utah_v4/)
+	 POST(022-Utah_v4,                             Sun, 21 Dec 2025 23:51:02 +0100, 022. Turning the V4 <span class="smallcaps">unix</span> dump into Utah_v4/)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 
