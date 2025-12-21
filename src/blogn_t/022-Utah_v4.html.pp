@@ -717,7 +717,7 @@ So, what have we learned to-day?
 			<li>ARTIFACT(v4tape.d) — the contents of the tape when viewed as tp (V)</li>
 			<li>ARTIFACT(v4root) — image of the V4 unix rootfs, equivalent to <tt>v5root</tt> in the TUHS dumps</li>
 			<li>ARTIFACT(v4root.tar) — the contents of the rootfs when viewed as file system (V), equivalent to <tt>v5root.tar</tt> in the TUHS dumps</li>
-			<li>ARTIFACT(v4root.tar.log) — a summary of the filesystem, including metadata that doesn't<!--'--> made it to the <tt>tar</tt></li>
+			<li>ARTIFACT(v4root.tar.log) — a summary of the filesystem, including metadata that doesn't<!--'--> make it to the <tt>tar</tt></li>
 		</ul>
 	</li>
 	<li>you can also inspect and reproduce my methodology by consulting <a href="//git.sr.ht/~nabijaczleweli/Utah_v4">the <tt>Utah_v4</tt> repository</a></li>
