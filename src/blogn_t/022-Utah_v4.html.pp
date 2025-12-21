@@ -180,7 +180,7 @@ It's unclear <em>why</em> this isn't part of the dump (so one has to assume gene
 But never mind all that.
 </p>
 <p class="indented continuing">
-Naturally, the readtape repository is humougous even at <tt>--depth 1</tt> (340M <tt>examples/</tt>, which leads to a 220M <tt>.git</tt>),
+Naturally, the readtape repository is humongous even at <tt>--depth 1</tt> (340M <tt>examples/</tt>, which leads to a 220M <tt>.git</tt>),
 the distribution is "there's 3 programs in this 16-file directory" (there is no build script of any sort),
 and it doesn't<!--'--> build at all.
 But that's<!--'--> standard for academic software
