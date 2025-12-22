@@ -230,9 +230,9 @@ So, once more, as a &lt;a href=&quot;//ra.ws.co.ls/~nabijaczleweli/Utah_v4/blob/
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;a href=&quot;//ra.ws.co.ls/~nabijaczleweli/Utah_v4/blob/trunk/bproc.pdf&quot;&gt;boot procedures (VII)&lt;/a&gt; elucidates the purpose of the &lt;tt&gt;&lt;var&gt;?&lt;/var&gt;boot&lt;/tt&gt;s
 — loading &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; from tape, DECtape, and file system (V), respectively — none of the others are mentioned in the manual.
-One has to assume &lt;tt&gt;rkf&lt;/tt&gt; and &lt;tt&gt;dt&lt;/tt&gt; will format a rk (IV)/DECtape in some way,
+One has to assume &lt;tt&gt;rkf&lt;/tt&gt; and &lt;tt&gt;dtf&lt;/tt&gt; will format a rk (IV)/DECtape in some way,
 &lt;tt&gt;mcopy&lt;/tt&gt; can copy (tp (V) files?) between tapes,
-and &lt;tt&gt;list&lt;/tt&gt; would list the files on a tp (V) tape,
+and &lt;tt&gt;list&lt;/tt&gt; would list the files on a tp (V) tape.
 Which leaves &lt;tt&gt;dldr&lt;/tt&gt;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
@@ -281,7 +281,7 @@ all the &lt;tt&gt;&lt;var&gt;?&lt;/var&gt;boot&lt;/tt&gt;s have a common almost-
 and we have a reference version in block 0
 (this also applies, more roughly, to the V5 dump):
 &lt;/p&gt;
-&lt;pre&gt;$ hd v4tape -N 512
+&lt;pre style=&quot;white-space: pre;&quot;&gt;$ hd v4tape -N 512
 &lt;!--&quot;--&gt;000000 07 01 dc 01 00 00 00 00 00 00 00 00 00 00 01 00  &lt;!--&quot;--&gt;&gt;................&amp;lt;
 &lt;!--&quot;--&gt;000010 c6 15 00 be c4 15 bc bf 81 11 c1 21 0b 86 00 0a  &lt;!--&quot;--&gt;&gt;...........!....&amp;lt;
 &lt;!--&quot;--&gt;000020 17 22 07 01 02 02 c0 15 10 00 11 14 57 20 b4 bf  &lt;!--&quot;--&gt;&gt;.&quot;..........W ..&amp;lt;&lt;!--&quot;--&gt;
@@ -292,7 +292,7 @@ all &lt;tt&gt;&lt;var&gt;?&lt;/var&gt;boot&lt;/tt&gt;s I've&lt;!--'--&gt; seen h
 and the V4 ones have a &lt;tt&gt;N&lt;del&gt;…&lt;/del&gt;D&lt;/tt&gt; sequence as well.
 So:
 &lt;/p&gt;
-&lt;pre&gt;$ hd v4tape | grep -F N.......D
+&lt;pre style=&quot;white-space: pre;&quot;&gt;$ hd v4tape | grep -F N.......D
 &lt;!--&quot;--&gt;000030 fc 87 4e 00 f7 09 10 01 c5 15 44 bf c0 15 3d 00  &lt;!--&quot;--&gt;&gt;..N.......D...=.&amp;lt;
 &lt;!--&quot;--&gt;008c30 fc 87 4e 00 f7 09 10 01 c5 15 44 bf c0 15 3d 00  &lt;!--&quot;--&gt;&gt;..N.......D...=.&amp;lt;
 &lt;!--&quot;--&gt;0cba30 fc 87 4e 00 f7 09 10 01 c5 15 44 bf c0 15 3d 00  &lt;!--&quot;--&gt;&gt;..N.......D...=.&amp;lt;&lt;/pre&gt;
@@ -307,7 +307,7 @@ and the size is just definitely wrong:
 &lt;p class=&quot;continued&quot;&gt;
 And &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/commit/74f3511a65861c0763f5fa471ee54e9eb3758d66#tp.cpp&quot;&gt;indeed it was&lt;/a&gt;:
 &lt;/p&gt;
-&lt;pre&gt;$ make tp &amp;&amp; &amp;lt; v4tape ./tp t | tr -d '\0' | column -t
+&lt;pre style=&quot;white-space: pre;&quot;&gt;$ make tp &amp;&amp; &amp;lt; v4tape ./tp t | tr -d '\0' | column -t
 &lt;!--&quot;--&gt;c++ -fdebug-default-version=3    tp.cpp   -o tp&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;2532864 bytes, 4947 blocks&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;dldr[4]   0100777  6:1  228   Wed  Oct  24  16:19:46  1973  block=63  cs=0x9653?  OK&lt;!--&quot;--&gt;
@@ -338,14 +338,14 @@ Extracting this is then &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/tre
 &lt;!--&quot;--&gt;-rwxrwxrwx   450 1973-10-25  tboot&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;-rwxrwxrwx   512 1973-10-25  uboot&lt;!--&quot;--&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-This confirms our suspicions: &lt;tt&gt;dtf&lt;/tt&gt; self-IDs with &lt;q&gt;set up to format on drive 0&lt;/q&gt; and ends with 3 empty blocks (&lt;tt&gt;rkf&lt;/tt&gt; does neither).
+This confirms our suspicions: &lt;tt&gt;dtf&lt;/tt&gt; self-IDs with &lt;q&gt;set up to format on drive 0&lt;/q&gt; and ends with 3 empty blocks of buffers (&lt;tt&gt;rkf&lt;/tt&gt; does neither).
 &lt;tt&gt;mcopy&lt;/tt&gt; says &lt;q&gt;'p' for rp; 'k' for rk&lt;/q&gt; and &lt;q&gt;disk offset&lt;/q&gt;/&lt;q&gt;tape offset&lt;/q&gt;/&lt;q&gt;count&lt;/q&gt;,
 so it presumably copies from disk to tape (or vice versa) by address range, and not files.
 Most curious of all: how can &lt;tt&gt;list&lt;/tt&gt; be so small when it does basically the same thing as &lt;tt&gt;&lt;var&gt;[tm]&lt;/var&gt;boot&lt;/tt&gt;
 (i.e.: read the tape as tp (V), parse the directory)?
 It doesn't:&lt;!--'--&gt;
 &lt;/p&gt;
-&lt;pre&gt;$ hd list
+&lt;pre style=&quot;white-space: pre;&quot;&gt;$ hd list
 &lt;!--&quot;--&gt;000000 07 01 3a 00 00 00 00 00 00 00 00 00 00 00 01 00  &lt;!--&quot;--&gt;&gt;..:.............&amp;lt;
 &lt;!--&quot;--&gt;000010 c1 15 0e 00 40 94 02 03 cd 09 fc 01 87 00 64 6c  &lt;!--&quot;--&gt;&gt;....@.........dl&amp;lt;
 &lt;!--&quot;--&gt;000020 64 72 0a 64 74 66 0a 6c 69 73 74 0a 6d 62 6f 6f  &lt;!--&quot;--&gt;&gt;dr.dtf.list.mboo&amp;lt;
@@ -458,20 +458,20 @@ $ ./fs5tar &amp;lt; v4tape.75
  (and, hilariously, the only way the rootfs's &lt;tt&gt;uboot&lt;/tt&gt; differs from the tape's is that the starting 16 bytes have been removed)).
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-Thus, we &lt;tt&gt;v4tape.75&lt;/tt&gt; has a 4000-block filesystem (just like &lt;tt&gt;v5root&lt;/tt&gt;), so we can easily call it &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root&quot;&gt;&lt;tt&gt;v4root&lt;/tt&gt;&lt;/a&gt;.
+Thus, &lt;tt&gt;v4tape.75&lt;/tt&gt; has a 4000-block filesystem (just like &lt;tt&gt;v5root&lt;/tt&gt;), so we can easily call it &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root&quot;&gt;&lt;tt&gt;v4root&lt;/tt&gt;&lt;/a&gt;.
 However, it is a 4872-block file.
 The remaining space is used for swap
 (this is standard:
  &lt;tt&gt;v5root&lt;/tt&gt; has exactly the same layout,
  and mkfs (VIII) says, of the filesystem size parameter:
- &lt;q&gt;
-  Typically it will be the number of blocks on the device,
-  perhaps diminished
-  by space for swapping.
- &lt;/q&gt;;
+ &lt;q&gt;&lt;!--
+--&gt;Typically it will be the number of blocks on the device,
+   perhaps diminished
+   by space for swapping.&lt;!--
+--&gt;&lt;/q&gt;;
  also, it starts with what can't&lt;!--'--&gt; more obviously be userspace memory:
 &lt;/p&gt;
-&lt;pre&gt;$ tail -c +$(( 1 + 4000 * 512 )) v4root | hd
+&lt;pre style=&quot;white-space: pre;&quot;&gt;$ tail -c +$(( 1 + 4000 * 512 )) v4root | hd
 &lt;!--&quot;--&gt;000000 09 f0 80 11 26 12 d0 0b 36 10 02 00 f7 09 90 00  &lt;!--&quot;--&gt;&gt;....&amp;...6.......&amp;lt;
 &lt;!--&quot;--&gt;000010 96 25 00 0a 01 89 48 61 6e 67 75 70 00 00 51 75  &lt;!--&quot;--&gt;&gt;.%....Hangup..Qu&amp;lt;
 &lt;!--&quot;--&gt;000020 69 74 00 00 49 6c 6c 65 67 61 6c 20 69 6e 73 74  &lt;!--&quot;--&gt;&gt;it..Illegal inst&amp;lt;
@@ -495,27 +495,27 @@ and feeding it into libarchive (ironically, &lt;a href=&quot;//github.com/libarc
 &lt;pre&gt;$ make fs5tar &amp;&amp; &amp;lt; v4root ./fs5tar &gt; &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar&quot;&gt;&lt;tt&gt;v4root.tar&lt;/tt&gt;&lt;/a&gt;
 c++ -fdebug-default-version=3 -O -std=c++20 fs5tar.cpp -larchive -o fs5tar
 2494464 bytes, 4872 blocks
-i-node blocks: 80
-filesystem length: 4000 blocks
-freelist: [ 3261 3275 3386 3456 3440 3444 3272 3370 3356 3369 3435 3434 2889 2891 2890 3421 3419 3417 3415 3414 3413 3412 3411 3410 3409 3408 3407 3405 3404 3403 3402 3401 3400 3399 3398 3396 3395 3394 3393 3392 3391 3390 3418 3263 3389 3429 3427 3430 3428 3426 3425 3424 3265 ]
-super block mtime: Wed Jun 12 12:29:28 2019
-i-node 1: ALLOCATED DIR 0755 links=9 3:1 size=160
-  1[0]: 1 ..
-  1[1]: 1 .
-  1[2]: 2 bin
-  1[3]: 59 dev
-  1[4]: 62 etc
-  1[5]: 75 lib
-  1[6]: 88 mnt
-  1[7]: 89 tmp
-  1[8]: 90 usr
-  1[9]: 460 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;
+&lt;!--&quot;--&gt;i-node blocks:     80&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;filesystem length: 4000 blocks&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;freelist:        [ 3261 3275 3386 3456 3440 3444 3272 3370 3356 3369 3435 3434 2889 2891 2890 3421 3419 3417 3415 3414 3413 3412 3411 3410 3409 3408 3407 3405 3404 3403 3402 3401 3400 3399 3398 3396 3395 3394 3393 3392 3391 3390 3418 3263 3389 3429 3427 3430 3428 3426 3425 3424 3265 ]&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;super block mtime: Wed Jun 12 12:29:28 2019&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;i-node 1: ALLOCATED DIR 0755 links=9 3:1 size=160&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[0]:     1 ..&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[1]:     1 .&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[2]:     2 bin&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[3]:    59 dev&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[4]:    62 etc&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[5]:    75 lib&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[6]:    88 mnt&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[7]:    89 tmp&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[8]:    90 usr&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;  1[9]:   460 unix&lt;!--&quot;--&gt;
 &lt;del&gt;[…]&lt;/del&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 The converter even supports multiply-linked files correctly
 (but there are none: &lt;code&gt;&amp;lt; v4root ./fs5tar 2&gt;&amp;1 &gt; /dev/null | grep 'i-node' | grep -v 'links=1 '&lt;/code&gt; only returns directories).
 There are no errors in the filesystem (&lt;code&gt;| grep 'i-node' | grep -v ALLOCATED&lt;/code&gt; is empty).
-There are 535 i-nodes, and the largest i-node is 627.
+There are 535 i-nodes, and the largest i-node number is 627.
 This implies there were some deletions, and indeed:
 &lt;/p&gt;
 &lt;pre&gt;$ &amp;lt; v4root ./fs5tar 2&gt;&amp;1 &gt; /dev/null | grep ':     0'
@@ -564,8 +564,8 @@ We can also confirm the lay-out of the root disk matches the configuration:
 &lt;p class=&quot;continuing&quot;&gt;
 and see how preposterous the multiple-hundred-kilobyte figure really was for the installer environment programs:
 &lt;/p&gt;
-&lt;pre&gt;$ tar -tvaf v4root.tar /etc /&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;
-tar: Removing leading `/'&lt;!--'--&gt; from member names
+&lt;pre style=&quot;white-space: pre;&quot;&gt;&lt;!--&quot;--&gt;$ tar -tvaf v4root.tar /etc /unix&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;tar: Removing leading `/' from member names&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;drwxr-xr-x 3/1               0 1974-06-12 22:55 /etc/&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;-rwxr--r-- 3/1             446 1974-06-10 14:37 /etc/getty&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;-rwxr-xr-x 3/1            2236 1974-06-10 14:37 /etc/glob&lt;!--&quot;--&gt;
@@ -583,7 +583,7 @@ tar: Removing leading `/'&lt;!--'--&gt; from member names
 &lt;!--&quot;--&gt;-rwxr-xr-x 3/1             814 1974-06-12 22:55 /etc/lpd&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;-rw-r--r-- 3/1           27624 1974-06-13 00:50 /unix&lt;!--&quot;--&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-(&lt;tt&gt;/&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/tt&gt; (and some of its object files) is the second-oldest file on the system, beaten only by &lt;tt&gt;/usr/sys/conf&lt;/tt&gt;, by 8 seconds).
+(&lt;!--&quot;--&gt;&lt;tt&gt;/unix&lt;/tt&gt;&lt;!--&quot;--&gt; (and some of its object files) is the second-oldest file on the system, beaten only by &lt;tt&gt;/usr/sys/conf&lt;/tt&gt;, by 8 seconds).
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
 So, what have we learned to-day?
