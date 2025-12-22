@@ -314,9 +314,9 @@ $ make tp && &lt; v4tape ./tp t | tr -d '\0' | column -t
 <p class="continuing">
 <a href="//ra.ws.co.ls/~nabijaczleweli/Utah_v4/blob/trunk/bproc.pdf">boot procedures (VII)</a> elucidates the purpose of the <tt><var>?</var>boot</tt>s
 — loading unix from tape, DECtape, and file system (V), respectively — none of the others are mentioned in the manual.
-One has to assume <tt>rkf</tt> and <tt>dt</tt> will format a rk (IV)/DECtape in some way,
+One has to assume <tt>rkf</tt> and <tt>dtf</tt> will format a rk (IV)/DECtape in some way,
 <tt>mcopy</tt> can copy (tp (V) files?) between tapes,
-and <tt>list</tt> would list the files on a tp (V) tape,
+and <tt>list</tt> would list the files on a tp (V) tape.
 Which leaves <tt>dldr</tt>.
 </p>
 <p class="indented continuation">
@@ -371,8 +371,8 @@ all the <tt><var>?</var>boot</tt>s have a common almost-initial sequence,
 and we have a reference version in block 0
 (this also applies, more roughly, to the V5 dump):
 </p>
-<pre>\
-$ hd v4tape  -N 512
+<pre style="white-space: pre;">\
+$ hd v4tape -N 512
 <!--"-->000000 07 01 dc 01 00 00 00 00 00 00 00 00 00 00 01 00  <!--"-->>................&lt;
 <!--"-->000010 c6 15 00 be c4 15 bc bf 81 11 c1 21 0b 86 00 0a  <!--"-->>...........!....&lt;
 <!--"-->000020 17 22 07 01 02 02 c0 15 10 00 11 14 57 20 b4 bf  <!--"-->>."..........W ..&lt;<!--"-->
@@ -384,7 +384,7 @@ all <tt><var>?</var>boot</tt>s I've<!--'--> seen have a <tt>W<del>…</del>N</tt
 and the V4 ones have a <tt>N<del>…</del>D</tt> sequence as well.
 So:
 </p>
-<pre>\
+<pre style="white-space: pre;">\
 $ hd v4tape | grep -F N.......D
 <!--"-->000030 fc 87 4e 00 f7 09 10 01 c5 15 44 bf c0 15 3d 00  <!--"-->>..N.......D...=.&lt;
 <!--"-->008c30 fc 87 4e 00 f7 09 10 01 c5 15 44 bf c0 15 3d 00  <!--"-->>..N.......D...=.&lt;
@@ -404,7 +404,7 @@ $ tar -tvaf <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Re
 <p class="continued">
 And <a href="//git.sr.ht/~nabijaczleweli/Utah_v4/commit/74f3511a65861c0763f5fa471ee54e9eb3758d66#tp.cpp">indeed it was</a>:
 </p>
-<pre>\
+<pre style="white-space: pre;">\
 $ make tp && &lt; v4tape ./tp t | tr -d '\0' | column -t
 <!--"-->c++ -fdebug-default-version=3    tp.cpp   -o tp<!--"-->
 <!--"-->2532864 bytes, 4947 blocks<!--"-->
@@ -438,14 +438,14 @@ $ make tp && (cd v4tape.d; &lt; ../v4tape ../tp x | tr -d '\0' | column -t); l v
 <!--"-->-rwxrwxrwx   512 1973-10-25  uboot<!--"-->\
 </pre>
 <p class="continuing">
-This confirms our suspicions: <tt>dtf</tt> self-IDs with <q>set up to format on drive 0</q> and ends with 3 empty blocks (<tt>rkf</tt> does neither).
+This confirms our suspicions: <tt>dtf</tt> self-IDs with <q>set up to format on drive 0</q> and ends with 3 empty blocks of buffers (<tt>rkf</tt> does neither).
 <tt>mcopy</tt> says <q>'p' for rp; 'k' for rk</q> and <q>disk offset</q>/<q>tape offset</q>/<q>count</q>,
 so it presumably copies from disk to tape (or vice versa) by address range, and not files.
 Most curious of all: how can <tt>list</tt> be so small when it does basically the same thing as <tt><var>[tm]</var>boot</tt>
 (i.e.: read the tape as tp (V), parse the directory)?
 It doesn't:<!--'-->
 </p>
-<pre>\
+<pre style="white-space: pre;">\
 $ hd list
 <!--"-->000000 07 01 3a 00 00 00 00 00 00 00 00 00 00 00 01 00  <!--"-->>..:.............&lt;
 <!--"-->000010 c1 15 0e 00 40 94 02 03 cd 09 fc 01 87 00 64 6c  <!--"-->>....@.........dl&lt;
@@ -564,20 +564,20 @@ $ ./fs5tar &lt; v4tape.75
  (and, hilariously, the only way the rootfs's <tt>uboot</tt> differs from the tape's is that the starting 16 bytes have been removed)).
 </p>
 <p class="indented continuing">
-Thus, we <tt>v4tape.75</tt> has a 4000-block filesystem (just like <tt>v5root</tt>), so we can easily call it ARTIFACT(v4root).
+Thus, <tt>v4tape.75</tt> has a 4000-block filesystem (just like <tt>v5root</tt>), so we can easily call it ARTIFACT(v4root).
 However, it is a 4872-block file.
 The remaining space is used for swap
 (this is standard:
  <tt>v5root</tt> has exactly the same layout,
  and mkfs (VIII) says, of the filesystem size parameter:
- <q>
- 	Typically it will be the number of blocks on the device,
-  perhaps diminished
-  by space for swapping.
- </q>;
+ <q><!--
+-->Typically it will be the number of blocks on the device,
+   perhaps diminished
+   by space for swapping.<!--
+--></q>;
  also, it starts with what can't<!--'--> more obviously be userspace memory:
 </p>
-<pre>\
+<pre style="white-space: pre;">\
 $ tail -c +$(( 1 + 4000 * 512 )) v4root | hd
 <!--"-->000000 09 f0 80 11 26 12 d0 0b 36 10 02 00 f7 09 90 00  <!--"-->>....&...6.......&lt;
 <!--"-->000010 96 25 00 0a 01 89 48 61 6e 67 75 70 00 00 51 75  <!--"-->>.%....Hangup..Qu&lt;
@@ -605,28 +605,28 @@ and feeding it into libarchive (ironically, <a href="//github.com/libarchive/lib
 $ make fs5tar && &lt; v4root ./fs5tar > ARTIFACT(v4root.tar)
 c++ -fdebug-default-version=3 -O -std=c++20    fs5tar.cpp  -larchive -o fs5tar
 2494464 bytes, 4872 blocks
-i-node blocks:     80
-filesystem length: 4000 blocks
-freelist:        [ 3261 3275 3386 3456 3440 3444 3272 3370 3356 3369 3435 3434 2889 2891 2890 3421 3419 3417 3415 3414 3413 3412 3411 3410 3409 3408 3407 3405 3404   3403 3402 3401 3400 3399 3398 3396 3395 3394 3393 3392 3391 3390 3418 3263 3389 3429 3427 3430 3428 3426 3425 3424 3265 ]
-super block mtime: Wed Jun 12 12:29:28 2019
-i-node 1: ALLOCATED DIR 0755 links=9 3:1 size=160
-  1[0]:     1 ..
-  1[1]:     1 .
-  1[2]:     2 bin
-  1[3]:    59 dev
-  1[4]:    62 etc
-  1[5]:    75 lib
-  1[6]:    88 mnt
-  1[7]:    89 tmp
-  1[8]:    90 usr
-  1[9]:   460 unix
+<!--"-->i-node blocks:     80<!--"-->
+<!--"-->filesystem length: 4000 blocks<!--"-->
+<!--"-->freelist:        [ 3261 3275 3386 3456 3440 3444 3272 3370 3356 3369 3435 3434 2889 2891 2890 3421 3419 3417 3415 3414 3413 3412 3411 3410 3409 3408 3407 3405 3404 3403 3402 3401 3400 3399 3398 3396 3395 3394 3393 3392 3391 3390 3418 3263 3389 3429 3427 3430 3428 3426 3425 3424 3265 ]<!--"-->
+<!--"-->super block mtime: Wed Jun 12 12:29:28 2019<!--"-->
+<!--"-->i-node 1: ALLOCATED DIR 0755 links=9 3:1 size=160<!--"-->
+<!--"-->  1[0]:     1 ..<!--"-->
+<!--"-->  1[1]:     1 .<!--"-->
+<!--"-->  1[2]:     2 bin<!--"-->
+<!--"-->  1[3]:    59 dev<!--"-->
+<!--"-->  1[4]:    62 etc<!--"-->
+<!--"-->  1[5]:    75 lib<!--"-->
+<!--"-->  1[6]:    88 mnt<!--"-->
+<!--"-->  1[7]:    89 tmp<!--"-->
+<!--"-->  1[8]:    90 usr<!--"-->
+<!--"-->  1[9]:   460 unix<!--"-->
 DEL\
 </pre>
 <p class="continuing">
 The converter even supports multiply-linked files correctly
 (but there are none: <code>&lt; v4root ./fs5tar 2>&1 > /dev/null | grep 'i-node' | grep -v 'links=1 '</code> only returns directories).
 There are no errors in the filesystem (<code>| grep 'i-node' | grep -v ALLOCATED</code> is empty).
-There are 535 i-nodes, and the largest i-node is 627.
+There are 535 i-nodes, and the largest i-node number is 627.
 This implies there were some deletions, and indeed:
 </p>
 <pre>\
@@ -679,9 +679,9 @@ $ tar -xOaf v4root.tar /usr/sys/conf/conf.c
 <p class="continuing">
 and see how preposterous the multiple-hundred-kilobyte figure really was for the installer environment programs:
 </p>
-<pre>\
-$ tar -tvaf v4root.tar /etc /unix
-tar: Removing leading `/'<!--'--> from member names
+<pre style="white-space: pre;">\
+<!--"-->$ tar -tvaf v4root.tar /etc /unix<!--"-->
+<!--"-->tar: Removing leading `/' from member names<!--"-->
 <!--"-->drwxr-xr-x 3/1               0 1974-06-12 22:55 /etc/<!--"-->
 <!--"-->-rwxr--r-- 3/1             446 1974-06-10 14:37 /etc/getty<!--"-->
 <!--"-->-rwxr-xr-x 3/1            2236 1974-06-10 14:37 /etc/glob<!--"-->
@@ -700,7 +700,7 @@ tar: Removing leading `/'<!--'--> from member names
 <!--"-->-rw-r--r-- 3/1           27624 1974-06-13 00:50 /unix<!--"-->\
 </pre>
 <p class="continuing">
-(<tt>/unix</tt> (and some of its object files) is the second-oldest file on the system, beaten only by <tt>/usr/sys/conf</tt>, by 8 seconds).
+(<!--"--><tt>/unix</tt><!--"--> (and some of its object files) is the second-oldest file on the system, beaten only by <tt>/usr/sys/conf</tt>, by 8 seconds).
 </p>
 
 <p class="continued">
