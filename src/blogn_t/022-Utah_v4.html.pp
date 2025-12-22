@@ -10,13 +10,14 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
 #include "../writing/writing.h"
+#include "../fontawesome.h"
 #include "../common.h"
 #include "blogn_t.h"
 
 
    <!-- RSS_PUB_DATE: "Sun, 21 Dec 2025 23:51:02 +0100" -->
 #define POST_DATE      Sun, 21 Dec 2025 23:51:02 +0100
-#define POST_POST_DATE
+#define POST_POST_DATE ; <a href="//archive.org/details/utah-v4">on the archive</a> <a href="//archive.org/details/utah-v4">FA(external-link-alt)</a>
 
 #define DEL      <del>[…]</del>
 #define REDACTED <span class="redacted">[redacted redacted]</span>
@@ -25,7 +26,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                    FORCED_NEWLINE \
                     <link href="/content/assets/prism-twilight.min.css?" rel="stylesheet">
-BOILERPLATE(022. Turning the V4 UNIX dump into Utah_v4/ — blognꞌt, 022. Turning the V4 UNIX dump into Utah_v4/, en-GB, STYLESHEETS WORD_COUNT_SCRIPT)
+BOILERPLATE(022. Turning the V4 UNIX dump into Utah_v4/ — blognꞌt, 022. Turning the V4 UNIX dump into Utah_v4/, en-GB, STYLESHEETS FONTAWESOME_LINK WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"
@@ -719,6 +720,7 @@ So, what have we learned to-day?
 			<li>ARTIFACT(v4root.tar) — the contents of the rootfs when viewed as file system (V), equivalent to <tt>v5root.tar</tt> in the TUHS dumps</li>
 			<li>ARTIFACT(v4root.tar.log) — a summary of the filesystem, including metadata that doesn't<!--'--> make it to the <tt>tar</tt></li>
 		</ul>
+		(also <a href="//archive.org/details/utah-v4">on the archive</a>)
 	</li>
 	<li>you can also inspect and reproduce my methodology by consulting <a href="//git.sr.ht/~nabijaczleweli/Utah_v4">the <tt>Utah_v4</tt> repository</a></li>
 	<li>10¼h well spent. better input data would've<!--'--> cut this in at least half</li>
