@@ -26,7 +26,7 @@
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;022. Turning the V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; dump into Utah_v4/&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 21 Dec 2025 23:51:02 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 21 Dec 2025 23:51:02 +0100&lt;/span&gt;; &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;on the archive&lt;/a&gt; &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;continued&quot;&gt;
 &lt;a href=&quot;//discuss.systems/@ricci/115748594116050292&quot;&gt;Recently&lt;/a&gt; (late this week),
@@ -602,6 +602,7 @@ So, what have we learned to-day?
    &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar&quot;&gt;&lt;tt&gt;v4root.tar&lt;/tt&gt;&lt;/a&gt; — the contents of the rootfs when viewed as file system (V), equivalent to &lt;tt&gt;v5root.tar&lt;/tt&gt; in the TUHS dumps&lt;/li&gt;
    &lt;li&gt;&lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar.log&quot;&gt;&lt;tt&gt;v4root.tar.log&lt;/tt&gt;&lt;/a&gt; — a summary of the filesystem, including metadata that doesn't&lt;!--'--&gt; make it to the &lt;tt&gt;tar&lt;/tt&gt;&lt;/li&gt;
   &lt;/ul&gt;
+  (also &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;on the archive&lt;/a&gt;)
  &lt;/li&gt;
  &lt;li&gt;you can also inspect and reproduce my methodology by consulting &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4&quot;&gt;the &lt;tt&gt;Utah_v4&lt;/tt&gt; repository&lt;/a&gt;&lt;/li&gt;
  &lt;li&gt;10¼h well spent. better input data would've&lt;!--'--&gt; cut this in at least half&lt;/li&gt;
