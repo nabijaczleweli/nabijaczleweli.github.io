@@ -195,7 +195,7 @@ but those are the only goofy records
     580 512 00000200
       2 0 00000000&lt;/pre&gt;
 &lt;p class=&quot;continuing&quot;&gt;
-So the file is degenerate enough that we can &lt;a href=&quot;://simh.trailing-edge.com/docs/simh_magtape.pdf#page=2&quot;&gt;strip off the top nibble&lt;/a&gt;,
+So the file is degenerate enough that we can &lt;a href=&quot;//simh.trailing-edge.com/docs/simh_magtape.pdf#page=2&quot;&gt;strip off the top nibble&lt;/a&gt;,
 and dump everything straight (re-using the padding byte for the short record):
 &lt;/p&gt;
 &lt;pre&gt;$ &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/tree/cde08dafa2d7ed4b4cad4a072d8ee0e70638a497/item/simh2raw.cpp#L11&quot;&gt;make simh2raw&lt;/a&gt; &amp;&amp; &amp;lt; analog.tap ./simh2raw &gt; &lt;a href=&quot;https://lfs.nabijaczleweli.xyz/0031-Utah_v4/v4tape&quot;&gt;&lt;tt&gt;v4tape&lt;/tt&gt;&lt;/a&gt;
