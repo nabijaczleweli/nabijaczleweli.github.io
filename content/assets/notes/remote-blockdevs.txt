@@ -1,0 +1,45 @@
+From the POV of what is used to connect over IP,
+authentication and transport encryption:
+
+NVMe-OF
+	TCP
+	https://manpages.debian.org/trixie/nvme-cli/nvme-connect.1.en.html
+		--tls  Enable TLS encryption (TCP).
+	https://www.snia.org/sniadeveloper/session/19423
+	  NVMe-over-Fabrics (NVMe-oF) offers DH-HMAC-CHAP as its in-band method for authenticating hosts and subsystems.
+	  However, the specification lacks comprehensive guidelines on implementing authentication mechanisms, particularly in determining when to use single versus multiple authentication keys.
+	  2025! talk.
+	  https://www.youtube.com/watch?v=1QbXOO_dFOw
+			key challenge-response
+
+iSCSI
+	TCP
+	https://manpages.debian.org/trixie/open-iscsi/iscsiadm.8.en.html#C
+	https://manpages.debian.org/trixie/open-iscsi/iscsiadm.8.en.html#S
+	https://wiki.archlinux.org/title/Open-iSCSI
+	  CHAP username:passphrase auth
+		no encryption
+
+NBD
+	https://github.com/NetworkBlockDevice/nbd/blob/master/doc/proto.md#tls-support
+	TCP
+	TLS (STARTTLS)
+	Authentication "implementation-dependent"
+	https://manpages.debian.org/trixie/nbd-client/nbdtab.5.en.html#certfile=
+		TLC client cert supported
+
+RBD
+	TCP
+	https://docs.ceph.com/en/reef/man/8/rbd/
+		--id username
+		--keyring filename
+		--keyfile filename
+		ms_mode=secure - Use msgr2.1 on-the-wire protocol, select 'secure' mode (since 5.11). 'secure' mode provides full in-transit encryption ensuring both confidentiality and authenticity. If the daemon denies 'secure' mode, fail the connection.
+
+DRBD
+	https://linbit.com/drbd/
+	TCP
+	Only as back-end for mirroring something preexisting
+	https://manpages.debian.org/trixie/drbd-utils/drbd.conf.5.en.html
+		peer auth by PSK
+	unclear if encrypted?
