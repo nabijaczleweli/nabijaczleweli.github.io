@@ -275,7 +275,7 @@ $ mtdump analog.tap | grep -o 'position [^,]*' | while read -r _ off; do od -An 
       2            0        00000000\
 </pre>
 <p class="continuing">
-So the file is degenerate enough that we can <a href="://simh.trailing-edge.com/docs/simh_magtape.pdf#page=2">strip off the top nibble</a>,
+So the file is degenerate enough that we can <a href="//simh.trailing-edge.com/docs/simh_magtape.pdf#page=2">strip off the top nibble</a>,
 and dump everything straight (re-using the padding byte for the short record):
 </p>
 <pre>\
