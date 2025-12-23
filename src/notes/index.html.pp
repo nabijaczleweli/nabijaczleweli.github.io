@@ -28,5 +28,6 @@ BOILERPLATE(Analysis notes, unsorted; unedited; unrestrained, en-GB, STYLESHEETS
 MAIN_HEADING(Analysis notes)
 
 <h3><a href="/content/assets/notes/elementary.txt">queerness in elementary</a></h3>
+<h3><a href="/content/assets/notes/remote-blockdevs.txt">remote blockdev protocols'<!--'--> IP transports, encryption, authentication</a></h3>
 
 BOILERPLATE_END()
