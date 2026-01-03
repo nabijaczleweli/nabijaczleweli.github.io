@@ -223,13 +223,14 @@ pre {
 <div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX)</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Mon, 10 Jun 2024 01:04:14 +0200</span></h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Mon, 10 Jun 2024 01:04:14 +0200, <a href="#v4">filled out with information about V4 on Sat, 03 Jan 2026 23:46:58 +0100</a></span></h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
 <li><a href='#v1'>The UNIX Programmer'<!--'-->s Manual (&c.)</a></li>
 <li><a href='#nsys'>nsys <span class="smallcaps">unix</span> (the V4 what isn'<!--'-->t)</a></li>
-<li><a href='#pdp7'>that funny PDP-7 proto-unix</a></li>
+<li><a href='#v4'>actual V4 <span class="smallcaps">unix</span></a></li>
+<li><a href='#pdp7'>that funny PDP-7 proto-<span class="smallcaps">unix</span></a></li>
 </ol>
 </ol>
 </details></div>
@@ -1155,10 +1156,9 @@ This mirrors almost-verbatim what we saw in V1 setup, except we now have segment
 One last time:
 </p>
 <p class="indented continuing">
-<var>proc[0].p_addr</var> is the base of the process'<!--'--> address space and <var>proc[0].p_size</var> is its size. but idk what the unit is lol
-(it's gotta be chunks of <em>some</em> size because the allocator's arena size is a <samp>char</samp>, but fuck knows what;
- <code>USIZE</code> is helpfully <q>8</q>, and I'<!--'-->ve calculated the size of <code>u</code> at 217 (or 228) bytes;
- maybe it's 32 bytes? that's awfully narrow but it fits).
+<var>proc[0].p_addr</var> is the base of the process'<!--'--> address space and <var>proc[0].p_size</var> is its size in 32-word (64-byte) units
+(<code>USIZE</code> is <q>8</q> (512 bytes) and it's the size of the process's control block — I'<!--'-->ve calculated the size of <code>u</code> at 232 bytes,
+ yielding 280 bytes of stack).
 In V1 this was <samp>[core; <var>u.break</var>)</samp> (and also the stack was separate. but close enough),
 now it'<!--'-->s <samp>[<var>proc[…].p_addr</var>, <var>proc[…].p_addr</var> + <var>proc[…].p_size</var>)</samp>.
 AFAICT, <code>KISA->r[6]</code> is gonna be the Kernel I<span class="cmt">nstruction</span>-Space Page Address Register #0, register 6
@@ -1213,9 +1213,9 @@ The special PID 0 process goes to <code>sched()</code> and now does scheduling.
 It will probably schedule our PID 1 instantly.
 </p>
 <p class="indented continuing">
-And PID 1 will first allocate another 1 block (32 bytes?), then…
-<var>u.u_uisa[0]</var>&<var>u.u_uisd[0]</var> look awfully like the user instruction and data segments? This matches segment 6 for data?
-But there are 8 segments (0–7 and <code>USIZE</code> is 8 so fuck knows. maybe not). <code>sureg()</code> sets user segment registers.
+And PID 1 will first allocate a 32-word block,
+then set the userspace mapping accordingly (physical address: <code>USIZE</code> 32-word units, flags: <code>RW|PAGESIZEIN32WORDUNITS(1)</code>).
+<code>sureg()</code> sets user segment registers.
 </p>
 <p class="indented continuing">
 <code>suword()</code>, expectedly, sets words in user memory.
@@ -1258,7 +1258,73 @@ TTBOMK, this corresponds with this being the first system targeting the PDP-11/4
 and thus a purely-interrupt-driven architecture was no longer possible.
 (This hurts less when it'<!--'-->s one process out of a fifty than if it were one process out of sixteen, too.)
 </p>
-<h2 id="pdp7" ><a class="hash-link" href="#pdp7">#</a> that funny PDP-7 proto-unix</h2>
+<h2 id="v4" ><a class="hash-link" href="#v4">#</a> actual V4 <span class="smallcaps">unix</span></h2>
+<p class="indented continuing">
+Was <a href="//lfs.nabijaczleweli.xyz/0031-Utah_v4">found</a> and <a href="022-Utah_v4.html">analysed</a> after this post has been written.
+Thus, we know that the setup is exactly the same except files actually bear a copyright statement:
+</p>
+<blockquote class="u69 continuing" id="v4-new-comment-s">
+ <a href="#v4-new-comment-s">
+  <span>/usr/sys/conf/low.s, /usr/sys/conf/mch.s</span>
+ </a>
+ <pre class="comment">/ Copyright 1974 Bell Telephone Laboratories Inc</pre>
+</blockquote>
+<blockquote class="u69 continuing" id="v4-new-comment-c">
+ <a href="#v4-new-comment-c">
+  <span>/usr/sys/ken/main.c</span>
+ </a>
+ <pre class="comment"><!--"-->/*<!--"-->
+<!--"--> *	Copyright 1973 Bell Telephone Laboratories Inc<!--"-->
+<!--"--> */<!--"--></pre>
+</blockquote>
+<p class="continuing">
+and <samp>mch.s</samp>, fittingly to the rename, misses the <q>PDP-11/45</q> comment,
+as well as additionally expositing the <q>call main</q> block thusly:
+</p>
+<blockquote class="u69 continuing" id="v4-enter-user-mode-at-0">
+ <a href="#v4-enter-user-mode-at-0">
+  <span>/usr/sys/conf/mch.s</span>
+ </a>
+ <pre class="comment">/ set up previous mode and call main
+/ on return, enter user mode at 0R</pre>
+</blockquote>
+<p class="continuation">
+which agrees to the letter with the analysis above.
+</p>
+<blockquote class="u69 continuing" id="v4-main-prep">
+ <a href="#v4-main-prep">
+  <span>/usr/sys/ken/main.c</span>
+ </a>
+ <pre><!--"-->	updlock = 0;<!--"-->
+<!--"-->	UISA->r[0] = KISA->r[6] + USIZE;<!--"-->
+<!--"-->	UISD->r[0] = 077406;<!--"-->
+<!--"-->	for(; fubyte(0) >= 0; UISA->r[0]++) {<!--"-->
+<!--"-->		clearseg(UISA->r[0]);<!--"-->
+<!--"-->		maxmem++;<!--"-->
+<!--"-->		mfree(coremap, 1, UISA->r[0]);<!--"-->
+<!--"-->	}<!--"-->
+<!--"-->	printf("mem = %l\n", maxmem*10/32);<!--"-->
+<!--"-->	maxmem = min(maxmem, MAXMEM);<!--"-->
+<!--"-->	mfree(swapmap, nswap, swplo);<!--"--></pre>
+</blockquote>
+<p class="continuing">
+this is the same sans the initial <code>UISD->r[0]</code> (user page 0 address) value (<code>RW|<a href="http://www.bitsavers.org/pdf/dec/pdp11/1145/EK-KT11C-MM-005-KT11-C_CD_Memory_Management_Maintenance_Manual_1976.pdf#page=29">PAGESIZEIN32WORDUNITS(128)</a></code> instead of <code>RW|PAGESIZEIN32WORDUNITS(1)</code>),
+counting the memory size (in 32-word (64-byte) units so the <q>mem =</q> value is in units of 20 bytes),
+and the swap device being variables instead of macros.
+</p>
+<p class="continuation">
+<code>MAXMEM</code> is <code>(32*32)</code>, i.e. 64kB.
+<code>USIZE</code> is <code>16</code> (1kB) and I've calculated the size of <code>struct user</code> at 242 bytes, giving 782 bytes of stack.
+</p>
+<p class="indented continued">
+The actual process table setup is the same.
+PID 1 setup is the same except the <code>for</code>/<code>suword()</code> loop is replaced with an equivalent <code>copyout(icode, 0, 30);</code>.
+The <code>icode</code> table itself is the same.
+</p>
+<p class="indented continuation">
+This agrees with the prediction based on nsys: the V4 scheduler (kernel) is PID 0 which forks, then returns to userspace.
+</p>
+<h2 id="pdp7" ><a class="hash-link" href="#pdp7">#</a> that funny PDP-7 proto-<span class="smallcaps">unix</span></h2>
 <p class="indented continued">
 Since we're all here already, it'd be a shame to stop at Version 1 <span class="smallcaps">unix</span>.
 The scans for this system can be found
@@ -1435,9 +1501,9 @@ This is as an open-coded sys exec (II).
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 03.01.2026 20:51:35 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 03.01.2026 22:51:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1645489">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1645570">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

@@ -3771,13 +3771,14 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 10 Jun 2024 01:04:14 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 10 Jun 2024 01:04:14 +0200, &lt;a href=&quot;#v4&quot;&gt;filled out with information about V4 on Sat, 03 Jan 2026 23:46:58 +0100&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href='#v1'&gt;The UNIX Programmer'&lt;!--'--&gt;s Manual (&amp;c.)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#nsys'&gt;nsys &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (the V4 what isn'&lt;!--'--&gt;t)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#pdp7'&gt;that funny PDP-7 proto-unix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v4'&gt;actual V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#pdp7'&gt;that funny PDP-7 proto-&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/ol&gt;
 &lt;/details&gt;&lt;/div&gt;
@@ -4703,10 +4704,9 @@ This mirrors almost-verbatim what we saw in V1 setup, except we now have segment
 One last time:
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-&lt;var&gt;proc[0].p_addr&lt;/var&gt; is the base of the process'&lt;!--'--&gt; address space and &lt;var&gt;proc[0].p_size&lt;/var&gt; is its size. but idk what the unit is lol
-(it's gotta be chunks of &lt;em&gt;some&lt;/em&gt; size because the allocator's arena size is a &lt;samp&gt;char&lt;/samp&gt;, but fuck knows what;
- &lt;code&gt;USIZE&lt;/code&gt; is helpfully &lt;q&gt;8&lt;/q&gt;, and I'&lt;!--'--&gt;ve calculated the size of &lt;code&gt;u&lt;/code&gt; at 217 (or 228) bytes;
- maybe it's 32 bytes? that's awfully narrow but it fits).
+&lt;var&gt;proc[0].p_addr&lt;/var&gt; is the base of the process'&lt;!--'--&gt; address space and &lt;var&gt;proc[0].p_size&lt;/var&gt; is its size in 32-word (64-byte) units
+(&lt;code&gt;USIZE&lt;/code&gt; is &lt;q&gt;8&lt;/q&gt; (512 bytes) and it's the size of the process's control block — I'&lt;!--'--&gt;ve calculated the size of &lt;code&gt;u&lt;/code&gt; at 232 bytes,
+ yielding 280 bytes of stack).
 In V1 this was &lt;samp&gt;[core; &lt;var&gt;u.break&lt;/var&gt;)&lt;/samp&gt; (and also the stack was separate. but close enough),
 now it'&lt;!--'--&gt;s &lt;samp&gt;[&lt;var&gt;proc[…].p_addr&lt;/var&gt;, &lt;var&gt;proc[…].p_addr&lt;/var&gt; + &lt;var&gt;proc[…].p_size&lt;/var&gt;)&lt;/samp&gt;.
 AFAICT, &lt;code&gt;KISA-&gt;r[6]&lt;/code&gt; is gonna be the Kernel I&lt;span class=&quot;cmt&quot;&gt;nstruction&lt;/span&gt;-Space Page Address Register #0, register 6
@@ -4761,9 +4761,9 @@ The special PID 0 process goes to &lt;code&gt;sched()&lt;/code&gt; and now does 
 It will probably schedule our PID 1 instantly.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
-And PID 1 will first allocate another 1 block (32 bytes?), then…
-&lt;var&gt;u.u_uisa[0]&lt;/var&gt;&amp;&lt;var&gt;u.u_uisd[0]&lt;/var&gt; look awfully like the user instruction and data segments? This matches segment 6 for data?
-But there are 8 segments (0–7 and &lt;code&gt;USIZE&lt;/code&gt; is 8 so fuck knows. maybe not). &lt;code&gt;sureg()&lt;/code&gt; sets user segment registers.
+And PID 1 will first allocate a 32-word block,
+then set the userspace mapping accordingly (physical address: &lt;code&gt;USIZE&lt;/code&gt; 32-word units, flags: &lt;code&gt;RW|PAGESIZEIN32WORDUNITS(1)&lt;/code&gt;).
+&lt;code&gt;sureg()&lt;/code&gt; sets user segment registers.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
 &lt;code&gt;suword()&lt;/code&gt;, expectedly, sets words in user memory.
@@ -4806,7 +4806,73 @@ TTBOMK, this corresponds with this being the first system targeting the PDP-11/4
 and thus a purely-interrupt-driven architecture was no longer possible.
 (This hurts less when it'&lt;!--'--&gt;s one process out of a fifty than if it were one process out of sixteen, too.)
 &lt;/p&gt;
-&lt;h2 id=&quot;pdp7&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#pdp7&quot;&gt;#&lt;/a&gt; that funny PDP-7 proto-unix&lt;/h2&gt;
+&lt;h2 id=&quot;v4&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v4&quot;&gt;#&lt;/a&gt; actual V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h2&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Was &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0031-Utah_v4&quot;&gt;found&lt;/a&gt; and &lt;a href=&quot;022-Utah_v4.html&quot;&gt;analysed&lt;/a&gt; after this post has been written.
+Thus, we know that the setup is exactly the same except files actually bear a copyright statement:
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;v4-new-comment-s&quot;&gt;
+ &lt;a href=&quot;#v4-new-comment-s&quot;&gt;
+  &lt;span&gt;/usr/sys/conf/low.s, /usr/sys/conf/mch.s&lt;/span&gt;
+ &lt;/a&gt;
+ &lt;pre class=&quot;comment&quot;&gt;/ Copyright 1974 Bell Telephone Laboratories Inc&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;v4-new-comment-c&quot;&gt;
+ &lt;a href=&quot;#v4-new-comment-c&quot;&gt;
+  &lt;span&gt;/usr/sys/ken/main.c&lt;/span&gt;
+ &lt;/a&gt;
+ &lt;pre class=&quot;comment&quot;&gt;&lt;!--&quot;--&gt;/*&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; *	Copyright 1973 Bell Telephone Laboratories Inc&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; */&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and &lt;samp&gt;mch.s&lt;/samp&gt;, fittingly to the rename, misses the &lt;q&gt;PDP-11/45&lt;/q&gt; comment,
+as well as additionally expositing the &lt;q&gt;call main&lt;/q&gt; block thusly:
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;v4-enter-user-mode-at-0&quot;&gt;
+ &lt;a href=&quot;#v4-enter-user-mode-at-0&quot;&gt;
+  &lt;span&gt;/usr/sys/conf/mch.s&lt;/span&gt;
+ &lt;/a&gt;
+ &lt;pre class=&quot;comment&quot;&gt;/ set up previous mode and call main
+/ on return, enter user mode at 0R&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+which agrees to the letter with the analysis above.
+&lt;/p&gt;
+&lt;blockquote class=&quot;u69 continuing&quot; id=&quot;v4-main-prep&quot;&gt;
+ &lt;a href=&quot;#v4-main-prep&quot;&gt;
+  &lt;span&gt;/usr/sys/ken/main.c&lt;/span&gt;
+ &lt;/a&gt;
+ &lt;pre&gt;&lt;!--&quot;--&gt;	updlock = 0;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	UISA-&gt;r[0] = KISA-&gt;r[6] + USIZE;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	UISD-&gt;r[0] = 077406;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	for(; fubyte(0) &gt;= 0; UISA-&gt;r[0]++) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		clearseg(UISA-&gt;r[0]);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		maxmem++;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		mfree(coremap, 1, UISA-&gt;r[0]);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	printf(&quot;mem = %l\n&quot;, maxmem*10/32);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	maxmem = min(maxmem, MAXMEM);&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mfree(swapmap, nswap, swplo);&lt;!--&quot;--&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+this is the same sans the initial &lt;code&gt;UISD-&gt;r[0]&lt;/code&gt; (user page 0 address) value (&lt;code&gt;RW|&lt;a href=&quot;http://www.bitsavers.org/pdf/dec/pdp11/1145/EK-KT11C-MM-005-KT11-C_CD_Memory_Management_Maintenance_Manual_1976.pdf#page=29&quot;&gt;PAGESIZEIN32WORDUNITS(128)&lt;/a&gt;&lt;/code&gt; instead of &lt;code&gt;RW|PAGESIZEIN32WORDUNITS(1)&lt;/code&gt;),
+counting the memory size (in 32-word (64-byte) units so the &lt;q&gt;mem =&lt;/q&gt; value is in units of 20 bytes),
+and the swap device being variables instead of macros.
+&lt;/p&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+&lt;code&gt;MAXMEM&lt;/code&gt; is &lt;code&gt;(32*32)&lt;/code&gt;, i.e. 64kB.
+&lt;code&gt;USIZE&lt;/code&gt; is &lt;code&gt;16&lt;/code&gt; (1kB) and I've calculated the size of &lt;code&gt;struct user&lt;/code&gt; at 242 bytes, giving 782 bytes of stack.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The actual process table setup is the same.
+PID 1 setup is the same except the &lt;code&gt;for&lt;/code&gt;/&lt;code&gt;suword()&lt;/code&gt; loop is replaced with an equivalent &lt;code&gt;copyout(icode, 0, 30);&lt;/code&gt;.
+The &lt;code&gt;icode&lt;/code&gt; table itself is the same.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+This agrees with the prediction based on nsys: the V4 scheduler (kernel) is PID 0 which forks, then returns to userspace.
+&lt;/p&gt;
+&lt;h2 id=&quot;pdp7&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#pdp7&quot;&gt;#&lt;/a&gt; that funny PDP-7 proto-&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h2&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Since we're all here already, it'd be a shame to stop at Version 1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;.
 The scans for this system can be found
