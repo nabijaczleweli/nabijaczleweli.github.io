@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
    <!-- RSS_PUB_DATE: "Sun, 28 Sep 2025 01:02:48 +0200" -->
 #define POST_DATE      Sun, 28 Sep 2025 01:02:48 +0200
-#define POST_POST_DATE Sun, 28 Sep 2025 19:54:03 +0200
+#define POST_POST_DATE Sun, 28 Sep 2025 19:54:03 +0200, <a href="#v4">filled out with information about V4 on Sat, 03 Jan 2026 21:47:26 +0100</a>
 
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                    FORCED_NEWLINE \
@@ -235,8 +235,28 @@ One has to assume <code>&var + 3.5</code> gets promoted before this, but idk if 
 Either way, V3 verdict: no <code>sizeof</code>, no <samp>int/int</samp> folding.
 </p>
 
-<p class="indented">
-V4 has a V3-style cc (I), and, likely, compiler. No way to know.
+<p class="indented continued" id="v4">
+<del style="opacity: initial;">V4 has a V3-style cc (I), and, likely, compiler. No way to know.</del>
+Since first writing this post, a dump of the system corresponding to
+</p>
+HEADING_S(2, v4-heading, class="continuing", UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/">Fourth Edition</a></cite>)
+<p class="continuing">
+was <a href="//lfs.nabijaczleweli.xyz/0031-Utah_v4">found</a> and <a href="022-Utah_v4.html">analysed</a>.
+So we can observe this directly.
+</p>
+<p class="indented continuing">
+<cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/v4man.tar.gz">Fourth Edition</a>, <samp>./man1/cc.1</samp></cite> is
+</p>
+<blockquote class="continuing">
+<b>cc</b> [ <b>−c</b> ] [ <b>−p</b> ] file ...
+</blockquote>
+<p class="continuing">
+(with <code>-p</code> being like present-day <code>-E</code>), but is otherwise
+— per <cite><a href="//lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar">V4</a>, <samp>/usr/source/s1/cc.c</samp>, <samp>/usr/c/c10.c</samp></cite> —
+<em>exactly</em> like V5, described below. Except undocumentedly.
+</p>
+<p class="indented continuation">
+V4 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>/usr/c/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
 </p>
 
 
@@ -265,7 +285,7 @@ but also with a full constant folder:
 </p>
 #include "blogn_t/020.03-v5-c12-const.oldc.html"
 <p class="continuation">
-V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
+V5 verdict: yes <code>sizeof</code> (<del style="opacity: initial;">new:</del> <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
 </p>
 
 HEADING(2, rest, &c.)
@@ -422,7 +442,8 @@ HEADING_S(2, conclusion, class="continuing", conclusion)
 other than "there has never been a compiler with <code>sizeof</code> but no <samp>int/int</samp> folding".
 </p>
 <p class="indented continuation">
-<em>Perhaps</em> for a hair? in 1973 around our V4 epistemic hole, <a href="/content/assets/blogn_t/020.02-kicker.webm">but.</a>
+<del style="opacity: initial;"><em>Perhaps</em> for a hair? in 1973 around our V4 epistemic hole, <a href="/content/assets/blogn_t/020.02-kicker.webm">but.</a></del>
+Ever.
 </p>
 
 
