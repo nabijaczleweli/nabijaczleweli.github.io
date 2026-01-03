@@ -1283,13 +1283,14 @@ mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quo
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;020. Pre-modern-UNIX sizeof division&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;Sun, 28 Sep 2025 19:54:03 +0200&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;Sun, 28 Sep 2025 19:54:03 +0200, &lt;a href=&quot;#v4&quot;&gt;filled out with information about V4 on Sat, 03 Jan 2026 21:47:26 +0100&lt;/a&gt;&lt;/h4&gt; 
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href='#v1'&gt;&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf&quot;&gt;UNIX Programmer'&lt;!--'--&gt;s Manual&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#v2'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/v2man.pdf#page=39&quot;&gt;Second Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#prestruct-c'&gt;&lt;a href=&quot;//web.archive.org/web/20080419002944/http://cm.bell-labs.com/cm/cs/who/dmr/primevalC.html&quot;&gt;prestruct-c&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v4-heading'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/&quot;&gt;Fourth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#v5'&gt;UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=36&quot;&gt;Fifth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#rest'&gt;&amp;c.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#conclusion'&gt;conclusion&lt;/a&gt;&lt;/li&gt;
@@ -1472,8 +1473,28 @@ This folds additions where either
 One has to assume &lt;code&gt;&amp;var + 3.5&lt;/code&gt; gets promoted before this, but idk if this works for &lt;code&gt;3.5 + 0&lt;/code&gt; or &lt;code&gt;3.5 + 0.0&lt;/code&gt;.
 Either way, V3 verdict: no &lt;code&gt;sizeof&lt;/code&gt;, no &lt;samp&gt;int/int&lt;/samp&gt; folding.
 &lt;/p&gt;
-&lt;p class=&quot;indented&quot;&gt;
-V4 has a V3-style cc (I), and, likely, compiler. No way to know.
+&lt;p class=&quot;indented continued&quot; id=&quot;v4&quot;&gt;
+&lt;del style=&quot;opacity: initial;&quot;&gt;V4 has a V3-style cc (I), and, likely, compiler. No way to know.&lt;/del&gt;
+Since first writing this post, a dump of the system corresponding to
+&lt;/p&gt;
+&lt;h2 id=&quot;v4-heading&quot; class=&quot;continuing&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v4-heading&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/&quot;&gt;Fourth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+was &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0031-Utah_v4&quot;&gt;found&lt;/a&gt; and &lt;a href=&quot;022-Utah_v4.html&quot;&gt;analysed&lt;/a&gt;.
+So we can observe this directly.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/v4man.tar.gz&quot;&gt;Fourth Edition&lt;/a&gt;, &lt;samp&gt;./man1/cc.1&lt;/samp&gt;&lt;/cite&gt; is
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+&lt;b&gt;cc&lt;/b&gt; [ &lt;b&gt;−c&lt;/b&gt; ] [ &lt;b&gt;−p&lt;/b&gt; ] file ...
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+(with &lt;code&gt;-p&lt;/code&gt; being like present-day &lt;code&gt;-E&lt;/code&gt;), but is otherwise
+— per &lt;cite&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar&quot;&gt;V4&lt;/a&gt;, &lt;samp&gt;/usr/source/s1/cc.c&lt;/samp&gt;, &lt;samp&gt;/usr/c/c10.c&lt;/samp&gt;&lt;/cite&gt; —
+&lt;em&gt;exactly&lt;/em&gt; like V5, described below. Except undocumentedly.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+V4 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;samp&gt;/usr/c/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), yes &lt;samp&gt;int/int&lt;/samp&gt; folding.
 &lt;/p&gt;
 &lt;h2 id=&quot;v5&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v5&quot;&gt;#&lt;/a&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=36&quot;&gt;Fifth Edition&lt;/a&gt;&lt;/cite&gt;&lt;/h2&gt;
 &lt;blockquote class=&quot;continuing&quot;&gt;
@@ -1601,7 +1622,7 @@ but also with a full constant folder:
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p class=&quot;continuation&quot;&gt;
-V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (new: &lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), yes &lt;samp&gt;int/int&lt;/samp&gt; folding.
+V5 verdict: yes &lt;code&gt;sizeof&lt;/code&gt; (&lt;del style=&quot;opacity: initial;&quot;&gt;new:&lt;/del&gt; &lt;cite&gt;ibid., &lt;samp&gt;./usr/source/s1/c0[01].c&lt;/samp&gt;&lt;/cite&gt;), yes &lt;samp&gt;int/int&lt;/samp&gt; folding.
 &lt;/p&gt;
 &lt;h2 id=&quot;rest&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#rest&quot;&gt;#&lt;/a&gt; &amp;c.&lt;/h2&gt;
 &lt;p class=&quot;indented continued&quot; id=&quot;v6&quot;&gt;
@@ -1806,7 +1827,8 @@ It's&lt;!--'--&gt; difficult to come to a
 other than &quot;there has never been a compiler with &lt;code&gt;sizeof&lt;/code&gt; but no &lt;samp&gt;int/int&lt;/samp&gt; folding&quot;.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
-&lt;em&gt;Perhaps&lt;/em&gt; for a hair? in 1973 around our V4 epistemic hole, &lt;a href=&quot;/content/assets/blogn_t/020.02-kicker.webm&quot;&gt;but.&lt;/a&gt;
+&lt;del style=&quot;opacity: initial;&quot;&gt;&lt;em&gt;Perhaps&lt;/em&gt; for a hair? in 1973 around our V4 epistemic hole, &lt;a href=&quot;/content/assets/blogn_t/020.02-kicker.webm&quot;&gt;but.&lt;/a&gt;&lt;/del&gt;
+Ever.
 &lt;/p&gt;
 &lt;p&gt; 
  &lt;br /&gt; 

@@ -142,13 +142,14 @@ dl > * {
 <div class="roboto writing"> 
  <p></p> 
  <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>020. Pre-modern-UNIX sizeof division</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Sun, 28 Sep 2025 01:02:48 +0200</span>Sun, 28 Sep 2025 19:54:03 +0200</h4> 
+ <h4 id="post-date"><span style="white-space: nowrap">Sun, 28 Sep 2025 01:02:48 +0200</span>Sun, 28 Sep 2025 19:54:03 +0200, <a href="#v4">filled out with information about V4 on Sat, 03 Jan 2026 21:47:26 +0100</a></h4> 
  <!--BLOGN_T_TOC_PLACEHOLDER-->
 <div style='position: relative;'><details id='contents'><summary><h2>Contents</h2></summary><ol>
 <ol>
 <li><a href='#v1'><cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf">UNIX Programmer'<!--'-->s Manual</a></cite></a></li>
 <li><a href='#v2'>UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/v2man.pdf#page=39">Second Edition</a></cite></a></li>
 <li><a href='#prestruct-c'><a href="//web.archive.org/web/20080419002944/http://cm.bell-labs.com/cm/cs/who/dmr/primevalC.html">prestruct-c</a></a></li>
+<li><a href='#v4-heading'>UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/">Fourth Edition</a></cite></a></li>
 <li><a href='#v5'>UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=36">Fifth Edition</a></cite></a></li>
 <li><a href='#rest'>&c.</a></li>
 <li><a href='#conclusion'>conclusion</a></li>
@@ -331,8 +332,28 @@ This folds additions where either
 One has to assume <code>&var + 3.5</code> gets promoted before this, but idk if this works for <code>3.5 + 0</code> or <code>3.5 + 0.0</code>.
 Either way, V3 verdict: no <code>sizeof</code>, no <samp>int/int</samp> folding.
 </p>
-<p class="indented">
-V4 has a V3-style cc (I), and, likely, compiler. No way to know.
+<p class="indented continued" id="v4">
+<del style="opacity: initial;">V4 has a V3-style cc (I), and, likely, compiler. No way to know.</del>
+Since first writing this post, a dump of the system corresponding to
+</p>
+<h2 id="v4-heading" class="continuing"><a class="hash-link" href="#v4-heading">#</a> UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/">Fourth Edition</a></cite></h2>
+<p class="continuing">
+was <a href="//lfs.nabijaczleweli.xyz/0031-Utah_v4">found</a> and <a href="022-Utah_v4.html">analysed</a>.
+So we can observe this directly.
+</p>
+<p class="indented continuing">
+<cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/v4man.tar.gz">Fourth Edition</a>, <samp>./man1/cc.1</samp></cite> is
+</p>
+<blockquote class="continuing">
+<b>cc</b> [ <b>−c</b> ] [ <b>−p</b> ] file ...
+</blockquote>
+<p class="continuing">
+(with <code>-p</code> being like present-day <code>-E</code>), but is otherwise
+— per <cite><a href="//lfs.nabijaczleweli.xyz/0031-Utah_v4/v4root.tar">V4</a>, <samp>/usr/source/s1/cc.c</samp>, <samp>/usr/c/c10.c</samp></cite> —
+<em>exactly</em> like V5, described below. Except undocumentedly.
+</p>
+<p class="indented continuation">
+V4 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>/usr/c/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
 </p>
 <h2 id="v5" class="continued"><a class="hash-link" href="#v5">#</a> UNIX Programmer'<!--'-->s Manual, <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=36">Fifth Edition</a></cite></h2>
 <blockquote class="continuing">
@@ -460,7 +481,7 @@ but also with a full constant folder:
 <span class="token punctuation">}</span>
 </code></pre>
 <p class="continuation">
-V5 verdict: yes <code>sizeof</code> (new: <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
+V5 verdict: yes <code>sizeof</code> (<del style="opacity: initial;">new:</del> <cite>ibid., <samp>./usr/source/s1/c0[01].c</samp></cite>), yes <samp>int/int</samp> folding.
 </p>
 <h2 id="rest" ><a class="hash-link" href="#rest">#</a> &c.</h2>
 <p class="indented continued" id="v6">
@@ -665,7 +686,8 @@ It's<!--'--> difficult to come to a
 other than "there has never been a compiler with <code>sizeof</code> but no <samp>int/int</samp> folding".
 </p>
 <p class="indented continuation">
-<em>Perhaps</em> for a hair? in 1973 around our V4 epistemic hole, <a href="/content/assets/blogn_t/020.02-kicker.webm">but.</a>
+<del style="opacity: initial;"><em>Perhaps</em> for a hair? in 1973 around our V4 epistemic hole, <a href="/content/assets/blogn_t/020.02-kicker.webm">but.</a></del>
+Ever.
 </p>
 <p> 
  <br /> 
@@ -689,9 +711,9 @@ other than "there has never been a compiler with <code>sizeof</code> but no <sam
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 23.12.2025 13:58:18 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 03.01.2026 20:51:35 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/020-sizeof-division.html.pp">src/blogn_t/020-sizeof-division.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1636900">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1645489">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
