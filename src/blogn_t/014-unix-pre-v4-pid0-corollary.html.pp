@@ -12,7 +12,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 
    <!-- RSS_PUB_DATE: "Mon, 10 Jun 2024 01:04:14 +0200" -->
-#define POST_DATE      Mon, 10 Jun 2024 01:04:14 +0200
+#define POST_DATE      Mon, 10 Jun 2024 01:04:14 +0200, <a href="#v4">filled out with information about V4 on Sat, 03 Jan 2026 23:46:58 +0100</a>
 #define POST_POST_DATE
 
 #define Tn(...)  <span class="smallcaps">__VA_ARGS__</span>
@@ -1089,10 +1089,9 @@ CMT(…)
 One last time:
 </p>
 <p class="indented continuing">
-<var>proc[0].p_addr</var> is the base of the process'<!--'--> address space and <var>proc[0].p_size</var> is its size. but idk what the unit is lol
-(it's gotta be chunks of <em>some</em> size because the allocator's arena size is a <samp>char</samp>, but fuck knows what;
- <code>USIZE</code> is helpfully <q>8</q>, and I'<!--'-->ve calculated the size of <code>u</code> at 217 (or 228) bytes;
- maybe it's 32 bytes? that's awfully narrow but it fits).
+<var>proc[0].p_addr</var> is the base of the process'<!--'--> address space and <var>proc[0].p_size</var> is its size in 32-word (64-byte) units
+(<code>USIZE</code> is <q>8</q> (512 bytes) and it's the size of the process's control block — I'<!--'-->ve calculated the size of <code>u</code> at 232 bytes,
+ yielding 280 bytes of stack).
 In V1 this was <samp>[core; <var>u.break</var>)</samp> (and also the stack was separate. but close enough),
 now it'<!--'-->s <samp>[<var>proc[…].p_addr</var>, <var>proc[…].p_addr</var> + <var>proc[…].p_size</var>)</samp>.
 AFAICT, <code>KISA->r[6]</code> is gonna be the Kernel I<!---->CMT(nstruction)-Space Page Address Register #0, register 6
@@ -1152,9 +1151,9 @@ The special PID 0 process goes to <code>sched()</code> and now does scheduling.
 It will probably schedule our PID 1 instantly.
 </p>
 <p class="indented continuing">
-And PID 1 will first allocate another 1 block (32 bytes?), then…
-<var>u.u_uisa[0]</var>&<var>u.u_uisd[0]</var> look awfully like the user instruction and data segments? This matches segment 6 for data?
-But there are 8 segments (0–7 and <code>USIZE</code> is 8 so fuck knows. maybe not). <code>sureg()</code> sets user segment registers.
+And PID 1 will first allocate a 32-word block,
+then set the userspace mapping accordingly (physical address: <code>USIZE</code> 32-word units, flags: <code>RW|PAGESIZEIN32WORDUNITS(1)</code>).
+<code>sureg()</code> sets user segment registers.
 </p>
 <p class="indented continuing">
 <code>suword()</code>, expectedly, sets words in user memory.
@@ -1207,7 +1206,85 @@ and thus a purely-interrupt-driven architecture was no longer possible.
 </p>
 
 
-HEADING(2, pdp7, that funny PDP-7 proto-unix)
+HEADING(2, v4, actual V4 <span class="smallcaps">unix</span>)
+
+<p class="indented continuing">
+Was <a href="//lfs.nabijaczleweli.xyz/0031-Utah_v4">found</a> and <a href="022-Utah_v4.html">analysed</a> after this post has been written.
+Thus, we know that the setup is exactly the same except files actually bear a copyright statement:
+</p>
+<blockquote class="u69 continuing" id="v4-new-comment-s">
+	<a href="#v4-new-comment-s">
+		<span>/usr/sys/conf/low.s, /usr/sys/conf/mch.s</span>
+	</a>
+	<pre class="comment">\
+/ Copyright 1974 Bell Telephone Laboratories Inc\
+</pre>
+</blockquote>
+<blockquote class="u69 continuing" id="v4-new-comment-c">
+	<a href="#v4-new-comment-c">
+		<span>/usr/sys/ken/main.c</span>
+	</a>
+	<pre class="comment">\
+<!--"-->/*<!--"-->
+<!--"--> *	Copyright 1973 Bell Telephone Laboratories Inc<!--"-->
+<!--"--> */<!--"-->\
+</pre>
+</blockquote>
+<p class="continuing">
+and <samp>mch.s</samp>, fittingly to the rename, misses the <q>PDP-11/45</q> comment,
+as well as additionally expositing the <q>call main</q> block thusly:
+</p>
+<blockquote class="u69 continuing" id="v4-enter-user-mode-at-0">
+	<a href="#v4-enter-user-mode-at-0">
+		<span>/usr/sys/conf/mch.s</span>
+	</a>
+	<pre class="comment">\
+/ set up previous mode and call main
+/ on return, enter user mode at 0R\
+</pre>
+</blockquote>
+<p class="continuation">
+which agrees to the letter with the analysis above.
+</p>
+
+<blockquote class="u69 continuing" id="v4-main-prep">
+	<a href="#v4-main-prep">
+		<span>/usr/sys/ken/main.c</span>
+	</a>
+	<pre>\
+<!--"-->	updlock = 0;<!--"-->
+<!--"-->	UISA->r[0] = KISA->r[6] + USIZE;<!--"-->
+<!--"-->	UISD->r[0] = 077406;<!--"-->
+<!--"-->	for(; fubyte(0) >= 0; UISA->r[0]++) {<!--"-->
+<!--"-->		clearseg(UISA->r[0]);<!--"-->
+<!--"-->		maxmem++;<!--"-->
+<!--"-->		mfree(coremap, 1, UISA->r[0]);<!--"-->
+<!--"-->	}<!--"-->
+<!--"-->	printf("mem = %l\n", maxmem*10/32);<!--"-->
+<!--"-->	maxmem = min(maxmem, MAXMEM);<!--"-->
+<!--"-->	mfree(swapmap, nswap, swplo);<!--"-->\
+</pre>
+</blockquote>
+<p class="continuing">
+this is the same sans the initial <code>UISD->r[0]</code> (user page 0 address) value (<code>RW|<a href="http://www.bitsavers.org/pdf/dec/pdp11/1145/EK-KT11C-MM-005-KT11-C_CD_Memory_Management_Maintenance_Manual_1976.pdf#page=29">PAGESIZEIN32WORDUNITS(128)</a></code> instead of <code>RW|PAGESIZEIN32WORDUNITS(1)</code>),
+counting the memory size (in 32-word (64-byte) units so the <q>mem =</q> value is in units of 20 bytes),
+and the swap device being variables instead of macros.
+</p>
+<p class="continuation">
+<code>MAXMEM</code> is <code>(32*32)</code>, i.e. 64kB.
+<code>USIZE</code> is <code>16</code> (1kB) and I've calculated the size of <code>struct user</code> at 242 bytes, giving 782 bytes of stack.
+</p>
+
+<p class="indented continued">
+The actual process table setup is the same.
+PID 1 setup is the same except the <code>for</code>/<code>suword()</code> loop is replaced with an equivalent <code>copyout(icode, 0, 30);</code>.
+The <code>icode</code> table itself is the same.
+</p>
+<p class="indented continuation">
+This agrees with the prediction based on nsys: the V4 scheduler (kernel) is PID 0 which forks, then returns to userspace.
+</p>
+
+HEADING(2, pdp7, that funny PDP-7 proto-<span class="smallcaps">unix</span>)
 
 <p class="indented continued">
 Since we're all here already, it'd be a shame to stop at Version 1 Tn(unix).
