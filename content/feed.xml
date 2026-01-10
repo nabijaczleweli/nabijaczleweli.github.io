@@ -48,13 +48,13 @@ from Bell Labs&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;V4
  &lt;li&gt;&lt;a href=&quot;//archive.org/download/utah_unix_v4_raw/analog.tap&quot;&gt;&lt;tt&gt;analog.tap&lt;/tt&gt;&lt;/a&gt; (2.5M) — the binary tape image &lt;span class=&quot;redacted&quot;&gt;[redacted redacted]&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
-The size of the tape binary is very close to the &lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5&quot;&gt;V5 rootfs dump&lt;/a&gt;,
+The size of the tape binary is very close to the &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5&quot;&gt;V5 rootfs dump&lt;/a&gt;,
 so this is as-expected.
-&lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v3/&quot;&gt;The&lt;/a&gt;
-&lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v4/&quot;&gt;standard&lt;/a&gt;
-&lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/&quot;&gt;procedure&lt;/a&gt;
-&lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v6/&quot;&gt;is&lt;/a&gt;
-&lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Henry_Spencer_v7/&quot;&gt;to&lt;/a&gt;
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/&quot;&gt;The&lt;/a&gt;
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/&quot;&gt;standard&lt;/a&gt;
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/&quot;&gt;procedure&lt;/a&gt;
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/&quot;&gt;is&lt;/a&gt;
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/&quot;&gt;to&lt;/a&gt;
 turn the tape into a tarball for interactive use.
 &lt;/p&gt;
 &lt;p class=&quot;indented continuing&quot;&gt;
@@ -87,7 +87,7 @@ A raw image of a rootfs would be unprecedented for distribution, but possible?
 wants some more hand-holding.
 &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/tree/77dbe89448169f530576723654b46aa4210efaba/item/fs5tar.cpp#L11&quot;&gt;But not much more&lt;/a&gt; just to read the super block:
 &lt;/p&gt;
-&lt;pre&gt;$ make fs5tar &amp;&amp; &amp;lt; &lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/&quot;&gt;v5root&lt;/a&gt; ./fs5tar
+&lt;pre&gt;$ make fs5tar &amp;&amp; &amp;lt; &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/&quot;&gt;v5root&lt;/a&gt; ./fs5tar
 c++ -fdebug-default-version=3 fs5tar.cpp -o fs5tar
 2494464 bytes, 4872 blocks
 i-node blocks: 80
@@ -301,7 +301,7 @@ So there's&lt;!--'--&gt; a &lt;tt&gt;&lt;var&gt;?&lt;/var&gt;boot&lt;/tt&gt; in 
 Which certainly implies the tp (V) read-out is more real,
 and the size is just definitely wrong:
 &lt;/p&gt;
-&lt;pre&gt;$ tar -tvaf &lt;a href=&quot;//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/&quot;&gt;v5root.tar.gz&lt;/a&gt; | grep boot$
+&lt;pre&gt;$ tar -tvaf &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/&quot;&gt;v5root.tar.gz&lt;/a&gt; | grep boot$
 &lt;!--&quot;--&gt;-rw-r--r-- 3/1             492 1974-11-27 00:13 ./usr/mdec/mboot&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;-rw-r--r-- 3/1             452 1974-11-27 00:13 ./usr/mdec/tboot&lt;!--&quot;--&gt;&lt;/pre&gt;
 &lt;p class=&quot;continued&quot;&gt;
@@ -3800,7 +3800,7 @@ To rectify this, and analyse it forward rather than in reverse, we can take adva
   (note that it says it's a fork but it actually appears to have SVN-imported commits exclusively, unlike the &quot;original&quot; which has been damaged; it's all bad));
  the more real mirror is &lt;a href=&quot;//www.tuhs.org/&quot;&gt;&lt;abbr title=&quot;TUHS&quot;&gt;The Unix Heritage Society&lt;/abbr&gt;&lt;/a&gt;'&lt;!--'--&gt;s
  (one of them; the &lt;a href=&quot;//wiki.tuhs.org/doku.php?id=source:unix_archive&quot;&gt;TUHS mirror structure&lt;/a&gt; is sociopathic)
- which reproduces said dump as &lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/&quot;&gt;&lt;samp&gt;svntree-20081216.tar.gz&lt;/samp&gt;&lt;/a&gt;)
+ which reproduces said dump as &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/&quot;&gt;&lt;samp&gt;svntree-20081216.tar.gz&lt;/samp&gt;&lt;/a&gt;)
 which transcribes
 &lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf&quot;&gt;Jim DeFelice'&lt;!--'--&gt;s 1972-06-20 &lt;samp&gt;Preliminary Release of UNIX Implementation Document&lt;/samp&gt;&lt;/a&gt;&lt;/cite&gt;,
 which itself includes
@@ -3817,7 +3817,7 @@ which itself includes
 &lt;p class=&quot;continuing&quot;&gt;
 &lt;code&gt;H.0–H.9&lt;/code&gt; is a re-print of
 &lt;cite&gt;&lt;a href=&quot;//bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf&quot;&gt;our current UNIX documentation&lt;/a&gt; as of 1972-04-03, also by Jim DeFelice&lt;/cite&gt;.
-Both are &lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/&quot;&gt;redistributed by the TUHS&lt;/a&gt;.
+Both are &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/&quot;&gt;redistributed by the TUHS&lt;/a&gt;.
 This is a different Jim DeFelice than the famous author
 (but I'm basing that entirely off the fact that the author would've been 11 when he started at Bell. maybe americans allow this).
 &lt;/p&gt;
@@ -3899,7 +3899,7 @@ Usually. This is vibes-based.
 Also also, I gave up trying to highlight this shit (sorry).
 &lt;/p&gt;
 &lt;p class=&quot;continued&quot;&gt;
-Which corresponds to &lt;code&gt;sys rele (II)&lt;/code&gt; (p. 128) in the &lt;cite&gt;&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf&quot;&gt;UNIX Programmer'&lt;!--'--&gt;s Manual&lt;/a&gt;&lt;/cite&gt;:
+Which corresponds to &lt;code&gt;sys rele (II)&lt;/code&gt; (p. 128) in the &lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf&quot;&gt;UNIX Programmer'&lt;!--'--&gt;s Manual&lt;/a&gt;&lt;/cite&gt;:
 &lt;/p&gt;
 &lt;blockquote class=&quot;manual continuing&quot; id=&quot;sys rele (ii)&quot;&gt;
  &lt;a href=&quot;#sys rele (ii)&quot;&gt;
@@ -4577,8 +4577,8 @@ So the filesystem, before loading from tape, consists of (omitting &lt;samp&gt;.
 &lt;h2 id=&quot;nsys&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#nsys&quot;&gt;#&lt;/a&gt; nsys &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (the V4 what isn'&lt;!--'--&gt;t)&lt;/h2&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 One would be remiss to not properly analyse the next available &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; as well.
-&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v2/&quot;&gt;V2&lt;/a&gt;? no.
-&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v3/&quot;&gt;V3&lt;/a&gt;? sure, but this is actually a &lt;em&gt;WIP&lt;/em&gt; of V4
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/&quot;&gt;V2&lt;/a&gt;? no.
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/&quot;&gt;V3&lt;/a&gt;? sure, but this is actually a &lt;em&gt;WIP&lt;/em&gt; of V4
 (compare &lt;samp&gt;Readme.nsys&lt;/samp&gt; and &lt;samp&gt;Changes.txt&lt;/samp&gt; and the &lt;a href=&quot;//www.tuhs.org/cgi-bin/utree.pl?file=V4&quot;&gt;The Unix Tree&lt;/a&gt;-for-V4 comments):
 it'&lt;!--'--&gt;s in C, sure, and time (II) already returns seconds since 1970,
 but &lt;code&gt;&lt;q&gt;0, &amp;nosys, /* 42 = pipe */&lt;/q&gt;&lt;/code&gt; (V3 &lt;a href=&quot;//www.tuhs.org/cgi-bin/utree.pl?file=V3/man/man2/pipe.2&quot;&gt;already had pipes&lt;/a&gt;).
@@ -4862,7 +4862,7 @@ and the swap device being variables instead of macros.
 &lt;/p&gt;
 &lt;p class=&quot;continuation&quot;&gt;
 &lt;code&gt;MAXMEM&lt;/code&gt; is &lt;code&gt;(32*32)&lt;/code&gt;, i.e. 64kB.
-&lt;code&gt;USIZE&lt;/code&gt; is &lt;code&gt;16&lt;/code&gt; (1kB) and I've calculated the size of &lt;code&gt;struct user&lt;/code&gt; at 242 bytes, giving 782 bytes of stack.
+&lt;code&gt;USIZE&lt;/code&gt; is &lt;code&gt;16&lt;/code&gt; (1kB) and I've&lt;!--'--&gt; calculated the size of &lt;code&gt;struct user&lt;/code&gt; at 242 bytes, giving 782 bytes of stack.
 &lt;/p&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 The actual process table setup is the same.
@@ -4876,9 +4876,9 @@ This agrees with the prediction based on nsys: the V4 scheduler (kernel) is PID 
 &lt;p class=&quot;indented continued&quot;&gt;
 Since we're all here already, it'd be a shame to stop at Version 1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;.
 The scans for this system can be found
-&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/McIlroy_v0/&quot;&gt;at the TUHS as the number-named PDFs&lt;/a&gt;.
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/&quot;&gt;at the TUHS as the number-named PDFs&lt;/a&gt;.
 The accompanying document —
-&lt;cite&gt;D. M. Ritchie'&lt;!--'--&gt;s &lt;samp&gt;&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/McIlroy_v0/UnixEditionZero-Threshold_OCR.pdf&quot;&gt;DRAFT of The UNIX Time-Sharing System&lt;/a&gt;&lt;/samp&gt;&lt;/cite&gt;
+&lt;cite&gt;D. M. Ritchie'&lt;!--'--&gt;s &lt;samp&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/UnixEditionZero-Threshold_OCR.pdf&quot;&gt;DRAFT of The UNIX Time-Sharing System&lt;/a&gt;&lt;/samp&gt;&lt;/cite&gt;
 — is a delightful 53 short pages (27 if you exclude the manuals (though they are not that yet)) and you should read or at least skim,
 is found in the &lt;samp&gt;UnixEditionZero&lt;var&gt;*&lt;/var&gt;&lt;/samp&gt; files. For the PDFs I recommend &lt;samp&gt;Threshold_OCR&lt;/samp&gt;, which has text, bookmarks, and not-being-100MB.
 An OCR-only text file is also available.
@@ -4933,7 +4933,7 @@ Everything else calls them &quot;system calls&quot;, but this is a call to &quot
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
 The TUHS also distributes a
-&lt;a href=&quot;http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/PDP7/pdp7-unix-master.zip&quot;&gt;zipped git export with no history&lt;/a&gt;,
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/PDP7/pdp7-unix-master.zip&quot;&gt;zipped git export with no history&lt;/a&gt;,
 which claims to be a transcription of the PDFs.
 It may well be, and you may even be able to run it!
 But the only reliable source is &lt;samp&gt;01-s1.pdf&lt;/samp&gt;.

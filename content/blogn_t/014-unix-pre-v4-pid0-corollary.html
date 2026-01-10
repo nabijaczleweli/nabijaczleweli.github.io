@@ -252,7 +252,7 @@ To rectify this, and analyse it forward rather than in reverse, we can take adva
   (note that it says it's a fork but it actually appears to have SVN-imported commits exclusively, unlike the "original" which has been damaged; it's all bad));
  the more real mirror is <a href="//www.tuhs.org/"><abbr title="TUHS">The Unix Heritage Society</abbr></a>'<!--'-->s
  (one of them; the <a href="//wiki.tuhs.org/doku.php?id=source:unix_archive">TUHS mirror structure</a> is sociopathic)
- which reproduces said dump as <a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/"><samp>svntree-20081216.tar.gz</samp></a>)
+ which reproduces said dump as <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/"><samp>svntree-20081216.tar.gz</samp></a>)
 which transcribes
 <cite><a href="//bitsavers.org/pdf/att/unix/Early_UNIX/PreliminaryUnixImplementationDocument_Jun72.pdf">Jim DeFelice'<!--'-->s 1972-06-20 <samp>Preliminary Release of UNIX Implementation Document</samp></a></cite>,
 which itself includes
@@ -269,7 +269,7 @@ which itself includes
 <p class="continuing">
 <code>H.0–H.9</code> is a re-print of
 <cite><a href="//bitsavers.org/pdf/att/unix/Early_UNIX/Kernel_Subroutine_Descriptions_Mar72.pdf">our current UNIX documentation</a> as of 1972-04-03, also by Jim DeFelice</cite>.
-Both are <a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/">redistributed by the TUHS</a>.
+Both are <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/">redistributed by the TUHS</a>.
 This is a different Jim DeFelice than the famous author
 (but I'm basing that entirely off the fact that the author would've been 11 when he started at Bell. maybe americans allow this).
 </p>
@@ -351,7 +351,7 @@ Usually. This is vibes-based.
 Also also, I gave up trying to highlight this shit (sorry).
 </p>
 <p class="continued">
-Which corresponds to <code>sys rele (II)</code> (p. 128) in the <cite><a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf">UNIX Programmer'<!--'-->s Manual</a></cite>:
+Which corresponds to <code>sys rele (II)</code> (p. 128) in the <cite><a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf">UNIX Programmer'<!--'-->s Manual</a></cite>:
 </p>
 <blockquote class="manual continuing" id="sys rele (ii)">
  <a href="#sys rele (ii)">
@@ -1029,8 +1029,8 @@ So the filesystem, before loading from tape, consists of (omitting <samp>.</samp
 <h2 id="nsys" ><a class="hash-link" href="#nsys">#</a> nsys <span class="smallcaps">unix</span> (the V4 what isn'<!--'-->t)</h2>
 <p class="indented continued">
 One would be remiss to not properly analyse the next available <span class="smallcaps">unix</span> as well.
-<a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v2/">V2</a>? no.
-<a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v3/">V3</a>? sure, but this is actually a <em>WIP</em> of V4
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v2/">V2</a>? no.
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/">V3</a>? sure, but this is actually a <em>WIP</em> of V4
 (compare <samp>Readme.nsys</samp> and <samp>Changes.txt</samp> and the <a href="//www.tuhs.org/cgi-bin/utree.pl?file=V4">The Unix Tree</a>-for-V4 comments):
 it'<!--'-->s in C, sure, and time (II) already returns seconds since 1970,
 but <code><q>0, &nosys, /* 42 = pipe */</q></code> (V3 <a href="//www.tuhs.org/cgi-bin/utree.pl?file=V3/man/man2/pipe.2">already had pipes</a>).
@@ -1314,7 +1314,7 @@ and the swap device being variables instead of macros.
 </p>
 <p class="continuation">
 <code>MAXMEM</code> is <code>(32*32)</code>, i.e. 64kB.
-<code>USIZE</code> is <code>16</code> (1kB) and I've calculated the size of <code>struct user</code> at 242 bytes, giving 782 bytes of stack.
+<code>USIZE</code> is <code>16</code> (1kB) and I've<!--'--> calculated the size of <code>struct user</code> at 242 bytes, giving 782 bytes of stack.
 </p>
 <p class="indented continued">
 The actual process table setup is the same.
@@ -1328,9 +1328,9 @@ This agrees with the prediction based on nsys: the V4 scheduler (kernel) is PID 
 <p class="indented continued">
 Since we're all here already, it'd be a shame to stop at Version 1 <span class="smallcaps">unix</span>.
 The scans for this system can be found
-<a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/McIlroy_v0/">at the TUHS as the number-named PDFs</a>.
+<a href="//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/">at the TUHS as the number-named PDFs</a>.
 The accompanying document —
-<cite>D. M. Ritchie'<!--'-->s <samp><a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/McIlroy_v0/UnixEditionZero-Threshold_OCR.pdf">DRAFT of The UNIX Time-Sharing System</a></samp></cite>
+<cite>D. M. Ritchie'<!--'-->s <samp><a href="//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/UnixEditionZero-Threshold_OCR.pdf">DRAFT of The UNIX Time-Sharing System</a></samp></cite>
 — is a delightful 53 short pages (27 if you exclude the manuals (though they are not that yet)) and you should read or at least skim,
 is found in the <samp>UnixEditionZero<var>*</var></samp> files. For the PDFs I recommend <samp>Threshold_OCR</samp>, which has text, bookmarks, and not-being-100MB.
 An OCR-only text file is also available.
@@ -1385,7 +1385,7 @@ Everything else calls them "system calls", but this is a call to "sys". Give it 
 </p>
 <p class="indented">
 The TUHS also distributes a
-<a href="http://ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/PDP7/pdp7-unix-master.zip">zipped git export with no history</a>,
+<a href="//www.tuhs.org/Archive/Distributions/Research/PDP7/pdp7-unix-master.zip">zipped git export with no history</a>,
 which claims to be a transcription of the PDFs.
 It may well be, and you may even be able to run it!
 But the only reliable source is <samp>01-s1.pdf</samp>.
@@ -1501,9 +1501,9 @@ This is as an open-coded sys exec (II).
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 03.01.2026 22:51:35 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 10.01.2026 20:30:56 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1645570">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1651616">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 

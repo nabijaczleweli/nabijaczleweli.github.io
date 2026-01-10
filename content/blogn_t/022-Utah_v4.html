@@ -174,13 +174,13 @@ from Bell Labs<!--"-->     <!--"-->V4
  <li><a href="//archive.org/download/utah_unix_v4_raw/analog.tap"><tt>analog.tap</tt></a> (2.5M) — the binary tape image <span class="redacted">[redacted redacted]</span></li>
 </ul>
 <p class="indented continued">
-The size of the tape binary is very close to the <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5">V5 rootfs dump</a>,
+The size of the tape binary is very close to the <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5">V5 rootfs dump</a>,
 so this is as-expected.
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v3/">The</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v4/">standard</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/">procedure</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v6/">is</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Henry_Spencer_v7/">to</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/">The</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/">standard</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/">procedure</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/">is</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/">to</a>
 turn the tape into a tarball for interactive use.
 </p>
 <p class="indented continuing">
@@ -213,7 +213,7 @@ A raw image of a rootfs would be unprecedented for distribution, but possible?
 wants some more hand-holding.
 <a href="//git.sr.ht/~nabijaczleweli/Utah_v4/tree/77dbe89448169f530576723654b46aa4210efaba/item/fs5tar.cpp#L11">But not much more</a> just to read the super block:
 </p>
-<pre>$ make fs5tar && &lt; <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/">v5root</a> ./fs5tar
+<pre>$ make fs5tar && &lt; <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/">v5root</a> ./fs5tar
 c++ -fdebug-default-version=3 fs5tar.cpp -o fs5tar
 2494464 bytes, 4872 blocks
 i-node blocks: 80
@@ -427,7 +427,7 @@ So there's<!--'--> a <tt><var>?</var>boot</tt> in block 0, block 70, and block 1
 Which certainly implies the tp (V) read-out is more real,
 and the size is just definitely wrong:
 </p>
-<pre>$ tar -tvaf <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/">v5root.tar.gz</a> | grep boot$
+<pre>$ tar -tvaf <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/">v5root.tar.gz</a> | grep boot$
 <!--"-->-rw-r--r-- 3/1             492 1974-11-27 00:13 ./usr/mdec/mboot<!--"-->
 <!--"-->-rw-r--r-- 3/1             452 1974-11-27 00:13 ./usr/mdec/tboot<!--"--></pre>
 <p class="continued">
@@ -755,9 +755,9 @@ So, what have we learned to-day?
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 03.01.2026 22:51:35 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 10.01.2026 20:30:56 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/022-Utah_v4.html.pp">src/blogn_t/022-Utah_v4.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1645570">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1651616">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
