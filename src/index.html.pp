@@ -36,6 +36,10 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
+	Search and filter UNIX tarballs interactively with <a href="//vtree.nabijaczleweli.xyz">vtree</a>…
+</p>
+
+<p>
 	Miscellaneous <a href="notes/">analysis notes</a>…
 </p>
 

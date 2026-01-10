@@ -145,6 +145,12 @@ Select programs:
 	            atrun(8) for the rat race (mail-based calendaring system))
 	   SRHT_SET(febug, DEVICON(cplusplus),
 	            User-space cooperative debugging à la debugfs)
+	   <li>
+	     <a href="//vtree.nabijaczleweli.xyz"><samp>vtree</samp></a>
+	     <a href="//git.sr.ht/~nabijaczleweli/vtree">FAR(circle)</a>
+	     DEVICON(javascript)
+	     — <a href="//vtree.nabijaczleweli.xyz">Interactive</a> UNIX tree (tarball) viewer
+	   </li>
 </ul>
 <br />
 

@@ -103,13 +103,13 @@ from Bell Labs<!--"-->     <!--"-->V4
 </ul>
 
 <p class="indented continued">
-The size of the tape binary is very close to the <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5">V5 rootfs dump</a>,
+The size of the tape binary is very close to the <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5">V5 rootfs dump</a>,
 so this is as-expected.
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v3/">The</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v4/">standard</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/">procedure</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v6/">is</a>
-<a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Henry_Spencer_v7/">to</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v3/">The</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v4/">standard</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/">procedure</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/">is</a>
+<a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/">to</a>
 turn the tape into a tarball for interactive use.
 </p>
 <p class="indented continuing">
@@ -146,7 +146,7 @@ wants some more hand-holding.
 <a href="//git.sr.ht/~nabijaczleweli/Utah_v4/tree/77dbe89448169f530576723654b46aa4210efaba/item/fs5tar.cpp#L11">But not much more</a> just to read the super block:
 </p>
 <pre>\
-$ make fs5tar && &lt; <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/">v5root</a> ./fs5tar
+$ make fs5tar && &lt; <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/">v5root</a> ./fs5tar
 c++ -fdebug-default-version=3    fs5tar.cpp   -o fs5tar
 2494464 bytes, 4872 blocks
 i-node blocks:     80
@@ -396,7 +396,7 @@ Which certainly implies the tp (V) read-out is more real,
 and the size is just definitely wrong:
 </p>
 <pre>\
-$ tar -tvaf <a href="//ftp.okass.net/pub/mirror/minnie.tuhs.org/Distributions/Research/Dennis_v5/">v5root.tar.gz</a> | grep boot$
+$ tar -tvaf <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/">v5root.tar.gz</a> | grep boot$
 <!--"-->-rw-r--r-- 3/1             492 1974-11-27 00:13 ./usr/mdec/mboot<!--"-->
 <!--"-->-rw-r--r-- 3/1             452 1974-11-27 00:13 ./usr/mdec/tboot<!--"-->\
 </pre>
