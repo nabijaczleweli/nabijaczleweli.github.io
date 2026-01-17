@@ -12,10 +12,587 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2025-12-21T23:51:02+01:00</updated>
+<updated>2026-01-17T04:33:03+01:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,a-v1-nbuf-benchmark.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/023,a-v1-nbuf-benchmark.html" />
+    <title> 023‚a. V1 UNIX I/O buffer count vs. performance benchmark — blognꞌt — nabijaczleweli </title>
+    <updated>2026-01-17T04:33:03+01:00</updated>
+    <content type="html">
+&lt;div class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;023,a. V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; I/O buffer count vs. performance benchmark&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 17 Jan 2026 04:33:03 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;p class=&quot;continued&quot;&gt;
+My draft for post 023 currently quips
+&lt;/p&gt;
+&lt;blockquote style=&quot;margin-left: 0;&quot; class=&quot;continuing&quot;&gt;
+(to wit: V1's&lt;!--'--&gt; filesystem cache consists of 1 – The – open file
+ &lt;cite&gt;(&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L215&quot;&gt;&lt;tt&gt;iget&lt;/tt&gt;&lt;/a&gt; (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L270&quot;&gt;+ &lt;tt&gt;icalc&lt;/tt&gt;&lt;/a&gt;),
+        &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L15&quot;&gt;&lt;tt&gt;inode&lt;/tt&gt;, &lt;tt&gt;i.&lt;var&gt;*&lt;/var&gt;&lt;/tt&gt;, &lt;tt&gt;ii&lt;/tt&gt;, &lt;tt&gt;idev&lt;/tt&gt;, &lt;tt&gt;cdev&lt;/tt&gt;, &lt;tt&gt;imod&lt;/tt&gt;&lt;/a&gt;)&lt;/cite&gt;,
+ and up to 6 (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40&quot;&gt;installer kernel has 2&lt;/a&gt;, I'm&lt;!--'--&gt; pretty sure even just 1 would work) 512-byte I/O block buffers
+ &lt;cite&gt;(&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40&quot;&gt;&lt;tt&gt;nbuf&lt;/tt&gt;&lt;/a&gt;,
+        &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L71&quot;&gt;&lt;tt&gt;buffer&lt;/tt&gt;&lt;/a&gt; (&lt;tt&gt;bufp&lt;/tt&gt;),
+        &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L180&quot;&gt;&lt;tt&gt;wslot&lt;/tt&gt;&lt;/a&gt;)&lt;/cite&gt;
+ (the block containing The open i-node isn't&lt;!--'--&gt; cached)).
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+but &lt;q&gt;pretty sure&lt;/q&gt; is not good enough.
+If only there were some way to compile and run a V1 kernel and test this directly!
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+This is borne out of pedantry and to satisfy my neurosis, because
+&lt;/p&gt;
+&lt;ol class=&quot;arrows&quot;&gt;
+ &lt;li&gt;&lt;tt&gt;write (II)&lt;/tt&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L334&quot;&gt;syswrite&lt;/a&gt;&lt;/tt&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L125&quot;&gt;writei&lt;/a&gt;&lt;small&gt;node&lt;/small&gt;&lt;/tt&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L212&quot;&gt;dskw&lt;/a&gt; &lt;small&gt;(&lt;q&gt;write routine for non-special files&lt;/q&gt;)&lt;/small&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+says
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuing&quot;&gt;
+&lt;pre class=linenos&gt;212
+213
+&lt;strong&gt;214
+&lt;/strong&gt;215
+&lt;small&gt;216
+217
+218
+219
+&lt;/small&gt;220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+&lt;small&gt;248
+249
+250
+251
+&lt;/small&gt;&lt;strong&gt;252
+&lt;/strong&gt;&lt;small&gt;253
+254
+255
+&lt;/small&gt;&lt;/pre&gt;
+&lt;pre&gt;
+&lt;!--&quot;--&gt;dskw: &lt;del&gt;/ write routine for non-special files&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov	(sp),r1 &lt;del&gt;/ get an i-node number from the stack into r1&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;strong&gt;&lt;!--&quot;--&gt;	jsr	r0,iget &lt;del&gt;/ write i-node out (if modified), read i-node 'r1'&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;		        &lt;del&gt;/ into i-node area of core&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;	mov	 *u.fofp,r2 &lt;del&gt;/ put the file offset [(u.off) or the offset in&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            &lt;del&gt;/ the fsp entry for this file] in r2&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	add	 u.count,r2 &lt;del&gt;/ no. of bytes to be written + file offset is&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            &lt;del&gt;/ put in r2&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	cmp	 r2,i.size &lt;del&gt;/ is this greater than the present size of&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ the file?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	blos	 &lt;!--&quot;--&gt;&lt;span class=&quot;label a&quot;&gt;1f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ no, branch&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 mov	r2,i.size &lt;del&gt;/ yes, increase the f11e size to file offset +&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ no. of data bytes&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 jsr	r0,setimod &lt;del&gt;/ set imod=1 (i.e., core inode has been&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ modified), stuff tlme of modification into&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ core image of i-node&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label a&quot;&gt;1&lt;/span&gt;:
+&lt;!--&quot;--&gt;	jsr	r0,mget &lt;del&gt;/ get the block no. in which to write the next data&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		        &lt;del&gt;/ byte&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bit	*u.fofp,$777 &lt;del&gt;/ test the lower 9 bits of the file offset&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	&lt;!--&quot;--&gt;&lt;span class=&quot;label b&quot;&gt;2f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ if its non-zero, branch; if zero, file offset = 0,&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   &lt;del&gt;/ 512, 1024,...(i.e., start of new block)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	cmp	u.count,$512. &lt;del&gt;/ if zero, is there enough data to fill an&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		              &lt;del&gt;/ entire block? (i.e., no. of&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bhis	&lt;!--&quot;--&gt;&lt;span class=&quot;label c&quot;&gt;3f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ bytes to be written greater than 512.? Yes, branch.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   &lt;del&gt;/ Don't have to read block&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label b&quot;&gt;2&lt;/span&gt;:&lt;!--&quot;--&gt; &lt;del&gt;/ in as no past info. is to be saved (the entire block will be&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   &lt;del&gt;/ overwritten).&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr	r0,dskrd &lt;del&gt;/ no, must retain old info.. Hence, read block 'r1'&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		         &lt;del&gt;/ into an I/O buffer&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label c&quot;&gt;3&lt;/span&gt;:
+&lt;!--&quot;--&gt;	jsr	r0,wslot &lt;del&gt;/ set write and inhibit bits in I/O queue, proc.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		         &lt;del&gt;/ status=0, r5 points to 1st word of data&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr	r0,sioreg &lt;del&gt;/ r3 = no. of bytes of data, r1 = address of data,&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		          &lt;del&gt;/ r2 points to location in buffer in which to&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		          &lt;del&gt;/ start writing data&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;span class=&quot;label d&quot;&gt;2&lt;/span&gt;:
+&lt;!--&quot;--&gt;	movb	(r1 )+,(r2)+ &lt;del&gt;/ transfer a byte of data to the I/O buffer&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	dec	r3 &lt;del&gt;/ decrement no. of bytes to be written&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;2b&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ have all bytes been transferred? No, branch&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;strong&gt;&lt;!--&quot;--&gt;	jsr	r0,dskwr &lt;del&gt;/ yes, write the block and the i-node&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;small&gt;&lt;!--&quot;--&gt;	tst	u.count &lt;del&gt;/ any more data to write?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	&lt;!--&quot;--&gt;&lt;span class=&quot;label a&quot;&gt;1b&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ yes, branch&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jmp	ret &lt;del&gt;/ no, return to the caller via 'ret'&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;/pre&gt;
+&lt;figcaption&gt;
+ cf. &lt;strong&gt;emphasised&lt;/strong&gt; fragments&lt;br /&gt;
+ (labels colour-coded; note that &lt;tt&gt;123&lt;/tt&gt; is octal and &lt;tt&gt;123.&lt;/tt&gt; is decimal)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+which can be translated to
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuation C&quot;&gt;
+&lt;pre class=linenos&gt;​
+212
+​
+&lt;strong&gt;214
+&lt;/strong&gt;215
+216
+217
+218
+220
+223
+225
+226
+​
+​
+229
+​
+​
+​
+240
+241
+​
+​
+243
+244
+245
+246
+247
+&lt;small&gt;​
+&lt;/small&gt;&lt;small&gt;249
+&lt;/small&gt;&lt;small&gt;​
+&lt;/small&gt;&lt;strong&gt;252
+&lt;/strong&gt;​
+&lt;small&gt;​
+&lt;/small&gt;&lt;small&gt;255
+&lt;/small&gt;​
+&lt;/pre&gt;
+&lt;pre&gt;
+extern r1, r2, r3, cdev;
+&lt;!--&quot;--&gt;dskw(ino) &lt;del&gt;/* write routine for non-special files */&lt;/del&gt;&lt;!--&quot;--&gt;
+{
+&lt;strong&gt;&lt;!--&quot;--&gt;	r1 = ino; iget(); &lt;del&gt;/* write i-node out (if modified), read i-node 'r1' on 'cdev'&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	                     into i-node area of core */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	r2 = *u.fofp + u.count; &lt;del&gt;/* file offset [(u.off) or the offset in&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	                           the fsp entry for this file] +&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	                           no. of bytes to be written */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	if(r2 &gt; i.size) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		i.size = r2;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		setimod();&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	while(u.count)&lt;!--&quot;--&gt; &lt;span class=&quot;label a&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		mget(); &lt;del&gt;/* get the block no. in which to write the next data byte */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;		&lt;del&gt;/* if lower 9 bits of file offset are 0,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   file offset = 0, 512, 1024,...(i.e., start of new block): */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		if(*u.fofp &amp; 511 || u.count &lt; 512)&lt;!--&quot;--&gt; &lt;span class=&quot;label b&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			dskrd();  &lt;del&gt;/* if there is not enough data to fill an entire block, */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label c&quot;&gt;}&lt;/span&gt;&lt;!--&quot;--&gt;	          &lt;del&gt;/* read block 'r1' on 'cdev' into an I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;		wslot(); &lt;del&gt;/* set write and inhibit bits in I/O queue, proc. status=0,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            r5 points to 1st word of data */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		sioreg(); &lt;del&gt;/* r3 = no. of bytes of data,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		             r1 = address of data,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		             r2 points to location in buffer in which to start writing data */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;while&lt;/span&gt;&lt;!--&quot;--&gt;(r3--)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;			*(char *)r2 = *(char *)r1; &lt;del&gt;/* transfer a byte of data to the I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;/small&gt;&lt;strong&gt;&lt;!--&quot;--&gt;		dskwr(); &lt;del&gt;/* yes, write the block and the i-node */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+&lt;small&gt;
+&lt;!--&quot;--&gt;	goto ret;&lt;!--&quot;--&gt;
+&lt;/small&gt;}
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The comment on the &lt;tt&gt;dskwr&lt;/tt&gt; call implies that it'll&lt;!--'--&gt; (schedule to)
+&lt;abbr title=&quot;A pedantic reader will notice that is not how V1's buffering works. More on this in 023,b. For the purposes of this post we can consider the caching models to be black boxes.&quot;&gt;
+ write the current i-node as well as the just-written-to data block&lt;/abbr&gt;.
+This is conspicuous given that &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40&quot;&gt;the installation build of the kernel&lt;/a&gt;
+downgrades from 6 I/O buffers to 2.
+Are those the same two?
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0033-unix-jun72&quot;&gt;unix72&lt;/a&gt; builds an image containing the unpacked source in &lt;tt&gt;/usr/sys&lt;/tt&gt;,
+so it's&lt;!--'--&gt; pretty easy to just Do this.
+time (II) is updated to return a sentinel large value to check if running updated kernel
+(this would be better served with a &lt;tt&gt;printf&lt;/tt&gt; or the like, but this kernel doesn't&lt;!--'--&gt; have &lt;em&gt;any&lt;/em&gt; kernel output facility):
+&lt;/p&gt;
+&lt;pre&gt;
+# &lt;kbd&gt;cp u2.s u2.s.orig&lt;/kbd&gt;
+# &lt;kbd&gt;ed u2.s&lt;/kbd&gt;
+19053
+&lt;kbd&gt;.,.+4p&lt;/kbd&gt;
+systime: / get time of year
+&lt;!--&quot;--&gt;	mov	s.time,4(sp)&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov	s.time+2,2(sp) / put the present time on the stack&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	br	sysret4&lt;!--&quot;--&gt;
+
+&lt;kbd&gt;&lt;del&gt;/sys/t@&lt;/del&gt;/systime/&lt;/kbd&gt;
+systime: / get time of year
+
+&lt;!--&quot;--&gt;	mov	s.time,4(sp)&lt;!--&quot;--&gt;
+&lt;kbd&gt;s/s.time/$65&lt;del&gt;3#5&lt;/del&gt;35./
+p&lt;/kbd&gt;
+&lt;!--&quot;--&gt;	mov	$65535.,4(sp)&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	mov	s.time+2,2(sp) / put the present time on the stack&lt;!--&quot;--&gt;
+&lt;kbd&gt;s/s.time+2/&lt;del&gt;65535#####&lt;/del&gt;$655&lt;del&gt;4$##&lt;/del&gt;3&lt;del&gt;4#4#&lt;/del&gt;5./
+p&lt;/kbd&gt;
+&lt;!--&quot;--&gt;	mov	$65535.,2(sp) / put the present time on the stack&lt;!--&quot;--&gt;
+
+# &lt;kbd&gt;cp u0.s u0.s.orig&lt;/kbd&gt;
+# &lt;kbd&gt;&lt;del&gt;ed us@&lt;/del&gt;ed u0.s&lt;/kbd&gt;
+12636
+&lt;kbd&gt;/nbuf/&lt;/kbd&gt;
+nbuf = 6
+&lt;kbd&gt;d
+d
+d
+p&lt;/kbd&gt;
+.endif
+&lt;kbd&gt;d
+i
+nbuf = 1
+.
+w&lt;/kbd&gt;
+12588
+&lt;kbd&gt;q&lt;/kbd&gt;
+# &lt;kbd&gt;as u*.s&lt;/kbd&gt;
+I
+II
+# &lt;kbd&gt;ls -l&lt;/kbd&gt;
+total 539
+225 lxrwrw 1 root 36432 Jan 1 00:00:00 a.out
+&lt;/pre&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+What remains is the matter of getting the kernel to boot.
+The unix72 bootloader is broadly-compatible with
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=195&quot;&gt;boot procedures (VII)&lt;/a&gt;
+and documented in
+&lt;a href=&quot;//git.sr.ht/~nabijaczleweli/unix-jun72/tree/trunk/item/boot/README&quot;&gt;&lt;tt&gt;boot/README&lt;/tt&gt;&lt;/a&gt;:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+NOTE: For using kernels built using the V2 assembler, all of the following
+should refer to msys2, instead of msys.
+&lt;/p&gt;
+&lt;p&gt;
+Alternatively, everything can be installed while running under the V1 system
+using the following procedure:
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 2em;&quot;&gt;
+    First, build the support programs: bos and msys
+&lt;/p&gt;
+&lt;pre style=&quot;margin-left: 4em;&quot;&gt;
+chdir /usr/boot
+sh run
+&lt;/pre&gt;
+&lt;p style=&quot;margin-left: 2em;&quot;&gt;
+&lt;del&gt;[…]&lt;/del&gt;
+If you build a kernel under V1, then you can install it into the &lt;del&gt;[…]&lt;/del&gt; cold
+boot area (such as for testing) with:
+&lt;/p&gt;
+&lt;pre style=&quot;margin-left: 4em;&quot;&gt;
+msys 1 name_of_kernel
+&lt;/pre&gt;
+&lt;p style=&quot;margin-left: 2em;&quot;&gt;
+&lt;del&gt;[I]&lt;/del&gt;f the cold boot area is being used for testing new kernels,
+then the kernel can be bootstrapped using:
+&lt;/p&gt;
+&lt;pre style=&quot;margin-left: 4em;&quot;&gt;
+tools/pdp11 boot/simh_cold.cfg
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+(layout sic!).
+The only difference in &lt;tt&gt;boot/simh_cold.cfg&lt;/tt&gt; is the console switches going from 173700&lt;sub&gt;&lt;small&gt;8&lt;/small&gt;&lt;/sub&gt; to 1.
+I bring this documentation up only because the &lt;tt&gt;run&lt;/tt&gt; script doesn't&lt;!--'--&gt; actually build &lt;tt&gt;msys2&lt;/tt&gt;,
+which one'd&lt;!--'--&gt; think rather defeats the purpose, since running it is only meaningful in the emulated system,
+which we know only has the V2 assembler.
+unix72 is universally weird like this.
+&lt;/p&gt;
+&lt;pre class=&quot;continued&quot;&gt;
+# &lt;kbd&gt;chdir /usr/boot&lt;/kbd&gt;
+# &lt;kbd&gt;cat run&lt;/kbd&gt;
+as bos.s
+mv a.out bos
+as msys.s
+mv a.out msys
+# &lt;kbd&gt;as msys2.s&lt;/kbd&gt;
+I
+II
+# &lt;kbd&gt;mv a.out msys2&lt;/kbd&gt;
+# &lt;kbd&gt;msys2 1 /usr/sys/a.out&lt;/kbd&gt;
+# &lt;kbd&gt;date&lt;/kbd&gt;
+Sun Jan 23 22:46:32
+# &lt;kbd&gt;^E&lt;/kbd&gt;
+Simulation stopped, PC: 007332 (MOV (SP)+,25244)
+sim&gt; &lt;kbd&gt;q&lt;/kbd&gt;
+Goodbye
+RF: writing buffer to file
+TC0: writing buffer to file
+unix72$ &lt;kbd&gt;pdp11 simh_cold.cfg&lt;/kbd&gt;
+PDP-11 simulator V3.8-1
+Disabling CR
+Disabling XQ
+RF: buffering file in memory
+TC0: 16b format, buffering file in memory
+:login: root
+root
+# &lt;kbd&gt;date&lt;/kbd&gt;
+Sun Dec &lt;9 12:06:28
+# &lt;kbd&gt;chdir /usr/sys&lt;/kbd&gt;
+# &lt;kbd&gt;as u*.s&lt;/kbd&gt;
+I
+II
+#
+&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+so it does work, it just took a little longer. Well, it felt longer.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+This paragraph was going to start &quot;Easy enough to quantify, though:&quot; but it isn't&lt;!--'--&gt;, because SIMH resists being instrumented at every turn.
+What &lt;em&gt;is&lt;/em&gt; easy is making the kernel self-identify by putting &lt;tt&gt;nbuf&lt;/tt&gt; in the minutes field of date (I)
+(there's&lt;!--'--&gt; an off-by-one in the division for seconds, so just returning &lt;code&gt;60*nbuf&lt;/code&gt; for nbuf=4 yields &lt;tt&gt;&lt;q&gt;Fri Jan &amp;nbsp;1 00:00:03&lt;/q&gt;&lt;/tt&gt;):
+&lt;/p&gt;
+&lt;pre class=&quot;continuation&quot;&gt;
+# &lt;kbd&gt;ed u2.s&lt;/kbd&gt;
+19053
+/65535/
+        mov $65535.,4(sp)
+s/65535/0/
+        mov $65535.,2(sp) / put the present time on the stack
+s/\$65535./$[60. * 60. * nbuf]/
+w
+19061
+# &lt;kbd&gt;as u*.s&lt;/kbd&gt;
+I
+II
+# &lt;kbd&gt;/usr/boot/msys2 1 a.out&lt;/kbd&gt;
+# &lt;kbd&gt;^E&lt;/kbd&gt;
+Simulation stopped, PC: 007332 (MOV (SP)+,25232)
+sim&gt; &lt;kbd&gt;q&lt;/kbd&gt;
+unix72$ &lt;kbd&gt;pdp11 simh_cold.cfg&lt;/kbd&gt;
+:login: &lt;kbd&gt;root&lt;/kbd&gt;
+root
+# &lt;kbd&gt;date&lt;/kbd&gt;
+Fri Jan 1 00:01:00
+&lt;/pre&gt;
+&lt;pre class=&quot;continued&quot;&gt;
+# &lt;kbd&gt;chdir /usr/sys&lt;/kbd&gt;
+# &lt;kbd&gt;cat &gt;nbuf
+: echo leaves a space at the end of every line
+echo /nbuf/s/=.\*/= $1/p &gt;.ed
+echo w &gt;&gt;.ed
+ed .ed
+1,$s/ $//
+w
+q
+ed u0.s &lt;.ed
+rm .ed
+as u*.s
+mv a.out nbuf.$1&lt;/kbd&gt;
+# &lt;kbd&gt;sh nbuf 0; sh nbuf 1; sh nbuf &lt;del&gt;[…]&lt;/del&gt;; sh nbuf 11; sh nbuf 12&lt;/kbd&gt;
+# &lt;kbd&gt;ls -l nbuf*&lt;/kbd&gt;
+&lt;!--&quot;--&gt;220 s-rwrw  1 root    178 Jan  1 00:00:00 nbuf&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;240 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;230 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;242 lxrwrw  1 root  37960 Jan  1 00:00:00 nbuf.10&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;234 lxrwrw  1 root  39004 Jan  1 00:00:00 nbuf.11&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;236 lxrwrw  1 root  40048 Jan  1 00:00:00 nbuf.12&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;232 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;225 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.3&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;237 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.4&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;231 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.5&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;235 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.6&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;238 lxrwrw  1 root  36916 Jan  1 00:00:00 nbuf.7&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;239 lxrwrw  1 root  37960 Jan  1 00:00:00 nbuf.8&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;241 lxrwrw  1 root  39004 Jan  1 00:00:00 nbuf.9&lt;!--&quot;--&gt;
+# &lt;kbd&gt;/usr/boot/msys2 1 nbuf.0&lt;/kbd&gt;
+# &lt;kbd&gt;^E&lt;/kbd&gt;
+sim&gt; &lt;kbd&gt;q&lt;/kbd&gt;
+unix72$ &lt;kbd&gt;pdp11 simh_cold.cfg&lt;/kbd&gt;
+Disabling CR
+Disabling XQ
+RF: buffering file in memory
+TC0: 16b format, buffering file in memory
+Listening on port 5555 (socket 7)
+&lt;del&gt;(it loops here)&lt;/del&gt;
+Simulation stopped, PC: 001000 (TSTB 25135)
+sim&gt; &lt;del&gt;q&lt;/del&gt;
+&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+so 0 obviously doesn't&lt;!--'--&gt; work (entirely unsurprisingly).
+6, as shipped, is the max: 7 crashes with
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuation&quot;&gt;
+&lt;tt&gt;Trap stack push abort, PC: 011600 (BNE 11612)&lt;/tt&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+The instrumentation is then &quot;install kernel, exit; boot it, compile the kernel, exit&quot;. &lt;kbd&gt;^E&lt;/kbd&gt; is byte 5.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;!--&quot;--&gt;for i in $(seq 6); do&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	{ sleep 1; echo root; echo &quot;/usr/boot/msys2 1 /usr/sys/nbuf.$i&quot;;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	  sleep 1; printf '\005'; sleep 0.2; echo q; } |&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		script /dev/null -c 'pdp11 simh.cfg'&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	for sample in $(seq 10); do&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		{ sleep 1; echo root; echo date; echo &quot;chdir /usr/sys&quot;; echo &quot;as u*.s&quot;;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		  sleep 5; printf '\005'; sleep 0.2; echo q; } |&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;			script log.$i+$sample -T log.$i+$sample.tm -c 'pdp11 simh_cold.cfg'&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	done&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;done&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Time samples can be found by &lt;a href=&quot;/content/assets/blogn_t/023,a.01-parser.cpp&quot;&gt;parsing&lt;/a&gt; the (time) logs:
+&lt;/p&gt;
+&lt;!--
+3.313121s: log.1+10
+3.145555s: log.1+1
+3.284353s: log.1+2
+3.152064s: log.1+3
+3.202243s: log.1+4
+3.173394s: log.1+5
+3.146847s: log.1+6
+3.323939s: log.1+7
+3.078766s: log.1+8
+3.325156s: log.1+9
+1.290864s: log.2+10
+1.336203s: log.2+1
+1.287681s: log.2+2
+1.308354s: log.2+3
+1.300058s: log.2+4
+1.351198s: log.2+5
+1.305227s: log.2+6
+1.313471s: log.2+7
+1.295463s: log.2+8
+1.302963s: log.2+9
+1.025874s: log.3+10
+1.006461s: log.3+1
+1.007840s: log.3+2
+1.007381s: log.3+3
+1.008314s: log.3+4
+1.001404s: log.3+5
+1.000894s: log.3+6
+0.985487s: log.3+7
+0.999002s: log.3+8
+0.995455s: log.3+9
+0.796960s: log.4+10
+0.802057s: log.4+1
+0.768628s: log.4+2
+0.803906s: log.4+3
+0.809615s: log.4+4
+0.761984s: log.4+5
+0.745797s: log.4+6
+0.766393s: log.4+7
+0.749353s: log.4+8
+0.796415s: log.4+9
+0.727993s: log.5+10
+0.720912s: log.5+1
+0.765737s: log.5+2
+0.734324s: log.5+3
+0.724790s: log.5+4
+0.741089s: log.5+5
+0.742971s: log.5+6
+0.728479s: log.5+7
+0.733802s: log.5+8
+0.721597s: log.5+9
+0.722550s: log.6+10
+0.730193s: log.6+1
+0.749635s: log.6+2
+0.724301s: log.6+3
+0.715376s: log.6+4
+0.716600s: log.6+5
+0.721910s: log.6+6
+0.717016s: log.6+7
+0.718776s: log.6+8
+0.718454s: log.6+9
+nabijaczleweli@tarta:~/store/vm/unix72$ for f in *.tm; do ./023,a.01-parser ${f%.tm} $f; done | sed 's/+.*//' | hypermid
+Benchmark 1: log.6
+  Time (mean ± σ): 723.481100 ms ± 9.671262 ms
+  Range (min … max): 715.376000 ms … 749.635000 ms 10 runs
+Benchmark 2: log.5
+  Time (mean ± σ): 734.169400 ms ± 12.705695 ms
+  Range (min … max): 720.912000 ms … 765.737000 ms 10 runs
+Benchmark 3: log.4
+  Time (mean ± σ): 780.110800 ms ± 22.891396 ms
+  Range (min … max): 745.797000 ms … 809.615000 ms 10 runs
+Benchmark 4: log.3
+  Time (mean ± σ): 1003.811200 ms ± 9.930126 ms
+  Range (min … max): 985.487000 ms … 1025.874000 ms 10 runs
+Benchmark 5: log.2
+  Time (mean ± σ): 1309.148200 ms ± 19.073979 ms
+  Range (min … max): 1287.681000 ms … 1351.198000 ms 10 runs
+Benchmark 6: log.1
+  Time (mean ± σ): 3214.543800 ms ± 85.040826 ms
+  Range (min … max): 3078.766000 ms … 3325.156000 ms 10 runs
+Summary
+  'log.6' ran
+    1.014773 ± 0.021768 times faster than 'log.5'
+    1.078274 ± 0.031261 times faster than 'log.4'
+    1.387474 ± 0.015787 times faster than 'log.3'
+    1.809513 ± 0.017205 times faster than 'log.2'
+    4.443162 ± 0.018336 times faster than 'log.1'
+--&gt;
+&lt;table class=&quot;perf&quot;&gt;
+ &lt;tr&gt;&lt;th&gt;&lt;tt&gt;nbuf&lt;/tt&gt;&lt;/th&gt; &lt;th&gt;Time to &lt;tt&gt;as u*.s&lt;/tt&gt;&lt;/th&gt; &lt;th&gt;speedup&lt;/th&gt; &lt;th&gt;vs previous&lt;/th&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;th&gt;1 &lt;/th&gt; &lt;td&gt;3.215s&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;th&gt;2 &lt;/th&gt; &lt;td&gt;1.309s&lt;/td&gt; &lt;td&gt;2.455×&lt;/td&gt; &lt;td&gt;146% &lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;th&gt;3 &lt;/th&gt; &lt;td&gt;1.004s&lt;/td&gt; &lt;td&gt;3.202×&lt;/td&gt; &lt;td&gt; 30.4% &lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;th&gt;4 &lt;/th&gt; &lt;td&gt; 780ms&lt;/td&gt; &lt;td&gt;4.121×&lt;/td&gt; &lt;td&gt; 28.7% &lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;th&gt;5 &lt;/th&gt; &lt;td&gt; 734ms&lt;/td&gt; &lt;td&gt;4.378×&lt;/td&gt; &lt;td&gt; 6.26%&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;th&gt;6 &lt;/th&gt; &lt;td&gt; 724ms&lt;/td&gt; &lt;td&gt;4.443×&lt;/td&gt; &lt;td&gt; 1.48%&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+This would be much more linear, except nbufs=1 pays double price because in that configuration,
+having &lt;em&gt;any&lt;/em&gt; in-flight I/O blocks &lt;em&gt;any&lt;/em&gt; disk I/O (except to the superblock and swap),
+so &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; and the disk no longer run in parallel.
+This is in an emulator with functionally-instant-for-the-time I/O.
+One has to assume this'd&lt;!--'--&gt; be &lt;em&gt;much&lt;/em&gt; worse on hardware.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+In conclusion:
+nbufs=2 is a soft usability minimum, more-so than a hard limit, and
+the distribution kernel ships as many nbufs as it can easily fit.
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,a-v1-nbuf-benchmark.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/div&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/022-Utah_v4.html</id>
