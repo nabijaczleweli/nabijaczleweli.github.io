@@ -20,8 +20,6 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define POST_POST_DATE
 
 #define DEL      <del>[…]</del>
-#define REDACTED <span class="redacted">[redacted redacted]</span>
-#define ARTIFACT(fn) <a href=STR(httpsCOLON_SLASH_SLASHlfs.nabijaczleweli.xyz/0031-Utah_v4/fn)><tt>fn</tt></a>
 
 
 BOILERPLATE(023‚a. V1 UNIX I/O buffer count vs. performance benchmark — blognꞌt, 023‚a. V1 UNIX I/O buffer count vs. performance benchmark, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT)
@@ -538,108 +536,190 @@ The instrumentation is then "install kernel, exit; boot it, compile the kernel, 
 Time samples can be found by <a href="/content/assets/blogn_t/023,a.01-parser.cpp">parsing</a> the (time) logs:
 </p>
 <!--
-3.313121s: log.1+10
-3.145555s: log.1+1
-3.284353s: log.1+2
-3.152064s: log.1+3
-3.202243s: log.1+4
-3.173394s: log.1+5
-3.146847s: log.1+6
-3.323939s: log.1+7
-3.078766s: log.1+8
-3.325156s: log.1+9
-1.290864s: log.2+10
-1.336203s: log.2+1
-1.287681s: log.2+2
-1.308354s: log.2+3
-1.300058s: log.2+4
-1.351198s: log.2+5
-1.305227s: log.2+6
-1.313471s: log.2+7
-1.295463s: log.2+8
-1.302963s: log.2+9
-1.025874s: log.3+10
-1.006461s: log.3+1
-1.007840s: log.3+2
-1.007381s: log.3+3
-1.008314s: log.3+4
-1.001404s: log.3+5
-1.000894s: log.3+6
-0.985487s: log.3+7
-0.999002s: log.3+8
-0.995455s: log.3+9
-0.796960s: log.4+10
-0.802057s: log.4+1
-0.768628s: log.4+2
-0.803906s: log.4+3
-0.809615s: log.4+4
-0.761984s: log.4+5
-0.745797s: log.4+6
-0.766393s: log.4+7
-0.749353s: log.4+8
-0.796415s: log.4+9
-0.727993s: log.5+10
-0.720912s: log.5+1
-0.765737s: log.5+2
-0.734324s: log.5+3
-0.724790s: log.5+4
-0.741089s: log.5+5
-0.742971s: log.5+6
-0.728479s: log.5+7
-0.733802s: log.5+8
-0.721597s: log.5+9
-0.722550s: log.6+10
-0.730193s: log.6+1
-0.749635s: log.6+2
-0.724301s: log.6+3
-0.715376s: log.6+4
-0.716600s: log.6+5
-0.721910s: log.6+6
-0.717016s: log.6+7
-0.718776s: log.6+8
-0.718454s: log.6+9
+3.089472s: log.1
+3.111546s: log.1
+3.069670s: log.1
+3.059972s: log.1
+3.051238s: log.1
+3.104852s: log.1
+3.374483s: log.1
+3.053362s: log.1
+3.060943s: log.1
+3.171275s: log.1
+3.150920s: log.1
+3.111829s: log.1
+3.070184s: log.1
+3.287678s: log.1
+3.086909s: log.1
+3.159535s: log.1
+3.090829s: log.1
+3.058854s: log.1
+3.301087s: log.1
+3.032912s: log.1
+3.086063s: log.1
+3.158491s: log.1
+3.062695s: log.1
+3.075707s: log.1
+3.254755s: log.1
+1.322997s: log.2
+1.296934s: log.2
+1.306806s: log.2
+1.299251s: log.2
+1.309037s: log.2
+1.300868s: log.2
+1.303242s: log.2
+1.307097s: log.2
+1.303823s: log.2
+1.304637s: log.2
+1.300503s: log.2
+1.329324s: log.2
+1.300778s: log.2
+1.306288s: log.2
+1.297252s: log.2
+1.391388s: log.2
+1.311729s: log.2
+1.308864s: log.2
+1.277079s: log.2
+1.355897s: log.2
+1.362374s: log.2
+1.300994s: log.2
+1.297451s: log.2
+1.300042s: log.2
+1.300317s: log.2
+0.991696s: log.3
+0.992638s: log.3
+1.004344s: log.3
+0.992051s: log.3
+0.996795s: log.3
+0.992992s: log.3
+0.999235s: log.3
+1.004857s: log.3
+0.984199s: log.3
+1.003325s: log.3
+1.012972s: log.3
+1.002739s: log.3
+1.002213s: log.3
+0.986319s: log.3
+0.993444s: log.3
+1.004088s: log.3
+1.000995s: log.3
+0.999323s: log.3
+1.000193s: log.3
+0.999016s: log.3
+1.005345s: log.3
+1.003168s: log.3
+1.010267s: log.3
+1.003820s: log.3
+0.999272s: log.3
+0.765964s: log.4
+0.751000s: log.4
+0.756883s: log.4
+0.760165s: log.4
+0.768689s: log.4
+0.759780s: log.4
+0.770072s: log.4
+0.770772s: log.4
+0.748427s: log.4
+0.766785s: log.4
+0.764432s: log.4
+0.746427s: log.4
+0.756008s: log.4
+0.755073s: log.4
+0.768758s: log.4
+0.762580s: log.4
+0.792220s: log.4
+0.766032s: log.4
+0.750377s: log.4
+0.759079s: log.4
+0.759669s: log.4
+0.764008s: log.4
+0.762561s: log.4
+0.750332s: log.4
+0.772324s: log.4
+0.718920s: log.5
+0.724461s: log.5
+0.719645s: log.5
+0.723170s: log.5
+0.719862s: log.5
+0.717961s: log.5
+0.720314s: log.5
+0.728411s: log.5
+0.721577s: log.5
+0.720466s: log.5
+0.723177s: log.5
+0.723622s: log.5
+0.721433s: log.5
+0.720886s: log.5
+0.719573s: log.5
+0.719127s: log.5
+0.721585s: log.5
+0.719419s: log.5
+0.721195s: log.5
+0.720431s: log.5
+0.719682s: log.5
+0.719675s: log.5
+0.719535s: log.5
+0.718997s: log.5
+0.720640s: log.5
+0.718169s: log.6
+0.718189s: log.6
+0.722394s: log.6
+0.718941s: log.6
+0.717006s: log.6
+0.722416s: log.6
+0.719249s: log.6
+0.716889s: log.6
+0.717868s: log.6
+0.737526s: log.6
+0.719055s: log.6
+0.723793s: log.6
+0.721165s: log.6
+0.717377s: log.6
+0.717185s: log.6
+0.718586s: log.6
+0.717744s: log.6
+0.717190s: log.6
+0.717851s: log.6
+0.717381s: log.6
+0.716304s: log.6
+0.717867s: log.6
+0.724943s: log.6
+0.719816s: log.6
+0.717491s: log.6
 
-nabijaczleweli@tarta:~/store/vm/unix72$ for f in *.tm; do ./023,a.01-parser ${f%.tm} $f; done | sed 's/+.*//' | hypermid
-Benchmark 1: log.6
-  Time (mean ± σ):        723.481100 ms ±     9.671262 ms
-  Range (min … max):      715.376000 ms …   749.635000 ms    10 runs
-
-Benchmark 2: log.5
-  Time (mean ± σ):        734.169400 ms ±    12.705695 ms
-  Range (min … max):      720.912000 ms …   765.737000 ms    10 runs
-
-Benchmark 3: log.4
-  Time (mean ± σ):        780.110800 ms ±    22.891396 ms
-  Range (min … max):      745.797000 ms …   809.615000 ms    10 runs
-
-Benchmark 4: log.3
-  Time (mean ± σ):       1003.811200 ms ±     9.930126 ms
-  Range (min … max):      985.487000 ms …  1025.874000 ms    10 runs
+nabijaczleweli@tarta:~/store/vm/unix72/logc$ for f in *.tm; do ../023,a.01-parser ${f%.tm} $f; done | sed 's/+.*//' | hypermid
+Benchmark 6: log.1
+Time (mean ± σ):       3125.410440 ms ±    87.628246 ms
+Range (min … max):     3032.912000 ms …  3374.483000 ms    25 runs
 
 Benchmark 5: log.2
-  Time (mean ± σ):       1309.148200 ms ±    19.073979 ms
-  Range (min … max):     1287.681000 ms …  1351.198000 ms    10 runs
+Time (mean ± σ):       1311.798880 ms ±    23.923147 ms
+Range (min … max):     1277.079000 ms …  1391.388000 ms    25 runs
 
-Benchmark 6: log.1
-  Time (mean ± σ):       3214.543800 ms ±    85.040826 ms
-  Range (min … max):     3078.766000 ms …  3325.156000 ms    10 runs
+Benchmark 4: log.3
+Time (mean ± σ):        999.412240 ms ±     6.723066 ms
+Range (min … max):      984.199000 ms …  1012.972000 ms    25 runs
 
-Summary
-  'log.6' ran
-    1.014773 ± 0.021768 times faster than 'log.5'
-    1.078274 ± 0.031261 times faster than 'log.4'
-    1.387474 ± 0.015787 times faster than 'log.3'
-    1.809513 ± 0.017205 times faster than 'log.2'
-    4.443162 ± 0.018336 times faster than 'log.1'
+Benchmark 3: log.4
+Time (mean ± σ):        761.936680 ms ±     9.526866 ms
+Range (min … max):      746.427000 ms …   792.220000 ms    25 runs
+
+Benchmark 2: log.5
+Time (mean ± σ):        720.950560 ms ±     2.187914 ms
+Range (min … max):      717.961000 ms …   728.411000 ms    25 runs
+
+Benchmark 1: log.6
+Time (mean ± σ):        719.695800 ms ±     4.265195 ms
+Range (min … max):      716.304000 ms …   737.526000 ms    25 runs
 -->
 <table class="perf">
-	<tr><th><tt>nbuf</tt></th> <th>Time to <tt>as u*.s</tt></th> <th>speedup</th>     <th>vs previous</th></tr>
-	<tr><th>1            </th>                   <td>3.215s</td></tr>
-	<tr><th>2            </th>                   <td>1.309s</td>  <td>2.455×</td>         <td>146%   </td></tr>
-	<tr><th>3            </th>                   <td>1.004s</td>  <td>3.202×</td>         <td> 30.4% </td></tr>
-	<tr><th>4            </th>                   <td> 780ms</td>  <td>4.121×</td>         <td> 28.7% </td></tr>
-	<tr><th>5            </th>                   <td> 734ms</td>  <td>4.378×</td>         <td>  6.26%</td></tr>
-	<tr><th>6            </th>                   <td> 724ms</td>  <td>4.443×</td>         <td>  1.48%</td></tr>
+	<tr><th><tt>nbuf</tt></th> <th>Time to <tt>as u*.s</tt></th> <th>speedup</th> <th>vs previous</th></tr>
+	<tr><th>1            </th>                    <td>3.12s </td></tr>
+	<tr><th>2            </th>                    <td>1.31s </td> <td>2.383×</td>      <td>138.3%</td></tr>
+	<tr><th>3            </th>                    <td> 999ms</td> <td>3.127×</td>      <td> 31.3%</td></tr>
+	<tr><th>4            </th>                    <td> 762ms</td> <td>4.102×</td>      <td> 31.2%</td></tr>
+	<tr><th>5            </th>                    <td> 721ms</td> <td>4.335×</td>      <td>  6.7%</td></tr>
+	<tr><th>6            </th>                    <td> 720ms</td> <td>4.343×</td>      <td>   .2%</td></tr>
 </table>
 <style>
 table.perf tr > * {
@@ -654,15 +734,6 @@ table.perf {
 	margin-left: 1em;
 	text-align: right;
 }
-table.perf.left {
-	margin-left: initial;
-}
-table.perf tr:nth-child(5), table.perf tr.spc {
-	height: 0.5em;
-}
-table.perf tr.hspc {
-	height: 0.25em;
-}
 </style>
 <p class="continuation">
 This would be much more linear, except nbufs=1 pays double price because in that configuration,
@@ -670,14 +741,16 @@ having <em>any</em> in-flight I/O blocks <em>any</em> disk I/O (except to the su
 so unix and the disk no longer run in parallel.
 This is in an emulator with functionally-instant-for-the-time I/O.
 One has to assume this'd<!--'--> be <em>much</em> worse on hardware.
+See chart, below, with half of nbufs=1 additionally indicated.
 </p>
 
-<p class="indented continuing">
+<p class="indented">
 In conclusion:
 nbufs=2 is a soft usability minimum, more-so than a hard limit, and
 the distribution kernel ships as many nbufs as it can easily fit.
 </p>
 
+<img src="/content/assets/blogn_t/023,a.03-graph.png" style="width: 100%; max-height: 50em;">
 
 BLOGN_T_FOOTER()
 WORD_COUNTER_END_NON_ENGLISH()
