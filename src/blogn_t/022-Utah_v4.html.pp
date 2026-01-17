@@ -24,9 +24,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #define ARTIFACT(fn) <a href=STR(httpsCOLON_SLASH_SLASHlfs.nabijaczleweli.xyz/0031-Utah_v4/fn)><tt>fn</tt></a>
 
 
-#define STYLESHEETS BLOGN_T_STYLESHEETS                                                    FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css?" rel="stylesheet">
-BOILERPLATE(022. Turning the V4 UNIX dump into Utah_v4/ — blognꞌt, 022. Turning the V4 UNIX dump into Utah_v4/, en-GB, STYLESHEETS FONTAWESOME_LINK WORD_COUNT_SCRIPT)
+BOILERPLATE(022. Turning the V4 UNIX dump into Utah_v4/ — blognꞌt, 022. Turning the V4 UNIX dump into Utah_v4/, en-GB, BLOGN_T_STYLESHEETS FONTAWESOME_LINK WORD_COUNT_SCRIPT)
 <style>
 #include "../writing/the_taste_of_mi/spacing.css"
 #include "../gen-epub-book/fonts.css"

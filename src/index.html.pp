@@ -30,8 +30,8 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	Become cursed by my <a href="blogn_t/">blog</a>…<br />
 	Latest post:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/022-Utah_v4.html">022. Turning the V4 <span class="smallcaps">unix</span> dump into Utah_v4/;
-		<span style="white-space: nowrap;">Sun, 21 Dec 2025 23:51:02 +0100</span></a>
+		<a href="blogn_t/023,a-v1-nbuf-benchmark.html">023,a. Benchmarking V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance;
+		<span style="white-space: nowrap;">Sat, 17 Jan 2026 04:33:03 +0100</span></a>
 	</samp>
 </p>
 

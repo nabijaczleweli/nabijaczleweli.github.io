@@ -19,6 +19,8 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 	<div><samp id=STR(post_id)><a href=STR(post_id.html)>__VA_ARGS__</a>; <span style="white-space: nowrap;">post_time, post_time_2</span></samp></div>
 #define POST(post_id, post_time, post_time_2, ...)  \
 	<p></p>PPOST(post_id, post_time, post_time_2, __VA_ARGS__)
+#define CPOST(post,id, post_time, post_time_2, ...)  \
+	<p></p><div><samp id=STR(post,id)><a href=STR(post,id.html)>__VA_ARGS__</a>; <span style="white-space: nowrap;">post_time, post_time_2</span></samp></div>
 
 #define B(n) n##.<span style="white-space: pre-wrap;"><!--"-->  <!--"--></span>
 
@@ -92,8 +94,10 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 	 POST(020-sizeof-division,                     Sun, 28 Sep 2025 01:02:48 +0200, 020. Pre-modern-UNIX sizeof division)
 	 POST(021-mirror-boot-efi-ESP-plain-raid,      Mon, 15 Dec 2025 00:02:14 +0100, 021. Natively mirrored but still functional & correct /boot/efi)
 	 POST(022-Utah_v4,                             Sun, 21 Dec 2025 23:51:02 +0100, 022. Turning the V4 <span class="smallcaps">unix</span> dump into Utah_v4/)
+	CPOST(023,a-v1-nbuf-benchmark,                 Sat, 17 Jan 2026 04:33:03 +0100, 023,a. V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance benchmark)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
+
 
 BLOGN_T_FOOTER()
 

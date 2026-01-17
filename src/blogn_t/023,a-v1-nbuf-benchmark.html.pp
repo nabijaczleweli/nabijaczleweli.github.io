@@ -1,0 +1,684 @@
+<!--
+nabijaczleweli.xyz (c) by nabijaczleweli@nabijaczleweli.xyz
+​
+nabijaczleweli.xyz is licensed under a
+Creative Commons Attribution 4.0 International License.
+​
+You should have received a copy of the license along with this
+work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+-->
+
+
+#include "../writing/writing.h"
+#include "../common.h"
+#include "blogn_t.h"
+#include "blogn_t/023,a!01-linenos.html"
+
+
+   <!-- RSS_PUB_DATE: "Sat, 17 Jan 2026 04:33:03 +0100" -->
+#define POST_DATE      Sat, 17 Jan 2026 04:33:03 +0100
+#define POST_POST_DATE
+
+#define DEL      <del>[…]</del>
+#define REDACTED <span class="redacted">[redacted redacted]</span>
+#define ARTIFACT(fn) <a href=STR(httpsCOLON_SLASH_SLASHlfs.nabijaczleweli.xyz/0031-Utah_v4/fn)><tt>fn</tt></a>
+
+
+BOILERPLATE(023‚a. V1 UNIX I/O buffer count vs. performance benchmark — blognꞌt, 023‚a. V1 UNIX I/O buffer count vs. performance benchmark, en-GB, BLOGN_T_STYLESHEETS WORD_COUNT_SCRIPT)
+<style>
+#include "../writing/the_taste_of_mi/spacing.css"
+#include "../gen-epub-book/fonts.css"
+#include "../indent.css"
+
+ol.arrows > li:first-child::marker {
+	content: "";
+}
+ol.arrows > li::marker {
+	content: "→ ";
+}
+
+@media (min-device-width: 800px) {
+	.offset {
+		margin-left: -4em;
+	}
+}
+@media (min-device-width: 600px) {
+	.offset {
+		margin-left: -4em;
+	}
+}
+.offset {
+	border: 1px solid;
+	border-radius: 1em;
+	padding: 0.5em;
+/*	padding-top: 0;*/
+}
+.offset figcaption:first-child {
+	font-family: "Droid Sans Mono", monospace;
+	padding-bottom: 0.25em;
+	text-align: center;
+	font-weight: bold;
+}
+.offset figcaption:first-child a {
+	color: inherit;
+}
+.offset figcaption:last-child {
+	padding: 0.5em;
+	text-align: center;
+}
+
+pre .label {
+	border-radius: 3px;
+	padding: 1px 0.5px;
+}
+pre .label.a { background-color: #ff00007f; }
+pre .label.b { background-color: #ff00ff7f; }
+pre .label.c { background-color: #0000ff7f; }
+pre .label.d { background-color: #00ffff7f; }
+pre .label.e { background-color: #00ff007f; }
+pre .label.f { background-color: #ffff007f; }
+
+pre.linenos {
+	float: left;
+	text-align: right;
+	padding-right: 0.25em;
+	margin-right: 0.25em;
+	border-right: 1px dashed;
+}
+
+cite {
+	font-size: 83.3653266056052%;
+}
+
+cite var {
+	font-style: normal; /* nested italics */
+}
+
+tt, pre {
+	font-family: "Droid Sans Mono", monospace;
+}
+
+pre {
+	margin: 0;
+}
+
+
+del {
+	opacity: 80%;
+	text-decoration: none;
+}
+
+ol, ul {
+	padding-left: 1em;
+}
+
+pre small {
+	display: block;
+}
+
+* {
+	     tab-size: 8 !important;
+	-moz-tab-size: 8 !important;
+}
+figure.C > pre,
+figure.C > pre * {
+	     tab-size: 4 !important;
+	-moz-tab-size: 4 !important;
+}
+
+/*small {
+	     tab-size: 9.5 !important;
+	-moz-tab-size: 9.5 !important;
+}*/
+pre small {
+	letter-spacing: 13%;
+}
+
+kbd {
+	font-weight: bold;
+}
+</style>
+
+#define unix <span class="smallcaps">unix</span>
+BLOGN_T_HEADING(023,a. V1 unix I/O buffer count vs. performance benchmark)
+
+<p class="continued">
+My draft for post 023 currently quips
+</p>
+<blockquote style="margin-left: 0;" class="continuing">
+(to wit: V1's<!--'--> filesystem cache consists of 1 – The – open file
+ <cite>(<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L215"><tt>iget</tt></a> (<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L270">+ <tt>icalc</tt></a>),
+        <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L15"><tt>inode</tt>, <tt>i.<var>*</var></tt>, <tt>ii</tt>, <tt>idev</tt>, <tt>cdev</tt>, <tt>imod</tt></a>)</cite>,
+ and up to 6 (<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40">installer kernel has 2</a>, I'm<!--'--> pretty sure even just 1 would work) 512-byte I/O block buffers
+ <cite>(<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40"><tt>nbuf</tt></a>,
+        <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L71"><tt>buffer</tt></a> (<tt>bufp</tt>),
+        <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L180"><tt>wslot</tt></a>)</cite>
+ (the block containing The open i-node isn't<!--'--> cached)).
+</blockquote>
+<p class="continuing">
+but <q>pretty sure</q> is not good enough.
+If only there were some way to compile and run a V1 kernel and test this directly!
+</p>
+<p class="indented continuing">
+This is borne out of pedantry and to satisfy my neurosis, because
+</p>
+<ol class="arrows">
+	<li><tt>write (II)</tt></li>
+	<li><tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L334">syswrite</a></tt></li>
+	<li><tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L125">writei</a><small>node</small></tt></li>
+	<li><tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L212">dskw</a> <small>(<q>write routine for non-special files</q>)</small></tt></li>
+</ol>
+<p class="continuing">
+says
+</p>
+#define L(group, ...) <span class=STR(label group)>__VA_ARGS__</span>
+<figure class="offset continuing">
+LINENOS_212f_2_1S_1_4s_28_4s_1S_3s
+<pre>
+<!--"-->dskw: <del>/ write routine for non-special files</del><!--"-->
+<!--"-->	mov	(sp),r1 <del>/ get an i-node number from the stack into r1</del><!--"-->
+<strong>\
+<!--"-->	jsr	r0,iget <del>/ write i-node out (if modified), read i-node 'r1'</del><!--"-->
+</strong>\
+<!--"-->		        <del>/ into i-node area of core</del><!--"-->
+<small>\
+<!--"-->	mov	 *u.fofp,r2 <del>/ put the file offset [(u.off) or the offset in</del><!--"-->
+<!--"-->		            <del>/ the fsp entry for this file] in r2</del><!--"-->
+<!--"-->	add	 u.count,r2 <del>/ no. of bytes to be written + file offset is</del><!--"-->
+<!--"-->		            <del>/ put in r2</del><!--"-->
+</small>\
+<!--"-->	cmp	 r2,i.size <del>/ is this greater than the present size of</del><!--"-->
+<!--"-->		           <del>/ the file?</del><!--"-->
+<!--"-->	blos	 <!--"-->L(a,1f)<!--"--> <del>/ no, branch</del><!--"-->
+<!--"-->	 mov	r2,i.size <del>/ yes, increase the f11e size to file offset +</del><!--"-->
+<!--"-->		           <del>/ no. of data bytes</del><!--"-->
+<!--"-->	 jsr	r0,setimod <del>/ set imod=1 (i.e., core inode has been</del><!--"-->
+<!--"-->		           <del>/ modified), stuff tlme of modification into</del><!--"-->
+<!--"-->		           <del>/ core image of i-node</del><!--"-->
+L(a,1):
+<!--"-->	jsr	r0,mget <del>/ get the block no. in which to write the next data</del><!--"-->
+<!--"-->		        <del>/ byte</del><!--"-->
+<!--"-->	bit	*u.fofp,$777 <del>/ test the lower 9 bits of the file offset</del><!--"-->
+<!--"-->	bne	<!--"-->L(b,2f)<!--"--> <del>/ if its non-zero, branch; if zero, file offset = 0,</del><!--"-->
+<!--"-->		   <del>/ 512, 1024,...(i.e., start of new block)</del><!--"-->
+<!--"-->	cmp	u.count,$512. <del>/ if zero, is there enough data to fill an</del><!--"-->
+<!--"-->		              <del>/ entire block? (i.e., no. of</del><!--"-->
+<!--"-->	bhis	<!--"-->L(c,3f)<!--"--> <del>/ bytes to be written greater than 512.? Yes, branch.</del><!--"-->
+<!--"-->		   <del>/ Don't have to read block</del><!--"-->
+L(b,2):<!--"--> <del>/ in as no past info. is to be saved (the entire block will be</del><!--"-->
+<!--"-->   <del>/ overwritten).</del><!--"-->
+<!--"-->	jsr	r0,dskrd <del>/ no, must retain old info.. Hence, read block 'r1'</del><!--"-->
+<!--"-->		         <del>/ into an I/O buffer</del><!--"-->
+L(c,3):
+<!--"-->	jsr	r0,wslot <del>/ set write and inhibit bits in I/O queue, proc.</del><!--"-->
+<!--"-->		         <del>/ status=0, r5 points to 1st word of data</del><!--"-->
+<!--"-->	jsr	r0,sioreg <del>/ r3 = no. of bytes of data, r1 = address of data,</del><!--"-->
+<!--"-->		          <del>/ r2 points to location in buffer in which to</del><!--"-->
+<!--"-->		          <del>/ start writing data</del><!--"-->
+<small>\
+L(d,2):
+<!--"-->	movb	(r1 )+,(r2)+ <del>/ transfer a byte of data to the I/O buffer</del><!--"-->
+<!--"-->	dec	r3 <del>/ decrement no. of bytes to be written</del><!--"-->
+<!--"-->	bne	<!--"-->L(d,2b)<!--"--> <del>/ have all bytes been transferred? No, branch</del><!--"-->
+</small>\
+<strong>\
+<!--"-->	jsr	r0,dskwr <del>/ yes, write the block and the i-node</del><!--"-->
+</strong>\
+<small>\
+<!--"-->	tst	u.count <del>/ any more data to write?</del><!--"-->
+<!--"-->	bne	<!--"-->L(a,1b)<!--"--> <del>/ yes, branch</del><!--"-->
+<!--"-->	jmp	ret <del>/ no, return to the caller via 'ret'</del><!--"-->
+</small>\
+</pre>
+<figcaption>
+	cf. <strong>emphasised</strong> fragments<br />
+	(labels colour-coded; note that <tt>123</tt> is octal and <tt>123.</tt> is decimal)
+</figcaption>
+</figure>
+<p class="continuing">
+which can be translated to
+</p>
+<figure class="offset continuation C">
+LINENOS_1z_212f_1_1z_214f_1S_4_220f_1_223f_1_225f_2_2z_229f_1_3z_240f_2_2z_243f_5_1sz_249f_1s_1sz_252f_1S_1z_1zs_255f_1s_1z
+<pre>
+extern r1, r2, r3, cdev;
+<!--"-->dskw(ino) <del>/* write routine for non-special files */</del><!--"-->
+{
+<strong>\
+<!--"-->	r1 = ino; iget(); <del>/* write i-node out (if modified), read i-node 'r1' on 'cdev'<!--"-->
+</strong>\
+<!--"-->	                     into i-node area of core */</del><!--"-->
+<!--"-->	r2 = *u.fofp + u.count; <del>/* file offset [(u.off) or the offset in<!--"-->
+<!--"-->	                           the fsp entry for this file] +<!--"-->
+<!--"-->	                           no. of bytes to be written */</del><!--"-->
+<!--"-->	if(r2 > i.size) {<!--"-->
+<!--"-->		i.size = r2;<!--"-->
+<!--"-->		setimod();<!--"-->
+<!--"-->	}<!--"-->
+<!---->
+<!--"-->	while(u.count)<!--"--> L(a,{)
+<!--"-->		mget(); <del>/* get the block no. in which to write the next data byte */</del><!--"-->
+<!---->
+<!--"-->		<del>/* if lower 9 bits of file offset are 0,<!--"-->
+<!--"-->		   file offset = 0, 512, 1024,...(i.e., start of new block): */</del><!--"-->
+<!--"-->		if(*u.fofp & 511 || u.count < 512)<!--"--> L(b,{)
+<!--"-->			dskrd();  <del>/* if there is not enough data to fill an entire block, */</del><!--"-->
+<!--"-->		<!--"-->L(c,})<!--"-->	          <del>/* read block 'r1' on 'cdev' into an I/O buffer */</del><!--"-->
+<!---->
+<!--"-->		wslot(); <del>/* set write and inhibit bits in I/O queue, proc. status=0,<!--"-->
+<!--"-->		            r5 points to 1st word of data */</del><!--"-->
+<!--"-->		sioreg(); <del>/* r3 = no. of bytes of data,<!--"-->
+<!--"-->		             r1 = address of data,<!--"-->
+<!--"-->		             r2 points to location in buffer in which to start writing data */</del><!--"-->
+<small>\
+<!--"-->		<!--"-->L(d,while)<!--"-->(r3--)<!--"-->
+<!--"-->			*(char *)r2 = *(char *)r1; <del>/* transfer a byte of data to the I/O buffer */</del><!--"-->
+<!---->
+</small>\
+<strong>\
+<!--"-->		dskwr(); <del>/* yes, write the block and the i-node */</del><!--"-->
+</strong>\
+<!--"-->	}<!--"-->
+<small>\
+<!---->
+<!--"-->	goto ret;<!--"-->
+</small>\
+}
+</pre>
+</figure>
+
+<p class="indented continued">
+The comment on the <tt>dskwr</tt> call implies that it'll<!--'--> (schedule to)
+<abbr title="A pedantic reader will notice that is not how V1's buffering works. More on this in 023,b. For the purposes of this post we can consider the caching models to be black boxes.">
+	write the current i-node as well as the just-written-to data block</abbr>.
+This is conspicuous given that <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40">the installation build of the kernel</a>
+downgrades from 6 I/O buffers to 2.
+Are those the same two?
+</p>
+<p class="indented continuing">
+<a href="//lfs.nabijaczleweli.xyz/0033-unix-jun72">unix72</a> builds an image containing the unpacked source in <tt>/usr/sys</tt>,
+so it's<!--'--> pretty easy to just Do this.
+time (II) is updated to return a sentinel large value to check if running updated kernel
+(this would be better served with a <tt>printf</tt> or the like, but this kernel doesn't<!--'--> have <em>any</em> kernel output facility):
+</p>
+<pre>
+<!----># <kbd>cp u2.s u2.s.orig</kbd>
+<!----># <kbd>ed u2.s</kbd>
+19053
+<kbd>.,.+4p</kbd>
+systime: / get time of year
+<!--"-->	mov	s.time,4(sp)<!--"-->
+<!--"-->	mov	s.time+2,2(sp) / put the present time on the stack<!--"-->
+<!--"-->	br	sysret4<!--"-->
+<!---->
+<kbd><del>/sys/t@</del>/systime/</kbd>
+systime: / get time of year
+<!---->
+<!--"-->	mov	s.time,4(sp)<!--"-->
+<kbd>s/s.time/$65<del>3#5</del>35./
+p</kbd>
+<!--"-->	mov	$65535.,4(sp)<!--"-->
+<!---->
+<!--"-->	mov	s.time+2,2(sp) / put the present time on the stack<!--"-->
+<kbd>s/s.time+2/<del>65535#####</del>$655<del>4$##</del>3<del>4#4#</del>5./
+p</kbd>
+<!--"-->	mov	$65535.,2(sp) / put the present time on the stack<!--"-->
+<!---->
+<!----># <kbd>cp u0.s u0.s.orig</kbd>
+<!----># <kbd><del>ed us@</del>ed u0.s</kbd>
+12636
+<kbd>/nbuf/</kbd>
+nbuf = 6
+<kbd>d
+d
+d
+p</kbd>
+.endif
+<kbd>d
+i
+nbuf = 1
+.
+w</kbd>
+12588
+<kbd>q</kbd>
+<!----># <kbd>as u*.s</kbd>
+I
+II
+<!----># <kbd>ls -l</kbd>
+total  539
+225 lxrwrw  1 root  36432 Jan  1 00:00:00 a.out
+</pre>
+
+<p class="indented continued">
+What remains is the matter of getting the kernel to boot.
+The unix72 bootloader is broadly-compatible with
+<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=195">boot procedures (VII)</a>
+and documented in
+<a href="//git.sr.ht/~nabijaczleweli/unix-jun72/tree/trunk/item/boot/README"><tt>boot/README</tt></a>:
+</p>
+<blockquote class="continuing">
+<p class="continuation">
+NOTE: For using kernels built using the V2 assembler, all of the following
+should refer to msys2, instead of msys.
+</p>
+<p>
+Alternatively, everything can be installed while running under the V1 system
+using the following procedure:
+</p>
+<p style="margin-left: 2em;">
+    First, build the support programs: bos and msys
+</p>
+<pre style="margin-left: 4em;">
+chdir /usr/boot
+sh run
+</pre>
+<p style="margin-left: 2em;">
+DEL
+If you build a kernel under V1, then you can install it into the DEL cold
+boot area (such as for testing) with:
+</p>
+<pre style="margin-left: 4em;">
+msys 1 name_of_kernel
+</pre>
+<p style="margin-left: 2em;">
+<del>[I]</del>f the cold boot area is being used for testing new kernels,
+then the kernel can be bootstrapped using:
+</p>
+<pre style="margin-left: 4em;">
+tools/pdp11 boot/simh_cold.cfg
+</pre>
+</blockquote>
+<p class="continuation">
+(layout sic!).
+The only difference in <tt>boot/simh_cold.cfg</tt> is the console switches going from 173700<sub><small>8</small></sub> to 1.
+I bring this documentation up only because the <tt>run</tt> script doesn't<!--'--> actually build <tt>msys2</tt>,
+which one'd<!--'--> think rather defeats the purpose, since running it is only meaningful in the emulated system,
+which we know only has the V2 assembler.
+unix72 is universally weird like this.
+</p>
+
+<pre class="continued">
+<!----># <kbd>chdir /usr/boot</kbd>
+<!----># <kbd>cat run</kbd>
+as bos.s
+mv a.out bos
+as msys.s
+mv a.out msys
+<!----># <kbd>as msys2.s</kbd>
+I
+II
+<!----># <kbd>mv a.out msys2</kbd>
+<!----># <kbd>msys2 1 /usr/sys/a.out</kbd>
+<!----># <kbd>date</kbd>
+Sun Jan 23 22:46:32
+<!----># <kbd>^E</kbd>
+Simulation stopped, PC: 007332 (MOV (SP)+,25244)
+sim> <kbd>q</kbd>
+Goodbye
+RF: writing buffer to file
+TC0: writing buffer to file
+unix72$ <kbd>pdp11 simh_cold.cfg</kbd>
+PDP-11 simulator V3.8-1
+Disabling CR
+Disabling XQ
+RF: buffering file in memory
+TC0: 16b format, buffering file in memory
+
+:login: root
+root
+<!----># <kbd>date</kbd>
+Sun Dec <9 12:06:28
+<!----># <kbd>chdir /usr/sys</kbd>
+<!----># <kbd>as u*.s</kbd>
+I
+II
+<!---->#
+</pre>
+<p class="continuing">
+so it does work, it just took a little longer. Well, it felt longer.
+</p>
+<p class="indented continuing">
+This paragraph was going to start "Easy enough to quantify, though:" but it isn't<!--'-->, because SIMH resists being instrumented at every turn.
+What <em>is</em> easy is making the kernel self-identify by putting <tt>nbuf</tt> in the minutes field of date (I)
+(there's<!--'--> an off-by-one in the division for seconds, so just returning <code>60*nbuf</code> for nbuf=4 yields <tt><q>Fri Jan &nbsp;1 00:00:03</q></tt>):
+</p>
+<pre class="continuation">
+<!----># <kbd>ed u2.s</kbd>
+19053
+/65535/
+        mov     $65535.,4(sp)
+s/65535/0/
+
+        mov     $65535.,2(sp) / put the present time on the stack
+s/\$65535./$[60. * 60. * nbuf]/
+w
+19061
+
+<!----># <kbd>as u*.s</kbd>
+I
+II
+<!----># <kbd>/usr/boot/msys2 1 a.out</kbd>
+<!----># <kbd>^E</kbd>
+Simulation stopped, PC: 007332 (MOV (SP)+,25232)
+sim> <kbd>q</kbd>
+unix72$ <kbd>pdp11 simh_cold.cfg</kbd>
+:login: <kbd>root</kbd>
+root
+<!----># <kbd>date</kbd>
+Fri Jan  1 00:01:00
+</pre>
+
+<pre class="continued">
+<!----># <kbd>chdir /usr/sys</kbd>
+<!----># <kbd>cat >nbuf
+: echo leaves a space at the end of every line
+echo /nbuf/s/=.\*/= $1/p >.ed
+echo w                  >>.ed
+ed .ed
+1,$s/ $//
+w
+q
+ed u0.s <.ed
+rm .ed
+as u*.s
+mv a.out nbuf.$1</kbd>
+<!----># <kbd>sh nbuf 0; sh nbuf 1; sh nbuf DEL; sh nbuf 11; sh nbuf 12</kbd>
+<!----># <kbd>ls -l nbuf*</kbd>
+<!--"-->220 s-rwrw  1 root    178 Jan  1 00:00:00 nbuf<!--"-->
+<!--"-->240 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.0<!--"-->
+<!--"-->230 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.1<!--"-->
+<!--"-->242 lxrwrw  1 root  37960 Jan  1 00:00:00 nbuf.10<!--"-->
+<!--"-->234 lxrwrw  1 root  39004 Jan  1 00:00:00 nbuf.11<!--"-->
+<!--"-->236 lxrwrw  1 root  40048 Jan  1 00:00:00 nbuf.12<!--"-->
+<!--"-->232 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.2<!--"-->
+<!--"-->225 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.3<!--"-->
+<!--"-->237 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.4<!--"-->
+<!--"-->231 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.5<!--"-->
+<!--"-->235 lxrwrw  1 root  36432 Jan  1 00:00:00 nbuf.6<!--"-->
+<!--"-->238 lxrwrw  1 root  36916 Jan  1 00:00:00 nbuf.7<!--"-->
+<!--"-->239 lxrwrw  1 root  37960 Jan  1 00:00:00 nbuf.8<!--"-->
+<!--"-->241 lxrwrw  1 root  39004 Jan  1 00:00:00 nbuf.9<!--"-->
+<!----># <kbd>/usr/boot/msys2 1 nbuf.0</kbd>
+<!----># <kbd>^E</kbd>
+sim> <kbd>q</kbd>
+unix72$ <kbd>pdp11 simh_cold.cfg</kbd>
+Disabling CR
+Disabling XQ
+RF: buffering file in memory
+TC0: 16b format, buffering file in memory
+Listening on port 5555 (socket 7)
+<del>(it loops here)</del>
+Simulation stopped, PC: 001000 (TSTB 25135)
+sim> <del>q</del>
+</pre>
+<p class="continuing">
+so 0 obviously doesn't<!--'--> work (entirely unsurprisingly).
+6, as shipped, is the max: 7 crashes with
+</p>
+<blockquote class="continuation">
+<tt>Trap stack push abort, PC: 011600 (BNE 11612)</tt>
+</blockquote>
+
+<p class="indented continued">
+The instrumentation is then "install kernel, exit; boot it, compile the kernel, exit". <kbd>^E</kbd> is byte 5.
+</p>
+<pre>
+<!--"-->for i in $(seq 6); do<!--"-->
+<!--"-->	{ sleep 1; echo root; echo "/usr/boot/msys2 1 /usr/sys/nbuf.$i";<!--"-->
+<!--"-->	  sleep 1; printf '\005'; sleep 0.2; echo q; } |<!--"-->
+<!--"-->		script /dev/null -c 'pdp11 simh.cfg'<!--"-->
+<!--"-->	for sample in $(seq 10); do<!--"-->
+<!--"-->		{ sleep 1; echo root; echo date; echo "chdir /usr/sys"; echo "as u*.s";<!--"-->
+<!--"-->		  sleep 5; printf '\005'; sleep 0.2; echo q; } |<!--"-->
+<!--"-->			script log.$i+$sample -T log.$i+$sample.tm -c 'pdp11 simh_cold.cfg'<!--"-->
+<!--"-->	done<!--"-->
+<!--"-->done<!--"-->
+</pre>
+<p class="continued">
+Time samples can be found by <a href="/content/assets/blogn_t/023,a.01-parser.cpp">parsing</a> the (time) logs:
+</p>
+<!--
+3.313121s: log.1+10
+3.145555s: log.1+1
+3.284353s: log.1+2
+3.152064s: log.1+3
+3.202243s: log.1+4
+3.173394s: log.1+5
+3.146847s: log.1+6
+3.323939s: log.1+7
+3.078766s: log.1+8
+3.325156s: log.1+9
+1.290864s: log.2+10
+1.336203s: log.2+1
+1.287681s: log.2+2
+1.308354s: log.2+3
+1.300058s: log.2+4
+1.351198s: log.2+5
+1.305227s: log.2+6
+1.313471s: log.2+7
+1.295463s: log.2+8
+1.302963s: log.2+9
+1.025874s: log.3+10
+1.006461s: log.3+1
+1.007840s: log.3+2
+1.007381s: log.3+3
+1.008314s: log.3+4
+1.001404s: log.3+5
+1.000894s: log.3+6
+0.985487s: log.3+7
+0.999002s: log.3+8
+0.995455s: log.3+9
+0.796960s: log.4+10
+0.802057s: log.4+1
+0.768628s: log.4+2
+0.803906s: log.4+3
+0.809615s: log.4+4
+0.761984s: log.4+5
+0.745797s: log.4+6
+0.766393s: log.4+7
+0.749353s: log.4+8
+0.796415s: log.4+9
+0.727993s: log.5+10
+0.720912s: log.5+1
+0.765737s: log.5+2
+0.734324s: log.5+3
+0.724790s: log.5+4
+0.741089s: log.5+5
+0.742971s: log.5+6
+0.728479s: log.5+7
+0.733802s: log.5+8
+0.721597s: log.5+9
+0.722550s: log.6+10
+0.730193s: log.6+1
+0.749635s: log.6+2
+0.724301s: log.6+3
+0.715376s: log.6+4
+0.716600s: log.6+5
+0.721910s: log.6+6
+0.717016s: log.6+7
+0.718776s: log.6+8
+0.718454s: log.6+9
+
+nabijaczleweli@tarta:~/store/vm/unix72$ for f in *.tm; do ./023,a.01-parser ${f%.tm} $f; done | sed 's/+.*//' | hypermid
+Benchmark 1: log.6
+  Time (mean ± σ):        723.481100 ms ±     9.671262 ms
+  Range (min … max):      715.376000 ms …   749.635000 ms    10 runs
+
+Benchmark 2: log.5
+  Time (mean ± σ):        734.169400 ms ±    12.705695 ms
+  Range (min … max):      720.912000 ms …   765.737000 ms    10 runs
+
+Benchmark 3: log.4
+  Time (mean ± σ):        780.110800 ms ±    22.891396 ms
+  Range (min … max):      745.797000 ms …   809.615000 ms    10 runs
+
+Benchmark 4: log.3
+  Time (mean ± σ):       1003.811200 ms ±     9.930126 ms
+  Range (min … max):      985.487000 ms …  1025.874000 ms    10 runs
+
+Benchmark 5: log.2
+  Time (mean ± σ):       1309.148200 ms ±    19.073979 ms
+  Range (min … max):     1287.681000 ms …  1351.198000 ms    10 runs
+
+Benchmark 6: log.1
+  Time (mean ± σ):       3214.543800 ms ±    85.040826 ms
+  Range (min … max):     3078.766000 ms …  3325.156000 ms    10 runs
+
+Summary
+  'log.6' ran
+    1.014773 ± 0.021768 times faster than 'log.5'
+    1.078274 ± 0.031261 times faster than 'log.4'
+    1.387474 ± 0.015787 times faster than 'log.3'
+    1.809513 ± 0.017205 times faster than 'log.2'
+    4.443162 ± 0.018336 times faster than 'log.1'
+-->
+<table class="perf">
+	<tr><th><tt>nbuf</tt></th> <th>Time to <tt>as u*.s</tt></th> <th>speedup</th>     <th>vs previous</th></tr>
+	<tr><th>1            </th>                   <td>3.215s</td></tr>
+	<tr><th>2            </th>                   <td>1.309s</td>  <td>2.455×</td>         <td>146%   </td></tr>
+	<tr><th>3            </th>                   <td>1.004s</td>  <td>3.202×</td>         <td> 30.4% </td></tr>
+	<tr><th>4            </th>                   <td> 780ms</td>  <td>4.121×</td>         <td> 28.7% </td></tr>
+	<tr><th>5            </th>                   <td> 734ms</td>  <td>4.378×</td>         <td>  6.26%</td></tr>
+	<tr><th>6            </th>                   <td> 724ms</td>  <td>4.443×</td>         <td>  1.48%</td></tr>
+</table>
+<style>
+table.perf tr > * {
+	padding-left:  0.25em;
+	padding-right: 0.25em;
+}
+table.perf tr:nth-child(2n) {
+	background-color: #80808020;
+}
+
+table.perf {
+	margin-left: 1em;
+	text-align: right;
+}
+table.perf.left {
+	margin-left: initial;
+}
+table.perf tr:nth-child(5), table.perf tr.spc {
+	height: 0.5em;
+}
+table.perf tr.hspc {
+	height: 0.25em;
+}
+</style>
+<p class="continuation">
+This would be much more linear, except nbufs=1 pays double price because in that configuration,
+having <em>any</em> in-flight I/O blocks <em>any</em> disk I/O (except to the superblock and swap),
+so unix and the disk no longer run in parallel.
+This is in an emulator with functionally-instant-for-the-time I/O.
+One has to assume this'd<!--'--> be <em>much</em> worse on hardware.
+</p>
+
+<p class="indented continuing">
+In conclusion:
+nbufs=2 is a soft usability minimum, more-so than a hard limit, and
+the distribution kernel ships as many nbufs as it can easily fit.
+</p>
+
+
+BLOGN_T_FOOTER()
+WORD_COUNTER_END_NON_ENGLISH()
+BOILERPLATE_END()

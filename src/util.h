@@ -12,5 +12,5 @@
 #pragma once
 
 
-#define _STR(a) #a
-#define STR(a) _STR(a)
+#define _STR(...) #__VA_ARGS__
+#define STR(...) _STR(__VA_ARGS__)
