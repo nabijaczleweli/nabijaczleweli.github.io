@@ -12,10 +12,2102 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2026-01-17T04:33:03+01:00</updated>
+<updated>2026-01-23T21:28:16+01:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,b-DeFelice-polemic.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/023,b-DeFelice-polemic.html" />
+    <title> 023‚b. A J. DeFelice polemick on V1 UNIX buffering schemes‚ novel results regarding V1 UNIX mounts‚ on the conceptualisation of the file system and block device partitioning — blognꞌt — nabijaczleweli </title>
+    <updated>2026-01-23T21:28:16+01:00</updated>
+    <content type="html">
+&lt;div class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;023,b. A J. DeFelice polemick on V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; buffering schemes, novel results regarding V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; mounts, on the conceptualisation of the file system and block device partitioning&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Fri, 23 Jan 2026 21:28:16 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
+&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#PSW'&gt;&lt;tt&gt;&lt;q&gt;proc. status&lt;/q&gt;&lt;/tt&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#buffer'&gt;Buffered block I/O&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#inode'&gt;I-node cache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#finally'&gt;And now, a vicious take-down of a user who's&lt;!--'--&gt; &lt;small&gt;&lt;abbr title=&quot;Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years&quot;&gt;probably&lt;/abbr&gt;&lt;/small&gt; been dead nearly a decade,&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/details&gt;&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+If we cast our &lt;a href=&quot;023,a-v1-nbuf-benchmark.html&quot;&gt;minds back&lt;/a&gt; and eyeballs down to
+ &lt;tt&gt;write (II)&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L334&quot;&gt;syswrite&lt;/a&gt;&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L125&quot;&gt;writei&lt;/a&gt;&lt;small&gt;node&lt;/small&gt;&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L212&quot;&gt;dskw&lt;/a&gt; &lt;small&gt;(&lt;q&gt;write routine for non-special files&lt;/q&gt;)&lt;/small&gt;&lt;/tt&gt;:
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuing&quot;&gt;
+&lt;pre class=linenos&gt;212
+213
+&lt;strong&gt;214
+&lt;/strong&gt;215
+&lt;small&gt;216
+217
+218
+219
+&lt;/small&gt;220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+&lt;small&gt;248
+249
+250
+251
+&lt;/small&gt;&lt;strong&gt;252
+&lt;/strong&gt;&lt;small&gt;253
+254
+255
+&lt;/small&gt;&lt;/pre&gt;
+&lt;pre&gt;
+&lt;!--&quot;--&gt;dskw: &lt;del&gt;/ write routine for non-special files&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	mov	(sp),r1 &lt;del&gt;/ get an i-node number from the stack into r1&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;strong&gt;&lt;!--&quot;--&gt;	jsr	r0,iget &lt;del&gt;/ write i-node out (if modified), read i-node 'r1'&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;		        &lt;del&gt;/ into i-node area of core&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;	mov	 *u.fofp,r2 &lt;del&gt;/ put the file offset [(u.off) or the offset in&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            &lt;del&gt;/ the fsp entry for this file] in r2&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	add	 u.count,r2 &lt;del&gt;/ no. of bytes to be written + file offset is&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            &lt;del&gt;/ put in r2&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	cmp	 r2,i.size &lt;del&gt;/ is this greater than the present size of&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ the file?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	blos	 &lt;!--&quot;--&gt;&lt;span class=&quot;label a&quot;&gt;1f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ no, branch&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 mov	r2,i.size &lt;del&gt;/ yes, increase the f11e size to file offset +&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ no. of data bytes&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	 jsr	r0,setimod &lt;del&gt;/ set imod=1 (i.e., core inode has been&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ modified), stuff tlme of modification into&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		           &lt;del&gt;/ core image of i-node&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label a&quot;&gt;1&lt;/span&gt;:
+&lt;!--&quot;--&gt;	jsr	r0,mget &lt;del&gt;/ get the block no. in which to write the next data&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		        &lt;del&gt;/ byte&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bit	*u.fofp,$777 &lt;del&gt;/ test the lower 9 bits of the file offset&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	&lt;!--&quot;--&gt;&lt;span class=&quot;label b&quot;&gt;2f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ if its non-zero, branch; if zero, file offset = 0,&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   &lt;del&gt;/ 512, 1024,...(i.e., start of new block)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	cmp	u.count,$512. &lt;del&gt;/ if zero, is there enough data to fill an&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		              &lt;del&gt;/ entire block? (i.e., no. of&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bhis	&lt;!--&quot;--&gt;&lt;span class=&quot;label c&quot;&gt;3f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ bytes to be written greater than 512.? Yes, branch.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   &lt;del&gt;/ Don't have to read block&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label b&quot;&gt;2&lt;/span&gt;:&lt;!--&quot;--&gt; &lt;del&gt;/ in as no past info. is to be saved (the entire block will be&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;   &lt;del&gt;/ overwritten).&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr	r0,dskrd &lt;del&gt;/ no, must retain old info.. Hence, read block 'r1'&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		         &lt;del&gt;/ into an I/O buffer&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label c&quot;&gt;3&lt;/span&gt;:
+&lt;!--&quot;--&gt;	jsr	r0,wslot &lt;del&gt;/ set write and inhibit bits in I/O queue, proc.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		         &lt;del&gt;/ status=0, r5 points to 1st word of data&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jsr	r0,sioreg &lt;del&gt;/ r3 = no. of bytes of data, r1 = address of data,&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		          &lt;del&gt;/ r2 points to location in buffer in which to&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		          &lt;del&gt;/ start writing data&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;span class=&quot;label d&quot;&gt;2&lt;/span&gt;:
+&lt;!--&quot;--&gt;	movb	(r1 )+,(r2)+ &lt;del&gt;/ transfer a byte of data to the I/O buffer&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	dec	r3 &lt;del&gt;/ decrement no. of bytes to be written&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;2b&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ have all bytes been transferred? No, branch&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;strong&gt;&lt;!--&quot;--&gt;	jsr	r0,dskwr &lt;del&gt;/ yes, write the block and the i-node&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;small&gt;&lt;!--&quot;--&gt;	tst	u.count &lt;del&gt;/ any more data to write?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	bne	&lt;!--&quot;--&gt;&lt;span class=&quot;label a&quot;&gt;1b&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ yes, branch&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	jmp	ret &lt;del&gt;/ no, return to the caller via 'ret'&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;/pre&gt;
+&lt;figcaption&gt;
+ Heed &lt;strong&gt;emphasised&lt;/strong&gt; fragments&lt;br /&gt;
+ (labels colour-coded; note that &lt;tt&gt;123&lt;/tt&gt; is octal and &lt;tt&gt;123.&lt;/tt&gt; is decimal; &lt;tt&gt;_&lt;/tt&gt;-prefixed names expositional)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+which can be translated to
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuing C&quot;&gt;
+&lt;pre class=linenos&gt;&lt;small&gt;​
+&lt;/small&gt;212
+​
+&lt;strong&gt;214
+&lt;/strong&gt;215
+216
+217
+218
+220
+223
+225
+226
+​
+​
+229
+​
+​
+​
+240
+241
+​
+​
+243
+244
+245
+246
+247
+&lt;small&gt;​
+​
+&lt;/small&gt;&lt;strong&gt;252
+&lt;/strong&gt;​
+​
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;small&gt;extern r1, r2, r3, cdev;
+&lt;/small&gt;&lt;!--&quot;--&gt;dskw(_ino) &lt;del&gt;/* write routine for non-special files */&lt;/del&gt;&lt;!--&quot;--&gt;
+{
+&lt;strong&gt;&lt;!--&quot;--&gt;	r1 = _ino; iget(); &lt;del&gt;/* write i-node out (if modified), read i-node 'r1' on 'cdev'&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	                      into i-node area of core */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	r2 = *u.fofp + u.count; &lt;del&gt;/* file offset [(u.off) or the offset in&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	                           the fsp entry for this file] +&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	                           no. of bytes to be written */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	if(r2 &gt; i.size) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		i.size = r2;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		setimod();&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	while(u.count)&lt;!--&quot;--&gt; &lt;span class=&quot;label a&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		mget(); &lt;del&gt;/* get the block no. in which to write the next data byte */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;		&lt;del&gt;/* if lower 9 bits of file offset are 0,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   file offset = 0, 512, 1024,...(i.e., start of new block): */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		if(*u.fofp &amp; 511 || u.count &lt; 512)&lt;!--&quot;--&gt; &lt;span class=&quot;label b&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			dskrd();  &lt;del&gt;/* if there is not enough data to fill an entire block, */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label c&quot;&gt;}&lt;/span&gt;&lt;!--&quot;--&gt;	          &lt;del&gt;/* read block 'r1' on 'cdev' into an I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;		wslot(); &lt;del&gt;/* set write and inhibit bits in I/O queue, proc. status=0,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            r5 points to 1st word of data */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		sioreg(); &lt;del&gt;/* r3 = no. of bytes of data,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		             r1 = address of data,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		             r2 points to location in buffer in which to start writing data */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;_memcpy&lt;/span&gt;&lt;!--&quot;--&gt;(r2, r1, r3); &lt;del&gt;/* transfer a byte of data to the I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;/small&gt;&lt;strong&gt;&lt;!--&quot;--&gt;		dskwr(); &lt;del&gt;/* yes, write the block and the i-node */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!-- goto *ret;, which is is equivalent to a bare return here --&gt;&lt;/small&gt;}
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+we observe the following: accd'g&lt;!--'--&gt; to
+&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf#page=2&quot;&gt;DeFelice's&lt;!--'--&gt; commentary&lt;/a&gt;,
+the final &lt;tt&gt;dskwr&lt;/tt&gt; call will schedule I/O such that
+&lt;q&gt;the&lt;/q&gt; (implied current) i-node &lt;em&gt;and&lt;/em&gt; the freshly-written data block are sent to disk.
+This is not true:
+the old i-node (if any) was already enqueued,
+the current i-node is not affected by this call,
+and the only buffer scheduled here is the new data block.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+This is all the more interesting because the behaviour of the &lt;tt&gt;iget&lt;/tt&gt; call is labelled correctly, and would contradict the supposed &lt;tt&gt;dskwr&lt;/tt&gt; behaviour.
+&lt;/p&gt;
+&lt;h3 id=&quot;PSW&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#PSW&quot;&gt;#&lt;/a&gt; &lt;tt&gt;&lt;q&gt;proc. status&lt;/q&gt;&lt;/tt&gt;&lt;/h3&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+is the process&lt;em&gt;or&lt;/em&gt; status,
+which contains arithmetic status flags
+(&lt;cite&gt;&lt;a href=&quot;//archive.org/details/bitsavers_decpdp11ha11ArchitectureHandbook1983_28728405/page/79/mode/1up?q=ps&quot;&gt;overflow, carry, zero, negative&lt;/a&gt;&lt;/cite&gt;)
+and the &lt;a href=&quot;//bitsavers.informatik.uni-stuttgart.de/pdf/dec/pdp11/handbooks/EB-24944-18_Micro_PDP-11_Handbook_1983-84.pdf#page=277&quot;&gt;interrupt priority&lt;/a&gt;:
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;
+During the interrupt acknowledge and priority arbitration phase the
+LSI-11/23 processor will acknowledge interrupts under the following
+conditions:
+&lt;ol&gt;
+ &lt;li&gt;The device interrupt priority is higher than the current PS&amp;lt;7:5&gt;.&lt;/li&gt;
+ &lt;li&gt;The processor has completed instruction execution and no additional bus cycles are pending.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+which can themselves go up to 7 (and &lt;span class=&quot;smallcaps&quot;&gt;micro/&lt;span class=&quot;smallcaps&quot;&gt;pdp&lt;/span&gt;-11&lt;/span&gt;'s&lt;!--'--&gt; smallest interrupt priority seems to be 4),
+so setting it to 7 blocks all interrupts.
+The V1 kernel uses these values:
+&lt;/p&gt;
+&lt;table id=&quot;ps-comparison&quot;&gt;
+ &lt;tr&gt;&lt;th&gt;Instruction&lt;/th&gt; &lt;th colspan=2&gt;Value&lt;/th&gt; &lt;th colspan=2&gt;Priority&lt;/th&gt; &lt;th&gt;Occurrences&lt;/th&gt; &lt;th&gt;Filter&lt;/th&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;clr *$ps&lt;/td&gt; &lt;td&gt;0&lt;sub&gt;&lt;small style=&quot;opacity: 0;&quot;&gt;8&lt;/small&gt;&lt;/sub&gt;&lt;/td&gt; &lt;td&gt;0000 0000 0000 0000&lt;/td&gt; &lt;td&gt;000&lt;/td&gt; &lt;td&gt;0&lt;/td&gt; &lt;td&gt;13&lt;del&gt;+1&lt;/del&gt;&lt;/td&gt; &lt;td&gt;All interrupts allowed&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;mov $240,*$ps&lt;/td&gt; &lt;td&gt;240&lt;sub&gt;&lt;small&gt;8&lt;/small&gt;&lt;/sub&gt;&lt;/td&gt; &lt;td&gt;0000 0000 1010 0000&lt;/td&gt; &lt;td&gt;101&lt;/td&gt; &lt;td&gt;5&lt;/td&gt; &lt;td&gt;11&lt;del&gt;+1&lt;/del&gt;&lt;/td&gt; &lt;td&gt;Priority 6, 7 interrupts allowed&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;mov $300,*$ps&lt;/td&gt; &lt;td&gt;300&lt;sub&gt;&lt;small&gt;8&lt;/small&gt;&lt;/sub&gt;&lt;/td&gt; &lt;td&gt;0000 0000 1100 0000&lt;/td&gt; &lt;td&gt;110&lt;/td&gt; &lt;td&gt;6&lt;/td&gt; &lt;td&gt;2&lt;del style=&quot;opacity: 0;&quot;&gt;+0&lt;/del&gt;&lt;/td&gt; &lt;td&gt;Priority 7 interrupts allowed&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;mov $340,*$ps&lt;/td&gt; &lt;td&gt;340&lt;sub&gt;&lt;small&gt;8&lt;/small&gt;&lt;/sub&gt;&lt;/td&gt; &lt;td&gt;0000 0000 1110 0000&lt;/td&gt; &lt;td&gt;111&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;2&lt;del style=&quot;opacity: 0;&quot;&gt;+0&lt;/del&gt;&lt;/td&gt; &lt;td&gt;All interrupts blocked&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Priority 7 is used to guard the I/O buffer queue:
+set by &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L295&quot;&gt;&lt;tt&gt;bufaloc&lt;/tt&gt;&lt;/a&gt;
+— which finds, locks, and returns a dynamic I/O buffer slot or sleeps in I/O wait until one is available —
+and in &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L188&quot;&gt;&lt;tt&gt;ppoke&lt;/tt&gt;&lt;/a&gt; which wraps &lt;tt&gt;poke&lt;/tt&gt; in priority=7
+— used by static &lt;tt&gt;sb0&lt;/tt&gt;/&lt;tt&gt;sb1&lt;/tt&gt;/&lt;tt&gt;swp&lt;/tt&gt; I/O buffer slots.
+&lt;tt&gt;poke&lt;/tt&gt; enqueues dirty buffers onto their respective device I/O queues
+(so it requires priority=7 on entry — this matches &quot;must call with these locks held&quot; interface contracts in modern Linux).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Priority 6
+(&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u4#L270&quot;&gt;&lt;tt&gt;swap&lt;/tt&gt;&lt;/a&gt;,
+ &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u4#L270&quot;&gt;&lt;tt&gt;sleep&lt;/tt&gt;&lt;/a&gt;)
+is used to guard the run queues (&lt;tt&gt;runq&lt;/tt&gt;, &lt;tt&gt;p.link&lt;/tt&gt;).
+Their precise structure is thankfully not relevant here.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Priority 5 is used by the teletype driver to protect tty state (thus why its use sprawls quite so).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Priority is cleared when not in a critical section
+(or during lock inversion while in I/O sleep in &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u3#L156&quot;&gt;&lt;tt&gt;idle&lt;/tt&gt;&lt;/a&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+One would be remiss to not note that this interface, obviously, is not very good:
+it'&lt;!--'--&gt;s less of an issue for a system with barely any memory management,
+but overwriting other flags (well, the non-ephemeral ones to the left of the priority)
+combined with a text-search-defeating non-zero offset both suck ass.
+Thus,
+&lt;a href=&quot;//bitsavers.informatik.uni-stuttgart.de/pdf/dec/pdp11/handbooks/EB-24944-18_Micro_PDP-11_Handbook_1983-84.pdf#page=332&quot;&gt;
+ subsequent systems grow an &lt;tt&gt;spl&lt;/tt&gt; instruction&lt;/a&gt;
+and C &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;es have (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/conf/mch.s#L674&quot;&gt;V4 has&lt;/a&gt;) &lt;tt&gt;spl&lt;var&gt;[&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/dmr/bio.c#L149&quot;&gt;0&lt;/a&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/ken/clock.c#L75&quot;&gt;1&lt;/a&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/dmr/pc.c#L72&quot;&gt;4&lt;/a&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/dmr/rf.c#L34&quot;&gt;5&lt;/a&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/ken/slp.c#L78&quot;&gt;6&lt;/a&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/ken/sys2.c#L226&quot;&gt;7&lt;/a&gt;]&lt;/var&gt;()&lt;/tt&gt; functions,
+which use this instruction on the &lt;span class=&quot;smallcaps&quot;&gt;pdp&lt;/span&gt;-11/45 (and open-code it on the &lt;span class=&quot;smallcaps&quot;&gt;pdp&lt;/span&gt;-11/40, emulating atomicity by ORing to get to privilege 7, then clearing the unneeded bits).
+(Note also how &lt;span class=&quot;smallcaps&quot;&gt;pdp&lt;/span&gt;-11/40 &lt;tt&gt;spl4()&lt;/tt&gt; falls through to &lt;tt&gt;spl5()&lt;/tt&gt;.)
+&lt;/p&gt;
+&lt;h3 id=&quot;buffer&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#buffer&quot;&gt;#&lt;/a&gt; Buffered block I/O&lt;/h3&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+was touched upon in the last post, but only insofar as the number of dynamic buffers.
+&lt;/p&gt;
+&lt;figure class=&quot;offset C&quot;&gt;
+ &lt;figcaption&gt;
+  &lt;tt&gt;_&lt;/tt&gt;-prefixed names were invented for exposition; others match source.&lt;br /&gt;
+  Upper-case comments are DeFelice's&lt;!--'--&gt;; others from me.&lt;br /&gt;
+  This is covered by &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux&quot;&gt;the final file with variables&lt;/a&gt;
+  and &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L79&quot;&gt;the top of on-entry initialisation&lt;/a&gt;.
+ &lt;/figcaption&gt;
+&lt;del&gt;
+&lt;pre class=linenos&gt;​
+​
+​
+​
+​
+​
+​
+ux
+&lt;small&gt;​
+&lt;/small&gt;​
+&lt;small&gt;ux
+&lt;/small&gt;​
+​
+​
+ux
+ux
+​
+u0
+u0
+u0
+&lt;small&gt;​
+​
+&lt;/small&gt;ux
+ux
+ux
+​
+ux
+ux
+u0
+u0
+u0
+​
+ux
+u0
+u0
+u0
+​
+&lt;small&gt;​
+&lt;/small&gt;ux
+ux
+&lt;small&gt;ux
+&lt;/small&gt;u0
+u0
+​
+&lt;/pre&gt;
+&lt;pre class=linenos&gt;​
+​
+​
+​
+​
+​
+​
+35
+&lt;small&gt;​
+&lt;/small&gt;​
+&lt;small&gt;71
+&lt;/small&gt;​
+​
+​
+72
+71
+​
+115
+117
+118
+&lt;small&gt;​
+​
+&lt;/small&gt;36
+37
+38
+​
+2
+15
+122
+127
+125
+​
+24
+123
+129
+128
+​
+&lt;small&gt;​
+&lt;/small&gt;76
+75
+&lt;small&gt;74
+&lt;/small&gt;124
+130
+​
+&lt;/pre&gt;
+&lt;/del&gt;
+&lt;pre&gt;
+&lt;!-- &quot;--&gt;struct _iobuf_hdr {&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	char  _dev;       	&lt;del&gt;// 0=&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=157&quot;&gt;rf0&lt;/a&gt;/1=&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=158&quot;&gt;rk0&lt;/a&gt;/≥2=&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=159&quot;&gt;tap&lt;var&gt;0-7&lt;/var&gt;&lt;/a&gt; (dectape)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	char  _flags;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	int   _block_number;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	int   _word_count;	&lt;del&gt;// negative&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	char *_buf;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;};&lt;!--&quot;--&gt;
+&lt;!--ux 35 &quot;--&gt;struct _iobuf_hdr * bufp[nbuf + 3];  &lt;del&gt;// priority = reverse index&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;
+&lt;/small&gt;&lt;!-- &quot;--&gt;struct {&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--ux 71 &quot;--&gt;	char _ttybufs[140][ntty];&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!-- &quot;--&gt;	struct _dynamic_iobuf {&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		struct _iobuf_hdr _hdr;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		char              _buf[512];&lt;!--&quot;--&gt;
+&lt;!--ux 72 &quot;--&gt;	} _iobufs[nbuf];&lt;!--&quot;--&gt;
+&lt;!--ux 71 &quot;--&gt;} buffer;&lt;!--&quot;--&gt;
+
+&lt;!--u0 115 &quot;--&gt;bufp[0..nbuf] = &amp;buffer._iobufs[0..nbuf]._hdr;&lt;!--&quot;--&gt;
+&lt;!--u0 117 &quot;--&gt;bufp[0..nbuf]-&gt;_buf        = buffer._iobufs[0..nbuf]._buf;&lt;!--&quot;--&gt;
+&lt;!--u0 118 &quot;--&gt;bufp[0..nbuf]-&gt;_word_count = -256;  &lt;del&gt;// 512 bytes&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;
+
+&lt;/small&gt;&lt;!--ux 36 &quot;--&gt;struct _iobuf_hdr sb0;  &lt;del&gt;// I/O queue entry drum&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--ux 37 &quot;--&gt;struct _iobuf_hdr sb1;  &lt;del&gt;// I/O queue entry disk (mounted device)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--ux 38 &quot;--&gt;struct _iobuf_hdr swp;  &lt;del&gt;// I/O queue entry core image being swapped&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--ux 2 &quot;--&gt;struct &lt;del&gt;/* 218 bytes */&lt;/del&gt; systm;  &lt;del&gt;// rootfs superblock&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--ux 15 &quot;--&gt;struct inode           inode;&lt;!--&quot;--&gt;
+&lt;!--u0 122 &quot;--&gt;bufp[nbuf]      = &amp;sb0;&lt;!--&quot;--&gt;
+&lt;!--u0 127 &quot;--&gt;sb0._buf        = &amp;systm;&lt;!--&quot;--&gt;
+&lt;!--u0 125 &quot;--&gt;sb0._word_count = (&amp;systm - &amp;inode) / 2;&lt;!--&quot;--&gt;
+
+&lt;!--ux 24 &quot;--&gt;char mount[1024];              &lt;del&gt;// second filesystem superblock&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u0 123 &quot;--&gt;bufp[nbuf + 1]  = &amp;sb1;&lt;!--&quot;--&gt;
+&lt;!--u0 129 &quot;--&gt;sb1._buf        = &amp;mount;&lt;!--&quot;--&gt;
+&lt;!--u0 128 &quot;--&gt;sb1._word_count = -512;  &lt;del&gt;// 1024 bytes&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;small&gt;&lt;!-- &quot;--&gt;union {&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!--ux 76 &quot;--&gt;	struct &lt;del&gt;/*...*/&lt;/del&gt; u;             &lt;del&gt;// process-specific state&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--ux 75 &quot;--&gt;	char           user[64];&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--ux 74 &quot;--&gt;} [[pin(core - 64)]];          &lt;del&gt;// (precedes start of userspace memory)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!--u0 124 &quot;--&gt;bufp[nbuf + 2] = &amp;swp;&lt;!--&quot;--&gt;
+&lt;!--u0 130 &quot;--&gt;swp._buf       = &amp;user;&lt;!--&quot;--&gt;
+&lt;!-- --&gt;&lt;del&gt;// swp._word_count set when swapping process &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u3#L99&quot;&gt;in&lt;/a&gt;/&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u3#L81&quot;&gt;out&lt;/a&gt;&lt;/del&gt;
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continued&quot;&gt;
+Herein we observe that:
+&lt;/p&gt;
+&lt;!-- 0: 0 --&gt;
+&lt;script&gt;
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+ Array.from(document.querySelectorAll(&quot;li[id][value]&quot;)).forEach(function(li) {
+  let container = document.createElement(&quot;span&quot;);
+  container.append(...li.childNodes);
+  li.append(container);
+  li.addEventListener(&quot;click&quot;, function(ev) {
+   if(ev.target == li) {
+    location.hash = &quot;#&quot; + li.id;
+   }
+  })
+ });
+});
+&lt;/script&gt;
+&lt;ol&gt;
+ &lt;li id=1 value=1&gt;this assembler uses &lt;a href=&quot;/vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L279&quot;&gt;&lt;tt&gt;!&lt;/tt&gt; for bit inversion&lt;/a&gt;
+     (what C later called &lt;tt&gt;~&lt;/tt&gt;; insert Rust retvrn gag)&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=2 value=2&gt;&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; supports exactly 1 or 2 filesystems being mounted at any time&lt;/li&gt;
+ &lt;li id=3 value=3&gt;the super-block of the second filesystem, if any, is 1k, which matches
+     &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=172&quot;&gt;file system (V)&lt;/a&gt;
+     — &lt;q&gt;Every file system storage volume (e.g. RF disk, RK disk, DECtape reel) has a common format &lt;del&gt;[…]&lt;/del&gt; divided into &lt;del&gt;[…]&lt;/del&gt; 512 byte&lt;del&gt;)&lt;/del&gt; blocks.
+          Blocks 0 and 1 are collectively known as the &lt;u&gt;super&lt;/u&gt;-&lt;u&gt;block&lt;/u&gt;.&lt;/q&gt;&lt;/li&gt;
+ &lt;li id=4 value=4&gt;the mandatory file-system
+     &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L85&quot;&gt;resides&lt;/a&gt;
+     &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L154&quot;&gt;on&lt;/a&gt;
+     &lt;tt&gt;rf0&lt;/tt&gt;&lt;/a&gt; and its super-block is but &lt;em&gt;218&lt;/em&gt; bytes!&lt;/li&gt;
+ &lt;li id=5 value=5&gt;this is because the V1 file system is self-describing unstructuredslop with its two fields (free-block bitmap, free-i-node bitmap)
+     laid out length-prefixed, unpadded, in order,
+     and &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L82&quot;&gt;both&lt;/a&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L188&quot;&gt;parsers&lt;/a&gt;
+     effectively take an &lt;tt&gt;int *&lt;/tt&gt;&lt;/li&gt;
+ &lt;li id=6 value=6&gt;because of this, the root filesystem's&lt;!--'--&gt; size is encoded in the kernel
+     — &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L3&quot;&gt;128 * 8 blocks, 64 * 8 i-nodes&lt;/a&gt;
+       (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171&quot;&gt;also mirrored in the installer&lt;/a&gt;) —
+     and changing this would render kernels configured with differently-sized root filesystems unbootable&lt;/li&gt;
+ &lt;li id=7 value=7&gt;(but if you copy a rootfs to a different device, it's&lt;!--'--&gt; still usable generically)&lt;/li&gt;
+ &lt;li id=8 value=8&gt;these sizes mean that, by definition, the rootfs is 1024 blocks long (512k, matching the documented RK05 size),
+     and can contain up to 512 files&lt;/li&gt;
+ &lt;li id=9 value=9&gt;(it's&lt;!--'--&gt; actually less, because the blocks at the end of the filesystem are marked as used and data is stored there at well-known addresses:
+      the last 32k of the disk is used for the bootloader and kernels,
+      then 136k for swapped-out process images
+      (8k+512 per process (corresponding to the userspace memory size + 1 block for kernel &lt;tt&gt;user&lt;/tt&gt; area), &lt;tt&gt;nproc&lt;/tt&gt; = 16);
+      i-node storage takes up an additional 32 blocks, so there are 654 data blocks (327k) on the rootfs)&lt;/li&gt;
+ &lt;li id=10 value=10&gt;((if you added more processes to your &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (or if you added more memory so you're swapping out more memory per process) but didn't re-create the rootfs,
+       then the system will boot but the bottom of the area the new &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; will swap to will still be marked as free,
+       so if you happen to allocate blocks in that range (i.e. when you fill your rootfs)
+       then those blocks will overwrite parts of the swapped-out image for the last process in the process tables))&lt;/li&gt;
+ &lt;li id=11 value=11&gt;the rootfs's privileged position means you can just stuff debug data after the filesystem stuff in the super-block and it's chill,
+     so long as you keep it under 512 bytes
+     — they &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=173&quot;&gt;advertise&lt;/a&gt; this as
+            &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=97&quot;&gt;tm (I)&lt;/a&gt; —
+     system-wide accounting of time spent in the kernel (&lt;tt&gt;s.syst&lt;/tt&gt;, which tm calls &lt;tt&gt;&lt;q&gt;ovh&lt;/q&gt;&lt;/tt&gt;, which is rather telling of the attitudes of the time)
+     vs. in what we'd&lt;!--'--&gt; call iowait (&lt;tt&gt;s.wait&lt;/tt&gt;/&lt;tt&gt;&lt;q&gt;dsk&lt;/q&gt;&lt;/tt&gt;)
+     vs. idle (no process to run) (&lt;tt&gt;s.idlet&lt;/tt&gt;/&lt;tt&gt;&lt;q&gt;idl&lt;/q&gt;&lt;/tt&gt;)
+     vs. in userspace (&lt;tt&gt;s.chrgt&lt;/tt&gt;/&lt;tt&gt;&lt;q&gt;usr&lt;/q&gt;&lt;/tt&gt;)
+     + error count (&lt;tt&gt;s.drerr&lt;/tt&gt;/&lt;tt&gt;&lt;q&gt;der&lt;/q&gt;&lt;/tt&gt;;
+                    the source doesn't use this symbol at all, but it's got fully functional logs in the manual,
+                    so perhaps DeFelice got an early (or late) version with this stubbed out? unclear.)
+     —
+     but the real current time is also kept there
+     (the clock updating the time(s) doesn't&lt;!--'--&gt; cause the super-block to be written to disk, of course, but it will come along with the next update)
+ &lt;/li&gt;
+ &lt;li id=12 value=12&gt;an additional side-effect of this is that on each rootfs superblock update
+     (i.e. when-ever the block or i-node bitmaps are updated, i.e. on file creation/destruction and file growth/shrinkage),
+     &lt;em&gt;less than half a block&lt;/em&gt; is written to disk;
+     conversely, every time the optional file-system is updated &lt;small&gt;(as above)&lt;/small&gt;, the &lt;em&gt;entire kilobyte&lt;/em&gt; is sent to disk/tape&lt;/li&gt;
+ &lt;li id=13 value=13&gt;similarly, this frees appx. two dynamic I/O buffers'&lt;!--'--&gt; worth of space in the kernel,
+     which, &lt;a href=&quot;023,a-v1-nbuf-benchmark.html&quot;&gt;as proven before&lt;/a&gt;, is very much worth it,
+     and gaining two I/O buffers (4 → 6 (shipped value)) makes the system ~30% faster in an emulator&lt;/li&gt;
+&lt;!--
+for space_for_blocks in $(seq 2 2 1020); do
+ blocks=$(( space_for_blocks * 8 ))
+ space_for_inodes=$(( 1020 - space_for_blocks ))
+ inodes=$(( space_for_inodes * 8 ))
+ last_inode_block=$(( (inodes+31)/16 ))
+ [ $last_inode_block -le $blocks ] &amp;&amp; echo blocks=$blocks inodes=$inodes
+done
+blocks=496 inodes=7664
+blocks=512 inodes=7648
+blocks=528 inodes=7632
+blocks=544 inodes=7616
+blocks=560 inodes=7600
+blocks=576 inodes=7584
+blocks=592 inodes=7568
+blocks=608 inodes=7552
+blocks=624 inodes=7536
+blocks=640 inodes=7520
+blocks=656 inodes=7504
+blocks=672 inodes=7488
+blocks=688 inodes=7472
+blocks=704 inodes=7456
+blocks=720 inodes=7440
+blocks=736 inodes=7424
+blocks=752 inodes=7408
+blocks=768 inodes=7392
+blocks=784 inodes=7376
+blocks=800 inodes=7360
+blocks=816 inodes=7344
+blocks=832 inodes=7328
+blocks=848 inodes=7312
+blocks=864 inodes=7296
+blocks=880 inodes=7280
+blocks=896 inodes=7264
+blocks=912 inodes=7248
+blocks=928 inodes=7232
+blocks=944 inodes=7216
+blocks=960 inodes=7200
+blocks=976 inodes=7184
+blocks=992 inodes=7168
+blocks=1008 inodes=7152
+blocks=1024 inodes=7136
+blocks=1040 inodes=7120
+blocks=1056 inodes=7104
+blocks=1072 inodes=7088
+blocks=1088 inodes=7072
+blocks=1104 inodes=7056
+blocks=1120 inodes=7040
+blocks=1136 inodes=7024
+blocks=1152 inodes=7008
+blocks=1168 inodes=6992
+blocks=1184 inodes=6976
+blocks=1200 inodes=6960
+blocks=1216 inodes=6944
+blocks=1232 inodes=6928
+blocks=1248 inodes=6912
+blocks=1264 inodes=6896
+blocks=1280 inodes=6880
+blocks=1296 inodes=6864
+blocks=1312 inodes=6848
+blocks=1328 inodes=6832
+blocks=1344 inodes=6816
+blocks=1360 inodes=6800
+blocks=1376 inodes=6784
+blocks=1392 inodes=6768
+blocks=1408 inodes=6752
+blocks=1424 inodes=6736
+blocks=1440 inodes=6720
+blocks=1456 inodes=6704
+blocks=1472 inodes=6688
+blocks=1488 inodes=6672
+blocks=1504 inodes=6656
+blocks=1520 inodes=6640
+blocks=1536 inodes=6624
+blocks=1552 inodes=6608
+blocks=1568 inodes=6592
+blocks=1584 inodes=6576
+blocks=1600 inodes=6560
+blocks=1616 inodes=6544
+blocks=1632 inodes=6528
+blocks=1648 inodes=6512
+blocks=1664 inodes=6496
+blocks=1680 inodes=6480
+blocks=1696 inodes=6464
+blocks=1712 inodes=6448
+blocks=1728 inodes=6432
+blocks=1744 inodes=6416
+blocks=1760 inodes=6400
+blocks=1776 inodes=6384
+blocks=1792 inodes=6368
+blocks=1808 inodes=6352
+blocks=1824 inodes=6336
+blocks=1840 inodes=6320
+blocks=1856 inodes=6304
+blocks=1872 inodes=6288
+blocks=1888 inodes=6272
+blocks=1904 inodes=6256
+blocks=1920 inodes=6240
+blocks=1936 inodes=6224
+blocks=1952 inodes=6208
+blocks=1968 inodes=6192
+blocks=1984 inodes=6176
+blocks=2000 inodes=6160
+blocks=2016 inodes=6144
+blocks=2032 inodes=6128
+blocks=2048 inodes=6112
+blocks=2064 inodes=6096
+blocks=2080 inodes=6080
+blocks=2096 inodes=6064
+blocks=2112 inodes=6048
+blocks=2128 inodes=6032
+blocks=2144 inodes=6016
+blocks=2160 inodes=6000
+blocks=2176 inodes=5984
+blocks=2192 inodes=5968
+blocks=2208 inodes=5952
+blocks=2224 inodes=5936
+blocks=2240 inodes=5920
+blocks=2256 inodes=5904
+blocks=2272 inodes=5888
+blocks=2288 inodes=5872
+blocks=2304 inodes=5856
+blocks=2320 inodes=5840
+blocks=2336 inodes=5824
+blocks=2352 inodes=5808
+blocks=2368 inodes=5792
+blocks=2384 inodes=5776
+blocks=2400 inodes=5760
+blocks=2416 inodes=5744
+blocks=2432 inodes=5728
+blocks=2448 inodes=5712
+blocks=2464 inodes=5696
+blocks=2480 inodes=5680
+blocks=2496 inodes=5664
+blocks=2512 inodes=5648
+blocks=2528 inodes=5632
+blocks=2544 inodes=5616
+blocks=2560 inodes=5600
+blocks=2576 inodes=5584
+blocks=2592 inodes=5568
+blocks=2608 inodes=5552
+blocks=2624 inodes=5536
+blocks=2640 inodes=5520
+blocks=2656 inodes=5504
+blocks=2672 inodes=5488
+blocks=2688 inodes=5472
+blocks=2704 inodes=5456
+blocks=2720 inodes=5440
+blocks=2736 inodes=5424
+blocks=2752 inodes=5408
+blocks=2768 inodes=5392
+blocks=2784 inodes=5376
+blocks=2800 inodes=5360
+blocks=2816 inodes=5344
+blocks=2832 inodes=5328
+blocks=2848 inodes=5312
+blocks=2864 inodes=5296
+blocks=2880 inodes=5280
+blocks=2896 inodes=5264
+blocks=2912 inodes=5248
+blocks=2928 inodes=5232
+blocks=2944 inodes=5216
+blocks=2960 inodes=5200
+blocks=2976 inodes=5184
+blocks=2992 inodes=5168
+blocks=3008 inodes=5152
+blocks=3024 inodes=5136
+blocks=3040 inodes=5120
+blocks=3056 inodes=5104
+blocks=3072 inodes=5088
+blocks=3088 inodes=5072
+blocks=3104 inodes=5056
+blocks=3120 inodes=5040
+blocks=3136 inodes=5024
+blocks=3152 inodes=5008
+blocks=3168 inodes=4992
+blocks=3184 inodes=4976
+blocks=3200 inodes=4960
+blocks=3216 inodes=4944
+blocks=3232 inodes=4928
+blocks=3248 inodes=4912
+blocks=3264 inodes=4896
+blocks=3280 inodes=4880
+blocks=3296 inodes=4864
+blocks=3312 inodes=4848
+blocks=3328 inodes=4832
+blocks=3344 inodes=4816
+blocks=3360 inodes=4800
+blocks=3376 inodes=4784
+blocks=3392 inodes=4768
+blocks=3408 inodes=4752
+blocks=3424 inodes=4736
+blocks=3440 inodes=4720
+blocks=3456 inodes=4704
+blocks=3472 inodes=4688
+blocks=3488 inodes=4672
+blocks=3504 inodes=4656
+blocks=3520 inodes=4640
+blocks=3536 inodes=4624
+blocks=3552 inodes=4608
+blocks=3568 inodes=4592
+blocks=3584 inodes=4576
+blocks=3600 inodes=4560
+blocks=3616 inodes=4544
+blocks=3632 inodes=4528
+blocks=3648 inodes=4512
+blocks=3664 inodes=4496
+blocks=3680 inodes=4480
+blocks=3696 inodes=4464
+blocks=3712 inodes=4448
+blocks=3728 inodes=4432
+blocks=3744 inodes=4416
+blocks=3760 inodes=4400
+blocks=3776 inodes=4384
+blocks=3792 inodes=4368
+blocks=3808 inodes=4352
+blocks=3824 inodes=4336
+blocks=3840 inodes=4320
+blocks=3856 inodes=4304
+blocks=3872 inodes=4288
+blocks=3888 inodes=4272
+blocks=3904 inodes=4256
+blocks=3920 inodes=4240
+blocks=3936 inodes=4224
+blocks=3952 inodes=4208
+blocks=3968 inodes=4192
+blocks=3984 inodes=4176
+blocks=4000 inodes=4160
+blocks=4016 inodes=4144
+blocks=4032 inodes=4128
+blocks=4048 inodes=4112
+blocks=4064 inodes=4096
+blocks=4080 inodes=4080
+blocks=4096 inodes=4064
+blocks=4112 inodes=4048
+blocks=4128 inodes=4032
+blocks=4144 inodes=4016
+blocks=4160 inodes=4000
+blocks=4176 inodes=3984
+blocks=4192 inodes=3968
+blocks=4208 inodes=3952
+blocks=4224 inodes=3936
+blocks=4240 inodes=3920
+blocks=4256 inodes=3904
+blocks=4272 inodes=3888
+blocks=4288 inodes=3872
+blocks=4304 inodes=3856
+blocks=4320 inodes=3840
+blocks=4336 inodes=3824
+blocks=4352 inodes=3808
+blocks=4368 inodes=3792
+blocks=4384 inodes=3776
+blocks=4400 inodes=3760
+blocks=4416 inodes=3744
+blocks=4432 inodes=3728
+blocks=4448 inodes=3712
+blocks=4464 inodes=3696
+blocks=4480 inodes=3680
+blocks=4496 inodes=3664
+blocks=4512 inodes=3648
+blocks=4528 inodes=3632
+blocks=4544 inodes=3616
+blocks=4560 inodes=3600
+blocks=4576 inodes=3584
+blocks=4592 inodes=3568
+blocks=4608 inodes=3552
+blocks=4624 inodes=3536
+blocks=4640 inodes=3520
+blocks=4656 inodes=3504
+blocks=4672 inodes=3488
+blocks=4688 inodes=3472
+blocks=4704 inodes=3456
+blocks=4720 inodes=3440
+blocks=4736 inodes=3424
+blocks=4752 inodes=3408
+blocks=4768 inodes=3392
+blocks=4784 inodes=3376
+blocks=4800 inodes=3360
+blocks=4816 inodes=3344
+blocks=4832 inodes=3328
+blocks=4848 inodes=3312
+blocks=4864 inodes=3296
+blocks=4880 inodes=3280
+blocks=4896 inodes=3264
+blocks=4912 inodes=3248
+blocks=4928 inodes=3232
+blocks=4944 inodes=3216
+blocks=4960 inodes=3200
+blocks=4976 inodes=3184
+blocks=4992 inodes=3168
+blocks=5008 inodes=3152
+blocks=5024 inodes=3136
+blocks=5040 inodes=3120
+blocks=5056 inodes=3104
+blocks=5072 inodes=3088
+blocks=5088 inodes=3072
+blocks=5104 inodes=3056
+blocks=5120 inodes=3040
+blocks=5136 inodes=3024
+blocks=5152 inodes=3008
+blocks=5168 inodes=2992
+blocks=5184 inodes=2976
+blocks=5200 inodes=2960
+blocks=5216 inodes=2944
+blocks=5232 inodes=2928
+blocks=5248 inodes=2912
+blocks=5264 inodes=2896
+blocks=5280 inodes=2880
+blocks=5296 inodes=2864
+blocks=5312 inodes=2848
+blocks=5328 inodes=2832
+blocks=5344 inodes=2816
+blocks=5360 inodes=2800
+blocks=5376 inodes=2784
+blocks=5392 inodes=2768
+blocks=5408 inodes=2752
+blocks=5424 inodes=2736
+blocks=5440 inodes=2720
+blocks=5456 inodes=2704
+blocks=5472 inodes=2688
+blocks=5488 inodes=2672
+blocks=5504 inodes=2656
+blocks=5520 inodes=2640
+blocks=5536 inodes=2624
+blocks=5552 inodes=2608
+blocks=5568 inodes=2592
+blocks=5584 inodes=2576
+blocks=5600 inodes=2560
+blocks=5616 inodes=2544
+blocks=5632 inodes=2528
+blocks=5648 inodes=2512
+blocks=5664 inodes=2496
+blocks=5680 inodes=2480
+blocks=5696 inodes=2464
+blocks=5712 inodes=2448
+blocks=5728 inodes=2432
+blocks=5744 inodes=2416
+blocks=5760 inodes=2400
+blocks=5776 inodes=2384
+blocks=5792 inodes=2368
+blocks=5808 inodes=2352
+blocks=5824 inodes=2336
+blocks=5840 inodes=2320
+blocks=5856 inodes=2304
+blocks=5872 inodes=2288
+blocks=5888 inodes=2272
+blocks=5904 inodes=2256
+blocks=5920 inodes=2240
+blocks=5936 inodes=2224
+blocks=5952 inodes=2208
+blocks=5968 inodes=2192
+blocks=5984 inodes=2176
+blocks=6000 inodes=2160
+blocks=6016 inodes=2144
+blocks=6032 inodes=2128
+blocks=6048 inodes=2112
+blocks=6064 inodes=2096
+blocks=6080 inodes=2080
+blocks=6096 inodes=2064
+blocks=6112 inodes=2048
+blocks=6128 inodes=2032
+blocks=6144 inodes=2016
+blocks=6160 inodes=2000
+blocks=6176 inodes=1984
+blocks=6192 inodes=1968
+blocks=6208 inodes=1952
+blocks=6224 inodes=1936
+blocks=6240 inodes=1920
+blocks=6256 inodes=1904
+blocks=6272 inodes=1888
+blocks=6288 inodes=1872
+blocks=6304 inodes=1856
+blocks=6320 inodes=1840
+blocks=6336 inodes=1824
+blocks=6352 inodes=1808
+blocks=6368 inodes=1792
+blocks=6384 inodes=1776
+blocks=6400 inodes=1760
+blocks=6416 inodes=1744
+blocks=6432 inodes=1728
+blocks=6448 inodes=1712
+blocks=6464 inodes=1696
+blocks=6480 inodes=1680
+blocks=6496 inodes=1664
+blocks=6512 inodes=1648
+blocks=6528 inodes=1632
+blocks=6544 inodes=1616
+blocks=6560 inodes=1600
+blocks=6576 inodes=1584
+blocks=6592 inodes=1568
+blocks=6608 inodes=1552
+blocks=6624 inodes=1536
+blocks=6640 inodes=1520
+blocks=6656 inodes=1504
+blocks=6672 inodes=1488
+blocks=6688 inodes=1472
+blocks=6704 inodes=1456
+blocks=6720 inodes=1440
+blocks=6736 inodes=1424
+blocks=6752 inodes=1408
+blocks=6768 inodes=1392
+blocks=6784 inodes=1376
+blocks=6800 inodes=1360
+blocks=6816 inodes=1344
+blocks=6832 inodes=1328
+blocks=6848 inodes=1312
+blocks=6864 inodes=1296
+blocks=6880 inodes=1280
+blocks=6896 inodes=1264
+blocks=6912 inodes=1248
+blocks=6928 inodes=1232
+blocks=6944 inodes=1216
+blocks=6960 inodes=1200
+blocks=6976 inodes=1184
+blocks=6992 inodes=1168
+blocks=7008 inodes=1152
+blocks=7024 inodes=1136
+blocks=7040 inodes=1120
+blocks=7056 inodes=1104
+blocks=7072 inodes=1088
+blocks=7088 inodes=1072
+blocks=7104 inodes=1056
+blocks=7120 inodes=1040
+blocks=7136 inodes=1024
+blocks=7152 inodes=1008
+blocks=7168 inodes=992
+blocks=7184 inodes=976
+blocks=7200 inodes=960
+blocks=7216 inodes=944
+blocks=7232 inodes=928
+blocks=7248 inodes=912
+blocks=7264 inodes=896
+blocks=7280 inodes=880
+blocks=7296 inodes=864
+blocks=7312 inodes=848
+blocks=7328 inodes=832
+blocks=7344 inodes=816
+blocks=7360 inodes=800
+blocks=7376 inodes=784
+blocks=7392 inodes=768
+blocks=7408 inodes=752
+blocks=7424 inodes=736
+blocks=7440 inodes=720
+blocks=7456 inodes=704
+blocks=7472 inodes=688
+blocks=7488 inodes=672
+blocks=7504 inodes=656
+blocks=7520 inodes=640
+blocks=7536 inodes=624
+blocks=7552 inodes=608
+blocks=7568 inodes=592
+blocks=7584 inodes=576
+blocks=7600 inodes=560
+blocks=7616 inodes=544
+blocks=7632 inodes=528
+blocks=7648 inodes=512
+blocks=7664 inodes=496
+blocks=7680 inodes=480
+blocks=7696 inodes=464
+blocks=7712 inodes=448
+blocks=7728 inodes=432
+blocks=7744 inodes=416
+blocks=7760 inodes=400
+blocks=7776 inodes=384
+blocks=7792 inodes=368
+blocks=7808 inodes=352
+blocks=7824 inodes=336
+blocks=7840 inodes=320
+blocks=7856 inodes=304
+blocks=7872 inodes=288
+blocks=7888 inodes=272
+blocks=7904 inodes=256
+blocks=7920 inodes=240
+blocks=7936 inodes=224
+blocks=7952 inodes=208
+blocks=7968 inodes=192
+blocks=7984 inodes=176
+blocks=8000 inodes=160
+blocks=8016 inodes=144
+blocks=8032 inodes=128
+blocks=8048 inodes=112
+blocks=8064 inodes=96
+blocks=8080 inodes=80
+blocks=8096 inodes=64
+blocks=8112 inodes=48
+blocks=8128 inodes=32
+blocks=8144 inodes=16
+blocks=8160 inodes=0
+--&gt;
+ &lt;li id=14 value=14&gt;the theoretically-maximal size of the optional file-system is
+     &lt;ul style=&quot;padding-left: 0.5em;&quot;&gt;
+       &lt;li style=&quot;list-style-type: '';&quot;&gt;8160 blocks (4M-16k with 0 i-nodes); or&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '';&quot;&gt;7664 i-nodes (with 496 blocks (248k), of which 15 (7.5k) available for data); or&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '';&quot;&gt;4080 blocks (2M-8k) * 4080 i-nodes (leaving 3823 blocks (1911k) for data)&lt;/li&gt;
+     &lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;continued&quot;&gt;
+One would also be remiss not to note this error in the analysis:
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuing&quot;&gt;
+ &lt;figcaption&gt;
+  DeFelice calls base 256 &lt;tt&gt;base 8&lt;/tt&gt;.&lt;br /&gt;
+  &lt;a style=&quot;font-weight: bold; color: inherit;&quot; href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L188&quot;&gt;&lt;tt&gt;u5&lt;/tt&gt;&lt;/a&gt;
+ &lt;/figcaption&gt;
+&lt;del&gt;
+&lt;pre class=linenos&gt;188
+189
+&lt;small&gt;190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+&lt;/small&gt;200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+&lt;strong&gt;211
+212
+&lt;/strong&gt;213
+&lt;/pre&gt;
+&lt;/del&gt;
+&lt;pre&gt;
+&lt;!-- &quot;--&gt;imap: &lt;del&gt;/ get the byte that has the allocation bit for the i-number contained&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;      &lt;del&gt;/ in r1&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!-- &quot;--&gt;	mov	$1,mq &lt;del&gt;/ put 1 in the mq&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	mov	r1,r2 &lt;del&gt;/ r2 now has i-number whose byte in the map we&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt; 		      &lt;del&gt;/ must find&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	sub	$41.,r2 &lt;del&gt;/ r2 has i-41&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	mov	r2,r3 &lt;del&gt;/ r3 has i-41&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	bic	$!7,r3 &lt;del&gt;/ r3 has (i-41) mod 8 to get the bit position&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	mov	r3,lsh &lt;del&gt;/ move the 1 over (i-41) mod 8 positions to the left&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		       &lt;del&gt;/ to mask the correct bit&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	asr	r2&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	asr	r2&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!-- &quot;--&gt;	asr	r2 &lt;del&gt;/ r2 has (i-41) base 8 of the byte no. from the start of&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		   &lt;del&gt;/ the map&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	mov	r2,-(sp) &lt;del&gt;/ put (i-41) base 8 on the stack&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	mov	$systm,r2 &lt;del&gt;/ r2 points to the in-core image of the super&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;			  &lt;del&gt;/ block for drum&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	tst	cdev &lt;del&gt;/ is the device the disk&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	beq	&lt;!--&quot;--&gt;&lt;span class=&quot;label b&quot;&gt;1f&lt;/span&gt;&lt;!--&quot;--&gt; &lt;del&gt;/ yes&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	add	$mount-systm,r2 &lt;del&gt;/ for mounted device, r2 points to 1st word&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;				&lt;del&gt;/ of its super block&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;span class=&quot;label b&quot;&gt;1&lt;/span&gt;:
+&lt;strong&gt;&lt;!-- &quot;--&gt;	add	(r2)+,(sp) &lt;del&gt;/ get byte address of allocation bit&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	add	(sp)+,r2 &lt;del&gt;/ ?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	add	$2,r2 &lt;del&gt;/ ?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!-- &quot;--&gt;	rts	r0&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+which can be translated as
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuing C&quot;&gt;
+ &lt;figcaption&gt;
+  &lt;tt&gt;_&lt;/tt&gt;-prefixed names were invented for exposition; others match source.&lt;br /&gt;
+  DeFelice's&lt;!--'--&gt; comments; my notes marked with &lt;tt&gt;[]&lt;/tt&gt;.
+ &lt;/figcaption&gt;
+&lt;del&gt;
+&lt;pre class=linenos&gt;ux
+​
+ux
+ux
+ux
+ux
+​
+&lt;small&gt;​
+​
+&lt;/small&gt;u5
+&lt;small&gt;​
+​
+​
+​
+&lt;/small&gt;​
+​
+​
+&lt;strong&gt;!
+!
+!
+&lt;/strong&gt;⇔
+​
+u5
+​
+&lt;/pre&gt;
+&lt;pre class=linenos&gt;41
+​
+5
+6
+7
+8
+&lt;small&gt;​
+​
+&lt;/small&gt;188
+199
+&lt;small&gt;​
+​
+​
+​
+&lt;/small&gt;​
+​
+​
+210
+&lt;strong&gt;211
+212
+&lt;/strong&gt;​
+​
+213
+​
+&lt;/pre&gt;
+&lt;/del&gt;
+&lt;pre&gt;
+&lt;!-- &quot;--&gt;extern cdev;  &lt;del&gt;// [device containing i-node referred to by any current i-node number]&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;extern struct {&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	int _free_block_bitmap_size;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	char _free_block_bitmap[._free_block_bitmap_size];&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	int _free_inode_bitmap_size;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	char _free_inode_bitmap[._free_inode_bitmap_size];&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;} systm, mount;&lt;!--&quot;--&gt;
+&lt;small&gt;
+&lt;!-- &quot;--&gt;extern r1, r2, r3, mq;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!-- &quot;--&gt;imap() {  &lt;del&gt;// get the byte that has the allocation bit for the i-number contained in r1&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!-- &quot;--&gt;	r2 = r1 - 41; &lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	mq = 1 &lt;&lt; (r2 % 8); &lt;del&gt;// move the 1 over (i-41) mod 8 positions to the left&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	                    &lt;del&gt;// to mask the correct bit&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;/small&gt;&lt;!-- &quot;--&gt;	int _off = r2 &gt;&gt; 3;  &lt;del&gt;// (i-41) base [256] of the byte no. from the start of the map&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	r2 = cdev &lt;!--&quot;--&gt;&lt;span class=&quot;label b&quot;&gt;?&lt;/span&gt;&lt;!--&quot;--&gt; &amp;mount : &amp;systm;&lt;!--&quot;--&gt;
+
+&lt;strong&gt;&lt;!-- &quot;--&gt;	_off += (r2 += 2)-&gt;_free_block_bitmap_size;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	r2 += _off; &lt;del&gt;// ?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	r2 += 2;    &lt;del&gt;// ?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!-- &quot;--&gt;	&lt;del&gt;r2 = &amp;r2-&gt;_free_inode_bitmap[_off];&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!-- &quot;--&gt;	return;  &lt;del&gt;// [r2 points to the byte, mq has the mask]&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;}&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+It's a very ugly way to skip the first array and index into the second, but that's clearly what this does.
+Charitably, one could say that the &lt;tt&gt;&lt;q&gt;get byte address of allocation bit&lt;/q&gt;&lt;/tt&gt; comment applies to the whole section.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+Notice also how each system call can affect only one filesystem at once
+(the only one that would even have the capacity to would be link (II) and that's&lt;!--'--&gt; illegal),
+hence why &lt;tt&gt;cdev&lt;/tt&gt; works at all as a global variable.
+&lt;/p&gt;
+&lt;ol&gt;
+ &lt;li id=15 value=15&gt;the I/O queue consists of a list of I/O requests ordered by priority:
+     3 special-purpose with dedicated buffers,
+     then &lt;a href=&quot;023,a-v1-nbuf-benchmark.html&quot;&gt;&lt;tt&gt;nbuf&lt;/tt&gt;&lt;/a&gt; general-purpose dynamic ones with 512-byte buffers&lt;/li&gt;
+ &lt;li id=16 value=16&gt;I/O requests are bound to device and starting 512-byte-block number, but may have &lt;em&gt;any&lt;/em&gt; even length&lt;/li&gt;
+ &lt;li id=17 value=17&gt;the internal structure of the &lt;tt&gt;_flags&lt;/tt&gt; byte need not concern us,
+     but it supports
+      lock, &lt;!-- 15 = &quot;inhibit&quot; --&gt;
+      &quot;want to read&quot;, &lt;!-- 10 --&gt; &quot;want to write&quot;, &lt;!-- 9 --&gt;
+      &quot;dispatched read request&quot;, &lt;!-- 13 --&gt; &quot;dispatched write request&quot; &lt;!-- 12 --&gt;
+     bits, and 0 means &quot;buffer unclaimed&quot;&lt;/li&gt;
+ &lt;li id=18 value=18&gt;I can't&lt;!--'--&gt; really tell why &lt;tt&gt;_word_count&lt;/tt&gt; is negative,
+     except that the &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L247&quot;&gt;disks&lt;/a&gt;
+                 and &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L379&quot;&gt;tape&lt;/a&gt;
+     just take that format
+     (presumably the devices do &lt;samp&gt;while(left++) *dst++ = *src++;&lt;/samp&gt;)&lt;/li&gt;
+ &lt;li id=19 value=19&gt;since all but one buffer have a constant size, this &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u3#L77&quot;&gt;doesn't&lt;!--'--&gt; really factor in&lt;/a&gt;&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;!-- &lt;li&gt;the dynamic buffer model uses a technique equivalent to what modern Linux calls &lt;tt&gt;container_of()&lt;/tt&gt; —
+          it does but only in the initialiser and it's&lt;!-'-&gt; just easier with no temp variables &lt;/li&gt; --&gt;
+ &lt;li id=20 value=20&gt;when &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L295&quot;&gt;looking for a block on a block device&lt;/a&gt;,
+     the dynamic buffer list is searched for, in order of preference:
+     &lt;ol&gt;
+      &lt;li&gt;an unclaimed buffer for which (&lt;tt&gt;_dev&lt;/tt&gt;, &lt;tt&gt;_block_number&lt;/tt&gt;) matches (&lt;tt&gt;cdev&lt;/tt&gt;, block number);
+          a &lt;abbr title=&quot;return address is not adjusted to skip over the next instruction in the caller&quot;&gt;&quot;buffer warm&quot; flag is set&lt;/abbr&gt; in this case
+          (lowest-priority result returned)&lt;/li&gt;
+      &lt;li&gt;any unclaimed buffer (highest-priority result returned)&lt;/li&gt;
+      &lt;li&gt;(sleep in iowait and run the search again)&lt;/li&gt;
+     &lt;/ol&gt;
+     the returned buffer is moved to be the lowest priority
+ &lt;/li&gt;
+ &lt;li id=21 value=21&gt;in theory this wants to form an LRU global coherent shared buffer of &lt;tt&gt;nbufs&lt;/tt&gt; blocks (and under no load this does work);
+     in reality, due to the ordering of the constraints and the buffer &lt;tt&gt;_flags&lt;/tt&gt; lifecycle, performance is degraded significantly:
+     &lt;tt&gt;_flags&lt;/tt&gt; are 0 only &lt;em&gt;after&lt;/em&gt; the I/O has completed,
+     while a warm-but-currently-pending request will have one of the &quot;dispatched&quot; flags set;
+     so, during repeated access to block 32 on &lt;tt&gt;rf0&lt;/tt&gt;, the queue may look like this (in priority order):
+     &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+      t=0:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li style=&quot;list-style-type: '0… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=1:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '1… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=2:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to read&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=3:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to read&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to read&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=4:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to read, dispatched read request&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to read&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/div&gt;
+     at this point the first request has succeeded (and requesting (0, 32) will return the buffer with priority 0),
+     so now there's an I/O request in flight (and one in the queue which will get sent) for data we've just gotten
+   &lt;/li&gt;
+ &lt;li id=22 value=22&gt;additionally, given:
+     &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+      t=1:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '1… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=2:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to write&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=3:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to write&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+      t=3:
+      &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+       &lt;li value=0&gt;(0, 32) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+       &lt;li &gt;(0, 32) flags: want to write, dispatched write request&lt;/li&gt;
+       &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/div&gt;
+    requesting (0, 32) will return the buffer with priority 0 (as above), which has stale data from the write issued after t=0,
+    in spite of a write was already issued and committed (and another one is pending, and will happen, and will render the returned data even more stale)&lt;/li&gt;
+ &lt;li id=23 value=23&gt;this would've&lt;!--'--&gt; been prevented if the discovery was more like
+     &lt;ol&gt;
+      &lt;li&gt;a buffer for which (&lt;tt&gt;_dev&lt;/tt&gt;, &lt;tt&gt;_block_number&lt;/tt&gt;) matches (&lt;tt&gt;cdev&lt;/tt&gt;, block number);
+          a &lt;abbr title=&quot;return address is not adjusted to skip over the next instruction in the caller&quot;&gt;&quot;buffer warm&quot; flag is set&lt;/abbr&gt; in this case&lt;/li&gt;
+     &lt;/ol&gt;
+     which would mean that there's&lt;!--'--&gt; at most 1 entry in the cache for any (device, block), making staleness impossible.
+     I'm not sure how well the scheduler would cope with this, however (well. you'd write the scheduler to cope with it if you implemented it like this).&lt;/li&gt;
+ &lt;li id=24 value=24&gt;the most common functions used to interface with the block buffering system
+     — &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L148&quot;&gt;&lt;tt&gt;dskrd&lt;/tt&gt;&lt;/a&gt; and
+       &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L165&quot;&gt;&lt;tt&gt;wslot&lt;/tt&gt;&lt;/a&gt; —
+     mirror each other in a way that doesn't&lt;!--'--&gt; really make sense given the shipped buffer allocation model which can only return unclaimed buffers:&lt;br /&gt;
+     &lt;tt&gt;dskrd&lt;/tt&gt; requests a buffer for its device/block and returns it instantly if it was hot;
+     if it wasn't&lt;!--'--&gt;, it sets its &quot;want to read&quot; flag, enqueues it, then idles until the &quot;want to read&quot; and &quot;dispatched read request&quot; flags are clear
+     and returns it.&lt;br /&gt;
+     Similarly, &lt;tt&gt;wslot&lt;/tt&gt; requests a buffer for its device/block,
+     then idle-loops until the &quot;want to read&quot; and &quot;dispatched read request&quot; flags are clear
+     (which they always are since the returned buffer always has no flags set),
+     then sets &quot;want to write&quot; and lock flags,
+     and returns it&lt;/li&gt;
+ &lt;li id=25 value=25&gt;(this, to me, reads like a remnant of a buffering scheme that &lt;em&gt;could&lt;/em&gt; return warm-but-currently-pending buffers,
+      especially since there are clear signs of a half-assed patch
+      (the &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L167&quot;&gt;&lt;tt&gt;br 1f&lt;/tt&gt;&lt;/a&gt;, only executed on a warm buffer,
+       is clearly supposed to point to the &lt;em&gt;next&lt;/em&gt; &lt;tt&gt;1:&lt;/tt&gt; label);
+      perhaps the scheduler or whatever did not in fact cope well with this; or I'm&lt;!--'--&gt; wrong and they just blindly re-wrote &lt;tt&gt;dskrd&lt;/tt&gt;!)&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=26 value=26&gt;dynamic buffers, like the rest of memory, are zeroed, except for the fields indicated:
+     this means that the initial state of the cache isn't&lt;!--'--&gt; empty (or full of invalid entries),
+     but it actually consists of &lt;tt&gt;nbufs&lt;/tt&gt; entries that say that block 0 on &lt;tt&gt;rk0&lt;/tt&gt; consists of 512 zero bytes&lt;/li&gt;
+ &lt;li id=27 value=27&gt;(so, if not enough churn has happened (or I/O is serviced infinitely fast(?)), &lt;code&gt;od /dev/rf0&lt;/code&gt; may return an all-zero block;
+      I haven't&lt;!--'--&gt; been able to reproduce this in single-user mode with &lt;tt&gt;nbufs&lt;/tt&gt; of 6;
+      attempting to reduce the churn even more by using &lt;tt&gt;/bin/sh&lt;/tt&gt; as &lt;tt&gt;/etc/init&lt;/tt&gt; irreversibly destroyed my rootfs somehow)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;inode&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#inode&quot;&gt;#&lt;/a&gt; I-node cache&lt;/h3&gt;
+&lt;figure class=&quot;offset C&quot;&gt;
+ &lt;figcaption&gt;
+  All names match source; &lt;tt&gt;rootdir&lt;/tt&gt; comment DeFelice's&lt;!--'--&gt;, others mine.&lt;br /&gt;
+  Covered by &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux&quot;&gt;the final file with variables&lt;/a&gt;
+         and &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L192&quot;&gt;on-entry process tables initialisation&lt;/a&gt;.
+ &lt;/figcaption&gt;
+&lt;del&gt;
+&lt;pre class=linenos&gt;​
+​
+ux
+ux
+ux
+ux
+ux
+ux
+ux
+​
+ux
+​
+​
+ux
+&lt;small&gt;​
+&lt;/small&gt;ux
+u0
+&lt;/pre&gt;
+&lt;pre class=linenos&gt;​
+​
+16
+17
+18
+19
+20
+21
+22
+​
+23
+​
+​
+62
+&lt;small&gt;​
+&lt;/small&gt;53
+195
+&lt;/pre&gt;
+&lt;/del&gt;
+&lt;pre&gt;
+&lt;!-- &quot;--&gt;union {&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	struct {&lt;!--&quot;--&gt;
+&lt;!--ux 16 &quot;--&gt;		int  flgs;&lt;!--&quot;--&gt;
+&lt;!--ux 17 &quot;--&gt;		char nlks;&lt;!--&quot;--&gt;
+&lt;!--ux 18 &quot;--&gt;		char uid;&lt;!--&quot;--&gt;
+&lt;!--ux 19 &quot;--&gt;		int  size;&lt;!--&quot;--&gt;
+&lt;!--ux 20 &quot;--&gt;		int  dskp[8];&lt;!--&quot;--&gt;
+&lt;!--ux 21 &quot;--&gt;		int  ctim[2];&lt;!--&quot;--&gt;
+&lt;!--ux 22 &quot;--&gt;		int  mtim[2];&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	}    i;&lt;!--&quot;--&gt;
+&lt;!--ux 23 &quot;--&gt;	char inode[32];  &lt;del&gt;// (2 free bytes)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;};&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;int  idev, ii;    &lt;del&gt;// i-node (device, number)&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--ux 62 &quot;--&gt;bool imod;        &lt;del&gt;// modified?&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;
+&lt;/small&gt;&lt;!--ux 62 &quot;--&gt;int rootdir;&lt;!--&quot;--&gt;
+&lt;!--u0 195 &quot;--&gt;rootdir = 41;     &lt;del&gt;// set to 41 and never changed&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;figure class=&quot;offset C&quot;&gt;
+ &lt;figcaption&gt;
+  &lt;tt&gt;_&lt;/tt&gt;-prefixed names were invented for exposition; others match source.&lt;br /&gt;
+  Lower-case &lt;tt&gt;//&lt;/tt&gt; comments DeFelice's&lt;!--'--&gt;, others mine.
+  &lt;a style=&quot;margin-left: 1em&quot; href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L215&quot;&gt;&lt;tt&gt;u5&lt;/tt&gt;&lt;/a&gt;
+ &lt;/figcaption&gt;
+&lt;del&gt;
+&lt;pre class=linenos&gt;u0
+&lt;small&gt;​
+​
+&lt;/small&gt;u5
+​
+u5
+​
+u5
+u5
+​
+​
+​
+u5
+u5
+u5
+​
+​
+u5
+u5
+u5
+​
+​
+​
+u5
+u5
+​
+​
+u5
+u5
+u5
+​
+u5
+​
+​
+u5
+u5
+​
+​
+​
+​
+u5
+u5
+u5
+u5
+​
+​
+u5
+​
+u5
+u5
+​
+​
+&lt;/pre&gt;
+&lt;pre class=linenos&gt;50
+&lt;small&gt;​
+​
+&lt;/small&gt;215
+​
+249
+​
+221
+224
+​
+​
+​
+229
+230
+231
+​
+​
+233
+248
+249
+​
+​
+​
+241
+242
+​
+​
+244
+245
+246
+​
+249
+​
+​
+251
+253
+​
+​
+​
+​
+260
+261
+262
+263
+​
+​
+272
+​
+278
+280
+​
+​
+&lt;/pre&gt;
+&lt;/del&gt;
+&lt;pre&gt;
+&lt;!--u0 50 &quot;--&gt;int mdev; &lt;del&gt;// Device containing second filesystem&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;
+&lt;!-- &quot;--&gt;extern r1;&lt;!--&quot;--&gt;
+&lt;/small&gt;&lt;!--u5 215 &quot;--&gt;iget() {  &lt;del&gt;// r1 = i-number of current flle&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	if(r1 == ii &amp;&amp; idev == cdev)&lt;!--&quot;--&gt;
+&lt;!--u5 249 &quot;--&gt;		return;&lt;!--&quot;--&gt;
+
+&lt;!--u5 221 &quot;--&gt;	if(imod) {        &lt;del&gt;// has i-node of current file been modified&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u5 224 &quot;--&gt;		imod = 0; &lt;del&gt;// if it has, we must write the new i-node out on disk&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!-- &quot;--&gt;		int _ino = _std::exchange(r1,   ii);&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		int _dev = _std::exchange(cdev, idev);&lt;!--&quot;--&gt;
+&lt;!--u5 229 &quot;--&gt;		icalc(1);&lt;!--&quot;--&gt;
+&lt;!--u5 230 &quot;--&gt;		cdev = _dev;&lt;!--&quot;--&gt;
+&lt;!--u5 231 &quot;--&gt;		r1   = _ino;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	}&lt;!--&quot;--&gt;
+
+&lt;!--u5 233 &quot;--&gt;	if(r1 == 0) {&lt;!--&quot;--&gt;
+&lt;!--u5 248 &quot;--&gt;		r1 = ii;&lt;!--&quot;--&gt;
+&lt;!--u5 249 &quot;--&gt;		return;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	}&lt;!--&quot;--&gt;
+
+&lt;!-- &quot;--&gt;	if(cdev == 0 &amp;&amp; r1 == mnti) {  &lt;del&gt;// On rootfs and opening mounted-over file&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u5 241 &quot;--&gt;		cdev = mntd;&lt;!--&quot;--&gt;
+&lt;!--u5 242 &quot;--&gt;		r1   = rootdir;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	}&lt;!--&quot;--&gt;
+
+&lt;!--u5 244 &quot;--&gt;	ii = r1;&lt;!--&quot;--&gt;
+&lt;!--u5 245 &quot;--&gt;	idev = cdev;&lt;!--&quot;--&gt;
+&lt;!--u5 246 &quot;--&gt;	icalc(0);  &lt;del&gt;// read in i-node ii&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--u5 249 &quot;--&gt;	return;    &lt;del&gt;// r1 has i-node number&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;}&lt;!--&quot;--&gt;
+
+&lt;!--u5 251 &quot;--&gt;icalc(_wr) { &lt;del&gt;// i-node i is located in block (i+31.)/16.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u5 253 &quot;--&gt;	r1 += 31;   &lt;del&gt;// and begins 32.*(i+31)mod16 bytes from its start&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	int _pos_in_block = r1 % 16;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;	r1 /= 16; &lt;del&gt;// r1 contains block number of block in which&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		  &lt;del&gt;// i-node exists&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--u5 260 &quot;--&gt;	&lt;del&gt;/*r5 =*/&lt;/del&gt; dskrd(); &lt;del&gt;// read in block containing i-node i.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u5 261 &quot;--&gt;	if(_wr)&lt;!--&quot;--&gt;
+&lt;!--u5 263 &quot;--&gt;		&lt;del&gt;/*r5 =*/&lt;/del&gt; wslot(); &lt;del&gt;// set up data buffer for write&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u5 264 &quot;--&gt;			          &lt;del&gt;// (will be same buffer as dskrd got)&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!-- &quot;--&gt;	r5 += _pos_in_block * 32; &lt;del&gt;// r5 points to first word in i-node i.&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--u5 272 &quot;--&gt;	if(_wr) {&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		_memcpy(r5, inode, 32);&lt;!--&quot;--&gt;
+&lt;!--u5 278 &quot;--&gt;		dskwr();&lt;!--&quot;--&gt;
+&lt;!--u5 280 &quot;--&gt;	} else&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;		_memcpy(inode, r5, 32);&lt;!--&quot;--&gt;
+&lt;!-- &quot;--&gt;}&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;ol&gt;
+ &lt;li id=28 value=28&gt;since &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=172&quot;&gt;the smallest valid i-node is 1&lt;/a&gt;,
+     the i-node cache starts empty (structurally, i-node 0 on &lt;tt&gt;rf0&lt;/tt&gt;, all 0 bytes)&lt;/li&gt;
+ &lt;li id=29 value=29&gt;in the installer kernel, it's&lt;!--'--&gt; initialised &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L209&quot;&gt;during rootfs prep&lt;/a&gt;&lt;/li&gt;
+ &lt;li id=30 value=30&gt;in a regular kernel, it's&lt;!--'--&gt; initialised in the user-space trampoline,
+     which &lt;a href=&quot;014-unix-pre-v4-pid0-corollary.html#init&quot;&gt;has featured before on this blog&lt;/a&gt;;
+     summa summarum: initialised by &lt;tt&gt;exec(&quot;/etc/init&quot;, &lt;del&gt;…&lt;/del&gt;)&lt;/tt&gt;
+     (&lt;a style=&quot;color: inherit;&quot; href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u2#L91&quot;&gt;⇒&lt;/a&gt; &lt;tt&gt;namei(&quot;/etc/init&quot;)&lt;/tt&gt;
+      &lt;a style=&quot;color: inherit;&quot; href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u2#L248&quot;&gt;⇒&lt;/a&gt; &lt;tt&gt;iget(rootdir)&lt;/tt&gt;)&lt;/li&gt;
+ &lt;li id=31 value=31&gt;it's&lt;!--'--&gt; never cleared again, so in V1, at all times, there is exactly &lt;em&gt;one&lt;/em&gt; currently-opened file&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=32 value=32&gt;asking for i-node 0 is overloaded to be equivalent to what we'd&lt;!--'--&gt; call &lt;tt&gt;fsync()&lt;/tt&gt; of the currently-open i-node:
+     if i-node modified, update the block it's&lt;!--'--&gt; contained in and enqueue writing it&lt;/li&gt;
+ &lt;li id=33 value=33&gt;this is used exactly once, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L76&quot;&gt;when returning from kernel- to user-space&lt;/a&gt;,
+     which, before deciding how to return,
+     &lt;ul&gt;
+      &lt;li&gt;&lt;tt&gt;r1 = 0; iget()&lt;/tt&gt;&lt;/li&gt;
+      &lt;li&gt;if rootfs superblock modified: enqueues writing &lt;tt&gt;sb0&lt;/tt&gt;&lt;/li&gt;
+      &lt;li&gt;if second filesystem's&lt;!--'--&gt; superblock modified: enqueues writing &lt;tt&gt;sb1&lt;/tt&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li id=34 value=34&gt;this explains why unix72 &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/unix-jun72/tree/trunk/item/Readme#L60&quot;&gt;prescribes &lt;kbd&gt;^E&lt;/kbd&gt;, &lt;kbd&gt;q&lt;/kbd&gt;&lt;/a&gt;
+     (halt emulator, exit) to stop:
+     while in userspace, all caches (i-node, block device) have been enqueued to be written,
+     so the system state is coherent once the disk is quiescent&lt;/li&gt;
+ &lt;li id=35 value=35&gt;in principle, this also means that, after init, all &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; does is service interrupts (from userspace, disk/tape, clock, other devices);
+     the only persistent inter- and supra-process state are the process tables themselves;
+     this differs significanly from subsequent &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;es, which &lt;a href=&quot;014-unix-pre-v4-pid0-corollary.html#nsys&quot;&gt;have An kernel (scheduler) process&lt;/a&gt;&lt;/li&gt;
+ &lt;li id=36 value=36&gt;however, unix72 is wrong to say that
+     &lt;q&gt;&lt;a href=&quot;//git.sr.ht/~nabijaczleweli/unix-jun72/tree/trunk/item/Readme#L61&quot;&gt;You do not need to sync the system before shutdown.&lt;/a&gt;&lt;/q&gt;,
+     because you do — by waiting until all userspace processes are in userspace (or sleeping on non-filesystem &amp; non-block-device I/O) and disk/tape I/O has stopped
+     (on a modern system with disk/tape backed by a VFS file this is below a human time-scale,
+      but there definitely &lt;em&gt;is&lt;/em&gt; a &lt;tt&gt;sync&lt;/tt&gt;-equivalent procedure,
+      and you can run afoul of it if you're&lt;!--'--&gt; unlucky)&lt;/kbd&gt;&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=37 value=37&gt;it's&lt;!--'--&gt; worth pointing out that this betrays what to a modern reader appears like a layering violation:
+     i-nodes appear on devices, not file-systems&lt;/li&gt;
+ &lt;li id=38 value=38&gt;rather, perhaps, these haven't&lt;!--'--&gt; fully divorced yet.
+     The &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; Programmer's&lt;!--'--&gt; Manual is permeated with an unstated &lt;del&gt;almost-&lt;/del&gt;equivalency of the two
+     — a modelling of the file system as little more than a slightly-more-convenient way to address the disk (tape), or
+       a relatively thin wrapper over the same&lt;/li&gt;
+ &lt;li id=39 value=39&gt;this reflects the rejection of the file management attitude of the systems pre-dating &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; that so pervades contemporary
+     (&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/UnixEditionZero-OCR.pdf#page=3&quot;
+           &gt;DRAFT: The UNIX Time-Sharing System, D. M. Ritchie&lt;/a&gt;,
+            &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/Readme&quot;&gt;&lt;q&gt;mid-1971&lt;/q&gt;&lt;/a&gt;&lt;/cite&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;&lt;pre&gt;&lt;u&gt;1&lt;/u&gt;. &lt;u&gt;Introduction&lt;/u&gt;
+&lt;del&gt;[…]&lt;/del&gt; UNIX contains a number of features very seldom
+offered even by larger systems, including&lt;ol style=&quot;margin-left: 2.75em;&quot;&gt; &lt;li&gt;A versatile, convenient file system with complete integra-
+tion between disk files and I/O devices;&lt;/li&gt;&lt;/ol&gt;
+&lt;u&gt;3&lt;/u&gt;. &lt;u&gt;The&lt;/u&gt; &lt;u&gt;File&lt;/u&gt; &lt;u&gt;System&lt;/u&gt;
+The most important role of UNIX is to provide a file system. &lt;del&gt;[…]&lt;/del&gt;
+
+&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;1&lt;/u&gt; &lt;u&gt;Ordinary&lt;/u&gt; &lt;u&gt;Files&lt;/u&gt;
+A file contains whatever information the user places there, for
+example symbolic or binary (object) programs. No particular
+structuring is expected by the system. &lt;del&gt;[…]&lt;/del&gt;
+A few user programs generate and expect files with
+more structure; &lt;del&gt;[…]&lt;/del&gt;
+however, the structure of files is controlled solely by the
+programs which use them, not by the system.
+
+&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;5&lt;/u&gt; &lt;u&gt;System&lt;/u&gt; &lt;u&gt;I&lt;/u&gt;/&lt;u&gt;O&lt;/u&gt; &lt;u&gt;Calls&lt;/u&gt;
+&lt;del&gt;[…]&lt;/del&gt; There
+is no distinction between &quot;random&quot; and sequential I/O, nor is any
+logical or physical record size imposed by the system. The size
+of a file on the disk is determined by the location of the last
+piece of information written on it; no predetermination of the
+size of a file is necessary.&lt;/pre&gt;&lt;/blockquote&gt;
+            (that's&lt;!--'--&gt; 2.5 times by page 7!))
+     and subsequent
+     (&lt;cite&gt;&lt;a href=&quot;//youtu.be/tc4ROCJYbm0&quot;&gt;The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories&lt;/a&gt;
+      —
+dmr, 11:32-12:03:
+&lt;blockquote class=&quot;continuation&quot; style=&quot;margin-bottom: calc(12.6715px / 2);&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; system has many features which make it easier for the programmer to write programs.
+These include formatless files, the hierarchical directory structure,
+the ability to pipeline the output of one command as the input of another, device independent I/O:
+all of these things make programming considerably easier than on most other systems.
+&lt;/blockquote&gt;
+bwk, 12:03-12:55:
+&lt;blockquote class=&quot;continuation&quot; style=&quot;margin-bottom: calc(12.6715px / 2);&quot;&gt;
+The heart of the system is really the file system –
+the ability to store information for extended periods of time.
+And the reason— one of the reasons the system works as well as it
+does is that the file system is well-designed;
+and, many systems, you have to say an awful lot about a file
+before you can do anything with it.
+You have to say where it is, and how big it is,
+and what kind of information that's going to— that's going to be in it.
+All kinds of things that are basically &lt;em&gt;utterly&lt;/em&gt;, &lt;em&gt;completely&lt;/em&gt; irrelevant.
+Here, you don't&lt;!--'--&gt; have to do any of that:
+a file is as big as it is,
+it doesn't&lt;!--'--&gt; matter where it is as long
+as you know what it's&lt;!--'--&gt; called…
+and so, you basically don't&lt;!--'--&gt; have to think
+of any of those complexities that you have in other systems.
+When you want information in a file, you put it there;
+when you want it back, you get it out again,
+and you don't&lt;!--'--&gt; have to think about size,
+or number of records and number of fields,
+or anything like that,
+unless it's&lt;!--'--&gt; really germane to your program.
+For most purposes, it's&lt;!--'--&gt; utterly irrelevant.
+&lt;/blockquote&gt;
+ken, 12:56-13:17:
+&lt;blockquote class=&quot;continuing&quot;&gt;
+A file is simply a sequence of bytes.
+Its main attribute is its size.
+By contrast, in more conventional systems,
+a file has a dozen or so attributes.
+To specify or create a file, it takes endless amounts of chit-chat.
+If you want a &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; system file, you simply ask for a file.
+And you can use it interchangeably
+wherever you want a file.
+&lt;/blockquote&gt;
+&lt;/cite&gt;
+     (this is all consecutive. it's&lt;!--'--&gt; so serious for them, and yet we cannot imagine a world where this would be prescient information.))
+     marketing&lt;/li&gt;
+ &lt;li id=40 value=40&gt;there is a view that is puritanical in a different direction than how a modern reader and system conceptualises strict filesystem-on-blockdev layering:
+     the file system's&lt;!--'--&gt; purpose is to let you &lt;em&gt;name (groups of) blocks on the underlying device&lt;/em&gt;, as fast and easily as possible,
+     and anything that makes that harder or makes it be more structured is heresy&lt;/li&gt;
+ &lt;p style=&quot;margin-top: 7.60px; margin-bottom: 7.60px;&quot;&gt;&lt;/p&gt;
+ &lt;li id=41 value=41&gt;you can cut out basically any part of the data area of the file-system by marking it used (and remembering which blocks you marked used):
+     they do this to &lt;a href=&quot;#9&quot;&gt;the 32k area at the end of the disk with a bootloader and a few kernels&lt;/a&gt; — what we'd&lt;!--'--&gt; call &lt;tt&gt;/boot&lt;/tt&gt; —
+     and &lt;a href=&quot;#9&quot;&gt;the &lt;tt&gt;nproc&lt;/tt&gt; 8k+512-byte-sized areas for swapped-out process images&lt;/a&gt;&lt;/li&gt;
+ &lt;li id=42 value=42&gt;this makes &lt;tt&gt;rf0&lt;/tt&gt; implicitly (non-self-descriptively) partitioned into 3 (2+&lt;tt&gt;nproc&lt;/tt&gt;) sections
+     — the file system (V) per se, the boot area, and the swap area (viz. &lt;tt&gt;nproc&lt;/tt&gt; individually-allocated swap areas) —
+     but the non-self-descriptiveness &lt;a href=&quot;#10&quot;&gt;poses issues&lt;/a&gt; (though idk whether they'd&lt;!--'--&gt; noticed this at the time, but it seems pretty obvious)&lt;/li&gt;
+ &lt;li id=43 value=43&gt;&lt;a href=&quot;022-Utah_v4.html#v4tape-1st&quot;&gt;later &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;ex&lt;/a&gt; do away with the split-&lt;tt&gt;/boot&lt;/tt&gt; model and read the kernel from a file-system&lt;/li&gt;
+ &lt;li id=44 value=44&gt;at a later point in time, in descendant systems, &quot;the swap area of the root file system/block device&quot; reifies into &quot;the swap&quot;
+     and &lt;a href=&quot;022-Utah_v4.html#v4root-1st&quot;&gt;the file system gains a length field&lt;/a&gt; (and a bootloader hole in block 0),
+     and the root device becomes more explicitly partitioned into {[bootloader+]filesystem, rest of device},
+     with rest of device being used for swapping (rather, the swap), but could be for anything,
+     and all readers/writers will understand this without knowing anything about the structure of the &lt;em&gt;file-system&lt;/em&gt; beyond its length&lt;/li&gt;
+ &lt;li id=45 value=45&gt;later systems still grow actual partitions (poorly),
+     wherein 81200-block (39M+664k) &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=222&quot;&gt;RP(IV)&lt;/a&gt; disks have
+  &lt;table id=&quot;rp&quot;&gt;
+   &lt;tr&gt;&lt;th&gt;file &lt;/th&gt; &lt;th&gt;start&lt;/th&gt; &lt;th&gt;length&lt;/th&gt; &lt;th&gt;&lt;/th&gt; &lt;th&gt;&lt;/th&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;&lt;tt&gt;rp&lt;var&gt;0,8,16&lt;/var&gt;&lt;/tt&gt;&lt;/td&gt; &lt;td&gt;0&lt;/td&gt; &lt;td&gt;40600&lt;/td&gt; &lt;td&gt;19M&lt;/td&gt; &lt;td&gt;&lt;span&gt;+&lt;/span&gt;844k&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;&lt;tt&gt;rp&lt;var&gt;1,9,17&lt;/var&gt;&lt;/tt&gt;&lt;/td&gt; &lt;td&gt;40600&lt;/td&gt; &lt;td&gt;40600&lt;/td&gt; &lt;td&gt;19M&lt;/td&gt; &lt;td&gt;&lt;span&gt;+&lt;/span&gt;844k&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;&lt;tt&gt;rp&lt;var&gt;2,10,18&lt;/var&gt;&lt;/tt&gt;&lt;/td&gt; &lt;td&gt;0&lt;/td&gt; &lt;td&gt;9200&lt;/td&gt; &lt;td&gt; 4M&lt;/td&gt; &lt;td&gt;&lt;span&gt;+&lt;/span&gt;504k&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;&lt;tt&gt;rp&lt;var&gt;3,11,19&lt;/var&gt;&lt;/tt&gt;&lt;/td&gt; &lt;td&gt;7200&lt;/td&gt; &lt;td&gt;9200&lt;/td&gt; &lt;td&gt; 4M&lt;/td&gt; &lt;td&gt;&lt;span&gt;+&lt;/span&gt;504k&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;&lt;tt&gt;rp&lt;var&gt;4,12,20&lt;/var&gt;&lt;/tt&gt;&lt;/td&gt; &lt;td&gt;0&lt;/td&gt; &lt;td&gt;65535&lt;/td&gt; &lt;td class=&quot;z&quot;&gt;32M&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;&lt;tt&gt;rp&lt;var&gt;5,13,21&lt;/var&gt;&lt;/tt&gt;&lt;/td&gt; &lt;td&gt;15600&lt;/td&gt; &lt;td&gt;65535&lt;/td&gt; &lt;td class=&quot;z&quot;&gt;32M&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+     with a recommended configuration of rootfs on &lt;tt&gt;rp2&lt;/tt&gt;, &lt;tt&gt;/usr&lt;/tt&gt; on &lt;tt&gt;rp5&lt;/tt&gt;,
+     and swap space &lt;q&gt;in the unused blocks 9500 to 15600 of &lt;i&gt;rp0&lt;/i&gt; (or, equivalently, &lt;i&gt;rp4)&lt;/i&gt;&lt;/q&gt;(?!);
+     allthewhile warning that
+     &lt;q&gt;It is unwise for all tof these files to be present in one installation, since there is overlap in addresses and proection becomes a sticky matter.&lt;/q&gt;
+ &lt;/li&gt;
+ &lt;li id=46 value=46&gt;(this is by no means universal in V5:
+      depending on the amount of &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=220&quot;&gt;RF(IV)&lt;/a&gt;-compatible disks you have
+      (context for reading the manual: RF11 is the controller, RS11 is the disk),
+      you're&lt;!--'--&gt; supposed to make &lt;tt&gt;/dev/rf0&lt;/tt&gt; with the minor corresponding to how long they all are in 512k increments minus 1
+      (conveniently, this corresponds to how many disks you have minus one, since they're&lt;!--'--&gt; 512k long),
+      and you get a continuous block device spanning them all in order,
+      so if you have 3, you &lt;tt&gt;mknod /dev/tf0 b &lt;var&gt;n&lt;/var&gt; 2&lt;/tt&gt; and you get a 1.5M device;
+      &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#./usr/sys/dmr/rf.c#L26&quot;&gt;&lt;tt&gt;rf.c&lt;/tt&gt;&lt;/a&gt; backs this up,
+      and shows that the controller exposes all the disks in order like this, and this is just protection
+      (&lt;cite&gt;&lt;a href=&quot;//archive.org/details/bitsavers_decunibusDCdiskSystemManualAug71_16878841/page/n11/mode/1up&quot;&gt;&lt;!--
+    --&gt;Digital Equipment Corporation, RF11/RS11 DECdisk system manual, 6th Printing, May 1973, DEC-11-HRFD-D, p. 1-4&lt;/a&gt;&lt;/cite&gt;))&lt;/li&gt;
+ &lt;li id=47 value=47&gt;((conversely, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=221&quot;&gt;RK(IV)&lt;/a&gt;
+       has a &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#./usr/sys/dmr/rk.c#L77&quot;&gt;three-liner implementing opt-in any-width RAID0 striping&lt;/a&gt;;
+       but &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/dmr/rk.c#L55&quot;&gt;so does V4&lt;/a&gt;, and it's&lt;!--'--&gt; even better there;
+       they were kinda just doing whatever back then))&lt;/li&gt;
+ &lt;li id=48 value=48&gt;at UCB, by 4BSD, every supported disk type has partitions, and they're&lt;!--'--&gt; all in every installation,
+     with the &lt;q&gt;unwise&lt;/q&gt; sentence conspicuously disappearing
+     &lt;cite&gt;(this doesn't&lt;!--'--&gt; exist in linkable form; cf. &lt;tt&gt;usr/man/man4/*.4&lt;/tt&gt; in &lt;tt&gt;3bsd&lt;/tt&gt;/&lt;tt&gt;4.0&lt;/tt&gt; on
+            &lt;a href=&quot;//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick&quot;&gt;CSRG CD 1&lt;/a&gt;)&lt;/cite&gt;;
+     from experience (&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export/#1524486577329778695&quot;&gt;sending mail to/from 4.2BSD&lt;/a&gt;)
+     this model &lt;em&gt;fucking sucks&lt;/em&gt;, especially as disks get bigger and their lay-outs more convoluted, as they had by 4.2BSD&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=49 value=49&gt;but this implies a different solution to this problem — an alternate-reality &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; —
+     where the swap areas for each process ended up properly as files on the filesystem as well;
+     this may've&lt;!--'--&gt; been &lt;em&gt;our&lt;/em&gt; reality if the performance eval looked different&lt;/li&gt;
+ &lt;li id=50 value=50&gt;(this does happen a bit:
+      ext4 keeps &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/ext4/ext4.h?id=a66191c590b3b58eaff05d2277971f854772bd5b#n311&quot;&gt;some metadata&lt;/a&gt; as &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/ext4/ext4.h?id=a66191c590b3b58eaff05d2277971f854772bd5b#n3109&quot;&gt;special&lt;/a&gt; unnameable files,
+      and linux lets you have &quot;swap files&quot; which are actually just like V1 swap but the swap area is named as part of an allocated i-node
+      instead of blindly blocked off,
+      but no system du jour swaps to addressable filesystem files, separately &lt;em&gt;or&lt;/em&gt; together;
+      all Windowses do this though)&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=51 value=51&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=124&quot;&gt;sys mount (II)&lt;/a&gt;
+     claims that
+     &lt;blockquote class=&quot;continuing&quot;&gt;&lt;pre&gt;Almost always, &lt;u&gt;name&lt;/u&gt; should be a directory so that
+an entire file system, not just one file, may
+exist on the removable device &lt;/pre&gt;&lt;/blockquote&gt;
+     but this is evidently false: every attempt to get the i-node that was the target of &lt;tt&gt;mount&lt;/tt&gt; will return the root directory of the mounted file system;
+     since (unlike in later and modern systems) the file type is not cached in the directory entry, it is &lt;em&gt;impossible&lt;/em&gt; to name the mounted-over file,
+     or at all distinguish it from the root of the mounted file system&lt;/li&gt;
+ &lt;li id=52 value=52&gt;unlike in comparatively modern systems with a name-based VFS, the file system is mounted on the &lt;em&gt;i-node&lt;/em&gt;,
+     which means it's&lt;!--'--&gt; actually mounted on &lt;em&gt;every link the mounted-over file has&lt;/em&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;# &lt;kbd&gt;chdir /tmp&lt;/kbd&gt;
+# &lt;kbd&gt;echo gaming &gt;file1&lt;/kbd&gt;
+# &lt;kbd&gt;ln file1 file2&lt;/kbd&gt;
+# &lt;kbd&gt;ls -l&lt;/kbd&gt;
+&lt;!--&quot;--&gt;total    8&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 47 s-r-r-  1 sys    1664 Jan  1 00:00:00 etma&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;119 s-rwrw  2 root      8 Jan  1 00:00:00 file1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;119 s-rwrw  2 root      8 Jan  1 00:00:00 file2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 46 s-rwr-  1 root     26 Jan  1 00:00:00 ttmp&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 45 s-rwr-  1 root    142 Jan  1 00:00:00 utmp&lt;!--&quot;--&gt;
+# &lt;kbd&gt;cat file1 file2&lt;/kbd&gt;
+gaming
+gaming
+# &lt;kbd&gt;cat &gt;mt.s&lt;/kbd&gt;
+&lt;!--&quot;--&gt;mount = 21.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;umount = 22.&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;sys     umount; rk0&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;sys     mount; rk0; file1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;sys     exit&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;rk0:    &amp;lt;/dev/rk0\0&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;file1:  &amp;lt;file1\0&gt;&lt;!--&quot;--&gt;
+# &lt;kbd&gt;as mt.s&lt;/kbd&gt;
+I
+II
+# &lt;kbd&gt;a.out&lt;/kbd&gt;
+# &lt;kbd&gt;ls -l&lt;/kbd&gt;
+&lt;!--&quot;--&gt;total   10&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;124 sxrwrw  1 root     96 Jan  1 00:00:00 a.out&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 47 s-r-r-  1 sys    1664 Jan  1 00:00:00 etma&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 41 sdrwr- 10 root    120 Jan  1 00:00:00 file1&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 41 sdrwr- 10 root    120 Jan  1 00:00:00 file2&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;120 s-rwrw  1 root    107 Jan  1 00:00:00 mt.s&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 46 s-rwr-  1 root     26 Jan  1 00:00:00 ttmp&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 45 s-rwr-  1 root    142 Jan  1 00:00:00 utmp&lt;!--&quot;--&gt;
+# &lt;kbd&gt;ls -l file1 file2&lt;/kbd&gt;
+file1:
+&lt;!--&quot;--&gt;total   82&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;202 sdrwr-  2 root    140 Jan  1 00:00:00 boot&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;197 sdrwr-  2 root     60 Jan  1 00:00:00 fort&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;194 sdrwr-  2 root     40 Jan  1 00:00:00 jack&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;192 sdrwr-  2 root     30 Jan  1 00:00:00 ken&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;183 sdrwr-  2 root    100 Jan  1 00:00:00 lib&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;209 sdrwrw  2 root    110 Jan  1 00:00:00 nab-test&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 42 sdrwr-  5 root     60 Jan  1 00:00:00 src&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;168 sdrwr-  2 root    360 Jan  1 00:00:00 sys&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;217 lxrwrw  2 root  36432 Jan  1 00:00:00 u&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;167 sxrwrw  1 root     54 Jan  1 00:00:00 x&lt;!--&quot;--&gt;
+
+&lt;/small&gt;file2:
+&lt;!--&quot;--&gt;total   82&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;202 sdrwr-  2 root    140 Jan  1 00:00:00 boot&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;197 sdrwr-  2 root     60 Jan  1 00:00:00 fort&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;194 sdrwr-  2 root     40 Jan  1 00:00:00 jack&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;192 sdrwr-  2 root     30 Jan  1 00:00:00 ken&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;183 sdrwr-  2 root    100 Jan  1 00:00:00 lib&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;209 sdrwrw  2 root    110 Jan  1 00:00:00 nab-test&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 42 sdrwr-  5 root     60 Jan  1 00:00:00 src&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;168 sdrwr-  2 root    360 Jan  1 00:00:00 sys&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;217 lxrwrw  2 root  36432 Jan  1 00:00:00 u&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;167 sxrwrw  1 root     54 Jan  1 00:00:00 x&lt;!--&quot;--&gt;
+&lt;/small&gt;# &lt;kbd&gt;cat file1/x file2/x&lt;/kbd&gt;
+&lt;!--&quot;--&gt;tap x\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc1\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc2\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc3\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc4&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;tap x\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc1\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc2\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc3\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc4&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+I've&lt;!--'--&gt; never seen this mentioned or hinted at by anyone, ever. Presumably because directories can only have 1 non-&lt;tt&gt;.&lt;del&gt;.&lt;/del&gt;&lt;/tt&gt; link,
+and people mount over directories generally?
+No modern system lets you do this.
+&lt;/p&gt;
+&lt;ol&gt;
+ &lt;li id=53 value=53&gt;in principle, if the i-node on the mounted file system that was supposed to contain the root directory actually contained another type of file
+     that would also Just Work
+      (actually we can just test this too: after copying 32 bytes from after 0x18C0 to after 0x0900
+       — i-node 167 (&lt;tt&gt;/x&lt;/tt&gt;) to 41 (&lt;tt&gt;/&lt;/tt&gt;) — on &lt;tt&gt;rk0&lt;/tt&gt; we observe&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;
+:login: &lt;kbd&gt;root&lt;/kbd&gt;
+root
+# &lt;kbd&gt;ls -l&lt;/kbd&gt;
+&lt;!--&quot;--&gt;total    6&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 58 sdrwr-  2 root    620 Jan  1 00:00:00 bin&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 42 sdrwr-  2 root    250 Jan  1 00:00:00 dev&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 48 sdrwr-  2 root    110 Jan  1 00:00:00 etc&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 44 sdrwr-  2 root    120 Jan  1 00:00:00 tmp&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt; 41 sxrwrw  1 root     54 Jan  1 00:00:00 usr&lt;!--&quot;--&gt;
+# &lt;kbd&gt;cat usr&lt;/kbd&gt;
+&lt;!--&quot;--&gt;tap x\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc1\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc2\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc3\&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;./fort/fc4&lt;!--&quot;--&gt;
+&lt;/pre&gt;
+&lt;ol&gt;
+ &lt;li id=53 value=53&gt;– has anyone done this?)&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=54 value=54&gt;this is the final buffer we'll&lt;!--'--&gt; look at in this post, so:
+     knowing that the memory map consists of kernel memory in
+     &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L4&quot;&gt;0&lt;/a&gt;-&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L45&quot;&gt;16k&lt;/a&gt;,
+     then 8k of userspace memory,
+     and buffers total
+     &lt;!--(218+32+1024+510+(9*140+6*520)=)--&gt;6164=6k+20 bytes
+     (&lt;tt&gt;systm&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;inode&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;mount&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;clist&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;buffer&lt;/tt&gt;),
+     buffers are 37.6% of kernel and 25.1% of total memory.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;finally&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#finally&quot;&gt;#&lt;/a&gt; And now, a vicious take-down of a user who's&lt;!--'--&gt; &lt;small&gt;&lt;abbr title=&quot;Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years&quot;&gt;probably&lt;/abbr&gt;&lt;/small&gt; been dead nearly a decade,&lt;/h3&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+with a final look at &lt;strong&gt;emphasised&lt;/strong&gt; fragments:
+&lt;/p&gt;
+&lt;figure class=&quot;offset continuing C&quot;&gt;
+&lt;del&gt; &lt;pre class=linenos&gt;&lt;small&gt;​
+&lt;/small&gt;u6
+​
+&lt;strong&gt;u6
+&lt;/strong&gt;u6
+u6
+u6
+u6
+u6
+u6
+u6
+u6
+​
+​
+u6
+​
+​
+​
+u6
+u6
+​
+​
+u6
+u6
+u6
+u6
+u6
+&lt;small&gt;​
+​
+&lt;/small&gt;&lt;strong&gt;u6
+&lt;/strong&gt;​
+​
+&lt;/pre&gt; &lt;pre class=linenos&gt;&lt;small&gt;​
+&lt;/small&gt;212
+​
+&lt;strong&gt;214
+&lt;/strong&gt;215
+216
+217
+218
+220
+223
+225
+226
+​
+​
+229
+​
+​
+​
+240
+241
+​
+​
+243
+244
+245
+246
+247
+&lt;small&gt;​
+​
+&lt;/small&gt;&lt;strong&gt;252
+&lt;/strong&gt;​
+​
+&lt;/pre&gt; &lt;/del&gt;
+&lt;pre&gt;
+&lt;small&gt;extern r1, r2, r3, cdev;
+&lt;/small&gt;&lt;!--&quot;--&gt;dskw(_ino) &lt;del&gt;/* write routine for non-special files */&lt;/del&gt;&lt;!--&quot;--&gt;
+{
+&lt;strong&gt;&lt;!--&quot;--&gt;	r1 = _ino; iget(); &lt;del&gt;/* write i-node out (if modified), read i-node 'r1' on 'cdev'&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	                      into i-node area of core */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	r2 = *u.fofp + u.count; &lt;del&gt;/* file offset [(u.off) or the offset in&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	                           the fsp entry for this file] +&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	                           no. of bytes to be written */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	if(r2 &gt; i.size) {&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		i.size = r2;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		setimod();&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;	while(u.count)&lt;!--&quot;--&gt; &lt;span class=&quot;label a&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;		mget(); &lt;del&gt;/* get the block no. in which to write the next data byte */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;		&lt;del&gt;/* if lower 9 bits of file offset are 0,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		   file offset = 0, 512, 1024,...(i.e., start of new block): */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		if(*u.fofp &amp; 511 || u.count &lt; 512)&lt;!--&quot;--&gt; &lt;span class=&quot;label b&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;			dskrd();  &lt;del&gt;/* if there is not enough data to fill an entire block, */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label c&quot;&gt;}&lt;/span&gt;&lt;!--&quot;--&gt;	          &lt;del&gt;/* read block 'r1' on 'cdev' into an I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;!--&quot;--&gt;		wslot(); &lt;del&gt;/* set write and inhibit bits in I/O queue, proc. status=0,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		            r5 points to 1st word of data */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		sioreg(); &lt;del&gt;/* r3 = no. of bytes of data,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		             r1 = address of data,&lt;!--&quot;--&gt;
+&lt;!--&quot;--&gt;		             r2 points to location in buffer in which to start writing data */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;_memcpy&lt;/span&gt;&lt;!--&quot;--&gt;(r2, r1, r3); &lt;del&gt;/* transfer a byte of data to the I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+
+&lt;/small&gt;&lt;strong&gt;&lt;!--&quot;--&gt;		dskwr(); &lt;del&gt;/* yes, write the block and the i-node */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!-- goto *ret;, which is is equivalent to a bare return here --&gt;&lt;/small&gt;}
+&lt;/pre&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+where we observe
+(assuming no other processes are running that would influence the make-up of the block device I/O queue),
+if, say, writing to a small file with i-node 167 on &lt;tt&gt;rk0&lt;/tt&gt; that remains small throughout
+(which lets us discard &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L3&quot;&gt;&lt;tt&gt;mget&lt;/tt&gt;&lt;/a&gt; cache effects from indirect blocks):
+&lt;/p&gt;
+&lt;ol&gt;
+ &lt;li id=55 value=55&gt;on l. 214, the file being written to is loaded into the i-node cache&lt;/li&gt;
+ &lt;li id=56 value=56&gt;(if it wasn't&lt;!--'--&gt; already in there, the block containing the i-node is looked up in the block cache
+      (and, if missing, enqueued to be read, and waited for), parsed)&lt;/li&gt;
+ &lt;li id=57 value=57&gt;((if had to look up in block cache, it now contains
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 12) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '1… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)))&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      or
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 12) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li value=1&gt;(0, 4) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '2… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)))&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      if the previously-open i-node was modified (in this example: 0,4 has the i-node for &lt;tt&gt;/&lt;/tt&gt;); this case folds into the former
+       &lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=58 value=58&gt;if writing partial or non-block-aligned data (l. 240),
+     the data block at the file cursor is &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L148&quot;&gt;looked up in the block cache&lt;/a&gt; (l. 241)
+     (and, if missing, enqueued to be read, and waited for)&lt;/li&gt;
+ &lt;li id=59 value=59&gt;(the block cache now contains
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 222) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li value=1&gt;(1, 12) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '2… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;))&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      (if the block cache contained the data block &lt;em&gt;and&lt;/em&gt; had to look up the i-node in the i-node cache) or
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 222) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '1… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      (in all other cases)&lt;/li&gt;
+ &lt;!-- preempt point --&gt;
+ &lt;li id=60 value=60&gt;the data block at the file cursor is looked up in the block cache (l. 243) and locked for writing&lt;/li&gt;
+ &lt;li id=61 value=61&gt;(the block cache now contains
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 222) flags: lock, want to write; data=(current contents of block (1,222) if &lt;a href=&quot;#59&quot;&gt;condition above&lt;/a&gt; was met, otherwise stale data from some other block that was reclaimed for this)&lt;/li&gt;
+         &lt;li value=1&gt;(1, 12) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '2… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;))&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      or
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 222) flags: lock, want to write; data=(current contents of block (1,222) if &lt;a href=&quot;#59&quot;&gt;condition above&lt;/a&gt; was met, otherwise stale data from some other block that was reclaimed for this)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '1… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      resp.&lt;/li&gt;
+ &lt;li id=62 value=62&gt;after the open-coded &lt;span class=&quot;label d&quot;&gt;&lt;tt&gt;_memcpy&lt;/tt&gt;&lt;/span&gt;, the buffer contains the new contents of the block&lt;/li&gt;
+ &lt;!-- preempt point --&gt;
+ &lt;li id=63 value=63&gt;on l. 252, the buffer with priority 0 is unlocked, and enqueued if there's&lt;!--'--&gt; no contending I/O
+     (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L184&quot;&gt;&lt;tt&gt;dskwr&lt;/tt&gt;&lt;/a&gt; is
+      &lt;tt&gt;bufp[0]._flags &amp;= ~lock; &lt;a href=&quot;#PSW&quot;&gt;ppoke()&lt;/a&gt;;&lt;/tt&gt;)&lt;/li&gt;
+ &lt;li id=64 value=64&gt;(the block cache now contains
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 222) flags: want to write (+ dispatched read request if successfully enqueued)&lt;/li&gt;
+         &lt;li value=1&gt;(1, 12) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '2… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;))&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      or
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 222) flags: want to write (+ dispatched read request if successfully enqueued)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '1… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      resp.&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=65 value=65&gt;the sequence above repeats until all affected data blocks were written and enqueued;
+     the I/O queue grows like
+       &lt;div style=&quot;margin-left: 1em;&quot;&gt;
+        &lt;ol style=&quot;margin-left: 1em;&quot;&gt;
+         &lt;li value=0&gt;(1, 223) flags: want to write (+ dispatched read request if successfully enqueued)&lt;/li&gt;
+         &lt;li value=1&gt;(1, 222) flags: want to write (+ dispatched read request if successfully enqueued)&lt;/li&gt;
+         &lt;li value=2&gt;(1, 12) flags: unclaimed (flags: &lt;del&gt;none&lt;/del&gt;)&lt;/li&gt;
+         &lt;li style=&quot;list-style-type: '3… ';&quot;&gt;(&lt;var&gt;d&lt;/var&gt;, &lt;var&gt;i&lt;/var&gt;) unclaimed (flags: &lt;del&gt;none&lt;/del&gt;))&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;&lt;/li&gt;
+ &lt;li id=66 value=66&gt;after returning to one of the callers
+     &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L334&quot;&gt;&lt;tt&gt;syswrite&lt;/tt&gt;&lt;/a&gt;,
+     &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L125&quot;&gt;&lt;tt&gt;wdir&lt;/tt&gt;&lt;/a&gt;
+     (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u2#L46&quot; &gt;&lt;tt&gt;sysunlink&lt;/tt&gt;&lt;/a&gt;),
+     &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L120&quot;&gt;&lt;tt&gt;badsys&lt;/tt&gt;&lt;/a&gt;,
+     at some point control ends up returning from kernel- to user-space at which point
+     &lt;a href=&quot;#33&quot;&gt;the (block containing the) i-node is flushed&lt;/a&gt; (if it was modified because the file grew)&lt;/li&gt;
+ &lt;li id=67 value=67&gt;(&lt;tt&gt;dskw&lt;/tt&gt; is only called by as-if by tail recursion from &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L125&quot;&gt;&lt;tt&gt;writei&lt;/tt&gt;&lt;/a&gt;,
+      so returning from &lt;tt&gt;dskw&lt;/tt&gt; returns to &lt;tt&gt;writei&lt;/tt&gt;'s&lt;!--'--&gt; caller)&lt;/li&gt;
+ &lt;li id=68 value=68&gt;((it's&lt;!--'--&gt; also called by the installer kernel to
+       &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L223&quot;&gt;write the installer i-nodes&lt;/a&gt; which flushes everything together afterward))&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=69 value=69&gt;it follows trivially from the above that the &lt;tt&gt;&lt;q&gt;yes, write the block and the i-node&lt;/q&gt;&lt;/tt&gt; comment is bogus:
+     at most, it writes the block; most likely, it just returns because there's&lt;!--'--&gt; already I/O happening to the device containing the block&lt;/li&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;li id=70 value=70&gt;an attentive reader will notice that if the process times out
+     (a &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u4#L11&quot;&gt;clock interrupt&lt;/a&gt; happens
+      ⇒ user &lt;abbr title=&quot;that's what they called time slices at the time; &amp;quot;process ran for too long, time for another to run&amp;quot;&quot;&gt;quantum&lt;/abbr&gt; expired
+      ⇒ process swapped out),
+     another process can re-arrange the I/O queue arbitrarily;
+     this is expected, except this function behaves as-if it held a lock on the buffer between ll. 240-252,
+     but it doesn't&lt;!--'--&gt;&lt;/li&gt;
+ &lt;li id=71 value=71&gt;thus, if the process is interrupted between &lt;a href=&quot;#58&quot;&gt;proposition 58&lt;/a&gt; (l. 241) and &lt;a href=&quot;#60&quot;&gt;proposition 60&lt;/a&gt; (l. 243), and not writing full block (i.e. need original data),
+     if the returned block is pushed out of the cache, &lt;tt&gt;wslot&lt;/tt&gt; will fail to find the buffer with the original data,
+     and will instead update a &quot;random&quot; block found on the cache with partial data&lt;/li&gt;
+ &lt;li id=72 value=72&gt;if the process is interrupted between &lt;a href=&quot;#60&quot;&gt;proposition 60&lt;/a&gt; (l. 243) and &lt;a href=&quot;#63&quot;&gt;proposition 63&lt;/a&gt; (l. 252) and the swapped-in process does any dynamic buffer I/O,
+     the buffer obtained in &lt;a href=&quot;#60&quot;&gt;proposition 60&lt;/a&gt; (l. 243) will be lost forever, since it will have been moved to priority &gt;0,
+     and thus never unlocked&lt;/li&gt;
+ &lt;li id=73 value=73&gt;(this would be fixed if &lt;tt&gt;dskwr&lt;/tt&gt; did &lt;tt&gt;container_of(r5, struct _dynamic_iobuf, _buf)-&gt;_flags &amp;= ~lock; ppoke();&lt;/tt&gt;,
+      updating the used buffer instead of the one with priority 0)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+at least, I think this is possible.
+The second half of &lt;tt&gt;clock&lt;/tt&gt; is impenetrable to me.
+&lt;/p&gt;
+&lt;p class=&quot;indented&quot;&gt;
+Tangentially,
+&lt;cite class=&quot;inline&quot;&gt;
+ J. DeFelice's&lt;!--'--&gt;
+ &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf#page=2&quot;&gt;
+  Preliminary Release of UNIX Implementation Document&lt;/a&gt;,
+ 6/20/72
+&lt;/cite&gt;
+appears to be the only reference to this author in the written record.
+But there's&lt;!--'--&gt; no &quot;satisfying&quot; way to end this post.
+All &lt;a href=&quot;#51&quot;&gt;novel&lt;/a&gt; &lt;a href=&quot;#53&quot;&gt;results&lt;/a&gt; were presented in-line,
+and pedantry that disproves well-established consensus and &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; historiosophy were rewards unto themselves.
+&lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/file-view-edit&quot;&gt;Spin &lt;cite class=&quot;inline&quot;&gt;File, View, Edit&lt;/cite&gt;&lt;/a&gt; maybe?
+&lt;a href=&quot;//101010.pl/@nabijaczleweli/115945389936286232&quot;&gt;Comment for engagement&lt;/a&gt;?
+Call to action
+&lt;a href=&quot;//store.nabijaczleweli.xyz&quot;&gt;3&lt;/a&gt;,
+&lt;a href=&quot;//liberapay.com/nabijaczleweli&quot;&gt;4&lt;/a&gt;,
+5…?
+&lt;/p&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,b-DeFelice-polemic.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/div&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,a-v1-nbuf-benchmark.html</id>
@@ -150,16 +2242,16 @@ says
 &lt;!--&quot;--&gt;	jmp	ret &lt;del&gt;/ no, return to the caller via 'ret'&lt;/del&gt;&lt;!--&quot;--&gt;
 &lt;/small&gt;&lt;/pre&gt;
 &lt;figcaption&gt;
- cf. &lt;strong&gt;emphasised&lt;/strong&gt; fragments&lt;br /&gt;
- (labels colour-coded; note that &lt;tt&gt;123&lt;/tt&gt; is octal and &lt;tt&gt;123.&lt;/tt&gt; is decimal)
+ Heed &lt;strong&gt;emphasised&lt;/strong&gt; fragments&lt;br /&gt;
+ (labels colour-coded; note that &lt;tt&gt;123&lt;/tt&gt; is octal and &lt;tt&gt;123.&lt;/tt&gt; is decimal; &lt;tt&gt;_&lt;/tt&gt;-prefixed names expositional)
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 which can be translated to
 &lt;/p&gt;
-&lt;figure class=&quot;offset continuation C&quot;&gt;
-&lt;pre class=linenos&gt;​
-212
+&lt;figure class=&quot;offset continuing C&quot;&gt;
+&lt;pre class=linenos&gt;&lt;small&gt;​
+&lt;/small&gt;212
 ​
 &lt;strong&gt;214
 &lt;/strong&gt;215
@@ -186,20 +2278,17 @@ which can be translated to
 246
 247
 &lt;small&gt;​
-&lt;/small&gt;&lt;small&gt;249
-&lt;/small&gt;&lt;small&gt;​
+​
 &lt;/small&gt;&lt;strong&gt;252
 &lt;/strong&gt;​
-&lt;small&gt;​
-&lt;/small&gt;&lt;small&gt;255
-&lt;/small&gt;​
+​
 &lt;/pre&gt;
 &lt;pre&gt;
-extern r1, r2, r3, cdev;
-&lt;!--&quot;--&gt;dskw(ino) &lt;del&gt;/* write routine for non-special files */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;extern r1, r2, r3, cdev;
+&lt;/small&gt;&lt;!--&quot;--&gt;dskw(_ino) &lt;del&gt;/* write routine for non-special files */&lt;/del&gt;&lt;!--&quot;--&gt;
 {
-&lt;strong&gt;&lt;!--&quot;--&gt;	r1 = ino; iget(); &lt;del&gt;/* write i-node out (if modified), read i-node 'r1' on 'cdev'&lt;!--&quot;--&gt;
-&lt;/strong&gt;&lt;!--&quot;--&gt;	                     into i-node area of core */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;strong&gt;&lt;!--&quot;--&gt;	r1 = _ino; iget(); &lt;del&gt;/* write i-node out (if modified), read i-node 'r1' on 'cdev'&lt;!--&quot;--&gt;
+&lt;/strong&gt;&lt;!--&quot;--&gt;	                      into i-node area of core */&lt;/del&gt;&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;	r2 = *u.fofp + u.count; &lt;del&gt;/* file offset [(u.off) or the offset in&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;	                           the fsp entry for this file] +&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;	                           no. of bytes to be written */&lt;/del&gt;&lt;!--&quot;--&gt;
@@ -222,16 +2311,14 @@ extern r1, r2, r3, cdev;
 &lt;!--&quot;--&gt;		sioreg(); &lt;del&gt;/* r3 = no. of bytes of data,&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;		             r1 = address of data,&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;		             r2 points to location in buffer in which to start writing data */&lt;/del&gt;&lt;!--&quot;--&gt;
-&lt;small&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;while&lt;/span&gt;&lt;!--&quot;--&gt;(r3--)&lt;!--&quot;--&gt;
-&lt;!--&quot;--&gt;			*(char *)r2 = *(char *)r1; &lt;del&gt;/* transfer a byte of data to the I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
+&lt;small&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;label d&quot;&gt;_memcpy&lt;/span&gt;&lt;!--&quot;--&gt;(r2, r1, r3); &lt;del&gt;/* transfer a byte of data to the I/O buffer */&lt;/del&gt;&lt;!--&quot;--&gt;
 
 &lt;/small&gt;&lt;strong&gt;&lt;!--&quot;--&gt;		dskwr(); &lt;del&gt;/* yes, write the block and the i-node */&lt;/del&gt;&lt;!--&quot;--&gt;
 &lt;/strong&gt;&lt;!--&quot;--&gt;	}&lt;!--&quot;--&gt;
-&lt;small&gt;
-&lt;!--&quot;--&gt;	goto ret;&lt;!--&quot;--&gt;
-&lt;/small&gt;}
+&lt;small&gt;&lt;!-- goto *ret;, which is is equivalent to a bare return here --&gt;&lt;/small&gt;}
 &lt;/pre&gt;
 &lt;/figure&gt;
+
 &lt;p class=&quot;indented continued&quot;&gt;
 The comment on the &lt;tt&gt;dskwr&lt;/tt&gt; call implies that it'll&lt;!--'--&gt; (schedule to)
 &lt;abbr title=&quot;A pedantic reader will notice that is not how V1's buffering works. More on this in 023,b. For the purposes of this post we can consider the caching models to be black boxes.&quot;&gt;
@@ -668,7 +2755,7 @@ In conclusion:
 nbufs=2 is a soft usability minimum, more-so than a hard limit, and
 the distribution kernel ships as many nbufs as it can easily fit.
 &lt;/p&gt;
-&lt;img src=&quot;/content/assets/blogn_t/023,a.03-graph.png&quot; style=&quot;width: 100%; max-height: 50em;&quot;&gt;
+&lt;img src=&quot;/content/assets/blogn_t/023,a.03-graph.png&quot; style=&quot;width: 100%; max-height: 50em;&quot; class=&quot;light-invert&quot; /&gt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
@@ -877,7 +2964,7 @@ So, once more, as a &lt;a href=&quot;//ra.ws.co.ls/~nabijaczleweli/Utah_v4/blob/
  &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/tree/537100b515f61b243dbe614d308062be0497d676/item/tp.cpp#L48&quot;&gt;care&lt;/a&gt;
  to work the &lt;q&gt;double-precision&lt;/q&gt; (32-bit) timestamp's&lt;!--'--&gt; endianness to get a reasonable result; the epoch matches ours by this point):
 &lt;/p&gt;
-&lt;pre style=&quot;white-space: pre;&quot;&gt;$ make tp &amp;&amp; &amp;lt; v4tape ./tp t | tr -d '\0' | column -t
+&lt;pre id=&quot;v4tape-1st&quot; style=&quot;white-space: pre;&quot;&gt;$ make tp &amp;&amp; &amp;lt; v4tape ./tp t | tr -d '\0' | column -t
 &lt;!--&quot;--&gt;c++ -fdebug-default-version=3    tp.cpp   -o tp&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;2532864 bytes, 4947 blocks&lt;!--&quot;--&gt;
 &lt;!--&quot;--&gt;&lt;del&gt;name      mode   uid:gid size   mtime                         tape address checksum&lt;/del&gt;&lt;!--&quot;--&gt;
@@ -1148,7 +3235,7 @@ The remaining space is used for swap
 &lt;p class=&quot;continuation&quot;&gt;
 ).
 &lt;/p&gt;
-&lt;p class=&quot;indented continued&quot;&gt;
+&lt;p class=&quot;indented continued&quot; id=&quot;v4root-1st&quot;&gt;
 Then, it's&lt;!--'--&gt;
 &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/commit/4db97ae713f9279902ec16ed91adc340af87369d#fs5tar.cpp&quot;&gt;a simple mechanical matter&lt;/a&gt;
 of traversing the filesystem (which is itself so trivial that file system (V) gives a full implementation)
