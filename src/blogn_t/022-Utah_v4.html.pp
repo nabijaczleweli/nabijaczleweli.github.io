@@ -295,7 +295,7 @@ So, once more, as a <a href="//ra.ws.co.ls/~nabijaczleweli/Utah_v4/blob/trunk/tp
  <a href="//git.sr.ht/~nabijaczleweli/Utah_v4/tree/537100b515f61b243dbe614d308062be0497d676/item/tp.cpp#L48">care</a>
  to work the <q>double-precision</q> (32-bit) timestamp's<!--'--> endianness to get a reasonable result; the epoch matches ours by this point):
 </p>
-<pre style="white-space: pre;">\
+<pre id="v4tape-1st" style="white-space: pre;">\
 $ make tp && &lt; v4tape ./tp t | tr -d '\0' | column -t
 <!--"-->c++ -fdebug-default-version=3    tp.cpp   -o tp<!--"-->
 <!--"-->2532864 bytes, 4947 blocks<!--"-->
@@ -593,7 +593,7 @@ $ tail -c +$(( 1 + 4000 * 512 )) v4root | hd
 ).
 </p>
 
-<p class="indented continued">
+<p class="indented continued" id="v4root-1st">
 Then, it's<!--'-->
 <a href="//git.sr.ht/~nabijaczleweli/Utah_v4/commit/4db97ae713f9279902ec16ed91adc340af87369d#fs5tar.cpp">a simple mechanical matter</a>
 of traversing the filesystem (which is itself so trivial that file system (V) gives a full implementation)

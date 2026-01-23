@@ -33,6 +33,10 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 		<a href="blogn_t/023,a-v1-nbuf-benchmark.html">023,a. Benchmarking V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance;
 		<span style="white-space: nowrap;">Sat, 17 Jan 2026 04:33:03 +0100</span></a>
 	</samp>
+	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
+		<a href="blogn_t/023,b-DeFelice-polemic.html">023,b. A J. DeFelice polemick on V1 <span class="smallcaps">unix</span> buffering schemes, novel results regarding V1 <span class="smallcaps">unix</span> mounts, on the conceptualisation of the file system and block device partitioning;
+		<span style="white-space: nowrap;">Fri, 23 Jan 2026 21:28:16 +0100</span></a>
+	</samp>
 </p>
 
 <p>
