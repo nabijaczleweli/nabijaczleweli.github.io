@@ -387,7 +387,8 @@ li[id][value]::marker {
 	    effectively take an <tt>int *</tt></li>
 	<LI>because of this, the root filesystem's<!--'--> size is encoded in the kernel
 	    — <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L3">128 * 8 blocks, 64 * 8 i-nodes</a>
-	      (<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171">also mirrored in the installer</a>) —
+	      (also <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171">mirrored</a>
+	       in the <a href="014-unix-pre-v4-pid0-corollary.html#superblock installation">installer</a>) —
 	    and changing this would render kernels configured with differently-sized root filesystems unbootable</li>
 	<LI>(but if you copy a rootfs to a different device, it's<!--'--> still usable generically)</li>
 	<LI>these sizes mean that, by definition, the rootfs is 1024 blocks long (512k, matching the documented RK05 size),
@@ -1625,7 +1626,7 @@ root
 </ol>
 
 
-HEADING_S(3, finally, class="continued", And now, a vicious take-down of a user who's<!--'--> <small><abbr title="Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years">probably</abbr></small> been dead nearly a decade,)
+HEADING_S(3, finally, class="continued", And now, a vicious take-down of a retiree who's<!--'--> made a minor error 55 years ago)
 <p class="continuing">
 with a final look at <strong>emphasised</strong> fragments:
 </p>
@@ -1777,15 +1778,7 @@ The second half of <tt>clock</tt> is impenetrable to me.
 </p>
 
 <p class="indented">
-Tangentially,
-<cite class="inline">
-	J. DeFelice's<!--'-->
-	<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf#page=2">
-		Preliminary Release of UNIX Implementation Document</a>,
-	6/20/72
-</cite>
-appears to be the only reference to this author in the written record.
-But there's<!--'--> no "satisfying" way to end this post.
+There's<!--'--> no "satisfying" way to end this post.
 All <a href="#51">novel</a> <a href="#53">results</a> were presented in-line,
 and pedantry that disproves well-established consensus and unix historiosophy were rewards unto themselves.
 <a href="//nabijaczleweli.bandcamp.com/album/file-view-edit">Spin <cite class="inline">File, View, Edit</cite></a> maybe?

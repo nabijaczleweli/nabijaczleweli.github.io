@@ -143,7 +143,8 @@ My draft for post 023 currently quips
 (to wit: V1's<!--'--> filesystem cache consists of 1 – The – open file
  <cite>(<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L215"><tt>iget</tt></a> (<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L270">+ <tt>icalc</tt></a>),
         <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L15"><tt>inode</tt>, <tt>i.<var>*</var></tt>, <tt>ii</tt>, <tt>idev</tt>, <tt>cdev</tt>, <tt>imod</tt></a>)</cite>,
- and up to 6 (<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40">installer kernel has 2</a>, I'm<!--'--> pretty sure even just 1 would work) 512-byte I/O block buffers
+ and up to 6 (<a href="014-unix-pre-v4-pid0-corollary.html#superblock installation">installer kernel</a> has
+              <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40">2</a>, I'm<!--'--> pretty sure even just 1 would work) 512-byte I/O block buffers
  <cite>(<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40"><tt>nbuf</tt></a>,
         <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L71"><tt>buffer</tt></a> (<tt>bufp</tt>),
         <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L180"><tt>wslot</tt></a>)</cite>
