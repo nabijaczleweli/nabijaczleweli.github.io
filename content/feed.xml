@@ -34,7 +34,7 @@
 &lt;li&gt;&lt;a href='#PSW'&gt;&lt;tt&gt;&lt;q&gt;proc. status&lt;/q&gt;&lt;/tt&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#buffer'&gt;Buffered block I/O&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href='#inode'&gt;I-node cache&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href='#finally'&gt;And now, a vicious take-down of a user who's&lt;!--'--&gt; &lt;small&gt;&lt;abbr title=&quot;Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years&quot;&gt;probably&lt;/abbr&gt;&lt;/small&gt; been dead nearly a decade,&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#finally'&gt;And now, a vicious take-down of a retiree who's&lt;!--'--&gt; made a minor error 55 years ago&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/ol&gt;
 &lt;/ol&gt;
@@ -478,7 +478,8 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
      effectively take an &lt;tt&gt;int *&lt;/tt&gt;&lt;/li&gt;
  &lt;li id=6 value=6&gt;because of this, the root filesystem's&lt;!--'--&gt; size is encoded in the kernel
      — &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L3&quot;&gt;128 * 8 blocks, 64 * 8 i-nodes&lt;/a&gt;
-       (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171&quot;&gt;also mirrored in the installer&lt;/a&gt;) —
+       (also &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171&quot;&gt;mirrored&lt;/a&gt;
+        in the &lt;a href=&quot;014-unix-pre-v4-pid0-corollary.html#superblock installation&quot;&gt;installer&lt;/a&gt;) —
      and changing this would render kernels configured with differently-sized root filesystems unbootable&lt;/li&gt;
  &lt;li id=7 value=7&gt;(but if you copy a rootfs to a different device, it's&lt;!--'--&gt; still usable generically)&lt;/li&gt;
  &lt;li id=8 value=8&gt;these sizes mean that, by definition, the rootfs is 1024 blocks long (512k, matching the documented RK05 size),
@@ -1843,7 +1844,7 @@ root
      (&lt;tt&gt;systm&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;inode&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;mount&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;clist&lt;/tt&gt;&lt;wbr /&gt;+&lt;tt&gt;buffer&lt;/tt&gt;),
      buffers are 37.6% of kernel and 25.1% of total memory.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;finally&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#finally&quot;&gt;#&lt;/a&gt; And now, a vicious take-down of a user who's&lt;!--'--&gt; &lt;small&gt;&lt;abbr title=&quot;Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years&quot;&gt;probably&lt;/abbr&gt;&lt;/small&gt; been dead nearly a decade,&lt;/h3&gt;
+&lt;h3 id=&quot;finally&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#finally&quot;&gt;#&lt;/a&gt; And now, a vicious take-down of a retiree who's&lt;!--'--&gt; made a minor error 55 years ago&lt;/h3&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 with a final look at &lt;strong&gt;emphasised&lt;/strong&gt; fragments:
 &lt;/p&gt;
@@ -2081,15 +2082,7 @@ at least, I think this is possible.
 The second half of &lt;tt&gt;clock&lt;/tt&gt; is impenetrable to me.
 &lt;/p&gt;
 &lt;p class=&quot;indented&quot;&gt;
-Tangentially,
-&lt;cite class=&quot;inline&quot;&gt;
- J. DeFelice's&lt;!--'--&gt;
- &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf#page=2&quot;&gt;
-  Preliminary Release of UNIX Implementation Document&lt;/a&gt;,
- 6/20/72
-&lt;/cite&gt;
-appears to be the only reference to this author in the written record.
-But there's&lt;!--'--&gt; no &quot;satisfying&quot; way to end this post.
+There's&lt;!--'--&gt; no &quot;satisfying&quot; way to end this post.
 All &lt;a href=&quot;#51&quot;&gt;novel&lt;/a&gt; &lt;a href=&quot;#53&quot;&gt;results&lt;/a&gt; were presented in-line,
 and pedantry that disproves well-established consensus and &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; historiosophy were rewards unto themselves.
 &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/file-view-edit&quot;&gt;Spin &lt;cite class=&quot;inline&quot;&gt;File, View, Edit&lt;/cite&gt;&lt;/a&gt; maybe?
@@ -2127,7 +2120,8 @@ My draft for post 023 currently quips
 (to wit: V1's&lt;!--'--&gt; filesystem cache consists of 1 – The – open file
  &lt;cite&gt;(&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L215&quot;&gt;&lt;tt&gt;iget&lt;/tt&gt;&lt;/a&gt; (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L270&quot;&gt;+ &lt;tt&gt;icalc&lt;/tt&gt;&lt;/a&gt;),
         &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L15&quot;&gt;&lt;tt&gt;inode&lt;/tt&gt;, &lt;tt&gt;i.&lt;var&gt;*&lt;/var&gt;&lt;/tt&gt;, &lt;tt&gt;ii&lt;/tt&gt;, &lt;tt&gt;idev&lt;/tt&gt;, &lt;tt&gt;cdev&lt;/tt&gt;, &lt;tt&gt;imod&lt;/tt&gt;&lt;/a&gt;)&lt;/cite&gt;,
- and up to 6 (&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40&quot;&gt;installer kernel has 2&lt;/a&gt;, I'm&lt;!--'--&gt; pretty sure even just 1 would work) 512-byte I/O block buffers
+ and up to 6 (&lt;a href=&quot;014-unix-pre-v4-pid0-corollary.html#superblock installation&quot;&gt;installer kernel&lt;/a&gt; has
+              &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40&quot;&gt;2&lt;/a&gt;, I'm&lt;!--'--&gt; pretty sure even just 1 would work) 512-byte I/O block buffers
  &lt;cite&gt;(&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L40&quot;&gt;&lt;tt&gt;nbuf&lt;/tt&gt;&lt;/a&gt;,
         &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L71&quot;&gt;&lt;tt&gt;buffer&lt;/tt&gt;&lt;/a&gt; (&lt;tt&gt;bufp&lt;/tt&gt;),
         &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u8#L180&quot;&gt;&lt;tt&gt;wslot&lt;/tt&gt;&lt;/a&gt;)&lt;/cite&gt;

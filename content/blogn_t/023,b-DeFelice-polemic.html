@@ -212,7 +212,7 @@ cite blockquote {
 <li><a href='#PSW'><tt><q>proc. status</q></tt></a></li>
 <li><a href='#buffer'>Buffered block I/O</a></li>
 <li><a href='#inode'>I-node cache</a></li>
-<li><a href='#finally'>And now, a vicious take-down of a user who's<!--'--> <small><abbr title="Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years">probably</abbr></small> been dead nearly a decade,</a></li>
+<li><a href='#finally'>And now, a vicious take-down of a retiree who's<!--'--> made a minor error 55 years ago</a></li>
 </ol>
 </ol>
 </ol>
@@ -691,7 +691,8 @@ li[id][value]::marker {
      effectively take an <tt>int *</tt></li>
  <li id=6 value=6>because of this, the root filesystem's<!--'--> size is encoded in the kernel
      — <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#ux#L3">128 * 8 blocks, 64 * 8 i-nodes</a>
-       (<a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171">also mirrored in the installer</a>) —
+       (also <a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u0#L171">mirrored</a>
+        in the <a href="014-unix-pre-v4-pid0-corollary.html#superblock installation">installer</a>) —
      and changing this would render kernels configured with differently-sized root filesystems unbootable</li>
  <li id=7 value=7>(but if you copy a rootfs to a different device, it's<!--'--> still usable generically)</li>
  <li id=8 value=8>these sizes mean that, by definition, the rootfs is 1024 blocks long (512k, matching the documented RK05 size),
@@ -2083,7 +2084,7 @@ root
      (<tt>systm</tt><wbr />+<tt>inode</tt><wbr />+<tt>mount</tt><wbr />+<tt>clist</tt><wbr />+<tt>buffer</tt>),
      buffers are 37.6% of kernel and 25.1% of total memory.</li>
 </ol>
-<h3 id="finally" class="continued"><a class="hash-link" href="#finally">#</a> And now, a vicious take-down of a user who's<!--'--> <small><abbr title="Assuming they were around dmr's age (born 1941), the average american life expectancy at the time is around 70 (and dmr died at 70), so on average one'd expect J. DeFelice to've been dead for 15 years">probably</abbr></small> been dead nearly a decade,</h3>
+<h3 id="finally" class="continued"><a class="hash-link" href="#finally">#</a> And now, a vicious take-down of a retiree who's<!--'--> made a minor error 55 years ago</h3>
 <p class="continuing">
 with a final look at <strong>emphasised</strong> fragments:
 </p>
@@ -2321,15 +2322,7 @@ at least, I think this is possible.
 The second half of <tt>clock</tt> is impenetrable to me.
 </p>
 <p class="indented">
-Tangentially,
-<cite class="inline">
- J. DeFelice's<!--'-->
- <a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf#page=2">
-  Preliminary Release of UNIX Implementation Document</a>,
- 6/20/72
-</cite>
-appears to be the only reference to this author in the written record.
-But there's<!--'--> no "satisfying" way to end this post.
+There's<!--'--> no "satisfying" way to end this post.
 All <a href="#51">novel</a> <a href="#53">results</a> were presented in-line,
 and pedantry that disproves well-established consensus and <span class="smallcaps">unix</span> historiosophy were rewards unto themselves.
 <a href="//nabijaczleweli.bandcamp.com/album/file-view-edit">Spin <cite class="inline">File, View, Edit</cite></a> maybe?
@@ -2361,9 +2354,9 @@ Call to action
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 23.01.2026 20:38:20 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 24.01.2026 12:20:50 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/023,b-DeFelice-polemic.html.pp">src/blogn_t/023,b-DeFelice-polemic.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1662470">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1662886">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
