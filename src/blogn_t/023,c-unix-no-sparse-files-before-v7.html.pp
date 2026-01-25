@@ -99,7 +99,7 @@ Per
 <blockquote class="continuing" style="margin-left: 0;"><tt>\
 If block <u>b</u> in a file exists, it is not necessary
 that all blocks less than <u>b</u> exist.&nbsp; A zero block
-nuimber either in the address words of the i-node
+number either in the address words of the i-node
 or in an indirect block indicates that the
 corresponding block has never been allocated.&nbsp;
 Such a missing block reads as if it contained all
@@ -283,24 +283,24 @@ which, again, runs counter to documentation and marketing of the time —
 	    <a href="//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/Readme"><q>mid-1971</q></a></cite>
 </p>
 #define u(...) <u>__VA_ARGS__</u>
-<blockquote class="continuing"><pre class="continuing">\
-u(3).u(1) u(Ordinary) u(Files)
+<blockquote class="continuing"><tt>\
+u(3).u(1) u(Ordinary) u(Files)<br />
 A file contains whatever information the user places there, for
 example symbolic or binary (object) programs. No particular
 structuring is expected by the system. DEL
 A few user programs generate and expect files with
 more structure; DEL
 however, the structure of files is controlled solely by the
-programs which use them, not by the system.
-<!---->
-u(3).u(5) u(System) u(I)/u(O) u(Calls)
+programs which use them, not by the system.<br />
+<br />
+u(3).u(5) u(System) u(I)/u(O) u(Calls)<br />
 DEL There
 is no distinction between "random" and sequential I/O, nor is any
 logical or physical record size imposed by the system. The size
 of a file on the disk is determined by the location of the last
 piece of information written on it; no predetermination of the
 size of a file is necessary.\
-</pre></blockquote>
+</tt></blockquote>
 <p class="continuing">
 — as well as those going forward
 (cf. <cite><a href="//youtu.be/tc4ROCJYbm0">The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories</a></cite>,
@@ -355,6 +355,7 @@ but are not required because the <tt>cat</tt> completes significantly faster.
 </div>
 
 
+#undef unix
 BLOGN_T_FOOTER()
 WORD_COUNTER_END_NON_ENGLISH()
 BOILERPLATE_END()
