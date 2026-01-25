@@ -1,0 +1,37 @@
+# df
+/dev/rk0 444
+# chdir /tmp
+# cat >big.s
+start:
+	mov     $1, r0
+	sys     write; start; 10
+	mov     $1, r0
+	sys     seek; 4087.; 0
+	sys     write; start; 10
+	sys     exit
+# ed big.s
+105
+/4087/
+	sys	seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+# df
+/dev/rk0 442
+# as big.s
+# a.out >big
+# as large.s
+# a.out >large
+# ls -l
+total 140
+-rwxrwxrwx  1 root       84 Mar 21 12:10 a.out
+-rw-rw-rw-  1 root     4095 Mar 21 12:10 big
+-rw-rw-rw-  1 root      105 Mar 21 12:09 big.s
+-rw-rw-rw-  1 root    65535 Mar 21 12:10 large
+-rw-rw-rw-  1 root      106 Mar 21 12:09 large.s
+# df
+/dev/rk0 436
+# cat big large
+@       @       @       @       #
+# df
+/dev/rk0 304

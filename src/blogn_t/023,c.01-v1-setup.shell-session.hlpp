@@ -1,0 +1,42 @@
+:login: root
+root
+# chdir /tmp
+# cat >big.s
+start:
+	mov	$1, r0
+	sys	write; start; 10
+	mov	$1, r0
+	sys	seek; 4087.; 0
+	sys	write; start; 10
+	sys	exit
+# ed big.s
+105
+/4087/
+        sys     seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+q
+# df
+723+2364
+# as big.s
+I
+II
+# a.out >big
+# as large.s
+I
+II
+# a.out >large
+# df
+718+2364
+# ls -l
+total   22
+124 sxrwrw  1 root     84 Jan  1 00:00:00 a.out
+123 s-rwrw  1 root   4095 Jan  1 00:00:00 big
+121 s-rwrw  1 root    105 Jan  1 00:00:00 big.s
+126 l-rwrw  1 root  65535 Jan  1 00:00:00 large
+125 s-rwrw  1 root    106 Jan  1 00:00:00 large.s
+#SMALL_START#
+                                          ...
+ 45 s-rwr-  1 root    142 Jan  1 00:00:00 utmp
+#SMALL_END#

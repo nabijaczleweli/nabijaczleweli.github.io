@@ -1,0 +1,41 @@
+struct {
+	int  flgs;
+#SMALL_START#
+	char nlks;
+	char uid;
+#SMALL_END#
+	int  size;
+	int  dskp[8];
+#SMALL_START#
+	int  ctim[2];
+	int  mtim[2];
+#SMALL_END#
+} i; // currently-open i-node
+#SMALL_START#
+struct {
+	// (more spilled process state)
+	int *fofp;
+	int  count;
+} u;
+extern r1, ret();
+#SMALL_END#
+dskr(_ino/*, u.fofp, u.count*/) {
+	r1 = _ino;
+	/*i =*/ iget(/*r1*/);  // get i-node (r1) into i-node section of core
+
+	r2 = i.size - *u.fofp; // file size DEL subtract file offset
+	if(r2 <= 0)
+		goto *ret;
+	if(r2 <= u.count)
+		u.count = r2;
+
+	/*r1 =*/ mget(/*i, u.fofp*/); // DEL physical block number of block DEL where offset points
+	/*r5 =*/ dskrd(/*r1*/);       // read in block, r5 points to 1st word of data in buffer
+	/*r1, r2, r3 =*/ sioreg(/*u.fofp, u.count, r5*/);
+	_memcpy(r1, r2, r3);          // move data from buffer into working core DEL
+
+	if(u.count == 0)
+		goto *ret;
+	else
+		goto *dskr;
+}

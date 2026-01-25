@@ -97,6 +97,7 @@ Not banged out in an hour. <button style="float: right;" onclick="reverse();">Re
 <p></p>
  PCPOST(023,a-v1-nbuf-benchmark,                 Sat, 17 Jan 2026 04:33:03 +0100, 023,a. V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance benchmark)
  PCPOST(023,b-DeFelice-polemic,                  Fri, 23 Jan 2026 21:28:16 +0100, 023,b. A J. DeFelice polemick on V1 <span class="smallcaps">unix</span> buffering schemes, novel results regarding V1 <span class="smallcaps">unix</span> mounts, on the conceptualisation of the file system and block device partitioning)
+ PCPOST(023,c-unix-no-sparse-files-before-v7,    Sun, 25 Jan 2026 23:28:55 +0100, 023,c. <span class="smallcaps">unix</span> didn't<!--'--> have sparse files before V7 (+ V1 patch))
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 

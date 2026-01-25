@@ -1,0 +1,42 @@
+# df
+/dev/rk0 958
+/dev/rk1 937
+/dev/rk2 bad free count
+192
+# cat >big.s
+start:
+	mov	$1, r0
+	sys	write; start; 10
+	mov	$1, r0
+	sys	seek; 4087.; 0
+	sys	write; start; 10
+	sys	exit
+# ed big.s
+105
+/4087/
+	sys	seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+# df
+/dev/rk0 956
+/dev/rk1 937
+# as big.s
+# a.out >big
+# as large.s
+# a.out >large
+# df
+/dev/rk0 950
+/dev/rk1 937
+# ls -l
+total 142
+-rwxrwxrwx  1 root       84 Oct 10 13:37 a.out
+-rw-rw-rw-  1 root     4095 Oct 10 13:37 big
+-rw-rw-rw-  1 root      105 Oct 10 13:36 big.s
+-rw-rw-rw-  1 root    65535 Oct 10 13:37 large
+-rw-rw-rw-  1 root      106 Oct 10 13:36 large.s
+# cat big large
+@       @       @       @       #
+# df
+/dev/rk0 818
+/dev/rk1 937

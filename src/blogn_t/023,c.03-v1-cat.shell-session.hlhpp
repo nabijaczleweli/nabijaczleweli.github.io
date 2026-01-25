@@ -1,0 +1,8 @@
+<span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">df</span></span></span>
+<span class="token output">718+2364
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cat</span> big</span></span>
+<span class="token output">@       @@      @</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">df</span></span></span>
+<span class="token output">712+2364
+</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">cat</span> large</span></span>
+<span class="token output">@       @@      @</span><span class="token command"><span class="token shell-symbol important">#</span> <span class="token bash language-bash"><span class="token function">df</span></span></span>
+<span class="token output">586+2364</span>

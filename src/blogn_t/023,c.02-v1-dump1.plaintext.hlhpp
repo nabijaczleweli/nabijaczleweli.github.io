@@ -1,0 +1,16 @@
+i-node 41: USED DIR 0604 links=7 uid=0 size=70
+  41[ 4]:    44 tmp
+i-node 44: USED DIR 0604 links=2 uid=0 size=200
+<strong>  44[16]:   126 large</strong>
+  44[17]:   125 large.s
+<strong>  44[18]:   123 big</strong>
+  44[19]:   121 big.s
+<strong>i-node 126: USED REG LARGE 0606 links=1 uid=0 size=65535
+i.dskp: 304 <small class=zero>0 0 0 0 0 0 0</small>
+indir0: 303 <small class=zero>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</small> 305 <small class=zero>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</small></strong>
+i-node 125: USED REG 0606 links=1 uid=0 size=106
+i.dskp: 301 <small class=zero>0 0 0 0 0 0 0</small>
+<strong>i-node 123: USED REG 0606 links=1 uid=0 size=4095
+i.dskp: 300 <small class=zero>0 0 0 0 0 0</small> 302</strong>
+i-node 121: USED REG 0606 links=1 uid=0 size=105
+i.dskp: 297 <small class=zero>0 0 0 0 0 0 0</small>

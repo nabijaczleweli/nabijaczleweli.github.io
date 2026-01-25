@@ -14,7 +14,7 @@
 #endif
 
 
-<figure class=STR(offset CONT C)>
+<figure class=STR(offset CONT C) id="dskw-C">
 LINENOS
 <pre>
 <small>\

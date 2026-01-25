@@ -28,7 +28,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 
 #define STYLESHEETS BLOGN_T_STYLESHEETS                                                           FORCED_NEWLINE \
                     <link href="../writing/the_taste_of_mi/MathJax-font.css" rel="stylesheet">    FORCED_NEWLINE \
-                    <link href="/content/assets/prism-twilight.min.css?" rel="stylesheet">
+                    <link href="/content/assets/prism-twilight.min.css" rel="stylesheet">
 #define SCRIPTS     WORD_COUNT_SCRIPT FORCED_NEWLINE \
                     <script                     defer src="/content/assets/MathJax3-config.js"></script> FORCED_NEWLINE \
                     <script id="MathJax-script" defer src="//cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script> \

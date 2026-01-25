@@ -1,0 +1,37 @@
+# chdir /tmp
+# cat >big.c
+main() {
+	long off = 4087;
+	write(1, main, 10);
+	lseek(1, off, 0);
+	write(1, main, 10);
+}
+# ed big.c
+73
+/4087/
+	lseek(1, 0, 4087);
+s/4087/65527/
+w large.c
+74
+# df
+/dev/rp0 984
+/dev/rp3 297416
+# cc big.c
+# a.out >big
+# cc large.c
+# a.out >large
+# df
+/dev/rp0 975
+/dev/rp3 297416
+# ls -l
+total 14
+-rwxrwxr-x 1 root      584 Dec 31 19:06 a.out
+-rw-rw-r-- 1 root     4097 Dec 31 19:06 big
+-rw-rw-r-- 1 root       73 Dec 31 19:05 big.c
+-rw-rw-r-- 1 root       10 Dec 31 19:06 large
+-rw-rw-r-- 1 root       74 Dec 31 19:05 large.c
+# cat big large
+w       <$uww   <$uww   >%uw    >%u#
+# df
+/dev/rp0 975
+/dev/rp3 297416
