@@ -12,10 +12,745 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2026-01-23T21:28:16+01:00</updated>
+<updated>2026-01-25T23:28:55+01:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,c-unix-no-sparse-files-before-v7.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/023,c-unix-no-sparse-files-before-v7.html" />
+    <title> 023‚c. UNIX didn't have sparse files before V7 (+ V1 patch) — blogn't — nabijaczleweli </title>
+    <updated>2026-01-25T23:28:55+01:00</updated>
+    <content type="html">
+&lt;div class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;023,c. &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; didn't&lt;!--'--&gt; have sparse files before V7 (+ V1 patch)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 25 Jan 2026 23:28:55 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
+&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#v1'&gt;V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v4'&gt;V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v5'&gt;V5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v6'&gt;V6 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v7'&gt;V7 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#notes'&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v1-patch'&gt;V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; patch&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/details&gt;&lt;/div&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+As we know, the core conceit of sparse files is that when you write to a file,
+and the start of the write is past the current file length, that space is filled with &lt;em&gt;synthetic&lt;/em&gt; zero bytes,
+which (to the precision of some block size) aren't&lt;!--'--&gt; stored on disk.
+The definition in the excerpt below agrees with this.
+They are first present in V7 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;, in spite of having been described in this form since V1.
+&lt;/p&gt;
+&lt;h3 id=&quot;v1&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v1&quot;&gt;#&lt;/a&gt; V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Per
+&lt;cite&gt;
+ UNIX Programmer'&lt;!--'--&gt;s Manual,
+ K. Thompson &amp; D. M. Ritchie,
+ November 3, 1971,
+ format of file system,
+ &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/UNIX_ProgrammersManual_Nov71.pdf#page=174&quot;&gt;p. 3&lt;/a&gt;&lt;/cite&gt;,
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot; style=&quot;margin-left: 0;&quot;&gt;&lt;tt&gt;If block &lt;u&gt;b&lt;/u&gt; in a file exists, it is not necessary
+that all blocks less than &lt;u&gt;b&lt;/u&gt; exist.&amp;nbsp; A zero block
+nuimber either in the address words of the i-node
+or in an indirect block indicates that the
+corresponding block has never been allocated.&amp;nbsp;
+Such a missing block reads as if it contained all
+zero words.&lt;/tt&gt;&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+and a picture is worth 861 words, so, filtered for relevant files:
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token output&quot;&gt;:login: root
+root
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;chdir /tmp&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;start:
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;exit
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;ed big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;105
+/4087/
+&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+q
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;723+2364
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;I
+II
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as large.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;I
+II
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;718+2364
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;total&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;22
+124 sxrwrw&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;84 Jan&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 00:00:00 a.out
+123 s-rwrw&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;4095 Jan&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 00:00:00 big
+121 s-rwrw&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;105 Jan&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 00:00:00 big.s
+126 l-rwrw&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;65535 Jan&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 00:00:00 large
+125 s-rwrw&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;106 Jan&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 00:00:00 large.s
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;                                          &lt;!--&quot;--&gt;...
+ 45 s-rwr-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;142 Jan&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 00:00:00 utmp
+&lt;/small&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&quot;v1-dump1&quot;&gt;
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;i-node 41: USED DIR 0604 links=7 uid=0 size=70
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;41[ 4]:&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;44 tmp
+i-node 44: USED DIR 0604 links=2 uid=0 size=200
+&lt;strong&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[16]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;126 large&lt;/strong&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[17]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;125 large.s
+&lt;strong&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[18]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;123 big&lt;/strong&gt;
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[19]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;121 big.s
+&lt;strong&gt;i-node 126: USED REG LARGE 0606 links=1 uid=0 size=65535
+i.dskp: 304 &lt;small class=zero&gt;0 0 0 0 0 0 0&lt;/small&gt;
+indir0: 303 &lt;small class=zero&gt;0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0&lt;/small&gt; 305 &lt;small class=zero&gt;0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0&lt;/small&gt;&lt;/strong&gt;
+i-node 125: USED REG 0606 links=1 uid=0 size=106
+i.dskp: 301 &lt;small class=zero&gt;0 0 0 0 0 0 0&lt;/small&gt;
+&lt;strong&gt;i-node 123: USED REG 0606 links=1 uid=0 size=4095
+i.dskp: 300 &lt;small class=zero&gt;0 0 0 0 0 0&lt;/small&gt; 302&lt;/strong&gt;
+i-node 121: USED REG 0606 links=1 uid=0 size=105
+i.dskp: 297 &lt;small class=zero&gt;0 0 0 0 0 0 0&lt;/small&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;v1-cat&quot;&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;718+2364
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; big&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;712+2364
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;586+2364&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;v1-dump2&quot;&gt;
+&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;i-node 41: USED DIR 0604 links=7 uid=0 size=70
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;41[ 4]:&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;44 tmp
+i-node 44: USED DIR 0604 links=2 uid=0 size=200
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[16]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;126 large
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[17]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;125 large.s
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[18]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;123 big
+&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;44[19]:&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;121 big.s
+i-node 126: USED REG LARGE 0606 links=1 uid=0 size=65535
+i_dskp: 304 &lt;small class=zero&gt;0 0 0 0 0 0 0&lt;/small&gt;
+indir0: 303 &lt;strong&gt;312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437&lt;/strong&gt; 305 &lt;small class=zero&gt;0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0&lt;/small&gt;
+i-node 125: USED REG 0606 links=1 uid=0 size=106
+i_dskp: 301 &lt;small class=zero&gt;0 0 0 0 0 0 0&lt;/small&gt;
+i-node 123: USED REG 0606 links=1 uid=0 size=4095
+i_dskp: 300 &lt;strong&gt;306 307 308 309 310 311&lt;/strong&gt; 302
+i-node 121: USED REG 0606 links=1 uid=0 size=105
+i_dskp: 297 &lt;small class=zero&gt;0 0 0 0 0 0 0&lt;/small&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+&lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Research_fs_tap_tp_V/commit/d94a79dea35f399aaed69bbab04f0cb23d8bf6e6&quot;&gt;Q.E.D.&lt;/a&gt;
+&lt;/p&gt;
+&lt;h3 id=&quot;v4&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v4&quot;&gt;#&lt;/a&gt; V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 542
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;chdir /tmp&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;start:
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;exit
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;ed big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;105
+/4087/
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 540
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as large.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;total 141
+-rwxrwxrwx 1 root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;84 Jun 12 19:59 a.out
+-rw-rw-rw- 1 root&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;4095 Jun 12 19:59 big
+-rw-rw-rw- 1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;105 Jun 12 19:59 big.s
+-rw-rw-rw- 1 root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;65535 Jun 12 19:59 large
+-rw-rw-rw- 1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;106 Jun 12 19:59 large.s
+-rw-r--r-- 1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;144 Jun 12 19:50 utmp
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 534
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; big large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;#
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 402
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Q.E.D.,
+with &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v4#./man5/fs.5#L265&quot;&gt;same wording&lt;/a&gt; in
+&lt;cite&gt;
+ UNIX Programmer'&lt;!--'--&gt;s Manual, Fourth Edition,
+ K. Thompson &amp; D. M. Ritchie,
+ November, 1973,
+ file system (V)&lt;/cite&gt;.
+&lt;/p&gt;
+&lt;h3 id=&quot;v5&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v5&quot;&gt;#&lt;/a&gt; V5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 444
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;chdir /tmp&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;start:
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;seek; 4087.; 0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;exit
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;ed big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;105
+/4087/
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 442
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as large.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;total 140
+-rwxrwxrwx&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;84 Mar 21 12:10 a.out
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;4095 Mar 21 12:10 big
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;105 Mar 21 12:09 big.s
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;65535 Mar 21 12:10 large
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;106 Mar 21 12:09 large.s
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 436
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; big large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;#
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 304
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Q.E.D.,
+with unchanged wording on &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=238&quot;&gt;p. 2&lt;/a&gt; of
+&lt;cite&gt;
+ UNIX Programmer'&lt;!--'--&gt;s Manual, Fifth Edition,
+ K. Thompson &amp; D. M. Ritchie,
+ June, 1974,
+ file system (V)&lt;/cite&gt;.
+&lt;/p&gt;
+&lt;h3 id=&quot;v6&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v6&quot;&gt;#&lt;/a&gt; V6 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 958
+/dev/rk1 937
+/dev/rk2 bad free count
+192
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;start:
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1, r0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write; start; 10
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;exit
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;ed big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;105
+/4087/
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
+s/4087/65527/
+w large.s
+106
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 956
+/dev/rk1 937
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as big.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;as large.s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 950
+/dev/rk1 937
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;total 142
+-rwxrwxrwx&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;84 Oct 10 13:37 a.out
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;4095 Oct 10 13:37 big
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;105 Oct 10 13:36 big.s
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;65535 Oct 10 13:37 large
+-rw-rw-rw-&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;106 Oct 10 13:36 large.s
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; big large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;#
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rk0 818
+/dev/rk1 937
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Q.E.D.,
+&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6doc#./man/man5/fs.5#L285&quot;&gt;untouched&lt;/a&gt; in
+&lt;cite&gt;
+ UNIX Programmer'&lt;!--'--&gt;s Manual, Sixth Edition,
+ K. Thompson &amp; D. M. Ritchie,
+ May, 1975,
+ file system (V)&lt;/cite&gt;.
+&lt;/p&gt;
+&lt;h3 id=&quot;v7&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v7&quot;&gt;#&lt;/a&gt; V7 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;chdir /tmp&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big.c&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;main() {
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;long off = 4087;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write(1, main, 10);
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;lseek(1, off, 0);
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;write(1, main, 10);
+}
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;ed big.c&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;73
+/4087/
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;lseek(1, 0, 4087);
+s/4087/65527/
+w large.c
+74
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rp0 984
+/dev/rp3 297416
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;cc big.c&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;big&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;cc large.c&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;a.out &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rp0 975
+/dev/rp3 297416
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;total 14
+-rwxrwxr-x 1 root&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;584 Dec 31 19:06 a.out
+-rw-rw-r-- 1 root&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;4097 Dec 31 19:06 big
+-rw-rw-r-- 1 root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;73 Dec 31 19:05 big.c
+-rw-rw-r-- 1 root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;10 Dec 31 19:06 large
+-rw-rw-r-- 1 root&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;74 Dec 31 19:05 large.c
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; big large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;w&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;&amp;lt;$uww&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&amp;lt;$uww&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&gt;%uw&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&gt;%u#
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;/dev/rp0 975
+/dev/rp3 297416
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+which for the first time correctly behaves according to the
+&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Henry_Spencer_v7#usr/man/man5/filsys.5#L242&quot;&gt;still-intact&lt;/a&gt;
+paragraph in
+&lt;cite&gt;
+ UNIX Programmer'&lt;!--'--&gt;s Manual, Sixth Edition,
+ K. Thompson &amp; D. M. Ritchie,
+ May, 1975,
+ file system (V)&lt;/cite&gt;,
+with the corrected behaviour corresponding to
+&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Henry_Spencer_v7#usr/sys/sys/rdwri.c#L58&quot;&gt;
+ &lt;tt&gt;readi()&lt;/tt&gt; zeroing an unused I/O buffer if the address of the data block is 0&lt;/a&gt;.
+&lt;/p&gt;
+&lt;h3 id=&quot;notes&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#notes&quot;&gt;#&lt;/a&gt; Notes&lt;/h3&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+I noticed this when writing
+&lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Research_fs_tap_tp_V/tree/d94a79dea35f399aaed69bbab04f0cb23d8bf6e6^/item/v1/fs.cpp#L107&quot;&gt;a parser for the V1 filesystem&lt;/a&gt;,
+because I forgot about this case.
+And then I noticed that when writing &lt;a href=&quot;022-Utah_v4.html&quot;&gt;the parser for V4 filesystems&lt;/a&gt; I based it on,
+I'd&lt;!--'--&gt; &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4/commit/813201026ba07a6dee2e5e14a669354b7e59f705&quot;&gt;also forgotten about this case&lt;/a&gt;
+(the integrity of the &lt;tt&gt;v4root.tar&lt;/tt&gt; dump is unaffected: there are no sparse files on the installation tape rootfs).
+And then I realised I didn't think I'd seen these branches in
+&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L3&quot;&gt;V1 &lt;tt&gt;mget&lt;/tt&gt;&lt;/a&gt; when reading it for &lt;a href=&quot;023,b-DeFelice-polemic.html&quot;&gt;the previous post&lt;/a&gt;,
+either.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; file system files contain 8 slots for links to 512-byte disk blocks.
+If the file fits within that size, i.e. is no larger than 4KiB, it is &quot;small&quot;, and those links point to data blocks directly.
+In the samples above, &lt;tt&gt;big.&lt;var&gt;[sc]&lt;/var&gt;&lt;/tt&gt; creates a 4KiB file with data in the first 8 bytes and the last 8 bytes,
+so the rest is sparse: we see this in &lt;a href=&quot;#v1-dump1&quot;&gt;&lt;tt&gt;rf0&lt;/tt&gt; dump 1&lt;/a&gt;,
+where the start of &lt;tt&gt;big&lt;/tt&gt;
+(file &lt;strong&gt;123&lt;/strong&gt; (I didn't renumber these, it's just fortuitous))
+is contained in block 300
+and the end — in block 302.
+The middle un-written-to blocks are 0 (not allocated).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Bigger files are deemed &quot;large&quot; and the 8 slots point to &quot;indirect&quot; blocks, which themselves contain 256 slots for disk block links.
+&lt;tt&gt;large.&lt;var&gt;[sc]&lt;/var&gt;&lt;/tt&gt; makes a 64KiB file in the same manner as &lt;tt&gt;big.&lt;var&gt;?&lt;/var&gt;&lt;/tt&gt;,
+so we observe that &lt;tt&gt;large&lt;/tt&gt; (file &lt;strong&gt;126&lt;/strong&gt;)
+contains one direct link to block 304, which links to blocks 303 and (appropriately further on) 305.
+The contents of those blocks are the same as 300 and 302.
+(It's&lt;!--'--&gt; impossible to make a bigger (sparse or otherwise) file in V1 because all file offsets are 16 bits; this is immaterial.
+ The maximum theoretical size of a large file is 1MiB, and later &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;es allow addressing this in
+ &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v4#./man2/seek.2&quot;&gt;decreasingly&lt;/a&gt;
+ &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Henry_Spencer_v7#usr/man/man2/lseek.2&quot;&gt;hacky&lt;/a&gt;
+ ways.)
+&lt;/p&gt;
+&lt;p class=&quot;indented continuation&quot;&gt;
+To wit: a &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; file system file consists of sequence of &quot;(read block &lt;var&gt;n&lt;/var&gt;) or (insert 512 zero bytes)&quot;,
+and reading it sequentially consists of traversing that list, in order, until you've&lt;!--'--&gt; read as much data as the file is large.
+Small files inline that sequence for performance, large files keep it in chunks on disk
+(and if a chunk is missing, that's&lt;!--'--&gt; equivalent to 256× &quot;insert 512 zero bytes&quot;).
+If implemented this way, our original definition (and description from the manual) is fulfilled.
+&lt;/p&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+But, as observed above, this is not how &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; (before V7) implements this:
+in &lt;a href=&quot;#v1-cat&quot;&gt;the cat log&lt;/a&gt;, we can see that just reading the file allocates &lt;em&gt;every&lt;/em&gt; formerly-sparse block:
+&lt;tt&gt;df&lt;/tt&gt; loses 6 (8 − 2) and 126 (also the amount of sparse blocks between 300 and 302 in the indirect block) blocks respectively,
+and in &lt;a href=&quot;#v1-dump2&quot;&gt;the subsequent dump&lt;/a&gt; we observe this directly:
+every previously-zero block within the bounds of the file was allocated (unsparsed) and now &lt;em&gt;actually&lt;/em&gt; links to a block full of zeroes.
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+To see why, we can trace the
+ &lt;tt&gt;sys read (II)&lt;/tt&gt;
+path through
+  &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L327&quot;&gt;sysread&lt;/a&gt;&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L3&quot;&gt;readi&lt;/a&gt;&lt;small&gt;node&lt;/small&gt;&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L85&quot;&gt;dskr&lt;/a&gt; &lt;small&gt;(the read routine for non-special files)&lt;/small&gt;&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L3&quot;&gt;mget&lt;/a&gt;&lt;/tt&gt;
+(noting that &lt;tt&gt;sys write (II)&lt;/tt&gt; is &lt;a href=&quot;023,b-DeFelice-polemic.html#dskw-C&quot;&gt;basically the same&lt;/a&gt; but &lt;tt&gt;memcpy&lt;/tt&gt;s the other way;
+ comments verbatim from
+ &lt;cite&gt;
+  &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf#page=2&quot;&gt;
+   Preliminary Release of UNIX Implementation Document&lt;/a&gt;,
+  J. DeFelice,
+  6/20/72
+ &lt;/cite&gt;
+ except where [indicated],
+ &lt;tt&gt;_&lt;/tt&gt;-prefixed names expositional,
+ &lt;tt&gt;&lt;q&gt;drum&lt;/q&gt;&lt;/tt&gt; is what they sometimes call the small disk containing the rootfs at this time):
+&lt;/p&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;flgs&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; nlks&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; uid&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;size&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;ctim&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;mtim&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// currently-open i-node&lt;/span&gt;
+&lt;small style='display: block; line-height: initial;'&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// (more spilled process state)&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;fofp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;count&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; u&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ret&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;span class=&quot;token function&quot;&gt;dskr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;_ino&lt;span class=&quot;token comment&quot;&gt;/*, u.fofp, u.count*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; _ino&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*i =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;iget&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// get i-node (r1) into i-node section of core&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fofp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// file size […] subtract file offset&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r2 &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;ret&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r2 &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mget&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*i, u.fofp*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// […] physical block number of block […] where offset points&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r5 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dskrd&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// read in block, r5 points to 1st word of data in buffer&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1, r2, r3 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sioreg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*u.fofp, u.count, r5*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;_memcpy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// move data from buffer into working core […]&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;ret&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;dskr&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;small style='display: block; line-height: initial;'&gt;&lt;span class=&quot;token keyword&quot;&gt;extern&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r5&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; mq&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/small&gt;&lt;span class=&quot;token function&quot;&gt;mget&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*i, u.fofp*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/*-&gt; r1*/&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mq &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fofp &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// divide […] by 256.&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mq&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;flgs &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;010000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; _large&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r2 &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xFFF0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; _small2large&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r1 &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// if physical block num is zero then need a new block for file&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// allocate a new block&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// physical block number stored in i-node&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;setimod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// [mark i-node modified, update mtim]&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// zero out disk/drum block just allocated&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+_small2large&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// adding on block which changes small file to a large file&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// transfer old physical block pointers into new indirect block for the new large file&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r5 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wslot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;_memcpy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r5&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;_memset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// clear rest of data buffer&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;_memset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r5 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;512&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;dskwr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// put pointer to indirect block in i-node&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;flgs &lt;span class=&quot;token operator&quot;&gt;|=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;010000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// set large file bit […]&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;setimod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;mget&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+_large&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 &lt;span class=&quot;token operator&quot;&gt;&amp;amp;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xFF&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// […] offset in indirect block&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; _in_indir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mq &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// divide byte number by 256.&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 &lt;span class=&quot;token operator&quot;&gt;&amp;amp;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0xF&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r1 &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// if no indirect block exists&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// allocate a new block&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;i&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dskp&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// put block number of new [indirect] block in i-node&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;setimod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// [mark i-node modified, update mtim]&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// [zero out disk/drum block just allocated]&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r5 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dskrd&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; _indir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// save block number of indirect block on stack&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r5&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; _in_indir&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// put physical block no of block in file sought in r1&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r1 &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;!--&quot;--&gt;            &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// if no block exists&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1 =*/&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// allocate a new block&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;r5&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; _in_indir&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// put new block number into proper location&lt;/span&gt;
+&lt;!--&quot;--&gt;		                         &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// in indirect block&lt;/span&gt;
+
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;r1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; _indir&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; _new &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r5&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;r2 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; _in_indir&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// […] block number of new block&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;wslot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;dskwr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// write newly modified indirect block back out on disk&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;r1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; _new&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;/*r1*/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// [zero out disk/drum block just allocated]&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+where we see that reading/writing &lt;var&gt;n&lt;/var&gt; bytes from/to file &lt;var&gt;f&lt;/var&gt; at offset &lt;var&gt;o&lt;/var&gt; is equivalent to
+&lt;/p&gt;
+&lt;ol&gt;
+ &lt;li&gt;ensuring all blocks in &lt;var&gt;f&lt;/var&gt; containing [&lt;var&gt;o&lt;/var&gt;, &lt;var&gt;o&lt;/var&gt;+&lt;var&gt;n&lt;/var&gt;) are allocated, then&lt;/li&gt;
+ &lt;li&gt;doing the read/write from/to the affected blocks.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+This is fine for writing, and equivalent to just 2.
+But 1. means the interface from the manual isn't fulfilled (thus, unix doesn't have sparse files before V7)
+and means this is more-so an implementation detail optimisation that ensures every I/O read completes in 1-3 I/Os
+instead of &lt;var&gt;m&lt;/var&gt; = blocks(&lt;var&gt;o&lt;/var&gt; - &lt;var&gt;f.size&lt;/var&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Unless, of course, you always seek to the same offset before reading.
+But that runs counter to &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;'s&lt;!--'--&gt; file-as-bag-of-bytes model,
+and imposes a certain structure to the file and makes it behave differently based on access pattern,
+which, again, runs counter to documentation and marketing of the time —
+&lt;cite&gt;&lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/UnixEditionZero-OCR.pdf#page=3&quot;
+     &gt;DRAFT: The UNIX Time-Sharing System, D. M. Ritchie&lt;/a&gt;,
+     &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/Readme&quot;&gt;&lt;q&gt;mid-1971&lt;/q&gt;&lt;/a&gt;&lt;/cite&gt;
+&lt;/p&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;&lt;pre class=&quot;continuing&quot;&gt;&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;1&lt;/u&gt; &lt;u&gt;Ordinary&lt;/u&gt; &lt;u&gt;Files&lt;/u&gt;
+A file contains whatever information the user places there, for
+example symbolic or binary (object) programs. No particular
+structuring is expected by the system. […]
+A few user programs generate and expect files with
+more structure; […]
+however, the structure of files is controlled solely by the
+programs which use them, not by the system.
+
+&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;5&lt;/u&gt; &lt;u&gt;System&lt;/u&gt; &lt;u&gt;I&lt;/u&gt;/&lt;u&gt;O&lt;/u&gt; &lt;u&gt;Calls&lt;/u&gt;
+[…] There
+is no distinction between &quot;random&quot; and sequential I/O, nor is any
+logical or physical record size imposed by the system. The size
+of a file on the disk is determined by the location of the last
+piece of information written on it; no predetermination of the
+size of a file is necessary.&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p class=&quot;continuing&quot;&gt;
+— as well as those going forward
+(cf. &lt;cite&gt;&lt;a href=&quot;//youtu.be/tc4ROCJYbm0&quot;&gt;The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories&lt;/a&gt;&lt;/cite&gt;,
+ transcribed in &lt;a href=&quot;023,b-DeFelice-polemic.html#Making Computers More Productive&quot;&gt;the previous post&lt;/a&gt;).
+&lt;/p&gt;
+&lt;p class=&quot;indented continuing&quot;&gt;
+Because the files afflicted by this are valid, just much bigger than they ought to be,
+the only way you really could notice this is by examining the filesystem directly trying to look precisely for this behaviour, as I have?
+or, on quiet system, check precisely the interaction of this behaviour and &lt;tt&gt;df&lt;/tt&gt;?
+Being fixed in V7 agrees with this because it implies to me that this facility had started to be used like we'd&lt;!--'--&gt; use sparse files today
+— with large &lt;var&gt;nominal file size/filesystem size&lt;/var&gt; ratios —
+on the huge &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; ≤V6 install base, someone filled their disk, and the fix is pretty simple.
+&lt;/p&gt;
+&lt;h3 id=&quot;v1-patch&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v1-patch&quot;&gt;#&lt;/a&gt; V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; patch&lt;/h3&gt;
+&lt;pre class=&quot;language-diff&quot;&gt;&lt;code class=&quot;language-diff&quot;&gt;&lt;span class=&quot;token coord&quot;&gt;--- /usr/sys/ux.s.bkp&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1972-01-01 00:00:00.000000000 +0000&lt;/span&gt;
+&lt;span class=&quot;token coord&quot;&gt;+++ /usr/sys/ux.s&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1972-01-01 00:00:00.000000000 +0000&lt;/span&gt;
+&lt;span class=&quot;token coord&quot;&gt;@@ -66,7 +66,7 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;sysflg:&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;.=.+1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;pptiflg:.=.+1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;ttyoch:&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;.=.+1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token deleted-sign deleted&quot;&gt;&lt;span class=&quot;token prefix deleted&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt; .even
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;mget0b:&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;.=.+1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt; .=.+100.; sstack:
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;buffer:&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;.=.+[ntty*140.]
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;.=.+[nbuf*520.]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;--- /usr/sys/u5.s.bkp&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1972-01-01 00:00:00.000000000 +0000&lt;/span&gt;
+&lt;span class=&quot;token coord&quot;&gt;+++ /usr/sys/u5.s&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1972-01-01 00:00:00.000000000 +0000&lt;/span&gt;
+&lt;span class=&quot;token coord&quot;&gt;@@ -1,6 +1,7 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;/ u5 -- unix
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;mget:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;idev,cdev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;*u.fofp,mq / file offset in mq
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;clr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;ac / later to be high sig
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$-8,lsh&lt;!--&quot;--&gt;   &lt;!--&quot;--&gt;/ divide ac/mq by 256.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -13,6 +14,10 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;i.dskp(r2),r1 / r1 has physical block number
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bne&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2f / if physical block num is zero then need a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		   &lt;!--&quot;--&gt;/ for file
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;clr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;cdev
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;movb&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mget0b,r1
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bne&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2f
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;idev,cdev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,alloc / allocate a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1,i.dskp(r2) / physical block number stored in i-node
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,setimod / set inode modified byte (imod)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -52,6 +57,10 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bic&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$!16,r2
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;i.dskp(r2),r1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bne&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2f / if no indirect block exists
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;clr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;cdev
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;movb&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mget0b,r1
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bne&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;3f
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;idev,cdev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,alloc / allocate a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1,i.dskp(r2) / put block number of new block in i-node
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,setimod / set i-node modified byte
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -65,6 +74,10 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;(r2),r1 / put physical block no of block in file
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	                &lt;!--&quot;--&gt;/ sought in r1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bne&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2f / if no block exists
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;clr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;cdev
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;movb&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mget0b,r1
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;bne&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;2f
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;idev,cdev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,alloc / allocate a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1,(r2) / put new block number into proper location in
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	                &lt;!--&quot;--&gt;/ indirect block
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -76,6 +89,7 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;(sp),r1 / restore block number of new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,clear / clear new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;2:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;3:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;tst&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;(sp)+ / bump stack pointer
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;rts&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;--- /usr/sys/u6.s.bkp&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1972-01-01 00:00:00.000000000 +0000&lt;/span&gt;
+&lt;span class=&quot;token coord&quot;&gt;+++ /usr/sys/u6.s&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;1972-01-01 00:00:00.000000000 +0000&lt;/span&gt;
+&lt;span class=&quot;token coord&quot;&gt;@@ -83,6 +83,7 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jmp&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;error / see '&lt;!--'--&gt;error'&lt;!--'--&gt; routine
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;dskr:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;movb&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;$1,mget0b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;(sp),r1 / i-number in r1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,iget / get i-node (r1) into i-node section of core
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;i.size,r2 / file size in bytes in r2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -210,6 +211,7 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jmp&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;error / ?
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;dskw: / write routine for non-special files
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;clrb&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mget0b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mov&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;(sp),r1 / get an i-node number from the stack into r1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;jsr&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r0,iget / write i-node out (if modified), read i-node '&lt;!--'--&gt;r1'&lt;!--'--&gt;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		        &lt;!--&quot;--&gt;/ into i-node area of core
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;center class=&quot;continuing&quot;&gt;&lt;small&gt;You can also &lt;a href=&quot;/content/assets/blogn_t/023,c.01-v1-patch.diff&quot;&gt;download&lt;/a&gt; this diff directly.&lt;/small&gt;&lt;br /&gt;&lt;/center&gt;
+&lt;p class=&quot;indented&quot;&gt;
+With the patch, when it encounters a 0 link and &lt;tt&gt;mget0b&lt;/tt&gt; is non-zero,
+&lt;tt&gt;mget&lt;/tt&gt; will return block &lt;tt&gt;mget0b&lt;/tt&gt; on &lt;tt&gt;rf0&lt;/tt&gt;.
+Because &lt;tt&gt;mget&lt;/tt&gt; needs to return a block number (on the current device),
+this is the least intrusive way of implementing this,
+but it means &lt;tt&gt;mget&lt;/tt&gt; needs to be careful to maintain the notion of the &quot;current device&quot; to mean &quot;the device containing the current i-node&quot;
+outside of this exceptional return,
+since the latter will vary when reading a file from the mounted filesystem.
+&lt;tt&gt;dskr&lt;/tt&gt; sets &lt;tt&gt;mget0b&lt;/tt&gt; to 1
+— &lt;a href=&quot;023,b-DeFelice-polemic.html#2&quot;&gt;due to the unique way the V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; file system is laid out&lt;/a&gt;,
+  block 1 on the rootfs can't&lt;!--'--&gt; usefully be anything except full of zeroes —
+&lt;tt&gt;dskw&lt;/tt&gt; clears &lt;tt&gt;mget0b&lt;/tt&gt; to get the old behaviour.
+The procedure for building and installing a thusly-updated kernel in a unix72 environment is outlined in post
+&lt;a href=&quot;023,a-v1-nbuf-benchmark.html&quot;&gt;&lt;tt&gt;023,a. V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; I/O buffer count vs. performance benchmark&lt;/tt&gt;&lt;/a&gt;.
+&lt;/p&gt;
+&lt;pre class=&quot;language-shell-session&quot;&gt;&lt;code class=&quot;language-shell-session&quot;&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;718+2309
+&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; big large /usr/big /usr/large&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;@&lt;!--&quot;--&gt;       &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@@&lt;!--&quot;--&gt;      &lt;!--&quot;--&gt;@&lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token output&quot;&gt;718+2309&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p class=&quot;indented&quot;&gt;
+&lt;tt&gt;df&lt;/tt&gt; and a direct examination confirm the blocks are unchanged by the read
+(and &lt;tt&gt;cdev&lt;/tt&gt; is restored properly),
+but are not required because the &lt;tt&gt;cat&lt;/tt&gt; completes significantly faster.
+&lt;/p&gt;
+&lt;div class=&quot;is-C&quot;&gt;
+&lt;pre class=&quot;language-diff&quot;&gt;&lt;code class=&quot;language-diff&quot;&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -1,6 +1,7 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;extern r1, r2, r5, mq;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;mget(/*i, u.fofp*/) /*-&gt; r1*/ {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;cdev = idev;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;mq = *u.fofp &gt;&gt; 8;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;// divide […] by 256.
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 = mq;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -13,6 +14,11 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 = i.dskp[r2/2];
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;if(r1 == 0) {&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;// if physical block num is zero then need a new block for file
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;cdev = 0;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;if(r1 = mget0b)
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;return;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;cdev = idev;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;/*r1 =*/ alloc();&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;// allocate a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;i.dskp[r2/2] = r1; // physical block number stored in i-node
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;setimod();&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;// [mark i-node modified, update mtim]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -43,6 +49,11 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r2 &amp;amp;= 0xF;
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 = i.dskp[r2/2];
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;if(r1 == 0) {&lt;!--&quot;--&gt;          &lt;!--&quot;--&gt;// if no indirect block exists
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;cdev = 0;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;if(r1 = mget0b)
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;return;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;cdev = idev;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;/*r1 =*/ alloc();&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;// allocate a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;i.dskp[r2/2] = r1; // put block number of new [indirect] block in i-node
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;setimod();&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;// [mark i-node modified, update mtim]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;@@ -52,6 +63,11 @@&lt;/span&gt;
+&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;int _indir = r1;&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;// save block number of indirect block on stack
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;r1 = r5[r2 + _in_indir]; // put physical block no of block in file sought in r1
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;if(r1 == 0) {&lt;!--&quot;--&gt;            &lt;!--&quot;--&gt;// if no block exists
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;cdev = 0;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;if(r1 = mget0b)
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;			&lt;!--&quot;--&gt;return;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;cdev = idev;
+&lt;/span&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token unchanged&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;/*r1 =*/ alloc();&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;// allocate a new block
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		&lt;!--&quot;--&gt;r5[r2 + _in_indir] = r1; // put new block number into proper location
+&lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		                         &lt;!--&quot;--&gt;// in indirect block
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,c-&lt;span class=\&quot;smallcaps\&quot;&gt;unix&lt;/span&gt;-no-sparse-files-before-v7.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/div&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,b-DeFelice-polemic.html</id>
@@ -146,7 +881,7 @@ If we cast our &lt;a href=&quot;023,a-v1-nbuf-benchmark.html&quot;&gt;minds back
 &lt;p class=&quot;continuing&quot;&gt;
 which can be translated to
 &lt;/p&gt;
-&lt;figure class=&quot;offset continuing C&quot;&gt;
+&lt;figure class=&quot;offset continuing C&quot; id=&quot;dskw-C&quot;&gt;
 &lt;pre class=linenos&gt;&lt;small&gt;​
 &lt;/small&gt;212
 ​
@@ -1609,7 +2344,7 @@ piece of information written on it; no predetermination of the
 size of a file is necessary.&lt;/pre&gt;&lt;/blockquote&gt;
             (that's&lt;!--'--&gt; 2.5 times by page 7!))
      and subsequent
-     (&lt;cite&gt;&lt;a href=&quot;//youtu.be/tc4ROCJYbm0&quot;&gt;The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories&lt;/a&gt;
+     (&lt;cite id=&quot;Making Computers More Productive&quot;&gt;&lt;a href=&quot;//youtu.be/tc4ROCJYbm0&quot;&gt;The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories&lt;/a&gt;
       —
 dmr, 11:32-12:03:
 &lt;blockquote class=&quot;continuation&quot; style=&quot;margin-bottom: calc(12.6715px / 2);&quot;&gt;
@@ -1848,7 +2583,7 @@ root
 &lt;p class=&quot;continuing&quot;&gt;
 with a final look at &lt;strong&gt;emphasised&lt;/strong&gt; fragments:
 &lt;/p&gt;
-&lt;figure class=&quot;offset continuing C&quot;&gt;
+&lt;figure class=&quot;offset continuing C&quot; id=&quot;dskw-C&quot;&gt;
 &lt;del&gt; &lt;pre class=linenos&gt;&lt;small&gt;​
 &lt;/small&gt;u6
 ​
@@ -2243,7 +2978,7 @@ says
 &lt;p class=&quot;continuing&quot;&gt;
 which can be translated to
 &lt;/p&gt;
-&lt;figure class=&quot;offset continuing C&quot;&gt;
+&lt;figure class=&quot;offset continuing C&quot; id=&quot;dskw-C&quot;&gt;
 &lt;pre class=linenos&gt;&lt;small&gt;​
 &lt;/small&gt;212
 ​
@@ -7755,12 +8490,12 @@ If I &lt;em&gt;were&lt;/em&gt; to translate this all to C and adapt it to a mode
 &lt;div class=&quot;codecontinued&quot;&gt;
 &lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; initf&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;init&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;&lt;span class=&quot;token comment&quot;&gt;// idk if 4 spaces or 4 NULs at the end&lt;/span&gt;
 
-&lt;span class=&quot;token function&quot;&gt;diskread&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;06000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sysdata&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdata&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// superblock(?)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;diskread&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;06000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sysdata&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdata&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// superblock&lt;/span&gt;
 
 init &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;initf&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;init &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;&lt;span class=&quot;token function&quot;&gt;halt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;init&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;init&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;

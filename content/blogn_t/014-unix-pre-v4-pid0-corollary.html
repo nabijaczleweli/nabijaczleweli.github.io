@@ -1466,12 +1466,12 @@ If I <em>were</em> to translate this all to C and adapt it to a modern audience,
 <div class="codecontinued">
 <pre class="language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">char</span> initf<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"init"</span><span class="token punctuation">;</span><!--"-->  <!--"--><span class="token comment">// idk if 4 spaces or 4 NULs at the end</span>
 
-<span class="token function">diskread</span><span class="token punctuation">(</span><span class="token number">06000</span><span class="token punctuation">,</span> sysdata<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>sysdata<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// superblock(?)</span>
+<span class="token function">diskread</span><span class="token punctuation">(</span><span class="token number">06000</span><span class="token punctuation">,</span> sysdata<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>sysdata<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// superblock</span>
 
 init <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>initf<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span>init <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
 <!--"-->	<!--"--><span class="token function">halt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">read</span><span class="token punctuation">(</span>init<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">4096</span><span class="token punctuation">,</span> <span class="token number">4096</span><span class="token punctuation">)</span>
+<span class="token function">read</span><span class="token punctuation">(</span>init<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">4096</span><span class="token punctuation">,</span> <span class="token number">4096</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">goto</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">4096</span><span class="token punctuation">;</span>
 </code></pre>
 </div>
@@ -1503,9 +1503,9 @@ This is as an open-coded sys exec (II).
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 24.01.2026 12:20:49 UTC from 
+ Compiled with Clang 21's<!--'--> C preprocessor on 25.01.2026 22:35:07 UTC from 
  <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp">src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1662886">See job on builds.sr.ht</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1663968">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
