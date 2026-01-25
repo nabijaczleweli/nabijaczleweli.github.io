@@ -61,7 +61,7 @@ Per
 &lt;/p&gt;
 &lt;blockquote class=&quot;continuing&quot; style=&quot;margin-left: 0;&quot;&gt;&lt;tt&gt;If block &lt;u&gt;b&lt;/u&gt; in a file exists, it is not necessary
 that all blocks less than &lt;u&gt;b&lt;/u&gt; exist.&amp;nbsp; A zero block
-nuimber either in the address words of the i-node
+number either in the address words of the i-node
 or in an indirect block indicates that the
 corresponding block has never been allocated.&amp;nbsp;
 Such a missing block reads as if it contained all
@@ -557,22 +557,22 @@ which, again, runs counter to documentation and marketing of the time —
      &gt;DRAFT: The UNIX Time-Sharing System, D. M. Ritchie&lt;/a&gt;,
      &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/Readme&quot;&gt;&lt;q&gt;mid-1971&lt;/q&gt;&lt;/a&gt;&lt;/cite&gt;
 &lt;/p&gt;
-&lt;blockquote class=&quot;continuing&quot;&gt;&lt;pre class=&quot;continuing&quot;&gt;&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;1&lt;/u&gt; &lt;u&gt;Ordinary&lt;/u&gt; &lt;u&gt;Files&lt;/u&gt;
+&lt;blockquote class=&quot;continuing&quot;&gt;&lt;tt&gt;&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;1&lt;/u&gt; &lt;u&gt;Ordinary&lt;/u&gt; &lt;u&gt;Files&lt;/u&gt;&lt;br /&gt;
 A file contains whatever information the user places there, for
 example symbolic or binary (object) programs. No particular
 structuring is expected by the system. […]
 A few user programs generate and expect files with
 more structure; […]
 however, the structure of files is controlled solely by the
-programs which use them, not by the system.
-
-&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;5&lt;/u&gt; &lt;u&gt;System&lt;/u&gt; &lt;u&gt;I&lt;/u&gt;/&lt;u&gt;O&lt;/u&gt; &lt;u&gt;Calls&lt;/u&gt;
+programs which use them, not by the system.&lt;br /&gt;
+&lt;br /&gt;
+&lt;u&gt;3&lt;/u&gt;.&lt;u&gt;5&lt;/u&gt; &lt;u&gt;System&lt;/u&gt; &lt;u&gt;I&lt;/u&gt;/&lt;u&gt;O&lt;/u&gt; &lt;u&gt;Calls&lt;/u&gt;&lt;br /&gt;
 […] There
 is no distinction between &quot;random&quot; and sequential I/O, nor is any
 logical or physical record size imposed by the system. The size
 of a file on the disk is determined by the location of the last
 piece of information written on it; no predetermination of the
-size of a file is necessary.&lt;/pre&gt;&lt;/blockquote&gt;
+size of a file is necessary.&lt;/tt&gt;&lt;/blockquote&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 — as well as those going forward
 (cf. &lt;cite&gt;&lt;a href=&quot;//youtu.be/tc4ROCJYbm0&quot;&gt;The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories&lt;/a&gt;&lt;/cite&gt;,
@@ -745,7 +745,7 @@ but are not required because the &lt;tt&gt;cat&lt;/tt&gt; completes significantl
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,c-&lt;span class=\&quot;smallcaps\&quot;&gt;unix&lt;/span&gt;-no-sparse-files-before-v7.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,c-unix-no-sparse-files-before-v7.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;

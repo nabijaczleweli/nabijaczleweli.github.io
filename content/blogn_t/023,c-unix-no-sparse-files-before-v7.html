@@ -189,7 +189,7 @@ Per
 </p>
 <blockquote class="continuing" style="margin-left: 0;"><tt>If block <u>b</u> in a file exists, it is not necessary
 that all blocks less than <u>b</u> exist.&nbsp; A zero block
-nuimber either in the address words of the i-node
+number either in the address words of the i-node
 or in an indirect block indicates that the
 corresponding block has never been allocated.&nbsp;
 Such a missing block reads as if it contained all
@@ -685,22 +685,22 @@ which, again, runs counter to documentation and marketing of the time —
      >DRAFT: The UNIX Time-Sharing System, D. M. Ritchie</a>,
      <a href="//www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/Readme"><q>mid-1971</q></a></cite>
 </p>
-<blockquote class="continuing"><pre class="continuing"><u>3</u>.<u>1</u> <u>Ordinary</u> <u>Files</u>
+<blockquote class="continuing"><tt><u>3</u>.<u>1</u> <u>Ordinary</u> <u>Files</u><br />
 A file contains whatever information the user places there, for
 example symbolic or binary (object) programs. No particular
 structuring is expected by the system. […]
 A few user programs generate and expect files with
 more structure; […]
 however, the structure of files is controlled solely by the
-programs which use them, not by the system.
-
-<u>3</u>.<u>5</u> <u>System</u> <u>I</u>/<u>O</u> <u>Calls</u>
+programs which use them, not by the system.<br />
+<br />
+<u>3</u>.<u>5</u> <u>System</u> <u>I</u>/<u>O</u> <u>Calls</u><br />
 […] There
 is no distinction between "random" and sequential I/O, nor is any
 logical or physical record size imposed by the system. The size
 of a file on the disk is determined by the location of the last
 piece of information written on it; no predetermination of the
-size of a file is necessary.</pre></blockquote>
+size of a file is necessary.</tt></blockquote>
 <p class="continuing">
 — as well as those going forward
 (cf. <cite><a href="//youtu.be/tc4ROCJYbm0">The UNIX™ System: Making Computers More Productive, 1982, Bell Laboratories</a></cite>,
@@ -878,7 +878,7 @@ but are not required because the <tt>cat</tt> completes significantly faster.
 <p> 
  <br /> 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,c-<span class=\"smallcaps\">unix</span>-no-sparse-files-before-v7.html.pp">Mail</a>, 
+ <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,c-unix-no-sparse-files-before-v7.html.pp">Mail</a>, 
  <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
  </p> 
  </div>
@@ -897,9 +897,9 @@ but are not required because the <tt>cat</tt> completes significantly faster.
  <hr /> 
  Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
  <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 25.01.2026 22:35:07 UTC from 
- <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/023,c-<span class=\"smallcaps\">unix</span>-no-sparse-files-before-v7.html.pp">src/blogn_t/023,c-<span class="smallcaps">unix</span>-no-sparse-files-before-v7.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1663968">See job on builds.sr.ht</a>. 
+ Compiled with Clang 21's<!--'--> C preprocessor on 25.01.2026 22:45:57 UTC from 
+ <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/023,c-unix-no-sparse-files-before-v7.html.pp">src/blogn_t/023,c-unix-no-sparse-files-before-v7.html.pp</a>. 
+ <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1663969">See job on builds.sr.ht</a>. 
  <hr /> 
  <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
  </body> 
