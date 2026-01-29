@@ -269,7 +269,7 @@ where we see that reading/writing <var>n</var> bytes from/to file <var>f</var> a
 </ol>
 <p class="continuing">
 This is fine for writing, and equivalent to just 2.
-But 1. means the interface from the manual isn't fulfilled (thus, unix doesn't have sparse files before V7)
+But 1. means the interface from the manual isn't<!--'--> fulfilled (thus, unix doesn't<!--'--> have sparse files before V7)
 and means this is more-so an implementation detail optimisation that ensures every I/O read completes in 1-3 I/Os
 instead of <var>m</var> = blocks(<var>o</var> - <var>f.size</var>).
 </p>
