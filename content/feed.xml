@@ -400,7 +400,7 @@ The contents of those blocks are the same as 300 and 302.
  ways.)
 &lt;/p&gt;
 &lt;p class=&quot;indented continuation&quot;&gt;
-To wit: a &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; file system file consists of sequence of &quot;(read block &lt;var&gt;n&lt;/var&gt;) or (insert 512 zero bytes)&quot;,
+To wit: a &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; file system file consists of a sequence of &quot;(read block &lt;var&gt;n&lt;/var&gt;) or (insert 512 zero bytes)&quot;,
 and reading it sequentially consists of traversing that list, in order, until you've&lt;!--'--&gt; read as much data as the file is large.
 Small files inline that sequence for performance, large files keep it in chunks on disk
 (and if a chunk is missing, that's&lt;!--'--&gt; equivalent to 256× &quot;insert 512 zero bytes&quot;).
@@ -418,7 +418,7 @@ To see why, we can trace the
  &lt;tt&gt;sys read (II)&lt;/tt&gt;
 path through
   &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L327&quot;&gt;sysread&lt;/a&gt;&lt;/tt&gt;
-→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L3&quot;&gt;readi&lt;/a&gt;&lt;small&gt;node&lt;/small&gt;&lt;/tt&gt;
+→ &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L3&quot;&gt;readi&lt;/a&gt;&lt;small&gt;-node&lt;/small&gt;&lt;/tt&gt;
 → &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L85&quot;&gt;dskr&lt;/a&gt; &lt;small&gt;(the read routine for non-special files)&lt;/small&gt;&lt;/tt&gt;
 → &lt;tt&gt;&lt;a href=&quot;//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L3&quot;&gt;mget&lt;/a&gt;&lt;/tt&gt;
 (noting that &lt;tt&gt;sys write (II)&lt;/tt&gt; is &lt;a href=&quot;023,b-DeFelice-polemic.html#dskw-C&quot;&gt;basically the same&lt;/a&gt; but &lt;tt&gt;memcpy&lt;/tt&gt;s the other way;
