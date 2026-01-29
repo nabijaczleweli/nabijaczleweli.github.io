@@ -544,7 +544,7 @@ where we see that reading/writing &lt;var&gt;n&lt;/var&gt; bytes from/to file &l
 &lt;/ol&gt;
 &lt;p class=&quot;continuing&quot;&gt;
 This is fine for writing, and equivalent to just 2.
-But 1. means the interface from the manual isn't fulfilled (thus, unix doesn't have sparse files before V7)
+But 1. means the interface from the manual isn't&lt;!--'--&gt; fulfilled (thus, &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; doesn't&lt;!--'--&gt; have sparse files before V7)
 and means this is more-so an implementation detail optimisation that ensures every I/O read completes in 1-3 I/Os
 instead of &lt;var&gt;m&lt;/var&gt; = blocks(&lt;var&gt;o&lt;/var&gt; - &lt;var&gt;f.size&lt;/var&gt;).
 &lt;/p&gt;
