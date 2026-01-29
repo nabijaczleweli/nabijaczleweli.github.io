@@ -224,7 +224,7 @@ The contents of those blocks are the same as 300 and 302.
  ways.)
 </p>
 <p class="indented continuation">
-To wit: a unix file system file consists of sequence of "(read block <var>n</var>) or (insert 512 zero bytes)",
+To wit: a unix file system file consists of a sequence of "(read block <var>n</var>) or (insert 512 zero bytes)",
 and reading it sequentially consists of traversing that list, in order, until you've<!--'--> read as much data as the file is large.
 Small files inline that sequence for performance, large files keep it in chunks on disk
 (and if a chunk is missing, that's<!--'--> equivalent to 256× "insert 512 zero bytes").
@@ -243,7 +243,7 @@ To see why, we can trace the
 	<tt>sys read (II)</tt>
 path through
  	<tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u1#L327">sysread</a></tt>
-→	<tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L3">readi</a><small>node</small></tt>
+→	<tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L3">readi</a><small>-node</small></tt>
 →	<tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u6#L85">dskr</a> <small>(the read routine for non-special files)</small></tt>
 →	<tt><a href="//vtree.nabijaczleweli.xyz/?DeFelice_v1#u5#L3">mget</a></tt>
 (noting that <tt>sys write (II)</tt> is <a href="023,b-DeFelice-polemic.html#dskw-C">basically the same</a> but <tt>memcpy</tt>s the other way;
