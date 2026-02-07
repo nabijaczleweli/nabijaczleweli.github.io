@@ -27,8 +27,7 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
-	Become cursed by my <a href="blogn_t/">blog</a>…<br />
-	Latest post:<br />
+	Latest post from the <a href="blogn_t/">blog</a>:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
 		<a href="blogn_t/023,a-v1-nbuf-benchmark.html">023,a. Benchmarking V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance</a>;
 		<span style="white-space: nowrap;">Sat, 17 Jan 2026 04:33:03 +0100</span>

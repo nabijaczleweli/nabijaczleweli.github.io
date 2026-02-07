@@ -12,7 +12,7 @@ start:
 # ed big.s
 105
 /4087/
-        sys     seek; 4087.; 0
+	sys	seek; 4087.; 0
 s/4087/65527/
 w large.s
 106
