@@ -83,7 +83,7 @@ root
 &lt;/span&gt;&lt;span class=&quot;token command&quot;&gt;&lt;span class=&quot;token shell-symbol important&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;token bash language-bash&quot;&gt;ed big.s&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token output&quot;&gt;105
 /4087/
-&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;seek; 4087.; 0
+&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;sys&lt;!--&quot;--&gt;	&lt;!--&quot;--&gt;seek; 4087.; 0
 s/4087/65527/
 w large.s
 106
