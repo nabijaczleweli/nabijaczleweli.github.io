@@ -1,14 +1,15 @@
-<!--
-nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli)
-​
-nabijaczleweli.xyz is licensed under a
-Creative Commons Attribution 4.0 International License.
-​
-You should have received a copy of the license along with this
-work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
--->
- <!-- RSS_PUB_DATE: "Thu, 08 Jul 2021 20:26:38 +0200" -->
-<!DOCTYPE html> 
+<!-- 
+ nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli) 
+ ​ 
+ nabijaczleweli.xyz is licensed under a 
+ Creative Commons Attribution 4.0 International License. 
+ ​ 
+ You should have received a copy of the license along with this 
+ work. If not, see <https://creativecommons.org/licenses/by/4.0/>. 
+ --> 
+ 
+ 
+ <!DOCTYPE html> 
  <html lang=en-GB> 
  <head> 
  <meta charset="utf-8"> 
@@ -55,164 +56,20 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  }); 
  })(); 
  </script> 
- <link href="/content/assets/heading.css" rel="stylesheet"> 
- <link href="/kaschism/assets/column.css" rel="stylesheet"> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
- <link href="/content/assets/contents.css" rel="stylesheet"> 
- <link href="../writing/Roboto-font.css" rel="stylesheet"> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"> 
- <script src="/content/assets/syllable.js"></script> 
- <script src="/content/assets/pluralize.js"></script> 
- <script src="/content/assets/word_count.js"></script> 
+ <meta id="refresher" http-equiv="refresh" content="0;url=/content/blogue/006-UNIX-r-ATT.html" /> 
+ <script> 
+ refresher.content += window.location.search; 
+ refresher.content += window.location.hash; 
+ /* ^ doesn't seem to do anything in spite of https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections#order_of_precedence */ 
+ window.location.pathname = "/content/blogue/006-UNIX-r-ATT.html"; 
+ </script> 
  </head> 
- <body>
-<style>
-.continued, .continuing {
- margin-bottom: 0;
-}
-.continuation, .continuing {
- margin-top: 0;
-}
-code, samp {
- font-family: "Droid Sans Mono", monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: "Merriweather", serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
-a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-.main-screenshot {
- margin-top: 0.2em;
- margin-bottom: 0.15em;
- width: 100%;
-}
-.main-font {
- margin-top: 0.15em;
- margin-bottom: 0.15em;
- max-width: 100%;
-}
-@media all and (min-device-width: 400px) {
- .main-font {
-  width: 100%;
- }
-}
-@media all and (min-device-width: 800px) {
- .main-font {
-  margin-left: 1em;
-  min-width: 75%;
- }
-}
-</style>
-<div class="roboto writing"> 
- <p></p> 
- <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>006. ¹UNIX® is a registered trademark of AT&T.</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Thu, 08 Jul 2021 20:26:38 +0200</span>; <a href="//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html">get one</a> <a href="//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html"><i class="fa fa-external-link-alt"></i></a></h4> 
- <!--BLOGN_T_TOC_PLACEHOLDER-->
-<p class="indented">
-It isn'<!--'-->t, of course – <span class="smallcaps">unix</span> belongs to the Open Group nowadays,
-but it wouldn'<!--'-->t be unheard of to have a note like this on the first page of a document in the bad old days,
-and the concept of unironically encountering this in the wild in year of the hog 2020 was too hilarious to pass up
-as a terrible urge <a href="//lfs.nabijaczleweli.xyz/0017-twitter-export#1408975129707794434">came over</a> me.
-</p>
-<p class="indented continued">
-Indeed, what better font to celebrate with than with something from the <span class="smallcaps">amix</span> distribution
-(this will be a link when I finally publish those).
-My first thought was, of course, <samp>sunfont.s</samp>:
-</p>
-<img class="continuing main-font dark-invert" alt="'UNIX is a registered trademark of AT&T.' in a tall, proportional, narrow-stroke font with typewriter-like typography and a really goofy ampersand." src="/content/assets/blogn_t/006.01-isunfont-tp.png" />
-<p class="continuation">
-but it'<!--'-->s way too thin, and lacks both <samp>®</samp> and <samp>¹</samp>.
-The latter could be emulated, of course, but it'<!--'-->d render the already-hardly-legible digit unreadable and the width would just scream off
-(and it's a difficult problem to solve in an obviously-correct mechanical fashion; I'm assembling these with ImageMagick in stitch mode on individual 4x glyphs).
-</p>
-<p class="indented continued">
-The next obvious direxion to go (rather, the last font before I fell back to trying something with cursed groff invocations) was <samp>topaz.s</samp>:
-</p>
-<img class="continuing main-font dark-invert" alt="'UNIX is a registered trademark of AT&T.' in a square, thick-stroke 8x8 font, the g is kinda goofy" src="/content/assets/blogn_t/006.02-itopaz-tp.png" />
-<p class="continuing">
-or, rather,
-</p>
-<img class="continuing main-font dark-invert" alt="'¹UNIX® is a registered trademark of AT&T.' in that same font." src="/content/assets/blogn_t/006.03-itopaz-tp+r-sp.png" />
-<p class="continuation">
-Now, if that ain'<!--'-->t perfect.
-</p>
-<img class="main-screenshot" alt="Variations of UNIX is a registered trademark of AT&T printed in multiple orientations and fonts on an A4 sheet" src="/content/assets/blogn_t/006.04-preprints.jpg" />
-<p class="indented continued">
-The final dimensions are 3.5mm text + 3mm padding, based on 12dpmm,
-as that worked out well for the native resolution and the 300-350dpi restrixion from my local print shop,
-pictured here with 1px(=1pt) cut line and 3mm padding:
-</p>
-<!-- Firefox does not like (any/multilayer/CMYK) TIFFs; yes, it's a JPEG: no other browser format supports CMYK '-->
-<img class="continuing main-font" alt="'¹UNIX® is a registered trademark of AT&T.' in that same font, white on black, surrounded by green, a single-pixel black line, and another layer of red" src="/content/assets/blogn_t/006.05-UNIX-tp+r-sp-120dpcm+3mm.jpg" />
-<p class="continuation">
-Properly-dimensioned print-ready CMYK TIFFs and measurements can be had <a href="//lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT">here</a>. CC BY 4.0.
-Works out to 9.5x149.5, which my shop tiled to 40 stickers to SRA3 sheet.
-</p>
-<p class="indented continued">
-Anyway, glam shots.
-</p>
-<img class="continuing main-screenshot" alt="A small black anodised aluminium laptop on a light wood floor, a window very softly reflects on the chassis, which has a OneMix logo stickered over with a neon orange BONELESS sticker, and a ¹UNIX® is a registered trademark of AT&T. sticker in the bottom left, crooked, near the hinge" src="https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7479ccc.png" />
-<img class="continuing main-screenshot" alt="Same laptop, but on a dark wood floor in direct hard summer sun. The edges of the sticker meld into the texture of the chassis in the highlight, and are lost in the shadow" src="https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7491ccc.png" />
-<img class="continuation main-screenshot" alt="Two matt SRA3 sheets in the same spot, one on top of the other, at a slight angle, with ¹UNIX® is a registered trademark of AT&T. stickers tiled on them. The left is entirely opaque, but shows a tiny bit through the right." src="https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7497ccc.png" />
-<p> 
- <br /> 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/006-UNIX-r-ATT.html.pp">Mail</a>, 
- <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
- </p> 
- </div>
-<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
- <hr /> 
- <span id="word_count">0</span> words, 
- <span id="syllable_count">0</span> syllables, 
- <span id="character_count">0</span> characters. 
- </span>
-<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
- Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
- code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
- <hr /> 
- This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, 
- and contribute and/or yell at me there. 
- <hr /> 
- Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
- <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 07.02.2026 16:43:21 UTC from 
- <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/006-UNIX-r-ATT.html.pp">src/blogn_t/006-UNIX-r-ATT.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1675370">See job on builds.sr.ht</a>. 
- <hr /> 
- <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
+ <body> 
+ 
+ 
+ Page moved to <a href="/content/blogue/OUT_FILE_NAME_BASE">/content/blogue/006-UNIX-r-ATT.html</a>. 
+ Old links will remain valid indefinitely. 
+ 
+ 
  </body> 
  </html>

@@ -56,12 +56,19 @@
  }); 
  })(); 
  </script> 
- <meta http-equiv="refresh" content="0;url=/content/writing/poetry/the_east_wind/" /> 
+ <meta id="refresher" http-equiv="refresh" content="0;url=/content/writing/poetry/the_east_wind/" /> 
+ <script> 
+ refresher.content += window.location.search; 
+ refresher.content += window.location.hash; 
+ /* ^ doesn't seem to do anything in spite of https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections#order_of_precedence */ 
+ window.location.pathname = "/content/writing/poetry/the_east_wind/"; 
+ </script> 
  </head> 
  <body> 
  
  
- This content resides at <a href="/content/writing/poetry/the_east_wind/">/content/writing/poetry/the_east_wind/</a>. 
+ Page moved to <a href="/content/writing/poetry/the_east_wind/">/content/writing/poetry/the_east_wind/</a>. 
+ Old links will remain valid indefinitely. 
  
  
  </body> 

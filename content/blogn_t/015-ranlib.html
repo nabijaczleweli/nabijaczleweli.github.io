@@ -1,12 +1,15 @@
-<!--
-nabijaczleweli.xyz is licensed under a
-Creative Commons Attribution 4.0 International License.
-​
-You should have received a copy of the license along with this
-work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
--->
- <!-- RSS_PUB_DATE: "Tue, 01 Oct 2024 11:09:48 +0200" -->
-<!DOCTYPE html> 
+<!-- 
+ nabijaczleweli.xyz (c) by nabijaczleweli@gmail.com (nabijaczleweli) 
+ ​ 
+ nabijaczleweli.xyz is licensed under a 
+ Creative Commons Attribution 4.0 International License. 
+ ​ 
+ You should have received a copy of the license along with this 
+ work. If not, see <https://creativecommons.org/licenses/by/4.0/>. 
+ --> 
+ 
+ 
+ <!DOCTYPE html> 
  <html lang=en-GB> 
  <head> 
  <meta charset="utf-8"> 
@@ -53,319 +56,20 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
  }); 
  })(); 
  </script> 
- <link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> <link href="/content/assets/heading.css" rel="stylesheet"> 
- <link href="/kaschism/assets/column.css" rel="stylesheet"> 
- <link href="/content/assets/blogn_t.css" rel="stylesheet"> 
- <link href="/content/assets/contents.css" rel="stylesheet"> 
- <link href="../writing/Roboto-font.css" rel="stylesheet"> 
- <link href="../writing/the_taste_of_mi/Merriweather-font.css" rel="stylesheet"> 
- <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet"> <script src="/content/assets/pluralize.js"></script> 
- <script src="/content/assets/word_count.js"></script> 
+ <meta id="refresher" http-equiv="refresh" content="0;url=<link href=\"/content/assets/prism-twilight.min.css\" rel=\"stylesheet\"> /content/blogue/015-ranlib.html" /> 
+ <script> 
+ refresher.content += window.location.search; 
+ refresher.content += window.location.hash; 
+ /* ^ doesn't seem to do anything in spite of https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections#order_of_precedence */ 
+ window.location.pathname = "<link href=\"/content/assets/prism-twilight.min.css\" rel=\"stylesheet\"> /content/blogue/015-ranlib.html"; 
+ </script> 
  </head> 
- <body>
-<style>
-.continued, .continuing {
- margin-bottom: 0;
-}
-.continuation, .continuing {
- margin-top: 0;
-}
-code, samp {
- font-family: "Droid Sans Mono", monospace;
-}
-h1, h2, h3, h4, h5, h6, summary {
- font-family: "Merriweather", serif;
-}
-h1:hover a.hash-link,
-h2:hover a.hash-link,
-h3:hover a.hash-link,
-h4:hover a.hash-link,
-h5:hover a.hash-link,
-h6:hover a.hash-link,
-summary:hover a.hash-link {
- visibility: visible;
- opacity: 1;
-}
-h1 a.hash-link,
-h2 a.hash-link,
-h3 a.hash-link,
-h4 a.hash-link,
-h5 a.hash-link,
-h6 a.hash-link,
-summary a.hash-link {
- float: left;
- visibility: hidden;
- opacity: 0;
- padding-right: calc(1em / 5.5);
- margin-left: calc(-1em / 1.1);
-  transition: all 0.5s;
-}
-h1 a.hash-link, h2 a.hash-link, h3 a.hash-link, h4 a.hash-link, h5 a.hash-link, h6 a.hash-link, summary a.hash-link,
-a .fa, a .far, a .fab, a [class*="icon"], a [class*="devicon"],
-a.fa, a.far, a.fab, a[class*="icon"], a[class*="devicon"] {
- color: inherit;
- text-decoration: none;
-}
-.indented {
- text-indent: 1em;
-}
-
-del {
- text-decoration: none;
- opacity: 50%;
-}
-.nowrap {
- white-space: nowrap;
-}
-samp {
- font-weight: bold;
-}
-.continuing > dl {
- margin: 0;
-}
-dl.bltag {
- display: table;
-}
-dl.bltag dt, dl.bltag dd {
- display: table-cell;
-}
-dl.bltag dd {
- padding-left: 1em;
-}
-</style>
-<div class="roboto writing"> 
- <p></p> 
- <h2 id="go-back" class="merriweather"><a class="go-back-link left" href=".">↩</a> <samp>015. where da lib runnin</samp> <a class="go-back-link right" href=".">↩</a></h2> 
- <h4 id="post-date"><span style="white-space: nowrap">Tue, 01 Oct 2024 11:09:48 +0200</span></h4> 
- <!--BLOGN_T_TOC_PLACEHOLDER-->
-<p class="indented continued">
-If you're anything like me (and let us hope this is not the case) you've come across <code>ar crs</code>, or, for that matter, ar(1) saying
-</p>
-<blockquote class="continuing">
- <dl class="bltag">
-  <dt><samp>s</samp></dt>
-  <dd>Write an object-file index into the archive <del>[…]</del>. Running <samp>ar s</samp> on an archive is equivalent to running <samp>ranlib</samp> on it.</dd>
- </dl>
-</blockquote>
-<p class="continuing">while ranlib(1) (<q>generate an index to an archive</q>) says</p>
-<blockquote class="continuing">
- <samp>ranlib</samp> generates an index to the contents of an archive <del>[…]</del>.
- The index lists each symbol defined by a member of an archive that is a relocatable object file.
-</blockquote>
-<p class="continuing">comparing llvm-ar(1)</p>
-<blockquote class="continuing">
- <dl class="bltag">
-  <dt><samp>s</samp></dt>
-  <dd>This modifier requests that an archive index (or symbol table) be added to the <var>archive</var>, as if using ranlib. <del>Content description follows.</del></dd>
- </dl>
-</blockquote>
-<p class="continuing">
-and llvm-ranlib(1) (<q>manual page for llvm-ranlib 19</q>, the manual looks like untouched help2man-equivalent output)
-OVERVIEWs it exclusively as <q>Generate an index for archives</q>.
-</p>
-<p class="indented continuing">
-Beside the obvious question (the linker can already read archives and read the symbols out of objects, so why would the archive itself duplicate this),
-these are all circular, <q>running <samp>ranlib</samp> is completely equivalent to executing <samp>ar -s</samp></q>, and <samp>s</samp> is the default.
-Well, <samp>s</samp> is an XSI extension that <em>just</em> rebuilds the symbol table,
-because POSIX.1-2024 (in text that dates back to the X/Open Portability Guide Issue 3 ("<!--"--><span class="smallcaps">xpg3</span><!--"-->") (1988), inherited directly from the System V Interface Definition ("<!--"--><span class="smallcaps">svid</span><!--"-->" (1985))) says
-</p>
-<blockquote class="continuation">
-When there is at least one object file <del>[…]</del> in the archive, an archive symbol table shall be created <del>[…]</del>.
-Whenever the <samp>ar</samp> utility is used to create or update <del>[…]</del> an archive, the symbol table shall be rebuilt.
-</blockquote>
-<p class="indented continued">
-This is all really clear-cut and agrees with our shared personal experience of having constructed many archives, and not having <code>ranlib</code>bed them, ever.
-Why, then, does the <cite><a href="//www.gnu.org/software/automake/manual/html_node/Optional.html#index-AC_005fPROG_005fRANLIB">GNU Automake manual</a></cite> say
-</p>
-<blockquote class="continuing">
- <dl class="bltag">
-  <dt><samp>AC_PROG_RANLIB</samp></dt>
-  <dd>This is required if any libraries are built in the package.</dd>
- </dl>
-</blockquote>
-<p class="continuation">
-And when was this last true, if ever?
-</p>
-<p class="indented continued">
-As expected from the <span class="smallcaps">svid</span> wording provenance, versions 1-<a href="//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6doc.tar.gz">6</a> <span class="smallcaps">at&t unix</span>, <span class="smallcaps">at&t</span> System III <span class="smallcaps">unix</span>, and all releases of <span class="smallcaps">at&t</span> System V <span class="smallcaps">unix</span>
-ship without <samp>ranlib</samp>.
-</p>
-<p class="indented continuing">
-Indeed, the <span class="smallcaps">svid</span> wording is replicated from
-<a href="//bitsavers.org/pdf/att/unix/System_V_Release_1/301-905_UNIX_System_V_Release_1_Users_Manual_Jan83.pdf"><cite><span class="smallcaps">Unix</span> System User'<!--'-->s Manual, System V, January 1983</cite></a> (SysVr1), in <em>both</em> ar(1)s,
-but is not in
-<a href="//archive.org/details/bitsavers_attunixSysalRelease3Jun80_33886798"><cite><span class="smallcaps">Unix</span> User'<!--'-->s Manual, Release 3.0, June 1980</cite></a> (SysIII).
-This also corresponds to the ld(1) wording change from
-</p>
-<blockquote class="continuing">
-If any argument is a library, it is searched exactly once at the point it is
-encountered in the argument list. Only those routines defining an unresolved
-external reference are loaded. If a routine from a library references
-another routine in the library, the referenced routine must appear after the
-referencing routine in the library. Thus the order of programs within
-libraries is important.
-</blockquote>
-<p class="continuing">(<cite>ibid.</cite>), and hence lorder(1) and tsort(1), to
-<blockquote class="continuing">
-<del>[…]</del> are loaded. The library (archive) symbol table (see <i>ar</i>(4) is
-searched sequentially with as many passes as are necessary to resolve external
-references which can be satisfied by library members. Thus, the ordering of
-library members is unimportant.
-</blockquote>
-<p class="continuing">
-(<cite>SysVr1</cite>), but only in ld(1) for non-<span class="smallcaps">pdp-11</span>
-(lorder(1) is further declared unneeded, except on the <span class="smallcaps">pdp-11</span>).
-Later releases
-(<a href="//bitsavers.org/pdf/att/unix/System_V_Release_2/UNIX_Programmers_Manual_Vol_1_Commands_and_Utilities_1986.pdf"><cite>UNIX programmer'<!--'-->s manual, 1986</cite></a> (SysVr2))
-drop the <span class="smallcaps">pdp-11</span> and its specific ld(1)/ar(1); the lorder(1) mention is downgraded to <!--"-->"except onsome<del>(sic)</del> computers"<!--"-->.
-</p>
-<p class="indented continued">
-Conversely, Version 7 <span class="smallcaps">at&t unix</span> contains ranlib(1) (<q>convert archives to random libraries</q>, which explains the bizarre name), which
-</p>
-<blockquote class="continuing">
-converts each <var>archive</var> to a form which can be loaded more rapidly by the loader, by adding a table of contents named <strong>__.SYMDEF</strong> to the beginning of the archive.
-It uses <i>ar</i>(1) to reconstruct the archive, <del>[…]</del>.
-</blockquote>
-<p class="continuing">
-(<a href="//www.tuhs.org/Archive/Distributions/Research/Henry_Spencer_v7/v7.tar.gz"><cite>UNIX<sup>TM</sup> TIME-SHARING SYSTEM: UNIX PROGRAMMER'<!--'-->S MANUAL, Seventh Edition, January, 1979</cite></a>),
-and the loader instead growing a midpoint of both of the aforementioned:
-</p>
-<blockquote class="continuing">
-<del>[…]</del> If a routine from a library references
-another routine in the library, and the library has not been processed by <i>ranlib</i>(1),
-the referenced routine must appear after the referencing routine in the library.
-Thus the order of programs within libraries may be important.
-If the first member of a library is named `__.SYMDEF'<!--'-->,
-then it is understood to be a dictionary for the library such as produced by ranlib;
-the dictionary is searched iteratively to satisfy as many references as possible.
-</blockquote>
-<p class="continuing">
-(<cite>ibid.</cite>).
-ranlib(1) <strong>BUGS</strong> indict further:
-</p>
-<blockquote class="continuing">
-Because generation <del>[…]</del> and randomization <del>[…]</del> are separate, phase errors are possible.
-The loader <i>ld</i> warns when the modification date of a library is more recent than the creation of its dictionary;
- but this means you get the warning even if you only copy the library.
-</blockquote>
-<p class="continuation">
-any system so utterly limp as to warrant more <strong>BUGS</strong> than <strong>DESCRIPTION</strong>
-is truly worthy of its stench still lingering 45 years on.
-One has to wonder why <samp>ar</samp> didn'<!--'-->t, at worst, finish with <code class="nowrap">exec("ranlib", <var>arc</var>, 0)</code>.
-</p>
-<p class="indented continued">
-<cite>
- <a href="//www.mckusick.com/csrg/">The <span class="smallcaps">csrg</span> Archives</a>,
- <a href="//archive.org/details/The_CSRG_Archives_CD-ROM_1_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 1</span>: Berkeley Systems 1978-1986</a>,
- <a href="//archive.org/details/The_CSRG_Archives_CD-ROM_2_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 2</span>: Berkeley Systems 1987-1993</a>,
- <a href="//archive.org/details/The_CSRG_Archives_CD-ROM_3_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 3</span>: Final Berkeley Releases</a>,
- and&nbsp;<a
-    href="//archive.org/details/The_CSRG_Archives_CD-ROM_4_August_1998_Marshall_Kirk_McKusick"><span class="nowrap">CD-ROM 4</span>: Final /usr/src including SCCS files</a>
-</cite>
-tell us that
-<span class="smallcaps">3bsd</span> (December, 1979) is not afflicted by this because it doesn'<!--'-->t ship ranlib(1) at all
-(owing no doubt to shipping a novel <span class="smallcaps">vax</span>-specific ld(1) with no support for a symbol table).
-</p>
-<p class="indented continuing">
-<span class="smallcaps">4bsd</span> (November, 1980) includes Version 7 <span class="smallcaps">at&t unix</span> ranlib(1) (and a very related implementation),
-and the ld(1) blurb is similarly related, except the first member <q>should</q>.
-lorder(1) is briefly expanded to note that
-<q>The need for lorder may be vitiated by use of <i>ranlib</i>(1), which converts an ordered archive into a randomly accessed library.</q>.
-</p>
-<p class="indented continuing">
-<span class="smallcaps">4.3bsd</span> (April, 1986) calls ranlib(1) <q>preprocess archives for efficient linking</q> instead
-and adds <samp>-t</samp> (matching <samp>make -t</samp>) to update the timestamp of the symbol table only.
-</p>
-<p class="indented continuing">
-Archive targets in <span class="smallcaps">4.3bsd</span>-Reno (June, 1990) <samp>make</samp> are rebuilt based on the timestamp in the symbol table, not that of the archive itself
-(archives without symbol tables are always rebuilt).
-</p>
-<p class="indented continuing">
-<span class="smallcaps">4.4bsd</span>-Lite (June, 1993)'<!--'-->s ranlib(1) is <q>table-of-contents for archive libraries</q>,
-and in spite of no implementation changes, ar(1) <q>is expected to offer a superset of the <span class="smallcaps">posix</span> 1003.2 functionality</q>.
-This is because
-<cite><a href="//rawcdn.githack.com/oldlinux-web/oldlinux-files/HEAD/Ref-docs/POSIX/all.pdf?page=717">IEEE P1003.2 Draft 11.2</a> − September 1991,
-      <a href="//ftp.funet.fi/index/doc/posix/p1003.2/d11.2/6.1">Section 6: Software Development Utilities Option</a></cite>
-doesn'<!--'-->t specify <samp>as -s</samp>, just requiring that
-<q>When an archive consists entirely of valid object files,
-   the implementation shall format the archive so that it is usable as a library for link editing <del>[…]</del>.</q>,
-rationalised because
-</p>
-<blockquote class="continuing">
-<p class="continuing">
-historical implementations maintain a symbol table to speed searches,
-particularly when the archive contains object files. However, future implementors
-may or may not use a symbol table, and the <samp>-s</samp> option was removed from this
-clause to permit implementors freedom of choice. <del>[…]</del>
-</p>
-<p class="indented continuing">
-System V maintain<del>s</del> the symbol table without
-<del>[…]</del> <samp>-s</samp>, so adding <samp>-s</samp> (even if it were worded as allowing a no-op)
-would essentially require all portable applications to use it in all invocations
-involving libraries.
-</p>
-</blockquote>
-<p class="continuing">
-And being fully <q>usable as a library for link editing</q> is ensured for libraries without symbol tables by this system just shipping GNU ld,
-which understands symbol tables, but can read symbols out of objects just as well.
-Naturally, the matter of make(1) remains, and it still always considers untabled archives outdated, but it doesn'<!--'-->t even try to claim <span class="smallcaps">posix</span> compatibility,
-and it'<!--'-->s basically a cosmetic issue.
-</p>
-<p class="indented continuation">
-Net<span class="smallcaps">bsd</span> 1.1 (<cite><a href="//cvsweb.netbsd.org/bsdweb.cgi/src/usr.bin/make/arch.c#rev1.8"><tt>make/arch.c</tt> revision 1.8 (1995-01-11)</a></cite>)
-echoes this, saying that
-<q>we should not bother with the TOC at all since this is used by 'ar' rules that affect the data contents of the archive, not by ranlib rules, which affect the TOC.</q>,
-except that no-thing has ever used separate <samp>ar</samp>/<samp>ranlib</samp> rules,
-and every make-file in every distribution heretofore (and hence),
-if it runs <samp>ranlib</samp> at all, does so just after <samp>ar</samp> anyway.
-Indeed, the application of the
-<a href="//ro.ws.co.ls/tsort.pdf?page=2">lorder(1)-recommended</a> <code>ar cr library `lorder *.o | tsort`</code>
-stanza is nigh-universal for library archives <em>anyway</em>, even post-<samp>ranlib</samp>.
-This version of the file is included in <span class="smallcaps">4.4bsd</span>-Lite2 (April, 1994 (actually 1995-06))
-as <tt>make/arch.c</tt> revision 8.3 (95/04/28, christos <q>Updated to the latest version from the Net<span class="smallcaps">bsd</span> source</q>).
-</p>
-<p class="continued indented">
-Thus, you <em>realistically</em> never really needed to run <samp>ranlib</samp>, since you were building archives with lorder(1) anyway.
-But if you weren'<!--'-->t, then the efficacious range is [1979-01, 1995-06).
-</p>
-<p class="continuing indented">
-The unfortunate virulence of this is reflected even contemporaneously
-— <a href="//fosstodon.org/@alanc/113182473295182189">upstream reports</a>,
-  and I <a href="//winworldpc.com/product/sun-solaris/2x">can</a> <a href="//vetusware.com/download/Solaris%202.5%20Source%20Code/?id=11544">validate</a> —
-that in the SunOS 4→5 1992 transition (<span class="smallcaps">4.3bsd</span>→SysV rebase) <samp>ranlib</samp> was naturally lost,
-then re-invented as a no-op in 2.5 for compat.
-This <a href="//github.com/illumos/illumos-gate/blame/master/usr/src/cmd/sgs/ranlib/ranlib.sh">remains</a> in the illumos gate.
-</p>
-<p class="continuation indented">
-So, last even remotely desirable 30 years ago, defined as extraneous by all standards,
-and also <span class="smallcaps">4.4bsd</span>-Lite2 very clearly includes Net<span class="smallcaps">bsd</span> code but no <span class="smallcaps">unix</span> genealogical chart shows this?
-</p>
-<p> 
- <br /> 
- Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- <a href="mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/015-ranlib.html.pp">Mail</a>, 
- <a href="//101010.pl/@nabijaczleweli">post</a>, or <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new">open</a>! 
- </p> 
- </div>
-<!-- CTNT_END --> <span id="wordcount_wrapper" class="hidden"> 
- <hr /> 
- <span id="word_count">0</span> words, 
+ <body> 
  
- <span id="character_count">0</span> characters. 
- </span>
-<!-- CTNT_END --> <hr style="padding-top: 1em;" /> 
- Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>, 
- code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>. 
- <hr /> 
- This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, 
- and contribute and/or yell at me there. 
- <hr /> 
- Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a sending a <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate"> <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> <span style="margin-left: 19px;">buck</span> <span style="font-size: 0;">liberapay donate</span> </a> or <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way if my software helped you in some significant way? 
- <hr /> 
- Compiled with Clang 21's<!--'--> C preprocessor on 07.02.2026 16:43:21 UTC from 
- <a href="https://github.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/src/blogn_t/015-ranlib.html.pp">src/blogn_t/015-ranlib.html.pp</a>. 
- <br /><a href="https://builds.sr.ht/~nabijaczleweli/job/1675370">See job on builds.sr.ht</a>. 
- <hr /> 
- <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a> 
+ 
+ Page moved to <a href="<link href=\"/content/assets/prism-twilight.min.css\" rel=\"stylesheet\"> /content/blogue/OUT_FILE_NAME_BASE"><link href="/content/assets/prism-twilight.min.css" rel="stylesheet"> /content/blogue/015-ranlib.html</a>. 
+ Old links will remain valid indefinitely. 
+ 
+ 
  </body> 
  </html>

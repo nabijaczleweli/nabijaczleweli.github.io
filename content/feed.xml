@@ -18,8 +18,8 @@
   </generator>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,c-unix-no-sparse-files-before-v7.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/023,c-unix-no-sparse-files-before-v7.html" />
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/023,c-unix-no-sparse-files-before-v7.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/023,c-unix-no-sparse-files-before-v7.html" />
     <title> 023‚c. UNIX didn't have sparse files before V7 (+ V1 patch) — blogn't — nabijaczleweli </title>
     <updated>2026-01-25T23:28:55+01:00</updated>
     <content type="html">
@@ -745,7 +745,7 @@ but are not required because the &lt;tt&gt;cat&lt;/tt&gt; completes significantl
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,c-unix-no-sparse-files-before-v7.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/023,c-unix-no-sparse-files-before-v7.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -753,9 +753,9 @@ but are not required because the &lt;tt&gt;cat&lt;/tt&gt; completes significantl
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,b-DeFelice-polemic.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/023,b-DeFelice-polemic.html" />
-    <title> 023‚b. A J. DeFelice polemick on V1 UNIX buffering schemes‚ novel results regarding V1 UNIX mounts‚ on the conceptualisation of the file system and block device partitioning — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/023,b-DeFelice-polemic.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/023,b-DeFelice-polemic.html" />
+    <title> 023‚b. A J. DeFelice polemick on V1 UNIX buffering schemes‚ novel results regarding V1 UNIX mounts‚ on the conceptualisation of the file system and block device partitioning — blogue — nabijaczleweli </title>
     <updated>2026-01-23T21:28:16+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -2830,7 +2830,7 @@ Call to action
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,b-DeFelice-polemic.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/023,b-DeFelice-polemic.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -2838,9 +2838,9 @@ Call to action
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/023,a-v1-nbuf-benchmark.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/023,a-v1-nbuf-benchmark.html" />
-    <title> 023‚a. V1 UNIX I/O buffer count vs. performance benchmark — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/023,a-v1-nbuf-benchmark.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/023,a-v1-nbuf-benchmark.html" />
+    <title> 023‚a. V1 UNIX I/O buffer count vs. performance benchmark — blogue — nabijaczleweli </title>
     <updated>2026-01-17T04:33:03+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -3488,7 +3488,7 @@ the distribution kernel ships as many nbufs as it can easily fit.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/023,a-v1-nbuf-benchmark.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/023,a-v1-nbuf-benchmark.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -3496,9 +3496,9 @@ the distribution kernel ships as many nbufs as it can easily fit.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/022-Utah_v4.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/022-Utah_v4.html" />
-    <title> 022. Turning the V4 UNIX dump into Utah_v4/ — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/022-Utah_v4.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/022-Utah_v4.html" />
+    <title> 022. Turning the V4 UNIX dump into Utah_v4/ — blogue — nabijaczleweli </title>
     <updated>2025-12-21T23:51:02+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -4088,7 +4088,7 @@ So, what have we learned to-day?
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/022-Utah_v4.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/022-Utah_v4.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -4096,9 +4096,9 @@ So, what have we learned to-day?
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html" />
-    <title> 021. Natively mirrored but still functional &amp; correct /boot/efi — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/021-mirror-boot-efi-ESP-plain-raid.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/021-mirror-boot-efi-ESP-plain-raid.html" />
+    <title> 021. Natively mirrored but still functional &amp; correct /boot/efi — blogue — nabijaczleweli </title>
     <updated>2025-12-15T00:02:14+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -4745,7 +4745,7 @@ mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quo
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/021-mirror-boot-efi-ESP-plain-raid.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/021-mirror-boot-efi-ESP-plain-raid.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -4753,9 +4753,9 @@ mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quo
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/020-sizeof-division.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/020-sizeof-division.html" />
-    <title> 020. Pre-modern-UNIX sizeof division — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/020-sizeof-division.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/020-sizeof-division.html" />
+    <title> 020. Pre-modern-UNIX sizeof division — blogue — nabijaczleweli </title>
     <updated>2025-09-28T01:02:48+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -5311,7 +5311,7 @@ Ever.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/020-sizeof-division.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/020-sizeof-division.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -5319,9 +5319,9 @@ Ever.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/019-aphantasia.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/019-aphantasia.html" />
-    <title> 019. aphantasia. — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/019-aphantasia.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/019-aphantasia.html" />
+    <title> 019. aphantasia. — blogue — nabijaczleweli </title>
     <updated>2025-09-18T18:34:15+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -5349,7 +5349,7 @@ lounge -&gt; systemd -&gt; weed -&gt; ability to hallucinate spinning apples&lt;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/019-aphantasia.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/019-aphantasia.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -5369,9 +5369,9 @@ lounge -&gt; systemd -&gt; weed -&gt; ability to hallucinate spinning apples&lt;
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/017-malloc0.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/017-malloc0.html" />
-    <title> 017. malloc(0) &amp; realloc(…，0) ≠ 0 — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/017-malloc0.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/017-malloc0.html" />
+    <title> 017. malloc(0) &amp; realloc(…，0) ≠ 0 — blogue — nabijaczleweli </title>
     <updated>2024-10-17T03:42:06+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -5712,7 +5712,7 @@ The rationale paper for C89 and the path &lt;code&gt;realloc()&lt;/code&gt; take
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/017-malloc0.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/017-malloc0.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -5720,9 +5720,9 @@ The rationale paper for C89 and the path &lt;code&gt;realloc()&lt;/code&gt; take
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/016-BSDi-qfont.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/016-BSDi-qfont.html" />
-    <title> 016. BSDi qfont — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/016-BSDi-qfont.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/016-BSDi-qfont.html" />
+    <title> 016. BSDi qfont — blogue — nabijaczleweli </title>
     <updated>2024-10-05T21:56:06+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -5811,7 +5811,7 @@ Built on bookworm.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/016-BSDi-qfont.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/016-BSDi-qfont.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -5819,9 +5819,9 @@ Built on bookworm.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/015-ranlib.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/015-ranlib.html" />
-    <title> 015. where da lib runnin — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/015-ranlib.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/015-ranlib.html" />
+    <title> 015. where da lib runnin — blogue — nabijaczleweli </title>
     <updated>2024-10-01T11:09:48+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -6034,7 +6034,7 @@ and also &lt;span class=&quot;smallcaps&quot;&gt;4.4bsd&lt;/span&gt;-Lite2 very 
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/015-ranlib.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/015-ranlib.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -7241,9 +7241,9 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/014-unix-pre-v4-pid0-corollary.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/014-unix-pre-v4-pid0-corollary.html" />
-    <title> 014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX) — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/014-unix-pre-v4-pid0-corollary.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/014-unix-pre-v4-pid0-corollary.html" />
+    <title> 014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX) — blogue — nabijaczleweli </title>
     <updated>2024-06-10T01:04:14+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -8508,7 +8508,7 @@ This is as an open-coded sys exec (II).
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/014-unix-pre-v4-pid0-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/014-unix-pre-v4-pid0-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -8516,9 +8516,9 @@ This is as an open-coded sys exec (II).
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/013-linux-a.out-quine.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/013-linux-a.out-quine.html" />
-    <title> 013. Linux a.out quine in 44 bytes — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/013-linux-a.out-quine.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/013-linux-a.out-quine.html" />
+    <title> 013. Linux a.out quine in 44 bytes — blogue — nabijaczleweli </title>
     <updated>2024-03-17T04:57:16+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -8668,7 +8668,7 @@ and, if you don'&lt;!--'--&gt;t disable coredumps, fills your disk.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/013-linux-a.out-quine.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/013-linux-a.out-quine.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -8676,9 +8676,9 @@ and, if you don'&lt;!--'--&gt;t disable coredumps, fills your disk.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html" />
-    <title> 012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) (real) — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html" />
+    <title> 012b. Debian on the Lenovo 300e 2nd-gen MTK arm64 Chromebook (hana) (real) — blogue — nabijaczleweli </title>
     <updated>2024-02-07T01:09:33+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -12374,7 +12374,7 @@ Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -12382,9 +12382,9 @@ Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html" />
-    <title> 012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html" />
+    <title> 012a. Installing Debian on the Lenovo 300e 2nd-gen Chromebook (Intel) — blogue — nabijaczleweli </title>
     <updated>2024-01-11T04:04:28+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -14475,7 +14475,7 @@ A good bug report never goes unpunished.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -14483,9 +14483,9 @@ A good bug report never goes unpunished.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html" />
-    <title> 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/012-debian-chromebook-lenovo-300e-gen2.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/012-debian-chromebook-lenovo-300e-gen2.html" />
+    <title> 012. Debian on the Lenovo 300e 2nd-gen arm64 Chromebook — blogue — nabijaczleweli </title>
     <updated>2024-01-08T16:06:34+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -14719,7 +14719,7 @@ but one has a Celeron N4000 and the other an MT8173.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/012-debian-chromebook-lenovo-300e-gen2.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/012-debian-chromebook-lenovo-300e-gen2.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -14727,9 +14727,9 @@ but one has a Celeron N4000 and the other an MT8173.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/011-linux-splice-exclusion.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/011-linux-splice-exclusion.html" />
-    <title> 011. pipe exclusion with splice() under Linux — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/011-linux-splice-exclusion.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/011-linux-splice-exclusion.html" />
+    <title> 011. pipe exclusion with splice() under Linux — blogue — nabijaczleweli </title>
     <updated>2023-07-07T01:42:34+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -14956,7 +14956,7 @@ sexion.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/011-linux-splice-exclusion.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/011-linux-splice-exclusion.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -14964,9 +14964,9 @@ sexion.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/010-tme-Sun-2-SunOS3-2023.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/010-tme-Sun-2-SunOS3-2023.html" />
-    <title> 010. tme booting SunOS 3 on Sun-2 in 2023 — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/010-tme-Sun-2-SunOS3-2023.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/010-tme-Sun-2-SunOS3-2023.html" />
+    <title> 010. tme booting SunOS 3 on Sun-2 in 2023 — blogue — nabijaczleweli </title>
     <updated>2023-06-21T23:56:00+02:00</updated>
     <published>2023-06-19T23:53:58+02:00</published>
     <content type="html">
@@ -15762,7 +15762,7 @@ but at that point you might as well just chroot after installing from the miniro
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/010-tme-Sun-2-SunOS3-2023.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/010-tme-Sun-2-SunOS3-2023.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -15770,9 +15770,9 @@ but at that point you might as well just chroot after installing from the miniro
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/009-XEROX-SIGMA-9-balls.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/009-XEROX-SIGMA-9-balls.html" />
-    <title> 009. XEROX SIGMA 9 balls — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/009-XEROX-SIGMA-9-balls.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/009-XEROX-SIGMA-9-balls.html" />
+    <title> 009. XEROX SIGMA 9 balls — blogue — nabijaczleweli </title>
     <updated>2022-12-01T17:16:50+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -15894,7 +15894,7 @@ Anyway, glam shots.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/009-XEROX-SIGMA-9-balls.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/009-XEROX-SIGMA-9-balls.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -15902,9 +15902,9 @@ Anyway, glam shots.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/008-amix-fonts.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/008-amix-fonts.html" />
-    <title> 008. AMIX fonts — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/008-amix-fonts.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/008-amix-fonts.html" />
+    <title> 008. AMIX fonts — blogue — nabijaczleweli </title>
     <updated>2022-11-17T22:36:33+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -16011,7 +16011,7 @@ see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.ful
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/008-amix-fonts.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/008-amix-fonts.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -16019,9 +16019,9 @@ see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.ful
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005-low-curse-zfs-on-root.html" />
-    <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/005-low-curse-zfs-on-root.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/005-low-curse-zfs-on-root.html" />
+    <title> 005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems — blogue — nabijaczleweli </title>
     <updated>2022-06-11T00:19:37+02:00</updated>
     <published>2020-09-14T00:20:20+02:00</published>
     <content type="html">
@@ -16631,7 +16631,7 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/005-low-curse-zfs-on-root.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/005-low-curse-zfs-on-root.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -16639,9 +16639,9 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/007-groff-Tps-cyrillic-et-al.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/007-groff-Tps-cyrillic-et-al.html" />
-    <title> 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/007-groff-Tps-cyrillic-et-al.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/007-groff-Tps-cyrillic-et-al.html" />
+    <title> 007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps — blogue — nabijaczleweli </title>
     <updated>2021-08-28T18:36:44+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -17321,7 +17321,7 @@ x&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;nobody
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/007-groff-Tps-cyrillic-et-al.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/007-groff-Tps-cyrillic-et-al.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -17329,9 +17329,9 @@ x&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;nobody
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/006-UNIX-r-ATT.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/006-UNIX-r-ATT.html" />
-    <title> 006. ¹UNIX® is a registered trademark of AT&amp;T. — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/006-UNIX-r-ATT.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/006-UNIX-r-ATT.html" />
+    <title> 006. ¹UNIX® is a registered trademark of AT&amp;T. — blogue — nabijaczleweli </title>
     <updated>2021-07-08T20:26:38+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -17388,7 +17388,7 @@ Anyway, glam shots.
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/006-UNIX-r-ATT.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/006-UNIX-r-ATT.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -17396,9 +17396,9 @@ Anyway, glam shots.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/005a-zfs-on-root-single-disk-corollary.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/005a-zfs-on-root-single-disk-corollary.html" />
-    <title> 005a. A single-disk but slightly more cursed ZFS-on-root corollary — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/005a-zfs-on-root-single-disk-corollary.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/005a-zfs-on-root-single-disk-corollary.html" />
+    <title> 005a. A single-disk but slightly more cursed ZFS-on-root corollary — blogue — nabijaczleweli </title>
     <updated>2020-11-05T22:06:30+01:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -17638,7 +17638,7 @@ zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.50G&lt;!--&quot;--&gt;  &lt;!--&qu
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/005a-zfs-on-root-single-disk-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/005a-zfs-on-root-single-disk-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -17646,9 +17646,9 @@ zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.50G&lt;!--&quot;--&gt;  &lt;!--&qu
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/004-cinque.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/004-cinque.html" />
-    <title> 004. New album: cinque — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/004-cinque.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/004-cinque.html" />
+    <title> 004. New album: cinque — blogue — nabijaczleweli </title>
     <updated>2020-07-18T22:14:33+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -17669,7 +17669,7 @@ You can find assorted extras (full-sized track and album art, programs to make t
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/004-cinque.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/004-cinque.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -17677,9 +17677,9 @@ You can find assorted extras (full-sized track and album art, programs to make t
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/003-maircl-poc.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/003-maircl-poc.html" />
-    <title> 003. A proof-of-concept IRC/mail bridge — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/003-maircl-poc.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/003-maircl-poc.html" />
+    <title> 003. A proof-of-concept IRC/mail bridge — blogue — nabijaczleweli </title>
     <updated>2020-07-11T00:34:50+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -17893,7 +17893,7 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/003-maircl-poc.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/003-maircl-poc.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -17901,9 +17901,9 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/002-ncurses-gpm-segfault.html" />
-    <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/002-ncurses-gpm-segfault.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/002-ncurses-gpm-segfault.html" />
+    <title> 002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users — blogue — nabijaczleweli </title>
     <updated>2020-05-25T00:12:30+02:00</updated>
     <content type="html">
 &lt;div class=&quot;roboto writing&quot;&gt; 
@@ -17936,7 +17936,7 @@ You may also be interested in the corresponding &lt;a href=&quot;//lfs.nabijaczl
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/002-ncurses-gpm-segfault.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/002-ncurses-gpm-segfault.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -17944,9 +17944,9 @@ You may also be interested in the corresponding &lt;a href=&quot;//lfs.nabijaczl
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/001-x32-in-2020.html" />
-    <title> 001. Installing Debianꞌs x32 port in 2020 — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/001-x32-in-2020.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/001-x32-in-2020.html" />
+    <title> 001. Installing Debianꞌs x32 port in 2020 — blogue — nabijaczleweli </title>
     <updated>2020-04-28T02:54:07+02:00</updated>
     <published>2020-04-09T01:44:47+02:00</published>
     <content type="html">
@@ -18203,7 +18203,7 @@ Alright, bye!
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/001-x32-in-2020.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/001-x32-in-2020.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
@@ -21471,9 +21471,9 @@ I tak, drogie dzieci, zaczęła sie WWI.
   </entry>
 
   <entry>
-    <id>https://nabijaczleweli.xyz/content/../content/blogn_t/018-mean-shift-clusterer.html</id>
-    <link href="https://nabijaczleweli.xyz/content/../content/blogn_t/018-mean-shift-clusterer.html" />
-    <title> 018. Mean-shift clustering — blognꞌt — nabijaczleweli </title>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/018-mean-shift-clusterer.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/018-mean-shift-clusterer.html" />
+    <title> 018. Mean-shift clustering — blogue — nabijaczleweli </title>
     <updated> TODO</updated>
     <content type="html">
 &lt;style class=&quot;dark-invert&quot;&gt;
@@ -39052,7 +39052,7 @@ It never gets better, it's never worth it, and it's &lt;em&gt;all&lt;/em&gt; wor
 &lt;p&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
- &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogn_t/018-mean-shift-clusterer.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/018-mean-shift-clusterer.html.pp&quot;&gt;Mail&lt;/a&gt;, 
  &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
  &lt;/p&gt; 
  &lt;/div&gt;
