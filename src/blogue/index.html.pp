@@ -63,7 +63,7 @@ BOILERPLATE(blogue, nabijaczleweli blog, en-GB, STYLESHEETS)
 MAIN_HEADING(blogue)
 
 <p>
-Not banged out in an hour. <button style="float: right;" onclick="reverse();">Reverse</button>
+Home-grown neurosis. <button style="float: right;" onclick="reverse();">Reverse</button>
 </p>
 
 <span class="roboto-unscale" id="posts">
