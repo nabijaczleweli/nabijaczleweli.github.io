@@ -27,17 +27,17 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
-	Latest post from the <a href="blogn_t/">blog</a>:<br />
+	Latest post from the <a href="blogue/">blog</a>:<br />
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/023,a-v1-nbuf-benchmark.html">023,a. Benchmarking V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance</a>;
+		<a href="blogue/023,a-v1-nbuf-benchmark.html">023,a. Benchmarking V1 <span class="smallcaps">unix</span> I/O buffer count vs. performance</a>;
 		<span style="white-space: nowrap;">Sat, 17 Jan 2026 04:33:03 +0100</span>
 	</samp>
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/023,b-DeFelice-polemic.html">023,b. A J. DeFelice polemick on V1 <span class="smallcaps">unix</span> buffering schemes, novel results regarding V1 <span class="smallcaps">unix</span> mounts, on the conceptualisation of the file system and block device partitioning</a>;
+		<a href="blogue/023,b-DeFelice-polemic.html">023,b. A J. DeFelice polemick on V1 <span class="smallcaps">unix</span> buffering schemes, novel results regarding V1 <span class="smallcaps">unix</span> mounts, on the conceptualisation of the file system and block device partitioning</a>;
 		<span style="white-space: nowrap;">Fri, 23 Jan 2026 21:28:16 +0100</span>
 	</samp>
 	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
-		<a href="blogn_t/023,c-unix-no-sparse-files-before-v7.html">023,c. <span class="smallcaps">unix</span> didn't<!--'--> have sparse files before V7 (+ V1 patch)</a>;
+		<a href="blogue/023,c-unix-no-sparse-files-before-v7.html">023,c. <span class="smallcaps">unix</span> didn't<!--'--> have sparse files before V7 (+ V1 patch)</a>;
 		<span style="white-space: nowrap;">Sun, 25 Jan 2026 23:28:55 +0100</span>
 	</samp>
 </p>

@@ -37,7 +37,7 @@ MAIN_HEADING(Prose)
 
 
 <p class="indented" style="margin-bottom: 0;">
-If it's not on <a href="/content/blogn_t">the blogue</a> and it's not a post,
+If it's not on <a href="/content/blogue">the blogue</a> and it's not a post,
 it's<!--'--> probably under the umbrella of <a href="//sr.ht/~nabijaczleweli/voreutils">voreutils</a>,
 which is my love letter to the UNIX userland or whatever,
 with a context preface of the current implementation and academia (literature review, historiosophic analysis) in HISTORY;

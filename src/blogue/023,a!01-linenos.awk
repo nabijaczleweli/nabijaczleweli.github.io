@@ -61,8 +61,8 @@ function one(file) {
 }
 
 END {
-	one("src/blogn_t/023,a-v1-nbuf-benchmark.html.pp")
-	one("src/blogn_t/023,a.01-dskw.h")
-	one("src/blogn_t/023,a.02-dskwC.h")
-	one("src/blogn_t/023,b-DeFelice-polemic.html.pp")
+	one("src/blogue/023,a-v1-nbuf-benchmark.html.pp")
+	one("src/blogue/023,a.01-dskw.h")
+	one("src/blogue/023,a.02-dskwC.h")
+	one("src/blogue/023,b-DeFelice-polemic.html.pp")
 }

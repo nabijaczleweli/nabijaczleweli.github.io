@@ -116,7 +116,7 @@ Most of my output can be found under my <a href="//sr.ht/~nabijaczleweli">Source
 Select programs:
 <ul>
 	   SRHT_SET(mean-shift-clusterer, MFIZZ(rust),
-	            Oklab 3D radius-based pallette reduction (posterisation?) per <a href="//youtu.be/HuW9qJbL0xM">Gneiss Name, <cite>Mean Shift Clustering</cite>, 2025 ▶</a>; also <a href="../blogn_t/018-mean-shift-clusterer.html">on the blogue</a>)
+	            Oklab 3D radius-based pallette reduction (posterisation?) per <a href="//youtu.be/HuW9qJbL0xM">Gneiss Name, <cite>Mean Shift Clustering</cite>, 2025 ▶</a>; also <a href="../blogue/018-mean-shift-clusterer.html">on the blogue</a>)
 	   SRHT_SET(fonts.debian.net, DEVICON(cplusplus)DEVICON(javascript),
 	            <a href="//debfonts.nabijaczleweli.xyz">httpsCOLON_SLASH_SLASHdebfonts.nabijaczleweli.xyz</a> ‒ interactively-filtered search through all debian fonts)
 	   SRHT_SET(msgpack_datetime, <a href="//hexdocs.pm/msgpack_datetime/MsgpackDateTime.html">MFIZZ(elixir)</a>,
