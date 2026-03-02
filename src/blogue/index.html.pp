@@ -63,8 +63,14 @@ BOILERPLATE(blogue, nabijaczleweli blog, en-GB, STYLESHEETS)
 MAIN_HEADING(blogue)
 
 <p>
-Home-grown neurosis. <button style="float: right;" onclick="reverse();">Reverse</button>
+<span id="Home">Home</span>-grown neurosis. <button style="float: right;" onclick="reverse();">Reverse</button>
 </p>
+<script>
+(function() {
+	let homes = ["Home", "Home", "Home", "Lab", "Home-lab", "Homelab"];
+	Home.innerText = homes[Math.floor(Math.random() * homes.length)];
+})()
+</script>
 
 <span class="roboto-unscale" id="posts">
 	PPOST(001-x32-in-2020,                         Thu, 9 Apr 2020 01:44:47 +0200,  001. Installing Debian'<!--'-->s x32 port in 2020)
