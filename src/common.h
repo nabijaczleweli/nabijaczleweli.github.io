@@ -106,7 +106,7 @@
       <a href="/">nabijaczleweli.xyz</a>                                                                                             FORCED_NEWLINE \
     : BOILERPLATE_LICENCE                                                                                                            FORCED_NEWLINE \
     : <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a> (GitHub)FORCED_NEWLINE \
-    : built DATE_TIME with COMPILER_NAME's<!--'--> COMPILER_VERSION C preprocessor                                                   FORCED_NEWLINE \
+    : built on DATE_TIME with COMPILER_NAME's<!--'--> COMPILER_VERSION C preprocessor                                                FORCED_NEWLINE \
     CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
     : <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a>                                            FORCED_NEWLINE \
     : <a style="display: inline-block; position: relative; width: 1em;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate">      \
