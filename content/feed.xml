@@ -26,7 +26,7 @@
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;023,c. &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; didn't&lt;!--'--&gt; have sparse files before V7 (+ V1 patch)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 25 Jan 2026 23:28:55 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sun, 25 Jan 2026 23:28:55 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -742,7 +742,7 @@ but are not required because the &lt;tt&gt;cat&lt;/tt&gt; completes significantl
 &lt;/span&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token line&quot;&gt;&lt;!--&quot;--&gt;		                         &lt;!--&quot;--&gt;// in indirect block
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/023,c-unix-no-sparse-files-before-v7.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -761,7 +761,7 @@ but are not required because the &lt;tt&gt;cat&lt;/tt&gt; completes significantl
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;023,b. A J. DeFelice polemick on V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; buffering schemes, novel results regarding V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; mounts, on the conceptualisation of the file system and block device partitioning&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Fri, 23 Jan 2026 21:28:16 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Fri, 23 Jan 2026 21:28:16 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -2827,7 +2827,7 @@ Call to action
 &lt;a href=&quot;//liberapay.com/nabijaczleweli&quot;&gt;4&lt;/a&gt;,
 5…?
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/023,b-DeFelice-polemic.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -2846,7 +2846,7 @@ Call to action
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;023,a. V1 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; I/O buffer count vs. performance benchmark&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 17 Jan 2026 04:33:03 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sat, 17 Jan 2026 04:33:03 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;continued&quot;&gt;
 My draft for post 023 currently quips
@@ -3485,7 +3485,7 @@ nbufs=2 is a soft usability minimum, more-so than a hard limit, and
 the distribution kernel ships as many nbufs as it can easily fit.
 &lt;/p&gt;
 &lt;img src=&quot;/content/assets/blogn_t/023,a.03-graph.png&quot; style=&quot;width: 100%; max-height: 50em;&quot; class=&quot;light-invert&quot; /&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/023,a-v1-nbuf-benchmark.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -3504,7 +3504,7 @@ the distribution kernel ships as many nbufs as it can easily fit.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;022. Turning the V4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; dump into Utah_v4/&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 21 Dec 2025 23:51:02 +0100&lt;/span&gt;; &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;on the archive&lt;/a&gt; &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sun, 21 Dec 2025 23:51:02 +0100&lt;/span&gt;; &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;on the archive&lt;/a&gt; &lt;a href=&quot;//archive.org/details/utah-v4&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;continued&quot;&gt;
 &lt;a href=&quot;//discuss.systems/@ricci/115748594116050292&quot;&gt;Recently&lt;/a&gt; (late this week),
@@ -4085,7 +4085,7 @@ So, what have we learned to-day?
  &lt;li&gt;you can also inspect and reproduce my methodology by consulting &lt;a href=&quot;//git.sr.ht/~nabijaczleweli/Utah_v4&quot;&gt;the &lt;tt&gt;Utah_v4&lt;/tt&gt; repository&lt;/a&gt;&lt;/li&gt;
  &lt;li&gt;10¼h well spent. better input data would've&lt;!--'--&gt; cut this in at least half&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/022-Utah_v4.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -4104,7 +4104,7 @@ So, what have we learned to-day?
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;021. Natively mirrored but still functional &amp; correct /boot/efi&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 15 Dec 2025 00:02:14 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Mon, 15 Dec 2025 00:02:14 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -4742,7 +4742,7 @@ mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quo
 &lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt; /boot/efi
 &lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; efi/ /boot/
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/021-mirror-boot-efi-ESP-plain-raid.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -4761,7 +4761,7 @@ mkfs.&lt;tt&gt;vfat&lt;/tt&gt; &lt;span class=&quot;token parameter variable&quo
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;020. Pre-modern-UNIX sizeof division&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;Sun, 28 Sep 2025 19:54:03 +0200, &lt;a href=&quot;#v4&quot;&gt;filled out with information about V4 on Sat, 03 Jan 2026 21:47:26 +0100&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sun, 28 Sep 2025 01:02:48 +0200&lt;/span&gt;Sun, 28 Sep 2025 19:54:03 +0200, &lt;a href=&quot;#v4&quot;&gt;filled out with information about V4 on Sat, 03 Jan 2026 21:47:26 +0100&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -5308,7 +5308,7 @@ other than &quot;there has never been a compiler with &lt;code&gt;sizeof&lt;/cod
 &lt;del style=&quot;opacity: initial;&quot;&gt;&lt;em&gt;Perhaps&lt;/em&gt; for a hair? in 1973 around our V4 epistemic hole, &lt;a href=&quot;/content/assets/blogn_t/020.02-kicker.webm&quot;&gt;but.&lt;/a&gt;&lt;/del&gt;
 Ever.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/020-sizeof-division.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -5327,7 +5327,7 @@ Ever.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;019. aphantasia.&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 18 Sep 2025 18:34:15 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 18 Sep 2025 18:34:15 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p&gt;
 I present the following minimally-editorialised conversation between me and a dear friend
@@ -5346,7 +5346,7 @@ Comment and opine under &lt;a href=&quot;//101010.pl/@nabijaczleweli/11514786293
 &lt;h4&gt;&lt;a href=&quot;#75&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;but then one could ask questions like&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=76&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#76&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;&quot;make it spin faster&quot;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=77&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#77&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;nope&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=78&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#78&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;&quot;which way is it pointing to now&quot;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=79&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#79&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;this makes no sense&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=80&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#80&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;there is no apple&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=81&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#81&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;it'&lt;!--'--&gt;s not pointing anywhere&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=82&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#82&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;yeah this is what i am saying&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=83&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#83&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;those are the statements that should tell you something is off&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=84&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#84&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:09+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:09&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;there are 5-10 semantic elements&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=85&gt;&lt;span&gt;&lt;a class=&quot;backlink&quot; href=&quot;#83&quot;&gt;↬ &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt; &lt;span&gt;those are the statements that should tell you something is off&lt;/span&gt;&lt;/a&gt;
 &lt;h4&gt;&lt;a href=&quot;#85&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:10+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:10&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;its impossible to conceive of a universe where there is a counterfactual to this&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=86&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#86&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:11+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:11&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;i think there could be&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=87&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#87&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:11+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:11&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;i can only give you this analysis because weed fixed my aphantasia a little bit&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=88&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#88&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:11+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:11&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;therefore i can conceive of a universe with a counterfactual because i am living in that universe&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=89&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#89&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:13+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:13&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;so when are you upgrading to 1 apple diagram rating&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=90&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#90&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:13+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:13&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;unclear&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=91&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#91&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:13+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:13&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;i have real weed (as opposed to weed goop which is narrow-spectrum) on the way. this may work better or it may work worse&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=92&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#92&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:14+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:14&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;the nab descent to hell
 lounge -&gt; systemd -&gt; weed -&gt; ability to hallucinate spinning apples&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=93&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#93&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:14+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:14&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;lol&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=94&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#94&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:21+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:21&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;if you want to know what being autistic is like you should watch poor things (2023)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=95&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#95&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:21+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:21&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;its pov me&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=96&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#96&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:21+02:00&quot; class=hoveronly&gt;&lt;span&gt;[&lt;/span&gt;15:21&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;no media that claims to be about being autistic actually is, it'&lt;!--'--&gt;s all reddit chungus&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=97&gt;&lt;span class=&quot;context&quot;&gt;&lt;h4&gt;&lt;a href=&quot;#97&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:23+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:23&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;similarly if you want to know what being gay is like you should watch belami boys&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=98&gt;&lt;span class=&quot;context&quot;&gt;&lt;h4&gt;&lt;a href=&quot;#98&quot;&gt;&lt;time datetime=&quot;2025-09-18 15:23+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;15:23&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;lmaoo&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=99&gt;&lt;span&gt;&lt;h4&gt;&lt;a href=&quot;#99&quot;&gt;&lt;time datetime=&quot;2025-09-18 +02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=100&gt;&lt;span class=&quot;context&quot;&gt;&lt;h4&gt;&lt;a href=&quot;#100&quot;&gt;&lt;time datetime=&quot;2025-09-18 16:25+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;16:25&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;nabijaczleweli&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;i will be editorialising our conversation above for a blogue poast btw&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=101&gt;&lt;span class=&quot;context&quot;&gt;&lt;h4&gt;&lt;a href=&quot;#101&quot;&gt;&lt;time datetime=&quot;2025-09-18 16:27+02:00&quot;&gt;&lt;span&gt;[&lt;/span&gt;16:27&lt;span&gt;]&lt;/span&gt;&lt;/time&gt;&lt;/a&gt; &lt;strong&gt;Mayfly&lt;span&gt;:&lt;/span&gt;&lt;/strong&gt;&lt;/h4&gt; &lt;span&gt;the part where you'&lt;!--'--&gt;re unable to imagine yourself sitting on a blinking cactus that'&lt;!--'--&gt;s spinning counter clockwise? 😔&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/019-aphantasia.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -5377,7 +5377,7 @@ lounge -&gt; systemd -&gt; weed -&gt; ability to hallucinate spinning apples&lt;
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;017. malloc(0) &amp; realloc(…, 0) ≠ 0&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200, &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/2&quot;&gt;Wed, 30 Oct 2024 18:53:30 +0100&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 17 Oct 2024 03:42:06 +0200&lt;/span&gt;; updated Thu, 17 Oct 2024 12:15:42 +0200, Fri, 18 Oct 2024 18:50:12 +0200, &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/2&quot;&gt;Wed, 30 Oct 2024 18:53:30 +0100&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -5709,7 +5709,7 @@ so C23 &lt;a href=&quot;//www.open-std.org/jtc1/sc22/wg14/www/docs/n3301.pdf#sub
 The rationale paper for C89 and the path &lt;code&gt;realloc()&lt;/code&gt; takes through later standards is summarised
 &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/3&quot;&gt;here&lt;/a&gt;.
 &lt;/a&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/017-malloc0.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -5728,7 +5728,7 @@ The rationale paper for C89 and the path &lt;code&gt;realloc()&lt;/code&gt; take
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;016. &lt;span class=&quot;qfont&quot;&gt;BSDi qfont&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 05 Oct 2024 21:56:06 +0200&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sat, 05 Oct 2024 21:56:06 +0200&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 This in many ways mirrors &lt;a href=&quot;008-amix-fonts&quot;&gt;&lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt;&lt;/a&gt;,
@@ -5808,7 +5808,7 @@ The font includes:
 Go wild: &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&quot;&gt;https://lfs.nabijaczleweli.xyz/0023-BSDi-fonts/&lt;/a&gt;.
 Built on bookworm.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/016-BSDi-qfont.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -5827,7 +5827,7 @@ Built on bookworm.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;015. where da lib runnin&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 01 Oct 2024 11:09:48 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Tue, 01 Oct 2024 11:09:48 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 If you're anything like me (and let us hope this is not the case) you've come across &lt;code&gt;ar crs&lt;/code&gt;, or, for that matter, ar(1) saying
@@ -6031,7 +6031,7 @@ This &lt;a href=&quot;//github.com/illumos/illumos-gate/blame/master/usr/src/cmd
 So, last even remotely desirable 30 years ago, defined as extraneous by all standards,
 and also &lt;span class=&quot;smallcaps&quot;&gt;4.4bsd&lt;/span&gt;-Lite2 very clearly includes Net&lt;span class=&quot;smallcaps&quot;&gt;bsd&lt;/span&gt; code but no &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; genealogical chart shows this?
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/015-ranlib.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -7249,7 +7249,7 @@ window.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;014. PID 0 in V1 UNIX (and V4 nsys, and the PDP-7 proto-UNIX)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 10 Jun 2024 01:04:14 +0200, &lt;a href=&quot;#v4&quot;&gt;filled out with information about V4 on Sat, 03 Jan 2026 23:46:58 +0100&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Mon, 10 Jun 2024 01:04:14 +0200, &lt;a href=&quot;#v4&quot;&gt;filled out with information about V4 on Sat, 03 Jan 2026 23:46:58 +0100&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -8505,7 +8505,7 @@ So I'&lt;!--'--&gt;d say this system &lt;em&gt;boots&lt;/em&gt; into PID 1 but e
 and jumps there.
 This is as an open-coded sys exec (II).
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/014-unix-pre-v4-pid0-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -8524,7 +8524,7 @@ This is as an open-coded sys exec (II).
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;013. Linux a.out quine in 44 bytes&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sun, 17 Mar 2024 04:57:16 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sun, 17 Mar 2024 04:57:16 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 &lt;a href=&quot;//susam.net/self-printing-machine-code.html&quot;&gt;Susam Pal'&lt;!--'--&gt;s &lt;cite&gt;Self-Printing Machine Code&lt;/cite&gt;&lt;/a&gt;
@@ -8665,7 +8665,7 @@ and, if you don'&lt;!--'--&gt;t disable coredumps, fills your disk.
 &lt;!--&quot;--&gt;0000044&lt;!--&quot;--&gt;&lt;/pre&gt;
  &lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/013-linux-a.out-quine.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -8684,7 +8684,7 @@ and, if you don'&lt;!--'--&gt;t disable coredumps, fills your disk.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012b. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen MTK arm64 Chromebook (hana) (real)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 07 Feb 2024 01:09:33 +0100&lt;/span&gt;; updated &lt;a href=&quot;update-2025-09-13&quot;&gt;Sat, 13 Sep 2025 16:05:39 +0200&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Wed, 07 Feb 2024 01:09:33 +0100&lt;/span&gt;; updated &lt;a href=&quot;update-2025-09-13&quot;&gt;Sat, 13 Sep 2025 16:05:39 +0200&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -12371,7 +12371,7 @@ Issues identified (chronological order):
 &lt;br /&gt;
 Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;&gt;my album&lt;/a&gt; buy &lt;a href=&quot;//store.nabijaczleweli.xyz/&quot;&gt;my stickers&lt;/a&gt;.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/012b-debian-chromebook-lenovo-300e-gen2-mtk-real.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -12390,7 +12390,7 @@ Buy &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/fluorescent-heart&quot;
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012a. Installing Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen Chromebook (Intel)&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 11 Jan 2024 04:04:28 +0100&lt;/span&gt;, updated Thu, 11 Jan 2024 21:38:02 +0100&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 11 Jan 2024 04:04:28 +0100&lt;/span&gt;, updated Thu, 11 Jan 2024 21:38:02 +0100&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -14472,7 +14472,7 @@ That is also the reason for most of them having been discovered.
 &lt;p class=&quot;indented&quot;&gt;
 A good bug report never goes unpunished.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/012a-installing-debian-chromebook-lenovo-300e-gen2-intel.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -14491,7 +14491,7 @@ A good bug report never goes unpunished.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;012. Debian on the Lenovo 300e 2&lt;sup&gt;nd&lt;/sup&gt;-gen arm64 Chromebook&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 08 Jan 2024 16:06:34 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Mon, 08 Jan 2024 16:06:34 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -14716,7 +14716,7 @@ but one has a Celeron N4000 and the other an MT8173.
 &lt;/p&gt;
 &lt;h2 id=&quot;kms&quot; class=&quot;continued&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#kms&quot;&gt;#&lt;/a&gt; fuckin kms i s'&lt;!--'--&gt;pose&lt;/h2&gt;
 &lt;a href=&quot;//101010.pl/@nabijaczleweli/111715350612107659&quot;&gt;&lt;img class=&quot;continuation&quot; alt=&quot;the chromebook on its side. both halves have holes out (two USB 3s, two USB-Cs, one of which charge-capable, one micro-SD card, one kensington lock, and volume up/down and power buttons), implying both halves are the keyboard half&quot; src=&quot;//storage.waw.cloud.ovh.net/v1/AUTH_74714a37e6e24c7fb695d79be309da62/101010public/media_attachments/files/111/715/765/596/303/398/original/947dc76b7942ba6b.jpeg&quot;&gt;&lt;/a&gt; &lt;!-- DSCN0539+40.JPG --&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/012-debian-chromebook-lenovo-300e-gen2.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -14735,7 +14735,7 @@ but one has a Celeron N4000 and the other an MT8173.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;011. pipe exclusion with splice() under Linux&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Fri, 07 Jul 2023 01:42:34 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Fri, 07 Jul 2023 01:42:34 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -14953,7 +14953,7 @@ sexion.
   &lt;div&gt;&lt;dt&gt;2023-12-21T04:08:41&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/cover.1703126594.git.nabijaczleweli@nabijaczleweli.xyz/t/#u&quot;&gt;post&lt;/a&gt; a fully-tested v2 with reproducers and a fixed (via disabling) teletype handling, new FUSE code, and most importantly a re-imagined framing in terms of a security model derived from only the real root being allowed to mount filesystems and an attack being possible if any other files sleep.&lt;/dd&gt;&lt;/div&gt;
   &lt;div&gt;&lt;dt&gt;2023-12-24T06:01:49&lt;/dt&gt;&lt;dd&gt;I &lt;a href=&quot;//lore.kernel.org/lkml/fvxufyqixohx65lcusrkkfoxs5cnlsuv7kajv6bnngcoewsodx@tarta.nabijaczleweli.xyz/t/#u&quot;&gt;append&lt;/a&gt; a fix for splice(pipe→tty) and splice(pipe→FUSE).&lt;/dd&gt;&lt;/div&gt;
 &lt;/dl&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/011-linux-splice-exclusion.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -14973,7 +14973,7 @@ sexion.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;010. tme booting SunOS 3 on Sun-2 in 2023&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 19 Jun 2023 23:53:58 +0200&lt;/span&gt;, &lt;a href=&quot;#sun4c&quot;&gt;Solaris on Sun-4c&lt;/a&gt; on &lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 21 Jun 2023 23:56:00 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Mon, 19 Jun 2023 23:53:58 +0200&lt;/span&gt;, &lt;a href=&quot;#sun4c&quot;&gt;Solaris on Sun-4c&lt;/a&gt; on &lt;span style=&quot;white-space: nowrap&quot;&gt;Wed, 21 Jun 2023 23:56:00 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -15759,7 +15759,7 @@ so the time-zone selection menu is all you really get.
 Or just &lt;kbd&gt;^C&lt;/kbd&gt;ing it and hoping it doesn'&lt;!--'--&gt;t break before you manage to test what you need,
 but at that point you might as well just chroot after installing from the miniroot.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/010-tme-Sun-2-SunOS3-2023.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -15778,7 +15778,7 @@ but at that point you might as well just chroot after installing from the miniro
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;009. XEROX SIGMA 9 balls&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 01 Dec 2022 17:16:50 +0100&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/002-XEROX-SIGMA-9-tape-deck.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 I was quite taken by the &lt;span class=&quot;smallcaps&quot;&gt;xerox sigma 9&lt;/span&gt; tape decks, in particular the right one from
@@ -15891,7 +15891,7 @@ Anyway, glam shots.
 &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0792ccc.JPG&quot;&gt;&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;Same laptop, but the image of the sky washes out the colours, highlighting the very slight ferric tint on the tape itself&quot; src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0792ccc.JPG&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0807cc.JPG&quot;&gt;&lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;Likewise, but this time under incandescent lighting on a dark wood surface; it does show a bit more I think&quot; src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0807cc.JPG&quot; /&gt;&lt;/a&gt;
 &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0780cc.JPG&quot;&gt;&lt;img class=&quot;continuation main-screenshot&quot; alt='Two SRA4 sheets with the XDS XEROX SIGMA 9 stickers, side-by-each so as to produce a single SRA3 one; the only difference between them is that the left half has &quot;XEROX SIGMA 9 BALLS&quot; written on it' src=&quot;//lfs.nabijaczleweli.xyz/0014-sigma-balls/glam/DSC_0780cc.JPG&quot; /&gt;&lt;/a&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/009-XEROX-SIGMA-9-balls.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -15910,7 +15910,7 @@ Anyway, glam shots.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;008. &lt;span class=&quot;topaz&quot;&gt;AMIX&lt;/span&gt; &lt;span class=&quot;sunfont&quot;&gt;fonts&lt;/span&gt;&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 17 Nov 2022 22:36:33 +0100&lt;/span&gt;; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;go wild&lt;/a&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 Have been
@@ -16008,7 +16008,7 @@ Go wild: &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/&quot;&gt;htt
 For the purposes of traceability, these were generated with bullseye programs, with the exception of patched FontForge,
 see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.fulldump/typescript&quot;&gt;generation transcript&lt;/a&gt;.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/008-amix-fonts.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -16028,7 +16028,7 @@ see the &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0013-AMIX-fonts/amix.fonts.ful
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;005. Low-curse ZFS-on-root for new Debian installations on multi-disk systems&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs! and Sat, 11 Jun 2022 00:19:37 +0200&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Mon, 14 Sep 2020 00:20:20 +0200&lt;/span&gt;, updated Tue, 15 Sep 2020 20:08:12 +0200, Tue, 29 Sep 2020 23:06:46 +0200, Sat, 12 Dec 2020 01:22:52 +0100, Mon, 15 Mar 2021 23:49:31 +0100, with thanks to &lt;a href=&quot;//github.com/ik5pvx&quot;&gt;Pierfrancesco&lt;/a&gt; for many pre-bullseye bugs! and Sat, 11 Jun 2022 00:19:37 +0200&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -16628,7 +16628,7 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 &lt;center&gt;&lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1311318328510644225&quot;&gt;
  &lt;img class=&quot;main-screenshot continuation&quot; alt=&quot;[07:16] Griwes: @((наб *)(войд)())() I'll have you know that everything worked, and I did indeed hit the dracut issue of using a weird option on first reboot and that it did indeed resolve itself after rebuilding initrd, it felt like black magic&quot;
       src=&quot;/content/assets/blogn_t/005.08-success.png&quot; style=&quot;min-width: 75%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/005-low-curse-zfs-on-root.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -16647,7 +16647,7 @@ On Tue, 29 Sep 2020 22:16 -0800, after minor hiccups, the deed has finally been 
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;007. Cleanly enabling Cyrillic and broad Unicode output in groff -Tps&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, Wed, 14 Jun 2023 14:46:03 +0200, and &lt;a href=&quot;//101010.pl/@nabijaczleweli/112717795133736568&quot;&gt;Tue, 02 Jul 2024 18:58:00 +0200&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sat, 28 Aug 2021 18:36:44 +0200&lt;/span&gt;, updated Thu, 02 Sep 2021 20:41:02 +0200, Wed, 22 Jun 2022 18:33:54 +0200, Wed, 14 Jun 2023 14:46:03 +0200, and &lt;a href=&quot;//101010.pl/@nabijaczleweli/112717795133736568&quot;&gt;Tue, 02 Jul 2024 18:58:00 +0200&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -17318,7 +17318,7 @@ x&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;nobody
 .Ed
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/007-groff-Tps-cyrillic-et-al.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -17337,7 +17337,7 @@ x&lt;!--&quot;--&gt; &lt;!--&quot;--&gt;nobody
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;006. ¹UNIX® is a registered trademark of AT&amp;T.&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 08 Jul 2021 20:26:38 +0200&lt;/span&gt;; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;get one&lt;/a&gt; &lt;a href=&quot;//store.nabijaczleweli.xyz/001-UNIX-r-ATT.html&quot;&gt;&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 It isn'&lt;!--'--&gt;t, of course – &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; belongs to the Open Group nowadays,
@@ -17385,7 +17385,7 @@ Anyway, glam shots.
 &lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;A small black anodised aluminium laptop on a light wood floor, a window very softly reflects on the chassis, which has a OneMix logo stickered over with a neon orange BONELESS sticker, and a ¹UNIX® is a registered trademark of AT&amp;T. sticker in the bottom left, crooked, near the hinge&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7479ccc.png&quot; /&gt;
 &lt;img class=&quot;continuing main-screenshot&quot; alt=&quot;Same laptop, but on a dark wood floor in direct hard summer sun. The edges of the sticker meld into the texture of the chassis in the highlight, and are lost in the shadow&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7491ccc.png&quot; /&gt;
 &lt;img class=&quot;continuation main-screenshot&quot; alt=&quot;Two matt SRA3 sheets in the same spot, one on top of the other, at a slight angle, with ¹UNIX® is a registered trademark of AT&amp;T. stickers tiled on them. The left is entirely opaque, but shows a tiny bit through the right.&quot; src=&quot;https://lfs.nabijaczleweli.xyz/0009-UNIX-r-ATT/glam/DSC_7497ccc.png&quot; /&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/006-UNIX-r-ATT.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -17404,7 +17404,7 @@ Anyway, glam shots.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;005a. A single-disk but slightly more cursed ZFS-on-root corollary&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 05 Nov 2020 22:06:30 +0100&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 05 Nov 2020 22:06:30 +0100&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -17635,7 +17635,7 @@ zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;4.50G&lt;!--&quot;--&gt;  &lt;!--&qu
 zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.50G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.20G&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;6.30G&lt;!--&quot;--&gt;        &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;         &lt;!--&quot;--&gt;-&lt;!--&quot;--&gt;     &lt;!--&quot;--&gt;2%&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;15%&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;1.00x&lt;!--&quot;--&gt;    &lt;!--&quot;--&gt;ONLINE&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;-
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/005a-zfs-on-root-single-disk-corollary.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -17654,7 +17654,7 @@ zoot&lt;!--&quot;--&gt;  &lt;!--&quot;--&gt;7.50G&lt;!--&quot;--&gt;  &lt;!--&qu
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;004. New album: cinque&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 18 Jul 2020 22:14:33 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sat, 18 Jul 2020 22:14:33 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented&quot;&gt;
 At &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1284582399838478339&quot;&gt;10:14 pm · 18 Jul 2020&lt;/a&gt; I released my third album: &lt;samp&gt;cinque&lt;/samp&gt;!
@@ -17666,7 +17666,7 @@ Go get it on &lt;a href=&quot;//nabijaczleweli.bandcamp.com/album/cinque&quot;&g
 &lt;p class=&quot;indented&quot;&gt;
 You can find assorted extras (full-sized track and album art, programs to make them) &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0004-cinque&quot;&gt;here&lt;/a&gt;.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/004-cinque.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -17685,7 +17685,7 @@ You can find assorted extras (full-sized track and album art, programs to make t
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;003. A proof-of-concept IRC/mail bridge&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Sat, 11 Jul 2020 00:34:50 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Sat, 11 Jul 2020 00:34:50 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -17890,7 +17890,7 @@ Despite this technically making an open IRC relay, since anyone can connect on p
 I am, as ever, morbidly curious so as to scaling this to a multi-user/auto-join solution, but, well, even I have my limits.
 Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch me eat my words in, like, a year, I guess?
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/003-maircl-poc.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -17909,7 +17909,7 @@ Okay, I don't, but I don't really have much of a reason to Be On™ IRC. Watch m
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;002. An overlong analysis of ^Z+fg crashing ncurses programs for gpm users&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Mon, 25 May 2020 00:12:30 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Mon, 25 May 2020 00:12:30 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;p class=&quot;indented continued&quot;&gt;
 The post I made for &lt;a href=&quot;//bugs.debian.org/961097#35&quot;&gt;#961097&lt;/a&gt;,
@@ -17933,7 +17933,7 @@ You can read it on &lt;a href=&quot;//bugs.debian.org/961097#35&quot;&gt;debbugs
 &lt;p class=&quot;indented continuation&quot;&gt;
 You may also be interested in the corresponding &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0017-twitter-export#1263652757803724800&quot;&gt;twitter thread&lt;/a&gt;.
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/002-ncurses-gpm-segfault.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -17953,7 +17953,7 @@ You may also be interested in the corresponding &lt;a href=&quot;//lfs.nabijaczl
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;001. Installing Debian'&lt;!--'--&gt;s x32 port in 2020&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Thu, 9 Apr 2020 01:44:47 +0200&lt;/span&gt;, last updated &lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 28 Apr 2020 02:54:07 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Thu, 9 Apr 2020 01:44:47 +0200&lt;/span&gt;, last updated &lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 28 Apr 2020 02:54:07 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -18200,7 +18200,7 @@ Ever wondered what'd happen if you had inits but the kernel couldn't execute the
 &lt;p class=&quot;continuation&quot;&gt;
 Alright, bye!
 &lt;/p&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/001-x32-in-2020.html.pp&quot;&gt;Mail&lt;/a&gt;, 
@@ -21502,7 +21502,7 @@ I tak, drogie dzieci, zaczęła sie WWI.
 &lt;div class=&quot;roboto writing&quot;&gt; 
  &lt;p&gt;&lt;/p&gt; 
  &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;018. Mean-shift clustering&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
- &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap&quot;&gt;Tue, 29 Apr 2025 16:32:56 +0200&lt;/span&gt;&lt;/h4&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Tue, 29 Apr 2025 16:32:56 +0200&lt;/span&gt;&lt;/h4&gt;
  &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
 &lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
 &lt;ol&gt;
@@ -39049,7 +39049,7 @@ It never gets better, it's never worth it, and it's &lt;em&gt;all&lt;/em&gt; wor
  &lt;li&gt;&lt;a href=&quot;//bugs.kde.org/show_bug.cgi?id=503481&quot; &gt;&lt;date class=&quot;roboto-unscale math-font-normal&quot; datetime=&quot;2025-04-28T15:20Z&quot; title=&quot;2025-04-28T15:20Z&quot;&gt;2025-04-28&lt;/date&gt; Bug &lt;span style=&quot;font-family: 'RobotoSlab-Regular+tabdig', 'Roboto Slab', serif;&quot;&gt;503481&lt;/span&gt;&lt;/a&gt;:&lt;!--&quot;--&gt; Moving cursor around in-image WYSIWYG copies text colour under cursor to everything else&lt;!--&quot;--&gt;&lt;/li&gt;
  &lt;li&gt;&lt;a href=&quot;//bugs.kde.org/show_bug.cgi?id=503482&quot; &gt;&lt;date class=&quot;roboto-unscale math-font-normal&quot; datetime=&quot;2025-04-28T15:26Z&quot; title=&quot;2025-04-28T15:26Z&quot;&gt;2025-04-28&lt;/date&gt; Bug &lt;span style=&quot;font-family: 'RobotoSlab-Regular+tabdig', 'Roboto Slab', serif;&quot;&gt;503482&lt;/span&gt;&lt;/a&gt;:&lt;!--&quot;--&gt; Subscript doesn't render correctly&lt;!--&quot;--&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt; 
+&lt;p class=&quot;continued&quot;&gt; 
  &lt;br /&gt; 
  Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
  &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/018-mean-shift-clusterer.html.pp&quot;&gt;Mail&lt;/a&gt;, 
