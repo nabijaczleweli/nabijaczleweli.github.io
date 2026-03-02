@@ -32,9 +32,9 @@
 #endif
 
 #if defined(BUILD_ID) && defined(REPO_SLUG)
-  #define CI_LINK_FOOTER_PART <br /><a href=STR(httpsCOLON_SLASH_SLASHtravis-ci.org/REPO_SLUG/builds/BUILD_ID)>See job on TravisCI</a>.
+  #define CI_LINK_FOOTER_PART : <a href=STR(httpsCOLON_SLASH_SLASHtravis-ci.org/REPO_SLUG/builds/BUILD_ID)>build job</a> (TravisCI)
 #elif defined(JOB_URL)
-  #define CI_LINK_FOOTER_PART <br /><a href="JOB_URL">See job on builds.sr.ht</a>.
+  #define CI_LINK_FOOTER_PART : <a href="JOB_URL">build job</a> (builds.sr.ht)
 #else
   #define CI_LINK_FOOTER_PART
 #endif
@@ -97,28 +97,24 @@
   </head>                                                                FORCED_NEWLINE \
   <body>
 
+#ifndef BOILERPLATE_LICENCE
+#define BOILERPLATE_LICENCE <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>/<a href="/content/LICENSE-CODE">MIT</a>
+#endif
+
 #define BOILERPLATE_END()                                                                                                                           \
-    <!-- CTNT_END --> <hr style="padding-top: 1em;" />                                                                               FORCED_NEWLINE \
-    Creative text licensed under <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>,                                               FORCED_NEWLINE \
-    code licensed under <a href="/content/LICENSE-CODE">The MIT License</a>.                                                         FORCED_NEWLINE \
-    <hr />                                                                                                                           FORCED_NEWLINE \
-    This page is open-source, you can find it at <a href="//github.com/nabijaczleweli/nabijaczleweli.github.io/tree/dev">GitHub</a>, FORCED_NEWLINE \
-    and contribute and/or yell at me there.                                                                                          FORCED_NEWLINE \
-    <hr />                                                                                                                           FORCED_NEWLINE \
-    Like what you see? Consider giving me a follow over at social medias listed <a href="/">here</a>, or maybe even a                               \
-    sending a                                                                                                                                       \
-    <a style="display: inline-block; position: relative;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate">                    \
-      <svg class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use></svg> \
-      <span style="margin-left: 19px;">buck</span>                                                                                                  \
-      <span style="font-size: 0;">liberapay donate</span>                                                                                           \
-    </a> or                                                                                                                                         \
-    <a href="//patreon.com/nabijaczleweli">two<span style="font-size: 0;"> patreon</span></a> my way                                                \
-    if my software helped you in some significant way?                                                                               FORCED_NEWLINE \
-    <hr />                                                                                                                           FORCED_NEWLINE \
-    Compiled with COMPILER_NAME COMPILER_VERSION's<!--'--> C preprocessor on DATE_TIME from                                          FORCED_NEWLINE \
-    <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a>.          FORCED_NEWLINE \
+    <!-- CTNT_END --> <hr />                                                                               FORCED_NEWLINE \
+      <a href="/">nabijaczleweli.xyz</a>                                                                                             FORCED_NEWLINE \
+    : BOILERPLATE_LICENCE                                                                                                            FORCED_NEWLINE \
+    : <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a> (GitHub)FORCED_NEWLINE \
+    : built DATE_TIME with COMPILER_NAME's<!--'--> COMPILER_VERSION C preprocessor                                                   FORCED_NEWLINE \
     CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
-    <hr />                                                                                                                           FORCED_NEWLINE \
-    <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a>                                              FORCED_NEWLINE \
+    : <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a>                                            FORCED_NEWLINE \
+    : <a style="display: inline-block; position: relative; width: 1em;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate">      \
+        <svg alt="Liberapay" class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use> \
+        </svg><span style="font-size: 0;">liberapay donate                                                                                          \
+      </span></a>                                                                                                                    FORCED_NEWLINE \
+    : <a href="//patreon.com/nabijaczleweli"><img alt="Patreon" class="dark-invert" style="width: 1em; vertical-align: bottom;" src="/assets/patreon-logo.svg" \
+        /><span style="font-size: 0;"> patreon</span>                                                                                FORCED_NEWLINE \
+      </a>                                                                                                                           FORCED_NEWLINE \
   </body>                                                                                                                            FORCED_NEWLINE \
 </html>
