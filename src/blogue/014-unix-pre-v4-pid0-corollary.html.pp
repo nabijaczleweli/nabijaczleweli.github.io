@@ -6,6 +6,7 @@ You should have received a copy of the license along with this
 work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
+#define BOILERPLATE_ID a9ebdaa3-1803-11f1-8362-94de80ae55d5
 #include "../writing/writing.h"
 #include "../common.h"
 #include "blogue.h"

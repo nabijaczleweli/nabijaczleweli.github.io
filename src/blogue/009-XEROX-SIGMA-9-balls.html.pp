@@ -7,6 +7,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
+#define BOILERPLATE_ID a9ebda6a-1803-11f1-835b-94de80ae55d5
 #include "../writing/writing.h"
 #include "../fontawesome.h"
 #include "../common.h"

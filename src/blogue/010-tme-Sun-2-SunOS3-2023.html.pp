@@ -8,6 +8,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 <!-- https://lfs.nabijaczleweli.xyz/0016-cohost-export/https:///nabijaczleweli/post/1730377-please-talk-to-my-su -->
 
 
+#define BOILERPLATE_ID a9ebda73-1803-11f1-835c-94de80ae55d5
 #include "../writing/writing.h"
 #include "../common.h"
 #include "blogue.h"

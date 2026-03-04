@@ -101,8 +101,14 @@
 #define BOILERPLATE_LICENCE <a href="/content/LICENSE-CREATIVE">CC-BY-SA 4.0</a>/<a href="/content/LICENSE-CODE">MIT</a>
 #endif
 
+#ifdef BOILERPLATE_ID
+#define BOILERPLATE_ID_PART : <small><tt id="page-id">BOILERPLATE_ID</tt></small>
+#else
+#define BOILERPLATE_ID_PART
+#endif
+
 #define BOILERPLATE_END()                                                                                                                           \
-    <!-- CTNT_END --> <hr />                                                                               FORCED_NEWLINE \
+    <!-- CTNT_END --> <hr />                                                                                                         FORCED_NEWLINE \
       <a href="/">nabijaczleweli.xyz</a>                                                                                             FORCED_NEWLINE \
     : BOILERPLATE_LICENCE                                                                                                            FORCED_NEWLINE \
     : <a href=STR(httpsCOLON_SLASH_SLASHgithub.com/nabijaczleweli/nabijaczleweli.github.io/blob/dev/FILE_NAME)>FILE_NAME</a> (GitHub)FORCED_NEWLINE \
@@ -114,7 +120,7 @@
         </svg><span style="font-size: 0;">liberapay donate                                                                                          \
       </span></a>                                                                                                                    FORCED_NEWLINE \
     : <a href="//patreon.com/nabijaczleweli"><img alt="Patreon" class="dark-invert" style="width: 1em; vertical-align: bottom;" src="/assets/patreon-logo.svg" \
-        /><span style="font-size: 0;"> patreon</span>                                                                                FORCED_NEWLINE \
-      </a>                                                                                                                           FORCED_NEWLINE \
+        /><span style="font-size: 0;"> patreon</span></a>                                                                            FORCED_NEWLINE \
+    BOILERPLATE_ID_PART                                                                                                              FORCED_NEWLINE \
   </body>                                                                                                                            FORCED_NEWLINE \
 </html>

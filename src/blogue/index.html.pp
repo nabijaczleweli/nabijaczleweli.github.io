@@ -9,6 +9,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 -->
 
 
+#define BOILERPLATE_ID a9ebdb16-1803-11f1-8371-94de80ae55d5
 #include "../util.h"
 #include "../common.h"
 #include "../heading.h"
