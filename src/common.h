@@ -116,11 +116,13 @@
     CI_LINK_FOOTER_PART                                                                                                              FORCED_NEWLINE \
     : <a href="/content/feed.xml" type="application/rss+xml" rel="alternate">RSS feed</a>                                            FORCED_NEWLINE \
     : <a style="display: inline-block; position: relative; width: 1em;" id="liberapay-btn" href="https://liberapay.com/nabijaczleweli/donate">      \
-        <svg alt="Liberapay" class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/liberapay-logo.svg#top"></use> \
+        <svg alt="Liberapay" class="dark-invert" style="position: absolute; top: 3px; width: 1em; height: 1em;"><use xlink:href="/assets/logo-bundle.svg#liberapay"></use> \
         </svg><span style="font-size: 0;">liberapay donate                                                                                          \
       </span></a>                                                                                                                    FORCED_NEWLINE \
-    : <a href="//patreon.com/nabijaczleweli"><img alt="Patreon" class="dark-invert" style="width: 1em; vertical-align: bottom;" src="/assets/patreon-logo.svg" \
-        /><span style="font-size: 0;"> patreon</span></a>                                                                            FORCED_NEWLINE \
+    : <a href="//patreon.com/nabijaczleweli"><svg alt="Liberapay" class="dark-invert" style="width: 1em; max-height: 1em; vertical-align: bottom;"><use xlink:href="/assets/logo-bundle.svg#patreon"></use> \
+        </svg><span style="font-size: 0;"> patreon</span></a>                                                                        FORCED_NEWLINE \
+    : <a href="//101010.pl/@nabijaczleweli"><svg alt="Mastodon" class="dark-invert" style="width: 1em; max-height: 1em; vertical-align: bottom;"><use xlink:href="/assets/logo-bundle.svg#mastodon"></use> \
+        </svg><span style="font-size: 0;"> mastodon fediverse twitter tweet</span></a>                                               FORCED_NEWLINE \
     BOILERPLATE_ID_PART                                                                                                              FORCED_NEWLINE \
   </body>                                                                                                                            FORCED_NEWLINE \
 </html>
