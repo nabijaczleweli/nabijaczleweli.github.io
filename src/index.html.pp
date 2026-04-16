@@ -43,7 +43,7 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 </p>
 
 <p>
-	Search and filter UNIX tarballs interactively with <a href="//vtree.nabijaczleweli.xyz">vtree</a>…
+	Search and filter <span style="font-variant: small-caps;">unix</span> tarballs interactively with <a href="//vtree.nabijaczleweli.xyz">vtree</a>…
 </p>
 
 <p>
@@ -80,8 +80,12 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	<!-- Consider contributing to the <a href="extensive_list_of_rust_puns/">Extensive List of Rust Puns</a>… -->
 </p>
 
-<a href="//lists.sr.ht/~nabijaczleweli/klapki/%3Ciw2edbooqpsrct4hzqec6srjo4eqnvuotlu6ajbdar3adygaxo%40tarta.nabijaczleweli.xyz%3E"><img style="width: 100%" alt="" src="/content/assets/klapki-v0.3.1.png"></a>
-
+<figure style="margin: 0;">
+	<a href="//lists.sr.ht/~nabijaczleweli/klapki/%3Ciw2edbooqpsrct4hzqec6srjo4eqnvuotlu6ajbdar3adygaxo%40tarta.nabijaczleweli.xyz%3E"><img style="width: 100%" alt="" src="/content/assets/klapki-v0.3.1.png"></a>
+	<figcaption style="text-align: right;">
+		(as seen on <a href="//infosec.exchange/@shodansafari/116416394777965011">TV</a>)
+	</figcaption>
+</figure>
 
 </span>
 BOILERPLATE_END()
