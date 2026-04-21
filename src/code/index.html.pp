@@ -135,6 +135,8 @@ Select programs:
 	            view remote HTTP/HTTPS URLs as local files with FUSE (httpfs2 replacement))
 	GITSRHT_SET(sockplex, MFIZZ(c),
 	            Multiplex client program's<!--'--> stdin/std{out,err} to sockets)
+	GITSRHT_SET(linkbag, DEVICON(cplusplus),
+	            open file descriptor cache/TCP session prolongator/file sharing mechanism)
 	GITSRHT_SET(fzifdso, DEVICON(cplusplus),
 	            FIDO2/WebAuthn-based (YubiKey, Somu, &c.) encryption keys for ZFS datasets)
 	   SRHT_SET(klapki, DEVICON(cplusplus),
