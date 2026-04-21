@@ -136,7 +136,7 @@ Select programs:
 	GITSRHT_SET(sockplex, MFIZZ(c),
 	            Multiplex client program's<!--'--> stdin/std{out,err} to sockets)
 	GITSRHT_SET(linkbag, DEVICON(cplusplus),
-	            open file descriptor cache/TCP session prolongator/file sharing mechanism)
+	            open file description cache/TCP session prolongator/file sharing mechanism)
 	GITSRHT_SET(fzifdso, DEVICON(cplusplus),
 	            FIDO2/WebAuthn-based (YubiKey, Somu, &c.) encryption keys for ZFS datasets)
 	   SRHT_SET(klapki, DEVICON(cplusplus),
