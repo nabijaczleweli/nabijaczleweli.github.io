@@ -80,8 +80,19 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 	<!-- Consider contributing to the <a href="extensive_list_of_rust_puns/">Extensive List of Rust Puns</a>… -->
 </p>
 
-<figure style="margin: 0;">
-	<a href="//lists.sr.ht/~nabijaczleweli/klapki/%3Ciw2edbooqpsrct4hzqec6srjo4eqnvuotlu6ajbdar3adygaxo%40tarta.nabijaczleweli.xyz%3E"><img style="width: 100%" alt="" src="/content/assets/klapki-v0.3.1.png"></a>
+<style>
+figure {
+	margin: 0;
+}
+figure img {
+	width: 100%;
+}
+</style>
+<figure>
+	<a href="//101010.pl/@nabijaczleweli/116551748052048070"><img src="/content/assets/lactobacillus-liberation-front.webp" alt="lactobacillus liberation front" style="image-rendering: crisp-edges;"></a>
+</figure>
+<figure>
+	<a href="//lists.sr.ht/~nabijaczleweli/klapki/%3Ciw2edbooqpsrct4hzqec6srjo4eqnvuotlu6ajbdar3adygaxo%40tarta.nabijaczleweli.xyz%3E"><img alt="" src="/content/assets/klapki-v0.3.1.png"></a>
 	<figcaption style="text-align: right;">
 		(as seen on <a href="//infosec.exchange/@shodansafari/116416394777965011">TV</a>)
 	</figcaption>
