@@ -12,10 +12,227 @@
     <uri>https://nabijaczleweli.xyz</uri>
   </author>
   <rights>Copyright (c) 2016 nabijaczleweli</rights>
-<updated>2026-01-25T23:28:55+01:00</updated>
+<updated>2026-05-13T15:12:04+02:00</updated>
   <generator>
     GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)
   </generator>
+
+  <entry>
+    <id>https://nabijaczleweli.xyz/content/../content/blogue/024-dev-null.html</id>
+    <link href="https://nabijaczleweli.xyz/content/../content/blogue/024-dev-null.html" />
+    <title> 024. History of /dev/null — blogue — nabijaczleweli </title>
+    <updated>2026-05-13T15:12:04+02:00</updated>
+    <content type="html">
+&lt;div class=&quot;roboto writing&quot;&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;h2 id=&quot;go-back&quot; class=&quot;merriweather&quot;&gt;&lt;a class=&quot;go-back-link left&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt; &lt;samp&gt;024. History of /dev/null&lt;/samp&gt; &lt;a class=&quot;go-back-link right&quot; href=&quot;.&quot;&gt;↩&lt;/a&gt;&lt;/h2&gt; 
+ &lt;h4 id=&quot;post-date&quot;&gt;&lt;span style=&quot;white-space: nowrap;&quot;&gt;Wed, 13 May 2026 15:12:04 +0200&lt;/span&gt;&lt;/h4&gt;
+ &lt;!--BLOGN_T_TOC_PLACEHOLDER--&gt;
+&lt;div style='position: relative;'&gt;&lt;details id='contents'&gt;&lt;summary&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;/summary&gt;&lt;ol&gt;
+&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#v1-3'&gt;Versions 1-3 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v4'&gt;Version 4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v5'&gt;Version 5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v6'&gt;Version 6 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#v7'&gt;Version 7 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#branches'&gt;The Published Apocrypha&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#conclusion'&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='#refs'&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/ol&gt;
+&lt;/details&gt;&lt;/div&gt;
+&lt;p class=&quot;indented&quot;&gt;
+In present-day,
+opening &lt;tt&gt;/dev/null&lt;/tt&gt; for reading and writing is allowed for everyone,
+and yields a file descriptor corresponding to a special file where any read returns empty and any write does nothing but return OK.&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#xbd2024&quot;&gt;[xbd2024&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#xbd2024a&quot;&gt;&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#xrat2024&quot;&gt;[xrat2024&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#xrat2024a&quot;&gt;&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+This is observed universally now,&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#Linux7null&quot;&gt;[Linux7&lt;span class=&quot;sub&quot;&gt;null&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#NetBSDnull&quot;&gt;[NetBSD&lt;span class=&quot;sub&quot;&gt;null&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#SORTIXnull&quot;&gt;[SORTIX&lt;span class=&quot;sub&quot;&gt;null&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+but wasn't always.
+&lt;/p&gt;
+&lt;!-- &lt;ol&gt;
+ &lt;li&gt;filesystem as-shipped (and as-configured)&lt;/li&gt;
+ &lt;li&gt;userspace conventions&lt;/li&gt;
+ &lt;li&gt;kernel support&lt;/li&gt;
+ &lt;li&gt;manual attitude&lt;/li&gt;
+&lt;/ol&gt; --&gt;
+&lt;p class=&quot;indented continued&quot;&gt;
+Four axes are of interest when evaluating historical systems like
+&lt;/p&gt;
+&lt;h3 id=&quot;v1-3&quot; class=&quot;continuation&quot;&gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v1-3&quot;&gt;#&lt;/a&gt; Versions 1-3 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li&gt;filesystem as-shipped (and as-configured):
+     —&lt;/li&gt;
+ &lt;li&gt;userspace conventions:
+     none&lt;/li&gt;
+ &lt;li&gt;kernel support:
+     N/A&lt;/li&gt;
+ &lt;li&gt;manual attitude:
+     nothing of &lt;tt&gt;/dev/null&lt;/tt&gt;'s&lt;!--'--&gt; sort mentioned&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;v4&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v4&quot;&gt;#&lt;/a&gt; Version 4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li&gt;filesystem as-shipped:
+     &lt;tt&gt;/dev/null&lt;/tt&gt; is a regular file, size 0, access &lt;abbr title=&quot;r--r--r--: everyone can read, nobody (save root) can write&quot;&gt;a=r&lt;/abbr&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#null4&quot;&gt;[null4]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;userspace conventions:
+     only user is &lt;tt&gt;sh&lt;/tt&gt; as &lt;code&gt;open(&quot;/dev/null&quot;, O_RDONLY)&lt;/code&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#sh4&quot;&gt;[sh4]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;kernel support:
+     &lt;q&gt;Memory special file&lt;/q&gt; (&lt;code&gt;mem&lt;/code&gt;) &lt;q&gt;minor device 2 is EOF/RATHOLE&lt;/q&gt; is fully-formed&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel4&quot;&gt;[kernel4&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#kernel4b&quot;&gt;&lt;span class=&quot;sub&quot;&gt;b&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;manual attitude:
+     only mentioned in &lt;cite&gt;sh(I)&lt;/cite&gt;:&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm4&quot;&gt;[upm4]&lt;/a&gt;&lt;/sup&gt;
+     &lt;blockquote class=&quot;continuation&quot;&gt;
+     &lt;!--
+      Process that are created with a `&amp;' ignore interrupts.    '
+      Also if such a process has not redirected its
+      input with a `&lt;',                                         '
+      its input is automatically redirected to the
+      zero length file /dev/null.
+   --&gt;
+      with a `&lt;',&lt;!--'--&gt;
+      its input is […] redirected to the
+      zero length file &lt;span class=l&gt;/dev/null&lt;/span&gt;.
+     &lt;/blockquote&gt;
+     &lt;blockquote class=&quot;continuation&quot;&gt;
+      &lt;h4 class=&quot;continuing&quot;&gt;FILES&lt;/h4&gt;
+      /dev/null as a source of end-of-file.
+     &lt;/blockquote&gt;
+     &lt;/li&gt;
+ &lt;li value=1&gt;… (and as-configured):
+     the distribution kernel is configured without &lt;code&gt;mem&lt;/code&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel4a&quot;&gt;[kernel4&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;v5&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v5&quot;&gt;#&lt;/a&gt; Version 5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li&gt;filesystem as-shipped (and as-configured):
+     &lt;tt&gt;/dev/null&lt;/tt&gt; is a character device major 1 minor 2, access &lt;abbr title=&quot;rw-rw-rw-: everyone can read, everyone can write&quot; &gt;a=rw&lt;/abbr&gt;;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#null5&quot;&gt;[null5]&lt;/a&gt;&lt;/sup&gt;
+     distribution kernel configured with &lt;code&gt;mem&lt;/code&gt; as character major 1&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel5a&quot;&gt;[kernel5&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;userspace conventions:
+     same as &lt;cite&gt;&lt;a href=&quot;#v4&quot;&gt;Version 4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#sh5&quot;&gt;[sh5]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;kernel support:
+     same as &lt;cite&gt;&lt;a href=&quot;#v4&quot;&gt;Version 4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;,
+     but &lt;code&gt;mem&lt;/code&gt; is now mandatory and always major 1&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel5&quot;&gt;[kernel5&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#kernel5b&quot;&gt;&lt;span class=&quot;sub&quot;&gt;b&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;manual attitude:
+     same as &lt;cite&gt;&lt;a href=&quot;#v4&quot;&gt;Version 4 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;,
+     &lt;cite&gt;mem(IV)&lt;/cite&gt; (&lt;q&gt;core memory&lt;/q&gt;) now mentions&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm5&quot;&gt;[upm5]&lt;/a&gt;&lt;/sup&gt;
+     &lt;blockquote class=&quot;continuation&quot;&gt;
+      &lt;h4 class=&quot;continuing&quot;&gt;FILES&lt;/h4&gt;
+      /dev/mem, /dev/kmem, /dev/null
+     &lt;/blockquote&gt;
+     and describes
+     &lt;blockquote class=&quot;continuation&quot;&gt;
+      The file &lt;em&gt;null&lt;/em&gt; returns end-of-file on &lt;em&gt;read&lt;/em&gt; and ignores &lt;em&gt;write.&lt;/em&gt;
+      &lt;!-- V5 doesn't italicise write, but V6 does; clearly wants to be symmetric '--&gt;
+     &lt;/blockquote&gt;
+     &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;v6&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v6&quot;&gt;#&lt;/a&gt; Version 6 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li&gt;filesystem as-shipped (and as-configured):
+     same as &lt;cite&gt;&lt;a href=&quot;#v5&quot;&gt;Version 5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#null6&quot;&gt;[null6]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel6a&quot;&gt;[kernel6&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;userspace conventions:
+     same as &lt;cite&gt;&lt;a href=&quot;#v5&quot;&gt;Version 5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#sh6&quot;&gt;[sh6]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;kernel support:
+     same as &lt;cite&gt;&lt;a href=&quot;#v5&quot;&gt;Version 5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel6&quot;&gt;[kernel6&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#kernel6a&quot;&gt;&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;manual attitude:
+     sh(I) same as &lt;cite&gt;&lt;a href=&quot;#v5&quot;&gt;Version 5 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;,
+     &lt;cite&gt;mem(IV)&lt;/cite&gt; is now &lt;q&gt;mem, kmem, null&lt;/q&gt;,
+     &lt;cite&gt;speak(VI)&lt;/cite&gt; has an example of:&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm6&quot;&gt;[upm6]&lt;/a&gt;&lt;/sup&gt;
+     &lt;blockquote class=&quot;continuing&quot;&gt;
+(cat speak.v; echo !w speak.m) ⎪ speak -v &lt;span class=l&gt;/dev/null&lt;/span&gt;
+     &lt;/blockquote&gt;
+     (&lt;tt&gt;/dev/null&lt;/tt&gt; is the &lt;var&gt;vocabulary&lt;/var&gt; input).
+     &lt;p class=&quot;continued&quot;&gt;&lt;cite&gt;Setting Up UNIX − Sixth Edition&lt;/cite&gt; affirms the distributed filesystem state:&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#setup6&quot;&gt;[setup6]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+     &lt;blockquote class=&quot;continuation&quot;&gt;
+The files tty8 (console), mem, kmem, null are
+already correctly configured.
+     &lt;/blockquote&gt;
+     &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;v7&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#v7&quot;&gt;#&lt;/a&gt; Version 7 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li&gt;filesystem as-shipped (and as-configured):
+   &lt;tt&gt;/dev/null&lt;/tt&gt; is a character device major 8 minor 2, access &lt;abbr title=&quot;rw-rw-rw-: everyone can read, everyone can write&quot; &gt;a=rw&lt;/abbr&gt;;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#null7&quot;&gt;[null7]&lt;/a&gt;&lt;/sup&gt;
+   distribution kernels configured with &lt;code&gt;mem&lt;/code&gt; as character major 8&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel7a&quot;&gt;[kernel7&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#kernel7b&quot;&gt;&lt;span class=&quot;sub&quot;&gt;b&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;userspace conventions:
+     freely uses &lt;tt class=l&gt;/dev/null&lt;/tt&gt; for empty input and to discard output&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#userspace7&quot;&gt;[userspace7&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#userspace7a&quot;&gt;&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;kernel support:
+     same as &lt;cite&gt;&lt;a href=&quot;#v6&quot;&gt;Version 6 &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/a&gt;&lt;/cite&gt;,
+     but &lt;tt&gt;mem&lt;/tt&gt; is always major 8&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernel7&quot;&gt;[kernel7&lt;span class=&quot;sub&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#kernel7a&quot;&gt;&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;&lt;/a&gt;&lt;!--&quot;--&gt;,&lt;!--&quot;--&gt;&lt;a href=&quot;#kernel7b&quot;&gt;&lt;span class=&quot;sub&quot;&gt;b&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+ &lt;li&gt;manual attitude:
+     the Bourne shell similarly calls &lt;tt class=l&gt;/dev/null&lt;/tt&gt; &lt;q&gt;the empty file&lt;/q&gt;,&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm7&quot;&gt;[upm7]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#sh7&quot;&gt;[sh7]&lt;/a&gt;&lt;/sup&gt;
+     but
+     &lt;cite&gt;Uucp Implementation Description&lt;/cite&gt; documents it as the default for standard input &lt;em&gt;and&lt;/em&gt; output&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#uucp7&quot;&gt;[uucp7]&lt;/a&gt;&lt;/sup&gt;
+     and
+     dd(1) &amp; &lt;cite&gt;Setting Up UNIX − Seventh Edition&lt;/cite&gt; recommend &lt;code&gt;dd of=/dev/null&lt;/code&gt; for skipping &quot;files&quot; on tape.&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm7a&quot;&gt;[upm7&lt;span class=&quot;sub&quot;&gt;a&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#setup7&quot;&gt;[setup7]&lt;/a&gt;&lt;/sup&gt;
+     &lt;p class=&quot;continued&quot;&gt;
+     The only recommendation for direct usage is in &lt;cite&gt;Typesetting Mathematics — User's&lt;!--'--&gt; Guide&lt;/cite&gt; as a USP:&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#eqn7&quot;&gt;[eqn7]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/p&gt;
+     &lt;blockquote class=&quot;continuation&quot;&gt;
+If you want to check a document before actually printing it
+(on &lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; only),
+&lt;pre class=&quot;indented continuing&quot;&gt;&lt;!--&quot;--&gt;eqn  files &gt;/dev/null&lt;!--&quot;--&gt;&lt;/pre&gt;
+will
+throw away the output but print the messages.
+     &lt;/blockquote&gt;
+     mem(4) splits into new null(4), reproduced in its entirety below.&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm7b&quot;&gt;[upm7&lt;span class=&quot;sub&quot;&gt;b&lt;/span&gt;]&lt;/a&gt;&lt;/sup&gt;
+     &lt;/li&gt;
+&lt;/ol&gt;
+&lt;article&gt;
+&lt;blockquote class=&quot;border&quot; style=&quot;margin-left: 0; margin-right: 0;&quot;&gt;
+&lt;h4 class=&quot;continuing&quot;&gt;NAME&lt;/h4&gt;
+&lt;p class=&quot;continuation&quot;&gt;null − data sink&lt;/p&gt;
+&lt;h4 class=&quot;continuing&quot;&gt;DESCRIPTION&lt;/h4&gt;
+&lt;p class=&quot;continuation&quot;&gt;
+Data written on a null special file is discarded.
+&lt;/p&gt;
+&lt;p&gt;
+Reads from a null special file always return 0 bytes.
+&lt;/p&gt;
+&lt;h4 class=&quot;continuing&quot;&gt;FILES&lt;/h4&gt;
+/dev/null
+&lt;/blockquote&gt;
+&lt;/article&gt;
+&lt;h3 id=&quot;branches&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#branches&quot;&gt;#&lt;/a&gt; The Published Apocrypha&lt;/h3&gt;
+&lt;p class=&quot;indented&quot;&gt;
+&lt;span class=&quot;smallcaps&quot;&gt;Pwb/&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/span&gt; and CB-UNIX kernels say that &lt;q&gt;minor device 2 is EOF/NULL&lt;/q&gt; &lt;a href=&quot;#v4&quot;&gt;instead&lt;/a&gt;;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernelPWB&quot;&gt;[kernelPWB]&lt;/a&gt;&lt;/sup&gt;
+CB-UNIX's&lt;!--'--&gt; implementation is novel.&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#kernelCB&quot;&gt;[kernelCB]&lt;/a&gt;&lt;/sup&gt;
+They use their respective base distributions'&lt;!--'--&gt; manual pages.&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upmPWB&quot;&gt;[upmPWB]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;ref&quot;&gt;&lt;a href=&quot;#upmCB&quot;&gt;[upmCB]&lt;/a&gt;&lt;/sup&gt;
+&lt;/p&gt;
+&lt;h3 id=&quot;conclusion&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#conclusion&quot;&gt;#&lt;/a&gt; Conclusion&lt;/h3&gt;
+&lt;table&gt;
+&lt;caption&gt;&lt;tt&gt;/dev/null&lt;/tt&gt;&lt;/caption&gt;
+&lt;tr&gt;&lt;th&gt;&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt; &lt;/th&gt;&lt;th&gt;acceptable &lt;/th&gt;&lt;th&gt;installed &lt;/th&gt;&lt;th&gt;possible &lt;/th&gt;&lt;th&gt;documented &lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;1, 2, 3&lt;/th&gt;&lt;td&gt;any &lt;/td&gt;&lt;td&gt;none &lt;/td&gt;&lt;td&gt;empty &lt;abbr title=&quot;r--r--r--: everyone can read, nobody (save root) can write&quot;&gt;a=r&lt;/abbr&gt; file &lt;/td&gt;&lt;td&gt;– &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;4 &lt;/th&gt;&lt;td rowspan=3&gt;device&lt;br&gt;empty &lt;abbr title=&quot;r--r--r--: everyone can read, nobody (save root) can write&quot;&gt;a=r&lt;/abbr&gt; file&lt;/td&gt;&lt;td&gt;empty &lt;abbr title=&quot;r--r--r--: everyone can read, nobody (save root) can write&quot;&gt;a=r&lt;/abbr&gt; file &lt;/td&gt;&lt;td rowspan=3&gt;device&lt;br&gt;empty &lt;abbr title=&quot;r--r--r--: everyone can read, nobody (save root) can write&quot;&gt;a=r&lt;/abbr&gt; file&lt;/td&gt;&lt;td&gt;just for sh(I), as readable &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;5 &lt;/th&gt; &lt;td rowspan=3&gt;&lt;abbr title=&quot;rw-rw-rw-: everyone can read, everyone can write&quot; &gt;a=rw&lt;/abbr&gt; device&lt;/td&gt; &lt;td&gt;&amp; under mem(IV) as read-write &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;6 &lt;/th&gt; &lt;td&gt;&amp; in setup &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;7 &lt;/th&gt;&lt;td&gt;&lt;abbr title=&quot;rw-rw-rw-: everyone can read, everyone can write&quot; &gt;a=rw&lt;/abbr&gt; device &lt;/td&gt; &lt;td&gt;device &lt;/td&gt;&lt;td&gt;as read-write in null(4) with global perfusion&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;refs&quot; &gt;&lt;a class=&quot;hash-link&quot; href=&quot;#refs&quot;&gt;#&lt;/a&gt; References&lt;/h3&gt;
+&lt;dl class=&quot;refs&quot;&gt;
+&lt;div id=&quot;Linux7null&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#Linux7null&quot;&gt;Linux7null&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Linux 7.1-rc3, &lt;tt&gt;drivers/char/mem.c&lt;/tt&gt;, &lt;a href=&quot;//git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/char/mem.c?h=v7.1-rc3#n714&quot;&gt;ll. 714, 679-692&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;NetBSDnull&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#NetBSDnull&quot;&gt;NetBSDnull&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; NetBSD src 2026-05-11, &lt;tt&gt;sys/sys/conf.h&lt;/tt&gt; &lt;a href=&quot;//cvsweb.netbsd.org/bsdweb.cgi/src/sys/sys/conf.h?rev=1.162#:~:text=DEV_NULL&quot;&gt;l. 271&lt;/a&gt;, &lt;tt&gt;sys/dev/mm.c&lt;/tt&gt; &lt;a href=&quot;//cvsweb.netbsd.org/bsdweb.cgi/src/sys/dev/mm.c?annotate=1.24.36.1#:~:text=351:&quot;&gt;ll. 351-356&lt;/a&gt;, &lt;tt&gt;etc/MAKEDEV.tmpl&lt;/tt&gt; &lt;a href=&quot;//cvsweb.netbsd.org/bsdweb.cgi/src/etc/MAKEDEV.tmpl?rev=1.238#:~:text=c%20%mem_chr%%202&quot;&gt;l. 966&lt;/a&gt;, &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;SORTIXnull&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#SORTIXnull&quot;&gt;SORTIXnull&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; sortix 2026-05-11, &lt;tt&gt;kernel/kernel.cpp&lt;/tt&gt; &lt;a href=&quot;//gitlab.com/sortix/sortix/-/blob/d6245d46824a097f66d283e9f34fdc61a6a9223f/kernel/kernel.cpp#L587&quot;&gt;ll. 587-593&lt;/a&gt;, &lt;tt&gt;kernel/fs/null.{&lt;a href=&quot;//gitlab.com/sortix/sortix/-/blob/d6245d46824a097f66d283e9f34fdc61a6a9223f/kernel/fs/null.h&quot;&gt;h&lt;/a&gt;,&lt;a href=&quot;//gitlab.com/sortix/sortix/-/blob/d6245d46824a097f66d283e9f34fdc61a6a9223f/kernel/fs/null.cpp&quot;&gt;cpp&lt;/tt&gt;&lt;/a&gt;}&lt;/tt&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;xbd2024&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#xbd2024&quot;&gt;xbd2024&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; IEEE Std 1003.1™-2024, IEEE Standard for Information Technology—Portable Operating System Interface (POSIX™), Base Specifications, Issue 8, Microprocessor Committee of the IEEE Computer Society and The Open Group, 14 June 2024, 979-8-8557-0793-9, STD26978, Vol. 1: Base Definitions, Issue 8, 3.62: Character Special File, p. 40, ll. 1285-1287 &lt;blockquote class=&quot;continuation&quot;&gt; A file that refers to a device (such as a terminal device file) or that has special properties (such as &lt;strong&gt;/dev/null&lt;/strong&gt;). &lt;/blockquote&gt; &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;xbd2024a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#xbd2024a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., 10.1: Directory Structure and Files, p. 197, ll. 7043-7045 &lt;blockquote class=&quot;continuation&quot;&gt; The following files shall exist on conforming systems and shall be both readable and writable: &lt;p class=&quot;continued&quot;&gt; &lt;strong class=l style=&quot;float: left;&quot;&gt;/dev/null&lt;/strong&gt; &lt;span style=&quot;padding-left: 3em;&quot;&gt; An empty data source and infinite data sink. Data written to &lt;strong class=l&gt;/dev/null&lt;/strong&gt; shall be discarded. Reads from &lt;strong class=l&gt;/dev/null&lt;/strong&gt; shall always return end-of-file (EOF). &lt;/span&gt; &lt;/p&gt; &lt;/blockquote&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;!-- TODO link? --&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;xrat2024&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#xrat2024&quot;&gt;xrat2024&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., Vol. 4: Rationale (Informative), Issue 8, A: Rationale for Base Definitions, A.10.1: Directory Structure and Files, p. 3717 ll. 127679-127680 &lt;blockquote class=&quot;continuation&quot;&gt; The standard files &lt;strong&gt;/dev/null&lt;/strong&gt; and &lt;strong&gt;/dev/tty&lt;/strong&gt; are required to be both readable and writable to allow applications to have the intended historical access to these files. &lt;/blockquote&gt; &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;xrat2024a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#xrat2024a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., C: Rationale for Shell and Utilities, C.2: Shell Command Language, C.2.7: Redirection, p. 3891, ll. 135049 &lt;blockquote class=&quot;continuation&quot;&gt; Since &lt;strong&gt;/dev/null&lt;/strong&gt; is not a regular file, no error is generated by redirecting to it in &lt;em&gt;noclobber&lt;/em&gt; mode. &lt;/blockquote&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;!-- TODO link? --&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upm4&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upm4&quot;&gt;upm4&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, Fourth Edition, K. Thompson &amp; D. M. Ritchie, November, 1973, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v4#./man1/sh.1#L294&quot;&gt;sh(I)&lt;/a&gt; (4/18/73, &lt;q&gt;shell (command interpreter)&lt;/q&gt;), ll. 294-297, 302 &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel4&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel4&quot;&gt;kernel4&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; &lt;a href=&quot;022-Utah_v4.html&quot;&gt;UNIX V4 tape from University of Utah (binary tape, rootfs)&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/dmr/mem.c&quot;&gt;&lt;tt&gt;/usr/sys/dmr/mem.c&lt;/tt&gt;&lt;/a&gt; &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;kernel4a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel4a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/usr/sys/conf/conf.c&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/conf/conf.c#L13&quot;&gt;ll. 13-21&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel4b&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel4b&quot;&gt;b&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/usr/sys/conf/mkconf.c&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/sys/conf/mkconf.c#L188&quot;&gt;ll. 188-200&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;sh4&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#sh4&quot;&gt;sh4&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., &lt;tt&gt;/usr/source/s2/sh.c&lt;/tt&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/usr/source/s2/sh.c#L601&quot;&gt;l. 601&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;null4&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#null4&quot;&gt;null4&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Utah_v4#/dev/null&quot;&gt;&lt;tt&gt;/dev/null&lt;/tt&gt;&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upm5&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upm5&quot;&gt;upm5&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, Fifth Edition, K. Thompson &amp; D. M. Ritchie, June, 1974, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=103&quot;&gt;sh(I)&lt;/a&gt; (5/15/74, &lt;q&gt;shell (command interpreter)&lt;/q&gt;) &amp; &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5man.pdf#page=218&quot;&gt;mem(IV)&lt;/a&gt; (5/27/74, &lt;q&gt;core memory&lt;/q&gt;) &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel5&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel5&quot;&gt;kernel5&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Dennis Ritchie, &lt;tt&gt;v5root.tar.gz&lt;/tt&gt;, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5root.tar.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#./usr/sys/dmr/mem.c&quot;&gt;&lt;tt&gt;./usr/sys/dmr/mem.c&lt;/tt&gt;&lt;/a&gt; &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;kernel5a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel5a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/usr/sys/conf/conf.c&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#./usr/sys/conf/conf.c#L11&quot;&gt;ll. 11-19&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel5b&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel5b&quot;&gt;b&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/usr/sys/conf/mkconf.c&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#./usr/sys/conf/mkconf.c#L28&quot;&gt;ll. 28-34&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;sh5&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#sh5&quot;&gt;sh5&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., &lt;tt&gt;./usr/source/s2/sh.c&lt;/tt&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#./usr/source/s2/sh.c#L641&quot;&gt;l. 641&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;null5&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#null5&quot;&gt;null5&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Dennis Ritchie, &lt;tt&gt;v5root.gz&lt;/tt&gt;, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v5/v5root.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v5#v5-missing-files&quot;&gt;&lt;tt&gt;/dev/null&lt;/tt&gt;&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upm6&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upm6&quot;&gt;upm6&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; UNIX Programmer'&lt;!--'--&gt;s Manual, Sixth Edition, K. Thompson &amp; D. M. Ritchie, May, 1975, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6doc#./man/man1/sh.1&quot;&gt;sh(I)&lt;/a&gt; (5/15/74, &lt;q&gt;shell (command interpreter)&lt;/q&gt;) &amp; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6doc#./man/man4/mem.4&quot;&gt;mem(IV)&lt;/a&gt; (5/27/74, &lt;q&gt;mem, kmem, null − core memory&lt;/q&gt;) &amp; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6doc#./man/man6/speak.6&quot;&gt;speak(VI)&lt;/a&gt; (4/26/75, &lt;q&gt;word to voice translator&lt;/q&gt;) &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;setup6&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#setup6&quot;&gt;setup6&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Ken Thompson &amp; Dennis Ritchie, Setting Up UNIX − Sixth Edition, Special Files, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6doc#./start/start#L418&quot;&gt;para. 4&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel6&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel6&quot;&gt;kernel6&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Dennis Ritchie, &lt;tt&gt;v6root.tar.gz&lt;/tt&gt;, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6root.tar.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6root#./usr/sys/dmr/mem.c&quot;&gt;&lt;tt&gt;./usr/sys/dmr/mem.c&lt;/tt&gt;&lt;/a&gt; &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;kernel6a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel6a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/usr/sys/conf/mkconf.c&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6root#./usr/sys/conf/mkconf.c#L60&quot;&gt;ll. 60-66&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;sh6&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#sh6&quot;&gt;sh6&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Dennis Ritchie, &lt;tt&gt;v6src.tar.gz&lt;/tt&gt;, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6src.tar.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;tt&gt;./s2/sh.c&lt;/tt&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6/v6src#./s2/sh.c#L668&quot;&gt;l. 668&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;null6&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#null6&quot;&gt;null6&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Dennis Ritchie, &lt;tt&gt;v6root.gz&lt;/tt&gt;, &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Dennis_v6/v6root.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Dennis_v6#v6-missing-files&quot;&gt;&lt;tt&gt;/dev/null&lt;/tt&gt;&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upm7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upm7&quot;&gt;upm7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; UNIX™ Time-Sharing System: UNIX Programmer'&lt;!--'--&gt;s Manual, Seventh Edition, Volume 1, January, 1979, Bell Telephone Laboratories, Incorporated, Murray Hill, New Jersey, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/man/man1/sh.1#L587&quot;&gt;sh(1)&lt;/a&gt; (&lt;q&gt;command language&lt;/q&gt;) &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;upm7a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upm7a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., dd(1) (&lt;q&gt;convert and copy a file&lt;/q&gt;), &lt;tt&gt;/man/man1/dd.1&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/man/man1/dd.1#L587&quot;&gt;l. 587&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upm7b&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upm7b&quot;&gt;b&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., null(4) (&lt;q&gt;data sink&lt;/q&gt;), &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/man/man4/null.4&quot;&gt;&lt;tt&gt;/man/man4/null.4&lt;/tt&gt;&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;sh7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#sh7&quot;&gt;sh7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; S. R. Bourne, An Introduction to the UNIX Shell, 3.7 Command execution, (&lt;tt&gt;/usr/doc/shell/t3&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/doc/shell/t3#L727&quot;&gt;ll. 727-733&lt;/a&gt;) &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;setup7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#setup7&quot;&gt;setup7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Charles B. Haley &amp; Dennis M. Ritchie, Setting Up UNIX − Seventh Edition, Special Files, (&lt;tt&gt;/usr/doc/setup&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/doc/setup#L244&quot;&gt;l. 244&lt;/a&gt;) &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;uucp7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#uucp7&quot;&gt;uucp7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; D. A. Nowitz, Uucp Implementation Description, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/doc/uucp/implement#L448&quot;&gt;Standard Input Line&lt;/a&gt; &amp; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/doc/uucp/implement#L458&quot;&gt;Standard Output Line&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;eqn7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#eqn7&quot;&gt;eqn7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; Brian W. Kernighan and Lorinda L. Cherry, Typesetting Mathematics — User's&lt;!--'--&gt; Guide, (&lt;tt&gt;/usr/doc/eqn/g4&lt;/tt&gt; &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/doc/eqn/g4#L210&quot;&gt;ll. 205-213&lt;/a&gt;) &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel7&quot;&gt;kernel7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/0034-Keith_Bostic_v7.tar&quot;&gt;Unsullied translation of the TUHS Keith_Bostic_v7 V7 UNIX distribution rootfs and /usr to tar&lt;/a&gt;, Keith Bostic, &lt;tt&gt;f6.gz&lt;/tt&gt; (&lt;tt&gt;/usr&lt;/tt&gt;), &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Keith_Bostic_v7/f6.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/sys/dev/mem.c&quot;&gt;&lt;tt&gt;/sys/dev/mem.c&lt;/tt&gt;&lt;/a&gt; &lt;dl class=&quot;refs&quot;&gt; &lt;div id=&quot;kernel6a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel6a&quot;&gt;a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/sys/conf/mkconf.c&lt;/tt&gt; ll. &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/sys/conf/mkconf.c#L35&quot;&gt;35&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/sys/conf/mkconf.c#L73&quot;&gt;73-81&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/sys/conf/mkconf.c#L659&quot;&gt;659-667&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernel6b&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernel6b&quot;&gt;b&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ibid., &lt;tt&gt;/sys/conf/c.c&lt;/tt&gt; l. &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/sys/conf/c.c#L50&quot;&gt;50&lt;/a&gt;&lt;/dd&gt;&lt;/div&gt; &lt;/dl&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;userspace7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#userspace7&quot;&gt;userspace7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/atrun.c&quot; &gt;/src/cmd/atrun.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/cu.c&quot; &gt;/src/cmd/cu.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/osh.c&quot; &gt;/src/cmd/osh.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/refer/inv1.c&quot; &gt;/src/cmd/refer/inv1.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/refer/what3.c&quot;&gt;/src/cmd/refer/what3.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/sh/xec.c&quot; &gt;/src/cmd/sh/xec.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/tk.c&quot; &gt;/src/cmd/tk.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/uucp/shio.c&quot; &gt;/src/cmd/uucp/shio.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/uucp/uuxqt.c&quot; &gt;/src/cmd/uucp/uuxqt.c&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/usr#/src/cmd/uucp/xqt.c&quot; &gt;/src/cmd/uucp/xqt.c&lt;/a&gt;, &amp;c. &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;null7&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#null7&quot;&gt;null7&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., &lt;tt&gt;f5.gz&lt;/tt&gt; (root), &lt;a href=&quot;//www.tuhs.org/Archive/Distributions/Research/Keith_Bostic_v7/f5.gz&quot;&gt;distributed by&lt;/a&gt; TUHS, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/root#/dev/&quot;&gt;&lt;tt&gt;/dev/null&lt;/tt&gt;&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;userspace7a&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#userspace7a&quot;&gt;userspace7a&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; ibid., &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/root#/etc/rc&quot;&gt;&lt;tt&gt;/etc/rc&lt;/tt&gt;&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/root#/bin/calendar&quot;&gt;&lt;tt&gt;/bin/calendar&lt;/tt&gt;&lt;/a&gt;, &lt;a href=&quot;//vtree.nabijaczleweli.xyz/?Keith_Bostic_v7/root#/bin/spell&quot;&gt;&lt;tt&gt;/bin/spell&lt;/tt&gt;&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernelPWB&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernelPWB&quot;&gt;kernelPWB&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; &lt;span class=&quot;smallcaps&quot;&gt;Pwb/&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/span&gt; 2, &lt;a href=&quot;https://vtree.nabijaczleweli.xyz/?bostic_pwb#pwb/pwb.5/pwb/sys/io/mem.c&quot;&gt;&lt;tt&gt;/pwb/sys/io/mem.c&lt;/tt&gt;&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upmPWB&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upmPWB&quot;&gt;upmPWB&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; &lt;span class=&quot;smallcaps&quot;&gt;Pwb/&lt;span class=&quot;smallcaps&quot;&gt;unix&lt;/span&gt;&lt;/span&gt;, Edition 1.0, T. A. Dolotta, R. C. Haight, E. M. Piskorik, eds., May 1977, Bell Telephone Laboratories, Incorporated, &lt;a href=&quot;https://vtree.nabijaczleweli.xyz/?bostic_pwb#pwb/pwb.5/pwb.2/usr/man/man4/mem.4&quot;&gt;mem(IV)&lt;/a&gt; (5/31/77, &lt;q&gt;core memory&lt;/q&gt;) &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;kernelCB&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#kernelCB&quot;&gt;kernelCB&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; CB-UNIX kernel source, &lt;tt&gt;conf.70.c&lt;/tt&gt; 2.16, &lt;a href=&quot;//lfs.nabijaczleweli.xyz/TUHS/Distributions/USDL/CB_Unix/SourceCode/cbunix4.pdf#page=21&quot;&gt;Page 2&lt;/a&gt; &amp; &lt;a href=&quot;//lfs.nabijaczleweli.xyz/TUHS/Distributions/USDL/CB_Unix/SourceCode/cbunix9.pdf#page=26&quot;&gt;&lt;tt&gt;mem.c&lt;/tt&gt; 2.7.1.1&lt;/a&gt; &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt; &lt;div id=&quot;upmCB&quot;&gt;&lt;dt&gt;&lt;a href=&quot;#upmCB&quot;&gt;upmCB&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;cite&gt; CB-UNIX Programmer'&lt;!--'--&gt;s Manual, Edition 2.3, J. D. Doan, ed., May 1981, Department 59473, Bell Telephone Laboratories, Incorporated, &lt;a href=&quot;//lfs.nabijaczleweli.xyz/TUHS/Distributions/USDL/CB_Unix/cbunix_man4.pdf#page=14&quot;&gt;null(IV)&lt;/a&gt; (November 1979, &lt;q&gt;the null file&lt;/q&gt;) [content identical to &lt;span class=&quot;ref&quot;&gt;&lt;a href=&quot;#upm7&quot;&gt;[upm7]&lt;/a&gt;&lt;/span&gt; beside the title line] &lt;/cite&gt;&lt;/dd&gt;&lt;/div&gt;
+&lt;/dl&gt;
+&lt;p class=&quot;continued&quot;&gt; 
+ &lt;br /&gt; 
+ Nit-pick? Correction? Improvement? Annoying? Cute? Anything? 
+ &lt;a href=&quot;mailto:nabijaczleweli@nabijaczleweli.xyz?subject=Notes on src/blogue/024-dev-null.html.pp&quot;&gt;Mail&lt;/a&gt;, 
+ &lt;a href=&quot;//101010.pl/@nabijaczleweli&quot;&gt;post&lt;/a&gt;, or &lt;a href=&quot;//github.com/nabijaczleweli/nabijaczleweli.github.io/issues/new&quot;&gt;open&lt;/a&gt;! 
+ &lt;/p&gt; 
+ &lt;/div&gt;
+</content>
+  </entry>
 
   <entry>
     <id>https://nabijaczleweli.xyz/content/../content/blogue/023,c-unix-no-sparse-files-before-v7.html</id>
