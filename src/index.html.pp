@@ -40,6 +40,10 @@ BOILERPLATE(main(), набꞌs web-site, en-GB, STYLESHEETS)
 		<a href="blogue/023,c-unix-no-sparse-files-before-v7.html">023,c. <span class="smallcaps">unix</span> didn't<!--'--> have sparse files before V7 (+ V1 patch)</a>;
 		<span style="white-space: nowrap;">Sun, 25 Jan 2026 23:28:55 +0100</span>
 	</samp>
+	<samp style="display: inline-block; margin-left: 1em;" class="roboto-unscale">
+		<a href="blogue/024-dev-null.html">024. History of /dev/null</a>;
+		<span style="white-space: nowrap;">Wed, 13 May 2026 15:12:04 +0200</span>
+	</samp>
 </p>
 
 <p>
