@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "blogue.h"
 
 
-<!-- TODO -->
+<!-- https://101010.pl/@nabijaczleweli/116567530618655084 -->
 
    <!-- RSS_PUB_DATE: "Wed, 13 May 2026 15:12:04 +0200" -->
 #define POST_DATE      Wed, 13 May 2026 15:12:04 +0200

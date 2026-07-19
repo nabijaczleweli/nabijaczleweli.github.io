@@ -16,7 +16,7 @@ work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 #include "blogue.h"
 
 
-<!-- TODO https://101010.pl/@nabijaczleweli/116567530618655084 -->
+<!-- https://101010.pl/@nabijaczleweli/116947022555615698 -->
 
    <!-- RSS_PUB_DATE: "Sun, 19 Jul 2026 15:47:21 +0200" -->
 #define POST_DATE      Sun, 19 Jul 2026 15:47:21 +0200
@@ -33,7 +33,7 @@ All lesbians think they're<!--'--> predators.
 They think this because this is the position of mainstream culture,
 and because they will have had the experience of being in a full-blown relationship,
 then either dropped cold or publicly humiliated and possibly persecuted for their normal and heretofore-co-created sexuality.
-(We all know at least one who continues this pattern well into adulthood; we all know one like this; unmourned love turned repetition compulsion trumps all.)
+(We all know at least one who continues this pattern well into adulthood; unmourned love turned repetition compulsion trumps all.)
 The latter, coming from someone they already love deeply, forms an especially-easy-to-introject vicious cocktail.
 <!--
 (Compare also how this effect is reduced in the cliques that form of people with diminished capacity for introjection
@@ -67,13 +67,13 @@ The standard image of this is the
 — all of which defend against the unbearable active/predator position by dissociating the affect, and thus also the positive parts of the experience —
 or by choosing partners on whom it would be <em>impossible</em> to prey on
 due to distance (lesbians love their long-distance girlfriends)
-— we know at least the former doesn't<!--'--> work as a defence because they still complain about it incessantly —
+— we know this one doesn't<!--'--> work as a defence because they still complain about it incessantly —
 or one of the more usual power dynamics; all lesbians love "older women".
 Are they hot? yeah. are you free to be as horny at/about them as you wish without a hint of impropriety from your end? also yes.
 </p>
 
 <p>
-Anecdote #1: I remember this happening to us (the vague dyke collective) in our high school class w/ our polish teacher (an old stately woman).
+Anecdote #1: I remember this happening to us (the vague dyke collective) in our high school class w/ our polish teacher (an old, stately woman).
 In retrospect this was clearly at least part displacement,
 and chronologically would fit with flaring up around the time one of us (with the largest amount of social capital (at the time she was by far the best at being gay))
 got big time rejected by a classmate who turned out apparently-"straight"
@@ -93,7 +93,7 @@ had recently sheepishly asked me if it was crazy/deranged/inappropriate/rotten o
 
 <p>
 The <a href="//101010.pl/@nabijaczleweli/116913594847076533">zoomer lesbian</a> who <em>does</em> partake in our zeitgeist,
-tends relieve her introjected depression differently, in a way that bears some similarity to a reverse hysteria:[4]
+tends to relieve her introjected depression differently, in a way that bears some similarity to a reverse hysteria: [4]
 rather than defending against sexualized interest with repression (then, failing that, dissociated enactments),
 it is the enactment (passive-into-active transformation) itself that is unacceptable,
 and so it is deflected into yearnposting, which can function either ejectively or be reinforced with social rewards (engagement) as a sublimation defence.
@@ -101,7 +101,7 @@ and so it is deflected into yearnposting, which can function either ejectively o
 
 <p>
 (One may also construe these defences as falling on the psychotic-borderline-neurotic spectrum
- v/v moralisation-[projective identification (ejection)]-[sublimation by co-creation with your peers but not your object. sometimes with your object too[*].)
+ v/v moralisation-[projective identification (ejection)]-[sublimation by co-creation with your peers but not your object. sometimes with your object too [*])
 </p>
 
 <div>
