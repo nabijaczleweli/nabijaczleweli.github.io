@@ -106,6 +106,7 @@ MAIN_HEADING(blogue)
  PCPOST(023,b-DeFelice-polemic,                  Fri, 23 Jan 2026 21:28:16 +0100, 023,b. A J. DeFelice polemick on V1 <span class="smallcaps">unix</span> buffering schemes, novel results regarding V1 <span class="smallcaps">unix</span> mounts, on the conceptualisation of the file system and block device partitioning)
  PCPOST(023,c-unix-no-sparse-files-before-v7,    Sun, 25 Jan 2026 23:28:55 +0100, 023,c. <span class="smallcaps">unix</span> didn't<!--'--> have sparse files before V7 (+ V1 patch))
 	 POST(024-dev-null,                            Wed, 13 May 2026 15:12:04 +0200, 024. History of /dev/null)
+	 POST(025-yearnposting,                        Sun, 19 Jul 2026 15:47:21 +0200, 025. the yearnposting culture; phone as analytic couch)
 	<!-- Remember to update latest post in toplevel index -->
 </span>
 
