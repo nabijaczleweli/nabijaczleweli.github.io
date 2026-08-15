@@ -1,12 +1,11 @@
 window.addEventListener("load", function() {
-	const MASTER_LOGO = document.getElementById("logo-img");
+	const DEFAULT_LOGO = document.getElementById("logo-img");
 	const EXTRA_IMAGES = document.getElementsByClassName("alt-logo-img");
 	EXTRA_IMAGES[0].classList.toggle("active");
-	EXTRA_IMAGES[EXTRA_IMAGES.length - 1].classList.toggle("active");
 
-	MASTER_LOGO.addEventListener("touchstart", function() {
+	DEFAULT_LOGO.addEventListener("touchstart", function() {
 		EXTRA_IMAGES[0].classList.remove("hidden");
-		MASTER_LOGO.classList.remove("forced");
+		DEFAULT_LOGO.classList.remove("forced");
 	});
 
 	var just_switched = false;
@@ -32,7 +31,7 @@ window.addEventListener("load", function() {
 			if(!first_round) {
 				if(next_idx === 0) {
 					EXTRA_IMAGES[next_idx].classList.add("hidden");
-					MASTER_LOGO.classList.add("forced");
+					DEFAULT_LOGO.classList.add("forced");
 				}
 			}
 			first_round = false;
